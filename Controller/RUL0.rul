@@ -10853,8 +10853,10 @@ CopyFrom    = 0x35050
 [HighwayIntersectionInfo_0x00005051]
 ;Added by MRTNRLN 8/22/2010.
 ;RHW-3 Filler Piece
-Piece = 0.0, 0.0, 0, 0, 0x57010000
-PreviewEffect = preview_filler__l0mis___000
+;Modified by Blue Lightning 3/3/2013
+;Fixes issue #41
+Piece = 0.0, 0.0, 0, 0, 0x57E10000
+PreviewEffect = preview_filler_l0_rhw_3_000
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -10866,9 +10868,9 @@ ConsLayout =.......
 ConsLayout =...|..<
 ConsLayout =...^...
 
-AutoTileBase=	0x57F01000
+AutoTileBase=	0x57E10000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F01005
+PlaceQueryID = 0x57F01000
 Costs       = 8
 [HighwayIntersectionInfo_0x00015051]
 CopyFrom    = 0x5051
@@ -10891,8 +10893,10 @@ CopyFrom    = 0x35051
 [HighwayIntersectionInfo_0x00005040]
 ;Added by Tarkus 12/23/2007.
 ;RHW-4 Filler Piece
-Piece = 0.0, 0.0, 0, 0, 0x57030000
-PreviewEffect = preview_filler__l0rhw4__000
+;Modified by Blue Lightning 3/3/2013
+;Fixes issue #41
+Piece = 0.0, 0.0, 0, 0, 0x57E30000
+PreviewEffect = preview_filler_l0_rhw_4_000
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -10904,9 +10908,9 @@ ConsLayout =.......
 ConsLayout =...|..<
 ConsLayout =...^...
 
-AutoTileBase=	0x57F03000
+AutoTileBase=	0x57E30000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F03005
+PlaceQueryID = 0x57E30000
 Costs       = 8
 [HighwayIntersectionInfo_0x00015040]
 CopyFrom    = 0x5040
@@ -10996,8 +11000,10 @@ Rotate = 3
 [HighwayIntersectionInfo_0x00005042]
 ;Added by Tarkus 05/24/2008.
 ;RHW-6S Filler Piece
-Piece = -16.0, 0.0, 0, 0, 0x57040000
-PreviewEffect = preview_filler__l0rhw6s_000
+;Modified by Blue Lightning 3/3/2013
+;Fixes issue #41
+Piece = 0.0, 0.0, 0, 0, 0x57E40000
+PreviewEffect = preview_filler_l0_rhw_6s000
 
 CellLayout =.......
 CellLayout =...c<..
@@ -11009,9 +11015,9 @@ ConsLayout = .......
 ConsLayout = ...|<..
 ConsLayout = ...^...
 
-AutoTileBase=	0x57F04000
+AutoTileBase=	0x57E40000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F04005
+PlaceQueryID = 0x57E40000
 Costs       = 600
 [HighwayIntersectionInfo_0x00015042]
 CopyFrom    = 0x5042
@@ -11036,8 +11042,10 @@ CopyFrom    = 0x35042
 [HighwayIntersectionInfo_0x00005043]
 ;Added by Tarkus 05/24/2008.
 ;RHW-6C Filler Piece
-Piece = 0.0, 0.0, 0, 0, 0x57080006
-PreviewEffect = preview_filler__l0rhw6c_000
+;Modified by Blue Lightning 3/3/2013
+;Fixes issue #41
+Piece = 0.0, 0.0, 0, 0, 0x57E80005
+PreviewEffect = preview_filler_l0_rhw_6c000
 
 CellLayout =........
 CellLayout =..ddd<..
@@ -11049,9 +11057,9 @@ ConsLayout = ........
 ConsLayout = ..+++<..
 ConsLayout = ...^....
 
-AutoTileBase=	0x57F08000
+AutoTileBase=	0x57E80000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F08005
+PlaceQueryID = 0x57E80000
 Costs       = 600
 [HighwayIntersectionInfo_0x00015043]
 CopyFrom    = 0x5043
@@ -11320,9 +11328,11 @@ Rotate = 3
 
 [HighwayIntersectionInfo_0x00005049]
 ;Added by Tarkus 12/23/2007.
+;Modified by Blue Lightning 3/3/2013
+;Fixes issue #41
 ;MIS Filler Piece
-Piece = 0.0, 0.0, 0, 0, 0x5deeee05
-PreviewEffect = preview_draggable_mis___000
+Piece = 0.0, 0.0, 0, 0, 0x57E20000
+PreviewEffect = preview_filler_l0_mis___000
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -11334,9 +11344,9 @@ ConsLayout =.......
 ConsLayout =...|..<
 ConsLayout =...^...
 
-AutoTileBase=	0x57F02000
+AutoTileBase=	0x57E20000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F02005
+PlaceQueryID = 0x57E20000
 Costs       = 8
 [HighwayIntersectionInfo_0x00015049]
 CopyFrom    = 0x5049
