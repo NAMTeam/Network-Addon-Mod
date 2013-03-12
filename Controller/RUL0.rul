@@ -1,7 +1,7 @@
 ;;NOTE; file has been modified, has some sections throughout commented out,
 ; has custom content, & contains various additional rules, done by NAM Team &/or others.
-;Last Updated: 05 March 2013 by Tarkus (r170)
-;Fixes rotations and mirroring on RHW starter pieces
+;Last Updated: 11 March 2013 by Tarkus (x172)
+;Fixes DDRHW-4 Ramp Interface
 ;
 ;RHD version
 ;search for RHD to find RHD-LHD specific rules
@@ -19767,7 +19767,7 @@ CellLayout =...^...
 
 ;CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 
-CheckType = c - rail: 0x02000200
+CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02020000
 ;CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
 ;CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
@@ -19814,7 +19814,7 @@ CellLayout =...^...
 
 ;CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 
-CheckType = c - rail: 0x02000200
+CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02020000
 ;CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
 ;CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
