@@ -1,0 +1,267 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MONORAIL WIDE CURVE BUTTON SECTION
+;MONORAIL WIDE CURVE BUTTON SECTION
+;C700
+RotationRing = C700, 1C700, 2C700, 3C700, 4C700, 5C700, 6C700, 7C700, 8C700, 9C700, AC700, BC700, CC700, DC700, EC700, FC700 ; Monorail S-Curve Puzzle Piece
+AddTypes     = C701, 1C701, 2C701, 3C701, 4C701, 5C701, 6C701, 7C701, 8C701, 9C701, AC701, BC701, CC701, DC701, EC701, FC701 ; Monorail 45-Curve Puzzle Piece
+AddTypes     = C702, 1C702, 2C702, 3C702, 4C702, 5C702, 6C702, 7C702, 8C702, 9C702, AC702, BC702, CC702, DC702, EC702, FC702 ; Monorail 90-Curve Puzzle Piece
+
+
+;###separator###
+
+;MONORAIL CURVES
+
+[HighwayIntersectionInfo_0x0000C700]
+;Added by moonlinght 22-Mar-2012
+;monorail S-Curve
+Piece = 0.0, 0.0, 0, 0, 0x5d411005
+PreviewEffect = preview_monoscurve_piece000
+
+CellLayout =....z..
+CellLayout =....A.<
+CellLayout =....A..
+CellLayout =...CE..
+CellLayout =...DF..
+CellLayout =...A...
+CellLayout =...A...
+CellLayout =...z...
+CellLayout =....^..
+
+CheckType = F - monorail: 0x00000103
+CheckType = D - monorail: 0x02010200
+Checktype = E - monorail: 0x02000201
+CheckType = C - monorail: 0x03010000
+CheckType = A - monorail: 0x02000200
+CheckType = z - monorail: 0x02000200 optional
+
+ConsLayout =....#..
+ConsLayout =....#.<
+ConsLayout =....#..
+ConsLayout =...##..
+ConsLayout =...##..
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =....^..
+
+AutoTileBase=	0x5d411000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d411000
+Costs       = 800
+[HighwayIntersectionInfo_0x0001C700]
+CopyFrom    = 0xC700
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C700]
+CopyFrom    = 0xC700
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C700]
+CopyFrom    = 0xC700
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C700]
+CopyFrom    = 0xC700
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C700]
+CopyFrom    = 0x4C700
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C700]
+CopyFrom    = 0x4C700
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C700]
+CopyFrom    = 0x4C700
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C700]
+CopyFrom    = 0xC700
+[HighwayIntersectionInfo_0x0009C700]
+CopyFrom    = 0xC700
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AC700]
+CopyFrom    = 0xC700
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BC700]
+CopyFrom    = 0xC700
+Rotate		= 3
+[HighwayIntersectionInfo_0x000CC700]
+CopyFrom    = 0x4C700
+[HighwayIntersectionInfo_0x000DC700]
+CopyFrom    = 0x4C700
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EC700]
+CopyFrom    = 0x4C700
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FC700]
+CopyFrom    = 0x4C700
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C701]
+;Monorail 45 degree curve
+;Added by moonlinght
+Piece = 0.0, 0.0, 0, 0, 0x5d412005
+PreviewEffect = preview_monoscurve_piece001
+
+CellLayout =..an.
+CellLayout =.ab..
+CellLayout =cb+..
+CellLayout =d+...
+CellLayout =d+...
+CellLayout =d....
+CellLayout =d...<
+CellLayout =z....
+CellLayout =^....
+
+CheckType   = a - monorail:0x03010000
+CheckType   = b - monorail:0x00000301
+CheckType   = c - monorail:0x02010000
+CheckType   = d - monorail:0x02000200
+CheckType   = n - monorail:0x00000001,0x000000ff check
+CheckType   = z - monorail:0x00000200,0x0000ff00 check
+
+ConsLayout = ..//.
+ConsLayout = .//..
+ConsLayout = //X..
+ConsLayout = ||...
+ConsLayout = |X...
+ConsLayout = |....
+ConsLayout = |...<
+ConsLayout = |....
+ConsLayout = ^....
+
+
+;Autoplace = 1
+AutoTileBase = 0x5d412000
+;ConvertQueryID = 0x5d412000
+PlaceQueryID = 0x5d412000
+Costs = 800
+
+[HighwayIntersectionInfo_0x0001C701]
+CopyFrom    = 0xC701
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C701]
+CopyFrom    = 0xC701
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C701]
+CopyFrom    = 0xC701
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C701]
+CopyFrom    = 0xC701
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C701]
+CopyFrom    = 0x4C701
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C701]
+CopyFrom    = 0x4C701
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C701]
+CopyFrom    = 0x4C701
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C701]
+CopyFrom    = 0xC701
+[HighwayIntersectionInfo_0x0009C701]
+CopyFrom    = 0xC701
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AC701]
+CopyFrom    = 0xC701
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BC701]
+CopyFrom    = 0xC701
+Rotate		= 3
+[HighwayIntersectionInfo_0x000CC701]
+CopyFrom    = 0x4C701
+[HighwayIntersectionInfo_0x000DC701]
+CopyFrom    = 0x4C701
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EC701]
+CopyFrom    = 0x4C701
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FC701]
+CopyFrom    = 0x4C701
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C702]
+;Monorail 90 degree curve
+;Added by moonlinght
+Piece = 0, 0.0, 0, 0, 0x5d413005
+PreviewEffect = preview_monoscurve_piece002
+
+CellLayout =..............
+CellLayout =..............
+CellLayout =..abbbdf.....<
+CellLayout =.....+cef.....
+CellLayout =.......cef....
+CellLayout =.........cf...
+CellLayout =.........+cf..
+CellLayout =..........+c..
+CellLayout =..........+h..
+CellLayout =...........h..
+CellLayout =...........h..
+CellLayout =...........i..
+CellLayout =...^..........
+
+CheckType = a - monorail: 0x00020000,0x00ff0000 check
+CheckType = b - monorail: 0x00020002
+CheckType = c - monorail: 0x00030100
+CheckType = d - monorail: 0x01030002
+CheckType = e - monorail: 0x01030103
+CheckType = f - monorail: 0x01000003
+CheckType = g - monorail: 0x02000103
+CheckType = h - monorail: 0x02000200
+CheckType = i - monorail: 0x00000200,0x0000ff00 check
+
+ConsLayout =..............
+ConsLayout =..............
+ConsLayout =...--\\\.....<
+ConsLayout =.....\\\\.....
+ConsLayout =.......\\\....
+ConsLayout =.........\\...
+ConsLayout =..........\\..
+ConsLayout =...........\..
+ConsLayout =...........\..
+ConsLayout =...........|..
+ConsLayout =...........|..
+ConsLayout =..............
+ConsLayout =...^..........
+
+AutoTileBase=	0x5d413000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d413000
+Costs = 800
+
+[HighwayIntersectionInfo_0x0001C702]
+CopyFrom = 0xC702
+Rotate = 1
+[HighwayIntersectionInfo_0x0002C702]
+CopyFrom = 0xC702
+Rotate = 2
+[HighwayIntersectionInfo_0x0003C702]
+CopyFrom = 0xC702
+Rotate = 3
+[HighwayIntersectionInfo_0x0004C702]
+CopyFrom = 0xC702
+[HighwayIntersectionInfo_0x0005C702]
+CopyFrom = 0x1C702
+[HighwayIntersectionInfo_0x0006C702]
+CopyFrom = 0x2C702
+[HighwayIntersectionInfo_0x0007C702]
+CopyFrom = 0x3C702
+[HighwayIntersectionInfo_0x0008C702]
+CopyFrom = 0xC702
+[HighwayIntersectionInfo_0x0009C702]
+CopyFrom = 0xC702
+Rotate = 1
+[HighwayIntersectionInfo_0x000AC702]
+CopyFrom = 0xC702
+Rotate = 2
+[HighwayIntersectionInfo_0x000BC702]
+CopyFrom = 0xC702
+Rotate = 3
+[HighwayIntersectionInfo_0x000CC702]
+CopyFrom = 0xC702
+[HighwayIntersectionInfo_0x000EC702]
+CopyFrom = 0x1C702
+[HighwayIntersectionInfo_0x000EC702]
+CopyFrom = 0x2C702
+[HighwayIntersectionInfo_0x000FC702]
+CopyFrom = 0x3C702
+

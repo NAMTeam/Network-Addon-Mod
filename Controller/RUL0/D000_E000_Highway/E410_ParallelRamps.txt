@@ -1,0 +1,1109 @@
+;PARALLEL RAMPS BUTTON - SINGLE-SIDED
+; 0x0000N4## - 0x0000N7## 
+RotationRing = E410, 4E410, 1E410, 5E410, 2E410, 6E410, 3E410, 7E410 ;highwayxroad parallel onramp
+AddTypes     = E411, 4E411, 1E411, 5E411, 2E411, 6E411, 3E411, 7E411 ;groundhighwayxroad Parallel onramp
+AddTypes     = E412, 4E412, 1E412, 5E412, 2E412, 6E412, 3E412, 7E412 ;highwayxroad parallel offramp
+AddTypes     = E413, 5E413, 1E413, 6E413, 2E413, 7E413, 3E413, 4E413 ;groundhighwayxroad parallel offramp
+AddTypes     = 4E414, 1E414, 5E414, 2E414, 6E414, 3E414, 7E414, E414 ;highwayxonewayroad Parallel Ramp Forward 01
+AddTypes     = E415, CE415, 1E415, DE415, 2E415, EE415, 3E415, FE415 ;highwayxonewayroad Parallel Ramp Reverse 01
+AddTypes     = 4E416, 1E416, 5E416, 2E416, 6E416, 3E416, 7E416, E416 ;highwayxonewayroad Parallel Ramp Forward 02
+AddTypes     = E417, CE417, 1E417, DE417, 2E417, EE417, 3E417, FE417 ;highwayxonewayroad Parallel Ramp Reverse 02
+AddTypes     = 4E418, 1E418, 5E418, 2E418, 6E418, 3E418, 7E418, E418 ;groundhighwayxonewayroad Parallel Ramp Forward 01
+AddTypes     = E419, CE419, 1E419, DE419, 2E419, EE419, 3E419, FE419 ;groundhighwayxonewayroad Parallel Ramp Reverse 01
+AddTypes     = 4E41A, 1E41A, 5E41A, 2E41A, 6E41A, 3E41A, 7E41A, E41A ;groundhighwayxonewayroad Parallel Ramp Forward 02
+AddTypes     = E41B, CE41B, 1E41B, DE41B, 2E41B, EE41B, 3E41B, FE41B ;groundhighwayxonewayroad Parallel Ramp Reverse 02
+AddTypes     = E41C, 2E41C, 4E41C, 6E41C, 8E41C, AE41C, CE41C, EE41C ;groundhighway to puzzle pieces ramp
+AddTypes     = E41D, 1E41D, 2E41D, 3E41D, 4E41D, 5E41D, 6E41D, 7E41D ;groundhighway lateral orthogonal
+AddTypes     = E41E, 1E41E, 2E41E, 3E41E, 4E41E, 5E41E, 6E41E, 7E41E ;groundhighway lateral diagonal
+AddTypes     = E41F, 1E41F, 2E41F, 3E41F, 4E41F, 5E41F, 6E41F, 7E41F ;groundhighway Parkplatzausfahrt orthgonal
+AddTypes     = E420, 1E420, 2E420, 3E420, 4E420, 5E420, 6E420, 7E420 ;groundhighway Parkplatzausfahrt diagonal
+;AddTypes     = E421, 1E421, 2E421, 3E421 ;Highwayxavenue OneSided dual Ramp (unknown - listed by memo)
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;GROUNDHIGHWAY SECTION
+;GROUNDHIGHWAY SECTION
+;GROUNDHIGHWAY SECTION
+;
+;RAMPS - Additional Highway Ramps.
+[HighwayIntersectionInfo_0x0000E411]
+;groundhighwayxroad Parallel O-OnRamp
+;Added 06.17.04 by Tropod
+Piece = -16.0, -16.0, 0, 0, 0x52259400
+HandleOffset = 0, 0
+PreviewEffect = preview_ghw_pararamproad002
+
+CellLayout = .DA...
+CellLayout = .Ed...
+CellLayout = .Ed+a.
+CellLayout = .EB+b<
+CellLayout = .FC.c.
+CellLayout = ....^.
+
+CheckType = a - road: 0x02000000, 0xFF000000 check
+CheckType = b - road: 0x02000200
+CheckType = c - road: 0x00000200, 0x0000FF00 check
+CheckType = d - groundhighway: 0x02000204
+CheckType = A - groundhighway: 0x02000004, 0xFFFF00FF check
+CheckType = B - groundhighway: 0x02000204             check
+CheckType = C - groundhighway: 0x00000204, 0x00FFFFFF check
+CheckType = D - groundhighway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - groundhighway: 0x02040200             optional
+CheckType = F - groundhighway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = .++...
+ConsLayout = .++...
+ConsLayout = .++++.
+ConsLayout = .++++<
+ConsLayout = .++.+.
+ConsLayout = ....^.
+
+AutoTileBase = 0x0c810000
+PlaceQueryID = 0xB000E070
+Costs       = 10
+[HighwayIntersectionInfo_0x0001E411]
+CopyFrom    = 0xE411
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E411]
+CopyFrom    = 0xE411
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E411]
+CopyFrom    = 0xE411
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E411]
+;groundhighwayxroad Parallel D-OnRamp 
+;Added 07.08.04 by Tropod
+Piece = -5.0, -22.0, 0, 0, 0x52259500
+HandleOffset = 0, 0
+PreviewEffect = preview_ghw_pararamproad0d2
+
+CellLayout = ...DC..
+CellLayout = ..DBc..
+CellLayout = ..Ad+..
+CellLayout = ....aZ<
+CellLayout = ....b..
+CellLayout = ....^..
+
+CheckType = a - road: 0x03010000
+CheckType = b - road: 0x00000300, 0x0000FF00 check
+CheckType = c - groundhighway: 0x00000301
+CheckType = d - check groundhighway: 0x00000301 optional
+CheckType = A - check groundhighway: 0x00010300, 0x00FFFF00
+CheckType = B - check groundhighway: 0x03010301
+CheckType = C - check groundhighway: 0x03000001, 0xFF0000FF
+CheckType = D - check groundhighway: 0x03010301 optional
+CheckType = D - check groundhighway: 0x03010000 optional
+CheckType = F - check groundhighway: 0x00000301 optional
+CheckType = Y - check road: 0x00000300, 0x0000FF00
+CheckType = Z - check road: 0x00000001, 0x000000FF
+
+ConsLayout = ...++..
+ConsLayout = ..+++..
+ConsLayout = ..+++..
+ConsLayout = ....++<
+ConsLayout = ....+..
+ConsLayout = ....^..
+
+AutoTileBase = 0x0C812300
+PlaceQueryID = 0xB000E070
+Costs       = 200
+[HighwayIntersectionInfo_0x0005E411]
+CopyFrom    = 0x4E411
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E411]
+CopyFrom    = 0x4E411
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E411]
+CopyFrom    = 0x4E411
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E413]
+;groundhighwayxroad Parallel O-OffRamp
+;Added 06.17.04 by Tropod
+;Piece = -16.0, 16.0, 0, 0, 0x52259100
+;HandleOffset = 0, 0
+;PreviewEffect = preview_hw_pararamp_road001
+;AutoTileBase = 0x0c810030
+CopyFrom    = 0xE411
+Transpose      = 1
+PlaceQueryID = 0xB000E080
+[HighwayIntersectionInfo_0x0001E413]
+CopyFrom    = 0xE413
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E413]
+CopyFrom    = 0xE413
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E413]
+CopyFrom    = 0xE413
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E413]
+;groundhighwayxroad Parallel D-OffRamp
+;Added 07.08.04 by Tropod
+CopyFrom    = 0x4E411
+Transpose   = 1
+PlaceQueryID = 0xB000E080
+[HighwayIntersectionInfo_0x0005E413]
+CopyFrom    = 0x4E413
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E413]
+CopyFrom    = 0x4E413
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E413]
+CopyFrom    = 0x4E413
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E419]
+;groundhighwayxonewayroad Parallel O-Ramp Reverse 01
+;Added 06.30.04 by Tropod
+Piece = -16.0, 16.0, 2, 1, 0x5A259405
+PreviewEffect = preview_ghw_pararampowrd002
+
+CellLayout = .....
+CellLayout = .DA.a.
+CellLayout = .EB+b<
+CellLayout = .Ed+c.
+CellLayout = .Ed...
+CellLayout = .FC...
+CellLayout = ....^.
+
+CheckType = a - onewayroad: 0x02000000, 0xFF000000 check
+CheckType = b - onewayroad: 0x02000200
+CheckType = c - onewayroad: 0x00000200, 0x0000FF00 check
+CheckType = d - groundhighway: 0x02000204
+CheckType = A - groundhighway: 0x02000004, 0xFFFF00FF check
+CheckType = B - groundhighway: 0x02000204             check
+CheckType = C - groundhighway: 0x00000204, 0x00FFFFFF check
+CheckType = D - groundhighway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - groundhighway: 0x02040200             optional
+CheckType = F - groundhighway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = .....
+ConsLayout = .++.+.
+ConsLayout = .++++<
+ConsLayout = .++++.
+ConsLayout = .++...
+ConsLayout = .++...
+ConsLayout = ....^.
+
+AutoTileBase = 0x09205030
+PlaceQueryID = 0xB000D5C0
+Costs       = 10
+OneWayDir	= 2
+[HighwayIntersectionInfo_0x0001E419]
+CopyFrom    = 0xE419
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E419]
+CopyFrom    = 0xE419
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E419]
+CopyFrom    = 0xE419
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E418]
+;groundhighwayxonewayroad Parallel D-Ramp Forward 01
+;Added 07.08.04 by Tropod
+Piece       = -5.0, -22.0, 0, 0, 0x5A259415
+PreviewEffect = preview_ghw_pararampowrd0d2
+
+CellLayout =...EC..
+CellLayout =..EBc..
+CellLayout =..Ad+..
+CellLayout =....aZ<
+CellLayout =....b..
+CellLayout =....^..
+
+CheckType = a - onewayroad: 0x03010000
+CheckType = b - onewayroad: 0x00000300, 0x0000FF00 check
+CheckType = c - groundhighway: 0x00000301
+CheckType = d - check groundhighway: 0x00000301 optional
+CheckType = A - check groundhighway: 0x00010300, 0x00FFFF00
+CheckType = B - check groundhighway: 0x03010301
+CheckType = C - check groundhighway: 0x03000001, 0xFF0000FF
+CheckType = D - check groundhighway: 0x03010301 optional
+CheckType = E - check groundhighway: 0x03010000 optional
+CheckType = F - check groundhighway: 0x00000301 optional
+CheckType = Y - check onewayroad: 0x00000300, 0x0000FF00
+CheckType = Z - check onewayroad: 0x00000001, 0x000000FF
+
+ConsLayout =...++..
+ConsLayout =..+++..
+ConsLayout =..+++..
+ConsLayout =....++<
+ConsLayout =....+..
+ConsLayout =....^..
+
+AutoTileBase = 0x09207300
+PlaceQueryID = 0xB000D5B0
+Costs       = 200
+OneWayDir	= 3
+[HighwayIntersectionInfo_0x0001E418]
+CopyFrom    = 0xE418
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E418]
+CopyFrom    = 0xE418
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E418]
+CopyFrom    = 0xE418
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E418]
+;groundhighwayxonewayroad Parallel O-Ramp Forward 01
+;Added 06.30.04 by Tropod
+CopyFrom    = 0xE419
+Transpose   = 1
+PlaceQueryID = 0xB000D5B0
+[HighwayIntersectionInfo_0x0005E418]
+CopyFrom    = 0x4E418
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E418]
+CopyFrom    = 0x4E418
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E418]
+CopyFrom    = 0x4E418
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x000CE419]
+;groundhighwayxonewayroad Parallel D-Ramp Reverse 01
+;Added 07.08.04 by Tropod
+CopyFrom    = 0xE418
+Transpose	= 1
+PlaceQueryID = 0xB000D5C0
+[HighwayIntersectionInfo_0x000DE419]
+CopyFrom    = 0xCE419
+Rotate      = 1
+[HighwayIntersectionInfo_0x000EE419]
+CopyFrom    = 0xCE419
+Rotate      = 2
+[HighwayIntersectionInfo_0x000FE419]
+CopyFrom    = 0xCE419
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E41B]
+;groundhighwayxonewayroad Parallel O-Ramp Reverse 02
+CopyFrom    = 0xE419
+AutoPathBase	= 0x0920D030
+OneWayDir	= 6
+PlaceQueryID = 0xB000D5C4
+[HighwayIntersectionInfo_0x0001E41B]
+CopyFrom    = 0xE41B
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E41B]
+CopyFrom    = 0xE41B
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E41B]
+CopyFrom    = 0xE41B
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E41A]
+;groundhighwayxonewayroad Parallel D-Ramp Forward 02
+;Added 07.08.04 by Tropod
+CopyFrom	= 0xE418
+OneWayDir	= 7
+AutoPathBase	= 0x09210300
+PlaceQueryID = 0xB000D5B4
+[HighwayIntersectionInfo_0x0001E41A]
+CopyFrom	= 0xE41A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002E41A]
+CopyFrom	= 0xE41A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003E41A]
+CopyFrom	= 0xE41A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004E41A]
+;Added 07.08.04 by Tropod
+;groundhighwayxonewayroad Parallel O-Ramp Forward 02
+CopyFrom    = 0xE41B
+Transpose   = 1
+PlaceQueryID = 0xB000D5B4
+[HighwayIntersectionInfo_0x0005E41A]
+CopyFrom    = 0x4E41A
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E41A]
+CopyFrom    = 0x4E41A
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E41A]
+CopyFrom    = 0x4E41A
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x000CE41B]
+;groundhighwayxonewayroad Parallel D-Ramp Reverse 02
+;Added 07.08.04 by Tropod
+CopyFrom    = 0xE41A
+Transpose	= 1
+PlaceQueryID = 0xB000D5C4
+[HighwayIntersectionInfo_0x000DE41B]
+CopyFrom    = 0xCE41B
+Rotate      = 1
+[HighwayIntersectionInfo_0x000EE41B]
+CopyFrom    = 0xCE41B
+Rotate      = 2
+[HighwayIntersectionInfo_0x000FE41B]
+CopyFrom    = 0xCE41B
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E41C];++++++++++++++++++++++++++++++++
+;groundhighway einseitige auffahrt als puzzleteil
+;added by ArkenbergeJoe 24/03/06
+Piece       = -0, 0, 0, 0, 0x5A400ee0
+PreviewEffect = preview_groundhighwaypuzz_1
+
+CellLayout =.AD..
+CellLayout =.BE..
+CellLayout =.BE+<
+CellLayout =.BE+.
+CellLayout =.FG+.
+CellLayout =..^..
+
+CheckType = A - groundhighway:0x02040000,0xFFFF00FF check 
+CheckType = B - optional groundhighway: 0x02040200
+CheckType = D - optional groundhighway: 0x02000004
+CheckType = E - groundhighway: 0x02000204
+CheckType = F - groundhighway:0x00040200,0x00ffffff check
+CheckType = G - groundhighway:0x00000204,0x00ffffff check
+
+ConsLayout =.++..
+ConsLayout =.++..
+ConsLayout =.+++<
+ConsLayout =.+++.
+ConsLayout =...+.
+ConsLayout =..^..
+
+AutoTileBase = 0x5A400200
+PlaceQueryID = 0x5A400002
+Costs       = 150
+
+[HighwayIntersectionInfo_0x0002E41C]
+CopyFrom    = 0xE41C
+Rotate      = 1
+[HighwayIntersectionInfo_0x0004E41C]
+CopyFrom    = 0xE41C
+Rotate      = 2
+[HighwayIntersectionInfo_0x0006E41C]
+CopyFrom    = 0xE41C
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0008E41C]
+;groundhighway einseitige abfahrt als puzzleteil
+;added by ArkenbergeJoe 24/03/06
+Piece       = -0.0, 0.0, 0, 0, 0x5A400ff0
+PreviewEffect = preview_groundhighwaypuzzle
+
+CellLayout =..AD..
+CellLayout =..BE..
+CellLayout =.+BE.<
+CellLayout =.+BE..
+CellLayout =.+FG..
+CellLayout =..^...
+
+CheckType = A - groundhighway: 0x02040000,0xFFFF00FF check 
+CheckType = B - groundhighway: 0x02040200
+CheckType = D - groundhighway: 0x02000004,0xFFFF00FF check
+CheckType = E - optional groundhighway: 0x02000204
+CheckType = F - groundhighway:0x00040200,0x00ffffff check
+CheckType = G - groundhighway:0x00000204,0x00ffffff check
+
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =.+++.<
+ConsLayout =.+++..
+ConsLayout =.+....
+ConsLayout =..^...
+
+AutoTileBase = 0x5A400000
+PlaceQueryID = 0x5A400001
+Costs       = 150
+
+[HighwayIntersectionInfo_0x000AE41C]
+CopyFrom    = 0x8E41C
+Rotate      = 1
+[HighwayIntersectionInfo_0x000CE41C]
+CopyFrom    = 0x8E41C
+Rotate      = 2
+[HighwayIntersectionInfo_0x000EE41C]
+CopyFrom    = 0x8E41C
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000E41D]
+;groundhighwayxroad Y-OnOffRampEuro
+;Added 28.03.06 by ArkenbergeJoe
+Piece = -16.0, -0.0, 0, 0, 0x5A401ff0
+HandleOffset = 0, 0
+PreviewEffect = preview_groundhighwayeuro_1
+
+CellLayout = .DA....
+CellLayout = .Ed....
+CellLayout = .Ed+...
+CellLayout = .EB+ba<
+CellLayout = .Ed+...
+CellLayout = .Ed....
+CellLayout = .FC....
+CellLayout = ...^...
+
+CheckType = a - road: 0x00000002, 0x000000FF check 
+CheckType = b - road: 0x00020002
+CheckType = d - groundhighway: 0x02000204
+CheckType = A - groundhighway: 0x02000004, 0xFFFF00FF check
+CheckType = B - groundhighway: 0x02000204             check
+CheckType = C - groundhighway: 0x00000204, 0x00FFFFFF check
+CheckType = D - groundhighway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - groundhighway: 0x02040200             optional
+CheckType = F - groundhighway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = .......
+ConsLayout = ..|....
+ConsLayout = ..|X...
+ConsLayout = ...X--<
+ConsLayout = ..|X...
+ConsLayout = ..|....
+ConsLayout = .......
+ConsLayout = ...^...
+
+AutoTileBase = 0x5A401000
+PlaceQueryID = 0x5A401ff0
+Costs       = 150
+[HighwayIntersectionInfo_0x0001E41D]
+CopyFrom    = 0xE41D
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E41D]
+CopyFrom    = 0xE41D
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E41D]
+CopyFrom    = 0xE41D
+Rotate      = 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004E41D]
+CopyFrom    = 0xE41D
+[HighwayIntersectionInfo_0x0005E41D]
+CopyFrom    = 0x1E41D
+[HighwayIntersectionInfo_0x0006E41D]
+CopyFrom    = 0x2E41D
+[HighwayIntersectionInfo_0x0007E41D]
+CopyFrom    = 0x3E41D
+
+
+[HighwayIntersectionInfo_0x0000E41E]
+;Added 05.08.2006 by ArkenbergeJoe
+Piece       = 32.0, 32.0, 0, 0, 0x5a402ff0
+PreviewEffect = preview_groundhigh_euro_dia
+
+CellLayout = ...EC..
+CellLayout = ..EDc<
+CellLayout = .EDF+.
+CellLayout = .Ac+ef
+CellLayout = ..^...
+
+CheckType = c - groundhighway: 0x00000301
+CheckType = e - road: 0x00030000
+CheckType = f - check road: 0x00000003, 0x00FF0000
+CheckType = A - check groundhighway: 0x00010300, 0x00FFFF00
+CheckType = B - check groundhighway: 0x03010301
+CheckType = C - check groundhighway: 0x03000001, 0xFF0000FF
+CheckType = D - check groundhighway: 0x03010301 optional
+CheckType = E - check groundhighway: 0x03010000 optional
+CheckType = F - check groundhighway: 0x00000301 optional
+
+ConsLayout = ......
+ConsLayout = ..../<
+ConsLayout = .../X.
+ConsLayout = ../XX\
+ConsLayout = ..^...
+
+AutoTileBase = 0x5A402000
+PlaceQueryID = 0x5A401ff0
+HandleOffset = 1, 1
+Costs       = 400
+[HighwayIntersectionInfo_0x0001E41E]
+CopyFrom    = 0xE41E
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E41E]
+CopyFrom    = 0xE41E
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E41E]
+CopyFrom    = 0xE41E
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004E41E]
+CopyFrom    = 0xE41E
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005E41E]
+CopyFrom    = 0x4E41E
+Rotate   = 1
+[HighwayIntersectionInfo_0x0006E41E]
+CopyFrom    = 0x4E41E
+Rotate   = 2
+[HighwayIntersectionInfo_0x0007E41E]
+CopyFrom    = 0x4E41E
+Rotate   = 3
+
+
+
+[HighwayIntersectionInfo_0x0000E420]
+;groundhighwayxonewayroad Parkplatz_Ramp_diag+++++++++++++++
+;Added 20.09.08 by ArkenbergeJoe
+Piece = -5.0, -22.0, 0, 0, 0x5A4031f0
+HandleOffset = 0, 0
+PreviewEffect = preview_groundhighwaypark_1
+
+CellLayout = ...DC..
+CellLayout = ..DBc..
+CellLayout = ..Ad+..
+CellLayout = ....+.<
+CellLayout = ...ba..
+CellLayout = ...e^..
+
+CheckType = a - onewayroad: 0x00000001
+CheckType = b - onewayroad: 0x03010000, 0xFFFF0000 check
+CheckType = e - onewayroad: 0x00000300, 0x0000FF00 check
+CheckType = c - groundhighway: 0x00000301
+CheckType = d - check groundhighway: 0x00000301 optional
+CheckType = A - check groundhighway: 0x00010300, 0x00FFFF00
+CheckType = B - check groundhighway: 0x03010301
+CheckType = C - check groundhighway: 0x03000001, 0xFF0000FF
+CheckType = D - check groundhighway: 0x03010000 optional
+
+ConsLayout = .......
+ConsLayout = ..../..
+ConsLayout = ....|..
+ConsLayout = ....|.<
+ConsLayout = ..../..
+ConsLayout = ....^..
+
+AutoTileBase = 0x5A403100
+PlaceQueryID = 0x5A403100
+;PlaceQueryID = 0x7A403100 ;LHD controller loads different description for error message
+Costs       = 200
+OneWayDir   = 3 ;this value is for RHD
+;OneWayDir   = 7 ;this value is for LHD, switch PlaceQueryID above
+[HighwayIntersectionInfo_0x0001E420]
+CopyFrom    = 0xE420
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E420]
+CopyFrom    = 0xE420
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E420]
+CopyFrom    = 0xE420
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004E420]
+CopyFrom    = 0xE420
+Transpose   = 1
+;;;OneWayDir   = 1
+[HighwayIntersectionInfo_0x0005E420]
+CopyFrom    = 0x4E420
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E420]
+CopyFrom    = 0x4E420
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E420]
+CopyFrom    = 0x4E420
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000E41F]
+;groundhighwayxonewayroad Parkplatz_Ramp_orth
+;Added 16.10.08 by ArkenbergeJoe
+Piece = 0.0, 0.0, 0, 0, 0x5A4033f0
+PreviewEffect = preview_groundhighwaypark_2
+
+CellLayout = .DA...
+CellLayout = .Ed...
+CellLayout = .Ed+.<
+CellLayout = .FC+b.
+CellLayout = ....b.
+CellLayout = ....c.
+CellLayout = ...^..
+
+CheckType = b - onewayroad: 0x02000200
+CheckType = c - onewayroad: 0x00000200, 0x0000FF00 check
+CheckType = d - groundhighway: 0x02000204
+CheckType = A - groundhighway: 0x02000004, 0xFFFF00FF check
+CheckType = C - groundhighway: 0x00000204, 0x00FFFFFF check
+CheckType = D - groundhighway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - groundhighway: 0x02040200             optional
+CheckType = F - groundhighway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = ......
+ConsLayout = ..++...
+ConsLayout = ..++.<
+ConsLayout = ...++.
+ConsLayout = ....+.
+ConsLayout = ...^..
+
+AutoTileBase = 0x5A403300
+PlaceQueryID = 0x5A403300
+;PlaceQueryID = 0x7A403300 ;LHD controller loads different description for error message
+HandleOffset = 1, 1
+Costs       = 200
+OneWayDir   = 2 ;this value is for RHD
+;OneWayDir   = 6 ;this value is for LHD, switch PlaceQueryID above
+[HighwayIntersectionInfo_0x0001E41F]
+CopyFrom    = 0xE41F
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E41F]
+CopyFrom    = 0xE41F
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E41F]
+CopyFrom    = 0xE41F
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004E41F]
+CopyFrom    = 0xE41F
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005E41F]
+CopyFrom    = 0x4E41F
+Rotate   = 1
+[HighwayIntersectionInfo_0x0006E41F]
+CopyFrom    = 0x4E41F
+Rotate   = 2
+[HighwayIntersectionInfo_0x0007E41F]
+CopyFrom    = 0x4E41F
+Rotate   = 3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;PARALLEL RAMPS BUTTON - SINGLE-SIDED
+
+[HighwayIntersectionInfo_0x0000E410]
+;highwayxroad Parallel O-OnRamp
+;Added 06.17.04 by Tropod
+Piece = -16.0, -16.0, 0, 0, 0x52259200
+PreviewEffect = preview_hw_pararamp_road002
+HandleOffset = 0, 0
+
+CellLayout = ......
+CellLayout = .DA...
+CellLayout = .Ed...
+CellLayout = .Ed+a.
+CellLayout = .EB+b<
+CellLayout = .FC.c.
+CellLayout = ....^.
+
+CheckType = a - road: 0x02000000, 0xFF000000 check
+CheckType = b - road: 0x02000200
+CheckType = c - road: 0x00000200, 0x0000FF00 check
+CheckType = d - highway: 0x02000204
+CheckType = A - highway: 0x02000004, 0xFFFF00FF check
+CheckType = B - highway: 0x02000204             check
+CheckType = C - highway: 0x00000204, 0x00FFFFFF check
+CheckType = D - highway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - highway: 0x02040200             optional
+CheckType = F - highway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = ......
+ConsLayout = .++...
+ConsLayout = .++...
+ConsLayout = .++++.
+ConsLayout = .++++<
+ConsLayout = .++.+.
+ConsLayout = ....^.
+
+AutoTileBase = 0x0c008000
+PlaceQueryID = 0xB000E050
+Costs       = 10
+[HighwayIntersectionInfo_0x0001E410]
+CopyFrom    = 0xE410
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E410]
+CopyFrom    = 0xE410
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E410]
+CopyFrom    = 0xE410
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E410]
+;highwayxroad Parallel D-OnRamp
+;Added 07.08.04 by Tropod
+Piece = -5.0, -22.0, 0, 0, 0x52259300
+HandleOffset = 0, 0
+PreviewEffect = preview_hw_pararamp_road0d2
+
+CellLayout =...EC..
+CellLayout =..EBc..
+CellLayout =..Ad+..
+CellLayout =....aZ<
+CellLayout =....b..
+CellLayout =....^..
+
+CheckType = a - road: 0x03010000
+CheckType = b - road: 0x00000300, 0x0000FF00 check
+CheckType = c - highway: 0x00000301
+CheckType = d - check highway: 0x00000301 optional
+CheckType = A - check highway: 0x00010300, 0x00FFFF00
+CheckType = B - check highway: 0x03010301
+CheckType = C - check highway: 0x03000001, 0xFF0000FF
+CheckType = D - check highway: 0x03010301 optional
+CheckType = E - check highway: 0x03010000 optional
+CheckType = F - check highway: 0x00000301 optional
+CheckType = Y - check road: 0x00000300, 0x0000FF00
+CheckType = Z - check road: 0x00000001, 0x000000FF
+
+ConsLayout =...++..
+ConsLayout =..+++..
+ConsLayout =..+++..
+ConsLayout =....++<
+ConsLayout =....+..
+ConsLayout =....^..
+
+AutoTileBase = 0x0C00A300
+PlaceQueryID = 0xB000E050
+Costs       = 500
+[HighwayIntersectionInfo_0x0005E410]
+CopyFrom    = 0x4E410
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E410]
+CopyFrom    = 0x4E410
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E410]
+CopyFrom    = 0x4E410
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E412]
+;highwayxroad Parallel O-OffRamp
+;Added 06.17.04 by Tropod
+Piece = -16.0, 16.0, 2, 1, 0x52259200
+PreviewEffect = preview_hw_pararamp_road002
+
+CellLayout = .....
+CellLayout = .DA.a.
+CellLayout = .EB+b<
+CellLayout = .Ed+c.
+CellLayout = .Ed...
+CellLayout = .FC...
+CellLayout = ....^.
+
+CheckType = a - road: 0x02000000, 0xFF000000 check
+CheckType = b - road: 0x02000200
+CheckType = c - road: 0x00000200, 0x0000FF00 check
+CheckType = d - highway: 0x02000204
+CheckType = A - highway: 0x02000004, 0xFFFF00FF check
+CheckType = B - highway: 0x02000204             check
+CheckType = C - highway: 0x00000204, 0x00FFFFFF check
+CheckType = D - highway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - highway: 0x02040200             optional
+CheckType = F - highway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout = .....
+ConsLayout = .++.+.
+ConsLayout = .++++<
+ConsLayout = .++++.
+ConsLayout = .++...
+ConsLayout = .++...
+ConsLayout = ....^.
+
+AutoTileBase = 0x0c008030
+PlaceQueryID = 0xB000E060
+Costs       = 10
+[HighwayIntersectionInfo_0x0001E412]
+CopyFrom    = 0xE412
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E412]
+CopyFrom    = 0xE412
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E412]
+CopyFrom    = 0xE412
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E412]
+;highwayxroad Parallel D-OffRamp
+;Added 07.08.04 by Tropod
+CopyFrom    = 0x4E410
+Transpose   = 1
+PlaceQueryID = 0xB000E060
+[HighwayIntersectionInfo_0x0005E412]
+CopyFrom    = 0x4E412
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E412]
+CopyFrom    = 0x4E412
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E412]
+CopyFrom    = 0x4E412
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E415]
+;highwayxonewayroad Parallel O-Ramp Reverse 01
+;Added 06.30.04 by Tropod
+Piece = -16.0, 16.0, 2, 1, 0x52259205
+PreviewEffect = preview_hw_pararamp_owrd002
+
+CellLayout =.....
+CellLayout =.DA.a.
+CellLayout =.EB+b<
+CellLayout =.Ed+c.
+CellLayout =.Ed...
+CellLayout =.FC...
+CellLayout =....^.
+
+CheckType = a - onewayroad: 0x02000000, 0xFF000000 check
+CheckType = b - onewayroad: 0x02000200
+CheckType = c - onewayroad: 0x00000200, 0x0000FF00 check
+CheckType = d - highway: 0x02000204
+CheckType = A - highway: 0x02000004, 0xFFFF00FF check
+CheckType = B - highway: 0x02000204             check
+CheckType = C - highway: 0x00000204, 0x00FFFFFF check
+CheckType = D - highway: 0x02040000, 0xFFFF00FF optional
+CheckType = E - highway: 0x02040200             optional
+CheckType = F - highway: 0x00040200, 0x00FFFFFF optional
+
+ConsLayout =.....
+ConsLayout =.++.+.
+ConsLayout =.++++<
+ConsLayout =.++++.
+ConsLayout =.++...
+
+ConsLayout =.++...
+ConsLayout =....^.
+
+AutoTileBase = 0x09201030
+PlaceQueryID = 0xB000E5C0
+Costs       = 10
+OneWayDir	= 2
+[HighwayIntersectionInfo_0x0001E415]
+CopyFrom    = 0xE415
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E415]
+CopyFrom    = 0xE415
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E415]
+CopyFrom    = 0xE415
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E414]
+;highwayxonewayroad Parallel D-Ramp Forward 01
+;Added 07.08.04 by Tropod
+Piece = -5.0, -22.0, 0, 0, 0x52259305
+PreviewEffect = preview_hw_pararamp_owrd0d2
+
+CellLayout =...EC..
+CellLayout =..EBc..
+CellLayout =..Ad+..
+CellLayout =....aZ<
+CellLayout =....b..
+CellLayout =....^..
+
+CheckType = a - onewayroad: 0x03010000
+CheckType = b - onewayroad: 0x00000300, 0x0000FF00 check
+CheckType = c - highway: 0x00000301
+CheckType = d - check highway: 0x00000301 optional
+CheckType = A - check highway: 0x00010300, 0x00FFFF00
+CheckType = B - check highway: 0x03010301
+CheckType = C - check highway: 0x03000001, 0xFF0000FF
+CheckType = D - check highway: 0x03010301 optional
+CheckType = E - check highway: 0x03010000 optional
+CheckType = F - check highway: 0x00000301 optional
+CheckType = Y - check onewayroad: 0x00000300, 0x0000FF00
+CheckType = Z - check onewayroad: 0x00000001, 0x000000FF
+
+ConsLayout =...++..
+ConsLayout =..+++..
+ConsLayout =..+++..
+ConsLayout =....++<
+ConsLayout =....+..
+ConsLayout =....^..
+
+AutoTileBase = 0x09203300
+PlaceQueryID = 0xB000E5B0
+Costs       = 500
+OneWayDir	= 3
+[HighwayIntersectionInfo_0x0001E414]
+CopyFrom    = 0xE414
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E414]
+CopyFrom    = 0xE414
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E414]
+CopyFrom    = 0xE414
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0004E414]
+;highwayxonewayroad Parallel O-Ramp Forward 01
+;Added 06.30.04 by Tropod
+CopyFrom    = 0xE415
+Transpose   = 1
+PlaceQueryID = 0xB000E5B0
+[HighwayIntersectionInfo_0x0005E414]
+CopyFrom    = 0x4E414
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E414]
+CopyFrom    = 0x4E414
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E414]
+CopyFrom    = 0x4E414
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x000CE415]
+;highwayxonewayroad Parallel D-Ramp Reverse 01
+;Added 07.08.04 by Tropod
+CopyFrom    = 0xE414
+Transpose	= 1
+PlaceQueryID = 0xB000E5C0
+[HighwayIntersectionInfo_0x000DE415]
+CopyFrom    = 0xCE415
+Rotate      = 1
+[HighwayIntersectionInfo_0x000EE415]
+CopyFrom    = 0xCE415
+Rotate      = 2
+[HighwayIntersectionInfo_0x000FE415]
+CopyFrom    = 0xCE415
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E417]
+;highwayxonewayroad Parallel O-Ramp Reverse 02
+CopyFrom    = 0xE415
+OneWayDir	= 6
+AutoPathBase	= 0x09209030
+PlaceQueryID = 0xB000E5C4
+[HighwayIntersectionInfo_0x0001E417]
+CopyFrom    = 0xE417
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E417]
+CopyFrom    = 0xE417
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E417]
+CopyFrom    = 0xE417
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E416]
+;highwayxonewayroad Parallel D-Ramp Forward 02
+;Added 07.08.04 by Tropod
+CopyFrom	= 0xE414
+OneWayDir	= 7
+AutoPathBase	= 0x0920B300
+PlaceQueryID = 0xB000E5B4
+[HighwayIntersectionInfo_0x0001E416]
+CopyFrom	= 0xE416
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002E416]
+CopyFrom	= 0xE416
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003E416]
+CopyFrom	= 0xE416
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004E416]
+;highwayxonewayroad Parallel O-Ramp Forward 02
+CopyFrom    = 0xE417
+Transpose   = 1
+PlaceQueryID = 0xB000E5B4
+[HighwayIntersectionInfo_0x0005E416]
+CopyFrom    = 0x4E416
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006E416]
+CopyFrom    = 0x4E416
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007E416]
+CopyFrom    = 0x4E416
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x000CE417]
+;highwayxonewayroad Parallel D-Ramp Reverse 02
+;Added 07.08.04 by Tropod
+CopyFrom    = 0xE416
+Transpose	= 1
+PlaceQueryID = 0xB000E5C4
+[HighwayIntersectionInfo_0x000DE417]
+CopyFrom    = 0xCE417
+Rotate      = 1
+[HighwayIntersectionInfo_0x000EE417]
+CopyFrom    = 0xCE417
+Rotate      = 2
+[HighwayIntersectionInfo_0x000FE417]
+CopyFrom    = 0xCE417
+Rotate      = 3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;RAMPS - OTHER RAMPS - section is only just temporary really.
+
+[HighwayIntersectionInfo_0x0000E421]
+;Added by Tropod 07.04.04
+;Highwayxavenue OneSided dual Ramp
+Piece = -8.0, 8.0, 0, 0, 0x02012300
+PreviewEffect = preview_el_av_straight_perp
+HandleOffset = 0, 0
+
+CellLayout = ..ab..
+CellLayout = ..cd..
+CellLayout = .+cd..
+CellLayout = .+cd..
+CellLayout = .+cd..
+CellLayout = giAB..<
+CellLayout = hjCD...
+CellLayout = .+cd..
+CellLayout = .+cd..
+CellLayout = .+cd..
+CellLayout = ..cd..
+CellLayout = ..ef..
+CellLayout = ..^...
+
+CheckType = a - highway: 0x02040000,0xffff00ff check
+CheckType = b - highway: 0x02000004,0xffff00ff check
+CheckType = c - highway: 0x02040200
+CheckType = d - optional highway: 0x02000204
+CheckType = e - highway: 0x00040200,0x00ffffff check
+CheckType = f - highway: 0x00000204,0x00ffffff check
+CheckType = g - avenue: 0x04020000,0xffffff00 check
+CheckType = h - avenue: 0x00020400,0xffffff00 check
+CheckType = i - avenue: 0x04020002
+CheckType = j - avenue: 0x00020402
+CheckType = k - avenue: 0x04000002,0xff00ffff check
+CheckType = l - avenue: 0x00000402,0xff00ffff check
+CheckType = A - optional highway: 0x02040200 optional avenue: 0x04020002
+CheckType = B - highway: 0x02000204 optional avenue: 0x04020002
+CheckType = C - highway: 0x02040200 avenue: 0x00020402
+CheckType = D - optional highway: 0x02000204 optional avenue: 0x00020402
+
+ConsLayout = ..||..
+ConsLayout = ..||..
+ConsLayout = .|||..
+ConsLayout = .|||..
+ConsLayout = .|||..
+ConsLayout = -#||..<
+ConsLayout = -#||..
+ConsLayout = .|||..
+ConsLayout = .|||..
+ConsLayout = .|||..
+ConsLayout = ..||..
+ConsLayout = ..||..
+ConsLayout = ..^...
+
+AutoTileBase = 0x0C880000
+ConvertQueryID = 0xA0000001
+PlaceQueryID = 0xA0000004
+Costs = 500
+[HighwayIntersectionInfo_0x0001E421]
+CopyFrom = 0xE421
+Rotate = 1
+[HighwayIntersectionInfo_0x0002E421]
+CopyFrom = 0xE421
+Rotate = 2
+[HighwayIntersectionInfo_0x0003E421]
+CopyFrom = 0xE421
+Rotate = 3
+

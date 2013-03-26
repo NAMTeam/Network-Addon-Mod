@@ -1,0 +1,644 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RAIL CURVES BUTTON SECTION
+;RAIL CURVES BUTTON SECTION
+RotationRing = A358, 1A358, 2A358, 3A358, 4A358, 5A358, 6A358, 7A358 ;Rail S-Curve
+AddTypes     = 5A359, A359, 6A359, 1A359, 7A359, 2A359, 4A359, 3A359 ;Rail 45-Curve Puzzle Piece
+AddTypes     = A35A, 1A35A, 2A35A, 3A35A, 4A35A, 5A35A, 6A35A, 7A35A ;Rail 90-Curve
+AddTypes     = A35B, 1A35B, 2A35B, 3A35B, 4A35B, 5A35B, 6A35B, 7A35B ;Rail Y-Stack
+AddTypes     = A35C, 1A35C, 2A35C, 3A35C, 4A35C, 5A35C, 6A35C, 7A35C ;Rail Diagonal S-Curve
+AddTypes     = A35D, 1A35D, 2A35D, 3A35D, 4A35D, 5A35D, 6A35D, 7A35D ;Double Track to Parallel Double Track Switch
+AddTypes     = A35E, 1A35E, 2A35E, 3A35E, 4A35E, 5A35E, 6A35E, 7A35E ;Double Track to 45 Degree Double Track Switch
+AddTypes     = A35F, 1A35F, 2A35F, 3A35F, 4A35F, 5A35F, 6A35F, 7A35F ;Diagonal Double Track to Double Track Switch
+AddTypes     = A360, 1A360, 2A360, 3A360, 4A360, 5A360, 6A360, 7A360 ;DT Crossover Ortho;;;(added by dedgren 090215)
+
+;###separator###
+
+
+;----------------------------------------------------------------------------------
+;Rail OTHER
+;
+;Includes other Rail items not related to normal Rail overpasses or Rail Puzzle Pieces
+
+[HighwayIntersectionInfo_0x0000A35B]
+;Rail Y-Intersection
+;Added by ArkenbergeJoe 17/05/05
+Piece       = 0.0, 0.0, 0, 0, 0x5399DFF0
+PreviewEffect = preview_rail___yinterchange
+
+CellLayout =ha...............
+CellLayout =cba..........den.
+CellLayout =.cba........def..
+CellLayout =..cba+....+def...
+CellLayout =...cbaggggdef....
+CellLayout =....cbaggdef+....
+CellLayout =....+cbadef+.....
+CellLayout =.....+cklf+.....<
+CellLayout =......+kl+.......
+CellLayout =......+kl+.......
+CellLayout =.......kl........
+CellLayout =.......kl........
+CellLayout =.......kl........
+CellLayout =.......k.........
+CellLayout =.......z.........
+CellLayout =........^........
+
+CheckType   = a - rail:0x01000003
+CheckType   = b - rail:0x01030103
+CheckType   = c - rail:0x00030100
+CheckType   = d - rail:0x03010000
+CheckType   = e - rail:0x03010301
+CheckType   = f - rail:0x00000301
+CheckType   = g - rail:0x00020002
+CheckType   = h - rail:0x00030000,0xff000000 check
+CheckType   = n - rail:0x00000001,0x000000ff check
+CheckType   = k - rail: 0x02000200
+CheckType   = l - rail: 0x02000200
+CheckType   = z - rail: 0x00000200,0x00ffffff check
+
+ConsLayout = \\...............
+ConsLayout = \\\..........///.
+ConsLayout = .\\\........///..
+ConsLayout = ..\\\......///...
+ConsLayout = ...\\\----///....
+ConsLayout = ....\\----//X....
+ConsLayout = .....\\..//......
+ConsLayout = ......\##/......<
+ConsLayout = ......X||X.......
+ConsLayout = .......||........
+ConsLayout = .......||........
+ConsLayout = .......||........
+ConsLayout = .......||........
+ConsLayout = .......|.........
+ConsLayout = .......|.........
+ConsLayout = ........^........
+
+AutoTileBase = 0x5399d000
+ConvertQueryID = 0x5399d000
+PlaceQueryID = 0x5399d000
+Costs = 1000
+
+[HighwayIntersectionInfo_0x0001A35B]
+CopyFrom = 0xA35B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35B]
+CopyFrom = 0xA35B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35B]
+CopyFrom = 0xA35B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A35B]
+CopyFrom = 0xA35B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A35B]
+CopyFrom = 0x4A35B
+Rotate = 1
+[HighwayIntersectionInfo_0x0006A35B]
+CopyFrom = 0x4A35B
+Rotate = 2
+[HighwayIntersectionInfo_0x0007A35B]
+CopyFrom = 0x4A35B
+Rotate = 3
+
+
+;--FARR/Rail Curves Section--
+;
+[HighwayIntersectionInfo_0x0000A359]
+;Rail 45 degree curve (textures by dedgren); edited by dedgren 081229
+;Added by Memo 05/05/06
+Piece = 0.0, 0.0, 0, 0, 0x53131ff0
+PreviewEffect = preview_rail_smoothcurve
+
+;CellLayout =..an.
+;CellLayout =.ab..
+;CellLayout =gc+..
+;CellLayout =df...
+;CellLayout =e+...
+;CellLayout =e....
+;CellLayout =e...<
+;CellLayout =z....
+;CellLayout =^....
+
+;CheckType   = a - rail:0x03010000
+;CheckType   = b - rail:0x00000301
+;CheckType   = c - rail:0x02000301
+;CheckType   = d - rail:0x02010200
+;CheckType   = e - rail:0x02000200
+;CheckType   = f - rail:0x00000201
+;CheckType   = g - rail:0x02010000
+;CheckType   = n - rail:0x00000001,0x000000ff check
+;CheckType   = z - rail:0x00000200,0x0000ff00 check
+
+CellLayout =..an.
+CellLayout =.ab..
+CellLayout =cb+..
+CellLayout =d+...
+CellLayout =d+...
+CellLayout =d....
+CellLayout =d...<
+CellLayout =z....
+CellLayout =^....
+
+CheckType   = a - rail:0x03010000
+CheckType   = b - rail:0x00000301
+CheckType   = c - rail:0x02010000
+CheckType   = d - rail:0x02000200
+CheckType   = n - rail:0x00000001,0x000000ff check
+CheckType   = z - rail:0x00000200,0x0000ff00 check
+
+ConsLayout = ..//.
+ConsLayout = .//..
+ConsLayout = //X..
+ConsLayout = ||...
+ConsLayout = |X...
+ConsLayout = |....
+ConsLayout = |...<
+ConsLayout = |....
+ConsLayout = ^....
+
+
+Autoplace = 1
+AutoTileBase = 0x53131000
+ConvertQueryID = 0x53131000
+PlaceQueryID = 0x53131000
+Costs = 68; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x0001A359]
+CopyFrom = 0xA359
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A359]
+CopyFrom = 0xA359
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A359]
+CopyFrom = 0xA359
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A359]
+CopyFrom = 0xA359
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A359]
+CopyFrom = 0x4A359
+Rotate = 1
+[HighwayIntersectionInfo_0x0006A359]
+CopyFrom = 0x4A359
+Rotate = 2
+[HighwayIntersectionInfo_0x0007A359]
+CopyFrom = 0x4A359
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0000A358]
+;Added by Tarkus 05/27/2007
+;Rail S-Curve (textures by dedgren); edited by dedgren 081229 ;edited by bighead 13/09/2009
+Piece = 0.0, 0.0, 0, 0, 0x53132005
+PreviewEffect = preview_farr_puzzlepiece001
+
+CellLayout =................
+CellLayout =..abbd++.......<
+CellLayout =....+cbbbf......
+CellLayout =...^............
+
+CheckType = a - rail: 0x00020000,0x00ff0000 check
+CheckType = b - rail: 0x00020002
+CheckType = c - rail: 0x00020200
+CheckType = d - rail: 0x02000002
+CheckType = f - rail: 0x00000002,0x000000ff check
+
+ConsLayout =................
+ConsLayout =...-\\\........<
+ConsLayout =....\\\\-.......
+ConsLayout =...^............
+
+Autoplace = 1
+;ConvertQueryID = 0x53132001
+AutoTileBase =   0x53132000
+PlaceQueryID = 0x53132000
+
+Costs = 60; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A358]
+CopyFrom = 0xA358
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A358]
+CopyFrom = 0xA358
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A358]
+CopyFrom = 0xA358
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A358]
+CopyFrom = 0xA358
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A358]
+CopyFrom = 0x3A358
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A358]
+CopyFrom = 0x2A358
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A358]
+CopyFrom = 0x1A358
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000A35A]
+;Added by Tarkus 05/27/2008
+;Rail 90 degree curve (textures by dedgren); edited by dedgren 081229
+Piece = 0, 0.0, 0, 0, 0x53133005
+PreviewEffect = preview_farr_puzzlepiece002
+
+CellLayout =..............
+CellLayout =..............
+CellLayout =..abbbdf.....<
+CellLayout =.....+cef.....
+CellLayout =.......cef....
+CellLayout =.........cf...
+CellLayout =.........+cf..
+CellLayout =..........+c..
+CellLayout =..........+h..
+CellLayout =...........h..
+CellLayout =...........h..
+CellLayout =...........i..
+CellLayout =...^..........
+
+CheckType = a - rail: 0x00020000,0x00ff0000 check
+CheckType = b - rail: 0x00020002
+CheckType = c - rail: 0x00030100
+CheckType = d - rail: 0x01030002
+CheckType = e - rail: 0x01030103
+CheckType = f - rail: 0x01000003
+CheckType = g - rail: 0x02000103
+CheckType = h - rail: 0x02000200
+CheckType = i - rail: 0x00000200,0x0000ff00 check
+
+ConsLayout =..............
+ConsLayout =..............
+ConsLayout =...--\\\.....<
+ConsLayout =.....\\\\.....
+ConsLayout =.......\\\....
+ConsLayout =.........\\...
+ConsLayout =..........\\..
+ConsLayout =...........\..
+ConsLayout =...........\..
+ConsLayout =...........|..
+ConsLayout =...........|..
+ConsLayout =..............
+ConsLayout =...^..........
+
+AutoTileBase=	0x53133000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53133000
+Costs = 120; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x0001A35A]
+CopyFrom = 0xA35A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35A]
+CopyFrom = 0xA35A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35A]
+CopyFrom = 0xA35A
+Rotate = 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004A35A]
+CopyFrom = 0xA35A
+[HighwayIntersectionInfo_0x0005A35A]
+CopyFrom = 0x1A35A
+[HighwayIntersectionInfo_0x0006A35A]
+CopyFrom = 0x2A35A
+[HighwayIntersectionInfo_0x0007A35A]
+CopyFrom = 0x3A35A
+
+
+
+[HighwayIntersectionInfo_0x0000A35C]
+;Added by dedgren 12/21/2008
+;Rail Diagonal S-Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53137005
+PreviewEffect = preview_farr_puzzlepiece007
+
+CellLayout =........
+CellLayout =.za....<
+CellLayout =..++....
+CellLayout =..+++...
+CellLayout =...++...
+CellLayout =....by..
+CellLayout =..^.....
+
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = a - Rail: 0x01000003
+CheckType = y - Rail: 0x00000003,0x000000ff check
+CheckType = b - Rail: 0x00030100
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =..\\....
+ConsLayout =..\\\...
+ConsLayout =...\\...
+ConsLayout =....\...
+ConsLayout =..^.....
+
+AutoTileBase = 0x53137000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53137000
+Costs = 66; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A35C]
+CopyFrom = 0xA35C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35C]
+CopyFrom = 0xA35C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35C]
+CopyFrom = 0xA35C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A35C]
+CopyFrom = 0xA35C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A35C]
+CopyFrom = 0x3A35C
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A35C]
+CopyFrom = 0x2A35C
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A35C]
+CopyFrom = 0x1A35C
+Transpose = 1
+
+
+;--Long Radius Switch subsection--
+;
+;
+[HighwayIntersectionInfo_0x0000A35D]
+;Added by dedgren 12/23/2008
+;Double Track Switch to Parallel Double Track (textures by dedgren); edited by Swamper 090219  ;edited by bighead99 4/10/2009
+Piece = 0.0, 0.0, 0, 0, 0x53B30005
+PreviewEffect = preview_lrsw_puzzlepiece001
+
+;CellLayout =...z....
+;CellLayout =...a...<
+;CellLayout =...a....
+;CellLayout =...a+...
+;CellLayout =...a+...
+;CellLayout =...a+...
+;CellLayout =...ya...
+;CellLayout =....x...
+;CellLayout =...^....
+
+;CheckType = z - rail: 0x02000000, 0xff000000 check
+;CheckType = a - rail: 0x02000200
+;CheckType = y - rail: 0x00000200, 0x0000ff00 check
+;CheckType = x - rail: 0x00000200, 0x0000ff00 check
+
+CellLayout =...z....
+CellLayout =...a...<
+CellLayout =...a....
+CellLayout =...ad...
+CellLayout =...bc...
+CellLayout =...aa...
+CellLayout =...ya...
+CellLayout =....x...
+CellLayout =...^....
+
+CheckType = z - rail: 0x02000000, 0xff000000 check
+CheckType = a - rail: 0x02000200
+CheckType = b - rail: 0x02020200
+CheckType = c - rail: 0x02000202
+CheckType = d - rail: 0x02000000
+CheckType = y - rail: 0x00000200, 0x0000ff00 check
+CheckType = x - rail: 0x00000200, 0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =...|...<
+ConsLayout =...|....
+ConsLayout =...|\...
+ConsLayout =...|\...
+ConsLayout =...|\...
+ConsLayout =....|...
+ConsLayout =...^....
+
+Autoplace = 1
+AutoTileBase=   0x53B30000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53B30000
+Costs = 164; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A35D]
+CopyFrom = 0xA35D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35D]
+CopyFrom = 0xA35D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35D]
+CopyFrom = 0xA35D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A35D]
+CopyFrom = 0xA35D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A35D]
+CopyFrom = 0x3A35D
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A35D]
+CopyFrom = 0x2A35D
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A35D]
+CopyFrom = 0x1A35D
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000A35E]
+;Added by dedgren 12/20/2008
+;Double Track to 45 Degree Double Track Switch (textures by dedgren); edited by Swamper 090219 ;edited by bighead 13/09/2009
+Piece = 0.0, 0.0, 0, 0, 0x53B31005
+PreviewEffect = preview_lrsw_puzzlepiece002
+
+;CellLayout =...z....
+;CellLayout =...a...<
+;CellLayout =...a+...
+;CellLayout =...a+...
+;CellLayout =...a++..
+;CellLayout =...y++..
+;CellLayout =.....bx.
+;CellLayout =...^....
+
+;CheckType = z - rail: 0x02000000, 0xff000000 check
+;CheckType = a - rail: 0x02000200
+;CheckType = y - rail: 0x00000200, 0x0000ff00 check
+;CheckType = x - rail: 0x00000003,0x000000ff check
+;CheckType = b - rail: 0x00030100
+
+CellLayout =...z....
+CellLayout =...a...<
+CellLayout =...a+...
+CellLayout =...a+...
+CellLayout =...dc+..
+CellLayout =...ybc..
+CellLayout =.....bx.
+CellLayout =...^....
+
+CheckType = a - rail: 0x02000200
+CheckType = b - rail: 0x00030100
+CheckType = c - rail: 0x01000003
+CheckType = d - rail: 0x02030200
+CheckType = x - rail: 0x00000003,0x000000ff check
+CheckType = y - rail: 0x00000200, 0x0000ff00 check
+CheckType = z - rail: 0x02000000, 0xff000000 check
+
+Autoplace = 1
+ConsLayout =........
+ConsLayout =...|...<
+ConsLayout =...|\...
+ConsLayout =...|\...
+ConsLayout =...|\\..
+ConsLayout =.....\..
+ConsLayout =.....-..
+ConsLayout =...^....
+
+AutoTileBase=   0x53B31000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53B31000
+Costs = 168; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A35E]
+CopyFrom = 0xA35E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35E]
+CopyFrom = 0xA35E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35E]
+CopyFrom = 0xA35E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A35E]
+CopyFrom = 0xA35E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A35E]
+CopyFrom = 0x3A35E
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A35E]
+CopyFrom = 0x2A35E
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A35E]
+CopyFrom = 0x1A35E
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000A35F]; (added by dedgren 081226)
+;Added by dedgren 12/26/2008
+;Diagonal Double Track Switch to Orthogonal Double Track (textures by dedgren); edited by Swamper 090219 ;edited by bighead 13/09/2009
+Piece = 0.0, 0.0, 0, 0, 0x53B33005
+PreviewEffect = preview_lrsw_puzzlepiece004
+
+;CellLayout =............
+;CellLayout =..za.......<
+;CellLayout =...ba+......
+;CellLayout =....ba++....
+;CellLayout =.....ba++cx.
+;CellLayout =......y.....
+;CellLayout =...^........
+
+;CheckType = z - Rail: 0x00030000,0x00ff0000 check
+;CheckType = a - Rail: 0x01000003
+;CheckType = y - Rail: 0x00000100,0x0000ff00 check
+;CheckType = b - Rail: 0x00030100
+;CheckType = x - Rail: 0x00000002,0x000000ff check
+;CheckType = c - Rail: 0x00020002
+
+CellLayout =............
+CellLayout =..za.......<
+CellLayout =...ba+......
+CellLayout =....ba++....
+CellLayout =.....edcccx.
+CellLayout =......y.....
+CellLayout =...^........
+
+
+CheckType = a - Rail: 0x01000003
+CheckType = b - Rail: 0x00030100
+CheckType = c - Rail: 0x00020002
+CheckType = d - Rail: 0x01020003
+CheckType = e - Rail: 0x00030100
+CheckType = x - Rail: 0x00000002,0x000000ff check
+CheckType = y - Rail: 0x00000100,0x0000ff00 check
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+
+
+ConsLayout =............
+ConsLayout =...\.......<
+ConsLayout =...\\\......
+ConsLayout =....\\\\....
+ConsLayout =.....\\---..
+ConsLayout =............
+ConsLayout =...^........
+
+Autoplace= 1
+AutoTileBase=   0x53B33000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53B33000
+Costs = 168; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A35F]
+CopyFrom = 0xA35F
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A35F]
+CopyFrom = 0xA35F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A35F]
+CopyFrom = 0xA35F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A35F]
+CopyFrom = 0xA35F
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A35F]
+CopyFrom = 0x3A35F
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A35F]
+CopyFrom = 0x2A35F
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A35F]
+CopyFrom = 0x1A35F
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000A360]
+;Added by dedgren 15/Feb/2009.
+;DT Crossover (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53b34005
+PreviewEffect = preview_lrsw_puzzlepiece005
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..y...........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200,0x0000ff00 check
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..^...........
+
+AutoTileBase = 0x53b34000
+PlaceQueryID = 0x53b34000
+Costs       = 165
+[HighwayIntersectionInfo_0x0001A360]
+CopyFrom    = 0xA360
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0002A360]
+CopyFrom    = 0xA360
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003A360]
+CopyFrom    = 0xA360
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004A360]
+CopyFrom    = 0x3A360
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005A360]
+CopyFrom    = 0x2A360
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006A360]
+CopyFrom    = 0x1A360
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007A360]
+CopyFrom    = 0xA360
+Transpose   = 1
+
+
+

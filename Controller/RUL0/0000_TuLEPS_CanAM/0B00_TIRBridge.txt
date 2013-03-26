@@ -1,0 +1,508 @@
+;; GLR-IN-ROAD bridge puzzle pieces
+;Lars Bridge
+RotationRing = 0B00, 10B00, 20B00, 30B00 ; GLR-In-Road bridge repeater piece
+AddTypes     = 0B01, 10B01, 20B01, 30B01 ; GLR-In-Road bridge support piece
+AddTypes     = 0B02, 10B02, 20B02, 30B02 ; GLR-In-Road bridge repeater piece - style 2
+AddTypes     = 0B03, 10B03, 20B03, 30B03 ; GLR-In-Road bridge support piece - style 2
+AddTypes     = 0B04, 10B04, 20B04, 30B04 ; GLR-In-Road bridge repeater piece - style 1>2
+AddTypes     = 0B05, 10B05, 20B05, 30B05 ; GLR-In-Pedmall bridge repeater piece 
+AddTypes     = 0B06, 10B06, 20B06, 30B06 ; GLR-In-Pedmall bridge support piece 
+AddTypes     = 0B07, 10B07, 20B07, 30B07 ; GLR-In-Road over Road (-15m)
+AddTypes     = 0B08, 10B08, 20B08, 30B08 ; GLR-In-Road over Road (-15m) - style 2
+AddTypes     = 0B09, 10B09, 20B09, 30B09 ; GLR-In-Pedmall over Road (-15m) 
+AddTypes     = 0B0A, 10B0A, 20B0A, 30B0A ; GLR-In-Road over GLR-In-Road (-15m)
+AddTypes     = 0B0B, 10B0B, 20B0B, 30B0B ; GLR-In-Road over GLR-In-Road (-15m) - style 2
+AddTypes     = 0B0C, 10B0C, 20B0C, 30B0C ; GLR-In-Road T-crossing with GLR
+AddTypes     = 0B0D, 10B0D, 20B0D, 30B0D ; GLR-In-Road T-crossing with GLR-In-Road
+AddTypes     = 0B0E, 10B0E, 20B0E, 30B0E ; GLR-In-Road X-crossing
+AddTypes     = 0B0F, 10B0F, 20B0F, 30B0F ; GLR-In-Road Corner
+
+;###separator###
+
+
+; Lars TRAM bridge puzzle pieces
+[HighwayIntersectionInfo_0x00000B00]
+;Added by Daeley 
+;Tram-in_road bridge repeater piece
+Piece = 0.0, 0.0, 0, 0, 0x38140000
+PreviewEffect = preview_larstram_span_38140
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200 
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140000
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B00]
+CopyFrom    = 0x0B00
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B00]
+CopyFrom    = 0x0B00
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B00]
+CopyFrom    = 0x0B00
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000B01]
+;Added by Daeley 
+;Tram-in_road bridge support piece
+Piece = 0.0, 0.0, 0, 0, 0x38140100
+PreviewEffect = preview_larstram_span_38140
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140100
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B01]
+CopyFrom    = 0x0B01
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B01]
+CopyFrom    = 0x0B01
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B01]
+CopyFrom    = 0x0B01
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000B02]
+;Added by Daeley 
+;Tram-in_road bridge repeater piece - style 2
+Piece = 0.0, 0.0, 0, 0, 0x38140001
+PreviewEffect = preview_larstram_span_38141
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140001
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140001
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B02]
+CopyFrom    = 0x0B02
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B02]
+CopyFrom    = 0x0B02
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B02]
+CopyFrom    = 0x0B02
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B03]
+;Added by Daeley 
+;Tram-in_road bridge support piece - style 2
+Piece = 0.0, 0.0, 0, 0, 0x38140101
+PreviewEffect = preview_larstram_span_38141
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140101
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140101
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B03]
+CopyFrom    = 0x0B03
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B03]
+CopyFrom    = 0x0B03
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B03]
+CopyFrom    = 0x0B03
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B05]
+;Added by Daeley 
+;Tram-in-pedmall bridge repeater piece
+Piece = 0.0, 0.0, 0, 0, 0x38140002
+PreviewEffect = preview_larstram_span_38142
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140002
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140002
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B05]
+CopyFrom    = 0x0B05
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B05]
+CopyFrom    = 0x0B05
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B05]
+CopyFrom    = 0x0B05
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B06]
+;Added by Daeley 
+;Tram-in-pedmall bridge support piece
+Piece = 0.0, 0.0, 0, 0, 0x38140102
+PreviewEffect = preview_larstram_span_38142
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140102
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140102
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B06]
+CopyFrom    = 0x0B06
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B06]
+CopyFrom    = 0x0B06
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B06]
+CopyFrom    = 0x0B06
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B0A]
+;Added by Daeley 
+;Tram-in-Road bridge over Tram-In-Road (-15m)
+Piece = 0.0, 0.0, 0, 0, 0x38140200
+PreviewEffect = preview_larstram_span_38140
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140200
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0A]
+CopyFrom    = 0x0B0A
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0A]
+CopyFrom    = 0x0B0A
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0A]
+CopyFrom    = 0x0B0A
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B0B]
+;Added by Daeley 
+;Tram-in-Road bridge over Tram-In-Road (-15m)
+Piece = 0.0, 0.0, 0, 0, 0x38140201
+PreviewEffect = preview_larstram_span_38141
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140201
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140201
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0B]
+CopyFrom    = 0x0B0B
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0B]
+CopyFrom    = 0x0B0B
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0B]
+CopyFrom    = 0x0B0B
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B07]
+;Added by Daeley 
+;Tram-in-Road bridge over Road (-15m)
+Piece = 0.0, 0.0, 0, 0, 0x38140300
+PreviewEffect = preview_larstram_span_38140
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140300
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B07]
+CopyFrom    = 0x0B07
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B07]
+CopyFrom    = 0x0B07
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B07]
+CopyFrom    = 0x0B07
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B08]
+;Added by Daeley 
+;Tram-in-Road bridge over Road (-15m)
+Piece = 0.0, 0.0, 0, 0, 0x38140301
+PreviewEffect = preview_larstram_span_38141
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140301
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140301
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B08]
+CopyFrom    = 0x0B08
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B08]
+CopyFrom    = 0x0B08
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B08]
+CopyFrom    = 0x0B08
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B09]
+;Added by Daeley 
+;Tram-in-Road bridge over Road (-15m)
+Piece = 0.0, 0.0, 0, 0, 0x38140302
+PreviewEffect = preview_larstram_span_38142
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140302
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140302
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B09]
+CopyFrom    = 0x0B09
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B09]
+CopyFrom    = 0x0B09
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B09]
+CopyFrom    = 0x0B09
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B04]
+;Added by Daeley 
+;GLR-In-Road bridge repeater piece - style 1>2
+Piece = 0.0, 0.0, 0, 0, 0x38140003
+PreviewEffect = preview_larstram_span_38143
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140003
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140003
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B04]
+CopyFrom    = 0x0B04
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B04]
+CopyFrom    = 0x0B04
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B04]
+CopyFrom    = 0x0B04
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000B0C]
+;Added by Daeley 
+;GLR-In-Road T-crossing with GLR
+Piece = 0.0, 0.0, 0, 0, 0x38140400
+PreviewEffect = preview_larstram_span_38144
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140400
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0C]
+CopyFrom    = 0x0B0C
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0C]
+CopyFrom    = 0x0B0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0C]
+CopyFrom    = 0x0B0C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000B0D]
+;Added by Daeley 
+;GLR-In-Road T-crossing with GLR
+Piece = 0.0, 0.0, 0, 0, 0x38140401
+PreviewEffect = preview_larstram_span_38145
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140401
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140401
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0D]
+CopyFrom    = 0x0B0D
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0D]
+CopyFrom    = 0x0B0D
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0D]
+CopyFrom    = 0x0B0D
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00000B0E]
+;Added by Daeley 
+;GLR-In-Road T-crossing with GLR
+Piece = 0.0, 0.0, 0, 0, 0x38140500
+PreviewEffect = preview_larstram_span_38146
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020202
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140500
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0E]
+CopyFrom    = 0x0B0E
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0E]
+CopyFrom    = 0x0B0E
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0E]
+CopyFrom    = 0x0B0E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000B0F]
+;Added by Daeley 
+;GLR-In-Road T-crossing with GLR
+Piece = 0.0, 0.0, 0, 0, 0x38140600
+PreviewEffect = preview_larstram_span_38147
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020000
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x38140600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x38140600
+Costs       = 80
+[HighwayIntersectionInfo_0x00010B0F]
+CopyFrom    = 0x0B0F
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020B0F]
+CopyFrom    = 0x0B0F
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030B0F]
+CopyFrom    = 0x0B0F
+Rotate		= 3
+

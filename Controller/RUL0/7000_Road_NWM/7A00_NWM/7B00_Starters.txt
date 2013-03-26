@@ -1,0 +1,1528 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;NETWORK WIDENING MOD (NWM) BUTTON SECTION
+;NETWORK WIDENING MOD (NWM) BUTTON SECTION
+;NETWORK WIDENING MOD (NWM) BUTTON SECTION
+;NETWORK WIDENING MOD (NWM) BUTTON SECTION
+RotationRing = 7B00, 17B00, 27B00, 37B00, 47B00, 57B00, 67B00, 77B00, 87B00, 97B00, A7B00, B7B00, C7B00, D7B00, E7B00, F7B00 ;TLA-3 Starter
+AddTypes     = 7B01, 17B01, 27B01, 37B01, 47B01, 57B01, 67B01, 77B01, 87B01, 97B01, A7B01, B7B01, C7B01, D7B01, E7B01, F7B01 ;AVE-2 Starter
+AddTypes     = 7B02, 17B02, 27B02, 37B02, 47B02, 57B02, 67B02, 77B02, 87B02, 97B02, A7B02, B7B02, C7B02, D7B02, E7B02, F7B02 ;ARD-3 Starter
+AddTypes     = 7B03, 17B03, 27B03, 37B03, 47B03, 57B03, 67B03, 77B03, 87B03, 97B03, A7B03, B7B03, C7B03, D7B03, E7B03, F7B03 ;OWR-1 Starter
+AddTypes     = 7B04, 17B04, 27B04, 37B04, 47B04, 57B04, 67B04, 77B04, 87B04, 97B04, A7B04, B7B04, C7B04, D7B04, E7B04, F7B04 ;OWR-3 Starter
+AddTypes     = 7B05, 17B05, 27B05, 37B05, 47B05, 57B05, 67B05, 77B05, 87B05, 97B05, A7B05, B7B05, C7B05, D7B05, E7B05, F7B05 ;NROAD-4 Starter
+;AddTypes     = 7B06, 17B06, 27B06, 37B06, 47B06, 57B06, 67B06, 77B06, 87B06, 97B06, A7B06, B7B06, C7B06, D7B06, E7B06, F7B06 ;NOWR-4 Starter
+;AddTypes     = 7B07, 17B07, 27B07, 37B07, 47B07, 57B07, 67B07, 77B07, 87B07, 97B07, A7B07, B7B07, C7B07, D7B07, E7B07, F7B07 ;TLA-3 Starter Diagonal
+;AddTypes     = 7B08, 17B08, 27B08, 37B08, 47B08, 57B08, 67B08, 77B08, 87B08, 97B08, A7B08, B7B08, C7B08, D7B08, E7B08, F7B08 ;AVE-2 Starter Diagonal
+;AddTypes     = 7B09, 17B09, 27B09, 37B09, 47B09, 57B09, 67B09, 77B09, 87B09, 97B09, A7B09, B7B09, C7B09, D7B09, E7B09, F7B09 ;ARD-3 Starter Diagonal 
+;AddTypes     = 7B0A, 17B0A, 27B0A, 37B0A, 47B0A, 57B0A, 67B0A, 77B0A, 87B0A, 97B0A, A7B0A, B7B0A, C7B0A, D7B0A, E7B0A, F7B0A ;OWR-1 Starter Diagonal
+;AddTypes     = 7B0B, 17B0B, 27B0B, 37B0B, 47B0B, 57B0B, 67B0B, 77B0B, 87B0B, 97B0B, A7B0B, B7B0B, C7B0B, D7B0B, E7B0B, F7B0B ;OWR-3 Starter Diagonal
+AddTypes     = 7B0C, 17B0C, 27B0C, 37B0C, 47B0C, 57B0C, 67B0C, 77B0C, 87B0C, 97B0C, A7B0C, B7B0C, C7B0C, D7B0C, E7B0C, F7B0C ;TLA-5 Starter
+AddTypes     = 7B0D, 17B0D, 27B0D, 37B0D, 47B0D, 57B0D, 67B0D, 77B0D, 87B0D, 97B0D, A7B0D, B7B0D, C7B0D, D7B0D, E7B0D, F7B0D ;OWR-4 Starter
+AddTypes     = 7B0E, 17B0E, 27B0E, 37B0E, 47B0E, 57B0E, 67B0E, 77B0E, 87B0E, 97B0E, A7B0E, B7B0E, C7B0E, D7B0E, E7B0E, F7B0E ;OWR-5 Starter
+AddTypes     = 7B0F, 17B0F, 27B0F, 37B0F, 47B0F, 57B0F, 67B0F, 77B0F, 87B0F, 97B0F, A7B0F, B7B0F, C7B0F, D7B0F, E7B0F, F7B0F ;ROAD-4 Starter
+AddTypes     = 7B10, 17B10, 27B10, 37B10, 47B10, 57B10, 67B10, 77B10, 87B10, 97B10, A7B10, B7B10, C7B10, D7B10, E7B10, F7B10 ;ROAD-6 Starter
+;AddTypes     = 7B11, 17B11, 27B11, 37B11, 47B11, 57B11, 67B11, 77B11, 87B11, 97B11, A7B11, B7B11, C7B11, D7B11, E7B11, F7B11 ;ROAD-5 Starter
+AddTypes     = 7B12, 17B12, 27B12, 37B12, 47B12, 57B12, 67B12, 77B12, 87B12, 97B12, A7B12, B7B12, C7B12, D7B12, E7B12, F7B12 ;TLA-7 Starter
+AddTypes     = 7B13, 17B13, 27B13, 37B13, 47B13, 57B13, 67B13, 77B13, 87B13, 97B13, A7B13, B7B13, C7B13, D7B13, E7B13, F7B13 ;AVE-6 Starter
+;AddTypes     = 7B14, 17B14, 27B14, 37B14, 47B14, 57B14, 67B14, 77B14, 87B14, 97B14, A7B14, B7B14, C7B14, D7B14, E7B14, F7B14 ;ROAD-8 Starter
+;AddTypes     = 7B15, 17B15, 27B15, 37B15, 47B15, 57B15, 67B15, 77B15, 87B15, 97B15, A7B15, B7B15, C7B15, D7B15, E7B15, F7B15 ;ROAD-10 Starter
+;AddTypes     = 7B16, 17B16, 27B16, 37B16, 47B16, 57B16, 67B16, 77B16, 87B16, 97B16, A7B16, B7B16, C7B16, D7B16, E7B16, F7B16 ;TLA-9 Starter
+;AddTypes     = 7B17, 17B17, 27B17, 37B17, 47B17, 57B17, 67B17, 77B17, 87B17, 97B17, A7B17, B7B17, C7B17, D7B17, E7B17, F7B17 ;AVE-8 Starter
+;AddTypes     = 7B18, 17B18, 27B18, 37B18, 47B18, 57B18, 67B18, 77B18, 87B18, 97B18, A7B18, B7B18, C7B18, D7B18, E7B18, F7B18 ;TLA-8 Starter
+;AddTypes     = 7B19, 17B19, 27B19, 37B19, 47B19, 57B19, 67B19, 77B19, 87B19, 97B19, A7B19, B7B19, C7B19, D7B19, E7B19, F7B19 ;AVE-7 Starter
+;AddTypes     = 7B1A, 17B1A, 27B1A, 37B1A, 47B1A, 57B1A, 67B1A, 77B1A, 87B1A, 97B1A, A7B1A, B7B1A, C7B1A, D7B1A, E7B1A, F7B1A ;ROAD-9 Starter
+
+
+;###separator###
+
+;NETWORK WIDENING MOD SECTION
+
+[HighwayIntersectionInfo_0x00007B00]
+;Added by Tarkus 1/3/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-3 Orthogonal Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5130F005
+PreviewEffect = preview_draggable_tla3__001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 Rail: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5130F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5130F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B00]
+CopyFrom    = 0x7B00
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B00]
+CopyFrom    = 0x7B00
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B00]
+CopyFrom    = 0x7B00
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B00]
+CopyFrom    = 0x7B00
+[HighwayIntersectionInfo_0x00057B00]
+CopyFrom    = 0x17B00
+[HighwayIntersectionInfo_0x00067B00]
+CopyFrom    = 0x27B00
+[HighwayIntersectionInfo_0x00077B00]
+CopyFrom    = 0x37B00
+
+
+
+[HighwayIntersectionInfo_0x00087B00]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-3 Diagonal Starter Piece
+Piece = 0.0, -16.0, 2, 0, 0x5130F105
+PreviewEffect = preview_draggable_tla3__002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - road: 0x00000301
+CheckType = a - road: 0x03010000 Rail: 0x02020000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5130F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5130F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097B00]
+CopyFrom    = 0x87B00
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7B00]
+CopyFrom    = 0x87B00
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7B00]
+CopyFrom    = 0x87B00
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7B00]
+CopyFrom    = 0x87B00
+[HighwayIntersectionInfo_0x000D7B00]
+CopyFrom    = 0x97B00
+[HighwayIntersectionInfo_0x000E7B00]
+CopyFrom    = 0xA7B00
+[HighwayIntersectionInfo_0x000F7B00]
+CopyFrom    = 0xB7B00
+
+
+[HighwayIntersectionInfo_0x00007B01]
+;Added by Tarkus 1/30/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;AVE-2 Orthogonal Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5131F005
+PreviewEffect = preview_draggable_ave2__001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 Rail: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5131F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5131F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B01]
+CopyFrom    = 0x7B01
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B01]
+CopyFrom    = 0x7B01
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B01]
+CopyFrom    = 0x7B01
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B01]
+CopyFrom    = 0x7B01
+[HighwayIntersectionInfo_0x00057B01]
+CopyFrom    = 0x17B01
+[HighwayIntersectionInfo_0x00067B01]
+CopyFrom    = 0x27B01
+[HighwayIntersectionInfo_0x00077B01]
+CopyFrom    = 0x37B01
+
+
+[HighwayIntersectionInfo_0x00087B01]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ave-2 Diagonal Starter Piece
+Piece = 0.0, -16.0, 2, 0, 0x5131F105
+PreviewEffect = preview_draggable_ave2__002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - road: 0x00000301
+CheckType = a - road: 0x03010000 onewayroad: 0x02020000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5131F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5131F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097B01]
+CopyFrom    = 0x87B01
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7B01]
+CopyFrom    = 0x87B01
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7B01]
+CopyFrom    = 0x87B01
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7B01]
+CopyFrom    = 0x87B01
+[HighwayIntersectionInfo_0x000D7B01]
+CopyFrom    = 0x97B01
+[HighwayIntersectionInfo_0x000E7B01]
+CopyFrom    = 0xA7B01
+[HighwayIntersectionInfo_0x000F7B01]
+CopyFrom    = 0xB7B01
+
+
+
+[HighwayIntersectionInfo_0x00007B02]
+;Added by Tarkus 1/30/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ARD-3 Orthogonal Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5132F005
+PreviewEffect = preview_draggable_ard3__001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 Rail: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5132F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5132F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B02]
+CopyFrom    = 0x7B02
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B02]
+CopyFrom    = 0x7B02
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B02]
+CopyFrom    = 0x7B02
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B02]
+CopyFrom    = 0x7B02
+[HighwayIntersectionInfo_0x00057B02]
+CopyFrom    = 0x17B02
+[HighwayIntersectionInfo_0x00067B02]
+CopyFrom    = 0x27B02
+[HighwayIntersectionInfo_0x00077B02]
+CopyFrom    = 0x37B02
+
+
+
+[HighwayIntersectionInfo_0x00087B02]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ARD-3 Diagonal Starter Piece 1
+Piece = 0.0, -16.0, 2, 0, 0x5132F105
+PreviewEffect = preview_draggable_ard3__002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - road: 0x00000301
+CheckType = a - road: 0x03010000 Rail: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5132F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5132F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097B02]
+CopyFrom    = 0x87B02
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7B02]
+CopyFrom    = 0x87B02
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7B02]
+CopyFrom    = 0x87B02
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x000C7B02]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ARD-3 Diagonal Starter Piece 2
+Piece = 0.0, -16.0, 2, 0, 0x5132F205
+PreviewEffect = preview_draggable_ard3__003
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - road: 0x00000301
+CheckType = a - road: 0x03010000 Rail: 0x00030001, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5132F200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5132F200
+Costs       = 8
+[HighwayIntersectionInfo_0x000D7B02]
+CopyFrom    = 0xC7B02
+Rotate = 1
+[HighwayIntersectionInfo_0x000E7B02]
+CopyFrom    = 0xC7B02
+Rotate = 2
+[HighwayIntersectionInfo_0x000F7B02]
+CopyFrom    = 0xC7B02
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00007B03]
+;Added by Tarkus 5/4/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-1 Orthogonal Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5133F005
+PreviewEffect = preview_draggable_owr1__001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200
+CheckType = a - onewayroad: 0x02000200 Rail: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5133F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5133F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B03]
+CopyFrom    = 0x7B03
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B03]
+CopyFrom    = 0x7B03
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B03]
+CopyFrom    = 0x7B03
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B03]
+CopyFrom    = 0x7B03
+[HighwayIntersectionInfo_0x00057B03]
+CopyFrom    = 0x17B03
+[HighwayIntersectionInfo_0x00067B03]
+CopyFrom    = 0x27B03
+[HighwayIntersectionInfo_0x00077B03]
+CopyFrom    = 0x37B03
+
+
+
+[HighwayIntersectionInfo_0x00087B03]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-1 Diagonal Starter Piece
+Piece = 0.0, -16.0, 3, 1, 0x5133F105
+PreviewEffect = preview_draggable_owr1__002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x00000301
+CheckType = a - onewayroad: 0x03010000 Rail: 0x02020000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5133F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5133F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097B03]
+CopyFrom    = 0x87B03
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7B03]
+CopyFrom    = 0x87B03
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7B03]
+CopyFrom    = 0x87B03
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7B03]
+CopyFrom    = 0x87B03
+[HighwayIntersectionInfo_0x000D7B03]
+CopyFrom    = 0x97B03
+[HighwayIntersectionInfo_0x000E7B03]
+CopyFrom    = 0xA7B03
+[HighwayIntersectionInfo_0x000F7B03]
+CopyFrom    = 0xB7B03
+
+
+
+
+[HighwayIntersectionInfo_0x00007B04]
+;Added by Tarkus 5/4/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-3 Orthogonal Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5134F005
+PreviewEffect = preview_draggable_owr3__001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200
+CheckType = a - onewayroad: 0x02000200 Rail: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5134F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5134F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B04]
+CopyFrom    = 0x7B04
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B04]
+CopyFrom    = 0x7B04
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B04]
+CopyFrom    = 0x7B04
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B04]
+CopyFrom    = 0x7B04
+[HighwayIntersectionInfo_0x00057B04]
+CopyFrom    = 0x17B04
+[HighwayIntersectionInfo_0x00067B04]
+CopyFrom    = 0x27B04
+[HighwayIntersectionInfo_0x00077B04]
+CopyFrom    = 0x37B04
+
+
+
+[HighwayIntersectionInfo_0x00087B04]
+;Added by Tarkus 11/8/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-3 Diagonal Starter Piece
+Piece = 0.0, -16.0, 3, 1, 0x5134F105
+PreviewEffect = preview_draggable_owr3__002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x00000301
+CheckType = a - onewayroad: 0x03010000 Rail: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5134F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5134F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097B04]
+CopyFrom    = 0x87B04
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7B04]
+CopyFrom    = 0x87B04
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7B04]
+CopyFrom    = 0x87B04
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7B04]
+CopyFrom    = 0x87B04
+[HighwayIntersectionInfo_0x000D7B04]
+CopyFrom    = 0x97B04
+[HighwayIntersectionInfo_0x000E7B04]
+CopyFrom    = 0xA7B04
+[HighwayIntersectionInfo_0x000F7B04]
+CopyFrom    = 0xB7B04
+
+
+
+[HighwayIntersectionInfo_0x00007B05]
+;Added by Tarkus 11/6/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;NRD-4 Starter Piece
+Piece = 0.0, 16.0, 0, 0, 0x5135F005
+PreviewEffect = preview_draggable_nrd_4_001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 street: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5135F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5135F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B05]
+CopyFrom    = 0x7B05
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B05]
+CopyFrom    = 0x7B05
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B05]
+CopyFrom    = 0x7B05
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B05]
+CopyFrom    = 0x7B05
+[HighwayIntersectionInfo_0x00057B05]
+CopyFrom    = 0x17B05
+[HighwayIntersectionInfo_0x00067B05]
+CopyFrom    = 0x27B05
+[HighwayIntersectionInfo_0x00077B05]
+CopyFrom    = 0x37B05
+[HighwayIntersectionInfo_0x00087B05]
+CopyFrom    = 0x7B05
+[HighwayIntersectionInfo_0x00097B05]
+CopyFrom    = 0x17B05
+[HighwayIntersectionInfo_0x000A7B05]
+CopyFrom    = 0x27B05
+[HighwayIntersectionInfo_0x000B7B05]
+CopyFrom    = 0x37B05
+[HighwayIntersectionInfo_0x000C7B05]
+CopyFrom    = 0x7B05
+[HighwayIntersectionInfo_0x000D7B05]
+CopyFrom    = 0x17B05
+[HighwayIntersectionInfo_0x000E7B05]
+CopyFrom    = 0x27B05
+[HighwayIntersectionInfo_0x000F7B05]
+CopyFrom    = 0x37B05
+
+
+
+[HighwayIntersectionInfo_0x00007B0C]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-5 Orthogonal Start Piece
+Piece = 16.0, 0.0, 0, 0, 0x5140f005
+PreviewEffect = preview_draggable_tla5__001
+
+CellLayout =.......
+CellLayout =..Za<..
+CellLayout =...b...
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5140f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5140f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B0C]
+CopyFrom    = 0x7B0C
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B0C]
+CopyFrom    = 0x7B0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B0C]
+CopyFrom    = 0x7B0C
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B0C]
+CopyFrom    = 0x7B0C
+[HighwayIntersectionInfo_0x00057B0C]
+CopyFrom    = 0x17B0C
+[HighwayIntersectionInfo_0x00067B0C]
+CopyFrom    = 0x27B0C
+[HighwayIntersectionInfo_0x00077B0C]
+CopyFrom    = 0x37B0C
+[HighwayIntersectionInfo_0x00087B0C]
+CopyFrom    = 0x7B0C
+[HighwayIntersectionInfo_0x00097B0C]
+CopyFrom    = 0x17B0C
+[HighwayIntersectionInfo_0x000A7B0C]
+CopyFrom    = 0x27B0C
+[HighwayIntersectionInfo_0x000B7B0C]
+CopyFrom    = 0x37B0C
+[HighwayIntersectionInfo_0x000C7B0C]
+CopyFrom    = 0x7B0C
+[HighwayIntersectionInfo_0x000D7B0C]
+CopyFrom    = 0x17B0C
+[HighwayIntersectionInfo_0x000E7B0C]
+CopyFrom    = 0x27B0C
+[HighwayIntersectionInfo_0x000F7B0C]
+CopyFrom    = 0x37B0C
+
+
+
+[HighwayIntersectionInfo_0x00007B0D]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-4 Orthogonal Start Piece
+Piece = 16.0, 0.0, 0, 0, 0x5141f005
+PreviewEffect = preview_draggable_owr4__001
+
+CellLayout =.......
+CellLayout =..Zb<..
+CellLayout =...a...
+CellLayout =..^....
+
+CheckType = Z - onewayroad: 0x00020002
+CheckType = a - onewayroad: 0x00020002 rail: 0x00000101, 0xffffffff optional
+CheckType = b - onewayroad: 0x00020002 road: 0x00000101, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5141f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5141f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B0D]
+CopyFrom    = 0x7B0D
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B0D]
+CopyFrom    = 0x7B0D
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B0D]
+CopyFrom    = 0x7B0D
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B0D]
+CopyFrom    = 0x7B0D
+[HighwayIntersectionInfo_0x00057B0D]
+CopyFrom    = 0x17B0D
+[HighwayIntersectionInfo_0x00067B0D]
+CopyFrom    = 0x27B0D
+[HighwayIntersectionInfo_0x00077B0D]
+CopyFrom    = 0x37B0D
+[HighwayIntersectionInfo_0x00087B0D]
+CopyFrom    = 0x7B0D
+[HighwayIntersectionInfo_0x00097B0D]
+CopyFrom    = 0x17B0D
+[HighwayIntersectionInfo_0x000A7B0D]
+CopyFrom    = 0x27B0D
+[HighwayIntersectionInfo_0x000B7B0D]
+CopyFrom    = 0x37B0D
+[HighwayIntersectionInfo_0x000C7B0D]
+CopyFrom    = 0x7B0D
+[HighwayIntersectionInfo_0x000D7B0D]
+CopyFrom    = 0x17B0D
+[HighwayIntersectionInfo_0x000E7B0D]
+CopyFrom    = 0x27B0D
+[HighwayIntersectionInfo_0x000F7B0D]
+CopyFrom    = 0x37B0D
+
+
+
+[HighwayIntersectionInfo_0x00007B0E]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;OWR-5 Orthogonal Start Piece
+Piece = 16.0, 0.0, 0, 0, 0x5142f005
+PreviewEffect = preview_draggable_owr5__001
+
+CellLayout =.......
+CellLayout =..Zb<..
+CellLayout =...a...
+CellLayout =..^....
+
+CheckType = Z - onewayroad: 0x00020002
+CheckType = a - onewayroad: 0x00020002 rail: 0x00000101, 0xffffffff optional
+CheckType = b - onewayroad: 0x00020002 road: 0x00000303, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5142f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5142f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B0E]
+CopyFrom    = 0x7B0E
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B0E]
+CopyFrom    = 0x7B0E
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B0E]
+CopyFrom    = 0x7B0E
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B0E]
+CopyFrom    = 0x7B0E
+[HighwayIntersectionInfo_0x00057B0E]
+CopyFrom    = 0x17B0E
+[HighwayIntersectionInfo_0x00067B0E]
+CopyFrom    = 0x27B0E
+[HighwayIntersectionInfo_0x00077B0E]
+CopyFrom    = 0x37B0E
+[HighwayIntersectionInfo_0x00087B0E]
+CopyFrom    = 0x7B0E
+[HighwayIntersectionInfo_0x00097B0E]
+CopyFrom    = 0x17B0E
+[HighwayIntersectionInfo_0x000A7B0E]
+CopyFrom    = 0x27B0E
+[HighwayIntersectionInfo_0x000B7B0E]
+CopyFrom    = 0x37B0E
+[HighwayIntersectionInfo_0x000C7B0E]
+CopyFrom    = 0x7B0E
+[HighwayIntersectionInfo_0x000D7B0E]
+CopyFrom    = 0x17B0E
+[HighwayIntersectionInfo_0x000E7B0E]
+CopyFrom    = 0x27B0E
+[HighwayIntersectionInfo_0x000F7B0E]
+CopyFrom    = 0x37B0E
+
+
+
+[HighwayIntersectionInfo_0x00007B0F]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-4 Orthogonal Start Piece
+Piece = 16.0, 0.0, 0, 0, 0x5143f000
+PreviewEffect = preview_draggable_road4_001
+
+CellLayout =.......
+CellLayout =..Zb<..
+CellLayout =...a...
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 onewayroad: 0x00000101, 0xffffffff optional
+CheckType = b - road: 0x00020002 rail: 0x03030000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5143f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5143f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B0F]
+CopyFrom    = 0x7B0F
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B0F]
+CopyFrom    = 0x7B0F
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B0F]
+CopyFrom    = 0x7B0F
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B0F]
+CopyFrom    = 0x7B0F
+[HighwayIntersectionInfo_0x00057B0F]
+CopyFrom    = 0x17B0F
+[HighwayIntersectionInfo_0x00067B0F]
+CopyFrom    = 0x27B0F
+[HighwayIntersectionInfo_0x00077B0F]
+CopyFrom    = 0x37B0F
+[HighwayIntersectionInfo_0x00087B0F]
+CopyFrom    = 0x7B0F
+[HighwayIntersectionInfo_0x00097B0F]
+CopyFrom    = 0x17B0F
+[HighwayIntersectionInfo_0x000A7B0F]
+CopyFrom    = 0x27B0F
+[HighwayIntersectionInfo_0x000B7B0F]
+CopyFrom    = 0x37B0F
+[HighwayIntersectionInfo_0x000C7B0F]
+CopyFrom    = 0x7B0F
+[HighwayIntersectionInfo_0x000D7B0F]
+CopyFrom    = 0x17B0F
+[HighwayIntersectionInfo_0x000E7B0F]
+CopyFrom    = 0x27B0F
+[HighwayIntersectionInfo_0x000F7B0F]
+CopyFrom    = 0x37B0F
+
+
+
+[HighwayIntersectionInfo_0x00007B10]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-6 Orthogonal Start Piece
+Piece = 16.0, 0.0, 0, 0, 0x5144f000
+PreviewEffect = preview_draggable_road6_001
+
+CellLayout =.......
+CellLayout =..Zb<..
+CellLayout =...a...
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+CheckType = b - road: 0x00020002 rail: 0x03030000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5144f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5144f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B10]
+CopyFrom    = 0x7B10
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B10]
+CopyFrom    = 0x7B10
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B10]
+CopyFrom    = 0x7B10
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B10]
+CopyFrom    = 0x7B10
+[HighwayIntersectionInfo_0x00057B10]
+CopyFrom    = 0x17B10
+[HighwayIntersectionInfo_0x00067B10]
+CopyFrom    = 0x27B10
+[HighwayIntersectionInfo_0x00077B10]
+CopyFrom    = 0x37B10
+[HighwayIntersectionInfo_0x00087B10]
+CopyFrom    = 0x7B10
+[HighwayIntersectionInfo_0x00097B10]
+CopyFrom    = 0x17B10
+[HighwayIntersectionInfo_0x000A7B10]
+CopyFrom    = 0x27B10
+[HighwayIntersectionInfo_0x000B7B10]
+CopyFrom    = 0x37B10
+[HighwayIntersectionInfo_0x000C7B10]
+CopyFrom    = 0x7B10
+[HighwayIntersectionInfo_0x000D7B10]
+CopyFrom    = 0x17B10
+[HighwayIntersectionInfo_0x000E7B10]
+CopyFrom    = 0x27B10
+[HighwayIntersectionInfo_0x000F7B10]
+CopyFrom    = 0x37B10
+
+
+
+[HighwayIntersectionInfo_0x00007B11]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-5 Orthogonal Start Piece
+Piece = -16.0, 0.0, 2, 0, 0x5144f105
+PreviewEffect = preview_draggable_road5_001
+
+CellLayout =.......
+CellLayout =..Zb<..
+CellLayout =...a...
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+CheckType = b - road: 0x00020002 rail: 0x03030000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5144f100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5144f100
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B11]
+CopyFrom    = 0x7B11
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B11]
+CopyFrom    = 0x7B11
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B11]
+CopyFrom    = 0x7B11
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B11]
+CopyFrom    = 0x7B11
+[HighwayIntersectionInfo_0x00057B11]
+CopyFrom    = 0x17B11
+[HighwayIntersectionInfo_0x00067B11]
+CopyFrom    = 0x27B11
+[HighwayIntersectionInfo_0x00077B11]
+CopyFrom    = 0x37B11
+[HighwayIntersectionInfo_0x00087B11]
+CopyFrom    = 0x7B11
+[HighwayIntersectionInfo_0x00097B11]
+CopyFrom    = 0x17B11
+[HighwayIntersectionInfo_0x000A7B11]
+CopyFrom    = 0x27B11
+[HighwayIntersectionInfo_0x000B7B11]
+CopyFrom    = 0x37B11
+[HighwayIntersectionInfo_0x000C7B11]
+CopyFrom    = 0x7B11
+[HighwayIntersectionInfo_0x000D7B11]
+CopyFrom    = 0x17B11
+[HighwayIntersectionInfo_0x000E7B11]
+CopyFrom    = 0x27B11
+[HighwayIntersectionInfo_0x000F7B11]
+CopyFrom    = 0x37B11
+
+
+
+[HighwayIntersectionInfo_0x00007B12]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-7 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5150f005
+PreviewEffect = preview_draggable_tla7__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5150f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5150f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B12]
+CopyFrom    = 0x7B12
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B12]
+CopyFrom    = 0x7B12
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B12]
+CopyFrom    = 0x7B12
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B12]
+CopyFrom    = 0x7B12
+[HighwayIntersectionInfo_0x00057B12]
+CopyFrom    = 0x17B12
+[HighwayIntersectionInfo_0x00067B12]
+CopyFrom    = 0x27B12
+[HighwayIntersectionInfo_0x00077B12]
+CopyFrom    = 0x37B12
+[HighwayIntersectionInfo_0x00087B12]
+CopyFrom    = 0x7B12
+[HighwayIntersectionInfo_0x00097B12]
+CopyFrom    = 0x17B12
+[HighwayIntersectionInfo_0x000A7B12]
+CopyFrom    = 0x27B12
+[HighwayIntersectionInfo_0x000B7B12]
+CopyFrom    = 0x37B12
+[HighwayIntersectionInfo_0x000C7B12]
+CopyFrom    = 0x7B12
+[HighwayIntersectionInfo_0x000D7B12]
+CopyFrom    = 0x17B12
+[HighwayIntersectionInfo_0x000E7B12]
+CopyFrom    = 0x27B12
+[HighwayIntersectionInfo_0x000F7B12]
+CopyFrom    = 0x37B12
+
+
+
+[HighwayIntersectionInfo_0x00007B13]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;AVE-6 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5151f005
+PreviewEffect = preview_draggable_ave6__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01030000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5151f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5151f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B13]
+CopyFrom    = 0x7B13
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B13]
+CopyFrom    = 0x7B13
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B13]
+CopyFrom    = 0x7B13
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B13]
+CopyFrom    = 0x7B13
+[HighwayIntersectionInfo_0x00057B13]
+CopyFrom    = 0x17B13
+[HighwayIntersectionInfo_0x00067B13]
+CopyFrom    = 0x27B13
+[HighwayIntersectionInfo_0x00077B13]
+CopyFrom    = 0x37B13
+[HighwayIntersectionInfo_0x00087B13]
+CopyFrom    = 0x7B13
+[HighwayIntersectionInfo_0x00097B13]
+CopyFrom    = 0x17B13
+[HighwayIntersectionInfo_0x000A7B13]
+CopyFrom    = 0x27B13
+[HighwayIntersectionInfo_0x000B7B13]
+CopyFrom    = 0x37B13
+[HighwayIntersectionInfo_0x000C7B13]
+CopyFrom    = 0x7B13
+[HighwayIntersectionInfo_0x000D7B13]
+CopyFrom    = 0x17B13
+[HighwayIntersectionInfo_0x000E7B13]
+CopyFrom    = 0x27B13
+[HighwayIntersectionInfo_0x000F7B13]
+CopyFrom    = 0x37B13
+
+
+
+[HighwayIntersectionInfo_0x00007B16]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-9 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5152f005
+PreviewEffect = preview_draggable_tla9__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5152f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5152f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B16]
+CopyFrom    = 0x7B16
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B16]
+CopyFrom    = 0x7B16
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B16]
+CopyFrom    = 0x7B16
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B16]
+CopyFrom    = 0x7B16
+[HighwayIntersectionInfo_0x00057B16]
+CopyFrom    = 0x17B16
+[HighwayIntersectionInfo_0x00067B16]
+CopyFrom    = 0x27B16
+[HighwayIntersectionInfo_0x00077B16]
+CopyFrom    = 0x37B16
+[HighwayIntersectionInfo_0x00087B16]
+CopyFrom    = 0x7B16
+[HighwayIntersectionInfo_0x00097B16]
+CopyFrom    = 0x17B16
+[HighwayIntersectionInfo_0x000A7B16]
+CopyFrom    = 0x27B16
+[HighwayIntersectionInfo_0x000B7B16]
+CopyFrom    = 0x37B16
+[HighwayIntersectionInfo_0x000C7B16]
+CopyFrom    = 0x7B16
+[HighwayIntersectionInfo_0x000D7B16]
+CopyFrom    = 0x17B16
+[HighwayIntersectionInfo_0x000E7B16]
+CopyFrom    = 0x27B16
+[HighwayIntersectionInfo_0x000F7B16]
+CopyFrom    = 0x37B16
+
+
+
+[HighwayIntersectionInfo_0x00007B17]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;AVE-8 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5153f005
+PreviewEffect = preview_draggable_ave8__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01030000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5153f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5153f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B17]
+CopyFrom    = 0x7B17
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B17]
+CopyFrom    = 0x7B17
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B17]
+CopyFrom    = 0x7B17
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B17]
+CopyFrom    = 0x7B17
+[HighwayIntersectionInfo_0x00057B17]
+CopyFrom    = 0x17B17
+[HighwayIntersectionInfo_0x00067B17]
+CopyFrom    = 0x27B17
+[HighwayIntersectionInfo_0x00077B17]
+CopyFrom    = 0x37B17
+[HighwayIntersectionInfo_0x00087B17]
+CopyFrom    = 0x7B17
+[HighwayIntersectionInfo_0x00097B17]
+CopyFrom    = 0x17B17
+[HighwayIntersectionInfo_0x000A7B17]
+CopyFrom    = 0x27B17
+[HighwayIntersectionInfo_0x000B7B17]
+CopyFrom    = 0x37B17
+[HighwayIntersectionInfo_0x000C7B17]
+CopyFrom    = 0x7B17
+[HighwayIntersectionInfo_0x000D7B17]
+CopyFrom    = 0x17B17
+[HighwayIntersectionInfo_0x000E7B17]
+CopyFrom    = 0x27B17
+[HighwayIntersectionInfo_0x000F7B17]
+CopyFrom    = 0x37B17
+
+
+
+[HighwayIntersectionInfo_0x00007B18]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;TLA-8 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5152f105
+PreviewEffect = preview_draggable_tla8__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...c..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+CheckType = c - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5152f100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5152f100
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B18]
+CopyFrom    = 0x7B18
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B18]
+CopyFrom    = 0x7B18
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B18]
+CopyFrom    = 0x7B18
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B18]
+CopyFrom    = 0x7B18
+[HighwayIntersectionInfo_0x00057B18]
+CopyFrom    = 0x17B18
+[HighwayIntersectionInfo_0x00067B18]
+CopyFrom    = 0x27B18
+[HighwayIntersectionInfo_0x00077B18]
+CopyFrom    = 0x37B18
+[HighwayIntersectionInfo_0x00087B18]
+CopyFrom    = 0x7B18
+[HighwayIntersectionInfo_0x00097B18]
+CopyFrom    = 0x17B18
+[HighwayIntersectionInfo_0x000A7B18]
+CopyFrom    = 0x27B18
+[HighwayIntersectionInfo_0x000B7B18]
+CopyFrom    = 0x37B18
+[HighwayIntersectionInfo_0x000C7B18]
+CopyFrom    = 0x7B18
+[HighwayIntersectionInfo_0x000D7B18]
+CopyFrom    = 0x17B18
+[HighwayIntersectionInfo_0x000E7B18]
+CopyFrom    = 0x27B18
+[HighwayIntersectionInfo_0x000F7B18]
+CopyFrom    = 0x37B18
+
+
+
+[HighwayIntersectionInfo_0x00007B19]
+;Added by Tarkus 3/1/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;AVE-7 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5153f105
+PreviewEffect = preview_draggable_ave7__001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...c..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 Rail: 0x01030000, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+CheckType = c - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5153f100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5153f100
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B19]
+CopyFrom    = 0x7B19
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B19]
+CopyFrom    = 0x7B19
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B19]
+CopyFrom    = 0x7B19
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B19]
+CopyFrom    = 0x7B19
+[HighwayIntersectionInfo_0x00057B19]
+CopyFrom    = 0x17B19
+[HighwayIntersectionInfo_0x00067B19]
+CopyFrom    = 0x27B19
+[HighwayIntersectionInfo_0x00077B19]
+CopyFrom    = 0x37B19
+[HighwayIntersectionInfo_0x00087B19]
+CopyFrom    = 0x7B19
+[HighwayIntersectionInfo_0x00097B19]
+CopyFrom    = 0x17B19
+[HighwayIntersectionInfo_0x000A7B19]
+CopyFrom    = 0x27B19
+[HighwayIntersectionInfo_0x000B7B19]
+CopyFrom    = 0x37B19
+[HighwayIntersectionInfo_0x000C7B19]
+CopyFrom    = 0x7B19
+[HighwayIntersectionInfo_0x000D7B19]
+CopyFrom    = 0x17B19
+[HighwayIntersectionInfo_0x000E7B19]
+CopyFrom    = 0x27B19
+[HighwayIntersectionInfo_0x000F7B19]
+CopyFrom    = 0x37B19
+
+
+
+[HighwayIntersectionInfo_0x00007B14]
+;Added by Tarkus 10/13/2010.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-8 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5152f005
+PreviewEffect = preview_draggable_ROAD8_001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5152f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5152f000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B14]
+CopyFrom    = 0x7B14
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B14]
+CopyFrom    = 0x7B14
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B14]
+CopyFrom    = 0x7B14
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B14]
+CopyFrom    = 0x7B14
+[HighwayIntersectionInfo_0x00057B14]
+CopyFrom    = 0x17B14
+[HighwayIntersectionInfo_0x00067B14]
+CopyFrom    = 0x27B14
+[HighwayIntersectionInfo_0x00077B14]
+CopyFrom    = 0x37B14
+[HighwayIntersectionInfo_0x00087B14]
+CopyFrom    = 0x7B14
+[HighwayIntersectionInfo_0x00097B14]
+CopyFrom    = 0x17B14
+[HighwayIntersectionInfo_0x000A7B14]
+CopyFrom    = 0x27B14
+[HighwayIntersectionInfo_0x000B7B14]
+CopyFrom    = 0x37B14
+[HighwayIntersectionInfo_0x000C7B14]
+CopyFrom    = 0x7B14
+[HighwayIntersectionInfo_0x000D7B14]
+CopyFrom    = 0x17B14
+[HighwayIntersectionInfo_0x000E7B14]
+CopyFrom    = 0x27B14
+[HighwayIntersectionInfo_0x000F7B14]
+CopyFrom    = 0x37B14
+
+
+
+[HighwayIntersectionInfo_0x00007B15]
+;Added by Tarkus 10/13/2010.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-10 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5152f105
+PreviewEffect = preview_draggable_ROAD10001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...b..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5152f100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5152f100
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B15]
+CopyFrom    = 0x7B15
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B15]
+CopyFrom    = 0x7B15
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B15]
+CopyFrom    = 0x7B15
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B15]
+CopyFrom    = 0x7B15
+[HighwayIntersectionInfo_0x00057B15]
+CopyFrom    = 0x17B15
+[HighwayIntersectionInfo_0x00067B15]
+CopyFrom    = 0x27B15
+[HighwayIntersectionInfo_0x00077B15]
+CopyFrom    = 0x37B15
+[HighwayIntersectionInfo_0x00087B15]
+CopyFrom    = 0x7B15
+[HighwayIntersectionInfo_0x00097B15]
+CopyFrom    = 0x17B15
+[HighwayIntersectionInfo_0x000A7B15]
+CopyFrom    = 0x27B15
+[HighwayIntersectionInfo_0x000B7B15]
+CopyFrom    = 0x37B15
+[HighwayIntersectionInfo_0x000C7B15]
+CopyFrom    = 0x7B15
+[HighwayIntersectionInfo_0x000D7B15]
+CopyFrom    = 0x17B15
+[HighwayIntersectionInfo_0x000E7B15]
+CopyFrom    = 0x27B15
+[HighwayIntersectionInfo_0x000F7B15]
+CopyFrom    = 0x37B15
+
+
+
+[HighwayIntersectionInfo_0x00007B1A]
+;Added by Tarkus 10/13/2010.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;ROAD-9 Orthogonal Start Piece
+Piece = 16.0, -16.0, 0, 0, 0x5152f205
+PreviewEffect = preview_draggable_ROAD9_001
+
+CellLayout =......
+CellLayout =...b..
+CellLayout =..Za<.
+CellLayout =...c..
+CellLayout =..^...
+
+CheckType = Z - road: 0x00020002
+CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
+CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
+CheckType = c - road: 0x00020002 onewayroad: 0x01030000, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..+.<.
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x55387000		; former 0x5152f200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5152f200
+Costs       = 8
+[HighwayIntersectionInfo_0x00017B1A]
+CopyFrom    = 0x7B1A
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027B1A]
+CopyFrom    = 0x7B1A
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037B1A]
+CopyFrom    = 0x7B1A
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047B1A]
+CopyFrom    = 0x7B1A
+[HighwayIntersectionInfo_0x00057B1A]
+CopyFrom    = 0x17B1A
+[HighwayIntersectionInfo_0x00067B1A]
+CopyFrom    = 0x27B1A
+[HighwayIntersectionInfo_0x00077B1A]
+CopyFrom    = 0x37B1A
+[HighwayIntersectionInfo_0x00087B1A]
+CopyFrom    = 0x7B1A
+[HighwayIntersectionInfo_0x00097B1A]
+CopyFrom    = 0x17B1A
+[HighwayIntersectionInfo_0x000A7B1A]
+CopyFrom    = 0x27B1A
+[HighwayIntersectionInfo_0x000B7B1A]
+CopyFrom    = 0x37B1A
+[HighwayIntersectionInfo_0x000C7B1A]
+CopyFrom    = 0x7B1A
+[HighwayIntersectionInfo_0x000D7B1A]
+CopyFrom    = 0x17B1A
+[HighwayIntersectionInfo_0x000E7B1A]
+CopyFrom    = 0x27B1A
+[HighwayIntersectionInfo_0x000F7B1A]
+CopyFrom    = 0x37B1A
+
+
+

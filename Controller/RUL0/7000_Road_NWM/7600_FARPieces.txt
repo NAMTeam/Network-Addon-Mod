@@ -1,0 +1,1161 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;FRACTIONAL ANGLE ROAD (FAR)
+;FRACTIONAL ANGLE ROAD (FAR)
+RotationRing = 7600, 17600, 27600, 37600, 47600, 57600, 67600, 77600, 87600, 97600, A7600, B7600, C7600, D7600, E7600, F7600 ;FAR Short Curve
+AddTypes     = 7601, 17601, 27601, 37601, 47601, 57601, 67601, 77601, 87601, 97601, A7601, B7601, C7601, D7601, E7601, F7601 ;FAR Long Curve
+AddTypes     = 7602, 17602, 27602, 37602, 47602, 57602, 67602, 77602, 87602, 97602, A7602, B7602, C7602, D7602, E7602, F7602 ;FAR Straight Piece
+AddTypes     = 7603, 17603, 27603, 37603, 47603, 57603, 67603, 77603, 87603, 97603, A7603, B7603, C7603, D7603, E7603, F7603 ;At-Grade Crossing-FAR Straight/Orthogonal Rail
+AddTypes     = 7604, 17604, 27604, 37604, 47604, 57604, 67604, 77604, 87604, 97604, A7604, B7604, C7604, D7604, E7604, F7604 ;45 Degree to FAR Transition
+AddTypes     = 7605, 17605, 27605, 37605, 47605, 57605, 67605, 77605, 87605, 97605, A7605, B7605, C7605, D7605, E7605, F7605 ;FAR/Ortho Crossroads
+AddTypes     = 7606, 17606, 27606, 37606, 47606, 57606, 67606, 77606, 87606, 97606, A7606, B7606, C7606, D7606, E7606, F7606 ;FAR to Ortho Tee Intersection
+AddTypes     = 7607, 17607, 27607, 37607, 47607, 57607, 67607, 77607, 87607, 97607, A7607, B7607, C7607, D7607, E7607, F7607 ;Ortho to FAR Tee Intersection
+AddTypes     = 7608, 17608, 27608, 37608, 47608, 57608, 67608, 77608, 87608, 97608, A7608, B7608, C7608, D7608, E7608, F7608 ;FAR Crossroads
+AddTypes     = 7609, 17609, 27609, 37609, 47609, 57609, 67609, 77609, 87609, 97609, A7609, B7609, C7609, D7609, E7609, F7609 ;FAR Tee Intersection
+AddTypes     = 760A, 1760A, 2760A, 3760A, 4760A, 5760A, 6760A, 7760A, 8760A, 9760A, A760A, B760A, C760A, D760A, E760A, F760A ;OWFAR Short Curve
+AddTypes     = 760B, 1760B, 2760B, 3760B, 4760B, 5760B, 6760B, 7760B, 8760B, 9760B, A760B, B760B, C760B, D760B, E760B, F760B ;OWFAR Long Curve
+AddTypes     = 760C, 1760C, 2760C, 3760C, 4760C, 5760C, 6760C, 7760C, 8760C, 9760C, A760C, B760C, C760C, D760C, E760C, F760C ;OWFAR Straight Piece
+AddTypes     = 760D, 1760D, 2760D, 3760D, 4760D, 5760D, 6760D, 7760D, 8760D, 9760D, A760D, B760D, C760D, D760D, E760D, F760D ;45 Degree to OWFAR Transition
+AddTypes	 = 760E, 4760E, 1760E, 5760E, 2760E, 6760E, 3760E, 7760E, 8760E, 9760E, A760E, B760E, C760E, D760E, E760E, F760E ;AVE to FA-AVE Transition
+AddTypes	 = 760F, 4760F, 1760F, 5760F, 2760F, 6760F, 3760F, 7760F, 8760F, 9760F, A760F, B760F, C760F, D760F, E760F, F760F ;FA-AVE Straight Piece
+
+;###separator###
+
+;ROAD WIDE RADIUS CURVES/FRACTIONAL ANGLE ROAD (FAR)/RURAL ROAD SECTION
+;
+;
+[HighwayIntersectionInfo_0x00007600]
+;Added by Tarkus 05/04/2007
+;FAR Short Curve (18.4 Degrees)(textures by dedgren); edited by dedgren 081228
+Piece = 16.0, 0.0, 0, 0, 0x50463305
+PreviewEffect = preview_road_puzzlepiece040
+
+CellLayout =............
+CellLayout =...abbbc..<
+CellLayout =.....dbc...
+CellLayout =....^.......
+
+CheckType = a - road: 0x00020000,0x00ff0000 check
+CheckType = b - road: 0x00020002
+CheckType = c - road: 0x00000002
+CheckType = d - road: 0x00020000
+
+ConsLayout =............
+ConsLayout =....----..<
+ConsLayout =.....---...
+ConsLayout =....^.......
+
+AutoTileBase=	0x50463300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463300
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 50; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017600]
+CopyFrom = 0x7600
+Rotate = 1
+[HighwayIntersectionInfo_0x00027600]
+CopyFrom = 0x7600
+Rotate = 2
+[HighwayIntersectionInfo_0x00037600]
+CopyFrom = 0x7600
+Rotate = 3
+[HighwayIntersectionInfo_0x00047600]
+CopyFrom = 0x7600
+Transpose = 1
+[HighwayIntersectionInfo_0x00057600]
+CopyFrom = 0x37600
+Transpose = 1
+[HighwayIntersectionInfo_0x00067600]
+CopyFrom = 0x27600
+Transpose = 1
+[HighwayIntersectionInfo_0x00077600]
+CopyFrom = 0x17600
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087600]
+CopyFrom = 0x7600
+[HighwayIntersectionInfo_0x00097600]
+CopyFrom = 0x17600
+[HighwayIntersectionInfo_0x000A7600]
+CopyFrom = 0x27600
+[HighwayIntersectionInfo_0x000B7600]
+CopyFrom = 0x37600
+[HighwayIntersectionInfo_0x000C7600]
+CopyFrom = 0x47600
+[HighwayIntersectionInfo_0x000D7600]
+CopyFrom = 0x57600
+[HighwayIntersectionInfo_0x000E7600]
+CopyFrom = 0x67600
+[HighwayIntersectionInfo_0x000F7600]
+CopyFrom = 0x77600
+
+
+
+[HighwayIntersectionInfo_0x00007601]
+;Added by Tarkus 05/05/2007
+;FAR Long Curve (71.6 Degrees)(textures by dedgren); edited by dedgren 081228
+Piece = 16.0, 0.0, 0, 0, 0x50463705
+PreviewEffect = preview_road_puzzlepiece041
+
+CellLayout =..............
+CellLayout =.....abbc....<
+CellLayout =.......dbc....
+CellLayout =........dc....
+CellLayout =......^.......
+
+CheckType = a - road: 0x00020000,0x00ff0000 check
+CheckType = b - road: 0x00020002
+CheckType = c - road: 0x00000002
+CheckType = d - road: 0x00020000
+
+ConsLayout =..............
+ConsLayout =.....----....<
+ConsLayout =.......\\\\...
+ConsLayout =........|||...
+ConsLayout =......^.......
+
+AutoTileBase=	0x50463700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463700
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 70; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017601]
+CopyFrom = 0x7601
+Rotate = 1
+[HighwayIntersectionInfo_0x00027601]
+CopyFrom = 0x7601
+Rotate = 2
+[HighwayIntersectionInfo_0x00037601]
+CopyFrom = 0x7601
+Rotate = 3
+[HighwayIntersectionInfo_0x00047601]
+CopyFrom = 0x7601
+Transpose = 1
+[HighwayIntersectionInfo_0x00057601]
+CopyFrom = 0x37601
+Transpose = 1
+[HighwayIntersectionInfo_0x00067601]
+CopyFrom = 0x27601
+Transpose = 1
+[HighwayIntersectionInfo_0x00077601]
+CopyFrom = 0x17601
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087601]
+CopyFrom = 0x7601
+[HighwayIntersectionInfo_0x00097601]
+CopyFrom = 0x17601
+[HighwayIntersectionInfo_0x000A7601]
+CopyFrom = 0x27601
+[HighwayIntersectionInfo_0x000B7601]
+CopyFrom = 0x37601
+[HighwayIntersectionInfo_0x000C7601]
+CopyFrom = 0x47601
+[HighwayIntersectionInfo_0x000D7601]
+CopyFrom = 0x57601
+[HighwayIntersectionInfo_0x000E7601]
+CopyFrom = 0x67601
+[HighwayIntersectionInfo_0x000F7601]
+CopyFrom = 0x77601
+
+
+
+[HighwayIntersectionInfo_0x00007602]
+;Added by Tarkus 05/04/2007
+;FAR Straight Section (textures by dedgren); edited by dedgren 081229
+Piece = 16.0, 0.0, 0, 0, 0x50463005
+PreviewEffect = preview_road_puzzlepiece042
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - road: 0x00020002
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=	0x50463000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463000
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017602]
+CopyFrom = 0x7602
+Rotate = 1
+[HighwayIntersectionInfo_0x00027602]
+CopyFrom = 0x7602
+Rotate = 2
+[HighwayIntersectionInfo_0x00037602]
+CopyFrom = 0x7602
+Rotate = 3
+[HighwayIntersectionInfo_0x00047602]
+CopyFrom = 0x7602
+Transpose = 1
+[HighwayIntersectionInfo_0x00057602]
+CopyFrom = 0x37602
+Transpose = 1
+[HighwayIntersectionInfo_0x00067602]
+CopyFrom = 0x27602
+Transpose = 1
+[HighwayIntersectionInfo_0x00077602]
+CopyFrom = 0x17602
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087602]
+CopyFrom = 0x7602
+[HighwayIntersectionInfo_0x00097602]
+CopyFrom = 0x17602
+[HighwayIntersectionInfo_0x000A7602]
+CopyFrom = 0x27602
+[HighwayIntersectionInfo_0x000B7602]
+CopyFrom = 0x37602
+[HighwayIntersectionInfo_0x000C7602]
+CopyFrom = 0x47602
+[HighwayIntersectionInfo_0x000D7602]
+CopyFrom = 0x57602
+[HighwayIntersectionInfo_0x000E7602]
+CopyFrom = 0x67602
+[HighwayIntersectionInfo_0x000F7602]
+CopyFrom = 0x77602
+
+
+
+[HighwayIntersectionInfo_0x00007603]
+;Added by Tarkus 07/23/2007
+;At-Grade Crossing-FAR across orthogonal rail (textures by dedgren); edited by Swamper 090219
+Piece = 16.0, 0.0, 0, 0, 0x50465005
+PreviewEffect = preview_road_puzzlepiece044
+
+CellLayout =.........
+CellLayout =....c....
+CellLayout =...abe..<
+CellLayout =...abe...
+CellLayout =....d....
+CellLayout =...^.....
+
+CheckType = a - road: 0x00020000
+CheckType = b - road: 0x00020002 rail: 0x02000200
+CheckType = c - rail: 0x02000000, 0xff000000 check
+CheckType = d - rail: 0x00000200, 0x0000ff00 check
+CheckType = e - road: 0x00000002
+
+ConsLayout =.........
+CellLayout =.........
+ConsLayout =...-|-..<
+ConsLayout =...-|-...
+CellLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50465000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50465000
+AutoPlace = 1
+Costs = 155; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017603]
+CopyFrom = 0x7603
+Rotate = 1
+[HighwayIntersectionInfo_0x00027603]
+CopyFrom = 0x7603
+Rotate = 2
+[HighwayIntersectionInfo_0x00037603]
+CopyFrom = 0x7603
+Rotate = 3
+[HighwayIntersectionInfo_0x00047603]
+CopyFrom = 0x7603
+Transpose = 1
+[HighwayIntersectionInfo_0x00057603]
+CopyFrom = 0x37603
+Transpose = 1
+[HighwayIntersectionInfo_0x00067603]
+CopyFrom = 0x27603
+Transpose = 1
+[HighwayIntersectionInfo_0x00077603]
+CopyFrom = 0x17603
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087603]
+CopyFrom = 0x7603
+[HighwayIntersectionInfo_0x00097603]
+CopyFrom = 0x17603
+[HighwayIntersectionInfo_0x000A7603]
+CopyFrom = 0x27603
+[HighwayIntersectionInfo_0x000B7603]
+CopyFrom = 0x37603
+[HighwayIntersectionInfo_0x000C7603]
+CopyFrom = 0x47603
+[HighwayIntersectionInfo_0x000D7603]
+CopyFrom = 0x57603
+[HighwayIntersectionInfo_0x000E7603]
+CopyFrom = 0x67603
+[HighwayIntersectionInfo_0x000F7603]
+CopyFrom = 0x77603
+
+
+
+[HighwayIntersectionInfo_0x00007604]
+;Added by dedgren 11/13/2008
+;45 degree curve to FAR Transition (textures by dedgren); edited by dedgren 081229
+;Modified by SA 07/07/2011 to fix odd deformation of puzzle piece on slopes
+Piece = 0, 0.0, 0, 0, 0x50466005
+PreviewEffect = preview_road_puzzlepiece045
+
+CellLayout =........
+CellLayout =.za....<
+CellLayout =..ba....
+CellLayout =..cc....
+CellLayout =..^.....
+
+CheckType = z - road: 0x00030000,0x00ff0000 check
+CheckType = a - road: 0x01000003
+CheckType = b - road: 0x02000200
+CheckType = c - road: 0x00000200
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =..|\....
+ConsLayout =..||....
+ConsLayout =..^.....
+
+AutoTileBase = 0x50466000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50466000
+Costs = 30; edited by dedgren 081229 
+[HighwayIntersectionInfo_0x00017604]
+CopyFrom = 0x7604
+Rotate = 1
+[HighwayIntersectionInfo_0x00027604]
+CopyFrom = 0x7604
+Rotate = 2
+[HighwayIntersectionInfo_0x00037604]
+CopyFrom = 0x7604
+Rotate = 3
+[HighwayIntersectionInfo_0x00047604]
+CopyFrom = 0x7604
+Transpose = 1
+[HighwayIntersectionInfo_0x00057604]
+CopyFrom = 0x37604
+Transpose = 1
+[HighwayIntersectionInfo_0x00067604]
+CopyFrom = 0x27604
+Transpose = 1
+[HighwayIntersectionInfo_0x00077604]
+CopyFrom = 0x17604
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087604]
+CopyFrom = 0x7604
+[HighwayIntersectionInfo_0x00097604]
+CopyFrom = 0x17604
+[HighwayIntersectionInfo_0x000A7604]
+CopyFrom = 0x27604
+[HighwayIntersectionInfo_0x000B7604]
+CopyFrom = 0x37604
+[HighwayIntersectionInfo_0x000C7604]
+CopyFrom = 0x47604
+[HighwayIntersectionInfo_0x000D7604]
+CopyFrom = 0x57604
+[HighwayIntersectionInfo_0x000E7604]
+CopyFrom = 0x67604
+[HighwayIntersectionInfo_0x000F7604]
+CopyFrom = 0x77604
+
+
+[HighwayIntersectionInfo_0x00007605]
+;Added by dedgren 090508
+;FAR/Ortho Crossroad (textures by dedgren)
+Piece = 16.0, 0.0, 0, 0, 0x50467005
+PreviewEffect = preview_road_puzzlepiece046
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bec..<
+CellLayout =...bec...
+CellLayout =....d....
+CellLayout =...^.....
+
+CheckType = a - road: 0x02000000,0xff000000 check
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+CheckType = d - road: 0x00000200,0x0000ff00 check
+CheckType = e - road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=   0x50467000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50467000
+AutoPlace = 1
+Costs = 105
+[HighwayIntersectionInfo_0x00017605]
+CopyFrom = 0x7605
+Rotate = 1
+[HighwayIntersectionInfo_0x00027605]
+CopyFrom = 0x7605
+Rotate = 2
+[HighwayIntersectionInfo_0x00037605]
+CopyFrom = 0x7605
+Rotate = 3
+[HighwayIntersectionInfo_0x00047605]
+CopyFrom = 0x7605
+Transpose = 1
+[HighwayIntersectionInfo_0x00057605]
+CopyFrom = 0x37605
+Transpose = 1
+[HighwayIntersectionInfo_0x00067605]
+CopyFrom = 0x27605
+Transpose = 1
+[HighwayIntersectionInfo_0x00077605]
+CopyFrom = 0x17605
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087605]
+CopyFrom = 0x7605
+[HighwayIntersectionInfo_0x00097605]
+CopyFrom = 0x17605
+[HighwayIntersectionInfo_0x000A7605]
+CopyFrom = 0x27605
+[HighwayIntersectionInfo_0x000B7605]
+CopyFrom = 0x37605
+[HighwayIntersectionInfo_0x000C7605]
+CopyFrom = 0x47605
+[HighwayIntersectionInfo_0x000D7605]
+CopyFrom = 0x57605
+[HighwayIntersectionInfo_0x000E7605]
+CopyFrom = 0x67605
+[HighwayIntersectionInfo_0x000F7605]
+CopyFrom = 0x77605
+
+
+[HighwayIntersectionInfo_0x00007606]
+;Added by dedgren 090508
+;FAR to Ortho Tee Intersection (textures by dedgren)
+Piece = 16.0, 0.0, 0, 0, 0x50468005
+PreviewEffect = preview_road_puzzlepiece047
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bdc..<
+CellLayout =...bec...
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - road: 0x02000000,0xff000000 check
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+CheckType = d - road: 0x02020202
+CheckType = e - road: 0x00020202
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=   0x50468000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50468000
+AutoPlace = 1
+Costs = 85
+[HighwayIntersectionInfo_0x00017606]
+CopyFrom = 0x7606
+Rotate = 1
+[HighwayIntersectionInfo_0x00027606]
+CopyFrom = 0x7606
+Rotate = 2
+[HighwayIntersectionInfo_0x00037606]
+CopyFrom = 0x7606
+Rotate = 3
+[HighwayIntersectionInfo_0x00047606]
+CopyFrom = 0x7606
+Transpose = 1
+[HighwayIntersectionInfo_0x00057606]
+CopyFrom = 0x37606
+Transpose = 1
+[HighwayIntersectionInfo_0x00067606]
+CopyFrom = 0x27606
+Transpose = 1
+[HighwayIntersectionInfo_0x00077606]
+CopyFrom = 0x17606
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087606]
+CopyFrom = 0x7606
+[HighwayIntersectionInfo_0x00097606]
+CopyFrom = 0x17606
+[HighwayIntersectionInfo_0x000A7606]
+CopyFrom = 0x27606
+[HighwayIntersectionInfo_0x000B7606]
+CopyFrom = 0x37606
+[HighwayIntersectionInfo_0x000C7606]
+CopyFrom = 0x47606
+[HighwayIntersectionInfo_0x000D7606]
+CopyFrom = 0x57606
+[HighwayIntersectionInfo_0x000E7606]
+CopyFrom = 0x67606
+[HighwayIntersectionInfo_0x000F7606]
+CopyFrom = 0x77606
+
+
+
+[HighwayIntersectionInfo_0x00007607]
+;Added by dedgren 090508
+;Ortho to FAR Tee Intersection (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50469005
+PreviewEffect = preview_road_puzzlepiece048
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bd...<
+CellLayout =...bd....
+CellLayout =....c....
+CellLayout =...^.....
+
+CheckType = a - road: 0x02000000,0xff000000 check
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000200,0x0000ff00 check
+CheckType = d - road: 0x02000202
+
+ConsLayout =.........
+ConsLayout =...-|...<
+ConsLayout =...-|....
+ConsLayout =...^.....
+
+AutoTileBase=   0x50469000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50469000
+Costs = 85
+AutoPlace = 1
+[HighwayIntersectionInfo_0x00017607]
+CopyFrom = 0x7607
+Rotate = 1
+[HighwayIntersectionInfo_0x00027607]
+CopyFrom = 0x7607
+Rotate = 2
+[HighwayIntersectionInfo_0x00037607]
+CopyFrom = 0x7607
+Rotate = 3
+[HighwayIntersectionInfo_0x00047607]
+CopyFrom = 0x7607
+Transpose = 1
+[HighwayIntersectionInfo_0x00057607]
+CopyFrom = 0x37607
+Transpose = 1
+[HighwayIntersectionInfo_0x00067607]
+CopyFrom = 0x27607
+Transpose = 1
+[HighwayIntersectionInfo_0x00077607]
+CopyFrom = 0x17607
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087607]
+CopyFrom = 0x7607
+[HighwayIntersectionInfo_0x00097607]
+CopyFrom = 0x17607
+[HighwayIntersectionInfo_0x000A7607]
+CopyFrom = 0x27607
+[HighwayIntersectionInfo_0x000B7607]
+CopyFrom = 0x37607
+[HighwayIntersectionInfo_0x000C7607]
+CopyFrom = 0x47607
+[HighwayIntersectionInfo_0x000D7607]
+CopyFrom = 0x57607
+[HighwayIntersectionInfo_0x000E7607]
+CopyFrom = 0x67607
+[HighwayIntersectionInfo_0x000F7607]
+CopyFrom = 0x77607
+
+
+[HighwayIntersectionInfo_0x00007608]
+;Added by dedgren 090508
+;FAR Crossroads (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5046A005
+PreviewEffect = preview_road_puzzlepiece049
+
+CellLayout =.........
+CellLayout =...ba+..<
+CellLayout =...++c...
+CellLayout =...d+....
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - road: 0x02000000
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+CheckType = d - road: 0x00000200
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+CellLayout =...||....
+ConsLayout =...^.....
+
+AutoTileBase=   0x5046A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5046A000
+Costs = 105
+[HighwayIntersectionInfo_0x00017608]
+CopyFrom = 0x7608
+Rotate = 1
+[HighwayIntersectionInfo_0x00027608]
+CopyFrom = 0x7608
+Rotate = 2
+[HighwayIntersectionInfo_0x00037608]
+CopyFrom = 0x7608
+Rotate = 3
+[HighwayIntersectionInfo_0x00047608]
+CopyFrom = 0x7608
+Transpose = 1
+[HighwayIntersectionInfo_0x00057608]
+CopyFrom = 0x37608
+Transpose = 1
+[HighwayIntersectionInfo_0x00067608]
+CopyFrom = 0x27608
+Transpose = 1
+[HighwayIntersectionInfo_0x00077608]
+CopyFrom = 0x17608
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087608]
+CopyFrom = 0x7608
+[HighwayIntersectionInfo_0x00097608]
+CopyFrom = 0x17608
+[HighwayIntersectionInfo_0x000A7608]
+CopyFrom = 0x27608
+[HighwayIntersectionInfo_0x000B7608]
+CopyFrom = 0x37608
+[HighwayIntersectionInfo_0x000C7608]
+CopyFrom = 0x47608
+[HighwayIntersectionInfo_0x000D7608]
+CopyFrom = 0x57608
+[HighwayIntersectionInfo_0x000E7608]
+CopyFrom = 0x67608
+[HighwayIntersectionInfo_0x000F7608]
+CopyFrom = 0x77608
+
+
+[HighwayIntersectionInfo_0x00007609]
+;Added by dedgren 090508
+;FAR Tee Intersection (textures by dedgren)
+Piece = 16.0, 0.0, 0, 0, 0x5046B005
+PreviewEffect = preview_road_puzzlepiece050
+
+CellLayout =.........
+CellLayout =...b++..<
+CellLayout =...+ac...
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - road: 0x00000200
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=   0x5046B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5046B000
+Costs = 85
+[HighwayIntersectionInfo_0x00017609]
+CopyFrom = 0x7609
+Rotate = 1
+[HighwayIntersectionInfo_0x00027609]
+CopyFrom = 0x7609
+Rotate = 2
+[HighwayIntersectionInfo_0x00037609]
+CopyFrom = 0x7609
+Rotate = 3
+[HighwayIntersectionInfo_0x00047609]
+CopyFrom = 0x7609
+Transpose = 1
+[HighwayIntersectionInfo_0x00057609]
+CopyFrom = 0x37609
+Transpose = 1
+[HighwayIntersectionInfo_0x00067609]
+CopyFrom = 0x27609
+Transpose = 1
+[HighwayIntersectionInfo_0x00077609]
+CopyFrom = 0x17609
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087609]
+CopyFrom = 0x7609
+[HighwayIntersectionInfo_0x00097609]
+CopyFrom = 0x17609
+[HighwayIntersectionInfo_0x000A7609]
+CopyFrom = 0x27609
+[HighwayIntersectionInfo_0x000B7609]
+CopyFrom = 0x37609
+[HighwayIntersectionInfo_0x000C7609]
+CopyFrom = 0x47609
+[HighwayIntersectionInfo_0x000D7609]
+CopyFrom = 0x57609
+[HighwayIntersectionInfo_0x000E7609]
+CopyFrom = 0x67609
+[HighwayIntersectionInfo_0x000F7609]
+CopyFrom = 0x77609
+
+
+[HighwayIntersectionInfo_0x0000760A]
+;Added by Tarkus 05/04/2007
+;OWFAR Short Curve (18.4 Degrees)(textures by dedgren); edited by dedgren 081228
+Piece = 16.0, 0.0, 0, 0, 0x59463305
+PreviewEffect = preview_owfarpuzzlepiece000
+
+CellLayout =............
+CellLayout =...abbbc..<
+CellLayout =.....dbc...
+CellLayout =....^.......
+
+CheckType = a - onewayroad: 0x00020000,0x00ff0000 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00000002
+CheckType = d - onewayroad: 0x00020000
+
+ConsLayout =............
+ConsLayout =....----..<
+ConsLayout =.....---...
+ConsLayout =....^.......
+
+AutoTileBase=	0x59463300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59463300
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+OneWayDir = 0
+Costs = 50; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001760A]
+CopyFrom = 0x760A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002760A]
+CopyFrom = 0x760A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760A]
+CopyFrom = 0x760A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760A]
+CopyFrom = 0x760A
+PreviewEffect = preview_owfarpuzzlepiece001
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760A]
+CopyFrom = 0x4760A
+Rotate = 3
+[HighwayIntersectionInfo_0x0006760A]
+CopyFrom = 0x4760A
+Rotate = 2
+[HighwayIntersectionInfo_0x0007760A]
+CopyFrom = 0x4760A
+Rotate = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008760A]
+CopyFrom = 0x760A
+PreviewEffect = preview_owfarpuzzlepiece001
+AutoPathBase= 0x79463300
+OneWayDir = 4
+[HighwayIntersectionInfo_0x0009760A]
+CopyFrom = 0x8760A
+Rotate = 1
+[HighwayIntersectionInfo_0x000A760A]
+CopyFrom = 0x8760A
+Rotate = 2
+[HighwayIntersectionInfo_0x000B760A]
+CopyFrom = 0x8760A
+Rotate = 3
+[HighwayIntersectionInfo_0x000C760A]
+CopyFrom = 0x8760A
+PreviewEffect = preview_owfarpuzzlepiece000
+AutoPathBase= 0x79463300
+Transpose = 1
+[HighwayIntersectionInfo_0x000D760A]
+CopyFrom = 0xC760A
+Rotate = 3
+[HighwayIntersectionInfo_0x000E760A]
+CopyFrom = 0xC760A
+Rotate = 2
+[HighwayIntersectionInfo_0x000F760A]
+CopyFrom = 0xC760A
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x0000760B]
+;Added by Tarkus 05/05/2007
+;OWFAR Long Curve (71.6 Degrees)(textures by dedgren); edited by dedgren 081228
+Piece = 16.0, 0.0, 0, 0, 0x59463705
+PreviewEffect = preview_owfarpuzzlepiece002
+
+CellLayout =..............
+CellLayout =.....abbc....<
+CellLayout =.......dbc....
+CellLayout =........dc....
+CellLayout =......^.......
+
+CheckType = a - onewayroad: 0x00020000,0x00ff0000 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00000002
+CheckType = d - onewayroad: 0x00020000
+
+ConsLayout =..............
+ConsLayout =.....----....<
+ConsLayout =.......\\\\...
+ConsLayout =........|||...
+ConsLayout =......^.......
+
+AutoTileBase=	0x59463700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59463700
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 70; edited by dedgren 081229
+OneWayDir = 0
+[HighwayIntersectionInfo_0x0001760B]
+CopyFrom = 0x760B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002760B]
+CopyFrom = 0x760B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760B]
+CopyFrom = 0x760B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760B]
+CopyFrom = 0x760B
+PreviewEffect = preview_owfarpuzzlepiece003
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760B]
+CopyFrom = 0x3760B
+Transpose = 1
+[HighwayIntersectionInfo_0x0006760B]
+CopyFrom = 0x2760B
+Transpose = 1
+[HighwayIntersectionInfo_0x0007760B]
+CopyFrom = 0x1760B
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008760B]
+CopyFrom = 0x760B
+PreviewEffect = preview_owfarpuzzlepiece003
+AutoPathBase= 0x79463700
+OneWayDir = 4
+[HighwayIntersectionInfo_0x0009760B]
+CopyFrom = 0x8760B
+Rotate = 1
+[HighwayIntersectionInfo_0x000A760B]
+CopyFrom = 0x8760B
+Rotate = 2
+[HighwayIntersectionInfo_0x000B760B]
+CopyFrom = 0x8760B
+Rotate = 3
+[HighwayIntersectionInfo_0x000C760B]
+CopyFrom = 0x8760B
+PreviewEffect = preview_owfarpuzzlepiece002
+AutoPathBase= 0x79463700
+Transpose = 1
+[HighwayIntersectionInfo_0x000D760B]
+CopyFrom = 0xC760B
+Rotate = 3
+[HighwayIntersectionInfo_0x000E760B]
+CopyFrom = 0xC760B
+Rotate = 2
+[HighwayIntersectionInfo_0x000F760B]
+CopyFrom = 0xC760B
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x0000760C]
+;Added by Tarkus 05/04/2007
+;OWFAR Straight Section (textures by dedgren); edited by dedgren 081229
+Piece = 16.0, 0.0, 0, 0, 0x59463005
+PreviewEffect = preview_owfarpuzzlepiece004
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - onewayroad: 0x00020002
+CheckType = b - onewayroad: 0x00020000
+CheckType = c - onewayroad: 0x00000002
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=	0x59463000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59463000
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001760C]
+CopyFrom = 0x760C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002760C]
+CopyFrom = 0x760C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760C]
+CopyFrom = 0x760C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760C]
+CopyFrom = 0x760C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760C]
+CopyFrom = 0x3760C
+Transpose = 1
+[HighwayIntersectionInfo_0x0006760C]
+CopyFrom = 0x2760C
+Transpose = 1
+[HighwayIntersectionInfo_0x0007760C]
+CopyFrom = 0x1760C
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008760C]
+CopyFrom = 0x760C
+[HighwayIntersectionInfo_0x0009760C]
+CopyFrom = 0x1760C
+[HighwayIntersectionInfo_0x000A760C]
+CopyFrom = 0x2760C
+[HighwayIntersectionInfo_0x000B760C]
+CopyFrom = 0x3760C
+[HighwayIntersectionInfo_0x000C760C]
+CopyFrom = 0x4760C
+[HighwayIntersectionInfo_0x000D760C]
+CopyFrom = 0x5760C
+[HighwayIntersectionInfo_0x000E760C]
+CopyFrom = 0x6760C
+[HighwayIntersectionInfo_0x000F760C]
+CopyFrom = 0x7760C
+
+
+
+[HighwayIntersectionInfo_0x0000760D]
+;Added by dedgren 11/13/2008
+;45 degree curve to OWFAR Transition (textures by dedgren); edited by dedgren 081229
+;Modified by SA 07/07/2011 to fix odd deformation of puzzle piece on slopes
+Piece = 0, 0.0, 0, 0, 0x59466005
+PreviewEffect = preview_owfarpuzzlepiece006
+
+CellLayout =........
+CellLayout =.za....<
+CellLayout =..ba....
+CellLayout =..cc....
+CellLayout =..^.....
+
+CheckType = z - onewayroad: 0x00030000,0x00ff0000 check
+CheckType = a - onewayroad: 0x01000003
+CheckType = b - onewayroad: 0x02000200
+CheckType = c - onewayroad: 0x00000200
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =..|\....
+ConsLayout =..||....
+ConsLayout =..^.....
+
+AutoTileBase = 0x59466000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59466000
+Costs = 30; edited by dedgren 081229 
+OneWayDir = 1
+[HighwayIntersectionInfo_0x0001760D]
+CopyFrom = 0x760D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002760D]
+CopyFrom = 0x760D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760D]
+CopyFrom = 0x760D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760D]
+CopyFrom = 0x760D
+PreviewEffect = preview_owfarpuzzlepiece007
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760D]
+CopyFrom = 0x4760D
+Rotate = 3
+[HighwayIntersectionInfo_0x0006760D]
+CopyFrom = 0x4760D
+Rotate = 2
+[HighwayIntersectionInfo_0x0007760D]
+CopyFrom = 0x4760D
+Rotate = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008760D]
+CopyFrom = 0x760D
+PreviewEffect = preview_owfarpuzzlepiece007
+AutoPathBase= 0x79466000
+OneWayDir = 5
+[HighwayIntersectionInfo_0x0009760D]
+CopyFrom = 0x8760D
+Rotate = 1
+[HighwayIntersectionInfo_0x000A760D]
+CopyFrom = 0x8760D
+Rotate = 2
+[HighwayIntersectionInfo_0x000B760D]
+CopyFrom = 0x8760D
+Rotate = 3
+[HighwayIntersectionInfo_0x000C760D]
+CopyFrom = 0x8760D
+PreviewEffect = preview_owfarpuzzlepiece006
+AutoPathBase= 0x79466000
+Transpose = 1
+[HighwayIntersectionInfo_0x000D760D]
+CopyFrom = 0xC760D
+Rotate = 3
+[HighwayIntersectionInfo_0x000E760D]
+CopyFrom = 0xC760D
+Rotate = 2
+[HighwayIntersectionInfo_0x000F760D]
+CopyFrom = 0xC760D
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x0000760E]
+;Added by SA 06/07/2011
+;AVE to FA-AVE transition
+Piece = 0.0, 0.0, 0, 0, 0x54600005
+PreviewEffect = preview_faave_to_ave_cur001
+
+CellLayout =.........
+CellLayout =.abbbbc.<
+CellLayout =.deeeef..
+CellLayout =....eef..
+CellLayout =..^......
+
+CheckType = a - avenue:0x04020000, 0xffff0000 optional
+CheckType = b - avenue:0x04020002
+CheckType = c - avenue:0x04000002
+CheckType = d - avenue:0x00020400, 0xff0000ff optional
+CheckType = e - avenue:0x00020402
+CheckType = f - avenue:0x00000402
+
+ConsLayout =.........
+ConsLayout =..-----.<
+ConsLayout =..-----..
+ConsLayout =....---..
+ConsLayout =..^......
+
+AutoTileBase=	0x54600000
+PlaceQueryID = 0x54600000
+Costs = 75
+[HighwayIntersectionInfo_0x0001760E]
+CopyFrom = 0x760E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002760E]
+CopyFrom = 0x760E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760E]
+CopyFrom = 0x760E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760E]
+CopyFrom = 0x760E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760E]
+CopyFrom = 0x4760E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006760E]
+CopyFrom = 0x4760E
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007760E]
+CopyFrom = 0x4760E
+Rotate	= 3
+[HighwayIntersectionInfo_0x0008760E]
+CopyFrom    = 0x760E
+[HighwayIntersectionInfo_0x0009760E]
+CopyFrom    = 0x1760E
+[HighwayIntersectionInfo_0x000A760E]
+CopyFrom    = 0x2760E
+[HighwayIntersectionInfo_0x000B760E]
+CopyFrom    = 0x3760E
+[HighwayIntersectionInfo_0x000C760E]
+CopyFrom    = 0x4760E
+[HighwayIntersectionInfo_0x000D760E]
+CopyFrom    = 0x5760E
+[HighwayIntersectionInfo_0x000E760E]
+CopyFrom    = 0x6760E
+[HighwayIntersectionInfo_0x000F760E]
+CopyFrom    = 0x7760E
+
+
+[HighwayIntersectionInfo_0x0000760F]
+;Added by SA 06/07/2011
+;FA-AVE 4 Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x54600505
+PreviewEffect = preview_faave_straight__001
+
+CellLayout =......
+CellLayout =.abc.<
+CellLayout =.def..
+CellLayout =.def..
+CellLayout =.^....
+
+CheckType = a - avenue:0x04020000
+CheckType = b - avenue:0x04020002
+CheckType = c - avenue:0x04000002
+CheckType = d - avenue:0x00020400
+CheckType = e - avenue:0x00020402
+CheckType = f - avenue:0x00000402
+
+ConsLayout =......
+ConsLayout =.---.<
+ConsLayout =.---..
+ConsLayout =.---..
+ConsLayout =.^....
+
+AutoTileBase=	0x54600500
+PlaceQueryID = 0x54600500
+Costs = 75
+[HighwayIntersectionInfo_0x0001760F]
+CopyFrom = 0x760F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002760F]
+CopyFrom = 0x760F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003760F]
+CopyFrom = 0x760F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004760F]
+CopyFrom = 0x760F
+Transpose = 1
+[HighwayIntersectionInfo_0x0005760F]
+CopyFrom = 0x4760F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006760F]
+CopyFrom = 0x4760F
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007760F]
+CopyFrom = 0x4760F
+Rotate	= 3
+[HighwayIntersectionInfo_0x0008760F]
+CopyFrom    = 0x760F
+[HighwayIntersectionInfo_0x0009760F]
+CopyFrom    = 0x1760F
+[HighwayIntersectionInfo_0x000A760F]
+CopyFrom    = 0x2760F
+[HighwayIntersectionInfo_0x000B760F]
+CopyFrom    = 0x3760F
+[HighwayIntersectionInfo_0x000C760F]
+CopyFrom    = 0x4760F
+[HighwayIntersectionInfo_0x000D760F]
+CopyFrom    = 0x5760F
+[HighwayIntersectionInfo_0x000E760F]
+CopyFrom    = 0x6760F
+[HighwayIntersectionInfo_0x000F760F]
+CopyFrom    = 0x7760F
+
+
+

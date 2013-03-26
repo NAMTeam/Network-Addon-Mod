@@ -1,0 +1,311 @@
+;Neighbor Connectors R7BF0+
+RotationRing = 7BF0, 17BF0, 27BF0, 37BF0, 47BF0, 57BF0, 67BF0, 77BF0, 87BF0, 97BF0, A7BF0, B7BF0, C7BF0, D7BF0, E7BF0, F7BF0 ;TLA-5 Neighbor Connector
+AddTypes     = 7BF1, 17BF1, 27BF1, 37BF1, 47BF1, 57BF1, 67BF1, 77BF1, 87BF1, 97BF1, A7BF1, B7BF1, C7BF1, D7BF1, E7BF1, F7BF1 ;ROAD-4 Neighbor Connector
+AddTypes     = 7BF2, 17BF2, 27BF2, 37BF2, 47BF2, 57BF2, 67BF2, 77BF2, 87BF2, 97BF2, A7BF2, B7BF2, C7BF2, D7BF2, E7BF2, F7BF2 ;ROAD-6 Neighbor Connector
+AddTypes     = 7BF3, 17BF3, 27BF3, 37BF3, 47BF3, 57BF3, 67BF3, 77BF3, 87BF3, 97BF3, A7BF3, B7BF3, C7BF3, D7BF3, E7BF3, F7BF3 ;TLA-7 Neighbor Connector
+AddTypes     = 7BF4, 17BF4, 27BF4, 37BF4, 47BF4, 57BF4, 67BF4, 77BF4, 87BF4, 97BF4, A7BF4, B7BF4, C7BF4, D7BF4, E7BF4, F7BF4 ;AVE-6 Neighbor Connector
+
+;###separator###
+
+
+;NEIGHBOR CONNECTORS
+[HighwayIntersectionInfo_0x00007BF0]
+;Added by Tarkus 3/1/2008.
+;TLA-5 Orthogonal Start Piece
+Piece = 0.0, 0.0, 0, 0, 0x5140f805
+PreviewEffect = preview_nborconn__tla5__001
+
+CellLayout =.......
+CellLayout =..Z.<..
+CellLayout =..Z....
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+
+ConsLayout =.......
+ConsLayout =..-.<..
+ConsLayout =..-....
+ConsLayout =..^....
+
+AutoTileBase=	0x5140f800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5140f800
+Costs       = 8
+[HighwayIntersectionInfo_0x00017BF0]
+CopyFrom    = 0x7BF0
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027BF0]
+CopyFrom    = 0x7BF0
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037BF0]
+CopyFrom    = 0x7BF0
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047BF0]
+CopyFrom    = 0x7BF0
+[HighwayIntersectionInfo_0x00057BF0]
+CopyFrom    = 0x17BF0
+[HighwayIntersectionInfo_0x00067BF0]
+CopyFrom    = 0x27BF0
+[HighwayIntersectionInfo_0x00077BF0]
+CopyFrom    = 0x37BF0
+[HighwayIntersectionInfo_0x00087BF0]
+CopyFrom    = 0x7BF0
+[HighwayIntersectionInfo_0x00097BF0]
+CopyFrom    = 0x17BF0
+[HighwayIntersectionInfo_0x000A7BF0]
+CopyFrom    = 0x27BF0
+[HighwayIntersectionInfo_0x000B7BF0]
+CopyFrom    = 0x37BF0
+[HighwayIntersectionInfo_0x000C7BF0]
+CopyFrom    = 0x7BF0
+[HighwayIntersectionInfo_0x000D7BF0]
+CopyFrom    = 0x17BF0
+[HighwayIntersectionInfo_0x000E7BF0]
+CopyFrom    = 0x27BF0
+[HighwayIntersectionInfo_0x000F7BF0]
+CopyFrom    = 0x37BF0
+
+
+
+[HighwayIntersectionInfo_0x00007BF1]
+;Added by Tarkus 3/1/2008.
+;ROAD-4 Neighbor Connector
+Piece = 0.0, 0.0, 0, 0, 0x5143f805
+PreviewEffect = preview_nborconn__road4_001
+
+CellLayout =.......
+CellLayout =..Z.<..
+CellLayout =..Z....
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+
+ConsLayout =.......
+ConsLayout =..-.<..
+ConsLayout =..-....
+ConsLayout =..^....
+
+AutoTileBase=	0x5143f800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5143f800
+Costs       = 8
+[HighwayIntersectionInfo_0x00017BF1]
+CopyFrom    = 0x7BF1
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027BF1]
+CopyFrom    = 0x7BF1
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037BF1]
+CopyFrom    = 0x7BF1
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047BF1]
+CopyFrom    = 0x7BF1
+[HighwayIntersectionInfo_0x00057BF1]
+CopyFrom    = 0x17BF1
+[HighwayIntersectionInfo_0x00067BF1]
+CopyFrom    = 0x27BF1
+[HighwayIntersectionInfo_0x00077BF1]
+CopyFrom    = 0x37BF1
+[HighwayIntersectionInfo_0x00087BF1]
+CopyFrom    = 0x7BF1
+[HighwayIntersectionInfo_0x00097BF1]
+CopyFrom    = 0x17BF1
+[HighwayIntersectionInfo_0x000A7BF1]
+CopyFrom    = 0x27BF1
+[HighwayIntersectionInfo_0x000B7BF1]
+CopyFrom    = 0x37BF1
+[HighwayIntersectionInfo_0x000C7BF1]
+CopyFrom    = 0x7BF1
+[HighwayIntersectionInfo_0x000D7BF1]
+CopyFrom    = 0x17BF1
+[HighwayIntersectionInfo_0x000E7BF1]
+CopyFrom    = 0x27BF1
+[HighwayIntersectionInfo_0x000F7BF1]
+CopyFrom    = 0x37BF1
+
+
+
+[HighwayIntersectionInfo_0x00007BF2]
+;Added by Tarkus 3/1/2008.
+;ROAD-6 Neighbor Connector
+Piece = 0.0, 0.0, 0, 0, 0x5144f805
+PreviewEffect = preview_draggable_road6_001
+
+CellLayout =.......
+CellLayout =..Z.<..
+CellLayout =..Z....
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+
+ConsLayout =.......
+ConsLayout =..-.<..
+ConsLayout =..-....
+ConsLayout =..^....
+
+AutoTileBase=	0x5144f800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5144f800
+Costs       = 8
+[HighwayIntersectionInfo_0x00017BF2]
+CopyFrom    = 0x7BF2
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027BF2]
+CopyFrom    = 0x7BF2
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037BF2]
+CopyFrom    = 0x7BF2
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047BF2]
+CopyFrom    = 0x7BF2
+[HighwayIntersectionInfo_0x00057BF2]
+CopyFrom    = 0x17BF2
+[HighwayIntersectionInfo_0x00067BF2]
+CopyFrom    = 0x27BF2
+[HighwayIntersectionInfo_0x00077BF2]
+CopyFrom    = 0x37BF2
+[HighwayIntersectionInfo_0x00087BF2]
+CopyFrom    = 0x7BF2
+[HighwayIntersectionInfo_0x00097BF2]
+CopyFrom    = 0x17BF2
+[HighwayIntersectionInfo_0x000A7BF2]
+CopyFrom    = 0x27BF2
+[HighwayIntersectionInfo_0x000B7BF2]
+CopyFrom    = 0x37BF2
+[HighwayIntersectionInfo_0x000C7BF2]
+CopyFrom    = 0x7BF2
+[HighwayIntersectionInfo_0x000D7BF2]
+CopyFrom    = 0x17BF2
+[HighwayIntersectionInfo_0x000E7BF2]
+CopyFrom    = 0x27BF2
+[HighwayIntersectionInfo_0x000F7BF2]
+CopyFrom    = 0x37BF2
+
+
+[HighwayIntersectionInfo_0x00007BF3]
+;Added by Tarkus 8/7/2011.
+;TLA-7 Orthogonal Start Piece
+Piece = 0.0, 0.0, 0, 0, 0x5150f805
+PreviewEffect = preview_nborconn__tla7__001
+
+CellLayout =.......
+CellLayout =..Z.<..
+CellLayout =..Z....
+CellLayout =..Z....
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+
+ConsLayout =.......
+ConsLayout =..-.<..
+ConsLayout =..-....
+ConsLayout =..-....
+ConsLayout =..^....
+
+AutoTileBase=	0x5150f800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5150f800
+Costs       = 24
+[HighwayIntersectionInfo_0x00017BF3]
+CopyFrom    = 0x7BF3
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027BF3]
+CopyFrom    = 0x7BF3
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037BF3]
+CopyFrom    = 0x7BF3
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047BF3]
+CopyFrom    = 0x7BF3
+[HighwayIntersectionInfo_0x00057BF3]
+CopyFrom    = 0x17BF3
+[HighwayIntersectionInfo_0x00067BF3]
+CopyFrom    = 0x27BF3
+[HighwayIntersectionInfo_0x00077BF3]
+CopyFrom    = 0x37BF3
+[HighwayIntersectionInfo_0x00087BF3]
+CopyFrom    = 0x7BF3
+[HighwayIntersectionInfo_0x00097BF3]
+CopyFrom    = 0x17BF3
+[HighwayIntersectionInfo_0x000A7BF3]
+CopyFrom    = 0x27BF3
+[HighwayIntersectionInfo_0x000B7BF3]
+CopyFrom    = 0x37BF3
+[HighwayIntersectionInfo_0x000C7BF3]
+CopyFrom    = 0x7BF3
+[HighwayIntersectionInfo_0x000D7BF3]
+CopyFrom    = 0x17BF3
+[HighwayIntersectionInfo_0x000E7BF3]
+CopyFrom    = 0x27BF3
+[HighwayIntersectionInfo_0x000F7BF3]
+CopyFrom    = 0x37BF3
+
+
+
+[HighwayIntersectionInfo_0x00007BF4]
+;Added by Tarkus 8/7/2011.
+;AVE-6 Orthogonal Start Piece
+Piece = 0.0, 0.0, 0, 0, 0x5150f905
+PreviewEffect = preview_nborconn__ave6__001
+
+CellLayout =.......
+CellLayout =..Z.<..
+CellLayout =..Z....
+CellLayout =..Z....
+CellLayout =..^....
+
+CheckType = Z - road: 0x00020002
+
+ConsLayout =.......
+ConsLayout =..-.<..
+ConsLayout =..-....
+ConsLayout =..-....
+ConsLayout =..^....
+
+AutoTileBase=	0x5150f900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5150f900
+Costs       = 24
+[HighwayIntersectionInfo_0x00017BF4]
+CopyFrom    = 0x7BF4
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027BF4]
+CopyFrom    = 0x7BF4
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037BF4]
+CopyFrom    = 0x7BF4
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047BF4]
+CopyFrom    = 0x7BF4
+[HighwayIntersectionInfo_0x00057BF4]
+CopyFrom    = 0x17BF4
+[HighwayIntersectionInfo_0x00067BF4]
+CopyFrom    = 0x27BF4
+[HighwayIntersectionInfo_0x00077BF4]
+CopyFrom    = 0x37BF4
+[HighwayIntersectionInfo_0x00087BF4]
+CopyFrom    = 0x7BF4
+[HighwayIntersectionInfo_0x00097BF4]
+CopyFrom    = 0x17BF4
+[HighwayIntersectionInfo_0x000A7BF4]
+CopyFrom    = 0x27BF4
+[HighwayIntersectionInfo_0x000B7BF4]
+CopyFrom    = 0x37BF4
+[HighwayIntersectionInfo_0x000C7BF4]
+CopyFrom    = 0x7BF4
+[HighwayIntersectionInfo_0x000D7BF4]
+CopyFrom    = 0x17BF4
+[HighwayIntersectionInfo_0x000E7BF4]
+CopyFrom    = 0x27BF4
+[HighwayIntersectionInfo_0x000F7BF4]
+CopyFrom    = 0x37BF4
+
+
+
+;End NWM Section
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

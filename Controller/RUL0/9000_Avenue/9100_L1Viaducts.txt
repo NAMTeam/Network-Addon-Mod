@@ -1,0 +1,2448 @@
+;--7.5m Content--
+;AddTypes = 9XXX, 19XXX, 29XXX, 39XXX, 49XXX, 59XXX, 69XXX, 79XXX, 89XXX, 99XXX, A9XXX, B9XXX, C9XXX, D9XXX, E9XXX, F9XXX ;avenue start/end section puzzle pieces
+RotationRing = 9100, 89100, 19100, 99100, 29100, A9100, 39100, B9100, 49100, C9100, 59100, D9100, 69100, E9100, 79100, F9100 ;avenue blank terrain main puzzle piece
+AddTypes     = 9101, 89101, 19101, 99101, 29101, A9101, 39101, B9101, 49101, C9101, 59101, D9101, 69101, E9101, 79101, F9101 ;avenue blank terrain supplementary filler puzzle pieces
+AddTypes     = 9102, 49102, 19102, 59102, 29102, 69102, 39102, 79102, 89102, C9102, 99102, D9102, A9102, E9102, B9102, F9102 ;avenuexblank transition to diagonal
+AddTypes     = 9103, 19103, 29103, 39103, 49103, 59103, 69103, 79103, 89103, 99103, A9103, B9103, C9103, D9103, E9103, F9103 ;avenue corner
+AddTypes     = 9104, 89104, 19104, 99104, 29104, A9104, 39104, B9104, 49104, C9104, 59104, D9104, 69104, E9104, 79104, F9104 ;avenuexavenue orthogonal
+AddTypes     = 9105, 89105, 19105, 99105, 29105, A9105, 39105, B9105, 49105, C9105, 59105, D9105, 69105, E9105, 79105, F9105 ;avenuexavenue diagonal
+AddTypes     = 9106, 89106, 19106, 99106, 29106, A9106, 39106, B9106, 49106, C9106, 59106, D9106, 69106, E9106, 79106, F9106 ;avenuexrail orthogonal
+AddTypes     = 9107, 89107, 19107, 99107, 29107, A9107, 39107, B9107, 49107, C9107, 59107, D9107, 69107, E9107, 79107, F9107 ;avenuexrail double diagonal
+AddTypes     = 9108, 89108, 19108, 99108, 29108, A9108, 39108, B9108, 49108, C9108, 59108, D9108, 69108, E9108, 79108, F9108 ;avenuexrail diagonal
+AddTypes     = 9109, 89109, 19109, 99109, 29109, A9109, 39109, B9109, 49109, C9109, 59109, D9109, 69109, E9109, 79109, F9109 ;avenuexstreet orthogonal
+AddTypes     = 910A, 8910A, 1910A, 9910A, 2910A, A910A, 3910A, B910A, 4910A, C910A, 5910A, D910A, 6910A, E910A, 7910A, F910A ;avenuexroad orthogonal
+AddTypes     = 910B, 8910B, 1910B, 9910B, 2910B, A910B, 3910B, B910B, 4910B, C910B, 5910B, D910B, 6910B, E910B, 7910B, F910B ;avenuexroad double diagonal
+AddTypes     = 910C, 8910C, 1910C, 9910C, 2910C, A910C, 3910C, B910C, 4910C, C910C, 5910C, D910C, 6910C, E910C, 7910C, F910C ;avenuexroad diagonal
+AddTypes     = 910D, 8910D, 1910D, 9910D, 2910D, A910D, 3910D, B910D, 4910D, C910D, 5910D, D910D, 6910D, E910D, 7910D, F910D ;avenuexonewayroad orthogonal
+AddTypes     = 910E, 8910E, 1910E, 9910E, 2910E, A910E, 3910E, B910E, 4910E, C910E, 5910E, D910E, 6910E, E910E, 7910E, F910E ;avenuexonewayroad double diagonal
+AddTypes     = 910F, 8910F, 1910F, 9910F, 2910F, A910F, 3910F, B910F, 4910F, C910F, 5910F, D910F, 6910F, E910F, 7910F, F910F ;avenuexonewayroad diagonal
+AddTypes     = 9110, 89110, 19110, 99110, 29110, A9110, 39110, B9110, 49110, C9110, 59110, D9110, 69110, E9110, 79110, F9110 ;avenuexgroundhighway orthogonal
+AddTypes     = 9111, 89111, 19111, 99111, 29111, A9111, 39111, B9111, 49111, C9111, 59111, D9111, 69111, E9111, 79111, F9111 ;avenuexgroundhighway diagonal
+AddTypes     = 9112, 19112, 29112, 39112, 49112, 59112, 69112, 79112, 89112, 99112, A9112, B9112, C9112, D9112, E9112, F9112 ;avenuexavenue + intersection
+AddTypes     = 9113, 19113, 29113, 39113, 49113, 59113, 69113, 79113, 89113, 99113, A9113, B9113, C9113, D9113, E9113, F9113 ;avenuexavenue T intersection
+AddTypes     = 9114, 19114, 29114, 39114, 49114, 59114, 69114, 79114, 89114, 99114, A9114, B9114, C9114, D9114, E9114, F9114 ;avenuexroad/onewayroad + intersection
+AddTypes     = 9115, 19115, 29115, 39115, 49115, 59115, 69115, 79115, 89115, 99115, A9115, B9115, C9115, D9115, E9115, F9115 ;avenuexroad/onewayroad T1 intersection
+AddTypes     = 9116, 19116, 29116, 39116, 49116, 59116, 69116, 79116, 89116, 99116, A9116, B9116, C9116, D9116, E9116, F9116 ;avenuexroad/onewayroad T2 intersection
+AddTypes     = 9117, 89117, 19117, 99117, 29117, A9117, 39117, B9117, 49117, C9117, 59117, D9117, 69117, E9117, 79117, F9117 ;avenuexlightrail orthogonal
+AddTypes     = 9118, 89118, 19118, 99118, 29118, A9118, 39118, B9118, 49118, C9118, 59118, D9118, 69118, E9118, 79118, F9118 ;avenuexlightrail diagonal
+AddTypes     = 9119, 19119, 29119, 39119, 89119, 99119, A9119, B9119, 49119, 59119, 69119, 79119, C9119, D9119, E9119, F9119 ;T/Straight Avenue OnSlope Puzzle Piece
+AddTypes     = 911A, 1911A, 2911A, 3911A, 4911A, 5911A, 6911A, 7911A, 8911A, 9911A, A911A, B911A, C911A, D911A, E911A, F911A ;Diagonal Avenue OnSlope
+
+
+;###separator###
+
+;7.5m Content
+[HighwayIntersectionInfo_0x0000911A]
+;diag ave on-slope 15m
+;added by SA 1/31/2012
+Piece = 0.0, 16.0, 0, 0, 0x54300f35
+PreviewEffect = preview_diag_av_onslope_002
+
+CellLayout =.......
+CellLayout =.da...<
+CellLayout =.eb+...
+CellLayout =..c+...
+CellLayout =...+...
+CellLayout =..^....
+
+CheckType = a - avenue: 0x01000003, 0xff0000ff optional
+CheckType = b - avenue: 0x01030103
+CheckType = c - avenue: 0x00030100
+CheckType = d - avenue: 0x01030000, 0xffff0000 optional
+CheckType = e - avenue: 0x00030100, 0x00000000 optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..+....
+ConsLayout =..+....
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x54300e30
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x54300e00
+Costs = 75
+
+[HighwayIntersectionInfo_0x0001911A]
+CopyFrom = 0x911A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002911A]
+CopyFrom = 0x911A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003911A]
+CopyFrom = 0x911A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004911A]
+CopyFrom = 0x911A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005911A]
+CopyFrom = 0x4911A
+Rotate = 1
+[HighwayIntersectionInfo_0x0006911A]
+CopyFrom = 0x4911A
+Rotate = 2
+[HighwayIntersectionInfo_0x0007911A]
+CopyFrom = 0x4911A
+Rotate = 3
+
+;; clones of remaining eight rotations
+[HighwayIntersectionInfo_0x0008911A]
+CopyFrom = 0x911A
+[HighwayIntersectionInfo_0x0009911A]
+CopyFrom = 0x1911A
+[HighwayIntersectionInfo_0x000A911A]
+CopyFrom = 0x2911A
+[HighwayIntersectionInfo_0x000B911A]
+CopyFrom = 0x3911A
+[HighwayIntersectionInfo_0x000C911A]
+CopyFrom = 0x4911A
+[HighwayIntersectionInfo_0x000D911A]
+CopyFrom = 0x5911A
+[HighwayIntersectionInfo_0x000E911A]
+CopyFrom = 0x6911A
+[HighwayIntersectionInfo_0x000F911A]
+CopyFrom = 0x7911A
+
+
+
+;=========================
+; MAXIS AVE4 7.5m - 0x91xx
+;=========================
+
+[HighwayIntersectionInfo_0x00009100]
+;Added by SA
+;avenue blank terrain orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x54301005
+PreviewEffect = preview_75m_elevated_av_001
+
+CellLayout =.........
+CellLayout =....W...<
+CellLayout =....Y....
+CellLayout =....^....
+
+CheckType = W - avenue:0x00000000
+CheckType = Y - avenue:0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x54301000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009012
+Costs       = 200
+[HighwayIntersectionInfo_0x00019100]
+CopyFrom    = 0x9100
+Rotate		= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00029100]
+CopyFrom    = 0x9100
+[HighwayIntersectionInfo_0x00039100]
+CopyFrom    = 0x19100
+
+
+
+[HighwayIntersectionInfo_0x00049100]
+;Added by SA
+;avenue blank terrain orthogonal puzzle piece no pylon
+Piece = 0.0, 0.0, 0, 0, 0x54301025
+PreviewEffect = preview_75m_elevated_av_002
+
+CellLayout =.........
+CellLayout =....W...<
+CellLayout =....Y....
+CellLayout =....^....
+
+CheckType = W - avenue:0x00000000
+CheckType = Y - avenue:0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x54301020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x54260130
+Costs       = 200
+[HighwayIntersectionInfo_0x00059100]
+CopyFrom    = 0x49100
+Rotate = 1
+[HighwayIntersectionInfo_0x00069100]
+CopyFrom    = 0x49100
+[HighwayIntersectionInfo_0x00079100]
+CopyFrom    = 0x59100
+
+
+[HighwayIntersectionInfo_0x00089100]
+;Added by SA
+;avenue diagonal blank terrain ~ main piece
+Piece = 0.0, -16.0, 0, 0, 0x54301045
+PreviewEffect = preview_75m_elevated_av_003
+
+CellLayout =.......
+CellLayout =...Y...
+CellLayout =...ZY.<
+CellLayout =...^...
+
+CheckType = Y - avenue:0x00000000
+CheckType = Z - avenue:0x00000000
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...++..<
+ConsLayout =...^....
+
+AutoTileBase=	0x54301040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009012
+Costs       = 200
+[HighwayIntersectionInfo_0x00099100]
+CopyFrom    = 0x89100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9100]
+CopyFrom    = 0x89100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9100]
+CopyFrom    = 0x89100
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C9100]
+CopyFrom    = 0x89100
+[HighwayIntersectionInfo_0x000D9100]
+CopyFrom    = 0x99100
+[HighwayIntersectionInfo_0x000E9100]
+CopyFrom    = 0xA9100
+[HighwayIntersectionInfo_0x000F9100]
+CopyFrom    = 0xB9100
+
+
+[HighwayIntersectionInfo_0x00009101]
+;Added by SA
+;avenue orthogonal blank terrain Filler puzzle piece.
+;Contains Directional Forcing & Arrows.
+Piece = 0.0, 0.0, 0, 0, 0x54301100
+PreviewEffect = preview_75m_elevated_av_004
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - avenue:0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x54301100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009013
+Costs       = 100
+[HighwayIntersectionInfo_0x00019101]
+CopyFrom    = 0x9101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029101]
+CopyFrom    = 0x9101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039101]
+CopyFrom    = 0x9101
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00049101]
+;Added by SA
+;avenue diagonal blank terrain ~ filler piece 1a ~ one sided
+;Contains Directional Forcing & Arrows.
+Piece = 0.0, 0.0, 0, 0, 0x54301110
+PreviewEffect = preview_75m_elevated_av_005
+
+CellLayout =.........
+CellLayout =....Y.<..
+CellLayout =....^....
+
+CheckType = Y - avenue:0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x54301110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009013
+Costs       = 100
+[HighwayIntersectionInfo_0x00059101]
+CopyFrom    = 0x49101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00069101]
+CopyFrom    = 0x49101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00079101]
+CopyFrom    = 0x49101
+Rotate		= 3
+[HighwayIntersectionInfo_0x00089101]
+CopyFrom    = 0x49101
+Transpose = 1
+Autopathbase = 0x7419E250
+[HighwayIntersectionInfo_0x00099101]
+CopyFrom    = 0x89101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9101]
+CopyFrom    = 0x89101
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9101]
+CopyFrom    = 0x89101
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x000C9101]
+;Added by Tropod bla bla
+;avenue diagonal blank terrain ~ Filler Puzzle Piece 1b ~ two sided
+;located in 0x54301050 for future reference
+Piece = 0.0, 0.0, 0, 0, 0x54301120
+PreviewEffect = preview_75m_elevated_av_006
+
+CellLayout =.........
+CellLayout =....Z.<..
+CellLayout =....^....
+
+CheckType = Z - avenue:0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x54301120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009013
+Costs       = 100
+[HighwayIntersectionInfo_0x000D9101]
+CopyFrom    = 0xC9101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E9101]
+CopyFrom    = 0xC9101
+[HighwayIntersectionInfo_0x000F9101]
+CopyFrom    = 0xD9101
+
+
+[HighwayIntersectionInfo_0x00009103]
+;Added by SA
+;avenue corner puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x54301065
+PreviewEffect = preview_75m_elevated_av_007
+
+CellLayout =..........
+CellLayout =....WX...<
+CellLayout =....YZ....
+CellLayout =.....^....
+
+CheckType = W - avenue:0x04040000
+CheckType = X - avenue:0x04040004
+CheckType = Y - avenue:0x04040400
+CheckType = Z - avenue:0x02020404
+
+ConsLayout =..........
+ConsLayout =....++...<
+ConsLayout =....++....
+ConsLayout =.....^....
+
+AutoTileBase=	0x54301060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009230
+Costs       = 400
+[HighwayIntersectionInfo_0x00019103]
+CopyFrom    = 0x9103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029103]
+CopyFrom    = 0x9103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039103]
+CopyFrom    = 0x9103
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049103]
+CopyFrom    = 0x9103
+[HighwayIntersectionInfo_0x00059103]
+CopyFrom    = 0x19103
+[HighwayIntersectionInfo_0x00069103]
+CopyFrom    = 0x29103
+[HighwayIntersectionInfo_0x00079103]
+CopyFrom    = 0x39103
+[HighwayIntersectionInfo_0x00089103]
+CopyFrom    = 0x9103
+[HighwayIntersectionInfo_0x00099103]
+CopyFrom    = 0x19103
+[HighwayIntersectionInfo_0x000A9103]
+CopyFrom    = 0x29103
+[HighwayIntersectionInfo_0x000B9103]
+CopyFrom    = 0x39103
+[HighwayIntersectionInfo_0x000C9103]
+CopyFrom    = 0x9103
+[HighwayIntersectionInfo_0x000D9103]
+CopyFrom    = 0x19103
+[HighwayIntersectionInfo_0x000E9103]
+CopyFrom    = 0x29103
+[HighwayIntersectionInfo_0x000F9103]
+CopyFrom    = 0x39103
+
+
+[HighwayIntersectionInfo_0x00009104]
+;Added by SA
+;avenue orthogonal x avenue orthogonal puzzle piece
+Piece = -16.0, 16.0, 0, 0, 0x54301205
+PreviewEffect = preview_75m_elevated_av_008
+
+CellLayout =..........
+CellLayout =....WX...<
+CellLayout =....YZ....
+CellLayout =.....^....
+
+CheckType = W - avenue:0x02040200
+CheckType = X - avenue:0x02000204
+CheckType = Y - avenue:0x02040200
+CheckType = Z - avenue:0x02000204
+
+ConsLayout =..........
+ConsLayout =....++...<
+ConsLayout =....++....
+ConsLayout =.....^....
+
+AutoTileBase=	0x54301200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009015
+Costs       = 400
+[HighwayIntersectionInfo_0x00019104]
+CopyFrom    = 0x9104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029104]
+CopyFrom    = 0x9104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039104]
+CopyFrom    = 0x9104
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049104]
+CopyFrom    = 0x9104
+[HighwayIntersectionInfo_0x00059104]
+CopyFrom    = 0x19104
+[HighwayIntersectionInfo_0x00069104]
+CopyFrom    = 0x29104
+[HighwayIntersectionInfo_0x00079104]
+CopyFrom    = 0x39104
+
+
+[HighwayIntersectionInfo_0x00089104]
+;Added by SA
+;avenue diagonal x avenue orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301225
+PreviewEffect = preview_75m_elevated_av_009
+
+CellLayout =.....
+CellLayout =...X..
+CellLayout =...YA<
+CellLayout =...ZB.
+CellLayout =....C.
+CellLayout =...^..
+
+CheckType = A - avenue:0x02000204
+CheckType = B - avenue:0x02000204
+CheckType = C - avenue:0x02000204
+CheckType = X - avenue:0x02040200
+CheckType = Y - avenue:0x02040200
+CheckType = Z - avenue:0x02040200
+
+ConsLayout =......
+ConsLayout =...+..
+ConsLayout =...++<
+ConsLayout =...++.
+ConsLayout =....+.
+ConsLayout =...^..
+
+AutoTileBase=	0x54301220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009015
+Costs       = 400
+[HighwayIntersectionInfo_0x00099104]
+CopyFrom    = 0x89104
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9104]
+CopyFrom    = 0x89104
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9104]
+CopyFrom    = 0x89104
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C9104]
+CopyFrom    = 0x89104
+Transpose = 1
+[HighwayIntersectionInfo_0x000D9104]
+CopyFrom    = 0xC9104
+Rotate		= 3
+[HighwayIntersectionInfo_0x000E9104]
+CopyFrom    = 0xC9104
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F9104]
+CopyFrom    = 0xC9104
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x00009105]
+;avenue orthogonal x diagonal avenue puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301265
+PreviewEffect = preview_75m_elevated_av_00a
+
+CellLayout =.........
+CellLayout =....A....
+CellLayout =....BA..<
+CellLayout =....CB...
+CellLayout =.....C...
+CellLayout =....^....
+
+CheckType = A - avenue:0x01000003
+CheckType = B - avenue:0x01030103
+CheckType = C - avenue:0x00030100
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....++..<
+ConsLayout =....++...
+ConsLayout =.....+...
+ConsLayout =....^....
+
+AutoTileBase=	0x54301260
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009015
+Costs       = 400
+[HighwayIntersectionInfo_0x00019105]
+CopyFrom    = 0x9105
+Rotate = 1
+[HighwayIntersectionInfo_0x00029105]
+CopyFrom    = 0x9105
+Transpose = 1
+[HighwayIntersectionInfo_0x00039105]
+CopyFrom    = 0x29105
+Rotate	= 1
+[HighwayIntersectionInfo_0x00049105]
+CopyFrom    = 0x9105
+[HighwayIntersectionInfo_0x00059105]
+CopyFrom    = 0x19105
+[HighwayIntersectionInfo_0x00069105]
+CopyFrom    = 0x29105
+[HighwayIntersectionInfo_0x00079105]
+CopyFrom    = 0x39105
+
+
+[HighwayIntersectionInfo_0x00089105]
+;Added by SA
+;avenue diagonal x avenue diagonal puzzle piece 1a
+Piece = 0.0, -16.0, 0, 0, 0x543010A5
+PreviewEffect = preview_75m_elevated_av_00b
+
+CellLayout =.........
+CellLayout =....W....
+CellLayout =...AXB..<
+CellLayout =....Y....
+CellLayout =....^....
+
+CheckType = A - avenue:0x03010000
+CheckType = B - avenue:0x00000301
+CheckType = W - avenue:0x03010000
+CheckType = X - avenue:0x03010301
+CheckType = Y - avenue:0x00000301
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =...+++..<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x543010A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009015
+Costs       = 400
+[HighwayIntersectionInfo_0x00099105]
+CopyFrom    = 0x89105
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9105]
+CopyFrom    = 0x89105
+[HighwayIntersectionInfo_0x000B9105]
+CopyFrom    = 0x99105
+
+
+[HighwayIntersectionInfo_0x000C9105]
+;Added by SA
+;avenue diagonal x avenue diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301085
+PreviewEffect = preview_75m_elevated_av_00c
+
+CellLayout =........
+CellLayout =...WY..<
+CellLayout =...XZ...
+CellLayout =...^....
+
+CheckType = W - avenue:0x03010000
+CheckType = X - avenue:0x03010301
+CheckType = Y - avenue:0x03010301
+CheckType = Z - avenue:0x00000301
+
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...++...
+ConsLayout =...^....
+
+AutoTileBase=	0x54301080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009015
+Costs       = 400
+[HighwayIntersectionInfo_0x000D9105]
+CopyFrom    = 0xC9105
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E9105]
+CopyFrom    = 0xC9105
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F9105]
+CopyFrom    = 0xC9105
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00009106]
+;Added by SA
+;avenue orthogonal x rail orthogonal puzzle piece
+Piece = 0.0, 16.0, 0, 0, 0x54301405
+PreviewEffect = preview_75m_elevated_av_00d
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =....Z...
+CellLayout =....^...
+
+CheckType = Y - avenue: 0x04020002 rail: 0x02000200
+CheckType = Z - avenue: 0x00020402 rail: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....+...
+ConsLayout =....^...
+
+AutoTileBase=	0x54301400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00019106]
+CopyFrom    = 0x9106
+Rotate = 1
+[HighwayIntersectionInfo_0x00029106]
+CopyFrom    = 0x9106
+[HighwayIntersectionInfo_0x00039106]
+CopyFrom    = 0x19106
+[HighwayIntersectionInfo_0x00049106]
+CopyFrom    = 0x9106
+[HighwayIntersectionInfo_0x00059106]
+CopyFrom    = 0x19106
+[HighwayIntersectionInfo_0x00069106]
+CopyFrom    = 0x9106
+[HighwayIntersectionInfo_0x00079106]
+CopyFrom    = 0x19106
+
+
+[HighwayIntersectionInfo_0x00089106]
+;Added by SA
+;avenue diagonal x rail orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301425
+PreviewEffect = preview_75m_elevated_av_00e
+
+CellLayout =......
+CellLayout =...X..
+CellLayout =...Y.<
+CellLayout =...Z..
+CellLayout =...^..
+
+CheckType = X - avenue:0x01000003 rail:0x02000200
+CheckType = Y - avenue:0x01030103 rail:0x02000200
+CheckType = Z - avenue:0x00030100 rail:0x02000200
+
+ConsLayout =......
+ConsLayout =...+..
+ConsLayout =...+.<
+ConsLayout =...+..
+ConsLayout =...^..
+
+AutoTileBase=	0x54301420
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00099106]
+CopyFrom    = 0x89106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9106]
+CopyFrom    = 0x89106
+Transpose = 1
+[HighwayIntersectionInfo_0x000B9106]
+CopyFrom    = 0xA9106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000C9106]
+CopyFrom    = 0x89106
+[HighwayIntersectionInfo_0x000D9106]
+CopyFrom    = 0x99106
+[HighwayIntersectionInfo_0x000E9106]
+CopyFrom    = 0xA9106
+[HighwayIntersectionInfo_0x000F9106]
+CopyFrom    = 0xB9106
+
+
+[HighwayIntersectionInfo_0x00009107]
+; avenue orthogonal x double diagonal rail puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301455
+PreviewEffect = preview_75m_elevated_av_00f
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =....z...
+CellLayout =...^....
+
+CheckType = Z - avenue:0x04020002 rail:0x01030103
+CheckType = z - avenue:0x00020402 rail:0x01030103
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =....+...
+ConsLayout =...^....
+
+AutoTileBase=	0x54301450
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00019107]
+CopyFrom    = 0x9107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029107]
+CopyFrom    = 0x9107
+Transpose = 1
+[HighwayIntersectionInfo_0x00039107]
+CopyFrom    = 0x29107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00049107]
+CopyFrom    = 0x9107
+[HighwayIntersectionInfo_0x00059107]
+CopyFrom    = 0x19107
+[HighwayIntersectionInfo_0x00069107]
+CopyFrom    = 0x29107
+[HighwayIntersectionInfo_0x00079107]
+CopyFrom    = 0x39107
+
+
+[HighwayIntersectionInfo_0x00089107]
+;Added by SA
+;avenue diagonal x rail double diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x54301475
+PreviewEffect = preview_75m_elevated_av_010
+
+CellLayout =.......
+CellLayout =...Y..<
+CellLayout =....Z..
+CellLayout =...^...
+
+CheckType = Y - avenue:0x03010000 rail:0x01030103
+CheckType = Z - avenue:0x00000301 rail:0x01030103
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =....+..
+ConsLayout =...^...
+
+AutoTileBase=	0x54301470
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00099107]
+CopyFrom    = 0x89107
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9107]
+CopyFrom    = 0x89107
+[HighwayIntersectionInfo_0x000B9107]
+CopyFrom    = 0x99107
+
+
+[HighwayIntersectionInfo_0x000C9107]
+;Added by SA
+;avenue diagonal x rail double diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301490
+PreviewEffect = preview_75m_elevated_av_011
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - avenue:0x01030103 rail:0x03010301
+
+ConsLayout =.......
+ConsLayout =....+.<
+ConsLayout =....^..
+
+AutoTileBase=	0x54301490
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x000D9107]
+CopyFrom    = 0xC9107
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E9107]
+CopyFrom    = 0xC9107
+[HighwayIntersectionInfo_0x000F9107]
+CopyFrom    = 0xD9107
+
+
+[HighwayIntersectionInfo_0x00009108]
+; avenue orthogonal x diagonal rail puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x543013A5
+PreviewEffect = preview_75m_elevated_av_012
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =....z...
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - avenue:0x04020002 rail:0x00030100
+CheckType = z - avenue:0x00020402 rail:0x00030100
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =....+...
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase=	0x543013A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00019108]
+CopyFrom    = 0x9108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029108]
+CopyFrom    = 0x9108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039108]
+CopyFrom    = 0x9108
+Rotate		= 3
+[HighwayIntersectionInfo_0x00049108]
+CopyFrom    = 0x9108
+Transpose = 1
+[HighwayIntersectionInfo_0x00059108]
+CopyFrom    = 0x49108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00069108]
+CopyFrom    = 0x49108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00079108]
+CopyFrom    = 0x49108
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00089108]
+;Added by SA
+;avenue diagonal x rail diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x543013C5
+PreviewEffect = preview_75m_elevated_av_013
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =.....Z..
+CellLayout =....^...
+
+CheckType = Y - avenue:0x03010000 rail:0x01000003
+CheckType = Z - avenue:0x00000301 rail:0x01000003
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =.....+..
+ConsLayout =....^...
+
+AutoTileBase=	0x543013C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x00099108]
+CopyFrom    = 0x89108
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9108]
+CopyFrom    = 0x89108
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9108]
+CopyFrom    = 0x89108
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x000C9108]
+;Added by SA
+;avenue diagonal x rail diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x543013E0
+PreviewEffect = preview_75m_elevated_av_014
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - avenue:0x01030103 rail:0x00000301
+
+ConsLayout =......
+ConsLayout =...+.<
+ConsLayout =...^..
+
+AutoTileBase=	0x543013E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009017
+Costs       = 250
+[HighwayIntersectionInfo_0x000D9108]
+CopyFrom    = 0xC9108
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E9108]
+CopyFrom    = 0xC9108
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F9108]
+CopyFrom    = 0xC9108
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00009109]
+;Added by SA
+;avenue orthogonal x street orthogonal puzzle piece
+Piece = 0.0, 16.0, 0, 0, 0x54301505
+PreviewEffect = preview_75m_elevated_av_015
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =....Z...
+CellLayout =....^...
+
+CheckType = Y - avenue: 0x04020002 street: 0x02000200
+CheckType = Z - avenue: 0x00020402 street: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....+...
+ConsLayout =....^...
+
+AutoTileBase=	0x54301500
+
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009025
+Costs       = 200
+[HighwayIntersectionInfo_0x00019109]
+CopyFrom    = 0x9109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029109]
+CopyFrom    = 0x9109
+[HighwayIntersectionInfo_0x00039109]
+CopyFrom    = 0x19109
+[HighwayIntersectionInfo_0x00049109]
+CopyFrom    = 0x9109
+[HighwayIntersectionInfo_0x00059109]
+CopyFrom    = 0x19109
+[HighwayIntersectionInfo_0x00069109]
+CopyFrom    = 0x9109
+[HighwayIntersectionInfo_0x00079109]
+CopyFrom    = 0x19109
+
+
+[HighwayIntersectionInfo_0x00089109]
+;Added by SA
+;avenue diagonal x street orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301525
+PreviewEffect = preview_75m_elevated_av_016
+
+CellLayout =......
+CellLayout =...X..
+CellLayout =...Y.<
+CellLayout =...Z..
+CellLayout =...^..
+
+CheckType = X - avenue:0x01000003 street:0x02000200
+CheckType = Y - avenue:0x01030103 street:0x02000200
+CheckType = Z - avenue:0x00030100 street:0x02000200
+
+ConsLayout =......
+ConsLayout =...+..
+ConsLayout =...+.<
+ConsLayout =...+..
+ConsLayout =...^..
+
+AutoTileBase=	0x54301520
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009025
+Costs       = 200
+[HighwayIntersectionInfo_0x00099109]
+CopyFrom    = 0x89109
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A9109]
+CopyFrom    = 0x89109
+Transpose = 1
+[HighwayIntersectionInfo_0x000B9109]
+CopyFrom    = 0xA9109
+Rotate = 1
+[HighwayIntersectionInfo_0x000C9109]
+CopyFrom    = 0x89109
+[HighwayIntersectionInfo_0x000D9109]
+CopyFrom    = 0x99109
+[HighwayIntersectionInfo_0x000E9109]
+CopyFrom    = 0xA9109
+[HighwayIntersectionInfo_0x000F9109]
+CopyFrom    = 0xB9109
+
+
+[HighwayIntersectionInfo_0x0000910A]
+;Added by SA
+;avenue orthogonal x road orthogonal puzzle piece
+Piece = 0.0, 16.0, 0, 0, 0x54301605
+PreviewEffect = preview_75m_elevated_av_017
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =....Z...
+CellLayout =....^...
+
+CheckType = Y - avenue: 0x04020002 road: 0x02000200
+CheckType = Z - avenue: 0x00020402 road: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....+...
+ConsLayout =....^...
+
+AutoTileBase=	0x54301600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910A]
+CopyFrom    = 0x910A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910A]
+CopyFrom    = 0x910A
+[HighwayIntersectionInfo_0x0003910A]
+CopyFrom    = 0x1910A
+[HighwayIntersectionInfo_0x0004910A]
+CopyFrom    = 0x910A
+[HighwayIntersectionInfo_0x0005910A]
+CopyFrom    = 0x1910A
+[HighwayIntersectionInfo_0x0006910A]
+CopyFrom    = 0x910A
+[HighwayIntersectionInfo_0x0007910A]
+CopyFrom    = 0x1910A
+
+
+[HighwayIntersectionInfo_0x0008910A]
+;Added by SA
+;avenue diagonal x road orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301625
+PreviewEffect = preview_75m_elevated_av_018
+
+CellLayout =.....
+CellLayout =..X..
+CellLayout =..Y.<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = X - avenue:0x01000003 road:0x02000200
+CheckType = Y - avenue:0x01030103 road:0x02000200
+CheckType = Z - avenue:0x00030100 road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+..
+ConsLayout =..+.<
+ConsLayout =..+..
+ConsLayout =..^..
+
+AutoTileBase=	0x54301620
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910A]
+CopyFrom    = 0x8910A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910A]
+CopyFrom    = 0x8910A
+Transpose = 1
+[HighwayIntersectionInfo_0x000B910A]
+CopyFrom    = 0xA910A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000C910A]
+CopyFrom    = 0x8910A
+[HighwayIntersectionInfo_0x000D910A]
+CopyFrom    = 0x9910A
+[HighwayIntersectionInfo_0x000E910A]
+CopyFrom    = 0xA910A
+[HighwayIntersectionInfo_0x000F910A]
+CopyFrom    = 0xB910A
+
+
+[HighwayIntersectionInfo_0x0000910B]
+; avenue orthogonal x double diagonal road puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301655
+PreviewEffect = preview_75m_elevated_av_019
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =.....z....
+CellLayout =....^.....
+
+CheckType = Z - avenue:0x04020002 road:0x01030103
+CheckType = z - avenue:0x00020402 road:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =.....+....
+ConsLayout =....^.....
+
+AutoTileBase=	0x54301650
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910B]
+CopyFrom    = 0x910B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910B]
+CopyFrom    = 0x910B
+Transpose = 1
+[HighwayIntersectionInfo_0x0003910B]
+CopyFrom    = 0x2910B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004910B]
+CopyFrom    = 0x910B
+[HighwayIntersectionInfo_0x0005910B]
+CopyFrom    = 0x1910B
+[HighwayIntersectionInfo_0x0006910B]
+CopyFrom    = 0x2910B
+[HighwayIntersectionInfo_0x0007910B]
+CopyFrom    = 0x3910B
+
+
+[HighwayIntersectionInfo_0x0008910B]
+;Added by SA
+;avenue diagonal x road double diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x54301675
+PreviewEffect = preview_75m_elevated_av_01a
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =.....Z..
+CellLayout =....^...
+
+CheckType = Y - avenue:0x03010000 road:0x01030103
+CheckType = Z - avenue:0x00000301 road:0x01030103
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =.....+..
+ConsLayout =....^...
+
+AutoTileBase=	0x54301670
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910B]
+CopyFrom    = 0x8910B
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910B]
+CopyFrom    = 0x8910B
+[HighwayIntersectionInfo_0x000B910B]
+CopyFrom    = 0x9910B
+
+
+[HighwayIntersectionInfo_0x000C910B]
+;Added by SA
+;avenue diagonal x road double diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301590
+PreviewEffect = preview_75m_elevated_av_01b
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - avenue:0x01030103 road:0x03010301
+
+ConsLayout =.......
+ConsLayout =....+.<
+ConsLayout =....^..
+
+AutoTileBase=	0x54301590
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x000D910B]
+CopyFrom    = 0xC910B
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E910B]
+CopyFrom    = 0xC910B
+[HighwayIntersectionInfo_0x000F910B]
+CopyFrom    = 0xD910B
+
+
+[HighwayIntersectionInfo_0x0000910C]
+; avenue orthogonal x diagonal road puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x543015A5
+PreviewEffect = preview_75m_elevated_av_01c
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =.....z...
+CellLayout =....^....
+
+CheckType = Z - avenue:0x04020002 road:0x00030100
+CheckType = z - avenue:0x00020402 road:0x00030100
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =.....+....
+ConsLayout =....^.....
+
+AutoTileBase=	0x543015A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910C]
+CopyFrom    = 0x910C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910C]
+CopyFrom    = 0x910C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003910C]
+CopyFrom    = 0x910C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004910C]
+CopyFrom    = 0x910C
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005910C]
+CopyFrom    = 0x4910C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006910C]
+CopyFrom    = 0x4910C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007910C]
+CopyFrom    = 0x4910C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0008910C]
+;Added by SA
+;avenue diagonal x road diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x543015C5
+PreviewEffect = preview_75m_elevated_av_01d
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =.....Z..
+CellLayout =....^...
+
+CheckType = Y - avenue:0x03010000 road:0x01000003
+CheckType = Z - avenue:0x00000301 road:0x01000003
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =.....+..
+ConsLayout =....^...
+
+AutoTileBase=	0x543015C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910C]
+CopyFrom    = 0x8910C
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910C]
+CopyFrom    = 0x8910C
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B910C]
+CopyFrom    = 0x8910C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x000C910C]
+;Added by SA
+;avenue diagonal x road diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301690
+PreviewEffect = preview_75m_elevated_av_01e
+
+CellLayout =.........
+CellLayout =....Z.<..
+CellLayout =....^....
+
+CheckType = Z - avenue:0x01030103 road:0x00000301
+
+ConsLayout =........
+ConsLayout =....+.<.
+ConsLayout =....^...
+
+AutoTileBase=	0x54301690
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009035
+Costs       = 225
+[HighwayIntersectionInfo_0x000D910C]
+CopyFrom    = 0xC910C
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E910C]
+CopyFrom    = 0xC910C
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F910C]
+CopyFrom    = 0xC910C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000910D]
+;Added by SA
+;Avenue orthogonal x OneWayRoad orthogonal puzzle piece
+Piece = 0.0, 16.0, 0, 0, 0x54301705
+PreviewEffect = preview_75m_elevated_av_01f
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =....Z...
+CellLayout =....^...
+
+CheckType = Y - avenue: 0x04020002 onewayroad: 0x02000200
+CheckType = Z - avenue: 0x00020402 onewayroad: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....+...
+ConsLayout =....^...
+
+AutoTileBase=	0x54301700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910D]
+CopyFrom    = 0x910D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910D]
+CopyFrom    = 0x910D
+[HighwayIntersectionInfo_0x0003910D]
+CopyFrom    = 0x1910D
+[HighwayIntersectionInfo_0x0004910D]
+CopyFrom    = 0x910D
+[HighwayIntersectionInfo_0x0005910D]
+CopyFrom    = 0x1910D
+[HighwayIntersectionInfo_0x0006910D]
+CopyFrom    = 0x910D
+[HighwayIntersectionInfo_0x0007910D]
+CopyFrom    = 0x1910D
+
+
+[HighwayIntersectionInfo_0x0008910D]
+;Added by SA
+;avenue diagonal x onewayroad orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301725
+PreviewEffect = preview_75m_elevated_av_020
+
+CellLayout =........
+CellLayout =....X...
+CellLayout =....Y.<.
+CellLayout =....Z...
+CellLayout =....^...
+
+CheckType = X - avenue:0x01000003 onewayroad:0x02000200
+CheckType = Y - avenue:0x01030103 onewayroad:0x02000200
+CheckType = Z - avenue:0x00030100 onewayroad:0x02000200
+
+ConsLayout =.......
+ConsLayout =....+..
+ConsLayout =....+.<
+ConsLayout =....+..
+ConsLayout =....^..
+
+AutoTileBase=	0x54301720
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910D]
+CopyFrom    = 0x8910D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910D]
+CopyFrom    = 0x8910D
+Transpose = 1
+[HighwayIntersectionInfo_0x000B910D]
+CopyFrom    = 0xA910D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000C910D]
+CopyFrom    = 0x8910D
+[HighwayIntersectionInfo_0x000D910D]
+CopyFrom    = 0x9910D
+[HighwayIntersectionInfo_0x000E910D]
+CopyFrom    = 0xA910D
+[HighwayIntersectionInfo_0x000F910D]
+CopyFrom    = 0xB910D
+
+
+[HighwayIntersectionInfo_0x0000910E]
+; avenue orthogonal x double diagonal onewayroad puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301805
+PreviewEffect = preview_75m_elevated_av_021
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =.....z....
+CellLayout =....^.....
+
+CheckType = Z - avenue:0x04020002 onewayroad:0x01030103
+CheckType = z - avenue:0x00020402 onewayroad:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =.....+....
+ConsLayout =....^.....
+
+AutoTileBase = 0x54301800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910E]
+CopyFrom    = 0x910E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910E]
+CopyFrom    = 0x910E
+Transpose = 1
+[HighwayIntersectionInfo_0x0003910E]
+CopyFrom    = 0x2910E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004910E]
+CopyFrom    = 0x910E
+[HighwayIntersectionInfo_0x0005910E]
+CopyFrom    = 0x1910E
+[HighwayIntersectionInfo_0x0006910E]
+CopyFrom    = 0x2910E
+[HighwayIntersectionInfo_0x0007910E]
+CopyFrom    = 0x3910E
+
+
+[HighwayIntersectionInfo_0x0008910E]
+;Added by SA
+;avenue diagonal x onewayroad double diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x54301825
+PreviewEffect = preview_75m_elevated_av_022
+
+CellLayout  =.........
+CellLayout  =....Y..<.
+CellLayout  =.....Z...
+CellLayout  =....^....
+
+CheckType  = Y - avenue:0x03010000 onewayroad:0x01030103
+CheckType  = Z - avenue:0x00000301 onewayroad:0x01030103
+
+ConsLayout  =.........
+ConsLayout  =....+..<.
+ConsLayout  =.....+...
+ConsLayout  =....^....
+
+AutoTileBase=	0x54301820
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910E]
+CopyFrom    = 0x8910E
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910E]
+CopyFrom    = 0x8910E
+[HighwayIntersectionInfo_0x000B910E]
+CopyFrom    = 0x9910E
+
+
+[HighwayIntersectionInfo_0x000C910E]
+;Added by SA
+;avenue diagonal x onewayroad double diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301840
+PreviewEffect = preview_75m_elevated_av_023
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - avenue:0x01030103 onewayroad:0x03010301
+
+ConsLayout =......
+ConsLayout =...+.<
+ConsLayout =......
+ConsLayout =...^..
+
+AutoTileBase=	0x54301840
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x000D910E]
+CopyFrom    = 0xC910E
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E910E]
+CopyFrom    = 0xC910E
+[HighwayIntersectionInfo_0x000F910E]
+CopyFrom    = 0xD910E
+
+
+[HighwayIntersectionInfo_0x0000910F]
+; avenue orthogonal x diagonal onewayroad puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301855
+PreviewEffect = preview_75m_elevated_av_024
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =.....z...
+CellLayout =....^....
+
+CheckType = Z - avenue:0x04020002 onewayroad:0x00030100
+CheckType = z - avenue:0x00020402 onewayroad:0x00030100
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =.....+....
+ConsLayout =....^.....
+
+AutoTileBase=	0x54301850
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0001910F]
+CopyFrom    = 0x910F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002910F]
+CopyFrom    = 0x910F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003910F]
+CopyFrom    = 0x910F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004910F]
+CopyFrom    = 0x910F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005910F]
+CopyFrom    = 0x4910F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006910F]
+CopyFrom    = 0x4910F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007910F]
+CopyFrom    = 0x4910F
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0008910F]
+;Added by SA
+;avenue diagonal x onewayroad diagonal puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x54301875
+PreviewEffect = preview_75m_elevated_av_025
+
+CellLayout =.........
+CellLayout =....Y..<.
+CellLayout =.....Z...
+CellLayout =....^....
+
+CheckType = Y - avenue:0x03010000 onewayroad:0x01000003
+CheckType = Z - avenue:0x00000301 onewayroad:0x01000003
+
+ConsLayout =.........
+ConsLayout =....+..<.
+ConsLayout =.....+...
+ConsLayout =....^....
+
+AutoTileBase=	0x54301870
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x0009910F]
+CopyFrom    = 0x8910F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A910F]
+CopyFrom    = 0x8910F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B910F]
+CopyFrom    = 0x8910F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x000C910F]
+;Added by SA
+;avenue diagonal x onewayroad diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301940
+PreviewEffect = preview_75m_elevated_av_026
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - avenue:0x01030103 onewayroad:0x00000301
+
+ConsLayout =.......
+ConsLayout =....+.<
+ConsLayout =....^..
+
+AutoTileBase=	0x54301940
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009045
+Costs       = 225
+[HighwayIntersectionInfo_0x000D910F]
+CopyFrom    = 0xC910F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E910F]
+CopyFrom    = 0xC910F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F910F]
+CopyFrom    = 0xC910F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00009110]
+;Added by SA
+;avenue orthogonal x groundhighway orthogonal puzzle piece
+Piece = -16.0, 0.0, 0, 0, 0x54301A05
+PreviewEffect = preview_75m_elevated_av_027
+
+CellLayout =...........
+CellLayout =....WX....<
+CellLayout =....YZ.....
+CellLayout =.....^.....
+
+CheckType = W - groundhighway: 0x02040200 avenue: 0x04020002
+CheckType = X - groundhighway: 0x02000204 avenue: 0x04020002
+CheckType = Y - groundhighway: 0x02040200 avenue: 0x00020402
+CheckType = Z - groundhighway: 0x02000204 avenue: 0x00020402
+
+ConsLayout =...........
+ConsLayout =....++....<
+ConsLayout =....++.....
+ConsLayout =.....^.....
+
+AutoTileBase=	0x54301A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009055
+Costs       = 600
+[HighwayIntersectionInfo_0x00019110]
+CopyFrom    = 0x9110
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029110]
+CopyFrom    = 0x9110
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039110]
+CopyFrom    = 0x9110
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049110]
+CopyFrom    = 0x9110
+[HighwayIntersectionInfo_0x00059110]
+CopyFrom    = 0x19110
+[HighwayIntersectionInfo_0x00069110]
+CopyFrom    = 0x29110
+[HighwayIntersectionInfo_0x00079110]
+CopyFrom    = 0x39110
+
+
+[HighwayIntersectionInfo_0x00089110]
+;Added by SA
+;avenue diagonal x groundhighway orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301A25
+PreviewEffect = preview_75m_elevated_av_028
+
+CellLayout =........
+CellLayout =....X...
+CellLayout =....YA<.
+CellLayout =....ZB..
+CellLayout =.....C..
+CellLayout =....^...
+
+CheckType = A - avenue:0x01000003 groundhighway:0x02000204
+CheckType = B - avenue:0x01030103 groundhighway:0x02000204
+CheckType = C - avenue:0x00030100 groundhighway:0x02000204
+CheckType = X - avenue:0x01000003 groundhighway:0x02040200
+CheckType = Y - avenue:0x01030103 groundhighway:0x02040200
+CheckType = Z - avenue:0x00030100 groundhighway:0x02040200
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....++..<
+ConsLayout =....++...
+ConsLayout =.....+...
+ConsLayout =....^....
+
+AutoTileBase=	0x54301A20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009055
+Costs       = 600
+[HighwayIntersectionInfo_0x00099110]
+CopyFrom    = 0x89110
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9110]
+CopyFrom    = 0x89110
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9110]
+CopyFrom    = 0x89110
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C9110]
+CopyFrom    = 0x89110
+Transpose = 1
+[HighwayIntersectionInfo_0x000D9110]
+CopyFrom    = 0xC9110
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x000E9110]
+CopyFrom    = 0xC9110
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F9110]
+CopyFrom    = 0xC9110
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x00009111]
+; avenue orthogonal x diagonal groundhighway puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301A65
+PreviewEffect = preview_75m_elevated_av_029
+
+CellLayout =.........
+CellLayout =....A....
+CellLayout =....Ba..<
+CellLayout =....Cb...
+CellLayout =.....c...
+CellLayout =....^....
+
+CheckType = A - avenue:0x02000000 groundhighway:0x01000003
+CheckType = a - avenue:0x02000004 groundhighway:0x01000003
+CheckType = B - avenue:0x02040200 groundhighway:0x01030103
+CheckType = b - avenue:0x02000204 groundhighway:0x01030103
+CheckType = C - avenue:0x00040200 groundhighway:0x00030100
+CheckType = c - avenue:0x00000200 groundhighway:0x00030100
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....++..<
+ConsLayout =....++...
+ConsLayout =.....+...
+ConsLayout =....^....
+
+AutoTileBase=	0x54301A60
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009055
+Costs       = 600
+[HighwayIntersectionInfo_0x00019111]
+CopyFrom    = 0x9111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029111]
+CopyFrom    = 0x9111
+Transpose = 1
+[HighwayIntersectionInfo_0x00039111]
+CopyFrom    = 0x29111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00049111]
+CopyFrom    = 0x9111
+[HighwayIntersectionInfo_0x00059111]
+CopyFrom    = 0x19111
+[HighwayIntersectionInfo_0x00069111]
+CopyFrom    = 0x29111
+[HighwayIntersectionInfo_0x00079111]
+CopyFrom    = 0x39111
+
+
+[HighwayIntersectionInfo_0x00089111]
+;Added by SA
+;avenue diagonal x groundhighway diagonal puzzle piece 1a
+Piece = 0.0, -16.0, 0, 0, 0x54301795
+PreviewEffect = preview_75m_elevated_av_02a
+
+CellLayout =.........
+CellLayout =....W....
+CellLayout =...AXB..<
+CellLayout =....Y....
+CellLayout =....^....
+
+CheckType = A - avenue:0x00030100 groundhighway:0x03010000
+CheckType = B - avenue:0x01000003 groundhighway:0x00000301
+CheckType = W - avenue:0x01000003 groundhighway:0x03010000
+CheckType = X - avenue:0x01030103 groundhighway:0x03010301
+CheckType = Y - avenue:0x00030100 groundhighway:0x00000301
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =...+++..<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x54301790
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009055
+Costs       = 600
+[HighwayIntersectionInfo_0x00099111]
+CopyFrom    = 0x89111
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9111]
+CopyFrom    = 0x89111
+[HighwayIntersectionInfo_0x000B9111]
+CopyFrom    = 0x99111
+
+
+[HighwayIntersectionInfo_0x000C9111]
+;Added by SA
+;avenue diagonal x groundhighway diagonal puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x54301AA5
+PreviewEffect = preview_75m_elevated_av_02b
+
+CellLayout =........
+CellLayout =...WY..<
+CellLayout =...XZ...
+CellLayout =...^....
+
+CheckType = W - avenue:0x01030103 groundhighway:0x03010000
+CheckType = X - avenue:0x00030100 groundhighway:0x03010301
+CheckType = Y - avenue:0x01000003 groundhighway:0x03010301
+CheckType = Z - avenue:0x01030103 groundhighway:0x00000301
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...++...
+ConsLayout =...^....
+
+AutoTileBase=	0x54301AA0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009055
+Costs       = 600
+[HighwayIntersectionInfo_0x000D9111]
+CopyFrom    = 0xC9111
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E9111]
+CopyFrom    = 0xC9111
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F9111]
+CopyFrom    = 0xC9111
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00009112]
+;Added by SA
+;avenuexavenue + intersection puzzle piece
+Piece = -16.0, 0.0, 0, 0, 0x543014E5
+PreviewEffect = preview_75m_elevated_av_02c
+
+CellLayout =...........
+CellLayout =....WX....<
+CellLayout =....YZ.....
+CellLayout =.....^.....
+
+CheckType = W - avenue:0x04040202 road: 0x02020202
+CheckType = X - avenue:0x04020204 road: 0x02020202
+CheckType = Y - avenue:0x02040402 road: 0x02020202
+CheckType = Z - avenue:0x02020404 road: 0x02020202
+
+ConsLayout =...........
+ConsLayout =....++...<
+ConsLayout =....++.....
+ConsLayout =.....^.....
+
+AutoTileBase=	0x543014E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009210
+Costs       = 350
+[HighwayIntersectionInfo_0x00019112]
+CopyFrom    = 0x9112
+Rotate		= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00029112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x00039112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x00049112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x00059112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x00069112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x00079112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x00089112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x00099112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x000A9112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x000B9112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x000C9112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x000D9112]
+CopyFrom    = 0x19112
+[HighwayIntersectionInfo_0x000E9112]
+CopyFrom    = 0x9112
+[HighwayIntersectionInfo_0x000F9112]
+CopyFrom    = 0x19112
+
+
+[HighwayIntersectionInfo_0x00009113]
+;Added by SA
+;avenuexavenue T intersection puzzle piece
+Piece = -16.0, 0.0, 0, 0, 0x543016E5
+PreviewEffect = preview_75m_elevated_av_02d
+
+CellLayout =...........
+CellLayout =....WX....<
+CellLayout =....YZ.....
+CellLayout =.....^.....
+
+CheckType = W - avenue:0x04040200 road: 0x02020200
+CheckType = X - avenue:0x04020204 road: 0x02020202
+CheckType = Y - avenue:0x02040400 road: 0x02020200
+CheckType = Z - avenue:0x02020404 road: 0x02020202
+
+ConsLayout =...........
+ConsLayout =....++...<
+ConsLayout =....++.....
+ConsLayout =.....^.....
+
+AutoTileBase=	0x543016E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009220
+Costs       = 350
+[HighwayIntersectionInfo_0x00019113]
+CopyFrom    = 0x9113
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029113]
+CopyFrom    = 0x9113
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039113]
+CopyFrom    = 0x9113
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049113]
+CopyFrom    = 0x9113
+[HighwayIntersectionInfo_0x00059113]
+CopyFrom    = 0x19113
+[HighwayIntersectionInfo_0x00069113]
+CopyFrom    = 0x29113
+[HighwayIntersectionInfo_0x00079113]
+CopyFrom    = 0x39113
+[HighwayIntersectionInfo_0x00089113]
+CopyFrom    = 0x9113
+[HighwayIntersectionInfo_0x00099113]
+CopyFrom    = 0x19113
+[HighwayIntersectionInfo_0x000A9113]
+CopyFrom    = 0x29113
+[HighwayIntersectionInfo_0x000B9113]
+CopyFrom    = 0x39113
+[HighwayIntersectionInfo_0x000C9113]
+CopyFrom    = 0x9113
+[HighwayIntersectionInfo_0x000D9113]
+CopyFrom    = 0x19113
+[HighwayIntersectionInfo_0x000E9113]
+CopyFrom    = 0x29113
+[HighwayIntersectionInfo_0x000F9113]
+CopyFrom    = 0x39113
+
+
+[HighwayIntersectionInfo_0x00009114]
+;Added by SA
+;avenuexroad/onewayroad + intersection puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x543017C5
+PreviewEffect = preview_75m_elevated_av_02e
+
+CellLayout = ..........
+CellLayout = ....c....<
+CellLayout = ....d.....
+CellLayout = ....^.....
+
+CheckType = c - avenue: 0x04020202 road: 0x02020202
+CheckType = d - avenue: 0x02020402 road: 0x02020202
+
+ConsLayout = ........
+ConsLayout = ...+...<
+ConsLayout = ...+....
+ConsLayout = ...^....
+
+AutoTileBase=	0x543017C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009250
+Costs       = 200
+[HighwayIntersectionInfo_0x00019114]
+CopyFrom    = 0x9114
+Rotate		= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00029114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x00039114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x00049114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x00059114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x00069114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x00079114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x00089114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x00099114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x000A9114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x000B9114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x000C9114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x000D9114]
+CopyFrom    = 0x19114
+[HighwayIntersectionInfo_0x000E9114]
+CopyFrom    = 0x9114
+[HighwayIntersectionInfo_0x000F9114]
+CopyFrom    = 0x19114
+
+
+[HighwayIntersectionInfo_0x00009115]
+;Added by SA
+;avenuexroad/onewayroad T1, avenue continues, intersection puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x543018C5
+PreviewEffect = preview_75m_elevated_av_02f
+
+CellLayout =..........
+CellLayout =....c....<
+CellLayout =....d.....
+CellLayout =....^.....
+
+CheckType = c - avenue: 0x04020002 road: 0x02020202
+CheckType = d - avenue: 0x00020402 road: 0x00020202
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...+....
+ConsLayout =...^....
+
+AutoTileBase=	0x543018C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009260
+Costs       = 200
+[HighwayIntersectionInfo_0x00019115]
+CopyFrom    = 0x9115
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029115]
+CopyFrom    = 0x9115
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039115]
+CopyFrom    = 0x9115
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049115]
+CopyFrom    = 0x9115
+[HighwayIntersectionInfo_0x00059115]
+CopyFrom    = 0x19115
+[HighwayIntersectionInfo_0x00069115]
+CopyFrom    = 0x29115
+[HighwayIntersectionInfo_0x00079115]
+CopyFrom    = 0x39115
+[HighwayIntersectionInfo_0x00089115]
+CopyFrom    = 0x9115
+[HighwayIntersectionInfo_0x00099115]
+CopyFrom    = 0x19115
+[HighwayIntersectionInfo_0x000A9115]
+CopyFrom    = 0x29115
+[HighwayIntersectionInfo_0x000B9115]
+CopyFrom    = 0x39115
+[HighwayIntersectionInfo_0x000C9115]
+CopyFrom    = 0x9115
+[HighwayIntersectionInfo_0x000D9115]
+CopyFrom    = 0x19115
+[HighwayIntersectionInfo_0x000E9115]
+CopyFrom    = 0x29115
+[HighwayIntersectionInfo_0x000F9115]
+CopyFrom    = 0x39115
+
+
+[HighwayIntersectionInfo_0x00009116]
+;Added by SA
+;avenuexroad/onewayroad T2, avenue ends, intersection puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x543018E5
+PreviewEffect = preview_75m_elevated_av_030
+
+CellLayout =.........
+CellLayout =....c...<
+CellLayout =....d....
+CellLayout =....^....
+
+CheckType = c - avenue: 0x04020002 road: 0x02020200
+CheckType = d - avenue: 0x00020402 road: 0x02020200
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...+....
+ConsLayout =...^....
+
+AutoTileBase=	0x543018E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009270
+Costs       = 200
+[HighwayIntersectionInfo_0x00019116]
+CopyFrom    = 0x9116
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029116]
+CopyFrom    = 0x9116
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039116]
+CopyFrom    = 0x9116
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049116]
+CopyFrom    = 0x9116
+[HighwayIntersectionInfo_0x00059116]
+CopyFrom    = 0x19116
+[HighwayIntersectionInfo_0x00069116]
+CopyFrom    = 0x29116
+[HighwayIntersectionInfo_0x00079116]
+CopyFrom    = 0x39116
+[HighwayIntersectionInfo_0x00089116]
+CopyFrom    = 0x9116
+
+[HighwayIntersectionInfo_0x00099116]
+CopyFrom    = 0x19116
+[HighwayIntersectionInfo_0x000A9116]
+CopyFrom    = 0x29116
+[HighwayIntersectionInfo_0x000B9116]
+CopyFrom    = 0x39116
+[HighwayIntersectionInfo_0x000C9116]
+CopyFrom    = 0x9116
+[HighwayIntersectionInfo_0x000D9116]
+CopyFrom    = 0x19116
+[HighwayIntersectionInfo_0x000E9116]
+CopyFrom    = 0x29116
+[HighwayIntersectionInfo_0x000F9116]
+CopyFrom    = 0x39116
+
+[HighwayIntersectionInfo_0x00009102]
+;avenuexorthogonal blank terrain transition to diagonal puzzle piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x543010D5
+PreviewEffect = preview_75m_elevated_av_031
+
+CellLayout =......
+CellLayout =..ab.<
+CellLayout =..cde.
+CellLayout =..^...
+
+CheckType = a - avenue:0x04020002
+CheckType = b - avenue:0x01000002
+CheckType = c - avenue:0x01000002
+CheckType = d - avenue:0x01030103
+CheckType = e - avenue:0x01000003
+
+ConsLayout =......
+ConsLayout =..-\.<
+ConsLayout =..\\\.
+ConsLayout =..^...
+
+AutoTileBase=	0x543010D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x54260800
+Costs = 300
+[HighwayIntersectionInfo_0x00019102]
+CopyFrom = 0x9102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00029102]
+CopyFrom = 0x9102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00039102]
+CopyFrom = 0x9102
+Rotate	= 3
+[HighwayIntersectionInfo_0x00049102]
+CopyFrom = 0x9102
+Transpose = 1
+[HighwayIntersectionInfo_0x00059102]
+CopyFrom = 0x49102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00069102]
+CopyFrom = 0x49102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00079102]
+CopyFrom = 0x49102
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00089102]
+CopyFrom = 0x9102
+[HighwayIntersectionInfo_0x00099102]
+CopyFrom = 0x19102
+[HighwayIntersectionInfo_0x000A9102]
+CopyFrom = 0x29102
+[HighwayIntersectionInfo_0x000B9102]
+CopyFrom = 0x39102
+[HighwayIntersectionInfo_0x000C9102]
+CopyFrom = 0x49102
+[HighwayIntersectionInfo_0x000D9102]
+CopyFrom = 0x59102
+[HighwayIntersectionInfo_0x000E9102]
+CopyFrom = 0x69102
+[HighwayIntersectionInfo_0x000F9102]
+CopyFrom = 0x79102
+
+
+
+[HighwayIntersectionInfo_0x00009117]
+;Added by SA
+;Avenue orthogonal x Ground Light Rail orthogonal Puzzle Piece
+Piece = 0.0, 16.0, 0, 0, 0x54301C05
+PreviewEffect = preview_75m_elevated_av_032
+
+CellLayout =........
+CellLayout =....Y..<
+CellLayout =....Z...
+CellLayout =....^...
+
+;CheckType = Y - avenue: 0x04020002 lightrail: 0x02000200
+;CheckType = Z - avenue: 0x00020402 lightrail: 0x02000200
+CheckType = Y - avenue: 0x04020002 lightrail: 0x00000200
+CheckType = Z - avenue: 0x00020402 lightrail: 0x02000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x54301C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5413b700
+Costs       = 250
+[HighwayIntersectionInfo_0x00019117]
+CopyFrom    = 0x9117
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029117]
+CopyFrom    = 0x9117
+[HighwayIntersectionInfo_0x00039117]
+CopyFrom    = 0x19117
+[HighwayIntersectionInfo_0x00049117]
+CopyFrom    = 0x9117
+[HighwayIntersectionInfo_0x00059117]
+CopyFrom    = 0x19117
+[HighwayIntersectionInfo_0x00069117]
+CopyFrom    = 0x9117
+[HighwayIntersectionInfo_0x00079117]
+CopyFrom    = 0x19117
+
+
+[HighwayIntersectionInfo_0x00089117]
+;Added by SA 
+;avenue diagonal x lightrail orthogonal puzzle piece
+Piece = 0.0, -16.0, 0, 0, 0x54301C25
+PreviewEffect = preview_75m_elevated_av_033
+
+CellLayout =.......
+CellLayout =....X..
+CellLayout =....Y.<
+CellLayout =....Z..
+CellLayout =....^..
+
+;CheckType = X - avenue:0x01000003 lightrail:0x02000200
+;CheckType = Y - avenue:0x01030103 lightrail:0x02000200
+;CheckType = Z - avenue:0x00030100 lightrail:0x02000200
+CheckType = X - avenue:0x01000003 lightrail:0x00000200
+CheckType = Y - avenue:0x01030103 lightrail:0x00000000
+CheckType = Z - avenue:0x00030100 lightrail:0x02000000
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....+....
+ConsLayout =....^....
+
+AutoTileBase=	0x54301C20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5413b700
+Costs       = 250
+[HighwayIntersectionInfo_0x00099117]
+CopyFrom    = 0x89117
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9117]
+CopyFrom    = 0x89117
+Transpose = 1
+[HighwayIntersectionInfo_0x000B9117]
+CopyFrom    = 0xA9117
+Rotate		= 1
+[HighwayIntersectionInfo_0x000C9117]
+CopyFrom    = 0x89117
+[HighwayIntersectionInfo_0x000D9117]
+CopyFrom    = 0x99117
+[HighwayIntersectionInfo_0x000E9117]
+CopyFrom    = 0xA9117
+[HighwayIntersectionInfo_0x000F9117]
+CopyFrom    = 0xB9117
+
+
+[HighwayIntersectionInfo_0x00009118]
+;Avenue orthogonal x Diagonal Ground Light Rail Puzzle Piece
+;Added by SA
+Piece = 0.0, 0.0, 0, 0, 0x54301D05
+
+PreviewEffect = preview_75m_elevated_av_034
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =.....z...
+CellLayout =....^....
+
+CheckType = Z - avenue:0x04020002 lightrail:0x00030100
+CheckType = z - avenue:0x00020402 lightrail:0x00030100
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =.....+....
+ConsLayout =....^.....
+
+AutoTileBase=	0x54301D00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5413c700
+Costs       = 250
+[HighwayIntersectionInfo_0x00019118]
+CopyFrom    = 0x9118
+Rotate	= 1
+[HighwayIntersectionInfo_0x00029118]
+CopyFrom    = 0x9118
+Rotate = 2
+[HighwayIntersectionInfo_0x00039118]
+CopyFrom    = 0x9118
+Rotate	= 3
+[HighwayIntersectionInfo_0x00049118]
+CopyFrom    = 0x9118
+Transpose = 1
+[HighwayIntersectionInfo_0x00059118]
+CopyFrom    = 0x49118
+Rotate = 1
+[HighwayIntersectionInfo_0x00069118]
+CopyFrom    = 0x49118
+Rotate = 2
+[HighwayIntersectionInfo_0x00079118]
+CopyFrom    = 0x49118
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00089118]
+;Added by SA
+;avenue diagonal x lightrail diagonal puzzle piece
+Piece = 16.0, 0.0, 2, 0, 0x54301D25
+PreviewEffect = preview_75m_elevated_av_035
+
+CellLayout =........
+CellLayout =....Y...
+CellLayout =....XZ.<
+CellLayout =....^...
+
+CheckType = X - avenue:0x00000000 lightrail:0x00030100
+CheckType = Y - avenue:0x00000000 lightrail:0x01000003
+CheckType = Z - avenue:0x00000000 lightrail:0x01000003
+
+ConsLayout =........
+ConsLayout =....+...
+ConsLayout =....++.<
+ConsLayout =....^...
+
+AutoTileBase=	0x54301D20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5413c700
+Costs       = 250
+[HighwayIntersectionInfo_0x00099118]
+CopyFrom    = 0x89118
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9118]
+CopyFrom    = 0x89118
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9118]
+CopyFrom    = 0x89118
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C9118]
+CopyFrom    = 0x89118
+[HighwayIntersectionInfo_0x000D9118]
+CopyFrom    = 0x99118
+[HighwayIntersectionInfo_0x000E9118]
+CopyFrom    = 0xA9118
+[HighwayIntersectionInfo_0x000F9118]
+CopyFrom    = 0xB9118
+
+[HighwayIntersectionInfo_0x00009119]
+;Added by smoncrie 04/02/05.
+;T Avenue OnSlope
+Piece = 0.0, 0, 0, 0, 0x54300F65
+PreviewEffect = preview_75m_elevated_av_036
+
+CellLayout =.....
+CellLayout =.ac.<
+CellLayout =.bd..
+CellLayout =.^...
+
+CheckType = a - avenue:0x04020000 onewayroad:0x02000200,0x00ff0000 optional
+CheckType = b - avenue:0x00020400 onewayroad:0x02000200,0x00ff0000 optional
+CheckType = c - avenue:0x04020002
+CheckType = d - avenue:0x00020402
+
+ConsLayout =.....
+ConsLayout =.++.<
+ConsLayout =.++..
+ConsLayout =.^...
+
+AutoTileBase=	0x54300F60
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x54192700
+Costs       = 150
+[HighwayIntersectionInfo_0x00019119]
+CopyFrom    = 0x9119
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029119]
+CopyFrom    = 0x9119
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039119]
+CopyFrom    = 0x9119
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00049119]
+CopyFrom    = 0x9119
+[HighwayIntersectionInfo_0x00059119]
+CopyFrom    = 0x19119
+[HighwayIntersectionInfo_0x00069119]
+CopyFrom    = 0x29119
+[HighwayIntersectionInfo_0x00079119]
+CopyFrom    = 0x39119
+
+
+[HighwayIntersectionInfo_0x00089119]
+;Added by SA
+;Straight Avenue OnSlope
+Piece = 0.0, 0, 0, 0, 0x54300E85
+PreviewEffect = preview_75m_elevated_av_037
+
+CellLayout =......
+CellLayout =.ac+.<
+CellLayout =.bd+..
+CellLayout =..^...
+
+CheckType = a - avenue: 0x04020000,0x00ff0000 check
+CheckType = b - avenue: 0x00020400,0x00ff0000 check
+CheckType = c - avenue: 0x04020002
+CheckType = d - avenue: 0x00020402
+
+ConsLayout =.......
+ConsLayout =..++...
+ConsLayout =..++..<
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x54300E80
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x54193700
+Costs = 200
+[HighwayIntersectionInfo_0x00099119]
+CopyFrom    = 0x89119
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9119]
+CopyFrom    = 0x89119
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9119]
+CopyFrom    = 0x89119
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C9119]
+CopyFrom    = 0x89119
+[HighwayIntersectionInfo_0x000D9119]
+CopyFrom    = 0x99119
+[HighwayIntersectionInfo_0x000E9119]
+CopyFrom    = 0xA9119
+[HighwayIntersectionInfo_0x000F9119]
+CopyFrom    = 0xB9119
+
+

@@ -1,0 +1,468 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;FRACTIONAL ANGLE RAILROAD (FARR) BUTTON SECTION
+;FRACTIONAL ANGLE RAILROAD (FARR) BUTTON SECTION
+RotationRing = A368, 1A368, 2A368, 3A368, 4A368, 5A368, 6A368, 7A368 ;FARR 18.4-Curve
+AddTypes     = A369, 1A369, 2A369, 3A369, 4A369, 5A369, 6A369, 7A369 ;FARR 71.6-Curve
+AddTypes     = A36A, 1A36A, 2A36A, 3A36A, 4A36A, 5A36A, 6A36A, 7A36A ;FARR Straight
+AddTypes     = A36B, 1A36B, 2A36B, 3A36B, 4A36B, 5A36B, 6A36B, 7A36B ;At-Grade Crossing-FARR Straight/Orthogonal Road
+AddTypes     = A36C, 1A36C, 2A36C, 3A36C, 4A36C, 5A36C, 6A36C, 7A36C ;FARR to Diagonal Curve
+AddTypes     = A36D, 1A36D, 2A36D, 3A36D, 4A36D, 5A36D, 6A36D, 7A36D ;FARR-DTR Crossover
+;AddTypes     = 400E, 1400E, 2400E, 3400E, 4400E, 5400E, 6400E, 7400E ;FARR-STR Crossover ;moved to STR button by ebina 06172009
+AddTypes     = A36E, 1A36E, 2A36E, 3A36E, 4A36E, 5A36E, 6A36E, 7A36E ;Double Track to FARR Double Track Switch
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000A368]
+;Added by Tarkus 05/27/2007
+;FARR Short Curve (18.4 Degrees)(textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53134005
+PreviewEffect = preview_farr_puzzlepiece003
+
+;CellLayout =............
+;CellLayout =...abbbb+..<
+;CellLayout =.....bbbc...
+;CellLayout =....^.......
+
+;CheckType = a - rail: 0x00020000,0x00ff0000 check
+;CheckType = b - rail: 0x00020002
+;CheckType = c - rail: 0x00000002
+
+CellLayout =............
+CellLayout =...abbbd+..<
+CellLayout =.....+fec...
+CellLayout =....^.......
+
+CheckType = a - rail: 0x00020000,0x00ff0000 check
+CheckType = b - rail: 0x00020002
+CheckType = c - rail: 0x00000002
+CheckType = d - rail: 0x02000002
+CheckType = e - rail: 0x00020202
+CheckType = f - rail: 0x00020000
+
+
+ConsLayout =............
+ConsLayout =.....----..<
+ConsLayout =......----..
+ConsLayout =....^.......
+
+AutoPlace   = 1
+AutoTileBase=	0x53134000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53134000
+Costs = 44; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A368]
+CopyFrom = 0xA368
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A368]
+CopyFrom = 0xA368
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A368]
+CopyFrom = 0xA368
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A368]
+CopyFrom = 0xA368
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A368]
+CopyFrom = 0x3A368
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A368]
+CopyFrom = 0x2A368
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A368]
+CopyFrom = 0x1A368
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000A369]
+;Added by Tarkus 05/27/2007
+;FARR Long Curve (71.6 Degrees)(textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53135005
+PreviewEffect = preview_farr_puzzlepiece004
+
+CellLayout =..................
+CellLayout =..................
+CellLayout =..abbbbb....<
+CellLayout =.....+bbb......
+CellLayout =.......bbb......
+CellLayout =.........bb......
+CellLayout =.........+bc....
+CellLayout =..........+c....
+CellLayout =..........+c....
+CellLayout =...^.............
+
+CheckType = a - rail: 0x00020000,0x00ff0000 check
+CheckType = b - rail: 0x00020002
+CheckType = c - rail: 0x00000002
+
+ConsLayout =..............
+ConsLayout =..............
+ConsLayout =...--\\\.....<
+ConsLayout =.....\\\\.....
+ConsLayout =.......\\\....
+ConsLayout =.........\\...
+ConsLayout =..........\\..
+ConsLayout =...........|..
+ConsLayout =...........|..
+ConsLayout =...^..........
+
+AutoTileBase=	0x53135000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53135000
+Costs = 76; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A369]
+CopyFrom = 0xA369
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A369]
+CopyFrom = 0xA369
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A369]
+CopyFrom = 0xA369
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A369]
+CopyFrom = 0xA369
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A369]
+CopyFrom = 0x3A369
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A369]
+CopyFrom = 0x2A369
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A369]
+CopyFrom = 0x1A369
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000A36A]
+;Added by Tarkus 05/27/2007
+;FARR straight section (textures by dedgren); edited by dedgren 081229
+Piece = 16.0, 0.0, 0, 0, 0x53136005
+PreviewEffect = preview_farr_puzzlepiece005
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bzc...
+CellLayout =...^.....
+
+CheckType = a - rail: 0x02020002
+CheckType = b - rail: 0x00020000
+CheckType = c - rail: 0x00000002
+CheckType = z - rail: 0x00020202
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoPlace   = 1
+AutoTileBase=	0x53136000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53136000
+Costs = 28; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A36A]
+CopyFrom = 0xA36A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A36A]
+CopyFrom = 0xA36A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A36A]
+CopyFrom = 0xA36A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A36A]
+CopyFrom = 0xA36A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A36A]
+CopyFrom = 0x3A36A
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A36A]
+CopyFrom = 0x2A36A
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A36A]
+CopyFrom = 0x1A36A
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000A36B]
+;Added by Tarkus 07/23/2007
+;At-grade crossing-FARR across orthogonal road (textures by dedgren); edited by Swamper 090219
+Piece = 16.0, 0.0, 0, 0, 0x53140005
+PreviewEffect = preview_farr_puzzlepiece006
+
+CellLayout =.........
+CellLayout =....c....
+CellLayout =...abe..<
+CellLayout =...abe...
+CellLayout =....d....
+CellLayout =...^.....
+
+CheckType = a - rail: 0x00020000
+CheckType = b - rail: 0x00020002 Road: 0x02000200
+CheckType = c - road: 0x02000000, 0xff000000 check
+CheckType = d - road: 0x00000200, 0x0000ff00 check
+CheckType = e - rail: 0x00000002
+
+ConsLayout =.........
+CellLayout =.........
+ConsLayout =...-|-..<
+ConsLayout =...-|-...
+CellLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x53140000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53140000
+Costs = 148; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A36B]
+CopyFrom = 0xA36B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A36B]
+CopyFrom = 0xA36B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A36B]
+CopyFrom = 0xA36B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A36B]
+CopyFrom = 0xA36B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A36B]
+CopyFrom = 0x3A36B
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A36B]
+CopyFrom = 0x2A36B
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A36B]
+CopyFrom = 0x1A36B
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000A36C]
+;Added by dedgren 12/21/2008
+;FARR to Diagonal Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53138005
+PreviewEffect = preview_farr_puzzlepiece008
+
+CellLayout =........
+CellLayout =.za....<
+CellLayout =..++....
+CellLayout =..+++...
+CellLayout =...++...
+CellLayout =...+b...
+CellLayout =..^.....
+
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = a - Rail: 0x01000003
+CheckType = b - Rail: 0x00000200
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =..\\....
+ConsLayout =..\\\...
+ConsLayout =...\\...
+ConsLayout =...\\...
+ConsLayout =..^.....
+
+AutoTileBase = 0x53138000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53138000
+Costs = 44; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A36C]
+CopyFrom = 0xA36C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A36C]
+CopyFrom = 0xA36C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A36C]
+CopyFrom = 0xA36C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A36C]
+CopyFrom = 0xA36C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A36C]
+CopyFrom = 0x3A36C
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A36C]
+CopyFrom = 0x2A36C
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A36C]
+CopyFrom = 0x1A36C
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000A36D]
+;Added by dedgren 090503
+;FARR-DTR crossover (textures by dedgren)
+Piece = 16.0, 0.0, 0, 0, 0x53139005
+PreviewEffect = preview_farr_puzzlepiece009
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bec..<
+CellLayout =...bec...
+CellLayout =....d....
+CellLayout =...^.....
+
+CheckType = a - rail: 0x02000000,0xff000000 check
+CheckType = b - rail: 0x00020000
+CheckType = c - rail: 0x00000002
+CheckType = d - rail: 0x00000200,0x0000ff00 check
+CheckType = e - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =...-+-..<
+ConsLayout =...-+-...
+ConsLayout =...^.....
+
+AutoTileBase=   0x53139000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53139000
+Costs = 88
+[HighwayIntersectionInfo_0x0001A36D]
+CopyFrom = 0xA36D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A36D]
+CopyFrom = 0xA36D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A36D]
+CopyFrom = 0xA36D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A36D]
+CopyFrom = 0xA36D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A36D]
+CopyFrom = 0x3A36D
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A36D]
+CopyFrom = 0x2A36D
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A36D]
+CopyFrom = 0x1A36D
+Transpose = 1
+
+
+[HighwayIntersectionInfo_0x0000400E]
+;Added by dedgren 090503
+;FARR-STR crossover (textures by dedgren)
+Piece = 16.0, 0.0, 0, 0, 0x5313A005
+PreviewEffect = preview_farr_puzzlepiece010
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bec..<
+CellLayout =...bec...
+CellLayout =....d....
+CellLayout =...^.....
+
+CheckType = a - rail: 0x02000000,0xff000000 check
+CheckType = b - rail: 0x00020000
+CheckType = c - rail: 0x00000002
+CheckType = d - rail: 0x00000200,0x0000ff00 check
+CheckType = e - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =...-+-..<
+ConsLayout =...-+-...
+ConsLayout =...^.....
+
+AutoTileBase=   0x5313A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313A000
+Costs = 88
+[HighwayIntersectionInfo_0x0001400E]
+CopyFrom = 0x400E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002400E]
+CopyFrom = 0x400E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003400E]
+CopyFrom = 0x400E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004400E]
+CopyFrom = 0x400E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005400E]
+CopyFrom = 0x3400E
+Transpose = 1
+[HighwayIntersectionInfo_0x0006400E]
+CopyFrom = 0x2400E
+Transpose = 1
+[HighwayIntersectionInfo_0x0007400E]
+CopyFrom = 0x1400E
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000A36E]
+;Added by dedgren 12/23/2008
+;Double Track Switch to FARR Double Track (textures by dedgren); edited by dedgren 081229 ;edited by bighead 13/09/2009
+Piece = 0.0, 0.0, 0, 0, 0x53B32005
+PreviewEffect = preview_lrsw_puzzlepiece003
+
+;CellLayout =...z....
+;CellLayout =...a...<
+;CellLayout =...a....
+;CellLayout =...a+...
+;CellLayout =...a+...
+;CellLayout =...aa...
+;CellLayout =...y....
+;CellLayout =...^....
+
+;CheckType = z - rail: 0x02000000, 0xff000000 check
+;CheckType = a - rail: 0x02000200
+;CheckType = y - rail: 0x00000200, 0x0000ff00 check
+
+CellLayout =...a....
+CellLayout =...b...<
+CellLayout =...b....
+CellLayout =...bf...
+CellLayout =...de...
+CellLayout =...bc...
+CellLayout =...y....
+CellLayout =...^....
+
+
+CheckType = a - rail: 0x02000000, 0xff000000 check
+CheckType = b - rail: 0x02000200
+CheckType = c - rail: 0x00000200
+CheckType = d - rail: 0x02020200
+CheckType = e - rail: 0x02000202
+CheckType = f - rail: 0x02000000
+CheckType = y - rail: 0x00000200, 0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =...|...<
+ConsLayout =...|....
+ConsLayout =...|\...
+ConsLayout =...|\...
+ConsLayout =...|\...
+ConsLayout =...^....
+
+Autoplace= 1
+AutoTileBase=   0x53B32000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53B32000
+Costs = 160; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001A36E]
+CopyFrom = 0xA36E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A36E]
+CopyFrom = 0xA36E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A36E]
+CopyFrom = 0xA36E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A36E]
+CopyFrom = 0xA36E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A36E]
+CopyFrom = 0x3A36E
+Transpose = 1
+[HighwayIntersectionInfo_0x0006A36E]
+CopyFrom = 0x2A36E
+Transpose = 1
+[HighwayIntersectionInfo_0x0007A36E]
+CopyFrom = 0x1A36E
+Transpose = 1
+
+

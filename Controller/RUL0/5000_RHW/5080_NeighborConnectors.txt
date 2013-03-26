@@ -1,0 +1,543 @@
+;
+;RHW Neighbor Connector Pieces
+;0xR508#
+RotationRing = 5080, 15080, 25080, 35080, 45080, 55080, 65080, 75080 ;Neighbor Connector Underground Loop
+AddTypes     = 5081, 15081, 25081, 35081, 45081, 55081, 65081, 75081 ;RHW-4 Neighbor Connector
+AddTypes     = 5082, 15082, 25082, 35082, 45082, 55082, 65082, 75082 ;MIS Neighbor Connector
+AddTypes     = 5083, 15083, 25083, 35083, 45083, 55083, 65083, 75083 ;RHW-6S Neighbor Connector
+AddTypes     = 5084, 15084, 25084, 35084, 45084, 55084, 65084, 75084 ;ERHW-4 NC T
+AddTypes     = 5085, 15085, 25085, 35085, 45085, 55085, 65085, 75085 ;RHW-8 NC T
+AddTypes     = 5086, 15086, 25086, 35086, 45086, 55086, 65086, 75086 ;RHW-10 NC T
+AddTypes     = 5087, 15087, 25087, 35087, 45087, 55087, 65087, 75087 ;EMIS NC T
+AddTypes     = 5088, 15088, 25088, 35088, 45088, 55088, 65088, 75088 ;RHW-6C NC T
+AddTypes     = 5089, 15089, 25089, 35089, 45089, 55089, 65089, 75089 ;RHW-8C NC T
+AddTypes     = 508A, 1508A, 2508A, 3508A, 4508A, 5508A, 6508A, 7508A ;ERHW-6S Neighbor Connector
+AddTypes     = 508B, 1508B, 2508B, 3508B, 4508B, 5508B, 6508B, 7508B ;ERHW-6C Neighbor Connector
+
+;###separator###
+
+
+;---RHW NEIGHBOR CONNECTORS-----
+;-------------------------------
+[HighwayIntersectionInfo_0x00005080]
+;Added by Tarkus 5/8/2009.
+;Loop Connector Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cbbf105
+PreviewEffect = preview_nborconn_piece__002
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =......<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cbbf100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbbf100
+Costs       = 1
+[HighwayIntersectionInfo_0x00015080]
+CopyFrom    = 0x5080
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025080]
+CopyFrom    = 0x5080
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035080]
+CopyFrom    = 0x5080
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045080]
+CopyFrom    = 0x5080
+[HighwayIntersectionInfo_0x00055080]
+CopyFrom    = 0x15080
+[HighwayIntersectionInfo_0x00065080]
+CopyFrom    = 0x25080
+[HighwayIntersectionInfo_0x00075080]
+CopyFrom    = 0x35080
+
+
+
+[HighwayIntersectionInfo_0x00005081]
+;Added by Tarkus 5/8/2009.
+;RHW-4 NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cbbf005
+PreviewEffect = preview_nborconn_piece__001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cbbf000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbbf000
+Costs       = 1
+[HighwayIntersectionInfo_0x00015081]
+CopyFrom    = 0x5081
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025081]
+CopyFrom    = 0x5081
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035081]
+CopyFrom    = 0x5081
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00045081]
+CopyFrom    = 0x5081
+Transpose = 1
+PlaceQueryID = 0x5cbbf001
+[HighwayIntersectionInfo_0x00055081]
+CopyFrom    = 0x45081
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065081]
+CopyFrom    = 0x45081
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075081]
+CopyFrom    = 0x45081
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005082]
+;Added by Tarkus 5/8/2009.
+;MIS NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5ceef005
+PreviewEffect = preview_nborconn_piece__003
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5ceef000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceef000
+Costs       = 1
+[HighwayIntersectionInfo_0x00015082]
+CopyFrom    = 0x5082
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025082]
+CopyFrom    = 0x5082
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035082]
+CopyFrom    = 0x5082
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045082]
+CopyFrom    = 0x5082
+[HighwayIntersectionInfo_0x00055082]
+CopyFrom    = 0x15082
+[HighwayIntersectionInfo_0x00065082]
+CopyFrom    = 0x25082
+[HighwayIntersectionInfo_0x00075082]
+CopyFrom    = 0x35082
+
+
+
+
+[HighwayIntersectionInfo_0x00005083]
+;Added by Tarkus 5/8/2009.
+;RHW-6S NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cccf005
+PreviewEffect = preview_nborconn_piece__004
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccf000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccf000
+Costs       = 1
+[HighwayIntersectionInfo_0x00015083]
+CopyFrom    = 0x5083
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025083]
+CopyFrom    = 0x5083
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035083]
+CopyFrom    = 0x5083
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045083]
+CopyFrom    = 0x5083
+[HighwayIntersectionInfo_0x00055083]
+CopyFrom    = 0x15083
+[HighwayIntersectionInfo_0x00065083]
+CopyFrom    = 0x25083
+[HighwayIntersectionInfo_0x00075083]
+CopyFrom    = 0x35083
+
+
+
+[HighwayIntersectionInfo_0x00005084]
+;Added by Tarkus 5/8/2009.
+;ERHW-4 NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cbbf205
+PreviewEffect = preview_nborconn_piece__005
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cbbf200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbbf200
+Costs       = 1
+[HighwayIntersectionInfo_0x00015084]
+CopyFrom    = 0x5084
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025084]
+CopyFrom    = 0x5084
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035084]
+CopyFrom    = 0x5084
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045084]
+CopyFrom    = 0x5084
+[HighwayIntersectionInfo_0x00055084]
+CopyFrom    = 0x15084
+[HighwayIntersectionInfo_0x00065084]
+CopyFrom    = 0x25084
+[HighwayIntersectionInfo_0x00075084]
+CopyFrom    = 0x35084
+
+
+
+[HighwayIntersectionInfo_0x00005085]
+;Added by Tarkus 5/8/2009.
+;RHW-8 NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cddf005
+PreviewEffect = preview_nborconn_piece__006
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...Z...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =...-...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddf000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddf000
+Costs       = 1
+[HighwayIntersectionInfo_0x00015085]
+CopyFrom    = 0x5085
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025085]
+CopyFrom    = 0x5085
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035085]
+CopyFrom    = 0x5085
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045085]
+CopyFrom    = 0x5085
+[HighwayIntersectionInfo_0x00055085]
+CopyFrom    = 0x15085
+[HighwayIntersectionInfo_0x00065085]
+CopyFrom    = 0x25085
+[HighwayIntersectionInfo_0x00075085]
+CopyFrom    = 0x35085
+
+
+
+[HighwayIntersectionInfo_0x00005086]
+;Added by Tarkus 5/8/2009.
+;RHW-10 NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cfff005
+PreviewEffect = preview_nborconn_piece__007
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...Z...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =...-...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cfff000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cfff000
+Costs       = 1
+[HighwayIntersectionInfo_0x00015086]
+CopyFrom    = 0x5086
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025086]
+CopyFrom    = 0x5086
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035086]
+CopyFrom    = 0x5086
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045086]
+CopyFrom    = 0x5086
+[HighwayIntersectionInfo_0x00055086]
+CopyFrom    = 0x15086
+[HighwayIntersectionInfo_0x00065086]
+CopyFrom    = 0x25086
+[HighwayIntersectionInfo_0x00075086]
+CopyFrom    = 0x35086
+
+
+
+[HighwayIntersectionInfo_0x00005087]
+;Added by Tarkus 5/8/2009.
+;EMIS NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5ceef105
+PreviewEffect = preview_nborconn_piece__008
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5ceef100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceef100
+Costs       = 1
+[HighwayIntersectionInfo_0x00015087]
+CopyFrom    = 0x5087
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025087]
+CopyFrom    = 0x5087
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035087]
+CopyFrom    = 0x5087
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045087]
+CopyFrom    = 0x5087
+[HighwayIntersectionInfo_0x00055087]
+CopyFrom    = 0x15087
+[HighwayIntersectionInfo_0x00065087]
+CopyFrom    = 0x25087
+[HighwayIntersectionInfo_0x00075087]
+CopyFrom    = 0x35087
+
+
+
+[HighwayIntersectionInfo_0x00005088]
+;Added by Tarkus 5/8/2009.
+;RHW-6C NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cccf105
+PreviewEffect = preview_nborconn_piece__009
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...Z...
+CellLayout =...Z...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =...-...
+ConsLayout =...-...
+ConsLayout =.......
+ConsLayout =...^...
+AutoTileBase=	0x5cccf100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccf100
+Costs       = 1
+[HighwayIntersectionInfo_0x00015088]
+CopyFrom    = 0x5088
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025088]
+CopyFrom    = 0x5088
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035088]
+CopyFrom    = 0x5088
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045088]
+CopyFrom    = 0x5088
+[HighwayIntersectionInfo_0x00055088]
+CopyFrom    = 0x15088
+[HighwayIntersectionInfo_0x00065088]
+CopyFrom    = 0x25088
+[HighwayIntersectionInfo_0x00075088]
+CopyFrom    = 0x35088
+
+
+[HighwayIntersectionInfo_0x00005089]
+;Added by Tarkus 8/8/2011.
+;RHW-8C NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cddf105
+PreviewEffect = preview_nborconn_piece__010
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...Z...
+CellLayout =...Z...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =...-...
+ConsLayout =...-...
+ConsLayout =.......
+ConsLayout =...^...
+AutoTileBase=	0x5cddf100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddf100
+Costs       = 1
+[HighwayIntersectionInfo_0x00015089]
+CopyFrom    = 0x5089
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025089]
+CopyFrom    = 0x5089
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035089]
+CopyFrom    = 0x5089
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045089]
+CopyFrom    = 0x5089
+[HighwayIntersectionInfo_0x00055089]
+CopyFrom    = 0x15089
+[HighwayIntersectionInfo_0x00065089]
+CopyFrom    = 0x25089
+[HighwayIntersectionInfo_0x00075089]
+CopyFrom    = 0x35089
+
+
+
+[HighwayIntersectionInfo_0x0000508A]
+;Added by Tarkus 8/21/2011.
+;ERHW-6S NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cccf015
+PreviewEffect = preview_nborconn_piece__011
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccf010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccf010
+Costs       = 1
+[HighwayIntersectionInfo_0x0001508A]
+CopyFrom    = 0x508A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002508A]
+CopyFrom    = 0x508A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003508A]
+CopyFrom    = 0x508A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004508A]
+CopyFrom    = 0x508A
+[HighwayIntersectionInfo_0x0005508A]
+CopyFrom    = 0x1508A
+[HighwayIntersectionInfo_0x0006508A]
+CopyFrom    = 0x2508A
+[HighwayIntersectionInfo_0x0007508A]
+CopyFrom    = 0x3508A
+
+
+
+[HighwayIntersectionInfo_0x0000508B]
+;Added by Tarkus 8/21/2011.
+;ERHW-6C NC T Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cccf135
+PreviewEffect = preview_nborconn_piece__012
+
+CellLayout =.......
+CellLayout =...Z...
+CellLayout =...Z..<
+CellLayout =...Z...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...-...
+ConsLayout =...-..<
+ConsLayout =...-...
+ConsLayout =.......
+ConsLayout =...^...
+AutoTileBase=	0x5cccf130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccf130
+Costs       = 1
+[HighwayIntersectionInfo_0x0001508B]
+CopyFrom    = 0x508B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002508B]
+CopyFrom    = 0x508B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003508B]
+CopyFrom    = 0x508B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004508B]
+CopyFrom    = 0x508B
+[HighwayIntersectionInfo_0x0005508B]
+CopyFrom    = 0x1508B
+[HighwayIntersectionInfo_0x0006508B]
+CopyFrom    = 0x2508B
+[HighwayIntersectionInfo_0x0007508B]
+CopyFrom    = 0x3508B
+
+

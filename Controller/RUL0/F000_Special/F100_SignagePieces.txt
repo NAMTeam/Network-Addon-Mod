@@ -1,0 +1,4127 @@
+;SIGNAGE COSMETIC PIECE BUTTON SECTION
+;SIGNAGE COSMETIC PIECE BUTTON SECTION
+;SIGNAGE COSMETIC PIECE BUTTON SECTION
+; 0xF1##
+;SCoPE Puzzle Pieces Button
+
+RotationRing = F100, 1F100, 2F100, 3F100, 4F100, 5F100, 6F100, 7F100, 8F100, 9F100, AF100, BF100, CF100, DF100, EF100, FF100, 10F100, 11F100, 12F100, 13F100, 14F100, 15F100, 16F100, 17F100, 18F100, 19F100, 1AF100, 1BF100, 1CF100, 1DF100, 1EF100, 1FF100 ;Ortho Road Signage Pieces 1-8
+AddTypes     = F101, 1F101, 2F101, 3F101, 4F101, 5F101, 6F101, 7F101, 8F101, 9F101, AF101, BF101, CF101, DF101, EF101, FF101, 10F101, 11F101, 12F101, 13F101, 14F101, 15F101, 16F101, 17F101, 18F101, 19F101, 1AF101, 1BF101, 1CF101, 1DF101, 1EF101, 1FF101 ;Diag Road Signage Pieces 1-8
+AddTypes     = F102, 1F102, 2F102, 3F102, 4F102, 5F102, 6F102, 7F102, 8F102, 9F102, AF102, BF102, CF102, DF102, EF102, FF102, 10F102, 11F102, 12F102, 13F102, 14F102, 15F102, 16F102, 17F102, 18F102, 19F102, 1AF102, 1BF102, 1CF102, 1DF102, 1EF102, 1FF102 ;Ortho OneWayRoad Signage Pieces 1-8
+AddTypes     = F103, 1F103, 2F103, 3F103, 4F103, 5F103, 6F103, 7F103, 8F103, 9F103, AF103, BF103, CF103, DF103, EF103, FF103, 10F103, 11F103, 12F103, 13F103, 14F103, 15F103, 16F103, 17F103, 18F103, 19F103, 1AF103, 1BF103, 1CF103, 1DF103, 1EF103, 1FF103 ;Diag OneWayRoad Signage Pieces 1-8
+AddTypes     = F104, 1F104, 2F104, 3F104, 4F104, 5F104, 6F104, 7F104, 8F104, 9F104, AF104, BF104, CF104, DF104, EF104, FF104, 10F104, 11F104, 12F104, 13F104, 14F104, 15F104, 16F104, 17F104, 18F104, 19F104, 1AF104, 1BF104, 1CF104, 1DF104, 1EF104, 1FF104 ;Ortho Street Signage Pieces 1-8
+AddTypes     = F105, 1F105, 2F105, 3F105, 4F105, 5F105, 6F105, 7F105, 8F105, 9F105, AF105, BF105, CF105, DF105, EF105, FF105, 10F105, 11F105, 12F105, 13F105, 14F105, 15F105, 16F105, 17F105, 18F105, 19F105, 1AF105, 1BF105, 1CF105, 1DF105, 1EF105, 1FF105 ;Diag Street Signage Pieces 1-8
+AddTypes     = F106, 1F106, 2F106, 3F106, 4F106, 5F106, 6F106, 7F106, 8F106, 9F106, AF106, BF106, CF106, DF106, EF106, FF106, 10F106, 11F106, 12F106, 13F106, 14F106, 15F106, 16F106, 17F106, 18F106, 19F106, 1AF106, 1BF106, 1CF106, 1DF106, 1EF106, 1FF106 ;Ortho Avenue Signage Pieces 1-8
+AddTypes     = F107, 1F107, 2F107, 3F107, 4F107, 5F107, 6F107, 7F107, 8F107, 9F107, AF107, BF107, CF107, DF107, EF107, FF107, 10F107, 11F107, 12F107, 13F107, 14F107, 15F107, 16F107, 17F107, 18F107, 19F107, 1AF107, 1BF107, 1CF107, 1DF107, 1EF107, 1FF107 ;Diag Avenue Signage Pieces 1-8
+AddTypes     = F108, 1F108, 2F108, 3F108, 4F108, 5F108, 6F108, 7F108, 8F108, 9F108, AF108, BF108, CF108, DF108, EF108, FF108, 10F108, 11F108, 12F108, 13F108, 14F108, 15F108, 16F108, 17F108, 18F108, 19F108, 1AF108, 1BF108, 1CF108, 1DF108, 1EF108, 1FF108 ;Ortho Elevated Highway Signage Pieces 1-8
+AddTypes     = F109, 1F109, 2F109, 3F109, 4F109, 5F109, 6F109, 7F109, 8F109, 9F109, AF109, BF109, CF109, DF109, EF109, FF109, 10F109, 11F109, 12F109, 13F109, 14F109, 15F109, 16F109, 17F109, 18F109, 19F109, 1AF109, 1BF109, 1CF109, 1DF109, 1EF109, 1FF109 ;Diag Elevated Highway Signage Pieces 1-8
+AddTypes     = F10A, 1F10A, 2F10A, 3F10A, 4F10A, 5F10A, 6F10A, 7F10A, 8F10A, 9F10A, AF10A, BF10A, CF10A, DF10A, EF10A, FF10A, 10F10A, 11F10A, 12F10A, 13F10A, 14F10A, 15F10A, 16F10A, 17F10A, 18F10A, 19F10A, 1AF10A, 1BF10A, 1CF10A, 1DF10A, 1EF10A, 1FF10A ;Ortho Ground Highway Signage Pieces 1-8
+AddTypes     = F10B, 1F10B, 2F10B, 3F10B, 4F10B, 5F10B, 6F10B, 7F10B, 8F10B, 9F10B, AF10B, BF10B, CF10B, DF10B, EF10B, FF10B, 10F10B, 11F10B, 12F10B, 13F10B, 14F10B, 15F10B, 16F10B, 17F10B, 18F10B, 19F10B, 1AF10B, 1BF10B, 1CF10B, 1DF10B, 1EF10B, 1FF10B ;Diag Ground Highway Signage Pieces 1-8
+AddTypes     = F10C, 1F10C, 2F10C, 3F10C, 4F10C, 5F10C, 6F10C, 7F10C, 8F10C, 9F10C, AF10C, BF10C, CF10C, DF10C, EF10C, FF10C, 10F10C, 11F10C, 12F10C, 13F10C, 14F10C, 15F10C, 16F10C, 17F10C, 18F10C, 19F10C, 1AF10C, 1BF10C, 1CF10C, 1DF10C, 1EF10C, 1FF10C ;Ortho Rail Signage Pieces 1-8
+AddTypes     = F10D, 1F10D, 2F10D, 3F10D, 4F10D, 5F10D, 6F10D, 7F10D, 8F10D, 9F10D, AF10D, BF10D, CF10D, DF10D, EF10D, FF10D, 10F10D, 11F10D, 12F10D, 13F10D, 14F10D, 15F10D, 16F10D, 17F10D, 18F10D, 19F10D, 1AF10D, 1BF10D, 1CF10D, 1DF10D, 1EF10D, 1FF10D ;Diag Rail Signage Pieces 1-8
+AddTypes     = F10E, 1F10E, 2F10E, 3F10E, 4F10E, 5F10E, 6F10E, 7F10E, 8F10E, 9F10E, AF10E, BF10E, CF10E, DF10E, EF10E, FF10E, 10F10E, 11F10E, 12F10E, 13F10E, 14F10E, 15F10E, 16F10E, 17F10E, 18F10E, 19F10E, 1AF10E, 1BF10E, 1CF10E, 1DF10E, 1EF10E, 1FF10E ;Ortho Elevated Light Rail Signage Pieces 1-8
+AddTypes     = F10F, 1F10F, 2F10F, 3F10F, 4F10F, 5F10F, 6F10F, 7F10F, 8F10F, 9F10F, AF10F, BF10F, CF10F, DF10F, EF10F, FF10F, 10F10F, 11F10F, 12F10F, 13F10F, 14F10F, 15F10F, 16F10F, 17F10F, 18F10F, 19F10F, 1AF10F, 1BF10F, 1CF10F, 1DF10F, 1EF10F, 1FF10F ;Diag Elevated Light Rail Signage Pieces 1-8
+
+
+;###separator###
+
+
+;----SIGNAGE PIECE SECTION----
+;----SIGNAGE PIECE SECTION----
+;----SIGNAGE PIECE SECTION----
+
+
+[HighwayIntersectionInfo_0x0000F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x500FF005
+PreviewEffect = preview_road_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F100]
+CopyFrom    = 0xF100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F100]
+CopyFrom    = 0xF100
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F100]
+CopyFrom    = 0xF100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x500FF005
+PreviewEffect = preview_road_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F100]
+CopyFrom    = 0x4F100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F100]
+CopyFrom    = 0x4F100
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F100]
+CopyFrom    = 0x4F100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x500FF005
+PreviewEffect = preview_road_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F100]
+CopyFrom    = 0x8F100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF100]
+CopyFrom    = 0x8F100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF100]
+CopyFrom    = 0x8F100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x500FF005
+PreviewEffect = preview_road_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF100]
+CopyFrom    = 0xCF100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF100]
+CopyFrom    = 0xCF100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF100]
+CopyFrom    = 0xCF100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x500FF045
+PreviewEffect = preview_road_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F100]
+CopyFrom    = 0x10F100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F100]
+CopyFrom    = 0x10F100
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F100]
+CopyFrom    = 0x10F100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x500FF045
+PreviewEffect = preview_road_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F100]
+CopyFrom    = 0x14F100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F100]
+CopyFrom    = 0x14F100
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F100]
+CopyFrom    = 0x14F100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x500FF045
+PreviewEffect = preview_road_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F100]
+CopyFrom    = 0x18F100
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF100]
+CopyFrom    = 0x18F100
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF100]
+CopyFrom    = 0x18F100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF100]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x500FF045
+PreviewEffect = preview_road_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF100]
+CopyFrom    = 0x1CF100
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF100]
+CopyFrom    = 0x1CF100
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF100]
+CopyFrom    = 0x1CF100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x500FF085
+PreviewEffect = preview_road_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F101]
+CopyFrom    = 0xF101
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F101]
+CopyFrom    = 0xF101
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F101]
+CopyFrom    = 0xF101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x500FF085
+PreviewEffect = preview_road_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F101]
+CopyFrom    = 0x4F101
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F101]
+CopyFrom    = 0x4F101
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F101]
+CopyFrom    = 0x4F101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x500FF085
+PreviewEffect = preview_road_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F101]
+CopyFrom    = 0x8F101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF101]
+CopyFrom    = 0x8F101
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF101]
+CopyFrom    = 0x8F101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x500FF085
+PreviewEffect = preview_road_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF101]
+CopyFrom    = 0xCF101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF101]
+CopyFrom    = 0xCF101
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF101]
+CopyFrom    = 0xCF101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x500FF0C5
+PreviewEffect = preview_road_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F101]
+CopyFrom    = 0x10F101
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F101]
+CopyFrom    = 0x10F101
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F101]
+CopyFrom    = 0x10F101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x500FF0C5
+PreviewEffect = preview_road_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F101]
+CopyFrom    = 0x14F101
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F101]
+CopyFrom    = 0x14F101
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F101]
+CopyFrom    = 0x14F101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x500FF0C5
+PreviewEffect = preview_road_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F101]
+CopyFrom    = 0x18F101
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF101]
+CopyFrom    = 0x18F101
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF101]
+CopyFrom    = 0x18F101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF101]
+;Added by Tarkus 1/21/2008
+;Road Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x500FF0C5
+PreviewEffect = preview_road_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x500FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x500FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF101]
+CopyFrom    = 0x1CF101
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF101]
+CopyFrom    = 0x1CF101
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF101]
+CopyFrom    = 0x1CF101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x590FF005
+PreviewEffect = preview_owrd_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F102]
+CopyFrom    = 0xF102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F102]
+CopyFrom    = 0xF102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F102]
+CopyFrom    = 0xF102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x590FF005
+PreviewEffect = preview_owrd_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F102]
+CopyFrom    = 0x4F102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F102]
+CopyFrom    = 0x4F102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F102]
+CopyFrom    = 0x4F102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x590FF005
+PreviewEffect = preview_owrd_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F102]
+CopyFrom    = 0x8F102
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF102]
+CopyFrom    = 0x8F102
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF102]
+CopyFrom    = 0x8F102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x590FF005
+PreviewEffect = preview_owrd_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF102]
+CopyFrom    = 0xCF102
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF102]
+CopyFrom    = 0xCF102
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF102]
+CopyFrom    = 0xCF102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x590FF045
+PreviewEffect = preview_owrd_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F102]
+CopyFrom    = 0x10F102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F102]
+CopyFrom    = 0x10F102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F102]
+CopyFrom    = 0x10F102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x590FF045
+PreviewEffect = preview_owrd_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F102]
+CopyFrom    = 0x14F102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F102]
+CopyFrom    = 0x14F102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F102]
+CopyFrom    = 0x14F102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x590FF045
+PreviewEffect = preview_owrd_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F102]
+CopyFrom    = 0x18F102
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF102]
+CopyFrom    = 0x18F102
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF102]
+CopyFrom    = 0x18F102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF102]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x590FF045
+PreviewEffect = preview_owrd_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF102]
+CopyFrom    = 0x1CF102
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF102]
+CopyFrom    = 0x1CF102
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF102]
+CopyFrom    = 0x1CF102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x590FF085
+PreviewEffect = preview_owrd_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F103]
+CopyFrom    = 0xF103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F103]
+CopyFrom    = 0xF103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F103]
+CopyFrom    = 0xF103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x590FF085
+PreviewEffect = preview_owrd_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F103]
+CopyFrom    = 0x4F103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F103]
+CopyFrom    = 0x4F103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F103]
+CopyFrom    = 0x4F103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x590FF085
+PreviewEffect = preview_owrd_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F103]
+CopyFrom    = 0x8F103
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF103]
+CopyFrom    = 0x8F103
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF103]
+CopyFrom    = 0x8F103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x590FF085
+PreviewEffect = preview_owrd_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF103]
+CopyFrom    = 0xCF103
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF103]
+CopyFrom    = 0xCF103
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF103]
+CopyFrom    = 0xCF103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x590FF0C5
+PreviewEffect = preview_owrd_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F103]
+CopyFrom    = 0x10F103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F103]
+CopyFrom    = 0x10F103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F103]
+CopyFrom    = 0x10F103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x590FF0C5
+PreviewEffect = preview_owrd_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F103]
+CopyFrom    = 0x14F103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F103]
+CopyFrom    = 0x14F103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F103]
+CopyFrom    = 0x14F103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x590FF0C5
+PreviewEffect = preview_owrd_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F103]
+CopyFrom    = 0x18F103
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF103]
+CopyFrom    = 0x18F103
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF103]
+CopyFrom    = 0x18F103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF103]
+;Added by Tarkus 1/21/2008
+;One-Way Road Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x590FF0C5
+PreviewEffect = preview_owrd_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x590FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x590FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF103]
+CopyFrom    = 0x1CF103
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF103]
+CopyFrom    = 0x1CF103
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF103]
+CopyFrom    = 0x1CF103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x550FF005
+PreviewEffect = preview_strt_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F104]
+CopyFrom    = 0xF104
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F104]
+CopyFrom    = 0xF104
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F104]
+CopyFrom    = 0xF104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x550FF005
+PreviewEffect = preview_strt_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F104]
+CopyFrom    = 0x4F104
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F104]
+CopyFrom    = 0x4F104
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F104]
+CopyFrom    = 0x4F104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x550FF005
+PreviewEffect = preview_strt_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F104]
+CopyFrom    = 0x8F104
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF104]
+CopyFrom    = 0x8F104
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF104]
+CopyFrom    = 0x8F104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x550FF005
+PreviewEffect = preview_strt_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF104]
+CopyFrom    = 0xCF104
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF104]
+CopyFrom    = 0xCF104
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF104]
+CopyFrom    = 0xCF104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x550FF045
+PreviewEffect = preview_strt_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F104]
+CopyFrom    = 0x10F104
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F104]
+CopyFrom    = 0x10F104
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F104]
+CopyFrom    = 0x10F104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x550FF045
+PreviewEffect = preview_strt_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F104]
+CopyFrom    = 0x14F104
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F104]
+CopyFrom    = 0x14F104
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F104]
+CopyFrom    = 0x14F104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x550FF045
+PreviewEffect = preview_strt_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F104]
+CopyFrom    = 0x18F104
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF104]
+CopyFrom    = 0x18F104
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF104]
+CopyFrom    = 0x18F104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF104]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x550FF045
+PreviewEffect = preview_strt_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF104]
+CopyFrom    = 0x1CF104
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF104]
+CopyFrom    = 0x1CF104
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF104]
+CopyFrom    = 0x1CF104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x550FF085
+PreviewEffect = preview_strt_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F105]
+CopyFrom    = 0xF105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F105]
+CopyFrom    = 0xF105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F105]
+CopyFrom    = 0xF105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x550FF085
+PreviewEffect = preview_strt_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F105]
+CopyFrom    = 0x4F105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F105]
+CopyFrom    = 0x4F105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F105]
+CopyFrom    = 0x4F105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x550FF085
+PreviewEffect = preview_strt_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F105]
+CopyFrom    = 0x8F105
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF105]
+CopyFrom    = 0x8F105
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF105]
+CopyFrom    = 0x8F105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x550FF085
+PreviewEffect = preview_strt_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF105]
+CopyFrom    = 0xCF105
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF105]
+CopyFrom    = 0xCF105
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF105]
+CopyFrom    = 0xCF105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x550FF0C5
+PreviewEffect = preview_strt_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F105]
+CopyFrom    = 0x10F105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F105]
+CopyFrom    = 0x10F105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F105]
+CopyFrom    = 0x10F105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x550FF0C5
+PreviewEffect = preview_strt_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F105]
+CopyFrom    = 0x14F105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F105]
+CopyFrom    = 0x14F105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F105]
+CopyFrom    = 0x14F105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x550FF0C5
+PreviewEffect = preview_strt_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F105]
+CopyFrom    = 0x18F105
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF105]
+CopyFrom    = 0x18F105
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF105]
+CopyFrom    = 0x18F105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF105]
+;Added by Tarkus 1/21/2008
+;Street Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x550FF0C5
+PreviewEffect = preview_strt_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - street: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x550FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x550FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF105]
+CopyFrom    = 0x1CF105
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF105]
+CopyFrom    = 0x1CF105
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF105]
+CopyFrom    = 0x1CF105
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x540FF005
+PreviewEffect = preview_aven_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F106]
+CopyFrom    = 0xF106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F106]
+CopyFrom    = 0xF106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F106]
+CopyFrom    = 0xF106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x540FF005
+PreviewEffect = preview_aven_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F106]
+CopyFrom    = 0x4F106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F106]
+CopyFrom    = 0x4F106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F106]
+CopyFrom    = 0x4F106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x540FF005
+PreviewEffect = preview_aven_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F106]
+CopyFrom    = 0x8F106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF106]
+CopyFrom    = 0x8F106
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF106]
+CopyFrom    = 0x8F106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x540FF005
+PreviewEffect = preview_aven_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF106]
+CopyFrom    = 0xCF106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF106]
+CopyFrom    = 0xCF106
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF106]
+CopyFrom    = 0xCF106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x540FF045
+PreviewEffect = preview_aven_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F106]
+CopyFrom    = 0x10F106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F106]
+CopyFrom    = 0x10F106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F106]
+CopyFrom    = 0x10F106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x540FF045
+PreviewEffect = preview_aven_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F106]
+CopyFrom    = 0x14F106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F106]
+CopyFrom    = 0x14F106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F106]
+CopyFrom    = 0x14F106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x540FF045
+PreviewEffect = preview_aven_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F106]
+CopyFrom    = 0x18F106
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF106]
+CopyFrom    = 0x18F106
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF106]
+CopyFrom    = 0x18F106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF106]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x540FF045
+PreviewEffect = preview_aven_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF106]
+CopyFrom    = 0x1CF106
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF106]
+CopyFrom    = 0x1CF106
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF106]
+CopyFrom    = 0x1CF106
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x540FF085
+PreviewEffect = preview_aven_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F107]
+CopyFrom    = 0xF107
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F107]
+CopyFrom    = 0xF107
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F107]
+CopyFrom    = 0xF107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x540FF085
+PreviewEffect = preview_aven_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F107]
+CopyFrom    = 0x4F107
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F107]
+CopyFrom    = 0x4F107
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F107]
+CopyFrom    = 0x4F107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x540FF085
+PreviewEffect = preview_aven_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F107]
+CopyFrom    = 0x8F107
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF107]
+CopyFrom    = 0x8F107
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF107]
+CopyFrom    = 0x8F107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x540FF085
+PreviewEffect = preview_aven_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF107]
+CopyFrom    = 0xCF107
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF107]
+CopyFrom    = 0xCF107
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF107]
+CopyFrom    = 0xCF107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x540FF0C5
+PreviewEffect = preview_aven_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F107]
+CopyFrom    = 0x10F107
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F107]
+CopyFrom    = 0x10F107
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F107]
+CopyFrom    = 0x10F107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x540FF0C5
+PreviewEffect = preview_aven_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F107]
+CopyFrom    = 0x14F107
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F107]
+CopyFrom    = 0x14F107
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F107]
+CopyFrom    = 0x14F107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x540FF0C5
+PreviewEffect = preview_aven_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F107]
+CopyFrom    = 0x18F107
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF107]
+CopyFrom    = 0x18F107
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF107]
+CopyFrom    = 0x18F107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF107]
+;Added by Tarkus 1/21/2008
+;Avenue Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x540FF0C5
+PreviewEffect = preview_aven_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - avenue: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x540FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x540FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF107]
+CopyFrom    = 0x1CF107
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF107]
+CopyFrom    = 0x1CF107
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF107]
+CopyFrom    = 0x1CF107
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F108]
+CopyFrom    = 0xF108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F108]
+CopyFrom    = 0xF108
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F108]
+CopyFrom    = 0xF108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F108]
+CopyFrom    = 0x4F108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F108]
+CopyFrom    = 0x4F108
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F108]
+CopyFrom    = 0x4F108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F108]
+CopyFrom    = 0x8F108
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF108]
+CopyFrom    = 0x8F108
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF108]
+CopyFrom    = 0x8F108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF108]
+CopyFrom    = 0xCF108
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF108]
+CopyFrom    = 0xCF108
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF108]
+CopyFrom    = 0xCF108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F108]
+CopyFrom    = 0x10F108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F108]
+CopyFrom    = 0x10F108
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F108]
+CopyFrom    = 0x10F108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F108]
+CopyFrom    = 0x14F108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F108]
+CopyFrom    = 0x14F108
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F108]
+CopyFrom    = 0x14F108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F108]
+CopyFrom    = 0x18F108
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF108]
+CopyFrom    = 0x18F108
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF108]
+CopyFrom    = 0x18F108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF108]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x520FF005
+PreviewEffect = preview_ehwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF108]
+CopyFrom    = 0x1CF108
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF108]
+CopyFrom    = 0x1CF108
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF108]
+CopyFrom    = 0x1CF108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F109]
+CopyFrom    = 0xF109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F109]
+CopyFrom    = 0xF109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F109]
+CopyFrom    = 0xF109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F109]
+CopyFrom    = 0x4F109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F109]
+CopyFrom    = 0x4F109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F109]
+CopyFrom    = 0x4F109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F109]
+CopyFrom    = 0x8F109
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF109]
+CopyFrom    = 0x8F109
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF109]
+CopyFrom    = 0x8F109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF109]
+CopyFrom    = 0xCF109
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF109]
+CopyFrom    = 0xCF109
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF109]
+CopyFrom    = 0xCF109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F109]
+CopyFrom    = 0x10F109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F109]
+CopyFrom    = 0x10F109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F109]
+CopyFrom    = 0x10F109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F109]
+CopyFrom    = 0x14F109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F109]
+CopyFrom    = 0x14F109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F109]
+CopyFrom    = 0x14F109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F109]
+CopyFrom    = 0x18F109
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF109]
+CopyFrom    = 0x18F109
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF109]
+CopyFrom    = 0x18F109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF109]
+;Added by Tarkus 1/21/2008
+;Elevated Highway Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x520FF085
+PreviewEffect = preview_ehwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - highway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x520FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x520FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF109]
+CopyFrom    = 0x1CF109
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF109]
+CopyFrom    = 0x1CF109
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF109]
+CopyFrom    = 0x1CF109
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10A]
+CopyFrom    = 0xF10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10A]
+CopyFrom    = 0xF10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10A]
+CopyFrom    = 0xF10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10A]
+CopyFrom    = 0x4F10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10A]
+CopyFrom    = 0x4F10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10A]
+CopyFrom    = 0x4F10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10A]
+CopyFrom    = 0x8F10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10A]
+CopyFrom    = 0x8F10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10A]
+CopyFrom    = 0x8F10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10A]
+CopyFrom    = 0xCF10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10A]
+CopyFrom    = 0xCF10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10A]
+CopyFrom    = 0xCF10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10A]
+CopyFrom    = 0x10F10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10A]
+CopyFrom    = 0x10F10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10A]
+CopyFrom    = 0x10F10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10A]
+CopyFrom    = 0x14F10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10A]
+CopyFrom    = 0x14F10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10A]
+CopyFrom    = 0x14F10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10A]
+CopyFrom    = 0x18F10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10A]
+CopyFrom    = 0x18F10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10A]
+CopyFrom    = 0x18F10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10A]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF005
+PreviewEffect = preview_ghwy_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10A]
+CopyFrom    = 0x1CF10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10A]
+CopyFrom    = 0x1CF10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10A]
+CopyFrom    = 0x1CF10A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10B]
+CopyFrom    = 0xF10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10B]
+CopyFrom    = 0xF10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10B]
+CopyFrom    = 0xF10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10B]
+CopyFrom    = 0x4F10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10B]
+CopyFrom    = 0x4F10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10B]
+CopyFrom    = 0x4F10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10B]
+CopyFrom    = 0x8F10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10B]
+CopyFrom    = 0x8F10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10B]
+CopyFrom    = 0x8F10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10B]
+CopyFrom    = 0xCF10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10B]
+CopyFrom    = 0xCF10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10B]
+CopyFrom    = 0xCF10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10B]
+CopyFrom    = 0x10F10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10B]
+CopyFrom    = 0x10F10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10B]
+CopyFrom    = 0x10F10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10B]
+CopyFrom    = 0x14F10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10B]
+CopyFrom    = 0x14F10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10B]
+CopyFrom    = 0x14F10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10B]
+CopyFrom    = 0x18F10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10B]
+CopyFrom    = 0x18F10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10B]
+CopyFrom    = 0x18F10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10B]
+;Added by Tarkus 1/21/2008
+;Ground Highway Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x5A0FF085
+PreviewEffect = preview_ghwy_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - groundhighway: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5A0FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A0FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10B]
+CopyFrom    = 0x1CF10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10B]
+CopyFrom    = 0x1CF10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10B]
+CopyFrom    = 0x1CF10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x530FF005
+PreviewEffect = preview_rail_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10C]
+CopyFrom    = 0xF10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10C]
+CopyFrom    = 0xF10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10C]
+CopyFrom    = 0xF10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x530FF005
+PreviewEffect = preview_rail_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10C]
+CopyFrom    = 0x4F10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10C]
+CopyFrom    = 0x4F10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10C]
+CopyFrom    = 0x4F10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x530FF005
+PreviewEffect = preview_rail_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10C]
+CopyFrom    = 0x8F10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10C]
+CopyFrom    = 0x8F10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10C]
+CopyFrom    = 0x8F10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x530FF005
+PreviewEffect = preview_rail_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10C]
+CopyFrom    = 0xCF10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10C]
+CopyFrom    = 0xCF10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10C]
+CopyFrom    = 0xCF10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x530FF045
+PreviewEffect = preview_rail_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10C]
+CopyFrom    = 0x10F10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10C]
+CopyFrom    = 0x10F10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10C]
+CopyFrom    = 0x10F10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x530FF045
+PreviewEffect = preview_rail_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10C]
+CopyFrom    = 0x14F10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10C]
+CopyFrom    = 0x14F10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10C]
+CopyFrom    = 0x14F10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x530FF045
+PreviewEffect = preview_rail_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10C]
+CopyFrom    = 0x18F10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10C]
+CopyFrom    = 0x18F10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10C]
+CopyFrom    = 0x18F10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10C]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x530FF045
+PreviewEffect = preview_rail_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10C]
+CopyFrom    = 0x1CF10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10C]
+CopyFrom    = 0x1CF10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10C]
+CopyFrom    = 0x1CF10C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x530FF085
+PreviewEffect = preview_rail_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10D]
+CopyFrom    = 0xF10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10D]
+CopyFrom    = 0xF10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10D]
+CopyFrom    = 0xF10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x530FF085
+PreviewEffect = preview_rail_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10D]
+CopyFrom    = 0x4F10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10D]
+CopyFrom    = 0x4F10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10D]
+CopyFrom    = 0x4F10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x530FF085
+PreviewEffect = preview_rail_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10D]
+CopyFrom    = 0x8F10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10D]
+CopyFrom    = 0x8F10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10D]
+CopyFrom    = 0x8F10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x530FF085
+PreviewEffect = preview_rail_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10D]
+CopyFrom    = 0xCF10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10D]
+CopyFrom    = 0xCF10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10D]
+CopyFrom    = 0xCF10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x530FF0C5
+PreviewEffect = preview_rail_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10D]
+CopyFrom    = 0x10F10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10D]
+CopyFrom    = 0x10F10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10D]
+CopyFrom    = 0x10F10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x530FF0C5
+PreviewEffect = preview_rail_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10D]
+CopyFrom    = 0x14F10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10D]
+CopyFrom    = 0x14F10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10D]
+CopyFrom    = 0x14F10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x530FF0C5
+PreviewEffect = preview_rail_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10D]
+CopyFrom    = 0x18F10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10D]
+CopyFrom    = 0x18F10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10D]
+CopyFrom    = 0x18F10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10D]
+;Added by Tarkus 1/21/2008
+;Rail Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x530FF0C5
+PreviewEffect = preview_rail_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x530FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x530FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10D]
+CopyFrom    = 0x1CF10D
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10D]
+CopyFrom    = 0x1CF10D
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10D]
+CopyFrom    = 0x1CF10D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 1
+Piece = 0.0, 0.0, 0, 0, 0x580FF005
+PreviewEffect = preview_eltr_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF000
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10E]
+CopyFrom    = 0xF10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10E]
+CopyFrom    = 0xF10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10E]
+CopyFrom    = 0xF10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 2
+Piece = 0.0, 0.0, 0, 0, 0x580FF005
+PreviewEffect = preview_eltr_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF010
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10E]
+CopyFrom    = 0x4F10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10E]
+CopyFrom    = 0x4F10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10E]
+CopyFrom    = 0x4F10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 3
+Piece = 0.0, 0.0, 0, 0, 0x580FF005
+PreviewEffect = preview_eltr_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF020
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10E]
+CopyFrom    = 0x8F10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10E]
+CopyFrom    = 0x8F10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10E]
+CopyFrom    = 0x8F10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 4
+Piece = 0.0, 0.0, 0, 0, 0x580FF005
+PreviewEffect = preview_eltr_signpiece__001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF030
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10E]
+CopyFrom    = 0xCF10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10E]
+CopyFrom    = 0xCF10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10E]
+CopyFrom    = 0xCF10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 5
+Piece = 0.0, 0.0, 0, 0, 0x580FF045
+PreviewEffect = preview_eltr_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF040
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10E]
+CopyFrom    = 0x10F10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10E]
+CopyFrom    = 0x10F10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10E]
+CopyFrom    = 0x10F10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 6
+Piece = 0.0, 0.0, 0, 0, 0x580FF045
+PreviewEffect = preview_eltr_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF050
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10E]
+CopyFrom    = 0x14F10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10E]
+CopyFrom    = 0x14F10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10E]
+CopyFrom    = 0x14F10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 7
+Piece = 0.0, 0.0, 0, 0, 0x580FF045
+PreviewEffect = preview_eltr_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF060
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10E]
+CopyFrom    = 0x18F10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10E]
+CopyFrom    = 0x18F10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10E]
+CopyFrom    = 0x18F10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10E]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Orthogonal 8
+Piece = 0.0, 0.0, 0, 0, 0x580FF045
+PreviewEffect = preview_eltr_signpiece__002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x02040200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF070
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10E]
+CopyFrom    = 0x1CF10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10E]
+CopyFrom    = 0x1CF10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10E]
+CopyFrom    = 0x1CF10E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 1
+Piece = 0.0, 0.0, 0, 0, 0x580FF085
+PreviewEffect = preview_eltr_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF080
+Costs = 2
+[HighwayIntersectionInfo_0x0001F10F]
+CopyFrom    = 0xF10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F10F]
+CopyFrom    = 0xF10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F10F]
+CopyFrom    = 0xF10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 2
+Piece = 0.0, 0.0, 0, 0, 0x580FF085
+PreviewEffect = preview_eltr_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF090
+Costs = 2
+[HighwayIntersectionInfo_0x0005F10F]
+CopyFrom    = 0x4F10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006F10F]
+CopyFrom    = 0x4F10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F10F]
+CopyFrom    = 0x4F10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0008F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 3
+Piece = 0.0, 0.0, 0, 0, 0x580FF085
+PreviewEffect = preview_eltr_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0A0
+Costs = 2
+[HighwayIntersectionInfo_0x0009F10F]
+CopyFrom    = 0x8F10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AF10F]
+CopyFrom    = 0x8F10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BF10F]
+CopyFrom    = 0x8F10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000CF10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 4
+Piece = 0.0, 0.0, 0, 0, 0x580FF085
+PreviewEffect = preview_eltr_signpiece__003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0B0
+Costs = 2
+[HighwayIntersectionInfo_0x000DF10F]
+CopyFrom    = 0xCF10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EF10F]
+CopyFrom    = 0xCF10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FF10F]
+CopyFrom    = 0xCF10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0010F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 5
+Piece = 0.0, 0.0, 0, 0, 0x580FF0C5
+PreviewEffect = preview_eltr_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0C0
+Costs = 2
+[HighwayIntersectionInfo_0x0011F10F]
+CopyFrom    = 0x10F10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012F10F]
+CopyFrom    = 0x10F10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013F10F]
+CopyFrom    = 0x10F10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0014F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 6
+Piece = 0.0, 0.0, 0, 0, 0x580FF0C5
+PreviewEffect = preview_eltr_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0D0
+Costs = 2
+[HighwayIntersectionInfo_0x0015F10F]
+CopyFrom    = 0x14F10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016F10F]
+CopyFrom    = 0x14F10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017F10F]
+CopyFrom    = 0x14F10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0018F10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 7
+Piece = 0.0, 0.0, 0, 0, 0x580FF0C5
+PreviewEffect = preview_eltr_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0E0
+Costs = 2
+[HighwayIntersectionInfo_0x0019F10F]
+CopyFrom    = 0x18F10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x001AF10F]
+CopyFrom    = 0x18F10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x001BF10F]
+CopyFrom    = 0x18F10F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x001CF10F]
+;Added by Tarkus 1/21/2008
+;Elevated Light Rail Signage Piece Diagonal 8
+Piece = 0.0, 0.0, 0, 0, 0x580FF0C5
+PreviewEffect = preview_eltr_signpiece__004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - lightrail: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x580FF0F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580FF0F0
+Costs = 2
+[HighwayIntersectionInfo_0x001DF10F]
+CopyFrom    = 0x1CF10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x001EF10F]
+CopyFrom    = 0x1CF10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x001FF10F]
+CopyFrom    = 0x1CF10F
+Rotate		= 3
+
+
+

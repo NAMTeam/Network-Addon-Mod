@@ -1,0 +1,308 @@
+;===TRANSITIONS===
+;5f0 and 5f1
+RotationRing = 5F00, 45F00, 15F00, 55F00, 25F00, 65F00, 35F00, 75F00 ;FAMIS to FARHW-4 transition A
+AddTypes = 85F00, C5F00, 95F00, D5F00, A5F00, E5F00, B5F00, F5F00 ;FAMIS to FARHW-4 transition B
+AddTypes = 5F01, 45F01, 15F01, 55F01, 25F01, 65F01, 35F01, 75F01 ;FAD-44 Type A Full
+AddTypes = 5F02, 45F02, 15F02, 55F02, 25F02, 65F02, 35F02, 75F02 ;FAD-44 Type A In/Out
+;AddTypes = 85F02, C5F02, 95F02, D5F02, A5F02, E5F02, B5F02, F5F02 ;FAD-44 Type B In/Out
+AddTypes = 5F03, 15F03, 25F03, 35F03, 45F03, 55F03, 65F03, 75F03 ;FAMIS/AVE-2 Full Diamond
+
+
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00005F00]
+;Added by SA 02/18/2011
+;FAMIS to MIS transition A
+Piece = 0.0, 0.0, 0, 0, 0x5e100005
+PreviewEffect = preview_famis_farhw_tra_001
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x00020002
+CheckType = b - dirtroad: 0x00020000
+CheckType = c - dirtroad: 0x00000002
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =...---.....
+ConsLayout =...^.......
+
+AutoTileBase = 0x5e100000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e100000
+Costs       = 200
+
+[HighwayIntersectionInfo_0x00015F00]
+CopyFrom = 0x5F00
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00025F00]
+CopyFrom = 0x5F00
+Rotate = 2
+
+[HighwayIntersectionInfo_0x00035F00]
+CopyFrom = 0x5F00
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045F00]
+CopyFrom = 0x5F00
+Transpose = 1
+
+[HighwayIntersectionInfo_0x00055F00]
+CopyFrom = 0x45F00
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00065F00]
+CopyFrom = 0x45F00
+Rotate = 2
+
+[HighwayIntersectionInfo_0x00075F00]
+CopyFrom = 0x45F00
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00085F00]
+;Added by SA 02/18/2011
+;FAMIS to MIS transition B
+Piece = 0.0, 0.0, 0, 0, 0x5e100025
+PreviewEffect = preview_famis_farhw_tra_002
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x00020002
+CheckType = b - dirtroad: 0x00020000
+CheckType = c - dirtroad: 0x00000002
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =...---.....
+ConsLayout =...^.......
+
+AutoTileBase = 0x5e100020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e100020
+Costs       = 200
+
+[HighwayIntersectionInfo_0x00095F00]
+CopyFrom = 0x85F00
+Rotate = 1
+
+[HighwayIntersectionInfo_0x000A5F00]
+CopyFrom = 0x85F00
+Rotate = 2
+
+[HighwayIntersectionInfo_0x000B5F00]
+CopyFrom = 0x85F00
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000C5F00]
+CopyFrom = 0x85F00
+Transpose = 1
+
+[HighwayIntersectionInfo_0x000D5F00]
+CopyFrom = 0xC5F00
+Rotate = 1
+
+[HighwayIntersectionInfo_0x000E5F00]
+CopyFrom = 0xC5F00
+Rotate = 2
+
+[HighwayIntersectionInfo_0x000F5F00]
+CopyFrom = 0xC5F00
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00005F01]
+;Added by SA 05/16/2011
+;FAD-44 Type A Full
+Piece = -32, 0.0, 0, 0, 0x5e100305
+PreviewEffect = preview_farhw_tulep_tra_001
+
+CellLayout =.........
+CellLayout =...wx....
+CellLayout =.abcdbe.<
+CellLayout =.abcdbe..
+CellLayout =...yz....
+CellLayout =...^.....
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000200
+CheckType = d - avenue:0x02000204 road:0x02000200
+CheckType = e - dirtroad:0x00000002
+CheckType = w - avenue:0x02040000, 0xffff0000 check
+CheckType = x - avenue:0x02000004, 0xff0000ff check
+CheckType = y - avenue:0x00040200, 0x00ffff00 check
+CheckType = z - avenue:0x00000204, 0x0000ffff check
+
+ConsLayout =.........
+ConsLayout =...||....
+ConsLayout =.--++--.<
+ConsLayout =.--++--..
+ConsLayout =...||....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5e100300
+PlaceQueryID = 0x5e100300
+Costs = 75
+[HighwayIntersectionInfo_0x00015F01]
+CopyFrom = 0x5F01
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025F01]
+CopyFrom = 0x5F01
+Rotate = 2
+[HighwayIntersectionInfo_0x00035F01]
+CopyFrom = 0x5F01
+Rotate = 3
+[HighwayIntersectionInfo_0x00045F01]
+CopyFrom = 0x5F01
+[HighwayIntersectionInfo_0x00055F01]
+CopyFrom = 0x15F01
+[HighwayIntersectionInfo_0x00065F01]
+CopyFrom = 0x25F01
+[HighwayIntersectionInfo_0x00075F01]
+CopyFrom = 0x35F01
+
+
+[HighwayIntersectionInfo_0x00005F02]
+;Added by SA 05/16/2011
+;FAD-44 Type A Half - Out
+Piece = -32, 0.0, 0, 0, 0x5e100385
+PreviewEffect = preview_fad44_type_a_out002
+
+CellLayout =.......
+CellLayout =...wx..
+CellLayout =.abcd.<
+CellLayout =.abcd..
+CellLayout =...yz..
+CellLayout =...^...
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000200
+CheckType = d - avenue:0x02000204 road:0x02000200
+CheckType = w - avenue:0x02040000, 0xffff0000 check
+CheckType = x - avenue:0x02000004, 0xff0000ff check
+CheckType = y - avenue:0x00040200, 0x00ffff00 check
+CheckType = z - avenue:0x00000204, 0x0000ffff check
+
+ConsLayout =.......
+ConsLayout =...||..
+ConsLayout =.--++.<
+ConsLayout =.--++..
+ConsLayout =...||..
+ConsLayout =...^...
+
+AutoTileBase=	0x5e100380
+PlaceQueryID =  0x5e100380
+Costs = 75
+[HighwayIntersectionInfo_0x00015F02]
+CopyFrom = 0x5F02
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025F02]
+CopyFrom = 0x5F02
+Rotate = 2
+[HighwayIntersectionInfo_0x00035F02]
+CopyFrom = 0x5F02
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045F02]
+;Added by SA 05/16/2011
+;FAD-44 Type A Half - In
+Piece = 0, 0.0, 0, 0, 0x5e100785
+PreviewEffect = preview_fad44_type_a_in_003
+
+CellLayout =.......
+CellLayout =.wx....
+CellLayout =.cdbe.<
+CellLayout =.cdbe..
+CellLayout =.yz....
+CellLayout =.^.....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000200
+CheckType = d - avenue:0x02000204 road:0x02000200
+CheckType = e - dirtroad:0x00000002
+CheckType = w - avenue:0x02040000, 0xffff0000 check
+CheckType = x - avenue:0x02000004, 0xff0000ff check
+CheckType = y - avenue:0x00040200, 0x00ffff00 check
+CheckType = z - avenue:0x00000204, 0x0000ffff check
+
+ConsLayout =.......
+ConsLayout =.||....
+ConsLayout =.++--.<
+ConsLayout =.++--..
+ConsLayout =.||....
+ConsLayout =.^.....
+
+AutoTileBase=	0x5e100780
+PlaceQueryID =  0x5e100780
+Costs = 75
+[HighwayIntersectionInfo_0x00055F02]
+CopyFrom = 0x45F02
+Rotate	= 1
+[HighwayIntersectionInfo_0x00065F02]
+CopyFrom = 0x45F02
+Rotate = 2
+[HighwayIntersectionInfo_0x00075F02]
+CopyFrom = 0x45F02
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00005F03]
+;Added by GDO29Anagram 06/26/2011.
+;FAMIS/AVE-2 Full Diamond
+Piece = -16.0, -16.0, 0, 0, 0x5B036005
+PreviewEffect = preview_famis_ave2_fulldiamond
+
+CellLayout =.......
+CellLayout =...d...
+CellLayout =..bac<.
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - Road: 0x02000200 dirtroad: 0x00020002
+CheckType = b - dirtroad: 0x00020000
+CheckType = c - dirtroad: 0x00000002
+CheckType = d - Road: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...+...
+ConsLayout =..-+-<.
+ConsLayout =.......
+ConsLayout =...^...
+
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B036000
+Costs = 450
+AutoTileBase = 0x5B036000
+
+[HighwayIntersectionInfo_0x00015F03]
+CopyFrom = 0x5F03
+Rotate = 1
+[HighwayIntersectionInfo_0x00025F03]
+CopyFrom = 0x5F03
+Rotate = 2
+[HighwayIntersectionInfo_0x00035F03]
+CopyFrom = 0x5F03
+Rotate = 3
+[HighwayIntersectionInfo_0x00045F03]
+CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00055F03]
+CopyFrom = 0x5F03
+Rotate = 1
+[HighwayIntersectionInfo_0x00065F03]
+CopyFrom = 0x5F03
+Rotate = 2
+[HighwayIntersectionInfo_0x00075F03]
+CopyFrom = 0x5F03
+Rotate = 3
+
+
+
+;End RHW Wide Curve Piece Section SECTION

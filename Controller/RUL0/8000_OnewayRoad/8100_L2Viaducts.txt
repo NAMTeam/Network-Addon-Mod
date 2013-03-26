@@ -1,0 +1,3602 @@
+;OneWayRoad Puzzle Pieces Button 
+;NOTE-OWR Puzzle Pieces are handled a little differently. onewayroad related items are typically the most complex of items for configuration.
+RotationRing = 8100, 128100, A8100, 1A8100, 18100, 138100, B8100, 1B8100, 48100, 148100, C8100, 1C8100, 58100, 158100, D8100, 1D8100, 68100, 168100, E8100, 1E8100, 78100, 178100, F8100, 1F8100, 28100, 108100, 88100, 188100, 38100, 118100, 98100, 198100 ;onewayroad start/end section puzzle piece
+AddTypes     = 8101, 108101, 18101, 118101, 28101, 128101, 38101, 138101, 48101, 148101, 58101, 158101, 68101, 168101, 78101, 178101, 88101, 188101, 98101, 198101, A8101, 1A8101, B8101, 1B8101, C8101, 1C8101, D8101, 1D8101, E8101, 1E8101, F8101, 1F8101 ;onewayroadxblank straight puzzle piece
+AddTypes     = 8102, 108102, 18102, 118102, 28102, 128102, 38102, 138102, 48102, 148102, 58102, 158102, 68102, 168102, 78102, 178102, 88102, 188102, 98102, 198102, A8102, 1A8102, B8102, 1B8102, C8102, 1C8102, D8102, 1D8102, E8102, 1E8102, F8102, 1F8102 ;onewayroadxblank transition to diagonal
+AddTypes     = 8103, 18103, 28103, 38103, 48103, 58103, 68103, 78103, 88103, 98103, A8103, B8103, C8103, D8103, E8103, F8103, 108103, 118103, 128103, 138103, 148103, 158103, 168103, 178103, 188103, 198103, 1A8103, 1B8103, 1C8103, 1D8103, 1E8103, 1F8103 ;onewayroadxcorner
+AddTypes     = 8104, 108104, 18104, 118104, 28104, 128104, 38104, 138104, 48104, 148104, 58104, 158104, 68104, 168104, 78104, 178104, 88104, 188104, 98104, 198104, A8104, 1A8104, B8104, 1B8104, C8104, 1C8104, D8104, 1D8104, E8104, 1E8104, F8104, 1F8104 ;onewayroadxonewayroad orthogonal onewayroad
+AddTypes     = 8105, 108105, 18105, 118105, 28105, 128105, 38105, 138105, 48105, 148105, 58105, 158105, 68105, 168105, 78105, 178105, 88105, 188105, 98105, 198105, A8105, 1A8105, B8105, 1B8105, C8105, 1C8105, D8105, 1D8105, E8105, 1E8105, F8105, 1F8105 ;onewayroadxonewayroad double diagonal onewayroad
+AddTypes     = 8106, 108106, 18106, 118106, 28106, 128106, 38106, 138106, 48106, 148106, 58106, 158106, 68106, 168106, 78106, 178106, 88106, 188106, 98106, 198106, A8106, 1A8106, B8106, 1B8106, C8106, 1C8106, D8106, 1D8106, E8106, 1E8106, F8106, 1F8106 ;onewayroadxonewayroad diagonal onewayroad
+AddTypes     = 8107, 108107, 18107, 118107, 28107, 128107, 38107, 138107, 48107, 148107, 58107, 158107, 68107, 168107, 78107, 178107, 88107, 188107, 98107, 198107, A8107, 1A8107, B8107, 1B8107, C8107, 1C8107, D8107, 1D8107, E8107, 1E8107, F8107, 1F8107 ;onewayroadxrail straight rail
+AddTypes     = 8108, 108108, 18108, 118108, 28108, 128108, 38108, 138108, 48108, 148108, 58108, 158108, 68108, 168108, 78108, 178108, 88108, 188108, 98108, 198108, A8108, 1A8108, B8108, 1B8108, C8108, 1C8108, D8108, 1D8108, E8108, 1E8108, F8108, 1F8108 ;onewayroadxrail double diagonal rail
+AddTypes     = 8109, 108109, 18109, 118109, 28109, 128109, 38109, 138109, 48109, 148109, 58109, 158109, 68109, 168109, 78109, 178109, 88109, 188109, 98109, 198109, A8109, 1A8109, B8109, 1B8109, C8109, 1C8109, D8109, 1D8109, E8109, 1E8109, F8109, 1F8109 ;onewayroadxrail diagonal rail
+AddTypes     = 810A, 10810A, 1810A, 11810A, 2810A, 12810A, 3810A, 13810A, 4810A, 14810A, 5810A, 15810A, 6810A, 16810A, 7810A, 17810A, 8810A, 18810A, 9810A, 19810A, A810A, 1A810A, B810A, 1B810A, C810A, 1C810A, D810A, 1D810A, E810A, 1E810A, F810A, 1F810A ;onewayroadxstreet straight street
+AddTypes     = 810B, 10810B, 1810B, 11810B, 2810B, 12810B, 3810B, 13810B, 4810B, 14810B, 5810B, 15810B, 6810B, 16810B, 7810B, 17810B, 8810B, 18810B, 9810B, 19810B, A810B, 1A810B, B810B, 1B810B, C810B, 1C810B, D810B, 1D810B, E810B, 1E810B, F810B, 1F810B ;onewayroadxroad straight road
+AddTypes     = 810C, 10810C, 1810C, 11810C, 2810C, 12810C, 3810C, 13810C, 4810C, 14810C, 5810C, 15810C, 6810C, 16810C, 7810C, 17810C, 8810C, 18810C, 9810C, 19810C, A810C, 1A810C, B810C, 1B810C, C810C, 1C810C, D810C, 1D810C, E810C, 1E810C, F810C, 1F810C ;onewayroadxroad double diagonal road
+AddTypes     = 810D, 10810D, 1810D, 11810D, 2810D, 12810D, 3810D, 13810D, 4810D, 14810D, 5810D, 15810D, 6810D, 16810D, 7810D, 17810D, 8810D, 18810D, 9810D, 19810D, A810D, 1A810D, B810D, 1B810D, C810D, 1C810D, D810D, 1D810D, E810D, 1E810D, F810D, 1F810D ;onewayroadxroad diagonal road
+AddTypes     = 810E, 10810E, 1810E, 11810E, 2810E, 12810E, 3810E, 13810E, 4810E, 14810E, 5810E, 15810E, 6810E, 16810E, 7810E, 17810E, 8810E, 18810E, 9810E, 19810E, A810E, 1A810E, B810E, 1B810E, C810E, 1C810E, D810E, 1D810E, E810E, 1E810E, F810E, 1F810E ;onewayroadxavenue orthogonal avenue
+AddTypes     = 810F, 10810F, 1810F, 11810F, 2810F, 12810F, 3810F, 13810F, 4810F, 14810F, 5810F, 15810F, 6810F, 16810F, 7810F, 17810F, 8810F, 18810F, 9810F, 19810F, A810F, 1A810F, B810F, 1B810F, C810F, 1C810F, D810F, 1D810F, E810F, 1E810F, F810F, 1F810F ;onewayroadxavenue diagonal avenue
+AddTypes     = 8110, 108110, 18110, 118110, 28110, 128110, 38110, 138110, 48110, 148110, 58110, 158110, 68110, 168110, 78110, 178110, 88110, 188110, 98110, 198110, A8110, 1A8110, B8110, 1B8110, C8110, 1C8110, D8110, 1D8110, E8110, 1E8110, F8110, 1F8110 ;onewayroadxgroundhighway straight groundhighway
+AddTypes     = 8111, 108111, 18111, 118111, 28111, 128111, 38111, 138111, 48111, 148111, 58111, 158111, 68111, 168111, 78111, 178111, 88111, 188111, 98111, 198111, A8111, 1A8111, B8111, 1B8111, C8111, 1C8111, D8111, 1D8111, E8111, 1E8111, F8111, 1F8111 ;onewayroadxgroundhighway diagonal groundhighway 
+AddTypes     = 8112, 18112, 28112, 38112, 48112, 58112, 68112, 78112, 88112, 98112, A8112, B8112, C8112, D8112, E8112, F8112, 108112, 118112, 128112, 138112, 148112, 158112, 168112, 178112, 188112, 198112, 1A8112, 1B8112, 1C8112, 1D8112, 1E8112, 1F8112 ;onewayroadxonewayroad/road + intersection puzzle piece
+AddTypes     = 8113, 18113, 28113, 38113, 48113, 58113, 68113, 78113, 88113, 98113, A8113, B8113, C8113, D8113, E8113, F8113, 108113, 118113, 128113, 138113, 148113, 158113, 168113, 178113, 188113, 198113, 1A8113, 1B8113, 1C8113, 1D8113, 1E8113, 1F8113 ;onewayroadxonewayroad/road t intersection puzzle piece
+AddTypes     = 8114, 18114, 28114, 38114, 48114, 58114, 68114, 78114, 88114, 98114, A8114, B8114, C8114, D8114, E8114, F8114, 108114, 118114, 128114, 138114, 148114, 158114, 168114, 178114, 188114, 198114, 1A8114, 1B8114, 1C8114, 1D8114, 1E8114, 1F8114 ;onewayroadxrail + intersection puzzle piece
+AddTypes     = 8115, 108115, 18115, 118115, 28115, 128115, 38115, 138115, 48115, 148115, 58115, 158115, 68115, 168115, 78115, 178115, 88115, 188115, 98115, 198115, A8115, 1A8115, B8115, 1B8115, C8115, 1C8115, D8115, 1D8115, E8115, 1E8115, F8115, 1F8115 ;onewayroadxGround Light Rail Puzzle Piece
+AddTypes     = 8116, 108116, 18116, 118116, 28116, 128116, 38116, 138116, 48116, 148116, 58116, 158116, 68116, 168116, 78116, 178116, 88116, 188116, 98116, 198116, A8116, 1A8116, B8116, 1B8116, C8116, 1C8116, D8116, 1D8116, E8116, 1E8116, F8116, 1F8116 ;onewayroadxDiagonal Ground Light Rail Puzzle Piece
+AddTypes     = 8117, 18117, 28117, 38117, 48117, 58117, 68117, 78117, 88117, 98117, A8117, B8117, C8117, D8117, E8117, F8117, 108117, 118117, 128117, 138117, 148117, 158117, 168117, 178117, 188117, 198117, 1A8117, 1B8117, 1C8117, 1D8117, 1E8117, 1F8117 ;T One-Way Road ON OnSlope
+AddTypes     = 28118, 38118, 48118, 58118, 68118, 78118, 88118, 98118, A8118, B8118, C8118, D8118, E8118, F8118, 108118, 118118, 128118, 138118, 148118, 158118, 168118, 178118, 188118, 198118, 1A8118, 1B8118, 1C8118, 1D8118, 1E8118, 1F8118, 8118, 18118 ;T One-Way Road OFF OnSlope
+AddTypes     = 8119, 18119, 28119, 38119, 48119, 58119, 68119, 78119, 88119, 98119, A8119, B8119, C8119, D8119, E8119, F8119, 108119, 118119, 128119, 138119, 148119, 158119, 168119, 178119, 188119, 198119, 1A8119, 1B8119, 1C8119, 1D8119, 1E8119, 1F8119 ;Straight One-Way Road ON OnSlope
+AddTypes     = 2811A, 3811A, 4811A, 5811A, 6811A, 7811A, 8811A, 9811A, A811A, B811A, C811A, D811A, E811A, F811A, 10811A, 11811A, 12811A, 13811A, 14811A, 15811A, 16811A, 17811A, 18811A, 19811A, 1A811A, 1B811A, 1C811A, 1D811A, 1E811A, 1F811A, 811A, 1811A ;Straight One-Way Road OFF OnSlope
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;PUZZLE PIECES
+;ONEWAYROAD PUZZLE PIECES
+;NOTE; all 0x59######, 0x79###### path files are now reversed through the ini network file. Be sure to include left hand drive paths & change IIDs. This also includes needing left hand drive paths for transposed paths. Transposed=Reversed.
+
+;NOTE; using Transpose function impacts on onewayroad direction for 'check' flags & paths for onewayroad, 
+;therefore may need onewaydir fuction to enforce direction for check flags & also additional paths in the case
+;of transpose function using autopathbase function for additional paths.
+;
+;Right Hand drive paths ~ rail-related & non-rail related onewayroad Non-Transposed paths; 0x59######
+;Right Hand drive paths ~ onewayroad rail related Transposed Paths; 0x99######
+;Left Hand drive paths ~ onewayroad non-rail related Transposed paths; 0x79######
+;Left Hand drive paths ~ onewayroad rail related Transposed Paths; 0xB9######
+;some limited exceptions may exist in some cases
+; Default >>> Replacement
+; Right Hand >>> Left Hand
+; Standard Versions >>> Reversed Versions
+; 0x59###### > 0x79######
+; 0x99###### > 0xB9######
+;
+[HighwayIntersectionInfo_0x00008100]
+;Added by Tropod 06/13/04.
+;edited by memo 12/31/07 in order to fix deep-hole-bug
+;onewayroad start Puzzle Piece ON orthogonal
+Piece = -16.0, 0.0, 2, 0, 0x5920C405
+PreviewEffect = preview_owrd_puzzlepiece006
+
+CellLayout =.......
+CellLayout =.abbc.<
+CellLayout =.^.....
+
+CheckType = a - onewayroad: 0x00020000
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00000002,0xff00ffff check
+
+ConsLayout =.......
+ConsLayout =.---..<
+ConsLayout =.^.....
+
+OneWayDir = 0
+AutoTileBase=	0x5920C400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000808A
+Costs       = 290
+[HighwayIntersectionInfo_0x00018100]
+CopyFrom    = 0x8100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028100]
+CopyFrom    = 0x8100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038100]
+CopyFrom    = 0x8100
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048100]
+CopyFrom    = 0x28100
+[HighwayIntersectionInfo_0x00058100]
+CopyFrom    = 0x38100
+[HighwayIntersectionInfo_0x00068100]
+CopyFrom    = 0x8100
+[HighwayIntersectionInfo_0x00078100]
+CopyFrom    = 0x18100
+
+
+[HighwayIntersectionInfo_0x00088100]
+;Added by Tropod 04/14/05
+;onewayroad start/end puzzle piece ON diagonal
+Piece = -32.0, -16.0, 0, 0, 0x591A4105
+PreviewEffect = preview_owrd_puzzlepiece036
+
+CellLayout =......
+CellLayout =..x...
+CellLayout =..cb..
+CellLayout =...cB<
+CellLayout =....^.
+
+CheckType = x - onewayroad: 0x01000000,0xff000000 check
+CheckType = b - onewayroad: 0x01000003
+CheckType = B - onewayroad: 0x00000003
+CheckType = c - onewayroad: 0x00030100
+
+ConsLayout =......
+ConsLayout =..\...
+ConsLayout =..\\..
+ConsLayout =...\+<
+ConsLayout =....^.
+
+OneWayDir = 5
+AutoTileBase=	0x591A4010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000808A
+Costs       = 290
+[HighwayIntersectionInfo_0x00098100]
+CopyFrom    = 0x88100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A8100]
+CopyFrom    = 0x88100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B8100]
+CopyFrom    = 0x88100
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C8100]
+CopyFrom    = 0x88100
+Transpose = 1
+Autopathbase = 0x591A4410
+OneWayDir = 5
+[HighwayIntersectionInfo_0x000D8100]
+CopyFrom    = 0xC8100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E8100]
+CopyFrom    = 0xC8100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F8100]
+CopyFrom    = 0xC8100
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00108100]
+;Added by Tropod 06/13/04.
+;edited by memo 12/31/07 in order to fix deep-hole-bug
+;onewayroad end Puzzle Piece OFF orthogonal
+Piece = 16.0, 0.0, 0, 0, 0x5920C015
+PreviewEffect = preview_owrd_puzzlepiece008
+
+CellLayout =......
+CellLayout =abbc.<
+CellLayout =...^..
+
+CheckType = a - onewayroad: 0x00020000,0xffffff00 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00020000
+
+ConsLayout =......
+ConsLayout =.---.<
+ConsLayout =...^...
+
+OneWayDir = 0
+AutoTileBase=	0x5920C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008005
+Costs       = 290
+[HighwayIntersectionInfo_0x00118100]
+CopyFrom    = 0x108100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128100]
+CopyFrom    = 0x108100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138100]
+CopyFrom    = 0x108100
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00148100]
+CopyFrom    = 0x108100
+[HighwayIntersectionInfo_0x00158100]
+CopyFrom    = 0x118100
+[HighwayIntersectionInfo_0x00168100]
+CopyFrom    = 0x128100
+[HighwayIntersectionInfo_0x00178100]
+CopyFrom    = 0x138100
+
+
+[HighwayIntersectionInfo_0x00188100]
+;Added by Tropod 04/14/05
+;onewayroad start/end puzzle piece OFF diagonal
+Piece = -32.0, -16.0, 0, 0, 0x591A4405
+PreviewEffect = preview_owrd_puzzlepiece037
+
+CellLayout =......
+CellLayout =..x...
+CellLayout =..cb..
+CellLayout =...cB<
+CellLayout =....^.
+
+CheckType = x - onewayroad: 0x01000000,0xff000000 check
+CheckType = b - onewayroad: 0x01000003
+CheckType = B - onewayroad: 0x00000003
+CheckType = c - onewayroad: 0x00030100
+
+ConsLayout =......
+ConsLayout =..\...
+ConsLayout =..\\..
+ConsLayout =...\+<
+ConsLayout =....^.
+
+OneWayDir = 1
+AutoTileBase=	0x591A4410
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008005
+Costs       = 290
+[HighwayIntersectionInfo_0x00198100]
+CopyFrom    = 0x188100
+Rotate = 1
+[HighwayIntersectionInfo_0x001A8100]
+CopyFrom    = 0x188100
+Rotate = 2
+[HighwayIntersectionInfo_0x001B8100]
+CopyFrom    = 0x188100
+Rotate = 3
+[HighwayIntersectionInfo_0x001C8100]
+CopyFrom    = 0x188100
+Transpose = 1
+Autopathbase = 0x591A4010
+OneWayDir = 1
+[HighwayIntersectionInfo_0x001D8100]
+CopyFrom    = 0x1C8100
+Rotate = 1
+[HighwayIntersectionInfo_0x001E8100]
+CopyFrom    = 0x1C8100
+Rotate = 2
+[HighwayIntersectionInfo_0x001F8100]
+CopyFrom    = 0x1C8100
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00008101]
+;Added by Tropod 06/13/04.
+;onewayroadxstraight blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x59265700
+PreviewEffect = preview_owrd_puzzlepiece000
+
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x59265700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000800A
+Costs      = 75
+OneWayDir	= 0
+[HighwayIntersectionInfo_0x00018101]
+CopyFrom    = 0x8101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028101]
+CopyFrom    = 0x8101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038101]
+CopyFrom    = 0x8101
+Rotate		= 3
+;;;Clones for rotation
+
+
+[HighwayIntersectionInfo_0x00048101]
+;Added by Tarkus 08/13/11.
+;onewayroadxstraight blank terrain puzzle piece no pylon
+Piece = 0.0, 0.0, 0, 0, 0x59265710
+PreviewEffect = preview_owrd_puzzlepiece051
+
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x59265710
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59265710
+Costs      = 75
+OneWayDir	= 0
+[HighwayIntersectionInfo_0x00058101]
+CopyFrom    = 0x48101
+Rotate = 1
+[HighwayIntersectionInfo_0x00068101]
+CopyFrom    = 0x48101
+Rotate = 2
+[HighwayIntersectionInfo_0x00078101]
+CopyFrom    = 0x48101
+Rotate = 3
+[HighwayIntersectionInfo_0x00088101]
+CopyFrom    = 0x8101
+[HighwayIntersectionInfo_0x00098101]
+CopyFrom    = 0x18101
+[HighwayIntersectionInfo_0x000A8101]
+CopyFrom    = 0x28101
+[HighwayIntersectionInfo_0x000B8101]
+CopyFrom    = 0x38101
+[HighwayIntersectionInfo_0x000C8101]
+CopyFrom    = 0x48101
+[HighwayIntersectionInfo_0x000D8101]
+CopyFrom    = 0x58101
+[HighwayIntersectionInfo_0x000E8101]
+CopyFrom    = 0x68101
+[HighwayIntersectionInfo_0x000F8101]
+CopyFrom    = 0x78101
+
+
+[HighwayIntersectionInfo_0x00108101]
+;Added by Tropod 04/14/05.
+;onewayroadxdiagonal blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5919E110
+PreviewEffect = preview_owrd_puzzlepiece01c
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5919E110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000800A
+Costs       = 75
+OneWayDir = 1
+[HighwayIntersectionInfo_0x00118101]
+CopyFrom    = 0x108101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128101]
+CopyFrom    = 0x108101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138101]
+CopyFrom    = 0x108101
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148101]
+CopyFrom    = 0x108101
+Transpose = 1
+Autopathbase = 0x7919E110
+[HighwayIntersectionInfo_0x00158101]
+CopyFrom    = 0x148101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168101]
+CopyFrom    = 0x148101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178101]
+CopyFrom    = 0x148101
+Rotate		= 3
+;;;Clones for rotation
+[HighwayIntersectionInfo_0x00188101]
+CopyFrom    = 0x108101
+[HighwayIntersectionInfo_0x00198101]
+CopyFrom    = 0x118101
+[HighwayIntersectionInfo_0x001A8101]
+CopyFrom    = 0x128101
+[HighwayIntersectionInfo_0x001B8101]
+CopyFrom    = 0x138101
+[HighwayIntersectionInfo_0x001C8101]
+CopyFrom    = 0x148101
+[HighwayIntersectionInfo_0x001D8101]
+CopyFrom    = 0x158101
+
+[HighwayIntersectionInfo_0x001E8101]
+CopyFrom    = 0x168101
+[HighwayIntersectionInfo_0x001F8101]
+CopyFrom    = 0x178101
+
+
+[HighwayIntersectionInfo_0x00008103]
+;Added by Tropod 04/01/05.
+;onewayroadxcorner blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5919E000
+PreviewEffect = preview_owrd_puzzlepiece018
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008230
+Costs       = 75
+[HighwayIntersectionInfo_0x00018103]
+CopyFrom    = 0x8103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028103]
+CopyFrom    = 0x8103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038103]
+CopyFrom    = 0x8103
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048103]
+CopyFrom    = 0x8103
+Transpose = 1
+Autopathbase = 0x7919E000
+[HighwayIntersectionInfo_0x00058103]
+CopyFrom    = 0x48103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068103]
+CopyFrom    = 0x48103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078103]
+CopyFrom    = 0x48103
+Rotate		= 3
+;;;Clones for rotation
+[HighwayIntersectionInfo_0x00088103]
+CopyFrom    = 0x8103
+[HighwayIntersectionInfo_0x00098103]
+CopyFrom    = 0x18103
+[HighwayIntersectionInfo_0x000A8103]
+CopyFrom    = 0x28103
+[HighwayIntersectionInfo_0x000B8103]
+CopyFrom    = 0x38103
+[HighwayIntersectionInfo_0x000C8103]
+CopyFrom    = 0x48103
+[HighwayIntersectionInfo_0x000D8103]
+CopyFrom    = 0x58103
+[HighwayIntersectionInfo_0x000E8103]
+CopyFrom    = 0x68103
+[HighwayIntersectionInfo_0x000F8103]
+CopyFrom    = 0x78103
+[HighwayIntersectionInfo_0x00108103]
+CopyFrom    = 0x8103
+[HighwayIntersectionInfo_0x00118103]
+CopyFrom    = 0x18103
+[HighwayIntersectionInfo_0x00128103]
+CopyFrom    = 0x28103
+[HighwayIntersectionInfo_0x00138103]
+CopyFrom    = 0x38103
+[HighwayIntersectionInfo_0x00148103]
+CopyFrom    = 0x48103
+[HighwayIntersectionInfo_0x00158103]
+CopyFrom    = 0x58103
+[HighwayIntersectionInfo_0x00168103]
+CopyFrom    = 0x68103
+[HighwayIntersectionInfo_0x00178103]
+CopyFrom    = 0x78103
+[HighwayIntersectionInfo_0x00188103]
+CopyFrom    = 0x8103
+[HighwayIntersectionInfo_0x00198103]
+CopyFrom    = 0x18103
+[HighwayIntersectionInfo_0x001A8103]
+CopyFrom    = 0x28103
+[HighwayIntersectionInfo_0x001B8103]
+CopyFrom    = 0x38103
+[HighwayIntersectionInfo_0x001C8103]
+CopyFrom    = 0x48103
+[HighwayIntersectionInfo_0x001D8103]
+CopyFrom    = 0x58103
+[HighwayIntersectionInfo_0x001E8103]
+CopyFrom    = 0x68103
+[HighwayIntersectionInfo_0x001F8103]
+CopyFrom    = 0x78103
+
+
+[HighwayIntersectionInfo_0x00008104]
+;Added by Tropod 06/13/04.
+;onewayroad orthogonal x onewayroad orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5920C300
+PreviewEffect = preview_owrd_puzzlepiece004
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5920C300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+
+[HighwayIntersectionInfo_0x00018104]
+CopyFrom    = 0x8104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028104]
+CopyFrom    = 0x8104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038104]
+CopyFrom    = 0x8104
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048104]
+CopyFrom    = 0x8104
+[HighwayIntersectionInfo_0x00058104]
+CopyFrom    = 0x18104
+[HighwayIntersectionInfo_0x00068104]
+CopyFrom    = 0x28104
+[HighwayIntersectionInfo_0x00078104]
+CopyFrom    = 0x38104
+[HighwayIntersectionInfo_0x00088104]
+CopyFrom    = 0x8104
+[HighwayIntersectionInfo_0x00098104]
+CopyFrom    = 0x18104
+[HighwayIntersectionInfo_0x000A8104]
+CopyFrom    = 0x28104
+[HighwayIntersectionInfo_0x000B8104]
+CopyFrom    = 0x38104
+[HighwayIntersectionInfo_0x000C8104]
+CopyFrom    = 0x8104
+[HighwayIntersectionInfo_0x000D8104]
+CopyFrom    = 0x18104
+[HighwayIntersectionInfo_0x000E8104]
+CopyFrom    = 0x28104
+[HighwayIntersectionInfo_0x000F8104]
+CopyFrom    = 0x38104
+
+
+[HighwayIntersectionInfo_0x00108104]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x onewayroad orthogonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E190
+PreviewEffect = preview_owrd_puzzlepiece024
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad:0x02000203
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5919E190
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00118104]
+CopyFrom    = 0x108104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128104]
+CopyFrom    = 0x108104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138104]
+CopyFrom    = 0x108104
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148104]
+CopyFrom    = 0x108104
+Transpose	= 1
+Autopathbase = 0x7919E190
+[HighwayIntersectionInfo_0x00158104]
+CopyFrom    = 0x148104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168104]
+CopyFrom    = 0x148104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178104]
+CopyFrom    = 0x148104
+Rotate		= 3
+
+;;follow on item
+[HighwayIntersectionInfo_0x00188104]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x onewayroad orthogonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E1C0
+PreviewEffect = preview_owrd_puzzlepiece02d
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - onewayroad:0x02030200
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5919E1C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00198104]
+CopyFrom    = 0x188104
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A8104]
+CopyFrom    = 0x188104
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B8104]
+CopyFrom    = 0x188104
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C8104]
+CopyFrom    = 0x188104
+Transpose	= 1
+Autopathbase = 0x7919E1C0
+[HighwayIntersectionInfo_0x001D8104]
+CopyFrom    = 0x1C8104
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E8104]
+CopyFrom    = 0x1C8104
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F8104]
+CopyFrom    = 0x1C8104
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008105]
+; onewayroad orthogonal x double diagonal onewayroad puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080050
+PreviewEffect = preview_owrd_puzzlepiece015
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x59080050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00018105]
+CopyFrom    = 0x8105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028105]
+CopyFrom    = 0x8105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038105]
+CopyFrom    = 0x8105
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048105]
+CopyFrom    = 0x8105
+Transpose = 1
+Autopathbase = 0x79080050
+[HighwayIntersectionInfo_0x00058105]
+CopyFrom    = 0x48105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068105]
+CopyFrom    = 0x48105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078105]
+CopyFrom    = 0x48105
+Rotate		= 3
+;;;Clones for rotation
+[HighwayIntersectionInfo_0x00088105]
+CopyFrom    = 0x8105
+[HighwayIntersectionInfo_0x00098105]
+CopyFrom    = 0x18105
+[HighwayIntersectionInfo_0x000A8105]
+CopyFrom    = 0x28105
+[HighwayIntersectionInfo_0x000B8105]
+CopyFrom    = 0x38105
+[HighwayIntersectionInfo_0x000C8105]
+CopyFrom    = 0x48105
+[HighwayIntersectionInfo_0x000D8105]
+CopyFrom    = 0x58105
+[HighwayIntersectionInfo_0x000E8105]
+CopyFrom    = 0x68105
+[HighwayIntersectionInfo_0x000F8105]
+CopyFrom    = 0x78105
+
+
+[HighwayIntersectionInfo_0x00108105]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x onewayroad double diagonal
+Piece = 0.0, 0.0, 0, 0, 0x5919E1B0
+PreviewEffect = preview_owrd_puzzlepiece026
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad:0x03010301
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E1B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00118105]
+CopyFrom    = 0x108105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128105]
+CopyFrom    = 0x108105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138105]
+CopyFrom    = 0x108105
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148105]
+CopyFrom    = 0x108105
+Transpose	= 1
+Autopathbase = 0x7919E1B0
+[HighwayIntersectionInfo_0x00158105]
+CopyFrom    = 0x148105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168105]
+CopyFrom    = 0x148105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178105]
+CopyFrom    = 0x148105
+Rotate		= 3
+;;;Clones for rotation
+[HighwayIntersectionInfo_0x00188105]
+CopyFrom    = 0x108105
+[HighwayIntersectionInfo_0x00198105]
+CopyFrom    = 0x118105
+[HighwayIntersectionInfo_0x001A8105]
+CopyFrom    = 0x128105
+[HighwayIntersectionInfo_0x001B8105]
+CopyFrom    = 0x138105
+[HighwayIntersectionInfo_0x001C8105]
+CopyFrom    = 0x148105
+[HighwayIntersectionInfo_0x001D8105]
+CopyFrom    = 0x158105
+[HighwayIntersectionInfo_0x001E8105]
+CopyFrom    = 0x168105
+[HighwayIntersectionInfo_0x001F8105]
+CopyFrom    = 0x178105
+
+
+[HighwayIntersectionInfo_0x00008106]
+; onewayroad orthogonal x diagonal onewayroad puzzle piece 1a
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080040
+PreviewEffect = preview_owrd_puzzlepiece014
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - onewayroad:0x03010000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x59080040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00018106]
+CopyFrom    = 0x8106
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028106]
+CopyFrom    = 0x8106
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038106]
+CopyFrom    = 0x8106
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048106]
+CopyFrom    = 0x8106
+Transpose	= 1
+Autopathbase = 0x79080040
+[HighwayIntersectionInfo_0x00058106]
+CopyFrom    = 0x48106
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068106]
+CopyFrom    = 0x48106
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078106]
+CopyFrom    = 0x48106
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00088106]
+; onewayroad orthogonal x diagonal onewayroad puzzle piece 1b
+;Added by Tropod ~ follow on from above item
+Piece = 0.0, 0.0, 0, 0, 0x59080140
+PreviewEffect = preview_owrd_puzzlepiece00b
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =...^....
+
+CheckType = Z - onewayroad:0x00000301
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x59080140
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00098106]
+CopyFrom    = 0x88106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A8106]
+CopyFrom    = 0x88106
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B8106]
+CopyFrom    = 0x88106
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C8106]
+CopyFrom    = 0x88106
+Transpose	= 1
+Autopathbase = 0x79080140
+[HighwayIntersectionInfo_0x000D8106]
+CopyFrom    = 0xC8106
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E8106]
+CopyFrom    = 0xC8106
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F8106]
+CopyFrom    = 0xC8106
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00108106]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x onewayroad diagonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E1A0
+PreviewEffect = preview_owrd_puzzlepiece025
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - onewayroad:0x03010000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5919E1A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00118106]
+CopyFrom    = 0x108106
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128106]
+CopyFrom    = 0x108106
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138106]
+CopyFrom    = 0x108106
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148106]
+CopyFrom    = 0x108106
+Transpose	= 1
+Autopathbase = 0x7919E1A0
+[HighwayIntersectionInfo_0x00158106]
+CopyFrom    = 0x148106
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168106]
+CopyFrom    = 0x148106
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178106]
+CopyFrom    = 0x148106
+Rotate		= 3
+
+
+
+;; Follow on from above item
+[HighwayIntersectionInfo_0x00188106]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x onewayroad diagonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E2A0
+PreviewEffect = preview_owrd_puzzlepiece00d
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - onewayroad:0x00000301
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5919E2A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000801A
+Costs       = 75
+[HighwayIntersectionInfo_0x00198106]
+CopyFrom    = 0x188106
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A8106]
+CopyFrom    = 0x188106
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B8106]
+CopyFrom    = 0x188106
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C8106]
+CopyFrom    = 0x188106
+Transpose	= 1
+Autopathbase = 0x7919E2A0
+[HighwayIntersectionInfo_0x001D8106]
+CopyFrom    = 0x1C8106
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E8106]
+CopyFrom    = 0x1C8106
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F8106]
+CopyFrom    = 0x1C8106
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008107]
+; onewayroad orthogonal x rail orthogonal puzzle piece
+;Added by Tropod 06/13/04.
+Piece = 0.0, 0.0, 0, 0, 0x04030300
+PreviewEffect = preview_owrd_puzzlepiece002
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x00020002 rail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5920D300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00018107]
+CopyFrom    = 0x8107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028107]
+CopyFrom    = 0x8107
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038107]
+CopyFrom    = 0x8107
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048107]
+CopyFrom    = 0x8107
+[HighwayIntersectionInfo_0x00058107]
+CopyFrom    = 0x18107
+[HighwayIntersectionInfo_0x00068107]
+CopyFrom    = 0x28107
+[HighwayIntersectionInfo_0x00078107]
+CopyFrom    = 0x38107
+[HighwayIntersectionInfo_0x00088107]
+CopyFrom    = 0x8107
+[HighwayIntersectionInfo_0x00098107]
+CopyFrom    = 0x18107
+[HighwayIntersectionInfo_0x000A8107]
+CopyFrom    = 0x28107
+[HighwayIntersectionInfo_0x000B8107]
+CopyFrom    = 0x38107
+[HighwayIntersectionInfo_0x000C8107]
+CopyFrom    = 0x8107
+[HighwayIntersectionInfo_0x000D8107]
+CopyFrom    = 0x18107
+[HighwayIntersectionInfo_0x000E8107]
+CopyFrom    = 0x28107
+[HighwayIntersectionInfo_0x000F8107]
+CopyFrom    = 0x38107
+
+
+[HighwayIntersectionInfo_0x00108107]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x rail orthogonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E150
+PreviewEffect = preview_owrd_puzzlepiece020
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - onewayroad:0x01000003 rail:0x02000200
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5919E150
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00118107]
+CopyFrom    = 0x108107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128107]
+CopyFrom    = 0x108107
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138107]
+CopyFrom    = 0x108107
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148107]
+CopyFrom    = 0x108107
+Transpose	= 1
+Autopathbase = 0x9919E150
+[HighwayIntersectionInfo_0x00158107]
+CopyFrom    = 0x148107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168107]
+CopyFrom    = 0x148107
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178107]
+CopyFrom    = 0x148107
+Rotate		= 3
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x00188107]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x rail orthogonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E1D0
+PreviewEffect = preview_owrd_puzzlepiece02e
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - onewayroad:0x00030100 rail:0x02000200
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5919E1D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00198107]
+CopyFrom    = 0x188107
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A8107]
+CopyFrom    = 0x188107
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B8107]
+CopyFrom    = 0x188107
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C8107]
+CopyFrom    = 0x188107
+Transpose	= 1
+Autopathbase = 0x9919E1D0
+[HighwayIntersectionInfo_0x001D8107]
+CopyFrom    = 0x1C8107
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E8107]
+CopyFrom    = 0x1C8107
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F8107]
+CopyFrom    = 0x1C8107
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008108]
+; onewayroad orthogonal x double diagonal rail puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080010
+PreviewEffect = preview_owrd_puzzlepiece011
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =...^....
+
+CheckType = Z - onewayroad:0x00020002 rail:0x01030103
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x59080010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00018108]
+CopyFrom    = 0x8108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028108]
+CopyFrom    = 0x8108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038108]
+CopyFrom    = 0x8108
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048108]
+CopyFrom    = 0x8108
+Transpose	= 1
+Autopathbase = 0x99080010
+[HighwayIntersectionInfo_0x00058108]
+CopyFrom    = 0x48108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068108]
+CopyFrom    = 0x48108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078108]
+CopyFrom    = 0x48108
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00088108]
+CopyFrom    = 0x8108
+[HighwayIntersectionInfo_0x00098108]
+CopyFrom    = 0x18108
+[HighwayIntersectionInfo_0x000A8108]
+CopyFrom    = 0x28108
+[HighwayIntersectionInfo_0x000B8108]
+CopyFrom    = 0x38108
+[HighwayIntersectionInfo_0x000C8108]
+CopyFrom    = 0x48108
+[HighwayIntersectionInfo_0x000D8108]
+CopyFrom    = 0x58108
+[HighwayIntersectionInfo_0x000E8108]
+CopyFrom    = 0x68108
+[HighwayIntersectionInfo_0x000F8108]
+CopyFrom    = 0x78108
+
+
+[HighwayIntersectionInfo_0x00108108]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x rail double diagonal
+Piece = 0.0, 0.0, 0, 0, 0x5919E170
+PreviewEffect = preview_owrd_puzzlepiece022
+
+CellLayout =......
+CellLayout =...Z.<
+CellLayout =...^..
+
+CheckType = Z - onewayroad:0x01000003 rail:0x03010301
+
+ConsLayout =......
+ConsLayout =...+.<
+ConsLayout =...^..
+
+AutoTileBase=	0x5919E170
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00118108]
+CopyFrom    = 0x108108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128108]
+CopyFrom    = 0x108108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138108]
+CopyFrom    = 0x108108
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148108]
+CopyFrom    = 0x108108
+Transpose	= 1
+Autopathbase = 0x9919E170
+[HighwayIntersectionInfo_0x00158108]
+CopyFrom    = 0x148108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168108]
+CopyFrom    = 0x148108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178108]
+CopyFrom    = 0x148108
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00188108]
+CopyFrom    = 0x108108
+[HighwayIntersectionInfo_0x00198108]
+CopyFrom    = 0x118108
+[HighwayIntersectionInfo_0x001A8108]
+CopyFrom    = 0x128108
+[HighwayIntersectionInfo_0x001B8108]
+CopyFrom    = 0x138108
+[HighwayIntersectionInfo_0x001C8108]
+CopyFrom    = 0x148108
+[HighwayIntersectionInfo_0x001D8108]
+CopyFrom    = 0x158108
+[HighwayIntersectionInfo_0x001E8108]
+CopyFrom    = 0x168108
+[HighwayIntersectionInfo_0x001F8108]
+CopyFrom    = 0x178108
+
+
+[HighwayIntersectionInfo_0x00008109]
+; onewayroad orthogonal x diagonal rail puzzle piece 1a
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080000
+PreviewEffect = preview_owrd_puzzlepiece010
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =...^....
+
+CheckType = Z - onewayroad:0x00020002 rail:0x03010000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x59080000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00018109]
+CopyFrom    = 0x8109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028109]
+CopyFrom    = 0x8109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038109]
+CopyFrom    = 0x8109
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048109]
+CopyFrom    = 0x8109
+Transpose	= 1
+Autopathbase = 0x99080000
+[HighwayIntersectionInfo_0x00058109]
+CopyFrom    = 0x48109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068109]
+CopyFrom    = 0x48109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078109]
+CopyFrom    = 0x48109
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00088109]
+; onewayroad orthogonal x diagonal rail puzzle piece 1b
+;Added by Tropod ~ follow on from above item
+Piece = 0.0, 0.0, 0, 0, 0x59080100
+PreviewEffect = preview_owrd_puzzlepiece009
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00020002 rail:0x00000301
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x59080100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00098109]
+CopyFrom    = 0x88109
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A8109]
+CopyFrom    = 0x88109
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B8109]
+CopyFrom    = 0x88109
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C8109]
+CopyFrom    = 0x88109
+Transpose	= 1
+Autopathbase = 0x99080100
+[HighwayIntersectionInfo_0x000D8109]
+CopyFrom    = 0xC8109
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E8109]
+CopyFrom    = 0xC8109
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F8109]
+CopyFrom    = 0xC8109
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00108109]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x rail diagonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E160
+PreviewEffect = preview_owrd_puzzlepiece021
+
+CellLayout =.........
+CellLayout =....Z.<..
+CellLayout =....^....
+
+CheckType = Z - onewayroad:0x01000003 rail:0x03010000
+
+ConsLayout =.........
+ConsLayout =....+..<
+ConsLayout =....^....
+
+AutoTileBase=	0x5919E160
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00118109]
+CopyFrom    = 0x108109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128109]
+CopyFrom    = 0x108109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138109]
+CopyFrom    = 0x108109
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148109]
+CopyFrom    = 0x108109
+Transpose	= 1
+Autopathbase = 0x9919E160
+[HighwayIntersectionInfo_0x00158109]
+CopyFrom    = 0x148109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168109]
+CopyFrom    = 0x148109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178109]
+CopyFrom    = 0x148109
+Rotate		= 3
+
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x00188109]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x rail diagonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E260
+PreviewEffect = preview_owrd_puzzlepiece00e
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad:0x01000003 rail:0x00000301
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E260
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000802A
+Costs       = 100
+[HighwayIntersectionInfo_0x00198109]
+CopyFrom    = 0x188109
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A8109]
+CopyFrom    = 0x188109
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B8109]
+CopyFrom    = 0x188109
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C8109]
+CopyFrom    = 0x188109
+Transpose	= 1
+Autopathbase = 0x9919E260
+[HighwayIntersectionInfo_0x001D8109]
+CopyFrom    = 0x1C8109
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E8109]
+CopyFrom    = 0x1C8109
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F8109]
+CopyFrom    = 0x1C8109
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000810A]
+;Added by Tropod 06/13/04.
+;onewayroad orthogonal x street puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5920E300
+PreviewEffect = preview_owrd_puzzlepiece003
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x00020002 street: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5920E300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000803A
+Costs       = 50
+[HighwayIntersectionInfo_0x0001810A]
+CopyFrom    = 0x810A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002810A]
+CopyFrom    = 0x810A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003810A]
+CopyFrom    = 0x810A
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x0004810A]
+CopyFrom    = 0x810A
+[HighwayIntersectionInfo_0x0005810A]
+CopyFrom    = 0x1810A
+[HighwayIntersectionInfo_0x0006810A]
+CopyFrom    = 0x2810A
+[HighwayIntersectionInfo_0x0007810A]
+CopyFrom    = 0x3810A
+[HighwayIntersectionInfo_0x0008810A]
+CopyFrom    = 0x810A
+[HighwayIntersectionInfo_0x0009810A]
+CopyFrom    = 0x1810A
+[HighwayIntersectionInfo_0x000A810A]
+CopyFrom    = 0x2810A
+[HighwayIntersectionInfo_0x000B810A]
+CopyFrom    = 0x3810A
+[HighwayIntersectionInfo_0x000C810A]
+CopyFrom    = 0x810A
+[HighwayIntersectionInfo_0x000D810A]
+CopyFrom    = 0x1810A
+[HighwayIntersectionInfo_0x000E810A]
+CopyFrom    = 0x2810A
+[HighwayIntersectionInfo_0x000F810A]
+CopyFrom    = 0x3810A
+
+
+[HighwayIntersectionInfo_0x0010810A]
+;Added by Tropod 04/14/05.
+;onewayroad diagonalxstreet puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E180
+PreviewEffect = preview_owrd_puzzlepiece023
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x01000003 street: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5919E180
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000803A
+Costs       = 50
+[HighwayIntersectionInfo_0x0011810A]
+CopyFrom = 0x10810A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012810A]
+CopyFrom = 0x10810A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810A]
+CopyFrom = 0x10810A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0014810A]
+CopyFrom = 0x10810A
+Transpose = 1
+Autopathbase = 0x7919E180
+;;rotate added to fix auto resolving issue for addtypes line for item
+Rotate = 1
+[HighwayIntersectionInfo_0x0015810A]
+CopyFrom = 0x14810A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016810A]
+CopyFrom = 0x14810A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810A]
+CopyFrom = 0x14810A
+Rotate		= 3
+
+
+;;follow on item
+[HighwayIntersectionInfo_0x0018810A]
+;Added by Tropod 04/14/05.
+;onewayroad diagonalxstreet puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E1E0
+PreviewEffect = preview_owrd_puzzlepiece02f
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x00030100 street: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5919E1E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000803A
+Costs       = 50
+[HighwayIntersectionInfo_0x0019810A]
+CopyFrom = 0x18810A
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A810A]
+CopyFrom = 0x18810A
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B810A]
+CopyFrom = 0x18810A
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C810A]
+CopyFrom = 0x18810A
+Transpose = 1
+Autopathbase = 0x7919E1E0
+;;rotate added to fix auto resolving issue for addtypes line for item
+Rotate = 1
+[HighwayIntersectionInfo_0x001D810A]
+CopyFrom = 0x1C810A
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E810A]
+CopyFrom = 0x1C810A
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F810A]
+CopyFrom = 0x1C810A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000810B]
+;Added by Tropod 06/13/04.
+;onewayroad orthogonal x road orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5920F300
+PreviewEffect = preview_owrd_puzzlepiece001
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x00020002 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5920F300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0001810B]
+CopyFrom    = 0x810B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002810B]
+CopyFrom    = 0x810B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003810B]
+CopyFrom    = 0x810B
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x0004810B]
+CopyFrom    = 0x810B
+[HighwayIntersectionInfo_0x0005810B]
+CopyFrom    = 0x1810B
+[HighwayIntersectionInfo_0x0006810B]
+CopyFrom    = 0x2810B
+[HighwayIntersectionInfo_0x0007810B]
+CopyFrom    = 0x3810B
+[HighwayIntersectionInfo_0x0008810B]
+CopyFrom    = 0x810B
+[HighwayIntersectionInfo_0x0009810B]
+CopyFrom    = 0x1810B
+[HighwayIntersectionInfo_0x000A810B]
+CopyFrom    = 0x2810B
+[HighwayIntersectionInfo_0x000B810B]
+CopyFrom    = 0x3810B
+[HighwayIntersectionInfo_0x000C810B]
+CopyFrom    = 0x810B
+[HighwayIntersectionInfo_0x000D810B]
+CopyFrom    = 0x1810B
+[HighwayIntersectionInfo_0x000E810B]
+CopyFrom    = 0x2810B
+[HighwayIntersectionInfo_0x000F810B]
+CopyFrom    = 0x3810B
+
+
+[HighwayIntersectionInfo_0x0010810B]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x road orthogonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E120
+PreviewEffect = preview_owrd_puzzlepiece01d
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x01000003 road: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0011810B]
+CopyFrom    = 0x10810B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012810B]
+CopyFrom    = 0x10810B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810B]
+CopyFrom    = 0x10810B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0014810B]
+CopyFrom    = 0x10810B
+Transpose	= 1
+Autopathbase = 0x7919E120
+[HighwayIntersectionInfo_0x0015810B]
+CopyFrom    = 0x14810B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016810B]
+CopyFrom    = 0x14810B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810B]
+CopyFrom    = 0x14810B
+Rotate		= 3
+
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x0018810B]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x road orthogonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E1F0
+PreviewEffect = preview_owrd_puzzlepiece00c
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x00030100 road: 0x02000200
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E1F0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0019810B]
+CopyFrom    = 0x18810B
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A810B]
+CopyFrom    = 0x18810B
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B810B]
+CopyFrom    = 0x18810B
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C810B]
+CopyFrom    = 0x18810B
+Transpose	= 1
+Autopathbase = 0x7919E1F0
+[HighwayIntersectionInfo_0x001D810B]
+CopyFrom    = 0x1C810B
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E810B]
+CopyFrom    = 0x1C810B
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F810B]
+CopyFrom    = 0x1C810B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000810C]
+;Added by Tropod 01/29/05
+;onewayroad orthogonal x double diagonal road puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x59080030
+PreviewEffect = preview_owrd_puzzlepiece013
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00020002 road:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x59080030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0001810C]
+CopyFrom    = 0x810C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002810C]
+CopyFrom    = 0x810C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003810C]
+CopyFrom    = 0x810C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004810C]
+CopyFrom    = 0x810C
+Transpose	= 1
+Autopathbase = 0x79080030
+[HighwayIntersectionInfo_0x0005810C]
+CopyFrom    = 0x4810C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006810C]
+CopyFrom    = 0x4810C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007810C]
+CopyFrom    = 0x4810C
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x0008810C]
+CopyFrom    = 0x810C
+[HighwayIntersectionInfo_0x0009810C]
+CopyFrom    = 0x1810C
+[HighwayIntersectionInfo_0x000A810C]
+CopyFrom    = 0x2810C
+[HighwayIntersectionInfo_0x000B810C]
+CopyFrom    = 0x3810C
+[HighwayIntersectionInfo_0x000C810C]
+CopyFrom    = 0x4810C
+[HighwayIntersectionInfo_0x000D810C]
+CopyFrom    = 0x5810C
+[HighwayIntersectionInfo_0x000E810C]
+CopyFrom    = 0x6810C
+[HighwayIntersectionInfo_0x000F810C]
+CopyFrom    = 0x7810C
+
+
+[HighwayIntersectionInfo_0x0010810C]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x road double diagonal
+Piece = 0.0, 0.0, 0, 0, 0x5919E140
+PreviewEffect = preview_owrd_puzzlepiece01f
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x01000003 road: 0x03010301
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E140
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0011810C]
+CopyFrom    = 0x10810C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012810C]
+CopyFrom    = 0x10810C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810C]
+CopyFrom    = 0x10810C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0014810C]
+CopyFrom    = 0x10810C
+Transpose	= 1
+Autopathbase = 0x7919E140
+[HighwayIntersectionInfo_0x0015810C]
+CopyFrom    = 0x14810C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016810C]
+CopyFrom    = 0x14810C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810C]
+CopyFrom    = 0x14810C
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x0018810C]
+CopyFrom    = 0x10810C
+[HighwayIntersectionInfo_0x0019810C]
+CopyFrom    = 0x11810C
+[HighwayIntersectionInfo_0x001A810C]
+CopyFrom    = 0x12810C
+[HighwayIntersectionInfo_0x001B810C]
+CopyFrom    = 0x13810C
+[HighwayIntersectionInfo_0x001C810C]
+CopyFrom    = 0x14810C
+[HighwayIntersectionInfo_0x001D810C]
+CopyFrom    = 0x15810C
+[HighwayIntersectionInfo_0x001E810C]
+CopyFrom    = 0x16810C
+[HighwayIntersectionInfo_0x001F810C]
+CopyFrom    = 0x17810C
+
+
+[HighwayIntersectionInfo_0x0000810D]
+; onewayroad orthogonal x diagonal road puzzle piece 1a
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080020
+PreviewEffect = preview_owrd_puzzlepiece012
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00020002 road:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x59080020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0001810D]
+CopyFrom    = 0x810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002810D]
+CopyFrom    = 0x810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003810D]
+CopyFrom    = 0x810D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004810D]
+CopyFrom    = 0x810D
+Transpose	= 1
+Autopathbase = 0x79080020
+[HighwayIntersectionInfo_0x0005810D]
+CopyFrom    = 0x4810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006810D]
+CopyFrom    = 0x4810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007810D]
+CopyFrom    = 0x4810D
+Rotate		= 3
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x0008810D]
+; onewayroadx diagonal road puzzle piece 1b
+;Added 04/14/05 ~ Tropod
+Piece = 0.0, 0.0, 0, 0, 0x59080120
+PreviewEffect = preview_owrd_puzzlepiece00a
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - onewayroad:0x00020002 road:0x00000301
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x59080120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0009810D]
+CopyFrom    = 0x8810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A810D]
+CopyFrom    = 0x8810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B810D]
+CopyFrom    = 0x8810D
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C810D]
+CopyFrom    = 0x8810D
+Transpose	= 1
+Autopathbase = 0x79080120
+[HighwayIntersectionInfo_0x000D810D]
+CopyFrom    = 0xC810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E810D]
+CopyFrom    = 0xC810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F810D]
+CopyFrom    = 0xC810D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0010810D]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x road diagonal 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919E130
+PreviewEffect = preview_owrd_puzzlepiece01e
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x01000003 road: 0x03010000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0011810D]
+CopyFrom    = 0x10810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012810D]
+CopyFrom    = 0x10810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810D]
+CopyFrom    = 0x10810D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0014810D]
+CopyFrom    = 0x10810D
+Transpose	= 1
+Autopathbase = 0x7919E130
+[HighwayIntersectionInfo_0x0015810D]
+CopyFrom    = 0x14810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016810D]
+CopyFrom    = 0x14810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810D]
+CopyFrom    = 0x14810D
+Rotate		= 3
+
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x0018810D]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x road diagonal 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919E250
+PreviewEffect = preview_owrd_puzzlepiece00f
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - onewayroad: 0x01000003 road: 0x00000301
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase=	0x5919E250
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000804A
+Costs       = 75
+[HighwayIntersectionInfo_0x0019810D]
+CopyFrom    = 0x18810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x001A810D]
+CopyFrom    = 0x18810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x001B810D]
+CopyFrom    = 0x18810D
+Rotate		= 3
+[HighwayIntersectionInfo_0x001C810D]
+CopyFrom    = 0x18810D
+Transpose	= 1
+Autopathbase = 0x7919E250
+[HighwayIntersectionInfo_0x001D810D]
+CopyFrom    = 0x1C810D
+Rotate		= 1
+[HighwayIntersectionInfo_0x001E810D]
+CopyFrom    = 0x1C810D
+Rotate		= 2
+[HighwayIntersectionInfo_0x001F810D]
+CopyFrom    = 0x1C810D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000810E]
+;Added by Tropod 06/13/04.
+;onewayroad orthogonal x avenue orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5020CF00
+PreviewEffect = preview_owrd_puzzlepiece005
+
+CellLayout = .........
+CellLayout = ....cd..<
+CellLayout = ....^....
+
+CheckType = c - onewayroad: 0x00020002 avenue: 0x02040200
+CheckType = d - onewayroad: 0x00020002 avenue: 0x02000204
+
+ConsLayout = ........
+ConsLayout = ...++..<
+ConsLayout = ...^....
+
+AutoTileBase=	0x59210300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000805A
+Costs       = 150
+[HighwayIntersectionInfo_0x0001810E]
+CopyFrom    = 0x810E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002810E]
+CopyFrom    = 0x810E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003810E]
+CopyFrom    = 0x810E
+Rotate = 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x0004810E]
+CopyFrom    = 0x810E
+[HighwayIntersectionInfo_0x0005810E]
+CopyFrom    = 0x1810E
+[HighwayIntersectionInfo_0x0006810E]
+CopyFrom    = 0x2810E
+[HighwayIntersectionInfo_0x0007810E]
+CopyFrom    = 0x3810E
+[HighwayIntersectionInfo_0x0008810E]
+CopyFrom    = 0x810E
+[HighwayIntersectionInfo_0x0009810E]
+CopyFrom    = 0x1810E
+[HighwayIntersectionInfo_0x000A810E]
+CopyFrom    = 0x2810E
+[HighwayIntersectionInfo_0x000B810E]
+CopyFrom    = 0x3810E
+[HighwayIntersectionInfo_0x000C810E]
+CopyFrom    = 0x810E
+[HighwayIntersectionInfo_0x000D810E]
+CopyFrom    = 0x1810E
+[HighwayIntersectionInfo_0x000E810E]
+CopyFrom    = 0x2810E
+[HighwayIntersectionInfo_0x000F810E]
+CopyFrom    = 0x3810E
+
+
+[HighwayIntersectionInfo_0x0010810E]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x avenue orthogonal
+Piece = 0.0, -16.0, 0, 0, 0x5919E205
+PreviewEffect = preview_owrd_puzzlepiece027
+
+CellLayout =.......
+CellLayout =...W...
+CellLayout =...YX.<
+CellLayout =....Z..
+CellLayout =...^...
+
+CheckType = W - onewayroad:0x01000003 avenue:0x02040200
+CheckType = X - onewayroad:0x01000003 avenue:0x02000204
+CheckType = Y - onewayroad:0x00030100 avenue:0x02040200
+CheckType = Z - onewayroad:0x00030100 avenue:0x02000204
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...++..<
+ConsLayout =....+...
+ConsLayout =...^....
+
+AutoTileBase=	0x5919E200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000805A
+Costs       = 150
+[HighwayIntersectionInfo_0x0011810E]
+CopyFrom    = 0x10810E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0012810E]
+CopyFrom    = 0x10810E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810E]
+CopyFrom    = 0x10810E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0014810E]
+CopyFrom    = 0x10810E
+Transpose	= 1
+Autopathbase = 0x7919E200
+[HighwayIntersectionInfo_0x0015810E]
+CopyFrom    = 0x14810E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0016810E]
+CopyFrom    = 0x14810E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810E]
+CopyFrom    = 0x14810E
+Rotate		= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x0018810E]
+CopyFrom    = 0x10810E
+[HighwayIntersectionInfo_0x0019810E]
+CopyFrom    = 0x11810E
+[HighwayIntersectionInfo_0x001A810E]
+CopyFrom    = 0x12810E
+[HighwayIntersectionInfo_0x001B810E]
+CopyFrom    = 0x13810E
+[HighwayIntersectionInfo_0x001C810E]
+CopyFrom    = 0x14810E
+[HighwayIntersectionInfo_0x001D810E]
+CopyFrom    = 0x15810E
+[HighwayIntersectionInfo_0x001E810E]
+CopyFrom    = 0x16810E
+[HighwayIntersectionInfo_0x001F810E]
+CopyFrom    = 0x17810E
+
+
+[HighwayIntersectionInfo_0x0000810F]
+; onewayroad orthogonal x diagonal avenue puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x59080080
+PreviewEffect = preview_owrd_puzzlepiece016
+
+CellLayout =........
+CellLayout =...A....
+CellLayout =...B...<
+CellLayout =...C....
+CellLayout =...^....
+
+CheckType = A - onewayroad:0x02000000 avenue:0x01000003
+CheckType = B - onewayroad:0x02000200 avenue:0x01030103
+CheckType = C - onewayroad:0x00000200 avenue:0x00030100
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...+...<
+ConsLayout =...+....
+ConsLayout =...^....
+
+AutoTileBase=	0x59080080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000805A
+Costs       = 150
+[HighwayIntersectionInfo_0x0001810F]
+CopyFrom    = 0x810F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002810F]
+CopyFrom    = 0x810F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003810F]
+CopyFrom    = 0x810F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004810F]
+CopyFrom    = 0x810F
+Transpose	= 1
+Autopathbase = 0x79080080
+[HighwayIntersectionInfo_0x0005810F]
+CopyFrom    = 0x4810F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006810F]
+CopyFrom    = 0x4810F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007810F]
+CopyFrom    = 0x4810F
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x0008810F]
+CopyFrom    = 0x810F
+[HighwayIntersectionInfo_0x0009810F]
+CopyFrom    = 0x1810F
+[HighwayIntersectionInfo_0x000A810F]
+CopyFrom    = 0x2810F
+[HighwayIntersectionInfo_0x000B810F]
+CopyFrom    = 0x3810F
+[HighwayIntersectionInfo_0x000C810F]
+CopyFrom    = 0x4810F
+[HighwayIntersectionInfo_0x000D810F]
+CopyFrom    = 0x5810F
+[HighwayIntersectionInfo_0x000E810F]
+CopyFrom    = 0x6810F
+[HighwayIntersectionInfo_0x000F810F]
+CopyFrom    = 0x7810F
+
+
+[HighwayIntersectionInfo_0x0010810F]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x avenue diagonal
+Piece = 0.0, -16.0, 0, 0, 0x5919E405
+PreviewEffect = preview_owrd_puzzlepiece028
+
+CellLayout =.......
+CellLayout =...X...
+CellLayout =...ZY.<
+CellLayout =...^...
+
+CheckType = X - onewayroad:0x01000003 avenue:0x03010000
+CheckType = Y - onewayroad:0x01000003 avenue:0x00000301
+CheckType = Z - onewayroad:0x00030100 avenue:0x03010301
+
+ConsLayout =.......
+ConsLayout =...+...
+ConsLayout =...++.<
+ConsLayout =...^...
+
+AutoTileBase=	0x5919E400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000805A
+Costs       = 150
+[HighwayIntersectionInfo_0x0011810F]
+CopyFrom    = 0x10810F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012810F]
+
+CopyFrom    = 0x10810F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013810F]
+CopyFrom    = 0x10810F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0014810F]
+CopyFrom    = 0x10810F
+Transpose	= 1
+Autopathbase = 0x7919E400
+[HighwayIntersectionInfo_0x0015810F]
+CopyFrom    = 0x14810F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016810F]
+CopyFrom    = 0x14810F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017810F]
+CopyFrom    = 0x14810F
+Rotate		= 3
+;;;Clones for rotation
+[HighwayIntersectionInfo_0x0018810F]
+CopyFrom    = 0x10810F
+[HighwayIntersectionInfo_0x0019810F]
+CopyFrom    = 0x11810F
+[HighwayIntersectionInfo_0x001A810F]
+CopyFrom    = 0x12810F
+[HighwayIntersectionInfo_0x001B810F]
+CopyFrom    = 0x13810F
+[HighwayIntersectionInfo_0x001C810F]
+CopyFrom    = 0x14810F
+[HighwayIntersectionInfo_0x001D810F]
+CopyFrom    = 0x15810F
+[HighwayIntersectionInfo_0x001E810F]
+CopyFrom    = 0x16810F
+[HighwayIntersectionInfo_0x001F810F]
+CopyFrom    = 0x17810F
+
+
+[HighwayIntersectionInfo_0x00008110]
+;Added by Tropod 06/13/04.
+;onewayroad orthogonoal x groundhighway orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x50262500
+PreviewEffect = preview_owrd_puzzlepiece007
+
+CellLayout =..........
+CellLayout =....cd...<
+CellLayout =....^.....
+
+CheckType = c - onewayroad: 0x00020002 groundhighway: 0x02040200
+CheckType = d - onewayroad: 0x00020002 groundhighway: 0x02000204
+
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...^....
+
+AutoTileBase=	0x5910A300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000806A
+Costs       = 200
+[HighwayIntersectionInfo_0x00018110]
+CopyFrom    = 0x8110
+Rotate      = 3
+[HighwayIntersectionInfo_0x00028110]
+CopyFrom    = 0x8110
+Rotate      = 2
+[HighwayIntersectionInfo_0x00038110]
+CopyFrom    = 0x8110
+Rotate      = 1
+[HighwayIntersectionInfo_0x00048110]
+CopyFrom    = 0x8110
+Transpose = 1
+Autopathbase = 0x7910A300
+[HighwayIntersectionInfo_0x00058110]
+CopyFrom    = 0x48110
+Rotate      = 3
+[HighwayIntersectionInfo_0x00068110]
+CopyFrom    = 0x48110
+Rotate      = 2
+[HighwayIntersectionInfo_0x00078110]
+CopyFrom    = 0x48110
+Rotate      = 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00088110]
+CopyFrom    = 0x8110
+[HighwayIntersectionInfo_0x00098110]
+CopyFrom    = 0x18110
+[HighwayIntersectionInfo_0x000A8110]
+CopyFrom    = 0x28110
+[HighwayIntersectionInfo_0x000B8110]
+CopyFrom    = 0x38110
+[HighwayIntersectionInfo_0x000C8110]
+CopyFrom    = 0x8110
+[HighwayIntersectionInfo_0x000D8110]
+CopyFrom    = 0x18110
+[HighwayIntersectionInfo_0x000E8110]
+CopyFrom    = 0x28110
+[HighwayIntersectionInfo_0x000F8110]
+CopyFrom    = 0x38110
+
+
+[HighwayIntersectionInfo_0x00108110]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x groundhighway orthogonal
+Piece = 0.0, -16.0, 0, 0, 0x5919E605
+PreviewEffect = preview_owrd_puzzlepiece029
+
+CellLayout =.......
+CellLayout =...W...
+CellLayout =...YX.<
+CellLayout =....Z..
+CellLayout =...^...
+
+CheckType = W - onewayroad:0x01000003 groundhighway:0x02040200
+CheckType = X - onewayroad:0x01000003 groundhighway:0x02000204
+CheckType = Y - onewayroad:0x00030100 groundhighway:0x02040200
+CheckType = Z - onewayroad:0x00030100 groundhighway:0x02000204
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...++..<
+ConsLayout =....+...
+ConsLayout =...^....
+
+AutoTileBase=	0x5919E600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000806A
+Costs       = 200
+[HighwayIntersectionInfo_0x00118110]
+CopyFrom    = 0x108110
+Rotate		= 3
+[HighwayIntersectionInfo_0x00128110]
+CopyFrom    = 0x108110
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138110]
+CopyFrom    = 0x108110
+Rotate		= 1
+[HighwayIntersectionInfo_0x00148110]
+CopyFrom    = 0x108110
+Transpose	= 1
+Autopathbase = 0x7919E600
+[HighwayIntersectionInfo_0x00158110]
+CopyFrom    = 0x148110
+Rotate		= 3
+[HighwayIntersectionInfo_0x00168110]
+CopyFrom    = 0x148110
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178110]
+CopyFrom    = 0x148110
+Rotate		= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00188110]
+CopyFrom    = 0x108110
+[HighwayIntersectionInfo_0x00198110]
+CopyFrom    = 0x118110
+[HighwayIntersectionInfo_0x001A8110]
+CopyFrom    = 0x128110
+[HighwayIntersectionInfo_0x001B8110]
+CopyFrom    = 0x138110
+[HighwayIntersectionInfo_0x001C8110]
+CopyFrom    = 0x148110
+[HighwayIntersectionInfo_0x001D8110]
+CopyFrom    = 0x158110
+[HighwayIntersectionInfo_0x001E8110]
+CopyFrom    = 0x168110
+[HighwayIntersectionInfo_0x001F8110]
+CopyFrom    = 0x178110
+
+
+[HighwayIntersectionInfo_0x00008111]
+; onewayroad orthogonal x diagonal groundhighway puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x590800C0
+PreviewEffect = preview_owrd_puzzlepiece017
+
+CellLayout =........
+CellLayout =...A....
+CellLayout =...B...<
+CellLayout =...C....
+CellLayout =...^....
+
+CheckType = A - onewayroad:0x02000000 groundhighway:0x03010000
+CheckType = B - onewayroad:0x02000200 groundhighway:0x03010301
+CheckType = C - onewayroad:0x00000200 groundhighway:0x00000301
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...+...<
+ConsLayout =...+....
+ConsLayout =...^....
+
+AutoTileBase=	0x590800C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000806A
+Costs       = 200
+[HighwayIntersectionInfo_0x00018111]
+CopyFrom    = 0x8111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028111]
+CopyFrom    = 0x8111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038111]
+CopyFrom    = 0x8111
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048111]
+CopyFrom    = 0x8111
+Transpose	= 1
+Autopathbase = 0x790800C0
+[HighwayIntersectionInfo_0x00058111]
+CopyFrom    = 0x48111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068111]
+CopyFrom    = 0x48111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078111]
+CopyFrom    = 0x48111
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00088111]
+CopyFrom    = 0x8111
+[HighwayIntersectionInfo_0x00098111]
+CopyFrom    = 0x18111
+[HighwayIntersectionInfo_0x000A8111]
+CopyFrom    = 0x28111
+[HighwayIntersectionInfo_0x000B8111]
+CopyFrom    = 0x38111
+[HighwayIntersectionInfo_0x000C8111]
+CopyFrom    = 0x48111
+[HighwayIntersectionInfo_0x000D8111]
+CopyFrom    = 0x58111
+[HighwayIntersectionInfo_0x000E8111]
+CopyFrom    = 0x68111
+[HighwayIntersectionInfo_0x000F8111]
+CopyFrom    = 0x78111
+
+
+[HighwayIntersectionInfo_0x00108111]
+;Added by Tropod 04/14/05.
+;onewayroad diagonal x groundhighway diagonal
+Piece = 0.0, -16.0, 0, 0, 0x5919E805
+PreviewEffect = preview_owrd_puzzlepiece02a
+
+CellLayout =........
+CellLayout =....X...
+CellLayout =....ZY.<
+CellLayout =....^...
+
+CheckType = X - onewayroad:0x01000003 groundhighway:0x03010000
+CheckType = Y - onewayroad:0x01000003 groundhighway:0x00000301
+CheckType = Z - onewayroad:0x00030100 groundhighway:0x03010301
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....++..<
+ConsLayout =....^....
+
+AutoTileBase=	0x5919E800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000806A
+Costs       = 200
+[HighwayIntersectionInfo_0x00118111]
+CopyFrom    = 0x108111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00128111]
+CopyFrom    = 0x108111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00138111]
+CopyFrom    = 0x108111
+Rotate		= 3
+[HighwayIntersectionInfo_0x00148111]
+CopyFrom    = 0x108111
+Transpose	= 1
+Autopathbase = 0x7919E800
+[HighwayIntersectionInfo_0x00158111]
+CopyFrom    = 0x148111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00168111]
+CopyFrom    = 0x148111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00178111]
+CopyFrom    = 0x148111
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00188111]
+CopyFrom    = 0x108111
+[HighwayIntersectionInfo_0x00198111]
+CopyFrom    = 0x118111
+[HighwayIntersectionInfo_0x001A8111]
+CopyFrom    = 0x128111
+[HighwayIntersectionInfo_0x001B8111]
+CopyFrom    = 0x138111
+[HighwayIntersectionInfo_0x001C8111]
+CopyFrom    = 0x148111
+[HighwayIntersectionInfo_0x001D8111]
+CopyFrom    = 0x158111
+[HighwayIntersectionInfo_0x001E8111]
+CopyFrom    = 0x168111
+[HighwayIntersectionInfo_0x001F8111]
+CopyFrom    = 0x178111
+
+
+[HighwayIntersectionInfo_0x00008112]
+;Added by Tropod 04/01/05
+;onewayroadxonewayroad/road + intersection puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x59191000
+PreviewEffect = preview_owrd_puzzlepiece019
+
+CellLayout =........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^....
+
+AutoTileBase=	0x59191000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008200
+Costs       = 75
+[HighwayIntersectionInfo_0x00018112]
+CopyFrom    = 0x8112
+Rotate		= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00028112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00038112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00048112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00058112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00068112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00078112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00088112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00098112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x000A8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x000B8112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x000C8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x000D8112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x000E8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x000F8112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00108112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00118112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00128112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00138112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00148112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00158112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00168112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00178112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x00188112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x00198112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x001A8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x001B8112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x001C8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x001D8112]
+CopyFrom    = 0x18112
+[HighwayIntersectionInfo_0x001E8112]
+CopyFrom    = 0x8112
+[HighwayIntersectionInfo_0x001F8112]
+CopyFrom    = 0x18112
+
+
+[HighwayIntersectionInfo_0x00008113]
+;Added by Tropod 04/01/05
+;onewayroadxonewayroad/road T intersection puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x59191010
+PreviewEffect = preview_owrd_puzzlepiece01a
+
+CellLayout =........
+CellLayout =....Z..<
+CellLayout =....^...
+
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x59191010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008210
+Costs       = 75
+[HighwayIntersectionInfo_0x00018113]
+CopyFrom    = 0x8113
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028113]
+CopyFrom    = 0x8113
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038113]
+CopyFrom    = 0x8113
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x00058113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x00068113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x00078113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x00088113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x00098113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x000A8113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x000B8113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x000C8113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x000D8113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x000E8113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x000F8113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x00108113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x00118113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x00128113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x00138113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x00148113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x00158113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x00168113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x00178113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x00188113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x00198113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x001A8113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x001B8113]
+CopyFrom    = 0x38113
+[HighwayIntersectionInfo_0x001C8113]
+CopyFrom    = 0x8113
+[HighwayIntersectionInfo_0x001D8113]
+CopyFrom    = 0x18113
+[HighwayIntersectionInfo_0x001E8113]
+CopyFrom    = 0x28113
+[HighwayIntersectionInfo_0x001F8113]
+CopyFrom    = 0x38113
+
+
+[HighwayIntersectionInfo_0x00008114]
+;onewayroadxrail + intersection puzzle piece
+;Added by Tropod 04/01/05.
+Piece = 0.0, 0.0, 0, 0, 0x5919E050
+PreviewEffect = preview_owrd_puzzlepiece01b
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 onewayroad:0x02000200
+
+;alternative modification for onewayroadxrail + intersection boom gates functionality ~ shouldn't have to resort to this!!
+;some sort of issue or limitation seems to exists thats preventing rail boom gates from working properly with this particular onewayroad item
+;following checktype line is an alternative for above checktype line that enables rail boom gates to work properly with the intersection
+;CheckType = Z - avenue:0x02000200 rail:0x00020002
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5919E050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008220
+Costs       = 100
+[HighwayIntersectionInfo_0x00018114]
+CopyFrom    = 0x8114
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028114]
+CopyFrom    = 0x8114
+Rotate = 2
+[HighwayIntersectionInfo_0x00038114]
+CopyFrom    = 0x8114
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x00058114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x00068114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x00078114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x00088114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x00098114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x000A8114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x000B8114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x000C8114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x000D8114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x000E8114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x000F8114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x00108114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x00118114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x00128114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x00138114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x00148114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x00158114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x00168114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x00178114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x00188114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x00198114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x001A8114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x001B8114]
+CopyFrom    = 0x38114
+[HighwayIntersectionInfo_0x001C8114]
+CopyFrom    = 0x8114
+[HighwayIntersectionInfo_0x001D8114]
+CopyFrom    = 0x18114
+[HighwayIntersectionInfo_0x001E8114]
+CopyFrom    = 0x28114
+[HighwayIntersectionInfo_0x001F8114]
+CopyFrom    = 0x38114
+
+
+[HighwayIntersectionInfo_0x00008115]
+; onewayroad orthogonal x Ground Light Rail orthogonal puzzle piece
+;Added by smoncrie 03/15/05.
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks - undo by Chrisim to prevent CTD
+Piece = 0.0, 0.0, 0, 0, 0x5913b704
+PreviewEffect = preview_owrd_puzzlepiece030
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - onewayroad: 0x00020002 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5913b700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913b700
+Costs       = 100
+[HighwayIntersectionInfo_0x00018115]
+CopyFrom    = 0x8115
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028115]
+CopyFrom    = 0x8115
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038115]
+CopyFrom    = 0x8115
+Rotate		= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048115]
+CopyFrom    = 0x8115
+[HighwayIntersectionInfo_0x00058115]
+CopyFrom    = 0x18115
+[HighwayIntersectionInfo_0x00068115]
+CopyFrom    = 0x28115
+[HighwayIntersectionInfo_0x00078115]
+CopyFrom    = 0x38115
+[HighwayIntersectionInfo_0x00088115]
+CopyFrom    = 0x8115
+[HighwayIntersectionInfo_0x00098115]
+CopyFrom    = 0x18115
+[HighwayIntersectionInfo_0x000A8115]
+CopyFrom    = 0x28115
+[HighwayIntersectionInfo_0x000B8115]
+CopyFrom    = 0x38115
+[HighwayIntersectionInfo_0x000C8115]
+CopyFrom    = 0x8115
+[HighwayIntersectionInfo_0x000D8115]
+CopyFrom    = 0x18115
+[HighwayIntersectionInfo_0x000E8115]
+CopyFrom    = 0x28115
+[HighwayIntersectionInfo_0x000F8115]
+CopyFrom    = 0x38115
+
+
+[HighwayIntersectionInfo_0x00108115]
+; added 050405 ~ Tropod
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks - undo by Chrisim to prevent CTD
+; onewayroad diagonal x orthogonal ground lightrail puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919EB00
+PreviewEffect = preview_owrd_puzzlepiece02b
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00000000 lightrail:0x00000000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5919EB00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913b700
+Costs       = 100
+[HighwayIntersectionInfo_0x00118115]
+CopyFrom    = 0x108115
+Rotate = 1
+[HighwayIntersectionInfo_0x00128115]
+CopyFrom    = 0x108115
+Rotate = 2
+[HighwayIntersectionInfo_0x00138115]
+CopyFrom    = 0x108115
+Rotate = 3
+[HighwayIntersectionInfo_0x00148115]
+CopyFrom    = 0x108115
+Transpose = 1
+Autopathbase = 0x9919EB00
+[HighwayIntersectionInfo_0x00158115]
+CopyFrom    = 0x148115
+Rotate = 1
+[HighwayIntersectionInfo_0x00168115]
+CopyFrom    = 0x148115
+Rotate = 2
+[HighwayIntersectionInfo_0x00178115]
+CopyFrom    = 0x148115
+Rotate = 3
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x00188115]
+; added 050405 ~ Tropod
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks
+; onewayroad diagonal x orthogonal ground lightrail puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919EB20
+PreviewEffect = preview_owrd_puzzlepiece033
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00000000 lightrail:0x00000000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5919EB20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913b700
+Costs       = 100
+[HighwayIntersectionInfo_0x00198115]
+CopyFrom    = 0x188115
+Rotate = 1
+[HighwayIntersectionInfo_0x001A8115]
+CopyFrom    = 0x188115
+Rotate = 2
+[HighwayIntersectionInfo_0x001B8115]
+CopyFrom    = 0x188115
+Rotate = 3
+[HighwayIntersectionInfo_0x001C8115]
+CopyFrom    = 0x188115
+Transpose = 1
+Autopathbase = 0x9919EB20
+[HighwayIntersectionInfo_0x001D8115]
+CopyFrom    = 0x1C8115
+Rotate = 1
+[HighwayIntersectionInfo_0x001E8115]
+CopyFrom    = 0x1C8115
+Rotate = 2
+[HighwayIntersectionInfo_0x001F8115]
+CopyFrom    = 0x1C8115
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00008116]
+; onewayroad orthogonal x Diagonal Ground Light Rail Puzzle Piece 1a
+;Added by smoncrie 03/15/05
+Piece = 0.0, 0.0, 0, 0, 0x5913c704
+PreviewEffect = preview_owrd_puzzlepiece031
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00020002 lightrail:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =..........
+ConsLayout =....^.....
+
+AutoTileBase=	0x5913c700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913c700
+Costs       = 100
+[HighwayIntersectionInfo_0x00018116]
+CopyFrom    = 0x8116
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028116]
+CopyFrom    = 0x8116
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038116]
+CopyFrom    = 0x8116
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048116]
+CopyFrom    = 0x8116
+Transpose	= 1
+Autopathbase = 0x9913c700
+[HighwayIntersectionInfo_0x00058116]
+CopyFrom    = 0x48116
+Rotate		= 1
+[HighwayIntersectionInfo_0x00068116]
+CopyFrom    = 0x48116
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078116]
+CopyFrom    = 0x48116
+Rotate		= 3
+
+;; follow on item
+[HighwayIntersectionInfo_0x00088116]
+;added 041405 ~ Tropod
+; onewayroad orthogonal x diagonal Ground Light Rail Puzzle Piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x5913C714
+PreviewEffect = preview_owrd_puzzlepiece032
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00020002 lightrail:0x00000301
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5913C710
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913C700
+Costs       = 100
+[HighwayIntersectionInfo_0x00098116]
+CopyFrom    = 0x88116
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A8116]
+CopyFrom    = 0x88116
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B8116]
+CopyFrom    = 0x88116
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C8116]
+CopyFrom    = 0x88116
+Transpose	= 1
+Autopathbase = 0x9913C710
+[HighwayIntersectionInfo_0x000D8116]
+CopyFrom    = 0xC8116
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E8116]
+CopyFrom    = 0xC8116
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F8116]
+CopyFrom    = 0xC8116
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00108116]
+; added 041405 ~ Tropod
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks
+; onewayroad diagonal x diagonal ground lightrail puzzle piece 1a
+Piece = 0.0, 0.0, 0, 0, 0x5919EB10
+PreviewEffect = preview_owrd_puzzlepiece02c
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00000000 lightrail:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5919EB10
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913C700
+Costs       = 100
+[HighwayIntersectionInfo_0x00118116]
+CopyFrom    = 0x108116
+Rotate = 1
+[HighwayIntersectionInfo_0x00128116]
+CopyFrom    = 0x108116
+Rotate = 2
+[HighwayIntersectionInfo_0x00138116]
+CopyFrom    = 0x108116
+Rotate = 3
+[HighwayIntersectionInfo_0x00148116]
+CopyFrom    = 0x108116
+Transpose = 1
+Autopathbase = 0x9919EB10
+[HighwayIntersectionInfo_0x00158116]
+CopyFrom    = 0x148116
+Rotate = 1
+[HighwayIntersectionInfo_0x00168116]
+CopyFrom    = 0x148116
+Rotate = 2
+[HighwayIntersectionInfo_0x00178116]
+CopyFrom    = 0x148116
+Rotate = 3
+
+
+;;follow on from above item
+[HighwayIntersectionInfo_0x00188116]
+; added 041405 ~ Tropod
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks
+; onewayroad diagonal x diagonal ground lightrail puzzle piece 1b
+Piece = 0.0, 0.0, 0, 0, 0x5919EB40
+PreviewEffect = preview_owrd_puzzlepiece035
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - onewayroad:0x00000000 lightrail:0x00000301
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5919EB40
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5913C700
+Costs       = 100
+[HighwayIntersectionInfo_0x00198116]
+CopyFrom    = 0x188116
+Rotate = 1
+[HighwayIntersectionInfo_0x001A8116]
+CopyFrom    = 0x188116
+Rotate = 2
+[HighwayIntersectionInfo_0x001B8116]
+CopyFrom    = 0x188116
+Rotate = 3
+[HighwayIntersectionInfo_0x001C8116]
+CopyFrom    = 0x188116
+Transpose = 1
+Autopathbase = 0x9919EB40
+[HighwayIntersectionInfo_0x001D8116]
+CopyFrom    = 0x1C8116
+Rotate = 1
+[HighwayIntersectionInfo_0x001E8116]
+CopyFrom    = 0x1C8116
+Rotate = 2
+[HighwayIntersectionInfo_0x001F8116]
+CopyFrom    = 0x1C8116
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00008102]
+;onewayroadxorthogonal blank terrain transition to diagonal puzzle piece
+;Added by Tarkus 28 October 2010
+Piece = 0.0, 0.0, 0, 0, 0x5920a805
+PreviewEffect = preview_owrd_puzzlepiece_c1
+
+CellLayout =......
+CellLayout =..ab.<
+CellLayout =..^...
+
+CheckType = a - onewayroad:0x00020002
+CheckType = b - onewayroad:0x01000002
+
+ConsLayout =......
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x5920a800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5920a800
+Costs = 100
+[HighwayIntersectionInfo_0x00018102]
+CopyFrom = 0x8102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028102]
+CopyFrom = 0x8102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038102]
+CopyFrom = 0x8102
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048102]
+CopyFrom = 0x8102
+PreviewEffect = preview_owrd_puzzlepiece_c2
+Transpose = 1
+[HighwayIntersectionInfo_0x00058102]
+CopyFrom = 0x48102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00068102]
+CopyFrom = 0x48102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00078102]
+CopyFrom = 0x48102
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00088102]
+CopyFrom = 0x8102
+[HighwayIntersectionInfo_0x00098102]
+CopyFrom = 0x18102
+[HighwayIntersectionInfo_0x000A8102]
+CopyFrom = 0x28102
+[HighwayIntersectionInfo_0x000B8102]
+CopyFrom = 0x38102
+[HighwayIntersectionInfo_0x000C8102]
+CopyFrom = 0x48102
+[HighwayIntersectionInfo_0x000D8102]
+CopyFrom = 0x58102
+[HighwayIntersectionInfo_0x000E8102]
+CopyFrom = 0x68102
+[HighwayIntersectionInfo_0x000F8102]
+CopyFrom = 0x78102
+
+
+
+[HighwayIntersectionInfo_0x00108102]
+;onewayroadxorthogonal blank terrain transition to diagonal puzzle piece
+;Added by Tarkus 28 October 2010
+Piece = 0.0, 0.0, 0, 0, 0x5920a815
+PreviewEffect = preview_owrd_puzzlepiece_c2
+
+CellLayout =......
+CellLayout =..ab.<
+CellLayout =..^...
+
+CheckType = a - onewayroad:0x00020002
+CheckType = b - onewayroad:0x01000002
+
+ConsLayout =......
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x5920a810
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5920a800
+Costs = 100
+[HighwayIntersectionInfo_0x00118102]
+CopyFrom = 0x108102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00128102]
+CopyFrom = 0x108102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00138102]
+CopyFrom = 0x108102
+Rotate	= 3
+[HighwayIntersectionInfo_0x00148102]
+CopyFrom = 0x108102
+PreviewEffect = preview_owrd_puzzlepiece_c1
+Transpose = 1
+[HighwayIntersectionInfo_0x00158102]
+CopyFrom = 0x148102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00168102]
+CopyFrom = 0x148102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00178102]
+CopyFrom = 0x148102
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00188102]
+CopyFrom = 0x108102
+[HighwayIntersectionInfo_0x00198102]
+CopyFrom = 0x118102
+[HighwayIntersectionInfo_0x001A8102]
+CopyFrom = 0x128102
+[HighwayIntersectionInfo_0x001B8102]
+CopyFrom = 0x138102
+[HighwayIntersectionInfo_0x001C8102]
+CopyFrom = 0x148102
+[HighwayIntersectionInfo_0x001D8102]
+CopyFrom = 0x158102
+[HighwayIntersectionInfo_0x001E8102]
+CopyFrom = 0x168102
+[HighwayIntersectionInfo_0x001F8102]
+CopyFrom = 0x178102
+
+
+
+
+
+
+[HighwayIntersectionInfo_0x0000811A]
+;Added by smoncrie 03/28/05.
+;edited by memo 09/23/12 for onslope colour fix.
+;Straight One-Way Road OFF OnSlope
+Piece       = 0.0, 0, 0, 0, 0x5914B705
+PreviewEffect = preview_owrd_puzzlepiece056
+
+CellLayout  =........
+CellLayout  =..ab+..<
+CellLayout  =........
+CellLayout  =...^....
+
+CheckType  = a - onewayroad: 0x00020000, 0x00ff0000 check
+CheckType  = b - onewayroad: 0x00000002
+
+ConsLayout  =........
+ConsLayout  =..++...<
+ConsLayout  =........
+ConsLayout  =...^....
+
+;AutoTileBase=	0x5914B700
+;A different AutoTileBase is needed to ensure compatibility
+;with previously built instances of this puzzle piece.
+AutoTileBase = 0x5914B710
+AutoPathBase = 0x5914B700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5914B700
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001811A]
+CopyFrom    = 0x811A
+Rotate		= 1
+AutoTileBase = 0x5914B720
+[HighwayIntersectionInfo_0x0002811A]
+CopyFrom    = 0x811A
+Rotate = 2
+AutoTileBase = 0x5914B730
+[HighwayIntersectionInfo_0x0003811A]
+CopyFrom    = 0x811A
+Rotate		= 3
+AutoTileBase = 0x5914B740
+;;Clones for rotation
+[HighwayIntersectionInfo_0x0004811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x0005811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x0006811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x0007811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x0008811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x0009811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x000A811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x000B811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x000C811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x000D811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x000E811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x000F811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x0010811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x0011811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x0012811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x0013811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x0014811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x0015811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x0016811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x0017811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x0018811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x0019811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x001A811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x001B811A]
+CopyFrom    = 0x3811A
+[HighwayIntersectionInfo_0x001C811A]
+CopyFrom    = 0x811A
+[HighwayIntersectionInfo_0x001D811A]
+CopyFrom    = 0x1811A
+[HighwayIntersectionInfo_0x001E811A]
+CopyFrom    = 0x2811A
+[HighwayIntersectionInfo_0x001F811A]
+CopyFrom    = 0x3811A
+
+
+[HighwayIntersectionInfo_0x00008119]
+;Added by smoncrie 03/29/05.
+;edited by memo 09/23/12 for onslope colour fix.
+;Straight One-Way Road ON OnSlope
+Piece       = 0.0, 0, 0, 0, 0x5914A705
+PreviewEffect = preview_owrd_puzzlepiece054
+
+CellLayout  =........
+CellLayout  =..+ba..<
+CellLayout  =........
+CellLayout  =...^....
+
+CheckType  = a - onewayroad: 0x00000002, 0x000000ff check
+CheckType  = b - onewayroad: 0x00020000
+
+ConsLayout  =........
+ConsLayout  =...++..<
+ConsLayout  =........
+ConsLayout  =...^....
+
+;AutoTileBase=	0x5914A700
+AutoTileBase = 0x5914A710
+AutoPathBase = 0x5914A700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5914A700
+Costs       = 75
+
+[HighwayIntersectionInfo_0x00018119]
+CopyFrom    = 0x8119
+Rotate		= 1
+AutoTileBase = 0x5914A720
+[HighwayIntersectionInfo_0x00028119]
+CopyFrom    = 0x8119
+Rotate = 2
+AutoTileBase = 0x5914A730
+[HighwayIntersectionInfo_0x00038119]
+CopyFrom    = 0x8119
+Rotate		= 3
+AutoTileBase = 0x5914A740
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x00058119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x00068119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x00078119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x00088119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x00098119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x000A8119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x000B8119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x000C8119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x000D8119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x000E8119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x000F8119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x00108119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x00118119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x00128119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x00138119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x00148119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x00158119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x00168119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x00178119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x00188119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x00198119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x001A8119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x001B8119]
+CopyFrom    = 0x38119
+[HighwayIntersectionInfo_0x001C8119]
+CopyFrom    = 0x8119
+[HighwayIntersectionInfo_0x001D8119]
+CopyFrom    = 0x18119
+[HighwayIntersectionInfo_0x001E8119]
+CopyFrom    = 0x28119
+[HighwayIntersectionInfo_0x001F8119]
+CopyFrom    = 0x38119
+
+
+[HighwayIntersectionInfo_0x00008118]
+;Added by smoncrie 03/28/05.
+;edited by memo 09/23/12 for onslope colour fix.
+;T One-Way Road OFF OnSlope
+Piece       = 0.0, 0, 2, 0, 0x59148705
+PreviewEffect = preview_owrd_puzzlepiece052
+
+CellLayout  =.......
+CellLayout  =..a+..<
+CellLayout  =.......
+CellLayout  =..^....
+
+CheckType  = a - onewayroad: 0x02020200, 0x00ff0000 check
+
+ConsLayout  =.......
+ConsLayout  =..+...<
+ConsLayout  =.......
+ConsLayout  =..^....
+
+;AutoTileBase=	0x59149700
+;to use the same models/paths as straight onslope piece.
+AutoTileBase = 0x5914B810
+AutoPathBase = 0x5914b800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59149700
+Costs       = 75
+
+[HighwayIntersectionInfo_0x00018118]
+CopyFrom    = 0x8118
+Rotate		= 1
+AutoTileBase = 0x5914B820
+[HighwayIntersectionInfo_0x00028118]
+CopyFrom    = 0x8118
+Rotate = 2
+AutoTileBase = 0x5914B830
+[HighwayIntersectionInfo_0x00038118]
+CopyFrom    = 0x8118
+Rotate		= 3
+AutoTileBase = 0x5914B840
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x00058118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x00068118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x00078118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x00088118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x00098118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x000A8118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x000B8118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x000C8118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x000D8118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x000E8118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x000F8118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x00108118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x00118118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x00128118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x00138118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x00148118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x00158118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x00168118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x00178118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x00188118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x00198118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x001A8118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x001B8118]
+CopyFrom    = 0x38118
+[HighwayIntersectionInfo_0x001C8118]
+CopyFrom    = 0x8118
+[HighwayIntersectionInfo_0x001D8118]
+CopyFrom    = 0x18118
+[HighwayIntersectionInfo_0x001E8118]
+CopyFrom    = 0x28118
+[HighwayIntersectionInfo_0x001F8118]
+CopyFrom    = 0x38118
+
+
+[HighwayIntersectionInfo_0x00008117]
+;Added by smoncrie 03/28/05.
+;edited by memo 09/23/12 for onslope colour fix.
+;T One-Way Road ON OnSlope
+Piece       = 0.0, 0, 0, 0, 0x59148705
+PreviewEffect = preview_owrd_puzzlepiece050
+
+CellLayout  =.......
+CellLayout  =..+a..<
+CellLayout  =.......
+CellLayout  =...^...
+
+CheckType  = a - onewayroad: 0x02000202, 0x000000ff check
+
+ConsLayout  =.......
+ConsLayout  =...+..<
+ConsLayout  =.......
+ConsLayout  =...^...
+
+;AutoTileBase=	0x59148700
+;to use the same models/paths as straight onslope piece.
+AutoTileBase = 0x5914A710
+AutoPathBase = 0x5914A700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59148700
+Costs       = 75
+
+[HighwayIntersectionInfo_0x00018117]
+CopyFrom    = 0x8117
+Rotate		= 1
+AutoTileBase = 0x5914A720
+[HighwayIntersectionInfo_0x00028117]
+CopyFrom    = 0x8117
+Rotate = 2
+AutoTileBase = 0x5914A730
+[HighwayIntersectionInfo_0x00038117]
+CopyFrom    = 0x8117
+Rotate		= 3
+AutoTileBase = 0x5914A740
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00048117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x00058117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x00068117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x00078117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x00088117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x00098117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x000A8117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x000B8117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x000C8117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x000D8117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x000E8117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x000F8117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x00108117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x00118117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x00128117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x00138117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x00148117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x00158117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x00168117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x00178117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x00188117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x00198117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x001A8117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x001B8117]
+CopyFrom    = 0x38117
+[HighwayIntersectionInfo_0x001C8117]
+CopyFrom    = 0x8117
+[HighwayIntersectionInfo_0x001D8117]
+CopyFrom    = 0x18117
+[HighwayIntersectionInfo_0x001E8117]
+CopyFrom    = 0x28117
+[HighwayIntersectionInfo_0x001F8117]
+CopyFrom    = 0x38117
+

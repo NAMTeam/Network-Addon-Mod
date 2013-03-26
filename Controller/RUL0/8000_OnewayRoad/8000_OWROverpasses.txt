@@ -1,0 +1,272 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ONEWAYROAD BUTTON SECTION
+;ONEWAYROAD BUTTON SECTION
+; 0x8###
+;OneWayRoad overpasses button.
+RotationRing = 8000, 18000, 28000, 38000 ;onewayroadxonewayroad overpass
+AddTypes     = 8001, 18001, 28001, 38001 ;onewayroadxrail overpass
+AddTypes     = 8002, 18002, 28002, 38002 ;onewayroadxstreet overpass
+AddTypes     = 8003, 18003, 28003, 38003 ;onewayroadxroad overpass
+AddTypes     = 8004, 18004, 28004, 38004 ;onewayroadxavenue overpass
+AddTypes     = 8005, 18005, 28005, 38005 ;onewayroadxgroundhighway plain overpass
+
+;###separator###
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ONEWAYROAD SECTION
+;ONEWAYROAD SECTION
+;ONEWAYROAD SECTION
+;
+;NOTE; using Transpose function impacts on onewayroad direction for 'check' flags & paths for onewayroad, 
+;therefore may need onewaydir fuction to enforce direction for check flags & also additional paths in the case
+;of transpose function using autopathbase function for additional paths.
+
+;Right Hand drive paths ~ rail-related & non-rail related onewayroad Non-Transposed paths; 0x59######
+;Right Hand drive paths ~ onewayroad rail related Transposed Paths; 0x99######
+;Left Hand drive paths ~ onewayroad non-rail related Transposed paths; 0x79######
+;Left Hand drive paths ~ onewayroad rail related Transposed Paths; 0xB9######
+;some limited exceptions may exist in some cases
+; Default >>> Replacement
+; Right Hand >>> Left Hand
+; Standard Versions >>> Reversed Versions
+; 0x59###### <> 0x79######
+; 0x99###### > 0xB9######
+;
+;OVERPASSES
+[HighwayIntersectionInfo_0x00008000]
+;Added by Tropod 05/23/04.
+;onewayroadxonewayroad overpass
+Piece = 0.0, 0.0, 0, 0, 0x5920C005
+PreviewEffect = preview_owrdowrdoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - onewayroad: 0x00020000,0xffffff00 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = d - onewayroad: 0x02000000,0xffff00ff check
+CheckType = e - onewayroad: 0x00000200,0x00ffffff check
+CheckType = c - onewayroad: 0x00000002,0xff00ffff check
+CheckType = Z - onewayroad: 0x02020202
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5920C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008000
+Costs       = 750
+[HighwayIntersectionInfo_0x00018000]
+CopyFrom    = 0x8000
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028000]
+CopyFrom    = 0x8000
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038000]
+CopyFrom    = 0x8000
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008001]
+;Added by Tropod 05/23/04.
+;onewayroadxrail overpass
+Piece = 0.0, 0.0, 0, 0, 0x5920D005
+PreviewEffect = preview_owrdrailoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - onewayroad: 0x00020000,0xffffff00 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = d - rail: 0x02000000,0xffff00ff check
+CheckType = e - rail: 0x00000200,0x00ffffff check
+CheckType = c - onewayroad: 0x00000002,0xff00ffff check
+CheckType = Z - onewayroad: 0x00020002 rail: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5920D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008040
+Costs       = 1000
+[HighwayIntersectionInfo_0x00018001]
+CopyFrom    = 0x8001
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028001]
+CopyFrom    = 0x8001
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038001]
+CopyFrom    = 0x8001
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00008002]
+;Added by Tropod 05/23/04.
+;onewayroadxstreet overpass
+Piece = 0.0, 0.0, 0, 0, 0x5920E005
+PreviewEffect = preview_owrdstrtoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - onewayroad: 0x00020000,0xffffff00 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = d - street: 0x02000000,0xffff00ff check
+CheckType = e - street: 0x00000200,0x00ffffff check
+CheckType = c - onewayroad: 0x00000002,0xff00ffff check
+CheckType = Z - onewayroad: 0x00020002 street: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5920E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008050
+Costs       = 500
+[HighwayIntersectionInfo_0x00018002]
+CopyFrom    = 0x8002
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028002]
+CopyFrom    = 0x8002
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038002]
+CopyFrom    = 0x8002
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008003]
+;Added by Tropod 05/23/04.
+;onewayroadxroad overpass
+Piece = 0.0, 0.0, 0, 0, 0x5920F005
+PreviewEffect = preview_owrdroadoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - onewayroad: 0x00020000,0xffffff00 check
+CheckType = b - onewayroad: 0x00020002
+CheckType = d - road: 0x02000000,0xffff00ff check
+CheckType = e - road: 0x00000200,0x00ffffff check
+CheckType = c - onewayroad: 0x00000002,0xff00ffff check
+CheckType = Z - onewayroad: 0x00020002 road: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5920F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008060
+Costs       = 750
+[HighwayIntersectionInfo_0x00018003]
+CopyFrom    = 0x8003
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028003]
+CopyFrom    = 0x8003
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038003]
+CopyFrom    = 0x8003
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00008004]
+;Added by Tropod 05/23/04.
+;onewayroadxavenue overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020D000
+PreviewEffect = preview_owrdavenoverpass001
+
+CellLayout = ....AB....
+CellLayout = abbbcdbbbe<
+CellLayout = ....EF....
+CellLayout = ....^.....
+
+CheckType = a - check onewayroad: 0x00020000, 0x00FF0000
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00020002 avenue: 0x02040200
+CheckType = d - onewayroad: 0x00020002 avenue: 0x02000204
+CheckType = e - check onewayroad: 0x00000002, 0x000000FF
+CheckType = A - check avenue: 0x02040000, 0xFFFF00FF
+CheckType = B - check avenue: 0x02000004, 0xFFFF00FF
+CheckType = E - check avenue: 0x00040200, 0x00FFFFFF
+CheckType = F - check avenue: 0x00000204, 0x00FFFFFF
+
+ConsLayout = ....||.....
+ConsLayout = ----##----<
+ConsLayout = ....||.....
+ConsLayout = ....^......
+
+AutoTileBase=	0x59210000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0008070
+Costs       = 1000
+[HighwayIntersectionInfo_0x00018004]
+CopyFrom    = 0x8004
+Rotate      = 1
+[HighwayIntersectionInfo_0x00028004]
+CopyFrom    = 0x8004
+Rotate      = 2
+[HighwayIntersectionInfo_0x00038004]
+CopyFrom    = 0x8004
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x00008005]
+;Added by Tropod 06.15.04 
+;onewayroadxgroundhighway normal overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020D000
+PreviewEffect = preview_owrdgrhwoverpass001
+
+CellLayout  =....AD...
+CellLayout  =abbbcdeeef<
+CellLayout  =....CF...
+CellLayout  =....^...
+
+CheckType = a - check onewayroad: 0x00020000, 0x00FF0000
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - onewayroad: 0x00020002 groundhighway: 0x02040200
+CheckType = d - onewayroad: 0x00020002 groundhighway: 0x02000204
+
+CheckType = e - onewayroad: 0x00020002
+CheckType = f - check onewayroad: 0x00000002, 0x000000FF
+CheckType = A - check groundhighway: 0x02040000, 0xFFFF00FF
+CheckType = C - check groundhighway: 0x00040200, 0x00FFFFFF
+CheckType = D - optional groundhighway: 0x02000004
+CheckType = F - optional groundhighway: 0x00000204
+
+ConsLayout = ....||.....
+ConsLayout = ----##----<
+ConsLayout = ....||.....
+ConsLayout = ....^......
+
+AutoTileBase = 0x5910A000
+PlaceQueryID = 0xB0008080
+HandleOffset = 0, 0
+Costs       = 400
+Autoplace = 1
+[HighwayIntersectionInfo_0x00018005]
+CopyFrom    = 0x8005
+Rotate      = 1
+[HighwayIntersectionInfo_0x00028005]
+CopyFrom    = 0x8005
+Rotate      = 2
+[HighwayIntersectionInfo_0x00038005]
+CopyFrom    = 0x8005
+Rotate      = 3
+

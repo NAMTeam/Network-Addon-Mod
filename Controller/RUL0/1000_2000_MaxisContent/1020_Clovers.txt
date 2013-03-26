@@ -1,0 +1,444 @@
+;Clovers
+RotationRing = 1020, 11020, 21020, 31020, 41020, 51020 ;elevated highway
+AddTypes     = 1021, 11021, 21021, 31021, 41021, 51021 ;ground highway
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00001020]
+Piece       = 0.0, 0.0, 0, 0, 0x02011000
+
+CellLayout =.......ef........
+CellLayout =.......cd........
+CellLayout =......+cd+.......
+CellLayout =....+++cd+++.....
+CellLayout =...++++cd++++....
+CellLayout =...++..cd..++....
+CellLayout =..+++..cd..+++...
+CellLayout =gaaaaaaWXaaaaaai<
+CellLayout =hbbbbbbYZbbbbbbj.
+CellLayout =..+++..cd..+++...
+CellLayout =...++..cd..++....
+CellLayout =...++++cd++++....
+CellLayout =....+++cd+++.....
+CellLayout =......+cd+.......
+CellLayout =.......cd........
+CellLayout =.......kl........
+CellLayout =.......^.........
+
+CheckType = a - highway:0x04020002
+CheckType = b - highway:0x00020402
+CheckType = c - highway:0x02040200
+CheckType = d - highway:0x02000204
+CheckType = e - highway:0x02040000,0xffff00ff check
+CheckType = f - highway:0x02000004,0xffff00ff check
+CheckType = g - highway:0x04020000,0xffffff00 check
+CheckType = h - highway:0x00020400,0xffffff00 check
+CheckType = i - highway:0x04000002,0xff00ffff check
+CheckType = j - highway:0x00000402,0xff00ffff check
+CheckType = k - highway:0x00040200,0x00ffffff check
+CheckType = l - highway:0x00000204,0x00ffffff check
+CheckType = W - highway:0x04040202
+CheckType = X - highway:0x04020204
+CheckType = Y - highway:0x02040402
+CheckType = Z - highway:0x02020404
+
+ConsLayout =......||.......
+ConsLayout =.....X||X......
+ConsLayout =...XXX||XXX....
+ConsLayout =..XXXX||XXXX...
+ConsLayout =..XX..||..XX...
+ConsLayout =.XXX..||..XXX..
+ConsLayout =------##------<
+ConsLayout =------##------.
+ConsLayout =.XXX..||..XXX..
+ConsLayout =..XX..||..XX...
+ConsLayout =..XXXX||XXXX...
+ConsLayout =...XXX||XXX....
+ConsLayout =.....X||X......
+ConsLayout =......||.......
+ConsLayout =......^........
+
+AutoTileBase = 0x0C004000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+PreviewEffect = preview_el_straight_clover
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x00011020]
+Piece       = 0.0, 0.0, 0, 0, 0x02011100
+
+CellLayout =hg..........mn
+CellLayout =iba+.++++.+deo
+CellLayout =.cba++++++def.
+CellLayout =.+cba+..+def+.
+CellLayout =..+cba..def+..
+CellLayout =.+++cbadef+++.
+CellLayout =.++..cWXf..++<
+CellLayout =.++..dYZa..++.
+CellLayout =.+++defcba+++.
+CellLayout =..+def..cba+..
+CellLayout =.+def+..+cba+.
+CellLayout =.def++++++cba.
+CellLayout =pef+.++++.+cbj
+CellLayout =qr....^.....lk
+
+CheckType = a - highway:0x01000003
+CheckType = b - highway:0x01030103
+CheckType = c - highway:0x00030100
+CheckType = d - highway:0x03010000
+CheckType = e - highway:0x03010301
+CheckType = f - highway:0x00000301
+CheckType = g - highway:0x01000003 check
+CheckType = h - highway:0x01030000,0xffff0000 check
+CheckType = i - highway:0x00030100 check
+CheckType = j - highway:0x01000003 check
+CheckType = k - highway:0x00000103,0x0000ffff check
+CheckType = l - highway:0x00030100 check
+CheckType = m - highway:0x03010000 check
+CheckType = n - highway:0x03000001,0xff0000ff check
+CheckType = o - highway:0x00000301 check
+CheckType = p - highway:0x03010000 check
+CheckType = q - highway:0x00010300,0x00ffff00 check
+CheckType = r - highway:0x00000301 check
+CheckType = W - highway:0x02020103
+CheckType = X - highway:0x02010302
+CheckType = Y - highway:0x03020201
+CheckType = Z - highway:0x01030202
+
+ConsLayout =..............
+ConsLayout =.\\X.XXXX.X//.
+ConsLayout =.\\\XXXXXX///.
+ConsLayout =.X\\\X..X///X.
+ConsLayout =..X\\\..///X..
+ConsLayout =.XXX\\\///XXX.
+ConsLayout =.XX..\XX/..XX<
+ConsLayout =.XX../XX\..XX.
+ConsLayout =.XXX///\\\XXX.
+ConsLayout =..X///..\\\X..
+ConsLayout =.X///X..X\\\X.
+ConsLayout =.///XXXXXX\\\.
+ConsLayout =.//X.XXXX.X\\.
+ConsLayout =......^.......
+
+AutoTileBase = 0x0C005000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+PreviewEffect = preview_el_diag1_clover
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x00021020]
+Piece       = 0.0, 0.0, 0, 0, 0x02011200
+
+CellLayout =hg.........mn
+CellLayout =iba+++++++deo
+CellLayout =.cba++.++def.
+CellLayout =.+cba+.+def+.
+CellLayout =.++cba.def++.
+CellLayout =.+++cbAef+++.
+CellLayout =.+...BCD...+<
+CellLayout =.+++deEba+++.
+CellLayout =.++def.cba++.
+CellLayout =.+def+.+cba+.
+CellLayout =.def++.++cba.
+CellLayout =pef+++++++cbj
+CellLayout =qr....^....lk
+
+CheckType = a - highway:0x01000003
+CheckType = b - highway:0x01030103
+CheckType = c - highway:0x00030100
+CheckType = d - highway:0x03010000
+CheckType = e - highway:0x03010301
+CheckType = f - highway:0x00000301
+CheckType = g - highway:0x01000003 check
+CheckType = h - highway:0x01030000,0xffff0000 check
+CheckType = i - highway:0x00030100 check
+CheckType = j - highway:0x01000003 check
+CheckType = k - highway:0x00000103,0x0000ffff check
+CheckType = l - highway:0x00030100 check
+CheckType = m - highway:0x03010000 check
+CheckType = n - highway:0x03000001,0xff0000ff check
+CheckType = o - highway:0x00000301 check
+CheckType = p - highway:0x03010000 check
+CheckType = q - highway:0x00010300,0x00ffff00 check
+CheckType = r - highway:0x00000301 check
+CheckType = A - highway:0x02010003
+CheckType = B - highway:0x03020100
+CheckType = C - highway:0x02020202
+CheckType = D - highway:0x01000302
+CheckType = E - highway:0x00030201
+
+ConsLayout =.............
+ConsLayout =.\\XXXXXXX//.
+ConsLayout =.\\\XX.XX///.
+ConsLayout =.X\\\X.X///X.
+ConsLayout =.XX\\\.///XX.
+ConsLayout =.XXX\\#//XXX.
+ConsLayout =.X...###...X<
+ConsLayout =.XXX//#\\XXX.
+ConsLayout =.XX///.\\\XX.
+ConsLayout =.X///X.X\\\X.
+ConsLayout =.///XX.XX\\\.
+ConsLayout =.//XXXXXXX\\.
+ConsLayout =......^......
+
+AutoTileBase = 0x0C006000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+PreviewEffect = preview_el_diag2_clover
+Costs       = 3000
+[HighwayIntersectionInfo_0x00031020]
+CopyFrom    = 0x1020
+Rotate      = 1
+[HighwayIntersectionInfo_0x00041020]
+CopyFrom    = 0x11020
+Rotate      = 1
+[HighwayIntersectionInfo_0x00051020]
+CopyFrom    = 0x21020
+Rotate      = 1
+
+[HighwayIntersectionInfo_0x00001021]
+Piece       = 0.0, 0.0, 0, 0, 0x02011000
+PreviewEffect = preview_gh_straight_clover
+
+CellLayout =.......ef........
+CellLayout =.......cd........
+CellLayout =......+cd+.......
+CellLayout =....+++cd+++.....
+CellLayout =...++++cd++++....
+CellLayout =...++..cd..++....
+CellLayout =..+++..cd..+++...
+CellLayout =gaaaaaaWXaaaaaai<
+CellLayout =hbbbbbbYZbbbbbbj.
+CellLayout =..+++..cd..+++...
+CellLayout =...++..cd..++....
+CellLayout =...++++cd++++....
+CellLayout =....+++cd+++.....
+CellLayout =......+cd+.......
+CellLayout =.......cd........
+CellLayout =.......kl........
+CellLayout =.......^.........
+
+CheckType = a - groundhighway:0x04020002
+CheckType = b - groundhighway:0x00020402
+CheckType = c - groundhighway:0x02040200
+CheckType = d - groundhighway:0x02000204
+CheckType = e - groundhighway:0x02040000,0xffff00ff check
+CheckType = f - groundhighway:0x02000004,0xffff00ff check
+CheckType = g - groundhighway:0x04020000,0xffffff00 check
+CheckType = h - groundhighway:0x00020400,0xffffff00 check
+CheckType = i - groundhighway:0x04000002,0xff00ffff check
+CheckType = j - groundhighway:0x00000402,0xff00ffff check
+CheckType = k - groundhighway:0x00040200,0x00ffffff check
+CheckType = l - groundhighway:0x00000204,0x00ffffff check
+CheckType = W - groundhighway:0x04040202
+CheckType = X - groundhighway:0x04020204
+CheckType = Y - groundhighway:0x02040402
+CheckType = Z - groundhighway:0x02020404
+
+ConsLayout =......||.......
+ConsLayout =.....X||X......
+ConsLayout =...XXX||XXX....
+ConsLayout =..XXXX||XXXX...
+ConsLayout =..XX..||..XX...
+ConsLayout =.XXX..||..XXX..
+ConsLayout =------##------<
+ConsLayout =------##------.
+ConsLayout =.XXX..||..XXX..
+ConsLayout =..XX..||..XX...
+ConsLayout =..XXXX||XXXX...
+ConsLayout =...XXX||XXX....
+ConsLayout =.....X||X......
+ConsLayout =......||.......
+ConsLayout =......^........
+
+AutoTileBase= 0x0C898000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x00011021]
+Piece       = 0.0, 0.0, 0, 0, 0x02011100
+PreviewEffect = preview_gh_diag1_clover
+
+CellLayout =hg..........mn
+CellLayout =iba+.++++.+deo
+CellLayout =.cba++++++def.
+CellLayout =.+cba+..+def+.
+CellLayout =..+cba..def+..
+CellLayout =.+++cbadef+++.
+CellLayout =.++..cWXf..++<
+CellLayout =.++..dYZa..++.
+CellLayout =.+++defcba+++.
+CellLayout =..+def..cba+..
+CellLayout =.+def+..+cba+.
+CellLayout =.def++++++cba.
+CellLayout =pef+.++++.+cbj
+CellLayout =qr....^.....lk
+
+CheckType = a - groundhighway:0x01000003
+CheckType = b - groundhighway:0x01030103
+CheckType = c - groundhighway:0x00030100
+CheckType = d - groundhighway:0x03010000
+CheckType = e - groundhighway:0x03010301
+CheckType = f - groundhighway:0x00000301
+CheckType = g - groundhighway:0x01000003 check
+CheckType = h - groundhighway:0x01030000,0xffff0000 check
+CheckType = i - groundhighway:0x00030100 check
+CheckType = j - groundhighway:0x01000003 check
+CheckType = k - groundhighway:0x00000103,0x0000ffff check
+CheckType = l - groundhighway:0x00030100 check
+CheckType = m - groundhighway:0x03010000 check
+CheckType = n - groundhighway:0x03000001,0xff0000ff check
+CheckType = o - groundhighway:0x00000301 check
+CheckType = p - groundhighway:0x03010000 check
+CheckType = q - groundhighway:0x00010300,0x00ffff00 check
+CheckType = r - groundhighway:0x00000301 check
+CheckType = W - groundhighway:0x02020103
+CheckType = X - groundhighway:0x02010302
+CheckType = Y - groundhighway:0x03020201
+CheckType = Z - groundhighway:0x01030202
+
+ConsLayout =..............
+ConsLayout =.\\X.XXXX.X//.
+ConsLayout =.\\\XXXXXX///.
+ConsLayout =.X\\\X..X///X.
+ConsLayout =..X\\\..///X..
+ConsLayout =.XXX\\\///XXX.
+ConsLayout =.XX..\##/..XX<
+ConsLayout =.XX../##\..XX.
+ConsLayout =.XXX///\\\XXX.
+ConsLayout =..X///..\\\X..
+ConsLayout =.X///X..X\\\X.
+ConsLayout =.///XXXXXX\\\.
+ConsLayout =.//X.XXXX.X\\.
+ConsLayout =......^.......
+
+AutoTileBase= 0x0C899000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x00021021]
+Piece       = 0.0, 0.0, 0, 0, 0x02011200
+PreviewEffect = preview_gh_diag2_clover
+
+CellLayout =hg.........mn
+CellLayout =iba+++++++deo
+CellLayout =.cba++.++def.
+CellLayout =.+cba+.+def+.
+CellLayout =.++cba.def++.
+CellLayout =.+++cbAef+++.
+CellLayout =.+...BCD...+<
+CellLayout =.+++deEba+++.
+CellLayout =.++def.cba++.
+CellLayout =.+def+.+cba+.
+CellLayout =.def++.++cba.
+CellLayout =pef+++++++cbj
+CellLayout =qr....^....lk
+
+CheckType = a - groundhighway:0x01000003
+CheckType = b - groundhighway:0x01030103
+CheckType = c - groundhighway:0x00030100
+CheckType = d - groundhighway:0x03010000
+CheckType = e - groundhighway:0x03010301
+CheckType = f - groundhighway:0x00000301
+CheckType = g - groundhighway:0x01000003 check
+CheckType = h - groundhighway:0x01030000,0xffff0000 check
+CheckType = i - groundhighway:0x00030100 check
+CheckType = j - groundhighway:0x01000003 check
+CheckType = k - groundhighway:0x00000103,0x0000ffff check
+CheckType = l - groundhighway:0x00030100 check
+CheckType = m - groundhighway:0x03010000 check
+CheckType = n - groundhighway:0x03000001,0xff0000ff check
+CheckType = o - groundhighway:0x00000301 check
+CheckType = p - groundhighway:0x03010000 check
+CheckType = q - groundhighway:0x00010300,0x00ffff00 check
+CheckType = r - groundhighway:0x00000301 check
+CheckType = A - groundhighway:0x02010003
+CheckType = B - groundhighway:0x03020100
+CheckType = C - groundhighway:0x02020202
+CheckType = D - groundhighway:0x01000302
+CheckType = E - groundhighway:0x00030201
+
+ConsLayout =.............
+ConsLayout =.\\XXXXXXX//.
+ConsLayout =.\\\XX.XX///.
+ConsLayout =.X\\\X.X///X.
+ConsLayout =.XX\\\.///XX.
+ConsLayout =.XXX\\#//XXX.
+ConsLayout =.X...###...X<
+ConsLayout =.XXX//#\\XXX.
+ConsLayout =.XX///.\\\XX.
+ConsLayout =.X///X.X\\\X.
+ConsLayout =.///XX.XX\\\.
+ConsLayout =.//XXXXXXX\\.
+ConsLayout =......^......
+
+AutoTileBase= 0x0C89A000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xA0000000
+PlaceQueryID = 0xA0000002
+HandleOffset = 0, 0
+Costs       = 3000
+[HighwayIntersectionInfo_0x00031021]
+CopyFrom    = 0x1021
+Rotate      = 1
+[HighwayIntersectionInfo_0x00041021]
+CopyFrom    = 0x11021
+Rotate      = 1
+[HighwayIntersectionInfo_0x00051021]
+CopyFrom    = 0x21021
+Rotate      = 1
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;

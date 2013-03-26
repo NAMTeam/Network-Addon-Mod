@@ -1,0 +1,1811 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;GROUND LIGHTRAIL BUTTON SECTION
+;GROUND LIGHTRAIL BUTTON SECTION
+;; Texture variation seperators
+RotationRing = B110, 1B110, 2B110, 3B110, 4B110, 5B110, 6B110, 7B110 ;Ground Light Rail Straight Puzzle Piece
+AddTypes     = B111, 1B111, 2B111, 3B111, 4B111, 5B111, 6B111, 7B111 ;Ground Light Rail Diagonal Puzzle Piece
+AddTypes     = B112, 1B112, 2B112, 3B112, 4B112, 5B112, 6B112, 7B112 ;Ground Light Rail Straight Puzzle Piece Alt1
+AddTypes     = B113, 1B113, 2B113, 3B113, 4B113, 5B113, 6B113, 7B113 ;Ground Light Rail Diagonal Puzzle Piece Alt1
+AddTypes     = B114, 1B114, 2B114, 3B114, 4B114, 5B114, 6B114, 7B114 ;Ground Light Rail Straight Puzzle Piece Alt2
+AddTypes     = B115, 1B115, 2B115, 3B115, 4B115, 5B115, 6B115, 7B115 ;Ground Light Rail Diagonal Puzzle Piece Alt2 
+AddTypes     = B116, 1B116, 2B116, 3B116, 4B116, 5B116, 6B116, 7B116 ;Ground Light Rail Rural Straight Puzzle Piece
+AddTypes     = B117, 1B117, 2B117, 3B117, 4B117, 5B117, 6B117, 7B117 ;Ground Light Rail Rural Diagonal Puzzle Piece
+;; Paved
+AddTypes     = B118, 1B118, 2B118, 3B118, 4B118, 5B118, 6B118, 7B118 ;Ground Light Rail Turn Puzzle Piece
+AddTypes     = B119, 1B119, 2B119, 3B119, 4B119, 5B119, 6B119, 7B119 ;Ground Light Rail Crossing Puzzle Piece
+AddTypes     = B11A, 1B11A, 2B11A, 3B11A, 4B11A, 5B11A, 6B11A, 7B11A ;Ground Light Rail + Multi-switch
+AddTypes     = B11B, 1B11B, 2B11B, 3B11B, 4B11B, 5B11B, 6B11B, 7B11B ;Ground Light Rail T-Intersection
+AddTypes     = B11C, 1B11C, 2B11C, 3B11C, 4B11C, 5B11C, 6B11C, 7B11C ;Ground Light Rail Turn Puzzle Piece
+AddTypes     = B11D, 1B11D, 2B11D, 3B11D, 4B11D, 5B11D, 6B11D, 7B11D ;Ground Light RailxRoad Puzzle Piece
+AddTypes     = B11E, 1B11E, 2B11E, 3B11E, 4B11E, 5B11E, 6B11E, 7B11E ;Ground Light RailxStreet Puzzle Piece
+AddTypes     = B11F, 1B11F, 2B11F, 3B11F, 4B11F, 5B11F, 6B11F, 7B11F ;Ground Light RailxOne-Way Puzzle Piece
+AddTypes     = B120, 1B120, 2B120, 3B120, 4B120, 5B120, 6B120, 7B120 ;Ground Light RailxAvenue Puzzle Piece
+AddTypes     = B121, 1B121, 2B121, 3B121, 4B121, 5B121, 6B121, 7B121 ;;Ground Light RailxRail Puzzle Piece
+AddTypes     = B122, 1B122, 2B122, 3B122, 4B122, 5B122, 6B122, 7B122 ;Ground Light Rail Junction Puzzle Piece
+AddTypes     = B123, 1B123, 2B123, 3B123, 4B123, 5B123, 6B123, 7B123 ;Ground Light Rail Diagonal Junction Left Puzzle Piece
+AddTypes     = B124, 1B124, 2B124, 3B124, 4B124, 5B124, 6B124, 7B124 ;Ground Light Rail Diagonal S-Curve Puzzle Piece
+AddTypes     = B125, 1B125, 2B125, 3B125, 4B125, 5B125, 6B125, 7B125 ;Ground Light Rail Y-Junction
+AddTypes     = B126, 1B126, 2B126, 3B126, 4B126, 5B126, 6B126, 7B126 ;Ground Light Rail W-Junction
+AddTypes     = B127, 1B127, 2B127, 3B127, 4B127, 5B127, 6B127, 7B127 ;Ground Light Rail on Ped Mall - Center Pole
+AddTypes     = B128, 1B128, 2B128, 3B128, 4B128, 5B128, 6B128, 7B128 ;;Ground Light Rail on Ped Mall - Pavement
+AddTypes     = B129, 1B129, 2B129, 3B129, 4B129, 5B129, 6B129, 7B129 ;;Ground Light Rail on Ped Mall - CobbleStone
+AddTypes     = B12A, 1B12A, 2B12A, 3B12A, 4B12A, 5B12A, 6B12A, 7B12A ;;Ground Light Rail on Ped Mall - OpenPaved
+AddTypes     = B12B, 1B12B, 2B12B, 3B12B, 4B12B, 5B12B, 6B12B, 7B12B ;;Ground Light Rail on Ped Mall - Sandstone
+;; Rural & Overpasses
+AddTypes     = B12C, 1B12C, 2B12C, 3B12C, 4B12C, 5B12C, 6B12C, 7B12C ;Ground Light Rail Rural Diagonal Junction Left Puzzle Piece
+AddTypes     = B12D, 1B12D, 2B12D, 3B12D, 4B12D, 5B12D, 6B12D, 7B12D ;Ground Light Rail X Elevated Light Rail Puzzle Piece
+AddTypes     = B12E, 1B12E, 2B12E, 3B12E, 4B12E, 5B12E, 6B12E, 7B12E ;Ground Light Rail X Elevated Highway Puzzle Piece
+AddTypes     = B12F, 1B12F, 2B12F, 3B12F, 4B12F, 5B12F, 6B12F, 7B12F ;Ground Light RailxMonorail Puzzle Piece
+AddTypes     = B130, 1B130, 2B130, 3B130, 4B130, 5B130, 6B130, 7B130 ;Elevated to Ground Light Rail Connector Puzzle Piece
+;AddTypes     = B131, 1B131, 2B131, 3B131, 4B131, 5B131, 6B131, 7B131 ;T Ground Light Rail OnSlope Connector Puzzle Piece
+;AddTypes     = B132, 1B132, 2B132, 3B132, 4B132, 5B132, 6B132, 7B132 ;Straight Ground Light Rail OnSlope Connector Puzzle Piece
+AddTypes     = B133, 1B133, 2B133, 3B133, 4B133, 5B133, 6B133, 7B133 ;smoncrie Ground Light Rail T OnSlope Puzzle Piece - danger of CTD
+AddTypes     = B134, 1B134, 2B134, 3B134, 4B134, 5B134, 6B134, 7B134 ;smoncrie Ground Light Rail Straight OnSlope Puzzle Piece
+AddTypes     = B135, 1B135, 2B135, 3B135, 4B135, 5B135, 6B135, 7B135 ;Ground Light Rail turning circle
+AddTypes     = B136, 6B136, 1B136, 7B136, 2B136, 4B136, 3B136, 5B136 ;Ground Light Rail turning circle with gap for station
+AddTypes     = B137, 6B137, 1B137, 7B137, 2B137, 4B137, 3B137, 5B137 ;Ground Light Rail straight and turning circle with gap for station
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Ground Light Rail
+;Ground Light Rail
+;Ground Light Rail
+
+[HighwayIntersectionInfo_0x0000B130]
+;Added by smoncrie 02/09/05.
+;Elevated to Ground Light Rail Connector Puzzle Piece 
+Piece = 0.0, 0.0, 0, 0, 0x580d0705
+PreviewEffect = preview_rail_dualnetwork013
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .c..
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x02000000
+CheckType  = b - lightrail: 0x00000000
+CheckType  = c - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout = ...
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .^.
+
+AutoTileBase = 0x580d0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d0700
+Costs       = 290
+[HighwayIntersectionInfo_0x0001B130]
+CopyFrom    = 0xB130
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B130]
+CopyFrom    = 0xB130
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B130]
+CopyFrom    = 0xB130
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B130]
+CopyFrom    = 0xB130
+[HighwayIntersectionInfo_0x0005B130]
+CopyFrom    = 0x1B130
+[HighwayIntersectionInfo_0x0006B130]
+CopyFrom    = 0x2B130
+[HighwayIntersectionInfo_0x0007B130]
+CopyFrom    = 0x3B130
+
+
+[HighwayIntersectionInfo_0x0000B110]
+;Added by smoncrie 02/04/05.
+;Ground Light Rail Straight Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580cc705
+PreviewEffect = preview_rail_dualnetwork009
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x580cc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cc700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B110]
+CopyFrom    = 0xB110
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B110]
+CopyFrom    = 0xB110
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B110]
+CopyFrom    = 0xB110
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B110]
+CopyFrom    = 0xB110
+[HighwayIntersectionInfo_0x0005B110]
+CopyFrom    = 0x1B110
+[HighwayIntersectionInfo_0x0006B110]
+CopyFrom    = 0x2B110
+[HighwayIntersectionInfo_0x0007B110]
+CopyFrom    = 0x3B110
+
+
+[HighwayIntersectionInfo_0x0000B119]
+;Added by smoncrie 02/04/05.
+;Ground Light Rail Crossing Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580cd705
+PreviewEffect = preview_rail_dualnetwork010
+
+CellLayout  =........
+CellLayout  =....Z<..
+CellLayout  =....^...
+
+CheckType  = Z - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....^....
+
+AutoTileBase=	0x580cd700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cd700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B119]
+CopyFrom    = 0xB119
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B119]
+CopyFrom    = 0xB119
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B119]
+CopyFrom    = 0xB119
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B119]
+CopyFrom    = 0xB119
+[HighwayIntersectionInfo_0x0005B119]
+CopyFrom    = 0x1B119
+[HighwayIntersectionInfo_0x0006B119]
+CopyFrom    = 0x2B119
+[HighwayIntersectionInfo_0x0007B119]
+CopyFrom    = 0x3B119
+
+
+[HighwayIntersectionInfo_0x0000B11C]
+;Added by smoncrie 02/05/05.
+;Ground Light Rail Turn 90 Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580ce705
+PreviewEffect = preview_rail_dualnetwork011
+
+CellLayout  =........
+CellLayout  =....Z<..
+CellLayout  =....^...
+
+CheckType  = Z - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....^....
+
+AutoTileBase=	0x580ce700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580ce700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11C]
+CopyFrom    = 0xB11C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11C]
+CopyFrom    = 0xB11C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11C]
+CopyFrom    = 0xB11C
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B11C]
+CopyFrom    = 0xB11C
+[HighwayIntersectionInfo_0x0005B11C]
+CopyFrom    = 0x1B11C
+[HighwayIntersectionInfo_0x0006B11C]
+CopyFrom    = 0x2B11C
+[HighwayIntersectionInfo_0x0007B11C]
+CopyFrom    = 0x3B11C
+
+
+[HighwayIntersectionInfo_0x0000B11D]
+;Added by smoncrie 02/06/05.
+;Ground Light RailxRoad Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580cf705
+PreviewEffect = preview_rail_dualnetwork012
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00000000 optional
+CheckType = c - road: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580cf700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cf700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11D]
+CopyFrom    = 0xB11D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11D]
+CopyFrom    = 0xB11D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11D]
+CopyFrom    = 0xB11D
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B11D]
+CopyFrom    = 0xB11D
+[HighwayIntersectionInfo_0x0005B11D]
+CopyFrom    = 0x1B11D
+[HighwayIntersectionInfo_0x0006B11D]
+CopyFrom    = 0x2B11D
+[HighwayIntersectionInfo_0x0007B11D]
+CopyFrom    = 0x3B11D
+
+
+[HighwayIntersectionInfo_0x0000B118]
+;Added by smoncrie 02/13/05.
+;Ground Light Rail Long Turn Puzzle Piece 
+Piece = 0.0, 0.0, 0, 0, 0x580d1705
+PreviewEffect = preview_rail_dualnetwork014
+
+CellLayout =........
+CellLayout =....a..
+CellLayout =....a<..
+CellLayout =....^...
+
+CheckType = a - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580d1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d1700
+Costs       = 16
+[HighwayIntersectionInfo_0x0001B118]
+CopyFrom    = 0xB118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B118]
+CopyFrom    = 0xB118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B118]
+CopyFrom    = 0xB118
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B118]
+CopyFrom    = 0xB118
+PlaceQueryID = 0x580d2700
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B118]
+CopyFrom    = 0x4B118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B118]
+CopyFrom    = 0x4B118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B118]
+CopyFrom    = 0x4B118
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B111]
+;Added by smoncrie 02/13/05.
+;Ground Light Rail Diagonal Puzzle Piece 
+Piece = 0.0, 0.0, 0, 0, 0x580d3705
+PreviewEffect = preview_rail_dualnetwork016
+
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580d3700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d3700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B111]
+CopyFrom    = 0xB111
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B111]
+CopyFrom    = 0xB111
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B111]
+CopyFrom    = 0xB111
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B111]
+CopyFrom    = 0xB111
+[HighwayIntersectionInfo_0x0005B111]
+CopyFrom    = 0x1B111
+[HighwayIntersectionInfo_0x0006B111]
+CopyFrom    = 0x2B111
+[HighwayIntersectionInfo_0x0007B111]
+CopyFrom    = 0x3B111
+
+
+[HighwayIntersectionInfo_0x0000B122]
+;Added by smoncrie 02/17/05.
+;Ground Light Rail Junction Right Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580d6705
+PreviewEffect = preview_rail_dualnetwork019
+
+CellLayout =.......
+CellLayout =....a..
+CellLayout =....a<.
+CellLayout =....^..
+
+CheckType = a - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580d6700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d6700
+Costs       = 16
+[HighwayIntersectionInfo_0x0001B122]
+CopyFrom    = 0xB122
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B122]
+CopyFrom    = 0xB122
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B122]
+CopyFrom    = 0xB122
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B122]
+CopyFrom    = 0xB122
+PlaceQueryID = 0x580d7700
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B122]
+CopyFrom    = 0x4B122
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B122]
+CopyFrom    = 0x4B122
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B122]
+CopyFrom    = 0x4B122
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B11E]
+;Added by smoncrie 02/24/05.
+;Ground Light RailxStreet Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580d8705
+PreviewEffect = preview_rail_dualnetwork021
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - street: 0x00020000, 0x00000000 optional
+CheckType = c - street: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000 street: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580d8700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d8700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11E]
+CopyFrom    = 0xB11E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11E]
+CopyFrom    = 0xB11E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11E]
+CopyFrom    = 0xB11E
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B11E]
+CopyFrom    = 0xB11E
+[HighwayIntersectionInfo_0x0005B11E]
+CopyFrom    = 0x1B11E
+[HighwayIntersectionInfo_0x0006B11E]
+CopyFrom    = 0x2B11E
+[HighwayIntersectionInfo_0x0007B11E]
+CopyFrom    = 0x3B11E
+
+
+[HighwayIntersectionInfo_0x0000B11F]
+;Added by smoncrie 02/24/05.
+;Ground Light RailxOne-Way Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580d9705
+PreviewEffect = preview_rail_dualnetwork022
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - onewayroad: 0x00020000, 0x00ff0000 check
+CheckType = c - onewayroad: 0x00000002,0x000000ff check
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580d9700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d9700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11F]
+CopyFrom    = 0xB11F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11F]
+CopyFrom    = 0xB11F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11F]
+CopyFrom    = 0xB11F
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B11F]
+CopyFrom    = 0xB11F
+[HighwayIntersectionInfo_0x0005B11F]
+CopyFrom    = 0x1B11F
+[HighwayIntersectionInfo_0x0006B11F]
+CopyFrom    = 0x2B11F
+[HighwayIntersectionInfo_0x0007B11F]
+CopyFrom    = 0x3B11F
+
+
+[HighwayIntersectionInfo_0x0000B120]
+;Added by smoncrie 02/26/05
+;Edited by smoncrie 04/06/08 to fix ConsLayout problem with 2 tile wide networks
+;                            to allow it to be placed on existing avenues
+;Ground Light RailxAvenue Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580da705
+PreviewEffect = preview_rail_dualnetwork023
+
+CellLayout =......
+CellLayout =.aca.<
+CellLayout =.bdb..
+CellLayout =..^...
+
+CheckType = a - avenue: 0x04020002, 0x00000000 optional
+CheckType = b - avenue: 0x00020402, 0x00000000 optional
+CheckType = c - lightrail: 0x02000200 avenue: 0x04020002
+CheckType = d - lightrail: 0x02000200 avenue: 0x00020402
+
+ConsLayout =......
+ConsLayout =.-+-.<
+ConsLayout =.-+-..
+ConsLayout =..^...
+
+AutoTileBase=	0x580da700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580da700
+Costs       = 16
+[HighwayIntersectionInfo_0x0001B120]
+CopyFrom    = 0xB120
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B120]
+CopyFrom    = 0xB120
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B120]
+CopyFrom    = 0xB120
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B120]
+CopyFrom    = 0xB120
+[HighwayIntersectionInfo_0x0005B120]
+CopyFrom    = 0x1B120
+[HighwayIntersectionInfo_0x0006B120]
+CopyFrom    = 0x2B120
+[HighwayIntersectionInfo_0x0007B120]
+CopyFrom    = 0x3B120
+
+
+[HighwayIntersectionInfo_0x0000B116]
+;Added by smoncrie 03/03/05.
+;Ground Light Rail Rural Straight Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580db705
+PreviewEffect = preview_rail_dualnetwork024
+
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580db700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580db700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B116]
+CopyFrom    = 0xB116
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B116]
+CopyFrom    = 0xB116
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B116]
+CopyFrom    = 0xB116
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B116]
+CopyFrom    = 0xB116
+[HighwayIntersectionInfo_0x0005B116]
+CopyFrom    = 0x1B116
+[HighwayIntersectionInfo_0x0006B116]
+CopyFrom    = 0x2B116
+[HighwayIntersectionInfo_0x0007B116]
+CopyFrom    = 0x3B116
+
+
+[HighwayIntersectionInfo_0x0000B117]
+;Added by smoncrie 03/03/05.
+;Ground Light Rail Rural Diagonal Puzzle Piece 
+Piece = 0.0, 0.0, 0, 0, 0x580dc705
+PreviewEffect = preview_rail_dualnetwork025
+
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580dc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580dc700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B117]
+CopyFrom    = 0xB117
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B117]
+CopyFrom    = 0xB117
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B117]
+CopyFrom    = 0xB117
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B117]
+CopyFrom    = 0xB117
+[HighwayIntersectionInfo_0x0005B117]
+CopyFrom    = 0x1B117
+[HighwayIntersectionInfo_0x0006B117]
+CopyFrom    = 0x2B117
+[HighwayIntersectionInfo_0x0007B117]
+CopyFrom    = 0x3B117
+
+
+[HighwayIntersectionInfo_0x0000B121]
+;Added by smoncrie 03/14/05.
+;Ground Light RailxRail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580dd705
+PreviewEffect = preview_rail_dualnetwork026
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - rail: 0x00020000, 0x00000000 optional
+CheckType = c - rail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580dd700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580dd700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B121]
+CopyFrom    = 0xB121
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B121]
+CopyFrom    = 0xB121
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B121]
+CopyFrom    = 0xB121
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B121]
+CopyFrom    = 0xB121
+[HighwayIntersectionInfo_0x0005B121]
+CopyFrom    = 0x1B121
+[HighwayIntersectionInfo_0x0006B121]
+CopyFrom    = 0x2B121
+[HighwayIntersectionInfo_0x0007B121]
+CopyFrom    = 0x3B121
+
+
+[HighwayIntersectionInfo_0x0000B12D]
+;Added by smoncrie 03/05/05.
+;Edited by memo 03/27/07 to enable to place puzzle piece on dragged GLR tracks
+;Ground Light Rail X Elevated Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580de705
+PreviewEffect = preview_rail_dualnetwork027
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - lightrail: 0x00020000, 0x00000000 optional
+CheckType = c - lightrail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000 
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580de700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580de700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B12D]
+CopyFrom    = 0xB12D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12D]
+CopyFrom    = 0xB12D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12D]
+CopyFrom    = 0xB12D
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B12D]
+CopyFrom    = 0xB12D
+[HighwayIntersectionInfo_0x0005B12D]
+CopyFrom    = 0x1B12D
+[HighwayIntersectionInfo_0x0006B12D]
+CopyFrom    = 0x2B12D
+[HighwayIntersectionInfo_0x0007B12D]
+CopyFrom    = 0x3B12D
+
+
+[HighwayIntersectionInfo_0x0000B12E]
+;Added by smoncrie 03/05/05
+;Edited by memo 03/27/07 to enable to place puzzle piece on dragged GLR tracks
+;Edited by smoncrie 04/06/08 to fix ConsLayout problem with 2 tile wide networks
+;Ground Light Rail X Elevated Highway Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580df705
+PreviewEffect = preview_rail_dualnetwork028
+
+CellLayout =........
+CellLayout =...ace...
+CellLayout =...bdf..<
+CellLayout =....^....
+
+CheckType = a - highway: 0x04020002, 0x00000000 optional
+CheckType = b - highway: 0x00020402, 0x00000000 optional
+CheckType = c - lightrail: 0x02000200 highway: 0x04020002
+CheckType = d - lightrail: 0x02000200 highway: 0x00020402
+CheckType = e - highway: 0x04020002, 0x00000000 optional
+CheckType = f - highway: 0x00020402, 0x00000000 optional
+
+ConsLayout =.........
+ConsLayout =...-+-...
+ConsLayout =...-+-..<
+ConsLayout =....^....
+
+AutoTileBase=	0x580df700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580df700
+Costs       = 16
+[HighwayIntersectionInfo_0x0001B12E]
+CopyFrom    = 0xB12E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12E]
+CopyFrom    = 0xB12E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12E]
+CopyFrom    = 0xB12E
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B12E]
+CopyFrom    = 0xB12E
+[HighwayIntersectionInfo_0x0005B12E]
+CopyFrom    = 0x1B12E
+[HighwayIntersectionInfo_0x0006B12E]
+CopyFrom    = 0x2B12E
+[HighwayIntersectionInfo_0x0007B12E]
+CopyFrom    = 0x3B12E
+
+
+[HighwayIntersectionInfo_0x0000B12F]
+;Added by smoncrie 03/05/05.
+;Edited by memo 03/27/07 to enable to place puzzle piece on dragged GLR tracks
+;Ground Light RailxMonorail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580e0705
+PreviewEffect = preview_rail_dualnetwork029
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - monorail: 0x00020000, 0x00000000 optional
+CheckType = c - monorail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580e0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e0700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B12F]
+CopyFrom    = 0xB12F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12F]
+CopyFrom    = 0xB12F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12F]
+CopyFrom    = 0xB12F
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B12F]
+CopyFrom    = 0xB12F
+[HighwayIntersectionInfo_0x0005B12F]
+CopyFrom    = 0x1B12F
+[HighwayIntersectionInfo_0x0006B12F]
+CopyFrom    = 0x2B12F
+[HighwayIntersectionInfo_0x0007B12F]
+CopyFrom    = 0x3B12F
+
+
+[HighwayIntersectionInfo_0x0000B128]
+;Added by GoaSkin 04/02/05.
+;GLR_on_pedmall_paved
+Piece = 0.0, 0.0, 0, 0, 0x580F1700
+PreviewEffect = preview_rail_dualnetwork00a
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....^....
+
+CheckType = a - road: 0x00000000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x580F1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580F1700
+Costs       = 10
+[HighwayIntersectionInfo_0x0001B128]
+CopyFrom    = 0xB128
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B128]
+CopyFrom    = 0xB128
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B128]
+CopyFrom    = 0xB128
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B128]
+CopyFrom    = 0xB128
+[HighwayIntersectionInfo_0x0005B128]
+CopyFrom    = 0x1B128
+[HighwayIntersectionInfo_0x0006B128]
+CopyFrom    = 0x2B128
+[HighwayIntersectionInfo_0x0007B128]
+CopyFrom    = 0x3B128
+
+
+[HighwayIntersectionInfo_0x0000B129]
+;Added by GoaSkin 04/02/05.
+;GLR_on_pedmall_CobbleStone
+Piece = 0.0, 0.0, 0, 0, 0x580F2700
+PreviewEffect = preview_rail_dualnetwork00b
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....^....
+
+CheckType = a - road: 0x00000000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x580F2700
+AutoPathBase = 0x580F1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580F2700
+Costs       = 10
+[HighwayIntersectionInfo_0x0001B129]
+CopyFrom    = 0xB129
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B129]
+CopyFrom    = 0xB129
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B129]
+CopyFrom    = 0xB129
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B129]
+CopyFrom    = 0xB129
+[HighwayIntersectionInfo_0x0005B129]
+CopyFrom    = 0x1B129
+[HighwayIntersectionInfo_0x0006B129]
+CopyFrom    = 0x2B129
+[HighwayIntersectionInfo_0x0007B129]
+CopyFrom    = 0x3B129
+
+
+[HighwayIntersectionInfo_0x0000B12A]
+;Added by GoaSkin 04/02/05.
+;GLR_on_pedmall_OpenPaved
+Piece = 0.0, 0.0, 0, 0, 0x580F3700
+PreviewEffect = preview_rail_dualnetwork00c
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....^....
+
+CheckType = a - road: 0x00000000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x580F3700
+AutoPathBase = 0x580F1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580F3700
+Costs       = 10
+[HighwayIntersectionInfo_0x0001B12A]
+CopyFrom    = 0xB12A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12A]
+CopyFrom    = 0xB12A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12A]
+CopyFrom    = 0xB12A
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B12A]
+CopyFrom    = 0xB12A
+[HighwayIntersectionInfo_0x0005B12A]
+CopyFrom    = 0x1B12A
+[HighwayIntersectionInfo_0x0006B12A]
+CopyFrom    = 0x2B12A
+[HighwayIntersectionInfo_0x0007B12A]
+CopyFrom    = 0x3B12A
+
+
+[HighwayIntersectionInfo_0x0000B12B]
+;Added by GoaSkin 04/03/05.
+;GLR_on_pedmall_Sandstone
+Piece = 0.0, 0.0, 0, 0, 0x580F4700
+PreviewEffect = preview_rail_dualnetwork00d
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....^....
+
+CheckType = a - road: 0x00000000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase = 0x580F4700
+AutoPathBase = 0x580F1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580F4700
+Costs       = 10
+[HighwayIntersectionInfo_0x0001B12B]
+CopyFrom    = 0xB12B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12B]
+CopyFrom    = 0xB12B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12B]
+CopyFrom    = 0xB12B
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B12B]
+CopyFrom    = 0xB12B
+[HighwayIntersectionInfo_0x0005B12B]
+CopyFrom    = 0x1B12B
+[HighwayIntersectionInfo_0x0006B12B]
+CopyFrom    = 0x2B12B
+[HighwayIntersectionInfo_0x0007B12B]
+CopyFrom    = 0x3B12B
+
+
+[HighwayIntersectionInfo_0x0000B127]
+;Added by Swamper77 08/04/05.
+;GLR_on_pedmall_centerpole
+Piece = 0.0, 0.0, 0, 0, 0x580F5700
+PreviewEffect = preview_rail_dualnetwork00e
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....^....
+
+CheckType = a - road: 0x00000000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x580F5700
+AutoPathBase = 0x580F1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580F5700
+Costs       = 10
+[HighwayIntersectionInfo_0x0001B127]
+CopyFrom    = 0xB127
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B127]
+CopyFrom    = 0xB127
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B127]
+CopyFrom    = 0xB127
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B127]
+CopyFrom    = 0xB127
+[HighwayIntersectionInfo_0x0005B127]
+CopyFrom    = 0x1B127
+[HighwayIntersectionInfo_0x0006B127]
+CopyFrom    = 0x2B127
+[HighwayIntersectionInfo_0x0007B127]
+CopyFrom    = 0x3B127
+
+
+[HighwayIntersectionInfo_0x0000B11A]
+;Added by GoaSkin 04/25/05.
+;Ground Light Rail Multi-Switch
+Piece = 0.0, 0.0, 0, 0, 0x580e9700
+PreviewEffect = preview_rail_dualnetwork040
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x580e9700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e9700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11A]
+CopyFrom    = 0xB11A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11A]
+CopyFrom    = 0xB11A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11A]
+CopyFrom    = 0xB11A
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B11A]
+CopyFrom    = 0xB11A
+[HighwayIntersectionInfo_0x0005B11A]
+CopyFrom    = 0x1B11A
+[HighwayIntersectionInfo_0x0006B11A]
+CopyFrom    = 0x2B11A
+[HighwayIntersectionInfo_0x0007B11A]
+CopyFrom    = 0x3B11A
+
+
+[HighwayIntersectionInfo_0x0000B11B]
+;Added by GoaSkin 05/22/05.
+;Ground Light Rail T-junction
+Piece       = 0.0, 0.0, 0, 0, 0x580e9800
+PreviewEffect = preview_rail_dualnetwork041
+
+CellLayout  =.........
+CellLayout  =....Z...<
+CellLayout  =....^....
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....^....
+
+AutoTileBase=	0x580e9800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e9800
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B11B]
+CopyFrom    = 0xB11B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B11B]
+CopyFrom    = 0xB11B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B11B]
+CopyFrom    = 0xB11B
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B11B]
+CopyFrom    = 0xB11B
+[HighwayIntersectionInfo_0x0005B11B]
+CopyFrom    = 0x1B11B
+[HighwayIntersectionInfo_0x0006B11B]
+CopyFrom    = 0x2B11B
+[HighwayIntersectionInfo_0x0007B11B]
+CopyFrom    = 0x3B11B
+
+
+[HighwayIntersectionInfo_0x0000B12C]
+;Added by GoaSkin 05/24/05.
+;Ground Light Rail Rural Diagonal Junction Puzzle Piece
+Piece       = 0.0, 0.0, 0, 0, 0x580ee005
+PreviewEffect = preview_rail_dualnetwork045
+
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =....^....
+
+CheckType  = a - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =....^....
+
+AutoTileBase=	0x580ee000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580ee000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B12C]
+CopyFrom    = 0xB12C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B12C]
+CopyFrom    = 0xB12C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B12C]
+CopyFrom    = 0xB12C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B12C]
+CopyFrom    = 0xB12C
+PlaceQueryID = 0x580F0000
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B12C]
+CopyFrom    = 0x4B12C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B12C]
+CopyFrom    = 0x4B12C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B12C]
+CopyFrom    = 0x4B12C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B123]
+;Added by GoaSkin 05/27/05.
+;Ground Light Rail Paved Diagonal Junction Puzzle Piece
+Piece       = 0.0, 0.0, 0, 0, 0x580ef005
+PreviewEffect = preview_rail_dualnetwork048
+
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =....^....
+
+CheckType  = a - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =....^....
+
+AutoTileBase = 0x580ef000
+AutoPathBase = 0x580ee000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580ef000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B123]
+CopyFrom    = 0xB123
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B123]
+CopyFrom    = 0xB123
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B123]
+CopyFrom    = 0xB123
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B123]
+CopyFrom    = 0xB123
+PlaceQueryID = 0x580F1000
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B123]
+CopyFrom    = 0x4B123
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B123]
+CopyFrom    = 0x4B123
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B123]
+CopyFrom    = 0x4B123
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B131]
+;Added by memo 04/29/07.
+;T Ground Light Rail OnSlope Connector Puzzle Piece
+Piece = 0.0, 0, 0, 0, 0x580e1ff1
+PreviewEffect = preview_rail_dualnetwork031
+
+CellLayout =......
+CellLayout =..a..<
+CellLayout =..b...
+CellLayout =..^...
+
+CheckType = a - lightrail: 0x02000200
+CheckType = b - road: 0x00020002 lightrail: 0x02000200,0xff00ff00 check
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase=	0x580e1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e1ff1
+Costs = 75
+[HighwayIntersectionInfo_0x0001B131]
+CopyFrom = 0xB131
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002B131]
+CopyFrom = 0xB131
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003B131]
+CopyFrom = 0xB131
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x0004B131]
+CopyFrom = 0xB131
+[HighwayIntersectionInfo_0x0005B131]
+CopyFrom = 0x1B131
+[HighwayIntersectionInfo_0x0006B131]
+CopyFrom = 0x2B131
+[HighwayIntersectionInfo_0x0007B131]
+CopyFrom = 0x3B131
+
+
+[HighwayIntersectionInfo_0x0000B132]
+;Added by memo 04/29/07.
+;Straight Ground Light Rail OnSlope Connector Puzzle Piece
+Piece = 0.0, 0, 0, 0, 0x580e1ff0
+PreviewEffect = preview_rail_dualnetwork030
+
+CellLayout =......
+CellLayout =..a..<
+CellLayout =..a...
+CellLayout =..b...
+CellLayout =..^...
+
+CheckType = a - lightrail: 0x02000200
+CheckType = b - lightrail: 0x00000200,0x0000ff00 check
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..+...
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase=	0x580e1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e1ff0
+Costs = 75
+[HighwayIntersectionInfo_0x0001B132]
+CopyFrom = 0xB132
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002B132]
+CopyFrom = 0xB132
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003B132]
+CopyFrom = 0xB132
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x0004B132]
+CopyFrom = 0xB132
+[HighwayIntersectionInfo_0x0005B132]
+CopyFrom = 0x1B132
+[HighwayIntersectionInfo_0x0006B132]
+CopyFrom = 0x2B132
+[HighwayIntersectionInfo_0x0007B132]
+CopyFrom = 0x3B132
+
+
+[HighwayIntersectionInfo_0x0000B133]
+;Added by smoncrie 03/25/05.
+;Ground Light Rail T OnSlope Puzzle Piece 
+Piece       = 0.0, 0.0, 0, 0, 0x580e1705
+PreviewEffect = preview_rail_dualnetwork600
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .b..
+CellLayout = ....
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x02000000
+CheckType  = b - lightrail: 0x02000200 Street:0x00020002, 0x0000ff00 optional
+
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = ...
+ConsLayout = .^.
+
+AutoTileBase = 0x580e1700
+AutoPathBase = 0x580e1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e1700
+Costs       = 50
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001B133]
+CopyFrom    = 0xB133
+Rotate		= 1
+AutoTileBase = 0x580e1800
+[HighwayIntersectionInfo_0x0002B133]
+CopyFrom    = 0xB133
+Rotate		= 2
+AutoTileBase = 0x580e1900
+[HighwayIntersectionInfo_0x0003B133]
+CopyFrom    = 0xB133
+Rotate		= 3
+AutoTileBase = 0x580e1a00
+;rotational clones
+[HighwayIntersectionInfo_0x0004B133]
+CopyFrom    = 0xB133
+[HighwayIntersectionInfo_0x0005B133]
+CopyFrom    = 0x1B133
+[HighwayIntersectionInfo_0x0006B133]
+CopyFrom    = 0x2B133
+[HighwayIntersectionInfo_0x0007B133]
+CopyFrom    = 0x3B133
+
+
+[HighwayIntersectionInfo_0x0000B134]
+;Added by smoncrie 03/06/06.
+;Ground Light Rail Straight OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x580e1706
+PreviewEffect = preview_rail_dualnetwork610
+
+CellLayout =....
+CellLayout =.a<.
+CellLayout =.b..
+CellLayout =.c..
+CellLayout =.^..
+
+CheckType = a - lightrail: 0x02000000
+CheckType = b - lightrail: 0x00000000
+CheckType = c - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =....
+ConsLayout =.+<.
+ConsLayout =.+..
+ConsLayout =.+..
+ConsLayout =.^..
+
+AutoTileBase=  0x580e1700
+AutoPathBase = 0x580e1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e1701
+Costs       = 100
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001B134]
+CopyFrom    = 0xB134
+Rotate		= 1
+AutoTileBase = 0x580e1800
+[HighwayIntersectionInfo_0x0002B134]
+CopyFrom    = 0xB134
+Rotate		= 2
+AutoTileBase = 0x580e1900
+[HighwayIntersectionInfo_0x0003B134]
+CopyFrom    = 0xB134
+Rotate		= 3
+AutoTileBase = 0x580e1a00
+;rotation clones
+[HighwayIntersectionInfo_0x0004B134]
+CopyFrom    = 0xB134
+[HighwayIntersectionInfo_0x0005B134]
+CopyFrom    = 0x1B134
+[HighwayIntersectionInfo_0x0006B134]
+CopyFrom    = 0x2B134
+[HighwayIntersectionInfo_0x0007B134]
+CopyFrom    = 0x3B134
+
+
+[HighwayIntersectionInfo_0x0000B125]
+;Added by GoaSkin 06/21/05.
+;Ground Light Rail Y-Junction Puzzle Piece
+Piece       = 0.0, 0.0, 0, 0, 0x580d4005
+PreviewEffect = preview_rail_dualnetwork049
+
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =.........
+CellLayout  =....^....
+
+CheckType  = a - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =.........
+ConsLayout  =....^....
+
+AutoTileBase = 0x580d4000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d4000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B125]
+CopyFrom    = 0xB125
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B125]
+CopyFrom    = 0xB125
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B125]
+CopyFrom    = 0xB125
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B125]
+CopyFrom    = 0xB125
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B125]
+CopyFrom    = 0x4B125
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B125]
+CopyFrom    = 0x4B125
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B125]
+CopyFrom    = 0x4B125
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B126]
+;Added by GoaSkin 06/23/05.
+;Ground Light Rail W-Junction Puzzle Piece
+Piece       = 0.0, 0.0, 0, 0, 0x580d5005
+PreviewEffect = preview_rail_dualnetwork050
+
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =.........
+CellLayout  =....^....
+
+CheckType  = a - lightrail: 0x00000000
+
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =.........
+ConsLayout  =....^....
+
+AutoTileBase = 0x580d5000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d5000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B126]
+CopyFrom    = 0xB126
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B126]
+CopyFrom    = 0xB126
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B126]
+CopyFrom    = 0xB126
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B126]
+CopyFrom    = 0xB126
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B126]
+CopyFrom    = 0x4B126
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B126]
+CopyFrom    = 0x4B126
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B126]
+CopyFrom    = 0x4B126
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B124]
+;Added by GoaSkin 07/14/05.
+;Ground Light Rail Diagonal S-Curve Puzzle Piece 
+Piece = 0.0, 0.0, 0, 0, 0x580cb005
+PreviewEffect = preview_rail_dualnetwork017
+
+CellLayout =.......
+CellLayout =..aaa.<
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00000000
+
+ConsLayout =.......
+ConsLayout =..+++.<
+ConsLayout =...^...
+
+AutoTileBase=	0x580cb000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cb000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B124]
+CopyFrom    = 0xB124
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B124]
+CopyFrom    = 0xB124
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B124]
+CopyFrom    = 0xB124
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B124]
+CopyFrom    = 0xB124
+Transpose     = 1
+[HighwayIntersectionInfo_0x0005B124]
+CopyFrom    = 0x4B124
+Rotate        = 1
+[HighwayIntersectionInfo_0x0006B124]
+CopyFrom    = 0x4B124
+Rotate        = 2
+[HighwayIntersectionInfo_0x0007B124]
+CopyFrom    = 0x4B124
+Rotate        = 3
+
+
+[HighwayIntersectionInfo_0x0000B135]
+;Added by ArkenbergeJoe 14/08/05
+;Ground Light Rail Turning Circle
+Piece = 0.0, 0.0, 0, 0, 0x580CFF0
+PreviewEffect = preview_lrail_wendeschleife
+
+CellLayout = abc.
+CellLayout = d.d.
+CellLayout = def<
+CellLayout = ge..
+CellLayout = h^..
+
+CheckType = a - lightrail:0x00000000
+CheckType = b - lightrail:0x00000000
+CheckType = c - lightrail:0x00000000
+CheckType = d - lightrail:0x00000000
+CheckType = e - lightrail:0x00000000
+CheckType = f - lightrail:0x00000000
+CheckType = g - lightrail:0x00000000
+CheckType = h - lightrail:0x00000000
+
+ConsLayout=+++.
+ConsLayout=+.+.
+ConsLayout=+++<
+ConsLayout=++..
+ConsLayout=+^..
+
+AutoTileBase = 0x580C0000
+ConvertQueryID = 0x580C0FF0
+PlaceQueryID = 0x580C0FF0
+Costs = 250
+
+[HighwayIntersectionInfo_0x0001B135]
+CopyFrom = 0xB135
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B135]
+CopyFrom = 0xB135
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B135]
+CopyFrom = 0xB135
+Rotate = 3
+[HighwayIntersectionInfo_0x0004B135]
+CopyFrom = 0xB135
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B135]
+CopyFrom = 0x4B135
+Rotate = 1
+[HighwayIntersectionInfo_0x0006B135]
+CopyFrom = 0x4B135
+Rotate = 2
+[HighwayIntersectionInfo_0x0007B135]
+CopyFrom = 0x4B135
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x0000B136]
+;Added by Chrisim 7 April 2010, Texture by DJPTiger
+;groundlightrailxroad Dual - GLR turning curve with gap for station
+Piece = 0.0, 0.0, 0, 0, 0x580e22f0
+PreviewEffect = preview_lrail_wendeschleif2
+
+CellLayout = .....
+CellLayout = .aaa.
+CellLayout = ...a.
+CellLayout = ..aa.
+CellLayout = ..a..
+CellLayout = .aa.<
+CellLayout = .^...
+
+CheckType = a - lightrail: 0x00000000
+
+ConsLayout = .....
+ConsLayout = .+++.
+ConsLayout = ...+.
+ConsLayout = ..++.
+ConsLayout = ..+..
+ConsLayout = .++.<
+ConsLayout = .^...
+
+AutoTileBase = 0x580e2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e2000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B136]
+CopyFrom    = 0xB136
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B136]
+CopyFrom    = 0xB136
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B136]
+CopyFrom    = 0xB136
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B136]
+CopyFrom    = 0xB136
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B136]
+CopyFrom    = 0x4B136
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B136]
+CopyFrom    = 0x4B136
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B136]
+CopyFrom    = 0x4B136
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B137]
+;Added by Chrisim 7 April 2010, Texture by DJPTiger
+;groundlightrailxroad Dual - GLR straight and turning curve with gap for station
+Piece = 0.0, 0.0, 0, 0, 0x580e25f0
+PreviewEffect = preview_lrail_wendeschleif3
+
+CellLayout = .....
+CellLayout = .aaa.
+CellLayout = ...a.
+CellLayout = ..aa.
+CellLayout = ..a..
+CellLayout = .aa.<
+CellLayout = .^...
+
+CheckType = a - lightrail: 0x00000000
+
+ConsLayout = .....
+ConsLayout = .+++.
+ConsLayout = ...+.
+ConsLayout = ..++.
+ConsLayout = ..+..
+ConsLayout = .++.<
+ConsLayout = .^...
+
+AutoTileBase = 0x580e2300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580e2300
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B137]
+CopyFrom    = 0xB137
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B137]
+CopyFrom    = 0xB137
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B137]
+CopyFrom    = 0xB137
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B137]
+CopyFrom    = 0xB137
+Transpose 	= 1
+AutoPathBase    = 0x580e2600
+[HighwayIntersectionInfo_0x0005B137]
+CopyFrom    = 0x4B137
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B137]
+CopyFrom    = 0x4B137
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B137]
+CopyFrom    = 0x4B137
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B112]
+;Added by Chrisim 19 September 2010.
+;Ground Light Rail Straight Puzzle Piece Alt1
+Piece = 0.0, 0.0, 0, 0, 0x5f888005
+PreviewEffect = preview_tram_alt_network001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5f888000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f888000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B112]
+CopyFrom    = 0xB112
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B112]
+CopyFrom    = 0xB112
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B112]
+CopyFrom    = 0xB112
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B112]
+CopyFrom    = 0xB112
+[HighwayIntersectionInfo_0x0005B112]
+CopyFrom    = 0x1B112
+[HighwayIntersectionInfo_0x0006B112]
+CopyFrom    = 0x2B112
+[HighwayIntersectionInfo_0x0007B112]
+CopyFrom    = 0x3B112
+
+
+[HighwayIntersectionInfo_0x0000B113]
+;Added by Chrisim 19 September 2010.
+;Ground Light Rail Diagonal Puzzle Piece Alt1
+Piece = 0.0, 0.0, 0, 0, 0x5f888605
+PreviewEffect = preview_tram_alt_network002
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5f888600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f888600
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B113]
+CopyFrom    = 0xB113
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B113]
+CopyFrom    = 0xB113
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B113]
+CopyFrom    = 0xB113
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B113]
+CopyFrom    = 0xB113
+[HighwayIntersectionInfo_0x0005B113]
+CopyFrom    = 0x1B113
+[HighwayIntersectionInfo_0x0006B113]
+CopyFrom    = 0x2B113
+[HighwayIntersectionInfo_0x0007B113]
+CopyFrom    = 0x3B113
+
+
+[HighwayIntersectionInfo_0x0000B114]
+;Added by Chrisim 19 September 2010.
+;Ground Light Rail Straight Puzzle Piece Alt2
+Piece = 0.0, 0.0, 0, 0, 0x5f88c005
+PreviewEffect = preview_tram_alt_network003
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5f88c000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f88c000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B114]
+CopyFrom    = 0xB114
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B114]
+CopyFrom    = 0xB114
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B114]
+CopyFrom    = 0xB114
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B114]
+CopyFrom    = 0xB114
+[HighwayIntersectionInfo_0x0005B114]
+CopyFrom    = 0x1B114
+[HighwayIntersectionInfo_0x0006B114]
+CopyFrom    = 0x2B114
+[HighwayIntersectionInfo_0x0007B114]
+CopyFrom    = 0x3B114
+
+
+[HighwayIntersectionInfo_0x0000B115]
+;Added by Chrisim 19 September 2010.
+;Ground Light Rail Diagonal Puzzle Piece Alt2
+Piece = 0.0, 0.0, 0, 0, 0x5f88c605
+PreviewEffect = preview_tram_alt_network004
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5f88c600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f88c600
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B115]
+CopyFrom    = 0xB115
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B115]
+CopyFrom    = 0xB115
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B115]
+CopyFrom    = 0xB115
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B115]
+CopyFrom    = 0xB115
+[HighwayIntersectionInfo_0x0005B115]
+CopyFrom    = 0x1B115
+[HighwayIntersectionInfo_0x0006B115]
+CopyFrom    = 0x2B115
+[HighwayIntersectionInfo_0x0007B115]
+CopyFrom    = 0x3B115
+
+
+

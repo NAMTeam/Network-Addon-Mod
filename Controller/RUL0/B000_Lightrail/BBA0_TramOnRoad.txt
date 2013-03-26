@@ -1,0 +1,2161 @@
+;groundlightrailxroad Dual for Tram-on-Road and Texture variations
+RotationRing = BBA0, 1BBA0, 2BBA0, 3BBA0, 4BBA0, 5BBA0, 6BBA0, 7BBA0 ;groundlightrailxroad Dual - GLRroad straight Dual Transition
+AddTypes     = BBA1, 1BBA1, 2BBA1, 3BBA1, 4BBA1, 5BBA1, 6BBA1, 7BBA1 ;groundlightrailxroad Dual - GLRroad straight Dual
+AddTypes     = BBA2, 1BBA2, 2BBA2, 3BBA2, 4BBA2, 5BBA2, 6BBA2, 7BBA2 ;groundlightrailxroad Dual - GLRroad straight Dual 1street
+AddTypes     = BBA3, 1BBA3, 2BBA3, 3BBA3, 4BBA3, 5BBA3, 6BBA3, 7BBA3 ;groundlightrailxroad Dual - GLRroad straight Dual 2street
+AddTypes     = BBA4, 1BBA4, 2BBA4, 3BBA4, 4BBA4, 5BBA4, 6BBA4, 7BBA4 ;groundlightrailxroad Dual - GLRroad straight Dual 1road
+AddTypes     = BBA5, 1BBA5, 2BBA5, 3BBA5, 4BBA5, 5BBA5, 6BBA5, 7BBA5 ;groundlightrailxroad Dual - GLRroad straight Dual 2road
+AddTypes     = BBA6, 1BBA6, 2BBA6, 3BBA6, 4BBA6, 5BBA6, 6BBA6, 7BBA6 ;groundlightrailxroad Dual - smooth S curve
+AddTypes     = BBA7, 1BBA7, 2BBA7, 3BBA7, 4BBA7, 5BBA7, 6BBA7, 7BBA7 ;groundlightrailxroad Dual - GLRroad Dual transition to GLR and 2road perpendicular
+AddTypes     = BBA8, 1BBA8, 2BBA8, 3BBA8, 4BBA8, 5BBA8, 6BBA8, 7BBA8 ;groundlightrailxroad Dual - GLRroad Dual curved transition to GLR and 2roads
+AddTypes     = BBA9, 1BBA9, 2BBA9, 3BBA9, 4BBA9, 5BBA9, 6BBA9, 7BBA9 ;groundlightrailxroad Dual - GLRroad curve Dual
+AddTypes     = BBAA, 1BBAA, 2BBAA, 3BBAA, 4BBAA, 5BBAA, 6BBAA, 7BBAA ;groundlightrailxroad Dual - GLRroad curved Dual 1street 
+AddTypes     = BBAB, 1BBAB, 2BBAB, 3BBAB, 4BBAB, 5BBAB, 6BBAB, 7BBAB ;groundlightrailxroad Dual - GLRroad curved Dual 2street
+AddTypes     = BBAC, 1BBAC, 2BBAC, 3BBAC, 4BBAC, 5BBAC, 6BBAC, 7BBAC ;groundlightrailxroad Dual - GLRroad curved Dual 1road
+AddTypes     = BBAD, 1BBAD, 2BBAD, 3BBAD, 4BBAD, 5BBAD, 6BBAD, 7BBAD ;groundlightrailxroad Dual - GLRroad curved Dual 2road
+AddTypes     = BBAE, 1BBAE, 2BBAE, 3BBAE, 4BBAE, 5BBAE, 6BBAE, 7BBAE ;groundlightrailxroad Dual - Tram-in-Road diagonal center
+AddTypes     = BBAF, 1BBAF, 2BBAF, 3BBAF, 4BBAF, 5BBAF, 6BBAF, 7BBAF ;groundlightrailxroad Dual - Tram-in-Road diagonal outside
+AddTypes     = BBB0, 6BBB0, 1BBB0, 7BBB0, 2BBB0, 4BBB0, 3BBB0, 5BBB0 ;groundlightrailxroad Dual - Tram-in-Road orthogonal to diagonal wide
+AddTypes     = 4BBB1, BBB1, 5BBB1, 1BBB1, 6BBB1, 2BBB1, 7BBB1, 3BBB1 ;groundlightrailxroad Dual - transition to groundlightrailxavenue
+AddTypes     = BBB2, 1BBB2, 2BBB2, 3BBB2, 4BBB2, 5BBB2, 6BBB2, 7BBB2 ;groundlightrailxroad Dual - GLRroad transition GLRavenue
+AddTypes     = BBB3, 1BBB3, 2BBB3, 3BBB3, 4BBB3, 5BBB3, 6BBB3, 7BBB3 ;groundlightrailxroad Dual - GLRroad split Dual
+AddTypes     = BBB4, 1BBB4, 2BBB4, 3BBB4, 4BBB4, 5BBB4, 6BBB4, 7BBB4 ;groundlightrailxroad Dual - GLRroad below highway
+AddTypes     = BBB5, 1BBB5, 2BBB5, 3BBB5, 4BBB5, 5BBB5, 6BBB5, 7BBB5 ;railxground light rail in road
+AddTypes     = BBB6, 1BBB6, 2BBB6, 3BBB6, 4BBB6, 5BBB6, 6BBB6, 7BBB6 ;groundlightrailxroad Dual - GLRroad crossing GLRavenue
+AddTypes     = BBB7, 1BBB7, 2BBB7, 3BBB7, 4BBB7, 5BBB7, 6BBB7, 7BBB7 ;groundlightrailxroad Dual - GLRroad below ElLightrail
+;AddTypes     = BBB8, 1BBB8, 2BBB8, 3BBB8, 4BBB8, 5BBB8, 6BBB8, 7BBB8 ;groundlightrailxroad Dual - BRIDGE GLRroad straight
+;AddTypes     = BBB9, 1BBB9, 2BBB9, 3BBB9, 4BBB9, 5BBB9, 6BBB9, 7BBB9 ;groundlightrailxroad Dual - BRIDGE GLRroad Dual straight
+;AddTypes     = BBBA, 1BBBA, 2BBBA, 3BBBA, 4BBBA, 5BBBA, 6BBBA, 7BBBA ;groundlightrailxstreet Dual - BRIDGE GLRstreet straight
+AddTypes     = BBBB, 1BBBB, 2BBBB, 3BBBB, 4BBBB, 5BBBB, 6BBBB, 7BBBB ;groundlightrailxroad Dual - GLRroad straight grass
+AddTypes     = BBBC, 1BBBC, 2BBBC, 3BBBC, 4BBBC, 5BBBC, 6BBBC, 7BBBC ;groundlightrailxroad Dual - GLRroad curve grass
+AddTypes     = BBBD, 1BBBD, 2BBBD, 3BBBD, 4BBBD, 5BBBD, 6BBBD, 7BBBD ;groundlightrailxroad Dual - roundabout entry
+AddTypes     = BBBE, 1BBBE, 2BBBE, 3BBBE, 4BBBE, 5BBBE, 6BBBE, 7BBBE ;groundlightrailxroad Dual - roundabout entry
+AddTypes     = BBBF, 1BBBF, 2BBBF, 3BBBF, 4BBBF, 5BBBF, 6BBBF, 7BBBF ;groundlightrailxroad Dual - roundabout round
+AddTypes     = BBC0, 1BBC0, 2BBC0, 3BBC0, 4BBC0, 5BBC0, 6BBC0, 7BBC0 ;groundlightrailxroad Dual - roundabout no entry
+AddTypes     = BBC1, 1BBC1, 2BBC1, 3BBC1, 4BBC1, 5BBC1, 6BBC1, 7BBC1 ;groundlightrailxroad Dual - roundabout road
+AddTypes     = BBC2, 1BBC2, 2BBC2, 3BBC2, 4BBC2, 5BBC2, 6BBC2, 7BBC2 ;groundlightrailxroad Dual - roundabout oneway
+AddTypes     = BBC3, 1BBC3, 2BBC3, 3BBC3, 4BBC3, 5BBC3, 6BBC3, 7BBC3 ;groundlightrailxroad Dual - roundabout street
+AddTypes     = BBC4, 1BBC4, 2BBC4, 3BBC4, 4BBC4, 5BBC4, 6BBC4, 7BBC4 ;groundlightrailxroad Dual - roundabout street
+;AddTypes     = BBC5, 6BBC5, 1BBC5, 7BBC5, 2BBC5, 4BBC5, 3BBC5, 5BBC5 ;groundlightrailxroad Dual - roundabout Avenue
+AddTypes     = BBC6, 6BBC6, 1BBC6, 7BBC6, 2BBC6, 4BBC6, 3BBC6, 5BBC6 ;groundlightrailxroad Dual - roundabout Tram-Avenue
+;AddTypes     = BBC7, 3BBC7, 2BBC7, 5BBC7, 4BBC7, 7BBC7, 6BBC7, 1BBC7 ;groundlightrailxroad Dual - roundabout corner road
+AddTypes     = BBC8, 1BBC8, 2BBC8, 3BBC8, 4BBC8, 5BBC8, 6BBC8, 7BBC8 ;groundlightrailxavenue Dual - Straight Piece grass
+AddTypes     = BBC9, 1BBC9, 2BBC9, 3BBC9, 4BBC9, 5BBC9, 6BBC9, 7BBC9 ;groundlightrailxavenue Dual - corner piece grass
+AddTypes     = BBCA, 1BBCA, 2BBCA, 3BBCA, 4BBCA, 5BBCA, 6BBCA, 7BBCA ;groundlightrailxavenue Dual - Diagonal Piece grass
+AddTypes     = 2BBCB, 7BBCB, 3BBCB, 4BBCB, BBCB, 5BBCB, 1BBCB, 6BBCB ;groundlightrailxavenue Dual - Orthogonal-Diagonal Piece grass
+AddTypes     = BBCC, 6BBCC, 1BBCC, 7BBCC, 2BBCC, 4BBCC, 3BBCC, 5BBCC ;groundlightrailxavenue Dual - GLR turning circle green
+AddTypes     = BBCD, 6BBCD, 1BBCD, 7BBCD, 2BBCD, 4BBCD, 3BBCD, 5BBCD ;groundlightrailxavenue Dual - GLR turning circle green with straight tram avenue
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000BBB5]
+;Added by Chrisim 6 December 2008
+;RailxAvenue Ground Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5313e035
+PreviewEffect = preview_rail_puzzlepiece043
+
+CellLayout =...
+CellLayout =...
+CellLayout =.A.<
+CellLayout =...
+CellLayout =.^.
+
+CheckType = A - rail: 0x02000200 lightrail: 0x00000000
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase=	0x5313d030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313d030
+Costs       = 75
+[HighwayIntersectionInfo_0x0001BBB5]
+CopyFrom    = 0xBBB5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB5]
+CopyFrom    = 0xBBB5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB5]
+CopyFrom    = 0xBBB5
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBB5]
+CopyFrom    = 0xBBB5
+[HighwayIntersectionInfo_0x0005BBB5]
+CopyFrom    = 0x1BBB5
+[HighwayIntersectionInfo_0x0006BBB5]
+CopyFrom    = 0x2BBB5
+[HighwayIntersectionInfo_0x0007BBB5]
+CopyFrom    = 0x3BBB5
+
+
+
+;;Rail Puzzle Pieces
+;;Effect Preview line usage upto
+;;PreviewEffect = preview_rail_puzzlepiece035
+
+
+[HighwayIntersectionInfo_0x0000BBC8]
+;Added by Chrisim, July 2008, textures by Schleicher68.
+;groundlightrailxavenue Dual - Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x584250f0
+PreviewEffect = preview_avexglr_dual_38
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58425000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58425000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBC8]
+CopyFrom    = 0xBBC8
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC8]
+CopyFrom    = 0xBBC8
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC8]
+CopyFrom    = 0xBBC8
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBC8]
+CopyFrom    = 0xBBC8
+[HighwayIntersectionInfo_0x0005BBC8]
+CopyFrom    = 0x1BBC8
+[HighwayIntersectionInfo_0x0006BBC8]
+CopyFrom    = 0x2BBC8
+[HighwayIntersectionInfo_0x0007BBC8]
+CopyFrom    = 0x3BBC8
+
+
+[HighwayIntersectionInfo_0x0000BBC9]
+;Added by Chrisim 26 September 2008, Texture by Schleicher68
+;groundlightrailxavenue Dual - corner piece grass
+Piece = 0.0, -16.0, 0, 0, 0x5840A3f0
+PreviewEffect = preview_avexglr_dual_39
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840A200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840A200
+Costs       = 160
+[HighwayIntersectionInfo_0x0001BBC9]
+CopyFrom    = 0xBBC9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC9]
+CopyFrom    = 0xBBC9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC9]
+CopyFrom    = 0xBBC9
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBC9]
+CopyFrom    = 0xBBC9
+[HighwayIntersectionInfo_0x0005BBC9]
+CopyFrom    = 0x1BBC9
+[HighwayIntersectionInfo_0x0006BBC9]
+CopyFrom    = 0x2BBC9
+[HighwayIntersectionInfo_0x0007BBC9]
+CopyFrom    = 0x3BBC9
+
+
+[HighwayIntersectionInfo_0x0000BBCA]
+;Added by Chrisim 26 September 2008, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x584122f0
+PreviewEffect = preview_avexglr_dual_40
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....b.....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = b - avenue: 0x00000301, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....+....<
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58412200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58412200
+Costs       = 50
+[HighwayIntersectionInfo_0x0001BBCA]
+CopyFrom    = 0xBBCA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBCA]
+CopyFrom    = 0xBBCA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBCA]
+CopyFrom    = 0xBBCA
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBCA]
+CopyFrom    = 0xBBCA
+[HighwayIntersectionInfo_0x0005BBCA]
+CopyFrom    = 0x1BBCA
+[HighwayIntersectionInfo_0x0006BBCA]
+CopyFrom    = 0x2BBCA
+[HighwayIntersectionInfo_0x0007BBCA]
+CopyFrom    = 0x3BBCA
+
+
+[HighwayIntersectionInfo_0x0000BBCB]
+;Added by Chrisim 26 September 2008, Texture by Schleicher68
+;groundlightrailxavenue Dual - Orthogonal-Diagonal Piece
+Piece = -16.0, -16.0, 0, 0, 0x58426ff0
+PreviewEffect = preview_avexglr_dual_41
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....ef....
+CellLayout = .....g....
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x01000204
+CheckType = c - lightrail: 0x00030200 avenue: 0x01040200
+CheckType = d - lightrail: 0x01000203 avenue: 0x00030100
+CheckType = e - avenue: 0x00030100
+CheckType = f - lightrail: 0x02020202 avenue: 0x01000003
+CheckType = g - avenue: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = .....^....
+
+AutoTileBase = 0x58426000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58426000
+Costs       = 240
+[HighwayIntersectionInfo_0x0001BBCB]
+CopyFrom    = 0xBBCB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBCB]
+CopyFrom    = 0xBBCB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBCB]
+CopyFrom    = 0xBBCB
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBCB]
+CopyFrom    = 0xBBCB
+Transpose = 1
+[HighwayIntersectionInfo_0x0005BBCB]
+CopyFrom    = 0x4BBCB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBCB]
+CopyFrom    = 0x4BBCB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBCB]
+CopyFrom    = 0x4BBCB
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBCC]
+;Added by Chrisim 8 April 2010, Texture with help by DJPTiger
+;groundlightrailxavenue Dual - GLR turning curve green
+Piece = 0.0, 0.0, 0, 0, 0x5842e7f0
+PreviewEffect = preview_avexglr_dual_51
+
+CellLayout = .gh...
+CellLayout = .ef...
+CellLayout = .abcc.
+CellLayout = .ab.c.
+CellLayout = ....c.
+CellLayout = ...cc.
+CellLayout = .abc.<
+CellLayout = .^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail:0x00000000
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x02040000, 0xffff0000 optional
+CheckType = h - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ......
+ConsLayout = ......
+ConsLayout = .++++.
+ConsLayout = .++.+.
+ConsLayout = ...++.
+ConsLayout = ...+..
+ConsLayout = .+++.<
+ConsLayout = .^....
+
+AutoTileBase = 0x5842e400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842e400
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBCC]
+CopyFrom    = 0xBBCC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBCC]
+CopyFrom    = 0xBBCC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBCC]
+CopyFrom    = 0xBBCC
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBCC]
+CopyFrom    = 0xBBCC
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005BBCC]
+CopyFrom    = 0x4BBCC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBCC]
+CopyFrom    = 0x4BBCC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBCC]
+CopyFrom    = 0x4BBCC
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBCD]
+;Added by Chrisim 8 April 2010, Texture with help by DJPTiger
+;groundlightrailxavenue Dual - GLR turning curve green with straight tram avenue
+Piece = 0.0, 0.0, 0, 0, 0x5842eff0
+PreviewEffect = preview_avexglr_dual_53
+
+CellLayout = ......
+CellLayout = .abcc.
+CellLayout = .ab.c.
+CellLayout = ....c.
+CellLayout = ...cc.
+CellLayout = .abc.<
+CellLayout = .^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail:0x00000000
+
+ConsLayout = ......
+ConsLayout = .++++.
+ConsLayout = .++.+.
+ConsLayout = ...++.
+ConsLayout = ...+..
+ConsLayout = .+++.<
+ConsLayout = .^....
+
+AutoTileBase = 0x5842ec00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842ec00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBCD]
+CopyFrom    = 0xBBCD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBCD]
+CopyFrom    = 0xBBCD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBCD]
+CopyFrom    = 0xBBCD
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBCD]
+CopyFrom    = 0xBBCD
+Transpose 	= 1
+AutoPathBase    = 0x5842fc00
+[HighwayIntersectionInfo_0x0005BBCD]
+CopyFrom    = 0x4BBCD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBCD]
+CopyFrom    = 0x4BBCD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBCD]
+CopyFrom    = 0x4BBCD
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBB8]
+;Added by Chrisim 14 Juillet 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - BRIDGE GLRroad straight
+Piece = 0.0, 0.0, 0, 0, 0x58480ff0
+PreviewEffect = preview_roaxglr_dual_01
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58480000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58480001
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBB8]
+CopyFrom    = 0xBBB8
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB8]
+CopyFrom    = 0xBBB8
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB8]
+CopyFrom    = 0xBBB8
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBB8]
+CopyFrom    = 0xBBB8
+[HighwayIntersectionInfo_0x0005BBB8]
+CopyFrom    = 0x1BBB8
+[HighwayIntersectionInfo_0x0006BBB8]
+CopyFrom    = 0x2BBB8
+[HighwayIntersectionInfo_0x0007BBB8]
+CopyFrom    = 0x3BBB8
+
+
+[HighwayIntersectionInfo_0x0000BBBB]
+;Added by Chrisim 24 July 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight grass
+Piece = 0.0, 0.0, 0, 0, 0x584880f0
+PreviewEffect = preview_roaxglr_dual_11
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58488000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58488000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBBB]
+CopyFrom    = 0xBBBB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBB]
+CopyFrom    = 0xBBBB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBB]
+CopyFrom    = 0xBBBB
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBBB]
+CopyFrom    = 0xBBBB
+[HighwayIntersectionInfo_0x0005BBBB]
+CopyFrom    = 0x1BBBB
+[HighwayIntersectionInfo_0x0006BBBB]
+CopyFrom    = 0x2BBBB
+[HighwayIntersectionInfo_0x0007BBBB]
+CopyFrom    = 0x3BBBB
+
+
+[HighwayIntersectionInfo_0x0000BBA0]
+;Added by Chrisim 4 September 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight dual transition
+;DO NOT CHANGE CheckType for lightrail otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58486bf0
+PreviewEffect = preview_roaxglr_dual_31
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58486b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58486b00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA0]
+CopyFrom    = 0xBBA0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA0]
+CopyFrom    = 0xBBA0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA0]
+CopyFrom    = 0xBBA0
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA0]
+CopyFrom    = 0xBBA0
+[HighwayIntersectionInfo_0x0005BBA0]
+CopyFrom    = 0x1BBA0
+[HighwayIntersectionInfo_0x0006BBA0]
+CopyFrom    = 0x2BBA0
+[HighwayIntersectionInfo_0x0007BBA0]
+CopyFrom    = 0x3BBA0
+
+
+[HighwayIntersectionInfo_0x0000BBA1]
+;Added by Chrisim 4 September 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight dual transition
+;DO NOT CHANGE CheckType for lightrail otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58486cf0
+PreviewEffect = preview_roaxglr_dual_32
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58486c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58486c00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA1]
+CopyFrom    = 0xBBA1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA1]
+CopyFrom    = 0xBBA1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA1]
+CopyFrom    = 0xBBA1
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA1]
+CopyFrom    = 0xBBA1
+[HighwayIntersectionInfo_0x0005BBA1]
+CopyFrom    = 0x1BBA1
+[HighwayIntersectionInfo_0x0006BBA1]
+CopyFrom    = 0x2BBA1
+[HighwayIntersectionInfo_0x0007BBA1]
+CopyFrom    = 0x3BBA1
+
+
+[HighwayIntersectionInfo_0x0000BBB9]
+;Added by Chrisim 4 September 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight dual transition
+;DO NOT CHANGE CheckType for lightrail otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58486cf0
+PreviewEffect = preview_roaxglr_dual_32
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58486c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58486c01
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBB9]
+CopyFrom    = 0xBBB9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB9]
+CopyFrom    = 0xBBB9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB9]
+CopyFrom    = 0xBBB9
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBB9]
+CopyFrom    = 0xBBB9
+[HighwayIntersectionInfo_0x0005BBB9]
+CopyFrom    = 0x1BBB9
+[HighwayIntersectionInfo_0x0006BBB9]
+CopyFrom    = 0x2BBB9
+[HighwayIntersectionInfo_0x0007BBB9]
+CopyFrom    = 0x3BBB9
+
+
+[HighwayIntersectionInfo_0x0000BBBC]
+;Added by Chrisim 27 September 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad curve grass
+Piece = 0.0, 0.0, 0, 0, 0x584876f0
+PreviewEffect = preview_roaxglr_dual_40
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020000
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487600
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBBC]
+CopyFrom    = 0xBBBC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBC]
+CopyFrom    = 0xBBBC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBC]
+CopyFrom    = 0xBBBC
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBBC]
+CopyFrom    = 0xBBBC
+[HighwayIntersectionInfo_0x0005BBBC]
+CopyFrom    = 0x1BBBC
+[HighwayIntersectionInfo_0x0006BBBC]
+CopyFrom    = 0x2BBBC
+[HighwayIntersectionInfo_0x0007BBBC]
+CopyFrom    = 0x3BBBC
+
+
+[HighwayIntersectionInfo_0x0000BBA9]
+;Added by Chrisim 30 November 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRonroad curve
+Piece = 0.0, 0.0, 0, 0, 0x584877f0
+PreviewEffect = preview_roaxglr_dual_47
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020000
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487700
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA9]
+CopyFrom    = 0xBBA9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA9]
+CopyFrom    = 0xBBA9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA9]
+CopyFrom    = 0xBBA9
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA9]
+CopyFrom    = 0xBBA9
+[HighwayIntersectionInfo_0x0005BBA9]
+CopyFrom    = 0x1BBA9
+[HighwayIntersectionInfo_0x0006BBA9]
+CopyFrom    = 0x2BBA9
+[HighwayIntersectionInfo_0x0007BBA9]
+CopyFrom    = 0x3BBA9
+
+
+[HighwayIntersectionInfo_0x0000BBA2]
+;Added by Chrisim 30 November 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRonroad straight 1Street
+Piece = 0.0, 0.0, 0, 0, 0x584878f0
+PreviewEffect = preview_roaxglr_dual_48
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487800
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA2]
+CopyFrom    = 0xBBA2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA2]
+CopyFrom    = 0xBBA2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA2]
+CopyFrom    = 0xBBA2
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA2]
+CopyFrom    = 0xBBA2
+[HighwayIntersectionInfo_0x0005BBA2]
+CopyFrom    = 0x1BBA2
+[HighwayIntersectionInfo_0x0006BBA2]
+CopyFrom    = 0x2BBA2
+[HighwayIntersectionInfo_0x0007BBA2]
+CopyFrom    = 0x3BBA2
+
+
+[HighwayIntersectionInfo_0x0000BBA3]
+;Added by Chrisim 30 November 2008, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRonroad straight 1Street
+Piece = 0.0, 0.0, 0, 0, 0x584879f0
+PreviewEffect = preview_roaxglr_dual_49
+
+CellLayout = .........
+CellLayout = ...bac..<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = c - street: 0x00000002, 0x000000ff optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487900
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA3]
+CopyFrom    = 0xBBA3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA3]
+CopyFrom    = 0xBBA3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA3]
+CopyFrom    = 0xBBA3
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA3]
+CopyFrom    = 0xBBA3
+[HighwayIntersectionInfo_0x0005BBA3]
+CopyFrom    = 0x1BBA3
+[HighwayIntersectionInfo_0x0006BBA3]
+CopyFrom    = 0x2BBA3
+[HighwayIntersectionInfo_0x0007BBA3]
+CopyFrom    = 0x3BBA3
+
+
+[HighwayIntersectionInfo_0x0000BBB4]
+;Added by Chrisim 6 December 2008
+;RailxAvenue Ground Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5848b3f0
+PreviewEffect = preview_roaxglr_dual_55
+
+CellLayout =....
+CellLayout =.cd.
+CellLayout =.ab.<
+CellLayout =.ef.
+CellLayout =.^..
+
+CheckType = a - lightrail: 0x00020002 highway: 0x02040200
+CheckType = b - lightrail: 0x00020002 highway: 0x02000204
+CheckType = c - highway: 0x02040000 optional
+CheckType = d - highway: 0x02000004 optional
+CheckType = e - highway: 0x00040200 optional
+CheckType = f - highway: 0x00000204 optional
+
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.++.<
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase=	0x5848b200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848b200
+Costs       = 75
+[HighwayIntersectionInfo_0x0001BBB4]
+CopyFrom    = 0xBBB4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB4]
+CopyFrom    = 0xBBB4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB4]
+CopyFrom    = 0xBBB4
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBB4]
+CopyFrom    = 0xBBB4
+[HighwayIntersectionInfo_0x0005BBB4]
+CopyFrom    = 0x1BBB4
+[HighwayIntersectionInfo_0x0006BBB4]
+CopyFrom    = 0x2BBB4
+[HighwayIntersectionInfo_0x0007BBB4]
+CopyFrom    = 0x3BBB4
+
+
+[HighwayIntersectionInfo_0x0000BBB3]
+;Added by Chrisim 19 March 2009, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad split Dual
+Piece = 0.0, 0.0, 0, 0, 0x584885f0
+PreviewEffect = preview_roaxglr_dual_61
+
+CellLayout = ..........
+CellLayout = ...cad...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02010300
+CheckType = c - onewayroad: 0x00030100, 0x00ffff00 optional
+CheckType = d - onewayroad: 0x00000301, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....+....<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58488500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58488500
+;PlaceQueryID = 0x78488500 ;LHD controller loads different description for error message
+Costs       = 80
+OneWayDir	= 4 ;this value is for RHD
+;OneWayDir	= 0 ;this value is for LHD, switch PlaceQueryID above
+[HighwayIntersectionInfo_0x0001BBB3]
+CopyFrom    = 0xBBB3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB3]
+CopyFrom    = 0xBBB3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB3]
+CopyFrom    = 0xBBB3
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBB3]
+CopyFrom    = 0xBBB3
+[HighwayIntersectionInfo_0x0005BBB3]
+CopyFrom    = 0x1BBB3
+[HighwayIntersectionInfo_0x0006BBB3]
+CopyFrom    = 0x2BBB3
+[HighwayIntersectionInfo_0x0007BBB3]
+CopyFrom    = 0x3BBB3
+
+
+[HighwayIntersectionInfo_0x0000BBB1]
+;Added by Chrisim 17 April 2009, Texture by Schleicher68
+;groundlightrailxroad Dual - transition to groundlightrailxavenue
+Piece = 0.0, 0.0, 0, 0, 0x584819f0
+PreviewEffect = preview_roaxglr_dual_70
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....--...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58481800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58481800
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBB1]
+CopyFrom    = 0xBBB1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB1]
+CopyFrom    = 0xBBB1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB1]
+CopyFrom    = 0xBBB1
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0004BBB1]
+;Added by Chrisim 16 April 2009, Texture by Schleicher68
+;groundlightrailxroad Dual - transition to groundlightrailxavenue
+;Transpose not possible due to T21 Exemplar
+Piece = 0.0, 0.0, 0, 0, 0x584829f0
+PreviewEffect = preview_roaxglr_dual_71
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....--...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58482800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58482800
+Costs       = 80
+[HighwayIntersectionInfo_0x0005BBB1]
+CopyFrom    = 0x4BBB1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBB1]
+CopyFrom    = 0x4BBB1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBB1]
+CopyFrom    = 0x4BBB1
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBB2]
+;Added by Chrisim 19 April 2009, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRonroad split Dual
+Piece = 0.0, -16.0, 0, 0, 0x58488df0
+PreviewEffect = preview_roaxglr_dual_72
+
+CellLayout = ........
+CellLayout = ..ab....
+CellLayout = ..cd...<
+CellLayout = ..^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+CheckType = c - lightrail: 0x02020200 road: 0x02020200
+CheckType = d - lightrail: 0x00000202 road: 0x00000202
+
+ConsLayout = ........
+ConsLayout = ..||...
+ConsLayout = ..||...<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x58488c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58488c00
+Costs       = 80
+OneWayDir	= 4
+[HighwayIntersectionInfo_0x0001BBB2]
+CopyFrom    = 0xBBB2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB2]
+CopyFrom    = 0xBBB2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB2]
+CopyFrom    = 0xBBB2
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBB2]
+CopyFrom    = 0xBBB2
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005BBB2]
+CopyFrom    = 0x4BBB2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBB2]
+CopyFrom    = 0x4BBB2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBB2]
+CopyFrom    = 0x4BBB2
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBB6]
+;Added by Chrisim 26 April 2009
+;TramInRoadxMonorail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5848b505
+PreviewEffect = preview_roaxglr_dual_74
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - monorail: 0x00020000, 0x00000000 optional
+CheckType = c - monorail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5848b500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848b500
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBB6]
+CopyFrom    = 0xBBB6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB6]
+CopyFrom    = 0xBBB6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB6]
+CopyFrom    = 0xBBB6
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBB6]
+CopyFrom    = 0xBBB6
+[HighwayIntersectionInfo_0x0005BBB6]
+CopyFrom    = 0x1BBB6
+[HighwayIntersectionInfo_0x0006BBB6]
+CopyFrom    = 0x2BBB6
+[HighwayIntersectionInfo_0x0007BBB6]
+CopyFrom    = 0x3BBB6
+
+
+[HighwayIntersectionInfo_0x0000BBBD]
+;Added by Chrisim 28 April 2009 Texture by RogerRon91 and Chrisim
+;groundlightrailxroad Dual - roundabout entry
+Piece = 0.0, 0.0, 0, 0, 0x584852f0
+PreviewEffect = preview_roaxglr_dual_75
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485200
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBBD]
+CopyFrom    = 0xBBBD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBD]
+CopyFrom    = 0xBBBD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBD]
+CopyFrom    = 0xBBBD
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBBD]
+CopyFrom    = 0xBBBD
+[HighwayIntersectionInfo_0x0005BBBD]
+CopyFrom    = 0x1BBBD
+[HighwayIntersectionInfo_0x0006BBBD]
+CopyFrom    = 0x2BBBD
+[HighwayIntersectionInfo_0x0007BBBD]
+CopyFrom    = 0x3BBBD
+
+
+[HighwayIntersectionInfo_0x0000BBBF]
+;Added by Chrisim 28 April 2009 by RogerRon91 and Chrisim
+;groundlightrailxroad Dual - roundabout round
+Piece = 0.0, 0.0, 0, 0, 0x584853f0
+PreviewEffect = preview_roaxglr_dual_76
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x02020000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485300
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBBF]
+CopyFrom    = 0xBBBF
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBF]
+CopyFrom    = 0xBBBF
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBF]
+CopyFrom    = 0xBBBF
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBBF]
+CopyFrom    = 0xBBBF
+[HighwayIntersectionInfo_0x0005BBBF]
+CopyFrom    = 0x1BBBF
+[HighwayIntersectionInfo_0x0006BBBF]
+CopyFrom    = 0x2BBBF
+[HighwayIntersectionInfo_0x0007BBBF]
+CopyFrom    = 0x3BBBF
+
+
+[HighwayIntersectionInfo_0x0000BBC0]
+;Added by Chrisim 28 April 2009 Texture by RogerRon91 and Chrisim
+;groundlightrailxroad Dual - roundabout no entry
+Piece = 0.0, 0.0, 0, 0, 0x584854f0
+PreviewEffect = preview_roaxglr_dual_77
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485400
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBC0]
+CopyFrom    = 0xBBC0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC0]
+CopyFrom    = 0xBBC0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC0]
+CopyFrom    = 0xBBC0
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBC0]
+CopyFrom    = 0xBBC0
+[HighwayIntersectionInfo_0x0005BBC0]
+CopyFrom    = 0x1BBC0
+[HighwayIntersectionInfo_0x0006BBC0]
+CopyFrom    = 0x2BBC0
+[HighwayIntersectionInfo_0x0007BBC0]
+CopyFrom    = 0x3BBC0
+
+
+[HighwayIntersectionInfo_0x0000BBC1]
+;Added by Chrisim 28 April 2009
+;groundlightrailxroad Dual - roundabout road
+Piece = 0.0, 0.0, 0, 0, 0x584855f0
+PreviewEffect = preview_roaxglr_dual_78
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+CheckType = a - road: 0x02000000, 0xff000000 optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485500
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBC1]
+CopyFrom    = 0xBBC1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC1]
+CopyFrom    = 0xBBC1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC1]
+CopyFrom    = 0xBBC1
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBC1]
+CopyFrom    = 0xBBC1
+[HighwayIntersectionInfo_0x0005BBC1]
+CopyFrom    = 0x1BBC1
+[HighwayIntersectionInfo_0x0006BBC1]
+CopyFrom    = 0x2BBC1
+[HighwayIntersectionInfo_0x0007BBC1]
+CopyFrom    = 0x3BBC1
+
+
+[HighwayIntersectionInfo_0x0000BBC3]
+;Added by Chrisim 29 April 2009
+;groundlightrailxroad Dual - roundabout street
+Piece = 0.0, 0.0, 0, 0, 0x584856f0
+PreviewEffect = preview_roaxglr_dual_79
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+CheckType = a - street: 0x02000000, 0xff000000 optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485600
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBC3]
+CopyFrom    = 0xBBC3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC3]
+CopyFrom    = 0xBBC3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC3]
+CopyFrom    = 0xBBC3
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBC3]
+CopyFrom    = 0xBBC3
+[HighwayIntersectionInfo_0x0005BBC3]
+CopyFrom    = 0x1BBC3
+[HighwayIntersectionInfo_0x0006BBC3]
+CopyFrom    = 0x2BBC3
+[HighwayIntersectionInfo_0x0007BBC3]
+CopyFrom    = 0x3BBC3
+
+
+[HighwayIntersectionInfo_0x0000BBBE]
+;Added by Chrisim 28 April 2009 Texture by RogerRon91 and Chrisim
+;groundlightrailxroad Dual - roundabout entry
+Piece = 0.0, 0.0, 0, 0, 0x584857f0
+PreviewEffect = preview_roaxglr_dual_80
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBBE]
+CopyFrom    = 0xBBBE
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBE]
+CopyFrom    = 0xBBBE
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBE]
+CopyFrom    = 0xBBBE
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBBE]
+CopyFrom    = 0xBBBE
+[HighwayIntersectionInfo_0x0005BBBE]
+CopyFrom    = 0x1BBBE
+[HighwayIntersectionInfo_0x0006BBBE]
+CopyFrom    = 0x2BBBE
+[HighwayIntersectionInfo_0x0007BBBE]
+CopyFrom    = 0x3BBBE
+
+
+[HighwayIntersectionInfo_0x0000BBC4]
+;Added by Chrisim 29 April 2009
+;groundlightrailxroad Dual - roundabout tram
+Piece = 0.0, 0.0, 0, 0, 0x584858f0
+PreviewEffect = preview_roaxglr_dual_81
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x58485800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485800
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBC4]
+CopyFrom    = 0xBBC4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC4]
+CopyFrom    = 0xBBC4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC4]
+CopyFrom    = 0xBBC4
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBC4]
+CopyFrom    = 0xBBC4
+[HighwayIntersectionInfo_0x0005BBC4]
+CopyFrom    = 0x1BBC4
+[HighwayIntersectionInfo_0x0006BBC4]
+CopyFrom    = 0x2BBC4
+[HighwayIntersectionInfo_0x0007BBC4]
+CopyFrom    = 0x3BBC4
+
+
+[HighwayIntersectionInfo_0x0000BBB7]
+;Added by Chrisim 21 May 2009
+;TramOnRoadxElLightrail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5848b705
+PreviewEffect = preview_roaxglr_dual_83
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - lightrail: 0x00020000, 0x00000000 optional
+CheckType = c - lightrail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5848b700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848b700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BBB7]
+CopyFrom    = 0xBBB7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB7]
+CopyFrom    = 0xBBB7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB7]
+CopyFrom    = 0xBBB7
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004BBB7]
+CopyFrom    = 0xBBB7
+[HighwayIntersectionInfo_0x0005BBB7]
+CopyFrom    = 0x1BBB7
+[HighwayIntersectionInfo_0x0006BBB7]
+CopyFrom    = 0x2BBB7
+[HighwayIntersectionInfo_0x0007BBB7]
+CopyFrom    = 0x3BBB7
+
+
+
+[HighwayIntersectionInfo_0x0000BBA4]
+;Added by Chrisim 27 February 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight dual junction with 1 road
+Piece = 0.0, 0.0, 0, 0, 0x58486df0
+PreviewEffect = preview_roaxglr_dual_84
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58486d00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58486d00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA4]
+CopyFrom    = 0xBBA4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA4]
+CopyFrom    = 0xBBA4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA4]
+CopyFrom    = 0xBBA4
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA4]
+CopyFrom    = 0xBBA4
+[HighwayIntersectionInfo_0x0005BBA4]
+CopyFrom    = 0x1BBA4
+[HighwayIntersectionInfo_0x0006BBA4]
+CopyFrom    = 0x2BBA4
+[HighwayIntersectionInfo_0x0007BBA4]
+CopyFrom    = 0x3BBA4
+
+
+[HighwayIntersectionInfo_0x0000BBA5]
+;Added by Chrisim 27 February 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad straight dual junction with 2 roads
+Piece = 0.0, 0.0, 0, 0, 0x58486ef0
+PreviewEffect = preview_roaxglr_dual_85
+
+CellLayout = .........
+CellLayout = ...bac..<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58486e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58486e00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA5]
+CopyFrom    = 0xBBA5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA5]
+CopyFrom    = 0xBBA5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA5]
+CopyFrom    = 0xBBA5
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA5]
+CopyFrom    = 0xBBA5
+[HighwayIntersectionInfo_0x0005BBA5]
+CopyFrom    = 0x1BBA5
+[HighwayIntersectionInfo_0x0006BBA5]
+CopyFrom    = 0x2BBA5
+[HighwayIntersectionInfo_0x0007BBA5]
+CopyFrom    = 0x3BBA5
+
+
+[HighwayIntersectionInfo_0x0000BBAA]
+;Added by Chrisim 2 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad curved dual junction with 1 street
+Piece = 0.0, 0.0, 0, 0, 0x58487cf0
+PreviewEffect = preview_roaxglr_dual_86
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x00020200
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487c00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAA]
+CopyFrom    = 0xBBAA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBAA]
+CopyFrom    = 0xBBAA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBAA]
+CopyFrom    = 0xBBAA
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBAA]
+CopyFrom    = 0xBBAA
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005BBAA]
+CopyFrom    = 0x4BBAA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBAA]
+CopyFrom    = 0x4BBAA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBAA]
+CopyFrom    = 0x4BBAA
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBAB]
+;Added by Chrisim 2 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad curved dual junction with 2 streets
+Piece = 0.0, 0.0, 0, 0, 0x58487df0
+PreviewEffect = preview_roaxglr_dual_87
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....c....
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x00020200
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = c - street: 0x00000200, 0x0000ff00 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487d00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487d00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAB]
+CopyFrom    = 0xBBAB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBAB]
+CopyFrom    = 0xBBAB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBAB]
+CopyFrom    = 0xBBAB
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBAB]
+CopyFrom    = 0xBBAB
+[HighwayIntersectionInfo_0x0005BBAB]
+CopyFrom    = 0x1BBAB
+[HighwayIntersectionInfo_0x0006BBAB]
+CopyFrom    = 0x2BBAB
+[HighwayIntersectionInfo_0x0007BBAB]
+CopyFrom    = 0x3BBAB
+
+
+[HighwayIntersectionInfo_0x0000BBAC]
+;Added by Chrisim 2 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad curved dual junction with 1 road
+Piece = 0.0, 0.0, 0, 0, 0x58487ef0
+PreviewEffect = preview_roaxglr_dual_88
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x00020202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487e00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAC]
+CopyFrom    = 0xBBAC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBAC]
+CopyFrom    = 0xBBAC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBAC]
+CopyFrom    = 0xBBAC
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBAC]
+CopyFrom    = 0xBBAC
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005BBAC]
+CopyFrom    = 0x4BBAC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBAC]
+CopyFrom    = 0x4BBAC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBAC]
+CopyFrom    = 0x4BBAC
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBAD]
+;Added by Chrisim 2 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad curved dual junction with 2 roads
+Piece = 0.0, 0.0, 0, 0, 0x58487ff0
+PreviewEffect = preview_roaxglr_dual_89
+
+CellLayout = .........
+CellLayout = ...ba...<
+CellLayout = ....c....
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02020202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000200, 0x0000ff00 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0x58487f00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58487f00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAD]
+CopyFrom    = 0xBBAD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBAD]
+CopyFrom    = 0xBBAD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBAD]
+CopyFrom    = 0xBBAD
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBAD]
+CopyFrom    = 0xBBAD
+[HighwayIntersectionInfo_0x0005BBAD]
+CopyFrom    = 0x1BBAD
+[HighwayIntersectionInfo_0x0006BBAD]
+CopyFrom    = 0x2BBAD
+[HighwayIntersectionInfo_0x0007BBAD]
+CopyFrom    = 0x3BBAD
+
+
+[HighwayIntersectionInfo_0x0000BBA7]
+;Added by Chrisim 2 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad Dual transition to GLR and 2road perpendicular
+Piece = 0.0, 0.0, 0, 0, 0x58488ef0
+PreviewEffect = preview_roaxglr_dual_90
+
+CellLayout = .........
+CellLayout = ...bac..<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x00020202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58488e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58488e00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA7]
+CopyFrom    = 0xBBA7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA7]
+CopyFrom    = 0xBBA7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA7]
+CopyFrom    = 0xBBA7
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA7]
+CopyFrom    = 0xBBA7
+[HighwayIntersectionInfo_0x0005BBA7]
+CopyFrom    = 0x1BBA7
+[HighwayIntersectionInfo_0x0006BBA7]
+CopyFrom    = 0x2BBA7
+[HighwayIntersectionInfo_0x0007BBA7]
+CopyFrom    = 0x3BBA7
+
+
+[HighwayIntersectionInfo_0x0000BBA8]
+;Added by Chrisim 5 March 2010, Texture by Schleicher68
+;groundlightrailxroad Dual - GLRroad Dual curved transition to GLR and 2roads
+Piece = 0.0, 0.0, 0, 0, 0x58488ff0
+PreviewEffect = preview_roaxglr_dual_91
+
+CellLayout = .........
+CellLayout = ....c....
+CellLayout = ...ba...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000202
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = .........
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x58488f00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58488f00
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBA8]
+CopyFrom    = 0xBBA8
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA8]
+CopyFrom    = 0xBBA8
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBA8]
+CopyFrom    = 0xBBA8
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBA8]
+CopyFrom    = 0xBBA8
+[HighwayIntersectionInfo_0x0005BBA8]
+CopyFrom    = 0x1BBA8
+[HighwayIntersectionInfo_0x0006BBA8]
+CopyFrom    = 0x2BBA8
+[HighwayIntersectionInfo_0x0007BBA8]
+CopyFrom    = 0x3BBA8
+
+
+[HighwayIntersectionInfo_0x0000BBAE]
+;Added by Chrisim 1 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - Tram-on-Road diagonal center
+Piece = 0.0, 0.0, 0, 0, 0x5848d505
+PreviewEffect = preview_roaxglr_dual106
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x00000000 road: 0x03010301
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .^..
+
+AutoTileBase = 0x5848d500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848d500
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAE]
+CopyFrom    = 0xBBAE
+Rotate		= 1
+;rotation clones
+[HighwayIntersectionInfo_0x0002BBAE]
+CopyFrom    = 0xBBAE
+[HighwayIntersectionInfo_0x0003BBAE]
+CopyFrom    = 0x1BBAE
+[HighwayIntersectionInfo_0x0004BBAE]
+CopyFrom    = 0xBBAE
+[HighwayIntersectionInfo_0x0005BBAE]
+CopyFrom    = 0x1BBAE
+[HighwayIntersectionInfo_0x0006BBAE]
+CopyFrom    = 0xBBAE
+[HighwayIntersectionInfo_0x0007BBAE]
+CopyFrom    = 0x1BBAE
+
+
+[HighwayIntersectionInfo_0x0000BBAF]
+;Added by Chrisim 1 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - Tram-on-Road diagonal outside
+Piece = 0.0, 0.0, 0, 0, 0x5848d605
+PreviewEffect = preview_roaxglr_dual107
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x00000000 road: 0x03010000
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .^..
+
+AutoTileBase = 0x5848d600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848d600
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBAF]
+CopyFrom    = 0xBBAF
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBAF]
+CopyFrom    = 0xBBAF
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBAF]
+CopyFrom    = 0xBBAF
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004BBAF]
+CopyFrom    = 0xBBAF
+[HighwayIntersectionInfo_0x0005BBAF]
+CopyFrom    = 0x1BBAF
+[HighwayIntersectionInfo_0x0006BBAF]
+CopyFrom    = 0x2BBAF
+[HighwayIntersectionInfo_0x0007BBAF]
+CopyFrom    = 0x3BBAF
+
+
+[HighwayIntersectionInfo_0x0000BBB0]
+;Added by Chrisim 1 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - Tram-on-Road ortogonal to diagonal wide
+Piece = 0.0, 0.0, 0, 0, 0x5848d705
+PreviewEffect = preview_roaxglr_dual108
+
+CellLayout = .....
+CellLayout = .ab.<
+CellLayout = .^...
+
+CheckType  = a - lightrail: 0x00000000 road: 0x02010300
+CheckType  = b - lightrail: 0x00000000 road: 0x00000301
+
+ConsLayout = .....
+ConsLayout = .++.<
+ConsLayout = .^...
+
+AutoTileBase = 0x5848d700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5848d700
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBB0]
+CopyFrom    = 0xBBB0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBB0]
+CopyFrom    = 0xBBB0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBB0]
+CopyFrom    = 0xBBB0
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBB0]
+CopyFrom    = 0xBBB0
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005BBB0]
+CopyFrom    = 0x4BBB0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBB0]
+CopyFrom    = 0x4BBB0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBB0]
+CopyFrom    = 0x4BBB0
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBC6]
+;Added by Chrisim 1 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - roundabout Tram-Avenue
+Piece = 0.0, 0.0, 0, 0, 0x58485905
+PreviewEffect = preview_roaxglr_dual109
+
+CellLayout = .....
+CellLayout = .ab.<
+CellLayout = .^...
+
+CheckType  = a - lightrail: 0x00000002 road: 0x02020000
+CheckType  = b - lightrail: 0x00000002 road: 0x00020002
+
+ConsLayout = .....
+ConsLayout = .++.<
+ConsLayout = .^...
+
+AutoTileBase = 0x58485900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485900
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBC6]
+CopyFrom    = 0xBBC6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC6]
+CopyFrom    = 0xBBC6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC6]
+CopyFrom    = 0xBBC6
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBC6]
+CopyFrom    = 0xBBC6
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005BBC6]
+CopyFrom    = 0x4BBC6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBC6]
+CopyFrom    = 0x4BBC6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBC6]
+CopyFrom    = 0x4BBC6
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBC2]
+;Added by Chrisim 9 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - roundabout oneway
+Piece = 0.0, 0.0, 0, 0, 0x58485B05
+PreviewEffect = preview_roaxglr_dual110
+
+CellLayout = .b..
+CellLayout = .a.<
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x00000002 road: 0x00020002
+CheckType  = b - onewayroad: 0x02000000, 0xff000000 optional
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .^..
+
+OneWayDir = 2
+AutoTileBase = 0x58485B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485B00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBC2]
+Piece = 0.0, 0.0, 0, 0, 0x58485B06
+PreviewEffect = preview_roaxglr_dual111
+
+CellLayout = .b..
+CellLayout = .a.<
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x00000002 road: 0x00020002
+CheckType  = b - onewayroad: 0x02000000, 0xff000000 optional
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .^..
+
+OneWayDir = 6
+AutoTileBase = 0x58485B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485B00
+Costs       = 80
+AutoPathBase = 0x58485B06
+
+[HighwayIntersectionInfo_0x0002BBC2]
+CopyFrom    = 0xBBC2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003BBC2]
+CopyFrom    = 0x1BBC2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004BBC2]
+CopyFrom    = 0xBBC2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005BBC2]
+CopyFrom    = 0x1BBC2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006BBC2]
+CopyFrom    = 0xBBC2
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007BBC2]
+CopyFrom    = 0x1BBC2
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBC7]
+;Added by Chrisim 9 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - roundabout corner road
+Piece = 0.0, 0.0, 0, 0, 0x58485C05
+PreviewEffect = preview_roaxglr_dual112
+
+CellLayout = .b..
+CellLayout = .a.<
+CellLayout = .^..
+
+CheckType  = a - lightrail: 0x00000002 road: 0x02020000
+CheckType =  b - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .^..
+
+AutoTileBase = 0x58485C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485C00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBC7]
+CopyFrom    = 0xBBC7
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002BBC7]
+CopyFrom    = 0xBBC7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003BBC7]
+CopyFrom    = 0x1BBC7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004BBC7]
+CopyFrom    = 0xBBC7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005BBC7]
+CopyFrom    = 0x1BBC7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006BBC7]
+CopyFrom    = 0xBBC7
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007BBC7]
+CopyFrom    = 0x1BBC7
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBC5]
+;Added by Chrisim 12 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - roundabout Avenue
+Piece = 0.0, 0.0, 0, 0, 0x58485D05
+PreviewEffect = preview_roaxglr_dual113
+
+CellLayout = .gh..
+CellLayout = .ab.<
+CellLayout = .^...
+
+CheckType  = a - lightrail: 0x00000002 road: 0x02020000
+CheckType  = b - lightrail: 0x00000002 road: 0x00020002
+CheckType  = g - avenue: 0x02040000, 0xffff0000 optional
+CheckType  = h - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = .....
+ConsLayout = .....
+ConsLayout = .++.<
+ConsLayout = .^...
+
+AutoTileBase = 0x58485D00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58485D00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBC5]
+CopyFrom    = 0xBBC5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBC5]
+CopyFrom    = 0xBBC5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBC5]
+CopyFrom    = 0xBBC5
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004BBC5]
+CopyFrom    = 0xBBC5
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005BBC5]
+CopyFrom    = 0x4BBC5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBC5]
+CopyFrom    = 0x4BBC5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007BBC5]
+CopyFrom    = 0x4BBC5
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BBA6]
+;Added by Chrisim 14 May 2011, Texture by Schleicher68
+;groundlightrailxroad Dual - smooth S curve
+Piece = 0.0, 0.0, 0, 0, 0x58481C05
+PreviewEffect = preview_roaxglr_dual115
+
+CellLayout = .....
+CellLayout = .ab..
+CellLayout = .cd.<
+CellLayout = .ef..
+CellLayout = .ba..
+CellLayout = .^...
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+CheckType = b - road: 0x00000000
+CheckType = c - lightrail: 0x00000000 road: 0x02030200
+CheckType = d - lightrail: 0x00000000 road: 0x02000003
+CheckType = e - lightrail: 0x00000000 road: 0x00030200
+CheckType = f - lightrail: 0x00000000 road: 0x02000203
+
+ConsLayout = .....
+ConsLayout = .++..
+ConsLayout = .++.<
+ConsLayout = .++..
+ConsLayout = .++..
+ConsLayout = .^...
+
+AutoTileBase = 0x58481C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58481C00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001BBA6]
+CopyFrom    = 0xBBA6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBA6]
+CopyFrom    = 0xBBA6
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003BBA6]
+CopyFrom    = 0x2BBA6
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0004BBA6]
+Piece = 0.0, 0.0, 0, 0, 0x58481A05
+PreviewEffect = preview_roaxglr_dual114
+
+CellLayout = .....
+CellLayout = .ab..
+CellLayout = .cd.<
+CellLayout = .ef..
+CellLayout = .ba..
+CellLayout = .^...
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+CheckType = b - road: 0x00000000
+CheckType = c - lightrail: 0x00000000 road: 0x02030200
+CheckType = d - lightrail: 0x00000000 road: 0x02000003
+CheckType = e - lightrail: 0x00000000 road: 0x00030200
+CheckType = f - lightrail: 0x00000000 road: 0x02000203
+
+ConsLayout = .....
+ConsLayout = .++..
+ConsLayout = .++.<
+ConsLayout = .++..
+ConsLayout = .++..
+ConsLayout = .^...
+
+AutoTileBase = 0x58481A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58481A00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0005BBA6]
+CopyFrom    = 0x4BBA6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006BBA6]
+CopyFrom    = 0x4BBA6
+Transpose	= 1
+[HighwayIntersectionInfo_0x0007BBA6]
+CopyFrom    = 0x6BBA6
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x0000BBBA]
+;Added by Chrisim 11 May 2009, Texture by Schleicher68
+;groundlightrailxstreet Dual - straight
+;DO NOT CHANGE CheckType for lightrail otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x584e00f0
+PreviewEffect = preview_strxglr_dual_01
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x02000200 street: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = ....^....
+
+AutoTileBase = 0x584e0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x584e0001
+Costs       = 80
+[HighwayIntersectionInfo_0x0001BBBA]
+CopyFrom    = 0xBBBA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BBBA]
+CopyFrom    = 0xBBBA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BBBA]
+CopyFrom    = 0xBBBA
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004BBBA]
+CopyFrom    = 0xBBBA
+[HighwayIntersectionInfo_0x0005BBBA]
+CopyFrom    = 0x1BBBA
+[HighwayIntersectionInfo_0x0006BBBA]
+CopyFrom    = 0x2BBBA
+[HighwayIntersectionInfo_0x0007BBBA]
+CopyFrom    = 0x3BBBA
+
+
+[HighwayIntersectionInfo_0x0500BBBB]
+CopyFrom    = 0x500BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0510BBBB]
+CopyFrom    = 0x510BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0520BBBB]
+CopyFrom    = 0x520BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0530BBBB]
+CopyFrom    = 0x530BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0540BBBB]
+CopyFrom    = 0x540BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0550BBBB]
+CopyFrom    = 0x550BA00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0500BBB8]
+CopyFrom    = 0x500BA01
+Rotate		= 1
+[HighwayIntersectionInfo_0x0500BBB9]
+CopyFrom    = 0x500BA01
+Rotate		= 2
+[HighwayIntersectionInfo_0x0500BBBA]
+CopyFrom    = 0x500BA01
+Rotate		= 3
+

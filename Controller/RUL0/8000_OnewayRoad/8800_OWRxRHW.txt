@@ -1,0 +1,1363 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;OWR/RHW INTERFACE/OVERPASS BUTTON SECTION
+;OWR/RHW INTERFACE/OVERPASS BUTTON SECTION
+
+RotationRing = 8800, 18800, 28800, 38800, 48800, 58800, 68800, 78800, 88800, 98800, A8800, B8800, C8800, D8800, E8800, F8800 ;OWR-over-RHW-4 Orthogonal/Orthogonal
+;AddTypes     = 8801, 18801, 28801, 38801, 48801, 58801, 68801, 78801, 88801, 98801, A8801, B8801, C8801, D8801, E8801, F8801 ;OWR-over-RHW-4 Diagonal/Orthogonal
+;AddTypes     = 8802, 18802, 28802, 38802, 48802, 58802, 68802, 78802, 88802, 98802, A8802, B8802, C8802, D8802, E8802, F8802 ;OWR-over-RHW-4 Orthogonal/Diagonal
+;AddTypes     = 8803, 18803, 28803, 38803, 48803, 58803, 68803, 78803, 88803, 98803, A8803, B8803, C8803, D8803, E8803, F8803 ;OWR-over-RHW-4 Diagonal/Diagonal
+AddTypes     = 8804, 18804, 28804, 38804, 48804, 58804, 68804, 78804, 88804, 98804, A8804, B8804, C8804, D8804, E8804, F8804 ;OWR-over-RHW-2 Orthogonal/orthogonal
+;AddTypes     = 8805, 18805, 28805, 38805, 48805, 58805, 68805, 78805, 88805, 98805, A8805, B8805, C8805, D8805, E8805, F8805 ;OWR-over-RHW-2 Diagonal/Orthogonal
+;AddTypes     = 8806, 18806, 28806, 38806, 48806, 58806, 68806, 78806, 88806, 98806, A8806, B8806, C8806, D8806, E8806, F8806 ;OWR-over-RHW-2 Orthogonal/Diagonal
+;AddTypes     = 8807, 18807, 28807, 38807, 48807, 58807, 68807, 78807, 88807, 98807, A8807, B8807, C8807, D8807, E8807, F8807 ;OWR-over-RHW-2 Diagonal/Diagonal
+AddTypes     = 8808, 18808, 28808, 38808, 48808, 58808, 68808, 78808, 88808, 98808, A8808, B8808, C8808, D8808, E8808, F8808 ;OWR-over-MIS Ramp Orthogonal/orthogonal
+;AddTypes     = 8809, 18809, 28809, 38809, 48809, 58809, 68809, 78809, 88809, 98809, A8809, B8809, C8809, D8809, E8809, F8809 ;OWR-over-MIS Ramp Diagonal/Orthogonal
+;AddTypes     = 880A, 1880A, 2880A, 3880A, 4880A, 5880A, 6880A, 7880A, 8880A, 9880A, A880A, B880A, C880A, D880A, E880A, F880A ;OWR-over-MIS Ramp Orthogonal/Diagonal
+;AddTypes     = 880B, 1880B, 2880B, 3880B, 4880B, 5880B, 6880B, 7880B, 8880B, 9880B, A880B, B880B, C880B, D880B, E880B, F880B ;OWR-over-MIS Ramp Diagonal/Diagonal
+AddTypes     = 880C, 1880C, 2880C, 3880C, 4880C, 5880C, 6880C, 7880C, 8880C, 9880C, A880C, B880C, C880C, D880C, E880C, F880C ;OWR-over-RHW-6S Orthogonal/orthogonal
+AddTypes     = 880D, 1880D, 2880D, 3880D, 4880D, 5880D, 6880D, 7880D, 8880D, 9880D, A880D, B880D, C880D, D880D, E880D, F880D ;OWR-over-RHW-6C Orthogonal/orthogonal
+AddTypes     = 880E, 1880E, 2880E, 3880E, 4880E, 5880E, 6880E, 7880E, 8880E, 9880E, A880E, B880E, C880E, D880E, E880E, F880E ;OWR-over-RHW-8S Orthogonal/orthogonal
+AddTypes     = 880F, 1880F, 2880F, 3880F, 4880F, 5880F, 6880F, 7880F, 8880F, 9880F, A880F, B880F, C880F, D880F, E880F, F880F ;OWR-over-RHW-8C Orthogonal/orthogonal
+AddTypes     = 8810, 18810, 28810, 38810, 48810, 58810, 68810, 78810, 88810, 98810, A8810, B8810, C8810, D8810, E8810, F8810 ;OWR-over-RHW-10 Orthogonal/orthogonal
+AddTypes	 = 8811, 18811, 28811, 38811, 48811, 58811, 68811, 78811, 88811, 98811, A8811, B8811, C8811, D8811, E8811, F8811 ;OWR-over-RHW-3 Orthogonal/Orthogonal
+AddTypes     = 8812, 18812, 28812, 38812, 48812, 58812, 68812, 78812, 88812, 98812, A8812, B8812, C8812, D8812, E8812, F8812 ;OWR/MIS +-Intersection
+AddTypes     = 8813, 88813, 18813, 98813, 28813, A8813, 38813, B8813, 48813, C8813, 58813, D8813, 68813, E8813, 78813, F8813 ;OWR/MIS T-Intersection
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;OWR/RHW Overpass/Interface Piece Section
+;
+[HighwayIntersectionInfo_0x00008800]
+;Added by Tarkus 4/13/07
+;OWR orthogonal x RHW orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5EEE7805
+PreviewEffect = preview_owrd_puzzlepiece057
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad:0x02000200 onewayroad:0x00020002
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5EEE7800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5EEE7800
+Costs = 75
+[HighwayIntersectionInfo_0x00018800]
+CopyFrom = 0x8800
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028800]
+CopyFrom = 0x8800
+Rotate = 2
+[HighwayIntersectionInfo_0x00038800]
+CopyFrom = 0x8800
+Rotate = 3
+[HighwayIntersectionInfo_0x00048800]
+CopyFrom = 0x8800
+[HighwayIntersectionInfo_0x00058800]
+CopyFrom = 0x18800
+[HighwayIntersectionInfo_0x00068800]
+CopyFrom = 0x28800
+[HighwayIntersectionInfo_0x00078800]
+CopyFrom = 0x38800
+[HighwayIntersectionInfo_0x00088800]
+CopyFrom = 0x8800
+[HighwayIntersectionInfo_0x00098800]
+CopyFrom = 0x18800
+[HighwayIntersectionInfo_0x000A8800]
+CopyFrom = 0x28800
+[HighwayIntersectionInfo_0x000B8800]
+CopyFrom = 0x38800
+[HighwayIntersectionInfo_0x000C8800]
+CopyFrom = 0x8800
+[HighwayIntersectionInfo_0x000D8800]
+CopyFrom = 0x18800
+[HighwayIntersectionInfo_0x000E8800]
+CopyFrom = 0x28800
+[HighwayIntersectionInfo_0x000F8800]
+CopyFrom = 0x38800
+
+
+
+[HighwayIntersectionInfo_0x00008801]
+;Added by Tarkus 08/10/08.
+;Road over RHW-4 Diag/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CB91005
+PreviewEffect = preview_owrdoverrhw4____001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CB91000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91000
+Costs = 75
+[HighwayIntersectionInfo_0x00018801]
+CopyFrom = 0x8801
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028801]
+CopyFrom = 0x8801
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038801]
+CopyFrom = 0x8801
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048801]
+CopyFrom = 0x8801
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058801]
+CopyFrom = 0x48801
+Rotate	= 3
+[HighwayIntersectionInfo_0x00068801]
+CopyFrom = 0x48801
+Rotate	= 2
+[HighwayIntersectionInfo_0x00078801]
+CopyFrom = 0x48801
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00088801]
+;Added by Tarkus 08/19/08.
+;Road over RHW-4 Diag/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CB91105
+PreviewEffect = preview_owrdoverrhw4____002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CB91100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91100
+Costs = 75
+[HighwayIntersectionInfo_0x00098801]
+CopyFrom = 0x88801
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A8801]
+CopyFrom = 0x88801
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8801]
+CopyFrom = 0x88801
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C8801]
+CopyFrom = 0x88801
+Transpose	= 1
+[HighwayIntersectionInfo_0x000D8801]
+CopyFrom = 0xC8801
+Rotate	= 3
+[HighwayIntersectionInfo_0x000E8801]
+CopyFrom = 0xC8801
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F8801]
+CopyFrom = 0xC8801
+Rotate	= 1
+
+
+
+[HighwayIntersectionInfo_0x00008802]
+;Road over RHW-4 Orth/Diag
+;Added by Tarkus 08/30/2008
+Piece = 0.0, 0.0, 0, 0, 0x5CB91205
+PreviewEffect = preview_owrdoverrhw4____003
+
+CellLayout =......
+CellLayout =..Z.<.
+CellLayout =..^...
+
+CheckType = Z - dirtroad:0x01000003
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5CB91200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91200
+Costs = 75
+[HighwayIntersectionInfo_0x00018802]
+CopyFrom = 0x8802
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028802]
+CopyFrom = 0x8802
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038802]
+CopyFrom = 0x8802
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048802]
+CopyFrom = 0x8802
+Transpose = 1
+[HighwayIntersectionInfo_0x00058802]
+CopyFrom = 0x48802
+Rotate	= 1
+[HighwayIntersectionInfo_0x00068802]
+CopyFrom = 0x48802
+Rotate	= 2
+[HighwayIntersectionInfo_0x00078802]
+CopyFrom = 0x48802
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x00088802]
+;Road over RHW-4 Orth/Diag
+;Added by Tarkus 08/30/2008
+Piece = 0.0, 0.0, 0, 0, 0x5CB91305
+PreviewEffect = preview_owrdoverrhw4____004
+
+CellLayout =......
+CellLayout =..Z.<.
+CellLayout =..^...
+
+CheckType = Z - dirtroad:0x01000003
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5CB91300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91300
+Costs = 75
+[HighwayIntersectionInfo_0x00098802]
+CopyFrom = 0x88802
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A8802]
+CopyFrom = 0x88802
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8802]
+CopyFrom = 0x88802
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C8802]
+CopyFrom = 0x88802
+Transpose = 1
+[HighwayIntersectionInfo_0x000D8802]
+CopyFrom = 0xC8802
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E8802]
+CopyFrom = 0xC8802
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F8802]
+CopyFrom = 0xC8802
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x00008803]
+;Added by Tarkus 08/10/2008.
+;Road over RHW-4 Diag/Diag
+Piece = 0.0, 0.0, 0, 0, 0x5CB91405
+PreviewEffect = preview_owrdoverrhw4____005
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CB91400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91400
+Costs = 75
+[HighwayIntersectionInfo_0x00018803]
+CopyFrom = 0x8803
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028803]
+CopyFrom = 0x8803
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038803]
+CopyFrom = 0x8803
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048803]
+CopyFrom = 0x8803
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058803]
+CopyFrom = 0x48803
+Rotate	= 1
+[HighwayIntersectionInfo_0x00068803]
+CopyFrom = 0x48803
+Rotate	= 2
+[HighwayIntersectionInfo_0x00078803]
+CopyFrom = 0x48803
+Rotate	= 3
+
+
+
+
+[HighwayIntersectionInfo_0x00088803]
+;Added by Tarkus 08/10/2008.
+;Road over RHW-4 Diag/Diag
+Piece = 0.0, 0.0, 0, 0, 0x5CB91505
+PreviewEffect = preview_owrdoverrhw4____006
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x01000003
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CB91500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CB91500
+Costs = 75
+[HighwayIntersectionInfo_0x00098803]
+CopyFrom = 0x88803
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A8803]
+CopyFrom = 0x88803
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8803]
+CopyFrom = 0x88803
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C8803]
+CopyFrom = 0x88803
+Transpose	= 1
+[HighwayIntersectionInfo_0x000D8803]
+CopyFrom = 0xC8803
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E8803]
+CopyFrom = 0xC8803
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F8803]
+CopyFrom = 0xC8803
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x00008804]
+;Added by Tarkus 08/30/2008
+;Road-over-RHW-2 Orthogonal/Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5CA90005
+PreviewEffect = preview_owrd_puzzlepiece058
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CA90000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CA90000
+Costs = 75
+[HighwayIntersectionInfo_0x00018804]
+CopyFrom = 0x8804
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028804]
+CopyFrom = 0x8804
+Rotate = 2
+[HighwayIntersectionInfo_0x00038804]
+CopyFrom = 0x8804
+Rotate = 3
+[HighwayIntersectionInfo_0x00048804]
+CopyFrom = 0x8804
+[HighwayIntersectionInfo_0x00058804]
+CopyFrom = 0x18804
+[HighwayIntersectionInfo_0x00068804]
+CopyFrom = 0x28804
+[HighwayIntersectionInfo_0x00078804]
+CopyFrom = 0x38804
+[HighwayIntersectionInfo_0x00088804]
+CopyFrom = 0x8804
+[HighwayIntersectionInfo_0x00098804]
+CopyFrom = 0x18804
+[HighwayIntersectionInfo_0x000A8804]
+CopyFrom = 0x28804
+[HighwayIntersectionInfo_0x000B8804]
+CopyFrom = 0x38804
+[HighwayIntersectionInfo_0x000C8804]
+CopyFrom = 0x8804
+[HighwayIntersectionInfo_0x000D8804]
+CopyFrom = 0x18804
+[HighwayIntersectionInfo_0x000E8804]
+CopyFrom = 0x28804
+[HighwayIntersectionInfo_0x000F8804]
+CopyFrom = 0x38804
+
+
+
+[HighwayIntersectionInfo_0x00008805]
+;Added by Tarkus 08/10/08.
+;Road over RHW-2 Diag/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CA91005
+PreviewEffect = preview_owrdoverrhw2____001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CA91000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CA91000
+Costs = 75
+[HighwayIntersectionInfo_0x00018805]
+CopyFrom = 0x8805
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028805]
+CopyFrom = 0x8805
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038805]
+CopyFrom = 0x8805
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048805]
+CopyFrom = 0x8805
+[HighwayIntersectionInfo_0x00058805]
+CopyFrom = 0x18805
+[HighwayIntersectionInfo_0x00068805]
+CopyFrom = 0x28805
+[HighwayIntersectionInfo_0x00078805]
+CopyFrom = 0x38805
+[HighwayIntersectionInfo_0x00088805]
+CopyFrom = 0x8805
+Transpose	= 1
+[HighwayIntersectionInfo_0x00098805]
+CopyFrom = 0x88805
+Rotate	= 3
+[HighwayIntersectionInfo_0x000A8805]
+CopyFrom = 0x88805
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8805]
+CopyFrom = 0x88805
+Rotate	= 1
+[HighwayIntersectionInfo_0x000C8805]
+CopyFrom = 0x88805
+[HighwayIntersectionInfo_0x000D8805]
+CopyFrom = 0x98805
+[HighwayIntersectionInfo_0x000E8805]
+CopyFrom = 0xA8805
+[HighwayIntersectionInfo_0x000F8805]
+CopyFrom = 0xB8805
+
+
+
+[HighwayIntersectionInfo_0x00008806]
+;Road over RHW-2 Orth/Diag
+;Added by Tarkus 08/30/2008
+Piece = 0.0, 0.0, 0, 0, 0x5CA91205
+PreviewEffect = preview_owrdoverrhw2____003
+
+CellLayout =......
+CellLayout =..Z.<.
+CellLayout =..^...
+
+CheckType = Z - dirtroad:0x01000003
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5CA91200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CA91200
+Costs = 75
+[HighwayIntersectionInfo_0x00018806]
+CopyFrom = 0x8806
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028806]
+CopyFrom = 0x8806
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038806]
+CopyFrom = 0x8806
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048806]
+CopyFrom = 0x8806
+[HighwayIntersectionInfo_0x00058806]
+CopyFrom = 0x18806
+[HighwayIntersectionInfo_0x00068806]
+CopyFrom = 0x28806
+[HighwayIntersectionInfo_0x00078806]
+CopyFrom = 0x38806
+[HighwayIntersectionInfo_0x00088806]
+CopyFrom = 0x8806
+Transpose = 1
+[HighwayIntersectionInfo_0x00098806]
+CopyFrom = 0x88806
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A8806]
+CopyFrom = 0x88806
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8806]
+CopyFrom = 0x88806
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C8806]
+CopyFrom = 0x88806
+[HighwayIntersectionInfo_0x000D8806]
+CopyFrom = 0x98806
+[HighwayIntersectionInfo_0x000E8806]
+CopyFrom = 0xA8806
+[HighwayIntersectionInfo_0x000F8806]
+CopyFrom = 0xB8806
+
+
+
+[HighwayIntersectionInfo_0x00008807]
+;Added by Tarkus 08/10/2008.
+;Road over RHW-4 Diag/Diag
+Piece = 0.0, 0.0, 0, 0, 0x5CA91405
+PreviewEffect = preview_owrdoverrhw2____005
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CA91400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CA91400
+Costs = 75
+[HighwayIntersectionInfo_0x00018807]
+CopyFrom = 0x8807
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028807]
+CopyFrom = 0x8807
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038807]
+CopyFrom = 0x8807
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048807]
+CopyFrom = 0x8807
+[HighwayIntersectionInfo_0x00058807]
+CopyFrom = 0x18807
+[HighwayIntersectionInfo_0x00068807]
+CopyFrom = 0x28807
+[HighwayIntersectionInfo_0x00078807]
+CopyFrom = 0x38807
+[HighwayIntersectionInfo_0x00088807]
+CopyFrom = 0x8807
+Transpose	= 1
+[HighwayIntersectionInfo_0x00098807]
+CopyFrom = 0x88807
+Rotate	= 3
+[HighwayIntersectionInfo_0x000A8807]
+CopyFrom = 0x88807
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8807]
+CopyFrom = 0x88807
+Rotate	= 1
+[HighwayIntersectionInfo_0x000C8807]
+CopyFrom = 0x88807
+[HighwayIntersectionInfo_0x000D8807]
+CopyFrom = 0x98807
+[HighwayIntersectionInfo_0x000E8807]
+CopyFrom = 0xA8807
+[HighwayIntersectionInfo_0x000F8807]
+CopyFrom = 0xB8807
+
+
+
+[HighwayIntersectionInfo_0x00008808]
+;Added by Tarkus 09/01/2008
+;Road over MIS Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CE90005
+PreviewEffect = preview_owrd_puzzlepiece039
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CE90000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE90000
+Costs = 75
+[HighwayIntersectionInfo_0x00018808]
+CopyFrom = 0x8808
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028808]
+CopyFrom = 0x8808
+Rotate = 2
+[HighwayIntersectionInfo_0x00038808]
+CopyFrom = 0x8808
+Rotate = 3
+[HighwayIntersectionInfo_0x00048808]
+CopyFrom = 0x8808
+[HighwayIntersectionInfo_0x00058808]
+CopyFrom = 0x18808
+[HighwayIntersectionInfo_0x00068808]
+CopyFrom = 0x28808
+[HighwayIntersectionInfo_0x00078808]
+CopyFrom = 0x38808
+[HighwayIntersectionInfo_0x00088808]
+CopyFrom = 0x8808
+[HighwayIntersectionInfo_0x00098808]
+CopyFrom = 0x18808
+[HighwayIntersectionInfo_0x000A8808]
+CopyFrom = 0x28808
+[HighwayIntersectionInfo_0x000B8808]
+CopyFrom = 0x38808
+[HighwayIntersectionInfo_0x000C8808]
+CopyFrom = 0x8808
+[HighwayIntersectionInfo_0x000D8808]
+CopyFrom = 0x18808
+[HighwayIntersectionInfo_0x000E8808]
+CopyFrom = 0x28808
+[HighwayIntersectionInfo_0x000F8808]
+CopyFrom = 0x38808
+
+
+
+[HighwayIntersectionInfo_0x00008809]
+;Added by Tarkus 09/01/2008
+;Road over MIS Diag/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CE91005
+PreviewEffect = preview_owrd_puzzlepiece059
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CE91000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91000
+Costs = 75
+[HighwayIntersectionInfo_0x00018809]
+CopyFrom = 0x8809
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028809]
+CopyFrom = 0x8809
+Rotate	= 2
+[HighwayIntersectionInfo_0x00038809]
+CopyFrom = 0x8809
+Rotate	= 3
+[HighwayIntersectionInfo_0x00048809]
+CopyFrom = 0x8809
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058809]
+CopyFrom = 0x48809
+Rotate	= 3
+[HighwayIntersectionInfo_0x00068809]
+CopyFrom = 0x48809
+Rotate	= 2
+[HighwayIntersectionInfo_0x00078809]
+CopyFrom = 0x48809
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00088809]
+;Added by Tarkus 09/01/2008
+;Road over MIS Diag/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CE91105
+PreviewEffect = preview_owrdovermis_____002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CE91100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91100
+Costs = 75
+[HighwayIntersectionInfo_0x00098809]
+CopyFrom = 0x88809
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A8809]
+CopyFrom = 0x88809
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B8809]
+CopyFrom = 0x88809
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C8809]
+CopyFrom = 0x88809
+Transpose	= 1
+[HighwayIntersectionInfo_0x000D8809]
+CopyFrom = 0xC8809
+Rotate	= 3
+[HighwayIntersectionInfo_0x000E8809]
+CopyFrom = 0xC8809
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F8809]
+CopyFrom = 0xC8809
+Rotate	= 1
+
+
+
+[HighwayIntersectionInfo_0x0000880A]
+;Road over MIS Orth/Diag
+;Added by Tarkus 09/01/2008
+Piece = 0.0, 0.0, 0, 0, 0x5CE91205
+PreviewEffect = preview_owrdovermis_____003
+
+CellLayout =......
+CellLayout =..Z.<.
+CellLayout =..^...
+
+CheckType = Z - dirtroad:0x01000003
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5CE91200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91200
+Costs = 75
+[HighwayIntersectionInfo_0x0001880A]
+CopyFrom = 0x880A
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880A]
+CopyFrom = 0x880A
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003880A]
+CopyFrom = 0x880A
+Rotate	= 3
+[HighwayIntersectionInfo_0x0004880A]
+CopyFrom = 0x880A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005880A]
+CopyFrom = 0x4880A
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006880A]
+CopyFrom = 0x4880A
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007880A]
+CopyFrom = 0x4880A
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x0008880A]
+;Road over MIS Orth/Diag
+;Added by Tarkus 09/01/2008
+Piece = 0.0, 0.0, 0, 0, 0x5CE91305
+PreviewEffect = preview_owrdovermis_____004
+
+CellLayout =......
+CellLayout =..Z.<.
+CellLayout =..^...
+
+CheckType = Z - dirtroad:0x01000003
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5CE91300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91300
+Costs = 75
+[HighwayIntersectionInfo_0x0009880A]
+CopyFrom = 0x8880A
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A880A]
+CopyFrom = 0x8880A
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B880A]
+CopyFrom = 0x8880A
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C880A]
+CopyFrom = 0x8880A
+Transpose = 1
+[HighwayIntersectionInfo_0x000D880A]
+CopyFrom = 0xC880A
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E880A]
+CopyFrom = 0xC880A
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F880A]
+CopyFrom = 0xC880A
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x0000880B]
+;Added by Tarkus 09/01/2008
+;Road over MIS Diag/Diag
+Piece = 0.0, 0.0, 0, 0, 0x5CE91405
+PreviewEffect = preview_owrdovermis_____005
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CE91400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91400
+Costs = 75
+[HighwayIntersectionInfo_0x0001880B]
+CopyFrom = 0x880B
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880B]
+CopyFrom = 0x880B
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003880B]
+CopyFrom = 0x880B
+Rotate	= 3
+[HighwayIntersectionInfo_0x0004880B]
+CopyFrom = 0x880B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005880B]
+CopyFrom = 0x4880B
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006880B]
+CopyFrom = 0x4880B
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007880B]
+CopyFrom = 0x4880B
+Rotate	= 3
+
+
+
+
+[HighwayIntersectionInfo_0x0008880B]
+;Added by Tarkus 09/01/2008
+;Road over MIS Diag/Diag
+Piece = 0.0, 0.0, 0, 0, 0x5CE91505
+PreviewEffect = preview_owrdovermis_____006
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad: 0x01000003
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5CE91500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE91500
+Costs = 75
+[HighwayIntersectionInfo_0x0009880B]
+CopyFrom = 0x8880B
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A880B]
+CopyFrom = 0x8880B
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B880B]
+CopyFrom = 0x8880B
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C880B]
+CopyFrom = 0x8880B
+Transpose	= 1
+[HighwayIntersectionInfo_0x000D880B]
+CopyFrom = 0xC880B
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E880B]
+CopyFrom = 0xC880B
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F880B]
+CopyFrom = 0xC880B
+Rotate	= 3
+
+
+
+[HighwayIntersectionInfo_0x0000880C]
+;Added by Tarkus 09/01/2008
+;Road over RHW-6S Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CC90005
+PreviewEffect = preview_owrdoverrhw6s___000
+
+CellLayout =........
+CellLayout =...Z...<
+CellLayout =...^....
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5CC90000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CC90000
+Costs = 225
+[HighwayIntersectionInfo_0x0001880C]
+CopyFrom = 0x880C
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880C]
+CopyFrom = 0x880C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003880C]
+CopyFrom = 0x880C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004880C]
+CopyFrom = 0x880C
+[HighwayIntersectionInfo_0x0005880C]
+CopyFrom = 0x1880C
+[HighwayIntersectionInfo_0x0006880C]
+CopyFrom = 0x2880C
+[HighwayIntersectionInfo_0x0007880C]
+CopyFrom = 0x3880C
+[HighwayIntersectionInfo_0x0008880C]
+CopyFrom = 0x880C
+[HighwayIntersectionInfo_0x0009880C]
+CopyFrom = 0x1880C
+[HighwayIntersectionInfo_0x000A880C]
+CopyFrom = 0x2880C
+[HighwayIntersectionInfo_0x000B880C]
+CopyFrom = 0x3880C
+[HighwayIntersectionInfo_0x000C880C]
+CopyFrom = 0x880C
+[HighwayIntersectionInfo_0x000D880C]
+CopyFrom = 0x1880C
+[HighwayIntersectionInfo_0x000E880C]
+CopyFrom = 0x2880C
+[HighwayIntersectionInfo_0x000F880C]
+CopyFrom = 0x3880C
+
+
+
+[HighwayIntersectionInfo_0x0000880D]
+;Added by Tarkus 09/01/2008
+;Road over RHW-6C Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CC90205
+PreviewEffect = preview_owrdoverrhw6c___000
+
+CellLayout =........
+CellLayout =..ZZZ..<
+CellLayout =..^.....
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =........
+ConsLayout =..+++..<
+ConsLayout =..^.....
+
+AutoTileBase=	0x5CC90200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CC90200
+Costs = 225
+[HighwayIntersectionInfo_0x0001880D]
+CopyFrom = 0x880D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880D]
+CopyFrom = 0x880D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003880D]
+CopyFrom = 0x880D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004880D]
+CopyFrom = 0x880D
+[HighwayIntersectionInfo_0x0005880D]
+CopyFrom = 0x1880D
+[HighwayIntersectionInfo_0x0006880D]
+CopyFrom = 0x2880D
+[HighwayIntersectionInfo_0x0007880D]
+CopyFrom = 0x3880D
+[HighwayIntersectionInfo_0x0008880D]
+CopyFrom = 0x880D
+[HighwayIntersectionInfo_0x0009880D]
+CopyFrom = 0x1880D
+[HighwayIntersectionInfo_0x000A880D]
+CopyFrom = 0x2880D
+[HighwayIntersectionInfo_0x000B880D]
+CopyFrom = 0x3880D
+[HighwayIntersectionInfo_0x000C880D]
+CopyFrom = 0x880D
+[HighwayIntersectionInfo_0x000D880D]
+CopyFrom = 0x1880D
+[HighwayIntersectionInfo_0x000E880D]
+CopyFrom = 0x2880D
+[HighwayIntersectionInfo_0x000F880D]
+CopyFrom = 0x3880D
+
+
+
+[HighwayIntersectionInfo_0x0000880E]
+;Added by Tarkus 10/04/2008
+;Road over RHW-8 Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CD90005
+PreviewEffect = preview_owrdoverrhw8____000
+
+CellLayout =........
+CellLayout =...ZZ..<
+CellLayout =...^....
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...^....
+
+AutoTileBase=	0x5CD90000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CD90000
+Costs = 225
+[HighwayIntersectionInfo_0x0001880E]
+CopyFrom = 0x880E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880E]
+CopyFrom = 0x880E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003880E]
+CopyFrom = 0x880E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004880E]
+CopyFrom = 0x880E
+[HighwayIntersectionInfo_0x0005880E]
+CopyFrom = 0x1880E
+[HighwayIntersectionInfo_0x0006880E]
+CopyFrom = 0x2880E
+[HighwayIntersectionInfo_0x0007880E]
+CopyFrom = 0x3880E
+[HighwayIntersectionInfo_0x0008880E]
+CopyFrom = 0x880E
+[HighwayIntersectionInfo_0x0009880E]
+CopyFrom = 0x1880E
+[HighwayIntersectionInfo_0x000A880E]
+CopyFrom = 0x2880E
+[HighwayIntersectionInfo_0x000B880E]
+CopyFrom = 0x3880E
+[HighwayIntersectionInfo_0x000C880E]
+CopyFrom = 0x880E
+[HighwayIntersectionInfo_0x000D880E]
+CopyFrom = 0x1880E
+[HighwayIntersectionInfo_0x000E880E]
+CopyFrom = 0x2880E
+[HighwayIntersectionInfo_0x000F880E]
+CopyFrom = 0x3880E
+
+
+
+[HighwayIntersectionInfo_0x00008810]
+;Added by Tarkus 10/04/2008
+;Road over RHW-10 Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CF90005
+PreviewEffect = preview_owrdoverrhw10___000
+
+CellLayout =........
+CellLayout =..ZZ...<
+CellLayout =..^.....
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =........
+ConsLayout =..++...<
+ConsLayout =..^.....
+
+AutoTileBase=	0x5CF90000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CF90000
+Costs = 225
+[HighwayIntersectionInfo_0x00018810]
+CopyFrom = 0x8810
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028810]
+CopyFrom = 0x8810
+Rotate = 2
+[HighwayIntersectionInfo_0x00038810]
+CopyFrom = 0x8810
+Rotate = 3
+[HighwayIntersectionInfo_0x00048810]
+CopyFrom = 0x8810
+[HighwayIntersectionInfo_0x00058810]
+CopyFrom = 0x18810
+[HighwayIntersectionInfo_0x00068810]
+CopyFrom = 0x28810
+[HighwayIntersectionInfo_0x00078810]
+CopyFrom = 0x38810
+[HighwayIntersectionInfo_0x00088810]
+CopyFrom = 0x8810
+[HighwayIntersectionInfo_0x00098810]
+CopyFrom = 0x18810
+[HighwayIntersectionInfo_0x000A8810]
+CopyFrom = 0x28810
+[HighwayIntersectionInfo_0x000B8810]
+CopyFrom = 0x38810
+[HighwayIntersectionInfo_0x000C8810]
+CopyFrom = 0x8810
+[HighwayIntersectionInfo_0x000D8810]
+CopyFrom = 0x18810
+[HighwayIntersectionInfo_0x000E8810]
+CopyFrom = 0x28810
+[HighwayIntersectionInfo_0x000F8810]
+CopyFrom = 0x38810
+
+
+
+[HighwayIntersectionInfo_0x00008812]
+;Added by Tarkus 12/28/2008.
+;OWR/MIS +-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x5CE92005
+PreviewEffect = preview_owrdwithmis_____001
+
+CellLayout =..........
+CellLayout =....c....<
+CellLayout =....^.....
+
+CheckType = c - onewayroad: 0x00020002
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5CE92000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE92000
+Costs       = 200
+[HighwayIntersectionInfo_0x00018812]
+CopyFrom    = 0x8812
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028812]
+CopyFrom    = 0x8812
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038812]
+CopyFrom    = 0x8812
+Rotate		= 3
+[HighwayIntersectionInfo_0x00048812]
+CopyFrom    = 0x8812
+[HighwayIntersectionInfo_0x00058812]
+CopyFrom    = 0x18812
+[HighwayIntersectionInfo_0x00068812]
+CopyFrom    = 0x28812
+[HighwayIntersectionInfo_0x00078812]
+CopyFrom    = 0x38812
+[HighwayIntersectionInfo_0x00088812]
+CopyFrom    = 0x8812
+[HighwayIntersectionInfo_0x00098812]
+CopyFrom    = 0x18812
+[HighwayIntersectionInfo_0x000A8812]
+CopyFrom    = 0x28812
+[HighwayIntersectionInfo_0x000B8812]
+CopyFrom    = 0x38812
+[HighwayIntersectionInfo_0x000C8812]
+CopyFrom    = 0x8812
+[HighwayIntersectionInfo_0x000D8812]
+CopyFrom    = 0x18812
+[HighwayIntersectionInfo_0x000E8812]
+CopyFrom    = 0x28812
+[HighwayIntersectionInfo_0x000F8812]
+CopyFrom    = 0x38812
+
+
+
+[HighwayIntersectionInfo_0x00008813]
+;Added by Tarkus 12/28/2008.
+;OWR/MIS T-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x5CE92105
+PreviewEffect = preview_owrdwithmis_____002
+
+CellLayout =..........
+CellLayout =....c....<
+CellLayout =....^.....
+
+CheckType = c - onewayroad: 0x00020002
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+
+AutoTileBase=	0x5CE92100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE92100
+Costs       = 200
+[HighwayIntersectionInfo_0x00018813]
+CopyFrom    = 0x8813
+Rotate		= 1
+[HighwayIntersectionInfo_0x00028813]
+CopyFrom    = 0x8813
+Rotate		= 2
+[HighwayIntersectionInfo_0x00038813]
+CopyFrom    = 0x8813
+Rotate		= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00048813]
+CopyFrom    = 0x8813
+[HighwayIntersectionInfo_0x00058813]
+CopyFrom    = 0x18813
+[HighwayIntersectionInfo_0x00068813]
+CopyFrom    = 0x28813
+[HighwayIntersectionInfo_0x00078813]
+CopyFrom    = 0x38813
+[HighwayIntersectionInfo_0x00088813]
+CopyFrom    = 0x8813
+PlaceQueryID = 0x5CE92101
+Transpose		= 1
+[HighwayIntersectionInfo_0x00098813]
+CopyFrom    = 0x88813
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A8813]
+CopyFrom    = 0x88813
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B8813]
+CopyFrom    = 0x88813
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C8813]
+CopyFrom    = 0x88813
+[HighwayIntersectionInfo_0x000D8813]
+CopyFrom    = 0x98813
+[HighwayIntersectionInfo_0x000E8813]
+CopyFrom    = 0xA8813
+[HighwayIntersectionInfo_0x000F8813]
+CopyFrom    = 0xB8813
+
+
+[HighwayIntersectionInfo_0x0000880F]
+;Added by Tarkus 09/01/2008
+;Road over RHW-8C Orth/Orth
+Piece = 0.0, 0.0, 0, 0, 0x5CD90205
+PreviewEffect = preview_owrdoverrhw8c___000
+
+CellLayout =........
+CellLayout =..ZZZ..<
+CellLayout =..^.....
+
+CheckType = Z - dirtroad:0x02000200
+
+ConsLayout =........
+ConsLayout =..+++..<
+ConsLayout =..^.....
+
+AutoTileBase=	0x5CD90200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CD90200
+Costs = 225
+[HighwayIntersectionInfo_0x0001880F]
+CopyFrom = 0x880F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002880F]
+CopyFrom = 0x880F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003880F]
+CopyFrom = 0x880F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004880F]
+CopyFrom = 0x880F
+[HighwayIntersectionInfo_0x0005880F]
+CopyFrom = 0x1880F
+[HighwayIntersectionInfo_0x0006880F]
+CopyFrom = 0x2880F
+[HighwayIntersectionInfo_0x0007880F]
+CopyFrom = 0x3880F
+[HighwayIntersectionInfo_0x0008880F]
+CopyFrom = 0x880F
+[HighwayIntersectionInfo_0x0009880F]
+CopyFrom = 0x1880F
+[HighwayIntersectionInfo_0x000A880F]
+CopyFrom = 0x2880F
+[HighwayIntersectionInfo_0x000B880F]
+CopyFrom = 0x3880F
+[HighwayIntersectionInfo_0x000C880F]
+CopyFrom = 0x880F
+[HighwayIntersectionInfo_0x000D880F]
+CopyFrom = 0x1880F
+[HighwayIntersectionInfo_0x000E880F]
+CopyFrom = 0x2880F
+[HighwayIntersectionInfo_0x000F880F]
+CopyFrom = 0x3880F
+
+[HighwayIntersectionInfo_0x00008811]
+;Added by Tarkus 4/13/07
+;OWR orthogonal x RHW orthogonal puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5C790005
+PreviewEffect = preview_owrd_puzzlepiece040
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - dirtroad:0x02000200 onewayroad:0x00020002
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5C790000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C790000
+Costs = 75
+[HighwayIntersectionInfo_0x00018811]
+CopyFrom = 0x8811
+Rotate	= 1
+[HighwayIntersectionInfo_0x00028811]
+CopyFrom = 0x8811
+Rotate = 2
+[HighwayIntersectionInfo_0x00038811]
+CopyFrom = 0x8811
+Rotate = 3
+[HighwayIntersectionInfo_0x00048811]
+CopyFrom = 0x8811
+[HighwayIntersectionInfo_0x00058811]
+CopyFrom = 0x18811
+[HighwayIntersectionInfo_0x00068811]
+CopyFrom = 0x28811
+[HighwayIntersectionInfo_0x00078811]
+CopyFrom = 0x38811
+[HighwayIntersectionInfo_0x00088811]
+CopyFrom = 0x8811
+[HighwayIntersectionInfo_0x00098811]
+CopyFrom = 0x18811
+[HighwayIntersectionInfo_0x000A8811]
+CopyFrom = 0x28811
+[HighwayIntersectionInfo_0x000B8811]
+CopyFrom = 0x38811
+[HighwayIntersectionInfo_0x000C8811]
+CopyFrom = 0x8811
+[HighwayIntersectionInfo_0x000D8811]
+CopyFrom = 0x18811
+[HighwayIntersectionInfo_0x000E8811]
+CopyFrom = 0x28811
+[HighwayIntersectionInfo_0x000F8811]
+CopyFrom = 0x38811
+
+;
+;End OWR/RHW Overpass/Interface Piece Section
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;One-Way Road Puzzle Pieces
+;;Effect Preview line usage upto
+;;PreviewEffect = preview_road_puzzlepiece059
+

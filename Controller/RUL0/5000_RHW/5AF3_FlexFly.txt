@@ -1,0 +1,229 @@
+;RHW FlexFly
+RotationRing 	= 5AF3, 15AF3, 25AF3, 35AF3, 45AF3, 55AF3, 65AF3, 75AF3 ;EMIS-15M FLEXFly 90 A1 A2
+;AddTypes     = 5AF4, 15AF4, 25AF4, 35AF4, 45AF4, 55AF4, 65AF4, 75AF4 ;EMIS-15M FLEXFly 45 B1
+AddTypes     = 5AF5, 15AF5, 25AF5, 35AF5, 45AF5, 55AF5, 65AF5, 75AF5 ;MIS FLEXCurve 90 A1 A2
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00005AF3]
+;Added by Blue Lightning 08/21/09
+;EMIS (15M)FLEXfly A1
+Piece = 32.0, -32.0, 0, 0, 0x5CAB0005
+PreviewEffect = preview_emis15wrc90flyovr00
+
+CellLayout=.......
+CellLayout=.ab....
+CellLayout=..bb...
+CellLayout=...bb..
+CellLayout=.f..c.<
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x00020002 road: 0x04010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 road: 0x03010400, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.++....
+ConsLayout=..++...
+ConsLayout=...++..
+ConsLayout=.+..+.<
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CAB0000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015AF3]
+CopyFrom=0x5AF3
+Rotate=1
+
+[HighwayIntersectionInfo_0x00025AF3]
+CopyFrom=0x5AF3
+Rotate=2
+
+[HighwayIntersectionInfo_0x00035AF3]
+CopyFrom=0x5AF3
+Rotate=3
+
+[HighwayIntersectionInfo_0x00045AF3]
+;Added by Blue Lightning 05/16/10
+;EMIS (15M)FLEXfly A2
+Piece = 32.0, -32.0, 0, 0, 0x5CAB1005
+PreviewEffect = preview_emis15wrc90flyovr01
+
+CellLayout=.......
+CellLayout=.ab....
+CellLayout=..bb...
+CellLayout=...bb..
+CellLayout=.f..c.<
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x00020002 road: 0x04010100, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 road: 0x03030400, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.++....
+ConsLayout=..++...
+ConsLayout=...++..
+ConsLayout=.+..+.<
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CAB1000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00055AF3]
+CopyFrom=0x45AF3
+Rotate=1
+
+[HighwayIntersectionInfo_0x00065AF3]
+CopyFrom=0x45AF3
+Rotate=2
+
+[HighwayIntersectionInfo_0x00075AF3]
+CopyFrom=0x45AF3
+Rotate=3
+
+[HighwayIntersectionInfo_0x00005AF4]
+;Added by Blue Lightning 06/17/10
+;EMIS (15M)FLEXfly 45 B1
+Piece = 0.0, 0.0, 0, 0, 0x5CAB2005
+PreviewEffect = preview_emis15wrc45flyovr00
+
+CellLayout=......
+CellLayout=..bbA<
+CellLayout=.Cb...
+CellLayout=...D..
+CellLayout=....^.
+
+CheckType = A - dirtroad: 0x00020000 groundhighway: 0x01040002, 0xffffffff check
+CheckType = b - dirtroad: 0x00000000, 0x00000000 check
+CheckType = C - dirtroad: 0x03000000 groundhighway: 0x01040003, 0xffffffff check
+CheckType = D - dirtroad: 0x02020202
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CAB2000
+Costs = 450
+
+ConsLayout=......
+ConsLayout=.....<
+ConsLayout=......
+ConsLayout=...+..
+ConsLayout=....^.
+
+[HighwayIntersectionInfo_0x00015AF4]
+CopyFrom=0x5AF4
+Rotate=1
+[HighwayIntersectionInfo_0x00025AF4]
+CopyFrom=0x5AF4
+Rotate=2
+[HighwayIntersectionInfo_0x00035AF4]
+CopyFrom=0x5AF4
+Rotate=3
+[HighwayIntersectionInfo_0x00045AF4]
+CopyFrom=0x5AF4
+[HighwayIntersectionInfo_0x00055AF4]
+CopyFrom=0x5AF4
+Rotate=1
+[HighwayIntersectionInfo_0x00065AF4]
+CopyFrom=0x5AF4
+Rotate=2
+[HighwayIntersectionInfo_0x00075AF4]
+CopyFrom=0x5AF4
+Rotate=3
+
+
+[HighwayIntersectionInfo_0x00005AF5]
+;Added by Jondor 09/30/11
+;MIS (0M) FLEXCurve A1
+Piece = 32.0, -32.0, 0, 0, 0x5CA60005
+PreviewEffect = preview_emis00wrc90flyovr00
+
+CellLayout=.......
+CellLayout=.ab....
+CellLayout=..bb...
+CellLayout=...bb..
+CellLayout=.f..c.<
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x00020002 street: 0x04010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 street: 0x03010400, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.++....
+ConsLayout=..++...
+ConsLayout=...++..
+ConsLayout=.+..+.<
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CA60000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015AF5]
+CopyFrom=0x5AF5
+Rotate=1
+
+[HighwayIntersectionInfo_0x00025AF5]
+CopyFrom=0x5AF5
+Rotate=2
+
+[HighwayIntersectionInfo_0x00035AF5]
+CopyFrom=0x5AF5
+Rotate=3
+
+[HighwayIntersectionInfo_0x00045AF5]
+Added by Jondor 09/30/11
+MIS (0M) FLEXCurve A2
+Piece = 32.0, -32.0, 0, 0, 0x5CA61005
+PreviewEffect = preview_emis00wrc90flyovr01
+
+CellLayout=.......
+CellLayout=.ab....
+CellLayout=..bb...
+CellLayout=...bb..
+CellLayout=.f..c.<
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x00020002 street: 0x04010100, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 street: 0x03030400, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.++....
+ConsLayout=..++...
+ConsLayout=...++..
+ConsLayout=.+..+.<
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CA61000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00055AF5]
+CopyFrom=0x45AF5
+Rotate=1
+
+[HighwayIntersectionInfo_0x00065AF5]
+CopyFrom=0x45AF5
+Rotate=2
+
+[HighwayIntersectionInfo_0x00075AF5]
+CopyFrom=0x45AF5
+Rotate=3
+
+

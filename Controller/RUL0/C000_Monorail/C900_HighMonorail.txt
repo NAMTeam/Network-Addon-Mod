@@ -1,0 +1,756 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HIGH MONORAIL BUTTON SECTION
+;HIGH MONORAIL BUTTON SECTION
+RotationRing = C900, 1C900, 2C900, 3C900 ;high monorail ramp puzzle Piece
+AddTypes     = C901, 1C901, 2C901, 3C901 ;high monorailxblank terrain - straight puzzle piece
+AddTypes     = C902, 1C902, 2C902, 3C902 ;high monorailxblank terrain - no pylon
+AddTypes     = C903, 1C903, 2C903, 3C903 ;high monorailxrail puzzle piece
+AddTypes     = C904, 1C904, 2C904, 3C904 ;high monorailxstreet puzzle piece
+AddTypes     = C905, 1C905, 2C905, 3C905 ;high monorailxroad puzzle piece
+AddTypes     = C906, 1C906, 2C906, 3C906 ;high monorailxoneWayRoad puzzle piece
+AddTypes     = C907, 1C907, 2C907, 3C907 ;high monorailxavenue puzzle piece
+AddTypes     = C908, 1C908, 2C908, 3C908 ;high monorailxgroundhighway puzzle piece
+AddTypes     = C909, 1C909, 2C909, 3C909 ;high monorailxelevated highway puzzle piece
+AddTypes     = C90A, 1C90A, 2C90A, 3C90A ;high monorailxelevated rail puzzle piece
+AddTypes     = C90B, 1C90B, 2C90B, 3C90B ;high monorailxmonorail puzzle piece
+AddTypes     = C90C, 1C90C, 2C90C, 3C90C ;high monorailxGround Light Rail Puzzle Piece
+AddTypes     = C90D, 1C90D, 2C90D, 3C90D ;high monorailxrail viaduct puzzle piece
+AddTypes     = C90E, 1C90E, 2C90E, 3C90E ;high monorailxroad viaduct puzzle piece
+AddTypes     = C90F, 1C90F, 2C90F, 3C90F ;high monorailxoneway road viaduct puzzle piece
+AddTypes     = C910, 1C910, 2C910, 3C910 ;high monorailxoneway avenue viaduct puzzle piece
+AddTypes     = C911, 1C911, 2C911, 3C911 ;T Monorail OnSlope Puzzle Piece
+AddTypes     = C912, 1C912, 2C912, 3C912 ;Straight Monorail OnSlope Puzzle Piece
+;AddTypes     = C913, 1C913 ;monorailxhighway overpass (listed by memo)
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MONORAIL SECTION
+;MONORAIL SECTION
+;MONORAIL SECTION
+;MONORAIL SECTION
+;MONORAIL SECTION
+;MONORAIL SECTION
+
+;[HighwayIntersectionInfo_0x0000C913]
+;Added by ArkenbergeJoe 13/04/05.
+;monorailxhighway overpass
+;Piece = 0.0, 0.0, 0, 0, 0x02012300
+;PreviewEffect = preview_gh_rd_straight
+
+;CellLayout = .a.
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = wAy<
+;CellLayout = xBz
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = .b.
+;CellLayout = .c.
+;CellLayout = .^..
+
+;CheckType = a - monorail: 0x02000000,0xffff00ff check
+;CheckType = b - monorail: 0x02000200
+;CheckType = c - monorail: 0x00000200,0x00ffffff check
+;CheckType = A - monorail: 0x02000200 highway: 0x04020002
+;CheckType = B - monorail: 0x02000200 highway: 0x00020402
+;CheckType = w - highway: 0x04020000,0xffffff00 check
+;CheckType = x - highway: 0x00020400,0xffffff00 check
+;CheckType = y - highway: 0x04000002,0xff00ffff check
+;CheckType = z - highway: 0x00000402,0xff00ffff check
+
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = -#-<
+;ConsLayout = -#-.
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .|..
+;ConsLayout = .^..
+
+;AutoTileBase = 0x5D1E5000
+;Autoplace = 1
+;Costs = 400
+;[HighwayIntersectionInfo_0x0001C913]
+;CopyFrom = 0xC913
+;Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0011C913]
+CopyFrom    = 0x10C001
+Rotate		= 1
+[HighwayIntersectionInfo_0x0012C913]
+CopyFrom    = 0x10C001
+Rotate		= 2
+[HighwayIntersectionInfo_0x0013C913]
+CopyFrom    = 0x10C001
+Rotate		= 3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HIGH MONORAIL BUTTON SECTION
+;HIGH MONORAIL BUTTON SECTION
+;HIGH MONORAIL BUTTON SECTION
+
+
+
+[HighwayIntersectionInfo_0x0000C900]
+;Added by smoncrie 29/10/05.
+;High Monorail Ramp Puzzle Piece
+;Edited by Chrisim April 2009 checktype c required to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x5d1e5005
+PreviewEffect = preview_mono_puzzlepiece900
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .c.<
+CellLayout = .^..
+
+CheckType = a - monorail: 0x02000000, 0x00000000 optional
+CheckType = b - monorail: 0x02000200
+CheckType = c - monorail: 0x00000200
+
+ConsLayout = ...
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.<
+ConsLayout = .^.
+
+AutoTileBase = 0x5d1e5000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d1e5000
+Costs       = 600
+[HighwayIntersectionInfo_0x0001C900]
+CopyFrom    = 0xC900
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C900]
+CopyFrom    = 0xC900
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C900]
+CopyFrom    = 0xC900
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C909]
+;Added by smoncrie 29/10/05.
+;High Monorail over Elevated Highway Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5d1e5045
+PreviewEffect = preview_mono_puzzlepiece910
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - highway: 0x04020002, 0x00000000 optional
+CheckType  = d - highway: 0x00020402, 0x00000000 optional
+CheckType  = A - monorail: 0x02000200 highway: 0x04020002
+CheckType  = B - monorail: 0x02000200 highway: 0x00020402
+
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x5d1e5040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d1e5040
+Costs       = 900
+[HighwayIntersectionInfo_0x0001C909]
+CopyFrom    = 0xC909
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C909]
+CopyFrom    = 0xC909
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C909]
+CopyFrom    = 0xC909
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C901]
+;Added by smoncrie 29/10/05.
+;high monorailxblank terrain - straight puzzle piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x5d405000
+PreviewEffect = preview_mono_puzzlepiece800
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405000
+Costs       = 150
+[HighwayIntersectionInfo_0x0001C901]
+CopyFrom    = 0xC901
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C901]
+CopyFrom    = 0xC901
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C901]
+CopyFrom    = 0xC901
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C902]
+;Added by smoncrie 29/10/05.
+;high monorailxblank terrain - no pylon
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x5d405100
+PreviewEffect = preview_mono_puzzlepiece810
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405100
+Costs       = 150
+[HighwayIntersectionInfo_0x0001C902]
+CopyFrom    = 0xC902
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C902]
+CopyFrom    = 0xC902
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C902]
+CopyFrom    = 0xC902
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C903]
+;Added by smoncrie 29/10/05.
+;high monorailxrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405205
+PreviewEffect = preview_mono_puzzlepiece820
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - rail: 0x00020000, 0x00000000 optional
+CheckType = c - rail: 0x00000002, 0x00000000 optional
+CheckType = Z - monorail: 0x02000200 rail: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5d405200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405200
+Costs       = 158
+[HighwayIntersectionInfo_0x0001C903]
+CopyFrom    = 0xC903
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C903]
+CopyFrom    = 0xC903
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C903]
+CopyFrom    = 0xC903
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C904]
+;high monorailxstreet puzzle piece
+;Added by smoncrie 29/10/05.
+Piece = 0.0, 0.0, 0, 0, 0x5d405305
+PreviewEffect = preview_mono_puzzlepiece830
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - street: 0x00020000, 0x00000000 optional
+CheckType = c - street: 0x00000002, 0x00000000 optional
+CheckType = Z - monorail: 0x02000200 street: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5d405300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405300
+Costs       = 155
+[HighwayIntersectionInfo_0x0001C904]
+CopyFrom    = 0xC904
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C904]
+CopyFrom    = 0xC904
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C904]
+CopyFrom    = 0xC904
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C905]
+;Added by smoncrie 29/10/05.
+;high monorailxroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405405
+PreviewEffect = preview_mono_puzzlepiece840
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - road: 0x00020000, 0x00000000 optional
+CheckType = c - road: 0x00000002, 0x00000000 optional
+CheckType = Z - monorail: 0x02000200 road: 0x00020002
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5d405400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405400
+Costs       = 160
+[HighwayIntersectionInfo_0x0001C905]
+CopyFrom    = 0xC905
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C905]
+CopyFrom    = 0xC905
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C905]
+CopyFrom    = 0xC905
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C906]
+;Added by smoncrie 29/10/05.
+;high monorailxonewayroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405505
+PreviewEffect = preview_mono_puzzlepiece850
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - onewayroad: 0x00020000, 0x00ff0000 check
+CheckType = c - onewayroad: 0x00000002,0x000000ff check
+CheckType = Z - monorail: 0x02000200 onewayroad: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5d405500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405500
+Costs       = 160
+[HighwayIntersectionInfo_0x0001C906]
+CopyFrom    = 0xC906
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C906]
+CopyFrom    = 0xC906
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C906]
+CopyFrom    = 0xC906
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C907]
+;Added by smoncrie 29/10/05.
+;high monorailxavenue puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405605
+PreviewEffect = preview_mono_puzzlepiece860
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - avenue: 0x04020002, 0x00000000 optional
+CheckType  = d - avenue: 0x00020402, 0x00000000 optional
+CheckType  = A - monorail: 0x02000200 avenue: 0x04020002
+CheckType  = B - monorail: 0x02000200 avenue: 0x00020402
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x5d405600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405600
+Costs       = 360
+[HighwayIntersectionInfo_0x0001C907]
+CopyFrom    = 0xC907
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C907]
+CopyFrom    = 0xC907
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C907]
+CopyFrom    = 0xC907
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90C]
+;Added by smoncrie 29/10/05.
+;High MonorailxGround Light Rail Puzzle Piece
+;Edited by Chrisim April 2009 lightrail: 0x00000000 required to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x5d405704
+PreviewEffect = preview_mono_puzzlepiece870
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200 lightrail: 0x00000000
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405700
+Costs       = 158
+[HighwayIntersectionInfo_0x0001C90C]
+CopyFrom    = 0xC90C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90C]
+CopyFrom    = 0xC90C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90C]
+CopyFrom    = 0xC90C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C908]
+;Added by smoncrie 29/10/05.
+;high monorailxgroundhighway puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405805
+PreviewEffect = preview_mono_puzzlepiece880
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - groundhighway: 0x04020002, 0x00000000 optional
+CheckType  = d - groundhighway: 0x00020402, 0x00000000 optional
+CheckType  = A - monorail: 0x02000200 groundhighway: 0x04020002
+CheckType  = B - monorail: 0x02000200 groundhighway: 0x00020402
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x5d405800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405800
+Costs       = 500
+[HighwayIntersectionInfo_0x0001C908]
+CopyFrom    = 0xC908
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C908]
+CopyFrom    = 0xC908
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C908]
+CopyFrom    = 0xC908
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90A]
+;Added by smoncrie 29/10/05.
+;high monorailxelevated rail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405905
+PreviewEffect = preview_mono_puzzlepiece890
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - lightrail: 0x00020000, 0x00000000 optional
+CheckType = c - lightrail: 0x00000002, 0x00000000 optional
+CheckType = Z - monorail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5d405900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405900
+Costs       = 200
+[HighwayIntersectionInfo_0x0001C90A]
+CopyFrom    = 0xC90A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90A]
+CopyFrom    = 0xC90A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90A]
+CopyFrom    = 0xC90A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90B]
+;Added by smoncrie 29/10/05.
+;high monorailxmonorail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405a05
+PreviewEffect = preview_mono_puzzlepiece8a0
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - monorail: 0x00020000, 0x00000000 optional
+CheckType = c - monorail: 0x00000002, 0x00000000 optional
+CheckType = Z - monorail: 0x02020202
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5d405a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405a00
+Costs       = 250
+[HighwayIntersectionInfo_0x0001C90B]
+CopyFrom    = 0xC90B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90B]
+CopyFrom    = 0xC90B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90B]
+CopyFrom    = 0xC90B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90D]
+;Added by smoncrie 24/02/06.
+;high monorailxrail viaduct puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405b04
+PreviewEffect = preview_mono_puzzlepiece8b0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200 rail: 0x00020002
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405b00
+Costs       = 225
+[HighwayIntersectionInfo_0x0001C90D]
+CopyFrom    = 0xC90D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90D]
+CopyFrom    = 0xC90D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90D]
+CopyFrom    = 0xC90D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90E]
+;Added by smoncrie 24/02/06.
+;high monorailxroad viaduct puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405c00
+PreviewEffect = preview_mono_puzzlepiece8c0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200 road: 0x00020002
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405c00
+Costs       = 225
+[HighwayIntersectionInfo_0x0001C90E]
+CopyFrom    = 0xC90E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90E]
+CopyFrom    = 0xC90E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90E]
+CopyFrom    = 0xC90E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C90F]
+;Added by smoncrie 24/02/06.
+;high monorailxoneway road viaduct puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405d00
+PreviewEffect = preview_mono_puzzlepiece8d0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - monorail: 0x02000200 onewayroad: 0x00020002
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x5d405d00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405d00
+Costs       = 225
+[HighwayIntersectionInfo_0x0001C90F]
+CopyFrom    = 0xC90F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C90F]
+CopyFrom    = 0xC90F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C90F]
+CopyFrom    = 0xC90F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C910]
+;Added by smoncrie 24/02/06.
+;high monorailxoneway avenue viaduct puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5d405e05
+PreviewEffect = preview_mono_puzzlepiece8e0
+
+CellLayout = ....
+CellLayout = .A.<
+CellLayout = .B..
+CellLayout = .^..
+
+CheckType  = A - monorail: 0x02000200 avenue: 0x04020002
+CheckType  = B - monorail: 0x02000200 avenue: 0x00020402
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase=	0x5d405e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d405e00
+Costs       = 500
+[HighwayIntersectionInfo_0x0001C910]
+CopyFrom    = 0xC910
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C910]
+CopyFrom    = 0xC910
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C910]
+CopyFrom    = 0xC910
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C911]
+;Added by smoncrie 29/10/05.
+;T Monorail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5d406015
+PreviewEffect = preview_mono_puzzlepiece920
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - street: 0x00020002 monorail: 0x02000200, 0x00000000 optional
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase = 0x5d406010
+AutoPathBase = 0x5d406010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d406010
+Costs       = 150
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001C911]
+CopyFrom    = 0xC911
+Rotate		= 1
+AutoTileBase = 0x5d406110
+[HighwayIntersectionInfo_0x0002C911]
+CopyFrom    = 0xC911
+Rotate		= 2
+AutoTileBase = 0x5d406210
+[HighwayIntersectionInfo_0x0003C911]
+CopyFrom    = 0xC911
+Rotate		= 3
+AutoTileBase = 0x5d406310
+
+
+[HighwayIntersectionInfo_0x0000C912]
+;Added by smoncrie 29/10/05.
+;Straight Monorail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5d406005
+PreviewEffect = preview_mono_puzzlepiece930
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - monorail: 0x02000000, 0x00000000 optional
+CheckType = b - monorail: 0x02000200
+
+ConsLayout = ....
+ConsLayout = .+..
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase = 0x5d406000
+AutoPathBase = 0x5d406000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d406000
+Costs       = 250
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001C912]
+CopyFrom    = 0xC912
+Rotate		= 1
+AutoTileBase = 0x5d406100
+[HighwayIntersectionInfo_0x0002C912]
+CopyFrom    = 0xC912
+Rotate		= 2
+AutoTileBase = 0x5d406200
+[HighwayIntersectionInfo_0x0003C912]
+CopyFrom    = 0xC912
+Rotate		= 3
+AutoTileBase = 0x5d406300
+
+

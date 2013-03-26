@@ -1,0 +1,352 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;LIGHTRAIL BUTTON SECTION ELEVATED RAIL OVER ROAD NWM INTERSECTIONS
+;LIGHTRAIL BUTTON SECTION ELEVATED RAIL OVER ROAD NWM INTERSECTIONS
+; 0xB###
+
+RotationRing = B080, 1B080, 2B080, 3B080, 4B080, 5B080, 6B080, 7B080 ;lightrailxroad Dual - + Intersection AVE-2 + Intersection LightRail Piece
+AddTypes     = B081, 1B081, 2B081, 3B081, 4B081, 5B081, 6B081, 7B081 ;lightrailxroad Dual - + Intersection TLA-3 + Intersection LightRail Piece
+AddTypes     = B082, 1B082, 2B082, 3B082, 4B082, 5B082, 6B082, 7B082 ;lightrailxroad Dual - + Intersection ARD-3 + Intersection LightRail Piece
+AddTypes     = B083, 1B083, 2B083, 3B083, 4B083, 5B083, 6B083, 7B083 ;lightrailxroad Dual - + Intersection NRD-4 + Intersection LightRail Piece
+AddTypes     = B084, 1B084, 2B084, 3B084, 4B084, 5B084, 6B084, 7B084 ;lightrailxroad Dual - + Intersection RD-4 + Intersection LightRail Piece
+AddTypes     = B085, 1B085, 2B085, 3B085, 4B085, 5B085, 6B085, 7B085 ;lightrailxroad Dual - + Intersection TLA-5 + Intersection LightRail Piece
+AddTypes     = B086, 1B086, 2B086, 3B086, 4B086, 5B086, 6B086, 7B086 ;lightrailxroad Dual - + Intersection RD-6 + Intersection LightRail Piece
+AddTypes     = B087, 1B087, 2B087, 3B087, 4B087, 5B087, 6B087, 7B087 ;lightrailxroad Dual - + Intersection AVE-6 + Intersection LightRail Piece
+;AddTypes     = B088, 1B088, 2B088, 3B088, 4B088, 5B088, 6B088, 7B088 ;lightrailxroad Dual - + Intersection AVE-8 + Intersection LightRail Piece
+
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000B080]
+;Added by jdenm8 2012/01/06.
+;lightrailxroad Dual - + Intersection AVE-2 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274105
+PreviewEffect = preview_elr_overrd_ave2
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase = 0x58274100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274100
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B080]
+CopyFrom    = 0xB080
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B080]
+CopyFrom    = 0xB080
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B080]
+CopyFrom    = 0xB080
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B080]
+CopyFrom    = 0xB080
+[HighwayIntersectionInfo_0x0005B080]
+CopyFrom    = 0x1B080
+[HighwayIntersectionInfo_0x0006B080]
+CopyFrom    = 0x2B080
+[HighwayIntersectionInfo_0x0007B080]
+CopyFrom    = 0x3B080
+
+[HighwayIntersectionInfo_0x0000B083]
+;Added by jdenm8 2012/01/06.
+;lightrailxroad Dual - + Intersection NRD-4 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274205
+PreviewEffect = preview_elr_overrd_nrd4
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase = 0x58274200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274200
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B083]
+CopyFrom    = 0xB083
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B083]
+CopyFrom    = 0xB083
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B083]
+CopyFrom    = 0xB083
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B083]
+CopyFrom    = 0xB083
+[HighwayIntersectionInfo_0x0005B083]
+CopyFrom    = 0x1B083
+[HighwayIntersectionInfo_0x0006B083]
+CopyFrom    = 0x2B083
+[HighwayIntersectionInfo_0x0007B083]
+CopyFrom    = 0x3B083
+
+[HighwayIntersectionInfo_0x0000B081]
+;Added by jdenm8 2012/01/25.
+;lightrailxroad Dual - + Intersection TLA-3 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274605
+PreviewEffect = preview_elr_overrd_tla3
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase = 0x58274600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274600
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B081]
+CopyFrom    = 0xB081
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B081]
+CopyFrom    = 0xB081
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B081]
+CopyFrom    = 0xB081
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B081]
+CopyFrom    = 0xB081
+[HighwayIntersectionInfo_0x0005B081]
+CopyFrom    = 0x1B081
+[HighwayIntersectionInfo_0x0006B081]
+CopyFrom    = 0x2B081
+[HighwayIntersectionInfo_0x0007B081]
+CopyFrom    = 0x3B081
+
+[HighwayIntersectionInfo_0x0000B082]
+;Added by jdenm8 2012/01/25.
+;lightrailxroad Dual - + Intersection ARD-3 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274405
+PreviewEffect = preview_elr_overrd_ard3
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase = 0x58274400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274400
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B082]
+CopyFrom    = 0xB082
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B082]
+CopyFrom    = 0xB082
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B082]
+CopyFrom    = 0xB082
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B082]
+CopyFrom    = 0xB082
+[HighwayIntersectionInfo_0x0005B082]
+CopyFrom    = 0x1B082
+[HighwayIntersectionInfo_0x0006B082]
+CopyFrom    = 0x2B082
+[HighwayIntersectionInfo_0x0007B082]
+CopyFrom    = 0x3B082
+
+[HighwayIntersectionInfo_0x0000B084]
+;Added by jdenm8 2012/01/25.
+;lightrailxroad Dual - + Intersection RD-4 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274705
+PreviewEffect = preview_elr_overrd_rd4
+
+CellLayout =..........
+CellLayout =...bZc...<
+CellLayout =...bZc....
+CellLayout =....^.....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....+.....
+ConsLayout =....^.....
+
+AutoTileBase = 0x58274700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274700
+Costs       = 200
+[HighwayIntersectionInfo_0x0001B084]
+CopyFrom    = 0xB084
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B084]
+CopyFrom    = 0xB084
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B084]
+CopyFrom    = 0xB084
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B084]
+CopyFrom    = 0xB084
+[HighwayIntersectionInfo_0x0005B084]
+CopyFrom    = 0x1B084
+[HighwayIntersectionInfo_0x0006B084]
+CopyFrom    = 0x2B084
+[HighwayIntersectionInfo_0x0007B084]
+CopyFrom    = 0x3B084
+
+[HighwayIntersectionInfo_0x0000B085]
+;Added by jdenm8 2012/01/25.
+;lightrailxroad Dual - + Intersection TLA-5 + ElRail over Road
+Piece = 0.0, 0.0, 0, 0, 0x58274905
+PreviewEffect = preview_elr_overrd_tla5
+
+CellLayout =..........
+CellLayout =...bZc...<
+CellLayout =...bZc....
+CellLayout =....^.....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....+.....
+ConsLayout =....^.....
+
+AutoTileBase=	0x58274900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274900
+Costs       = 200
+[HighwayIntersectionInfo_0x0001B085]
+CopyFrom    = 0xB085
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B085]
+CopyFrom    = 0xB085
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B085]
+CopyFrom    = 0xB085
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B085]
+CopyFrom    = 0xB085
+[HighwayIntersectionInfo_0x0005B085]
+CopyFrom    = 0x1B085
+[HighwayIntersectionInfo_0x0006B085]
+CopyFrom    = 0x2B085
+[HighwayIntersectionInfo_0x0007B085]
+CopyFrom    = 0x3B085
+
+[HighwayIntersectionInfo_0x0000B086]
+;Added by jdenm8 2012/01/27.
+;lightrailxroad Dual - + Intersection RD-6 + ElRail over Road
+Piece =  0.0, 0.0, 0, 0, 0x58274805
+PreviewEffect = preview_elr_overrd_rd6
+
+CellLayout =..........
+CellLayout =...bZc...<
+CellLayout =...bZc....
+CellLayout =....^.....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....+.....
+ConsLayout =....^.....
+
+AutoTileBase = 0x58274800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274800
+Costs = 200
+[HighwayIntersectionInfo_0x0001B086]
+CopyFrom = 0xB086
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B086]
+CopyFrom = 0xB086
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B086]
+CopyFrom = 0xB086
+Rotate = 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B086]
+CopyFrom = 0xB086
+[HighwayIntersectionInfo_0x0005B086]
+CopyFrom = 0x1B086
+[HighwayIntersectionInfo_0x0006B086]
+CopyFrom = 0x2B086
+[HighwayIntersectionInfo_0x0007B086]
+CopyFrom = 0x3B086
+
+[HighwayIntersectionInfo_0x0000B087]
+;Added by jdenm8 2012/01/26.
+;lightrailxroad Dual - + Intersection AVE-6 + ElRail over Road
+Piece =  0.0, 0.0, 0, 0, 0x58274A05
+PreviewEffect = preview_elr_overrd_ave6
+
+CellLayout =..........
+CellLayout =...bZc....
+CellLayout =...bZc...<
+CellLayout =...bZc....
+CellLayout =....^.....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202 
+
+ConsLayout =..........
+ConsLayout =....+.....
+ConsLayout =....+....<
+ConsLayout =....+.....
+ConsLayout =....^.....
+
+AutoTileBase = 0x58274A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274A00
+Costs = 200
+[HighwayIntersectionInfo_0x0001B087]
+CopyFrom = 0xB087
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B087]
+CopyFrom = 0xB087
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B087]
+CopyFrom = 0xB087
+Rotate = 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B087]
+CopyFrom = 0xB087
+[HighwayIntersectionInfo_0x0005B087]
+CopyFrom = 0x1B087
+[HighwayIntersectionInfo_0x0006B087]
+CopyFrom = 0x2B087
+[HighwayIntersectionInfo_0x0007B087]
+CopyFrom = 0x3B087
+

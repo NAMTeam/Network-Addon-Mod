@@ -1,0 +1,227 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;AVENUE BUTTON SECTION
+;AVENUE BUTTON SECTION
+; 0x9###
+;Avenue overpasses button.
+RotationRing = 9000, 19000 ;avenuexavenue overpass
+AddTypes     = 9001, 19001 ;avenuexrail overpass
+AddTypes     = 9002, 19002 ;avenuexstreet overpass
+AddTypes     = 9003, 19003 ;avenuexroad overpass
+AddTypes     = 9004, 19004 ;avenuexonewayroad overpass
+
+;###separator###
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;AVENUE SECTION
+;AVENUE SECTION
+;AVENUE SECTION
+;
+;OVERPASSES
+[HighwayIntersectionInfo_0x00009000]
+;Added by Tropod 05/23/04.
+;avenuexavenue overpass
+Piece = 0.0, 16.0, 0, 0, 0x54208000
+PreviewEffect = preview_avenavenoverpass001
+
+CellLayout =....ef.....
+CellLayout =....cd.....
+CellLayout =gaaaWXaaai<
+CellLayout =hbbbYZbbbj.
+CellLayout =....cd.....
+CellLayout =....kl.....
+CellLayout =....^......
+
+CheckType = a - avenue:0x04020002
+CheckType = b - avenue:0x00020402
+CheckType = c - avenue:0x02040200,0xffffff00 optional
+CheckType = d - avenue:0x02000204,0xff00ffff optional
+CheckType = e - avenue:0x02040000,0xffff00ff optional
+CheckType = f - avenue:0x02000004,0xffff00ff optional
+CheckType = g - avenue:0x04020000,0xffffff00 check
+CheckType = h - avenue:0x00020400,0xffffff00 check
+CheckType = i - avenue:0x04000002,0xff00ffff check
+CheckType = j - avenue:0x00000402,0xff00ffff check
+CheckType = k - avenue:0x00040200,0x00ffffff optional
+CheckType = l - avenue:0x00000204,0x00ffffff optional
+;
+;following changed for resolve to ATL. 'c' & 'd' check flags above also modified as a result.
+;original
+;CheckType = W - avenue:0x04040202
+;CheckType = X - avenue:0x04020204
+;CheckType = Y - avenue:0x02040402
+;CheckType = Z - avenue:0x02020404
+
+CheckType = W - avenue:0x02040200
+CheckType = X - avenue:0x02000204
+CheckType = Y - avenue:0x02040200
+CheckType = Z - avenue:0x02000204
+
+ConsLayout =....||.....
+ConsLayout =....||.....
+ConsLayout =----##----<
+ConsLayout =----##----.
+ConsLayout =....||.....
+ConsLayout =....||.....
+ConsLayout =....^......
+
+AutoTileBase= 0x54209000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009000
+Costs = 1000
+[HighwayIntersectionInfo_0x00019000]
+CopyFrom    = 0x9000
+Rotate      = 1
+
+
+[HighwayIntersectionInfo_0x00009001]
+; Avenue-over-rail overpass
+; Added by redlotus on 4/19/04
+Piece       = 0.0, 16.0, 0, 0, 0x04030005
+PreviewEffect = preview_avenrailoverpass001
+
+CellLayout =....d....
+CellLayout =fgggYgggh<
+CellLayout =abbbZbbbc
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - avenue: 0x00020400,0xffffff00 check
+CheckType = b - avenue: 0x00020402
+CheckType = d - rail: 0x02000000,0xffff00ff check
+CheckType = e - rail: 0x00000200,0x00ffffff check
+CheckType = c - avenue: 0x00000402,0xff00ffff check
+CheckType = f - avenue: 0x04020000,0xffff0000 check
+CheckType = g - avenue: 0x04020002
+CheckType = h - avenue: 0x04000002,0xff00ffff check
+CheckType = Y - avenue: 0x04020002 rail: 0x02000200
+CheckType = Z - avenue: 0x00020402 rail: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =----#----
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x04030000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009010
+Costs       = 1200
+[HighwayIntersectionInfo_0x00019001]
+CopyFrom    = 0x9001
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x00009002]
+;Added by Tropod 24/05/04
+;AvenuexStreet
+Piece = 0.0, 16.0, 0, 0, 0x5420A005
+PreviewEffect = preview_avenstrtoverpass001
+
+CellLayout =....d....
+CellLayout =fgggYgggh<
+CellLayout =abbbZbbbc
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - avenue: 0x00020400,0xffffff00 check
+CheckType = b - avenue: 0x00020402
+CheckType = d - street: 0x02000000,0xffff00ff check
+CheckType = e - street: 0x00000200,0x00ffffff check
+CheckType = c - avenue: 0x00000402,0xff00ffff check
+CheckType = f - avenue: 0x04020000,0xffff0000 check
+CheckType = g - avenue: 0x04020002
+CheckType = h - avenue: 0x04000002,0xff00ffff check
+CheckType = Y - avenue: 0x04020002 street: 0x02000200
+CheckType = Z - avenue: 0x00020402 street: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =----#----
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5420A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009020
+Costs       = 750
+[HighwayIntersectionInfo_0x00019002]
+CopyFrom    = 0x9002
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00009003]
+;Added by Tropod 24/05/04
+;AvenuexRoad
+Piece = 0.0, 16.0, 0, 0, 0x5420B005
+PreviewEffect = preview_avenroadoverpass001
+
+CellLayout =....d....
+CellLayout =fgggYgggh<
+CellLayout =abbbZbbbc
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - avenue: 0x00020400,0xffffff00 check
+CheckType = b - avenue: 0x00020402
+CheckType = d - road: 0x02000000,0xffff00ff check
+CheckType = e - road: 0x00000200,0x00ffffff check
+CheckType = c - avenue: 0x00000402,0xff00ffff check
+CheckType = f - avenue: 0x04020000,0xffff0000 check
+CheckType = g - avenue: 0x04020002
+CheckType = h - avenue: 0x04000002,0xff00ffff check
+CheckType = Y - avenue: 0x04020002 road: 0x02000200
+CheckType = Z - avenue: 0x00020402 road: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =----#----
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5420B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009030
+Costs       = 1000
+[HighwayIntersectionInfo_0x00019003]
+CopyFrom    = 0x9003
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x00009004]
+;Added by Tropod 24/05/04
+;AvenuexOneWayRoad
+Piece = 0.0, 16.0, 0, 0, 0x5420C005
+PreviewEffect = preview_avenowrdoverpass001
+
+CellLayout =....d....
+CellLayout =fgggYgggh<
+CellLayout =abbbZbbbc
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - avenue: 0x00020400,0xffffff00 check
+CheckType = b - avenue: 0x00020402
+CheckType = d - onewayroad: 0x02000000,0xffff00ff check
+CheckType = e - onewayroad: 0x00000200,0x00ffffff check
+CheckType = c - avenue: 0x00000402,0xff00ffff check
+CheckType = f - avenue: 0x04020000,0xffff0000 check
+CheckType = g - avenue: 0x04020002
+CheckType = h - avenue: 0x04000002,0xff00ffff check
+CheckType = Y - avenue: 0x04020002 onewayroad: 0x02000200
+CheckType = Z - avenue: 0x00020402 onewayroad: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =----#----
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5420C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0009040
+Costs       = 1000
+[HighwayIntersectionInfo_0x00019004]
+CopyFrom    = 0x9004
+Rotate		= 1
+

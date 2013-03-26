@@ -1,0 +1,3637 @@
+;groundlightrailxavenue Dual Tram-in-Avenue
+RotationRing = B420, 1B420, 2B420, 3B420, 4B420, 5B420, 6B420, 7B420 ;groundlightrailxavenue Dual - Straight Piece
+AddTypes     = B421, 1B421, 2B421, 3B421, 4B421, 5B421, 6B421, 7B421 ;groundlightrailxavenue Dual - corner piece
+AddTypes     = 2B422, 7B422, 3B422, 4B422, B422, 5B422, 1B422, 6B422 ;groundlightrailxavenue Dual - Orthogonal Transition
+AddTypes     = B423, 1B423, 2B423, 3B423, 4B423, 5B423, 6B423, 7B423 ;groundlightrailxavenue Dual - Avenue x Road Intersection - dead end road
+AddTypes     = B424, 1B424, 2B424, 3B424, 4B424, 5B424, 6B424, 7B424 ;groundlightrailxavenue Dual - Avenue x Road Intersection
+AddTypes     = B425, 1B425, 2B425, 3B425, 4B425, 5B425, 6B425, 7B425 ;groundlightrailxavenue Dual - Avenue x Street Intersection - dead end street
+AddTypes     = B426, 1B426, 2B426, 3B426, 4B426, 5B426, 6B426, 7B426 ;groundlightrailxavenue Dual - Avenue x Street Intersection
+AddTypes     = B427, 6B427, 1B427, 7B427, 2B427, 4B427, 3B427, 5B427 ;groundlightrailxavenue Dual - Avenue x OneWayRoad Intersection - dead end onewayroad
+AddTypes     = B428, 1B428, 2B428, 3B428, 4B428, 5B428, 6B428, 7B428 ;groundlightrailxavenue Dual - Avenue x OneWayRoad Intersection
+AddTypes     = B429, 1B429, 2B429, 3B429, 4B429, 5B429, 6B429, 7B429 ;groundlightrailxavenue Dual - Avenue x Avenue T-Intersection - GLR straight
+AddTypes     = B42A, 1B42A, 2B42A, 3B42A, 4B42A, 5B42A, 6B42A, 7B42A ;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR straight
+AddTypes     = B42B, 6B42B, 1B42B, 7B42B, 2B42B, 4B42B, 3B42B, 5B42B ;groundlightrailxavenue Dual - Avenue x Avenue T-Intersection - GLR corner
+AddTypes     = B42C, 1B42C, 2B42C, 3B42C, 4B42C, 5B42C, 6B42C, 7B42C ;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR corner
+AddTypes     = B42D, 1B42D, 2B42D, 3B42D, 4B42D, 5B42D, 6B42D, 7B42D ;groundlightrailxavenue Dual - T-Intersection
+AddTypes     = B42E, 1B42E, 2B42E, 3B42E, 4B42E, 5B42E, 6B42E, 7B42E ;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR T-Intersection
+AddTypes     = B42F, 1B42F, 2B42F, 3B42F, 4B42F, 5B42F, 6B42F, 7B42F ;groundlightrailxavenue Dual - +-Intersection
+AddTypes     = B430, 7B430, 1B430, 4B430, 2B430, 5B430, 3B430, 6B430 ;groundlightrailxavenue Dual - +-Intersection
+AddTypes     = B431, 7B431, 1B431, 4B431, 2B431, 5B431, 3B431, 6B431 ;groundlightrailxavenue Dual - Intersection with GLRroad
+AddTypes     = B432, 7B432, 1B432, 4B432, 2B432, 5B432, 3B432, 6B432 ;groundlightrailxavenue Dual - avenue curve and straight tram
+AddTypes     = B433, 7B433, 1B433, 4B433, 2B433, 5B433, 3B433, 6B433 ;groundlightrailxavenue Dual - avenue curve to diagonal and straight tram
+AddTypes     = 2B434, 3B434, B434, 1B434, 6B434, 7B434, 4B434, 5B434 ;groundlightrailxavenue Dual - Avenue straight - GLR T-Intersection
+AddTypes     = 2B435, 7B435, 3B435, 4B435, B435, 5B435, 1B435, 6B435 ;groundlightrailxavenue Dual - Avenue-GLR-transition piece
+AddTypes     = 2B436, 7B436, 3B436, 4B436, B436, 5B436, 1B436, 6B436 ;groundlightrailxavenue Dual - Avenue-GLR GLR diagonal exit
+AddTypes     = B437, 4B437, 1B437, 5B437, 2B437, 6B437, 3B437, 7B437 ;groundlightrailxavenue Dual - Avenue x Road End Transition to Left/Right GLR 08 
+AddTypes     = B438, 4B438, 1B438, 5B438, 2B438, 6B438, 3B438, 7B438 ;groundlightrailxavenue Dual - Avenue x Road Transition to Left/Right GLR + ROAD 08
+AddTypes     = B439, 14B439, 1B439, 15B439, 2B439, 16B439, 3B439, 17B439 ;groundlightrailxavenue Dual - Avenue x Road Transition to Left GLR + left/right ROAD 08
+AddTypes     = CB43A, B43A, DB43A, 1B43A, EB43A, 2B43A, FB43A, 3B43A ;groundlightrailxavenue Dual - Avenue x Road Transition to Right GLR + left/right ROAD 08
+AddTypes     = B43B, 1B43B, 2B43B, 3B43B, 4B43B, 5B43B, 6B43B, 7B43B ;groundlightrailxavenue Dual - Avenue GLR Clover 08
+AddTypes     = B43C, 1B43C, 2B43C, 3B43C, 4B43C, 5B43C, 6B43C, 7B43C ;groundlightrailxavenue Dual - Avenue GLR End Triangle 08
+AddTypes     = B43D, 1B43D, 2B43D, 3B43D, 4B43D, 5B43D, 6B43D, 7B43D ;groundlightrailxavenue Dual - Avenue GLR Side Triangle 08
+AddTypes     = B43E, 4B43E, 1B43E, 5B43E, 2B43E, 6B43E, 3B43E, 7B43E ;groundlightrailxavenue Dual - Avenue GLR left/right Curve 08
+AddTypes     = B43F, 1B43F, 2B43F, 3B43F, 4B43F, 5B43F, 6B43F, 7B43F ;groundlightrailxavenue Dual - under elevated highway
+AddTypes     = B440, 1B440, 2B440, 3B440, 4B440, 5B440, 6B440, 7B440 ;railxground light rail in avenue
+AddTypes     = B441, 1B441, 2B441, 3B441, 4B441, 5B441, 6B441, 7B441 ;groundlightrailxavenue Dual - under monorail
+AddTypes     = B442, 1B442, 2B442, 3B442, 4B442, 5B442, 6B442, 7B442 ;groundlightrailxroad Dual - GLRroad below ElLightrail
+AddTypes     = B443, 4B443, 1B443, 5B443, 2B443, 6B443, 3B443, 7B443 ;groundlightrailxavenue Dual - transition to road/GLR 08
+AddTypes     = B444, 6B444, 1B444, 7B444, 2B444, 4B444, 3B444, 5B444 ;groundlightrailxavenue Dual - GLR turning circle
+AddTypes     = B445, 6B445, 1B445, 7B445, 2B445, 4B445, 3B445, 5B445 ;groundlightrailxavenue Dual - GLR turning circle with straight tram avenue
+AddTypes     = B446, 1B446, 2B446, 3B446, 4B446, 5B446, 6B446, 7B446 ;groundlightrailxavenue Dual - Diagonal half-avenue Piece
+AddTypes     = B447, 1B447, 2B447, 3B447, 4B447, 5B447, 6B447, 7B447 ;groundlightrailxavenue Dual - Diagonal Piece half
+AddTypes     = B448, 1B448, 2B448, 3B448, 4B448, 5B448, 6B448, 7B448 ;groundlightrailxavenue Dual - Diagonal tram-avenue with orthogonal tram exit
+AddTypes     = B449, 1B449, 2B449, 3B449, 4B449, 5B449, 6B449, 7B449 ;groundlightrailxavenue Dual - Straight to diagonal cross
+AddTypes     = B44A, 1B44A, 2B44A, 3B44A, 4B44A, 5B44A, 6B44A, 7B44A ;groundlightrailxavenue Dual - Orthogonal and diagonal tram-avenue junction
+AddTypes     = B44B, 1B44B, 2B44B, 3B44B, 4B44B, 5B44B, 6B44B, 7B44B ;groundlightrailxavenue Dual - Triangle tram-avenue junction with straight avenue
+AddTypes     = B44C, 1B44C, 2B44C, 3B44C, 4B44C, 5B44C, 6B44C, 7B44C ;groundlightrailxavenue Dual - Triangle tram-avenue junction
+AddTypes     = B44D, 1B44D, 2B44D, 3B44D, 4B44D, 5B44D, 6B44D, 7B44D ;groundlightrailxavenue Dual - Straight to diagonal triangle and orthogonal avenue
+AddTypes     = B44E, 1B44E, 2B44E, 3B44E, 4B44E, 5B44E, 6B44E, 7B44E ;groundlightrailxavenue Dual - Straight to diagonal triangle
+AddTypes     = B44F, 6B44F, 1B44F, 7B44F, 2B44F, 4B44F, 3B44F, 5B44F ;groundlightrailxavenue Dual - Straight to diagonal tram-avenue junction with two straight avenue
+AddTypes     = B450, 6B450, 1B450, 7B450, 2B450, 4B450, 3B450, 5B450 ;groundlightrailxavenue Dual - Straight to diagonal tram-avenue junction with straight avenue
+AddTypes     = B451, 1B451, 2B451, 3B451, 4B451, 5B451, 6B451, 7B451 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal avenue single sided
+AddTypes     = B452, 1B452, 2B452, 3B452, 4B452, 5B452, 6B452, 7B452 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal avenue
+AddTypes     = B453, 6B453, 1B453, 7B453, 2B453, 4B453, 3B453, 5B453 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal avenue
+AddTypes     = B454, 1B454, 2B454, 3B454, 4B454, 5B454, 6B454, 7B454 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal avenue
+AddTypes     = 8B455, 9B455, AB455, BB455, CB455, DB455, EB455, FB455 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad single sided
+AddTypes     = B455, 1B455, 2B455, 3B455, 4B455, 5B455, 6B455, 7B455 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad single sided
+AddTypes     = B456, 1B456, 2B456, 3B456, 4B456, 5B456, 6B456, 7B456 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad
+AddTypes     = 8B457, 9B457, AB457, BB457, CB457, DB457, EB457, FB457 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal onewayroad single sided
+AddTypes     = B457, 1B457, 2B457, 3B457, 4B457, 5B457, 6B457, 7B457 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal onewayroad single sided
+AddTypes     = B458, 2B458, 1B458, 3B458, 4B458, 6B458, 5B458, 7B458 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal onewayroad
+AddTypes     = B459, 1B459, 2B459, 3B459, 4B459, 5B459, 6B459, 7B459 ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road single sided
+AddTypes     = B45A, 1B45A, 2B45A, 3B45A, 4B45A, 5B45A, 6B45A, 7B45A ;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road
+AddTypes     = B45B, 1B45B, 2B45B, 3B45B, 4B45B, 5B45B, 6B45B, 7B45B ;groundlightrailxavenue Dual - Diagonal tram-avenue intersection with orthogonal road on one side
+AddTypes     = B45C, 1B45C, 2B45C, 3B45C, 4B45C, 5B45C, 6B45C, 7B45C ;groundlightrailxavenue Dual - Diagonal tram-avenue crossed by orthogonal road
+AddTypes     = 2B45D, 7B45D, 3B45D, 4B45D, B45D, 5B45D, 1B45D, 6B45D ;groundlightrailxavenue Dual - Orthogonal-Diagonal Piece
+AddTypes     = 2B45E, 7B45E, 3B45E, 4B45E, B45E, 5B45E, 1B45E, 6B45E ;groundlightrailxavenue Dual - Diagonal-Orthogonal Transition
+AddTypes     = B45F, 2B45F, 1B45F, 3B45F, 4B45F, 6B45F, 5B45F, 7B45F ;groundlightrailxavenue Dual - Diagonal Piece double
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000B440]
+;Added by Chrisim 6 August 2008
+;RailxAvenue Ground Light Rail Puzzle Piece
+Piece = -8.0, 8.0, 1, 0, 0x5313d050
+PreviewEffect = preview_rail_puzzlepiece041
+
+CellLayout =...
+CellLayout =...
+CellLayout =.A.<
+CellLayout =.A.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = A - rail: 0x02000200 lightrail: 0x00000000
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase=	0x5313d010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313d010
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B440]
+CopyFrom    = 0xB440
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B440]
+CopyFrom    = 0xB440
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B440]
+CopyFrom    = 0xB440
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B440]
+CopyFrom    = 0xB440
+[HighwayIntersectionInfo_0x0005B440]
+CopyFrom    = 0x1B440
+[HighwayIntersectionInfo_0x0006B440]
+CopyFrom    = 0x2B440
+[HighwayIntersectionInfo_0x0007B440]
+CopyFrom    = 0x3B440
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;GROUND LIGHT RAIL x AVENUE DUAL NETWORKING SECTION
+;GROUND LIGHT RAIL x AVENUE DUAL NETWORKING SECTION
+;GROUND LIGHT RAIL x AVENUE DUAL NETWORKING SECTION
+
+
+[HighwayIntersectionInfo_0x0000B420]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x58400ff0
+PreviewEffect = preview_avexglr_dual_01
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58400000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58400000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B420]
+CopyFrom    = 0xB420
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B420]
+CopyFrom    = 0xB420
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B420]
+CopyFrom    = 0xB420
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B420]
+CopyFrom    = 0xB420
+[HighwayIntersectionInfo_0x0005B420]
+CopyFrom    = 0x1B420
+[HighwayIntersectionInfo_0x0006B420]
+CopyFrom    = 0x2B420
+[HighwayIntersectionInfo_0x0007B420]
+CopyFrom    = 0x3B420
+
+
+[HighwayIntersectionInfo_0x0000B423]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Road Intersection - dead end road
+Piece = 0.0, 0.0, 0, 0, 0x58401ff0
+PreviewEffect = preview_avexglr_dual_02
+
+CellLayout = ..........
+CellLayout = ...cab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58401000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58401000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B423]
+CopyFrom    = 0xB423
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B423]
+CopyFrom    = 0xB423
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B423]
+CopyFrom    = 0xB423
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B423]
+CopyFrom    = 0xB423
+[HighwayIntersectionInfo_0x0005B423]
+CopyFrom    = 0x1B423
+[HighwayIntersectionInfo_0x0006B423]
+CopyFrom    = 0x2B423
+[HighwayIntersectionInfo_0x0007B423]
+CopyFrom    = 0x3B423
+
+
+[HighwayIntersectionInfo_0x0000B424]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Road Intersection
+Piece = 0.0, 0.0, 0, 0, 0x58402ff0
+PreviewEffect = preview_avexglr_dual_03
+
+CellLayout = ..........
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = d - road: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58402000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58402000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B424]
+CopyFrom    = 0xB424
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B424]
+CopyFrom    = 0xB424
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B424]
+CopyFrom    = 0xB424
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B424]
+CopyFrom    = 0xB424
+[HighwayIntersectionInfo_0x0005B424]
+CopyFrom    = 0x1B424
+[HighwayIntersectionInfo_0x0006B424]
+CopyFrom    = 0x2B424
+[HighwayIntersectionInfo_0x0007B424]
+CopyFrom    = 0x3B424
+
+
+[HighwayIntersectionInfo_0x0000B425]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Street Intersection - dead end street
+Piece = 0.0, 0.0, 0, 0, 0x58403ff0
+PreviewEffect = preview_avexglr_dual_04
+
+CellLayout = ..........
+CellLayout = ...cab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - street: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58403000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58403000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B425]
+CopyFrom    = 0xB425
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B425]
+CopyFrom    = 0xB425
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B425]
+CopyFrom    = 0xB425
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B425]
+CopyFrom    = 0xB425
+[HighwayIntersectionInfo_0x0005B425]
+CopyFrom    = 0x1B425
+[HighwayIntersectionInfo_0x0006B425]
+CopyFrom    = 0x2B425
+[HighwayIntersectionInfo_0x0007B425]
+CopyFrom    = 0x3B425
+
+
+[HighwayIntersectionInfo_0x0000B426]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Street Intersection
+Piece = 0.0, 0.0, 0, 0, 0x58404ff0
+PreviewEffect = preview_avexglr_dual_05
+
+CellLayout = ..........
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - street: 0x00020000, 0x00ff0000 optional
+CheckType = d - street: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58404000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58404000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B426]
+CopyFrom    = 0xB426
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B426]
+CopyFrom    = 0xB426
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B426]
+CopyFrom    = 0xB426
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B426]
+CopyFrom    = 0xB426
+[HighwayIntersectionInfo_0x0005B426]
+CopyFrom    = 0x1B426
+[HighwayIntersectionInfo_0x0006B426]
+CopyFrom    = 0x2B426
+[HighwayIntersectionInfo_0x0007B426]
+CopyFrom    = 0x3B426
+
+
+[HighwayIntersectionInfo_0x0000B427]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x OneWayRoad Intersection - dead end onewayroad 1
+Piece = 0.0, 0.0, 0, 0, 0x58405ff0
+PreviewEffect = preview_avexglr_dual_06
+
+CellLayout = ..........
+CellLayout = ...cab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - onewayroad: 0x00020000, 0x00ff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58405000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58405000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B427]
+CopyFrom    = 0xB427
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B427]
+CopyFrom    = 0xB427
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B427]
+CopyFrom    = 0xB427
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004B427]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x OneWayRoad Intersection - dead end onewayroad 2
+Piece = -16.0, 0.0, 0, 0, 0x58406ff0
+PreviewEffect = preview_avexglr_dual_07
+
+CellLayout = ..........
+CellLayout = ....abc..<
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - onewayroad: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = .....^....
+
+AutoTileBase = 0x58406000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58406000
+Costs       = 80
+[HighwayIntersectionInfo_0x0005B427]
+CopyFrom    = 0x4B427
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B427]
+CopyFrom    = 0x4B427
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B427]
+CopyFrom    = 0x4B427
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B428]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x OneWayRoad Intersection
+;Edited by Chrisim in April 2009 to reduce the risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58407ff0
+PreviewEffect = preview_avexglr_dual_08
+
+CellLayout = ..........
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000000 onewayroad: 0x02020202
+CheckType = b - lightrail: 0x00000000 onewayroad: 0x02020202
+CheckType = c - onewayroad: 0x00020000, 0x00ff0000 optional
+CheckType = d - onewayroad: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58407000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58407000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B428]
+CopyFrom    = 0xB428
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B428]
+CopyFrom    = 0xB428
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B428]
+CopyFrom    = 0xB428
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B428]
+CopyFrom    = 0xB428
+[HighwayIntersectionInfo_0x0005B428]
+CopyFrom    = 0x1B428
+[HighwayIntersectionInfo_0x0006B428]
+CopyFrom    = 0x2B428
+[HighwayIntersectionInfo_0x0007B428]
+CopyFrom    = 0x3B428
+
+
+[HighwayIntersectionInfo_0x0000B429]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Avenue T-Intersection - GLR straight
+Piece = 0.0, -16.0, 0, 0, 0x58408ff0
+PreviewEffect = preview_avexglr_dual_09
+
+CellLayout = ..........
+CellLayout = ..geab....
+CellLayout = ..hfcd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02000404
+CheckType = e - avenue: 0x04020002, 0xffff00ff optional
+CheckType = f - avenue: 0x00020402, 0x00ffffff optional
+CheckType = g - avenue: 0x04020000, 0xffff0000 optional
+CheckType = h - avenue: 0x00020400, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58408000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58408000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B429]
+CopyFrom    = 0xB429
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B429]
+CopyFrom    = 0xB429
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B429]
+CopyFrom    = 0xB429
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B429]
+CopyFrom    = 0xB429
+[HighwayIntersectionInfo_0x0005B429]
+CopyFrom    = 0x1B429
+[HighwayIntersectionInfo_0x0006B429]
+CopyFrom    = 0x2B429
+[HighwayIntersectionInfo_0x0007B429]
+CopyFrom    = 0x3B429
+
+
+[HighwayIntersectionInfo_0x0000B42A]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR straight
+Piece = 0.0, -16.0, 0, 0, 0x58409ff0
+PreviewEffect = preview_avexglr_dual_10
+
+CellLayout = ..........
+CellLayout = ..geabei..
+CellLayout = ..hfcdfj.<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x02020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020204
+CheckType = e - avenue: 0x04020002, 0xffff00ff optional
+CheckType = f - avenue: 0x00020402, 0x00ffffff optional
+CheckType = g - avenue: 0x04020000, 0xffff0000 optional
+CheckType = h - avenue: 0x00020400, 0x00ffff00 optional
+CheckType = i - avenue: 0x04000002, 0xff0000ff optional
+CheckType = j - avenue: 0x00000402, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58409000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58409000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42A]
+CopyFrom    = 0xB42A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42A]
+CopyFrom    = 0xB42A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42A]
+CopyFrom    = 0xB42A
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B42A]
+CopyFrom    = 0xB42A
+[HighwayIntersectionInfo_0x0005B42A]
+CopyFrom    = 0x1B42A
+[HighwayIntersectionInfo_0x0006B42A]
+CopyFrom    = 0x2B42A
+[HighwayIntersectionInfo_0x0007B42A]
+CopyFrom    = 0x3B42A
+
+
+[HighwayIntersectionInfo_0x0000B421]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - corner piece
+Piece = 0.0, -16.0, 0, 0, 0x5840Aff0
+PreviewEffect = preview_avexglr_dual_11
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840A000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B421]
+CopyFrom    = 0xB421
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B421]
+CopyFrom    = 0xB421
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B421]
+CopyFrom    = 0xB421
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B421]
+CopyFrom    = 0xB421
+[HighwayIntersectionInfo_0x0005B421]
+CopyFrom    = 0x1B421
+[HighwayIntersectionInfo_0x0006B421]
+CopyFrom    = 0x2B421
+[HighwayIntersectionInfo_0x0007B421]
+CopyFrom    = 0x3B421
+
+
+[HighwayIntersectionInfo_0x0000B42B]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Avenue T-Intersection - GLR corner
+Piece = 0.0, -16.0, 0, 0, 0x5840Bff0
+PreviewEffect = preview_avexglr_dual_12
+
+CellLayout = ..........
+CellLayout = ....gh....
+CellLayout = ....ef....
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00020002 avenue: 0x04040202
+CheckType = b - lightrail: 0x02000002 avenue: 0x04000204
+CheckType = c - lightrail: 0x02000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x02000200 avenue: 0x02000404
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x02040000, 0xffff0000 optional
+CheckType = h - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840B000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42B]
+CopyFrom    = 0xB42B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42B]
+CopyFrom    = 0xB42B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42B]
+CopyFrom    = 0xB42B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B42B]
+CopyFrom    = 0xB42B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B42B]
+CopyFrom    = 0x4B42B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B42B]
+CopyFrom    = 0x4B42B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B42B]
+CopyFrom    = 0x4B42B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B42C]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR corner
+Piece = 0.0, -16.0, 0, 0, 0x5840Cff0
+PreviewEffect = preview_avexglr_dual_13
+
+CellLayout = ..........
+CellLayout = ....gh....
+CellLayout = ....ef....
+CellLayout = ....abik..
+CellLayout = ....cdjl.<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00020002 avenue: 0x04040202
+CheckType = b - lightrail: 0x02000002 avenue: 0x02020204
+CheckType = c - lightrail: 0x02000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x02000200 avenue: 0x02020204
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x02040000, 0xffff0000 optional
+CheckType = h - avenue: 0x02000004, 0xff0000ff optional
+CheckType = i - avenue: 0x04020002, 0xffff00ff optional
+CheckType = j - avenue: 0x00020402, 0x00ffffff optional
+CheckType = k - avenue: 0x04000002, 0xff0000ff optional
+CheckType = l - avenue: 0x00000402, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840C000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42C]
+CopyFrom    = 0xB42C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42C]
+CopyFrom    = 0xB42C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42C]
+CopyFrom    = 0xB42C
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B42C]
+CopyFrom    = 0xB42C
+[HighwayIntersectionInfo_0x0005B42C]
+CopyFrom    = 0x1B42C
+[HighwayIntersectionInfo_0x0006B42C]
+CopyFrom    = 0x2B42C
+[HighwayIntersectionInfo_0x0007B42C]
+CopyFrom    = 0x3B42C
+
+
+[HighwayIntersectionInfo_0x0000B42D]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - T-Intersection
+Piece = 0.0, -16.0, 0, 0, 0x5840Dff0
+PreviewEffect = preview_avexglr_dual_14
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02000404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840D000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42D]
+CopyFrom    = 0xB42D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42D]
+CopyFrom    = 0xB42D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42D]
+CopyFrom    = 0xB42D
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B42D]
+CopyFrom    = 0xB42D
+[HighwayIntersectionInfo_0x0005B42D]
+CopyFrom    = 0x1B42D
+[HighwayIntersectionInfo_0x0006B42D]
+CopyFrom    = 0x2B42D
+[HighwayIntersectionInfo_0x0007B42D]
+CopyFrom    = 0x3B42D
+
+
+[HighwayIntersectionInfo_0x0000B42E]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue x Avenue +-Intersection - GLR T-Intersection
+Piece = 0.0, -16.0, 0, 0, 0x5840Eff0
+PreviewEffect = preview_avexglr_dual_15
+
+CellLayout = ..........
+CellLayout = ....abeg..
+CellLayout = ....cdfh.<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x02020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020204
+CheckType = e - avenue: 0x04020002, 0xffff00ff optional
+CheckType = f - avenue: 0x00020402, 0x00ffffff optional
+CheckType = g - avenue: 0x04000002, 0xff0000ff optional
+CheckType = h - avenue: 0x00000402, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840E000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42E]
+CopyFrom    = 0xB42E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42E]
+CopyFrom    = 0xB42E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42E]
+CopyFrom    = 0xB42E
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B42E]
+CopyFrom    = 0xB42E
+[HighwayIntersectionInfo_0x0005B42E]
+CopyFrom    = 0x1B42E
+[HighwayIntersectionInfo_0x0006B42E]
+CopyFrom    = 0x2B42E
+[HighwayIntersectionInfo_0x0007B42E]
+CopyFrom    = 0x3B42E
+
+
+[HighwayIntersectionInfo_0x0000B42F]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - +-Intersection
+Piece = 0.0, -16.0, 0, 0, 0x5840Fff0
+PreviewEffect = preview_avexglr_dual_16
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5840F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5840F000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B42F]
+CopyFrom    = 0xB42F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B42F]
+CopyFrom    = 0xB42F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B42F]
+CopyFrom    = 0xB42F
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B42F]
+CopyFrom    = 0xB42F
+[HighwayIntersectionInfo_0x0005B42F]
+CopyFrom    = 0x1B42F
+[HighwayIntersectionInfo_0x0006B42F]
+CopyFrom    = 0x2B42F
+[HighwayIntersectionInfo_0x0007B42F]
+CopyFrom    = 0x3B42F
+
+
+[HighwayIntersectionInfo_0x0000B45D]
+;Added by memo 03/24/07.
+;groundlightrailxavenue Dual - Orthogonal-Diagonal Piece
+Piece = -16.0, -16.0, 0, 0, 0x58413ff0
+PreviewEffect = preview_avexglr_dual_20
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....ef....
+CellLayout = .....g....
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x01000204
+CheckType = c - lightrail: 0x00030200 avenue: 0x01040200
+CheckType = d - lightrail: 0x01000203 avenue: 0x00030100
+CheckType = e - avenue: 0x00030100
+CheckType = f - lightrail: 0x02020202 avenue: 0x01000003
+CheckType = g - avenue: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = .....^....
+
+AutoTileBase = 0x58413000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58413000
+Costs       = 240
+[HighwayIntersectionInfo_0x0001B45D]
+CopyFrom    = 0xB45D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B45D]
+CopyFrom    = 0xB45D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B45D]
+CopyFrom    = 0xB45D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B45D]
+CopyFrom    = 0xB45D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B45D]
+CopyFrom    = 0x4B45D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B45D]
+CopyFrom    = 0x4B45D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B45D]
+CopyFrom    = 0x4B45D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B447]
+;Added by memo 03/23/07. Changed by Chrisim June 2011.
+;groundlightrailxavenue Dual - Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x58412ff0
+PreviewEffect = preview_avexglr_dual_19
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = b - avenue: 0x00000301, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....+....<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58412000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58412000
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B447]
+CopyFrom    = 0xB447
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B447]
+CopyFrom    = 0xB447
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B447]
+CopyFrom    = 0xB447
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B447]
+CopyFrom    = 0xB447
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005B447]
+CopyFrom    = 0x4B447
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B447]
+CopyFrom    = 0x4B447
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B447]
+CopyFrom    = 0x4B447
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B434]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue straight - GLR T-Intersection
+Piece = -16.0, -16.0, 0, 0, 0x58410ff0
+PreviewEffect = preview_avexglr_dual_17
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....ab....
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000200 avenue: 0x02000204
+CheckType = c - lightrail: 0x00000200 avenue: 0x02040200
+CheckType = d - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = .....^....
+
+AutoTileBase = 0x58410000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58410000
+Costs       = 240
+[HighwayIntersectionInfo_0x0001B434]
+CopyFrom    = 0xB434
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B434]
+CopyFrom    = 0xB434
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B434]
+CopyFrom    = 0xB434
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B434]
+CopyFrom    = 0xB434
+[HighwayIntersectionInfo_0x0005B434]
+CopyFrom    = 0x1B434
+[HighwayIntersectionInfo_0x0006B434]
+CopyFrom    = 0x2B434
+[HighwayIntersectionInfo_0x0007B434]
+CopyFrom    = 0x3B434
+
+
+[HighwayIntersectionInfo_0x0000B435]
+;Added by memo 12/28/06.
+;groundlightrailxavenue Dual - Avenue-GLR-transition piece
+Piece = -16.0, -16.0, 0, 0, 0x58411f00
+PreviewEffect = preview_avexglr_dual_18
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....ef....
+CellLayout = ....gh....
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x00030200 avenue: 0x02040200
+CheckType = b - lightrail: 0x01000203 avenue: 0x02000204
+CheckType = c - avenue: 0x02040200
+CheckType = d - lightrail: 0x00030100 avenue: 0x02000204
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = h - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = .....^....
+
+AutoTileBase = 0x58411000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58411000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B435]
+CopyFrom    = 0xB435
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B435]
+CopyFrom    = 0xB435
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B435]
+CopyFrom    = 0xB435
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B435]
+CopyFrom    = 0xB435
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B435]
+CopyFrom    = 0x4B435
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B435]
+CopyFrom    = 0x4B435
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B435]
+CopyFrom    = 0x4B435
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B422]
+;Added by memo 03/25/07.
+;groundlightrailxavenue Dual - Orthogonal Transition
+Piece = -16.0, -16.0, 0, 0, 0x58415ff0
+PreviewEffect = preview_avexglr_dual_22
+
+CellLayout = ...........
+CellLayout = ....i.j....
+CellLayout = ....abc....
+CellLayout = ....def...<
+CellLayout = .....gh....
+CellLayout = .....^.....
+
+CheckType = a - avenue: 0x01040200
+CheckType = b - lightrail: 0x02000200 onewayroad: 0x03030000, 0xffffffff optional
+CheckType = c - avenue: 0x02000204
+CheckType = d - avenue: 0x00030100
+CheckType = e - lightrail: 0x02030200 avenue: 0x01000003
+CheckType = f - lightrail: 0x02000003 avenue: 0x02000204
+CheckType = g - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = h - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ...........
+ConsLayout = ...........
+ConsLayout = ....+.+....
+ConsLayout = ....+++...<
+ConsLayout = .....++....
+ConsLayout = .....^.....
+
+AutoTileBase = 0x58415000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58415000
+Costs       = 280
+[HighwayIntersectionInfo_0x0001B422]
+CopyFrom    = 0xB422
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B422]
+CopyFrom    = 0xB422
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B422]
+CopyFrom    = 0xB422
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B422]
+CopyFrom    = 0xB422
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B422]
+CopyFrom    = 0x4B422
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B422]
+CopyFrom    = 0x4B422
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B422]
+CopyFrom    = 0x4B422
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B45E]
+;Added by memo 03/25/07.
+;groundlightrailxavenue Dual - Diagonal-Orthogonal Transition
+Piece = -16.0, 0.0, 0, 0, 0x58414ff0
+PreviewEffect = preview_avexglr_dual_21
+
+CellLayout = ...........
+CellLayout = ....i.j....
+CellLayout = ....abc...<
+CellLayout = ....defg...
+CellLayout = .....^.....
+
+CheckType = a - avenue: 0x01040200
+CheckType = b - lightrail: 0x02000200 onewayroad: 0x03030000, 0xffffffff optional
+CheckType = c - avenue: 0x01000204
+CheckType = d - avenue: 0x00030100
+CheckType = e - lightrail: 0x00030100 avenue: 0x01000003
+CheckType = f - lightrail: 0x01000003 avenue: 0x00030100
+CheckType = g - avenue: 0x01000003, 0xff0000ff optional
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ...........
+ConsLayout = ...........
+ConsLayout = ....+.+...<
+ConsLayout = ....+++....
+ConsLayout = .....^.....
+
+AutoTileBase = 0x58414000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58414000
+Costs       = 200
+[HighwayIntersectionInfo_0x0001B45E]
+CopyFrom    = 0xB45E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B45E]
+CopyFrom    = 0xB45E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B45E]
+CopyFrom    = 0xB45E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B45E]
+CopyFrom    = 0xB45E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B45E]
+CopyFrom    = 0x4B45E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B45E]
+CopyFrom    = 0x4B45E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B45E]
+CopyFrom    = 0x4B45E
+Rotate		= 3
+
+;The below are by Chrisim ~ 2008
+
+[HighwayIntersectionInfo_0x0000B437]
+;Added by Chrism 02/24/08.
+;groundlightrailxavenue Dual - Avenue x Road End Transition to Left GLR
+Piece = 0.0, 0.0, 0, 0, 0x58416ff0
+PreviewEffect = preview_avexglr_dual_23
+
+CellLayout = ..........
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = d - road: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58416000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58416000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B437]
+CopyFrom    = 0xB437
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B437]
+CopyFrom    = 0xB437
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B437]
+CopyFrom    = 0xB437
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004B437]
+;Added by Chrism 02/24/08.
+;groundlightrailxavenue Dual - Avenue x Road End Transition to Right GLR
+Piece = 0.0, 0.0, 0, 0, 0x58417ff0
+PreviewEffect = preview_avexglr_dual_24
+
+CellLayout = ..........
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = d - road: 0x00000002, 0x000000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58417000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58417000
+Costs       = 80
+[HighwayIntersectionInfo_0x0005B437]
+CopyFrom    = 0x4B437
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B437]
+CopyFrom    = 0x4B437
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B437]
+CopyFrom    = 0x4B437
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B438]
+;Added by Chrism 03/06/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Left GLR and Road
+Piece = 0.0, 0.0, 0, 0, 0x58418ff0
+PreviewEffect = preview_avexglr_dual_25
+
+CellLayout = .....e.....
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = d - road: 0x00000002, 0x000000ff optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58418000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58418000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B438]
+CopyFrom    = 0xB438
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B438]
+CopyFrom    = 0xB438
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B438]
+CopyFrom    = 0xB438
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004B438]
+;Added by Chrism 03/06/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Right GLR and Road
+Piece = 0.0, 0.0, 0, 0, 0x58419ff0
+PreviewEffect = preview_avexglr_dual_26
+
+CellLayout = ....e.....
+CellLayout = ...cabd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x02000200 avenue: 0x02040200
+CheckType = b - lightrail: 0x02000200 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = d - road: 0x00000002, 0x000000ff optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58419000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58419000
+Costs       = 80
+[HighwayIntersectionInfo_0x0005B438]
+CopyFrom    = 0x4B438
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B438]
+CopyFrom    = 0x4B438
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B438]
+CopyFrom    = 0x4B438
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B439]
+;Added by Chrism 03/07/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Left GLR and left Road
+Piece = 0.0, 0.0, 0, 0, 0x5841aff0
+PreviewEffect = preview_avexglr_dual_27
+
+CellLayout = .....e....
+CellLayout = ...cab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841a000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841a000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B439]
+CopyFrom    = 0xB439
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B439]
+CopyFrom    = 0xB439
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B439]
+CopyFrom    = 0xB439
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B43A]
+;Added by Chrism 03/07/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Right GLR and left Road
+Piece = 0.0, 0.0, 0, 0, 0x5841bff0
+PreviewEffect = preview_avexglr_dual_28
+
+CellLayout = ....e.....
+CellLayout = ....abd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = d - road: 0x00000002, 0x000000ff optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841b000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841b000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B43A]
+CopyFrom    = 0xB43A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43A]
+CopyFrom    = 0xB43A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43A]
+CopyFrom    = 0xB43A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x000CB43A]
+;Added by Chrism 03/07/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Left GLR and right Road
+Piece = 0.0, 0.0, 0, 0, 0x5841cff0
+PreviewEffect = preview_avexglr_dual_29
+
+CellLayout = .....e....
+CellLayout = ....abd..<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = d - road: 0x00000002, 0x000000ff optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841c000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841c000
+Costs       = 80
+[HighwayIntersectionInfo_0x000DB43A]
+CopyFrom    = 0xCB43A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EB43A]
+CopyFrom    = 0xCB43A
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FB43A]
+CopyFrom    = 0xCB43A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0014B439]
+;Added by Chrism 03/07/08.
+;groundlightrailxavenue Dual - Avenue x Road Transition to Right GLR and right Road
+Piece = 0.0, 0.0, 0, 0, 0x5841dff0
+PreviewEffect = preview_avexglr_dual_30
+
+CellLayout = ....e.....
+CellLayout = ...cab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - road: 0x00020000, 0x00ff0000 optional
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841d000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841d000
+Costs       = 80
+[HighwayIntersectionInfo_0x0015B439]
+CopyFrom    = 0x14B439
+Rotate		= 1
+[HighwayIntersectionInfo_0x0016B439]
+CopyFrom    = 0x14B439
+Rotate		= 2
+[HighwayIntersectionInfo_0x0017B439]
+CopyFrom    = 0x14B439
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B43B]
+;Added by Chrisim 03/10/08.
+;groundlightrailxavenue Dual - Avenue GLR Clover
+Piece = 0.0, 0.0, 0, 0, 0x5841eff0
+PreviewEffect = preview_avexglr_dual_31
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841e000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841e000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B43B]
+CopyFrom    = 0xB43B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43B]
+CopyFrom    = 0xB43B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43B]
+CopyFrom    = 0xB43B
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B43B]
+CopyFrom    = 0xB43B
+[HighwayIntersectionInfo_0x0005B43B]
+CopyFrom    = 0x1B43B
+[HighwayIntersectionInfo_0x0006B43B]
+CopyFrom    = 0x2B43B
+[HighwayIntersectionInfo_0x0007B43B]
+CopyFrom    = 0x3B43B
+
+
+[HighwayIntersectionInfo_0x0000B43C]
+;Added by Chrisim 03/10/08.
+;groundlightrailxavenue Dual - Avenue GLR End Triangle
+Piece = 0.0, 0.0, 0, 0, 0x5841fff0
+PreviewEffect = preview_avexglr_dual_32
+
+CellLayout = ....ij....
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5841f000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5841f000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B43C]
+CopyFrom    = 0xB43C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43C]
+CopyFrom    = 0xB43C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43C]
+CopyFrom    = 0xB43C
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B43C]
+CopyFrom    = 0xB43C
+[HighwayIntersectionInfo_0x0005B43C]
+CopyFrom    = 0x1B43C
+[HighwayIntersectionInfo_0x0006B43C]
+CopyFrom    = 0x2B43C
+[HighwayIntersectionInfo_0x0007B43C]
+CopyFrom    = 0x3B43C
+
+
+[HighwayIntersectionInfo_0x0000B43D]
+;Added by Chrisim 03/14/08.
+;groundlightrailxavenue Dual - Avenue GLR Side Triangle
+Piece = 0.0, 0.0, 0, 0, 0x58420ff0
+PreviewEffect = preview_avexglr_dual_33
+
+CellLayout = ..........
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58420000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58420000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B43D]
+CopyFrom    = 0xB43D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43D]
+CopyFrom    = 0xB43D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43D]
+CopyFrom    = 0xB43D
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B43D]
+CopyFrom    = 0xB43D
+[HighwayIntersectionInfo_0x0005B43D]
+CopyFrom    = 0x1B43D
+[HighwayIntersectionInfo_0x0006B43D]
+CopyFrom    = 0x2B43D
+[HighwayIntersectionInfo_0x0007B43D]
+CopyFrom    = 0x3B43D
+
+
+[HighwayIntersectionInfo_0x0000B43E]
+;Added by Chrism 03/14/08.
+;groundlightrailxavenue Dual - Avenue GLR right Curve 
+Piece = 0.0, 0.0, 0, 0, 0x58421ff0
+PreviewEffect = preview_avexglr_dual_34
+
+CellLayout = ....ij....
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58421000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58421000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B43E]
+CopyFrom    = 0xB43E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43E]
+CopyFrom    = 0xB43E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43E]
+CopyFrom    = 0xB43E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004B43E]
+;Added by Chrism 03/07/08.
+;groundlightrailxavenue Dual - Avenue GLR left Curve 
+Piece = 0.0, 0.0, 0, 0, 0x58422ff0
+PreviewEffect = preview_avexglr_dual_35
+
+CellLayout = ....ij....
+CellLayout = ....ab...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58422000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58422000
+Costs       = 80
+[HighwayIntersectionInfo_0x0005B43E]
+CopyFrom    = 0x4B43E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B43E]
+CopyFrom    = 0x4B43E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B43E]
+CopyFrom    = 0x4B43E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B443]
+;Added by Chrisim 03/16/08.
+;groundlightrailxavenue Dual - transition to road/GLR
+Piece = 0.0, -16.0, 0, 0, 0x58423ff0
+PreviewEffect = preview_avexglr_dual_36
+
+CellLayout = .....e....
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58423000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58423000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B443]
+CopyFrom    = 0xB443
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B443]
+CopyFrom    = 0xB443
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B443]
+CopyFrom    = 0xB443
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0004B443]
+;Added by Chrisim 03/16/08.
+;groundlightrailxavenue Dual - transition to GLR/road
+Piece = 0.0, -16.0, 0, 0, 0x58424ff0
+PreviewEffect = preview_avexglr_dual_37
+
+CellLayout = ....e.....
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+CheckType = e - road: 0x02000000, 0xff000000 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58424000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58424000
+Costs       = 160
+[HighwayIntersectionInfo_0x0005B443]
+CopyFrom    = 0x4B443
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B443]
+CopyFrom    = 0x4B443
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B443]
+CopyFrom    = 0x4B443
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B43F]
+;Added by Chrisim 5 December 2008
+;RailxAvenue Ground Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x584271f0
+PreviewEffect = preview_avexglr_dual_42
+
+CellLayout =....
+CellLayout =.cd.
+CellLayout =.ab.<
+CellLayout =.ab.
+CellLayout =.ef.
+CellLayout =.^..
+
+CheckType = a - lightrail: 0x00020002 highway: 0x02040200
+CheckType = b - lightrail: 0x00020002 highway: 0x02000204
+CheckType = c - highway: 0x02040000 optional
+CheckType = d - highway: 0x02000004 optional
+CheckType = e - highway: 0x00040200 optional
+CheckType = f - highway: 0x00000204 optional
+
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.xx.<
+ConsLayout =.xx.
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase=	0x58427000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58427000
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B43F]
+CopyFrom    = 0xB43F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B43F]
+CopyFrom    = 0xB43F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B43F]
+CopyFrom    = 0xB43F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B43F]
+CopyFrom    = 0xB43F
+[HighwayIntersectionInfo_0x0005B43F]
+CopyFrom    = 0x1B43F
+[HighwayIntersectionInfo_0x0006B43F]
+CopyFrom    = 0x2B43F
+[HighwayIntersectionInfo_0x0007B43F]
+CopyFrom    = 0x3B43F
+
+
+[HighwayIntersectionInfo_0x0000B436]
+;Added by Chrisim 28 March 2009, Texture by Schleicher68
+;groundlightrailxavenue Dual - Avenue-GLR GLR diagonal exit
+Piece = -16.0, -16.0, 0, 0, 0x58428ff0
+PreviewEffect = preview_avexglr_dual_43
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ..........
+CellLayout = .....^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = d - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ..........
+ConsLayout = .....^....
+
+AutoTileBase = 0x58428000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58428000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B436]
+CopyFrom    = 0xB436
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B436]
+CopyFrom    = 0xB436
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B436]
+CopyFrom    = 0xB436
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B436]
+CopyFrom    = 0xB436
+Transpose = 1
+AutoPathBase = 0x58428200
+[HighwayIntersectionInfo_0x0005B436]
+CopyFrom    = 0x4B436
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B436]
+CopyFrom    = 0x4B436
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B436]
+CopyFrom    = 0x4B436
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B441]
+;Added by Chrisim 27 April 2009
+;TraROADnuexMonorail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x584290f0
+PreviewEffect = preview_avexglr_dual_44
+
+CellLayout =..........
+CellLayout =...bZZc...<
+CellLayout =....^.....
+
+CheckType = b - monorail: 0x00020000, 0x00000000 optional
+CheckType = c - monorail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =..........
+ConsLayout =....--...<
+ConsLayout =....^.....
+
+AutoTileBase=	0x58429000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58429000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B441]
+CopyFrom    = 0xB441
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B441]
+CopyFrom    = 0xB441
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B441]
+CopyFrom    = 0xB441
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B441]
+CopyFrom    = 0xB441
+[HighwayIntersectionInfo_0x0005B441]
+CopyFrom    = 0x1B441
+[HighwayIntersectionInfo_0x0006B441]
+CopyFrom    = 0x2B441
+[HighwayIntersectionInfo_0x0007B441]
+CopyFrom    = 0x3B441
+
+
+[HighwayIntersectionInfo_0x0000B442]
+;Added by Chrisim 21 May 2009
+;TraROADnuexElLightrail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x584293f0
+PreviewEffect = preview_avexglr_dual_45
+
+CellLayout =..........
+CellLayout =...bZZc...<
+CellLayout =....^.....
+
+CheckType = b - lightrail: 0x00020000, 0x00000000 optional
+CheckType = c - lightrail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =..........
+ConsLayout =....--...<
+ConsLayout =....^.....
+
+AutoTileBase=	0x58429200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58429200
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B442]
+CopyFrom    = 0xB442
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B442]
+CopyFrom    = 0xB442
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B442]
+CopyFrom    = 0xB442
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B442]
+CopyFrom    = 0xB442
+[HighwayIntersectionInfo_0x0005B442]
+CopyFrom    = 0x1B442
+[HighwayIntersectionInfo_0x0006B442]
+CopyFrom    = 0x2B442
+[HighwayIntersectionInfo_0x0007B442]
+CopyFrom    = 0x3B442
+
+
+[HighwayIntersectionInfo_0x0000B430]
+;Added by Chrisim 13 June 2009.
+;groundlightrailxavenue Dual - +-Intersection
+Piece = 0.0, -16.0, 0, 0, 0x5842aff0
+PreviewEffect = preview_avexglr_dual_46
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5842a000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842a000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B430]
+CopyFrom    = 0xB430
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B430]
+CopyFrom    = 0xB430
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B430]
+CopyFrom    = 0xB430
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B430]
+CopyFrom    = 0xB430
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B430]
+CopyFrom    = 0x4B430
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B430]
+CopyFrom    = 0x4B430
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B430]
+CopyFrom    = 0x4B430
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B431]
+;Added by Chrisim 14 June 2009.
+;groundlightrailxavenue Dual - Intersection with tramroad
+Piece = 0.0, -16.0, 0, 0, 0x5842bff0
+PreviewEffect = preview_avexglr_dual_47
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020404
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5842b000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842b000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B431]
+CopyFrom    = 0xB431
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B431]
+CopyFrom    = 0xB431
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B431]
+CopyFrom    = 0xB431
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B431]
+CopyFrom    = 0xB431
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B431]
+CopyFrom    = 0x4B431
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B431]
+CopyFrom    = 0x4B431
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B431]
+CopyFrom    = 0x4B431
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B432]
+;Added by Chrisim 1 April 2010 texture by DJPTiger.
+;groundlightrailxavenue Dual - avenue curve and straight tram
+Piece = 0.0, -16.0, 0, 0, 0x5842cff0
+PreviewEffect = preview_avexglr_dual_48
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cd...<
+CellLayout = ....ef....
+CellLayout = ....gh....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = h - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5842c000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842c000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B432]
+CopyFrom    = 0xB432
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B432]
+CopyFrom    = 0xB432
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B432]
+CopyFrom    = 0xB432
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B432]
+CopyFrom    = 0xB432
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B432]
+CopyFrom    = 0x4B432
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B432]
+CopyFrom    = 0x4B432
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B432]
+CopyFrom    = 0x4B432
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B433]
+;Added by Chrisim 1 April 2010 texture by DJPTiger.
+;groundlightrailxavenue Dual - avenue curve to diagonal and straight tram
+Piece = 0.0, -16.0, 0, 0, 0x5842dff0
+PreviewEffect = preview_avexglr_dual_49
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....cdf..<
+CellLayout = .....eg...
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+CheckType = e - avenue: 0x00030100, 0x00ffff00 optional
+CheckType = f - avenue: 0x01000003, 0xff0000ff optional
+CheckType = g - avenue: 0x00000103,0x0000ffff check
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x5842d000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842d000
+Costs       = 160
+[HighwayIntersectionInfo_0x0001B433]
+CopyFrom    = 0xB433
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B433]
+CopyFrom    = 0xB433
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B433]
+CopyFrom    = 0xB433
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B433]
+CopyFrom    = 0xB433
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B433]
+CopyFrom    = 0x4B433
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B433]
+CopyFrom    = 0x4B433
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B433]
+CopyFrom    = 0x4B433
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B444]
+;Added by Chrisim 8 April 2010, Texture with help by DJPTiger
+;groundlightrailxavenue Dual - GLR turning curve
+Piece = 0.0, 0.0, 0, 0, 0x5842e3f0
+PreviewEffect = preview_avexglr_dual_50
+
+CellLayout = .gh...
+CellLayout = .ef...
+CellLayout = .abcc.
+CellLayout = .ab.c.
+CellLayout = ....c.
+CellLayout = ...cc.
+CellLayout = .abc.<
+CellLayout = .^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail:0x00000000
+CheckType = e - avenue: 0x02040200, 0xffffff00 optional
+CheckType = f - avenue: 0x02000204, 0xff00ffff optional
+CheckType = g - avenue: 0x02040000, 0xffff0000 optional
+CheckType = h - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ......
+ConsLayout = ......
+ConsLayout = .++++.
+ConsLayout = .++.+.
+ConsLayout = ...++.
+ConsLayout = ...+..
+ConsLayout = .+++.<
+ConsLayout = .^....
+
+AutoTileBase = 0x5842e000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842e000
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B444]
+CopyFrom    = 0xB444
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B444]
+CopyFrom    = 0xB444
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B444]
+CopyFrom    = 0xB444
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B444]
+CopyFrom    = 0xB444
+Transpose 	= 1
+[HighwayIntersectionInfo_0x0005B444]
+CopyFrom    = 0x4B444
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B444]
+CopyFrom    = 0x4B444
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B444]
+CopyFrom    = 0x4B444
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B445]
+;Added by Chrisim 8 April 2010, Texture with help by DJPTiger
+;groundlightrailxavenue Dual - GLR turning curve with straight tram avenue
+Piece = 0.0, 0.0, 0, 0, 0x5842ebf0
+PreviewEffect = preview_avexglr_dual_52
+
+CellLayout = ......
+CellLayout = .abcc.
+CellLayout = .ab.c.
+CellLayout = ....c.
+CellLayout = ...cc.
+CellLayout = .abc.<
+CellLayout = .^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail:0x00000000
+
+ConsLayout = ......
+ConsLayout = .++++.
+ConsLayout = .++.+.
+ConsLayout = ...++.
+ConsLayout = ...+..
+ConsLayout = .+++.<
+ConsLayout = .^....
+
+AutoTileBase = 0x5842e800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5842e800
+Costs       = 80
+[HighwayIntersectionInfo_0x0001B445]
+CopyFrom    = 0xB445
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B445]
+CopyFrom    = 0xB445
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B445]
+CopyFrom    = 0xB445
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B445]
+CopyFrom    = 0xB445
+Transpose 	= 1
+AutoPathBase    = 0x5842f800
+[HighwayIntersectionInfo_0x0005B445]
+CopyFrom    = 0x4B445
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B445]
+CopyFrom    = 0x4B445
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B445]
+CopyFrom    = 0x4B445
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B45A]
+;Added by Chrisim 22 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road v1
+Piece = -16.0, 0.0, 0, 0, 0x584300f0
+PreviewEffect = preview_avexglr_dual_54
+
+CellLayout = ...ml.....
+CellLayout = ...ab....<
+CellLayout = ....cd....
+CellLayout = ....kn....
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000 road: 0x00030100
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x01000003
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - road: 0x01000003, 0xff0000ff optional
+CheckType = n - road: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...++....<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430000
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B45A]
+;Added by Chrisim 22 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road v2
+Piece = 0.0, 16.0, 0, 0, 0x584303f0
+PreviewEffect = preview_avexglr_dual_55
+
+CellLayout = ..........
+CellLayout = ..na.....<
+CellLayout = ..lbck....
+CellLayout = ....dm....
+CellLayout = ...^......
+
+CheckType = a - avenue: 0x03010000 road: 0x01000003
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x00030100
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - road: 0x01000003, 0xff0000ff optional
+CheckType = n - road: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...+.....<
+ConsLayout = ...++.....
+ConsLayout = ....+.....
+ConsLayout = ...^......
+
+AutoTileBase = 0x58430300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430300
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0002B45A]
+CopyFrom    = 0xB45A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B45A]
+CopyFrom    = 0x1B45A
+Rotate		= 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B45A]
+CopyFrom    = 0xB45A
+[HighwayIntersectionInfo_0x0005B45A]
+CopyFrom    = 0x1B45A
+[HighwayIntersectionInfo_0x0006B45A]
+CopyFrom    = 0x2B45A
+[HighwayIntersectionInfo_0x0007B45A]
+CopyFrom    = 0x3B45A
+
+
+[HighwayIntersectionInfo_0x0000B459]
+;Added by Chrisim 23 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road single sided v1
+Piece = -16.0, 0.0, 0, 0, 0x584305f0
+PreviewEffect = preview_avexglr_dual_56
+
+CellLayout = ....l.....
+CellLayout = ...ab....<
+CellLayout = ....cd....
+CellLayout = ....kn....
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000 road: 0x00030100
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x01000003
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = n - road: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...++....<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430500
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B459]
+;Added by Chrisim 23 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal road single sided v2
+Piece = 0.0, 16.0, 0, 0, 0x584308f0
+PreviewEffect = preview_avexglr_dual_57
+
+CellLayout = ..........
+CellLayout = ...a.....<
+CellLayout = ..lbck....
+CellLayout = ....dm....
+CellLayout = ...^......
+
+CheckType = a - avenue: 0x03010000 road: 0x01000003
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x00030100
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - road: 0x01000003, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ...+.....<
+ConsLayout = ...++.....
+ConsLayout = ....+.....
+ConsLayout = ...^......
+
+AutoTileBase = 0x58430800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430800
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0002B459]
+CopyFrom    = 0xB459
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B459]
+CopyFrom    = 0x1B459
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B459]
+CopyFrom    = 0xB459
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B459]
+CopyFrom    = 0x1B459
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B459]
+CopyFrom    = 0xB459
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B459]
+CopyFrom    = 0x1B459
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B45F]
+;Added by Chrisim 23 April 2011
+;groundlightrailxavenue Dual - Diagonal Piece double
+Piece = 0.0, 16.0, 0, 0, 0x58411ff5
+PreviewEffect = preview_avexglr_dual_58
+
+CellLayout = ....d.....
+CellLayout = ....c....<
+CellLayout = ....a.....
+CellLayout = ....b.....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = b - avenue: 0x00000301, 0x0000ffff optional
+CheckType = c - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = d - avenue: 0x03010000, 0xffff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....+....<
+ConsLayout = ....+.....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58411ff0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58411ff0
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B45F]
+CopyFrom    = 0xB45F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B45F]
+CopyFrom    = 0xB45F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003B45F]
+CopyFrom    = 0x2B45F
+Rotate		= 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B45F]
+CopyFrom    = 0xB45F
+[HighwayIntersectionInfo_0x0005B45F]
+CopyFrom    = 0x1B45F
+[HighwayIntersectionInfo_0x0006B45F]
+CopyFrom    = 0x2B45F
+[HighwayIntersectionInfo_0x0007B45F]
+CopyFrom    = 0x3B45F
+
+
+[HighwayIntersectionInfo_0x0000B452]
+;Added by Chrisim 23 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal avenue
+Piece = 0.0, 0.0, 0, 0, 0x584310f0
+PreviewEffect = preview_avexglr_dual_59
+
+CellLayout = ..pn.q....
+CellLayout = ..mlaf....
+CellLayout = ...ebc...<
+CellLayout = ..qfcdn...
+CellLayout = .....mo...
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x01000003
+CheckType = e - avenue: 0x00030100
+CheckType = b - lightrail: 0x03010000 avenue: 0x01030103
+CheckType = f - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x01030301
+CheckType = q - avenue: 0x03010000, 0xffff0000 optional
+CheckType = l - avenue: 0x01030103 optional
+CheckType = m - avenue: 0x00030100, 0x00ffff00 optional
+CheckType = n - avenue: 0x01000003, 0xffffffff optional
+CheckType = o - avenue: 0x00000103, 0xffffffff optional
+CheckType = p - avenue: 0x01030000, 0xffff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ...+++...<
+ConsLayout = ...+++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58431000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58431000
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B452]
+;Added by Chrisim 7 May 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal avenue v2
+Piece = 0.0, 0.0, 0, 0, 0x584311f0
+PreviewEffect = preview_avexglr_dual_69
+
+CellLayout = ..ps......
+CellLayout = ..rla.....
+CellLayout = ...abck..<
+CellLayout = ....cdn...
+CellLayout = ....kmo...
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x01030301
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x01030103
+CheckType = m - avenue: 0x00030100, 0x00ffff00 optional
+CheckType = n - avenue: 0x01000003, 0xffffffff optional
+CheckType = o - avenue: 0x00000103, 0xffffffff optional
+CheckType = p - avenue: 0x01030000, 0xffff0000 optional
+CheckType = r - avenue: 0x00030100
+CheckType = s - avenue: 0x01000003
+
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ...+++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430ef0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430ef0
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0002B452]
+CopyFrom    = 0xB452
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B452]
+CopyFrom    = 0x1B452
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B452]
+CopyFrom    = 0xB452
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B452]
+CopyFrom    = 0x1B452
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B452]
+CopyFrom    = 0xB452
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B452]
+CopyFrom    = 0x1B452
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B451]
+;Added by Chrisim 27 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal avenue on one side
+Piece = 0.0, 0.0, 0, 0, 0x584313f0
+PreviewEffect = preview_avexglr_dual_60
+
+CellLayout = ..........
+CellLayout = ....a.....
+CellLayout = ...abck..<
+CellLayout = ....cdn...
+CellLayout = ....kmo...
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x01030301
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = m - avenue: 0x00030100, 0x00ffff00 optional
+CheckType = n - avenue: 0x01000003, 0xffffffff optional
+CheckType = o - avenue: 0x00000103, 0xffffffff optional
+
+ConsLayout = ..........
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ...+++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58431300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58431300
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B451]
+CopyFrom    = 0xB451
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B451]
+CopyFrom    = 0xB451
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B451]
+CopyFrom    = 0xB451
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004B451]
+CopyFrom    = 0xB451
+[HighwayIntersectionInfo_0x0005B451]
+CopyFrom    = 0x1B451
+[HighwayIntersectionInfo_0x0006B451]
+CopyFrom    = 0x2B451
+[HighwayIntersectionInfo_0x0007B451]
+CopyFrom    = 0x3B451
+
+
+[HighwayIntersectionInfo_0x0000B456]
+;Added by Chrisim 28 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad v1
+Piece = -16.0, 0.0, 0, 0, 0x584320f0
+PreviewEffect = preview_avexglr_dual_61
+
+CellLayout = ...ml.....
+CellLayout = ...ab....<
+CellLayout = ....cd....
+CellLayout = ....kn....
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000 road: 0x00030100
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x01000003
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - onewayroad: 0x01000003, 0xff0000ff optional
+CheckType = n - onewayroad: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...++....<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58432000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432000
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B456]
+;Added by Chrisim 28 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad v2
+Piece = 0.0, 16.0, 0, 0, 0x584323f0
+PreviewEffect = preview_avexglr_dual_62
+
+CellLayout = ..........
+CellLayout = ..na.....<
+CellLayout = ..lbck....
+CellLayout = ....dm....
+CellLayout = ...^......
+
+CheckType = a - avenue: 0x03010000 road: 0x01000003
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x00030100
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - onewayroad: 0x01000003, 0xff0000ff optional
+CheckType = n - onewayroad: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...+.....<
+ConsLayout = ...++.....
+ConsLayout = ....+.....
+ConsLayout = ...^......
+
+AutoTileBase = 0x58432300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432300
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0002B456]
+CopyFrom    = 0xB456
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B456]
+CopyFrom    = 0x1B456
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B456]
+CopyFrom    = 0xB456
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B456]
+CopyFrom    = 0x1B456
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B456]
+CopyFrom    = 0xB456
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B456]
+CopyFrom    = 0x1B456
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B455]
+;Added by Chrisim 29 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad single sided v1
+Piece = -16.0, 0.0, 0, 0, 0x584325f0
+PreviewEffect = preview_avexglr_dual_63
+
+CellLayout = ....l.....
+CellLayout = ...ab....<
+CellLayout = ....cd....
+CellLayout = ....kn....
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x03010000 road: 0x00030100
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x01000003
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = n - onewayroad: 0x00030100, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ...++....<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58432500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432500
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B455]
+;Added by Chrisim 29 April 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with diagonal onewayroad single sided v2
+Piece = 0.0, 16.0, 0, 0, 0x584328f0
+PreviewEffect = preview_avexglr_dual_64
+
+CellLayout = ..........
+CellLayout = ...a.....<
+CellLayout = ..lbck....
+CellLayout = ....dm....
+CellLayout = ...^......
+
+CheckType = a - avenue: 0x03010000 road: 0x01000003
+CheckType = b - lightrail: 0x03010000 avenue: 0x00000301
+CheckType = c - lightrail: 0x00000301 avenue: 0x03010000
+CheckType = d - avenue: 0x00000301 road: 0x00030100
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+CheckType = l - avenue: 0x03010000, 0xffff0000 optional
+CheckType = m - onewayroad: 0x01000003, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ...+.....<
+ConsLayout = ...++.....
+ConsLayout = ....+.....
+ConsLayout = ...^......
+
+AutoTileBase = 0x58432800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432800
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0002B455]
+CopyFrom    = 0xB455
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B455]
+CopyFrom    = 0x1B455
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B455]
+CopyFrom    = 0xB455
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B455]
+CopyFrom    = 0x1B455
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B455]
+CopyFrom    = 0xB455
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B455]
+CopyFrom    = 0x1B455
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0008B455]
+CopyFrom    = 0xB455
+Piece = -16.0, 0.0, 0, 0, 0x584326f0
+PreviewEffect = preview_avexglr_dual_65
+Transpose	= 1
+[HighwayIntersectionInfo_0x0009B455]
+CopyFrom    = 0x1B455
+Piece = -16.0, 0.0, 0, 0, 0x584329f0
+PreviewEffect = preview_avexglr_dual_66
+Transpose	= 1
+
+[HighwayIntersectionInfo_0x000AB455]
+CopyFrom    = 0x8B455
+Rotate		= 1
+[HighwayIntersectionInfo_0x000BB455]
+CopyFrom    = 0x9B455
+Rotate		= 1
+[HighwayIntersectionInfo_0x000CB455]
+CopyFrom    = 0x8B455
+Rotate		= 2
+[HighwayIntersectionInfo_0x000DB455]
+CopyFrom    = 0x9B455
+Rotate		= 2
+[HighwayIntersectionInfo_0x000EB455]
+CopyFrom    = 0x8B455
+Rotate		= 3
+[HighwayIntersectionInfo_0x000FB455]
+CopyFrom    = 0x9B455
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B44E]
+;Added by Chrisim 29 April 2011, Texture by RogerRon91
+;groundlightrailxavenue Dual - Straight to diagonal triangle
+Piece = 0.0, 0.0, 0, 0, 0x584330f0
+PreviewEffect = preview_avexglr_dual_67
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433000
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44E]
+CopyFrom    = 0xB44E
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002B44E]
+CopyFrom    = 0xB44E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B44E]
+CopyFrom    = 0x1B44E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B44E]
+CopyFrom    = 0xB44E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B44E]
+CopyFrom    = 0x1B44E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B44E]
+CopyFrom    = 0xB44E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B44E]
+CopyFrom    = 0x1B44E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B44D]
+;Added by Chrisim 29 April 2011, Texture by RogerRon91
+;groundlightrailxavenue Dual - Straight to diagonal triangle and orthogonal avenue
+Piece = 0.0, 0.0, 0, 0, 0x584332f0
+PreviewEffect = preview_avexglr_dual_68
+
+CellLayout = ..........
+CellLayout = ....ef....
+CellLayout = ...gab....
+CellLayout = ...hcd...<
+CellLayout = ....ef....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02000404
+CheckType = e - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = f - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = g - avenue: 0x04020000, 0xffff0000 optional
+CheckType = h - avenue: 0x00020400, 0x00ffff00 optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433200
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44D]
+CopyFrom    = 0xB44D
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002B44D]
+CopyFrom    = 0xB44D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B44D]
+CopyFrom    = 0x1B44D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B44D]
+CopyFrom    = 0xB44D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005B44D]
+CopyFrom    = 0x1B44D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B44D]
+CopyFrom    = 0xB44D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B44D]
+CopyFrom    = 0x1B44D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B448]
+;Added by Chrisim 27 May 2011, Texture by DJPTiger
+;groundlightrailxavenue Dual - Diagonal tram-avenue with orthogonal tram
+Piece = 0.0, 0.0, 0, 0, 0x58430af0
+PreviewEffect = preview_avexglr_dual_72
+
+CellLayout = .....
+CellLayout = ..a..
+CellLayout = ..b.<
+CellLayout = ..a..
+CellLayout = ..k..
+CellLayout = ..^..
+
+CheckType = a - lightrail: 0x00000000 avenue: 0x03010000
+CheckType = b - lightrail: 0x00000000 avenue: 0x00000301
+CheckType = k - avenue: 0x00000301, 0x0000ffff optional
+
+ConsLayout = .....
+ConsLayout = ..+..
+ConsLayout = ..+.<
+ConsLayout = ..+..
+ConsLayout = ..+..
+ConsLayout = ..^..
+
+AutoTileBase = 0x58430a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430a00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B448]
+CopyFrom    = 0xB448
+Rotate		= 2
+[HighwayIntersectionInfo_0x0002B448]
+CopyFrom    = 0xB448
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B448]
+CopyFrom    = 0xB448
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B448]
+CopyFrom    = 0xB448
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B448]
+CopyFrom    = 0x4B448
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006B448]
+CopyFrom    = 0x4B448
+Rotate		= 1
+[HighwayIntersectionInfo_0x0007B448]
+CopyFrom    = 0x4B448
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B45C]
+;Added by Chrisim 28 May 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossed by orthogonal road
+Piece = 0.0, 0.0, 0, 0, 0x58430bf0
+PreviewEffect = preview_avexglr_dual_70
+
+CellLayout = ....n.....
+CellLayout = ....a.....
+CellLayout = ....b.....
+CellLayout = ....b....<
+CellLayout = ....a.....
+CellLayout = ....m.....
+CellLayout = ....^.....
+
+CheckType = a - road:0x02000200
+CheckType = b - lightrail: 0x00000002 road:0x02000200
+CheckType = m - road: 0x00000200, 0x0000ffff optional
+CheckType = n - road: 0x02000000, 0xffff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ....+.....
+ConsLayout = ....+....<
+ConsLayout = ....+.....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430b00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B45C]
+CopyFrom    = 0xB45C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B45C]
+CopyFrom    = 0xB45C
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003B45C]
+CopyFrom    = 0x2B45C
+Rotate		= 1
+;clones
+[HighwayIntersectionInfo_0x0004B45C]
+CopyFrom    = 0xB45C
+[HighwayIntersectionInfo_0x0005B45C]
+CopyFrom    = 0x1B45C
+[HighwayIntersectionInfo_0x0006B45C]
+CopyFrom    = 0x2B45C
+[HighwayIntersectionInfo_0x0007B45C]
+CopyFrom    = 0x3B45C
+
+
+[HighwayIntersectionInfo_0x0000B45B]
+;Added by Chrisim 29 May 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue intersection with orthogonal road on one side
+Piece = 0.0, 0.0, 0, 0, 0x58430cf0
+PreviewEffect = preview_avexglr_dual_71
+
+CellLayout = ....a.....
+CellLayout = ....b.....
+CellLayout = ....b....<
+CellLayout = ....c.....
+CellLayout = ....m.....
+CellLayout = ....^.....
+
+CheckType = a - road: 0x00000200
+CheckType = b - lightrail: 0x00000002 road: 0x02000200
+CheckType = c - road: 0x02000200
+CheckType = m - road: 0x00000200, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ....+.....
+ConsLayout = ....+....<
+ConsLayout = ....+.....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430c00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B45B]
+CopyFrom    = 0xB45B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B45B]
+CopyFrom    = 0xB45B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B45B]
+CopyFrom    = 0xB45B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B45B]
+CopyFrom    = 0xB45B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B45B]
+CopyFrom    = 0x4B45B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B45B]
+CopyFrom    = 0x4B45B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B45B]
+CopyFrom    = 0x4B45B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B454]
+;Added by Chrisim 1 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal avenue
+Piece = 0.0, 0.0, 0, 0, 0x58431605
+PreviewEffect = preview_avexglr_dual_73
+
+CellLayout = ....mn....
+CellLayout = ....ab....
+CellLayout = ....ac....
+CellLayout = ....dc...<
+CellLayout = ....db....
+CellLayout = ....ab....
+CellLayout = ....op...
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x02000204 
+CheckType = c - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = d - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = m - avenue: 0x02040000, 0xffff0000 optional
+CheckType = n - avenue: 0x02000004, 0xff0000ff optional
+CheckType = o - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = p - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58431600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58431600
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B454]
+CopyFrom    = 0xB454
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002B454]
+CopyFrom    = 0xB454
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B454]
+CopyFrom    = 0x1B454
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B454]
+CopyFrom    = 0xB454
+[HighwayIntersectionInfo_0x0005B454]
+CopyFrom    = 0x1B454
+[HighwayIntersectionInfo_0x0006B454]
+CopyFrom    = 0x2B454
+[HighwayIntersectionInfo_0x0007B454]
+CopyFrom    = 0x3B454
+
+
+[HighwayIntersectionInfo_0x0000B453]
+;Added by Chrisim 4 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossing with orthogonal avenue on one side
+Piece = 0.0, 0.0, 0, 0, 0x58431805
+PreviewEffect = preview_avexglr_dual_74
+
+CellLayout = ..........
+CellLayout = .....e....
+CellLayout = ....ac....
+CellLayout = ....dc..<
+CellLayout = ....db....
+CellLayout = ....ab....
+CellLayout = ....op....
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x02000204 
+CheckType = c - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = d - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = e - avenue: 0x02000004
+CheckType = o - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = p - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = .....+....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58431800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58431800
+Costs       = 50
+
+[HighwayIntersectionInfo_0x0001B453]
+CopyFrom    = 0xB453
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B453]
+CopyFrom    = 0xB453
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B453]
+CopyFrom    = 0xB453
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B453]
+CopyFrom    = 0xB453
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B453]
+CopyFrom    = 0x4B453
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B453]
+CopyFrom    = 0x4B453
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B453]
+CopyFrom    = 0x4B453
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B458]
+;Added by Chrisim 5 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossed by orthogonal onewayroad
+Piece = 0.0, 0.0, 0, 0, 0x58432b05
+PreviewEffect = preview_avexglr_dual_75
+
+CellLayout = ....n.....
+CellLayout = ....a.....
+CellLayout = ....b.....
+CellLayout = ....b....<
+CellLayout = ....a.....
+CellLayout = ....m.....
+CellLayout = ....^.....
+
+CheckType = a - onewayroad:0x02000200
+CheckType = b - lightrail: 0x00000002 onewayroad:0x02000200
+CheckType = m - onewayroad: 0x00000200, 0x0000ffff optional
+CheckType = n - onewayroad: 0x02000000, 0xffff0000 optional
+
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ....+.....
+ConsLayout = ....+....<
+ConsLayout = ....+.....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58432b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432b00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B458]
+CopyFrom    = 0xB458
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B458]
+CopyFrom    = 0xB458
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B458]
+CopyFrom    = 0xB458
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B458]
+CopyFrom    = 0xB458
+Transpose	= 1
+AutoPathBase = 0x58432b80
+[HighwayIntersectionInfo_0x0005B458]
+CopyFrom    = 0x4B458
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B458]
+CopyFrom    = 0x4B458
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B458]
+CopyFrom    = 0x4B458
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B457]
+;Added by Chrisim 6 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Diagonal tram-avenue crossed by orthogonal onewayroad single sided
+Piece = 0.0, 0.0, 0, 0, 0x58432c05
+PreviewEffect = preview_avexglr_dual_76
+
+CellLayout = ..........
+CellLayout = ....a.....
+CellLayout = ....b.....
+CellLayout = ....b....<
+CellLayout = ....a.....
+CellLayout = ....m.....
+CellLayout = ....^.....
+
+CheckType = a - onewayroad:0x02000200
+CheckType = b - lightrail: 0x00000002 onewayroad:0x02000200
+CheckType = m - onewayroad: 0x00000200, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = ....+.....
+ConsLayout = ....+....<
+ConsLayout = ....+.....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58432c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58432c00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B457]
+CopyFrom    = 0xB457
+Piece = 0.0, 0.0, 0, 0, 0x58432c06
+PreviewEffect = preview_avexglr_dual_77
+AutoTileBase = 0x58432d00
+
+[HighwayIntersectionInfo_0x0002B457]
+CopyFrom    = 0xB457
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B457]
+CopyFrom    = 0x1B457
+Rotate		= 2
+[HighwayIntersectionInfo_0x0004B457]
+CopyFrom    = 0xB457
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005B457]
+CopyFrom    = 0x1B457
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B457]
+CopyFrom    = 0xB457
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007B457]
+CopyFrom    = 0x1B457
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0008B457]
+CopyFrom    = 0xB457
+Transpose	= 1
+AutoTileBase = 0x58432d00
+[HighwayIntersectionInfo_0x0009B457]
+CopyFrom    = 0x1B457
+Transpose	= 1
+AutoTileBase = 0x58432c00
+[HighwayIntersectionInfo_0x000AB457]
+CopyFrom    = 0x8B457
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BB457]
+CopyFrom    = 0x9B457
+Rotate		= 2
+[HighwayIntersectionInfo_0x000CB457]
+CopyFrom    = 0x8B457
+Rotate		= 1
+[HighwayIntersectionInfo_0x000DB457]
+CopyFrom    = 0x9B457
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EB457]
+CopyFrom    = 0x8B457
+Rotate		= 3
+[HighwayIntersectionInfo_0x000FB457]
+CopyFrom    = 0x9B457
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B449]
+;Added by Chrisim 10 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Straight to diagonal cross
+Piece = 0.0, 0.0, 0, 0, 0x584334f0
+PreviewEffect = preview_avexglr_dual_80
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433400
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B449]
+CopyFrom    = 0xB449
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002B449]
+CopyFrom    = 0xB449
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003B449]
+CopyFrom    = 0x1B449
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004B449]
+CopyFrom    = 0xB449
+[HighwayIntersectionInfo_0x0005B449]
+CopyFrom    = 0x1B449
+[HighwayIntersectionInfo_0x0006B449]
+CopyFrom    = 0x2B449
+[HighwayIntersectionInfo_0x0007B449]
+CopyFrom    = 0x3B449
+
+
+[HighwayIntersectionInfo_0x0000B450]
+;Added by Chrisim 11 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Straight to diagonal tram-avenue junction with straight avenue
+Piece = 0.0, 0.0, 0, 0, 0x584336f0
+PreviewEffect = preview_avexglr_dual_78
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....cd....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = d - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433600
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B450]
+CopyFrom    = 0xB450
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B450]
+CopyFrom    = 0xB450
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B450]
+CopyFrom    = 0xB450
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B450]
+CopyFrom    = 0xB450
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B450]
+CopyFrom    = 0x4B450
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B450]
+CopyFrom    = 0x4B450
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B450]
+CopyFrom    = 0x4B450
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B44F]
+;Added by Chrisim 11 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Straight to diagonal tram-avenue junction with two straight avenues
+Piece = 0.0, 0.0, 0, 0, 0x584338f0
+PreviewEffect = preview_avexglr_dual_79
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ...gcd....
+CellLayout = ...hef...<
+CellLayout = ....ab....
+CellLayout = ....ij....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = d - lightrail: 0x00000002 avenue: 0x04000204
+CheckType = e - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = f - lightrail: 0x00000002 avenue: 0x02000404
+CheckType = g - avenue: 0x04020000, 0xffff0000 optional
+CheckType = h - avenue: 0x00020400, 0x00ffff00 optional
+CheckType = i - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = j - avenue: 0x00000204, 0x0000ffff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ..........
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433800
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44F]
+CopyFrom    = 0xB44F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B44F]
+CopyFrom    = 0xB44F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B44F]
+CopyFrom    = 0xB44F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B44F]
+CopyFrom    = 0xB44F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B44F]
+CopyFrom    = 0x4B44F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B44F]
+CopyFrom    = 0x4B44F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B44F]
+CopyFrom    = 0x4B44F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B44C]
+;Added by Chrisim 11 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Triangle tram-avenue junction
+Piece = 0.0, 0.0, 0, 0, 0x58433AF0
+PreviewEffect = preview_avexglr_dual_81
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433A00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44C]
+CopyFrom    = 0xB44C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B44C]
+CopyFrom    = 0xB44C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B44C]
+CopyFrom    = 0xB44C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B44C]
+CopyFrom    = 0xB44C
+[HighwayIntersectionInfo_0x0005B44C]
+CopyFrom    = 0x1B44C
+[HighwayIntersectionInfo_0x0006B44C]
+CopyFrom    = 0x2B44C
+[HighwayIntersectionInfo_0x0007B44C]
+CopyFrom    = 0x3B44C
+
+
+[HighwayIntersectionInfo_0x0000B44B]
+;Added by Chrisim 12 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Triangle tram-avenue junction with straight avenue
+Piece = 0.0, 0.0, 0, 0, 0x58433CF0
+PreviewEffect = preview_avexglr_dual_82
+
+CellLayout = ....ij....
+CellLayout = ....cd....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+CheckType = c - avenue: 0x02040200
+CheckType = d - avenue: 0x02000204
+CheckType = i - avenue: 0x02040000, 0xffff0000 optional
+CheckType = j - avenue: 0x02000004, 0xff0000ff optional
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433C00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44B]
+CopyFrom    = 0xB44B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B44B]
+CopyFrom    = 0xB44B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B44B]
+CopyFrom    = 0xB44B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B44B]
+CopyFrom    = 0xB44B
+[HighwayIntersectionInfo_0x0005B44B]
+CopyFrom    = 0x1B44B
+[HighwayIntersectionInfo_0x0006B44B]
+CopyFrom    = 0x2B44B
+[HighwayIntersectionInfo_0x0007B44B]
+CopyFrom    = 0x3B44B
+
+
+[HighwayIntersectionInfo_0x0000B44A]
+;Added by Chrisim 12 June 2011, Texture by Schleicher68
+;groundlightrailxavenue Dual - Orthogonal and diagonal tram-avenue junction
+Piece = 0.0, 0.0, 0, 0, 0x58433EF0
+PreviewEffect = preview_avexglr_dual_83
+
+CellLayout = ..........
+CellLayout = ....ab....
+CellLayout = ....ab....
+CellLayout = ....ab...<
+CellLayout = ....ab....
+CellLayout = ....^.....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x02040200
+CheckType = b - lightrail: 0x00000002 avenue: 0x02000204
+
+ConsLayout = ..........
+ConsLayout = ....++....
+ConsLayout = ....++....
+ConsLayout = ....++...<
+ConsLayout = ....++....
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58433E00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58433E00
+Costs       = 80
+
+[HighwayIntersectionInfo_0x0001B44A]
+CopyFrom    = 0xB44A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B44A]
+CopyFrom    = 0xB44A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B44A]
+CopyFrom    = 0xB44A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B44A]
+CopyFrom    = 0xB44A
+[HighwayIntersectionInfo_0x0005B44A]
+CopyFrom    = 0x1B44A
+[HighwayIntersectionInfo_0x0006B44A]
+CopyFrom    = 0x2B44A
+[HighwayIntersectionInfo_0x0007B44A]
+CopyFrom    = 0x3B44A
+
+
+[HighwayIntersectionInfo_0x0000B446]
+;Added by Chrisim 12 June 2011
+;groundlightrailxavenue Dual - Diagonal half-avenue Piece
+Piece = 0.0, 0.0, 0, 0, 0x58430F05
+PreviewEffect = preview_avexglr_dual_84
+
+CellLayout = ..........
+CellLayout = ....a...<
+CellLayout = ....^.....
+
+CheckType = a - avenue: 0x00030100
+
+ConsLayout = ..........
+ConsLayout = ....+....<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x58430F00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430F00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B446]
+CopyFrom    = 0xB446
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B446]
+CopyFrom    = 0xB446
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B446]
+CopyFrom    = 0xB446
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B446]
+CopyFrom    = 0xB446
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005B446]
+CopyFrom    = 0x4B446
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B446]
+CopyFrom    = 0x4B446
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B446]
+CopyFrom    = 0x4B446
+Rotate		= 3
+
+
+

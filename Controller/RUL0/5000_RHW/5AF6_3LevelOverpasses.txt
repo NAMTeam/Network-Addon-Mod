@@ -1,0 +1,297 @@
+RotationRing = 5AF6, 15AF6, 25AF6, 35AF6, 45AF6, 55AF6, 65AF6, 75AF6, 85AF6, 95AF6, A5AF6, B5AF6, C5AF6, D5AF6, E5AF6, F5AF6 ;FLEX 3-level-overpass default
+AddTypes     = 5AF7, 15AF7, 25AF7, 35AF7, 45AF7, 55AF7, 65AF7, 75AF7, 85AF7, 95AF7, A5AF7, B5AF7, C5AF7, D5AF7, E5AF7, F5AF7 ;FLEX 3-level-overpass 2-tiles wide
+AddTypes     = 5AF8, 15AF8, 25AF8, 35AF8, 45AF8, 55AF8, 65AF8, 75AF8, 85AF8, 95AF8, A5AF8, B5AF8, C5AF8, D5AF8, E5AF8, F5AF8 ;FLEX 3-level-overpass 3-tiles wide
+AddTypes     = 5AF9, 15AF9, 25AF9, 35AF9, 45AF9, 55AF9, 65AF9, 75AF9, 85AF9, 95AF9, A5AF9, B5AF9, C5AF9, D5AF9, E5AF9, F5AF9 ;FLEX 3-level-overpass 4-tiles wide
+
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00005AF6]
+;Created by memo on 2013/01/19
+;FLEX 3-level-overpass default
+Piece = 0.0, 16.0, 1, 0, 0x57a00000
+PreviewEffect = preview_3-level-overpass_00
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..b..
+CellLayout =..c..
+CellLayout =..^..
+
+CheckType = a - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
+CheckType = c - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57a00000
+Costs = 600
+[HighwayIntersectionInfo_0x00015AF6]
+CopyFrom    = 0x5AF6
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025AF6]
+CopyFrom    = 0x5AF6
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035AF6]
+CopyFrom    = 0x5AF6
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045AF6]
+CopyFrom    = 0x5AF6
+[HighwayIntersectionInfo_0x00055AF6]
+CopyFrom    = 0x15AF6
+[HighwayIntersectionInfo_0x00065AF6]
+CopyFrom    = 0x25AF6
+[HighwayIntersectionInfo_0x00075AF6]
+CopyFrom    = 0x35AF6
+[HighwayIntersectionInfo_0x00085AF6]
+CopyFrom    = 0x5AF6
+[HighwayIntersectionInfo_0x00095AF6]
+CopyFrom    = 0x15AF6
+[HighwayIntersectionInfo_0x000A5AF6]
+CopyFrom    = 0x25AF6
+[HighwayIntersectionInfo_0x000B5AF6]
+CopyFrom    = 0x35AF6
+[HighwayIntersectionInfo_0x000C5AF6]
+CopyFrom    = 0x5AF6
+[HighwayIntersectionInfo_0x000D5AF6]
+CopyFrom    = 0x15AF6
+[HighwayIntersectionInfo_0x000E5AF6]
+CopyFrom    = 0x25AF6
+[HighwayIntersectionInfo_0x000F5AF6]
+CopyFrom    = 0x35AF6
+
+[HighwayIntersectionInfo_0x00005AF7]
+;Created by memo on 2013/01/19
+;FLEX 3-level-overpass 2-tiles wide
+Piece = 0.0, 16.0, 1, 0, 0x57a00001
+PreviewEffect = preview_3-level-overpass_01
+
+CellLayout =.......
+CellLayout =..UaV.<
+CellLayout =.ZdbeY.
+CellLayout =.ZfcgY.
+CellLayout =..W.X..
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
+CheckType = c - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
+CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
+CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
+CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
+CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
+
+CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
+CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
+CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
+CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
+CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
+CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57a00001
+Costs = 600
+[HighwayIntersectionInfo_0x00015AF7]
+CopyFrom    = 0x5AF7
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025AF7]
+CopyFrom    = 0x5AF7
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035AF7]
+CopyFrom    = 0x5AF7
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045AF7]
+CopyFrom    = 0x5AF7
+[HighwayIntersectionInfo_0x00055AF7]
+CopyFrom    = 0x15AF7
+[HighwayIntersectionInfo_0x00065AF7]
+CopyFrom    = 0x25AF7
+[HighwayIntersectionInfo_0x00075AF7]
+CopyFrom    = 0x35AF7
+[HighwayIntersectionInfo_0x00085AF7]
+CopyFrom    = 0x5AF7
+[HighwayIntersectionInfo_0x00095AF7]
+CopyFrom    = 0x15AF7
+[HighwayIntersectionInfo_0x000A5AF7]
+CopyFrom    = 0x25AF7
+[HighwayIntersectionInfo_0x000B5AF7]
+CopyFrom    = 0x35AF7
+[HighwayIntersectionInfo_0x000C5AF7]
+CopyFrom    = 0x5AF7
+[HighwayIntersectionInfo_0x000D5AF7]
+CopyFrom    = 0x15AF7
+[HighwayIntersectionInfo_0x000E5AF7]
+CopyFrom    = 0x25AF7
+[HighwayIntersectionInfo_0x000F5AF7]
+CopyFrom    = 0x35AF7
+
+[HighwayIntersectionInfo_0x00005AF8]
+;Created by memo on 2013/01/19
+;FLEX 3-level-overpass 3-tiles wide
+Piece = 0.0, 32.0, 0, 0, 0x57a00002
+PreviewEffect = preview_3-level-overpass_02
+
+CellLayout =........
+CellLayout =..Ua.V.<
+CellLayout =.ZdpqeY.
+CellLayout =.ZhBChY.
+CellLayout =.ZfrsgY.
+CellLayout =..W..X..
+CellLayout =...^....
+
+CheckType = a - dirtroad: 0x00000000
+CheckType = B - dirtroad: 0x03040102 groundhighway: 0x00020000,0xffffffff optional
+CheckType = C - dirtroad: 0x01020304 groundhighway: 0x00000002,0xffffffff optional
+CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
+CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
+CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
+CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
+CheckType = h - dirtroad: 0x00020002, 0x00ff00ff optional
+
+CheckType = p - dirtroad: 0x01000003, 0xff0000ff optional
+CheckType = q - dirtroad: 0x03010000, 0xffff0000 optional
+CheckType = r - dirtroad: 0x00000301, 0x0000ffff optional
+CheckType = s - dirtroad: 0x00030100, 0x00ffff00 optional
+
+CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
+CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
+CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
+CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
+CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
+CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =........
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57a00002
+Costs = 600
+[HighwayIntersectionInfo_0x00015AF8]
+CopyFrom    = 0x5AF8
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025AF8]
+CopyFrom    = 0x5AF8
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035AF8]
+CopyFrom    = 0x5AF8
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045AF8]
+CopyFrom    = 0x5AF8
+[HighwayIntersectionInfo_0x00055AF8]
+CopyFrom    = 0x15AF8
+[HighwayIntersectionInfo_0x00065AF8]
+CopyFrom    = 0x25AF8
+[HighwayIntersectionInfo_0x00075AF8]
+CopyFrom    = 0x35AF8
+[HighwayIntersectionInfo_0x00085AF8]
+CopyFrom    = 0x5AF8
+[HighwayIntersectionInfo_0x00095AF8]
+CopyFrom    = 0x15AF8
+[HighwayIntersectionInfo_0x000A5AF8]
+CopyFrom    = 0x25AF8
+[HighwayIntersectionInfo_0x000B5AF8]
+CopyFrom    = 0x35AF8
+[HighwayIntersectionInfo_0x000C5AF8]
+CopyFrom    = 0x5AF8
+[HighwayIntersectionInfo_0x000D5AF8]
+CopyFrom    = 0x15AF8
+[HighwayIntersectionInfo_0x000E5AF8]
+CopyFrom    = 0x25AF8
+[HighwayIntersectionInfo_0x000F5AF8]
+CopyFrom    = 0x35AF8
+
+[HighwayIntersectionInfo_0x00005AF9]
+;Created by memo on 2013/01/19
+;FLEX 3-level-overpass 4-tiles wide
+Piece = 0.0, 32.0, 1, 0, 0x57a00003
+PreviewEffect = preview_3-level-overpass_03
+
+CellLayout =.........
+CellLayout =..U.a.V.<
+CellLayout =.ZdghfeY.
+CellLayout =.ZhdBehY.
+CellLayout =.ZhfCghY.
+CellLayout =.ZfehdgY.
+CellLayout =..W...X..
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x00000000
+CheckType = B - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
+CheckType = C - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
+CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
+CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
+CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
+CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
+CheckType = h - dirtroad: 0x00020002, 0x00ff00ff optional
+
+CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
+CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
+CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
+CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
+CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
+CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57a00003
+Costs = 600
+[HighwayIntersectionInfo_0x00015AF9]
+CopyFrom    = 0x5AF9
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025AF9]
+CopyFrom    = 0x5AF9
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035AF9]
+CopyFrom    = 0x5AF9
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045AF9]
+CopyFrom    = 0x5AF9
+[HighwayIntersectionInfo_0x00055AF9]
+CopyFrom    = 0x15AF9
+[HighwayIntersectionInfo_0x00065AF9]
+CopyFrom    = 0x25AF9
+[HighwayIntersectionInfo_0x00075AF9]
+CopyFrom    = 0x35AF9
+[HighwayIntersectionInfo_0x00085AF9]
+CopyFrom    = 0x5AF9
+[HighwayIntersectionInfo_0x00095AF9]
+CopyFrom    = 0x15AF9
+[HighwayIntersectionInfo_0x000A5AF9]
+CopyFrom    = 0x25AF9
+[HighwayIntersectionInfo_0x000B5AF9]
+CopyFrom    = 0x35AF9
+[HighwayIntersectionInfo_0x000C5AF9]
+CopyFrom    = 0x5AF9
+[HighwayIntersectionInfo_0x000D5AF9]
+CopyFrom    = 0x15AF9
+[HighwayIntersectionInfo_0x000E5AF9]
+CopyFrom    = 0x25AF9
+[HighwayIntersectionInfo_0x000F5AF9]
+CopyFrom    = 0x35AF9
+
+

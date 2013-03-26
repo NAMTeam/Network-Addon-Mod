@@ -1,0 +1,2191 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;UNDERGROUND ROAD DUAL-NETWORKING BUTTON SECTION
+;Road Tunnel under various Pieces
+;extended to subsurface avenue, oneway, tram, RHW and peds
+RotationRing = 7A00, 17A00, 27A00, 37A00, 47A00, 57A00, 67A00, 77A00, 87A00, 97A00, A7A00, B7A00 ;Road and Oneway Ramps
+AddTypes     = 7A01, 17A01, 27A01, 37A01, 47A01, 57A01, 67A01, 77A01, 87A01, 97A01, A7A01, B7A01 ;Avenue ramp
+AddTypes     = 7A02, 17A02, 27A02, 37A02, 47A02, 57A02, 67A02, 77A02, 87A02, 97A02, A7A02, B7A02 ;Tram-avenue ramp
+AddTypes     = 7A03, 17A03, 27A03, 37A03, 47A03, 57A03, 67A03, 77A03, 87A03, 97A03, A7A03, B7A03 ;Street Pedestrian and tunnel-street ramps
+AddTypes     = 7A04, 17A04, 97A04, 47A04, B7A04, 67A04, 87A04, 77A04, A7A04, 57A04, 27A04, 37A04 ;Underpass under straight road
+AddTypes     = 7A05, 17A05, 27A05, 37A05, 97A05, 47A05, B7A05, 67A05, 87A05, 77A05, A7A05, 57A05 ;Underpass under straight Street
+AddTypes     = 7A06, 47A06, 87A06, 17A06, 67A07, A7A07, 27A06, 67A06, A7A06, 27A07, 47A07, 87A07 ;Underpass under straight onewayroad1
+AddTypes     = 7A07, 57A06, 97A06, 17A07, 77A07, B7A07, 37A06, 77A06, B7A06, 37A07, 57A07, 97A07 ;Underpass under straight onewayroad2
+AddTypes     = 7A08, 17A08, 27A08, 37A08, 47A08, 57A08, 67A08, 77A08, 87A08, 97A08, A7A08, B7A08 ;Underpass under Avenue
+AddTypes     = 7A09, 17A09, 27A09, 37A09, 47A09, 57A09, 67A09, 77A09, 87A09, 97A09, A7A09, B7A09 ;Underpass under Highway
+AddTypes     = 7A0A, 17A0A, 27A0A, 37A0A, 97A0A, 47A0A, B7A0A, 67A0A, 87A0A, 77A0A, A7A0A, 57A0A ;Underpass under Rail
+AddTypes     = 7A0B, 27A0B, 37A0B, 47A0B, 57A0B, 17A0B, 67A0B, 87A0B, 97A0B, A7A0B, B7A0B, 77A0B ;Underpass junction under ped or rail
+AddTypes     = 7A0C, 17A0C, 27A0C, 37A0C, 47A0C, 57A0C, 67A0C, 77A0C, 87A0C, 97A0C, A7A0C, B7A0C ;Underpass under pedmall 1
+AddTypes     = 7A0D, 17A0D, 27A0D, 37A0D, 47A0D, 57A0D, 67A0D, 77A0D, 87A0D, 97A0D, A7A0D, B7A0D ;Underpass under pedmall 2
+AddTypes     = 7A0E, 17A0E, 27A0E, 37A0E, 97A0E, 47A0E, B7A0E, 67A0E, 87A0E, 77A0E, A7A0E, 57A0E ;Underpass under Tram
+AddTypes     = 7A0F, 17A0F, 27A0F, 37A0F, 47A0F, 57A0F, 67A0F, 77A0F, 87A0F, 97A0F, A7A0F, B7A0F ;Underpass under Tram-Avenue
+AddTypes     = 7A10, 87A10, 57A10, 17A10, 97A10, 67A10, 27A10, A7A10, 77A10, 37A10, B7A10, 47A10 ;straight Underpass under curved Road
+AddTypes     = 7A11, 47A11, 87A11, 17A11, 57A11, 97A11, 27A11, 67A11, A7A11, 37A11, 77A11, B7A11 ;curved Underpass under curved Road
+AddTypes     = 7A12, 87A12, 57A12, 17A12, 97A12, 67A12, 27A12, A7A12, 77A12, 37A12, B7A12, 47A12 ;straight Underpass under diagonal Road
+AddTypes     = 7A13, 47A13, 87A13, 17A13, 57A13, 97A13, 27A13, 67A13, A7A13, 37A13, 77A13, B7A13 ;curved Underpass under diagonal Road
+AddTypes     = 7A14, 87A14, 57A14, 17A14, 97A14, 67A14, 27A14, A7A14, 77A14, 37A14, B7A14, 47A14 ;straight Underpass under diagonal Road
+AddTypes     = 7A15, 47A15, 87A15, 17A15, 57A15, 97A15, 27A15, 67A15, A7A15, 37A15, 77A15, B7A15 ;curved Underpass under diagonal Road
+AddTypes     = 7A16, 17A16, 27A16, 37A16, 47A16, 57A16, 67A16, 77A16, 87A16, 97A16, A7A16, B7A16 ;Underpass under custom fields
+AddTypes     = 7A17, 17A17, 27A17, 37A17, 47A17, 57A17, 67A17, 77A17, 87A17, 97A17, A7A17, B7A17 ;Underpass under custom fields
+AddTypes     = 7A18, 27A18, 37A18, 47A18, 57A18, 17A18, 67A18, 87A18, 97A18, A7A18, B7A18, 77A18 ;Underpass junction under park
+AddTypes     = 7A19, 17A19, 27A19, 37A19, 47A19, 57A19, 67A19, 77A19, 87A19, 97A19, A7A19, B7A19 ;Underpass under park
+
+;###separator###
+
+;UNDERGROUND ROAD PUZZLE PIECES
+;
+
+[HighwayIntersectionInfo_0x00007A00]
+;Added by Chrisim 13 September 2008.
+;roadUroad Dual - Underground Ramp
+Piece = 0.0, 0.0, 0, 0, 0x53e63e00
+PreviewEffect = preview_subroadentranceramp
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.Z.
+CellLayout =.Z.
+CellLayout =.a.
+CellLayout =.^.
+
+CheckType = a - road: 0x00000200, 0x0000ff00 check
+CheckType = Z - road: 0x02000200
+
+ConsLayout =...
+ConsLayout =.#.<
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63e00
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63e00
+Costs       = 100
+[HighwayIntersectionInfo_0x00017A00]
+CopyFrom    = 0x7A00
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A00]
+CopyFrom    = 0x7A00
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A00]
+CopyFrom    = 0x7A00
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00047A00]
+;Added by Chrisim 20 May 2009.
+;roadUroad Dual - Underground Ramp oneway1
+Piece = 0.0, 0.0, 0, 0, 0x53e63500
+PreviewEffect = preview_subroadentranceram4
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.Z.
+CellLayout =.Z.
+CellLayout =.a.
+CellLayout =.^.
+
+CheckType = a - onewayroad: 0x00000200, 0x0000ff00 check
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =...
+ConsLayout =.#.<
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63500
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63500
+Costs       = 100
+[HighwayIntersectionInfo_0x00057A00]
+CopyFrom    = 0x47A00
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A00]
+CopyFrom    = 0x47A00
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A00]
+CopyFrom    = 0x47A00
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A00]
+;Added by Chrisim 20 May 2009.
+;roadUroad Dual - Underground Ramp oneway2
+Piece = 0.0, 0.0, 0, 0, 0x53e63400
+PreviewEffect = preview_subroadentranceram3
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.Z.
+CellLayout =.Z.
+CellLayout =.a.
+CellLayout =.^.
+
+CheckType = a - onewayroad: 0x00000200, 0x0000ff00 check
+CheckType = Z - onewayroad: 0x02000200
+
+ConsLayout =...
+ConsLayout =.#.<
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63400
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63400
+Costs       = 100
+[HighwayIntersectionInfo_0x00097A00]
+CopyFrom    = 0x87A00
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A00]
+CopyFrom    = 0x87A00
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A00]
+CopyFrom    = 0x87A00
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00007A04]
+;Added by Chrisim 11 December 2008.
+;roadUroad Dual - Road Crossing - Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64000
+PreviewEffect = preview_subroad_53e64000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64000
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A04]
+CopyFrom    = 0x7A04
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A04]
+CopyFrom    = 0x7A04
+[HighwayIntersectionInfo_0x00037A04]
+CopyFrom    = 0x17A04
+
+[HighwayIntersectionInfo_0x00047A04]
+;Added by Chrisim 11 December 2008.
+;roadUroad Dual - Road corner - Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64100
+PreviewEffect = preview_subroad_53e64100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64100
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A04]
+CopyFrom    = 0x47A04
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A04]
+CopyFrom    = 0x47A04
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A04]
+CopyFrom    = 0x47A04
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A04]
+CopyFrom    = 0x47A04
+Transpose = 1
+[HighwayIntersectionInfo_0x00097A04]
+CopyFrom    = 0x87A04
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A04]
+CopyFrom    = 0x87A04
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A04]
+CopyFrom    = 0x87A04
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A0A]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road Crossing - Straight Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66000
+PreviewEffect = preview_subroad_53e66000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66000
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0A]
+CopyFrom    = 0x7A0A
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A0A]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road Crossing - Straight Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66200
+PreviewEffect = preview_subroad_53e66200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66200
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A0A]
+CopyFrom    = 0x27A0A
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00047A0A]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road corner - Straight Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66100
+PreviewEffect = preview_subroad_53e66100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66100
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A0A]
+CopyFrom    = 0x47A0A
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A0A]
+CopyFrom    = 0x47A0A
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A0A]
+CopyFrom    = 0x47A0A
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A0A]
+CopyFrom    = 0x47A0A
+Transpose = 1
+[HighwayIntersectionInfo_0x00097A0A]
+CopyFrom    = 0x87A0A
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A0A]
+CopyFrom    = 0x87A0A
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A0A]
+CopyFrom    = 0x87A0A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A10]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road Crossing - curved Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64200
+PreviewEffect = preview_subroad_53e64200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64200
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A10]
+CopyFrom    = 0x7A10
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A10]
+CopyFrom    = 0x7A10
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A10]
+CopyFrom    = 0x7A10
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A10]
+CopyFrom    = 0x7A10
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A10]
+CopyFrom    = 0x47A10
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A10]
+CopyFrom    = 0x47A10
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A10]
+CopyFrom    = 0x47A10
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A10]
+CopyFrom    = 0x47A10
+[HighwayIntersectionInfo_0x00097A10]
+CopyFrom    = 0x57A10
+[HighwayIntersectionInfo_0x000A7A10]
+CopyFrom    = 0x67A10
+[HighwayIntersectionInfo_0x000B7A10]
+CopyFrom    = 0x77A10
+
+
+[HighwayIntersectionInfo_0x00007A11]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road corner - curved Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64300
+PreviewEffect = preview_subroad_53e64300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64300
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A11]
+CopyFrom    = 0x7A11
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A11]
+CopyFrom    = 0x7A11
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A11]
+CopyFrom    = 0x7A11
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A11]
+CopyFrom    = 0x7A11
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A11]
+CopyFrom    = 0x47A11
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A11]
+CopyFrom    = 0x47A11
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A11]
+CopyFrom    = 0x47A11
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A11]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road corner - curved Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64400
+PreviewEffect = preview_subroad_53e64400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64400
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A11]
+CopyFrom    = 0x87A11
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A11]
+CopyFrom    = 0x87A11
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A11]
+CopyFrom    = 0x87A11
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A05]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road Crossing - Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64800
+PreviewEffect = preview_subroad_53e64800_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 street: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64800
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A05]
+CopyFrom    = 0x7A05
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A05]
+CopyFrom    = 0x7A05
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A05]
+CopyFrom    = 0x7A05
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00047A05]
+;Added by Chrisim 12 December 2008.
+;roadUroad Dual - Road corner - Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64900
+PreviewEffect = preview_subroad_53e64900_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 street: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64900
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64900
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A05]
+CopyFrom    = 0x47A05
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A05]
+CopyFrom    = 0x47A05
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A05]
+CopyFrom    = 0x47A05
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A05]
+CopyFrom    = 0x47A05
+Transpose = 1
+[HighwayIntersectionInfo_0x00097A05]
+CopyFrom    = 0x87A05
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A05]
+CopyFrom    = 0x87A05
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A05]
+CopyFrom    = 0x87A05
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A19]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - transparent
+Piece = 0.0, 0.0, 0, 0, 0x53e61000
+PreviewEffect = preview_subroad_53e61000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61000
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A19]
+CopyFrom    = 0x7A19
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A19]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - transparent
+Piece = 0.0, 0.0, 0, 0, 0x53e61100
+PreviewEffect = preview_subroad_53e61100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61100
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A19]
+CopyFrom    = 0x27A19
+Rotate		= 1
+[HighwayIntersectionInfo_0x00047A19]
+CopyFrom    = 0x27A19
+Rotate		= 2
+[HighwayIntersectionInfo_0x00057A19]
+CopyFrom    = 0x27A19
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00067A19]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - green
+Piece = 0.0, 0.0, 0, 0, 0x53e61400
+PreviewEffect = preview_subroad_53e61400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61400
+Costs       = 50
+[HighwayIntersectionInfo_0x00077A19]
+CopyFrom    = 0x67A19
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00087A19]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - green
+Piece = 0.0, 0.0, 0, 0, 0x53e61500
+PreviewEffect = preview_subroad_53e61500_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61500
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61500
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A19]
+CopyFrom    = 0x87A19
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A19]
+CopyFrom    = 0x87A19
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A19]
+CopyFrom    = 0x87A19
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A0C]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - pedmall1
+Piece = 0.0, 0.0, 0, 0, 0x53e62000
+PreviewEffect = preview_subroad_53e62000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62000
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0C]
+CopyFrom    = 0x7A0C
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A0C]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - pedmall1
+Piece = 0.0, 0.0, 0, 0, 0x53e62100
+PreviewEffect = preview_subroad_53e62100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62100
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A0C]
+CopyFrom    = 0x27A0C
+Rotate		= 1
+[HighwayIntersectionInfo_0x00047A0C]
+CopyFrom    = 0x27A0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x00057A0C]
+CopyFrom    = 0x27A0C
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00067A0C]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - pedmall1
+Piece = 0.0, 0.0, 0, 0, 0x53e62200
+PreviewEffect = preview_subroad_53e62200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62200
+Costs       = 50
+[HighwayIntersectionInfo_0x00077A0C]
+CopyFrom    = 0x67A0C
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00087A0C]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - pedmall1
+Piece = 0.0, 0.0, 0, 0, 0x53e62300
+PreviewEffect = preview_subroad_53e62300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62300
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A0C]
+CopyFrom    = 0x87A0C
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A0C]
+CopyFrom    = 0x87A0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A0C]
+CopyFrom    = 0x87A0C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A0D]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - pedmall2
+Piece = 0.0, 0.0, 0, 0, 0x53e62400
+PreviewEffect = preview_subroad_53e62400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62400
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0D]
+CopyFrom    = 0x7A0D
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A0D]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - pedmall2
+Piece = 0.0, 0.0, 0, 0, 0x53e62500
+PreviewEffect = preview_subroad_53e62500_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62500
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62500
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A0D]
+CopyFrom    = 0x27A0D
+Rotate		= 1
+[HighwayIntersectionInfo_0x00047A0D]
+CopyFrom    = 0x27A0D
+Rotate		= 2
+[HighwayIntersectionInfo_0x00057A0D]
+CopyFrom    = 0x27A0D
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00067A0D]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - pedmall2
+Piece = 0.0, 0.0, 0, 0, 0x53e62600
+PreviewEffect = preview_subroad_53e62600_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62600
+Costs       = 50
+[HighwayIntersectionInfo_0x00077A0D]
+CopyFrom    = 0x67A0D
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00087A0D]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - pedmall2
+Piece = 0.0, 0.0, 0, 0, 0x53e62700
+PreviewEffect = preview_subroad_53e62700_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62700
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62700
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A0D]
+CopyFrom    = 0x87A0D
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A0D]
+CopyFrom    = 0x87A0D
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A0D]
+CopyFrom    = 0x87A0D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A06]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - Straight onewayroad Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e67000
+PreviewEffect = preview_subroad_53e67000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67000
+Costs       = 50
+OneWayDir	= 0
+[HighwayIntersectionInfo_0x00007A07]
+CopyFrom    = 0x7A06
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A06]
+CopyFrom    = 0x7A06
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A06]
+CopyFrom    = 0x7A06
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00047A06]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - Straight onewayroad Piece1
+Piece = 0.0, 0.0, 0, 0, 0x53e67100
+PreviewEffect = preview_subroad_53e67100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67100
+Costs       = 50
+OneWayDir	= 0
+[HighwayIntersectionInfo_0x00057A06]
+CopyFrom    = 0x47A06
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A06]
+CopyFrom    = 0x47A06
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A06]
+CopyFrom    = 0x47A06
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A06]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - Straight onewayroad Piece1
+Piece = 0.0, 0.0, 0, 0, 0x53e67200
+PreviewEffect = preview_subroad_53e67200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67200
+Costs       = 50
+OneWayDir	= 0
+[HighwayIntersectionInfo_0x00097A06]
+CopyFrom    = 0x87A06
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A06]
+CopyFrom    = 0x87A06
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A06]
+CopyFrom    = 0x87A06
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00017A06]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - Straight onewayroad Piece copy
+Piece = 0.0, 0.0, 0, 0, 0x53e67000
+PreviewEffect = preview_subroad_53e67000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67000
+Costs       = 50
+OneWayDir	= 4
+[HighwayIntersectionInfo_0x00017A07]
+CopyFrom    = 0x17A06
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A07]
+CopyFrom    = 0x17A06
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A07]
+CopyFrom    = 0x17A06
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00047A07]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - Straight onewayroad Piece1
+Piece = 0.0, 0.0, 0, 0, 0x53e67300
+PreviewEffect = preview_subroad_53e67300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67300
+Costs       = 50
+OneWayDir	= 4
+[HighwayIntersectionInfo_0x00057A07]
+CopyFrom    = 0x47A07
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A07]
+CopyFrom    = 0x47A07
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A07]
+CopyFrom    = 0x47A07
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A07]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road corner - Straight onewayroad Piece1
+Piece = 0.0, 0.0, 0, 0, 0x53e67400
+PreviewEffect = preview_subroad_53e67400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e67400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e67400
+Costs       = 50
+OneWayDir	= 4
+[HighwayIntersectionInfo_0x00097A07]
+CopyFrom    = 0x87A07
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A07]
+CopyFrom    = 0x87A07
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A07]
+CopyFrom    = 0x87A07
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A09]
+;Added by Chrisim 13 December 2008.
+;roadUroad Dual - Road Crossing - highway
+Piece = 0.0, 0.0, 0, 0, 0x53e65400
+PreviewEffect = preview_subroad_53e65400_ch
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....b....
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x00000200 groundhighway: 0x04020002
+CheckType = b - lightrail: 0x00000200 groundhighway: 0x00020402
+
+ConsLayout =.........
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x53e65400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e65400
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A09]
+CopyFrom    = 0x7A09
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A09]
+;Added by Chrisim 25 October 2009.
+;roadUroad Dual - Road Crossing - diagonal highway
+Piece = 0.0, 0.0, 0, 0, 0x53e65600
+PreviewEffect = preview_subroad_53e65600_ch
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....b....
+CellLayout =....c....
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x00000002 groundhighway: 0x03010000
+CheckType = b - lightrail: 0x00000002 groundhighway: 0x03010301
+CheckType = c - lightrail: 0x00000002 groundhighway: 0x00000301
+
+ConsLayout =.........
+ConsLayout =..../....
+ConsLayout =..../...<
+ConsLayout =..../....
+ConsLayout =....^....
+
+AutoTileBase=	0x53e65600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e65600
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A09]
+CopyFrom    = 0x27A09
+Transpose = 1
+[HighwayIntersectionInfo_0x00047A09]
+CopyFrom    = 0x27A09
+Rotate		= 1
+[HighwayIntersectionInfo_0x00057A09]
+CopyFrom    = 0x47A09
+Transpose = 1
+
+[HighwayIntersectionInfo_0x00067A09]
+CopyFrom    = 0x7A09
+[HighwayIntersectionInfo_0x00077A09]
+CopyFrom    = 0x17A09
+[HighwayIntersectionInfo_0x00087A09]
+CopyFrom    = 0x27A09
+[HighwayIntersectionInfo_0x00097A09]
+CopyFrom    = 0x37A09
+[HighwayIntersectionInfo_0x000A7A09]
+CopyFrom    = 0x47A09
+[HighwayIntersectionInfo_0x000B7A09]
+CopyFrom    = 0x57A09
+
+
+[HighwayIntersectionInfo_0x00007A08]
+;Added by Chrisim 14 December 2008.
+;roadUroad Dual - Road Crossing - avenue
+Piece = 0.0, 0.0, 0, 0, 0x53e65000
+PreviewEffect = preview_subroad_53e65000_ch
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....b....
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020002
+CheckType = b - lightrail: 0x00000200 avenue: 0x00020402
+
+ConsLayout =.........
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x53e65000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e65000
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A08]
+CopyFrom    = 0x7A08
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A08]
+CopyFrom    = 0x7A08
+[HighwayIntersectionInfo_0x00037A08]
+CopyFrom    = 0x17A08
+[HighwayIntersectionInfo_0x00047A08]
+CopyFrom    = 0x7A08
+[HighwayIntersectionInfo_0x00057A08]
+CopyFrom    = 0x17A08
+[HighwayIntersectionInfo_0x00067A08]
+CopyFrom    = 0x27A08
+[HighwayIntersectionInfo_0x00077A08]
+CopyFrom    = 0x37A08
+[HighwayIntersectionInfo_0x00087A08]
+CopyFrom    = 0x7A08
+[HighwayIntersectionInfo_0x00097A08]
+CopyFrom    = 0x17A08
+[HighwayIntersectionInfo_0x000A7A08]
+CopyFrom    = 0x27A08
+[HighwayIntersectionInfo_0x000B7A08]
+CopyFrom    = 0x37A08
+
+
+[HighwayIntersectionInfo_0x00007A0F]
+;Added by Chrisim 14 December 2008.
+;roadUroad Dual - Road Crossing - tram-avenue
+Piece = 0.0, 0.0, 0, 0, 0x53e65800
+PreviewEffect = preview_subroad_53e65800_ch
+
+CellLayout =.........
+CellLayout =....a...<
+CellLayout =....b....
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020002
+CheckType = b - lightrail: 0x00000200 avenue: 0x00020402
+
+ConsLayout =.........
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x53e65800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e65800
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0F]
+CopyFrom    = 0x7A0F
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A0F]
+CopyFrom    = 0x7A0F
+[HighwayIntersectionInfo_0x00037A0F]
+CopyFrom    = 0x17A0F
+[HighwayIntersectionInfo_0x00047A0F]
+CopyFrom    = 0x7A0F
+[HighwayIntersectionInfo_0x00057A0F]
+CopyFrom    = 0x17A0F
+[HighwayIntersectionInfo_0x00067A0F]
+CopyFrom    = 0x7A0F
+[HighwayIntersectionInfo_0x00077A0F]
+CopyFrom    = 0x17A0F
+[HighwayIntersectionInfo_0x00087A0F]
+CopyFrom    = 0x7A0F
+[HighwayIntersectionInfo_0x00097A0F]
+CopyFrom    = 0x17A0F
+[HighwayIntersectionInfo_0x000A7A0F]
+CopyFrom    = 0x7A0F
+[HighwayIntersectionInfo_0x000B7A0F]
+CopyFrom    = 0x17A0F
+
+
+[HighwayIntersectionInfo_0x00007A16]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 1
+Piece = 0.0, 0.0, 0, 0, 0x53e61800
+PreviewEffect = preview_subroad_53e61800_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61800
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A16]
+CopyFrom    = 0x7A16
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A16]
+CopyFrom    = 0x7A16
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A16]
+CopyFrom    = 0x7A16
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00047A16]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 2
+Piece = 0.0, 0.0, 0, 0, 0x53e61900
+PreviewEffect = preview_subroad_53e61900_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61900
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61900
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A16]
+CopyFrom    = 0x47A16
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A16]
+CopyFrom    = 0x47A16
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A16]
+CopyFrom    = 0x47A16
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00087A16]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 3
+Piece = 0.0, 0.0, 0, 0, 0x53e61a00
+PreviewEffect = preview_subroad_53e61a00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61a00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61a00
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A16]
+CopyFrom    = 0x87A16
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A16]
+CopyFrom    = 0x87A16
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A16]
+CopyFrom    = 0x87A16
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A17]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 4
+Piece = 0.0, 0.0, 0, 0, 0x53e61b00
+PreviewEffect = preview_subroad_53e61b00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61b00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61b00
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A17]
+CopyFrom    = 0x7A17
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A17]
+CopyFrom    = 0x7A17
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A17]
+CopyFrom    = 0x7A17
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00047A17]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 5
+Piece = 0.0, 0.0, 0, 0, 0x53e61c00
+PreviewEffect = preview_subroad_53e61c00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61c00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61c00
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A17]
+CopyFrom    = 0x47A17
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A17]
+CopyFrom    = 0x47A17
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A17]
+CopyFrom    = 0x47A17
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00087A17]
+;Added by Chrisim 27 December 2008.
+;roadUroad Dual - Road Crossing - custom field 6
+Piece = 0.0, 0.0, 0, 0, 0x53e61d00
+PreviewEffect = preview_subroad_53e61d00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61d00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61d00
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A17]
+CopyFrom    = 0x87A17
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A17]
+CopyFrom    = 0x87A17
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A17]
+CopyFrom    = 0x87A17
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A18]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road 4 junction - transparent
+Piece = 0.0, 0.0, 0, 0, 0x53e61200
+PreviewEffect = preview_subroad_53e61200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61200
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A18]
+CopyFrom    = 0x7A18
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A18]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road T junction - transparent
+Piece = 0.0, 0.0, 0, 0, 0x53e61300
+PreviewEffect = preview_subroad_53e61300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61300
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A18]
+CopyFrom    = 0x27A18
+Rotate		= 1
+[HighwayIntersectionInfo_0x00047A18]
+CopyFrom    = 0x27A18
+Rotate		= 2
+[HighwayIntersectionInfo_0x00057A18]
+CopyFrom    = 0x27A18
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00067A18]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road 4 junction - green
+Piece = 0.0, 0.0, 0, 0, 0x53e61600
+PreviewEffect = preview_subroad_53e61600_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61600
+Costs       = 50
+[HighwayIntersectionInfo_0x00077A18]
+CopyFrom    = 0x67A18
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00087A18]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road T junction - green
+Piece = 0.0, 0.0, 0, 0, 0x53e61700
+PreviewEffect = preview_subroad_53e61700_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e61700
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e61700
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A18]
+CopyFrom    = 0x87A18
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A18]
+CopyFrom    = 0x87A18
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A18]
+CopyFrom    = 0x87A18
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A0B]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road 4 junction - pedmall
+Piece = 0.0, 0.0, 0, 0, 0x53e62800
+PreviewEffect = preview_subroad_53e62800_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62800
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0B]
+CopyFrom    = 0x7A0B
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00027A0B]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road T junction - pedmall
+Piece = 0.0, 0.0, 0, 0, 0x53e62900
+PreviewEffect = preview_subroad_53e62900_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e62900
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e62900
+Costs       = 50
+[HighwayIntersectionInfo_0x00037A0B]
+CopyFrom    = 0x27A0B
+Rotate		= 1
+[HighwayIntersectionInfo_0x00047A0B]
+CopyFrom    = 0x27A0B
+Rotate		= 2
+[HighwayIntersectionInfo_0x00057A0B]
+CopyFrom    = 0x27A0B
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00067A0B]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road 4 junction - Straight Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66300
+PreviewEffect = preview_subroad_53e66300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66300
+Costs       = 50
+[HighwayIntersectionInfo_0x00077A0B]
+CopyFrom    = 0x67A0B
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00087A0B]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road T junction - Straight Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66400
+PreviewEffect = preview_subroad_53e66400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66400
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A0B]
+CopyFrom    = 0x87A0B
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A0B]
+CopyFrom    = 0x87A0B
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A0B]
+CopyFrom    = 0x87A0B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A0E]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road Crossing - Straight Tram Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66800
+PreviewEffect = preview_subroad_53e66800_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66800
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A0E]
+CopyFrom    = 0x7A0E
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A0E]
+CopyFrom    = 0x7A0E
+[HighwayIntersectionInfo_0x00037A0E]
+CopyFrom    = 0x17A0E
+
+;[HighwayIntersectionInfo_0x00027A0E]
+;;Added by Chrisim 13 May 2009. 
+;;Disabled in September 2009 when adding subsurface tram. Would cause trams jumping between surface and subsurface
+;;roadUroad Dual - Road Crossing - Straight Tram Piece
+;Piece = 0.0, 0.0, 0, 0, 0x53e66a00
+;PreviewEffect = preview_subroad_53e66a00_ch
+;
+;CellLayout =.........
+;CellLayout =....Z...<
+;CellLayout =....^....
+;
+;CheckType = Z - lightrail: 0x00000000
+;
+;ConsLayout =.........
+;ConsLayout =....+...<
+;ConsLayout =....^....
+;
+;AutoTileBase=	0x53e66a00
+;ReplacementIntersection0 = 0, 0
+;PlaceQueryID = 0x53e66a00
+;Costs       = 50
+;[HighwayIntersectionInfo_0x00037A0E]
+;CopyFrom    = 0x27A0E
+;Rotate		= 1
+
+[HighwayIntersectionInfo_0x00047A0E]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Road corner - Straight Tram Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66900
+PreviewEffect = preview_subroad_53e66900_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66900
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66900
+Costs       = 50
+[HighwayIntersectionInfo_0x00057A0E]
+CopyFrom    = 0x47A0E
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A0E]
+CopyFrom    = 0x47A0E
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A0E]
+CopyFrom    = 0x47A0E
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A0E]
+CopyFrom    = 0x47A0E
+Transpose = 1
+[HighwayIntersectionInfo_0x00097A0E]
+CopyFrom    = 0x87A0E
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A0E]
+CopyFrom    = 0x87A0E
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A0E]
+CopyFrom    = 0x87A0E
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00007A12]
+;Added by Chrisim 10 October 2009.
+;roadUroad Dual - Road Crossing - diagonal Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64500
+PreviewEffect = preview_subroad_53e64500_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=  0x53e64500
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64500
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A12]
+CopyFrom    = 0x7A12
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A12]
+CopyFrom    = 0x7A12
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A12]
+CopyFrom    = 0x7A12
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A12]
+CopyFrom    = 0x7A12
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A12]
+CopyFrom    = 0x47A12
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A12]
+CopyFrom    = 0x47A12
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A12]
+CopyFrom    = 0x47A12
+Rotate		= 3
+[HighwayIntersectionInfo_0x00087A12]
+CopyFrom    = 0x47A12
+[HighwayIntersectionInfo_0x00097A12]
+CopyFrom    = 0x57A12
+[HighwayIntersectionInfo_0x000A7A12]
+CopyFrom    = 0x67A12
+[HighwayIntersectionInfo_0x000B7A12]
+CopyFrom    = 0x77A12
+
+
+[HighwayIntersectionInfo_0x00007A13]
+;Added by Chrisim 10 October 2009.
+;roadUroad Dual - Road corner - diagonal Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64600
+PreviewEffect = preview_subroad_53e64600_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64600
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A13]
+CopyFrom    = 0x7A13
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A13]
+CopyFrom    = 0x7A13
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A13]
+CopyFrom    = 0x7A13
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A13]
+CopyFrom    = 0x7A13
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A13]
+CopyFrom    = 0x47A13
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A13]
+CopyFrom    = 0x47A13
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A13]
+CopyFrom    = 0x47A13
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A13]
+;Added by Chrisim 10 October 2009.
+;roadUroad Dual - Road corner - diagonal Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e64700
+PreviewEffect = preview_subroad_53e64700_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e64700
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e64700
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A13]
+CopyFrom    = 0x87A13
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A13]
+CopyFrom    = 0x87A13
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A13]
+CopyFrom    = 0x87A13
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A14]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road Crossing - diagonal Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66500
+PreviewEffect = preview_subroad_53e66500_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=  0x53e66500
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66500
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A14]
+CopyFrom    = 0x7A14
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A14]
+CopyFrom    = 0x7A14
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A14]
+CopyFrom    = 0x7A14
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A14]
+CopyFrom    = 0x7A14
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A14]
+CopyFrom    = 0x47A14
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A14]
+CopyFrom    = 0x47A14
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A14]
+CopyFrom    = 0x47A14
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A14]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road corner - diagonal Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66b00
+PreviewEffect = preview_subroad_53e66b00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66b00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66b00
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A14]
+CopyFrom    = 0x87A14
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A14]
+CopyFrom    = 0x87A14
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A14]
+CopyFrom    = 0x87A14
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A15]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road corner - diagonal Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66600
+PreviewEffect = preview_subroad_53e66600_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66600
+Costs       = 50
+[HighwayIntersectionInfo_0x00017A15]
+CopyFrom    = 0x7A15
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A15]
+CopyFrom    = 0x7A15
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A15]
+CopyFrom    = 0x7A15
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A15]
+CopyFrom    = 0x7A15
+Transpose = 1
+[HighwayIntersectionInfo_0x00057A15]
+CopyFrom    = 0x47A15
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A15]
+CopyFrom    = 0x47A15
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A15]
+CopyFrom    = 0x47A15
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00087A15]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road corner - diagonal Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66700
+PreviewEffect = preview_subroad_53e66700_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 rail: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66700
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66700
+Costs       = 50
+[HighwayIntersectionInfo_0x00097A15]
+CopyFrom    = 0x87A15
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A15]
+CopyFrom    = 0x87A15
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A15]
+CopyFrom    = 0x87A15
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00007A01]
+;Added by Chrisim 13 May 2009.
+;roadUroad Dual - Underground Ramp
+Piece = 0.0, 0.0, 0, 0, 0x53e63000
+PreviewEffect = preview_subroadentranceram2
+
+CellLayout =....
+CellLayout =.ef.<
+CellLayout =.cd.
+CellLayout =.cd.
+CellLayout =.ab.
+CellLayout =.^..
+
+CheckType = a - avenue: 0x00040200, 0x00ffff00 check
+CheckType = b - avenue: 0x00000204, 0x0000ffff check
+;CheckType = c - avenue: 0x02040200
+;CheckType = d - avenue: 0x02000204
+;CheckType = a - onewayroad: 0x00000200, 0x0000ff00 check
+;CheckType = b - onewayroad: 0x00000200, 0x0000ff00 check
+CheckType = c - onewayroad: 0x02000200
+CheckType = d - onewayroad: 0x02000200
+CheckType = e - road: 0x02000200
+CheckType = f - road: 0x02000200
+
+ConsLayout =....
+ConsLayout =.##.<
+ConsLayout =.##.
+ConsLayout =.##.
+ConsLayout =.||.
+ConsLayout =.^..
+
+AutoTileBase= 0x53e63000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63000
+Costs       = 100
+[HighwayIntersectionInfo_0x00017A01]
+CopyFrom    = 0x7A01
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A01]
+CopyFrom    = 0x7A01
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A01]
+CopyFrom    = 0x7A01
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047A01]
+CopyFrom    = 0x7A01
+[HighwayIntersectionInfo_0x00057A01]
+CopyFrom    = 0x17A01
+[HighwayIntersectionInfo_0x00067A01]
+CopyFrom    = 0x27A01
+[HighwayIntersectionInfo_0x00077A01]
+CopyFrom    = 0x37A01
+[HighwayIntersectionInfo_0x00087A01]
+CopyFrom    = 0x7A01
+[HighwayIntersectionInfo_0x00097A01]
+CopyFrom    = 0x17A01
+[HighwayIntersectionInfo_0x000A7A01]
+CopyFrom    = 0x27A01
+[HighwayIntersectionInfo_0x000B7A01]
+CopyFrom    = 0x37A01
+
+
+[HighwayIntersectionInfo_0x00007A02]
+;Added by Chrisim 30 May 2009.
+;uTram - Tram-avenue Ramp
+Piece = 0.0, 0.0, 0, 0, 0x584b3005
+PreviewEffect = preview_sub_tram_piece_ch02
+
+CellLayout =....
+CellLayout =.ef.<
+CellLayout =.ef.
+CellLayout =.ef.
+CellLayout =....
+CellLayout =.^..
+
+CheckType = e - lightrail: 0x02000200 road: 0x02000200
+CheckType = f - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout =....
+ConsLayout =.##.<
+ConsLayout =.##.
+ConsLayout =.##.
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase= 0x584b3000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x584b3000
+Costs       = 100
+[HighwayIntersectionInfo_0x00017A02]
+CopyFrom    = 0x7A02
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A02]
+CopyFrom    = 0x7A02
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A02]
+CopyFrom    = 0x7A02
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00047A02]
+CopyFrom    = 0x7A02
+[HighwayIntersectionInfo_0x00057A02]
+CopyFrom    = 0x17A02
+[HighwayIntersectionInfo_0x00067A02]
+CopyFrom    = 0x27A02
+[HighwayIntersectionInfo_0x00077A02]
+CopyFrom    = 0x37A02
+[HighwayIntersectionInfo_0x00087A02]
+CopyFrom    = 0x7A02
+[HighwayIntersectionInfo_0x00097A02]
+CopyFrom    = 0x17A02
+[HighwayIntersectionInfo_0x000A7A02]
+CopyFrom    = 0x27A02
+[HighwayIntersectionInfo_0x000B7A02]
+CopyFrom    = 0x37A02
+
+
+[HighwayIntersectionInfo_0x00007A03]
+;Added by Chrisim 15 January 2010.
+;roadUroad Dual - Underground street Ramp by Chrisim
+Piece = 0.0, 8.0, 0, 0, 0x53e63800
+PreviewEffect = preview_subroad_53e63800_ch
+
+CellLayout =...
+CellLayout =.a<
+CellLayout =.a.
+CellLayout =.b.
+CellLayout =.^.
+
+CheckType = a - street: 0x02000200
+CheckType = b - street: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+<
+ConsLayout =.+.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63800
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63800
+Costs       = 100
+[HighwayIntersectionInfo_0x00017A03]
+CopyFrom    = 0x7A03
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027A03]
+CopyFrom    = 0x7A03
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037A03]
+CopyFrom    = 0x7A03
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00047A03]
+;Added by Chrisim 15 September 2009.
+;roadUroad Dual - Underground Ped Ramp
+Piece = 0.0, 0.0, 0, 0, 0x53e63600
+PreviewEffect = preview_subroad_ped_stairs1
+
+CellLayout =...
+CellLayout =.a<
+CellLayout =.^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =...
+ConsLayout =.+<
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63600
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63600
+Costs       = 100
+[HighwayIntersectionInfo_0x00057A03]
+CopyFrom    = 0x47A03
+Rotate		= 1
+[HighwayIntersectionInfo_0x00067A03]
+CopyFrom    = 0x47A03
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077A03]
+CopyFrom    = 0x47A03
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00087A03]
+;Added by Chrisim 1 February 2010 - tunnel model by Toja
+;roadUroad Dual - Street tunnel into FLUPs
+Piece = 0.0, 0.0, 2, 0, 0x53e63900
+PreviewEffect = preview_subroad_53e63900_ch
+
+CellLayout =...
+CellLayout =.b.
+CellLayout =.a<
+CellLayout =.^..
+
+;CheckType = a - road: 0x02000200
+;CheckType = b - street: 0x02000000, 0xff000000 optional
+CheckType = a - road: 0x00000000
+CheckType = b - street: 0x02020200, 0xffffff00 optional
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.+<
+ConsLayout =.^.
+
+AutoTileBase= 0x53e63900
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63900
+Costs       = 100
+
+[HighwayIntersectionInfo_0x00097A03]
+CopyFrom    = 0x87A03
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7A03]
+CopyFrom    = 0x87A03
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7A03]
+CopyFrom    = 0x87A03
+Rotate		= 3
+
+
+;
+;END UNDERGROUND ROAD PUZZLE PIECES
+

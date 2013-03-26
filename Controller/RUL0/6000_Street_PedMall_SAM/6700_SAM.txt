@@ -1,0 +1,759 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;STREET ADDON MOD (SAM) BUTTON SECTION
+;STREET ADDON MOD (SAM) BUTTON SECTION
+;0x67##
+;Street Addon Mod Puzzle Pieces button
+RotationRing = 6700, 16700, 26700, 36700, 46700, 56700, 66700, 76700 ;SAM Texture Set 1
+AddTypes     = 6701, 16701, 26701, 36701, 46701, 56701, 66701, 76701 ;SAM Texture Set 2
+AddTypes     = 6702, 16702, 26702, 36702, 46702, 56702, 66702, 76702 ;SAM Texture Set 3
+AddTypes     = 6703, 16703, 26703, 36703, 46703, 56703, 66703, 76703 ;SAM Texture Set 4
+AddTypes     = 6704, 16704, 26704, 36704, 46704, 56704, 66704, 76704 ;SAM Texture Set 5
+AddTypes     = 6705, 16705, 26705, 36705, 46705, 56705, 66705, 76705 ;SAM Texture Set 6
+AddTypes     = 6706, 16706, 26706, 36706, 46706, 56706, 66706, 76706 ;SAM Texture Set 7
+AddTypes     = 6707, 16707, 26707, 36707, 46707, 56707, 66707, 76707 ;SAM Texture Set 8
+AddTypes     = 6708, 16708, 26708, 36708, 46708, 56708, 66708, 76708 ;SAM Texture Set 9
+AddTypes     = 6709, 16709, 26709, 36709, 46709, 56709, 66709, 76709 ;SAM Texture Set 10
+;AddTypes     = 670A, 1670A, 2670A, 3670A, 4670A, 5670A, 6670A, 7670A ;SAM Texture Set 11
+;AddTypes     = 670B, 1670B, 2670B, 3670B, 4670B, 5670B, 6670B, 7670B ;SAM Texture Set 12
+;AddTypes     = 670C, 1670C, 2670C, 3670C, 4670C, 5670C, 6670C, 7670C ;SAM Texture Set 13
+;AddTypes     = 670D, 1670D, 2670D, 3670D, 4670D, 5670D, 6670D, 7670D ;SAM Texture Set 14
+;AddTypes     = 670E, 1670E, 2670E, 3670E, 4670E, 5670E, 6670E, 7670E ;BSC Trail Parks
+;AddTypes     = 670F, 1670F, 2670F, 3670F, 4670F, 5670F, 6670F, 7670F ;BSC Trail Parks (draggable? - unknown - listed by memo)
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;SAM SECTION
+;SAM SECTION
+;SAM SECTION
+
+
+[HighwayIntersectionInfo_0x00006700]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 1
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff106
+PreviewEffect = preview_draggable_sam___001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Rail: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff106
+Costs       = 8
+[HighwayIntersectionInfo_0x00016700]
+CopyFrom    = 0x6700
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026700]
+CopyFrom    = 0x6700
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036700]
+CopyFrom    = 0x6700
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046700]
+CopyFrom    = 0x6700
+[HighwayIntersectionInfo_0x00056700]
+CopyFrom    = 0x16700
+[HighwayIntersectionInfo_0x00066700]
+CopyFrom    = 0x26700
+[HighwayIntersectionInfo_0x00076700]
+CopyFrom    = 0x36700
+
+
+
+[HighwayIntersectionInfo_0x00006701]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 2
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff206
+PreviewEffect = preview_draggable_sam___002
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff206
+Costs       = 8
+[HighwayIntersectionInfo_0x00016701]
+CopyFrom    = 0x6701
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026701]
+CopyFrom    = 0x6701
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036701]
+CopyFrom    = 0x6701
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046701]
+CopyFrom    = 0x6701
+[HighwayIntersectionInfo_0x00056701]
+CopyFrom    = 0x16701
+[HighwayIntersectionInfo_0x00066701]
+CopyFrom    = 0x26701
+[HighwayIntersectionInfo_0x00076701]
+CopyFrom    = 0x36701
+
+
+
+[HighwayIntersectionInfo_0x00006702]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 3
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff306
+PreviewEffect = preview_draggable_sam___003
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff306
+Costs       = 8
+[HighwayIntersectionInfo_0x00016702]
+CopyFrom    = 0x6702
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026702]
+CopyFrom    = 0x6702
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036702]
+CopyFrom    = 0x6702
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046702]
+CopyFrom    = 0x6702
+[HighwayIntersectionInfo_0x00056702]
+CopyFrom    = 0x16702
+[HighwayIntersectionInfo_0x00066702]
+CopyFrom    = 0x26702
+[HighwayIntersectionInfo_0x00076702]
+CopyFrom    = 0x36702
+
+
+
+[HighwayIntersectionInfo_0x00006703]
+;Added by Tarkus 7/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 4
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff406
+PreviewEffect = preview_draggable_sam___004
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff406
+Costs       = 8
+[HighwayIntersectionInfo_0x00016703]
+CopyFrom    = 0x6703
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026703]
+CopyFrom    = 0x6703
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036703]
+CopyFrom    = 0x6703
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046703]
+CopyFrom    = 0x6703
+[HighwayIntersectionInfo_0x00056703]
+CopyFrom    = 0x16703
+[HighwayIntersectionInfo_0x00066703]
+CopyFrom    = 0x26703
+[HighwayIntersectionInfo_0x00076703]
+CopyFrom    = 0x36703
+
+
+
+[HighwayIntersectionInfo_0x00006704]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 5
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff506
+PreviewEffect = preview_draggable_sam___005
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00010001, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff506
+Costs       = 8
+[HighwayIntersectionInfo_0x00016704]
+CopyFrom    = 0x6704
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026704]
+CopyFrom    = 0x6704
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036704]
+CopyFrom    = 0x6704
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046704]
+CopyFrom    = 0x6704
+[HighwayIntersectionInfo_0x00056704]
+CopyFrom    = 0x16704
+[HighwayIntersectionInfo_0x00066704]
+CopyFrom    = 0x26704
+[HighwayIntersectionInfo_0x00076704]
+CopyFrom    = 0x36704
+
+
+
+[HighwayIntersectionInfo_0x00006705]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 6
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff606
+PreviewEffect = preview_draggable_sam___006
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00030001, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff606
+Costs       = 8
+[HighwayIntersectionInfo_0x00016705]
+CopyFrom    = 0x6705
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026705]
+CopyFrom    = 0x6705
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036705]
+CopyFrom    = 0x6705
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046705]
+CopyFrom    = 0x6705
+[HighwayIntersectionInfo_0x00056705]
+CopyFrom    = 0x16705
+[HighwayIntersectionInfo_0x00066705]
+CopyFrom    = 0x26705
+[HighwayIntersectionInfo_0x00076705]
+CopyFrom    = 0x36705
+
+
+
+[HighwayIntersectionInfo_0x00006706]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 7
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff706
+PreviewEffect = preview_draggable_sam___007
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Road: 0x00030003, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff706
+Costs       = 8
+[HighwayIntersectionInfo_0x00016706]
+CopyFrom    = 0x6706
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026706]
+CopyFrom    = 0x6706
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036706]
+CopyFrom    = 0x6706
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046706]
+CopyFrom    = 0x6706
+[HighwayIntersectionInfo_0x00056706]
+CopyFrom    = 0x16706
+[HighwayIntersectionInfo_0x00066706]
+CopyFrom    = 0x26706
+[HighwayIntersectionInfo_0x00076706]
+CopyFrom    = 0x36706
+
+
+
+[HighwayIntersectionInfo_0x00006707]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 8
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff806
+PreviewEffect = preview_draggable_sam___008
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Rail: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff806
+Costs       = 8
+[HighwayIntersectionInfo_0x00016707]
+CopyFrom    = 0x6707
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026707]
+CopyFrom    = 0x6707
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036707]
+CopyFrom    = 0x6707
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046707]
+CopyFrom    = 0x6707
+[HighwayIntersectionInfo_0x00056707]
+CopyFrom    = 0x16707
+[HighwayIntersectionInfo_0x00066707]
+CopyFrom    = 0x26707
+[HighwayIntersectionInfo_0x00076707]
+CopyFrom    = 0x36707
+
+
+
+[HighwayIntersectionInfo_0x00006708]
+;Added by Tarkus 7/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 4
+Piece = 0.0, 0.0, 0, 0, 0x5e5ff906
+PreviewEffect = preview_draggable_sam___009
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 Rail: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ff900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ff906
+Costs       = 8
+[HighwayIntersectionInfo_0x00016708]
+CopyFrom    = 0x6708
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026708]
+CopyFrom    = 0x6708
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036708]
+CopyFrom    = 0x6708
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046708]
+CopyFrom    = 0x6708
+[HighwayIntersectionInfo_0x00056708]
+CopyFrom    = 0x16708
+[HighwayIntersectionInfo_0x00066708]
+CopyFrom    = 0x26708
+[HighwayIntersectionInfo_0x00076708]
+CopyFrom    = 0x36708
+
+
+
+[HighwayIntersectionInfo_0x00006709]
+;Added by Tarkus 6/9/2010.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 10
+Piece = 0.0, 0.0, 0, 0, 0x5e5ffa06
+PreviewEffect = preview_draggable_sam___010
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ffA00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ffA06
+Costs       = 8
+[HighwayIntersectionInfo_0x00016709]
+CopyFrom    = 0x6709
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026709]
+CopyFrom    = 0x6709
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036709]
+CopyFrom    = 0x6709
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00046709]
+CopyFrom    = 0x6709
+[HighwayIntersectionInfo_0x00056709]
+CopyFrom    = 0x16709
+[HighwayIntersectionInfo_0x00066709]
+CopyFrom    = 0x26709
+[HighwayIntersectionInfo_0x00076709]
+CopyFrom    = 0x36709
+
+
+
+[HighwayIntersectionInfo_0x0000670A]
+;Added by Tarkus 6/9/2010.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 11
+Piece = 0.0, 0.0, 0, 0, 0x5e5ffb06
+PreviewEffect = preview_draggable_sam___011
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 onewayroad: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ffB00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ffB06
+Costs       = 8
+[HighwayIntersectionInfo_0x0001670A]
+CopyFrom    = 0x670A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670A]
+CopyFrom    = 0x670A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670A]
+CopyFrom    = 0x670A
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004670A]
+CopyFrom    = 0x670A
+[HighwayIntersectionInfo_0x0005670A]
+CopyFrom    = 0x1670A
+[HighwayIntersectionInfo_0x0006670A]
+CopyFrom    = 0x2670A
+[HighwayIntersectionInfo_0x0007670A]
+CopyFrom    = 0x3670A
+
+
+
+[HighwayIntersectionInfo_0x0000670B]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 12
+Piece = 0.0, 0.0, 0, 0, 0x5e5ffc06
+PreviewEffect = preview_draggable_sam___012
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 onewayroad: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ffC00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ffC06
+Costs       = 8
+[HighwayIntersectionInfo_0x0001670B]
+CopyFrom    = 0x670B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670B]
+CopyFrom    = 0x670B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670B]
+CopyFrom    = 0x670B
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004670B]
+CopyFrom    = 0x670B
+[HighwayIntersectionInfo_0x0005670B]
+CopyFrom    = 0x1670B
+[HighwayIntersectionInfo_0x0006670B]
+CopyFrom    = 0x2670B
+[HighwayIntersectionInfo_0x0007670B]
+CopyFrom    = 0x3670B
+
+
+
+[HighwayIntersectionInfo_0x0000670C]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 13
+Piece = 0.0, 0.0, 0, 0, 0x5e5ffd06
+PreviewEffect = preview_draggable_sam___013
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 onewayroad: 0x00010001, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ffD00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ffD06
+Costs       = 8
+[HighwayIntersectionInfo_0x0001670C]
+CopyFrom    = 0x670C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670C]
+CopyFrom    = 0x670C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670C]
+CopyFrom    = 0x670C
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004670C]
+CopyFrom    = 0x670C
+[HighwayIntersectionInfo_0x0005670C]
+CopyFrom    = 0x1670C
+[HighwayIntersectionInfo_0x0006670C]
+CopyFrom    = 0x2670C
+[HighwayIntersectionInfo_0x0007670C]
+CopyFrom    = 0x3670C
+
+
+
+[HighwayIntersectionInfo_0x0000670D]
+;Added by Tarkus 8/13/2007.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Street Addon Mod-Texture Set 14
+Piece = 0.0, 0.0, 0, 0, 0x5e5ffe06
+PreviewEffect = preview_draggable_sam___014
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - street: 0x02000200
+CheckType = a - street: 0x02000200 onewayroad: 0x00030003, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5e5ffE00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e5ffE06
+Costs       = 8
+[HighwayIntersectionInfo_0x0001670D]
+CopyFrom    = 0x670D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670D]
+CopyFrom    = 0x670D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670D]
+CopyFrom    = 0x670D
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004670D]
+CopyFrom    = 0x670D
+[HighwayIntersectionInfo_0x0005670D]
+CopyFrom    = 0x1670D
+[HighwayIntersectionInfo_0x0006670D]
+CopyFrom    = 0x2670D
+[HighwayIntersectionInfo_0x0007670D]
+CopyFrom    = 0x3670D
+
+
+
+;END SAM SECTION
+
+
+
+[HighwayIntersectionInfo_0x0000670E]
+;Added by Tarkus 7/13/2007.
+;BSC Paths-Draggable
+Piece = 0.0, 0.0, 0, 0, 0x5560fa05
+PreviewEffect = preview_draggable_bscpa_001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 street: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase=	0x5560fa00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5560fa00
+Costs       = 8
+[HighwayIntersectionInfo_0x0001670E]
+CopyFrom    = 0x670E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670E]
+CopyFrom    = 0x670E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670E]
+CopyFrom    = 0x670E
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004670E]
+CopyFrom    = 0x670E
+[HighwayIntersectionInfo_0x0005670E]
+CopyFrom    = 0x1670E
+[HighwayIntersectionInfo_0x0006670E]
+CopyFrom    = 0x2670E
+[HighwayIntersectionInfo_0x0007670E]
+CopyFrom    = 0x3670E
+
+
+
+;FA00
+[HighwayIntersectionInfo_0x0000670F]
+Piece = 0.0, 0.0, 0, 0, 0x5560fa05
+PreviewEffect = preview_draggable_bscpa_001
+CellLayout =.......
+CellLayout =...c...
+CellLayout =...a..<
+CellLayout =...b...
+CellLayout =...d...
+CellLayout =...^...
+
+CheckType = a - road: 0x02000000 street: 0x00020202
+;CheckType = a - street: 0x02020202
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000000, 0xff000000 check
+CheckType = d - onewayroad: 0x00000200, 0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =...|...<
+ConsLayout =...|....
+ConsLayout =...^....
+
+AutoTileBase=	0x5CAB1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CAB1000
+Costs       = 8
+OneWayDir = 0
+[HighwayIntersectionInfo_0x0001670F]
+CopyFrom    = 0x670F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002670F]
+CopyFrom    = 0x670F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003670F]
+CopyFrom    = 0x670F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004670F]
+CopyFrom    = 0x670F
+[HighwayIntersectionInfo_0x0005670F]
+CopyFrom    = 0x670F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006670F]
+CopyFrom    = 0x670F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007670F]
+CopyFrom    = 0x670F
+Rotate		= 3
+
+
+

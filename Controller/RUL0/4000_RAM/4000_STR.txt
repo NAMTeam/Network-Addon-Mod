@@ -1,0 +1,1030 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RAIL ADDON MOD (RAM) BUTTON SECTION
+;RAIL ADDON MOD (RAM) BUTTON SECTION
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RAIL ADDON MOD (RAM) BUTTON SECTION
+;RAIL ADDON MOD (RAM) BUTTON SECTION
+;RAM Set1 - Single Track Railroad (STR) button
+RotationRing = 4000, 14000, 24000, 34000, 44000, 54000, 64000, 74000 ;STR Starter Piece Orth
+AddTypes     = 4001, 14001, 24001, 34001, 44001, 54001, 64001, 74001 ;STR Starter Piece Diag
+AddTypes     = 4002, 14002, 24002, 34002, 44002, 54002, 64002, 74002 ;90 Curve
+AddTypes     = 4003, 14003, 24003, 34003, 44003, 54003, 64003, 74003 ;45 Curve
+AddTypes     = 4004, 14004, 24004, 34004, 44004, 54004, 64004, 74004 ;90 Curve STR off Straight STR
+AddTypes     = 4005, 14005, 24005, 34005, 44005, 54005, 64005, 74005 ;45 Curve STR off Straight STR
+AddTypes     = 4006, 14006, 24006, 34006, 44006, 54006, 64006, 74006 ;90 Curve STR off Straight Dual
+AddTypes     = 4007, 14007, 24007, 34007, 44007, 54007, 64007, 74007 ;45 Curve STR off Straight Dual
+AddTypes     = 4008, 14008, 24008, 34008, 44008, 54008, 64008, 74008 ;STR Parallel off STR Straight Switch
+AddTypes     = 4009, 14009, 24009, 34009, 44009, 54009, 64009, 74009 ;STR Parallel off Dual Rail Straight Switch
+AddTypes     = 400A, 1400A, 2400A, 3400A, 4400A, 5400A, 6400A, 7400A ;S-Curve STR
+AddTypes     = 400B, 1400B, 2400B, 3400B, 4400B, 5400B, 6400B, 7400B ;Diagonal STR to Ortho STR Switch
+AddTypes     = 400C, 1400C, 2400C, 3400C, 4400C, 5400C, 6400C, 7400C ;Diagonal Dual Rail to Ortho STR Switch
+AddTypes     = 400D, 1400D, 2400D, 3400D, 4400D, 5400D, 6400D, 7400D ;Diagonal S-Curve STR
+AddTypes     = 400E, 1400E, 2400E, 3400E, 4400E, 5400E, 6400E, 7400E ;FARR-STR Crossover ;moved from FARR button by ebina 06172009
+Addtypes     = 400F, 1400F, 2400F, 3400F, 4400F, 5400F, 6400F, 7400F ;Filler Straight Piece (1x1)
+Addtypes     = 4010, 14010, 24010, 34010, 44010, 54010, 64010, 74010 ;Filler Diagonal Piece (1x1)
+AddTypes     = 4011, 14011, 24011, 34011, 44011, 54011, 64011, 74011 ;Double Track to STR Long Transition;;;placed here by dedgren 090214 in order to move to later in menu
+AddTypes     = 4012, 14012, 24012, 34012, 44012, 54012, 64012, 74012 ;Double Track to STR Short Transition;;;added by dedgren 090214
+;AddTypes     = 4013, 14013, 24013, 34013, 44013, 54013, 64013, 74013
+;AddTypes     = 4014, 14014, 24014, 34014, 44014, 54014, 64014, 74014 ;TUNNEL STR - disabled -memo 13/03/01
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;RAM SECTION
+;RAM SECTION
+;     STR SET 1 SUBSECTION
+;     STR SET 1 SUBSECTION
+
+[HighwayIntersectionInfo_0x00004000]
+;Added by Warrior 3/Oct/2008.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;STR Starter piece/Transition (Textures by Bighead99)
+Piece = 0.0, 0.0, 0, 0, 0x53d0000B
+PreviewEffect = preview_ram1_puzzlepiece000
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - Rail: 0x02000200
+CheckType = a - Rail: 0x02000200 Street: 0x00010100 optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000			; former 0x53d00000
+PlaceQueryID = 0x53d00000
+Costs       = 5; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014000]
+CopyFrom    = 0x4000
+Rotate		= 1
+[HighwayIntersectionInfo_0x00024000]
+CopyFrom    = 0x4000
+Rotate		= 2
+[HighwayIntersectionInfo_0x00034000]
+CopyFrom    = 0x4000
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00044000]
+CopyFrom    = 0x4000
+[HighwayIntersectionInfo_0x00054000]
+CopyFrom    = 0x14000
+[HighwayIntersectionInfo_0x00064000]
+CopyFrom    = 0x24000
+[HighwayIntersectionInfo_0x00074000]
+CopyFrom    = 0x34000
+
+[HighwayIntersectionInfo_0x00004001]
+;Added by Warrior 1/March/2009.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;STR Starter piece Diag (Textures by Bighead99)
+Piece = 0.0, -16.0, 0, 0, 0x53d0000B
+PreviewEffect = preview_ram1_puzzlepiece017
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - Rail: 0x00000301
+CheckType = a - Rail: 0x03010000 Street: 0x00000101 optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000			; former 0x53d00100
+PlaceQueryID = 0x53d00100
+Costs       = 5
+[HighwayIntersectionInfo_0x00014001]
+CopyFrom    = 0x4001
+Rotate		= 1
+[HighwayIntersectionInfo_0x00024001]
+CopyFrom    = 0x4001
+Rotate		= 2
+[HighwayIntersectionInfo_0x00034001]
+CopyFrom    = 0x4001
+Rotate		= 3
+[HighwayIntersectionInfo_0x00044001]
+CopyFrom    = 0x4001
+Transpose   = 1
+[HighwayIntersectionInfo_0x00054001]
+CopyFrom    = 0x14001
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064001]
+CopyFrom    = 0x24001
+Transpose   = 1
+[HighwayIntersectionInfo_0x00074001]
+CopyFrom    = 0x34001
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004002]
+;Added by Warrior 11/Oct/2008.
+;STR 90 Degree Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53d01005
+PreviewEffect = preview_ram1_puzzlepiece001
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..+...........
+CellLayout =..++..........
+CellLayout =..++..........
+CellLayout =...++.........
+CellLayout =....++........
+CellLayout =.....+++......
+CellLayout =......+++by...
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000002,0x000000ff check
+CheckType = b - Rail: 0x00020002
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..\\..........
+ConsLayout =..\\..........
+ConsLayout =...\\.........
+ConsLayout =....\\........
+ConsLayout =.....\\\......
+ConsLayout =......\\--....
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d01000
+PlaceQueryID = 0x53d01000
+Costs       = 58; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014002]
+CopyFrom    = 0x4002
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024002]
+CopyFrom    = 0x4002
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034002]
+CopyFrom    = 0x24002
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044002]
+CopyFrom    = 0x4002
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054002]
+CopyFrom    = 0x44002
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064002]
+CopyFrom    = 0x4002
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074002]
+CopyFrom    = 0x64002
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004003]
+;Added by Warrior 11/Oct/2008.
+;STR 45 Degree Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53d02005
+PreviewEffect = preview_ram1_puzzlepiece002
+
+CellLayout =..z.....
+CellLayout =..a....<
+CellLayout =..+.....
+CellLayout =..++....
+CellLayout =..++....
+CellLayout =...++...
+CellLayout =....by..
+CellLayout =..^.....
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000003,0x000000ff check
+CheckType = b - Rail: 0x00030100
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =..|.....
+ConsLayout =..\\....
+ConsLayout =..\\....
+ConsLayout =...\\...
+ConsLayout =....\...
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d02000
+PlaceQueryID = 0x53d02000
+Costs       = 33; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014003]
+CopyFrom    = 0x4003
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024003]
+CopyFrom    = 0x4003
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034003]
+CopyFrom    = 0x24003
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044003]
+CopyFrom    = 0x4003
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054003]
+CopyFrom    = 0x44003
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064003]
+CopyFrom    = 0x4003
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074003]
+CopyFrom    = 0x64003
+Transpose   = 1
+
+[HighwayIntersectionInfo_0x00004004]
+;Added by Warrior 12/Oct/2008.
+;STR 90 Degree Curve Off STR Straight Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d03005
+PreviewEffect = preview_ram1_puzzlepiece003
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a...........
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..x++.........
+CellLayout =....++........
+CellLayout =.....+++......
+CellLayout =......+++by...
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000002,0x000000ff check
+CheckType = x - Rail: 0x00000200,0x0000ff00 check
+CheckType = b - Rail: 0x00020002
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|\..........
+ConsLayout =..|\..........
+ConsLayout =..|\\.........
+ConsLayout =....\\........
+ConsLayout =.....\\\......
+ConsLayout =..^...\\--....
+
+AutoTileBase = 0x53d03000
+PlaceQueryID = 0x53d03000
+Costs       = 153; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014004]
+CopyFrom    = 0x4004
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024004]
+CopyFrom    = 0x4004
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034004]
+CopyFrom    = 0x24004
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044004]
+CopyFrom    = 0x4004
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054004]
+CopyFrom    = 0x44004
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064004]
+CopyFrom    = 0x4004
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074004]
+CopyFrom    = 0x64004
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004005]
+;Added by Warrior 12/Oct/2008.
+;STR 45 Degree Curve Off STR Straight Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d0400B
+PreviewEffect = preview_ram1_puzzlepiece004
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a...........
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..x++.........
+CellLayout =....by........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000003,0x00000000 check
+CheckType = x - Rail: 0x00000200,0x00000000 check
+CheckType = b - Rail: 0x00030100
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =..|.....
+ConsLayout =..|\....
+ConsLayout =..|\....
+ConsLayout =..|\\...
+ConsLayout =....\...
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d04000
+PlaceQueryID = 0x53d04000
+Costs       = 138; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014005]
+CopyFrom    = 0x4005
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024005]
+CopyFrom    = 0x4005; (edited by dedgren 081213)
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034005]
+CopyFrom    = 0x24005
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044005]
+CopyFrom    = 0x4005
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054005]
+CopyFrom    = 0x44005
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064005]
+CopyFrom    = 0x4005
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074005]
+CopyFrom    = 0x64005
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004006]
+;Added by Warrior 18/Oct/2008.
+;STR 90 Degree Curve Off Dual Rail Straight Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d05005
+PreviewEffect = preview_ram1_puzzlepiece005
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..x++.........
+CellLayout =....++........
+CellLayout =.....+++......
+CellLayout =......+++by...
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000002,0x000000ff check
+CheckType = x - Rail: 0x00000200,0x0000ff00 check
+CheckType = b - Rail: 0x00020002
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|\..........
+ConsLayout =..|\..........
+ConsLayout =..|\\.........
+ConsLayout =....\\........
+ConsLayout =.....\\\......
+ConsLayout =..^...\\--....
+
+AutoTileBase = 0x53d05000; (edited by dedgren 081213)
+PlaceQueryID = 0x53d05000; (edited by dedgren 081213)
+Costs       = 173; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014006]
+CopyFrom    = 0x4006
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024006]
+CopyFrom    = 0x4006
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034006]
+CopyFrom    = 0x24006
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044006]
+CopyFrom    = 0x4006
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054006]
+CopyFrom    = 0x44006
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064006]
+CopyFrom    = 0x4006
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074006]
+CopyFrom    = 0x64006
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004007]
+;Added by Warrior 18/Oct/2008.
+;STR 45 Degree Curve Off Dual Rail Straight Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d06005
+PreviewEffect = preview_ram1_puzzlepiece006
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..a+..........
+CellLayout =..x++.........
+CellLayout =....by........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000003,0x00000000 check
+CheckType = x - Rail: 0x00000200,0x0000ff00 check
+CheckType = b - Rail: 0x00030100
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|\..........
+ConsLayout =..|\..........
+ConsLayout =..|\\.........
+ConsLayout =....\.........
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d06000
+PlaceQueryID = 0x53d06000
+Costs       = 158; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014007]
+CopyFrom    = 0x4007
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024007]
+CopyFrom    = 0x4007
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034007]
+CopyFrom    = 0x24007
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044007]
+CopyFrom    = 0x4007
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054007]
+CopyFrom    = 0x44007
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064007]
+CopyFrom    = 0x4007
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074007]
+CopyFrom    = 0x64007
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004008]
+;Added by dedgren 17/Dec/2008
+;STR to Parallel STR Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d07005
+PreviewEffect = preview_ram1_puzzlepiece007
+
+CellLayout =..z.....
+CellLayout =..a....<
+CellLayout =..a+....
+CellLayout =..a+....
+CellLayout =..a+....
+CellLayout =..ya....
+CellLayout =...x....
+CellLayout =..^.....
+
+CheckType = z - Rail: 0x02000000, 0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200, 0x0000ff00 check
+CheckType = x - Rail: 0x00000200, 0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =..|\....
+ConsLayout =..|\....
+ConsLayout =..||....
+ConsLayout =...|....
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d07000
+PlaceQueryID = 0x53d07000
+Costs       = 135; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014008]
+CopyFrom    = 0x4008
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024008]
+CopyFrom    = 0x4008
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034008]
+CopyFrom    = 0x24008
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044008]
+CopyFrom    = 0x4008
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054008]
+CopyFrom    = 0x44008
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064008]
+CopyFrom    = 0x4008
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074008]
+CopyFrom    = 0x64008
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004009]
+;Added by dedgren 17/Dec/2008
+;Dual Rail to Parallel STR Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d08005
+PreviewEffect = preview_ram1_puzzlepiece008
+
+CellLayout =..z.....
+CellLayout =..a....<
+CellLayout =..a+....
+CellLayout =..a+....
+CellLayout =..a+....
+CellLayout =..ya....
+CellLayout =...x....
+CellLayout =..^.....
+
+CheckType = z - Rail: 0x02000000, 0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200, 0x0000ff00 check
+CheckType = x - Rail: 0x00000200, 0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =..|\....
+ConsLayout =..|\....
+ConsLayout =..||....
+ConsLayout =...|....
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d08000
+PlaceQueryID = 0x53d08000
+Costs       = 155; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014009]
+CopyFrom    = 0x4009
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024009]
+CopyFrom    = 0x4009
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034009]
+CopyFrom    = 0x24009
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044009]
+CopyFrom    = 0x4009
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054009]
+CopyFrom    = 0x44009
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064009]
+CopyFrom    = 0x4009
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074009]
+CopyFrom    = 0x64009
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000400A]
+;Added by dedgren 26/Oct/2008
+;STR S-Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53d09005
+PreviewEffect = preview_ram1_puzzlepiece009
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..+...........
+CellLayout =..++..........
+CellLayout =..++..........
+CellLayout =...+..........
+CellLayout =...b..........
+CellLayout =...y..........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200,0x0000ff00 check
+CheckType = b - Rail: 0x02000200
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..\\..........
+ConsLayout =..\\..........
+ConsLayout =...|..........
+ConsLayout =...|..........
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d09000
+PlaceQueryID = 0x53d09000
+Costs       = 33; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001400A]
+CopyFrom    = 0x400A
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0002400A]
+CopyFrom    = 0x400A
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003400A]
+CopyFrom    = 0x400A
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004400A]
+CopyFrom    = 0x3400A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005400A]
+CopyFrom    = 0x2400A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006400A]
+CopyFrom    = 0x1400A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007400A]
+CopyFrom    = 0x400A
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000400B]
+;Added by dedgren 18/Dec/2008.
+;Diagonal STR to Orthogonal STR Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d0b005
+PreviewEffect = preview_ram1_puzzlepiece011
+
+CellLayout =.............
+CellLayout =.za.........<
+CellLayout =..ba+........
+CellLayout =...ba+cx.....
+CellLayout =....y........
+CellLayout =..^..........
+
+
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = a - Rail: 0x01000003
+CheckType = y - Rail: 0x00000100,0x0000ff00 check
+CheckType = b - Rail: 0x00030100
+CheckType = x - Rail: 0x00000002,0x000000ff check
+CheckType = c - Rail: 0x00020002
+
+ConsLayout =.............
+ConsLayout =..\.........<
+ConsLayout =..\\\........
+ConsLayout =...\\--......
+ConsLayout =.............
+ConsLayout =..^..........
+
+AutoTileBase = 0x53d0b000
+PlaceQueryID = 0x53d0b000
+Costs       = 113; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001400B]
+CopyFrom    = 0x400B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002400B]
+CopyFrom    = 0x400B
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003400B]
+CopyFrom    = 0x2400B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004400B]
+CopyFrom    = 0x400B
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005400B]
+CopyFrom    = 0x4400B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006400B]
+CopyFrom    = 0x400B
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007400B]
+CopyFrom    = 0x6400B
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000400C]
+;Added by dedgren 19/Dec/2008.
+;Diagonal Dual Rail to Orthogonal STR Switch (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d0c005
+PreviewEffect = preview_ram1_puzzlepiece012
+
+CellLayout =.............
+CellLayout =.za+........<
+CellLayout =..ba++.......
+CellLayout =...ba+cx.....
+CellLayout =....y........
+CellLayout =..^..........
+
+
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = a - Rail: 0x01000003
+CheckType = y - Rail: 0x00000100,0x0000ff00 check
+CheckType = b - Rail: 0x00030100
+CheckType = x - Rail: 0x00000002,0x000000ff check
+CheckType = c - Rail: 0x00020002
+
+ConsLayout =.............
+ConsLayout =..\\........<
+ConsLayout =..\\\\.......
+ConsLayout =...\\--......
+ConsLayout =.............
+ConsLayout =..^..........
+
+AutoTileBase = 0x53d0c000
+PlaceQueryID = 0x53d0c000
+Costs       = 133; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001400C]
+CopyFrom    = 0x400C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002400C]
+CopyFrom    = 0x400C
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003400C]
+CopyFrom    = 0x2400C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004400C]
+CopyFrom    = 0x400C
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005400C]
+CopyFrom    = 0x4400C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006400C]
+CopyFrom    = 0x400C
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007400C]
+CopyFrom    = 0x6400C
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000400D]
+;Added by dedgren 8/Nov/2008
+;STR Diagonal S-Curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x53d0d005
+PreviewEffect = preview_ram1_puzzlepiece013
+
+CellLayout =..............
+CellLayout =.za..........<
+CellLayout =..+++.........
+CellLayout =...+++........
+CellLayout =....+++.......
+CellLayout =......by......
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = a - Rail: 0x01000003
+CheckType = y - Rail: 0x00000003,0x000000ff check
+CheckType = b - Rail: 0x00030100
+
+ConsLayout =..............
+ConsLayout =..\..........<
+ConsLayout =..\\\.........
+ConsLayout =...\\\........
+ConsLayout =....\\\.......
+ConsLayout =......\.......
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d0d000
+PlaceQueryID = 0x53d0d000
+Costs       = ; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001400D]
+CopyFrom    = 0x400D
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0002400D]
+CopyFrom    = 0x400D
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003400D]
+CopyFrom    = 0x400D
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004400D]
+CopyFrom    = 0x3400D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005400D]
+CopyFrom    = 0x2400D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006400D]
+CopyFrom    = 0x1400D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007400D]
+CopyFrom    = 0x400D
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000400F]
+;Added by dedgren 13/Dec/2008
+;STR Straight Filler Piece (textures by dedgren); edited by dedgren 081229; edited by Warrior 060309
+Piece = 0.0, 0.0, 0, 0, 0x53d0E005
+PreviewEffect = preview_ram1_puzzlepiece014
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - Rail: 0x02000202
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53D0E000
+PlaceQueryID = 0x53D0E000
+Costs       = 5; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001400F]
+CopyFrom    = 0x400F
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002400F]
+CopyFrom    = 0x400F
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003400F]
+CopyFrom    = 0x400F
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004400F]
+CopyFrom    = 0x400F
+[HighwayIntersectionInfo_0x0005400F]
+CopyFrom    = 0x1400F
+[HighwayIntersectionInfo_0x0006400F]
+CopyFrom    = 0x2400F
+[HighwayIntersectionInfo_0x0007400F]
+CopyFrom    = 0x3400F
+
+
+[HighwayIntersectionInfo_0x00004010]
+;Added by dedgren 13/Dec/2008.
+;STR Diagonal Filler Piece (textures by dedgren); edited by dedgren 081229; edited by Warrior 060309
+Piece = 0.0, 0.0, 0, 0, 0x53d0F005
+PreviewEffect = preview_ram1_puzzlepiece015
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - Rail: 0x01030103
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53D0F000
+PlaceQueryID = 0x53D0F000
+Costs       = 8; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00014010]
+CopyFrom    = 0x4010
+Rotate      = 1
+[HighwayIntersectionInfo_0x00024010]
+CopyFrom    = 0x4010
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00034010]
+CopyFrom    = 0x4010
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00044010]
+CopyFrom    = 0x4010
+[HighwayIntersectionInfo_0x00054010]
+CopyFrom    = 0x14010
+[HighwayIntersectionInfo_0x00064010]
+CopyFrom    = 0x24010
+[HighwayIntersectionInfo_0x00074010]
+CopyFrom    = 0x34010
+
+
+[HighwayIntersectionInfo_0x00004011]; edited by dedgren 090214
+;Added by dedgren 27/Oct/2008.
+;Dual Track to STR Long Transition (textures by dedgren); edited by Swamper 090219
+;edited by Warrior 21/02/2009
+Piece = 0.0, 0.0, 0, 0, 0x53d0a005
+PreviewEffect = preview_ram1_puzzlepiece010
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..y...........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200,0x0000ff00 check
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d0a000
+PlaceQueryID = 0x53d0a000
+Costs       = 145
+[HighwayIntersectionInfo_0x00014011]
+CopyFrom    = 0x4011
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00024011]
+CopyFrom    = 0x4011
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00034011]
+CopyFrom    = 0x4011
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00044011]
+CopyFrom    = 0x34011
+Transpose   = 1
+[HighwayIntersectionInfo_0x00054011]
+CopyFrom    = 0x24011
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064011]
+CopyFrom    = 0x14011
+Transpose   = 1
+[HighwayIntersectionInfo_0x00074011]
+CopyFrom    = 0x4011
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004012]
+;Added by dedgren 14/Feb/2009.
+;Dual Track to STR Short Transition (textures by dedgren); edited by Swamper 090219
+Piece = 0.0, 0.0, 0, 0, 0x53d70005
+PreviewEffect = preview_ram1_puzzlepiece016
+
+CellLayout =..z...........
+CellLayout =..a..........<
+CellLayout =..a...........
+CellLayout =..a...........
+CellLayout =..y...........
+CellLayout =..^...........
+
+CheckType = z - Rail: 0x02000000,0xff000000 check
+CheckType = a - Rail: 0x02000200
+CheckType = y - Rail: 0x00000200,0x0000ff00 check
+
+ConsLayout =..............
+ConsLayout =..|..........<
+ConsLayout =..|...........
+ConsLayout =..|...........
+ConsLayout =..^...........
+
+AutoTileBase = 0x53d70000
+PlaceQueryID = 0x53d70000
+Costs       = 95
+[HighwayIntersectionInfo_0x00014012]
+CopyFrom    = 0x4012
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00024012]
+CopyFrom    = 0x4012
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00034012]
+CopyFrom    = 0x4012
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00044012]
+CopyFrom    = 0x34012
+Transpose   = 1
+[HighwayIntersectionInfo_0x00054012]
+CopyFrom    = 0x24012
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064012]
+CopyFrom    = 0x14012
+Transpose   = 1
+[HighwayIntersectionInfo_0x00074012]
+CopyFrom    = 0x4012
+Transpose   = 1
+
+;
+;
+;     END STR SET 1 SUBSECTION
+;     END STR SET 1 SUBSECTION
+
+
+[HighwayIntersectionInfo_0x00004014]
+;Added by bighea99 16/07/2009
+;TUNNEL STR
+Piece = 0.0, 0.0, 0, 0, 0x53d7E50F
+PreviewEffect = preview_raie_puzzlepiece003
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - Rail: 0x02000202
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53D7E50A
+AutoPathBase = 0x53D7E500
+PlaceQueryID = 0x53D7E500
+Costs       = 56
+[HighwayIntersectionInfo_0x00014014]
+CopyFrom    = 0x4014
+Rotate      = 1
+[HighwayIntersectionInfo_0x00024014]
+CopyFrom    = 0x4014
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00034014]
+CopyFrom    = 0x4014
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00044014]
+CopyFrom    = 0x4014
+[HighwayIntersectionInfo_0x00054014]
+CopyFrom    = 0x14014
+[HighwayIntersectionInfo_0x00064014]
+CopyFrom    = 0x24014
+[HighwayIntersectionInfo_0x00074014]
+CopyFrom    = 0x34014
+
+

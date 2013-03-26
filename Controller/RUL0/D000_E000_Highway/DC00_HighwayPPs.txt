@@ -1,0 +1,366 @@
+;Highway Puzzle Pieces Button
+; 0x0000NC## - 0x0000NF##
+RotationRing = DC00, 1DC00, 2DC00, 3DC00, 4DC00, 5DC00, 6DC00, 7DC00 ;Ground HighwayXstraight puzzle piece
+AddTypes     = DC01, 1DC01, 2DC01, 3DC01, 4DC01, 5DC01, 6DC01, 7DC01 ;Ground HighwayXend puzzle piece
+AddTypes     = DC02, 1DC02, 2DC02, 3DC02, 4DC02, 5DC02, 6DC02, 7DC02 ;Ground HighwayXslightbend puzzle piece
+AddTypes     = DC03, 1DC03, 2DC03, 3DC03, 4DC03, 5DC03, 6DC03, 7DC03 ;Ground HighwayXbigbend puzzle piece
+AddTypes     = DC04, 1DC04, 2DC04, 3DC04, 4DC04, 5DC04, 6DC04, 7DC04 ;Ground HighwayXtinybend puzzle piece
+AddTypes     = DC05, 1DC05, 2DC05, 3DC05, 4DC05, 5DC05, 6DC05, 7DC05 ;Ground HighwayXslightbend double puzzle piece
+AddTypes     = DC06, 1DC06, 2DC06, 3DC06, 4DC06, 5DC06, 6DC06, 7DC06 ;Ground HighwayXdaigonal straight double puzzle piece
+AddTypes     = DC07, 1DC07, 2DC07, 3DC07, 4DC07, 5DC07, 6DC07, 7DC07 ;Ground HighwayXdaigonal straight puzzle piece
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;HIGHWAY PUZZLE PIECES
+
+;comment by memo: Rudimentary components/files of some of these pieces
+;were deleted from the NAM because of being unused. Only some Rules remained.
+
+[HighwayIntersectionInfo_0x0000DC00]
+;Added by Teirusu 05/15/05.
+;groundhighwayxstraight blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020300
+PreviewEffect = preview_ghwy_puzzlepiece001
+
+CellLayout =........
+CellLayout =...Z<..
+CellLayout =...^....
+
+CheckType = Z - groundhighway: 0x00020002
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020300
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC00]
+CopyFrom    = 0xDC00
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC00]
+CopyFrom    = 0xDC00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC00]
+CopyFrom    = 0xDC00
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC00]
+CopyFrom    = 0xDC00
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC00]
+CopyFrom    = 0x1DC00
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC00]
+CopyFrom    = 0x2DC00
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC00]
+CopyFrom    = 0x3DC00
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC01]
+;Added by Teirusu 05/15/05.
+;groundhighwayxend blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020400
+PreviewEffect = preview_ghwy_puzzlepiece002
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020400
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC01]
+CopyFrom    = 0xDC01
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC01]
+CopyFrom    = 0xDC01
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC01]
+CopyFrom    = 0xDC01
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC01]
+CopyFrom    = 0xDC01
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC01]
+CopyFrom    = 0x1DC01
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC01]
+CopyFrom    = 0x2DC01
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC01]
+CopyFrom    = 0x3DC01
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC02]
+;Added by Teirusu 05/15/05.
+;groundhighwayxslightbend blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020500
+PreviewEffect = preview_ghwy_puzzlepiece003
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020500
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC02]
+CopyFrom    = 0xDC02
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC02]
+CopyFrom    = 0xDC02
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC02]
+CopyFrom    = 0xDC02
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC02]
+CopyFrom    = 0xDC02
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC02]
+CopyFrom    = 0x1DC02
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC02]
+CopyFrom    = 0x2DC02
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC02]
+CopyFrom    = 0x3DC02
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC03]
+;Added by Teirusu 05/15/05.
+;groundhighwayxbigbend blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020600
+PreviewEffect = preview_ghwy_puzzlepiece004
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020600
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC03]
+CopyFrom    = 0xDC03
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC03]
+CopyFrom    = 0xDC03
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC03]
+CopyFrom    = 0xDC03
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC03]
+CopyFrom    = 0xDC03
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC03]
+CopyFrom    = 0x1DC03
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC03]
+CopyFrom    = 0x2DC03
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC03]
+CopyFrom    = 0x3DC03
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC04]
+;Added by Teirusu 05/15/05.
+;groundhighwayxtinybend blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020700
+PreviewEffect = preview_ghwy_puzzlepiece005
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020700
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC04]
+CopyFrom    = 0xDC04
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC04]
+CopyFrom    = 0xDC04
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC04]
+CopyFrom    = 0xDC04
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC04]
+CopyFrom    = 0xDC04
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC04]
+CopyFrom    = 0x1DC04
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC04]
+CopyFrom    = 0x2DC04
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC04]
+CopyFrom    = 0x3DC04
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC05]
+;Added by Teirusu 05/15/05.
+;groundhighwayxslightbenddouble blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020800
+PreviewEffect = preview_ghwy_puzzlepiece006
+
+CellLayout =.......
+CellLayout =....Z.<
+CellLayout =....^..
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020800
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC05]
+CopyFrom    = 0xDC05
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC05]
+CopyFrom    = 0xDC05
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC05]
+CopyFrom    = 0xDC05
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC05]
+CopyFrom    = 0xDC05
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC05]
+CopyFrom    = 0x1DC05
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC05]
+CopyFrom    = 0x2DC05
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC05]
+CopyFrom    = 0x3DC05
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC06]
+;Added by Teirusu 05/15/05.
+;groundhighwayxdiagonalstraightdouble blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020900
+PreviewEffect = preview_ghwy_puzzlepiece007
+
+CellLayout =........
+CellLayout =....Z.<.
+CellLayout =....^...
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =........
+ConsLayout =....+..<
+ConsLayout =....^...
+
+AutoTileBase = 0x5A020900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020900
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC06]
+CopyFrom    = 0xDC06
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC06]
+CopyFrom    = 0xDC06
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC06]
+CopyFrom    = 0xDC06
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC06]
+CopyFrom    = 0xDC06
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC06]
+CopyFrom    = 0x1DC06
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC06]
+CopyFrom    = 0x2DC06
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC06]
+CopyFrom    = 0x3DC06
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000DC07]
+;Added by Teirusu 05/15/05.
+;groundhighwayxdiagonalstraight blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5A020a00
+PreviewEffect = preview_ghwy_puzzlepiece008
+
+CellLayout =.........
+CellLayout =....Z.<..
+CellLayout =....^....
+
+CheckType = Z - groundhighway: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+..<
+ConsLayout =....^....
+
+AutoTileBase = 0x5A020a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A020a00
+Costs       = 75
+[HighwayIntersectionInfo_0x0001DC07]
+CopyFrom    = 0xDC07
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002DC07]
+CopyFrom    = 0xDC07
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003DC07]
+CopyFrom    = 0xDC07
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004DC07]
+CopyFrom    = 0xDC07
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005DC07]
+CopyFrom    = 0x1DC07
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006DC07]
+CopyFrom    = 0x2DC07
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007DC07]
+CopyFrom    = 0x3DC07
+Transpose   = 1
+
+

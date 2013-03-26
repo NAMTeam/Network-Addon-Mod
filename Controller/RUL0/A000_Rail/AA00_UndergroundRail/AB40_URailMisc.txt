@@ -1,0 +1,380 @@
+;Rail Tunnel Miscellaneous Pieces Button
+RotationRing = AB40, 1AB40, 2AB40, 3AB40, 4AB40, 5AB40, 6AB40, 7AB40 ;RailURoad Rail 4-way Road Straight
+AddTypes     = AB41, 1AB41, 2AB41, 3AB41, 4AB41, 5AB41, 6AB41, 7AB41 ;RailURoad Rail 4-way Road T-intersection dead end
+AddTypes     = AB42, 1AB42, 2AB42, 3AB42, 4AB42, 5AB42, 6AB42, 7AB42 ;RailURoad Rail 4-way Road Crossing
+AddTypes     = AB43, 1AB43, 2AB43, 3AB43, 4AB43, 5AB43, 6AB43, 7AB43 ;RailUPedMall Cobblestone Rail 4-way
+AddTypes     = AB44, 1AB44, 2AB44, 3AB44, 4AB44, 5AB44, 6AB44, 7AB44 ;RailUPedMall Concrete Rail 4-way
+AddTypes     = AB45, 1AB45, 2AB45, 3AB45, 4AB45, 5AB45, 6AB45, 7AB45 ;RailUPedMall Open Paved Rail 4-way
+AddTypes     = AB46, 1AB46, 2AB46, 3AB46, 4AB46, 5AB46, 6AB46, 7AB46 ;RailUPedMall Paved Rail 4-way
+AddTypes     = AB47, 1AB47, 2AB47, 3AB47, 4AB47, 5AB47, 6AB47, 7AB47 ;RailUPedMall Sandstone Rail 4-way
+AddTypes     = AB48, 1AB48, 2AB48, 3AB48, 4AB48, 5AB48, 6AB48, 7AB48 ;RailUPedMall Grass Rail 4-way
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000AB40]
+;Added by ebina 09/01/2010.
+;railUroad Dual - Rail 4-way Junction, Road Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F637A5
+PreviewEffect = preview_road_subrail____026
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType  = Z - rail: 0x02020202 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53F637A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F637A0
+Costs       = 50
+[HighwayIntersectionInfo_0x0001AB40]
+CopyFrom    = 0xAB40
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AB40]
+CopyFrom    = 0xAB40
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AB40]
+CopyFrom    = 0xAB40
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB40]
+CopyFrom    = 0xAB40
+[HighwayIntersectionInfo_0x0005AB40]
+CopyFrom    = 0x1AB40
+[HighwayIntersectionInfo_0x0006AB40]
+CopyFrom    = 0x2AB40
+[HighwayIntersectionInfo_0x0007AB40]
+CopyFrom    = 0x3AB40
+
+
+[HighwayIntersectionInfo_0x0000AB41]
+;Added by ebina 09/01/2010.
+;railUroad Dual - Rail 4-way Junction, Road T-Intersection Dead-End Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F63CA5
+PreviewEffect = preview_road_subrail____027
+
+CellLayout =...
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =...
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02020202 road: 0x02020200
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53F63CA0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F63CA0
+Costs       = 50
+[HighwayIntersectionInfo_0x0001AB41]
+CopyFrom    = 0xAB41
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AB41]
+CopyFrom    = 0xAB41
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AB41]
+CopyFrom    = 0xAB41
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB41]
+CopyFrom    = 0xAB41
+[HighwayIntersectionInfo_0x0005AB41]
+CopyFrom    = 0x1AB41
+[HighwayIntersectionInfo_0x0006AB41]
+CopyFrom    = 0x2AB41
+[HighwayIntersectionInfo_0x0007AB41]
+CopyFrom    = 0x3AB41
+
+
+[HighwayIntersectionInfo_0x0000AB42]
+;Added by ebina 09/01/2010.
+;railUroad Dual - Rail 4-way Junction, Road Crossing Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F63DA5
+PreviewEffect = preview_road_subrail____028
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53F63DA0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F63DA0
+Costs       = 50
+[HighwayIntersectionInfo_0x0001AB42]
+CopyFrom    = 0xAB42
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AB42]
+CopyFrom    = 0xAB42
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AB42]
+CopyFrom    = 0xAB42
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB42]
+CopyFrom    = 0xAB42
+[HighwayIntersectionInfo_0x0005AB42]
+CopyFrom    = 0x1AB42
+[HighwayIntersectionInfo_0x0006AB42]
+CopyFrom    = 0x2AB42
+[HighwayIntersectionInfo_0x0007AB42]
+CopyFrom    = 0x3AB42
+
+
+[HighwayIntersectionInfo_0x0000AB43]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Cobblestone
+Piece = 0.0, 0.0, 0, 0, 0x53F680A5
+PreviewEffect = preview_pedmall_subrail_041
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F680A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB43]
+CopyFrom = 0xAB43
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB43]
+CopyFrom = 0xAB43
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB43]
+CopyFrom = 0xAB43
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB43]
+CopyFrom = 0xAB43
+[HighwayIntersectionInfo_0x0005AB43]
+CopyFrom = 0x1AB43
+[HighwayIntersectionInfo_0x0006AB43]
+CopyFrom = 0x2AB43
+[HighwayIntersectionInfo_0x0007AB43]
+CopyFrom = 0x3AB43
+
+
+[HighwayIntersectionInfo_0x0000AB44]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Grey
+Piece = 0.0, 0.0, 0, 0, 0x53F681A5
+PreviewEffect = preview_pedmall_subrail_042
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F681A0
+AutoPathBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F681A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB44]
+CopyFrom = 0xAB44
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB44]
+CopyFrom = 0xAB44
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB44]
+CopyFrom = 0xAB44
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB44]
+CopyFrom = 0xAB44
+[HighwayIntersectionInfo_0x0005AB44]
+CopyFrom = 0x1AB44
+[HighwayIntersectionInfo_0x0006AB44]
+CopyFrom = 0x2AB44
+[HighwayIntersectionInfo_0x0007AB44]
+CopyFrom = 0x3AB44
+
+
+[HighwayIntersectionInfo_0x0000AB45]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Open Paved
+Piece = 0.0, 0.0, 0, 0, 0x53F682A5
+PreviewEffect = preview_pedmall_subrail_043
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F682A0
+AutoPathBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F682A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB45]
+CopyFrom = 0xAB45
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB45]
+CopyFrom = 0xAB45
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB45]
+CopyFrom = 0xAB45
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB45]
+CopyFrom = 0xAB45
+[HighwayIntersectionInfo_0x0005AB45]
+CopyFrom = 0x1AB45
+[HighwayIntersectionInfo_0x0006AB45]
+CopyFrom = 0x2AB45
+[HighwayIntersectionInfo_0x0007AB45]
+CopyFrom = 0x3AB45
+
+
+[HighwayIntersectionInfo_0x0000AB46]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Paved
+Piece = 0.0, 0.0, 0, 0, 0x53F683A5
+PreviewEffect = preview_pedmall_subrail_044
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F683A0
+AutoPathBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F683A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB46]
+CopyFrom = 0xAB46
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB46]
+CopyFrom = 0xAB46
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB46]
+CopyFrom = 0xAB46
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB46]
+CopyFrom = 0xAB46
+[HighwayIntersectionInfo_0x0005AB46]
+CopyFrom = 0x1AB46
+[HighwayIntersectionInfo_0x0006AB46]
+CopyFrom = 0x2AB46
+[HighwayIntersectionInfo_0x0007AB46]
+CopyFrom = 0x3AB46
+
+
+[HighwayIntersectionInfo_0x0000AB47]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Sandstone
+Piece = 0.0, 0.0, 0, 0, 0x53F684A5
+PreviewEffect = preview_pedmall_subrail_045
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F684A0
+AutoPathBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F684A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB47]
+CopyFrom = 0xAB47
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB47]
+CopyFrom = 0xAB47
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB47]
+CopyFrom = 0xAB47
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB47]
+CopyFrom = 0xAB47
+[HighwayIntersectionInfo_0x0005AB47]
+CopyFrom = 0x1AB47
+[HighwayIntersectionInfo_0x0006AB47]
+CopyFrom = 0x2AB47
+[HighwayIntersectionInfo_0x0007AB47]
+CopyFrom = 0x3AB47
+
+
+[HighwayIntersectionInfo_0x0000AB48]
+;Added by ebina 09/01/2010.
+;Rail Under Padmall - Rail 4-way Junction, Grass
+Piece = 0.0, 0.0, 0, 0, 0x53F685A5
+PreviewEffect = preview_pedmall_subrail_046
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02020202 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F685A0
+AutoPathBase = 0x53F680A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F685A0
+Costs = 75
+[HighwayIntersectionInfo_0x0001AB48]
+CopyFrom = 0xAB48
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AB48]
+CopyFrom = 0xAB48
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AB48]
+CopyFrom = 0xAB48
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AB48]
+CopyFrom = 0xAB48
+[HighwayIntersectionInfo_0x0005AB48]
+CopyFrom = 0x1AB48
+[HighwayIntersectionInfo_0x0006AB48]
+CopyFrom = 0x2AB48
+[HighwayIntersectionInfo_0x0007AB48]
+CopyFrom = 0x3AB48
+
+
