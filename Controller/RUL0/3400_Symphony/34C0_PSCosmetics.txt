@@ -1,17 +1,17 @@
 ;COSMETICS
-RotationRing = 31C0, 731C0, 131C0, 631C0, 231C0, 531C0, 331C0, 431C0, 831C0, F31C0, 931C0, E31C0, A31C0, D31C0, B31C0, C31C0 ;MHW Curve L0
-AddTypes     = 31C1, 731C1, 131C1, 631C1, 231C1, 531C1, 331C1, 431C1, 831C1, F31C1, 931C1, E31C1, A31C1, D31C1, B31C1, C31C1 ;MHW Curve L2
-AddTypes     = 31C2, 731C2, 131C2, 631C2, 231C2, 531C2, 331C2, 431C2, 831C2, F31C2, 931C2, E31C2, A31C2, D31C2, B31C2, C31C2 ;FAMHW Straight
-AddTypes     = 31C3, 731C3, 131C3, 631C3, 231C3, 531C3, 331C3, 431C3, 831C3, F31C3, 931C3, E31C3, A31C3, D31C3, B31C3, C31C3 ;Orthg-to-FAMHW
-AddTypes     = 31C4, 731C4, 131C4, 631C4, 231C4, 531C4, 331C4, 431C4, 831C4, F31C4, 931C4, E31C4, A31C4, D31C4, B31C4, C31C4 ;Diag-to-FAMHW
-AddTypes     = 31C5, 131C5, 231C5, 331C5, 431C5, 531C5, 631C5, 731C5, 831C5, 931C5, A31C5, B31C5, C31C5, D31C5, E31C5, F31C5 ;Cloverleaf Ramp
+RotationRing = 34C0, 734C0, 134C0, 634C0, 234C0, 534C0, 334C0, 434C0, 834C0, F34C0, 934C0, E34C0, A34C0, D34C0, B34C0, C34C0 ;MHW Curve L0
+AddTypes     = 34C1, 734C1, 134C1, 634C1, 234C1, 534C1, 334C1, 434C1, 834C1, F34C1, 934C1, E34C1, A34C1, D34C1, B34C1, C34C1 ;MHW Curve L2
+AddTypes     = 34C2, 734C2, 134C2, 634C2, 234C2, 534C2, 334C2, 434C2, 834C2, F34C2, 934C2, E34C2, A34C2, D34C2, B34C2, C34C2 ;FAMHW Straight
+AddTypes     = 34C3, 734C3, 134C3, 634C3, 234C3, 534C3, 334C3, 434C3, 834C3, F34C3, 934C3, E34C3, A34C3, D34C3, B34C3, C34C3 ;Orthg-to-FAMHW
+AddTypes     = 34C4, 734C4, 134C4, 634C4, 234C4, 534C4, 334C4, 434C4, 834C4, F34C4, 934C4, E34C4, A34C4, D34C4, B34C4, C34C4 ;Diag-to-FAMHW
+AddTypes     = 34C5, 134C5, 234C5, 334C5, 434C5, 534C5, 634C5, 734C5, 834C5, 934C5, A34C5, B34C5, C34C5, D34C5, E34C5, F34C5 ;Cloverleaf Ramp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
 
 ;###separator###
 
-[HighwayIntersectionInfo_0x000031C0]
+[HighwayIntersectionInfo_0x000034C0]
 ;Added by memo 03/09/2008
 Piece = -16.0, 0.0, 0, 0, 0x5a135FF0
 PreviewEffect = preview_groundhighway_curve
@@ -56,45 +56,45 @@ AutoTileBase=	0x5a135000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5a135000
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C0]
-CopyFrom = 0x31C0
+[HighwayIntersectionInfo_0x000134C0]
+CopyFrom = 0x34C0
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C0]
-CopyFrom = 0x31C0
+[HighwayIntersectionInfo_0x000234C0]
+CopyFrom = 0x34C0
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C0]
-CopyFrom = 0x31C0
+[HighwayIntersectionInfo_0x000334C0]
+CopyFrom = 0x34C0
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C0]
-CopyFrom = 0x31C0
+[HighwayIntersectionInfo_0x000434C0]
+CopyFrom = 0x34C0
 Transpose   = 1
-[HighwayIntersectionInfo_0x000531C0]
-CopyFrom = 0x131C0
+[HighwayIntersectionInfo_0x000534C0]
+CopyFrom = 0x134C0
 Transpose   = 1
-[HighwayIntersectionInfo_0x000631C0]
-CopyFrom = 0x231C0
+[HighwayIntersectionInfo_0x000634C0]
+CopyFrom = 0x234C0
 Transpose   = 1
-[HighwayIntersectionInfo_0x000731C0]
-CopyFrom = 0x331C0
+[HighwayIntersectionInfo_0x000734C0]
+CopyFrom = 0x334C0
 Transpose   = 1
-[HighwayIntersectionInfo_0x000831C0]
-CopyFrom = 0x31C0
-[HighwayIntersectionInfo_0x000931C0]
-CopyFrom = 0x131C0
-[HighwayIntersectionInfo_0x000A31C0]
-CopyFrom = 0x231C0
-[HighwayIntersectionInfo_0x000B31C0]
-CopyFrom = 0x331C0
-[HighwayIntersectionInfo_0x000C31C0]
-CopyFrom = 0x431C0
-[HighwayIntersectionInfo_0x000D31C0]
-CopyFrom = 0x531C0
-[HighwayIntersectionInfo_0x000E31C0]
-CopyFrom = 0x631C0
-[HighwayIntersectionInfo_0x000F31C0]
-CopyFrom = 0x731C0
+[HighwayIntersectionInfo_0x000834C0]
+CopyFrom = 0x34C0
+[HighwayIntersectionInfo_0x000934C0]
+CopyFrom = 0x134C0
+[HighwayIntersectionInfo_0x000A34C0]
+CopyFrom = 0x234C0
+[HighwayIntersectionInfo_0x000B34C0]
+CopyFrom = 0x334C0
+[HighwayIntersectionInfo_0x000C34C0]
+CopyFrom = 0x434C0
+[HighwayIntersectionInfo_0x000D34C0]
+CopyFrom = 0x534C0
+[HighwayIntersectionInfo_0x000E34C0]
+CopyFrom = 0x634C0
+[HighwayIntersectionInfo_0x000F34C0]
+CopyFrom = 0x734C0
 
-[HighwayIntersectionInfo_0x000031C1]
+[HighwayIntersectionInfo_0x000034C1]
 ;Added by Chrisim 19 Feb 2011 based on memos model
 Piece = -16.0, 0.0, 0, 0, 0x5a1357F0
 PreviewEffect = preview_elevathighway_curve
@@ -144,45 +144,45 @@ AutoTileBase=	0x5a135400
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5a135400
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C1]
-CopyFrom = 0x31C1
+[HighwayIntersectionInfo_0x000134C1]
+CopyFrom = 0x34C1
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C1]
-CopyFrom = 0x31C1
+[HighwayIntersectionInfo_0x000234C1]
+CopyFrom = 0x34C1
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C1]
-CopyFrom = 0x31C1
+[HighwayIntersectionInfo_0x000334C1]
+CopyFrom = 0x34C1
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C1]
-CopyFrom = 0x31C1
+[HighwayIntersectionInfo_0x000434C1]
+CopyFrom = 0x34C1
 Transpose   = 1
-[HighwayIntersectionInfo_0x000531C1]
-CopyFrom = 0x131C1
+[HighwayIntersectionInfo_0x000534C1]
+CopyFrom = 0x134C1
 Transpose   = 1
-[HighwayIntersectionInfo_0x000631C1]
-CopyFrom = 0x231C1
+[HighwayIntersectionInfo_0x000634C1]
+CopyFrom = 0x234C1
 Transpose   = 1
-[HighwayIntersectionInfo_0x000731C1]
-CopyFrom = 0x331C1
+[HighwayIntersectionInfo_0x000734C1]
+CopyFrom = 0x334C1
 Transpose   = 1
-[HighwayIntersectionInfo_0x000831C1]
-CopyFrom = 0x31C1
-[HighwayIntersectionInfo_0x000931C1]
-CopyFrom = 0x131C1
-[HighwayIntersectionInfo_0x000A31C1]
-CopyFrom = 0x231C1
-[HighwayIntersectionInfo_0x000B31C1]
-CopyFrom = 0x331C1
-[HighwayIntersectionInfo_0x000C31C1]
-CopyFrom = 0x431C1
-[HighwayIntersectionInfo_0x000D31C1]
-CopyFrom = 0x531C1
-[HighwayIntersectionInfo_0x000E31C1]
-CopyFrom = 0x631C1
-[HighwayIntersectionInfo_0x000F31C1]
-CopyFrom = 0x731C1
+[HighwayIntersectionInfo_0x000834C1]
+CopyFrom = 0x34C1
+[HighwayIntersectionInfo_0x000934C1]
+CopyFrom = 0x134C1
+[HighwayIntersectionInfo_0x000A34C1]
+CopyFrom = 0x234C1
+[HighwayIntersectionInfo_0x000B34C1]
+CopyFrom = 0x334C1
+[HighwayIntersectionInfo_0x000C34C1]
+CopyFrom = 0x434C1
+[HighwayIntersectionInfo_0x000D34C1]
+CopyFrom = 0x534C1
+[HighwayIntersectionInfo_0x000E34C1]
+CopyFrom = 0x634C1
+[HighwayIntersectionInfo_0x000F34C1]
+CopyFrom = 0x734C1
 
-[HighwayIntersectionInfo_0x000031C5]
+[HighwayIntersectionInfo_0x000034C5]
 ;Added 10/30/12 by MandelSoft
 ;Symphony Cloverleaf Ramp L0-to-L2
 Piece = 0.0, 0.0, 0, 0, 0x5A580000
@@ -217,16 +217,16 @@ AutoTileBase=	0x5A580000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A580000
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C5]
-CopyFrom = 0x31C5
+[HighwayIntersectionInfo_0x000134C5]
+CopyFrom = 0x34C5
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C5]
-CopyFrom = 0x31C5
+[HighwayIntersectionInfo_0x000234C5]
+CopyFrom = 0x34C5
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C5]
-CopyFrom = 0x31C5
+[HighwayIntersectionInfo_0x000334C5]
+CopyFrom = 0x34C5
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C5]
+[HighwayIntersectionInfo_0x000434C5]
 ;Added 10/30/12 by MandelSoft
 ;Symphony Cloverleaf Ramp L2-to-L0
 Piece = 0.0, 0.0, 0, 0, 0x5A580080
@@ -261,33 +261,33 @@ AutoTileBase=	0x5A580080
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A580080
 Costs       = 2000
-[HighwayIntersectionInfo_0x000531C5]
-CopyFrom = 0x431C5
+[HighwayIntersectionInfo_0x000534C5]
+CopyFrom = 0x434C5
 Rotate		= 1
-[HighwayIntersectionInfo_0x000631C5]
-CopyFrom = 0x431C5
+[HighwayIntersectionInfo_0x000634C5]
+CopyFrom = 0x434C5
 Rotate		= 2
-[HighwayIntersectionInfo_0x000731C5]
-CopyFrom = 0x431C5
+[HighwayIntersectionInfo_0x000734C5]
+CopyFrom = 0x434C5
 Rotate		= 3
-[HighwayIntersectionInfo_0x000831C5]
-CopyFrom = 0x31C5
-[HighwayIntersectionInfo_0x000931C5]
-CopyFrom = 0x131C5
-[HighwayIntersectionInfo_0x000A31C5]
-CopyFrom = 0x231C5
-[HighwayIntersectionInfo_0x000B31C5]
-CopyFrom = 0x331C5
-[HighwayIntersectionInfo_0x000C31C5]
-CopyFrom = 0x431C5
-[HighwayIntersectionInfo_0x000D31C5]
-CopyFrom = 0x531C5
-[HighwayIntersectionInfo_0x000E31C5]
-CopyFrom = 0x631C5
-[HighwayIntersectionInfo_0x000F31C5]
-CopyFrom = 0x731C5
+[HighwayIntersectionInfo_0x000834C5]
+CopyFrom = 0x34C5
+[HighwayIntersectionInfo_0x000934C5]
+CopyFrom = 0x134C5
+[HighwayIntersectionInfo_0x000A34C5]
+CopyFrom = 0x234C5
+[HighwayIntersectionInfo_0x000B34C5]
+CopyFrom = 0x334C5
+[HighwayIntersectionInfo_0x000C34C5]
+CopyFrom = 0x434C5
+[HighwayIntersectionInfo_0x000D34C5]
+CopyFrom = 0x534C5
+[HighwayIntersectionInfo_0x000E34C5]
+CopyFrom = 0x634C5
+[HighwayIntersectionInfo_0x000F34C5]
+CopyFrom = 0x734C5
 
-[HighwayIntersectionInfo_0x000031C2]
+[HighwayIntersectionInfo_0x000034C2]
 ;Added 11/17/12 by MandelSoft
 ;Symphony FAN Straight Section
 Piece = 16.0, 16.0, 0, 0, 0x5A540005
@@ -314,45 +314,45 @@ AutoTileBase=	0x5A540000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A540000
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C2]
-CopyFrom = 0x31C2
+[HighwayIntersectionInfo_0x000134C2]
+CopyFrom = 0x34C2
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C2]
-CopyFrom = 0x31C2
+[HighwayIntersectionInfo_0x000234C2]
+CopyFrom = 0x34C2
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C2]
-CopyFrom = 0x31C2
+[HighwayIntersectionInfo_0x000334C2]
+CopyFrom = 0x34C2
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C2]
-CopyFrom = 0x31C2
+[HighwayIntersectionInfo_0x000434C2]
+CopyFrom = 0x34C2
 Transpose   = 1
-[HighwayIntersectionInfo_0x000531C2]
-CopyFrom = 0x131C2
+[HighwayIntersectionInfo_0x000534C2]
+CopyFrom = 0x134C2
 Transpose   = 1
-[HighwayIntersectionInfo_0x000631C2]
-CopyFrom = 0x231C2
+[HighwayIntersectionInfo_0x000634C2]
+CopyFrom = 0x234C2
 Transpose   = 1
-[HighwayIntersectionInfo_0x000731C2]
-CopyFrom = 0x331C2
+[HighwayIntersectionInfo_0x000734C2]
+CopyFrom = 0x334C2
 Transpose   = 1
-[HighwayIntersectionInfo_0x000831C2]
-CopyFrom = 0x31C2
-[HighwayIntersectionInfo_0x000931C2]
-CopyFrom = 0x131C2
-[HighwayIntersectionInfo_0x000A31C2]
-CopyFrom = 0x231C2
-[HighwayIntersectionInfo_0x000B31C2]
-CopyFrom = 0x331C2
-[HighwayIntersectionInfo_0x000C31C2]
-CopyFrom = 0x431C2
-[HighwayIntersectionInfo_0x000D31C2]
-CopyFrom = 0x531C2
-[HighwayIntersectionInfo_0x000E31C2]
-CopyFrom = 0x631C2
-[HighwayIntersectionInfo_0x000F31C2]
-CopyFrom = 0x731C2
+[HighwayIntersectionInfo_0x000834C2]
+CopyFrom = 0x34C2
+[HighwayIntersectionInfo_0x000934C2]
+CopyFrom = 0x134C2
+[HighwayIntersectionInfo_0x000A34C2]
+CopyFrom = 0x234C2
+[HighwayIntersectionInfo_0x000B34C2]
+CopyFrom = 0x334C2
+[HighwayIntersectionInfo_0x000C34C2]
+CopyFrom = 0x434C2
+[HighwayIntersectionInfo_0x000D34C2]
+CopyFrom = 0x534C2
+[HighwayIntersectionInfo_0x000E34C2]
+CopyFrom = 0x634C2
+[HighwayIntersectionInfo_0x000F34C2]
+CopyFrom = 0x734C2
 
-[HighwayIntersectionInfo_0x000031C3]
+[HighwayIntersectionInfo_0x000034C3]
 ;Added 11/17/12 by MandelSoft
 ;Symphony Orth-to-FAN Curve
 Piece = 0.0, 0.0, 0, 0, 0x5A540305
@@ -386,45 +386,45 @@ AutoTileBase=	0x5A540300
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A540300
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C3]
-CopyFrom = 0x31C3
+[HighwayIntersectionInfo_0x000134C3]
+CopyFrom = 0x34C3
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C3]
-CopyFrom = 0x31C3
+[HighwayIntersectionInfo_0x000234C3]
+CopyFrom = 0x34C3
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C3]
-CopyFrom = 0x31C3
+[HighwayIntersectionInfo_0x000334C3]
+CopyFrom = 0x34C3
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C3]
-CopyFrom = 0x31C3
+[HighwayIntersectionInfo_0x000434C3]
+CopyFrom = 0x34C3
 Transpose   = 1
-[HighwayIntersectionInfo_0x000531C3]
-CopyFrom = 0x131C3
+[HighwayIntersectionInfo_0x000534C3]
+CopyFrom = 0x134C3
 Transpose   = 1
-[HighwayIntersectionInfo_0x000631C3]
-CopyFrom = 0x231C3
+[HighwayIntersectionInfo_0x000634C3]
+CopyFrom = 0x234C3
 Transpose   = 1
-[HighwayIntersectionInfo_0x000731C3]
-CopyFrom = 0x331C3
+[HighwayIntersectionInfo_0x000734C3]
+CopyFrom = 0x334C3
 Transpose   = 1
-[HighwayIntersectionInfo_0x000831C3]
-CopyFrom = 0x31C3
-[HighwayIntersectionInfo_0x000931C3]
-CopyFrom = 0x131C3
-[HighwayIntersectionInfo_0x000A31C3]
-CopyFrom = 0x231C3
-[HighwayIntersectionInfo_0x000B31C3]
-CopyFrom = 0x331C3
-[HighwayIntersectionInfo_0x000C31C3]
-CopyFrom = 0x431C3
-[HighwayIntersectionInfo_0x000D31C3]
-CopyFrom = 0x531C3
-[HighwayIntersectionInfo_0x000E31C3]
-CopyFrom = 0x631C3
-[HighwayIntersectionInfo_0x000F31C3]
-CopyFrom = 0x731C3
+[HighwayIntersectionInfo_0x000834C3]
+CopyFrom = 0x34C3
+[HighwayIntersectionInfo_0x000934C3]
+CopyFrom = 0x134C3
+[HighwayIntersectionInfo_0x000A34C3]
+CopyFrom = 0x234C3
+[HighwayIntersectionInfo_0x000B34C3]
+CopyFrom = 0x334C3
+[HighwayIntersectionInfo_0x000C34C3]
+CopyFrom = 0x434C3
+[HighwayIntersectionInfo_0x000D34C3]
+CopyFrom = 0x534C3
+[HighwayIntersectionInfo_0x000E34C3]
+CopyFrom = 0x634C3
+[HighwayIntersectionInfo_0x000F34C3]
+CopyFrom = 0x734C3
 
-[HighwayIntersectionInfo_0x000031C4]
+[HighwayIntersectionInfo_0x000034C4]
 ;Added 11/17/12 by MandelSoft
 ;Symphony Diag-to-FAN Curve
 Piece = 0.0, 0.0, 0, 0, 0x5A540600
@@ -453,41 +453,41 @@ AutoTileBase=	0x5A540600
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A540600
 Costs       = 2000
-[HighwayIntersectionInfo_0x000131C4]
-CopyFrom = 0x31C4
+[HighwayIntersectionInfo_0x000134C4]
+CopyFrom = 0x34C4
 Rotate		= 1
-[HighwayIntersectionInfo_0x000231C4]
-CopyFrom = 0x31C4
+[HighwayIntersectionInfo_0x000234C4]
+CopyFrom = 0x34C4
 Rotate		= 2
-[HighwayIntersectionInfo_0x000331C4]
-CopyFrom = 0x31C4
+[HighwayIntersectionInfo_0x000334C4]
+CopyFrom = 0x34C4
 Rotate		= 3
-[HighwayIntersectionInfo_0x000431C4]
-CopyFrom = 0x31C4
+[HighwayIntersectionInfo_0x000434C4]
+CopyFrom = 0x34C4
 Transpose   = 1
-[HighwayIntersectionInfo_0x000531C4]
-CopyFrom = 0x131C4
+[HighwayIntersectionInfo_0x000534C4]
+CopyFrom = 0x134C4
 Transpose   = 1
-[HighwayIntersectionInfo_0x000631C4]
-CopyFrom = 0x231C4
+[HighwayIntersectionInfo_0x000634C4]
+CopyFrom = 0x234C4
 Transpose   = 1
-[HighwayIntersectionInfo_0x000731C4]
-CopyFrom = 0x331C4
+[HighwayIntersectionInfo_0x000734C4]
+CopyFrom = 0x334C4
 Transpose   = 1
-[HighwayIntersectionInfo_0x000831C4]
-CopyFrom = 0x31C4
-[HighwayIntersectionInfo_0x000931C4]
-CopyFrom = 0x131C4
-[HighwayIntersectionInfo_0x000A31C4]
-CopyFrom = 0x231C4
-[HighwayIntersectionInfo_0x000B31C4]
-CopyFrom = 0x331C4
-[HighwayIntersectionInfo_0x000C31C4]
-CopyFrom = 0x431C4
-[HighwayIntersectionInfo_0x000D31C4]
-CopyFrom = 0x531C4
-[HighwayIntersectionInfo_0x000E31C4]
-CopyFrom = 0x631C4
-[HighwayIntersectionInfo_0x000F31C4]
-CopyFrom = 0x731C4
+[HighwayIntersectionInfo_0x000834C4]
+CopyFrom = 0x34C4
+[HighwayIntersectionInfo_0x000934C4]
+CopyFrom = 0x134C4
+[HighwayIntersectionInfo_0x000A34C4]
+CopyFrom = 0x234C4
+[HighwayIntersectionInfo_0x000B34C4]
+CopyFrom = 0x334C4
+[HighwayIntersectionInfo_0x000C34C4]
+CopyFrom = 0x434C4
+[HighwayIntersectionInfo_0x000D34C4]
+CopyFrom = 0x534C4
+[HighwayIntersectionInfo_0x000E34C4]
+CopyFrom = 0x634C4
+[HighwayIntersectionInfo_0x000F34C4]
+CopyFrom = 0x734C4
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

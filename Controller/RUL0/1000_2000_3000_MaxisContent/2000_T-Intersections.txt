@@ -1,18 +1,17 @@
 ;T-intersections ;highways
-RotationRing = 2000, 12000, 512000, 22000, 32000, 522000, 42000, 52000, 532000, 62000, 72000, 502000 ;el3 / el3offset
-AddTypes     = 2001, 12001, 492001, 22001, 32001, 4A2001, 42001, 52001, 4B2001, 62001, 72001, 482001 ;gh3 / gh3offset
-AddTypes     = 2002, 92002, 292002, 12002, A2002, 2A2002, 22002, B2002, 2B2002, 32002, 82002, 282002 ;el2gh1
-AddTypes     = 2003, 92003, 112003, 12003, A2003, 122003, 22003, B2003, 132003, 32003, 82003, 102003 ;el1gh2
-;AddTypes     = 2004, 12004, 22004, 32004, 42004, 52004, 62004, 82004, A2004, C2004 ; highwayxhighway (listed by memo)
-;AddTypes     = 2005, 12005, 42005, 52005, 82005, 92005 ; groundhighway_GroundHWxGroundHW-Orth (listed by memo)
-;AddTypes     = 2006, 22006, 42006, 62006 ; groundhighway_GroundHWxGroundHW-Diag (listed by memo)
-;AddTypes     = 2007, 12007, 22007, 32007, 42007, 52007 ; gh_av_straight (listed by memo)
-;AddTypes     = 2008, 32008, 12008, 42008, 22008, 52008 ; GroundHighwayxRoad (listed by memo)
+RotationRing = 2000, 2001, 2051, 2002, 2003, 2052, 2004, 2005, 2053, 2006, 2007, 2050 ;el3 / el3offset
+AddTypes     = 2010, 2011, 2059, 2012, 2013, 205A, 2014, 2015, 205B, 2016, 2017, 2058 ;gh3 / gh3offset
+AddTypes     = 2020, 2029, 2049, 2021, 202A, 204A, 2022, 202B, 204B, 2023, 2028, 2048 ;el2gh1
+AddTypes     = 2030, 2039, 2041, 2031, 203A, 2042, 2032, 203B, 2043, 2033, 2038, 2040 ;el1gh2
+;AddTypes     = 0000,... ; highwayxhighway (listed by memo)
+;AddTypes     = 2060,... ; groundhighway_GroundHWxGroundHW-Orth (listed by memo)
+;AddTypes     = 2070,... ; groundhighway_GroundHWxGroundHW-Diag (listed by memo)
+;AddTypes     = 2150,... ; gh_av_straight (listed by memo)
+;AddTypes     = 2160,... ; GroundHighwayxRoad (listed by memo)
 
 ;###separator###
 
-
-[HighwayIntersectionInfo_0x00002004]
+[HighwayIntersectionInfo_0x00000000]
 ;Modified by Tropod 06.25.04, for better in-game using
 Piece       = 0.0, 0.0, 0, 0, 0x02010000
 StepOffsets = -6, 6
@@ -48,11 +47,11 @@ AutoTileBase = 0x0C000060
 AutoPlace   = 1
 Costs       = 1000
 ;;Rotation Added by Tropod 06.25.04
-[HighwayIntersectionInfo_0x00012004]
-CopyFrom    = 0x2004
+[HighwayIntersectionInfo_0x00000001]
+CopyFrom    = 0x0000
 Rotate      = 1
 
-[HighwayIntersectionInfo_0x00022004]
+[HighwayIntersectionInfo_0x00000002]
 ;Modified by Tropod 07.04.04, for better in-game using
 Piece       = 0.0, 0.0, 0, 0, 0x02010100
 StepOffsets = -5, 5
@@ -112,11 +111,11 @@ AutoTileBase = 0x0C001000
 Costs       = 1000
 AutoPlace   = 1
 ;;Rotation Added by Tropod 07.04.04
-[HighwayIntersectionInfo_0x00032004]
-CopyFrom    = 0x22004
+[HighwayIntersectionInfo_0x00000003]
+CopyFrom    = 0x0002
 Rotate      = 1
 
-[HighwayIntersectionInfo_0x00042004]
+[HighwayIntersectionInfo_0x00000004]
 ;Modified by Tropod 06.25.04, for better in-game using
 Piece       = 0.0, 0.0, 0, 0, 0x02010200
 StepOffsets = -5, 5
@@ -172,11 +171,11 @@ AutoTileBase = 0x0C002000
 Costs       = 1000
 AutoPlace   = 1
 ;;Rotation FIXED by Tropod 07.04.04
-[HighwayIntersectionInfo_0x00052004]
-CopyFrom    = 0x42004
+[HighwayIntersectionInfo_0x00000005]
+CopyFrom    = 0x00000004
 Rotate      = 1
 
-[HighwayIntersectionInfo_0x00062004]
+[HighwayIntersectionInfo_0x00000006]
 Piece       = 32.0, 0.0, 0, 0, 0x02010300
 StepOffsets = -4, 4
 
@@ -236,15 +235,16 @@ ConsLayout =......^......
 AutoTileBase = 0x0C003010
 Costs       = 1000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00082004]
-CopyFrom    = 0x62004
+[HighwayIntersectionInfo_0x00000008]
+CopyFrom    = 0x00000006
 Rotate      = 3
-[HighwayIntersectionInfo_0x000A2004]
-CopyFrom    = 0x62004
+[HighwayIntersectionInfo_0x0000000A]
+CopyFrom    = 0x00000006
 Transpose   = 1
-[HighwayIntersectionInfo_0x000C2004]
-CopyFrom    = 0xA2004
+[HighwayIntersectionInfo_0x0000000C]
+CopyFrom    = 0x0000000A
 Rotate      = 1
+
 
 [HighwayIntersectionInfo_0x00002000]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
@@ -293,18 +293,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00022000]
+[HighwayIntersectionInfo_0x00002002]
 CopyFrom = 0x2000
 Rotate = 1
-[HighwayIntersectionInfo_0x00042000]
+[HighwayIntersectionInfo_0x00002004]
 CopyFrom = 0x2000
 Rotate = 2
-[HighwayIntersectionInfo_0x00062000]
+[HighwayIntersectionInfo_0x00002006]
 CopyFrom = 0x2000
 Rotate = 3
 
 ;hack to get a lower starting number
-[HighwayIntersectionInfo_0x01002000]
+[HighwayIntersectionInfo_0x000001ffe]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 0, -1
 
@@ -357,21 +357,21 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00012000]
-CopyFrom = 0x1002000
+[HighwayIntersectionInfo_0x00002001]
+CopyFrom = 0x1ffe
 Rotate = 1
-[HighwayIntersectionInfo_0x00032000]
-CopyFrom = 0x1002000
+[HighwayIntersectionInfo_0x00002003]
+CopyFrom = 0x1ffe
 Rotate = 2
-[HighwayIntersectionInfo_0x00052000]
-CopyFrom = 0x1002000
+[HighwayIntersectionInfo_0x00002005]
+CopyFrom = 0x1ffe
 Rotate = 3
-[HighwayIntersectionInfo_0x00072000]
-CopyFrom = 0x1002000
+[HighwayIntersectionInfo_0x00002007]
+CopyFrom = 0x1ffe
 Rotate = 0
 
 
-[HighwayIntersectionInfo_0x00002001]
+[HighwayIntersectionInfo_0x00002010]
 Piece       = 24.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 2,0
 
@@ -418,18 +418,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 1000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00022001]
-CopyFrom = 0x2001
+[HighwayIntersectionInfo_0x00002012]
+CopyFrom = 0x2010
 Rotate = 1
-[HighwayIntersectionInfo_0x00042001]
-CopyFrom = 0x2001
+[HighwayIntersectionInfo_0x00002014]
+CopyFrom = 0x2010
 Rotate = 2
-[HighwayIntersectionInfo_0x00062001]
-CopyFrom = 0x2001
+[HighwayIntersectionInfo_0x00002016]
+CopyFrom = 0x2010
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x01002001]
+[HighwayIntersectionInfo_0x00001ff0]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,-1
 
@@ -478,21 +478,21 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 1000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00012001]
-CopyFrom = 0x1002001
+[HighwayIntersectionInfo_0x00002011]
+CopyFrom = 0x1ff0
 Rotate = 1
-[HighwayIntersectionInfo_0x00032001]
-CopyFrom = 0x1002001
+[HighwayIntersectionInfo_0x00002013]
+CopyFrom = 0x1ff0
 Rotate = 2
-[HighwayIntersectionInfo_0x00052001]
-CopyFrom = 0x1002001
+[HighwayIntersectionInfo_0x00002015]
+CopyFrom = 0x1ff0
 Rotate = 3
-[HighwayIntersectionInfo_0x00072001]
-CopyFrom = 0x1002001
+[HighwayIntersectionInfo_0x00002017]
+CopyFrom = 0x1ff0
 Rotate = 0
 
 
-[HighwayIntersectionInfo_0x00002002]
+[HighwayIntersectionInfo_0x00002020]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,1
 
@@ -539,18 +539,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00012002]
-CopyFrom = 0x2002
+[HighwayIntersectionInfo_0x00002021]
+CopyFrom = 0x2020
 Rotate = 1
-[HighwayIntersectionInfo_0x00022002]
-CopyFrom = 0x2002
+[HighwayIntersectionInfo_0x00002022]
+CopyFrom = 0x2020
 Rotate = 2
-[HighwayIntersectionInfo_0x00032002]
-CopyFrom = 0x2002
+[HighwayIntersectionInfo_0x00002023]
+CopyFrom = 0x2020
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x00082002]
+[HighwayIntersectionInfo_0x00002028]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,-1
 
@@ -597,18 +597,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00092002]
-CopyFrom = 0x82002
+[HighwayIntersectionInfo_0x00002029]
+CopyFrom = 0x2028
 Rotate = 1
-[HighwayIntersectionInfo_0x000A2002]
-CopyFrom = 0x82002
+[HighwayIntersectionInfo_0x0000202A]
+CopyFrom = 0x2028
 Rotate = 2
-[HighwayIntersectionInfo_0x000B2002]
-CopyFrom = 0x82002
+[HighwayIntersectionInfo_0x0000202B]
+CopyFrom = 0x2028
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x00002003]
+[HighwayIntersectionInfo_0x00002030]
 Piece       = 24.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,0
 
@@ -655,18 +655,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00012003]
-CopyFrom = 0x2003
+[HighwayIntersectionInfo_0x00002031]
+CopyFrom = 0x2030
 Rotate = 1
-[HighwayIntersectionInfo_0x00022003]
-CopyFrom = 0x2003
+[HighwayIntersectionInfo_0x00002032]
+CopyFrom = 0x2030
 Rotate = 2
-[HighwayIntersectionInfo_0x00032003]
-CopyFrom = 0x2003
+[HighwayIntersectionInfo_0x00002033]
+CopyFrom = 0x2030
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x00082003]
+[HighwayIntersectionInfo_0x00002038]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,-1
 
@@ -713,18 +713,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00092003]
-CopyFrom = 0x82003
+[HighwayIntersectionInfo_0x00002039]
+CopyFrom = 0x2038
 Rotate = 1
-[HighwayIntersectionInfo_0x000A2003]
-CopyFrom = 0x82003
+[HighwayIntersectionInfo_0x0000203A]
+CopyFrom = 0x2038
 Rotate = 2
-[HighwayIntersectionInfo_0x000B2003]
-CopyFrom = 0x82003
+[HighwayIntersectionInfo_0x0000203B]
+CopyFrom = 0x2038
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x00102003]
+[HighwayIntersectionInfo_0x00002040]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,-1
 
@@ -771,18 +771,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00112003]
-CopyFrom = 0x102003
+[HighwayIntersectionInfo_0x00002041]
+CopyFrom = 0x2040
 Rotate = 1
-[HighwayIntersectionInfo_0x00122003]
-CopyFrom = 0x102003
+[HighwayIntersectionInfo_0x00002042]
+CopyFrom = 0x2040
 Rotate = 2
-[HighwayIntersectionInfo_0x00132003]
-CopyFrom = 0x102003
+[HighwayIntersectionInfo_0x00002043]
+CopyFrom = 0x2040
 Rotate = 3
 
 
-[HighwayIntersectionInfo_0x00282002]
+[HighwayIntersectionInfo_0x00002048]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 1,-1
 
@@ -829,18 +829,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 2000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00292002]
-CopyFrom = 0x282002
+[HighwayIntersectionInfo_0x00002049]
+CopyFrom = 0x2048
 Rotate = 1
-[HighwayIntersectionInfo_0x002A2002]
-CopyFrom = 0x282002
+[HighwayIntersectionInfo_0x0000204A]
+CopyFrom = 0x2048
 Rotate = 2
-[HighwayIntersectionInfo_0x002B2002]
-CopyFrom = 0x282002
+[HighwayIntersectionInfo_0x0000204B]
+CopyFrom = 0x2048
 Rotate = 3
 
 ; TintersectionDiag_EL3offset
-[HighwayIntersectionInfo_0x00502000]
+[HighwayIntersectionInfo_0x00002050]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 
 CellLayout =BC......UV
@@ -886,19 +886,19 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 3000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00512000]
-CopyFrom = 0x502000
+[HighwayIntersectionInfo_0x00002051]
+CopyFrom = 0x2050
 Rotate = 1
-[HighwayIntersectionInfo_0x00522000]
-CopyFrom = 0x502000
+[HighwayIntersectionInfo_0x00002052]
+CopyFrom = 0x2050
 Rotate = 2
-[HighwayIntersectionInfo_0x00532000]
-CopyFrom = 0x502000
+[HighwayIntersectionInfo_0x00002053]
+CopyFrom = 0x2050
 Rotate = 3
 
 
 ; TintersectionDiag_GH3offset
-[HighwayIntersectionInfo_0x00482001]
+[HighwayIntersectionInfo_0x00002058]
 Piece       = 8.0, 8.0, 0, 0, 0x02011200
 HandleOffset = 2,-1
 
@@ -945,18 +945,18 @@ ConvertQueryID = 0x0c369c73
 PlaceQueryID = 0xA0000002
 Costs       = 1000
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00492001]
-CopyFrom = 0x482001
+[HighwayIntersectionInfo_0x00002059]
+CopyFrom = 0x2058
 Rotate = 1
-[HighwayIntersectionInfo_0x004A2001]
-CopyFrom = 0x482001
+[HighwayIntersectionInfo_0x0000205A]
+CopyFrom = 0x2058
 Rotate = 2
-[HighwayIntersectionInfo_0x004B2001]
-CopyFrom = 0x482001
+[HighwayIntersectionInfo_0x0000205B]
+CopyFrom = 0x2058
 Rotate = 3
 
 ; groundhighway_GroundHWxGroundHW-Orth
-[HighwayIntersectionInfo_0x00002005]
+[HighwayIntersectionInfo_0x00002060]
 Piece       = 16.0, 16.0, 0, 0, 0x02011200
 
 CellLayout =.....ef.....
@@ -989,13 +989,13 @@ Costs = 500
 PreviewEffect = preview_gh_straight
 AutoPlace   = 1
 ;;Rotation added by Tropod 06.07.04
-[HighwayIntersectionInfo_0x00012005]
-CopyFrom    = 0x2005
+[HighwayIntersectionInfo_0x00002061]
+CopyFrom    = 0x2060
 Rotate      = 1
 
 
 ; groundhighway_GroundHWxGroundHW-Diag
-[HighwayIntersectionInfo_0x00042005]
+[HighwayIntersectionInfo_0x00002064]
 Piece       = 16.0, 16.0, 0, 0, 0x02011200
 CellLayout =hg............
 CellLayout =iba...........
@@ -1055,11 +1055,11 @@ Costs = 500
 PreviewEffect = preview_gh_diag1
 AutoPlace   = 1
 ;;Rotation added by Tropod 06.07.04
-[HighwayIntersectionInfo_0x00052005]
-CopyFrom    = 0x42005
+[HighwayIntersectionInfo_0x00002065]
+CopyFrom    = 0x2064
 Rotate      = 1
 
-[HighwayIntersectionInfo_0x00082005]
+[HighwayIntersectionInfo_0x00002068]
 Piece       = 16.0, 16.0, 0, 0, 0x02010200
 StepOffsets = -5, 5
 
@@ -1120,12 +1120,12 @@ PreviewEffect = preview_gh_diag2
 Costs       = 500
 AutoPlace   = 1
 ;;Rotation added by Tropod 06.07.04
-[HighwayIntersectionInfo_0x00092005]
-CopyFrom    = 0x82005
+[HighwayIntersectionInfo_0x00002069]
+CopyFrom    = 0x2068
 Rotate      = 1
 
 ; groundhighway_GroundHWxGroundHW-Diag
-[HighwayIntersectionInfo_0x00002006]
+[HighwayIntersectionInfo_0x00002070]
 Piece       = 32.0, 0.0, 0, 0, 0x02010300
 StepOffsets = -4, 4
 
@@ -1180,18 +1180,18 @@ AutoTileBase = 0x0C80E000
 PreviewEffect = preview_gh_straightdiag
 Costs       = 500
 AutoPlace   = 1
-[HighwayIntersectionInfo_0x00022006]
-CopyFrom    = 0x2006
+[HighwayIntersectionInfo_0x00002072]
+CopyFrom    = 0x00002070
 Rotate      = 3
-[HighwayIntersectionInfo_0x00042006]
-CopyFrom    = 0x2006
+[HighwayIntersectionInfo_0x00002074]
+CopyFrom    = 0x00002070
 Transpose   = 1
-[HighwayIntersectionInfo_0x00062006]
-CopyFrom    = 0x42006
+[HighwayIntersectionInfo_0x00002076]
+CopyFrom    = 0x00002074
 Rotate      = 1
 
 
-[HighwayIntersectionInfo_0x00002007]
+[HighwayIntersectionInfo_0x00002150]
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_straight
 
@@ -1234,7 +1234,7 @@ AutoPlace   = 1
 Costs = 400
 
 
-[HighwayIntersectionInfo_0x00012007]
+[HighwayIntersectionInfo_0x00002151]
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_diag1
 
@@ -1273,7 +1273,7 @@ AutoPlace   = 1
 Costs = 400
 
 
-[HighwayIntersectionInfo_0x00022007]
+[HighwayIntersectionInfo_0x00002152]
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_diag2
 
@@ -1312,18 +1312,18 @@ ConsLayout = ..........
 ConsLayout = ....^.....
 AutoPlace   = 1
 Costs = 400
-[HighwayIntersectionInfo_0x00032007]
-CopyFrom = 0x2007
+[HighwayIntersectionInfo_0x00002153]
+CopyFrom = 0x00002150
 Rotate = 1
-[HighwayIntersectionInfo_0x00042007]
-CopyFrom = 0x12007
+[HighwayIntersectionInfo_0x00002154]
+CopyFrom = 0x00002151
 Rotate = 1
-[HighwayIntersectionInfo_0x00052007]
-CopyFrom = 0x22007
+[HighwayIntersectionInfo_0x00002155]
+CopyFrom = 0x00002152
 Rotate = 1
 
 
-[HighwayIntersectionInfo_0x00002008]
+[HighwayIntersectionInfo_0x00002160]
 ;GroundHighwayxRoad
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_rd_straight
@@ -1363,11 +1363,11 @@ ConsLayout = .^.
 AutoTileBase = 0x0C893000
 AutoPlace   = 1
 Costs = 400
-[HighwayIntersectionInfo_0x00032008]
-CopyFrom = 0x2008
+[HighwayIntersectionInfo_0x00002163]
+CopyFrom = 0x00002160
 Rotate = 1
 
-[HighwayIntersectionInfo_0x00012008]
+[HighwayIntersectionInfo_0x00002161]
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_rd_diag
 
@@ -1411,13 +1411,13 @@ ConsLayout = ........
 ConsLayout = ....^...
 AutoPlace   = 1
 Costs = 400
-[HighwayIntersectionInfo_0x00042008]
-CopyFrom = 0x12008
+[HighwayIntersectionInfo_0x00002164]
+CopyFrom = 0x00002161
 Rotate = 1
-[HighwayIntersectionInfo_0x00022008]
-CopyFrom = 0x12008
+[HighwayIntersectionInfo_0x00002162]
+CopyFrom = 0x00002161
 Transpose = 1
-[HighwayIntersectionInfo_0x00052008]
-CopyFrom = 0x42008
+[HighwayIntersectionInfo_0x00002165]
+CopyFrom = 0x00002164
 Transpose = 1
 

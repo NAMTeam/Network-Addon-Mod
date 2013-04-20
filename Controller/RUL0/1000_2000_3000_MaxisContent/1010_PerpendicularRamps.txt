@@ -1,13 +1,13 @@
 ;Perpendicular ramp
-RotationRing = 1010, 11010, 81010, 21010, 31010, B1010, 41010, 51010, A1010, 61010, 71010, 91010 ;elevated highway <-> road
-AddTypes     = 1011, 11011, 81011, 21011, 31011, B1011, 41011, 51011, A1011, 61011, 71011, 91011 ;ground highway <-> road
-AddTypes     = 1012, 11012, 21012, 31012, 41012, 51012, 61012, 71012, 81012, 91012, A1012, B1012 ;elevated highway <-> avenue
-AddTypes     = 1013, 11013, 21013, 31013, 41013, 51013, 81013, 91013, A1013, B1013, C1013, D1013 ;ground highway <-> avenue
-AddTypes     = 1014, 11014, 21014, 31014, 41014, 51014, 61014, 71014, 81014, 91014, A1014, B1014 ;elevated highway <-> traROADnue
-AddTypes     = 1015, 11015, 81015, 21015, 31015, B1015, 41015, 51015, A1015, 61015, 71015, 91015 ;elevated highway <-> one way road forward
-AddTypes     = 1016, 11016, 81016, 21016, 31016, B1016, 41016, 51016, A1016, 61016, 71016, 91016 ;elevated highway <-> one way road reverse
-AddTypes     = 1017, 11017, 81017, 21017, 31017, B1017, 41017, 51017, A1017, 61017, 71017, 91017 ;ground highway <-> one way road forward
-AddTypes     = 1018, 11018, 81018, 21018, 31018, B1018, 41018, 51018, A1018, 61018, 71018, 91018 ;ground highway <-> one way road reverse
+RotationRing = 1010, 1011, 1018, 1012, 1013, 101B, 1014, 1015, 101A, 1016, 1017, 1019 ;elevated highway <-> road
+AddTypes     = 2090, 2091, 2098, 2092, 2093, 209B, 2094, 2095, 209A, 2096, 2097, 2099 ;ground highway <-> road
+AddTypes     = 2100, 2140, 2141, 2101, 2142, 2143, 2108, 2148, 2149, 2109, 214A, 214B ;elevated highway <-> avenue
+AddTypes     = 2120, 2121, 2122, 2123, 2124, 2125, 2128, 2129, 212A, 212B, 212C, 212D ;ground highway <-> avenue
+AddTypes     = 2170, 2171, 2172, 2173, 2174, 2175, 2176, 2177, 2178, 2179, 217A, 217B ;elevated highway <-> tramavenue
+AddTypes     = 3100, 3101, 3108, 3102, 3103, 310B, 3104, 3105, 310A, 3106, 3107, 3109 ;elevated highway <-> one way road forward
+AddTypes     = 3110, 3111, 3118, 3112, 3113, 311B, 3114, 3115, 311A, 3116, 3117, 3119 ;elevated highway <-> one way road reverse
+AddTypes     = 3120, 3121, 3128, 3122, 3123, 312B, 3124, 3125, 312A, 3126, 3127, 3129 ;ground highway <-> one way road forward
+AddTypes     = 3130, 3131, 3138, 3132, 3133, 313B, 3134, 3135, 313A, 3136, 3137, 3139 ;ground highway <-> one way road reverse
 
 
 ;###separator###
@@ -53,17 +53,17 @@ PlaceQueryID = 0xA0000004
 HandleOffset = -1, 0
 PreviewEffect = preview_el_straight_perp
 Costs       = 1000
-[HighwayIntersectionInfo_0x00021010]
+[HighwayIntersectionInfo_0x00001012]
 CopyFrom    = 0x1010
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041010]
+[HighwayIntersectionInfo_0x00001014]
 CopyFrom    = 0x1010
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061010]
+[HighwayIntersectionInfo_0x00001016]
 CopyFrom    = 0x1010
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00011010]
+[HighwayIntersectionInfo_0x00001011]
 Piece       = 32.0, -32.0, 0, 0, 0x02012300
 
 CellLayout = ...+AD
@@ -99,30 +99,30 @@ PlaceQueryID = 0xA0000004
 HandleOffset = 0,0
 PreviewEffect = preview_el_diag_perp
 Costs       = 1000
-[HighwayIntersectionInfo_0x00031010]
-CopyFrom    = 0x11010
+[HighwayIntersectionInfo_0x00001013]
+CopyFrom    = 0x1011
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051010]
-CopyFrom    = 0x11010
+[HighwayIntersectionInfo_0x00001015]
+CopyFrom    = 0x1011
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071010]
-CopyFrom    = 0x11010
+[HighwayIntersectionInfo_0x00001017]
+CopyFrom    = 0x1011
 Rotate      = 3
-[HighwayIntersectionInfo_0x00081010]
-CopyFrom    = 0x11010
+[HighwayIntersectionInfo_0x00001018]
+CopyFrom    = 0x1011
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091010]
-CopyFrom    = 0x31010
+[HighwayIntersectionInfo_0x00001019]
+CopyFrom    = 0x1013
 Transpose   = 1
-[HighwayIntersectionInfo_0x000A1010]
-CopyFrom    = 0x51010
+[HighwayIntersectionInfo_0x0000101A]
+CopyFrom    = 0x1015
 Transpose   = 1
-[HighwayIntersectionInfo_0x000B1010]
-CopyFrom    = 0x71010
+[HighwayIntersectionInfo_0x0000101B]
+CopyFrom    = 0x1017
 Transpose   = 1
 
 
-[HighwayIntersectionInfo_0x00001011]
+[HighwayIntersectionInfo_0x00002090]
 Piece       = -8.0, 8.0, 0, 0, 0x02012100
 
 CellLayout = ...AB...
@@ -164,17 +164,17 @@ ConvertQueryID = 0xA0000001
 PlaceQueryID = 0xA0000004
 PreviewEffect = preview_gh_straight_perp
 Costs       = 400
-[HighwayIntersectionInfo_0x00021011]
-CopyFrom    = 0x1011
+[HighwayIntersectionInfo_0x00002092]
+CopyFrom    = 0x2090
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041011]
-CopyFrom    = 0x1011
+[HighwayIntersectionInfo_0x00002094]
+CopyFrom    = 0x2090
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061011]
-CopyFrom    = 0x1011
+[HighwayIntersectionInfo_0x00002096]
+CopyFrom    = 0x2090
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00011011]
+[HighwayIntersectionInfo_0x00002091]
 Piece       = -8.0, 8.0, 0, 0, 0x02012300
 
 CellLayout = ab........
@@ -216,31 +216,31 @@ PlaceQueryID = 0xA0000004
 HandleOffset = 0,0
 PreviewEffect = preview_gh_diag_perp
 Costs       = 400
-[HighwayIntersectionInfo_0x00031011]
-CopyFrom    = 0x11011
+[HighwayIntersectionInfo_0x00002093]
+CopyFrom    = 0x2091
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051011]
-CopyFrom    = 0x11011
+[HighwayIntersectionInfo_0x00002095]
+CopyFrom    = 0x2091
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071011]
-CopyFrom    = 0x11011
+[HighwayIntersectionInfo_0x00002097]
+CopyFrom    = 0x2091
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00081011]
-CopyFrom    = 0x11011
+[HighwayIntersectionInfo_0x00002098]
+CopyFrom    = 0x2091
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091011]
-CopyFrom    = 0x31011
+[HighwayIntersectionInfo_0x00002099]
+CopyFrom    = 0x2093
 Transpose   = 1
-[HighwayIntersectionInfo_0x000A1011]
-CopyFrom    = 0x51011
+[HighwayIntersectionInfo_0x0000209A]
+CopyFrom    = 0x2095
 Transpose   = 1
-[HighwayIntersectionInfo_0x000B1011]
-CopyFrom    = 0x71011
+[HighwayIntersectionInfo_0x0000209B]
+CopyFrom    = 0x2097
 Transpose   = 1
 
 
-[HighwayIntersectionInfo_0x00001012]
+[HighwayIntersectionInfo_0x00002100]
 ;elevated highway <-> avenue - orthogonal
 Piece       = -8.0, 8.0, 0, 0, 0x02012300
 PreviewEffect = preview_el_av_straight_perp
@@ -295,18 +295,18 @@ AutoTileBase = 0x0C880000
 ConvertQueryID = 0xA0000001
 PlaceQueryID = 0xA0000004
 Costs = 1000
-
-[HighwayIntersectionInfo_0x00031012]
-CopyFrom = 0x1012
+[HighwayIntersectionInfo_0x00002101]
+CopyFrom = 0x2100
 Rotate = 1
+
 ;clones for doubled rotation loop
-[HighwayIntersectionInfo_0x00061012]
-CopyFrom = 0x1012
-[HighwayIntersectionInfo_0x00091012]
-CopyFrom = 0x31012
+[HighwayIntersectionInfo_0x00002108]
+CopyFrom = 0x2100
+[HighwayIntersectionInfo_0x00002109]
+CopyFrom = 0x2101
 
 
-[HighwayIntersectionInfo_0x00011012]
+[HighwayIntersectionInfo_0x00002140]
 ;elevated highway <-> avenue - diagonal
 ;changed by Chrisim September 2010
 Piece       = -8.0, -8.0, 0, 0, 0x02012300
@@ -351,17 +351,17 @@ ConsLayout = ....^....
 ConvertQueryID = 0xA0000001
 PlaceQueryID = 0xA0000004
 Costs = 1000
-[HighwayIntersectionInfo_0x00041012]
-CopyFrom = 0x11012
+[HighwayIntersectionInfo_0x00002142]
+CopyFrom = 0x2140
 Rotate = 1
 ;clones for doubled rotation loop
-[HighwayIntersectionInfo_0x00071012]
-CopyFrom = 0x11012
-[HighwayIntersectionInfo_0x000A1012]
-CopyFrom = 0x41012
+[HighwayIntersectionInfo_0x00002148]
+CopyFrom = 0x2140
+[HighwayIntersectionInfo_0x0000214A]
+CopyFrom = 0x2142
 
 
-[HighwayIntersectionInfo_0x00021012]
+[HighwayIntersectionInfo_0x00002141]
 ;elevated highway <-> avenue - diagonal
 ;changed by Chrisim September 2010
 Piece       = 0.0, 0.0, 0, 0, 0x02012300
@@ -412,21 +412,20 @@ ConsLayout = .....^.....
 ConvertQueryID = 0xA0000001
 PlaceQueryID = 0xA0000004
 Costs = 1000
-[HighwayIntersectionInfo_0x00051012]
-CopyFrom = 0x21012
+[HighwayIntersectionInfo_0x00002143]
+CopyFrom = 0x2141
 Rotate = 1
 ;clones for doubled rotation loop
-[HighwayIntersectionInfo_0x00081012]
-CopyFrom = 0x21012
-[HighwayIntersectionInfo_0x000B1012]
-CopyFrom = 0x51012
+[HighwayIntersectionInfo_0x00002149]
+CopyFrom = 0x2141
+[HighwayIntersectionInfo_0x0000214B]
+CopyFrom = 0x2143
 
 
-[HighwayIntersectionInfo_0x00001013]
+[HighwayIntersectionInfo_0x00002120]
 Piece       = -8.0, 8.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_straight_perp
-;;bugfixed by AJ 09/01/2010
-
+;;bugfixed by AJ 09/01/2010++++++++++++++++++++++++++++++++++++
 CellLayout = ...ab...
 CellLayout = ...cd...
 CellLayout = ..+cd+..
@@ -473,12 +472,11 @@ ConsLayout = ...||...
 ConsLayout = ........
 ConsLayout = ...^....
 
-[HighwayIntersectionInfo_0x00031013]
-CopyFrom = 0x1013
+[HighwayIntersectionInfo_0x00002123]
+CopyFrom = 0x00002120
 Rotate = 1
 
-
-[HighwayIntersectionInfo_0x00011013]
+[HighwayIntersectionInfo_0x00002121]
 Piece       = -8.0, -8.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_diag1_perp
 
@@ -525,12 +523,12 @@ ConsLayout = ..........
 ConsLayout = .....^....
 AutoPlace   = 1
 
-[HighwayIntersectionInfo_0x00041013]
-CopyFrom = 0x11013
+[HighwayIntersectionInfo_0x00002124]
+CopyFrom = 0x00002121
 Rotate = 1
 
 
-[HighwayIntersectionInfo_0x00021013]
+[HighwayIntersectionInfo_0x00002122]
 Piece       = -8.0, 8.0, 0, 0, 0x02012300
 PreviewEffect = preview_gh_av_diag2_perp
 
@@ -579,26 +577,26 @@ AutoPlace   = 1
 ConvertQueryID = 0xA0000001
 PlaceQueryID = 0xA0000004
 Costs       = 400
-[HighwayIntersectionInfo_0x00051013]
-CopyFrom = 0x21013
+[HighwayIntersectionInfo_0x00002125]
+CopyFrom = 0x00002122
 Rotate = 1
 
 ;Clone paths to double avenues to 12-way rotation
-[HighwayIntersectionInfo_0x00081013]
-CopyFrom = 0x1013
-[HighwayIntersectionInfo_0x00091013]
-CopyFrom = 0x11013
-[HighwayIntersectionInfo_0x000A1013]
-CopyFrom = 0x21013
-[HighwayIntersectionInfo_0x000B1013]
-CopyFrom = 0x31013
-[HighwayIntersectionInfo_0x000C1013]
-CopyFrom = 0x41013
-[HighwayIntersectionInfo_0x000D1013]
-CopyFrom = 0x51013
+[HighwayIntersectionInfo_0x00002128]
+CopyFrom = 0x00002120
+[HighwayIntersectionInfo_0x00002129]
+CopyFrom = 0x00002121
+[HighwayIntersectionInfo_0x0000212A]
+CopyFrom = 0x00002122
+[HighwayIntersectionInfo_0x0000212B]
+CopyFrom = 0x00002123
+[HighwayIntersectionInfo_0x0000212C]
+CopyFrom = 0x00002124
+[HighwayIntersectionInfo_0x0000212D]
+CopyFrom = 0x00002125
 
 
-[HighwayIntersectionInfo_0x00001014]
+[HighwayIntersectionInfo_0x00002170]
 ;highway over orthogonal tram-avenue
 ;inserted by Chrisim 17 September 2010
 Piece       = -8.0, 8.0, 0, 0, 0x584403f0
@@ -651,12 +649,12 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x58440000
 Costs = 1100
 
-[HighwayIntersectionInfo_0x00011014]
-CopyFrom = 0x1014
+[HighwayIntersectionInfo_0x00002171]
+CopyFrom = 0x2170
 Rotate = 1
 
 
-[HighwayIntersectionInfo_0x00021014]
+[HighwayIntersectionInfo_0x00002172]
 ;highway over diagonal tram-avenue
 ;inserted by Chrisim 22 January 2011
 ;Piece       = -8.0, 8.0, 0, 0, 0x58443ff0
@@ -708,32 +706,32 @@ ConvertQueryID = 0x58440000
 PlaceQueryID = 0x58440000
 Costs = 1100
 
-[HighwayIntersectionInfo_0x00031014]
-CopyFrom = 0x21014
+[HighwayIntersectionInfo_0x00002173]
+CopyFrom = 0x2172
 Rotate = 1
-[HighwayIntersectionInfo_0x00041014]
-CopyFrom = 0x21014
+[HighwayIntersectionInfo_0x00002174]
+CopyFrom = 0x2172
 Rotate = 2
-[HighwayIntersectionInfo_0x00051014]
-CopyFrom = 0x21014
+[HighwayIntersectionInfo_0x00002175]
+CopyFrom = 0x2172
 Rotate = 3
-[HighwayIntersectionInfo_0x00061014]
-CopyFrom = 0x1014
-[HighwayIntersectionInfo_0x00071014]
-CopyFrom = 0x11014
-[HighwayIntersectionInfo_0x00081014]
-CopyFrom = 0x21014
-[HighwayIntersectionInfo_0x00091014]
-CopyFrom = 0x31014
-[HighwayIntersectionInfo_0x000A1014]
-CopyFrom = 0x41014
-[HighwayIntersectionInfo_0x000B1014]
-CopyFrom = 0x51014
+[HighwayIntersectionInfo_0x00002176]
+CopyFrom = 0x2170
+[HighwayIntersectionInfo_0x00002177]
+CopyFrom = 0x2171
+[HighwayIntersectionInfo_0x00002178]
+CopyFrom = 0x2172
+[HighwayIntersectionInfo_0x00002179]
+CopyFrom = 0x2173
+[HighwayIntersectionInfo_0x0000217A]
+CopyFrom = 0x2174
+[HighwayIntersectionInfo_0x0000217B]
+CopyFrom = 0x2175
 
 
 
 ; perp ramps: oneway + highway
-[HighwayIntersectionInfo_0x00001015]
+[HighwayIntersectionInfo_0x00003100]
 Piece       = 0.0, -48.0, 0, 0, 0x02012100
 
 CellLayout =..AD..
@@ -775,18 +773,18 @@ HandleOffset = -1, 0
 PreviewEffect = preview_el_ow_straight_perp
 Costs       = 1000
 OneWayDir	= 0
-[HighwayIntersectionInfo_0x00021015]
-CopyFrom    = 0x1015
+[HighwayIntersectionInfo_0x00003102]
+CopyFrom    = 0x3100
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041015]
-CopyFrom    = 0x1015
+[HighwayIntersectionInfo_0x00003104]
+CopyFrom    = 0x3100
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061015]
-CopyFrom    = 0x1015
+[HighwayIntersectionInfo_0x00003106]
+CopyFrom    = 0x3100
 Rotate      = 3
 
 
-[HighwayIntersectionInfo_0x00011015]
+[HighwayIntersectionInfo_0x00003101]
 Piece       = 32.0, -32.0, 0, 0, 0x02012300
 
 CellLayout = ...+AD
@@ -823,76 +821,76 @@ HandleOffset = -1,-1
 PreviewEffect = preview_el_ow_diag_perp
 Costs       = 1000
 OneWayDir	= 5
-[HighwayIntersectionInfo_0x00031015]
-CopyFrom    = 0x11015
+[HighwayIntersectionInfo_0x00003103]
+CopyFrom    = 0x3101
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051015]
-CopyFrom    = 0x11015
+[HighwayIntersectionInfo_0x00003105]
+CopyFrom    = 0x3101
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071015]
-CopyFrom    = 0x11015
+[HighwayIntersectionInfo_0x00003107]
+CopyFrom    = 0x3101
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00081015]
-CopyFrom    = 0x11015
+[HighwayIntersectionInfo_0x00003108]
+CopyFrom    = 0x3101
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091015]
-CopyFrom    = 0x31015
+[HighwayIntersectionInfo_0x00003109]
+CopyFrom    = 0x3103
 Transpose   = 1
-[HighwayIntersectionInfo_0x000A1015]
-CopyFrom    = 0x51015
+[HighwayIntersectionInfo_0x0000310A]
+CopyFrom    = 0x3105
 Transpose   = 1
-[HighwayIntersectionInfo_0x000B1015]
-CopyFrom    = 0x71015
+[HighwayIntersectionInfo_0x0000310B]
+CopyFrom    = 0x3107
 Transpose   = 1
 
 
 ; perp ramps: oneway + highway (reverse)
-[HighwayIntersectionInfo_0x00001016]
-CopyFrom	= 0x1015
+[HighwayIntersectionInfo_0x00003110]
+CopyFrom	= 0x3100
 AutoPathBase	= 0x0920A000
 OneWayDir	= 4
-[HighwayIntersectionInfo_0x00021016]
-CopyFrom    = 0x1016
+[HighwayIntersectionInfo_0x00003112]
+CopyFrom    = 0x3110
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041016]
-CopyFrom    = 0x1016
+[HighwayIntersectionInfo_0x00003114]
+CopyFrom    = 0x3110
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061016]
-CopyFrom    = 0x1016
+[HighwayIntersectionInfo_0x00003116]
+CopyFrom    = 0x3110
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00011016]
-CopyFrom	= 0x11015
+[HighwayIntersectionInfo_0x00003111]
+CopyFrom	= 0x3101
 AutoPathBase	= 0x0920C000
 OneWayDir	= 1
-[HighwayIntersectionInfo_0x00031016]
-CopyFrom    = 0x11016
+[HighwayIntersectionInfo_0x00003113]
+CopyFrom    = 0x3111
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051016]
-CopyFrom    = 0x11016
+[HighwayIntersectionInfo_0x00003115]
+CopyFrom    = 0x3111
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071016]
-CopyFrom    = 0x11016
+[HighwayIntersectionInfo_0x00003117]
+CopyFrom    = 0x3111
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00081016]
-CopyFrom    = 0x11016
+[HighwayIntersectionInfo_0x00003118]
+CopyFrom    = 0x3111
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091016]
-CopyFrom    = 0x31016
+[HighwayIntersectionInfo_0x00003119]
+CopyFrom    = 0x3113
 Transpose   = 1
 
-[HighwayIntersectionInfo_0x000A1016]
-CopyFrom    = 0x51016
+[HighwayIntersectionInfo_0x0000311A]
+CopyFrom    = 0x3115
 Transpose   = 1
-[HighwayIntersectionInfo_0x000B1016]
-CopyFrom    = 0x71016
+[HighwayIntersectionInfo_0x0000311B]
+CopyFrom    = 0x3117
 Transpose   = 1
 
 
 ; perp ramps: oneway + ground highway
-[HighwayIntersectionInfo_0x00001017]
+[HighwayIntersectionInfo_0x00003120]
 Piece       = -8.0, 8.0, 0, 0, 0x02012100
 
 CellLayout =...AD..
@@ -935,17 +933,17 @@ HandleOffset = 0, 0
 PreviewEffect = preview_gh_ow_straight_perp
 Costs       = 400
 AutoPlace = 1
-[HighwayIntersectionInfo_0x00021017]
-CopyFrom    = 0x1017
+[HighwayIntersectionInfo_0x00003122]
+CopyFrom    = 0x3120
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041017]
-CopyFrom    = 0x1017
+[HighwayIntersectionInfo_0x00003124]
+CopyFrom    = 0x3120
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061017]
-CopyFrom    = 0x1017
+[HighwayIntersectionInfo_0x00003126]
+CopyFrom    = 0x3120
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00011017]
+[HighwayIntersectionInfo_0x00003121]
 Piece       = 8.0, 8.0, 0, 0, 0x02012300
 
 CellLayout = ab........
@@ -991,70 +989,70 @@ PreviewEffect = preview_gh_ow_diag_perp
 OneWayDir	= 5
 Costs       = 400
 AutoPlace	= 1
-[HighwayIntersectionInfo_0x00031017]
-CopyFrom    = 0x11017
+[HighwayIntersectionInfo_0x00003123]
+CopyFrom    = 0x3121
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051017]
-CopyFrom    = 0x11017
+[HighwayIntersectionInfo_0x00003125]
+CopyFrom    = 0x3121
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071017]
-CopyFrom    = 0x11017
+[HighwayIntersectionInfo_0x00003127]
+CopyFrom    = 0x3121
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00081017]
-CopyFrom    = 0x11017
+[HighwayIntersectionInfo_0x00003128]
+CopyFrom    = 0x3121
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091017]
-CopyFrom    = 0x81017
+[HighwayIntersectionInfo_0x00003129]
+CopyFrom    = 0x3128
 Rotate		= 1
-[HighwayIntersectionInfo_0x000A1017]
-CopyFrom    = 0x81017
+[HighwayIntersectionInfo_0x0000312A]
+CopyFrom    = 0x3128
 Rotate		= 2
-[HighwayIntersectionInfo_0x000B1017]
-CopyFrom    = 0x81017
+[HighwayIntersectionInfo_0x0000312B]
+CopyFrom    = 0x3128
 Rotate		= 3
 
 
 ; perp ramps: oneway + ground highway (reverse)
 ; These are just clones for rotational purposes.  We don't need a
 ; reverse set because the ramp is dual sided.
-[HighwayIntersectionInfo_0x00001018]
-CopyFrom	= 0x1017
-[HighwayIntersectionInfo_0x00021018]
-CopyFrom    = 0x1018
+[HighwayIntersectionInfo_0x00003130]
+CopyFrom	= 0x3120
+[HighwayIntersectionInfo_0x00003132]
+CopyFrom    = 0x3130
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041018]
-CopyFrom    = 0x1018
+[HighwayIntersectionInfo_0x00003134]
+CopyFrom    = 0x3130
 Rotate      = 2
-[HighwayIntersectionInfo_0x00061018]
-CopyFrom    = 0x1018
+[HighwayIntersectionInfo_0x00003136]
+CopyFrom    = 0x3130
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00011018]
-CopyFrom	= 0x11017
+[HighwayIntersectionInfo_0x00003131]
+CopyFrom	= 0x3121
 OneWayDir	= 1
 AutoPathBase	= 0x09211000
-[HighwayIntersectionInfo_0x00031018]
-CopyFrom    = 0x11018
+[HighwayIntersectionInfo_0x00003133]
+CopyFrom    = 0x3131
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051018]
-CopyFrom    = 0x11018
+[HighwayIntersectionInfo_0x00003135]
+CopyFrom    = 0x3131
 Rotate      = 2
-[HighwayIntersectionInfo_0x00071018]
-CopyFrom    = 0x11018
+[HighwayIntersectionInfo_0x00003137]
+CopyFrom    = 0x3131
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00081018]
-CopyFrom    = 0x11018
+[HighwayIntersectionInfo_0x00003138]
+CopyFrom    = 0x3131
 Transpose   = 1
-[HighwayIntersectionInfo_0x00091018]
-CopyFrom    = 0x81018
+[HighwayIntersectionInfo_0x00003139]
+CopyFrom    = 0x3138
 Rotate		= 1
-[HighwayIntersectionInfo_0x000A1018]
-CopyFrom    = 0x81018
+[HighwayIntersectionInfo_0x0000313A]
+CopyFrom    = 0x3138
 Rotate		= 2
-[HighwayIntersectionInfo_0x000B1018]
-CopyFrom    = 0x81018
+[HighwayIntersectionInfo_0x0000313B]
+CopyFrom    = 0x3138
 Rotate		= 3
 
 

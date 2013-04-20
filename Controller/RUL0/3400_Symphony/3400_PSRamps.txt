@@ -1,9 +1,9 @@
 ;=== Symphony Pieces ===
 ;RAMPS
-RotationRing = 3100, 13100, 23100, 33100, 43100, 53100, 63100, 73100, 83100, 93100, A3100, B3100, C3100, D3100, E3100, F3100 ;Type A1 Ramp
-AddTypes     = 3101, 13101, 23101, 33101, 43101, 53101, 63101, 73101, 83101, 93101, A3101, B3101, C3101, D3101, E3101, F3101 ;Type B1 Ramp
-AddTypes     = 3102, 13102, 23102, 33102, 43102, 53102, 63102, 73102, 83102, 93102, A3102, B3102, C3102, D3102, E3102, F3102 ;Type D1 Ramp
-AddTypes     = 3103, 13103, 23103, 33103, 43103, 53103, 63103, 73103, 83103, 93103, A3103, B3103, C3103, D3103, E3103, F3103 ;Type E1 Ramp
+RotationRing = 3400, 13400, 23400, 33400, 43400, 53400, 63400, 73400, 83400, 93400, A3400, B3400, C3400, D3400, E3400, F3400 ;Type A1 Ramp
+AddTypes     = 3401, 13401, 23401, 33401, 43401, 53401, 63401, 73401, 83401, 93401, A3401, B3401, C3401, D3401, E3401, F3401 ;Type B1 Ramp
+AddTypes     = 3402, 13402, 23402, 33402, 43402, 53402, 63402, 73402, 83402, 93402, A3402, B3402, C3402, D3402, E3402, F3402 ;Type D1 Ramp
+AddTypes     = 3403, 13403, 23403, 33403, 43403, 53403, 63403, 73403, 83403, 93403, A3403, B3403, C3403, D3403, E3403, F3403 ;Type E1 Ramp
 
 
 ;###separator###
@@ -12,7 +12,7 @@ AddTypes     = 3103, 13103, 23103, 33103, 43103, 53103, 63103, 73103, 83103, 931
 ;PROJECT SYMPHONY
 ;Maxis Highway Revamp by MandelSoft and jdenm8
 
-[HighwayIntersectionInfo_0x00003100]
+[HighwayIntersectionInfo_0x00003400]
 ;Added 10/24/12 by MandelSoft
 ;Symphony Exit Ramp-Style A1 L0
 Piece = -16.0, 0.0, 0, 0, 0x5A570005
@@ -48,18 +48,18 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A570000
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00013100]
-CopyFrom    = 0x3100
+[HighwayIntersectionInfo_0x00013400]
+CopyFrom    = 0x3400
 Rotate      = 1
 ;clones for rotation
-[HighwayIntersectionInfo_0x00023100]
-CopyFrom    = 0x3100
+[HighwayIntersectionInfo_0x00023400]
+CopyFrom    = 0x3400
 Rotate      = 2
-[HighwayIntersectionInfo_0x00033100]
-CopyFrom    = 0x3100
+[HighwayIntersectionInfo_0x00033400]
+CopyFrom    = 0x3400
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00043100]
+[HighwayIntersectionInfo_0x00043400]
 ;Added 10/24/12 by MandelSoft
 ;Symphony Entrance Ramp-Style A1 L0
 Piece = 16.0, 0.0, 0, 0, 0x5A570205
@@ -95,17 +95,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A570200
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00053100]
-CopyFrom    = 0x43100
+[HighwayIntersectionInfo_0x00053400]
+CopyFrom    = 0x43400
 Rotate      = 1
-[HighwayIntersectionInfo_0x00063100]
-CopyFrom    = 0x43100
+[HighwayIntersectionInfo_0x00063400]
+CopyFrom    = 0x43400
 Rotate      = 2
-[HighwayIntersectionInfo_0x00073100]
-CopyFrom    = 0x43100
+[HighwayIntersectionInfo_0x00073400]
+CopyFrom    = 0x43400
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00083100]
+[HighwayIntersectionInfo_0x00083400]
 ;Added 10/24/12 by MandelSoft
 ;Symphony Exit Ramp-Style A1 L2
 Piece = -16.0, 0.0, 0, 0, 0x5A570405
@@ -141,16 +141,16 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A570400
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00093100]
-CopyFrom    = 0x83100
+[HighwayIntersectionInfo_0x00093400]
+CopyFrom    = 0x83400
 Rotate      = 1
-[HighwayIntersectionInfo_0x000A3100]
-CopyFrom    = 0x83100
+[HighwayIntersectionInfo_0x000A3400]
+CopyFrom    = 0x83400
 Rotate      = 2
-[HighwayIntersectionInfo_0x000B3100]
-CopyFrom    = 0x83100
+[HighwayIntersectionInfo_0x000B3400]
+CopyFrom    = 0x83400
 Rotate      = 3
-[HighwayIntersectionInfo_0x000C3100]
+[HighwayIntersectionInfo_0x000C3400]
 ;Added 10/24/12 by MandelSoft
 ;Symphony Entrance Ramp-Style A1 L2
 Piece = 16.0, 0.0, 0, 0, 0x5A570605
@@ -186,17 +186,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A570600
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x000D3100]
-CopyFrom    = 0xC3100
+[HighwayIntersectionInfo_0x000D3400]
+CopyFrom    = 0xC3400
 Rotate      = 1
-[HighwayIntersectionInfo_0x000E3100]
-CopyFrom    = 0xC3100
+[HighwayIntersectionInfo_0x000E3400]
+CopyFrom    = 0xC3400
 Rotate      = 2
-[HighwayIntersectionInfo_0x000F3100]
-CopyFrom    = 0xC3100
+[HighwayIntersectionInfo_0x000F3400]
+CopyFrom    = 0xC3400
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00003101]
+[HighwayIntersectionInfo_0x00003401]
 ;Added 10/28/12 by MandelSoft
 ;Symphony Exit Ramp-Style B1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A571005
@@ -233,18 +233,18 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A571000
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00013101]
-CopyFrom    = 0x3101
+[HighwayIntersectionInfo_0x00013401]
+CopyFrom    = 0x3401
 Rotate      = 1
 ;clones for rotation
-[HighwayIntersectionInfo_0x00023101]
-CopyFrom    = 0x3101
+[HighwayIntersectionInfo_0x00023401]
+CopyFrom    = 0x3401
 Rotate      = 2
-[HighwayIntersectionInfo_0x00033101]
-CopyFrom    = 0x3101
+[HighwayIntersectionInfo_0x00033401]
+CopyFrom    = 0x3401
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00043101]
+[HighwayIntersectionInfo_0x00043401]
 ;Added 10/28/12 by MandelSoft
 ;Symphony Entrance Ramp-Style B1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A571205
@@ -281,17 +281,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A571200
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00053101]
-CopyFrom    = 0x43101
+[HighwayIntersectionInfo_0x00053401]
+CopyFrom    = 0x43401
 Rotate      = 1
-[HighwayIntersectionInfo_0x00063101]
-CopyFrom    = 0x43101
+[HighwayIntersectionInfo_0x00063401]
+CopyFrom    = 0x43401
 Rotate      = 2
-[HighwayIntersectionInfo_0x00073101]
-CopyFrom    = 0x43101
+[HighwayIntersectionInfo_0x00073401]
+CopyFrom    = 0x43401
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00083101]
+[HighwayIntersectionInfo_0x00083401]
 ;Added 10/28/12 by MandelSoft
 ;Symphony Exit Ramp-Style B1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A571405
@@ -329,16 +329,16 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A571400
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00093101]
-CopyFrom    = 0x83101
+[HighwayIntersectionInfo_0x00093401]
+CopyFrom    = 0x83401
 Rotate      = 1
-[HighwayIntersectionInfo_0x000A3101]
-CopyFrom    = 0x83101
+[HighwayIntersectionInfo_0x000A3401]
+CopyFrom    = 0x83401
 Rotate      = 2
-[HighwayIntersectionInfo_0x000B3101]
-CopyFrom    = 0x83101
+[HighwayIntersectionInfo_0x000B3401]
+CopyFrom    = 0x83401
 Rotate      = 3
-[HighwayIntersectionInfo_0x000C3101]
+[HighwayIntersectionInfo_0x000C3401]
 ;Added 10/28/12 by MandelSoft
 ;Symphony Entrance Ramp-Style B1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A571605
@@ -375,17 +375,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A571600
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x000D3101]
-CopyFrom    = 0xC3101
+[HighwayIntersectionInfo_0x000D3401]
+CopyFrom    = 0xC3401
 Rotate      = 1
-[HighwayIntersectionInfo_0x000E3101]
-CopyFrom    = 0xC3101
+[HighwayIntersectionInfo_0x000E3401]
+CopyFrom    = 0xC3401
 Rotate      = 2
-[HighwayIntersectionInfo_0x000F3101]
-CopyFrom    = 0xC3101
+[HighwayIntersectionInfo_0x000F3401]
+CopyFrom    = 0xC3401
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00003102]
+[HighwayIntersectionInfo_0x00003402]
 ;Added 11/17/12 by MandelSoft
 ;Symphony Exit Ramp-Style D1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A572005
@@ -421,18 +421,18 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A572000
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00013102]
-CopyFrom    = 0x3102
+[HighwayIntersectionInfo_0x00013402]
+CopyFrom    = 0x3402
 Rotate      = 1
 ;clones for rotation
-[HighwayIntersectionInfo_0x00023102]
-CopyFrom    = 0x3102
+[HighwayIntersectionInfo_0x00023402]
+CopyFrom    = 0x3402
 Rotate      = 2
-[HighwayIntersectionInfo_0x00033102]
-CopyFrom    = 0x3102
+[HighwayIntersectionInfo_0x00033402]
+CopyFrom    = 0x3402
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00043102]
+[HighwayIntersectionInfo_0x00043402]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Entrance Ramp-Style D1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A572205
@@ -468,17 +468,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A572200
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00053102]
-CopyFrom    = 0x43102
+[HighwayIntersectionInfo_0x00053402]
+CopyFrom    = 0x43402
 Rotate      = 1
-[HighwayIntersectionInfo_0x00063102]
-CopyFrom    = 0x43102
+[HighwayIntersectionInfo_0x00063402]
+CopyFrom    = 0x43402
 Rotate      = 2
-[HighwayIntersectionInfo_0x00073102]
-CopyFrom    = 0x43102
+[HighwayIntersectionInfo_0x00073402]
+CopyFrom    = 0x43402
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00083102]
+[HighwayIntersectionInfo_0x00083402]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Exit Ramp-Style D1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A572405
@@ -514,16 +514,16 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A572400
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00093102]
-CopyFrom    = 0x83102
+[HighwayIntersectionInfo_0x00093402]
+CopyFrom    = 0x83402
 Rotate      = 1
-[HighwayIntersectionInfo_0x000A3102]
-CopyFrom    = 0x83102
+[HighwayIntersectionInfo_0x000A3402]
+CopyFrom    = 0x83402
 Rotate      = 2
-[HighwayIntersectionInfo_0x000B3102]
-CopyFrom    = 0x83102
+[HighwayIntersectionInfo_0x000B3402]
+CopyFrom    = 0x83402
 Rotate      = 3
-[HighwayIntersectionInfo_0x000C3102]
+[HighwayIntersectionInfo_0x000C3402]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Entrance Ramp-Style D1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A572605
@@ -559,17 +559,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A572600
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x000D3102]
-CopyFrom    = 0xC3102
+[HighwayIntersectionInfo_0x000D3402]
+CopyFrom    = 0xC3402
 Rotate      = 1
-[HighwayIntersectionInfo_0x000E3102]
-CopyFrom    = 0xC3102
+[HighwayIntersectionInfo_0x000E3402]
+CopyFrom    = 0xC3402
 Rotate      = 2
-[HighwayIntersectionInfo_0x000F3102]
-CopyFrom    = 0xC3102
+[HighwayIntersectionInfo_0x000F3402]
+CopyFrom    = 0xC3402
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00003103]
+[HighwayIntersectionInfo_0x00003403]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Exit Ramp-Style E1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A573005
@@ -605,18 +605,18 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A573000
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00013103]
-CopyFrom    = 0x3103
+[HighwayIntersectionInfo_0x00013403]
+CopyFrom    = 0x3403
 Rotate      = 1
 ;clones for rotation
-[HighwayIntersectionInfo_0x00023103]
-CopyFrom    = 0x3103
+[HighwayIntersectionInfo_0x00023403]
+CopyFrom    = 0x3403
 Rotate      = 2
-[HighwayIntersectionInfo_0x00033103]
-CopyFrom    = 0x3103
+[HighwayIntersectionInfo_0x00033403]
+CopyFrom    = 0x3403
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00043103]
+[HighwayIntersectionInfo_0x00043403]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Entrance Ramp-Style E1 L0
 Piece = 0.0, 0.0, 0, 0, 0x5A573205
@@ -652,17 +652,17 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A573200
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00053103]
-CopyFrom    = 0x43103
+[HighwayIntersectionInfo_0x00053403]
+CopyFrom    = 0x43403
 Rotate      = 1
-[HighwayIntersectionInfo_0x00063103]
-CopyFrom    = 0x43103
+[HighwayIntersectionInfo_0x00063403]
+CopyFrom    = 0x43403
 Rotate      = 2
-[HighwayIntersectionInfo_0x00073103]
-CopyFrom    = 0x43103
+[HighwayIntersectionInfo_0x00073403]
+CopyFrom    = 0x43403
 Rotate      = 3
 
-[HighwayIntersectionInfo_0x00083103]
+[HighwayIntersectionInfo_0x00083403]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Exit Ramp-Style E1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A573405
@@ -699,16 +699,16 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A573400
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x00093103]
-CopyFrom    = 0x83103
+[HighwayIntersectionInfo_0x00093403]
+CopyFrom    = 0x83403
 Rotate      = 1
-[HighwayIntersectionInfo_0x000A3103]
-CopyFrom    = 0x83103
+[HighwayIntersectionInfo_0x000A3403]
+CopyFrom    = 0x83403
 Rotate      = 2
-[HighwayIntersectionInfo_0x000B3103]
-CopyFrom    = 0x83103
+[HighwayIntersectionInfo_0x000B3403]
+CopyFrom    = 0x83403
 Rotate      = 3
-[HighwayIntersectionInfo_0x000C3103]
+[HighwayIntersectionInfo_0x000C3403]
 ;Added 11/18/12 by MandelSoft
 ;Symphony Entrance Ramp-Style E1 L2
 Piece = 0.0, 0.0, 0, 0, 0x5A573605
@@ -744,13 +744,13 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5A573600
 Costs       = 1000
 
-[HighwayIntersectionInfo_0x000D3103]
-CopyFrom    = 0xC3103
+[HighwayIntersectionInfo_0x000D3403]
+CopyFrom    = 0xC3403
 Rotate      = 1
-[HighwayIntersectionInfo_0x000E3103]
-CopyFrom    = 0xC3103
+[HighwayIntersectionInfo_0x000E3403]
+CopyFrom    = 0xC3403
 Rotate      = 2
-[HighwayIntersectionInfo_0x000F3103]
-CopyFrom    = 0xC3103
+[HighwayIntersectionInfo_0x000F3403]
+CopyFrom    = 0xC3403
 Rotate      = 3
 

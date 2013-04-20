@@ -586,11 +586,11 @@ ConsLayout = ..../..
 ConsLayout = ....^..
 
 AutoTileBase = 0x5A403100
-PlaceQueryID = 0x5A403100
-;PlaceQueryID = 0x7A403100 ;LHD controller loads different description for error message
+;###RHD###PlaceQueryID = 0x5A403100
+;###LHD###PlaceQueryID = 0x7A403100 ;LHD controller loads different description for error message
 Costs       = 200
-OneWayDir   = 3 ;this value is for RHD
-;OneWayDir   = 7 ;this value is for LHD, switch PlaceQueryID above
+;###RHD###OneWayDir   = 3 ;this value is for RHD
+;###LHD###OneWayDir   = 7 ;this value is for LHD, switch PlaceQueryID above
 [HighwayIntersectionInfo_0x0001E420]
 CopyFrom    = 0xE420
 Rotate      = 1
@@ -645,12 +645,12 @@ ConsLayout = ....+.
 ConsLayout = ...^..
 
 AutoTileBase = 0x5A403300
-PlaceQueryID = 0x5A403300
-;PlaceQueryID = 0x7A403300 ;LHD controller loads different description for error message
+;###RHD###PlaceQueryID = 0x5A403300
+;###LHD###PlaceQueryID = 0x7A403300 ;LHD controller loads different description for error message
 HandleOffset = 1, 1
 Costs       = 200
-OneWayDir   = 2 ;this value is for RHD
-;OneWayDir   = 6 ;this value is for LHD, switch PlaceQueryID above
+;###RHD###OneWayDir   = 2 ;this value is for RHD
+;###LHD###OneWayDir   = 6 ;this value is for LHD, switch PlaceQueryID above
 [HighwayIntersectionInfo_0x0001E41F]
 CopyFrom    = 0xE41F
 Rotate      = 1

@@ -1,6 +1,6 @@
 ;Clovers
-RotationRing = 1020, 11020, 21020, 31020, 41020, 51020 ;elevated highway
-AddTypes     = 1021, 11021, 21021, 31021, 41021, 51021 ;ground highway
+RotationRing = 1020, 1021, 1022, 1023, 1024, 1025 ;elevated highway
+AddTypes     = 3140, 3141, 3142, 3143, 3144, 3145 ;ground highway
 
 ;###separator###
 
@@ -65,7 +65,7 @@ PlaceQueryID = 0xA0000002
 PreviewEffect = preview_el_straight_clover
 Costs       = 3000
 
-[HighwayIntersectionInfo_0x00011020]
+[HighwayIntersectionInfo_0x00001021]
 Piece       = 0.0, 0.0, 0, 0, 0x02011100
 
 CellLayout =hg..........mn
@@ -128,7 +128,7 @@ PlaceQueryID = 0xA0000002
 PreviewEffect = preview_el_diag1_clover
 Costs       = 3000
 
-[HighwayIntersectionInfo_0x00021020]
+[HighwayIntersectionInfo_0x00001022]
 Piece       = 0.0, 0.0, 0, 0, 0x02011200
 
 CellLayout =hg.........mn
@@ -189,17 +189,18 @@ ConvertQueryID = 0xA0000000
 PlaceQueryID = 0xA0000002
 PreviewEffect = preview_el_diag2_clover
 Costs       = 3000
-[HighwayIntersectionInfo_0x00031020]
+[HighwayIntersectionInfo_0x00001023]
 CopyFrom    = 0x1020
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041020]
-CopyFrom    = 0x11020
+[HighwayIntersectionInfo_0x00001024]
+CopyFrom    = 0x1021
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051020]
-CopyFrom    = 0x21020
+[HighwayIntersectionInfo_0x00001025]
+CopyFrom    = 0x1022
 Rotate      = 1
 
-[HighwayIntersectionInfo_0x00001021]
+
+[HighwayIntersectionInfo_0x00003140]
 Piece       = 0.0, 0.0, 0, 0, 0x02011000
 PreviewEffect = preview_gh_straight_clover
 
@@ -260,7 +261,7 @@ ConvertQueryID = 0xA0000000
 PlaceQueryID = 0xA0000002
 Costs       = 3000
 
-[HighwayIntersectionInfo_0x00011021]
+[HighwayIntersectionInfo_0x00003141]
 Piece       = 0.0, 0.0, 0, 0, 0x02011100
 PreviewEffect = preview_gh_diag1_clover
 
@@ -323,7 +324,7 @@ ConvertQueryID = 0xA0000000
 PlaceQueryID = 0xA0000002
 Costs       = 3000
 
-[HighwayIntersectionInfo_0x00021021]
+[HighwayIntersectionInfo_0x00003142]
 Piece       = 0.0, 0.0, 0, 0, 0x02011200
 PreviewEffect = preview_gh_diag2_clover
 
@@ -385,14 +386,14 @@ ConvertQueryID = 0xA0000000
 PlaceQueryID = 0xA0000002
 HandleOffset = 0, 0
 Costs       = 3000
-[HighwayIntersectionInfo_0x00031021]
-CopyFrom    = 0x1021
+[HighwayIntersectionInfo_0x00003143]
+CopyFrom    = 0x3140
 Rotate      = 1
-[HighwayIntersectionInfo_0x00041021]
-CopyFrom    = 0x11021
+[HighwayIntersectionInfo_0x00003144]
+CopyFrom    = 0x3141
 Rotate      = 1
-[HighwayIntersectionInfo_0x00051021]
-CopyFrom    = 0x21021
+[HighwayIntersectionInfo_0x00003145]
+CopyFrom    = 0x3142
 Rotate      = 1
 ;
 ;
