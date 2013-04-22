@@ -1,0 +1,184 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ROAD BUTTON SECTION
+;ROAD BUTTON SECTION
+; 0x7###
+;Road overpasses button
+RotationRing = 7000, 17000 ;roadxroad overpass
+AddTypes     = 7001, 17001 ;roadxrail overpass
+AddTypes     = 7002, 17002 ;roadxstreet overpass
+AddTypes     = 7003, 17003 ;roadxonewayroad overpass
+AddTypes     = 7004, 17004 ;roadxavenue overpass
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ROAD SECTION
+;ROAD SECTION
+;ROAD SECTION
+
+;OVERPASSES
+[HighwayIntersectionInfo_0x00007000]
+;Added by Tropod 05/23/04.
+;roadxroad overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020A005
+PreviewEffect = preview_roadroadoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - road: 0x00020000,0xffffff00 check
+CheckType = b - road: 0x00020002
+CheckType = d - road: 0x02000000,0xffff00ff check
+CheckType = e - road: 0x00000200,0x00ffffff check
+CheckType = c - road: 0x00000002,0xff00ffff check
+CheckType = Z - road: 0x02020202
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5020A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007000
+Costs = 750
+[HighwayIntersectionInfo_0x00017000]
+CopyFrom = 0x7000
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00007001]
+; Road-over-rail overpass
+; Added by redlotus on 4/8/04
+Piece = 0.0, 0.0, 0, 0, 0x03120005
+PreviewEffect = preview_roadrailoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - road: 0x00020000,0xffffff00 check
+CheckType = b - road: 0x00020002
+CheckType = d - rail: 0x02000000,0xffff00ff check
+CheckType = e - rail: 0x00000200,0x00ffffff check
+CheckType = c - road: 0x00000002,0xff00ffff check
+CheckType = Z - road: 0x00020002 rail: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x03120000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007010
+Costs = 1000
+[HighwayIntersectionInfo_0x00017001]
+CopyFrom = 0x7001
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00007002]
+;Added by Tropod 05/23/04.
+;roadxstreet overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020B005
+PreviewEffect = preview_roadstrtoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - road: 0x00020000,0xffffff00 check
+CheckType = b - road: 0x00020002
+CheckType = d - street: 0x02000000,0xffff00ff check
+CheckType = e - street: 0x00000200,0x00ffffff check
+CheckType = c - road: 0x00000002,0xff00ffff check
+CheckType = Z - road: 0x00020002 street: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5020B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007020
+Costs = 500
+[HighwayIntersectionInfo_0x00017002]
+CopyFrom = 0x7002
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00007003]
+;Added by Tropod 05/23/04.
+;roadxonewayroad overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020C005
+PreviewEffect = preview_roadowrdoverpass001
+
+CellLayout =....d....
+CellLayout =abbbZbbbc<
+CellLayout =....e....
+CellLayout =....^....
+
+CheckType = a - road: 0x00020000,0xffffff00 check
+CheckType = b - road: 0x00020002
+CheckType = d - onewayroad: 0x02000000,0xffff00ff check
+CheckType = e - onewayroad: 0x00000200,0x00ffffff check
+CheckType = c - road: 0x00000002,0xff00ffff check
+CheckType = Z - road: 0x00020002 onewayroad: 0x02000200
+
+ConsLayout =....|....
+ConsLayout =----#----<
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5020C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007030
+Costs = 750
+[HighwayIntersectionInfo_0x00017003]
+CopyFrom = 0x7003
+Rotate	= 1
+
+
+[HighwayIntersectionInfo_0x00007004]
+;Added by Tropod 05/23/04.
+;roadxavenue overpass
+Piece = 0.0, 0.0, 0, 0, 0x5020D005
+PreviewEffect = preview_roadavenoverpass001
+
+CellLayout = ....AB....
+CellLayout = abbbcdbbbe<
+CellLayout = ....EF....
+CellLayout = ....^.....
+
+CheckType = a - check road: 0x00020000, 0x00FF0000
+CheckType = b - road: 0x00020002
+CheckType = c - road: 0x00020002 avenue: 0x02040200
+CheckType = d - road: 0x00020002 avenue: 0x02000204
+CheckType = e - check road: 0x00000002, 0x000000FF
+CheckType = A - check avenue: 0x02040000, 0xFFFF00FF
+CheckType = B - check avenue: 0x02000004, 0xFFFF00FF
+CheckType = E - check avenue: 0x00040200, 0x00FFFFFF
+CheckType = F - check avenue: 0x00000204, 0x00FFFFFF
+
+ConsLayout = .........
+ConsLayout = ....||...
+ConsLayout = ----##---<
+ConsLayout = ....||...
+ConsLayout = ....^....
+
+AutoTileBase=	0x5020D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007040
+Costs = 1000
+[HighwayIntersectionInfo_0x00017004]
+CopyFrom = 0x7004
+Rotate = 1
+

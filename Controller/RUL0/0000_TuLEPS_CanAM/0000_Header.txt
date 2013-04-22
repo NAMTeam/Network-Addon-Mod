@@ -1,0 +1,102 @@
+;;NOTE; file has been modified, has some sections throughout commented out,
+; has custom content, & contains various additional rules, done by NAM Team &/or others.
+;Last Updated: 20 April 2013 by memo (based on e180)
+;several fixes.
+;
+;RHD version
+;search for RHD to find RHD-LHD specific rules
+;
+;-----------------------------------------------------
+; Intersection ordering
+;
+; RotationRing = hex-id [,hex-id...]
+;
+;   Creates a ring of rules that are cycled through via
+;   Home/End or automatically by the tool as it tries to
+;   auto-fit rules to the current mouse point.
+;
+; AddTypes = hex-id [,hex-id...]
+;
+;   Attaches another ring to the last ring, creating type
+;   rings perpendicular to the rotation ring.  Type rings
+;   can be cycled through via Tab/Shift-Tab.  Generally,
+;   type rings are set up to preserve rotation as you
+;   cycle through rules of different network types.
+;
+; A given rule can only belong to ONE rotation ring and
+; ONE type ring.  Attempting to hook a rule into more than
+; one rotation or type ring will result in the rings getting
+; trashed.
+;
+;
+[Ordering]
+;###separator###
+;Additional information added by Tropod 17/04/04.
+;For any additional RotationRings, AddTypes, and/or Rules, the following designations should preferrably be followed;
+;long version
+;Rail Addon Mod 0x00004###
+;dirtroad 0x00005###
+;street 0x00006###
+;road 0x00007###
+;onewayroad 0x00008###
+;avenue 0x00009###
+;rail 0x0000a###
+;lightrail 0x0000b###
+;monorail 0x0000c###
+;groundhighway 0x0000d###
+;highway 0x0000e###
+;Pedestraian 0x00006###
+;Miscellaneous 0x0000f### may contain items that might otherwise normally be nested under network specific section.
+;For the short version, just remove 0x0000 from the start of each one.
+;These RotationRing & AddTypes values can typically be changed safely for any items. Note though; changing the value of an item will require changing any references pointing to the item.
+
+;Where one network type overpasses another network type, then the number 
+;used should preferrably be dictated by which network overlaps/overpasses the other.
+;The indexing of the RotationRings,AddTypes, & Rules should prefably be at least 0x10 for <--
+;each additional one. This is to allow for some flexibility if changes/additions are made <--  Old guidelines, please see below
+; to an item at a later date for whatever reasons.                                        <--
+;
+;RotationRing lines must all include a unique 4 digit HID and all other entries increment the 5th digit (and 6th, 7th and 8th if necessary)
+;AddTypes lines should follow the same guideline to maintain compatability with the DAMN menu system.
+;
+;
+;Notes for Lines;
+;ConsLayout works in conjunction with CellLayout based on CheckTypes. Also, ConsLayout influences terrain/model movement with the use of ASCII characters. Some characters though aren't actually valid.
+
+
+;--------------------------------------------------------
+; Highway intersection rules.
+;
+;   StepOffsets = start-offset, end-offset
+;   PaddingCell = x-offset, z-offset, edge-types
+;   CellLayout  = <mix of characters>
+;                 '+': Add invisible tile for piece
+;                 'n': Tile must be a new network tile from current drag
+;                 'p': Tile must be a previously existing network tile
+;                 'X': Both 'n' and 'p' apply (intersection tile)
+;                 '.': Don't care
+;                 'P': Padding tile
+;                 '<': Set center row
+;                 '^': Set center column
+;   CopyFrom    = source-rule-ID
+;   Invert      = 1
+;   Transpose   = 1
+;   ConvertQueryID = string-instance-id
+;   PlaceQueryID   = string-instance-id
+
+
+[Intersection Tile Types]
+DefineType  = 0x00000000,Road
+DefineType  = 0x00000001,Rail	; added by redlotus 4/8/04.
+DefineType  = 0x00000002,Highway
+DefineType  = 0x00000003,Street ;Added from here down 1/3/10
+DefineType  = 0x00000004,Pipe
+DefineType  = 0x00000005,Powerpole
+DefineType  = 0x00000006,Avenue
+DefineType  = 0x00000007,Subway
+DefineType  = 0x00000008,Lightrail
+DefineType  = 0x00000009,Monorail
+DefineType  = 0x0000000A,Onewayroad
+DefineType  = 0x0000000B,Dirtroad
+DefineType  = 0x0000000C,Groundhighway
+

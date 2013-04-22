@@ -1,0 +1,95 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;GROUND LIGHTRAIL EXTENSION BUTTON SECTION
+;GROUND LIGHTRAIL EXTENSION BUTTON SECTION
+RotationRing    = BD00, 1BD00, 2BD00, 3BD00, 4BD00, 5BD00, 6BD00, 7BD00 ;Ground Light Rail Alt1 Straight Puzzle Piece - drag
+AddTypes     = BD01, 1BD01, 2BD01, 3BD01, 4BD01, 5BD01, 6BD01, 7BD01 ;Ground Light Rail Alt2 Straight Puzzle Piece - drag
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000BD00]
+;Added by Chrisim 16 September 2010
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Straight Alt1 Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x5F888006
+PreviewEffect = preview_draggable_glr___011
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x02000200
+CheckType = a - lightrail: 0x02000200 Road: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5F888000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5F888006
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BD00]
+CopyFrom    = 0xBD00
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BD00]
+CopyFrom    = 0xBD00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BD00]
+CopyFrom    = 0xBD00
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004BD00]
+CopyFrom    = 0xBD00
+[HighwayIntersectionInfo_0x0005BD00]
+CopyFrom    = 0x1BD00
+[HighwayIntersectionInfo_0x0006BD00]
+CopyFrom    = 0x2BD00
+[HighwayIntersectionInfo_0x0007BD00]
+CopyFrom    = 0x3BD00
+
+[HighwayIntersectionInfo_0x0000BD01]
+;Added by Chrisim 16 September 2010
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Straight Alt2 Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x5F88C006
+PreviewEffect = preview_draggable_glr___010
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x02000200
+CheckType = a - lightrail: 0x02000200 onewayroad: 0x00010300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x5F88C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5F88C006
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BD01]
+CopyFrom    = 0xBD01
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BD01]
+CopyFrom    = 0xBD01
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BD01]
+CopyFrom    = 0xBD01
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004BD01]
+CopyFrom    = 0xBD01
+[HighwayIntersectionInfo_0x0005BD01]
+CopyFrom    = 0x1BD01
+[HighwayIntersectionInfo_0x0006BD01]
+CopyFrom    = 0x2BD01
+[HighwayIntersectionInfo_0x0007BD01]
+CopyFrom    = 0x3BD01
+
+

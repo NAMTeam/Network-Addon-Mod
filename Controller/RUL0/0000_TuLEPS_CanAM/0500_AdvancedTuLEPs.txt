@@ -1,0 +1,2198 @@
+;Advanced TuLEPs
+;0xr05##
+RotationRing = 0500, 10500, 20500, 30500, 40500, 50500, 60500, 70500, 80500, 90500, A0500, B0500, C0500, D0500, E0500, F0500 ;Road Type A-Transition
+AddTypes = 0501, 10501, 20501, 30501, 40501, 50501, 60501, 70501, 80501, 90501, A0501, B0501, C0501, D0501, E0501, F0501 ;Road Type AX
+AddTypes = 0502, 10502, 20502, 30502, 40502, 50502, 60502, 70502, 80502, 90502, A0502, B0502, C0502, D0502, E0502, F0502 ;Road Type AT
+AddTypes = 0503, 10503, 20503, 30503, 40503, 50503, 60503, 70503, 80503, 90503, A0503, B0503, C0503, D0503, E0503, F0503 ;Road Type B-Transition
+AddTypes = 0504, 10504, 20504, 30504, 40504, 50504, 60504, 70504, 80504, 90504, A0504, B0504, C0504, D0504, E0504, F0504 ;Road Type BX
+AddTypes = 0505, 10505, 20505, 30505, 40505, 50505, 60505, 70505, 80505, 90505, A0505, B0505, C0505, D0505, E0505, F0505 ;Road Type BX/T
+AddTypes = 0506, 10506, 20506, 30506, 40506, 50506, 60506, 70506, 80506, 90506, A0506, B0506, C0506, D0506, E0506, F0506 ;Road Type C Transitions
+AddTypes = 0507, 10507, 20507, 30507, 40507, 50507, 60507, 70507, 80507, 90507, A0507, B0507, C0507, D0507, E0507, F0507 ;Road Type C1-4
+AddTypes = 0508, 10508, 20508, 30508, 40508, 50508, 60508, 70508, 80508, 90508, A0508, B0508, C0508, D0508, E0508, F0508 ;Road Type C5-8
+AddTypes = 0509, 10509, 20509, 30509, 40509, 50509, 60509, 70509, 80509, 90509, A0509, B0509, C0509, D0509, E0509, F0509 ;Road Type B Intersection 1
+AddTypes = 050A, 1050A, 2050A, 3050A, 4050A, 5050A, 6050A, 7050A, 8050A, 9050A, A050A, B050A, C050A, D050A, E050A, F050A ;Road Type B Intersection 2
+AddTypes = 050B, 1050B, 2050B, 3050B, 4050B, 5050B, 6050B, 7050B, 8050B, 9050B, A050B, B050B, C050B, D050B, E050B, F050B ;Road Type B Intersection 3
+AddTypes = 050C, 1050C, 2050C, 3050C, 4050C, 5050C, 6050C, 7050C, 8050C, 9050C, A050C, B050C, C050C, D050C, E050C, F050C ;Road Type B Intersection 4
+AddTypes = 050D, 1050D, 2050D, 3050D, 4050D, 5050D, 6050D, 7050D, 8050D, 9050D, A050D, B050D, C050D, D050D, E050D, F050D ;Road Type AX Road/Street/OWR Intersections
+AddTypes = 050E, 1050E, 2050E, 3050E, 4050E, 5050E, 6050E, 7050E, 8050E, 9050E, A050E, B050E, C050E, D050E, E050E, F050E ;Road Type AX/Road Type BX Intersections
+AddTypes = 050F, 1050F, 2050F, 3050F, 4050F, 5050F, 6050F, 7050F, 8050F, 9050F, A050F, B050F, C050F, D050F, E050F, F050F ;Avenue Type A/OneWayRoad Intersections
+AddTypes = 0510, 10510, 20510, 30510, 40510, 50510, 60510, 70510, 80510, 90510, A0510, B0510, C0510, D0510, E0510, F0510 ;Avenue Type A/Street Intersections
+AddTypes = 0511, 10511, 20511, 30511, 40511, 50511, 60511, 70511, 80511, 90511, A0511, B0511, C0511, D0511, E0511, F0511 ;Avenue Type AX/Road Type DX/AX
+AddTypes = 0512, 10512, 20512, 30512, 40512, 50512, 60512, 70512, 80512, 90512, A0512, B0512, C0512, D0512, E0512, F0512 ;Avenue Type AX/Road Type DX (2)
+AddTypes = 0513, 10513, 20513, 30513, 40513, 50513, 60513, 70513, 80513, 90513, A0513, B0513, C0513, D0513, E0513, F0513 ;Avenue Type AX/DX Int
+AddTypes = 0514, 10514, 20514, 30514, 40514, 50514, 60514, 70514, 80514, 90514, A0514, B0514, C0514, D0514, E0514, F0514 ;Avenue Type DX
+AddTypes = 0515, 10515, 20515, 30515, 40515, 50515, 60515, 70515, 80515, 90515, A0515, B0515, C0515, D0515, E0515, F0515 ;OWR Base Intersection 1 (4 OWR +)
+AddTypes = 0516, 10516, 20516, 30516, 40516, 50516, 60516, 70516, 80516, 90516, A0516, B0516, C0516, D0516, E0516, F0516 ;OWR Base Intersection 1 (2 OWR/2 Road +)
+
+
+
+
+;###separator###
+
+;Transitions
+[HighwayIntersectionInfo_0x00000500]
+CopyFrom = 0x0400
+[HighwayIntersectionInfo_0x00010500]
+CopyFrom = 0x10400
+[HighwayIntersectionInfo_0x00020500]
+CopyFrom = 0x20400
+[HighwayIntersectionInfo_0x00030500]
+CopyFrom = 0x30400
+[HighwayIntersectionInfo_0x00040500]
+CopyFrom = 0x40400
+[HighwayIntersectionInfo_0x00050500]
+CopyFrom = 0x50400
+[HighwayIntersectionInfo_0x00060500]
+CopyFrom = 0x60400
+[HighwayIntersectionInfo_0x00070500]
+CopyFrom = 0x70400
+[HighwayIntersectionInfo_0x00080500]
+CopyFrom = 0x0400
+[HighwayIntersectionInfo_0x00090500]
+CopyFrom = 0x10400
+[HighwayIntersectionInfo_0x000A0500]
+CopyFrom = 0x20400
+[HighwayIntersectionInfo_0x000B0500]
+CopyFrom = 0x30400
+[HighwayIntersectionInfo_0x000C0500]
+CopyFrom = 0x40400
+[HighwayIntersectionInfo_0x000D0500]
+CopyFrom = 0x50400
+[HighwayIntersectionInfo_0x000E0500]
+CopyFrom = 0x60400
+[HighwayIntersectionInfo_0x000F0500]
+CopyFrom = 0x70400
+
+;Type A1
+[HighwayIntersectionInfo_0x00000501]
+CopyFrom = 0x0401
+[HighwayIntersectionInfo_0x00010501]
+CopyFrom = 0x10401
+[HighwayIntersectionInfo_0x00020501]
+CopyFrom = 0x20401
+[HighwayIntersectionInfo_0x00030501]
+CopyFrom = 0x30401
+
+;Type A3
+[HighwayIntersectionInfo_0x00040501]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A3
+Piece = 0.0, 0.0, 0, 0, 0x5B000025
+PreviewEffect = preview_rd_tulep_ortha009
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000020
+Costs = 75
+[HighwayIntersectionInfo_0x00050501]
+CopyFrom = 0x40501
+Rotate = 1
+[HighwayIntersectionInfo_0x00060501]
+CopyFrom = 0x40501
+Rotate = 2
+[HighwayIntersectionInfo_0x00070501]
+CopyFrom = 0x40501
+Rotate = 3
+
+
+;Type A5
+[HighwayIntersectionInfo_0x00080501]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A4
+Piece = 0.0, 0.0, 0, 0, 0x5B000045
+PreviewEffect = preview_rd_tulep_ortha005
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000040
+Costs = 75
+[HighwayIntersectionInfo_0x00090501]
+CopyFrom = 0x80501
+Rotate = 1
+[HighwayIntersectionInfo_0x000A0501]
+CopyFrom = 0x80501
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0501]
+CopyFrom = 0x80501
+Rotate = 3
+
+;Type A7
+[HighwayIntersectionInfo_0x000C0501]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A7
+Piece = 0.0, 0.0, 0, 0, 0x5B000065
+PreviewEffect = preview_rd_tulep_ortha007
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000060
+Costs = 75
+[HighwayIntersectionInfo_0x000D0501]
+CopyFrom = 0xC0501
+Rotate = 1
+[HighwayIntersectionInfo_0x000E0501]
+CopyFrom = 0xC0501
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0501]
+CopyFrom = 0xC0501
+Rotate = 3
+
+
+
+;Type A2
+[HighwayIntersectionInfo_0x00000502]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A2
+Piece = 0.0, 0.0, 0, 0, 0x5B000015
+PreviewEffect = preview_rd__tulep_ortha002
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000010
+Costs = 75
+[HighwayIntersectionInfo_0x00010502]
+CopyFrom = 0x0502
+Rotate = 1
+[HighwayIntersectionInfo_0x00020502]
+CopyFrom = 0x0502
+Rotate = 2
+[HighwayIntersectionInfo_0x00030502]
+CopyFrom = 0x0502
+Rotate = 3
+
+;Type A4
+[HighwayIntersectionInfo_0x00040502]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A4
+Piece = 0.0, 0.0, 0, 0, 0x5B000035
+PreviewEffect = preview_rd_tulep_ortha_004
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000030
+Costs = 75
+[HighwayIntersectionInfo_0x00050502]
+CopyFrom = 0x40502
+Rotate = 1
+[HighwayIntersectionInfo_0x00060502]
+CopyFrom = 0x40502
+Rotate = 2
+[HighwayIntersectionInfo_0x00070502]
+CopyFrom = 0x40502
+Rotate = 3
+
+
+
+;Type A6
+[HighwayIntersectionInfo_0x00080502]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A6
+Piece = 0.0, 0.0, 0, 0, 0x5B000055
+PreviewEffect = preview_rd_tulep_ortha_006
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000050
+Costs = 75
+[HighwayIntersectionInfo_0x00090502]
+CopyFrom = 0x80502
+Rotate = 1
+[HighwayIntersectionInfo_0x000A0502]
+CopyFrom = 0x80502
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0502]
+CopyFrom = 0x80502
+Rotate = 3
+
+
+;Type A8
+[HighwayIntersectionInfo_0x000C0502]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type A4
+Piece = 0.0, 0.0, 0, 0, 0x5B000075
+PreviewEffect = preview_rd_tulep_ortha_008
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000070
+Costs = 75
+[HighwayIntersectionInfo_0x000D0502]
+CopyFrom = 0xC0502
+Rotate = 1
+[HighwayIntersectionInfo_0x000E0502]
+CopyFrom = 0xC0502
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0502]
+CopyFrom = 0xC0502
+Rotate = 3
+
+;Type A Blank
+[HighwayIntersectionInfo_0x00000503]
+CopyFrom = 0x0402
+[HighwayIntersectionInfo_0x00010503]
+CopyFrom = 0x10402
+[HighwayIntersectionInfo_0x00020503]
+CopyFrom = 0x20402
+[HighwayIntersectionInfo_0x00030503]
+CopyFrom = 0x30402
+[HighwayIntersectionInfo_0x00040503]
+CopyFrom = 0x0402
+[HighwayIntersectionInfo_0x00050503]
+CopyFrom = 0x10402
+[HighwayIntersectionInfo_0x00060503]
+CopyFrom = 0x20402
+[HighwayIntersectionInfo_0x00070503]
+CopyFrom = 0x30402
+[HighwayIntersectionInfo_0x00080503]
+CopyFrom = 0x0402
+[HighwayIntersectionInfo_0x00090503]
+CopyFrom = 0x10402
+[HighwayIntersectionInfo_0x000A0503]
+CopyFrom = 0x20402
+[HighwayIntersectionInfo_0x000B0503]
+CopyFrom = 0x30402
+[HighwayIntersectionInfo_0x000C0503]
+CopyFrom = 0x0402
+[HighwayIntersectionInfo_0x000D0503]
+CopyFrom = 0x10402
+[HighwayIntersectionInfo_0x000E0503]
+CopyFrom = 0x20402
+[HighwayIntersectionInfo_0x000F0503]
+CopyFrom = 0x30402
+
+
+
+;Type B-Transition
+[HighwayIntersectionInfo_0x00000504]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type B-Transition
+Piece = 0.0, 0.0, 0, 0, 0x5B010105
+PreviewEffect = preview_rd_tulep_trans_002
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..b..
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+CheckType = b - road:0x00000200, 0x0000ff00 optional
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase=	0x5B010100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B010100
+Costs = 75
+[HighwayIntersectionInfo_0x00010504]
+CopyFrom = 0x0504
+Rotate = 1
+[HighwayIntersectionInfo_0x00020504]
+CopyFrom = 0x0504
+Rotate = 2
+[HighwayIntersectionInfo_0x00030504]
+CopyFrom = 0x0504
+Rotate = 3
+[HighwayIntersectionInfo_0x00040504]
+CopyFrom = 0x0504
+[HighwayIntersectionInfo_0x00050504]
+CopyFrom = 0x10504
+[HighwayIntersectionInfo_0x00060504]
+CopyFrom = 0x20504
+[HighwayIntersectionInfo_0x00070504]
+CopyFrom = 0x30504
+[HighwayIntersectionInfo_0x00080504]
+CopyFrom = 0x0504
+[HighwayIntersectionInfo_0x00090504]
+CopyFrom = 0x10504
+[HighwayIntersectionInfo_0x000A0504]
+CopyFrom = 0x20504
+[HighwayIntersectionInfo_0x000B0504]
+CopyFrom = 0x30504
+[HighwayIntersectionInfo_0x000C0504]
+CopyFrom = 0x0504
+[HighwayIntersectionInfo_0x000D0504]
+CopyFrom = 0x10504
+[HighwayIntersectionInfo_0x000E0504]
+CopyFrom = 0x20504
+[HighwayIntersectionInfo_0x000F0504]
+CopyFrom = 0x30504
+
+
+[HighwayIntersectionInfo_0x00000505]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type B1
+Piece = 0.0, 0.0, 0, 0, 0x5B000105
+PreviewEffect = preview_rd_tulep_orthb_001
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000100
+Costs = 75
+[HighwayIntersectionInfo_0x00010505]
+CopyFrom = 0x0505
+Rotate = 1
+[HighwayIntersectionInfo_0x00020505]
+CopyFrom = 0x0505
+Rotate = 2
+[HighwayIntersectionInfo_0x00030505]
+CopyFrom = 0x0505
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00040505]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type B2
+Piece = 0.0, 0.0, 0, 0, 0x5B000115
+PreviewEffect = preview_rd_tulep_orthb_002
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000110
+Costs = 75
+[HighwayIntersectionInfo_0x00050505]
+CopyFrom = 0x40505
+Rotate = 1
+[HighwayIntersectionInfo_0x00060505]
+CopyFrom = 0x40505
+Rotate = 2
+[HighwayIntersectionInfo_0x00070505]
+CopyFrom = 0x40505
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00080505]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type B3
+Piece = 0.0, 0.0, 0, 0, 0x5B000125
+PreviewEffect = preview_rd_tulep_orthb_003
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000120
+Costs = 75
+[HighwayIntersectionInfo_0x00090505]
+CopyFrom = 0x80505
+Rotate = 1
+[HighwayIntersectionInfo_0x000A0505]
+CopyFrom = 0x80505
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0505]
+CopyFrom = 0x80505
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x000C0505]
+;Added by Tarkus 10/5/2010
+;Road TuLEP Type B3
+Piece = 0.0, 0.0, 0, 0, 0x5B000135
+PreviewEffect = preview_rd_tulep_orthb_004
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000130
+Costs = 75
+[HighwayIntersectionInfo_0x000D0505]
+CopyFrom = 0xC0505
+Rotate = 1
+[HighwayIntersectionInfo_0x000E0505]
+CopyFrom = 0xC0505
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0505]
+CopyFrom = 0xC0505
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00000506]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C-Transition 1 (from Road)
+Piece = 0.0, 0.0, 0, 0, 0x5B010205
+PreviewEffect = preview_rd_tulep_trans_003
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..aa.
+CellLayout =..a..
+CellLayout =..a..
+CellLayout =..b..
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+CheckType = b - road:0x00000200, 0x0000ff00 optional
+
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..||.
+ConsLayout =..|..
+ConsLayout =..|..
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase=	0x5B010200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B010200
+Costs = 75
+[HighwayIntersectionInfo_0x00010506]
+CopyFrom = 0x0506
+Rotate	= 1
+[HighwayIntersectionInfo_0x00020506]
+CopyFrom = 0x0506
+Rotate = 2
+[HighwayIntersectionInfo_0x00030506]
+CopyFrom = 0x0506
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00040506]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C-Transition 2 (from TLA/AVE/ARD/Type A)
+Piece = 0.0, 0.0, 0, 0, 0x5B010245
+PreviewEffect = preview_rd_tulep_trans_005
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..aa.
+CellLayout =..aa.
+CellLayout =..b..
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+CheckType = b - road:0x00000200, 0x0000ff00 optional
+
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..||.
+ConsLayout =..||.
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase=	0x5B010240
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B010240
+Costs = 75
+[HighwayIntersectionInfo_0x00050506]
+CopyFrom = 0x40506
+Rotate = 1
+[HighwayIntersectionInfo_0x00060506]
+CopyFrom = 0x40506
+Rotate = 2
+[HighwayIntersectionInfo_0x00070506]
+CopyFrom = 0x40506
+Rotate = 3
+[HighwayIntersectionInfo_0x00080506]
+CopyFrom = 0x0506
+[HighwayIntersectionInfo_0x00090506]
+CopyFrom = 0x10506
+[HighwayIntersectionInfo_0x000A0506]
+CopyFrom = 0x20506
+[HighwayIntersectionInfo_0x000B0506]
+CopyFrom = 0x30506
+[HighwayIntersectionInfo_0x000C0506]
+CopyFrom = 0x40506
+[HighwayIntersectionInfo_0x000D0506]
+CopyFrom = 0x50506
+[HighwayIntersectionInfo_0x000E0506]
+CopyFrom = 0x60506
+[HighwayIntersectionInfo_0x000F0506]
+CopyFrom = 0x70506
+
+
+
+[HighwayIntersectionInfo_0x00000507]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C1
+Piece = 0.0, 0.0, 0, 0, 0x5B000205
+PreviewEffect = preview_rd__tulep_orthc001
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000200
+Costs = 75
+[HighwayIntersectionInfo_0x00010507]
+CopyFrom = 0x0507
+Rotate	= 1
+[HighwayIntersectionInfo_0x00020507]
+CopyFrom = 0x0507
+Rotate = 2
+[HighwayIntersectionInfo_0x00030507]
+CopyFrom = 0x0507
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00040507]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C1
+Piece = 0.0, 0.0, 0, 0, 0x5B000215
+PreviewEffect = preview_rd__tulep_orthc002
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000210
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000210
+Costs = 75
+[HighwayIntersectionInfo_0x00050507]
+CopyFrom = 0x40507
+Rotate	= 1
+[HighwayIntersectionInfo_0x00060507]
+CopyFrom = 0x40507
+Rotate = 2
+[HighwayIntersectionInfo_0x00070507]
+CopyFrom = 0x40507
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00080507]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C3
+Piece = 0.0, 0.0, 0, 0, 0x5B000225
+PreviewEffect = preview_rd__tulep_orthc003
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000220
+Costs = 75
+[HighwayIntersectionInfo_0x00090507]
+CopyFrom = 0x80507
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A0507]
+CopyFrom = 0x80507
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0507]
+CopyFrom = 0x80507
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x000C0507]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C4
+Piece = 0.0, 0.0, 0, 0, 0x5B000235
+PreviewEffect = preview_rd__tulep_orthc004
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000230
+Costs = 75
+[HighwayIntersectionInfo_0x000D0507]
+CopyFrom = 0xC0507
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E0507]
+CopyFrom = 0xC0507
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0507]
+CopyFrom = 0xC0507
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00000508]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C1
+Piece = 0.0, 0.0, 0, 0, 0x5B000245
+PreviewEffect = preview_rd__tulep_orthc005
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000240
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000240
+Costs = 75
+[HighwayIntersectionInfo_0x00010508]
+CopyFrom = 0x0508
+Rotate	= 1
+[HighwayIntersectionInfo_0x00020508]
+CopyFrom = 0x0508
+Rotate = 2
+[HighwayIntersectionInfo_0x00030508]
+CopyFrom = 0x0508
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00040508]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C1
+Piece = 0.0, 0.0, 0, 0, 0x5B000255
+PreviewEffect = preview_rd__tulep_orthc006
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000250
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000250
+Costs = 75
+[HighwayIntersectionInfo_0x00050508]
+CopyFrom = 0x40508
+Rotate	= 1
+[HighwayIntersectionInfo_0x00060508]
+CopyFrom = 0x40508
+Rotate = 2
+[HighwayIntersectionInfo_0x00070508]
+CopyFrom = 0x40508
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00080508]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C7
+Piece = 0.0, 0.0, 0, 0, 0x5B000265
+PreviewEffect = preview_rd__tulep_orthc007
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000260
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000260
+Costs = 75
+[HighwayIntersectionInfo_0x00090508]
+CopyFrom = 0x80508
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A0508]
+CopyFrom = 0x80508
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0508]
+CopyFrom = 0x80508
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x000C0508]
+;Added by Tarkus 7/18/2009, original idea by Chrno in 2007
+;Road TuLEP Type C8
+Piece = 0.0, 0.0, 0, 0, 0x5B000275
+PreviewEffect = preview_rd__tulep_orthc008
+
+CellLayout =.....
+CellLayout =..aa<
+CellLayout =..^..
+
+CheckType = a - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..||<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B000270
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B000270
+Costs = 75
+[HighwayIntersectionInfo_0x000D0508]
+CopyFrom = 0xC0508
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E0508]
+CopyFrom = 0xC0508
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0508]
+CopyFrom = 0xC0508
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00000509]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020105
+PreviewEffect = preview_rd__tulep_inter016
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020100
+Costs = 75
+[HighwayIntersectionInfo_0x00010509]
+CopyFrom = 0x0509
+Rotate	= 1
+[HighwayIntersectionInfo_0x00020509]
+CopyFrom = 0x0509
+Rotate = 2
+[HighwayIntersectionInfo_0x00030509]
+CopyFrom = 0x0509
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00040509]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020115
+PreviewEffect = preview_rd__tulep_inter017
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020110
+Costs = 75
+[HighwayIntersectionInfo_0x00050509]
+CopyFrom = 0x40509
+Rotate	= 1
+[HighwayIntersectionInfo_0x00060509]
+CopyFrom = 0x40509
+Rotate = 2
+[HighwayIntersectionInfo_0x00070509]
+CopyFrom = 0x40509
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00080509]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020125
+PreviewEffect = preview_rd__tulep_inter018
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020120
+Costs = 75
+[HighwayIntersectionInfo_0x00090509]
+CopyFrom = 0x80509
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A0509]
+CopyFrom = 0x80509
+Rotate = 2
+[HighwayIntersectionInfo_0x000B0509]
+CopyFrom = 0x80509
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x000C0509]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020135
+PreviewEffect = preview_rd__tulep_inter019
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020130
+Costs = 75
+[HighwayIntersectionInfo_0x000D0509]
+CopyFrom = 0xC0509
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E0509]
+CopyFrom = 0xC0509
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0509]
+CopyFrom = 0xC0509
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0000050A]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020145
+PreviewEffect = preview_rd__tulep_inter020
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020140
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020140
+Costs = 75
+[HighwayIntersectionInfo_0x0001050A]
+CopyFrom = 0x050A
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002050A]
+CopyFrom = 0x050A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003050A]
+CopyFrom = 0x050A
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0004050A]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Intersection 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020155
+PreviewEffect = preview_rd__tulep_intert16
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020150
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020150
+Costs = 75
+[HighwayIntersectionInfo_0x0005050A]
+CopyFrom = 0x050A
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006050A]
+CopyFrom = 0x050A
+Rotate = 2
+[HighwayIntersectionInfo_0x0007050A]
+CopyFrom = 0x050A
+Rotate = 3
+[HighwayIntersectionInfo_0x0008050A]
+CopyFrom = 0x050A
+[HighwayIntersectionInfo_0x0009050A]
+CopyFrom = 0x1050A
+[HighwayIntersectionInfo_0x000A050A]
+CopyFrom = 0x2050A
+[HighwayIntersectionInfo_0x000B050A]
+CopyFrom = 0x3050A
+[HighwayIntersectionInfo_0x000C050A]
+CopyFrom = 0x4050A
+[HighwayIntersectionInfo_0x000D050A]
+CopyFrom = 0x5050A
+[HighwayIntersectionInfo_0x000E050A]
+CopyFrom = 0x6050A
+[HighwayIntersectionInfo_0x000F050A]
+CopyFrom = 0x7050A
+
+
+
+[HighwayIntersectionInfo_0x0000050B]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B022405
+PreviewEffect = preview_avetulep_inter_007
+
+CellLayout =...........
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022400
+Costs       = 350
+[HighwayIntersectionInfo_0x0001050B]
+CopyFrom    = 0x050B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002050B]
+CopyFrom    = 0x050B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003050B]
+CopyFrom    = 0x050B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004050B]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road T
+Piece = 0.0, 0.0, 0, 0, 0x5B022705
+PreviewEffect = preview_avetulep_intert018
+
+CellLayout =...........
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x00020202
+
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022700
+Costs       = 350
+[HighwayIntersectionInfo_0x0005050B]
+CopyFrom    = 0x4050B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006050B]
+CopyFrom    = 0x4050B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007050B]
+CopyFrom    = 0x4050B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008050B]
+CopyFrom    = 0x050B
+[HighwayIntersectionInfo_0x0009050B]
+CopyFrom    = 0x1050B
+[HighwayIntersectionInfo_0x000A050B]
+CopyFrom    = 0x2050B
+[HighwayIntersectionInfo_0x000B050B]
+CopyFrom    = 0x3050B
+[HighwayIntersectionInfo_0x000C050B]
+CopyFrom    = 0x4050B
+[HighwayIntersectionInfo_0x000D050B]
+CopyFrom    = 0x5050B
+[HighwayIntersectionInfo_0x000E050B]
+CopyFrom    = 0x6050B
+[HighwayIntersectionInfo_0x000F050B]
+CopyFrom    = 0x7050B
+
+
+
+[HighwayIntersectionInfo_0x0000050C]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road Type B/Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B022425
+PreviewEffect = preview_avetulep_inter_008
+
+CellLayout =...........
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022420
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022420
+Costs       = 350
+[HighwayIntersectionInfo_0x0001050C]
+CopyFrom    = 0x050C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002050C]
+CopyFrom    = 0x050C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003050C]
+CopyFrom    = 0x050C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004050C]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road Type B/Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B022445
+PreviewEffect = preview_avetulep_inter_009
+
+CellLayout =...........
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022440
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022440
+Costs       = 350
+[HighwayIntersectionInfo_0x0005050C]
+CopyFrom    = 0x4050C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006050C]
+CopyFrom    = 0x4050C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007050C]
+CopyFrom    = 0x4050C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008050C]
+CopyFrom    = 0x050C
+[HighwayIntersectionInfo_0x0009050C]
+CopyFrom    = 0x1050C
+[HighwayIntersectionInfo_0x000A050C]
+CopyFrom    = 0x2050C
+[HighwayIntersectionInfo_0x000B050C]
+CopyFrom    = 0x3050C
+[HighwayIntersectionInfo_0x000C050C]
+CopyFrom    = 0x4050C
+[HighwayIntersectionInfo_0x000D050C]
+CopyFrom    = 0x5050C
+[HighwayIntersectionInfo_0x000E050C]
+CopyFrom    = 0x6050C
+[HighwayIntersectionInfo_0x000F050C]
+CopyFrom    = 0x7050C
+
+
+
+[HighwayIntersectionInfo_0x00000515]
+;Added by Tarkus 10/13/2010
+;OWR Base TuLEP Intersection 1 (4 OWR +)
+Piece = 0.0, 0.0, 0, 0, 0x5B021005
+PreviewEffect = preview_owr_tulep_inter001
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202 onewayroad:0x02020202
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B021000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B021000
+Costs = 75
+[HighwayIntersectionInfo_0x00010515]
+CopyFrom = 0x0515
+Rotate = 1
+[HighwayIntersectionInfo_0x00020515]
+CopyFrom = 0x0515
+Rotate = 2
+[HighwayIntersectionInfo_0x00030515]
+CopyFrom = 0x0515
+Rotate = 3
+[HighwayIntersectionInfo_0x00040515]
+CopyFrom = 0x0515
+[HighwayIntersectionInfo_0x00050515]
+CopyFrom = 0x10515
+[HighwayIntersectionInfo_0x00060515]
+CopyFrom = 0x20515
+[HighwayIntersectionInfo_0x00070515]
+CopyFrom = 0x30515
+[HighwayIntersectionInfo_0x00080515]
+CopyFrom = 0x0515
+[HighwayIntersectionInfo_0x00090515]
+CopyFrom = 0x10515
+[HighwayIntersectionInfo_0x000A0515]
+CopyFrom = 0x20515
+[HighwayIntersectionInfo_0x000B0515]
+CopyFrom = 0x30515
+[HighwayIntersectionInfo_0x000C0515]
+CopyFrom = 0x0515
+[HighwayIntersectionInfo_0x000D0515]
+CopyFrom = 0x10515
+[HighwayIntersectionInfo_0x000E0515]
+CopyFrom = 0x20515
+[HighwayIntersectionInfo_0x000F0515]
+CopyFrom = 0x30515
+
+
+
+[HighwayIntersectionInfo_0x00000516]
+;Added by Tarkus 10/13/2010
+;OWR Base TuLEP Intersection 2 (2 OWR/2 Road +)
+Piece = 0.0, 0.0, 0, 0, 0x5B021025
+PreviewEffect = preview_owr_tulep_inter003
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202 onewayroad:0x02000200
+
+ConsLayout =.....
+ConsLayout =..|.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B021020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B021020
+Costs = 75
+[HighwayIntersectionInfo_0x00010516]
+CopyFrom = 0x0516
+Rotate = 1
+[HighwayIntersectionInfo_0x00020516]
+CopyFrom = 0x0516
+Rotate = 2
+[HighwayIntersectionInfo_0x00030516]
+CopyFrom = 0x0516
+Rotate = 3
+[HighwayIntersectionInfo_0x00040516]
+CopyFrom = 0x0516
+[HighwayIntersectionInfo_0x00050516]
+CopyFrom = 0x10516
+[HighwayIntersectionInfo_0x00060516]
+CopyFrom = 0x20516
+[HighwayIntersectionInfo_0x00070516]
+CopyFrom = 0x30516
+[HighwayIntersectionInfo_0x00080516]
+CopyFrom = 0x0516
+[HighwayIntersectionInfo_0x00090516]
+CopyFrom = 0x10516
+[HighwayIntersectionInfo_0x000A0516]
+CopyFrom = 0x20516
+[HighwayIntersectionInfo_0x000B0516]
+CopyFrom = 0x30516
+[HighwayIntersectionInfo_0x000C0516]
+CopyFrom = 0x0516
+[HighwayIntersectionInfo_0x000D0516]
+CopyFrom = 0x10516
+[HighwayIntersectionInfo_0x000E0516]
+CopyFrom = 0x20516
+[HighwayIntersectionInfo_0x000F0516]
+CopyFrom = 0x30516
+
+
+
+[HighwayIntersectionInfo_0x0000050F]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B022725
+PreviewEffect = preview_avetulep_inter_010
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....Z......
+CellLayout =....^......
+
+CheckType = V - onewayroad: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+CheckType = Z - onewayroad: 0x00000200, 0xFFFF00FF optional
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022720
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022720
+Costs       = 350
+[HighwayIntersectionInfo_0x0001050F]
+CopyFrom    = 0x050F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002050F]
+CopyFrom    = 0x050F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003050F]
+CopyFrom    = 0x050F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004050F]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road T
+Piece = 0.0, 0.0, 0, 0, 0x5B022745
+PreviewEffect = preview_avetulep_intert020
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....Z......
+CellLayout =....^......
+
+CheckType = V - onewayroad: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+CheckType = Z - onewayroad: 0x00000200, 0xFFFF00FF optional
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022740
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022740
+Costs       = 350
+[HighwayIntersectionInfo_0x0005050F]
+CopyFrom    = 0x4050F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006050F]
+CopyFrom    = 0x4050F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007050F]
+CopyFrom    = 0x4050F
+Rotate		= 3
+
+
+
+
+[HighwayIntersectionInfo_0x0008050F]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B022725
+PreviewEffect = preview_avetulep_inter_010
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....Z......
+CellLayout =....^......
+
+CheckType = V - onewayroad: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+CheckType = Z - onewayroad: 0x00000200, 0xFFFF00FF optional
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022720
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022720
+Costs       = 350
+[HighwayIntersectionInfo_0x0009050F]
+CopyFrom    = 0x8050F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A050F]
+CopyFrom    = 0x8050F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B050F]
+CopyFrom    = 0x8050F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x000C050F]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road T
+Piece = 0.0, 0.0, 0, 0, 0x5B022745
+PreviewEffect = preview_avetulep_intert019
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....Z......
+CellLayout =....^......
+
+CheckType = V - onewayroad: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+CheckType = Z - onewayroad: 0x00000200, 0xFFFF00FF optional
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022740
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022740
+Costs       = 350
+[HighwayIntersectionInfo_0x000D050F]
+CopyFrom    = 0xC050F
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E050F]
+CopyFrom    = 0xC050F
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F050F]
+CopyFrom    = 0xC050F
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00000510]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Street +
+Piece = 0.0, 0.0, 0, 0, 0x5B023005
+PreviewEffect = preview_avetulep_inter_011
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =....Z......
+CellLayout =....^......
+
+CheckType = V - street: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+CheckType = Z - street: 0x00000200, 0xFFFF00FF optional
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B023000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B023000
+Costs       = 250
+[HighwayIntersectionInfo_0x00010510]
+CopyFrom    = 0x0510
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020510]
+CopyFrom    = 0x0510
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030510]
+CopyFrom    = 0x0510
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00040510]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Street T
+Piece = 0.0, 0.0, 0, 0, 0x5B023025
+PreviewEffect = preview_avetulep_intert021
+
+CellLayout =...........
+CellLayout =....V......
+CellLayout =....W.....<
+CellLayout =....Y......
+CellLayout =...........
+CellLayout =....^......
+
+CheckType = V - street: 0x02000000, 0x00FFFFFF optional
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+.....<
+ConsLayout =....+......
+ConsLayout =...........
+ConsLayout =....^......
+
+AutoTileBase=	0x5B023020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B023020
+Costs       = 200
+[HighwayIntersectionInfo_0x00050510]
+CopyFrom    = 0x40510
+Rotate		= 1
+[HighwayIntersectionInfo_0x00060510]
+CopyFrom    = 0x40510
+Rotate		= 2
+[HighwayIntersectionInfo_0x00070510]
+CopyFrom    = 0x40510
+Rotate		= 3
+[HighwayIntersectionInfo_0x00080510]
+CopyFrom    = 0x0510
+[HighwayIntersectionInfo_0x00090510]
+CopyFrom    = 0x10510
+[HighwayIntersectionInfo_0x000A0510]
+CopyFrom    = 0x20510
+[HighwayIntersectionInfo_0x000B0510]
+CopyFrom    = 0x30510
+[HighwayIntersectionInfo_0x000C0510]
+CopyFrom    = 0x40510
+[HighwayIntersectionInfo_0x000D0510]
+CopyFrom    = 0x50510
+[HighwayIntersectionInfo_0x000E0510]
+CopyFrom    = 0x60510
+[HighwayIntersectionInfo_0x000F0510]
+CopyFrom    = 0x70510
+
+
+
+[HighwayIntersectionInfo_0x0000050D]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Road +
+Piece = 0.0, 0.0, 0, 0, 0x5B020205
+PreviewEffect = preview_rd__tulep_inter033
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020200
+Costs = 75
+[HighwayIntersectionInfo_0x0001050D]
+CopyFrom = 0x050D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002050D]
+CopyFrom = 0x050D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003050D]
+CopyFrom = 0x050D
+Rotate = 3
+
+[HighwayIntersectionInfo_0x0004050D]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Street +
+Piece = 0.0, 0.0, 0, 0, 0x5B020215
+PreviewEffect = preview_rd__tulep_inter034
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x00020002 street:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020210
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020210
+Costs = 75
+[HighwayIntersectionInfo_0x0005050D]
+CopyFrom = 0x4050D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006050D]
+CopyFrom = 0x4050D
+Rotate = 2
+[HighwayIntersectionInfo_0x0007050D]
+CopyFrom = 0x4050D
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x0008050D]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Street +
+Piece = 0.0, 0.0, 0, 0, 0x5B020225
+PreviewEffect = preview_rd__tulep_inter035
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x00020002 street:0x02000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020220
+Costs = 75
+[HighwayIntersectionInfo_0x0009050D]
+CopyFrom = 0x8050D
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A050D]
+CopyFrom = 0x8050D
+Rotate = 2
+[HighwayIntersectionInfo_0x000B050D]
+CopyFrom = 0x8050D
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x000C050D]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Street +
+Piece = 0.0, 0.0, 0, 0, 0x5B020235
+PreviewEffect = preview_rd__tulep_inter036
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202 onewayroad:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020230
+Costs = 75
+[HighwayIntersectionInfo_0x000D050D]
+CopyFrom = 0xC050D
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E050D]
+CopyFrom = 0xC050D
+Rotate = 2
+[HighwayIntersectionInfo_0x000F050D]
+CopyFrom = 0xC050D
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0000050E]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Road Type BX + 1
+Piece = 0.0, 0.0, 0, 0, 0x5B020165
+PreviewEffect = preview_rd__tulep_inter037
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020160
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020160
+Costs = 75
+[HighwayIntersectionInfo_0x0001050E]
+CopyFrom = 0x050E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002050E]
+CopyFrom = 0x050E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003050E]
+CopyFrom = 0x050E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004050E]
+CopyFrom = 0x050E
+[HighwayIntersectionInfo_0x0005050E]
+CopyFrom = 0x1050E
+[HighwayIntersectionInfo_0x0006050E]
+CopyFrom = 0x2050E
+[HighwayIntersectionInfo_0x0007050E]
+CopyFrom = 0x3050E
+
+
+[HighwayIntersectionInfo_0x0008050E]
+;Added by Tarkus 10/05/2009
+;Road TuLEP Type AX/Road Type BX + 2
+Piece = 0.0, 0.0, 0, 0, 0x5B020175
+PreviewEffect = preview_rd__tulep_inter038
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road:0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B020170
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B020170
+Costs = 75
+[HighwayIntersectionInfo_0x0009050E]
+CopyFrom = 0x8050E
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A050E]
+CopyFrom = 0x8050E
+Rotate = 2
+[HighwayIntersectionInfo_0x000B050E]
+CopyFrom = 0x8050E
+Rotate = 3
+[HighwayIntersectionInfo_0x000C050E]
+CopyFrom = 0x8050E
+[HighwayIntersectionInfo_0x000D050E]
+CopyFrom = 0x9050E
+[HighwayIntersectionInfo_0x000E050E]
+CopyFrom = 0xA050E
+[HighwayIntersectionInfo_0x000F050E]
+CopyFrom = 0xB050E
+
+
+[HighwayIntersectionInfo_0x00000511]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road Type C1/A1 +
+Piece = 0.0, 0.0, 0, 0, 0x5B025005
+PreviewEffect = preview_avetulep_inter_018
+
+CellLayout =...........
+CellLayout =....WW....<
+CellLayout =....YY.....
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....++....<
+ConsLayout =....++.....
+ConsLayout =....^......
+
+AutoTileBase=	0x5B025000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B025000
+Costs       = 450
+[HighwayIntersectionInfo_0x00010511]
+CopyFrom    = 0x0511
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020511]
+CopyFrom    = 0x0511
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030511]
+CopyFrom    = 0x0511
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00040511]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road Type C1 T
+Piece = 0.0, 0.0, 0, 0, 0x5B025505
+PreviewEffect = preview_avetulep_inter_019
+
+CellLayout =...........
+CellLayout =....WW....<
+CellLayout =....YY.....
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x00020202
+
+ConsLayout =...........
+ConsLayout =....++....<
+ConsLayout =....++.....
+ConsLayout =....^......
+
+AutoTileBase=	0x5B025500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B025500
+Costs       = 350
+[HighwayIntersectionInfo_0x00050511]
+CopyFrom    = 0x40511
+Rotate		= 1
+[HighwayIntersectionInfo_0x00060511]
+CopyFrom    = 0x40511
+Rotate		= 2
+[HighwayIntersectionInfo_0x00070511]
+CopyFrom    = 0x40511
+Rotate		= 3
+[HighwayIntersectionInfo_0x00080511]
+CopyFrom    = 0x0511
+[HighwayIntersectionInfo_0x00090511]
+CopyFrom    = 0x10511
+[HighwayIntersectionInfo_0x000A0511]
+CopyFrom    = 0x20511
+[HighwayIntersectionInfo_0x000B0511]
+CopyFrom    = 0x30511
+[HighwayIntersectionInfo_0x000C0511]
+CopyFrom    = 0x0511
+[HighwayIntersectionInfo_0x000D0511]
+CopyFrom    = 0x10511
+[HighwayIntersectionInfo_0x000E0511]
+CopyFrom    = 0x20511
+[HighwayIntersectionInfo_0x000F0511]
+CopyFrom    = 0x30511
+
+
+[HighwayIntersectionInfo_0x00000512]
+;Added by Tarkus 10/26/2009
+;Avenue TuLEP A1 x Road Type C1 +
+Piece = 0.0, 0.0, 0, 0, 0x5B025205
+PreviewEffect = preview_avetulep_inter_020
+
+CellLayout =...........
+CellLayout =....WWW...<
+CellLayout =....YYY....
+CellLayout =....^......
+
+CheckType = W - avenue:0x04020002 road:0x02020202
+CheckType = Y - avenue:0x00020402 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....+++...<
+ConsLayout =....+++....
+ConsLayout =....^......
+
+AutoTileBase=	0x5B025200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B025200
+Costs       = 350
+[HighwayIntersectionInfo_0x00010512]
+CopyFrom    = 0x0512
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020512]
+CopyFrom    = 0x0512
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030512]
+CopyFrom    = 0x0512
+Rotate		= 3
+[HighwayIntersectionInfo_0x00040512]
+CopyFrom    = 0x0512
+[HighwayIntersectionInfo_0x00050512]
+CopyFrom    = 0x10512
+[HighwayIntersectionInfo_0x00060512]
+CopyFrom    = 0x20512
+[HighwayIntersectionInfo_0x00070512]
+CopyFrom    = 0x30512
+[HighwayIntersectionInfo_0x00080512]
+CopyFrom    = 0x0512
+[HighwayIntersectionInfo_0x00090512]
+CopyFrom    = 0x10512
+[HighwayIntersectionInfo_0x000A0512]
+CopyFrom    = 0x20512
+[HighwayIntersectionInfo_0x000B0512]
+CopyFrom    = 0x30512
+[HighwayIntersectionInfo_0x000C0512]
+CopyFrom    = 0x0512
+[HighwayIntersectionInfo_0x000D0512]
+CopyFrom    = 0x10512
+[HighwayIntersectionInfo_0x000E0512]
+CopyFrom    = 0x20512
+[HighwayIntersectionInfo_0x000F0512]
+CopyFrom    = 0x30512
+
+
+[HighwayIntersectionInfo_0x00000513]
+;Added by Tarkus 07/22/2009
+;Avenue TuLEP +-INTERSECTION 3 A1 x 1 C1
+Piece = 0.0, 0.0, 0, 0, 0x5B022805
+PreviewEffect = preview_avetulep_inter_021
+
+CellLayout =...........
+CellLayout =....UWX...<
+CellLayout =....VYZ....
+CellLayout =....^......
+
+CheckType = U - avenue:0x04020002 road:0x00020202
+CheckType = V - avenue:0x00020402 road:0x00020002
+CheckType = W - avenue:0x04040202 road:0x02020202
+CheckType = X - avenue:0x04020204 road:0x02020202
+CheckType = Y - avenue:0x02040402 road:0x02020202
+CheckType = Z - avenue:0x02020404 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....+++..<
+ConsLayout =....+++....
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022800
+Costs       = 650
+[HighwayIntersectionInfo_0x00010513]
+CopyFrom    = 0x0513
+Rotate = 1
+[HighwayIntersectionInfo_0x00020513]
+CopyFrom    = 0x0513
+Rotate = 2
+[HighwayIntersectionInfo_0x00030513]
+CopyFrom    = 0x0513
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00040513]
+;Added by Tarkus 07/22/2009
+;Avenue TuLEP +-INTERSECTION 2 A1 x 2 C1
+Piece = 0.0, 0.0, 0, 0, 0x5B022B05
+PreviewEffect = preview_avetulep_inter_022
+
+CellLayout =...........
+CellLayout =....UWXU..<
+CellLayout =....VYZV...
+CellLayout =....^......
+
+CheckType = U - avenue:0x04020002 road:0x00020202
+CheckType = V - avenue:0x00020402 road:0x00020002
+CheckType = W - avenue:0x04040202 road:0x02020202
+CheckType = X - avenue:0x04020204 road:0x02020202
+CheckType = Y - avenue:0x02040402 road:0x02020202
+CheckType = Z - avenue:0x02020404 road:0x02020202
+
+ConsLayout =...........
+ConsLayout =....++++.<
+ConsLayout =....++++...
+ConsLayout =....^......
+
+AutoTileBase=	0x5B022B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B022B00
+Costs       = 750
+[HighwayIntersectionInfo_0x00050513]
+CopyFrom    = 0x40513
+Rotate = 1
+[HighwayIntersectionInfo_0x00060513]
+CopyFrom    = 0x40513
+Rotate = 2
+[HighwayIntersectionInfo_0x00070513]
+CopyFrom    = 0x40513
+Rotate = 3
+[HighwayIntersectionInfo_0x00080513]
+CopyFrom    = 0x0513
+[HighwayIntersectionInfo_0x00090513]
+CopyFrom    = 0x10513
+[HighwayIntersectionInfo_0x000A0513]
+CopyFrom    = 0x20513
+[HighwayIntersectionInfo_0x000B0513]
+CopyFrom    = 0x30513
+[HighwayIntersectionInfo_0x000C0513]
+CopyFrom    = 0x40513
+[HighwayIntersectionInfo_0x000D0513]
+CopyFrom    = 0x50513
+[HighwayIntersectionInfo_0x000E0513]
+CopyFrom    = 0x60513
+[HighwayIntersectionInfo_0x000F0513]
+CopyFrom    = 0x70513
+
+
+
+[HighwayIntersectionInfo_0x00000514]
+;Added by Tarkus 7/18/2009
+;Avenue TuLEP Type D1
+Piece = 0.0, 0.0, 0, 0, 0x5B002505
+PreviewEffect = preview_ave_tulep_orthd001
+
+CellLayout =.....
+CellLayout =.cab<
+CellLayout =..^..
+
+CheckType = a - avenue:0x02040200 road:0x02000200
+CheckType = b - avenue:0x02000204 road:0x02000200
+CheckType = c - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =.+++<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B002400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B002400
+Costs = 75
+[HighwayIntersectionInfo_0x00010514]
+CopyFrom = 0x0514
+Rotate	= 1
+[HighwayIntersectionInfo_0x00020514]
+CopyFrom = 0x0514
+Rotate = 2
+[HighwayIntersectionInfo_0x00030514]
+CopyFrom = 0x0514
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00040514]
+;Added by Tarkus 7/18/2009
+;Avenue TuLEP Type D1
+Piece = 0.0, 0.0, 0, 0, 0x5B002515
+PreviewEffect = preview_ave_tulep_orthd002
+
+CellLayout =.....
+CellLayout =.cab<
+CellLayout =..^..
+
+CheckType = a - avenue:0x02040200 road:0x02000200
+CheckType = b - avenue:0x02000204 road:0x02000200
+CheckType = c - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =.+++<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B002410
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B002410
+Costs = 75
+[HighwayIntersectionInfo_0x00050514]
+CopyFrom = 0x40514
+Rotate	= 1
+[HighwayIntersectionInfo_0x00060514]
+CopyFrom = 0x40514
+Rotate = 2
+[HighwayIntersectionInfo_0x00070514]
+CopyFrom = 0x40514
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00080514]
+;Added by Tarkus 7/18/2009
+;Avenue TuLEP Type D1
+Piece = 0.0, 0.0, 0, 0, 0x5B002525
+PreviewEffect = preview_ave_tulep_orthd003
+
+CellLayout =.....
+CellLayout =.cab<
+CellLayout =..^..
+
+CheckType = a - avenue:0x02040200 road:0x02000200
+CheckType = b - avenue:0x02000204 road:0x02000200
+CheckType = c - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =.+++<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B002420
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B002420
+Costs = 75
+[HighwayIntersectionInfo_0x000A0514]
+CopyFrom = 0x80514
+Rotate	= 1
+[HighwayIntersectionInfo_0x000B0514]
+CopyFrom = 0x80514
+Rotate = 2
+[HighwayIntersectionInfo_0x000C0514]
+CopyFrom = 0x80514
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x000C0514]
+;Added by Tarkus 7/18/2009
+;Avenue TuLEP Type D1
+Piece = 0.0, 0.0, 0, 0, 0x5B002535
+PreviewEffect = preview_ave_tulep_orthd004
+
+CellLayout =.....
+CellLayout =.cab<
+CellLayout =..^..
+
+CheckType = a - avenue:0x02040200 road:0x02000200
+CheckType = b - avenue:0x02000204 road:0x02000200
+CheckType = c - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =.+++<
+ConsLayout =..^..
+
+AutoTileBase=	0x5B002430
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B002430
+Costs = 75
+[HighwayIntersectionInfo_0x000D0514]
+CopyFrom = 0xC0514
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E0514]
+CopyFrom = 0xC0514
+Rotate = 2
+[HighwayIntersectionInfo_0x000F0514]
+CopyFrom = 0xC0514
+Rotate = 3
+
+
+

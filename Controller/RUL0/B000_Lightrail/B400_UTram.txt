@@ -1,0 +1,528 @@
+;UNDERGROUND TRAM UNDERPASS DUAL-NETWORKING BUTTON SECTION
+;Tram Tunnel under various Pieces
+RotationRing = B400, 1B400, 2B400, 3B400 ;Tram Ramp
+AddTypes     = B401, 1B401, 2B401, 3B401 ;RTMT Tram-Road Ramp
+AddTypes     = B402, 1B402, 2B402, 3B402 ;RTMT Tram-avenue Ramp
+AddTypes     = B403, 1B403, 2B403, 3B403 ;Tram Crossing - Straight Road Piece
+AddTypes     = B404, 1B404, 2B404, 3B404 ;Tram 4way underpass under Straight Road Piece and Road 4way junction
+AddTypes     = B405, 1B405, 2B405, 3B405 ;Tram 4way underpass under Road T junction
+AddTypes     = B406, 1B406, 2B406, 3B406 ;Tram 4way underpass under Road curve
+AddTypes     = B407, 1B407, 2B407, 3B407 ;Tram parallel below avenue
+AddTypes     = B408, 1B408, 2B408, 3B408 ;Tram parallel below avenue with tram underpass exits and below avenue junction with road
+AddTypes     = B409, 1B409, 2B409, 3B409 ;Tram parallel below avenue junction with T road
+AddTypes     = B40A, 1B40A, 2B40A, 3B40A ;Tram parallel below avenue 4way junction
+AddTypes     = B40B, 1B40B, 2B40B, 3B40B ;Tram parallel below avenue T junction
+AddTypes     = B40C, 1B40C, 2B40C, 3B40C ;Tram below avenue curve
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;UNDERGROUND TRAM DUAL-NETWORKING BUTTON SECTION
+;Tram Tunnel under various Pieces
+
+
+[HighwayIntersectionInfo_0x0000B400]
+;Added by Chrisim 30 May 2009.
+;uTram - Tram Ramp
+Piece = 0.0, 0.0, 0, 0, 0x584b3e05
+PreviewEffect = preview_sub_tram_piece_ch01
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.Z.
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Z - lightrail: 0x00000200
+
+ConsLayout =...
+ConsLayout =.#.<
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.^.
+
+AutoTileBase= 0x584b3e00
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x584b3e00
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B400]
+CopyFrom    = 0xB400
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B400]
+CopyFrom    = 0xB400
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B400]
+CopyFrom    = 0xB400
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B401]
+;Added by Chrisim 1 January 2010.
+;uTram - RTMT Tram-Road Ramp
+Piece = 0.0, 0.0, 0, 0, 0x584b3f05
+PreviewEffect = preview_sub_tram_piece_ch04
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.Z.
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout =...
+ConsLayout =.#<
+ConsLayout =.#.
+ConsLayout =.#.
+ConsLayout =.^.
+
+AutoTileBase= 0x584b3f00
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x584b3f00
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B401]
+CopyFrom    = 0xB401
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B401]
+CopyFrom    = 0xB401
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B401]
+CopyFrom    = 0xB401
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B402]
+;Added by Chrisim 1 January 2010.
+;uTram - RTMT Tram-avenue Ramp
+Piece = 0.0, 0.0, 0, 0, 0x584b3205
+PreviewEffect = preview_sub_tram_piece_ch03
+
+CellLayout =....
+CellLayout =.ab<
+CellLayout =.ab.
+CellLayout =.ab.
+CellLayout =.^..
+
+CheckType = a - lightrail: 0x02000200 road: 0x02000200
+CheckType = b - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout =....
+ConsLayout =.##<
+ConsLayout =.##.
+ConsLayout =.##.
+ConsLayout =.^..
+
+AutoTileBase= 0x584b3200
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x584b3200
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B402]
+CopyFrom    = 0xB402
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B402]
+CopyFrom    = 0xB402
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B402]
+CopyFrom    = 0xB402
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B403]
+;Added by Chrisim 4 January 2010.
+;roadUroad Dual - Tram Crossing - Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e68000
+PreviewEffect = preview_subroad_53e68000_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e68000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e68000
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B403]
+CopyFrom    = 0xB403
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B403]
+CopyFrom    = 0xB403
+[HighwayIntersectionInfo_0x0003B403]
+CopyFrom    = 0x1B403
+
+
+[HighwayIntersectionInfo_0x0000B404]
+;Added by Chrisim 8 January 2010.
+;roadUroad Dual - Tram 4way underpass under Straight Road Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e68100
+PreviewEffect = preview_subroad_53e68100_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e68100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e68100
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B404]
+CopyFrom    = 0xB404
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0002B404]
+;Added by Chrisim 8 January 2010.
+;roadUroad Dual - Tram 4way underpass under Road 4way junction
+Piece = 0.0, 0.0, 0, 0, 0x53e68200
+PreviewEffect = preview_subroad_53e68200_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e68200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e68200
+Costs       = 50
+[HighwayIntersectionInfo_0x0003B404]
+CopyFrom    = 0x2B404
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x0000B405]
+;Added by Chrisim 8 January 2010.
+;roadUroad Dual - Tram 4way underpass under Road T junction
+Piece = 0.0, 0.0, 0, 0, 0x53e68300
+PreviewEffect = preview_subroad_53e68300_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e68300
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e68300
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B405]
+CopyFrom    = 0xB405
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B405]
+CopyFrom    = 0xB405
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B405]
+CopyFrom    = 0xB405
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B406]
+;Added by Chrisim 8 January 2010.
+;roadUroad Dual - Tram 4way underpass under Road curve
+Piece = 0.0, 0.0, 0, 0, 0x53e68400
+PreviewEffect = preview_subroad_53e68400_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 road: 0x00020200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e68400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e68400
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B406]
+CopyFrom    = 0xB406
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B406]
+CopyFrom    = 0xB406
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B406]
+CopyFrom    = 0xB406
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B407]
+;Added by Chrisim 5 January 2010.
+;roadUroad Dual - Tram parallel below avenue
+Piece = 0.0, 0.0, 0, 0, 0x53e69000
+PreviewEffect = preview_subroad_53e69000_ch
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...b...
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020002
+CheckType = b - lightrail: 0x00000200 avenue: 0x00020402
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =...|...
+ConsLayout =...^...
+
+AutoTileBase=	0x53e69000
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69000
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B407]
+CopyFrom    = 0xB407
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B407]
+CopyFrom    = 0xB407
+[HighwayIntersectionInfo_0x0003B407]
+CopyFrom    = 0x1B407
+
+
+[HighwayIntersectionInfo_0x0000B408]
+;Added by Chrisim 7 January 2010.
+;roadUroad Dual - Tram parallel below avenue with tram underpass exits
+Piece = 0.0, 0.0, 0, 0, 0x53e69100
+PreviewEffect = preview_subroad_53e69100_ch
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...b...
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020002
+CheckType = b - lightrail: 0x00000200 avenue: 0x00020402
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =...|...
+ConsLayout =...^...
+
+AutoTileBase=	0x53e69100
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69100
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B408]
+CopyFrom    = 0xB408
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x0002B408]
+;Added by Chrisim 7 January 2010.
+;roadUroad Dual - Tram parallel below avenue junction with road
+Piece = 0.0, 0.0, 0, 0, 0x53e69700
+PreviewEffect = preview_subroad_53e69700_ch
+
+CellLayout =.......
+CellLayout =...c...
+CellLayout =...a..<
+CellLayout =...b...
+CellLayout =...d...
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020202
+CheckType = b - lightrail: 0x00000200 avenue: 0x02020402
+CheckType = c - road: 0x02000000, 0xff000000 optional
+CheckType = d - road: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...+...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x53e69700
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69700
+Costs        = 50
+[HighwayIntersectionInfo_0x0003B408]
+CopyFrom    = 0x2B408
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x0000B409]
+;Added by Chrisim 7 January 2010.
+;roadUroad Dual - Tram parallel below avenue junction with T road
+Piece = 0.0, 0.0, 0, 0, 0x53e69600
+PreviewEffect = preview_subroad_53e69600_ch
+
+CellLayout =.......
+CellLayout =...c...
+CellLayout =...a..<
+CellLayout =...b...
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00000200 avenue: 0x04020202
+CheckType = b - lightrail: 0x00000200 avenue: 0x00020402
+CheckType = c - road: 0x02000000, 0xff000000 optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...+...
+ConsLayout =...^...
+
+AutoTileBase = 0x53e69600
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69600
+Costs        = 50
+[HighwayIntersectionInfo_0x0001B409]
+CopyFrom    = 0xB409
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B409]
+CopyFrom    = 0xB409
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B409]
+CopyFrom    = 0xB409
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B40A]
+;Added by Chrisim 5 January 2010.
+;roadUroad Dual - Tram parallel below avenue 4way junction
+Piece = 0.0, 0.0, 0, 0, 0x53e69400
+PreviewEffect = preview_subroad_53e69400_ch
+
+CellLayout =........
+CellLayout =...ef...
+CellLayout =..iabk.<
+CellLayout =..jcdl..
+CellLayout =...gh...
+CellLayout =...^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x02020404
+CheckType = e - avenue: 0x02040000, 0xffff0000 optional
+CheckType = f - avenue: 0x02000004, 0xff0000ff optional
+CheckType = g - avenue: 0x00040200, 0x00ffff00 optional
+CheckType = h - avenue: 0x00000204, 0x0000ffff optional
+CheckType = i - avenue: 0x04020000, 0xffff0000 optional
+CheckType = j - avenue: 0x00020400, 0x00ffff00 optional
+CheckType = k - avenue: 0x04000002, 0xff0000ff optional
+CheckType = l - avenue: 0x00000402, 0x0000ffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...++...
+ConsLayout =........
+ConsLayout =...^....	
+
+AutoTileBase = 0x53e69400
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69400
+Costs        = 50
+[HighwayIntersectionInfo_0x0001B40A]
+CopyFrom    = 0xB40A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B40A]
+CopyFrom    = 0xB40A
+[HighwayIntersectionInfo_0x0003B40A]
+CopyFrom    = 0x1B40A
+
+
+[HighwayIntersectionInfo_0x0000B40B]
+;Added by Chrisim 5 January 2010.
+;roadUroad Dual - Tram parallel below avenue T junction
+Piece = 0.0, 0.0, 0, 0, 0x53e69200
+PreviewEffect = preview_subroad_53e69200_ch
+
+CellLayout =........
+CellLayout =...ef...
+CellLayout =..iabk.<
+CellLayout =..jcdl..
+CellLayout =...^....
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040202
+CheckType = b - lightrail: 0x00000002 avenue: 0x04020204
+CheckType = c - lightrail: 0x00000002 avenue: 0x00040402
+CheckType = d - lightrail: 0x00000002 avenue: 0x00020404
+CheckType = e - avenue: 0x02040000, 0xffff0000 optional
+CheckType = f - avenue: 0x02000004, 0xff0000ff optional
+CheckType = i - avenue: 0x04020000, 0xffff0000 optional
+CheckType = j - avenue: 0x00020400, 0x00ffff00 optional
+CheckType = k - avenue: 0x04000002, 0xff0000ff optional
+CheckType = l - avenue: 0x00000402, 0x0000ffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...++..<
+ConsLayout =...++...
+ConsLayout =...^....
+
+AutoTileBase = 0x53e69200
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69200
+Costs        = 50
+[HighwayIntersectionInfo_0x0001B40B]
+CopyFrom    = 0xB40B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B40B]
+CopyFrom    = 0xB40B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B40B]
+CopyFrom    = 0xB40B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B40C]
+;Added by Chrisim 8 January 2010.
+;roadUroad Dual - Tram below avenue curve
+Piece = 0.0, -16.0, 0, 0, 0x53e69800
+PreviewEffect = preview_subroad_53e69800_ch
+
+CellLayout =......
+CellLayout =..ab..
+CellLayout =..cd.<
+CellLayout =..^...
+
+CheckType = a - lightrail: 0x00000002 avenue: 0x04040002
+CheckType = b - lightrail: 0x00000002 avenue: 0x04000004
+CheckType = c - lightrail: 0x00000002 avenue: 0x02040402
+CheckType = d - lightrail: 0x00000200 avenue: 0x02000404
+
+ConsLayout =......
+ConsLayout =..++..
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase = 0x53e69800
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e69800
+Costs        = 50
+[HighwayIntersectionInfo_0x0001B40C]
+CopyFrom    = 0xB40C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B40C]
+CopyFrom    = 0xB40C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B40C]
+CopyFrom    = 0xB40C
+Rotate		= 3
+
+

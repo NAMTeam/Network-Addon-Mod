@@ -1,0 +1,506 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DRAGGABLE GROUND LIGHTRAIL BUTTON SECTION
+;DRAGGABLE GROUND LIGHTRAIL BUTTON SECTION
+RotationRing = B3F0, 1B3F0, 2B3F0, 3B3F0, 4B3F0, 5B3F0, 6B3F0, 7B3F0 ;Ground Light Rail Straight Puzzle Piece - drag
+AddTypes     = 3B3F1, 6B3F1, B3F1, 7B3F1, 1B3F1, 4B3F1, 2B3F1, 5B3F1 ;Ground Light Rail Diagonal Puzzle Piece - drag
+AddTypes     = B3F2, 1B3F2, 2B3F2, 3B3F2, 4B3F2, 5B3F2, 6B3F2, 7B3F2 ;Ground Light Rail Rural Straight Puzzle Piece - drag
+AddTypes     = 3B3F3, 6B3F3, B3F3, 7B3F3, 1B3F3, 4B3F3, 2B3F3, 5B3F3 ;Ground Light Rail Rural Diagonal Puzzle Piece - drag
+AddTypes     = 2B3F4, 3B3F4, B3F4, 1B3F4, 6B3F4, 7B3F4, 4B3F4, 5B3F4 ;Elevated to Ground Light Rail Connector Puzzle Piece - drag
+AddTypes     = 2B3F5, 3B3F5, B3F5, 1B3F5, 6B3F5, 7B3F5, 4B3F5, 5B3F5 ;Elevated to Rural Ground Light Rail Connector Puzzle Piece - drag
+AddTypes     = 9B3F6, B3F6, AB3F6, 1B3F6, BB3F6, 2B3F6, 8B3F6, 3B3F6 ;Ground Light Rail turning circle - drag
+AddTypes     = 9B3F7, B3F7, AB3F7, 1B3F7, BB3F7, 2B3F7, 8B3F7, 3B3F7 ;Ground Light Rail Rural turning circle - drag
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DRAGGABLE GROUND LIGHTRAIL BUTTON SECTION
+;DRAGGABLE GROUND LIGHTRAIL BUTTON SECTION
+;DRAGGABLE GROUND LIGHTRAIL BUTTON SECTION
+
+
+[HighwayIntersectionInfo_0x0000B3F4]
+;Added by memo 01/31/07.
+;Elevated to Ground Light Rail Connector Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580d0706
+PreviewEffect = preview_draggable_glr___002
+
+CellLayout = ....
+CellLayout = .d..
+CellLayout = .a.<
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .c..
+CellLayout = .^..
+
+CheckType  = d - lightrail: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType  = a - lightrail: 0x02000000
+CheckType  = b - lightrail: 0x02000200
+CheckType  = c - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout = ...
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .^.
+
+AutoTileBase = 0x580d0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d0706
+Costs       = 290
+[HighwayIntersectionInfo_0x0001B3F4]
+CopyFrom    = 0xB3F4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F4]
+CopyFrom    = 0xB3F4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F4]
+CopyFrom    = 0xB3F4
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B3F4]
+CopyFrom    = 0xB3F4
+[HighwayIntersectionInfo_0x0005B3F4]
+CopyFrom    = 0x1B3F4
+[HighwayIntersectionInfo_0x0006B3F4]
+CopyFrom    = 0x2B3F4
+[HighwayIntersectionInfo_0x0007B3F4]
+CopyFrom    = 0x3B3F4
+
+
+[HighwayIntersectionInfo_0x0000B3F0]
+;Added by memo 01/31/07.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Straight Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580cc706
+PreviewEffect = preview_draggable_glr___001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x02000200
+CheckType = a - lightrail: 0x02000200 Road: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x580cc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cc706
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B3F0]
+CopyFrom    = 0xB3F0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F0]
+CopyFrom    = 0xB3F0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F0]
+CopyFrom    = 0xB3F0
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B3F0]
+CopyFrom    = 0xB3F0
+[HighwayIntersectionInfo_0x0005B3F0]
+CopyFrom    = 0x1B3F0
+[HighwayIntersectionInfo_0x0006B3F0]
+CopyFrom    = 0x2B3F0
+[HighwayIntersectionInfo_0x0007B3F0]
+CopyFrom    = 0x3B3F0
+
+
+[HighwayIntersectionInfo_0x0000B3F1]
+;Added by memo 02/26/07.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Diagonal Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580d3706
+PreviewEffect = preview_draggable_glr___003
+
+CellLayout =........
+CellLayout =...aZ<..
+CellLayout =........
+CellLayout =....^...
+
+CheckType = Z - lightrail: 0x00000301
+CheckType = a - lightrail: 0x03010000 Road: 0x01010000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase = 0x55387000		; former 0x580d3700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d3706
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B3F1]
+CopyFrom    = 0xB3F1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F1]
+CopyFrom    = 0xB3F1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F1]
+CopyFrom    = 0xB3F1
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B3F1]
+CopyFrom    = 0xB3F1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B3F1]
+CopyFrom    = 0x4B3F1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B3F1]
+CopyFrom    = 0x4B3F1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B3F1]
+CopyFrom    = 0x4B3F1
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B3F5]
+;Added by memo 03/26/07.
+;Elevated to Rural Ground Light Rail Connector Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580d0707
+PreviewEffect = preview_draggable_glr___005
+
+CellLayout = ....
+CellLayout = .d..
+CellLayout = .a.<
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .c..
+CellLayout = .^..
+
+CheckType  = d - lightrail: 0x02000200 Road: 0x03000003, 0xffffffff optional
+CheckType  = a - lightrail: 0x02000000
+CheckType  = b - lightrail: 0x02000200
+CheckType  = c - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout = ...
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .^.
+
+AutoTileBase = 0x580d0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d0707
+Costs       = 290
+[HighwayIntersectionInfo_0x0001B3F5]
+CopyFrom    = 0xB3F5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F5]
+CopyFrom    = 0xB3F5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F5]
+CopyFrom    = 0xB3F5
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004B3F5]
+CopyFrom    = 0xB3F5
+[HighwayIntersectionInfo_0x0005B3F5]
+CopyFrom    = 0x1B3F5
+[HighwayIntersectionInfo_0x0006B3F5]
+CopyFrom    = 0x2B3F5
+[HighwayIntersectionInfo_0x0007B3F5]
+CopyFrom    = 0x3B3F5
+
+
+[HighwayIntersectionInfo_0x0000B3F2]
+;Added by memo 03/26/07.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Rural Straight Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580cc707
+PreviewEffect = preview_draggable_glr___004
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - lightrail: 0x02000200
+CheckType = a - lightrail: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x55387000		; former 0x580db700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580cc707
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B3F2]
+CopyFrom    = 0xB3F2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F2]
+CopyFrom    = 0xB3F2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F2]
+CopyFrom    = 0xB3F2
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B3F2]
+CopyFrom    = 0xB3F2
+[HighwayIntersectionInfo_0x0005B3F2]
+CopyFrom    = 0x1B3F2
+[HighwayIntersectionInfo_0x0006B3F2]
+CopyFrom    = 0x2B3F2
+[HighwayIntersectionInfo_0x0007B3F2]
+CopyFrom    = 0x3B3F2
+
+
+[HighwayIntersectionInfo_0x0000B3F3]
+;Added by memo 03/26/07.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;Ground Light Rail Rural Diagonal Puzzle Piece - drag
+Piece = 0.0, 0.0, 0, 0, 0x580d3707
+PreviewEffect = preview_draggable_glr___006
+
+CellLayout =........
+CellLayout =...aZ<..
+CellLayout =........
+CellLayout =....^...
+
+CheckType = Z - lightrail: 0x00000301
+CheckType = a - lightrail: 0x03010000 onewayroad: 0x01010000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase = 0x55387000		; former 0x580dc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580d3707
+Costs       = 8
+[HighwayIntersectionInfo_0x0001B3F3]
+CopyFrom    = 0xB3F3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B3F3]
+CopyFrom    = 0xB3F3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B3F3]
+CopyFrom    = 0xB3F3
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B3F3]
+CopyFrom    = 0xB3F3
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005B3F3]
+CopyFrom    = 0x4B3F3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B3F3]
+CopyFrom    = 0x4B3F3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B3F3]
+CopyFrom    = 0x4B3F3
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B3F6]
+;Added by memo 03/26/07
+;Ground Light Rail Turning Circle - drag
+Piece = 16.0, -32.0, 0, 0, 0x580C0FF1
+PreviewEffect = preview_draggable_glr___007
+
+CellLayout =.........
+CellLayout =...abc...
+CellLayout =...d.d...
+CellLayout =...def...
+CellLayout =...ge....
+CellLayout =...h....<
+CellLayout =...i.....
+CellLayout =...^.....
+
+CheckType = a - lightrail:0x00000000
+CheckType = b - lightrail:0x00000000
+CheckType = c - lightrail:0x00000000
+CheckType = d - lightrail:0x00000000
+CheckType = e - lightrail:0x00000000
+CheckType = f - lightrail:0x00000000
+CheckType = g - lightrail:0x00000000
+CheckType = h - lightrail:0x00000000
+CheckType = i - lightrail: 0x02000200 Road: 0x00010100, 0xffffffff optional
+
+ConsLayout=.........
+ConsLayout=...+++...
+ConsLayout=...+.+...
+ConsLayout=...+++...
+ConsLayout=...++....
+ConsLayout=...+....<
+ConsLayout=.........
+ConsLayout=...^.....
+
+AutoTileBase = 0x580C0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580C0FF1
+Costs = 250
+
+[HighwayIntersectionInfo_0x0001B3F6]
+CopyFrom = 0xB3F6
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B3F6]
+CopyFrom = 0xB3F6
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B3F6]
+CopyFrom = 0xB3F6
+Rotate = 3
+[HighwayIntersectionInfo_0x0010B3F6]
+;Added by memo 03/26/07
+;Ground Light Rail Turning Circle - drag
+Piece = 16.0, -32.0, 0, 0, 0x580C0FF1
+PreviewEffect = preview_draggable_glr___007
+
+CellLayout =.........
+CellLayout =...abc...
+CellLayout =...d.d...
+CellLayout =...def...
+CellLayout =...ge....
+CellLayout =...h....<
+CellLayout =...i.....
+CellLayout =...^.....
+
+CheckType = a - lightrail:0x00000000
+CheckType = b - lightrail:0x00000000
+CheckType = c - lightrail:0x00000000
+CheckType = d - lightrail:0x00000000
+CheckType = e - lightrail:0x00000000
+CheckType = f - lightrail:0x00000000
+CheckType = g - lightrail:0x00000000
+CheckType = h - lightrail:0x00000000
+CheckType = i - lightrail: 0x02000200 Road: 0x00000303, 0xffffffff optional
+
+ConsLayout=.........
+ConsLayout=...+++...
+ConsLayout=...+.+...
+ConsLayout=...+++...
+ConsLayout=...++....
+ConsLayout=...+....<
+ConsLayout=.........
+ConsLayout=...^.....
+
+AutoTileBase = 0x580C0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580C0FF1
+Costs = 250
+[HighwayIntersectionInfo_0x0008B3F6]
+CopyFrom = 0x10B3F6
+Transpose = 1
+[HighwayIntersectionInfo_0x0009B3F6]
+CopyFrom = 0x8B3F6
+Rotate = 1
+[HighwayIntersectionInfo_0x000AB3F6]
+CopyFrom = 0x8B3F6
+Rotate = 2
+[HighwayIntersectionInfo_0x000BB3F6]
+CopyFrom = 0x8B3F6
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x0000B3F7]
+;Added by memo 03/26/07
+;Ground Light Rail Rural Turning Circle - drag
+Piece = 16.0, -32.0, 0, 0, 0x580C0FF2
+PreviewEffect = preview_draggable_glr___008
+
+CellLayout =.........
+CellLayout =...abc...
+CellLayout =...d.d...
+CellLayout =...def...
+CellLayout =...ge....
+CellLayout =...h....<
+CellLayout =...i.....
+CellLayout =...^.....
+
+CheckType = a - lightrail:0x00000000
+CheckType = b - lightrail:0x00000000
+CheckType = c - lightrail:0x00000000
+CheckType = d - lightrail:0x00000000
+CheckType = e - lightrail:0x00000000
+CheckType = f - lightrail:0x00000000
+CheckType = g - lightrail:0x00000000
+CheckType = h - lightrail:0x00000000
+CheckType = i - lightrail: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout=.........
+ConsLayout=...+++...
+ConsLayout=...+.+...
+ConsLayout=...+++...
+ConsLayout=...++....
+ConsLayout=...+....<
+ConsLayout=.........
+ConsLayout=...^.....
+
+AutoTileBase = 0x580C0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580C0FF2
+Costs = 250
+
+[HighwayIntersectionInfo_0x0001B3F7]
+CopyFrom = 0xB3F7
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B3F7]
+CopyFrom = 0xB3F7
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B3F7]
+CopyFrom = 0xB3F7
+Rotate = 3
+[HighwayIntersectionInfo_0x0010B3F7]
+;Added by memo 03/26/07
+;Ground Light Rail Rural Turning Circle - drag
+Piece = 16.0, -32.0, 0, 0, 0x580C0FF2
+PreviewEffect = preview_draggable_glr___008
+
+CellLayout =.........
+CellLayout =...abc...
+CellLayout =...d.d...
+CellLayout =...def...
+CellLayout =...ge....
+CellLayout =...h....<
+CellLayout =...i.....
+CellLayout =...^.....
+
+CheckType = a - lightrail:0x00000000
+CheckType = b - lightrail:0x00000000
+CheckType = c - lightrail:0x00000000
+CheckType = d - lightrail:0x00000000
+CheckType = e - lightrail:0x00000000
+CheckType = f - lightrail:0x00000000
+CheckType = g - lightrail:0x00000000
+CheckType = h - lightrail:0x00000000
+CheckType = i - lightrail: 0x02000200 Road: 0x00000101, 0xffffffff optional
+
+ConsLayout=.........
+ConsLayout=...+++...
+ConsLayout=...+.+...
+ConsLayout=...+++...
+ConsLayout=...++....
+ConsLayout=...+....<
+ConsLayout=.........
+ConsLayout=...^.....
+
+AutoTileBase = 0x580C0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x580C0FF2
+Costs = 250
+[HighwayIntersectionInfo_0x0008B3F7]
+CopyFrom = 0x10B3F7
+Transpose = 1
+[HighwayIntersectionInfo_0x0009B3F7]
+CopyFrom = 0x8B3F7
+Rotate = 1
+[HighwayIntersectionInfo_0x000AB3F7]
+CopyFrom = 0x8B3F7
+Rotate = 2
+[HighwayIntersectionInfo_0x000BB3F7]
+CopyFrom = 0x8B3F7
+Rotate = 3
+

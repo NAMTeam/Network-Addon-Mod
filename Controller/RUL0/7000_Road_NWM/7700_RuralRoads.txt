@@ -1,0 +1,1729 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RURAL ROADS BUTTON SECTION
+;RURAL ROADS BUTTON SECTION
+RotationRing = 7700, 17700, 27700, 37700, 47700, 57700, 67700, 77700, 87700, 97700, A7700, B7700, C7700, D7700, E7700, F7700 ;Rural Road Diagonal 1x1
+AddTypes     = 7701, 17701, 27701, 37701, 47701, 57701, 67701, 77701, 87701, 97701, A7701, B7701, C7701, D7701, E7701, F7701 ;Rural Road Straight 1x1
+AddTypes     = 7702, 17702, 27702, 37702, 47702, 57702, 67702, 77702, 87702, 97702, A7702, B7702, C7702, D7702, E7702, F7702 ;Rural Road FAR PP 2x3
+AddTypes     = 7703, 17703, 27703, 37703, 47703, 57703, 67703, 77703, 87703, 97703, A7703, B7703, C7703, D7703, E7703, F7703 ;Rural Road Diagonal Solid Double Centerline End 1x1
+AddTypes     = 7704, 17704, 27704, 37704, 47704, 57704, 67704, 77704, 87704, 97704, A7704, B7704, C7704, D7704, E7704, F7704 ;Rural Road Straight Solid Double Centerline End 1x1
+AddTypes     = 7705, 17705, 27705, 37705, 47705, 57705, 67705, 77705, 87705, 97705, A7705, B7705, C7705, D7705, E7705, F7705 ;Rural Road FAR PP Solid Double Centerline End 1x1
+AddTypes     = 7706, 17706, 27706, 37706, 47706, 57706, 67706, 77706, 87706, 97706, A7706, B7706, C7706, D7706, E7706, F7706 ;Rural Road 4Way Intersection 1x1
+AddTypes     = 7707, 17707, 27707, 37707, 47707, 57707, 67707, 77707, 87707, 97707, A7707, B7707, C7707, D7707, E7707, F7707 ;Rural Road T Intersection 1x1
+AddTypes     = 7708, 17708, 27708, 37708, 47708, 57708, 67708, 77708, 87708, 97708, A7708, B7708, C7708, D7708, E7708, F7708 ;Rural Road 45 degree dirt road curve (SAM3) 2x4; edited by dedgren 090220
+AddTypes     = 7709, 17709, 27709, 37709, 47709, 57709, 67709, 77709, 87709, 97709, A7709, B7709, C7709, D7709, E7709, F7709 ;Rural Road 90 degree dirt road curve (SAM3) 4x4; edited by dedgren 090220
+AddTypes     = 770A, 1770A, 2770A, 3770A, 4770A, 5770A, 6770A, 7770A, 8770A, 9770A, A770A, B770A, C770A, D770A, E770A, F770A ;Rural Road 90 degree dirt road curve (SAM3) 2x2; edited by dedgren 090220
+AddTypes     = 770B, 1770B, 2770B, 3770B, 4770B, 5770B, 6770B, 7770B, 8770B, 9770B, A770B, B770B, C770B, D770B, E770B, F770B ;Rural Road Diag dirt filler piece (SAM3) 1x1; added by dedgren 090220
+AddTypes     = 770C, 1770C, 2770C, 3770C, 4770C, 5770C, 6770C, 7770C, 8770C, 9770C, A770C, B770C, C770C, D770C, E770C, F770C ;Rural Road Ortho dirt filler piece (SAM3) 1x1; added by dedgren 090220
+AddTypes     = 770D, 1770D, 2770D, 3770D, 4770D, 5770D, 6770D, 7770D, 8770D, 9770D, A770D, B770D, C770D, D770D, E770D, F770D ;Rural Road 45 degree asphalt road curve (SAM7) 2x4; added by dedgren 090220
+AddTypes     = 770E, 1770E, 2770E, 3770E, 4770E, 5770E, 6770E, 7770E, 8770E, 9770E, A770E, B770E, C770E, D770E, E770E, F770E ;Rural Road 90 degree asphalt road curve (SAM7) 4x4; added by dedgren 090220
+AddTypes     = 770F, 1770F, 2770F, 3770F, 4770F, 5770F, 6770F, 7770F, 8770F, 9770F, A770F, B770F, C770F, D770F, E770F, F770F ;Rural Road 90 degree asphalt road curve (SAM7) 2x2; added by dedgren 090220
+AddTypes     = 7710, 17710, 27710, 37710, 47710, 57710, 67710, 77710, 87710, 97710, A7710, B7710, C7710, D7710, E7710, F7710 ;Rural Road Diag asphalt filler piece (SAM7) 1x1; added by dedgren 090220
+AddTypes     = 7711, 17711, 27711, 37711, 47711, 57711, 67711, 77711, 87711, 97711, A7711, B7711, C7711, D7711, E7711, F7711 ;Rural Road Ortho asphalt filler piece (SAM7) 1x1; added by dedgren 090220
+AddTypes     = 7712, 17712, 27712, 37712, 47712, 57712, 67712, 77712, 87712, 97712, A7712, B7712, C7712, D7712, E7712, F7712 ;Rural Road 45 degree gravel road curve (SAM4) 2x4; added by dedgren 090222
+AddTypes     = 7713, 17713, 27713, 37713, 47713, 57713, 67713, 77713, 87713, 97713, A7713, B7713, C7713, D7713, E7713, F7713 ;Rural Road 90 degree gravel road curve (SAM4) 4x4; added by dedgren 090222
+AddTypes     = 7714, 17714, 27714, 37714, 47714, 57714, 67714, 77714, 87714, 97714, A7714, B7714, C7714, D7714, E7714, F7714 ;Rural Road 90 degree gravel road curve (SAM4) 2x2; added by dedgren 090222
+AddTypes     = 7715, 17715, 27715, 37715, 47715, 57715, 67715, 77715, 87715, 97715, A7715, B7715, C7715, D7715, E7715, F7715 ;Rural Road Diag gravel filler piece (SAM4) 1x1; added by dedgren 090222
+AddTypes     = 7716, 17716, 27716, 37716, 47716, 57716, 67716, 77716, 87716, 97716, A7716, B7716, C7716, D7716, E7716, F7716 ;Rural Road Orth gravel filler piece (SAM4) 1x1; added by dedgren 090222
+;disabled -memo 13/03/01
+;AddTypes     = 7717, 17717, 27717, 37717, 47717, 57717, 67717, 77717, 87717, 97717, A7717, B7717, C7717, D7717, E7717, F7717 ;Rural Road 90 degree herringbone road curve (SAM2) 4x4; added by Swordmaster 130217
+
+;###separator###
+
+;RURAL ROAD SUBSECTION
+;
+;
+[HighwayIntersectionInfo_0x00007700]
+;Added by dedgren 11/29/2008
+;Rural Road Diagonal Section 1x1 (texture by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5046E005
+PreviewEffect =  preview_rlrd_puzzlepiece001
+
+CellLayout =.........
+CellLayout =..za....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+
+CheckType = z - Road: 0x00030000,0x00ff0000 check
+CheckType = a - Road: 0x01000003
+CheckType = y - Road: 0x00000100,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =...\....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5046E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5046E000
+Costs = 10; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017700]
+CopyFrom = 0x7700
+Rotate = 1
+[HighwayIntersectionInfo_0x00027700]
+CopyFrom = 0x7700
+Rotate = 2
+[HighwayIntersectionInfo_0x00037700]
+CopyFrom = 0x7700
+Rotate = 3
+[HighwayIntersectionInfo_0x00047700]
+CopyFrom = 0x7700
+Transpose = 1
+[HighwayIntersectionInfo_0x00057700]
+CopyFrom = 0x37700
+Transpose = 1
+[HighwayIntersectionInfo_0x00067700]
+CopyFrom = 0x27700
+Transpose = 1
+[HighwayIntersectionInfo_0x00077700]
+CopyFrom = 0x17700
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087700]
+CopyFrom = 0x7700
+[HighwayIntersectionInfo_0x00097700]
+CopyFrom = 0x17700
+[HighwayIntersectionInfo_0x000A7700]
+CopyFrom = 0x27700
+[HighwayIntersectionInfo_0x000B7700]
+CopyFrom = 0x37700
+[HighwayIntersectionInfo_0x000C7700]
+CopyFrom = 0x47700
+[HighwayIntersectionInfo_0x000D7700]
+CopyFrom = 0x57700
+[HighwayIntersectionInfo_0x000E7700]
+CopyFrom = 0x67700
+[HighwayIntersectionInfo_0x000F7700]
+CopyFrom = 0x77700
+
+
+[HighwayIntersectionInfo_0x00007701]
+;Added by dedgren 11/27/2008
+;Rural Road Straight Section 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5046F005
+PreviewEffect =  preview_rlrd_puzzlepiece000
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - road: 0x02000000,0xff000000 check
+CheckType = a - road: 0x02000200
+CheckType = y - road: 0x00000200,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5046F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5046F000
+Costs = 15; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017701]
+CopyFrom = 0x7701
+Rotate = 1
+[HighwayIntersectionInfo_0x00027701]
+CopyFrom = 0x7701
+Rotate = 2
+[HighwayIntersectionInfo_0x00037701]
+CopyFrom = 0x7701
+Rotate = 3
+[HighwayIntersectionInfo_0x00047701]
+CopyFrom = 0x7701
+Transpose = 1
+[HighwayIntersectionInfo_0x00057701]
+CopyFrom = 0x37701
+Transpose = 1
+[HighwayIntersectionInfo_0x00067701]
+CopyFrom = 0x27701
+Transpose = 1
+[HighwayIntersectionInfo_0x00077701]
+CopyFrom = 0x17701
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087701]
+CopyFrom = 0x7701
+[HighwayIntersectionInfo_0x00097701]
+CopyFrom = 0x17701
+[HighwayIntersectionInfo_0x000A7701]
+CopyFrom = 0x27701
+[HighwayIntersectionInfo_0x000B7701]
+CopyFrom = 0x37701
+[HighwayIntersectionInfo_0x000C7701]
+CopyFrom = 0x47701
+[HighwayIntersectionInfo_0x000D7701]
+CopyFrom = 0x57701
+[HighwayIntersectionInfo_0x000E7701]
+CopyFrom = 0x67701
+[HighwayIntersectionInfo_0x000F7701]
+CopyFrom = 0x77701
+
+
+[HighwayIntersectionInfo_0x00007702]; (added by dedgren 081227)
+;Added by dedgren 12/27/2008
+;Rural Road FAR Section PP (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x50472005; edited by dedgren 081229
+PreviewEffect = preview_rlrd_puzzlepiece002
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - road: 0x00020002
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=	0x50472000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50472000
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017702]
+CopyFrom = 0x7702
+Rotate = 1
+[HighwayIntersectionInfo_0x00027702]
+CopyFrom = 0x7702
+Rotate = 2
+[HighwayIntersectionInfo_0x00037702]
+CopyFrom = 0x7702
+Rotate = 3
+[HighwayIntersectionInfo_0x00047702]
+CopyFrom = 0x7702
+Transpose = 1
+[HighwayIntersectionInfo_0x00057702]
+CopyFrom = 0x37702
+Transpose = 1
+[HighwayIntersectionInfo_0x00067702]
+CopyFrom = 0x27702
+Transpose = 1
+[HighwayIntersectionInfo_0x00077702]
+CopyFrom = 0x17702
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087702]
+CopyFrom = 0x7702
+[HighwayIntersectionInfo_0x00097702]
+CopyFrom = 0x17702
+[HighwayIntersectionInfo_0x000A7702]
+CopyFrom = 0x27702
+[HighwayIntersectionInfo_0x000B7702]
+CopyFrom = 0x37702
+[HighwayIntersectionInfo_0x000C7702]
+CopyFrom = 0x47702
+[HighwayIntersectionInfo_0x000D7702]
+CopyFrom = 0x57702
+[HighwayIntersectionInfo_0x000E7702]
+CopyFrom = 0x67702
+[HighwayIntersectionInfo_0x000F7702]
+CopyFrom = 0x77702
+
+
+[HighwayIntersectionInfo_0x00007703]; (added by dedgren 081227)
+;Added by dedgren 12/27/2008
+;Rural Road Diagonal Section Double Solid Centerline End 1x1 (texture by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x50473005
+PreviewEffect =  preview_rlrd_puzzlepiece003
+
+CellLayout =.........
+CellLayout =..za....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+
+CheckType = z - Road: 0x00030000,0x00ff0000 check
+CheckType = a - Road: 0x01000003
+CheckType = y - Road: 0x00000100,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =...\....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50473000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50473000
+Costs = 15; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017703]
+CopyFrom = 0x7703
+Rotate = 1
+[HighwayIntersectionInfo_0x00027703]
+CopyFrom = 0x7703
+Rotate = 2
+[HighwayIntersectionInfo_0x00037703]
+CopyFrom = 0x7703
+Rotate = 3
+[HighwayIntersectionInfo_0x00047703]
+CopyFrom = 0x7703
+Transpose = 1
+[HighwayIntersectionInfo_0x00057703]
+CopyFrom = 0x37703
+Transpose = 1
+[HighwayIntersectionInfo_0x00067703]
+CopyFrom = 0x27703
+Transpose = 1
+[HighwayIntersectionInfo_0x00077703]
+CopyFrom = 0x17703
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087703]
+CopyFrom = 0x7703
+[HighwayIntersectionInfo_0x00097703]
+CopyFrom = 0x17703
+[HighwayIntersectionInfo_0x000A7703]
+CopyFrom = 0x27703
+[HighwayIntersectionInfo_0x000B7703]
+CopyFrom = 0x37703
+[HighwayIntersectionInfo_0x000C7703]
+CopyFrom = 0x47703
+[HighwayIntersectionInfo_0x000D7703]
+CopyFrom = 0x57703
+[HighwayIntersectionInfo_0x000E7703]
+CopyFrom = 0x67703
+[HighwayIntersectionInfo_0x000F7703]
+CopyFrom = 0x77703
+
+
+[HighwayIntersectionInfo_0x00007704]; (added by dedgren 081227)
+;Added by dedgren 12/27/2008
+;Rural Road Straight Section Double Solid Centerline End 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50474005
+PreviewEffect =  preview_rlrd_puzzlepiece004
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - road: 0x02000000,0xff000000 check
+CheckType = a - road: 0x02000200
+CheckType = y - road: 0x00000200,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50474000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50474000
+Costs = 10; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017704]
+CopyFrom = 0x7704
+Rotate = 1
+[HighwayIntersectionInfo_0x00027704]
+CopyFrom = 0x7704
+Rotate = 2
+[HighwayIntersectionInfo_0x00037704]
+CopyFrom = 0x7704
+Rotate = 3
+[HighwayIntersectionInfo_0x00047704]
+CopyFrom = 0x7704
+Transpose = 1
+[HighwayIntersectionInfo_0x00057704]
+CopyFrom = 0x37704
+Transpose = 1
+[HighwayIntersectionInfo_0x00067704]
+CopyFrom = 0x27704
+Transpose = 1
+[HighwayIntersectionInfo_0x00077704]
+CopyFrom = 0x17704
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087704]
+CopyFrom = 0x7704
+[HighwayIntersectionInfo_0x00097704]
+CopyFrom = 0x17704
+[HighwayIntersectionInfo_0x000A7704]
+CopyFrom = 0x27704
+[HighwayIntersectionInfo_0x000B7704]
+CopyFrom = 0x37704
+[HighwayIntersectionInfo_0x000C7704]
+CopyFrom = 0x47704
+[HighwayIntersectionInfo_0x000D7704]
+CopyFrom = 0x57704
+[HighwayIntersectionInfo_0x000E7704]
+CopyFrom = 0x67704
+[HighwayIntersectionInfo_0x000F7704]
+CopyFrom = 0x77704
+
+
+[HighwayIntersectionInfo_0x00007705]; (added by dedgren 081227)
+;Added by dedgren 12/27/2008
+;Rural Road FAR Section Solid Centerline End 1x1 PP (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x50475005; edited by dedgren 081229
+PreviewEffect = preview_rlrd_puzzlepiece005
+
+CellLayout =.........
+CellLayout =...bac..<
+CellLayout =...bac...
+CellLayout =...^.....
+
+CheckType = a - road: 0x00020002
+CheckType = b - road: 0x00020000
+CheckType = c - road: 0x00000002
+
+ConsLayout =.........
+ConsLayout =...---..<
+ConsLayout =...---...
+ConsLayout =...^.....
+
+AutoTileBase=	0x50475000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50475000
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017705]
+CopyFrom = 0x7705
+Rotate = 1
+[HighwayIntersectionInfo_0x00027705]
+CopyFrom = 0x7705
+Rotate = 2
+[HighwayIntersectionInfo_0x00037705]
+CopyFrom = 0x7705
+Rotate = 3
+[HighwayIntersectionInfo_0x00047705]
+CopyFrom = 0x7705
+Transpose = 1
+[HighwayIntersectionInfo_0x00057705]
+CopyFrom = 0x37705
+Transpose = 1
+[HighwayIntersectionInfo_0x00067705]
+CopyFrom = 0x27705
+Transpose = 1
+[HighwayIntersectionInfo_0x00077705]
+CopyFrom = 0x17705
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087705]
+CopyFrom = 0x7705
+[HighwayIntersectionInfo_0x00097705]
+CopyFrom = 0x17705
+[HighwayIntersectionInfo_0x000A7705]
+CopyFrom = 0x27705
+[HighwayIntersectionInfo_0x000B7705]
+CopyFrom = 0x37705
+[HighwayIntersectionInfo_0x000C7705]
+CopyFrom = 0x47705
+[HighwayIntersectionInfo_0x000D7705]
+CopyFrom = 0x57705
+[HighwayIntersectionInfo_0x000E7705]
+CopyFrom = 0x67705
+[HighwayIntersectionInfo_0x000F7705]
+CopyFrom = 0x77705
+
+
+[HighwayIntersectionInfo_0x00007706]; (added by dedgren 081227)
+;Added by dedgren 12/27/2008
+;Rural Road 4 Way Intersection 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50476005
+PreviewEffect =  preview_rlrd_puzzlepiece006
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =..xaw...<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - road: 0x02000000,0xff000000 check
+CheckType = a - road: 0x02020202
+CheckType = y - road: 0x00000200,0x0000ff00 check
+CheckType = x - road: 0x00020000,0x00ff0000 check
+CheckType = w - road: 0x00000002,0x000000ff check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50476000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50476000
+Costs = 60; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017706]
+CopyFrom = 0x7706
+Rotate = 1
+[HighwayIntersectionInfo_0x00027706]
+CopyFrom = 0x7706
+Rotate = 2
+[HighwayIntersectionInfo_0x00037706]
+CopyFrom = 0x7706
+Rotate = 3
+[HighwayIntersectionInfo_0x00047706]
+CopyFrom = 0x7706
+Transpose = 1
+[HighwayIntersectionInfo_0x00057706]
+CopyFrom = 0x37706
+Transpose = 1
+[HighwayIntersectionInfo_0x00067706]
+CopyFrom = 0x27706
+Transpose = 1
+[HighwayIntersectionInfo_0x00077706]
+CopyFrom = 0x17706
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087706]
+CopyFrom = 0x7706
+[HighwayIntersectionInfo_0x00097706]
+CopyFrom = 0x17706
+[HighwayIntersectionInfo_0x000A7706]
+CopyFrom = 0x27706
+[HighwayIntersectionInfo_0x000B7706]
+CopyFrom = 0x37706
+[HighwayIntersectionInfo_0x000C7706]
+CopyFrom = 0x47706
+[HighwayIntersectionInfo_0x000D7706]
+CopyFrom = 0x57706
+[HighwayIntersectionInfo_0x000E7706]
+CopyFrom = 0x67706
+[HighwayIntersectionInfo_0x000F7706]
+CopyFrom = 0x77706
+
+
+[HighwayIntersectionInfo_0x00007707]; (added by dedgren 081228)
+;Added by dedgren 12/28/2008
+;Rural Road T Intersection 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50477005
+PreviewEffect =  preview_rlrd_puzzlepiece007
+
+CellLayout =...z.....
+CellLayout =...ax...<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - road: 0x02000000,0xff000000 check
+CheckType = a - road: 0x02020200
+CheckType = y - road: 0x00000200,0x0000ff00 check
+CheckType = x - road: 0x00000002,0x000000ff check
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50477000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50477000
+Costs = 40; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00017707]
+CopyFrom = 0x7707
+Rotate = 1
+[HighwayIntersectionInfo_0x00027707]
+CopyFrom = 0x7707
+Rotate = 2
+[HighwayIntersectionInfo_0x00037707]
+CopyFrom = 0x7707
+Rotate = 3
+[HighwayIntersectionInfo_0x00047707]
+CopyFrom = 0x7707
+Transpose = 1
+[HighwayIntersectionInfo_0x00057707]
+CopyFrom = 0x37707
+Transpose = 1
+[HighwayIntersectionInfo_0x00067707]
+CopyFrom = 0x27707
+Transpose = 1
+[HighwayIntersectionInfo_0x00077707]
+CopyFrom = 0x17707
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087707]
+CopyFrom = 0x7707
+[HighwayIntersectionInfo_0x00097707]
+CopyFrom = 0x17707
+[HighwayIntersectionInfo_0x000A7707]
+CopyFrom = 0x27707
+[HighwayIntersectionInfo_0x000B7707]
+CopyFrom = 0x37707
+[HighwayIntersectionInfo_0x000C7707]
+CopyFrom = 0x47707
+[HighwayIntersectionInfo_0x000D7707]
+CopyFrom = 0x57707
+[HighwayIntersectionInfo_0x000E7707]
+CopyFrom = 0x67707
+[HighwayIntersectionInfo_0x000F7707]
+CopyFrom = 0x77707
+
+
+[HighwayIntersectionInfo_0x00007708]
+;Added by dedgren 01/17/2009
+;Rural Road 45 degree dirt road curve (SAM3) (2x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50480005
+PreviewEffect = preview_rlrd_puzzlepiece017
+
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...++....
+CellLayout =...++....
+CellLayout =....by...
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00030000
+CheckType = y - street: 0x00000003,0x000000ff optional
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...\\....
+ConsLayout =...\\....
+ConsLayout =....\....
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x50480000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50480000
+Costs = 13
+[HighwayIntersectionInfo_0x00017708]
+CopyFrom = 0x7708
+Rotate = 1
+[HighwayIntersectionInfo_0x00027708]
+CopyFrom = 0x7708
+Rotate = 2
+[HighwayIntersectionInfo_0x00037708]
+CopyFrom = 0x7708
+Rotate = 3
+[HighwayIntersectionInfo_0x00047708]
+CopyFrom = 0x7708
+Transpose = 1
+[HighwayIntersectionInfo_0x00057708]
+CopyFrom = 0x37708
+Transpose = 1
+[HighwayIntersectionInfo_0x00067708]
+CopyFrom = 0x27708
+Transpose = 1
+[HighwayIntersectionInfo_0x00077708]
+CopyFrom = 0x17708
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087708]
+CopyFrom = 0x7708
+[HighwayIntersectionInfo_0x00097708]
+CopyFrom = 0x17708
+[HighwayIntersectionInfo_0x000A7708]
+CopyFrom = 0x27708
+[HighwayIntersectionInfo_0x000B7708]
+CopyFrom = 0x37708
+[HighwayIntersectionInfo_0x000C7708]
+CopyFrom = 0x47708
+[HighwayIntersectionInfo_0x000D7708]
+CopyFrom = 0x57708
+[HighwayIntersectionInfo_0x000E7708]
+CopyFrom = 0x67708
+[HighwayIntersectionInfo_0x000F7708]
+CopyFrom = 0x77708
+
+
+[HighwayIntersectionInfo_0x00007709]; (added by dedgren 090119)
+;Added by dedgren 01/19/2009
+;Rural Road 90 degree dirt road curve (SAM3) (4x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50481005
+PreviewEffect = preview_rlrd_puzzlepiece018
+
+CellLayout =...z.......
+CellLayout =...a......<
+CellLayout =...++......
+CellLayout =...+++.....
+CellLayout =....++by...
+CellLayout =...........
+CellLayout =...^.......
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00020002,0x000000ff optional
+
+ConsLayout =...........
+ConsLayout =...|......<
+ConsLayout =...\\......
+ConsLayout =...\\\.....
+ConsLayout =....\\-....
+ConsLayout =...........
+ConsLayout =...^.......
+
+AutoTileBase=   0x50481000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50481000
+Costs = 21
+[HighwayIntersectionInfo_0x00017709]
+CopyFrom = 0x7709
+Rotate = 1
+[HighwayIntersectionInfo_0x00027709]
+CopyFrom = 0x7709
+Rotate = 2
+[HighwayIntersectionInfo_0x00037709]
+CopyFrom = 0x7709
+Rotate = 3
+[HighwayIntersectionInfo_0x00047709]
+CopyFrom = 0x7709
+Transpose = 1
+[HighwayIntersectionInfo_0x00057709]
+CopyFrom = 0x37709
+Transpose = 1
+[HighwayIntersectionInfo_0x00067709]
+CopyFrom = 0x27709
+Transpose = 1
+[HighwayIntersectionInfo_0x00077709]
+CopyFrom = 0x17709
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087709]
+CopyFrom = 0x7709
+[HighwayIntersectionInfo_0x00097709]
+CopyFrom = 0x17709
+[HighwayIntersectionInfo_0x000A7709]
+CopyFrom = 0x27709
+[HighwayIntersectionInfo_0x000B7709]
+CopyFrom = 0x37709
+[HighwayIntersectionInfo_0x000C7709]
+CopyFrom = 0x47709
+[HighwayIntersectionInfo_0x000D7709]
+CopyFrom = 0x57709
+[HighwayIntersectionInfo_0x000E7709]
+CopyFrom = 0x67709
+[HighwayIntersectionInfo_0x000F7709]
+CopyFrom = 0x77709
+
+
+[HighwayIntersectionInfo_0x0000770A]
+;Added by dedgren 01/21/2009
+;Rural Road 90 degree dirt road curve (SAM3) (2x2)(textures by dedgren); edited by dedgren 090121
+Piece = 0.0, 0.0, 0, 0, 0x50482005
+PreviewEffect = preview_rlrd_puzzlepiece019
+
+;CellLayout =........
+;CellLayout =.adf...<
+;CellLayout =..cg....
+;CellLayout =...i....
+;CellLayout =..^.....
+
+;CellLayout =.a......
+;CellLayout =.dc....<
+;CellLayout =.fgi....
+;CellLayout =........
+;CellLayout =.^......
+
+CellLayout =.z......
+CellLayout =.a+....<
+CellLayout =.+by....
+CellLayout =........
+CellLayout =.^......
+
+;CheckType = a - street: 0x00020000,0x00ff0000 optional
+;CheckType = c - street: 0x00030100
+;CheckType = d - street: 0x01030002
+;CheckType = f - street: 0x01000003
+;CheckType = g - street: 0x02000103
+;CheckType = i - street: 0x00000200,0x0000ff00 optional
+
+;CheckType = a - street: 0x02000000,0xff000000 optional
+;CheckType = c - street: 0x03000001
+;CheckType = d - street: 0x01030200
+;CheckType = f - street: 0x00030100
+;CheckType = g - street: 0x00020103
+;CheckType = i - street: 0x00000002,0x000000ff optional
+
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = a - street: 0x00000200
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00000002,0x000000ff optional
+
+ConsLayout =........
+ConsLayout =..\\...<
+ConsLayout =..\\....
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase=   0x50482000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50482000
+Costs = 9
+[HighwayIntersectionInfo_0x0001770A]
+CopyFrom = 0x770A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770A]
+CopyFrom = 0x770A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770A]
+CopyFrom = 0x770A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770A]
+CopyFrom = 0x770A
+[HighwayIntersectionInfo_0x0005770A]
+CopyFrom = 0x1770A
+[HighwayIntersectionInfo_0x0006770A]
+CopyFrom = 0x2770A
+[HighwayIntersectionInfo_0x0007770A]
+CopyFrom = 0x3770A
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770A]
+CopyFrom = 0x770A
+[HighwayIntersectionInfo_0x0009770A]
+CopyFrom = 0x1770A
+[HighwayIntersectionInfo_0x000A770A]
+CopyFrom = 0x2770A
+[HighwayIntersectionInfo_0x000B770A]
+CopyFrom = 0x3770A
+[HighwayIntersectionInfo_0x000C770A]
+CopyFrom = 0x770A
+[HighwayIntersectionInfo_0x000D770A]
+CopyFrom = 0x1770A
+[HighwayIntersectionInfo_0x000E770A]
+CopyFrom = 0x2770A
+[HighwayIntersectionInfo_0x000F770A]
+CopyFrom = 0x3770A
+
+
+[HighwayIntersectionInfo_0x0000770B]
+;Added by dedgren 02/20/2009
+;Rural Road Diag Dirt Filler Piece (SAM3) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50483005
+PreviewEffect =  preview_rlrd_puzzlepiece020
+
+CellLayout =.........
+CellLayout =..za....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+
+CheckType = z - street: 0x00030000,0x00ff0000 check
+CheckType = a - street: 0x01000003
+CheckType = y - street: 0x00000100,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =...\....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase = 0x50483000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50483000
+Costs = 7
+
+[HighwayIntersectionInfo_0x0001770B]
+CopyFrom = 0x770B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770B]
+CopyFrom = 0x770B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770B]
+CopyFrom = 0x770B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770B]
+CopyFrom = 0x770B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005770B]
+CopyFrom = 0x3770B
+Transpose = 1
+[HighwayIntersectionInfo_0x0006770B]
+CopyFrom = 0x2770B
+Transpose = 1
+[HighwayIntersectionInfo_0x0007770B]
+CopyFrom = 0x1770B
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770B]
+CopyFrom = 0x770B
+[HighwayIntersectionInfo_0x0009770B]
+CopyFrom = 0x1770B
+[HighwayIntersectionInfo_0x000A770B]
+CopyFrom = 0x2770B
+[HighwayIntersectionInfo_0x000B770B]
+CopyFrom = 0x3770B
+[HighwayIntersectionInfo_0x000C770B]
+CopyFrom = 0x4770B
+[HighwayIntersectionInfo_0x000D770B]
+CopyFrom = 0x5770B
+[HighwayIntersectionInfo_0x000E770B]
+CopyFrom = 0x6770B
+[HighwayIntersectionInfo_0x000F770B]
+CopyFrom = 0x7770B
+
+
+[HighwayIntersectionInfo_0x0000770C]
+;Added by dedgren 02/20/2009
+;Rural Road Ortho Dirt Filler Piece (SAM3) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50484005
+PreviewEffect =  preview_rlrd_puzzlepiece021
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - street: 0x02000000,0xff000000 check
+CheckType = a - street: 0x02000200
+CheckType = y - street: 0x00000200,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=   0x50484000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50484000
+Costs = 11
+
+[HighwayIntersectionInfo_0x0001770C]
+CopyFrom = 0x770C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770C]
+CopyFrom = 0x770C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770C]
+CopyFrom = 0x770C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770C]
+CopyFrom = 0x770C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005770C]
+CopyFrom = 0x3770C
+Transpose = 1
+[HighwayIntersectionInfo_0x0006770C]
+CopyFrom = 0x2770C
+Transpose = 1
+[HighwayIntersectionInfo_0x0007770C]
+CopyFrom = 0x1770C
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770C]
+CopyFrom = 0x770C
+[HighwayIntersectionInfo_0x0009770C]
+CopyFrom = 0x1770C
+[HighwayIntersectionInfo_0x000A770C]
+CopyFrom = 0x2770C
+[HighwayIntersectionInfo_0x000B770C]
+CopyFrom = 0x3770C
+[HighwayIntersectionInfo_0x000C770C]
+CopyFrom = 0x4770C
+[HighwayIntersectionInfo_0x000D770C]
+CopyFrom = 0x5770C
+[HighwayIntersectionInfo_0x000E770C]
+CopyFrom = 0x6770C
+[HighwayIntersectionInfo_0x000F770C]
+CopyFrom = 0x7770C
+
+
+[HighwayIntersectionInfo_0x0000770D]
+;Added by dedgren 02/20/2009
+;Rural Road 45 degree asphalt road curve (SAM7) (2x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50485005
+PreviewEffect = preview_rlrd_puzzlepiece022
+
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...++....
+CellLayout =...++....
+CellLayout =....by...
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00030000
+CheckType = y - street: 0x00000003,0x000000ff optional
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...\\....
+ConsLayout =...\\....
+ConsLayout =....\....
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=   0x50485000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50485000
+Costs = 19
+[HighwayIntersectionInfo_0x0001770D]
+CopyFrom = 0x770D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770D]
+CopyFrom = 0x770D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770D]
+CopyFrom = 0x770D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770D]
+CopyFrom = 0x770D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005770D]
+CopyFrom = 0x3770D
+Transpose = 1
+[HighwayIntersectionInfo_0x0006770D]
+CopyFrom = 0x2770D
+Transpose = 1
+[HighwayIntersectionInfo_0x0007770D]
+CopyFrom = 0x1770D
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770D]
+CopyFrom = 0x770D
+[HighwayIntersectionInfo_0x0009770D]
+CopyFrom = 0x1770D
+[HighwayIntersectionInfo_0x000A770D]
+CopyFrom = 0x2770D
+[HighwayIntersectionInfo_0x000B770D]
+CopyFrom = 0x3770D
+[HighwayIntersectionInfo_0x000C770D]
+CopyFrom = 0x4770D
+[HighwayIntersectionInfo_0x000D770D]
+CopyFrom = 0x5770D
+[HighwayIntersectionInfo_0x000E770D]
+CopyFrom = 0x6770D
+[HighwayIntersectionInfo_0x000F770D]
+CopyFrom = 0x7770D
+
+
+[HighwayIntersectionInfo_0x0000770E]
+;Added by dedgren 02/20/2009
+;Rural Road 90 degree asphalt road curve (SAM7) (4x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50486005
+PreviewEffect = preview_rlrd_puzzlepiece023
+
+CellLayout =...z.......
+CellLayout =...a......<
+CellLayout =...++......
+CellLayout =...+++.....
+CellLayout =....++by...
+CellLayout =...........
+CellLayout =...^.......
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00020002,0x000000ff optional
+
+ConsLayout =...........
+ConsLayout =...|......<
+ConsLayout =...\\......
+ConsLayout =...\\\.....
+ConsLayout =....\\-....
+ConsLayout =...........
+ConsLayout =...^.......
+
+AutoTileBase=   0x50486000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50486000
+Costs = 21
+[HighwayIntersectionInfo_0x0001770E]
+CopyFrom = 0x770E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770E]
+CopyFrom = 0x770E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770E]
+CopyFrom = 0x770E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770E]
+CopyFrom = 0x770E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005770E]
+CopyFrom = 0x3770E
+Transpose = 1
+[HighwayIntersectionInfo_0x0006770E]
+CopyFrom = 0x2770E
+Transpose = 1
+[HighwayIntersectionInfo_0x0007770E]
+CopyFrom = 0x1770E
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770E]
+CopyFrom = 0x770E
+[HighwayIntersectionInfo_0x0009770E]
+CopyFrom = 0x1770E
+[HighwayIntersectionInfo_0x000A770E]
+CopyFrom = 0x2770E
+[HighwayIntersectionInfo_0x000B770E]
+CopyFrom = 0x3770E
+[HighwayIntersectionInfo_0x000C770E]
+CopyFrom = 0x4770E
+[HighwayIntersectionInfo_0x000D770E]
+CopyFrom = 0x5770E
+[HighwayIntersectionInfo_0x000E770E]
+CopyFrom = 0x6770E
+[HighwayIntersectionInfo_0x000F770E]
+CopyFrom = 0x7770E
+
+
+[HighwayIntersectionInfo_0x0000770F]
+;Added by dedgren 02/20/2009
+;Rural Road 90 degree asphalt road curve (SAM7) (2x2)(textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50487005
+PreviewEffect = preview_rlrd_puzzlepiece024
+
+;CellLayout =........
+;CellLayout =.adf...<
+;CellLayout =..cg....
+;CellLayout =...i....
+;CellLayout =..^.....
+
+;CellLayout =.a......
+;CellLayout =.dc....<
+;CellLayout =.fgi....
+;CellLayout =........
+;CellLayout =.^......
+
+CellLayout =.z......
+CellLayout =.a+....<
+CellLayout =.+by....
+CellLayout =........
+CellLayout =.^......
+
+;CheckType = a - street: 0x00020000,0x00ff0000 optional
+;CheckType = c - street: 0x00030100
+;CheckType = d - street: 0x01030002
+;CheckType = f - street: 0x01000003
+;CheckType = g - street: 0x02000103
+;CheckType = i - street: 0x00000200,0x0000ff00 optional
+
+;CheckType = a - street: 0x02000000,0xff000000 optional
+;CheckType = c - street: 0x03000001
+;CheckType = d - street: 0x01030200
+;CheckType = f - street: 0x00030100
+;CheckType = g - street: 0x00020103
+;CheckType = i - street: 0x00000002,0x000000ff optional
+
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = a - street: 0x00000200
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00000002,0x000000ff optional
+
+ConsLayout =........
+ConsLayout =..\\...<
+ConsLayout =..\\....
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x50487000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50487000
+Costs = 17
+[HighwayIntersectionInfo_0x0001770F]
+CopyFrom = 0x770F
+Rotate = 1
+[HighwayIntersectionInfo_0x0002770F]
+CopyFrom = 0x770F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003770F]
+CopyFrom = 0x770F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004770F]
+CopyFrom = 0x770F
+[HighwayIntersectionInfo_0x0005770F]
+CopyFrom = 0x1770F
+[HighwayIntersectionInfo_0x0006770F]
+CopyFrom = 0x2770F
+[HighwayIntersectionInfo_0x0007770F]
+CopyFrom = 0x3770F
+;clones for rotation
+[HighwayIntersectionInfo_0x0008770F]
+CopyFrom = 0x770F
+[HighwayIntersectionInfo_0x0009770F]
+CopyFrom = 0x1770F
+[HighwayIntersectionInfo_0x000A770F]
+CopyFrom = 0x2770F
+[HighwayIntersectionInfo_0x000B770F]
+CopyFrom = 0x3770F
+[HighwayIntersectionInfo_0x000C770F]
+CopyFrom = 0x770F
+[HighwayIntersectionInfo_0x000D770F]
+CopyFrom = 0x1770F
+[HighwayIntersectionInfo_0x000E770F]
+CopyFrom = 0x2770F
+[HighwayIntersectionInfo_0x000F770F]
+CopyFrom = 0x3770F
+
+
+[HighwayIntersectionInfo_0x00007710]
+;Added by dedgren 02/20/2009
+;Rural Road Diag Asphalt Filler Piece (SAM7) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50488005
+PreviewEffect =  preview_rlrd_puzzlepiece025
+
+CellLayout =.........
+CellLayout =..za....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+
+CheckType = z - street: 0x00030000,0x00ff0000 check
+CheckType = a - street: 0x01000003
+CheckType = y - street: 0x00000100,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =...\....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase = 0x50488000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50488000
+Costs = 7
+
+[HighwayIntersectionInfo_0x00017710]
+CopyFrom = 0x7710
+Rotate = 1
+[HighwayIntersectionInfo_0x00027710]
+CopyFrom = 0x7710
+Rotate = 2
+[HighwayIntersectionInfo_0x00037710]
+CopyFrom = 0x7710
+Rotate = 3
+[HighwayIntersectionInfo_0x00047710]
+CopyFrom = 0x7710
+Transpose = 1
+[HighwayIntersectionInfo_0x00057710]
+CopyFrom = 0x37710
+Transpose = 1
+[HighwayIntersectionInfo_0x00067710]
+CopyFrom = 0x27710
+Transpose = 1
+[HighwayIntersectionInfo_0x00077710]
+CopyFrom = 0x17710
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087710]
+CopyFrom = 0x7710
+[HighwayIntersectionInfo_0x00097710]
+CopyFrom = 0x17710
+[HighwayIntersectionInfo_0x000A7710]
+CopyFrom = 0x27710
+[HighwayIntersectionInfo_0x000B7710]
+CopyFrom = 0x37710
+[HighwayIntersectionInfo_0x000C7710]
+CopyFrom = 0x47710
+[HighwayIntersectionInfo_0x000D7710]
+CopyFrom = 0x57710
+[HighwayIntersectionInfo_0x000E7710]
+CopyFrom = 0x67710
+[HighwayIntersectionInfo_0x000F7710]
+CopyFrom = 0x77710
+
+
+[HighwayIntersectionInfo_0x00007711]
+;Added by dedgren 02/20/2009
+;Rural Road Ortho Asphalt Filler Piece (SAM7) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x50489005
+PreviewEffect =  preview_rlrd_puzzlepiece026
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - street: 0x02000000,0xff000000 check
+CheckType = a - street: 0x02000200
+CheckType = y - street: 0x00000200,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=   0x50489000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50489000
+Costs = 11
+
+[HighwayIntersectionInfo_0x00017711]
+CopyFrom = 0x7711
+Rotate = 1
+[HighwayIntersectionInfo_0x00027711]
+CopyFrom = 0x7711
+Rotate = 2
+[HighwayIntersectionInfo_0x00037711]
+CopyFrom = 0x7711
+Rotate = 3
+[HighwayIntersectionInfo_0x00047711]
+CopyFrom = 0x7711
+Transpose = 1
+[HighwayIntersectionInfo_0x00057711]
+CopyFrom = 0x37711
+Transpose = 1
+[HighwayIntersectionInfo_0x00067711]
+CopyFrom = 0x27711
+Transpose = 1
+[HighwayIntersectionInfo_0x00077711]
+CopyFrom = 0x17711
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087711]
+CopyFrom = 0x7711
+[HighwayIntersectionInfo_0x00097711]
+CopyFrom = 0x17711
+[HighwayIntersectionInfo_0x000A7711]
+CopyFrom = 0x27711
+[HighwayIntersectionInfo_0x000B7711]
+CopyFrom = 0x37711
+[HighwayIntersectionInfo_0x000C7711]
+CopyFrom = 0x47711
+[HighwayIntersectionInfo_0x000D7711]
+CopyFrom = 0x57711
+[HighwayIntersectionInfo_0x000E7711]
+CopyFrom = 0x67711
+[HighwayIntersectionInfo_0x000F7711]
+CopyFrom = 0x77711
+
+
+[HighwayIntersectionInfo_0x00007712]
+;Added by dedgren 02/22/2009
+;Rural Road 45 degree gravel road curve (SAM4) (2x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5048A005
+PreviewEffect = preview_rlrd_puzzlepiece027
+
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...++....
+CellLayout =...++....
+CellLayout =....by...
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00030000
+CheckType = y - street: 0x00000003,0x000000ff optional
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...\\....
+ConsLayout =...\\....
+ConsLayout =....\....
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=   0x5048A000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048A000
+Costs = 11
+[HighwayIntersectionInfo_0x00017712]
+CopyFrom = 0x7712
+Rotate = 1
+[HighwayIntersectionInfo_0x00027712]
+CopyFrom = 0x7712
+Rotate = 2
+[HighwayIntersectionInfo_0x00037712]
+CopyFrom = 0x7712
+Rotate = 3
+[HighwayIntersectionInfo_0x00047712]
+CopyFrom = 0x7712
+Transpose = 1
+[HighwayIntersectionInfo_0x00057712]
+CopyFrom = 0x37712
+Transpose = 1
+[HighwayIntersectionInfo_0x00067712]
+CopyFrom = 0x27712
+Transpose = 1
+[HighwayIntersectionInfo_0x00077712]
+CopyFrom = 0x17712
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087712]
+CopyFrom = 0x7712
+[HighwayIntersectionInfo_0x00097712]
+CopyFrom = 0x17712
+[HighwayIntersectionInfo_0x000A7712]
+CopyFrom = 0x27712
+[HighwayIntersectionInfo_0x000B7712]
+CopyFrom = 0x37712
+[HighwayIntersectionInfo_0x000C7712]
+CopyFrom = 0x47712
+[HighwayIntersectionInfo_0x000D7712]
+CopyFrom = 0x57712
+[HighwayIntersectionInfo_0x000E7712]
+CopyFrom = 0x67712
+[HighwayIntersectionInfo_0x000F7712]
+CopyFrom = 0x77712
+
+
+[HighwayIntersectionInfo_0x00007713]
+;Added by dedgren 02/22/2009
+;Rural Road 90 degree gravel road curve (SAM4) (4x4) PP (textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5048B005
+PreviewEffect = preview_rlrd_puzzlepiece028
+
+CellLayout =...z.......
+CellLayout =...a......<
+CellLayout =...++......
+CellLayout =...+++.....
+CellLayout =....++by...
+CellLayout =...........
+CellLayout =...^.......
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00020002,0x000000ff optional
+
+ConsLayout =...........
+ConsLayout =...|......<
+ConsLayout =...\\......
+ConsLayout =...\\\.....
+ConsLayout =....\\-....
+ConsLayout =...........
+ConsLayout =...^.......
+
+AutoTileBase=   0x5048B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048B000
+Costs = 14
+[HighwayIntersectionInfo_0x00017713]
+CopyFrom = 0x7713
+Rotate = 1
+[HighwayIntersectionInfo_0x00027713]
+CopyFrom = 0x7713
+Rotate = 2
+[HighwayIntersectionInfo_0x00037713]
+CopyFrom = 0x7713
+Rotate = 3
+[HighwayIntersectionInfo_0x00047713]
+CopyFrom = 0x7713
+Transpose = 1
+[HighwayIntersectionInfo_0x00057713]
+CopyFrom = 0x37713
+Transpose = 1
+[HighwayIntersectionInfo_0x00067713]
+CopyFrom = 0x27713
+Transpose = 1
+[HighwayIntersectionInfo_0x00077713]
+CopyFrom = 0x17713
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087713]
+CopyFrom = 0x7713
+[HighwayIntersectionInfo_0x00097713]
+CopyFrom = 0x17713
+[HighwayIntersectionInfo_0x000A7713]
+CopyFrom = 0x27713
+[HighwayIntersectionInfo_0x000B7713]
+CopyFrom = 0x37713
+[HighwayIntersectionInfo_0x000C7713]
+CopyFrom = 0x47713
+[HighwayIntersectionInfo_0x000D7713]
+CopyFrom = 0x57713
+[HighwayIntersectionInfo_0x000E7713]
+CopyFrom = 0x67713
+[HighwayIntersectionInfo_0x000F7713]
+CopyFrom = 0x77713
+
+
+[HighwayIntersectionInfo_0x00007714]
+;Added by dedgren 02/22/2009
+;Rural Road 90 degree gravel road curve (SAM4) (2x2)(textures by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5048C005
+PreviewEffect = preview_rlrd_puzzlepiece029
+
+;CellLayout =........
+;CellLayout =.adf...<
+;CellLayout =..cg....
+;CellLayout =...i....
+;CellLayout =..^.....
+
+;CellLayout =.a......
+;CellLayout =.dc....<
+;CellLayout =.fgi....
+;CellLayout =........
+;CellLayout =.^......
+
+CellLayout =.z......
+CellLayout =.a+....<
+CellLayout =.+by....
+CellLayout =........
+CellLayout =.^......
+
+;CheckType = a - street: 0x00020000,0x00ff0000 optional
+;CheckType = c - street: 0x00030100
+;CheckType = d - street: 0x01030002
+;CheckType = f - street: 0x01000003
+;CheckType = g - street: 0x02000103
+;CheckType = i - street: 0x00000200,0x0000ff00 optional
+
+;CheckType = a - street: 0x02000000,0xff000000 optional
+;CheckType = c - street: 0x03000001
+;CheckType = d - street: 0x01030200
+;CheckType = f - street: 0x00030100
+;CheckType = g - street: 0x00020103
+;CheckType = i - street: 0x00000002,0x000000ff optional
+
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = a - street: 0x00000200
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00000002,0x000000ff optional
+
+ConsLayout =........
+ConsLayout =..\\...<
+ConsLayout =..\\....
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x5048C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048C000
+Costs = 9
+[HighwayIntersectionInfo_0x00017714]
+CopyFrom = 0x7714
+Rotate = 1
+[HighwayIntersectionInfo_0x00027714]
+CopyFrom = 0x7714
+Rotate = 2
+[HighwayIntersectionInfo_0x00037714]
+CopyFrom = 0x7714
+Rotate = 3
+[HighwayIntersectionInfo_0x00047714]
+CopyFrom = 0x7714
+[HighwayIntersectionInfo_0x00057714]
+CopyFrom = 0x17714
+[HighwayIntersectionInfo_0x00067714]
+CopyFrom = 0x27714
+[HighwayIntersectionInfo_0x00077714]
+CopyFrom = 0x37714
+;clones for rotation
+[HighwayIntersectionInfo_0x00087714]
+CopyFrom = 0x7714
+[HighwayIntersectionInfo_0x00097714]
+CopyFrom = 0x17714
+[HighwayIntersectionInfo_0x000A7714]
+CopyFrom = 0x27714
+[HighwayIntersectionInfo_0x000B7714]
+CopyFrom = 0x37714
+[HighwayIntersectionInfo_0x000C7714]
+CopyFrom = 0x7714
+[HighwayIntersectionInfo_0x000D7714]
+CopyFrom = 0x17714
+[HighwayIntersectionInfo_0x000E7714]
+CopyFrom = 0x27714
+[HighwayIntersectionInfo_0x000F7714]
+CopyFrom = 0x37714
+
+
+[HighwayIntersectionInfo_0x00007715]
+;Added by dedgren 02/22/2009
+;Rural Road Diag Gravel Filler Piece (SAM4) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5048D005
+PreviewEffect =  preview_rlrd_puzzlepiece030
+
+CellLayout =.........
+CellLayout =..za....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+
+CheckType = z - street: 0x00030000,0x00ff0000 check
+CheckType = a - street: 0x01000003
+CheckType = y - street: 0x00000100,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =...\....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase = 0x5048D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048D000
+Costs = 3
+
+[HighwayIntersectionInfo_0x00017715]
+CopyFrom = 0x7715
+Rotate = 1
+[HighwayIntersectionInfo_0x00027715]
+CopyFrom = 0x7715
+Rotate = 2
+[HighwayIntersectionInfo_0x00037715]
+CopyFrom = 0x7715
+Rotate = 3
+[HighwayIntersectionInfo_0x00047715]
+CopyFrom = 0x7715
+Transpose = 1
+[HighwayIntersectionInfo_0x00057715]
+CopyFrom = 0x37715
+Transpose = 1
+[HighwayIntersectionInfo_0x00067715]
+CopyFrom = 0x27715
+Transpose = 1
+[HighwayIntersectionInfo_0x00077715]
+CopyFrom = 0x17715
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087715]
+CopyFrom = 0x7715
+[HighwayIntersectionInfo_0x00097715]
+CopyFrom = 0x17715
+[HighwayIntersectionInfo_0x000A7715]
+CopyFrom = 0x27715
+[HighwayIntersectionInfo_0x000B7715]
+CopyFrom = 0x37715
+[HighwayIntersectionInfo_0x000C7715]
+CopyFrom = 0x47715
+[HighwayIntersectionInfo_0x000D7715]
+CopyFrom = 0x57715
+[HighwayIntersectionInfo_0x000E7715]
+CopyFrom = 0x67715
+[HighwayIntersectionInfo_0x000F7715]
+CopyFrom = 0x77715
+
+
+[HighwayIntersectionInfo_0x00007716]
+;Added by dedgren 02/22/2009
+;Rural Road Ortho Gravel Filler Piece (SAM4) 1x1 (texture by dedgren)
+Piece = 0.0, 0.0, 0, 0, 0x5048E005
+PreviewEffect =  preview_rlrd_puzzlepiece031
+
+CellLayout =.........
+CellLayout =...z.....
+CellLayout =...a....<
+CellLayout =...y.....
+CellLayout =...^.....
+
+CheckType = z - street: 0x02000000,0xff000000 check
+CheckType = a - street: 0x02000200
+CheckType = y - street: 0x00000200,0x0000ff00 check
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=   0x5048E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048E000
+Costs = 2
+
+[HighwayIntersectionInfo_0x00017716]
+CopyFrom = 0x7716
+Rotate = 1
+[HighwayIntersectionInfo_0x00027716]
+CopyFrom = 0x7716
+Rotate = 2
+[HighwayIntersectionInfo_0x00037716]
+CopyFrom = 0x7716
+Rotate = 3
+[HighwayIntersectionInfo_0x00047716]
+CopyFrom = 0x7716
+Transpose = 1
+[HighwayIntersectionInfo_0x00057716]
+CopyFrom = 0x37716
+Transpose = 1
+[HighwayIntersectionInfo_0x00067716]
+CopyFrom = 0x27716
+Transpose = 1
+[HighwayIntersectionInfo_0x00077716]
+CopyFrom = 0x17716
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087716]
+CopyFrom = 0x7716
+[HighwayIntersectionInfo_0x00097716]
+CopyFrom = 0x17716
+[HighwayIntersectionInfo_0x000A7716]
+CopyFrom = 0x27716
+[HighwayIntersectionInfo_0x000B7716]
+CopyFrom = 0x37716
+[HighwayIntersectionInfo_0x000C7716]
+CopyFrom = 0x47716
+[HighwayIntersectionInfo_0x000D7716]
+CopyFrom = 0x57716
+[HighwayIntersectionInfo_0x000E7716]
+CopyFrom = 0x67716
+[HighwayIntersectionInfo_0x000F7716]
+CopyFrom = 0x77716
+
+
+;[HighwayIntersectionInfo_0x00007717]
+;Added by Swordmaster 02/17/2013
+;Rural Road 90 degree herringbone road curve (SAM2) 4x4 PP 
+Piece = 0.0, 0.0, 0, 0, 0x5048F005
+PreviewEffect = preview_rlrd_puzzlepiece032
+
+CellLayout =...z.......
+CellLayout =...a......<
+CellLayout =...++......
+CellLayout =...+++.....
+CellLayout =....++by...
+CellLayout =...........
+CellLayout =...^.......
+
+CheckType = a - street: 0x02000200
+CheckType = z - street: 0x02000000,0xff000000 optional
+CheckType = b - street: 0x00020000
+CheckType = y - street: 0x00020002,0x000000ff optional
+
+ConsLayout =...........
+ConsLayout =...|......<
+ConsLayout =...\\......
+ConsLayout =...\\\.....
+ConsLayout =....\\-....
+ConsLayout =...........
+ConsLayout =...^.......
+
+AutoTileBase=   0x5048F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5048F000
+Costs = 21
+[HighwayIntersectionInfo_0x00017717]
+CopyFrom = 0x7717
+Rotate = 1
+[HighwayIntersectionInfo_0x00027717]
+CopyFrom = 0x7717
+Rotate = 2
+[HighwayIntersectionInfo_0x00037717]
+CopyFrom = 0x7717
+Rotate = 3
+[HighwayIntersectionInfo_0x00047717]
+CopyFrom = 0x7717
+Transpose = 1
+[HighwayIntersectionInfo_0x00057717]
+CopyFrom = 0x37717
+Transpose = 1
+[HighwayIntersectionInfo_0x00067717]
+CopyFrom = 0x27717
+Transpose = 1
+[HighwayIntersectionInfo_0x00077717]
+CopyFrom = 0x17717
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087717]
+CopyFrom = 0x7717
+[HighwayIntersectionInfo_0x00097717]
+CopyFrom = 0x17717
+[HighwayIntersectionInfo_0x000A7717]
+CopyFrom = 0x27717
+[HighwayIntersectionInfo_0x000B7717]
+CopyFrom = 0x37717
+[HighwayIntersectionInfo_0x000C7717]
+CopyFrom = 0x47717
+[HighwayIntersectionInfo_0x000D7717]
+CopyFrom = 0x57717
+[HighwayIntersectionInfo_0x000E7717]
+CopyFrom = 0x67717
+[HighwayIntersectionInfo_0x000F7717]
+CopyFrom = 0x77717
+
+
+;END ROAD WIDE RADIUS CURVES/FRACTIONAL ANGLE ROAD (FAR)/RURAL ROAD SECTION
+;
+;

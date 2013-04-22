@@ -1,0 +1,493 @@
+;COSMETICS
+RotationRing = 34C0, 734C0, 134C0, 634C0, 234C0, 534C0, 334C0, 434C0, 834C0, F34C0, 934C0, E34C0, A34C0, D34C0, B34C0, C34C0 ;MHW Curve L0
+AddTypes     = 34C1, 734C1, 134C1, 634C1, 234C1, 534C1, 334C1, 434C1, 834C1, F34C1, 934C1, E34C1, A34C1, D34C1, B34C1, C34C1 ;MHW Curve L2
+AddTypes     = 34C2, 734C2, 134C2, 634C2, 234C2, 534C2, 334C2, 434C2, 834C2, F34C2, 934C2, E34C2, A34C2, D34C2, B34C2, C34C2 ;FAMHW Straight
+AddTypes     = 34C3, 734C3, 134C3, 634C3, 234C3, 534C3, 334C3, 434C3, 834C3, F34C3, 934C3, E34C3, A34C3, D34C3, B34C3, C34C3 ;Orthg-to-FAMHW
+AddTypes     = 34C4, 734C4, 134C4, 634C4, 234C4, 534C4, 334C4, 434C4, 834C4, F34C4, 934C4, E34C4, A34C4, D34C4, B34C4, C34C4 ;Diag-to-FAMHW
+AddTypes     = 34C5, 134C5, 234C5, 334C5, 434C5, 534C5, 634C5, 734C5, 834C5, 934C5, A34C5, B34C5, C34C5, D34C5, E34C5, F34C5 ;Cloverleaf Ramp
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;###separator###
+
+[HighwayIntersectionInfo_0x000034C0]
+;Added by memo 03/09/2008
+Piece = -16.0, 0.0, 0, 0, 0x5a135FF0
+PreviewEffect = preview_groundhighway_curve
+
+CellLayout =xy...
+CellLayout =ab..<
+CellLayout =ab...
+CellLayout =ab+..
+CellLayout =gih..
+CellLayout =.ef+.
+CellLayout =.dch.
+CellLayout =..dcw
+CellLayout =.^.vz
+
+CheckType = a - groundhighway: 0x02040200
+CheckType = b - groundhighway: 0x02000204
+CheckType = c - groundhighway: 0x01030103
+CheckType = d - groundhighway: 0x00030100
+CheckType = e - groundhighway: 0x01040200
+CheckType = f - groundhighway: 0x01000104
+CheckType = g - groundhighway: 0x00030200
+CheckType = h - groundhighway: 0x01000003
+CheckType = i - groundhighway: 0x02030203
+
+CheckType = v - groundhighway: 0x00030100, 0x00FFFF00 check
+CheckType = w - groundhighway: 0x01000003, 0xFF0000FF check
+CheckType = x - groundhighway: 0x02040000, 0xFFFF0000 check
+CheckType = y - groundhighway: 0x02000004, 0xFF0000FF check
+CheckType = z - groundhighway: 0x00000103, 0x0000FFFF check
+
+ConsLayout =.....
+ConsLayout =||..<
+ConsLayout =||...
+ConsLayout =||x..
+ConsLayout =|||..
+ConsLayout =.\\x.
+ConsLayout =.\\\.
+ConsLayout =..\\.
+ConsLayout =.^...
+
+AutoTileBase=	0x5a135000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a135000
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C0]
+CopyFrom = 0x34C0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C0]
+CopyFrom = 0x34C0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C0]
+CopyFrom = 0x34C0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C0]
+CopyFrom = 0x34C0
+Transpose   = 1
+[HighwayIntersectionInfo_0x000534C0]
+CopyFrom = 0x134C0
+Transpose   = 1
+[HighwayIntersectionInfo_0x000634C0]
+CopyFrom = 0x234C0
+Transpose   = 1
+[HighwayIntersectionInfo_0x000734C0]
+CopyFrom = 0x334C0
+Transpose   = 1
+[HighwayIntersectionInfo_0x000834C0]
+CopyFrom = 0x34C0
+[HighwayIntersectionInfo_0x000934C0]
+CopyFrom = 0x134C0
+[HighwayIntersectionInfo_0x000A34C0]
+CopyFrom = 0x234C0
+[HighwayIntersectionInfo_0x000B34C0]
+CopyFrom = 0x334C0
+[HighwayIntersectionInfo_0x000C34C0]
+CopyFrom = 0x434C0
+[HighwayIntersectionInfo_0x000D34C0]
+CopyFrom = 0x534C0
+[HighwayIntersectionInfo_0x000E34C0]
+CopyFrom = 0x634C0
+[HighwayIntersectionInfo_0x000F34C0]
+CopyFrom = 0x734C0
+
+[HighwayIntersectionInfo_0x000034C1]
+;Added by Chrisim 19 Feb 2011 based on memos model
+Piece = -16.0, 0.0, 0, 0, 0x5a1357F0
+PreviewEffect = preview_elevathighway_curve
+
+CellLayout =xy...
+CellLayout =ab..<
+CellLayout =nb...
+CellLayout =lk+..
+CellLayout =gih..
+CellLayout =.ef+.
+CellLayout =.mcj.
+CellLayout =..dcw
+CellLayout =.^.vz
+
+CheckType = a - highway: 0x02040200
+CheckType = b - highway: 0x02000204
+CheckType = c - highway: 0x01030103
+CheckType = d - highway: 0x00030100
+CheckType = e - highway: 0x02000200
+CheckType = f - highway: 0x01000200
+CheckType = g - highway: 0x00030200
+CheckType = h - highway: 0x02000003
+CheckType = i - highway: 0x02030103
+CheckType = j - highway: 0x01000003
+CheckType = k - highway: 0x01000204
+CheckType = l - highway: 0x02040100
+CheckType = m - highway: 0x00030200
+CheckType = n - highway: 0x01040200
+
+CheckType = v - highway: 0x00030100, 0x00FFFF00 check
+CheckType = w - highway: 0x01000003, 0xFF0000FF check
+CheckType = x - highway: 0x02040000, 0xFFFF0000 check
+CheckType = y - highway: 0x02000004, 0xFF0000FF check
+CheckType = z - highway: 0x00000103, 0x0000FFFF check
+
+ConsLayout =.....
+ConsLayout =||..<
+ConsLayout =||...
+ConsLayout =||x..
+ConsLayout =|||..
+ConsLayout =.\\x.
+ConsLayout =.\\\.
+ConsLayout =..\\.
+ConsLayout =.^...
+
+AutoTileBase=	0x5a135400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a135400
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C1]
+CopyFrom = 0x34C1
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C1]
+CopyFrom = 0x34C1
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C1]
+CopyFrom = 0x34C1
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C1]
+CopyFrom = 0x34C1
+Transpose   = 1
+[HighwayIntersectionInfo_0x000534C1]
+CopyFrom = 0x134C1
+Transpose   = 1
+[HighwayIntersectionInfo_0x000634C1]
+CopyFrom = 0x234C1
+Transpose   = 1
+[HighwayIntersectionInfo_0x000734C1]
+CopyFrom = 0x334C1
+Transpose   = 1
+[HighwayIntersectionInfo_0x000834C1]
+CopyFrom = 0x34C1
+[HighwayIntersectionInfo_0x000934C1]
+CopyFrom = 0x134C1
+[HighwayIntersectionInfo_0x000A34C1]
+CopyFrom = 0x234C1
+[HighwayIntersectionInfo_0x000B34C1]
+CopyFrom = 0x334C1
+[HighwayIntersectionInfo_0x000C34C1]
+CopyFrom = 0x434C1
+[HighwayIntersectionInfo_0x000D34C1]
+CopyFrom = 0x534C1
+[HighwayIntersectionInfo_0x000E34C1]
+CopyFrom = 0x634C1
+[HighwayIntersectionInfo_0x000F34C1]
+CopyFrom = 0x734C1
+
+[HighwayIntersectionInfo_0x000034C5]
+;Added 10/30/12 by MandelSoft
+;Symphony Cloverleaf Ramp L0-to-L2
+Piece = 0.0, 0.0, 0, 0, 0x5A580000
+PreviewEffect = preview_symphony_clover_ramp_01
+
+CellLayout =..........
+CellLayout =.....b+..<
+CellLayout =......++..
+CellLayout =.......++.
+CellLayout =........+.
+CellLayout =.a......+.
+CellLayout =.++....++.
+CellLayout =..++..++..
+CellLayout =...++++...
+CellLayout =.....^....
+
+CheckType = a - dirtroad: 0x00000200
+CheckType = b - dirtroad: 0x00000002
+
+ConsLayout =..........
+ConsLayout =.....++..<
+ConsLayout =......++..
+ConsLayout =.......++.
+ConsLayout =........+.
+ConsLayout =.+......+.
+ConsLayout =.++....++.
+ConsLayout =..++..++..
+ConsLayout =...++++...
+ConsLayout =.....^....
+
+AutoTileBase=	0x5A580000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A580000
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C5]
+CopyFrom = 0x34C5
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C5]
+CopyFrom = 0x34C5
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C5]
+CopyFrom = 0x34C5
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C5]
+;Added 10/30/12 by MandelSoft
+;Symphony Cloverleaf Ramp L2-to-L0
+Piece = 0.0, 0.0, 0, 0, 0x5A580080
+PreviewEffect = preview_symphony_clover_ramp_02
+
+CellLayout =..........
+CellLayout =.....b+..<
+CellLayout =......++..
+CellLayout =.......++.
+CellLayout =........+.
+CellLayout =.a......+.
+CellLayout =.++....++.
+CellLayout =..++..++..
+CellLayout =...++++...
+CellLayout =.....^....
+
+CheckType = a - dirtroad: 0x00000200
+CheckType = b - dirtroad: 0x00000002
+
+ConsLayout =..........
+ConsLayout =.....++..<
+ConsLayout =......++..
+ConsLayout =.......++.
+ConsLayout =........+.
+ConsLayout =.+......+.
+ConsLayout =.++....++.
+ConsLayout =..++..++..
+ConsLayout =...++++...
+ConsLayout =.....^....
+
+AutoTileBase=	0x5A580080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A580080
+Costs       = 2000
+[HighwayIntersectionInfo_0x000534C5]
+CopyFrom = 0x434C5
+Rotate		= 1
+[HighwayIntersectionInfo_0x000634C5]
+CopyFrom = 0x434C5
+Rotate		= 2
+[HighwayIntersectionInfo_0x000734C5]
+CopyFrom = 0x434C5
+Rotate		= 3
+[HighwayIntersectionInfo_0x000834C5]
+CopyFrom = 0x34C5
+[HighwayIntersectionInfo_0x000934C5]
+CopyFrom = 0x134C5
+[HighwayIntersectionInfo_0x000A34C5]
+CopyFrom = 0x234C5
+[HighwayIntersectionInfo_0x000B34C5]
+CopyFrom = 0x334C5
+[HighwayIntersectionInfo_0x000C34C5]
+CopyFrom = 0x434C5
+[HighwayIntersectionInfo_0x000D34C5]
+CopyFrom = 0x534C5
+[HighwayIntersectionInfo_0x000E34C5]
+CopyFrom = 0x634C5
+[HighwayIntersectionInfo_0x000F34C5]
+CopyFrom = 0x734C5
+
+[HighwayIntersectionInfo_0x000034C2]
+;Added 11/17/12 by MandelSoft
+;Symphony FAN Straight Section
+Piece = 16.0, 16.0, 0, 0, 0x5A540005
+PreviewEffect = preview_symphony_famhw_straight
+
+CellLayout =.....
+CellLayout =.ab.<
+CellLayout =.+++.
+CellLayout =..cd.
+CellLayout =.^...
+
+CheckType = a - groundhighway: 0x02040000
+CheckType = b - groundhighway: 0x02000004
+CheckType = c - groundhighway: 0x00040200
+CheckType = d - groundhighway: 0x00000204
+
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.|||.
+ConsLayout =..||.
+ConsLayout =.^...
+
+AutoTileBase=	0x5A540000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A540000
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C2]
+CopyFrom = 0x34C2
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C2]
+CopyFrom = 0x34C2
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C2]
+CopyFrom = 0x34C2
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C2]
+CopyFrom = 0x34C2
+Transpose   = 1
+[HighwayIntersectionInfo_0x000534C2]
+CopyFrom = 0x134C2
+Transpose   = 1
+[HighwayIntersectionInfo_0x000634C2]
+CopyFrom = 0x234C2
+Transpose   = 1
+[HighwayIntersectionInfo_0x000734C2]
+CopyFrom = 0x334C2
+Transpose   = 1
+[HighwayIntersectionInfo_0x000834C2]
+CopyFrom = 0x34C2
+[HighwayIntersectionInfo_0x000934C2]
+CopyFrom = 0x134C2
+[HighwayIntersectionInfo_0x000A34C2]
+CopyFrom = 0x234C2
+[HighwayIntersectionInfo_0x000B34C2]
+CopyFrom = 0x334C2
+[HighwayIntersectionInfo_0x000C34C2]
+CopyFrom = 0x434C2
+[HighwayIntersectionInfo_0x000D34C2]
+CopyFrom = 0x534C2
+[HighwayIntersectionInfo_0x000E34C2]
+CopyFrom = 0x634C2
+[HighwayIntersectionInfo_0x000F34C2]
+CopyFrom = 0x734C2
+
+[HighwayIntersectionInfo_0x000034C3]
+;Added 11/17/12 by MandelSoft
+;Symphony Orth-to-FAN Curve
+Piece = 0.0, 0.0, 0, 0, 0x5A540305
+PreviewEffect = preview_symphony_orth-to-famhw
+
+CellLayout =.xy..
+CellLayout =.ab.<
+CellLayout =.ab..
+CellLayout =.ab+.
+CellLayout =.+++.
+CellLayout =..ef.
+CellLayout =.^...
+
+CheckType = a - groundhighway: 0x02040200
+CheckType = b - groundhighway: 0x02000204
+CheckType = e - groundhighway: 0x02040000
+CheckType = f - groundhighway: 0x02000004
+
+CheckType = x - groundhighway: 0x02040000, 0xFFFF0000 check
+CheckType = y - groundhighway: 0x02000004, 0xFF0000FF check
+
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.||..
+ConsLayout =.||x.
+ConsLayout =.|||.
+ConsLayout =..||.
+ConsLayout =.^...
+
+AutoTileBase=	0x5A540300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A540300
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C3]
+CopyFrom = 0x34C3
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C3]
+CopyFrom = 0x34C3
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C3]
+CopyFrom = 0x34C3
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C3]
+CopyFrom = 0x34C3
+Transpose   = 1
+[HighwayIntersectionInfo_0x000534C3]
+CopyFrom = 0x134C3
+Transpose   = 1
+[HighwayIntersectionInfo_0x000634C3]
+CopyFrom = 0x234C3
+Transpose   = 1
+[HighwayIntersectionInfo_0x000734C3]
+CopyFrom = 0x334C3
+Transpose   = 1
+[HighwayIntersectionInfo_0x000834C3]
+CopyFrom = 0x34C3
+[HighwayIntersectionInfo_0x000934C3]
+CopyFrom = 0x134C3
+[HighwayIntersectionInfo_0x000A34C3]
+CopyFrom = 0x234C3
+[HighwayIntersectionInfo_0x000B34C3]
+CopyFrom = 0x334C3
+[HighwayIntersectionInfo_0x000C34C3]
+CopyFrom = 0x434C3
+[HighwayIntersectionInfo_0x000D34C3]
+CopyFrom = 0x534C3
+[HighwayIntersectionInfo_0x000E34C3]
+CopyFrom = 0x634C3
+[HighwayIntersectionInfo_0x000F34C3]
+CopyFrom = 0x734C3
+
+[HighwayIntersectionInfo_0x000034C4]
+;Added 11/17/12 by MandelSoft
+;Symphony Diag-to-FAN Curve
+Piece = 0.0, 0.0, 0, 0, 0x5A540600
+PreviewEffect = preview_symphony_diag-to-famhw
+
+CellLayout =.....
+CellLayout =.ef+<
+CellLayout =.dch.
+CellLayout =..dch
+CellLayout =.^.dz
+
+CheckType = c - groundhighway: 0x01030103
+CheckType = d - groundhighway: 0x00030100
+CheckType = e - groundhighway: 0x01040200
+CheckType = f - groundhighway: 0x01000104
+CheckType = h - groundhighway: 0x01000003
+CheckType = z - groundhighway: 0x00000103, 0x0000FFFF check
+
+ConsLayout =.....
+ConsLayout =.\\x<
+ConsLayout =.\\\.
+ConsLayout =..\\\
+ConsLayout =.^.\.
+
+AutoTileBase=	0x5A540600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5A540600
+Costs       = 2000
+[HighwayIntersectionInfo_0x000134C4]
+CopyFrom = 0x34C4
+Rotate		= 1
+[HighwayIntersectionInfo_0x000234C4]
+CopyFrom = 0x34C4
+Rotate		= 2
+[HighwayIntersectionInfo_0x000334C4]
+CopyFrom = 0x34C4
+Rotate		= 3
+[HighwayIntersectionInfo_0x000434C4]
+CopyFrom = 0x34C4
+Transpose   = 1
+[HighwayIntersectionInfo_0x000534C4]
+CopyFrom = 0x134C4
+Transpose   = 1
+[HighwayIntersectionInfo_0x000634C4]
+CopyFrom = 0x234C4
+Transpose   = 1
+[HighwayIntersectionInfo_0x000734C4]
+CopyFrom = 0x334C4
+Transpose   = 1
+[HighwayIntersectionInfo_0x000834C4]
+CopyFrom = 0x34C4
+[HighwayIntersectionInfo_0x000934C4]
+CopyFrom = 0x134C4
+[HighwayIntersectionInfo_0x000A34C4]
+CopyFrom = 0x234C4
+[HighwayIntersectionInfo_0x000B34C4]
+CopyFrom = 0x334C4
+[HighwayIntersectionInfo_0x000C34C4]
+CopyFrom = 0x434C4
+[HighwayIntersectionInfo_0x000D34C4]
+CopyFrom = 0x534C4
+[HighwayIntersectionInfo_0x000E34C4]
+CopyFrom = 0x634C4
+[HighwayIntersectionInfo_0x000F34C4]
+CopyFrom = 0x734C4
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

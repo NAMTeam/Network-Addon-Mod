@@ -1,0 +1,1826 @@
+;Rail Tunnel x Pedestrian Malls Dual Networking Pieces Button
+RotationRing = AA40, 1AA40, 2AA40, 3AA40, 4AA40, 5AA40, 6AA40, 7AA40 ;RailUPedMall Cobblestone
+AddTypes     = AA41, 1AA41, 2AA41, 3AA41, 4AA41, 5AA41, 6AA41, 7AA41 ;RailUPedMall Cobblestone Diagonal
+AddTypes     = AA42, 1AA42, 2AA42, 3AA42, 4AA42, 5AA42, 6AA42, 7AA42 ;RailUPedMall Cobblestone Curve
+AddTypes     = AA43, 1AA43, 2AA43, 3AA43, 4AA43, 5AA43, 6AA43, 7AA43 ;RailUPedMall Cobblestone Switch A
+AddTypes     = AA44, 1AA44, 2AA44, 3AA44, 4AA44, 5AA44, 6AA44, 7AA44 ;RailUPedMall Cobblestone Switch B
+AddTypes     = AA45, 1AA45, 2AA45, 3AA45, 4AA45, 5AA45, 6AA45, 7AA45 ;RailUPedMall Cobblestone x Ground Light Rail
+AddTypes     = AA46, 1AA46, 2AA46, 3AA46, 4AA46, 5AA46, 6AA46, 7AA46 ;RailUPedMall Cobblestone x Elevated Rail
+AddTypes     = AA47, 1AA47, 2AA47, 3AA47, 4AA47, 5AA47, 6AA47, 7AA47 ;RailUPedMall Concrete
+AddTypes     = AA48, 1AA48, 2AA48, 3AA48, 4AA48, 5AA48, 6AA48, 7AA48 ;RailUPedMall Concrete Diagonal
+AddTypes     = AA49, 1AA49, 2AA49, 3AA49, 4AA49, 5AA49, 6AA49, 7AA49 ;RailUPedMall Concrete Curve
+AddTypes     = AA4A, 1AA4A, 2AA4A, 3AA4A, 4AA4A, 5AA4A, 6AA4A, 7AA4A ;RailUPedMall Concrete Switch A
+AddTypes     = AA4B, 1AA4B, 2AA4B, 3AA4B, 4AA4B, 5AA4B, 6AA4B, 7AA4B ;RailUPedMall Concrete Switch B
+AddTypes     = AA4C, 1AA4C, 2AA4C, 3AA4C, 4AA4C, 5AA4C, 6AA4C, 7AA4C ;RailUPedMall Concrete x Ground Light Rail
+AddTypes     = AA4D, 1AA4D, 2AA4D, 3AA4D, 4AA4D, 5AA4D, 6AA4D, 7AA4D ;RailUPedMall Concrete x Elevated Rail
+AddTypes     = AA4E, 1AA4E, 2AA4E, 3AA4E, 4AA4E, 5AA4E, 6AA4E, 7AA4E ;RailUPedMall Open Paved
+AddTypes     = AA4F, 1AA4F, 2AA4F, 3AA4F, 4AA4F, 5AA4F, 6AA4F, 7AA4F ;RailUPedMall Open Paved Diagonal
+AddTypes     = AA50, 1AA50, 2AA50, 3AA50, 4AA50, 5AA50, 6AA50, 7AA50 ;RailUPedMall Open Paved Curve
+AddTypes     = AA51, 1AA51, 2AA51, 3AA51, 4AA51, 5AA51, 6AA51, 7AA51 ;RailUPedMall Open Paved Switch A
+AddTypes     = AA52, 1AA52, 2AA52, 3AA52, 4AA52, 5AA52, 6AA52, 7AA52 ;RailUPedMall Open Paved Switch B
+AddTypes     = AA53, 1AA53, 2AA53, 3AA53, 4AA53, 5AA53, 6AA53, 7AA53 ;RailUPedMall Open Paved x Ground Light Rail
+AddTypes     = AA54, 1AA54, 2AA54, 3AA54, 4AA54, 5AA54, 6AA54, 7AA54 ;RailUPedMall Open Paved x Elevated Rail
+AddTypes     = AA55, 1AA55, 2AA55, 3AA55, 4AA55, 5AA55, 6AA55, 7AA55 ;RailUPedMall Paved
+AddTypes     = AA56, 1AA56, 2AA56, 3AA56, 4AA56, 5AA56, 6AA56, 7AA56 ;RailUPedMall Paved Diagonal
+AddTypes     = AA57, 1AA57, 2AA57, 3AA57, 4AA57, 5AA57, 6AA57, 7AA57 ;RailUPedMall Paved Curve
+AddTypes     = AA58, 1AA58, 2AA58, 3AA58, 4AA58, 5AA58, 6AA58, 7AA58 ;RailUPedMall Paved Switch A
+AddTypes     = AA59, 1AA59, 2AA59, 3AA59, 4AA59, 5AA59, 6AA59, 7AA59 ;RailUPedMall Paved Switch B
+AddTypes     = AA5A, 1AA5A, 2AA5A, 3AA5A, 4AA5A, 5AA5A, 6AA5A, 7AA5A ;RailUPedMall Paved x Ground Light Rail
+AddTypes     = AA5B, 1AA5B, 2AA5B, 3AA5B, 4AA5B, 5AA5B, 6AA5B, 7AA5B ;RailUPedMall Paved x Elevated Rail
+AddTypes     = AA5C, 1AA5C, 2AA5C, 3AA5C, 4AA5C, 5AA5C, 6AA5C, 7AA5C ;RailUPedMall Sandstone
+AddTypes     = AA5D, 1AA5D, 2AA5D, 3AA5D, 4AA5D, 5AA5D, 6AA5D, 7AA5D ;RailUPedMall Sandstone Diagonal
+AddTypes     = AA5E, 1AA5E, 2AA5E, 3AA5E, 4AA5E, 5AA5E, 6AA5E, 7AA5E ;RailUPedMall Sandstone Curve
+AddTypes     = AA5F, 1AA5F, 2AA5F, 3AA5F, 4AA5F, 5AA5F, 6AA5F, 7AA5F ;RailUPedMall Sandstone Switch A
+AddTypes     = AA60, 1AA60, 2AA60, 3AA60, 4AA60, 5AA60, 6AA60, 7AA60 ;RailUPedMall Sandstone Switch B
+AddTypes     = AA61, 1AA61, 2AA61, 3AA61, 4AA61, 5AA61, 6AA61, 7AA61 ;RailUPedMall Sandstone x Ground Light Rail
+AddTypes     = AA62, 1AA62, 2AA62, 3AA62, 4AA62, 5AA62, 6AA62, 7AA62 ;RailUPedMall Sandstone x Elevated Rail
+AddTypes     = AA63, 1AA63, 2AA63, 3AA63, 4AA63, 5AA63, 6AA63, 7AA63 ;RailUPedMall Grass
+AddTypes     = AA64, 1AA64, 2AA64, 3AA64, 4AA64, 5AA64, 6AA64, 7AA64 ;RailUPedMall Grass Diagonal
+AddTypes     = AA65, 1AA65, 2AA65, 3AA65, 4AA65, 5AA65, 6AA65, 7AA65 ;RailUPedMall Grass Curve
+AddTypes     = AA66, 1AA66, 2AA66, 3AA66, 4AA66, 5AA66, 6AA66, 7AA66 ;RailUPedMall Grass Switch A
+AddTypes     = AA67, 1AA67, 2AA67, 3AA67, 4AA67, 5AA67, 6AA67, 7AA67 ;RailUPedMall Grass Switch B
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000AA40]
+;Added by GoaSkin 12/20/07.
+;Rail Under Padmall - Cobblestone
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68005
+PreviewEffect = preview_pedmall_subrail_001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68000
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68000
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA40]
+CopyFrom = 0xAA40
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA40]
+CopyFrom = 0xAA40
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA40]
+CopyFrom = 0xAA40
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA40]
+CopyFrom = 0xAA40
+[HighwayIntersectionInfo_0x0005AA40]
+CopyFrom = 0x1AA40
+[HighwayIntersectionInfo_0x0006AA40]
+CopyFrom = 0x2AA40
+[HighwayIntersectionInfo_0x0007AA40]
+CopyFrom = 0x3AA40
+
+
+[HighwayIntersectionInfo_0x0000AA47]
+;Added by GoaSkin 12/20/07.
+;Rail Under Padmall - Grey
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68105
+PreviewEffect = preview_pedmall_subrail_002
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68100
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68100
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA47]
+CopyFrom = 0xAA47
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA47]
+CopyFrom = 0xAA47
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA47]
+CopyFrom = 0xAA47
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA47]
+CopyFrom = 0xAA47
+[HighwayIntersectionInfo_0x0005AA47]
+CopyFrom = 0x1AA47
+[HighwayIntersectionInfo_0x0006AA47]
+CopyFrom = 0x2AA47
+[HighwayIntersectionInfo_0x0007AA47]
+CopyFrom = 0x3AA47
+
+
+[HighwayIntersectionInfo_0x0000AA4E]
+;Added by GoaSkin 12/20/07.
+;Rail Under Padmall - Open Paved
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68205
+PreviewEffect = preview_pedmall_subrail_003
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68200
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68200
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA4E]
+CopyFrom = 0xAA4E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA4E]
+CopyFrom = 0xAA4E
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA4E]
+CopyFrom = 0xAA4E
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA4E]
+CopyFrom = 0xAA4E
+[HighwayIntersectionInfo_0x0005AA4E]
+CopyFrom = 0x1AA4E
+[HighwayIntersectionInfo_0x0006AA4E]
+CopyFrom = 0x2AA4E
+[HighwayIntersectionInfo_0x0007AA4E]
+CopyFrom = 0x3AA4E
+
+
+[HighwayIntersectionInfo_0x0000AA55]
+;Added by GoaSkin 12/20/07.
+;Rail Under Padmall - Paved
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68305
+PreviewEffect = preview_pedmall_subrail_004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68300
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68300
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA55]
+CopyFrom = 0xAA55
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA55]
+CopyFrom = 0xAA55
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA55]
+CopyFrom = 0xAA55
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA55]
+CopyFrom = 0xAA55
+[HighwayIntersectionInfo_0x0005AA55]
+CopyFrom = 0x1AA55
+[HighwayIntersectionInfo_0x0006AA55]
+CopyFrom = 0x2AA55
+[HighwayIntersectionInfo_0x0007AA55]
+CopyFrom = 0x3AA55
+
+
+[HighwayIntersectionInfo_0x0000AA5C]
+;Added by Warrior 02/05/2009
+;Rail Under Padmall - Sandstone
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68405
+PreviewEffect = preview_pedmall_subrail_005
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68400
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68400
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA5C]
+CopyFrom = 0xAA5C
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA5C]
+CopyFrom = 0xAA5C
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA5C]
+CopyFrom = 0xAA5C
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA5C]
+CopyFrom = 0xAA5C
+[HighwayIntersectionInfo_0x0005AA5C]
+CopyFrom = 0x1AA5C
+[HighwayIntersectionInfo_0x0006AA5C]
+CopyFrom = 0x2AA5C
+[HighwayIntersectionInfo_0x0007AA5C]
+CopyFrom = 0x3AA5C
+
+
+[HighwayIntersectionInfo_0x0000AA63]
+;Added by Warrior 02/05/2009
+;Rail Under Padmall - Grass
+;Edited by ebina 08/18/2009.
+Piece = 0.0, 0.0, 0, 0, 0x53F68505
+PreviewEffect = preview_pedmall_subrail_006
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x53F68500
+AutoPathBase = 0x53F68000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53F68500
+Costs = 75
+[HighwayIntersectionInfo_0x0001AA63]
+CopyFrom = 0xAA63
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002AA63]
+CopyFrom = 0xAA63
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003AA63]
+CopyFrom = 0xAA63
+Rotate	= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA63]
+CopyFrom = 0xAA63
+[HighwayIntersectionInfo_0x0005AA63]
+CopyFrom = 0x1AA63
+[HighwayIntersectionInfo_0x0006AA63]
+CopyFrom = 0x2AA63
+[HighwayIntersectionInfo_0x0007AA63]
+CopyFrom = 0x3AA63
+
+
+[HighwayIntersectionInfo_0x0000AA41]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68015
+PreviewEffect = preview_pedmall_subrail_007
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68010
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA41]
+CopyFrom    = 0xAA41
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA41]
+CopyFrom    = 0xAA41
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA41]
+CopyFrom    = 0xAA41
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA41]
+CopyFrom    = 0xAA41
+[HighwayIntersectionInfo_0x0005AA41]
+CopyFrom    = 0x1AA41
+[HighwayIntersectionInfo_0x0006AA41]
+CopyFrom    = 0x2AA41
+[HighwayIntersectionInfo_0x0007AA41]
+CopyFrom    = 0x3AA41
+
+
+[HighwayIntersectionInfo_0x0000AA42]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68025
+PreviewEffect = preview_pedmall_subrail_008
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68020
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA42]
+CopyFrom    = 0xAA42
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA42]
+CopyFrom    = 0xAA42
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA42]
+CopyFrom    = 0xAA42
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA42]
+CopyFrom    = 0xAA42
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA42]
+CopyFrom    = 0x4AA42
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA42]
+CopyFrom    = 0x4AA42
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA42]
+CopyFrom    = 0x4AA42
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA43]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68045
+PreviewEffect = preview_pedmall_subrail_009
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68040
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA43]
+CopyFrom    = 0xAA43
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA43]
+CopyFrom    = 0xAA43
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA43]
+CopyFrom    = 0xAA43
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA43]
+CopyFrom    = 0xAA43
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA43]
+CopyFrom    = 0x4AA43
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA43]
+CopyFrom    = 0x4AA43
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA43]
+CopyFrom    = 0x4AA43
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA44]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68065
+PreviewEffect = preview_pedmall_subrail_010
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68060
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA44]
+CopyFrom    = 0xAA44
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA44]
+CopyFrom    = 0xAA44
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA44]
+CopyFrom    = 0xAA44
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA44]
+CopyFrom    = 0xAA44
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA44]
+CopyFrom    = 0x4AA44
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA44]
+CopyFrom    = 0x4AA44
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA44]
+CopyFrom    = 0x4AA44
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA45]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone x Ground Light Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68085
+PreviewEffect = preview_pedmall_subrail_011
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68080
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA45]
+CopyFrom    = 0xAA45
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA45]
+CopyFrom    = 0xAA45
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA45]
+CopyFrom    = 0xAA45
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA45]
+CopyFrom    = 0xAA45
+[HighwayIntersectionInfo_0x0005AA45]
+CopyFrom    = 0x1AA45
+[HighwayIntersectionInfo_0x0006AA45]
+CopyFrom    = 0x2AA45
+[HighwayIntersectionInfo_0x0007AA45]
+CopyFrom    = 0x3AA45
+
+
+[HighwayIntersectionInfo_0x0000AA46]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Cobblestone x Elevated Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68095
+PreviewEffect = preview_pedmall_subrail_012
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68090
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA46]
+CopyFrom    = 0xAA46
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA46]
+CopyFrom    = 0xAA46
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA46]
+CopyFrom    = 0xAA46
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA46]
+CopyFrom    = 0xAA46
+[HighwayIntersectionInfo_0x0005AA46]
+CopyFrom    = 0x1AA46
+[HighwayIntersectionInfo_0x0006AA46]
+CopyFrom    = 0x2AA46
+[HighwayIntersectionInfo_0x0007AA46]
+CopyFrom    = 0x3AA46
+
+
+[HighwayIntersectionInfo_0x0000AA48]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68115
+PreviewEffect = preview_pedmall_subrail_013
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68110
+AutoPathBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68110
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA48]
+CopyFrom    = 0xAA48
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA48]
+CopyFrom    = 0xAA48
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA48]
+CopyFrom    = 0xAA48
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA48]
+CopyFrom    = 0xAA48
+[HighwayIntersectionInfo_0x0005AA48]
+CopyFrom    = 0x1AA48
+[HighwayIntersectionInfo_0x0006AA48]
+CopyFrom    = 0x2AA48
+[HighwayIntersectionInfo_0x0007AA48]
+CopyFrom    = 0x3AA48
+
+
+[HighwayIntersectionInfo_0x0000AA49]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68125
+PreviewEffect = preview_pedmall_subrail_014
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68120
+AutoPathBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68120
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA49]
+CopyFrom    = 0xAA49
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA49]
+CopyFrom    = 0xAA49
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA49]
+CopyFrom    = 0xAA49
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA49]
+CopyFrom    = 0xAA49
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA49]
+CopyFrom    = 0x4AA49
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA49]
+CopyFrom    = 0x4AA49
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA49]
+CopyFrom    = 0x4AA49
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA4A]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68145
+PreviewEffect = preview_pedmall_subrail_015
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68140
+AutoPathBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68140
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA4A]
+CopyFrom    = 0xAA4A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA4A]
+CopyFrom    = 0xAA4A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA4A]
+CopyFrom    = 0xAA4A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA4A]
+CopyFrom    = 0xAA4A
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA4A]
+CopyFrom    = 0x4AA4A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA4A]
+CopyFrom    = 0x4AA4A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA4A]
+CopyFrom    = 0x4AA4A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA4B]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68165
+PreviewEffect = preview_pedmall_subrail_016
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68160
+AutoPathBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68160
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA4B]
+CopyFrom    = 0xAA4B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA4B]
+CopyFrom    = 0xAA4B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA4B]
+CopyFrom    = 0xAA4B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA4B]
+CopyFrom    = 0xAA4B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA4B]
+CopyFrom    = 0x4AA4B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA4B]
+CopyFrom    = 0x4AA4B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA4B]
+CopyFrom    = 0x4AA4B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA4C]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete x Ground Light Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68185
+PreviewEffect = preview_pedmall_subrail_017
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68180
+AutoPathBase=	0x53f68080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68180
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA4C]
+CopyFrom    = 0xAA4C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA4C]
+CopyFrom    = 0xAA4C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA4C]
+CopyFrom    = 0xAA4C
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA4C]
+CopyFrom    = 0xAA4C
+[HighwayIntersectionInfo_0x0005AA4C]
+CopyFrom    = 0x1AA4C
+[HighwayIntersectionInfo_0x0006AA4C]
+CopyFrom    = 0x2AA4C
+[HighwayIntersectionInfo_0x0007AA4C]
+CopyFrom    = 0x3AA4C
+
+
+[HighwayIntersectionInfo_0x0000AA4D]
+;Added by ebina 08/19/2009.
+;Rail Under Padmall - Concrete x Elevated Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68195
+PreviewEffect = preview_pedmall_subrail_018
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68190
+AutoPathBase=	0x53f68090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68190
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA4D]
+CopyFrom    = 0xAA4D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA4D]
+CopyFrom    = 0xAA4D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA4D]
+CopyFrom    = 0xAA4D
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA4D]
+CopyFrom    = 0xAA4D
+[HighwayIntersectionInfo_0x0005AA4D]
+CopyFrom    = 0x1AA4D
+[HighwayIntersectionInfo_0x0006AA4D]
+CopyFrom    = 0x2AA4D
+[HighwayIntersectionInfo_0x0007AA4D]
+CopyFrom    = 0x3AA4D
+
+
+[HighwayIntersectionInfo_0x0000AA4F]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68215
+PreviewEffect = preview_pedmall_subrail_019
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68210
+AutoPathBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68210
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA4F]
+CopyFrom    = 0xAA4F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA4F]
+CopyFrom    = 0xAA4F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA4F]
+CopyFrom    = 0xAA4F
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA4F]
+CopyFrom    = 0xAA4F
+[HighwayIntersectionInfo_0x0005AA4F]
+CopyFrom    = 0x1AA4F
+[HighwayIntersectionInfo_0x0006AA4F]
+CopyFrom    = 0x2AA4F
+[HighwayIntersectionInfo_0x0007AA4F]
+CopyFrom    = 0x3AA4F
+
+
+[HighwayIntersectionInfo_0x0000AA50]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68225
+PreviewEffect = preview_pedmall_subrail_020
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68220
+AutoPathBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68220
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA50]
+CopyFrom    = 0xAA50
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA50]
+CopyFrom    = 0xAA50
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA50]
+CopyFrom    = 0xAA50
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA50]
+CopyFrom    = 0xAA50
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA50]
+CopyFrom    = 0x4AA50
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA50]
+CopyFrom    = 0x4AA50
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA50]
+CopyFrom    = 0x4AA50
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA51]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68245
+PreviewEffect = preview_pedmall_subrail_021
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68240
+AutoPathBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68240
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA51]
+CopyFrom    = 0xAA51
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA51]
+CopyFrom    = 0xAA51
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA51]
+CopyFrom    = 0xAA51
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA51]
+CopyFrom    = 0xAA51
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA51]
+CopyFrom    = 0x4AA51
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA51]
+CopyFrom    = 0x4AA51
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA51]
+CopyFrom    = 0x4AA51
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA52]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68265
+PreviewEffect = preview_pedmall_subrail_022
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68260
+AutoPathBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68260
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA52]
+CopyFrom    = 0xAA52
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA52]
+CopyFrom    = 0xAA52
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA52]
+CopyFrom    = 0xAA52
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA52]
+CopyFrom    = 0xAA52
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA52]
+CopyFrom    = 0x4AA52
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA52]
+CopyFrom    = 0x4AA52
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA52]
+CopyFrom    = 0x4AA52
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA53]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved x Ground Light Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68285
+PreviewEffect = preview_pedmall_subrail_023
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68280
+AutoPathBase=	0x53f68080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68280
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA53]
+CopyFrom    = 0xAA53
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA53]
+CopyFrom    = 0xAA53
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA53]
+CopyFrom    = 0xAA53
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA53]
+CopyFrom    = 0xAA53
+[HighwayIntersectionInfo_0x0005AA53]
+CopyFrom    = 0x1AA53
+[HighwayIntersectionInfo_0x0006AA53]
+CopyFrom    = 0x2AA53
+[HighwayIntersectionInfo_0x0007AA53]
+CopyFrom    = 0x3AA53
+
+
+[HighwayIntersectionInfo_0x0000AA54]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Open Paved x Elevated Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68295
+PreviewEffect = preview_pedmall_subrail_024
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68290
+AutoPathBase=	0x53f68090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68290
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA54]
+CopyFrom    = 0xAA54
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA54]
+CopyFrom    = 0xAA54
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA54]
+CopyFrom    = 0xAA54
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA54]
+CopyFrom    = 0xAA54
+[HighwayIntersectionInfo_0x0005AA54]
+CopyFrom    = 0x1AA54
+[HighwayIntersectionInfo_0x0006AA54]
+CopyFrom    = 0x2AA54
+[HighwayIntersectionInfo_0x0007AA54]
+CopyFrom    = 0x3AA54
+
+
+[HighwayIntersectionInfo_0x0000AA56]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68315
+PreviewEffect = preview_pedmall_subrail_025
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68310
+AutoPathBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68310
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA56]
+CopyFrom    = 0xAA56
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA56]
+CopyFrom    = 0xAA56
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA56]
+CopyFrom    = 0xAA56
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA56]
+CopyFrom    = 0xAA56
+[HighwayIntersectionInfo_0x0005AA56]
+CopyFrom    = 0x1AA56
+[HighwayIntersectionInfo_0x0006AA56]
+CopyFrom    = 0x2AA56
+[HighwayIntersectionInfo_0x0007AA56]
+CopyFrom    = 0x3AA56
+
+
+[HighwayIntersectionInfo_0x0000AA57]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68325
+PreviewEffect = preview_pedmall_subrail_026
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68320
+AutoPathBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68320
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA57]
+CopyFrom    = 0xAA57
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA57]
+CopyFrom    = 0xAA57
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA57]
+CopyFrom    = 0xAA57
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA57]
+CopyFrom    = 0xAA57
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA57]
+CopyFrom    = 0x4AA57
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA57]
+CopyFrom    = 0x4AA57
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA57]
+CopyFrom    = 0x4AA57
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA58]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68345
+PreviewEffect = preview_pedmall_subrail_027
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68340
+AutoPathBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68340
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA58]
+CopyFrom    = 0xAA58
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA58]
+CopyFrom    = 0xAA58
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA58]
+CopyFrom    = 0xAA58
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA58]
+CopyFrom    = 0xAA58
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA58]
+CopyFrom    = 0x4AA58
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA58]
+CopyFrom    = 0x4AA58
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA58]
+CopyFrom    = 0x4AA58
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA59]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68365
+PreviewEffect = preview_pedmall_subrail_028
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68360
+AutoPathBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68360
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA59]
+CopyFrom    = 0xAA59
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA59]
+CopyFrom    = 0xAA59
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA59]
+CopyFrom    = 0xAA59
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA59]
+CopyFrom    = 0xAA59
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA59]
+CopyFrom    = 0x4AA59
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA59]
+CopyFrom    = 0x4AA59
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA59]
+CopyFrom    = 0x4AA59
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA5A]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved x Ground Light Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68385
+PreviewEffect = preview_pedmall_subrail_029
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68380
+AutoPathBase=	0x53f68080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68380
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA5A]
+CopyFrom    = 0xAA5A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA5A]
+CopyFrom    = 0xAA5A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA5A]
+CopyFrom    = 0xAA5A
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA5A]
+CopyFrom    = 0xAA5A
+[HighwayIntersectionInfo_0x0005AA5A]
+CopyFrom    = 0x1AA5A
+[HighwayIntersectionInfo_0x0006AA5A]
+CopyFrom    = 0x2AA5A
+[HighwayIntersectionInfo_0x0007AA5A]
+CopyFrom    = 0x3AA5A
+
+
+[HighwayIntersectionInfo_0x0000AA5B]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Paved x Elevated Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68395
+PreviewEffect = preview_pedmall_subrail_030
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68390
+AutoPathBase=	0x53f68090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68390
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA5B]
+CopyFrom    = 0xAA5B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA5B]
+CopyFrom    = 0xAA5B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA5B]
+CopyFrom    = 0xAA5B
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA5B]
+CopyFrom    = 0xAA5B
+[HighwayIntersectionInfo_0x0005AA5B]
+CopyFrom    = 0x1AA5B
+[HighwayIntersectionInfo_0x0006AA5B]
+CopyFrom    = 0x2AA5B
+[HighwayIntersectionInfo_0x0007AA5B]
+CopyFrom    = 0x3AA5B
+
+
+[HighwayIntersectionInfo_0x0000AA5D]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68415
+PreviewEffect = preview_pedmall_subrail_031
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68410
+AutoPathBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68410
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA5D]
+CopyFrom    = 0xAA5D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA5D]
+CopyFrom    = 0xAA5D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA5D]
+CopyFrom    = 0xAA5D
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA5D]
+CopyFrom    = 0xAA5D
+[HighwayIntersectionInfo_0x0005AA5D]
+CopyFrom    = 0x1AA5D
+[HighwayIntersectionInfo_0x0006AA5D]
+CopyFrom    = 0x2AA5D
+[HighwayIntersectionInfo_0x0007AA5D]
+CopyFrom    = 0x3AA5D
+
+
+[HighwayIntersectionInfo_0x0000AA5E]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68425
+PreviewEffect = preview_pedmall_subrail_032
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68420
+AutoPathBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68420
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA5E]
+CopyFrom    = 0xAA5E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA5E]
+CopyFrom    = 0xAA5E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA5E]
+CopyFrom    = 0xAA5E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA5E]
+CopyFrom    = 0xAA5E
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA5E]
+CopyFrom    = 0x4AA5E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA5E]
+CopyFrom    = 0x4AA5E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA5E]
+CopyFrom    = 0x4AA5E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA5F]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68445
+PreviewEffect = preview_pedmall_subrail_033
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68440
+AutoPathBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68440
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA5F]
+CopyFrom    = 0xAA5F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA5F]
+CopyFrom    = 0xAA5F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA5F]
+CopyFrom    = 0xAA5F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA5F]
+CopyFrom    = 0xAA5F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA5F]
+CopyFrom    = 0x4AA5F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA5F]
+CopyFrom    = 0x4AA5F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA5F]
+CopyFrom    = 0x4AA5F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA60]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68465
+PreviewEffect = preview_pedmall_subrail_034
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68460
+AutoPathBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68460
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA60]
+CopyFrom    = 0xAA60
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA60]
+CopyFrom    = 0xAA60
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA60]
+CopyFrom    = 0xAA60
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA60]
+CopyFrom    = 0xAA60
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA60]
+CopyFrom    = 0x4AA60
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA60]
+CopyFrom    = 0x4AA60
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA60]
+CopyFrom    = 0x4AA60
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA61]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone x Ground Light Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68485
+PreviewEffect = preview_pedmall_subrail_035
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68480
+AutoPathBase=	0x53f68080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68480
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA61]
+CopyFrom    = 0xAA61
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA61]
+CopyFrom    = 0xAA61
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA61]
+CopyFrom    = 0xAA61
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA61]
+CopyFrom    = 0xAA61
+[HighwayIntersectionInfo_0x0005AA61]
+CopyFrom    = 0x1AA61
+[HighwayIntersectionInfo_0x0006AA61]
+CopyFrom    = 0x2AA61
+[HighwayIntersectionInfo_0x0007AA61]
+CopyFrom    = 0x3AA61
+
+
+[HighwayIntersectionInfo_0x0000AA62]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Sandstone x Elevated Rail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68495
+PreviewEffect = preview_pedmall_subrail_036
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68490
+AutoPathBase=	0x53f68090
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68490
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001AA62]
+CopyFrom    = 0xAA62
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA62]
+CopyFrom    = 0xAA62
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA62]
+CopyFrom    = 0xAA62
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA62]
+CopyFrom    = 0xAA62
+[HighwayIntersectionInfo_0x0005AA62]
+CopyFrom    = 0x1AA62
+[HighwayIntersectionInfo_0x0006AA62]
+CopyFrom    = 0x2AA62
+[HighwayIntersectionInfo_0x0007AA62]
+CopyFrom    = 0x3AA62
+
+
+[HighwayIntersectionInfo_0x0000AA64]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Grass Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68515
+PreviewEffect = preview_pedmall_subrail_037
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68510
+AutoPathBase=	0x53f68010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68510
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA64]
+CopyFrom    = 0xAA64
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA64]
+CopyFrom    = 0xAA64
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA64]
+CopyFrom    = 0xAA64
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AA64]
+CopyFrom    = 0xAA64
+[HighwayIntersectionInfo_0x0005AA64]
+CopyFrom    = 0x1AA64
+[HighwayIntersectionInfo_0x0006AA64]
+CopyFrom    = 0x2AA64
+[HighwayIntersectionInfo_0x0007AA64]
+CopyFrom    = 0x3AA64
+
+
+[HighwayIntersectionInfo_0x0000AA65]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Grass Rail 45 Curve Piece
+Piece = 0.0, 0.0, 0, 0, 0x53F68525
+PreviewEffect = preview_pedmall_subrail_038
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010000 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68520
+AutoPathBase=	0x53f68020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68520
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA65]
+CopyFrom    = 0xAA65
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA65]
+CopyFrom    = 0xAA65
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA65]
+CopyFrom    = 0xAA65
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA65]
+CopyFrom    = 0xAA65
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA65]
+CopyFrom    = 0x4AA65
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA65]
+CopyFrom    = 0x4AA65
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA65]
+CopyFrom    = 0x4AA65
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA66]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Grass Rail Switch Piece A
+Piece = 0.0, 0.0, 0, 0, 0x53F68545
+PreviewEffect = preview_pedmall_subrail_039
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200 road: 0x02020202
+CheckType = Z - rail: 0x02000200 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68540
+AutoPathBase=	0x53f68040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68540
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA66]
+CopyFrom    = 0xAA66
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA66]
+CopyFrom    = 0xAA66
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA66]
+CopyFrom    = 0xAA66
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA66]
+CopyFrom    = 0xAA66
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA66]
+CopyFrom    = 0x4AA66
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA66]
+CopyFrom    = 0x4AA66
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA66]
+CopyFrom    = 0x4AA66
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AA67]
+;Added by ebina 08/18/2009.
+;Rail Under Padmall - Grass Rail Switch Piece B
+Piece = 0.0, 0.0, 0, 0, 0x53F68565
+PreviewEffect = preview_pedmall_subrail_040
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.^.
+
+CheckType = Y - rail: 0x03010000 road: 0x02020202
+CheckType = Z - rail: 0x02000301 road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x53f68560
+AutoPathBase=	0x53f68060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53f68560
+Costs       = 75
+
+[HighwayIntersectionInfo_0x0001AA67]
+CopyFrom    = 0xAA67
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AA67]
+CopyFrom    = 0xAA67
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AA67]
+CopyFrom    = 0xAA67
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AA67]
+CopyFrom    = 0xAA67
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AA67]
+CopyFrom    = 0x4AA67
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AA67]
+CopyFrom    = 0x4AA67
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AA67]
+CopyFrom    = 0x4AA67
+Rotate		= 3
+
+

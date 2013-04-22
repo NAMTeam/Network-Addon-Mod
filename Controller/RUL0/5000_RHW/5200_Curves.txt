@@ -1,0 +1,1562 @@
+;RHW Curve Pieces
+;0xR52##
+RotationRing = 5200, 45200, 15200, 55200, 25200, 65200, 35200, 75200 ;RHW-4 Double Curve
+AddTypes     = 5201, 45201, 15201, 55201, 25201, 65201, 35201, 75201 ;RHW-4 Outer Curve
+AddTypes     = 5202, 45202, 15202, 55202, 25202, 65202, 35202, 75202 ;RHW-4 Inner Curve
+AddTypes     = 5203, 45203, 15203, 55203, 25203, 65203, 35203, 75203 ;RHW-4 Lane Shift
+AddTypes     = 5204, 45204, 15204, 55204, 25204, 65204, 35204, 75204 ;RHW-4 Dual Lane Shift
+AddTypes     = 5205, 45205, 15205, 55205, 25205, 65205, 35205, 75205 ;MIS S-Curve 1
+;AddTypes     = 5206, 45206, 15206, 55206, 25206, 65206, 35206, 75206 ;MIS S-Curve 2
+AddTypes     = 5207, 45207, 15207, 55207, 25207, 65207, 35207, 75207 ;MIS 45-Curve 1
+AddTypes     = 5208, 45208, 15208, 55208, 25208, 65208, 35208, 75208 ;MIS 45-Curve 2
+AddTypes     = 5209, 45209, 15209, 55209, 25209, 65209, 35209, 75209 ;MIS 90-Curve
+AddTypes     = 520A, 4520A, 1520A, 5520A, 2520A, 6520A, 3520A, 7520A ;RHW-2 S-Curve
+AddTypes     = 520B, 4520B, 1520B, 5520B, 2520B, 6520B, 3520B, 7520B ;RHW-2 45-Curve
+AddTypes     = 520C, 4520C, 1520C, 5520C, 2520C, 6520C, 3520C, 7520C ;RHW-2 90-Curve (Large)
+AddTypes     = 520D, 4520D, 1520D, 5520D, 2520D, 6520D, 3520D, 7520D ;RHW-2 90-Curve (Small)
+AddTypes     = 520E, 4520E, 1520E, 5520E, 2520E, 6520E, 3520E, 7520E ;RHW-3 S-Curve 1
+AddTypes     = 8520E, C520E, 9520E, D520E, A520E, E520E, B520E, F520E ;RHW-3 S-Curve 2
+AddTypes     = 520F, 4520F, 1520F, 5520F, 2520F, 6520F, 3520F, 7520F ;RHW-3 45-Curve 1
+AddTypes     = 8520F, C520F, 9520F, D520F, A520F, E520F, B520F, F520F ;RHW-3 45-Curve 2
+;AddTypes     = 5210, 45210, 15210, 55210, 25210, 65210, 35210, 75210 ;RHW-6S Orth-Diagonal Outer
+;AddTypes     = 5211, 45211, 15211, 55211, 25211, 65211, 35211, 75211 ;RHW-6S Orth-Diagonal Inner
+;AddTypes     = 5212, 15212, 25212, 35212, 45212, 55212, 65212, 75212 ;RHW-6S Diagonal
+;AddTypes     = 5213, 45213, 15213, 55213, 25213, 65213, 35213, 75213 ;RHW-6S Diagonal Fillers
+;AddTypes     = 5214, 45214, 15214, 55214, 25214, 65214, 35214, 75214 ;RHW-8 Orth-Diagonal Outer
+;AddTypes     = 5215, 45215, 15215, 55215, 25215, 65215, 35215, 75215 ;RHW-8 Orth-Diagonal Inner
+;AddTypes     = 5216, 15216, 25216, 35216, 45216, 55216, 65216, 75216 ;RHW-8 Diagonal
+;AddTypes     = 5217, 45217, 15217, 55217, 25217, 65217, 35217, 75217 ;RHW-8S Diagonal Fillers
+;AddTypes     = 5218, 45218, 15218, 55218, 25218, 65218, 35218, 75218 ;RHW-10 Orth-Diagonal Outer
+;AddTypes     = 5219, 45219, 15219, 55219, 25219, 65219, 35219, 75219 ;RHW-10 Orth-Diagonal Inner
+;AddTypes     = 521A, 1521A, 2521A, 3521A, 4521A, 5521A, 6521A, 7521A ;RHW-10 Diagonal
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00005210]
+;Added by Tarkus 11/10/2008.
+;RHW-6S Orth-Diag 1
+Piece = -16.0, 0.0, 0, 0, 0x5cccc005
+PreviewEffect = preview_diagonal_rhw6s__001
+
+CellLayout =.......
+CellLayout =...X..<
+CellLayout =..XY...
+CellLayout =..ZW...
+CellLayout =...V...
+CellLayout =...^...
+
+CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
+CheckType = W - dirtroad: 0x00000301
+CheckType = X - dirtroad: 0x03010000
+CheckType = Y - dirtroad: 0x03010301
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =..//...
+ConsLayout =..|/...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccc000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccc000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015210]
+CopyFrom    = 0x5210
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025210]
+CopyFrom    = 0x5210
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035210]
+CopyFrom    = 0x5210
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045210]
+CopyFrom    = 0x5210
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055210]
+CopyFrom    = 0x45210
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065210]
+CopyFrom    = 0x45210
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075210]
+CopyFrom    = 0x45210
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005211]
+;Added by Tarkus 11/10/2008.
+;RHW-6S Orth-Diag 2
+Piece = -16.0, 0.0, 0, 0, 0x5cccc035
+PreviewEffect = preview_diagonal_rhw6s__002
+
+CellLayout =.......
+CellLayout =...X..<
+CellLayout =..XY...
+CellLayout =..ZW...
+CellLayout =..V....
+CellLayout =...^...
+
+CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
+CheckType = W - dirtroad: 0x00000301
+CheckType = X - dirtroad: 0x03010000
+CheckType = Y - dirtroad: 0x03010301
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =..//...
+ConsLayout =..|/...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccc030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccc030
+Costs       = 400
+[HighwayIntersectionInfo_0x00015211]
+CopyFrom    = 0x5211
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025211]
+CopyFrom    = 0x5211
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035211]
+CopyFrom    = 0x5211
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045211]
+CopyFrom    = 0x5211
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055211]
+CopyFrom    = 0x45211
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065211]
+CopyFrom    = 0x45211
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075211]
+CopyFrom    = 0x45211
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005212]
+;Added by Tarkus 11/10/2008.
+;RHW-6S Diagonal
+Piece = 0.0, 0.0, 0, 0, 0x5cccc205
+PreviewEffect = preview_diagonal_rhw6s__003
+
+CellLayout =.......
+CellLayout =...Y..<
+CellLayout =...Z...
+CellLayout =...X...
+CellLayout =...^...
+
+CheckType = X - dirtroad: 0x00000301
+CheckType = Y - dirtroad: 0x03010000
+CheckType = Z - dirtroad: 0x03010301
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =.../...
+ConsLayout =.../...
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccc200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccc200
+Costs       = 200
+[HighwayIntersectionInfo_0x00015212]
+CopyFrom    = 0x5212
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025212]
+CopyFrom    = 0x5212
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035212]
+CopyFrom    = 0x5212
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045212]
+CopyFrom    = 0x5212
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055212]
+CopyFrom    = 0x45212
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065212]
+CopyFrom    = 0x45212
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075212]
+CopyFrom    = 0x45212
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005213]
+;Added by Tarkus 1/26/2010.
+;RHW-6S Diagonal Filler 1
+Piece = 0.0, 0.0, 0, 0, 0x5cccc206
+PreviewEffect = preview_diagonal_rhw6s__004
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...YZ.
+CellLayout =...^...
+
+CheckType = Y - dirtroad: 0x03010301
+CheckType = Z - dirtroad: 0x01000003
+
+
+ConsLayout =.......
+ConsLayout =...\..<
+ConsLayout =...\\..
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccc300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccc201
+Costs       = 200
+[HighwayIntersectionInfo_0x00015213]
+CopyFrom    = 0x5213
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025213]
+CopyFrom    = 0x5213
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035213]
+CopyFrom    = 0x5213
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045213]
+;Added by Tarkus 1/26/2010.
+;RHW-6S Diagonal Filler 2
+Piece = 0.0, 0.0, 0, 0, 0x5cccc225
+PreviewEffect = preview_diagonal_rhw6s__005
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00000301
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cccc220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cccc202
+Costs       = 200
+
+[HighwayIntersectionInfo_0x00055213]
+CopyFrom    = 0x45213
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065213]
+CopyFrom    = 0x45213
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075213]
+CopyFrom    = 0x45213
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00005214]
+;Added by Tarkus 11/10/2008.
+;RHW-8 Orth-Diag 1
+Piece = -16.0, 0.0, 0, 0, 0x5cddd005
+PreviewEffect = preview_diagonal_rhw8___001
+
+CellLayout =.......
+CellLayout =...X..<
+CellLayout =..XY...
+CellLayout =..ZX...
+CellLayout =..ZY...
+CellLayout =..VV...
+CellLayout =...^...
+
+CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
+CheckType = X - dirtroad: 0x03010000
+CheckType = Y - dirtroad: 0x00000301
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =..//...
+ConsLayout =..|/...
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddd000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddd000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015214]
+CopyFrom    = 0x5214
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025214]
+CopyFrom    = 0x5214
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035214]
+CopyFrom    = 0x5214
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045214]
+CopyFrom    = 0x5214
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055214]
+CopyFrom    = 0x45214
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065214]
+CopyFrom    = 0x45214
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075214]
+CopyFrom    = 0x45214
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005215]
+;Added by Tarkus 11/10/2008.
+;RHW-8 Orth-Diag 2
+Piece = -16.0, 0.0, 0, 0, 0x5cddd045
+PreviewEffect = preview_diagonal_rhw8___002
+
+CellLayout =.......
+CellLayout =...X..<
+CellLayout =..XY...
+CellLayout =..ZX...
+CellLayout =..ZY...
+CellLayout =..VV...
+CellLayout =...^...
+
+CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
+CheckType = X - dirtroad: 0x03010000
+CheckType = Y - dirtroad: 0x00000301
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =..//...
+ConsLayout =..|/...
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddd040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddd040
+Costs       = 500
+[HighwayIntersectionInfo_0x00015215]
+CopyFrom    = 0x5215
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025215]
+CopyFrom    = 0x5215
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035215]
+CopyFrom    = 0x5215
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045215]
+CopyFrom    = 0x5215
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055215]
+CopyFrom    = 0x45215
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065215]
+CopyFrom    = 0x45215
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075215]
+CopyFrom    = 0x45215
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005216]
+;Added by Tarkus 11/10/2008.
+;RHW-8 Diagonal
+Piece = 0.0, 0.0, 0, 0, 0x5cddd205
+PreviewEffect = preview_diagonal_rhw8___003
+
+CellLayout =.......
+CellLayout =...Y..<
+CellLayout =...Z...
+CellLayout =...Y...
+CellLayout =...Z...
+CellLayout =...^...
+
+CheckType = Y - dirtroad: 0x03010000
+CheckType = Z - dirtroad: 0x00000301
+
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =.../...
+ConsLayout =.../...
+ConsLayout =.../...
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddd200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddd200
+Costs       = 300
+[HighwayIntersectionInfo_0x00015216]
+CopyFrom    = 0x5216
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025216]
+CopyFrom    = 0x5216
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035216]
+CopyFrom    = 0x5216
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045216]
+CopyFrom    = 0x5216
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055216]
+CopyFrom    = 0x45216
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065216]
+CopyFrom    = 0x45216
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075216]
+CopyFrom    = 0x45216
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005217]
+;Added by Tarkus 1/26/2010.
+;RHW-8S Diagonal Filler 1
+Piece = 0.0, 0.0, 0, 0, 0x5cddd405
+PreviewEffect = preview_diagonal_rhw8___004
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...ZZ..
+CellLayout =...ZZZ.
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x01000003
+
+ConsLayout =.......
+ConsLayout =...\..<
+ConsLayout =...\\..
+ConsLayout =...\\\.
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddd400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddd201
+Costs       = 200
+[HighwayIntersectionInfo_0x00015217]
+CopyFrom    = 0x5217
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025217]
+CopyFrom    = 0x5217
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035217]
+CopyFrom    = 0x5217
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045217]
+;Added by Tarkus 1/26/2010.
+;RHW-8 Diagonal Filler 2
+Piece = 0.0, 0.0, 0, 0, 0x5cddd235
+PreviewEffect = preview_diagonal_rhw8___005
+
+CellLayout =.......
+CellLayout =...ZZ.<
+CellLayout =...Z...
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x03010000
+
+ConsLayout =.......
+ConsLayout =...//.<
+ConsLayout =.../...
+ConsLayout =...^...
+
+AutoTileBase=	0x5cddd220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cddd202
+Costs       = 200
+
+[HighwayIntersectionInfo_0x00055217]
+CopyFrom    = 0x45217
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065217]
+CopyFrom    = 0x45217
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075217]
+CopyFrom    = 0x45217
+Rotate		= 3
+
+
+; === RHW-10C Cosmetic Transitions ===
+; === Placeholder ===
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RHW Wide Curve Piece Section
+;
+[HighwayIntersectionInfo_0x00005200]
+;Added by Alidonkey 03/23/07
+;Real Highway RHW-4 Double Curve
+Piece = 0.0, 0.0, 0, 0, 0x5E14BFF0
+PreviewEffect = preview_rhw-4_double_curve
+
+CellLayout =aa....
+CellLayout =bb+..<
+CellLayout =bb+...
+CellLayout =bcd...
+CellLayout =cdcd..
+CellLayout =.cde..
+CellLayout =..e...
+CellLayout =^.....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+
+ConsLayout = ||....
+ConsLayout = ||X..<
+ConsLayout = |||...
+ConsLayout = |\\...
+ConsLayout = \\\\..
+ConsLayout = .\\\..
+ConsLayout = ..\...
+ConsLayout = ^.....
+
+AutoTileBase = 0x5E14B000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14BFF0
+Costs = 375
+[HighwayIntersectionInfo_0x00015200]
+CopyFrom = 0x5200
+Rotate = 1
+[HighwayIntersectionInfo_0x00025200]
+CopyFrom = 0x5200
+Rotate = 2
+[HighwayIntersectionInfo_0x00035200]
+CopyFrom = 0x5200
+Rotate = 3
+[HighwayIntersectionInfo_0x00045200]
+CopyFrom = 0x5200
+Transpose = 1
+[HighwayIntersectionInfo_0x00055200]
+CopyFrom = 0x45200
+Rotate = 1
+[HighwayIntersectionInfo_0x00065200]
+CopyFrom = 0x45200
+Rotate = 2
+[HighwayIntersectionInfo_0x00075200]
+CopyFrom = 0x45200
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00005201]
+;Added by Alidonkey 04/03/07
+;Real Highway RHW-4 Outer Curve
+Piece = 0.0, 0.0, 0, 0, 0x5E14CFF0
+PreviewEffect = preview_rhw-4_outer_curve
+
+CellLayout =a....
+CellLayout =b...<
+CellLayout =b+...
+CellLayout =b+...
+CellLayout =cd+..
+CellLayout =.cd..
+CellLayout =..e..
+CellLayout =^....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+
+ConsLayout = |....
+ConsLayout = |...<
+ConsLayout = |X...
+ConsLayout = ||...
+ConsLayout = \\X..
+ConsLayout = .\\..
+ConsLayout = ..\..
+ConsLayout = ^....
+
+AutoTileBase = 0x5E14C000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14CFF0
+Costs = 375
+[HighwayIntersectionInfo_0x00015201]
+CopyFrom = 0x5201
+Rotate = 1
+[HighwayIntersectionInfo_0x00025201]
+CopyFrom = 0x5201
+Rotate = 2
+[HighwayIntersectionInfo_0x00035201]
+CopyFrom = 0x5201
+Rotate = 3
+[HighwayIntersectionInfo_0x00045201]
+CopyFrom = 0x5201
+Transpose = 1
+[HighwayIntersectionInfo_0x00055201]
+CopyFrom = 0x45201
+Rotate = 1
+[HighwayIntersectionInfo_0x00065201]
+CopyFrom = 0x45201
+Rotate = 2
+[HighwayIntersectionInfo_0x00075201]
+CopyFrom = 0x45201
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00005202]
+;Added by Alidonkey 04/04/07
+;Real Highway RHW-4 Inner Curve
+Piece = 0.0, 0.0, 0, 0, 0x5E14DFF0
+PreviewEffect = preview_rhw-4_inner_curve
+
+CellLayout =a....
+CellLayout =b+..<
+CellLayout =b+...
+CellLayout =cd...
+CellLayout =.cd..
+CellLayout =..e..
+CellLayout =^....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+
+ConsLayout = |....
+ConsLayout = |X..<
+ConsLayout = ||...
+ConsLayout = \\...
+ConsLayout = .\\..
+ConsLayout = ..\..
+ConsLayout = ^....
+
+AutoTileBase = 0x5E14D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14DFF0
+Costs = 375
+[HighwayIntersectionInfo_0x00015202]
+CopyFrom = 0x5202
+Rotate = 1
+[HighwayIntersectionInfo_0x00025202]
+CopyFrom = 0x5202
+Rotate = 2
+[HighwayIntersectionInfo_0x00035202]
+CopyFrom = 0x5202
+Rotate = 3
+[HighwayIntersectionInfo_0x00045202]
+CopyFrom = 0x5202
+Transpose = 1
+[HighwayIntersectionInfo_0x00055202]
+CopyFrom = 0x45202
+Rotate = 1
+[HighwayIntersectionInfo_0x00065202]
+CopyFrom = 0x45202
+Rotate = 2
+[HighwayIntersectionInfo_0x00075202]
+CopyFrom = 0x45202
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00005203]
+;Added by Alidonkey 04/04/07
+;Real Highway RHW-4 Lanes Shift
+Piece = 0.0, 0.0, 0, 0, 0x5E14EFF0
+PreviewEffect = preview_rhw-4_lanes_shift
+
+CellLayout =a...
+CellLayout =b..<
+CellLayout =b+..
+CellLayout =cd..
+CellLayout =+b..
+CellLayout =+b..
+CellLayout =.e..
+CellLayout =^...
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout = |...
+ConsLayout = |..<
+ConsLayout = ||..
+ConsLayout = ||..
+ConsLayout = ||..
+ConsLayout = ||..
+ConsLayout = .|..
+ConsLayout = ^...
+
+AutoTileBase = 0x5E14E000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14EFF0
+Costs = 375
+[HighwayIntersectionInfo_0x00015203]
+CopyFrom = 0x5203
+Rotate = 1
+[HighwayIntersectionInfo_0x00025203]
+CopyFrom = 0x5203
+Rotate = 2
+[HighwayIntersectionInfo_0x00035203]
+CopyFrom = 0x5203
+Rotate = 3
+[HighwayIntersectionInfo_0x00045203]
+CopyFrom = 0x5203
+Transpose = 1
+[HighwayIntersectionInfo_0x00055203]
+CopyFrom = 0x45203
+Rotate = 1
+[HighwayIntersectionInfo_0x00065203]
+CopyFrom = 0x45203
+Rotate = 2
+[HighwayIntersectionInfo_0x00075203]
+CopyFrom = 0x45203
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00005204]
+;Added by mrtnrln 05/28/07
+;Real Highway RHW-4 Dual Lanes Shift
+Piece = 0.0, 0.0, 0, 0, 0x5E14A805
+PreviewEffect = rhw-4-dual-lanes-shift
+
+CellLayout =aa..
+CellLayout =bb+<
+CellLayout =bb+.
+CellLayout =bbb.
+CellLayout =+bb.
+CellLayout =+bb.
+CellLayout =.ee.
+CellLayout =^...
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout = ||..
+ConsLayout = ||.<
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = .||.
+ConsLayout = ^...
+
+AutoTileBase = 0x5E14A800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14A800
+Costs = 500
+[HighwayIntersectionInfo_0x00015204]
+CopyFrom = 0x5204
+Rotate = 1
+[HighwayIntersectionInfo_0x00025204]
+CopyFrom = 0x5204
+Rotate = 2
+[HighwayIntersectionInfo_0x00035204]
+CopyFrom = 0x5204
+Rotate = 3
+[HighwayIntersectionInfo_0x00045204]
+;Added by mrtnrln 05/28/07
+;Real Highway RHW-4 Dual Lanes Shift
+Piece = 0.0, 0.0, 0, 0, 0x5E14AB05
+PreviewEffect = rhw-4-dual-lanes-shift-mirror
+
+CellLayout =.aa.
+CellLayout =+bb<
+CellLayout =+bb.
+CellLayout =bbb.
+CellLayout =bb+.
+CellLayout =bb+.
+CellLayout =ee..
+CellLayout =^...
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout = .||.
+ConsLayout = .||<
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = ||..
+ConsLayout = ||..
+ConsLayout = ^...
+
+AutoTileBase = 0x5E14AB00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5E14A800
+Costs = 500
+[HighwayIntersectionInfo_0x00055204]
+CopyFrom = 0x45204
+Rotate = 1
+[HighwayIntersectionInfo_0x00065204]
+CopyFrom = 0x45204
+Rotate = 2
+[HighwayIntersectionInfo_0x00075204]
+CopyFrom = 0x45204
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00005205]
+;Added by Tarkus 04/05/2009
+;Road S-Curve (textures by dedgren); edited by dedgren 081229
+Piece = 8.0, 8.0, 0, 0, 0x5CEE0005
+PreviewEffect = preview_mis__curve_piece001
+
+CellLayout =...........
+CellLayout =..abdf....<
+CellLayout =....cegh....
+CellLayout =....^......
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x00020103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =....---....
+ConsLayout =....^......
+
+AutoTileBase=	0x5CEE0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CEE0000
+Costs = 50; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00015205]
+CopyFrom = 0x5205
+Rotate = 1
+[HighwayIntersectionInfo_0x00025205]
+CopyFrom = 0x5205
+Rotate = 2
+[HighwayIntersectionInfo_0x00035205]
+CopyFrom = 0x5205
+Rotate = 3
+[HighwayIntersectionInfo_0x00045205]
+CopyFrom = 0x5205
+Transpose = 1
+[HighwayIntersectionInfo_0x00055205]
+CopyFrom = 0x35205
+Transpose = 1
+[HighwayIntersectionInfo_0x00065205]
+CopyFrom = 0x25205
+Transpose = 1
+[HighwayIntersectionInfo_0x00075205]
+CopyFrom = 0x15205
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x00005206]
+;Added by Tarkus 04/05/2009
+;Road S-Curve (textures by dedgren); edited by dedgren 081229
+Piece = 8.0, 8.0, 0, 0, 0x5CEE0405
+PreviewEffect = preview_mis__curve_piece002
+
+CellLayout =...........
+CellLayout =..abdf....<
+CellLayout =....cegh....
+CellLayout =....^......
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x00020103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =....---....
+ConsLayout =....^......
+
+AutoTileBase=	0x5CEE0400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CEE0400
+Costs = 50; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00015206]
+CopyFrom = 0x5206
+Rotate = 1
+[HighwayIntersectionInfo_0x00025206]
+CopyFrom = 0x5206
+Rotate = 2
+[HighwayIntersectionInfo_0x00035206]
+CopyFrom = 0x5206
+Rotate = 3
+[HighwayIntersectionInfo_0x00045206]
+CopyFrom = 0x5206
+Transpose = 1
+[HighwayIntersectionInfo_0x00055206]
+CopyFrom = 0x5206
+Rotate = 3
+[HighwayIntersectionInfo_0x00065206]
+CopyFrom = 0x5206
+Rotate = 2
+[HighwayIntersectionInfo_0x00075206]
+CopyFrom = 0x5206
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x00005207]
+;Added by Tarkus 02/22/2009
+;MIS 45 degree curve 1 (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5cee1005
+PreviewEffect =  preview_mis__curve_piece003
+
+CellLayout =...........
+CellLayout =..a........
+CellLayout =..bce......
+CellLayout =...dfgh...<
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x01000000,0xff000000 check
+CheckType = b - dirtroad: 0x00030100
+CheckType = c - dirtroad: 0x01030003
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x00020103
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =..\\\......
+ConsLayout =...\\-.....<
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5cee1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cee1000
+Costs = 50; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00015207]
+CopyFrom = 0x5207
+Rotate = 1
+[HighwayIntersectionInfo_0x00025207]
+CopyFrom = 0x5207
+Rotate = 2
+[HighwayIntersectionInfo_0x00035207]
+CopyFrom = 0x5207
+Rotate = 3
+[HighwayIntersectionInfo_0x00045207]
+CopyFrom = 0x5207
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055207]
+CopyFrom = 0x45207
+Rotate = 3
+[HighwayIntersectionInfo_0x00065207]
+CopyFrom = 0x45207
+Rotate = 2
+[HighwayIntersectionInfo_0x00075207]
+CopyFrom = 0x45207
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x00005208]
+;Added by Tarkus 02/22/2009
+;MIS 45 degree curve 1 (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5cee1405
+PreviewEffect =  preview_mis__curve_piece004
+
+CellLayout =...........
+CellLayout =..a........
+CellLayout =..bce......
+CellLayout =...dfgh...<
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x01000000,0xff000000 check
+CheckType = b - dirtroad: 0x00030100
+CheckType = c - dirtroad: 0x01030003
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x00020103
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =..\\\......
+ConsLayout =...\\-.....<
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5cee1400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cee1400
+Costs = 50; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00015208]
+CopyFrom = 0x5208
+Rotate = 1
+[HighwayIntersectionInfo_0x00025208]
+CopyFrom = 0x5208
+Rotate = 2
+[HighwayIntersectionInfo_0x00035208]
+CopyFrom = 0x5208
+Rotate = 3
+[HighwayIntersectionInfo_0x00045208]
+CopyFrom = 0x5208
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055208]
+CopyFrom = 0x45208
+Rotate = 3
+[HighwayIntersectionInfo_0x00065208]
+CopyFrom = 0x45208
+Rotate = 2
+[HighwayIntersectionInfo_0x00075208]
+CopyFrom = 0x45208
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x00005209]
+;Added by Tarkus 01/19/2009
+;MIS 90 degree curve 1 (5x5)(textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5CEE2005
+PreviewEffect =  preview_mis__curve_piece007
+
+CellLayout =...........
+CellLayout =..abdf.....
+CellLayout =....cef...<
+CellLayout =.....cg....
+CellLayout =......h....
+CellLayout =......i....
+CellLayout =...........
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x01030103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x02000103
+CheckType = h - dirtroad: 0x02000200
+CheckType = i - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout =...........
+ConsLayout =...-\\.....
+ConsLayout =....\\\...<
+ConsLayout =.....\\....
+ConsLayout =......|....
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5CEE2100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CEE2100
+Costs = 100; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00015209]
+CopyFrom = 0x5209
+Rotate = 1
+[HighwayIntersectionInfo_0x00025209]
+CopyFrom = 0x5209
+Rotate = 2
+[HighwayIntersectionInfo_0x00035209]
+CopyFrom = 0x5209
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x00045209]
+;Added by Tarkus 01/19/2009
+;MIS 90 degree curve 2 (5x5)(textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5CEE2505
+PreviewEffect =  preview_mis__curve_piece008
+
+CellLayout =...........
+CellLayout =..abdf.....
+CellLayout =....cef...<
+CellLayout =.....cg....
+CellLayout =......h....
+CellLayout =......i....
+CellLayout =...........
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x01030103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x02000103
+CheckType = h - dirtroad: 0x02000200
+CheckType = i - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout =...........
+ConsLayout =...-\\.....
+ConsLayout =....\\\...<
+ConsLayout =.....\\....
+ConsLayout =......|....
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5CEE2600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CEE2600
+Costs = 100; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x00055209]
+CopyFrom = 0x45209
+Rotate = 1
+[HighwayIntersectionInfo_0x00065209]
+CopyFrom = 0x45209
+Rotate = 2
+[HighwayIntersectionInfo_0x00075209]
+CopyFrom = 0x45209
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0000520A]
+;Added by Tarkus 04/05/2009
+;RHW-2 S-Curve 
+Piece = 8.0, 8.0, 0, 0, 0x5CAA0005
+PreviewEffect = preview_rhw2_curve_piece001
+
+CellLayout =...........
+CellLayout =..abdf....<
+CellLayout =....cegh....
+CellLayout =....^......
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x00020103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =....---....
+ConsLayout =....^......
+
+AutoTileBase=	0x5CAA0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CAA0000
+Costs = 50; edited by dedgren 081229
+[HighwayIntersectionInfo_0x0001520A]
+CopyFrom = 0x520A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520A]
+CopyFrom = 0x520A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520A]
+CopyFrom = 0x520A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004520A]
+CopyFrom = 0x520A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005520A]
+CopyFrom = 0x3520A
+Transpose = 1
+[HighwayIntersectionInfo_0x0006520A]
+CopyFrom = 0x2520A
+Transpose = 1
+[HighwayIntersectionInfo_0x0007520A]
+CopyFrom = 0x1520A
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000520B]
+;Added by Tarkus 02/22/2009
+;Road 45 degree curve (textures by dedgren); edited by dedgren 081229
+Piece = 0.0, 0.0, 0, 0, 0x5caa1005
+PreviewEffect =  preview_rhw2_curve_piece002
+
+CellLayout =...........
+CellLayout =..a........
+CellLayout =..bce......
+CellLayout =...dfgh...<
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x01000000,0xff000000 check
+CheckType = b - dirtroad: 0x00030100
+CheckType = c - dirtroad: 0x01030003
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x00020103
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =..\\\......
+ConsLayout =...\\-.....<
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5caa1100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5caa1000
+Costs = 50; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x0001520B]
+CopyFrom = 0x520B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520B]
+CopyFrom = 0x520B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520B]
+CopyFrom = 0x520B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004520B]
+CopyFrom = 0x520B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005520B]
+CopyFrom = 0x4520B
+Rotate = 3
+[HighwayIntersectionInfo_0x0006520B]
+CopyFrom = 0x4520B
+Rotate = 2
+[HighwayIntersectionInfo_0x0007520B]
+CopyFrom = 0x4520B
+Rotate = 1
+
+
+
+[HighwayIntersectionInfo_0x0000520C]
+;Added by Tarkus 01/12/2009
+;RHW-2 90 degree curve (5x5)
+Piece = 0.0, 0.0, 0, 0, 0x5caa2005
+PreviewEffect =  preview_rhw2_curve_piece003
+
+CellLayout =...........
+CellLayout =..abdf.....
+CellLayout =...+cef...<
+CellLayout =.....cg....
+CellLayout =.....+h....
+CellLayout =......i....
+CellLayout =...........
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x01030103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x02000103
+CheckType = h - dirtroad: 0x02000200
+CheckType = i - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout =...........
+ConsLayout =...-\\.....
+ConsLayout =....\\\...<
+ConsLayout =.....\\....
+ConsLayout =......|....
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =.....^.....
+
+AutoTileBase=	0x5caa2100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5caa2000
+Costs = 100; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x0001520C]
+CopyFrom = 0x520C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520C]
+CopyFrom = 0x520C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520C]
+CopyFrom = 0x520C
+Rotate = 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004520C]
+CopyFrom = 0x520C
+[HighwayIntersectionInfo_0x0005520C]
+CopyFrom = 0x1520C
+[HighwayIntersectionInfo_0x0006520C]
+CopyFrom = 0x2520C
+[HighwayIntersectionInfo_0x0007520C]
+CopyFrom = 0x3520C
+
+
+
+[HighwayIntersectionInfo_0x0000520D]
+;Added by Tarkus 04/05/2010
+;RHW-2 90 degree curve (2x2)
+Piece = 0.0, 0.0, 0, 0, 0x5CAA4005
+PreviewEffect = preview_rhw2_curve_piece004
+
+CellLayout =........
+CellLayout =.adf...<
+CellLayout =..+g....
+CellLayout =...i....
+CellLayout =..^.....
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = d - dirtroad: 0x00020002
+CheckType = f - dirtroad: 0x02000002
+CheckType = g - dirtroad: 0x02000200
+CheckType = i - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout =........
+ConsLayout =..-\...<
+ConsLayout =..\|....
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase=	0x5CAA4000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CAA4000
+Costs = 30; edited by dedgren 081229
+
+[HighwayIntersectionInfo_0x0001520D]
+CopyFrom = 0x520D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520D]
+CopyFrom = 0x520D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520D]
+CopyFrom = 0x520D
+Rotate = 3
+;clones for rotation
+[HighwayIntersectionInfo_0x0004520D]
+CopyFrom = 0x520D
+[HighwayIntersectionInfo_0x0005520D]
+CopyFrom = 0x1520D
+[HighwayIntersectionInfo_0x0006520D]
+CopyFrom = 0x2520D
+[HighwayIntersectionInfo_0x0007520D]
+CopyFrom = 0x3520D
+
+[HighwayIntersectionInfo_0x0000520E]
+;Added by MandelSoft 02/01/2013
+;RHW-3 S-Curve 1
+Piece = 8.0, 8.0, 0, 0, 0x57910005
+PreviewEffect = preview_rhw3_curve_piece001
+
+CellLayout =...........
+CellLayout =..abdf....<
+CellLayout =....cegh....
+CellLayout =....^......
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x00020103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =....---....
+ConsLayout =....^......
+
+AutoTileBase=	0x57910000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57910000
+Costs = 50
+[HighwayIntersectionInfo_0x0001520E]
+CopyFrom = 0x520E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520E]
+CopyFrom = 0x520E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520E]
+CopyFrom = 0x520E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004520E]
+CopyFrom = 0x520E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005520E]
+CopyFrom = 0x3520E
+Transpose = 1
+[HighwayIntersectionInfo_0x0006520E]
+CopyFrom = 0x2520E
+Transpose = 1
+[HighwayIntersectionInfo_0x0007520E]
+CopyFrom = 0x1520E
+Transpose = 1
+
+[HighwayIntersectionInfo_0x0008520E]
+;Added by MandelSoft 02/01/2013
+;RHW-3 S-Curve 2
+Piece = 8.0, 8.0, 0, 0, 0x57910405
+PreviewEffect = preview_rhw3_curve_piece002
+
+CellLayout =...........
+CellLayout =..abdf....<
+CellLayout =....cegh....
+CellLayout =....^......
+
+CheckType = a - dirtroad: 0x00020000,0x00ff0000 check
+CheckType = b - dirtroad: 0x00020002
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01030002
+CheckType = e - dirtroad: 0x00020103
+CheckType = f - dirtroad: 0x01000003
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...---....<
+ConsLayout =....---....
+ConsLayout =....^......
+
+AutoTileBase=	0x57910400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57910400
+Costs = 50
+[HighwayIntersectionInfo_0x0009520E]
+CopyFrom = 0x8520E
+Rotate = 1
+[HighwayIntersectionInfo_0x000A520E]
+CopyFrom = 0x8520E
+Rotate = 2
+[HighwayIntersectionInfo_0x000B520E]
+CopyFrom = 0x8520E
+Rotate = 3
+[HighwayIntersectionInfo_0x000C520E]
+CopyFrom = 0x8520E
+Transpose = 1
+[HighwayIntersectionInfo_0x000D520E]
+CopyFrom = 0xB520E
+Transpose = 1
+[HighwayIntersectionInfo_0x000E520E]
+CopyFrom = 0xA520E
+Transpose = 1
+[HighwayIntersectionInfo_0x000F520E]
+CopyFrom = 0x9520E
+Transpose = 1
+
+
+
+[HighwayIntersectionInfo_0x0000520F]
+;Added by MandelSoft 02/01/2013
+;RHW-3 45-Curve 1
+Piece = 0.0, 0.0, 0, 0, 0x57911005
+PreviewEffect =  preview_rhw3_curve_piece003
+
+CellLayout =...........
+CellLayout =..a........
+CellLayout =..bce......
+CellLayout =...dfgh...<
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x01000000,0xff000000 check
+CheckType = b - dirtroad: 0x00030100
+CheckType = c - dirtroad: 0x01030003
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x00020103
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =..\\\......
+ConsLayout =...\\-.....<
+ConsLayout =.....^.....
+
+AutoTileBase=	0x57911100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57911000
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001520F]
+CopyFrom = 0x520F
+Rotate = 1
+[HighwayIntersectionInfo_0x0002520F]
+CopyFrom = 0x520F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003520F]
+CopyFrom = 0x520F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004520F]
+CopyFrom = 0x520F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005520F]
+CopyFrom = 0x4520F
+Rotate = 3
+[HighwayIntersectionInfo_0x0006520F]
+CopyFrom = 0x4520F
+Rotate = 2
+[HighwayIntersectionInfo_0x0007520F]
+CopyFrom = 0x4520F
+Rotate = 1
+
+[HighwayIntersectionInfo_0x0008520F]
+;Added by MandelSoft 02/01/2013
+;RHW-3 45-Curve 2
+Piece = 0.0, 0.0, 0, 0, 0x57911505
+PreviewEffect =  preview_rhw3_curve_piece004
+
+CellLayout =...........
+CellLayout =..a........
+CellLayout =..bce......
+CellLayout =...dfgh...<
+CellLayout =.....^.....
+
+CheckType = a - dirtroad: 0x01000000,0xff000000 check
+CheckType = b - dirtroad: 0x00030100
+CheckType = c - dirtroad: 0x01030003
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x00020103
+CheckType = g - dirtroad: 0x00020002
+CheckType = h - dirtroad: 0x00000002,0x000000ff check
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =..\\\......
+ConsLayout =...\\-.....<
+ConsLayout =.....^.....
+
+AutoTileBase=	0x57911600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57911500
+Costs = 50
+
+[HighwayIntersectionInfo_0x0009520F]
+CopyFrom = 0x8520F
+Rotate = 1
+[HighwayIntersectionInfo_0x000A520F]
+CopyFrom = 0x8520F
+Rotate = 2
+[HighwayIntersectionInfo_0x000B520F]
+CopyFrom = 0x8520F
+Rotate = 3
+[HighwayIntersectionInfo_0x000C520F]
+CopyFrom = 0x8520F
+Transpose	= 1
+[HighwayIntersectionInfo_0x000D520F]
+CopyFrom = 0xC520F
+Rotate = 3
+[HighwayIntersectionInfo_0x000E520F]
+CopyFrom = 0xC520F
+Rotate = 2
+[HighwayIntersectionInfo_0x000F520F]
+CopyFrom = 0xC520F
+Rotate = 1
+

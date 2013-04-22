@@ -1,0 +1,775 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HIGH ELEVATED RAIL BUTTON SECTION
+;HIGH ELEVATED RAIL BUTTON SECTION
+;
+RotationRing = B900, 1B900, 2B900, 3B900 ;High Elevated Rail Ramp Puzzle Piece
+AddTypes     = B901, 1B901, 2B901, 3B901 ;High Elevated Rail over Blank Terrain - Straight Puzzle Piece
+AddTypes     = B902, 1B902, 2B902, 3B902 ;High Elevated Rail over Blank Terrain - NO Pylon
+AddTypes     = B903, 1B903, 2B903, 3B903 ;High Elevated Rail over Rail Puzzle Piece
+AddTypes     = B904, 1B904, 2B904, 3B904 ;High Elevated Rail over Street Puzzle Piece
+AddTypes     = B905, 1B905, 2B905, 3B905 ;High Elevated Rail over Road Puzzle Piece
+AddTypes     = B906, 1B906, 2B906, 3B906 ;High Elevated Rail over OneWayRoad Puzzle Piece
+AddTypes     = B907, 1B907, 2B907, 3B907 ;High Elevated Rail over Avenue Puzzle Piece
+AddTypes     = B908, 1B908, 2B908, 3B908 ;High Elevated Rail over GroundHighway Puzzle Piece
+AddTypes     = B909, 1B909, 2B909, 3B909 ;High Elevated Rail over Elevated Highway Puzzle Piece
+AddTypes     = B90A, 1B90A, 2B90A, 3B90A ;High Elevated Rail over Elevated Rail Puzzle Piece
+AddTypes     = B90B, 1B90B, 2B90B, 3B90B ;High Elevated Rail over Monorail Puzzle Piece
+AddTypes     = B90C, 1B90C, 2B90C, 3B90C ;High Elevated Rail over Ground Light Rail Puzzle Piece
+AddTypes     = B90D, 1B90D, 2B90D, 3B90D ;High Elevated Rail over Rail Viaduct Puzzle Piece
+AddTypes     = B90E, 1B90E, 2B90E, 3B90E ;High Elevated Rail over Road Viaduct Puzzle Piece
+AddTypes     = B90F, 1B90F, 2B90F, 3B90F ;High Elevated Rail over OneWay Road Viaduct Puzzle Piece
+AddTypes     = B910, 1B910, 2B910, 3B910 ;High Elevated Rail over Avenue Viaduct Puzzle Piece
+AddTypes     = B911, 1B911, 2B911, 3B911 ;T Elevated Rail OnSlope Puzzle Piece
+AddTypes     = B912, 1B912, 2B912, 3B912 ;Straight Elevated Rail OnSlope Puzzle Piece
+;AddTypes     = B913, 1B913 ;lightrailxmonorail overpass - Autoplace (listed by memo)
+;AddTypes     = B914, 1B914 ;lightrailxhighway overpass - Autoplace (listed by memo)
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;LIGHTRAIL SECTION
+;LIGHTRAIL SECTION
+;LIGHTRAIL SECTION
+;OVERPASSES
+
+[HighwayIntersectionInfo_0x0000B913]
+;Added by Tropod 05/08/04.
+;lightrailxmonorail overpass
+Piece = 0.0, 0.0, 0, 0, 0x03121000
+PreviewEffect = preview_road_rail_underpass
+
+CellLayout =.....d.....
+CellLayout =abbbbZbbbbc<
+CellLayout =.....e.....
+CellLayout =.....^.....
+
+CheckType = a - lightrail: 0x00020000,0xffffff00 check
+CheckType = b - lightrail: 0x00020002
+CheckType = d - monorail: 0x02000000,0xffff00ff check
+CheckType = e - monorail: 0x00000200,0x00ffffff check
+CheckType = c - lightrail: 0x00000002,0xff00ffff check
+CheckType = Z - lightrail: 0x00020002 monorail: 0x02000200
+
+ConsLayout =.....|.....
+ConsLayout =-----#-----<
+ConsLayout =.....|.....
+ConsLayout =.....^.....
+
+AutoTileBase=	0x581F5100
+Autoplace = 1
+ReplacementIntersection = 0, 0
+Costs       = 400
+[HighwayIntersectionInfo_0x0001B913]
+CopyFrom    = 0xB913
+Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x0000B914]
+;Added by Tropod 05/08/04.
+;lightrailxhighway overpass
+Piece = 0.0, 0.0, 0, 0, 0x02012300
+PreviewEffect = preview_gh_rd_straight
+
+CellLayout = .a.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = wAy<
+CellLayout = xBz
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .c.
+CellLayout = .^..
+
+CheckType = a - lightrail: 0x02000000,0xffff00ff check
+CheckType = b - lightrail: 0x02000200
+CheckType = c - lightrail: 0x00000200,0x00ffffff check
+CheckType = A - lightrail: 0x02000200 highway: 0x04020002
+CheckType = B - lightrail: 0x02000200 highway: 0x00020402
+CheckType = w - highway: 0x04020000,0xffffff00 check
+CheckType = x - highway: 0x00020400,0xffffff00 check
+CheckType = y - highway: 0x04000002,0xff00ffff check
+CheckType = z - highway: 0x00000402,0xff00ffff check
+
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = -#-<
+ConsLayout = -#-.
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = .^..
+
+AutoTileBase = 0x581F5000
+Autoplace = 1
+Costs = 400
+[HighwayIntersectionInfo_0x0001B914]
+CopyFrom = 0xB914
+Rotate = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HIGH ELEVATED RAIL BUTTON SECTION
+;HIGH ELEVATED RAIL BUTTON SECTION
+;HIGH ELEVATED RAIL BUTTON SECTION
+
+
+
+[HighwayIntersectionInfo_0x0000B900]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail Ramp Puzzle Piece
+;Edited by Chrisim April 2009 checktype c required to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x581f5005
+PreviewEffect = previewelrailpuzzlepiece900
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .c.<
+CellLayout = .^..
+
+CheckType = a - lightrail: 0x02000000, 0x00000000 optional
+CheckType = b - lightrail: 0x02000200
+CheckType = c - lightrail: 0x00000200
+
+ConsLayout = ...
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.
+ConsLayout = .+.<
+ConsLayout = .^.
+
+AutoTileBase = 0x581f5000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x581f5000
+Costs       = 300
+[HighwayIntersectionInfo_0x0001B900]
+CopyFrom    = 0xB900
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B900]
+CopyFrom    = 0xB900
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B900]
+CopyFrom    = 0xB900
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B909]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Elevated Highway Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x581f5045
+PreviewEffect = previewelrailpuzzlepiece910
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - highway: 0x04020002, 0x00000000 optional
+CheckType  = d - highway: 0x00020402, 0x00000000 optional
+CheckType  = A - lightrail: 0x02000200 highway: 0x04020002
+CheckType  = B - lightrail: 0x02000200 highway: 0x00020402
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x581f5040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x581f5040
+Costs       = 750
+[HighwayIntersectionInfo_0x0001B909]
+CopyFrom    = 0xB909
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B909]
+CopyFrom    = 0xB909
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B909]
+CopyFrom    = 0xB909
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B901]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Blank Terrain - Straight Puzzle Piece
+;modified by Warrior 01 March 09 - to place on top of El-Rail
+Piece = 0.0, 0.0, 0, 0, 0x58450004
+PreviewEffect = previewelrailpuzzlepiece800
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450000
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B901]
+CopyFrom    = 0xB901
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B901]
+CopyFrom    = 0xB901
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B901]
+CopyFrom    = 0xB901
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B902]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Blank Terrain - NO Pylon
+;modified by Warrior 01 March 09 - to place on top of El-Rail
+Piece = 0.0, 0.0, 0, 0, 0x58450104
+PreviewEffect = previewelrailpuzzlepiece810
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450100
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B902]
+CopyFrom    = 0xB902
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B902]
+CopyFrom    = 0xB902
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B902]
+CopyFrom    = 0xB902
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B903]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450205
+PreviewEffect = previewelrailpuzzlepiece820
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - rail: 0x00020000, 0x00000000 optional
+CheckType = c - rail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 rail: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58450200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450200
+Costs       = 83
+[HighwayIntersectionInfo_0x0001B903]
+CopyFrom    = 0xB903
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B903]
+CopyFrom    = 0xB903
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B903]
+CopyFrom    = 0xB903
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B904]
+;High Elevated Rail over Street Puzzle Piece
+;Added by smoncrie 4/11/05.
+Piece = 0.0, 0.0, 0, 0, 0x58450305
+PreviewEffect = previewelrailpuzzlepiece830
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - street: 0x00020000, 0x00000000 optional
+CheckType = c - street: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 street: 0x00020002
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x58450300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450300
+Costs       = 70
+[HighwayIntersectionInfo_0x0001B904]
+CopyFrom    = 0xB904
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B904]
+CopyFrom    = 0xB904
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B904]
+CopyFrom    = 0xB904
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B905]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Road Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450405
+PreviewEffect = previewelrailpuzzlepiece840
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - road: 0x00020000, 0x00000000 optional
+CheckType = c - road: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 road: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58450400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450400
+Costs       = 65
+[HighwayIntersectionInfo_0x0001B905]
+CopyFrom    = 0xB905
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B905]
+CopyFrom    = 0xB905
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B905]
+CopyFrom    = 0xB905
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B906]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over OneWayRoad Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450505
+PreviewEffect = previewelrailpuzzlepiece850
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - onewayroad: 0x00020000, 0x00ff0000 check
+CheckType = c - onewayroad: 0x00000002,0x000000ff check
+CheckType = Z - lightrail: 0x02000200 onewayroad: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58450500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450500
+Costs       = 65
+[HighwayIntersectionInfo_0x0001B906]
+CopyFrom    = 0xB906
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B906]
+CopyFrom    = 0xB906
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B906]
+CopyFrom    = 0xB906
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B907]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Avenue Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450605
+PreviewEffect = previewelrailpuzzlepiece860
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - avenue: 0x04020002, 0x00000000 optional
+CheckType  = d - avenue: 0x00020402, 0x00000000 optional
+CheckType  = A - lightrail: 0x02000200 avenue: 0x04020002
+CheckType  = B - lightrail: 0x02000200 avenue: 0x00020402
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x58450600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450600
+Costs       = 90
+[HighwayIntersectionInfo_0x0001B907]
+CopyFrom    = 0xB907
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B907]
+CopyFrom    = 0xB907
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B907]
+CopyFrom    = 0xB907
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90C]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over Ground Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450704
+PreviewEffect = previewelrailpuzzlepiece870
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450700
+Costs       = 83
+[HighwayIntersectionInfo_0x0001B90C]
+CopyFrom    = 0xB90C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90C]
+CopyFrom    = 0xB90C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90C]
+CopyFrom    = 0xB90C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B908]
+;Added by smoncrie 4/11/05.
+;High Elevated Rail over GroundHighway Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450805
+PreviewEffect = previewelrailpuzzlepiece880
+
+CellLayout = ......
+CellLayout = .cAc.<
+CellLayout = .dBd..
+CellLayout = ..^...
+
+CheckType  = c - groundhighway: 0x04020002, 0x00000000 optional
+CheckType  = d - groundhighway: 0x00020402, 0x00000000 optional
+CheckType  = A - lightrail: 0x02000200 groundhighway: 0x04020002
+CheckType  = B - lightrail: 0x02000200 groundhighway: 0x00020402
+
+ConsLayout = ......
+ConsLayout = .-+-.<
+ConsLayout = .-+-..
+ConsLayout = ..^...
+
+AutoTileBase=	0x58450800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450800
+Costs       = 1
+[HighwayIntersectionInfo_0x0001B908]
+CopyFrom    = 0xB908
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B908]
+CopyFrom    = 0xB908
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B908]
+CopyFrom    = 0xB908
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90B]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over Monorail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450905
+PreviewEffect = previewelrailpuzzlepiece890
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - monorail: 0x00020000, 0x00000000 optional
+CheckType = c - monorail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58450900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450900
+Costs       = 1
+[HighwayIntersectionInfo_0x0001B90B]
+CopyFrom    = 0xB90B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90B]
+CopyFrom    = 0xB90B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90B]
+CopyFrom    = 0xB90B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90A]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over Elevated Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450a05
+PreviewEffect = previewelrailpuzzlepiece8a0
+
+CellLayout =......
+CellLayout =.bZc.<
+CellLayout =..^...
+
+CheckType = b - lightrail: 0x00020000, 0x00000000 optional
+CheckType = c - lightrail: 0x00000002, 0x00000000 optional
+CheckType = Z - lightrail: 0x02020202
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x58450a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450a00
+Costs       = 25
+[HighwayIntersectionInfo_0x0001B90A]
+CopyFrom    = 0xB90A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90A]
+CopyFrom    = 0xB90A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90A]
+CopyFrom    = 0xB90A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90D]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over Rail Viaduct Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450b04
+PreviewEffect = previewelrailpuzzlepiece8b0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200 rail: 0x00020002
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450b00
+Costs       = 150
+[HighwayIntersectionInfo_0x0001B90D]
+CopyFrom    = 0xB90D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90D]
+CopyFrom    = 0xB90D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90D]
+CopyFrom    = 0xB90D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90E]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over Road Viaduct Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450c04
+PreviewEffect = previewelrailpuzzlepiece8c0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200 road: 0x00020002
+
+ConsLayout =.,..
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450c00
+Costs       = 150
+[HighwayIntersectionInfo_0x0001B90E]
+CopyFrom    = 0xB90E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90E]
+CopyFrom    = 0xB90E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90E]
+CopyFrom    = 0xB90E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B90F]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over OneWay Road Viaduct Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450d04
+PreviewEffect = previewelrailpuzzlepiece8d0
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.^..
+
+CheckType = Z - lightrail: 0x02000200 onewayroad: 0x00020002
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58450d00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450d00
+Costs       = 150
+[HighwayIntersectionInfo_0x0001B90F]
+CopyFrom    = 0xB90F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B90F]
+CopyFrom    = 0xB90F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B90F]
+CopyFrom    = 0xB90F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B910]
+;Added by smoncrie 28/02/06.
+;High Elevated Rail over Avenue Viaduct Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58450e05
+PreviewEffect = previewelrailpuzzlepiece8e0
+
+CellLayout = ....
+CellLayout = .A.<
+CellLayout = .B..
+CellLayout = .^..
+
+CheckType  = A - lightrail: 0x02000200 avenue: 0x04020002
+CheckType  = B - lightrail: 0x02000200 avenue: 0x00020402
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase=	0x58450e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58450e00
+Costs       = 350
+[HighwayIntersectionInfo_0x0001B910]
+CopyFrom    = 0xB910
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B910]
+CopyFrom    = 0xB910
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B910]
+CopyFrom    = 0xB910
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B911]
+;Added by smoncrie 4/11/05.
+;T Elevated Rail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58451015
+PreviewEffect = previewelrailpuzzlepiece920
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - street: 0x00020002 lightrail: 0x02000200, 0x00000000 optional
+
+ConsLayout = ....
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase = 0x58451010
+AutoPathBase = 0x58451010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58451010
+Costs       = 75
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001B911]
+CopyFrom    = 0xB911
+Rotate		= 1
+AutoTileBase = 0x58451110
+[HighwayIntersectionInfo_0x0002B911]
+CopyFrom    = 0xB911
+Rotate		= 2
+AutoTileBase = 0x58451210
+[HighwayIntersectionInfo_0x0003B911]
+CopyFrom    = 0xB911
+Rotate		= 3
+AutoTileBase = 0x58451310
+
+
+[HighwayIntersectionInfo_0x0000B912]
+;Added by smoncrie 4/11/05.
+;Straight Elevated Rail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x58451005
+PreviewEffect = previewelrailpuzzlepiece930
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - lightrail: 0x02000000, 0x00000000 optional
+CheckType = b - lightrail: 0x02000200
+
+ConsLayout = ....
+ConsLayout = .+..
+ConsLayout = .+.<
+ConsLayout = .+..
+ConsLayout = .^..
+
+AutoTileBase = 0x58451000
+AutoPathBase = 0x58451000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58451000
+Costs       = 75
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x0001B912]
+CopyFrom    = 0xB912
+AutoTileBase = 0x58451100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B912]
+CopyFrom    = 0xB912
+AutoTileBase = 0x58451200
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B912]
+CopyFrom    = 0xB912
+AutoTileBase = 0x58451300
+Rotate		= 3
+
+

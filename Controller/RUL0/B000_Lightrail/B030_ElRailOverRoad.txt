@@ -1,0 +1,1189 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;LIGHTRAIL BUTTON SECTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;LIGHTRAIL BUTTON SECTION ELEVATED RAIL ELRAIL OVER ROAD
+;LIGHTRAIL BUTTON SECTION ELEVATED RAIL ELRAIL OVER ROAD
+; 0xB###
+;ElevatedRail Dual Networking
+RotationRing = B030, 1B030, 2B030, 3B030, 4B030, 5B030, 6B030, 7B030 ;lightrailxroad Dual - Straight Piece
+AddTypes     = B031, 1B031, 2B031, 3B031, 4B031, 5B031, 6B031, 7B031 ;lightrailxroad Dual - Straight Piece NO Pylon
+AddTypes     = B032, 1B032, 2B032, 3B032, 4B032, 5B032, 6B032, 7B032 ;lightrailxroad Dual - Corner Road1 Straight LightRail Piece
+AddTypes     = B033, 1B033, 2B033, 3B033, 4B033, 5B033, 6B033, 7B033 ;lightrailxroad Dual - T-Intersection Straight Road Straight LightRail Piece
+AddTypes     = B034, 1B034, 2B034, 3B034, 4B034, 5B034, 6B034, 7B034 ;lightrailxroad Dual - T-Intersection Dead-End Road Straight LightRail Piece
+AddTypes     = B035, 1B035, 2B035, 3B035, 4B035, 5B035, 6B035, 7B035 ;lightrailxroad Dual - +-Intersection Road Straight LightRail Piece
+AddTypes     = B036, 1B036, 2B036, 3B036, 4B036, 5B036, 6B036, 7B036 ;format might be changed - lightrailxroad Dual - +-Intersection StreetxRoad Straight LightRail Piece
+AddTypes     = B037, 1B037, 2B037, 3B037, 4B037, 5B037, 6B037, 7B037 ;lightrailxroad Dual - T-intersection Street T Road Straight LightRail Piece
+AddTypes     = B038, 1B038, 2B038, 3B038, 4B038, 5B038, 6B038, 7B038 ;lightrailxroad Dual - +-Intersection RailxRoad Straight LightRail Piece Traffic Exemplar requires modifying for this in order to work
+AddTypes     = B039, 1B039, 2B039, 3B039, 4B039, 5B039, 6B039, 7B039 ;lightrailxroad Dual - +-Intersection AvenuexRoad Straight LightRail Piece
+AddTypes     = B03A, 1B03A, 2B03A, 3B03A, 4B03A, 5B03A, 6B03A, 7B03A ;lightrailxroad Dual - Corner Piece
+AddTypes     = B03B, 1B03B, 2B03B, 3B03B, 4B03B, 5B03B, 6B03B, 7B03B ;lightrailxroad Dual - Straight Road, 45 degree access LightRail Piece
+AddTypes     = B03C, 1B03C, 2B03C, 3B03C, 4B03C, 5B03C, 6B03C, 7B03C ;lightrailxroad Dual - + Intersection Road T Intersection LightRail Piece
+AddTypes     = B03D, 1B03D, 2B03D, 3B03D, 4B03D, 5B03D, 6B03D, 7B03D ;lightrailxroad Dual - + Intersection Road + Intersection LightRail Piece
+AddTypes     = B03E, 1B03E, 2B03E, 3B03E, 4B03E, 5B03E, 6B03E, 7B03E ;lightrailxstreet Dual - Straight Piece
+AddTypes     = B03F, 1B03F, 2B03F, 3B03F, 4B03F, 5B03F, 6B03F, 7B03F ;lightrailxstreet Dual - Straight Piece NO Pylon
+AddTypes     = B040, 1B040, 2B040, 3B040, 4B040, 5B040, 6B040, 7B040 ;lightrailxstreet Dual - T-Intersection Street Straight
+AddTypes     = B041, 1B041, 2B041, 3B041, 4B041, 5B041, 6B041, 7B041 ;lightrailxstreet Dual - T-Intersection Street Dead End
+AddTypes     = B042, 1B042, 2B042, 3B042, 4B042, 5B042, 6B042, 7B042 ;lightrailxstreet Dual - +-Intersection Street Straight
+AddTypes     = B043, 1B043, 2B043, 3B043, 4B043, 5B043, 6B043, 7B043 ;lightrailxstreet Dual - T-Intersection Dead-End Road Straight
+AddTypes     = B044, 1B044, 2B044, 3B044, 4B044, 5B044, 6B044, 7B044 ;lightrailxroad Dual - ELR Over Road To ELR Over Street Transition
+AddTypes     = B045, 1B045, 2B045, 3B045, 4B045, 5B045, 6B045, 7B045 ;lightrail over ped mall - centerpole
+AddTypes     = B046, 1B046, 2B046, 3B046, 4B046, 5B046, 6B046, 7B046 ;lightrail over ped mall - openPaved
+AddTypes     = B047, 1B047, 2B047, 3B047, 4B047, 5B047, 6B047, 7B047 ;lightrail over ped mall - cobblestone
+AddTypes     = B048, 1B048, 2B048, 3B048, 4B048, 5B048, 6B048, 7B048 ;lightrail over ped mall - paved
+AddTypes     = B049, 1B049, 2B049, 3B049, 4B049, 5B049, 6B049, 7B049 ;lightrail over ped mall - sandstone
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x0000B030]
+;Added by Tropod 06/11/04.
+;opps! all the following Lightrails autotilebase
+;should have been 0x58, not 0x53 doh! - though the checktypes can always be changed
+; to rail instead of lightrail, if so desired, though some other minor changes would
+;probably also be needed.
+;
+;lightrailxroad Dual - Straight Piece
+;Edited by Chrisim 13 September 2009, lightrail: 0x00000000 required otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x53263800
+PreviewEffect = preview_rail_dualnetwork001
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType  = Z - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b03a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B030]
+CopyFrom    = 0xB030
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B030]
+CopyFrom    = 0xB030
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B030]
+CopyFrom    = 0xB030
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B030]
+CopyFrom    = 0xB030
+[HighwayIntersectionInfo_0x0005B030]
+CopyFrom    = 0x1B030
+[HighwayIntersectionInfo_0x0006B030]
+CopyFrom    = 0x2B030
+[HighwayIntersectionInfo_0x0007B030]
+CopyFrom    = 0x3B030
+
+
+[HighwayIntersectionInfo_0x0000B031]
+;Added by smoncrie 19/07/04.
+;lightrailxroad Dual - Straight Piece NO Pylon
+;Edited by Chrisim 13 September 2009, lightrail: 0x00000000 required otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x532cf704
+PreviewEffect = preview_rail_dualnetwork620
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType  = Z - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x532cf700
+AutoPathBase =  0x53263800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x532cf700
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B031]
+CopyFrom    = 0xB031
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B031]
+CopyFrom    = 0xB031
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B031]
+CopyFrom    = 0xB031
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B031]
+CopyFrom    = 0xB031
+[HighwayIntersectionInfo_0x0005B031]
+CopyFrom    = 0x1B031
+[HighwayIntersectionInfo_0x0006B031]
+CopyFrom    = 0x2B031
+[HighwayIntersectionInfo_0x0007B031]
+CopyFrom    = 0x3B031
+
+
+[HighwayIntersectionInfo_0x0000B032]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - Corner Road, Straight LightRail Piece
+;Edited by smoncrie 04/08/08  Combined Corner Road1 (b040) and Corner Road2 (b050)
+;                             into different rotations of a single piece (b040)
+;                             and changed CheckType = a to 0x00000000 optional
+;Edited by Chrisim 13 September 2009, lightrail: 0x00000000 for Z required otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x53263900
+PreviewEffect = preview_rail_dualnetwork002
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...rZ...<
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x02000200, 0x00000000 optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02000002
+CheckType = r - road: 0x00020000, 0x00ff0000 optional
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b04a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B032]
+CopyFrom    = 0xB032
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B032]
+CopyFrom    = 0xB032
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B032]
+CopyFrom    = 0xB032
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B032]
+CopyFrom    = 0xB032
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B032]
+CopyFrom    = 0x4B032
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B032]
+CopyFrom    = 0x4B032
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B032]
+CopyFrom    = 0x4B032
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B033]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - T-Intersection Straight Road, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+;Edited by Chrisim 13 September 2009, lightrail: 0x00000000 required otherwise risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x53263a00
+PreviewEffect = preview_rail_dualnetwork003
+
+CellLayout =.........
+CellLayout =...bZ...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = Z - lightrail: 0x00000000 road: 0x02000202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b06a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B033]
+CopyFrom    = 0xB033
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B033]
+CopyFrom    = 0xB033
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B033]
+CopyFrom    = 0xB033
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B033]
+CopyFrom    = 0xB033
+[HighwayIntersectionInfo_0x0005B033]
+CopyFrom    = 0x1B033
+[HighwayIntersectionInfo_0x0006B033]
+CopyFrom    = 0x2B033
+[HighwayIntersectionInfo_0x0007B033]
+CopyFrom    = 0x3B033
+
+
+[HighwayIntersectionInfo_0x0000B034]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - T-Intersection Dead-End Road, Straight LightRail Piece
+;Edited by smoncrie 04/08/08  Changed CheckType = a to 0x00000000 optional
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x53263400
+PreviewEffect = preview_rail_dualnetwork005
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x02000200, 0x000000 optional
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x02000200 road: 0x02020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b07a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B034]
+CopyFrom    = 0xB034
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B034]
+CopyFrom    = 0xB034
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B034]
+CopyFrom    = 0xB034
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B034]
+CopyFrom    = 0xB034
+[HighwayIntersectionInfo_0x0005B034]
+CopyFrom    = 0x1B034
+[HighwayIntersectionInfo_0x0006B034]
+CopyFrom    = 0x2B034
+[HighwayIntersectionInfo_0x0007B034]
+CopyFrom    = 0x3B034
+
+
+[HighwayIntersectionInfo_0x0000B035]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - +-Intersection Road, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x53263b00
+PreviewEffect = preview_rail_dualnetwork004
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b08a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B035]
+CopyFrom    = 0xB035
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B035]
+CopyFrom    = 0xB035
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B035]
+CopyFrom    = 0xB035
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B035]
+CopyFrom    = 0xB035
+[HighwayIntersectionInfo_0x0005B035]
+CopyFrom    = 0x1B035
+[HighwayIntersectionInfo_0x0006B035]
+CopyFrom    = 0x2B035
+[HighwayIntersectionInfo_0x0007B035]
+CopyFrom    = 0x3B035
+
+
+[HighwayIntersectionInfo_0x0000B036]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - +-Intersection StreetxRoad, Straight LightRail Piece
+Piece = 0.0, 0.0, 0, 0, 0x53263D00
+PreviewEffect = preview_rail_dualnetwork006
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = c - street: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x02000200 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263d00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b09a
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B036]
+CopyFrom    = 0xB036
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B036]
+CopyFrom    = 0xB036
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B036]
+CopyFrom    = 0xB036
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B036]
+CopyFrom    = 0xB036
+[HighwayIntersectionInfo_0x0005B036]
+CopyFrom    = 0x1B036
+[HighwayIntersectionInfo_0x0006B036]
+CopyFrom    = 0x2B036
+[HighwayIntersectionInfo_0x0007B036]
+CopyFrom    = 0x3B036
+
+
+[HighwayIntersectionInfo_0x0000B038]
+;Added by Tropod 10/15/04. Reactivated by Warrior 25/12/08
+;lightrailxroad Dual - +-Intersection RailxRoad, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x53263E00
+PreviewEffect = preview_rail_dualnetwork007
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - rail: 0x00020000, 0x00ff0000 optional
+CheckType = c - rail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x00020002 lightrail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000b0aa
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B038]
+CopyFrom    = 0xB038
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B038]
+CopyFrom    = 0xB038
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B038]
+CopyFrom    = 0xB038
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B038]
+CopyFrom    = 0xB038
+[HighwayIntersectionInfo_0x0005B038]
+CopyFrom    = 0x1B038
+[HighwayIntersectionInfo_0x0006B038]
+CopyFrom    = 0x2B038
+[HighwayIntersectionInfo_0x0007B038]
+CopyFrom    = 0x3B038
+
+
+[HighwayIntersectionInfo_0x0000B039]
+;Added by Tropod 10/15/04.
+;lightrailxroad Dual - +-Intersection AvenuexRoad, Straight LightRail Piece
+;Edited by smoncrie 04/08/08 to fix ConsLayout problem with 2 tile wide networks
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x53264E05
+PreviewEffect = preview_rail_dualnetwork008
+
+CellLayout =.........
+CellLayout =..aAZCc..<
+CellLayout =..bBzDd..
+CellLayout =....^....
+
+CheckType = a - avenue: 0x04020000, 0xffff0000 optional
+CheckType = b - avenue: 0x00020400, 0x00ffff00 optional
+CheckType = c - avenue: 0x04000002, 0xff0000ff optional
+CheckType = d - avenue: 0x00000402, 0x0000ffff optional
+CheckType = A - avenue: 0x04020002, 0xffff00ff optional
+CheckType = B - avenue: 0x00020402, 0x00ffffff optional
+CheckType = C - avenue: 0x04020002, 0xffff00ff optional
+CheckType = D - avenue: 0x00020402, 0x00ffffff optional
+CheckType = Z - lightrail: 0x00000000 onewayroad: 0x02020202
+CheckType = z - lightrail: 0x00000000 onewayroad: 0x02020202
+
+ConsLayout =.........
+ConsLayout =..--+--..<
+ConsLayout =..--+--..
+ConsLayout =....^....
+
+AutoTileBase=	0x53264e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53264e00
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B039]
+CopyFrom    = 0xB039
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B039]
+CopyFrom    = 0xB039
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B039]
+CopyFrom    = 0xB039
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B039]
+CopyFrom    = 0xB039
+[HighwayIntersectionInfo_0x0005B039]
+CopyFrom    = 0x1B039
+[HighwayIntersectionInfo_0x0006B039]
+CopyFrom    = 0x2B039
+[HighwayIntersectionInfo_0x0007B039]
+CopyFrom    = 0x3B039
+
+
+[HighwayIntersectionInfo_0x0000B03A]
+;Added by ardecila and smoncrie 04/13/06.
+;ElevatedRail on Road - Corner Piece
+Piece = 0.0, 0.0, 0, 0, 0x58273005
+PreviewEffect = preview_rail_dualnetwork640
+
+CellLayout =....
+CellLayout =.ab<
+CellLayout =.c..
+CellLayout =.^..
+
+CheckType = b - lightrail: 0x00020001 road: 0x00020002
+CheckType = a - lightrail: 0x03010000 road: 0x02020000
+CheckType = c - lightrail: 0x02000300 road: 0x02000200
+
+ConsLayout =....
+ConsLayout =.++<
+ConsLayout =.+..
+ConsLayout =.^..
+
+AutoTileBase=	0x58273000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58273000
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B03A]
+CopyFrom    = 0xB03A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03A]
+CopyFrom    = 0xB03A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03A]
+CopyFrom    = 0xB03A
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B03A]
+CopyFrom    = 0xB03A
+[HighwayIntersectionInfo_0x0005B03A]
+CopyFrom    = 0x1B03A
+[HighwayIntersectionInfo_0x0006B03A]
+CopyFrom    = 0x2B03A
+[HighwayIntersectionInfo_0x0007B03A]
+CopyFrom    = 0x3B03A
+
+
+[HighwayIntersectionInfo_0x0000B03B]
+;Added by ardecila and smoncrie 04/11/06.
+;ElevatedRail on Road - Straight Road, 45 degree access LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x58274005
+PreviewEffect = preview_rail_dualnetwork650
+
+CellLayout =.r..
+CellLayout =.ab.
+CellLayout =.c.<
+CellLayout =.^..
+
+CheckType = b - lightrail: 0x00000001,0x000000ff optional
+CheckType = a - lightrail: 0x03010000 road: 0x02000200
+CheckType = c - lightrail: 0x02000300 road: 0x02000200
+CheckType = r - road: 0x02000000, 0xff000000 optional
+
+ConsLayout =.+..
+ConsLayout =.++.
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x58274000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274000
+Costs       = 75
+[HighwayIntersectionInfo_0x0001B03B]
+CopyFrom    = 0xB03B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03B]
+CopyFrom    = 0xB03B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03B]
+CopyFrom    = 0xB03B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B03B]
+CopyFrom    = 0xB03B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B03B]
+CopyFrom    = 0x4B03B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B03B]
+CopyFrom    = 0x4B03B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B03B]
+CopyFrom    = 0x4B03B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000B03C]
+;Added by ardecila and smoncrie 22/09/06.
+;lightrailxroad Dual - + Intersection Road T Intersection LightRail Piece
+;Edited by ebina 08/12/09.
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58272005
+PreviewEffect = preview_rail_dualnetwork660
+
+CellLayout =.a.
+CellLayout =bZc<
+CellLayout =.d.
+CellLayout =.^.
+
+CheckType  = a - road: 0x02000000, 0xff000000 optional
+CheckType  = b - lightrail: 0x00020002 road: 0x00020002
+CheckType  = c - lightrail: 0x00020002 road: 0x00020002
+CheckType  = d - lightrail: 0x02000200 road: 0x02000200
+CheckType  = Z - lightrail: 0x00000000 road: 0x02020202
+
+ConsLayout =.+.
+ConsLayout =+++<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase=	0x58272000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58272000
+Costs       = 240
+[HighwayIntersectionInfo_0x0001B03C]
+CopyFrom    = 0xB03C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03C]
+CopyFrom    = 0xB03C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03C]
+CopyFrom    = 0xB03C
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B03C]
+CopyFrom    = 0xB03C
+[HighwayIntersectionInfo_0x0005B03C]
+CopyFrom    = 0x1B03C
+[HighwayIntersectionInfo_0x0006B03C]
+CopyFrom    = 0x2B03C
+[HighwayIntersectionInfo_0x0007B03C]
+CopyFrom    = 0x3B03C
+
+
+[HighwayIntersectionInfo_0x0000B03D]
+;Added by ardecila and smoncrie 04/07/06.
+;lightrailxroad Dual - + Intersection Road + Intersection LightRail Piece
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x58271005
+PreviewEffect = preview_rail_dualnetwork670
+
+CellLayout =..a...
+CellLayout =.bZc.<
+CellLayout =..d...
+CellLayout =..^...
+
+CheckType  = a - lightrail: 0x02000200 road: 0x02000200
+CheckType  = b - lightrail: 0x00020002 road: 0x00020002
+CheckType  = c - lightrail: 0x00020002 road: 0x00020002
+CheckType  = d - lightrail: 0x02000200 road: 0x02000200
+CheckType  = Z - lightrail: 0x00000000 road: 0x02020202
+
+ConsLayout =..+...
+ConsLayout =.+++.<
+ConsLayout =..+...
+ConsLayout =..^...
+
+AutoTileBase=	0x58271000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58271000
+Costs       = 300
+[HighwayIntersectionInfo_0x0001B03D]
+CopyFrom    = 0xB03D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03D]
+CopyFrom    = 0xB03D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03D]
+CopyFrom    = 0xB03D
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B03D]
+CopyFrom    = 0xB03D
+[HighwayIntersectionInfo_0x0005B03D]
+CopyFrom    = 0x1B03D
+[HighwayIntersectionInfo_0x0006B03D]
+CopyFrom    = 0x2B03D
+[HighwayIntersectionInfo_0x0007B03D]
+CopyFrom    = 0x3B03D
+
+
+[HighwayIntersectionInfo_0x0000B03E]
+;Added by GoaSkin 08/22/05
+;lightrailxstreet Dual - Straight Piece
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD 
+Piece = 0.0, 0.0, 0, 0, 0x58263000
+PreviewEffect = preview_rail_dualnetwork320
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType  = Z - lightrail: 0x00000000 street: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x58263000
+AutoPathBase = 0x53263800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58263000
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B03E]
+CopyFrom    = 0xB03E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03E]
+CopyFrom    = 0xB03E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03E]
+CopyFrom    = 0xB03E
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B03E]
+CopyFrom    = 0xB03E
+[HighwayIntersectionInfo_0x0005B03E]
+CopyFrom    = 0x1B03E
+[HighwayIntersectionInfo_0x0006B03E]
+CopyFrom    = 0x2B03E
+[HighwayIntersectionInfo_0x0007B03E]
+CopyFrom    = 0x3B03E
+
+
+[HighwayIntersectionInfo_0x0000B03F]
+;Added by smoncrie 08/13/06
+;lightrailxstreet Dual - Straight Piece NO Pylon
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD
+Piece = 0.0, 0.0, 0, 0, 0x5332d704
+PreviewEffect = preview_rail_dualnetwork630
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType  = Z - lightrail: 0x00000000 street: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x5332d700
+AutoPathBase = 0x58263000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5332d700
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B03F]
+CopyFrom    = 0xB03F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B03F]
+CopyFrom    = 0xB03F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B03F]
+CopyFrom    = 0xB03F
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B03F]
+CopyFrom    = 0xB03F
+[HighwayIntersectionInfo_0x0005B03F]
+CopyFrom    = 0x1B03F
+[HighwayIntersectionInfo_0x0006B03F]
+CopyFrom    = 0x2B03F
+[HighwayIntersectionInfo_0x0007B03F]
+CopyFrom    = 0x3B03F
+
+
+[HighwayIntersectionInfo_0x0000B040]
+;Added by GoaSkin 08/23/05.
+;lightrailxstreet Dual - T-Intersection Straight Street, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+;Edited by Chrisim 13 September 2009 to reduce risk of CTD 
+Piece = 0.0, 0.0, 0, 0, 0x58263100
+PreviewEffect = preview_rail_dualnetwork330
+
+CellLayout =.........
+CellLayout =...bZ...<
+CellLayout =....^....
+
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = Z - lightrail: 0x00000000 street: 0x02000202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x58263100
+AutoPathBase = 0x53263a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58263100
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B040]
+CopyFrom    = 0xB040
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B040]
+CopyFrom    = 0xB040
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B040]
+CopyFrom    = 0xB040
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B040]
+CopyFrom    = 0xB040
+[HighwayIntersectionInfo_0x0005B040]
+CopyFrom    = 0x1B040
+[HighwayIntersectionInfo_0x0006B040]
+CopyFrom    = 0x2B040
+[HighwayIntersectionInfo_0x0007B040]
+CopyFrom    = 0x3B040
+
+
+[HighwayIntersectionInfo_0x0000B041]
+;Added by GoaSkin 08/23/05.
+;lightrailxstreet Dual - T-Intersection Dead-End Street, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x58263200
+PreviewEffect = preview_rail_dualnetwork340
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x02000200, 0xff000000 optional
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = c - street: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x02000200 street: 0x02020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x58263200
+AutoPathBase = 0x53263c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58263200
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B041]
+CopyFrom    = 0xB041
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B041]
+CopyFrom    = 0xB041
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B041]
+CopyFrom    = 0xB041
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B041]
+CopyFrom    = 0xB041
+[HighwayIntersectionInfo_0x0005B041]
+CopyFrom    = 0x1B041
+[HighwayIntersectionInfo_0x0006B041]
+CopyFrom    = 0x2B041
+[HighwayIntersectionInfo_0x0007B041]
+CopyFrom    = 0x3B041
+
+
+[HighwayIntersectionInfo_0x0000B042]
+;Added by GoaSkin 08/24/04.
+;lightrailxstreet Dual - +-Intersection Street, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x58263300
+PreviewEffect = preview_rail_dualnetwork350
+
+CellLayout =.........
+CellLayout =...bZc...<
+CellLayout =....^....
+
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = c - street: 0x00000002, 0x000000ff optional
+CheckType = Z - lightrail: 0x02000200 street: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x58263300
+AutoPathBase = 0x53263b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58263300
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B042]
+CopyFrom    = 0xB042
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B042]
+CopyFrom    = 0xB042
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B042]
+CopyFrom    = 0xB042
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B042]
+CopyFrom    = 0xB042
+[HighwayIntersectionInfo_0x0005B042]
+CopyFrom    = 0x1B042
+[HighwayIntersectionInfo_0x0006B042]
+CopyFrom    = 0x2B042
+[HighwayIntersectionInfo_0x0007B042]
+CopyFrom    = 0x3B042
+
+
+[HighwayIntersectionInfo_0x0000B043]
+;Added by GoaSkin 08/24/05.
+;lightrailxstreet Dual - T-Intersection Dead-End Road, Straight LightRail Piece
+;Edited by ebina 08/12/09.
+Piece = 0.0, 0.0, 0, 0, 0x58263400
+PreviewEffect = preview_rail_dualnetwork360
+
+CellLayout =....a....
+CellLayout =...bZc..<
+CellLayout =....s....
+CellLayout =....^....
+
+CheckType = a - lightrail: 0x02000200, 0xff000000 optional
+CheckType = b - road: 0x00020000, 0x00ff0000 optional
+CheckType = c - road: 0x00000002, 0x000000ff optional
+CheckType = s - street: 0x02000200, 0x0000ff00 optional
+CheckType = Z - lightrail: 0x02000200 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x58263400
+AutoPathBase = 0x53263c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58263400
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B043]
+CopyFrom    = 0xB043
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B043]
+CopyFrom    = 0xB043
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B043]
+CopyFrom    = 0xB043
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B043]
+CopyFrom    = 0xB043
+[HighwayIntersectionInfo_0x0005B043]
+CopyFrom    = 0x1B043
+[HighwayIntersectionInfo_0x0006B043]
+CopyFrom    = 0x2B043
+[HighwayIntersectionInfo_0x0007B043]
+CopyFrom    = 0x3B043
+
+
+[HighwayIntersectionInfo_0x0000B046]
+;Added by GoaSkin 05/05/05.
+;Elevated Rail over Pedmall - OpenPaved
+;This piece will cause a CTD when hovered above a tram station - change not feasible because of connection problem to elevated light rail 
+Piece = 0.0, 0.0, 0, 0, 0x53265800
+PreviewEffect = preview_rail_dualnetwork01a
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265800
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B046]
+CopyFrom    = 0xB046
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B046]
+CopyFrom    = 0xB046
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B046]
+CopyFrom    = 0xB046
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B046]
+CopyFrom    = 0xB046
+[HighwayIntersectionInfo_0x0005B046]
+CopyFrom    = 0x1B046
+[HighwayIntersectionInfo_0x0006B046]
+CopyFrom    = 0x2B046
+[HighwayIntersectionInfo_0x0007B046]
+CopyFrom    = 0x3B046
+
+
+[HighwayIntersectionInfo_0x0000B047]
+;Added by GoaSkin 05/05/05.
+;Elevated Rail over Pedmall - CobbleStone
+;This piece will cause a CTD when hovered above a tram station - change not feasible because of connection problem to elevated light rail 
+Piece = 0.0, 0.0, 0, 0, 0x53265900
+PreviewEffect = preview_rail_dualnetwork01b
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x53265900
+AutoPathBase = 0x53265800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265900
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B047]
+CopyFrom    = 0xB047
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B047]
+CopyFrom    = 0xB047
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B047]
+CopyFrom    = 0xB047
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B047]
+CopyFrom    = 0xB047
+[HighwayIntersectionInfo_0x0005B047]
+CopyFrom    = 0x1B047
+[HighwayIntersectionInfo_0x0006B047]
+CopyFrom    = 0x2B047
+[HighwayIntersectionInfo_0x0007B047]
+CopyFrom    = 0x3B047
+
+
+[HighwayIntersectionInfo_0x0000B048]
+;Added by GoaSkin 05/05/05.
+;Elevated Rail over Pedmall - Paved
+;This piece will cause a CTD when hovered above a tram station - change not feasible because of connection problem to elevated light rail 
+Piece = 0.0, 0.0, 0, 0, 0x53265A00
+PreviewEffect = preview_rail_dualnetwork01c
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x53265a00
+AutoPathBase = 0x53265800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265a00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B048]
+CopyFrom    = 0xB048
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B048]
+CopyFrom    = 0xB048
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B048]
+CopyFrom    = 0xB048
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B048]
+CopyFrom    = 0xB048
+[HighwayIntersectionInfo_0x0005B048]
+CopyFrom    = 0x1B048
+[HighwayIntersectionInfo_0x0006B048]
+CopyFrom    = 0x2B048
+[HighwayIntersectionInfo_0x0007B048]
+CopyFrom    = 0x3B048
+
+
+[HighwayIntersectionInfo_0x0000B049]
+;Added by GoaSkin 05/05/05.
+;Elevated Rail over Pedmall - SandStone
+;This piece will cause a CTD when hovered above a tram station - change not feasible because of connection problem to elevated light rail 
+Piece = 0.0, 0.0, 0, 0, 0x53265B00
+PreviewEffect = preview_rail_dualnetwork01d
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x53265b00
+AutoPathBase = 0x53265800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265b00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B049]
+CopyFrom    = 0xB049
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B049]
+CopyFrom    = 0xB049
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B049]
+CopyFrom    = 0xB049
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B049]
+CopyFrom    = 0xB049
+[HighwayIntersectionInfo_0x0005B049]
+CopyFrom    = 0x1B049
+[HighwayIntersectionInfo_0x0006B049]
+CopyFrom    = 0x2B049
+[HighwayIntersectionInfo_0x0007B049]
+CopyFrom    = 0x3B049
+
+
+[HighwayIntersectionInfo_0x0000B045]
+;Added by Swamper77 08/05/05.
+;Elevated Rail over Pedmall - Center Pole
+;This piece will cause a CTD when hovered above a tram station - change not feasible because of connection problem to elevated light rail 
+Piece = 0.0, 0.0, 0, 0, 0x53265c00
+PreviewEffect = preview_rail_dualnetwork01e
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x02000200 road: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x53265c00
+AutoPathBase = 0x53265800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265c00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B045]
+CopyFrom    = 0xB045
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B045]
+CopyFrom    = 0xB045
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B045]
+CopyFrom    = 0xB045
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B045]
+CopyFrom    = 0xB045
+[HighwayIntersectionInfo_0x0005B045]
+CopyFrom    = 0x1B045
+[HighwayIntersectionInfo_0x0006B045]
+CopyFrom    = 0x2B045
+[HighwayIntersectionInfo_0x0007B045]
+CopyFrom    = 0x3B045
+
+
+
+[HighwayIntersectionInfo_0x0000B037]
+;Added by jdenm8 2012/01/06.
+;lightrailxroad Dual - T Street Intersection LightRail Piece
+Piece = 0.0, 0.0, 0, 0, 0x58274305
+PreviewEffect = preview_elr_overrd_street_t
+
+CellLayout =........
+CellLayout =...bZ...<
+CellLayout =....^...
+
+CheckType = b - street: 0x00020000, 0x00ff0000 optional
+CheckType = Z - street: 0x00000002 lightrail: 0x02000200
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58274300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274300
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B037]
+CopyFrom    = 0xB037
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B037]
+CopyFrom    = 0xB037
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B037]
+CopyFrom    = 0xB037
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B037]
+CopyFrom    = 0xB037
+[HighwayIntersectionInfo_0x0005B037]
+CopyFrom    = 0x1B037
+[HighwayIntersectionInfo_0x0006B037]
+CopyFrom    = 0x2B037
+[HighwayIntersectionInfo_0x0007B037]
+CopyFrom    = 0x3B037
+
+[HighwayIntersectionInfo_0x0000B044]
+;Added by jdenm8 2012/01/06.
+;lightrailxroad Dual - ELRail over Road to ElRail over Street Transition
+Piece = 0.0, 0.0, 0, 0, 0x58274500
+PreviewEffect = preview_elr_overstr_street_t
+
+CellLayout =.......
+CellLayout =...Z...<
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200 lightrail: 0x00000000
+
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x58274500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58274500
+Costs       = 100
+[HighwayIntersectionInfo_0x0001B044]
+CopyFrom    = 0xB044
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B044]
+CopyFrom    = 0xB044
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B044]
+CopyFrom    = 0xB044
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004B044]
+CopyFrom    = 0xB044
+[HighwayIntersectionInfo_0x0005B044]
+CopyFrom    = 0x1B044
+[HighwayIntersectionInfo_0x0006B044]
+CopyFrom    = 0x2B044
+[HighwayIntersectionInfo_0x0007B044]
+CopyFrom    = 0x3B044
+
+
+

@@ -1,0 +1,47 @@
+;RAM Set2 - Elevated Single Track Railroad (El-STR) button
+RotationRing = 4100, 14100, 24100, 34100, 44100, 54100, 64100, 74100 ;El-STR Starter Piece Orth;;;move to own icon later
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00004100]
+;Added by Tarkus 09/14/2010.
+;El-STR Starter piece/Transition (Textures by Bighead99)
+Piece = 0.0, 0.0, 0, 0, 0x53d1000B
+PreviewEffect = preview_ram2_puzzlepiece000
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - Rail: 0x02000200
+CheckType = a - Rail: 0x02000200 Lightrail: 0x00010100 optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x53d10000
+PlaceQueryID = 0x53d10000
+Costs       = 400
+[HighwayIntersectionInfo_0x00014100]
+CopyFrom    = 0x4100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00024100]
+CopyFrom    = 0x4100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00034100]
+CopyFrom    = 0x4100
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00044100]
+CopyFrom    = 0x4100
+[HighwayIntersectionInfo_0x00054100]
+CopyFrom    = 0x14100
+[HighwayIntersectionInfo_0x00064100]
+CopyFrom    = 0x24100
+[HighwayIntersectionInfo_0x00074100]
+CopyFrom    = 0x34100
+
+

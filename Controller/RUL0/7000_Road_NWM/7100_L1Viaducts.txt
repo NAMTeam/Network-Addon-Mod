@@ -1,0 +1,1836 @@
+;;;; TO DO: MOVE 7.5m STUFF INTO A NEW ROTATION RING WITH NEW ICONS TRANSITIONS FIRST
+RotationRing = 7100, 87100, 17100, 97100, 27100, A7100, 37100, B7100, 47100, C7100, 57100, D7100, 67100, E7100, 77100, F7100 ;road x blank puzzle pieces
+AddTypes     = 7101, 17101, 27101, 37101, 47101, 57101, 67101, 77101, 87101, 97101, A7101, B7101, C7101, D7101, E7101, F7101 ;roadxblank corner
+AddTypes     = 7102, 17102, 27102, 37102, 47102, 57102, 67102, 77102, 87102, 97102, A7102, B7102, C7102, D7102, E7102, F7102 ;road orth to diag transition
+AddTypes     = 7103, 17103, 27103, 37103, 47103, 57103, 67103, 77103, 87103, 97103, A7103, B7103, C7103, D7103, E7103, F7103 ;road intersections
+
+AddTypes     = 7104, 87104, 17104, 97104, 27104, A7104, 37104, B7104, 47104, C7104, 57104, D7104, 67104, E7104, 77104, F7104 ;roadxroad orthogonal
+AddTypes     = 7105, 87105, 17105, 97105, 27105, A7105, 37105, B7105, 47105, C7105, 57105, D7105, 67105, E7105, 77105, F7105 ;roadxroad double diagonal road
+AddTypes     = 7106, 87106, 17106, 97106, 27106, A7106, 37106, B7106, 47106, C7106, 57106, D7106, 67106, E7106, 77106, F7106 ;roadxroad diagonalroad
+
+AddTypes     = 7107, 87107, 17107, 97107, 27107, A7107, 37107, B7107, 47107, C7107, 57107, D7107, 67107, E7107, 77107, F7107 ;roadxrail orthogonal rail
+AddTypes     = 7108, 87108, 17108, 97108, 27108, A7108, 37108, B7108, 47108, C7108, 57108, D7108, 67108, E7108, 77108, F7108 ;roadxrail double diagonal rail
+AddTypes     = 7109, 87109, 17109, 97109, 27109, A7109, 37109, B7109, 47109, C7109, 57109, D7109, 67109, E7109, 77109, F7109 ;roadxrail diagonal rail
+
+AddTypes     = 710A, 8710A, 1710A, 9710A, 2710A, A710A, 3710A, B710A, 4710A, C710A, 5710A, D710A, 6710A, E710A, 7710A, F710A ;roadxstreet orthogonal street
+
+AddTypes     = 710B, 8710B, 1710B, 9710B, 2710B, A710B, 3710B, B710B, 4710B, C710B, 5710B, D710B, 6710B, E710B, 7710B, F710B ;roadxonewayroad orthogonal onewayroad
+AddTypes     = 710C, 8710C, 1710C, 9710C, 2710C, A710C, 3710C, B710C, 4710C, C710C, 5710C, D710C, 6710C, E710C, 7710C, F710C ;roadxonewayroad double diagonal onewayroad
+AddTypes     = 710D, 8710D, 1710D, 9710D, 2710D, A710D, 3710D, B710D, 4710D, C710D, 5710D, D710D, 6710D, E710D, 7710D, F710D ;roadxonewayroad diagonal onewayroad
+
+AddTypes     = 710E, 8710E, 1710E, 9710E, 2710E, A710E, 3710E, B710E, 4710E, C710E, 5710E, D710E, 6710E, E710E, 7710E, F710E ;roadxavenue orthogonal avenue
+AddTypes     = 710F, 8710F, 1710F, 9710F, 2710F, A710F, 3710F, B710F, 4710F, C710F, 5710F, D710F, 6710F, E710F, 7710F, F710F ;roadxavenue diagonal avenue
+
+AddTypes     = 7110, 87110, 17110, 97110, 27110, A7110, 37110, B7110, 47110, C7110, 57110, D7110, 67110, E7110, 77110, F7110 ;roadxgroundhighway orthogonal groundhighway
+AddTypes     = 7111, 87111, 17111, 97111, 27111, A7111, 37111, B7111, 47111, C7111, 57111, D7111, 67111, E7111, 77111, F7111 ;roadxgroundhighway diagonal groundhighway
+
+AddTypes     = 7112, 87112, 17112, 97112, 27112, A7112, 37112, B7112, 47112, C7112, 57112, D7112, 67112, E7112, 77112, F7112 ;roadxGround Light Rail puzzle piece
+AddTypes     = 7113, 87113, 17113, 97113, 27113, A7113, 37113, B7113, 47113, C7113, 57113, D7113, 67113, E7113, 77113, F7113 ;RoadxDiagonal Ground Light Rail Puzzle Piece
+
+AddTypes     = 7114, 17114, 27114, 37114, 87114, 97114, A7114, B7114, 47114, 57114, 67114, 77114, C7114, D7114, E7114, F7114 ;Orthogonal OnSlope Puzzle Pieces
+AddTypes     = 7115, 17115, 27115, 37115, 47115, 57115, 67115, 77115, 87115, 97115, A7115, B7115, C7115, D7115, E7115, F7115 ;diagonal Road OnSlope Puzzle Piece
+
+;###separator###
+
+;=========================
+; MAXIS RD2 TRANSITIONS - 0x70xx
+;=========================
+
+[HighwayIntersectionInfo_0x00007114]
+;T Road OnSlope (7.5m)
+;added by SA 1/25/2012
+Piece = 0.0, 0, 0, 0, 0x50300e65
+PreviewEffect = preview_orth_rd_onslope_001
+
+CellLayout =.......
+CellLayout =..a+..<
+CellLayout =..^....
+
+CheckType = a - road: 0x02020200,0x00ff0000 check
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase=	0x50300f60
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x503ea700
+Costs = 75
+[HighwayIntersectionInfo_0x00017114]
+CopyFrom = 0x7114
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027114]
+CopyFrom = 0x7114
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037114]
+CopyFrom = 0x7114
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00047114]
+CopyFrom = 0x7114
+[HighwayIntersectionInfo_0x00057114]
+CopyFrom = 0x17114
+[HighwayIntersectionInfo_0x00067114]
+CopyFrom = 0x27114
+[HighwayIntersectionInfo_0x00077114]
+CopyFrom = 0x37114
+
+
+
+[HighwayIntersectionInfo_0x00087114]
+;Straight Road OnSlope (7.5m)
+;added by SA 1/25/2012
+Piece = 0.0, 0, 0, 0, 0x50300e75
+PreviewEffect = preview_orth_rd_onslope_002
+
+CellLayout =......
+CellLayout =.ab+.<
+CellLayout =..^...
+
+CheckType = a - road: 0x00020000,0x00ff0000 check
+CheckType = b - road: 0x00000000
+
+ConsLayout =......
+ConsLayout =.++..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50300e70
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x503fa700
+Costs = 75
+[HighwayIntersectionInfo_0x00097114]
+CopyFrom = 0x87114
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7114]
+CopyFrom = 0x87114
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7114]
+CopyFrom = 0x87114
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C7114]
+CopyFrom = 0x87114
+[HighwayIntersectionInfo_0x000D7114]
+CopyFrom = 0x97114
+[HighwayIntersectionInfo_0x000E7114]
+CopyFrom = 0xA7114
+[HighwayIntersectionInfo_0x000F7114]
+CopyFrom = 0xB7114
+
+[HighwayIntersectionInfo_0x00007115]
+;Added by SA 1/23/2012
+;Diagonal Road OnSlope Puzzle Piece
+Piece = 0, 0,0, 0, 0x50300f20
+PreviewEffect = preview_diag_rd_onslope_002
+
+CellLayout = .....
+CellLayout = .c...
+CellLayout = .da.<
+CellLayout = ..b..
+CellLayout = .^...
+
+CheckType = a - road: 0x01000003
+CheckType = b - road: 0x00030100
+CheckType = c - road: 0x01000000, 0x00000000 optional
+CheckType = d - road: 0x00000103
+
+ConsLayout = .....
+ConsLayout = .....
+ConsLayout = .++.<
+ConsLayout = ..+..
+ConsLayout = .^...
+
+AutoTileBase = 0x50300e20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50300f00
+Costs = 290
+[HighwayIntersectionInfo_0x00017115]
+CopyFrom = 0x7115
+Rotate = 1
+[HighwayIntersectionInfo_0x00027115]
+CopyFrom = 0x7115
+Rotate = 2
+[HighwayIntersectionInfo_0x00037115]
+CopyFrom = 0x7115
+Rotate = 3
+[HighwayIntersectionInfo_0x00047115]
+CopyFrom = 0x7115
+Transpose = 1
+[HighwayIntersectionInfo_0x00057115]
+CopyFrom = 0x47115
+Rotate = 1
+[HighwayIntersectionInfo_0x00067115]
+CopyFrom = 0x47115
+Rotate = 2
+[HighwayIntersectionInfo_0x00077115]
+CopyFrom = 0x47115
+Rotate = 3
+
+;; clones of remaining eight rotations
+[HighwayIntersectionInfo_0x00087115]
+CopyFrom    = 0x7115
+[HighwayIntersectionInfo_0x00097115]
+CopyFrom    = 0x17115
+[HighwayIntersectionInfo_0x000A7115]
+CopyFrom    = 0x27115
+[HighwayIntersectionInfo_0x000B7115]
+CopyFrom    = 0x37115
+
+[HighwayIntersectionInfo_0x000C7115]
+CopyFrom    = 0x7115
+[HighwayIntersectionInfo_0x000D7115]
+CopyFrom    = 0x57115
+[HighwayIntersectionInfo_0x000E7115]
+CopyFrom    = 0x67115
+[HighwayIntersectionInfo_0x000F7115]
+CopyFrom    = 0x77115
+
+;=========================
+; MAXIS RD2 7.5m - 0x71xx
+;=========================
+[HighwayIntersectionInfo_0x00007100]
+;Added by SA 1/25/2012
+;orth rd x blank
+Piece = 0.0, 0.0, 0, 0, 0x50301000
+PreviewEffect = preview_75_el_rd_07100_1000
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007012
+Costs = 75
+[HighwayIntersectionInfo_0x00017100]
+CopyFrom = 0x7100
+Rotate	= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00027100]
+CopyFrom = 0x7100
+[HighwayIntersectionInfo_0x00037100]
+CopyFrom = 0x17100
+
+
+[HighwayIntersectionInfo_0x00047100]
+;Added by SA 1/25/2012
+;orth rd x blank, no pylon
+Piece = 0.0, 0.0, 0, 0, 0x50301010
+PreviewEffect = preview_75_el_rd_47100_1010
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5020A710
+Costs = 75
+[HighwayIntersectionInfo_0x00057100]
+CopyFrom = 0x47100
+Rotate = 1
+[HighwayIntersectionInfo_0x00067100]
+CopyFrom = 0x47100
+[HighwayIntersectionInfo_0x00077100]
+CopyFrom = 0x57100
+
+
+[HighwayIntersectionInfo_0x00087100]
+;Added by SA 1/25/2012
+;diag road x blank
+Piece = 0.0, 0.0, 0, 0, 0x50301020
+PreviewEffect = preview_75_el_rd_87100_1020
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007012
+Costs = 75
+[HighwayIntersectionInfo_0x00097100]
+CopyFrom = 0x87100
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7100]
+CopyFrom = 0x87100
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7100]
+CopyFrom = 0x87100
+Rotate	= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x000C7100]
+CopyFrom = 0x87100
+[HighwayIntersectionInfo_0x000D7100]
+CopyFrom = 0x97100
+[HighwayIntersectionInfo_0x000E7100]
+CopyFrom = 0xA7100
+[HighwayIntersectionInfo_0x000F7100]
+CopyFrom = 0xB7100
+
+
+[HighwayIntersectionInfo_0x00007101]
+;Added by SA 1/25/2012
+;road corner x blank
+Piece = 0.0, 0.0, 0, 0, 0x50301030
+PreviewEffect = preview_75_el_rd_07101_1030
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB00071F0
+Costs = 75
+[HighwayIntersectionInfo_0x00017101]
+CopyFrom = 0x7101
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027101]
+CopyFrom = 0x7101
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037101]
+CopyFrom = 0x7101
+Rotate	= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00047101]
+CopyFrom = 0x7101
+[HighwayIntersectionInfo_0x00057101]
+CopyFrom = 0x17101
+[HighwayIntersectionInfo_0x00067101]
+CopyFrom = 0x27101
+[HighwayIntersectionInfo_0x00077101]
+CopyFrom = 0x37101
+[HighwayIntersectionInfo_0x00087101]
+CopyFrom = 0x7101
+[HighwayIntersectionInfo_0x00097101]
+CopyFrom = 0x17101
+[HighwayIntersectionInfo_0x000A7101]
+CopyFrom = 0x27101
+[HighwayIntersectionInfo_0x000B7101]
+CopyFrom = 0x37101
+[HighwayIntersectionInfo_0x000C7101]
+CopyFrom = 0x7101
+[HighwayIntersectionInfo_0x000D7101]
+CopyFrom = 0x17101
+[HighwayIntersectionInfo_0x000E7101]
+CopyFrom = 0x27101
+[HighwayIntersectionInfo_0x000F7101]
+CopyFrom = 0x37101
+
+
+
+[HighwayIntersectionInfo_0x00007103]
+;roadxroad + intersection (also owr)
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301040
+PreviewEffect = preview_75_el_rd_071A0_1040
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007200
+Costs = 75
+[HighwayIntersectionInfo_0x00017103]
+CopyFrom = 0x7103
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00027103]
+CopyFrom = 0x7103
+[HighwayIntersectionInfo_0x00037103]
+CopyFrom = 0x17103
+[HighwayIntersectionInfo_0x00047103]
+CopyFrom = 0x7103
+[HighwayIntersectionInfo_0x00057103]
+CopyFrom = 0x17103
+[HighwayIntersectionInfo_0x00067103]
+CopyFrom = 0x7103
+[HighwayIntersectionInfo_0x00077103]
+CopyFrom = 0x17103
+
+
+[HighwayIntersectionInfo_0x00087103]
+;roadxroad T intersection (also owr)
+Piece = 0.0, 0.0, 0, 0, 0x50301050
+PreviewEffect = preview_75_el_rd_871A0_1050
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007210
+Costs = 75
+[HighwayIntersectionInfo_0x00097103]
+CopyFrom = 0x87103
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7103]
+CopyFrom = 0x87103
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7103]
+CopyFrom = 0x87103
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C7103]
+CopyFrom = 0x87103
+
+[HighwayIntersectionInfo_0x000D7103]
+CopyFrom = 0x97103
+[HighwayIntersectionInfo_0x000E7103]
+CopyFrom = 0xA7103
+[HighwayIntersectionInfo_0x000F7103]
+CopyFrom = 0xB7103
+
+
+[HighwayIntersectionInfo_0x00007102]
+;road to diag transition x blank
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301065
+PreviewEffect = preview_75_el_rd_07102_1060
+
+CellLayout =......
+CellLayout =..ab.<
+CellLayout =..^...
+
+CheckType = a - road:0x00020002
+CheckType = b - road:0x01000002
+
+ConsLayout =......
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301060
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5020a800
+Costs = 100
+[HighwayIntersectionInfo_0x00017102]
+CopyFrom = 0x7102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027102]
+CopyFrom = 0x7102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037102]
+CopyFrom = 0x7102
+Rotate	= 3
+[HighwayIntersectionInfo_0x00047102]
+CopyFrom = 0x7102
+Transpose = 1
+[HighwayIntersectionInfo_0x00057102]
+CopyFrom = 0x47102
+Rotate	= 1
+[HighwayIntersectionInfo_0x00067102]
+CopyFrom = 0x47102
+Rotate	= 2
+[HighwayIntersectionInfo_0x00077102]
+CopyFrom = 0x47102
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x00087102]
+CopyFrom = 0x7102
+[HighwayIntersectionInfo_0x00097102]
+CopyFrom = 0x17102
+[HighwayIntersectionInfo_0x000A7102]
+CopyFrom = 0x27102
+[HighwayIntersectionInfo_0x000B7102]
+CopyFrom = 0x37102
+[HighwayIntersectionInfo_0x000C7102]
+CopyFrom = 0x47102
+[HighwayIntersectionInfo_0x000D7102]
+CopyFrom = 0x57102
+[HighwayIntersectionInfo_0x000E7102]
+CopyFrom = 0x67102
+[HighwayIntersectionInfo_0x000F7102]
+CopyFrom = 0x77102
+
+
+[HighwayIntersectionInfo_0x00007104]
+;Added by SA 1/25/2012
+;orth road x orth road
+Piece = 0.0, 0.0, 0, 0, 0x50301100
+PreviewEffect = preview_75_el_rd_07110_1100
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00017104]
+CopyFrom = 0x7104
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00027104]
+CopyFrom = 0x7104
+[HighwayIntersectionInfo_0x00037104]
+CopyFrom = 0x17104
+[HighwayIntersectionInfo_0x00047104]
+CopyFrom = 0x7104
+[HighwayIntersectionInfo_0x00057104]
+CopyFrom = 0x17104
+[HighwayIntersectionInfo_0x00067104]
+CopyFrom = 0x7104
+[HighwayIntersectionInfo_0x00077104]
+CopyFrom = 0x17104
+
+
+[HighwayIntersectionInfo_0x00087104]
+;Added by SA 1/25/2012
+;diag road x orth road
+Piece = 0.0, 0.0, 0, 0, 0x50301110
+PreviewEffect = preview_75_el_rd_87110_1110
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00097104]
+CopyFrom = 0x87104
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7104]
+CopyFrom = 0x87104
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7104]
+CopyFrom = 0x87104
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C7104]
+CopyFrom = 0x87104
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7104]
+CopyFrom = 0xC7104
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E7104]
+CopyFrom = 0xC7104
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F7104]
+CopyFrom = 0xC7104
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00007105]
+;Added by SA 1/25/2012
+;orth road x ddiag road
+Piece = 0.0, 0.0, 0, 0, 0x50301120
+PreviewEffect = preview_75_el_rd_07111_1120
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x01030103
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00017105]
+CopyFrom = 0x7105
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027105]
+CopyFrom = 0x7105
+Transpose = 1
+[HighwayIntersectionInfo_0x00037105]
+CopyFrom = 0x27105
+Rotate	= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00047105]
+CopyFrom = 0x7105
+[HighwayIntersectionInfo_0x00057105]
+CopyFrom = 0x17105
+[HighwayIntersectionInfo_0x00067105]
+CopyFrom = 0x27105
+[HighwayIntersectionInfo_0x00077105]
+CopyFrom = 0x37105
+
+
+[HighwayIntersectionInfo_0x00087105]
+;Added by SA 1/25/2012
+;diag road x ddiag road
+Piece = 0.0, 0.0, 0, 0, 0x50301130
+PreviewEffect = preview_75_el_rd_87111_1130
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010301
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00097105]
+CopyFrom = 0x87105
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7105]
+CopyFrom = 0x87105
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7105]
+CopyFrom = 0x87105
+Rotate	= 3
+;;Clones for rotation
+[HighwayIntersectionInfo_0x000C7105]
+CopyFrom = 0x87105
+[HighwayIntersectionInfo_0x000D7105]
+CopyFrom = 0x97105
+[HighwayIntersectionInfo_0x000E7105]
+CopyFrom = 0xA7105
+[HighwayIntersectionInfo_0x000F7105]
+CopyFrom = 0xB7105
+
+
+[HighwayIntersectionInfo_0x00007106]
+;Added by SA 1/25/2012
+;orth road x diag road
+Piece = 0.0, 0.0, 0, 0, 0x50301140
+PreviewEffect = preview_75_el_rd_07112_1140
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x03010000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301140
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00017106]
+CopyFrom = 0x7106
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027106]
+CopyFrom = 0x7106
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037106]
+CopyFrom = 0x7106
+Rotate	= 3
+[HighwayIntersectionInfo_0x00047106]
+CopyFrom = 0x7106
+Transpose = 1
+[HighwayIntersectionInfo_0x00057106]
+CopyFrom = 0x47106
+Rotate	= 1
+[HighwayIntersectionInfo_0x00067106]
+CopyFrom = 0x47106
+Rotate	= 2
+[HighwayIntersectionInfo_0x00077106]
+CopyFrom = 0x47106
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00087106]
+;Added by SA 1/25/2012
+;diag road x diag road
+Piece = 0.0, 0.0, 0, 0, 0x50301150
+PreviewEffect = preview_75_el_rd_87112_1150
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301150
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007015
+Costs = 75
+[HighwayIntersectionInfo_0x00097106]
+CopyFrom = 0x87106
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7106]
+CopyFrom = 0x87106
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7106]
+CopyFrom = 0x87106
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C7106]
+CopyFrom = 0x87106
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7106]
+CopyFrom = 0xC7106
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E7106]
+CopyFrom = 0xC7106
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F7106]
+CopyFrom = 0xC7106
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00007107]
+;orth road x orth rail
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301200
+PreviewEffect = preview_75_el_rd_07120_1200
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 rail:0x02000200
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00017107]
+CopyFrom = 0x7107
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00027107]
+CopyFrom = 0x7107
+[HighwayIntersectionInfo_0x00037107]
+CopyFrom = 0x17107
+[HighwayIntersectionInfo_0x00047107]
+CopyFrom = 0x7107
+[HighwayIntersectionInfo_0x00057107]
+CopyFrom = 0x17107
+[HighwayIntersectionInfo_0x00067107]
+CopyFrom = 0x7107
+[HighwayIntersectionInfo_0x00077107]
+CopyFrom = 0x17107
+
+
+[HighwayIntersectionInfo_0x00087107]
+;Added by SA 1/25/2012
+;diag road x orth rail
+Piece = 0.0, 0.0, 0, 0, 0x50301210
+PreviewEffect = preview_75_el_rd_87120_1210
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 rail:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301210
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00097107]
+CopyFrom = 0x87107
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7107]
+CopyFrom = 0x87107
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7107]
+CopyFrom = 0x87107
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C7107]
+CopyFrom = 0x87107
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7107]
+CopyFrom = 0xC7107
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E7107]
+CopyFrom = 0xC7107
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F7107]
+CopyFrom = 0xC7107
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00007108]
+;orth road x ddiag rail
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301220
+PreviewEffect = preview_75_el_rd_07121_1220
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 rail:0x01030103
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301220
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00017108]
+CopyFrom = 0x7108
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027108]
+CopyFrom = 0x7108
+Transpose = 1
+[HighwayIntersectionInfo_0x00037108]
+CopyFrom = 0x27108
+Rotate	= 1
+;;Clones for rotation
+[HighwayIntersectionInfo_0x00047108]
+CopyFrom = 0x7108
+[HighwayIntersectionInfo_0x00057108]
+CopyFrom = 0x17108
+[HighwayIntersectionInfo_0x00067108]
+CopyFrom = 0x27108
+[HighwayIntersectionInfo_0x00077108]
+CopyFrom = 0x37108
+
+
+[HighwayIntersectionInfo_0x00087108]
+;Added by SA 1/25/2012
+;diag road x ddiag rail
+Piece = 0.0, 0.0, 0, 0, 0x50301230
+PreviewEffect = preview_75_el_rd_87121_1230
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 rail:0x03010301
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00097108]
+CopyFrom = 0x87108
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7108]
+CopyFrom = 0x87108
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7108]
+CopyFrom = 0x87108
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C7108]
+CopyFrom = 0x87108
+[HighwayIntersectionInfo_0x000D7108]
+CopyFrom = 0x97108
+[HighwayIntersectionInfo_0x000E7108]
+CopyFrom = 0xA7108
+[HighwayIntersectionInfo_0x000F7108]
+CopyFrom = 0xB7108
+
+
+[HighwayIntersectionInfo_0x00007109]
+;orth road x diag rail
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301240
+PreviewEffect = preview_75_el_rd_07122_1240
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 rail:0x03010000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301240
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00017109]
+CopyFrom = 0x7109
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027109]
+CopyFrom = 0x7109
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037109]
+CopyFrom = 0x7109
+Rotate	= 3
+[HighwayIntersectionInfo_0x00047109]
+CopyFrom = 0x7109
+
+Transpose = 1
+[HighwayIntersectionInfo_0x00057109]
+CopyFrom = 0x47109
+Rotate	= 1
+[HighwayIntersectionInfo_0x00067109]
+CopyFrom = 0x47109
+Rotate	= 2
+[HighwayIntersectionInfo_0x00077109]
+CopyFrom = 0x47109
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00087109]
+;diag road x diag rail
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301250
+PreviewEffect = preview_75_el_rd_87122_1250
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 rail:0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301250
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007017
+Costs = 100
+[HighwayIntersectionInfo_0x00097109]
+CopyFrom = 0x87109
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7109]
+CopyFrom = 0x87109
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B7109]
+CopyFrom = 0x87109
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C7109]
+CopyFrom = 0x87109
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7109]
+CopyFrom = 0xC7109
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E7109]
+CopyFrom = 0xC7109
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F7109]
+CopyFrom = 0xC7109
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0000710A]
+;orth road x orth street
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301300
+PreviewEffect = preview_75_el_rd_07130_1300
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00020002 street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007025
+Costs = 50
+[HighwayIntersectionInfo_0x0001710A]
+CopyFrom = 0x710A
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x0002710A]
+CopyFrom = 0x710A
+[HighwayIntersectionInfo_0x0003710A]
+CopyFrom = 0x1710A
+[HighwayIntersectionInfo_0x0004710A]
+CopyFrom = 0x710A
+[HighwayIntersectionInfo_0x0005710A]
+CopyFrom = 0x1710A
+[HighwayIntersectionInfo_0x0006710A]
+CopyFrom = 0x710A
+[HighwayIntersectionInfo_0x0007710A]
+CopyFrom = 0x1710A
+
+
+[HighwayIntersectionInfo_0x0008710A]
+;diag road x orth street
+;added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301310
+PreviewEffect = preview_75_el_rd_87130_1310
+
+CellLayout =.....
+CellLayout =..Z..<
+CellLayout =..^..
+
+CheckType = Z - road: 0x01000003 street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301310
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007025
+Costs = 50
+[HighwayIntersectionInfo_0x0009710A]
+CopyFrom = 0x8710A
+Rotate = 1
+[HighwayIntersectionInfo_0x000A710A]
+CopyFrom = 0x8710A
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B710A]
+CopyFrom = 0x8710A
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C710A]
+CopyFrom = 0x8710A
+Transpose = 1
+;;rotate added to fix auto resolving issue for addtypes line for item
+Rotate = 1
+[HighwayIntersectionInfo_0x000D710A]
+CopyFrom = 0xC710A
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E710A]
+CopyFrom = 0xC710A
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F710A]
+CopyFrom = 0xC710A
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0000710B]
+;orth road x orth owr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301400
+PreviewEffect = preview_75_el_rd_07140_1400
+
+CellLayout =.....
+CellLayout =..Z..<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00020002 onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0001710B]
+CopyFrom = 0x710B
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002710B]
+CopyFrom = 0x710B
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003710B]
+CopyFrom = 0x710B
+Rotate	= 3
+[HighwayIntersectionInfo_0x0004710B]
+CopyFrom = 0x710B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005710B]
+CopyFrom = 0x4710B
+Rotate = 1
+[HighwayIntersectionInfo_0x0006710B]
+CopyFrom = 0x4710B
+Rotate = 2
+[HighwayIntersectionInfo_0x0007710B]
+CopyFrom = 0x4710B
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x0008710B]
+;diag road x orth owr
+;added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301410
+PreviewEffect = preview_75_el_rd_87140_1410
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 onewayroad:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301410
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0009710B]
+CopyFrom = 0x8710B
+Rotate = 1
+[HighwayIntersectionInfo_0x000A710B]
+CopyFrom = 0x8710B
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B710B]
+CopyFrom = 0x8710B
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C710B]
+CopyFrom = 0x8710B
+Transpose = 1
+;;rotate added to fix auto resolving for addtypes line
+Rotate = 1
+[HighwayIntersectionInfo_0x000D710B]
+CopyFrom = 0xC710B
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E710B]
+CopyFrom = 0xC710B
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F710B]
+CopyFrom = 0xC710B
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0000710C]
+;orth road x ddiag owr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301420
+PreviewEffect = preview_75_el_rd_07141_1420
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 onewayroad:0x01030103
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301420
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0001710C]
+CopyFrom = 0x710C
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002710C]
+CopyFrom = 0x710C
+Transpose = 1
+[HighwayIntersectionInfo_0x0003710C]
+CopyFrom = 0x2710C
+Rotate	= 1
+[HighwayIntersectionInfo_0x0004710C]
+CopyFrom = 0x710C
+[HighwayIntersectionInfo_0x0005710C]
+CopyFrom = 0x1710C
+[HighwayIntersectionInfo_0x0006710C]
+CopyFrom = 0x2710C
+[HighwayIntersectionInfo_0x0007710C]
+CopyFrom = 0x3710C
+
+
+[HighwayIntersectionInfo_0x0008710C]
+;diag road x ddiag owr
+;added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301430
+PreviewEffect = preview_75_el_rd_87141_1430
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 onewayroad:0x03010301
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x50301430
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0009710C]
+CopyFrom = 0x8710C
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A710C]
+CopyFrom = 0x8710C
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B710C]
+CopyFrom = 0x8710C
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C710C]
+CopyFrom = 0x8710C
+Transpose = 1
+[HighwayIntersectionInfo_0x000D710C]
+CopyFrom = 0xC710C
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E710C]
+CopyFrom = 0xC710C
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F710C]
+CopyFrom = 0xC710C
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0000710D]
+;orth road x diag owr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301440
+PreviewEffect = preview_75_el_rd_07142_1440
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 onewayroad:0x03010000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301440
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0001710D]
+CopyFrom = 0x710D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002710D]
+CopyFrom = 0x710D
+Rotate	= 2
+[HighwayIntersectionInfo_0x0003710D]
+CopyFrom = 0x710D
+Rotate	= 3
+[HighwayIntersectionInfo_0x0004710D]
+CopyFrom = 0x710D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005710D]
+CopyFrom = 0x4710D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006710D]
+CopyFrom = 0x4710D
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007710D]
+CopyFrom = 0x4710D
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0008710D]
+;diag road x diag owr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301450
+PreviewEffect = preview_75_el_rd_87142_1450
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x01000003 onewayroad:0x03010000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase = 0x50301450
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007035
+Costs = 75
+[HighwayIntersectionInfo_0x0009710D]
+CopyFrom = 0x8710D
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A710D]
+CopyFrom = 0x8710D
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B710D]
+CopyFrom = 0x8710D
+Rotate	= 3
+[HighwayIntersectionInfo_0x000C710D]
+CopyFrom = 0x8710D
+Transpose = 1
+[HighwayIntersectionInfo_0x000D710D]
+CopyFrom = 0xC710D
+Rotate	= 1
+[HighwayIntersectionInfo_0x000E710D]
+CopyFrom = 0xC710D
+Rotate	= 2
+[HighwayIntersectionInfo_0x000F710D]
+CopyFrom = 0xC710D
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x0000710E]
+;orth road x orth ave
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301505
+PreviewEffect = preview_75_el_rd_07150_1500
+
+CellLayout =......
+CellLayout =..cd.<
+CellLayout =..^...
+
+CheckType = c - road: 0x00020002 avenue: 0x02040200
+CheckType = d - road: 0x00020002 avenue: 0x02000204
+
+ConsLayout =......
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007045
+Costs = 150
+[HighwayIntersectionInfo_0x0001710E]
+CopyFrom = 0x710E
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x0002710E]
+CopyFrom = 0x710E
+[HighwayIntersectionInfo_0x0003710E]
+CopyFrom = 0x1710E
+[HighwayIntersectionInfo_0x0004710E]
+CopyFrom = 0x710E
+[HighwayIntersectionInfo_0x0005710E]
+CopyFrom = 0x1710E
+[HighwayIntersectionInfo_0x0006710E]
+CopyFrom = 0x710E
+[HighwayIntersectionInfo_0x0007710E]
+CopyFrom = 0x1710E
+
+
+[HighwayIntersectionInfo_0x0008710E]
+;diag road x orth ave
+;added by SA 1/25/2012
+Piece = 0.0, -16.0, 0, 0, 0x50301515
+PreviewEffect = preview_75_el_rd_87150_1510
+
+CellLayout =......
+CellLayout =..W...
+CellLayout =..YX.<
+CellLayout =...Z..
+CellLayout =..^...
+
+CheckType = W - road:0x01000003 avenue:0x02040200
+CheckType = X - road:0x01000003 avenue:0x02000204
+CheckType = Y - road:0x00030100 avenue:0x02040200
+CheckType = Z - road:0x00030100 avenue:0x02000204
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..++.<
+ConsLayout =...+..
+ConsLayout =..^...
+
+AutoTileBase=	0x50301510
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007045
+Costs = 150
+[HighwayIntersectionInfo_0x0009710E]
+CopyFrom = 0x8710E
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A710E]
+CopyFrom = 0x8710E
+Transpose = 1
+[HighwayIntersectionInfo_0x000B710E]
+CopyFrom = 0xA710E
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C710E]
+CopyFrom = 0x8710E
+[HighwayIntersectionInfo_0x000D710E]
+CopyFrom = 0x9710E
+[HighwayIntersectionInfo_0x000E710E]
+CopyFrom = 0xA710E
+[HighwayIntersectionInfo_0x000F710E]
+CopyFrom = 0xB710E
+
+
+[HighwayIntersectionInfo_0x0000710F]
+;orth road x diag ave
+;added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301705
+PreviewEffect = preview_75_el_rd_07151_1700
+
+CellLayout =......
+CellLayout =..A...
+CellLayout =..B..<
+CellLayout =..C...
+CellLayout =..^...
+
+CheckType = A - road:0x02000000 avenue:0x01000003
+CheckType = B - road:0x02000200 avenue:0x01030103
+CheckType = C - road:0x00000200 avenue:0x00030100
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..+..<
+ConsLayout =..+...
+ConsLayout =..^...
+
+AutoTileBase=	0x50301700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007045
+Costs = 150
+[HighwayIntersectionInfo_0x0001710F]
+CopyFrom = 0x710F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002710F]
+CopyFrom = 0x710F
+Transpose = 1
+[HighwayIntersectionInfo_0x0003710F]
+CopyFrom = 0x2710F
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x0004710F]
+CopyFrom = 0x710F
+[HighwayIntersectionInfo_0x0005710F]
+CopyFrom = 0x1710F
+[HighwayIntersectionInfo_0x0006710F]
+CopyFrom = 0x2710F
+[HighwayIntersectionInfo_0x0007710F]
+CopyFrom = 0x3710F
+
+
+[HighwayIntersectionInfo_0x0008710F]
+;diag road x diag ave
+;Added by SA 1/25/2012
+Piece = 0.0, -16.0, 0, 0, 0x50301545
+PreviewEffect = preview_75_el_rd_87151_1540
+
+CellLayout =......
+CellLayout =..X...
+CellLayout =..ZY.<
+CellLayout =..^...
+
+CheckType = X - road:0x01000003 avenue:0x03010000
+CheckType = Y - road:0x01000003 avenue:0x00000301
+CheckType = Z - road:0x00030100 avenue:0x03010301
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301540
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007045
+Costs = 150
+[HighwayIntersectionInfo_0x0009710F]
+CopyFrom = 0x8710F
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A710F]
+CopyFrom = 0x8710F
+Rotate	= 2
+[HighwayIntersectionInfo_0x000B710F]
+CopyFrom = 0x8710F
+Rotate	= 3
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C710F]
+CopyFrom = 0x8710F
+[HighwayIntersectionInfo_0x000D710F]
+CopyFrom = 0x9710F
+[HighwayIntersectionInfo_0x000E710F]
+CopyFrom = 0xA710F
+[HighwayIntersectionInfo_0x000F710F]
+CopyFrom = 0xB710F
+
+
+[HighwayIntersectionInfo_0x00007110]
+;orth road x orth ghw
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301805
+PreviewEffect = preview_75_el_rd_07160_1800
+
+CellLayout = ..........
+CellLayout = ....cd....<
+CellLayout = ....^.....
+
+CheckType = c - road: 0x00020002 groundhighway: 0x02040200
+CheckType = d - road: 0x00020002 groundhighway: 0x02000204
+
+ConsLayout = ........
+ConsLayout = ...++..<
+ConsLayout = ...^....
+
+AutoTileBase=	0x50301800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007055
+Costs = 200
+[HighwayIntersectionInfo_0x00017110]
+CopyFrom = 0x7110
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00027110]
+CopyFrom = 0x7110
+[HighwayIntersectionInfo_0x00037110]
+CopyFrom = 0x17110
+[HighwayIntersectionInfo_0x00047110]
+CopyFrom = 0x7110
+[HighwayIntersectionInfo_0x00057110]
+CopyFrom = 0x17110
+[HighwayIntersectionInfo_0x00067110]
+CopyFrom = 0x7110
+[HighwayIntersectionInfo_0x00077110]
+CopyFrom = 0x17110
+
+
+[HighwayIntersectionInfo_0x00087110]
+;diag road x orth ghw
+;Added by SA 1/25/2012
+Piece = 0.0, -16.0, 0, 0, 0x50301815
+PreviewEffect = preview_75_el_rd_87160_1810
+
+CellLayout =......
+CellLayout =..W...
+CellLayout =..YX.<
+CellLayout =...Z..
+CellLayout =..^...
+
+CheckType = W - road:0x01000003 groundhighway:0x02040200
+CheckType = X - road:0x01000003 groundhighway:0x02000204
+CheckType = Y - road:0x00030100 groundhighway:0x02040200
+CheckType = Z - road:0x00030100 groundhighway:0x02000204
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..++.<
+ConsLayout =...+..
+ConsLayout =..^...
+
+AutoTileBase=	0x50301810
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007055
+Costs = 200
+[HighwayIntersectionInfo_0x00097110]
+CopyFrom = 0x87110
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7110]
+CopyFrom = 0x87110
+Transpose = 1
+[HighwayIntersectionInfo_0x000B7110]
+CopyFrom = 0xA7110
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C7110]
+CopyFrom = 0x87110
+[HighwayIntersectionInfo_0x000D7110]
+CopyFrom = 0x97110
+[HighwayIntersectionInfo_0x000E7110]
+CopyFrom = 0xA7110
+[HighwayIntersectionInfo_0x000F7110]
+CopyFrom = 0xB7110
+
+
+[HighwayIntersectionInfo_0x00007111]
+;orth road x diag ghw
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301A05
+PreviewEffect = preview_75_el_rd_07161_1a00
+
+CellLayout =......
+CellLayout =..A...
+CellLayout =..B..<
+CellLayout =..C...
+CellLayout =..^...
+
+CheckType = A - road:0x02000000 groundhighway:0x03010000
+CheckType = B - road:0x02000200 groundhighway:0x03010301
+CheckType = C - road:0x00000200 groundhighway:0x00000301
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..+..<
+ConsLayout =..+...
+ConsLayout =..^...
+
+AutoTileBase=	0x50301A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007055
+Costs = 200
+[HighwayIntersectionInfo_0x00017111]
+CopyFrom = 0x7111
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027111]
+CopyFrom = 0x7111
+Transpose = 1
+[HighwayIntersectionInfo_0x00037111]
+CopyFrom = 0x27111
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00047111]
+CopyFrom = 0x7111
+[HighwayIntersectionInfo_0x00057111]
+CopyFrom = 0x17111
+[HighwayIntersectionInfo_0x00067111]
+CopyFrom = 0x27111
+[HighwayIntersectionInfo_0x00077111]
+CopyFrom = 0x37111
+
+
+[HighwayIntersectionInfo_0x00087111]
+;diag road x diag ghw
+;Added by SA 1/25/2012
+Piece = 0.0, -16.0, 0, 0, 0x50301845
+PreviewEffect = preview_75_el_rd_87161_1840
+
+CellLayout =......
+CellLayout =..X...
+CellLayout =..ZY.<
+CellLayout =..^...
+
+CheckType = X - road:0x01000003 groundhighway:0x03010000
+CheckType = Y - road:0x01000003 groundhighway:0x00000301
+CheckType = Z - road:0x00030100 groundhighway:0x03010301
+
+ConsLayout =......
+ConsLayout =..+...
+ConsLayout =..++.<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301840
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0007055
+Costs = 200
+[HighwayIntersectionInfo_0x00097111]
+CopyFrom = 0x87111
+Rotate	= 1
+[HighwayIntersectionInfo_0x000A7111]
+CopyFrom = 0x87111
+Transpose = 1
+[HighwayIntersectionInfo_0x000B7111]
+CopyFrom = 0xA7111
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x000C7111]
+CopyFrom = 0x87111
+[HighwayIntersectionInfo_0x000D7111]
+CopyFrom = 0x97111
+[HighwayIntersectionInfo_0x000E7111]
+CopyFrom = 0xA7111
+[HighwayIntersectionInfo_0x000F7111]
+CopyFrom = 0xB7111
+
+
+
+[HighwayIntersectionInfo_0x00007112]
+;orth road x orth glr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301b00
+PreviewEffect = preview_75_el_rd_07170_1b00
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 lightrail:0x00000000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5013b700
+Costs = 100
+[HighwayIntersectionInfo_0x00017112]
+CopyFrom = 0x7112
+Rotate	= 1
+;Clones for rotation
+[HighwayIntersectionInfo_0x00027112]
+CopyFrom = 0x7112
+[HighwayIntersectionInfo_0x00037112]
+CopyFrom = 0x17112
+[HighwayIntersectionInfo_0x00047112]
+CopyFrom = 0x7112
+[HighwayIntersectionInfo_0x00057112]
+CopyFrom = 0x17112
+[HighwayIntersectionInfo_0x00067112]
+CopyFrom = 0x7112
+[HighwayIntersectionInfo_0x00077112]
+CopyFrom = 0x17112
+
+
+[HighwayIntersectionInfo_0x00087112]
+;diag road x orth glr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301b10
+PreviewEffect = preview_75_el_rd_87170_1b10
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00000000 lightrail:0x00000000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301b10
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5013b700
+Costs = 100
+[HighwayIntersectionInfo_0x00097112]
+CopyFrom = 0x87112
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7112]
+CopyFrom = 0x87112
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7112]
+CopyFrom = 0x87112
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7112]
+CopyFrom = 0x87112
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7112]
+CopyFrom = 0xC7112
+Rotate = 1
+[HighwayIntersectionInfo_0x000E7112]
+CopyFrom = 0xC7112
+Rotate = 2
+[HighwayIntersectionInfo_0x000F7112]
+CopyFrom = 0xC7112
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00007113]
+;orth road x diag glr
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301b20
+PreviewEffect = preview_75_el_rd_07171_1b20
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00020002 lightrail:0x03010000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301b20
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5013b700
+Costs = 100
+[HighwayIntersectionInfo_0x00017113]
+CopyFrom = 0x7113
+Rotate	= 1
+[HighwayIntersectionInfo_0x00027113]
+CopyFrom = 0x7113
+Rotate	= 2
+[HighwayIntersectionInfo_0x00037113]
+CopyFrom = 0x7113
+Rotate	= 3
+[HighwayIntersectionInfo_0x00047113]
+CopyFrom = 0x7113
+Transpose = 1
+[HighwayIntersectionInfo_0x00057113]
+CopyFrom = 0x47113
+Rotate	= 1
+[HighwayIntersectionInfo_0x00067113]
+CopyFrom = 0x47113
+Rotate	= 2
+[HighwayIntersectionInfo_0x00077113]
+CopyFrom = 0x47113
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00087113]
+;Added by SA 1/25/2012
+Piece = 0.0, 0.0, 0, 0, 0x50301b30
+PreviewEffect = preview_75_el_rd_87171_1b30
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00000000 lightrail:0x03010000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x50301b30
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5013b700
+Costs = 100
+[HighwayIntersectionInfo_0x00097113]
+CopyFrom = 0x87113
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7113]
+CopyFrom = 0x87113
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7113]
+CopyFrom = 0x87113
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7113]
+CopyFrom = 0x87113
+Transpose = 1
+[HighwayIntersectionInfo_0x000D7113]
+CopyFrom = 0xC7113
+Rotate = 1
+[HighwayIntersectionInfo_0x000E7113]
+CopyFrom = 0xC7113
+Rotate = 2
+[HighwayIntersectionInfo_0x000F7113]
+CopyFrom = 0xC7113
+Rotate = 3
+

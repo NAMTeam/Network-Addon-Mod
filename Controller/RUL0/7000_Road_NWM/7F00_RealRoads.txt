@@ -1,0 +1,107 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RealRoads BUTTON SECTION
+;RealRoads BUTTON SECTION
+;RealRoads BUTTON SECTION
+
+RotationRing = 7F00, 17F00, 27F00, 37F00, 47F00, 57F00, 67F00, 77F00, 87F00, 97F00, A7F00, B7F00, C7F00, D7F00, E7F00, F7F00 ;RealRoads-Dashed Orthogonal Starter
+
+
+
+;###separator###
+
+
+;----RealRoads Section----
+;R7F##
+
+[HighwayIntersectionInfo_0x00007F00]
+;Added by Tarkus 1/25/2010.
+;RealRoads-Dashed Orthogonal Starter Piece
+Piece = 0.0, 0.0, 0, 0, 0x5180F005
+PreviewEffect = preview_draggable_realrd001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - road: 0x02000200
+CheckType = a - road: 0x02000200 dirtroad: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase=	0x5180F000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5180F000
+Costs       = 8
+[HighwayIntersectionInfo_0x00017F00]
+CopyFrom    = 0x7F00
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027F00]
+CopyFrom    = 0x7F00
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037F00]
+CopyFrom    = 0x7F00
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00047F00]
+CopyFrom    = 0x7F00
+[HighwayIntersectionInfo_0x00057F00]
+CopyFrom    = 0x17F00
+[HighwayIntersectionInfo_0x00067F00]
+CopyFrom    = 0x27F00
+[HighwayIntersectionInfo_0x00077F00]
+CopyFrom    = 0x37F00
+
+
+
+[HighwayIntersectionInfo_0x00087F00]
+;Added by Tarkus 1/25/2010.
+;RealRoads-Dashed Diagonal Starter Piece
+Piece = 0.0, 0.0, 0, 0, 0x5180F105
+PreviewEffect = preview_draggable_realrd002
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z<..
+CellLayout =...^...
+
+CheckType = Z - road: 0x00000301
+CheckType = a - road: 0x03010000 dirtroad: 0x02020000, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase=	0x5180F100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5180F100
+Costs       = 8
+[HighwayIntersectionInfo_0x00097F00]
+CopyFrom    = 0x87F00
+Rotate = 1
+[HighwayIntersectionInfo_0x000A7F00]
+CopyFrom    = 0x87F00
+Rotate = 2
+[HighwayIntersectionInfo_0x000B7F00]
+CopyFrom    = 0x87F00
+Rotate = 3
+[HighwayIntersectionInfo_0x000C7F00]
+CopyFrom    = 0x87F00
+[HighwayIntersectionInfo_0x000D7F00]
+CopyFrom    = 0x97F00
+[HighwayIntersectionInfo_0x000E7F00]
+CopyFrom    = 0xA7F00
+[HighwayIntersectionInfo_0x000F7F00]
+CopyFrom    = 0xB7F00
+
+;----END RealRoads SECTION----
+
+;;Road Puzzle Pieces
+;;Effect Preview line usage upto
+;;PreviewEffect = preview_road_puzzlepiece044
+
+

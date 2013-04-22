@@ -1,0 +1,694 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;NOTE; for all custom content; some items have added values for them for rotational/cycling purposes only,
+; because of an issue with tabbing that can cause the game to crash and/or the cursor not to display the
+;preview model properly when cycling from one item to the next.
+;Game will typically auto resolve appropriate possible pieces for a given tile, for a given addtypes line, when rotating if there's an underlying network present & checktype lines are configured to that of the underlying network. Some variations to this may exist though.
+;Some RUL items have rotate &/or transpose modifications to them for in-game adjustment purposes, relating to auto-resolving of the Ordering Section.
+;NOTE: Be mindful of making comments in the Ordering Section on/after RotatingRing &/or AddTypes lines
+; as certain characters (,) can completely stuff up a whole buttons RotationRings and AddTypes section.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; CANAL PUZZLE PIECES ;
+; CANAL PUZZLE PIECES ;
+; CANAL PUZZLE PIECES ;
+; 0x01##
+RotationRing = 0100, 10100, 20100, 30100 ; straight paths
+AddTypes     = 0101, 10101, 20101, 30101 ; corner paths
+AddTypes     = 0102, 10102, 20102, 30102 ; T crossing paths
+AddTypes     = 0103, 10103, 20103, 30103 ; + crossing paths
+AddTypes     = 0104, 10104, 20104, 30104 ; road-over-canal straight
+AddTypes     = 0105, 10105, 20105, 30105 ; road-over-canal edge
+AddTypes     = 0106, 10106, 20106, 30106 ; road-under-canal edge
+AddTypes     = 0107, 10107, 20107, 30107 ; onewayroad-over-canal straight
+AddTypes     = 0108, 10108, 20108, 30108 ; onewayroad-over-canal edge
+AddTypes     = 0109, 10109, 20109, 30109 ; avenue-over-canal straight
+AddTypes     = 010A, 1010A, 2010A, 3010A ; avenue-over-canal edge
+AddTypes     = 010B, 1010B, 2010B, 3010B ; highway-over-canal straight
+AddTypes     = 010C, 1010C, 2010C, 3010C ; highway-over-canal edge
+AddTypes     = 010D, 1010D, 2010D, 3010D ; monorail-over-canal straight
+AddTypes     = 010E, 1010E, 2010E, 3010E ; monorail-over-canal edge
+AddTypes     = 010F, 1010F, 2010F, 3010F ; elevatedLightRail-over-canal straight
+AddTypes     = 0110, 10110, 20110, 30110 ; elevatedLightRail-over-canal edge
+AddTypes     = 0111, 10111, 20111, 30111 ; viaductRail-over-canal straight
+AddTypes     = 0112, 10112, 20112, 30112 ; viaductRail-over-canal edge
+
+;###separator###
+
+;
+;
+;Everything below here are additional Overpasses, 
+;Puzzle Pieces, Ramps, Interchanges or related items.
+;Generally everything is broken up into particular categories, with rules in 
+;order of #HighwayIntersectionInfo_#valuehere## value in a given category.
+;There may be some exceptions to this though.
+;Some items, coding etc, have been left in & or modified but commented out, 
+;these commented out sections have mostly just been left in for reference.
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;; CANAL PUZZLE PIECES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x00000100]
+;Added by Daeley
+;Edited by ebina, 11 October 2009. To reflect update to the FLUPs.
+;canal  straight paths
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1005
+PreviewEffect = preview_sgcanal_str_ca1a100
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+;CheckType = a - rail: 0x00000000 road: 0x00020002
+CheckType = a - lightrail: 0x00000000 road: 0x00020002
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1000
+Costs       = 10
+[HighwayIntersectionInfo_0x00010100]
+CopyFrom    = 0x0100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020100]
+CopyFrom    = 0x0100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030100]
+CopyFrom    = 0x0100
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000103]
+;Added by Daeley 
+;canal  + crossing paths
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1305
+PreviewEffect = preview_sgcanal_str_ca1a130
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00000000 road: 0x02020202
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1300
+Costs       = 10
+[HighwayIntersectionInfo_0x00010103]
+CopyFrom    = 0x0103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020103]
+CopyFrom    = 0x0103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030103]
+CopyFrom    = 0x0103
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000101]
+;Added by Daeley 
+;canal  corner paths
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1105
+PreviewEffect = preview_sgcanal_str_ca1a110
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00000000 road: 0x00000202
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1100
+Costs       = 10
+[HighwayIntersectionInfo_0x00010101]
+CopyFrom    = 0x0101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020101]
+CopyFrom    = 0x0101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030101]
+CopyFrom    = 0x0101
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000102]
+;Added by Daeley 
+;canal  T crossing paths
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1205
+PreviewEffect = preview_sgcanal_str_ca1a120
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00000000 road: 0x02000202
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1200
+Costs       = 10
+[HighwayIntersectionInfo_0x00010102]
+CopyFrom    = 0x0102
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020102]
+CopyFrom    = 0x0102
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030102]
+CopyFrom    = 0x0102
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000104]
+;Added by Daeley 
+;road over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1405
+PreviewEffect = preview_sgcanal_str_ca1a140
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1400
+Costs       = 10
+[HighwayIntersectionInfo_0x00010104]
+CopyFrom    = 0x0104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020104]
+CopyFrom    = 0x0104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030104]
+CopyFrom    = 0x0104
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000105]
+;Added by Daeley 
+;road over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1505
+PreviewEffect = preview_sgcanal_str_ca1a150
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - road: 0x00000000
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1500
+Costs       = 10
+[HighwayIntersectionInfo_0x00010105]
+CopyFrom    = 0x0105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020105]
+CopyFrom    = 0x0105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030105]
+CopyFrom    = 0x0105
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000107]
+;Added by Daeley and Chrisim
+;onewayroad over canal
+;this is a triple network puzzle piece - onewayroad
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1605
+PreviewEffect = preview_sgcanal_str_ca1a160
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - onewayroad: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1600
+Costs       = 10
+[HighwayIntersectionInfo_0x00010107]
+CopyFrom    = 0x0107
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020107]
+CopyFrom    = 0x0107
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030107]
+CopyFrom    = 0x0107
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000108]
+;Added by Daeley and Chrisim
+;onewayroad over canal
+;this is a triple network puzzle piece - onewayroad
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1705
+PreviewEffect = preview_sgcanal_str_ca1a170
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - onewayroad: 0x00000000
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1700
+Costs       = 10
+[HighwayIntersectionInfo_0x00010108]
+CopyFrom    = 0x0108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020108]
+CopyFrom    = 0x0108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030108]
+CopyFrom    = 0x0108
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010D]
+;Added by Daeley and Chrisim
+;monorail over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1805
+PreviewEffect = preview_sgcanal_str_ca1a180
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - monorail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1800
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010D]
+CopyFrom    = 0x010D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010D]
+CopyFrom    = 0x010D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010D]
+CopyFrom    = 0x010D
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010E]
+;Added by Daeley and Chrisim
+;monorail over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1905
+PreviewEffect = preview_sgcanal_str_ca1a190
+
+CellLayout = .........
+CellLayout = ....ab..<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - monorail: 0x00020002
+CheckType = b - monorail: 0x00000002, 0x00000000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1900
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010E]
+CopyFrom    = 0x010E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010E]
+CopyFrom    = 0x010E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010E]
+CopyFrom    = 0x010E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000109]
+;Added by Daeley and Chrisim
+;avenue over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1A15
+PreviewEffect = preview_sgcanal_str_ca1a1a5
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....b....
+CellLayout = ....^....
+
+CheckType = a - avenue: 0x04020002
+CheckType = b - avenue: 0x00020402
+
+ConsLayout = .........
+ConsLayout = ....|...<
+ConsLayout = ....|....
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1A00
+Costs       = 10
+[HighwayIntersectionInfo_0x00010109]
+CopyFrom    = 0x0109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020109]
+CopyFrom    = 0x0109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030109]
+CopyFrom    = 0x0109
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010A]
+;Added by Daeley and Chrisim
+;avenue over canal edge
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1B15
+PreviewEffect = preview_sgcanal_str_ca1a1b5
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....b....
+CellLayout = ....^....
+
+CheckType = a - avenue: 0x04020002
+CheckType = b - avenue: 0x00020402
+
+ConsLayout = .........
+ConsLayout = ....|...<
+ConsLayout = ....|....
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1B00
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010A]
+CopyFrom    = 0x010A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010A]
+CopyFrom    = 0x010A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010A]
+CopyFrom    = 0x010A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010B]
+;Added by Daeley and Chrisim
+;highway over canal
+Piece = 0.0, 16.0, 0, 0, 0xCA1A1C15
+PreviewEffect = preview_sgcanal_str_ca1a1c5
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = ....b....
+CellLayout = ....^....
+
+CheckType = a - highway: 0x04020002
+CheckType = b - highway: 0x00020402
+
+ConsLayout = .........
+ConsLayout = ....|...<
+ConsLayout = ....|....
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1C00
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010B]
+CopyFrom    = 0x010B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010B]
+CopyFrom    = 0x010B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010B]
+CopyFrom    = 0x010B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010C]
+;Added by Daeley and Chrisim
+;highway over canal edge
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1D15
+PreviewEffect = preview_sgcanal_str_ca1a1d5
+
+CellLayout =........
+CellLayout =....ac..
+CellLayout =....bd.<
+CellLayout =....^....
+
+CheckType = a - highway: 0x04020002
+CheckType = b - highway: 0x00020402
+CheckType = c - highway: 0x04020002, 0x00000000 optional
+CheckType = d - highway: 0x00020402, 0x00000000 optional
+
+ConsLayout =.........
+ConsLayout =...-+-...
+ConsLayout =...-+-..<
+ConsLayout =....^....
+
+AutoTileBase = 0xCA1A1D00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1D00
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010C]
+CopyFrom    = 0x010C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010C]
+CopyFrom    = 0x010C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010C]
+CopyFrom    = 0x010C
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000010F]
+;Added by Daeley and Chrisim
+;elevated light rail over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1E05
+PreviewEffect = preview_sgcanal_str_ca1a1e0
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1E00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1E00
+Costs       = 10
+[HighwayIntersectionInfo_0x0001010F]
+CopyFrom    = 0x010F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002010F]
+CopyFrom    = 0x010F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003010F]
+CopyFrom    = 0x010F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000110]
+;Added by Daeley and Chrisim
+;elevated light rail over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A1F05
+PreviewEffect = preview_sgcanal_str_ca1a1f0
+
+CellLayout = .........
+CellLayout = ....ab..<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - lightrail: 0x00000000
+CheckType = b - lightrail: 0x00000002, 0x00000000 optional
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A1F00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A1F00
+Costs       = 10
+[HighwayIntersectionInfo_0x00010110]
+CopyFrom    = 0x0110
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020110]
+CopyFrom    = 0x0110
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030110]
+CopyFrom    = 0x0110
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000111]
+;Added by Daeley and Chrisim
+;viaduct rail over canal
+Piece = 0.0, 0.0, 0, 0, 0xCA1A2005
+PreviewEffect = preview_sgcanal_str_ca1a200
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00000000 road: 0x02000200
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A2000
+Costs       = 10
+[HighwayIntersectionInfo_0x00010111]
+CopyFrom    = 0x0111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020111]
+CopyFrom    = 0x0111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030111]
+CopyFrom    = 0x0111
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000112]
+;Added by Daeley and Chrisim
+;viaduct rail over canal
+Piece = 0.0, 0.0, 0, 1, 0xCA1A2105
+PreviewEffect = preview_sgcanal_str_ca1a210
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+CheckType = a - rail: 0x00020002
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A2100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A2100
+Costs       = 10
+[HighwayIntersectionInfo_0x00010112]
+CopyFrom    = 0x0112
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020112]
+CopyFrom    = 0x0112
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030112]
+CopyFrom    = 0x0112
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00000106]
+;Added by Chrisim
+;Edited by ebina, 11 October 2009. To reflect update to the FLUPs.
+;road under canal
+Piece = 0.0, 0.0, 0, 1, 0xCA1A2205
+PreviewEffect = preview_sgcanal_str_ca1a220
+
+CellLayout = .........
+CellLayout = ....a...<
+CellLayout = .........
+CellLayout = ....^....
+
+;CheckType = a - rail: 0x00020002
+CheckType = a - lightrail: 0x00000000 rail: 0x00020002
+
+ConsLayout = .........
+ConsLayout = ....+...<
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0xCA1A2200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xCA1A2200
+Costs       = 10
+[HighwayIntersectionInfo_0x00010106]
+CopyFrom    = 0x0106
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020106]
+CopyFrom    = 0x0106
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030106]
+CopyFrom    = 0x0106
+Rotate		= 3
+
+
+

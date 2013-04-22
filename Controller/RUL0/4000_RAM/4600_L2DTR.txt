@@ -1,0 +1,1515 @@
+;;The rest of the RAM section is generally in the right HID space (need to decide HID spacefor DTR) it needs more work
+;RAM Set7 - Elevated Dual Track Railroad (El-DTR) button
+RotationRing = 4600, 14600, 24600, 34600, 44600, 54600, 64600, 74600 ;El-DTR Starter Piece Orth;;;need to be reHIDed
+AddTypes     = 4601, 14601, 24601, 34601, 44601, 54601, 64601, 74601 ;DTR FA2 HALF BE0 ;;These DTR peices are temporarily here-we need to decide if these get their own icon-or go in the non-RAM FARR icon. but whatever-they shouldn't stay here.
+AddTypes     = 4602, 14602, 24602, 34602, 44602, 54602, 64602, 74602 ;DTR FA3 HALF BF0
+AddTypes     = 4603, 14603, 24603, 34603, 44603, 54603, 64603, 74603 ;DTR fa3 straight 0E0
+AddTypes     = 4604, 14604, 24604, 34604, 44604, 54604, 64604, 74604 ;DTR diag to fa3 2C0
+AddTypes     = 4605, 14605, 24605, 34605, 44605, 54605, 64605, 74605 ;DTR fa2 to fa3 B60
+AddTypes     = 4606, 14606, 24606, 34606, 44606, 54606, 64606, 74606 ;DTR orth to fa3 6E0
+AddTypes     = 4607, 14607, 24607, 34607, 44607, 54607, 64607, 74607 ;DTR orth to fa3 switch A BC0  
+AddTypes     = 4608, 14608, 24608, 34608, 44608, 54608, 64608, 74608 ;DTR orth to fa3 switch B B90
+AddTypes     = 4609, 14609, 24609, 34609, 44609, 54609, 64609, 74609 ;DTR IN ROAD ORTH FILLER
+AddTypes     = 460A, 1460A, 2460A, 3460A, 4460A, 5460A, 6460A, 7460A ;DTR IN ROAD FAR SPLITTER
+AddTypes     = 460B, 1460B, 2460B, 3460B, 4460B, 5460B, 6460B, 7460B ;DTR fa2 x diag rail A 360
+AddTypes     = 460C, 1460C, 2460C, 3460C, 4460C, 5460C, 6460C, 7460C ;DTR fa2 x diag rail B 390
+AddTypes     = 460D, 1460D, 2460D, 3460D, 4460D, 5460D, 6460D, 7460D ;DTR fa2 x diag str A 080
+AddTypes     = 460E, 1460E, 2460E, 3460E, 4460E, 5460E, 6460E, 7460E ;DTR fa2 x diag str B 620
+AddTypes     = 460F, 1460F, 2460F, 3460F, 4460F, 5460F, 6460F, 7460F ;DTR fa2 x orth rail A B30
+AddTypes     = 4610, 14610, 24610, 34610, 44610, 54610, 64610, 74610 ;DTR fa2 x orth rail B 990
+AddTypes     = 4611, 14611, 24611, 34611, 44611, 54611, 64611, 74611 ;DTR fa2 x orth str A 660
+AddTypes     = 4612, 14612, 24612, 34612, 44612, 54612, 64612, 74612 ;DTR fa2 x orth str B 890
+AddTypes     = 4613, 14613, 24613, 34613, 44613, 54613, 64613, 74613 ;DTR fa3 x diag rail A 150
+AddTypes     = 4614, 14614, 24614, 34614, 44614, 54614, 64614, 74614 ;DTR fa3 x diag str A 120
+AddTypes     = 4615, 14615, 24615, 34615, 44615, 54615, 64615, 74615 ;DTR fa3 x orth rail A 0B0
+AddTypes     = 4616, 14616, 24616, 34616, 44616, 54616, 64616, 74616 ;DTR fa3 x orth rail B 690
+AddTypes     = 4617, 14617, 24617, 34617, 44617, 54617, 64617, 74617 ;DTR fa3 x orth str A E30
+AddTypes     = 4618, 14618, 24618, 34618, 44618, 54618, 64618, 74618 ;DTR fa3 x orth str B 790
+AddTypes     = 4619, 14619, 24619, 34619, 44619, 54619, 64619, 74619 ;DIVERGENT STATION - DOUBLE TRACK TO WIDE TRACK 1
+AddTypes     = 461A, 1461A, 2461A, 3461A, 4461A, 5461A, 6461A, 7461A ;DIVERGENT STATION - WIDE TRACK 1 
+AddTypes     = 461B, 1461B, 2461B, 3461B, 4461B, 5461B, 6461B, 7461B ;DTR ORTHOGONAL FILLER EE0
+AddTypes     = 461C, 1461C, 2461C, 3461C, 4461C, 5461C, 6461C, 7461C ;DTR DIAGONAL   FILLER FE0
+AddTypes     = 461D, 1461D, 2461D, 3461D, 4461D, 5461D, 6461D, 7461D ;TUNNEL DTR;end temp message
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00004600]
+;Added by Tarkus 09/14/2010.
+;El-DTR Starter piece/Transition (Textures by Bighead99)
+Piece = 0.0, 0.0, 0, 0, 0x53d6000B
+PreviewEffect = preview_ram2_puzzlepiece001
+
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - Rail: 0x02000200
+CheckType = a - Rail: 0x02000200 Lightrail: 0x00030300 optional
+
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x53d60000
+PlaceQueryID = 0x53d60000
+Costs       = 400
+[HighwayIntersectionInfo_0x00014600]
+CopyFrom    = 0x4600
+Rotate		= 1
+[HighwayIntersectionInfo_0x00024600]
+CopyFrom    = 0x4600
+Rotate		= 2
+[HighwayIntersectionInfo_0x00034600]
+CopyFrom    = 0x4600
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x00044600]
+CopyFrom    = 0x4600
+[HighwayIntersectionInfo_0x00054600]
+CopyFrom    = 0x14600
+[HighwayIntersectionInfo_0x00064600]
+CopyFrom    = 0x24600
+[HighwayIntersectionInfo_0x00074600]
+CopyFrom    = 0x34600
+
+
+
+;     START STR UPDATE SECTION_rename_later
+;     START STR UPDATE SECTION_rename_later
+;
+;
+
+[HighwayIntersectionInfo_0x00004609]
+;Added by Bighead99 30/08/2009
+;DTR IN ROAD ORTH FILLER
+Piece = 0.0, 0.0, 0, 0, 0x53d7d405
+PreviewEffect = preview_raid_puzzlepiece001
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - road: 0x02000200 rail: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x53d7d400
+PlaceQueryID = 0x53d7d400
+Costs        = 34
+
+[HighwayIntersectionInfo_0x00014609]
+CopyFrom    = 0x4609
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024609]
+CopyFrom    = 0x4609
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034609]
+CopyFrom    = 0x24609
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044609]
+CopyFrom    = 0x4609
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054609]
+CopyFrom    = 0x44609
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064609]
+CopyFrom    = 0x4609
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074609]
+CopyFrom    = 0x64609
+Transpose   = 1
+
+
+
+
+[HighwayIntersectionInfo_0x0000460A]
+;Added by Bighead99 30/08/2009
+;DTR IN ROAD FAR SPLITTER
+Piece = 0.0, 0.0, 0, 0, 0x53d7d005
+PreviewEffect = preview_raid_puzzlepiece000
+
+CellLayout =..........
+CellLayout =...aaaaz.<
+CellLayout =....aaa...
+CellLayout =..........
+CellLayout =....^.....
+
+CheckType = a - rail: 0x00020002
+CheckType = z - rail: 0x00000002,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...----..<
+ConsLayout =.....--...
+ConsLayout =..........
+ConsLayout =....^.....
+
+AutoTileBase = 0x53d7d000
+PlaceQueryID = 0x53d7d000
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460A]
+CopyFrom    = 0x460A 
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0002460A]
+CopyFrom    = 0x460A 
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003460A]
+CopyFrom    = 0x460A 
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004460A]
+CopyFrom    = 0x460A 
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005460A]
+CopyFrom    = 0x1460A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460A]
+CopyFrom    = 0x2460A 
+Transpose   = 1
+[HighwayIntersectionInfo_0x0007460A]
+CopyFrom    = 0x3460A
+Transpose   = 1
+
+;----------------------
+
+[HighwayIntersectionInfo_0x00004601]
+;Added by Bighead99 7/08/2009
+;DTR FA2 HALF BE0
+Piece = 0.0, 0.0, 0, 0, 0x53d7EBEF
+PreviewEffect = preview_raiE_puzzlepiece01a
+
+CellLayout =..........
+CellLayout =...aa....<
+CellLayout =..........
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020002
+
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EBEA
+AutoPathBase = 0x53136000
+PlaceQueryID = 0x53d7EBE0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014601]
+CopyFrom    = 0x4601
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024601]
+CopyFrom    = 0x4601
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034601]
+CopyFrom    = 0x24601
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044601]
+CopyFrom    = 0x4601
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054601]
+CopyFrom    = 0x44601
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064601]
+CopyFrom    = 0x4601
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074601]
+CopyFrom    = 0x64601
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004602]
+;Added by Bighead99 7/08/2009
+;DTR FA3 HALF BF0
+Piece = 0.0, 0.0, 0, 0, 0x53d7EBFF
+PreviewEffect = preview_raie_puzzlepiece01B
+
+CellLayout =..........
+CellLayout =...aa....<
+CellLayout =..........
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020002
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EBFA
+AutoPathBase = 0x53d7E0E0
+PlaceQueryID = 0x53d7EBF0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014602]
+CopyFrom    = 0x4602
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024602]
+CopyFrom    = 0x4602
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034602]
+CopyFrom    = 0x24602
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044602]
+CopyFrom    = 0x4602
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054602]
+CopyFrom    = 0x44602
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064602]
+CopyFrom    = 0x4602
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074602]
+CopyFrom    = 0x64602
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000461B]
+;Added by Bighead99 7/08/2009
+;DTR ORTHOGONAL FILLER EE0
+Piece = 0.0, 0.0, 0, 0, 0x53d7EEEF
+PreviewEffect = preview_raie_puzzlepiece01c
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - rail: 0x02000202
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d7EEEA
+AutoPathBase = 0x53d7EEE0
+PlaceQueryID = 0x53d7EEE0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001461B]
+CopyFrom    = 0x461B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002461B]
+CopyFrom    = 0x461B
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003461B]
+CopyFrom    = 0x2461B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004461B]
+CopyFrom    = 0x461B
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005461B]
+CopyFrom    = 0x4461B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006461B]
+CopyFrom    = 0x461B
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007461B]
+CopyFrom    = 0x6461B
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000461C]
+;Added by Bighead99 7/08/2009
+;DTR DIAGONAL   FILLER FE0
+Piece = 0.0, 0.0, 0, 0, 0x53d7EFEF
+PreviewEffect = preview_raie_puzzlepiece01d
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - rail: 0x03010000
+
+ConsLayout =........
+ConsLayout =..\....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53d7EFEA
+AutoPathBase = 0x53d7EFE0
+PlaceQueryID = 0x53d7EFE0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001461C]
+CopyFrom    = 0x461C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002461C]
+CopyFrom    = 0x461C
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003461C]
+CopyFrom    = 0x2461C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004461C]
+CopyFrom    = 0x461C
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005461C]
+CopyFrom    = 0x4461C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006461C]
+CopyFrom    = 0x461C
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007461C]
+CopyFrom    = 0x6461C
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000460B]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x diag rail A 360
+Piece = 0.0, 0.0, 0, 0, 0x53d7E36F
+PreviewEffect = preview_raie_puzzlepiece00C
+
+CellLayout =..........
+CellLayout =...caw...<
+CellLayout =...zbc....
+CellLayout =...^......
+
+CheckType = a - rail: 0x03010000
+CheckType = b - rail: 0x00000301
+CheckType = c - rail: 0x00020002
+CheckType = z - rail: 0x00010000,0x00000000 check
+CheckType = w - rail: 0x00000001,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =....--....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E36A
+AutoPathBase = 0x53d7E360
+PlaceQueryID = 0x53d7E360
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460B]
+CopyFrom    = 0x460B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002460B]
+CopyFrom    = 0x460B
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003460B]
+CopyFrom    = 0x2460B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004460B]
+CopyFrom    = 0x460B
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005460B]
+CopyFrom    = 0x4460B
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460B]
+CopyFrom    = 0x460B
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007460B]
+CopyFrom    = 0x6460B
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000460C]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x diag rail B 390
+Piece = 0.0, 0.0, 0, 0, 0x53d7E39F
+PreviewEffect = preview_raie_puzzlepiece00D
+
+CellLayout =...z......
+CellLayout =...ab....<
+CellLayout =....ab....
+CellLayout =...^.w....
+
+CheckType = a - rail: 0x00030100
+CheckType = b - rail: 0x01000003
+CheckType = z - rail: 0x01000000,0x00000000 check
+CheckType = w - rail: 0x00000100,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =....--....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E39A
+AutoPathBase = 0x53d7E390
+PlaceQueryID = 0x53d7E390
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460C]
+CopyFrom    = 0x460C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002460C]
+CopyFrom    = 0x460C
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003460C]
+CopyFrom    = 0x2460C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004460C]
+CopyFrom    = 0x460C
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005460C]
+CopyFrom    = 0x4460C
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460C]
+CopyFrom    = 0x460C
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007460C]
+CopyFrom    = 0x6460C
+Transpose   = 1
+
+[HighwayIntersectionInfo_0x0000460D]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x diag str A 080
+Piece = 0.0, 0.0, 0, 0, 0x53d7E08F
+PreviewEffect = preview_raie_puzzlepiece00E
+
+CellLayout =..........
+CellLayout =...caw...<
+CellLayout =...zbc....
+CellLayout =...^......
+
+CheckType = a - rail: 0x03010000
+CheckType = b - rail: 0x00000301
+CheckType = c - rail: 0x00020002
+CheckType = z - rail: 0x00010000,0x00000000 check
+CheckType = w - rail: 0x00000001,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =....--....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E08A
+AutoPathBase = 0x53d7E080
+PlaceQueryID = 0x53d7E080
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460D]
+CopyFrom    = 0x460D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002460D]
+CopyFrom    = 0x460D
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003460D]
+CopyFrom    = 0x2460D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004460D]
+CopyFrom    = 0x460D
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005460D]
+CopyFrom    = 0x4460D
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460D]
+CopyFrom    = 0x460D
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007460D]
+CopyFrom    = 0x6460D
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000460E]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x diag str B 620
+Piece = 0.0, 0.0, 0, 0, 0x53d7E62F
+PreviewEffect = preview_raie_puzzlepiece00F
+
+CellLayout =...z......
+CellLayout =...ab....<
+CellLayout =....ab....
+CellLayout =...^.w....
+
+CheckType = a - rail: 0x00030100
+CheckType = b - rail: 0x01000003
+CheckType = z - rail: 0x01000000,0x00000000 check
+CheckType = w - rail: 0x00000100,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =....--....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E62A
+AutoPathBase = 0x53d7E620
+PlaceQueryID = 0x53d7E620
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460E]
+CopyFrom    = 0x460E
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002460E]
+CopyFrom    = 0x460E
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003460E]
+CopyFrom    = 0x2460E
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004460E]
+CopyFrom    = 0x460E
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005460E]
+CopyFrom    = 0x4460E
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460E]
+CopyFrom    = 0x460E
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007460E]
+CopyFrom    = 0x6460E
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000460F]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x orth rail A B30
+Piece = 0.0, 0.0, 0, 0, 0x53d7EB3F
+PreviewEffect = preview_raie_puzzlepiece010
+
+CellLayout =...z......
+CellLayout =...aa....<
+CellLayout =...aaa....
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...---....
+CellLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EB3A
+AutoPathBase = 0x53d7EB30
+PlaceQueryID = 0x53d7EB30
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001460F]
+CopyFrom    = 0x460F
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002460F]
+CopyFrom    = 0x460F
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003460F]
+CopyFrom    = 0x2460F
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004460F]
+CopyFrom    = 0x460F
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005460F]
+CopyFrom    = 0x4460F
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006460F]
+CopyFrom    = 0x460F
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007460F]
+CopyFrom    = 0x6460F
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004610]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x orth rail B 990
+Piece = 0.0, 0.0, 0, 0, 0x53d7E99F
+PreviewEffect = preview_raie_puzzlepiece011
+
+CellLayout =...z......
+CellLayout =...a.....<
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...-.....<
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E99A
+AutoPathBase = 0x53d7E990
+PlaceQueryID = 0x53d7E990
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014610]
+CopyFrom    = 0x4610
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024610]
+CopyFrom    = 0x4610
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034610]
+CopyFrom    = 0x24610
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044610]
+CopyFrom    = 0x4610
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054610]
+CopyFrom    = 0x44610
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064610]
+CopyFrom    = 0x4610
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074610]
+CopyFrom    = 0x64610
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004611]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x orth str A 660
+Piece = 0.0, 0.0, 0, 0, 0x53d7E66F
+PreviewEffect = preview_raie_puzzlepiece012
+
+CellLayout =...z......
+CellLayout =...aa....<
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E66A
+AutoPathBase = 0x53d7E660
+PlaceQueryID = 0x53d7E660
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014611]
+CopyFrom    = 0x4611
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024611]
+CopyFrom    = 0x4611
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034611]
+CopyFrom    = 0x24611
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044611]
+CopyFrom    = 0x4611
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054611]
+CopyFrom    = 0x44611
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064611]
+CopyFrom    = 0x4611
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074611]
+CopyFrom    = 0x64611
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004612]
+;Added by Bighead99 6/08/2009
+;DTR fa2 x orth str B 890
+Piece = 0.0, 0.0, 0, 0, 0x53d7E89F
+PreviewEffect = preview_raie_puzzlepiece013
+
+CellLayout =...z......
+CellLayout =...a.....<
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...-.....<
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E89A
+AutoPathBase = 0x53d7E890
+PlaceQueryID = 0x53d7E890
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014612]
+CopyFrom    = 0x4612
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024612]
+CopyFrom    = 0x4612
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034612]
+CopyFrom    = 0x24612
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044612]
+CopyFrom    = 0x4612
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054612]
+CopyFrom    = 0x44612
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064612]
+CopyFrom    = 0x4612
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074612]
+CopyFrom    = 0x64612
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004613]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x diag rail A 150
+Piece = 0.0, 0.0, 0, 0, 0x53d7E15F
+PreviewEffect = preview_raie_puzzlepiece014
+
+CellLayout =....z.....
+CellLayout =...ab....<
+CellLayout =..wba.....
+CellLayout =...^......
+
+CheckType = a - rail: 0x03010000
+CheckType = b - rail: 0x00000301
+CheckType = c - rail: 0x00020002
+CheckType = z - rail: 0x03000000,0x00000000 check
+CheckType = w - rail: 0x00010000,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...--.....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E15A
+AutoPathBase = 0x53d7E150
+PlaceQueryID = 0x53d7E150
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014613]
+CopyFrom    = 0x4613
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024613]
+CopyFrom    = 0x4613
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034613]
+CopyFrom    = 0x24613
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044613]
+CopyFrom    = 0x4613
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054613]
+CopyFrom    = 0x44613
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064613]
+CopyFrom    = 0x4613
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074613]
+CopyFrom    = 0x64613
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004614]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x diag str A 120
+Piece = 0.0, 0.0, 0, 0, 0x53d7E12F
+PreviewEffect = preview_raie_puzzlepiece015
+
+CellLayout =....z.....
+CellLayout =...ab....<
+CellLayout =..wba.....
+CellLayout =...^......
+
+CheckType = a - rail: 0x03010000
+CheckType = b - rail: 0x00000301
+CheckType = c - rail: 0x00020002
+CheckType = z - rail: 0x03000000,0x00000000 check
+CheckType = w - rail: 0x00010000,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...--.....
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E12A
+AutoPathBase = 0x53d7E120
+PlaceQueryID = 0x53d7E120
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014614]
+CopyFrom    = 0x4614
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024614]
+CopyFrom    = 0x4614
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034614]
+CopyFrom    = 0x24614
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044614]
+CopyFrom    = 0x4614
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054614]
+CopyFrom    = 0x44614
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064614]
+CopyFrom    = 0x4614
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074614]
+CopyFrom    = 0x64614
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004615]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x orth rail A 0B0
+Piece = 0.0, 0.0, 0, 0, 0x53d7E0BF
+PreviewEffect = preview_raie_puzzlepiece016
+
+CellLayout =...z......
+CellLayout =...aa....<
+CellLayout =...aa.....
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...--.....
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E0BA
+AutoPathBase = 0x53d7E0B0
+PlaceQueryID = 0x53d7E0B0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014615]
+CopyFrom    = 0x4615
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024615]
+CopyFrom    = 0x4615
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034615]
+CopyFrom    = 0x24615
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044615]
+CopyFrom    = 0x4615
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054615]
+CopyFrom    = 0x44615
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064615]
+CopyFrom    = 0x4615
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074615]
+CopyFrom    = 0x64615
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004616]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x orth rail B 690
+Piece = 0.0, 0.0, 0, 0, 0x53d7E69F
+PreviewEffect = preview_raie_puzzlepiece011
+
+CellLayout =...z......
+CellLayout =...a.....<
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...-.....<
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E69A
+AutoPathBase = 0x53d7E690
+PlaceQueryID = 0x53d7E690
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014616]
+CopyFrom    = 0x4616
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024616]
+CopyFrom    = 0x4616
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034616]
+CopyFrom    = 0x24616
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044616]
+CopyFrom    = 0x4616
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054616]
+CopyFrom    = 0x44616
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064616]
+CopyFrom    = 0x4616
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074616]
+CopyFrom    = 0x64616
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004617]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x orth str A E30
+Piece = 0.0, 0.0, 0, 0, 0x53d7EE3F
+PreviewEffect = preview_raie_puzzlepiece018
+
+CellLayout =...z......
+CellLayout =...aa....<
+CellLayout =...aa.....
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...--.....
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EE3A
+AutoPathBase = 0x53d7EE30
+PlaceQueryID = 0x53d7EE30
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014617]
+CopyFrom    = 0x4617
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024617]
+CopyFrom    = 0x4617
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034617]
+CopyFrom    = 0x24617
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044617]
+CopyFrom    = 0x4617
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054617]
+CopyFrom    = 0x44617
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064617]
+CopyFrom    = 0x4617
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074617]
+CopyFrom    = 0x64617
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004618]
+;Added by Bighead99 6/08/2009
+;DTR fa3 x orth str B 790
+Piece = 0.0, 0.0, 0, 0, 0x53d7E79F
+PreviewEffect = preview_raie_puzzlepiece019
+
+CellLayout =...z......
+CellLayout =...a.....<
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...a......
+CellLayout =...w......
+CellLayout =...^......
+
+CheckType = w - Rail: 0x00000200,0x00000000 check
+CheckType = z - Rail: 0x02000000,0x00000000 check
+CheckType = a - rail: 0x02000200
+
+ConsLayout =..........
+ConsLayout =...-.....<
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =...-......
+ConsLayout =..........
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7E79A
+AutoPathBase = 0x53d7E790
+PlaceQueryID = 0x53d7E790
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014618]
+CopyFrom    = 0x4618
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024618]
+CopyFrom    = 0x4618
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034618]
+CopyFrom    = 0x24618
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044618]
+CopyFrom    = 0x4618
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054618]
+CopyFrom    = 0x44618
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064618]
+CopyFrom    = 0x4618
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074618]
+CopyFrom    = 0x64618
+Transpose   = 1
+
+
+
+[HighwayIntersectionInfo_0x00004603]
+;Added by Bighead99 29/07/2009
+;DTR fa3 straight 
+Piece = 0.0, 0.0, 0, 0, 0x53d7E0EF
+PreviewEffect = preview_raie_puzzlepiece006
+
+CellLayout =........
+CellLayout =...ab..<
+CellLayout =...ac...
+CellLayout =...^....
+
+CheckType = a - rail: 0x00020000
+CheckType = b - rail: 0x02000002
+CheckType = c - rail: 0x00000202
+
+ConsLayout =........
+ConsLayout =...--..<
+ConsLayout =...--...
+ConsLayout =...^....
+
+Autoplace= 1
+AutoTileBase = 0x53d7E0EA
+AutoPathBase = 0x53d7E0E0
+PlaceQueryID = 0x53d7E0E0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014603]
+CopyFrom    = 0x4603
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024603]
+CopyFrom    = 0x4603
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034603]
+CopyFrom    = 0x24603
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044603]
+CopyFrom    = 0x4603
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054603]
+CopyFrom    = 0x44603
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064603]
+CopyFrom    = 0x4603
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074603]
+CopyFrom    = 0x64603
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004604]
+;Added by Bighead99 29/07/2009
+;DTR diag to fa3
+Piece = 0.0, 0.0, 0, 0, 0x53d7E2CF
+PreviewEffect = preview_raie_puzzlepiece007
+
+CellLayout =........
+CellLayout =...ca..<
+CellLayout =...ba...
+CellLayout =....ba..
+CellLayout =.....bz.
+CellLayout =...^....
+
+CheckType = a - Rail: 0x01000003
+CheckType = b - Rail: 0x00030100
+CheckType = c - Rail: 0x00020002
+CheckType = z - rail: 0x00000003,0x00000000 check
+
+ConsLayout =........
+ConsLayout =...--..<
+ConsLayout =...--...
+ConsLayout =....--..
+ConsLayout =.....-..
+ConsLayout =...^....
+
+AutoTileBase = 0x53d7E2CA
+AutoPathBase = 0x53d7E2C0
+PlaceQueryID = 0x53d7E2C0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014604]
+CopyFrom    = 0x4604
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024604]
+CopyFrom    = 0x4604
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034604]
+CopyFrom    = 0x24604
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044604]
+CopyFrom    = 0x4604
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054604]
+CopyFrom    = 0x44604
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064604]
+CopyFrom    = 0x4604
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074604]
+CopyFrom    = 0x64604
+Transpose   = 1
+
+
+
+[HighwayIntersectionInfo_0x00004605]
+;Added by Bighead99 29/07/2009
+;DTR fa2 to fa3
+Piece = 0.0, 0.0, 0, 0, 0x53d7EB6F
+PreviewEffect = preview_raie_puzzlepiece008
+
+CellLayout =..........
+CellLayout =...aa....<
+CellLayout =...aaaa...
+CellLayout =......aa..
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020002
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...----...
+ConsLayout =......--..
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EB6A
+AutoPathBase = 0x53d7EB60
+PlaceQueryID = 0x53d7EB60
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014605]
+CopyFrom    = 0x4605
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024605]
+CopyFrom    = 0x4605
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034605]
+CopyFrom    = 0x24605
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044605]
+CopyFrom    = 0x4605
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054605]
+CopyFrom    = 0x44605
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064605]
+CopyFrom    = 0x4605
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074605]
+CopyFrom    = 0x64605
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004606]
+;Added by Bighead99 29/07/2009
+;DTR orth to fa3 6E0
+Piece = 0.0, 0.0, 0, 0, 0x53d7E6EF
+PreviewEffect = preview_raie_puzzlepiece009
+
+CellLayout =..........
+CellLayout =...ab....<
+CellLayout =...acddz..
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020000
+CheckType = b - rail: 0x02000002
+CheckType = c - rail: 0x00020202
+CheckType = d - rail: 0x00020002
+CheckType = z - Rail: 0x00000002,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...----...
+ConsLayout =...^......
+
+Autoplace= 1
+AutoTileBase = 0x53d7E6EA
+AutoPathBase = 0x53d7E6E0
+PlaceQueryID = 0x53d7E6E0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014606]
+CopyFrom    = 0x4606
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024606]
+CopyFrom    = 0x4606
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034606]
+CopyFrom    = 0x24606
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044606]
+CopyFrom    = 0x4606
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054606]
+CopyFrom    = 0x44606
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064606]
+CopyFrom    = 0x4606
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074606]
+CopyFrom    = 0x64606
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00004607]
+;Added by Bighead99 29/07/2009
+;DTR orth to fa3 switch A
+Piece = 0.0, 0.0, 0, 0, 0x53d7EBCF
+PreviewEffect = preview_raie_puzzlepiece00A
+
+CellLayout =..........
+CellLayout =...ab....<
+CellLayout =..wdcddz..
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020000
+CheckType = b - rail: 0x02000002
+CheckType = c - rail: 0x00020202
+CheckType = d - rail: 0x00020002
+CheckType = z - Rail: 0x00000002,0x00000000 check
+CheckType = w - Rail: 0x00020000,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...----...
+ConsLayout =...^......
+
+Autoplace= 1
+AutoTileBase = 0x53d7EBCA
+AutoPathBase = 0x53d7EBC0
+PlaceQueryID = 0x53d7EBC0
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014607]
+CopyFrom    = 0x4607
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024607]
+CopyFrom    = 0x4607
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034607]
+CopyFrom    = 0x24607
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044607]
+CopyFrom    = 0x4607
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054607]
+CopyFrom    = 0x44607
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064607]
+CopyFrom    = 0x4607
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074607]
+CopyFrom    = 0x64607
+Transpose   = 1
+
+[HighwayIntersectionInfo_0x00004608]
+;Added by Bighead99 29/07/2009
+;DTR orth to fa3 switch B
+Piece = 0.0, 0.0, 0, 0, 0x53d7EB9F
+PreviewEffect = preview_raie_puzzlepiece00B
+
+CellLayout =..........
+CellLayout =...aa....<
+CellLayout =...aaaaz..
+CellLayout =...^......
+
+CheckType = a - rail: 0x00020002
+CheckType = z - Rail: 0x00000002,0x00000000 check
+
+ConsLayout =..........
+ConsLayout =...--....<
+ConsLayout =...----...
+ConsLayout =...^......
+
+AutoTileBase = 0x53d7EB9A
+AutoPathBase = 0x53d7EB90
+PlaceQueryID = 0x53d7EB90
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014608]
+CopyFrom    = 0x4608
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024608]
+CopyFrom    = 0x4608
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034608]
+CopyFrom    = 0x24608
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044608]
+CopyFrom    = 0x4608
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054608]
+CopyFrom    = 0x44608
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064608]
+CopyFrom    = 0x4608
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074608]
+CopyFrom    = 0x64608
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x0000461D]
+;Added by bighea99 16/07/2009
+;TUNNEL DTR
+Piece = 0.0, 0.0, 0, 0, 0x53d7E60F
+PreviewEffect = preview_raie_puzzlepiece005
+
+CellLayout =........
+CellLayout =..a....<
+CellLayout =........
+CellLayout =..^.....
+
+CheckType = a - Rail: 0x02000202
+
+ConsLayout =........
+ConsLayout =..|....<
+ConsLayout =........
+ConsLayout =..^.....
+
+AutoTileBase = 0x53D7E60A
+AutoPathBase = 0x53D7E600
+PlaceQueryID = 0x53D7E600
+Costs       = 56
+[HighwayIntersectionInfo_0x0001461D]
+CopyFrom    = 0x461D
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002461D]
+CopyFrom    = 0x461D
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0003461D]
+CopyFrom    = 0x461D
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0004461D]
+CopyFrom    = 0x461D
+[HighwayIntersectionInfo_0x0005461D]
+CopyFrom    = 0x1461D
+[HighwayIntersectionInfo_0x0006461D]
+CopyFrom    = 0x2461D
+[HighwayIntersectionInfo_0x0007461D]
+CopyFrom    = 0x3461D
+
+
+
+[HighwayIntersectionInfo_0x00004619]
+;Added by Bighead99 12/07/2009.
+;DIVERGENT STATION - DOUBLE TRACK TO WIDE TRACK 1 (textures by Bighead99)
+Piece = 0.0, 0.0, 0, 0, 0x53d7EB0F
+PreviewEffect = preview_raie_puzzlepiece001
+
+
+CellLayout =..........
+CellLayout =..waaaa..<
+CellLayout =..........
+CellLayout =..^.......
+
+CheckType = a - rail: 0x00020002
+CheckType = w - Rail: 0x00020000,0x00000000 check
+
+
+ConsLayout =..........
+ConsLayout =...----..<
+ConsLayout =..........
+ConsLayout =..^.......
+
+AutoTileBase = 0x53d7EB0A
+AutoPathBase = 0x53d7EB00
+PlaceQueryID = 0x53d7EB00
+Costs        = 26
+
+[HighwayIntersectionInfo_0x00014619]
+CopyFrom    = 0x4619
+Transpose   = 1
+[HighwayIntersectionInfo_0x00024619]
+CopyFrom    = 0x4619
+Rotate	    = 1
+[HighwayIntersectionInfo_0x00034619]
+CopyFrom    = 0x24619
+Transpose   = 1
+[HighwayIntersectionInfo_0x00044619]
+CopyFrom    = 0x4619
+Rotate	    = 2
+[HighwayIntersectionInfo_0x00054619]
+CopyFrom    = 0x44619
+Transpose   = 1
+[HighwayIntersectionInfo_0x00064619]
+CopyFrom    = 0x4619
+Rotate	    = 3
+[HighwayIntersectionInfo_0x00074619]
+CopyFrom    = 0x64619
+Transpose   = 1
+
+
+
+[HighwayIntersectionInfo_0x0000461A]
+;Added by Bighead99 12/07/2009.
+;DIVERGENT STATION - WIDE TRACK 1 (textures by Bighead99)
+Piece = 0.0, 0.0, 0, 0, 0x53d7E10F
+PreviewEffect = preview_raie_puzzlepiece002
+
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - rail: 0x02000200
+
+
+ConsLayout =.......
+ConsLayout =...-..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x53d7E10A
+AutoPathBase = 0x53d7E100
+PlaceQueryID = 0x53d7E100
+Costs        = 26
+
+[HighwayIntersectionInfo_0x0001461A]
+CopyFrom    = 0x461A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0002461A]
+CopyFrom    = 0x461A
+Rotate	    = 1
+[HighwayIntersectionInfo_0x0003461A]
+CopyFrom    = 0x2461A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0004461A]
+CopyFrom    = 0x461A
+Rotate	    = 2
+[HighwayIntersectionInfo_0x0005461A]
+CopyFrom    = 0x4461A
+Transpose   = 1
+[HighwayIntersectionInfo_0x0006461A]
+CopyFrom    = 0x461A
+Rotate	    = 3
+[HighwayIntersectionInfo_0x0007461A]
+CopyFrom    = 0x6461A
+Transpose   = 1
+

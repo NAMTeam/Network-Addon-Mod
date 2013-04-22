@@ -1,0 +1,1331 @@
+;Rail Tunnel x Railways Interface Pieces Button
+RotationRing = AAC0, 1AAC0, 2AAC0, 3AAC0, 4AAC0, 5AAC0, 6AAC0, 7AAC0 ;RailURail DTR Straight Rail Straight Perpendicular
+AddTypes     = AAC1, 1AAC1, 2AAC1, 3AAC1, 4AAC1, 5AAC1, 6AAC1, 7AAC1 ;RailURail DTR Diagonal Rail Straight
+AddTypes     = AAC2, 1AAC2, 2AAC2, 3AAC2, 4AAC2, 5AAC2, 6AAC2, 7AAC2 ;RailURail DTR Straight Rail Diagonal
+AddTypes     = AAC3, 1AAC3, 2AAC3, 3AAC3, 4AAC3, 5AAC3, 6AAC3, 7AAC3 ;RailURail DTR Diagonal Rail Diagonal Perpendicular
+AddTypes     = AAC4, 1AAC4, 2AAC4, 3AAC4, 4AAC4, 5AAC4, 6AAC4, 7AAC4 ;RailURail EDTR Straight Rail Straight Perpendicular
+AddTypes     = AAC5, 1AAC5, 2AAC5, 3AAC5, 4AAC5, 5AAC5, 6AAC5, 7AAC5 ;RailURail EDTR Diagonal Rail Straight
+AddTypes     = AAC6, 1AAC6, 2AAC6, 3AAC6, 4AAC6, 5AAC6, 6AAC6, 7AAC6 ;RailURail EDTR Straight Rail Diagonal
+AddTypes     = AAC7, 1AAC7, 2AAC7, 3AAC7, 4AAC7, 5AAC7, 6AAC7, 7AAC7 ;RailURail EDTR Diagonal Rail Diagonal Perpendicular
+AddTypes     = AAC8, 1AAC8, 2AAC8, 3AAC8, 4AAC8, 5AAC8, 6AAC8, 7AAC8 ;RailURail STR Straight Rail Straight Perpendicular
+AddTypes     = AAC9, 1AAC9, 2AAC9, 3AAC9, 4AAC9, 5AAC9, 6AAC9, 7AAC9 ;RailURail STR Diagonal Rail Straight
+AddTypes     = AACA, 1AACA, 2AACA, 3AACA, 4AACA, 5AACA, 6AACA, 7AACA ;RailURail STR Straight Rail Diagonal
+AddTypes     = AACB, 1AACB, 2AACB, 3AACB, 4AACB, 5AACB, 6AACB, 7AACB ;RailURail STR Diagonal Rail Diagonal Perpendicular
+AddTypes     = AACC, 1AACC, 2AACC, 3AACC, 4AACC, 5AACC, 6AACC, 7AACC ;RailULightrail ELR Straight Rail Straight Perpendicular
+AddTypes     = AACD, 1AACD, 2AACD, 3AACD, 4AACD, 5AACD, 6AACD, 7AACD ;RailULightrail ELR Diagonal Rail Straight
+AddTypes     = AACE, 1AACE, 2AACE, 3AACE, 4AACE, 5AACE, 6AACE, 7AACE ;RailULightrail ELR Straight Rail Diagonal
+AddTypes     = AACF, 1AACF, 2AACF, 3AACF, 4AACF, 5AACF, 6AACF, 7AACF ;RailULightrail ELR Diagonal Rail Diagonal Perpendicular
+AddTypes     = AAD0, 1AAD0, 2AAD0, 3AAD0, 4AAD0, 5AAD0, 6AAD0, 7AAD0 ;RailULightrail HighELR Straight Rail Straight Perpendicular
+;AddTypes     = AAD1, 1AAD1, 2AAD1, 3AAD1, 4AAD1, 5AAD1, 6AAD1, 7AAD1 ;RailULightrail HighELR Diagonal Rail Straight - RULs and necessary files exist. Can be enabled whenever diagonal high elevated railways are available.
+AddTypes     = AAD2, 1AAD2, 2AAD2, 3AAD2, 4AAD2, 5AAD2, 6AAD2, 7AAD2 ;RailULightrail HighELR Straight Rail Diagonal
+;AddTypes     = AAD3, 1AAD3, 2AAD3, 3AAD3, 4AAD3, 5AAD3, 6AAD3, 7AAD3 ;RailULightrail HighELR Diagonal Rail Diagonal Perpendicular - RULs and necessary files exist. Can be enabled whenever diagonal high elevated railways are available.
+AddTypes     = AAD4, 1AAD4, 2AAD4, 3AAD4, 4AAD4, 5AAD4, 6AAD4, 7AAD4 ;RailUMonorail Monorail Straight Rail Straight Perpendicular
+AddTypes     = AAD5, 1AAD5, 2AAD5, 3AAD5, 4AAD5, 5AAD5, 6AAD5, 7AAD5 ;RailUMonorail Monorail Diagonal Rail Straight
+AddTypes     = AAD6, 1AAD6, 2AAD6, 3AAD6, 4AAD6, 5AAD6, 6AAD6, 7AAD6 ;RailUMonorail Monorail Straight Rail Diagonal
+AddTypes     = AAD7, 1AAD7, 2AAD7, 3AAD7, 4AAD7, 5AAD7, 6AAD7, 7AAD7 ;RailUMonorail Monorail Diagonal Rail Diagonal Perpendicular
+AddTypes     = AAD8, 1AAD8, 2AAD8, 3AAD8, 4AAD8, 5AAD8, 6AAD8, 7AAD8 ;RailUMonorail HighMonorail Straight Rail Straight Perpendicular
+;AddTypes     = AAD9, 1AAD9, 2AAD9, 3AAD9, 4AAD9, 5AAD9, 6AAD9, 7AAD9 ;RailUMonorail HighMonorail Diagonal Rail Straight - RULs and necessary files exist. Can be enabled whenever diagonal high elevated railways are available.
+AddTypes     = AADA, 1AADA, 2AADA, 3AADA, 4AADA, 5AADA, 6AADA, 7AADA ;RailUMonorail HighMonorail Straight Rail Diagonal
+;AddTypes     = AADB, 1AADB, 2AADB, 3AADB, 4AADB, 5AADB, 6AADB, 7AADB ;RailUMonorail HighMonorail Diagonal Rail Diagonal Perpendicular - RULs and necessary files exist. Can be enabled whenever diagonal high elevated railways are available.
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000AAC0]
+;Added by ebina 08/20/2010.
+;railUrail Dual - DTR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33005
+PreviewEffect = preview_rail_subrail____000
+
+CellLayout =.........
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = b - rail: 0x00020000, 0x00ff0000 optional
+CheckType = c - rail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F33000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33000
+Costs       = 55
+[HighwayIntersectionInfo_0x0001AAC0]
+CopyFrom	= 0xAAC0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC0]
+CopyFrom	= 0xAAC0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC0]
+CopyFrom	= 0xAAC0
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAC0]
+CopyFrom    = 0xAAC0
+[HighwayIntersectionInfo_0x0005AAC0]
+CopyFrom    = 0x1AAC0
+[HighwayIntersectionInfo_0x0006AAC0]
+CopyFrom    = 0x2AAC0
+[HighwayIntersectionInfo_0x0007AAC0]
+CopyFrom    = 0x3AAC0
+
+
+[HighwayIntersectionInfo_0x0000AAC1]
+;Added by ebina 08/20/2010.
+;railUrail Dual - DTR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33015
+PreviewEffect = preview_rail_subrail____001
+
+CellLayout =.....
+CellLayout =..Ys.<
+CellLayout =.rZ..
+CellLayout =..^..
+
+CheckType = r - rail: 0x00010000, 0x00ff0000 optional
+CheckType = s - rail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33010
+Costs = 60
+[HighwayIntersectionInfo_0x0001AAC1]
+CopyFrom	= 0xAAC1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC1]
+CopyFrom	= 0xAAC1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC1]
+CopyFrom	= 0xAAC1
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC1]
+CopyFrom	= 0xAAC1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC1]
+CopyFrom	= 0x4AAC1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC1]
+CopyFrom	= 0x4AAC1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC1]
+CopyFrom	= 0x4AAC1
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC2]
+;Added by ebina 08/20/2010.
+;railUrail Dual - DTR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33035
+PreviewEffect = preview_rail_subrail____002
+
+CellLayout =.r.
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.s.
+CellLayout =.^.
+
+CheckType = r - rail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+CheckType = s - rail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33030
+Costs = 60
+[HighwayIntersectionInfo_0x0001AAC2]
+CopyFrom	= 0xAAC2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC2]
+CopyFrom	= 0xAAC2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC2]
+CopyFrom	= 0xAAC2
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC2]
+CopyFrom	= 0xAAC2
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC2]
+CopyFrom	= 0x4AAC2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC2]
+CopyFrom	= 0x4AAC2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC2]
+CopyFrom	= 0x4AAC2
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC3]
+;Added by ebina 08/20/2010.
+;railUrail Dual - DTR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33055
+PreviewEffect = preview_rail_subrail____003
+
+CellLayout =.....
+CellLayout =.rY..<
+CellLayout =..Zs.
+CellLayout =..^..
+
+CheckType = r - rail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x02010003
+CheckType = Z - rail: 0x00030201
+CheckType = s - rail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33050
+Costs = 60
+[HighwayIntersectionInfo_0x0001AAC3]
+CopyFrom	= 0xAAC3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC3]
+CopyFrom	= 0xAAC3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC3]
+CopyFrom	= 0xAAC3
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC3]
+CopyFrom	= 0xAAC3
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC3]
+CopyFrom	= 0x4AAC3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC3]
+CopyFrom	= 0x4AAC3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC3]
+CopyFrom	= 0x4AAC3
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AACC]
+;Added by ebina 08/20/2010.
+;railUlightrail Dual - ELR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38005
+PreviewEffect = preview_elrail_subrail__000
+
+CellLayout =.........
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = b - lightrail: 0x00020000, 0x00ff0000 optional
+CheckType = c - lightrail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F38000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38000
+Costs       = 75
+[HighwayIntersectionInfo_0x0001AACC]
+CopyFrom	= 0xAACC
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACC]
+CopyFrom	= 0xAACC
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACC]
+CopyFrom	= 0xAACC
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AACC]
+CopyFrom    = 0xAACC
+[HighwayIntersectionInfo_0x0005AACC]
+CopyFrom    = 0x1AACC
+[HighwayIntersectionInfo_0x0006AACC]
+CopyFrom    = 0x2AACC
+[HighwayIntersectionInfo_0x0007AACC]
+CopyFrom    = 0x3AACC
+
+
+[HighwayIntersectionInfo_0x0000AACD]
+;Added by ebina 08/20/2010.
+;railUlightrail Dual - ELR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38015
+PreviewEffect = preview_elrail_subrail__001
+
+CellLayout =.....
+CellLayout =..Ys.<
+CellLayout =.rZ..
+CellLayout =..^..
+
+CheckType = r - lightrail: 0x00010000, 0x00ff0000 optional
+CheckType = s - lightrail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02000200 lightrail: 0x03010000
+CheckType = Z - rail: 0x02000200 lightrail: 0x00000301
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F38010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38010
+Costs = 100
+[HighwayIntersectionInfo_0x0001AACD]
+CopyFrom	= 0xAACD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACD]
+CopyFrom	= 0xAACD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACD]
+CopyFrom	= 0xAACD
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AACD]
+CopyFrom	= 0xAACD
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AACD]
+CopyFrom	= 0x4AACD
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AACD]
+CopyFrom	= 0x4AACD
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AACD]
+CopyFrom	= 0x4AACD
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AACE]
+;Added by ebina 08/20/2010.
+;railUlightrail Dual - ELR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38035
+PreviewEffect = preview_elrail_subrail__002
+
+CellLayout =.r.
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.s.
+CellLayout =.^.
+
+CheckType = r - lightrail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x03010000 lightrail: 0x02000200
+CheckType = Z - rail: 0x00000301 lightrail: 0x02000200
+CheckType = s - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F38030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38030
+Costs = 100
+[HighwayIntersectionInfo_0x0001AACE]
+CopyFrom	= 0xAACE
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACE]
+CopyFrom	= 0xAACE
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACE]
+CopyFrom	= 0xAACE
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AACE]
+CopyFrom	= 0xAACE
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AACE]
+CopyFrom	= 0x4AACE
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AACE]
+CopyFrom	= 0x4AACE
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AACE]
+CopyFrom	= 0x4AACE
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AACF]
+;Added by ebina 08/20/2010.
+;railUlightrail Dual - ELR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38055
+PreviewEffect = preview_elrail_subrail__003
+
+CellLayout =.....
+CellLayout =.rY..<
+CellLayout =..Zs.
+CellLayout =..^..
+
+CheckType = r - lightrail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x03010000 lightrail: 0x01000003
+CheckType = Z - rail: 0x00000301 lightrail: 0x00030100
+CheckType = s - lightrail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F38050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38050
+Costs = 100
+[HighwayIntersectionInfo_0x0001AACF]
+CopyFrom	= 0xAACF
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACF]
+CopyFrom	= 0xAACF
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACF]
+CopyFrom	= 0xAACF
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AACF]
+CopyFrom	= 0xAACF
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AACF]
+CopyFrom	= 0x4AACF
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AACF]
+CopyFrom	= 0x4AACF
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AACF]
+CopyFrom	= 0x4AACF
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD4]
+;Added by ebina 08/20/2010.
+;railUmonorail Dual - Monorail Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D005
+PreviewEffect = preview_mono_subrail____000
+
+CellLayout =.........
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = b - monorail: 0x00020000, 0x00ff0000 optional
+CheckType = c - monorail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F3D000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D000
+Costs       = 100
+[HighwayIntersectionInfo_0x0001AAD4]
+CopyFrom	= 0xAAD4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD4]
+CopyFrom	= 0xAAD4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD4]
+CopyFrom	= 0xAAD4
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAD4]
+CopyFrom    = 0xAAD4
+[HighwayIntersectionInfo_0x0005AAD4]
+CopyFrom    = 0x1AAD4
+[HighwayIntersectionInfo_0x0006AAD4]
+CopyFrom    = 0x2AAD4
+[HighwayIntersectionInfo_0x0007AAD4]
+CopyFrom    = 0x3AAD4
+
+
+[HighwayIntersectionInfo_0x0000AAD5]
+;Added by ebina 08/20/2010.
+;railUmonorail Dual - Monorail Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D015
+PreviewEffect = preview_mono_subrail____001
+
+CellLayout =.....
+CellLayout =..Ys.<
+CellLayout =.rZ..
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00010000, 0x00ff0000 optional
+CheckType = s - monorail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02000200 monorail: 0x03010000
+CheckType = Z - rail: 0x02000200 monorail: 0x00000301
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D010
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAD5]
+CopyFrom	= 0xAAD5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD5]
+CopyFrom	= 0xAAD5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD5]
+CopyFrom	= 0xAAD5
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD5]
+CopyFrom	= 0xAAD5
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD5]
+CopyFrom	= 0x4AAD5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD5]
+CopyFrom	= 0x4AAD5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD5]
+CopyFrom	= 0x4AAD5
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD6]
+;Added by ebina 08/20/2010.
+;railUmonorail Dual - Monorail Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D035
+PreviewEffect = preview_mono_subrail____002
+
+CellLayout =.r.
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.s.
+CellLayout =.^.
+
+CheckType = r - monorail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x02000200
+CheckType = Z - rail: 0x00000301 monorail: 0x02000200
+CheckType = s - monorail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D030
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAD6]
+CopyFrom	= 0xAAD6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD6]
+CopyFrom	= 0xAAD6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD6]
+CopyFrom	= 0xAAD6
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD6]
+CopyFrom	= 0xAAD6
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD6]
+CopyFrom	= 0x4AAD6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD6]
+CopyFrom	= 0x4AAD6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD6]
+CopyFrom	= 0x4AAD6
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD7]
+;Added by ebina 08/20/2010.
+;railUmonorail Dual - Monorail Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D055
+PreviewEffect = preview_mono_subrail____003
+
+CellLayout =.....
+CellLayout =.rY..<
+CellLayout =..Zs.
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x01000003
+CheckType = Z - rail: 0x00000301 monorail: 0x00030100
+CheckType = s - monorail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D050
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAD7]
+CopyFrom	= 0xAAD7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD7]
+CopyFrom	= 0xAAD7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD7]
+CopyFrom	= 0xAAD7
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD7]
+CopyFrom	= 0xAAD7
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD7]
+CopyFrom	= 0x4AAD7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD7]
+CopyFrom	= 0x4AAD7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD7]
+CopyFrom	= 0x4AAD7
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC4]
+;Added by ebina 08/21/2010.
+;railUrail Dual - EDTR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33105
+PreviewEffect = preview_rail_subrail____004
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F33100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33100
+Costs       = 100
+[HighwayIntersectionInfo_0x0001AAC4]
+CopyFrom	= 0xAAC4
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC4]
+CopyFrom	= 0xAAC4
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC4]
+CopyFrom	= 0xAAC4
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAC4]
+CopyFrom    = 0xAAC4
+[HighwayIntersectionInfo_0x0005AAC4]
+CopyFrom    = 0x1AAC4
+[HighwayIntersectionInfo_0x0006AAC4]
+CopyFrom    = 0x2AAC4
+[HighwayIntersectionInfo_0x0007AAC4]
+CopyFrom    = 0x3AAC4
+
+
+[HighwayIntersectionInfo_0x0000AAC5]
+;Added by ebina 08/21/2010.
+;railUrail Dual - EDTR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33115
+PreviewEffect = preview_rail_subrail____005
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33110
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAC5]
+CopyFrom	= 0xAAC5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC5]
+CopyFrom	= 0xAAC5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC5]
+CopyFrom	= 0xAAC5
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC5]
+CopyFrom	= 0xAAC5
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC5]
+CopyFrom	= 0x4AAC5
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC5]
+CopyFrom	= 0x4AAC5
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC5]
+CopyFrom	= 0x4AAC5
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC6]
+;Added by ebina 08/21/2010.
+;railUrail Dual - EDTR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33135
+PreviewEffect = preview_rail_subrail____006
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33130
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAC6]
+CopyFrom	= 0xAAC6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC6]
+CopyFrom	= 0xAAC6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC6]
+CopyFrom	= 0xAAC6
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC6]
+CopyFrom	= 0xAAC6
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC6]
+CopyFrom	= 0x4AAC6
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC6]
+CopyFrom	= 0x4AAC6
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC6]
+CopyFrom	= 0x4AAC6
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC7]
+;Added by ebina 08/20/2010.
+;railUrail Dual - EDTR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33155
+PreviewEffect = preview_rail_subrail____007
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = Y - rail: 0x02010003
+CheckType = Z - rail: 0x00030201
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33150
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33150
+Costs = 150
+[HighwayIntersectionInfo_0x0001AAC7]
+CopyFrom	= 0xAAC7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC7]
+CopyFrom	= 0xAAC7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC7]
+CopyFrom	= 0xAAC7
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC7]
+CopyFrom	= 0xAAC7
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC7]
+CopyFrom	= 0x4AAC7
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC7]
+CopyFrom	= 0x4AAC7
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC7]
+CopyFrom	= 0x4AAC7
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAC8]
+;Added by ebina 08/21/2010.
+;railUrail Dual - STR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33205
+PreviewEffect = preview_rail_subrail____008
+
+CellLayout =.........
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = b - rail: 0x00020000, 0x00ff0000 optional
+CheckType = c - rail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F33200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33200
+Costs       = 55
+[HighwayIntersectionInfo_0x0001AAC8]
+CopyFrom	= 0xAAC8
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC8]
+CopyFrom	= 0xAAC8
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC8]
+CopyFrom	= 0xAAC8
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAC8]
+CopyFrom    = 0xAAC8
+[HighwayIntersectionInfo_0x0005AAC8]
+CopyFrom    = 0x1AAC8
+[HighwayIntersectionInfo_0x0006AAC8]
+CopyFrom    = 0x2AAC8
+[HighwayIntersectionInfo_0x0007AAC8]
+CopyFrom    = 0x3AAC8
+
+
+[HighwayIntersectionInfo_0x0000AAC9]
+;Added by ebina 08/21/2010.
+;railUrail Dual - STR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33215
+PreviewEffect = preview_rail_subrail____009
+
+CellLayout =.....
+CellLayout =..Ys.<
+CellLayout =.rZ..
+CellLayout =..^..
+
+CheckType = r - rail: 0x00010000, 0x00ff0000 optional
+CheckType = s - rail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33210
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33210
+Costs = 60
+[HighwayIntersectionInfo_0x0001AAC9]
+CopyFrom	= 0xAAC9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAC9]
+CopyFrom	= 0xAAC9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAC9]
+CopyFrom	= 0xAAC9
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAC9]
+CopyFrom	= 0xAAC9
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAC9]
+CopyFrom	= 0x4AAC9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAC9]
+CopyFrom	= 0x4AAC9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAC9]
+CopyFrom	= 0x4AAC9
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AACA]
+;Added by ebina 08/21/2010.
+;railUrail Dual - STR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33235
+PreviewEffect = preview_rail_subrail____010
+
+CellLayout =.r.
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.s.
+CellLayout =.^.
+
+CheckType = r - rail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x02010200
+CheckType = Z - rail: 0x02000201
+CheckType = s - rail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33230
+Costs = 60
+[HighwayIntersectionInfo_0x0001AACA]
+CopyFrom	= 0xAACA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACA]
+CopyFrom	= 0xAACA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACA]
+CopyFrom	= 0xAACA
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AACA]
+CopyFrom	= 0xAACA
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AACA]
+CopyFrom	= 0x4AACA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AACA]
+CopyFrom	= 0x4AACA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AACA]
+CopyFrom	= 0x4AACA
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AACB]
+;Added by ebina 08/21/2010.
+;railUrail Dual - STR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F33255
+PreviewEffect = preview_rail_subrail____011
+
+CellLayout =.....
+CellLayout =.rY..<
+CellLayout =..Zs.
+CellLayout =..^..
+
+CheckType = r - rail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x02010003
+CheckType = Z - rail: 0x00030201
+CheckType = s - rail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F33250
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F33250
+Costs = 60
+[HighwayIntersectionInfo_0x0001AACB]
+CopyFrom	= 0xAACB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AACB]
+CopyFrom	= 0xAACB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AACB]
+CopyFrom	= 0xAACB
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AACB]
+CopyFrom	= 0xAACB
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AACB]
+CopyFrom	= 0x4AACB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AACB]
+CopyFrom	= 0x4AACB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AACB]
+CopyFrom	= 0x4AACB
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD0]
+;Added by ebina 08/24/2010.
+;railUlightrail Dual - HighELR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38075
+PreviewEffect = preview_elrail_subrail__900
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F38070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38070
+Costs       = 100
+[HighwayIntersectionInfo_0x0001AAD0]
+CopyFrom	= 0xAAD0
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD0]
+CopyFrom	= 0xAAD0
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD0]
+CopyFrom	= 0xAAD0
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAD0]
+CopyFrom    = 0xAAD0
+[HighwayIntersectionInfo_0x0005AAD0]
+CopyFrom    = 0x1AAD0
+[HighwayIntersectionInfo_0x0006AAD0]
+CopyFrom    = 0x2AAD0
+[HighwayIntersectionInfo_0x0007AAD0]
+CopyFrom    = 0x3AAD0
+
+
+[HighwayIntersectionInfo_0x0000AAD1]
+;Added by ebina 08/24/2010.
+;railUlightrail Dual - HighELR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F38085
+PreviewEffect = preview_elrail_subrail__901
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = r - lightrail: 0x00010000, 0x00ff0000 optional
+CheckType = s - lightrail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02000200 lightrail: 0x03010000
+CheckType = Z - rail: 0x02000200 lightrail: 0x00000301
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F38080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F38080
+Costs = 125
+[HighwayIntersectionInfo_0x0001AAD1]
+CopyFrom	= 0xAAD1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD1]
+CopyFrom	= 0xAAD1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD1]
+CopyFrom	= 0xAAD1
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD1]
+CopyFrom	= 0xAAD1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD1]
+CopyFrom	= 0x4AAD1
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD1]
+CopyFrom	= 0x4AAD1
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD1]
+CopyFrom	= 0x4AAD1
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD2]
+;Added by ebina 08/24/2010.
+;railUlightrail Dual - HighELR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F380A5
+PreviewEffect = preview_elrail_subrail__902
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = r - lightrail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x03010000 lightrail: 0x02000200
+CheckType = Z - rail: 0x00000301 lightrail: 0x02000200
+CheckType = s - lightrail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F380A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F380A0
+Costs = 125
+[HighwayIntersectionInfo_0x0001AAD2]
+CopyFrom	= 0xAAD2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD2]
+CopyFrom	= 0xAAD2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD2]
+CopyFrom	= 0xAAD2
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD2]
+CopyFrom	= 0xAAD2
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD2]
+CopyFrom	= 0x4AAD2
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD2]
+CopyFrom	= 0x4AAD2
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD2]
+CopyFrom	= 0x4AAD2
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD3]
+;Added by ebina 08/24/2010.
+;railUlightrail Dual - HighELR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F380C5
+PreviewEffect = preview_elrail_subrail__903
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = r - lightrail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x03010000 lightrail: 0x01000003
+CheckType = Z - rail: 0x00000301 lightrail: 0x00030100
+CheckType = s - lightrail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F380C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F380C0
+Costs = 125
+[HighwayIntersectionInfo_0x0001AAD3]
+CopyFrom	= 0xAAD3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD3]
+CopyFrom	= 0xAAD3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD3]
+CopyFrom	= 0xAAD3
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD3]
+CopyFrom	= 0xAAD3
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD3]
+CopyFrom	= 0x4AAD3
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD3]
+CopyFrom	= 0x4AAD3
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD3]
+CopyFrom	= 0x4AAD3
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AAD8]
+;Added by ebina 08/24/2010.
+;railUmonorail Dual - HighMonorail Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D075
+PreviewEffect = preview_mono_subrail____900
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = b - monorail: 0x00020000, 0x00ff0000 optional
+CheckType = c - monorail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F3D070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D070
+Costs       = 150
+[HighwayIntersectionInfo_0x0001AAD8]
+CopyFrom	= 0xAAD8
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD8]
+CopyFrom	= 0xAAD8
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD8]
+CopyFrom	= 0xAAD8
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004AAD8]
+CopyFrom    = 0xAAD8
+[HighwayIntersectionInfo_0x0005AAD8]
+CopyFrom    = 0x1AAD8
+[HighwayIntersectionInfo_0x0006AAD8]
+CopyFrom    = 0x2AAD8
+[HighwayIntersectionInfo_0x0007AAD8]
+CopyFrom    = 0x3AAD8
+
+
+[HighwayIntersectionInfo_0x0000AAD9]
+;Added by ebina 08/24/2010.
+;railUmonorail Dual - HighMonorail Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D085
+PreviewEffect = preview_mono_subrail____901
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00010000, 0x00ff0000 optional
+CheckType = s - monorail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02000200 monorail: 0x03010000
+CheckType = Z - rail: 0x02000200 monorail: 0x00000301
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D080
+Costs = 200
+[HighwayIntersectionInfo_0x0001AAD9]
+CopyFrom	= 0xAAD9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AAD9]
+CopyFrom	= 0xAAD9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AAD9]
+CopyFrom	= 0xAAD9
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AAD9]
+CopyFrom	= 0xAAD9
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AAD9]
+CopyFrom	= 0x4AAD9
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AAD9]
+CopyFrom	= 0x4AAD9
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AAD9]
+CopyFrom	= 0x4AAD9
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AADA]
+;Added by ebina 08/24/2010.
+;railUmonorail Dual - HighMonorail Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D0A5
+PreviewEffect = preview_mono_subrail____902
+
+CellLayout =...
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = r - monorail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x02000200
+CheckType = Z - rail: 0x00000301 monorail: 0x02000200
+CheckType = s - monorail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D0A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D0A0
+Costs = 200
+[HighwayIntersectionInfo_0x0001AADA]
+CopyFrom	= 0xAADA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AADA]
+CopyFrom	= 0xAADA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AADA]
+CopyFrom	= 0xAADA
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AADA]
+CopyFrom	= 0xAADA
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AADA]
+CopyFrom	= 0x4AADA
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AADA]
+CopyFrom	= 0x4AADA
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AADA]
+CopyFrom	= 0x4AADA
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000AADB]
+;Added by ebina 08/24/2010.
+;railUmonorail Dual - HighMonorail Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D0C5
+PreviewEffect = preview_mono_subrail____903
+
+CellLayout =.....
+CellLayout =..Y..<
+CellLayout =..Z..
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x01000003
+CheckType = Z - rail: 0x00000301 monorail: 0x00030100
+CheckType = s - monorail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D0C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D0C0
+Costs = 200
+[HighwayIntersectionInfo_0x0001AADB]
+CopyFrom	= 0xAADB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002AADB]
+CopyFrom	= 0xAADB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003AADB]
+CopyFrom	= 0xAADB
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004AADB]
+CopyFrom	= 0xAADB
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AADB]
+CopyFrom	= 0x4AADB
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006AADB]
+CopyFrom	= 0x4AADB
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007AADB]
+CopyFrom	= 0x4AADB
+Rotate		= 3
+
+

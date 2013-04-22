@@ -1,0 +1,2213 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RAIL BUTTON SECTION
+;RAIL BUTTON SECTION
+; 0xA###
+;Rail Puzzle Pieces, Button
+RotationRing = A100, 1A100, 2A100, 3A100, 4A100, 5A100, 6A100, 7A100 ;rail start/end section puzzle piece
+AddTypes     = A101, 1A101, 2A101, 3A101, 4A101, 5A101, 6A101, 7A101 ; rail start/end digonal puzzle piece
+AddTypes     = A102, 1A102, 2A102, 3A102, 4A102, 6A102, 5A102, 7A102 ;railxblank terrain puzzle piece orthogonal and diagonal
+AddTypes     = A103, 6A103, 1A103, 7A103, 2A103, 4A103, 3A103, 5A103 ;railxblank terrain turn puzzle piece
+AddTypes     = A104, 1A104, 2A104, 3A104, 4A104, 5A104, 6A104, 7A104 ;Rail Curve_45
+AddTypes     = A105, 1A105, 2A105, 3A105, 4A105, 5A105, 6A105, 7A105 ;rail junction orthogonal puzzle piece
+AddTypes     = A106, 1A106, 2A106, 3A106, 4A106, 5A106, 6A106, 7A106 ;rail junction diagonal puzzle piece
+AddTypes     = A107, 1A107, 2A107, 3A107, 4A107, 5A107, 6A107, 7A107 ;railxrail straight rail
+AddTypes     = A108, 1A108, 2A108, 3A108, 4A108, 5A108, 6A108, 7A108 ;railxrail double diagonal rail 
+AddTypes     = A109, 1A109, 2A109, 3A109, 4A109, 5A109, 6A109, 7A109 ;railxrail diagonal rail
+AddTypes     = A10A, 1A10A, 2A10A, 3A10A, 4A10A, 5A10A, 6A10A, 7A10A ;rail_diagonalxrail diagonal rail
+AddTypes     = A10B, 1A10B, 2A10B, 3A10B, 4A10B, 5A10B, 6A10B, 7A10B ;raildiagonalxrail straight rail 
+AddTypes     = A10C, 1A10C, 2A10C, 3A10C, 4A10C, 5A10C, 6A10C, 7A10C ;railxstreet straight street
+AddTypes     = A10D, 1A10D, 2A10D, 3A10D, 4A10D, 5A10D, 6A10D, 7A10D ;railXstreet_diagonal
+AddTypes     = A10E, 1A10E, 2A10E, 3A10E, 4A10E, 5A10E, 6A10E, 7A10E ;raildiagonalxstreet straight street
+AddTypes     = A10F, 1A10F, 2A10F, 3A10F, 4A10F, 5A10F, 6A10F, 7A10F ;raildiagonalXstreetdiagonal 
+AddTypes     = A110, 1A110, 2A110, 3A110, 4A110, 5A110, 6A110, 7A110 ;railxroad straight road
+AddTypes     = A111, 1A111, 2A111, 3A111, 4A111, 5A111, 6A111, 7A111 ;railxroad double diagonal road
+AddTypes     = A112, 1A112, 2A112, 3A112, 4A112, 5A112, 6A112, 7A112 ;railxroad diagonal road
+AddTypes     = A113, 1A113, 2A113, 3A113, 4A113, 5A113, 6A113, 7A113 ;raildiagonalxroad straight road
+AddTypes     = A114, 1A114, 2A114, 3A114, 4A114, 5A114, 6A114, 7A114 ;raildiagonalXroad_diagonal
+AddTypes     = A115, 1A115, 2A115, 3A115, 4A115, 5A115, 6A115, 7A115 ;raildiagonalXDD_road_diagonal
+AddTypes     = A116, 1A116, 2A116, 3A116, 4A116, 5A116, 6A116, 7A116 ;railxonewayroad straight onewayroad
+AddTypes     = A117, 1A117, 2A117, 3A117, 4A117, 5A117, 6A117, 7A117 ;railxonewayroad double diagonal onewayroad
+AddTypes     = A118, 1A118, 2A118, 3A118, 4A118, 5A118, 6A118, 7A118 ;railxonewayroad diagonal onewayroad
+AddTypes     = A119, 1A119, 2A119, 3A119, 4A119, 5A119, 6A119, 7A119 ;raildiagonalxonewayroad straight onewayroad
+AddTypes     = A11A, 2A11A, 1A11A, 3A11A, 4A11A, 6A11A, 5A11A, 7A11A ;raildiagonalXonewayroad_diagonal
+AddTypes     = A11B, 1A11B, 2A11B, 3A11B, 4A11B, 5A11B, 6A11B, 7A11B ;raildiagonalXDD_onewayroad_diagonal
+AddTypes     = A11C, 1A11C, 2A11C, 3A11C, 4A11C, 5A11C, 6A11C, 7A11C ;railxavenue straight avenue
+AddTypes     = A11D, 1A11D, 2A11D, 3A11D, 4A11D, 5A11D, 6A11D, 7A11D ;railxrail diagonal avenue
+AddTypes     = A11E, 1A11E, 2A11E, 3A11E, 4A11E, 5A11E, 6A11E, 7A11E ;raildiagonalXstraight avenue
+AddTypes     = A11F, 1A11F, 2A11F, 3A11F, 4A11F, 5A11F, 6A11F, 7A11F ;raildiagonalXdiagonal avenue
+AddTypes     = A120, 1A120, 2A120, 3A120, 4A120, 5A120, 6A120, 7A120 ;railxgroundhighway straight groundhighway
+AddTypes     = A121, 1A121, 2A121, 3A121, 4A121, 5A121, 6A121, 7A121 ;railxrail diagonal groundhighway
+AddTypes     = A122, 1A122, 2A122, 3A122, 4A122, 5A122, 6A122, 7A122 ;raildiagonalXstraight groundhighway
+AddTypes     = A123, 1A123, 2A123, 3A123, 4A123, 5A123, 6A123, 7A123 ;raildiagonalXdiagonal groundhighway
+AddTypes     = A124, 1A124, 2A124, 3A124, 4A124, 5A124, 6A124, 7A124 ;railxrail + intersection puzzle piece
+AddTypes     = A125, 1A125, 2A125, 3A125, 4A125, 5A125, 6A125, 7A125 ;railxground light rail
+AddTypes     = A126, 1A126, 2A126, 3A126, 4A126, 5A126, 6A126, 7A126 ;railxdiagonal ground light rail
+AddTypes     = A127, 1A127, 2A127, 3A127, 4A127, 5A127, 6A127, 7A127 ;raildiagonalxGLR
+AddTypes     = A128, 1A128, 2A128, 3A128, 4A128, 5A128, 6A128, 7A128 ;raildiagonalXGLR_diagonal
+AddTypes     = A129, 1A129, 2A129, 3A129, 4A129, 5A129, 6A129, 7A129 ;railxpedmall1
+AddTypes     = A12A, 1A12A, 2A12A, 3A12A, 4A12A, 5A12A, 6A12A, 7A12A ;railxpedmall2
+AddTypes     = A12B, 1A12B, 2A12B, 3A12B, 4A12B, 5A12B, 6A12B, 7A12B ;T Rail OnSlope
+AddTypes     = A12C, 1A12C, 2A12C, 3A12C, 4A12C, 5A12C, 6A12C, 7A12C ;Straight Rail OnSlope
+AddTypes     = A12D, 1A12D, 2A12D, 3A12D, 4A12D, 5A12D, 6A12D, 7A12D ;Rail OnSlope_diagonal
+;AddTypes     = A12E, 1A12E ;railxgroundhighway overpass - Autoplace (listed by memo)
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RAIL SECTION
+;RAIL SECTION
+;
+;OVERPASSES
+[HighwayIntersectionInfo_0x0000A12E]
+;railxgroundhighway overpass
+;added by Tropod 05/01/04
+Piece = 0.0, 0.0, 0, 0, 0x02012300
+PreviewEffect = preview_gh_rd_straight
+
+CellLayout = .a.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = wAy<
+CellLayout = xBz
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .b.
+CellLayout = .c.
+CellLayout = .^..
+
+CheckType = a - rail: 0x02000000,0xffff00ff check
+CheckType = b - rail: 0x02000200
+CheckType = c - rail: 0x00000200,0x00ffffff check
+CheckType = A - rail: 0x02000200 groundhighway: 0x04020002
+CheckType = B - rail: 0x02000200 groundhighway: 0x00020402
+CheckType = w - groundhighway: 0x04020000,0xffffff00 check
+CheckType = x - groundhighway: 0x00020400,0xffffff00 check
+CheckType = y - groundhighway: 0x04000002,0xff00ffff check
+CheckType = z - groundhighway: 0x00000402,0xff00ffff check
+
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = .-#-<
+ConsLayout = .-#-.
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = ..|..
+ConsLayout = ..^..
+
+AutoTileBase = 0x531F5000
+AutoPlace   = 1
+Costs = 500
+[HighwayIntersectionInfo_0x0001A12E]
+CopyFrom = 0xA12E
+Rotate = 1
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;PUZZLE PIECES
+;RAIL PUZZLE PIECES
+
+[HighwayIntersectionInfo_0x0000A100]
+;Added by Tropod 06/06/04.
+;edited by memo 12/31/07 in order to fix deep-hole-bug
+;rail start/end Puzzle Piece
+Piece = 0.0, -24.0, 1, 0, 0x53269100
+PreviewEffect = preview_rail_puzzlepiece008
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b..
+CellLayout = .b.<
+CellLayout = .^..
+
+CheckType = a - rail: 0x02000000, 0xff000000 check
+CheckType = b - rail: 0x02000200
+;;CheckType = c - rail: 0x00000200
+
+ConsLayout = ...
+ConsLayout = ...
+ConsLayout = .|.
+ConsLayout = .|.
+ConsLayout = .|.
+ConsLayout = .|.<
+ConsLayout = .^.
+
+AutoTileBase = 0x53269000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a005
+Costs       = 290
+[HighwayIntersectionInfo_0x0001A100]
+CopyFrom    = 0xA100
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A100]
+CopyFrom    = 0xA100
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A100]
+CopyFrom    = 0xA100
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A100]
+CopyFrom    = 0xA100
+[HighwayIntersectionInfo_0x0005A100]
+CopyFrom    = 0x1A100
+[HighwayIntersectionInfo_0x0006A100]
+CopyFrom    = 0x2A100
+[HighwayIntersectionInfo_0x0007A100]
+CopyFrom    = 0x3A100
+
+
+[HighwayIntersectionInfo_0x0000A102]
+;Added by Tropod 06/06/04.
+;railxstraight blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53263100
+PreviewEffect = preview_rail_puzzlepiece001
+
+CellLayout =......
+CellLayout =...Z<.
+CellLayout =...^..
+
+CheckType = Z - rail: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x53263100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a012
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A102]
+CopyFrom    = 0xA102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A102]
+CopyFrom    = 0xA102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A102]
+CopyFrom    = 0xA102
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0004A102]
+;Added by Swamper77 03/19/07.
+;railxstraight diagonal blank terrain puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53264F00
+PreviewEffect = preview_rail_puzzlepiece009
+
+CellLayout =......
+CellLayout =...Z<.
+CellLayout =...^..
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x53264F00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a013
+Costs       = 75
+[HighwayIntersectionInfo_0x0005A102]
+CopyFrom    = 0x4A102
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A102]
+CopyFrom    = 0x4A102
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A102]
+CopyFrom    = 0x4A102
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A107]
+;Added by Tropod 06/06/04.
+;railxrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53263200
+PreviewEffect = preview_rail_puzzlepiece002
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02020202
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a015
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A107]
+CopyFrom    = 0xA107
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A107]
+CopyFrom    = 0xA107
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A107]
+CopyFrom    = 0xA107
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A107]
+CopyFrom    = 0xA107
+[HighwayIntersectionInfo_0x0005A107]
+CopyFrom    = 0x1A107
+[HighwayIntersectionInfo_0x0006A107]
+CopyFrom    = 0x2A107
+[HighwayIntersectionInfo_0x0007A107]
+CopyFrom    = 0x3A107
+
+
+[HighwayIntersectionInfo_0x0000A129]
+;Added by ArkenbergeJoe 08/12/08
+;railxpedmall_1 puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53266704
+PreviewEffect = preview_rail_puzzlepiece01g
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=   0x53266700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266700
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A129]
+CopyFrom    = 0xA129
+Rotate      = 1
+
+[HighwayIntersectionInfo_0x0002A129]
+;Added by ArkenbergeJoe 08/12/08
+;railxpedmall_2 puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53266804
+PreviewEffect = preview_rail_puzzlepiece01h
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoPathBase=   0x53266700
+AutoTileBase=   0x53266800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266800
+Costs       = 150
+[HighwayIntersectionInfo_0x0003A129]
+CopyFrom    = 0x2A129
+Rotate      = 1
+
+[HighwayIntersectionInfo_0x0004A129]
+;raildiagonalxpedmall puzzle piece
+;Added by ArkenbergeJoe 08/12/08
+Piece = 0.0, 0.0, 0, 0, 0x53266A04
+PreviewEffect = preview_rail_puzzlepiece01k
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 road: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=   0x53266A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266A00
+Costs       = 150
+[HighwayIntersectionInfo_0x0005A129]
+CopyFrom    = 0x4A129
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A129]
+CopyFrom    = 0x4A129
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A129]
+CopyFrom    = 0x4A129
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000A10C]
+; railxstreet puzzle piece
+;Added by Tropod 06/06/04.
+Piece = 0.0, 0.0, 0, 0, 0x53263300
+PreviewEffect = preview_rail_puzzlepiece003
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 street: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a017
+Costs       = 100
+[HighwayIntersectionInfo_0x0001A10C]
+CopyFrom    = 0xA10C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A10C]
+CopyFrom    = 0xA10C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A10C]
+CopyFrom    = 0xA10C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A10C]
+CopyFrom    = 0xA10C
+[HighwayIntersectionInfo_0x0005A10C]
+CopyFrom    = 0x1A10C
+[HighwayIntersectionInfo_0x0006A10C]
+CopyFrom    = 0x2A10C
+[HighwayIntersectionInfo_0x0007A10C]
+CopyFrom    = 0x3A10C
+
+
+[HighwayIntersectionInfo_0x0000A12A]
+;raildiagonalxped_ext puzzle piece
+;Added by ArkenbergeJoe 08/12/08
+Piece = 0.0, 0.0, 0, 0, 0x53266B05
+PreviewEffect = preview_rail_puzzlepiece01l
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 road: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoPathBase=   0x53266A00
+AutoTileBase=   0x53266B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266B00
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A12A]
+CopyFrom    = 0xA12A
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A12A]
+CopyFrom    = 0xA12A
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A12A]
+CopyFrom    = 0xA12A
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A12A]
+CopyFrom    = 0xA12A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A12A]
+CopyFrom    = 0x4A12A
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A12A]
+CopyFrom    = 0x4A12A
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A12A]
+CopyFrom    = 0x4A12A
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000A110]
+;Added by Tropod 06/06/04.
+;railxroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53263400
+PreviewEffect = preview_rail_puzzlepiece004
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 road: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a025
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A110]
+CopyFrom    = 0xA110
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A110]
+CopyFrom    = 0xA110
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A110]
+CopyFrom    = 0xA110
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A110]
+CopyFrom    = 0xA110
+[HighwayIntersectionInfo_0x0005A110]
+CopyFrom    = 0x1A110
+[HighwayIntersectionInfo_0x0006A110]
+CopyFrom    = 0x2A110
+[HighwayIntersectionInfo_0x0007A110]
+CopyFrom    = 0x3A110
+
+
+[HighwayIntersectionInfo_0x0000A104]
+;Rail 45 viaductcurve
+;Added by ArkenbergeJoe 01/12/09
+Piece = 0.0, -48.0, 0, 0, 0x53267800
+PreviewEffect = preview_rail_puzzlepiece044
+
+CellLayout =..a..
+CellLayout =.ab..
+CellLayout =gc...
+CellLayout =d+...
+CellLayout =e+...
+CellLayout =e...<
+CellLayout =.....
+CellLayout =^....
+
+
+CheckType   = a - rail:0x03010000
+CheckType   = b - rail:0x00000301
+CheckType   = c - rail:0x02000301
+CheckType   = d - rail:0x02010200
+CheckType   = e - rail:0x02000200
+CheckType   = g - rail:0x02010000
+
+ConsLayout = ../..
+ConsLayout = .//..
+ConsLayout = //...
+ConsLayout = |X...
+ConsLayout = |X...
+ConsLayout = |...<
+ConsLayout = .....
+ConsLayout = ^....
+
+AutoTileBase = 0x53267800
+ConvertQueryID = 0x53267800
+PlaceQueryID = 0x53267800
+Costs = 250
+
+[HighwayIntersectionInfo_0x0001A104]
+CopyFrom = 0xA104
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A104]
+CopyFrom = 0xA104
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A104]
+CopyFrom = 0xA104
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A104]
+CopyFrom = 0xA104
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A104]
+CopyFrom = 0x4A104
+Rotate = 1
+[HighwayIntersectionInfo_0x0006A104]
+CopyFrom = 0x4A104
+Rotate = 2
+[HighwayIntersectionInfo_0x0007A104]
+CopyFrom = 0x4A104
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x0000A116]
+;Added by Tropod 06/06/04.
+;railxonewayroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53263500
+PreviewEffect = preview_rail_puzzlepiece005
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200 onewayroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53263500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a035
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A116]
+CopyFrom    = 0xA116
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A116]
+CopyFrom    = 0xA116
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A116]
+CopyFrom    = 0xA116
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A116]
+CopyFrom    = 0xA116
+[HighwayIntersectionInfo_0x0005A116]
+CopyFrom    = 0x1A116
+[HighwayIntersectionInfo_0x0006A116]
+CopyFrom    = 0x2A116
+[HighwayIntersectionInfo_0x0007A116]
+CopyFrom    = 0x3A116
+
+
+[HighwayIntersectionInfo_0x0000A11C]
+;Added by Tropod 06/06/04.
+;railxavenue puzzle piece
+Piece = -8.0, 8.0, 1, 0, 0x53263650
+PreviewEffect = preview_rail_puzzlepiece006
+
+CellLayout = ...
+CellLayout = .A.<
+CellLayout = .B.
+CellLayout = .^.
+
+CheckType  = A - rail: 0x02000200 avenue: 0x04020002
+CheckType  = B - rail: 0x02000200 avenue: 0x00020402
+
+ConsLayout = ..
+ConsLayout = .+<
+ConsLayout = .+.
+ConsLayout = .^.
+
+AutoTileBase=	0x53263600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a045
+Costs       = 100
+[HighwayIntersectionInfo_0x0001A11C]
+CopyFrom    = 0xA11C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A11C]
+CopyFrom    = 0xA11C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A11C]
+CopyFrom    = 0xA11C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A11C]
+CopyFrom    = 0xA11C
+[HighwayIntersectionInfo_0x0005A11C]
+CopyFrom    = 0x1A11C
+[HighwayIntersectionInfo_0x0006A11C]
+CopyFrom    = 0x2A11C
+[HighwayIntersectionInfo_0x0007A11C]
+CopyFrom    = 0x3A11C
+
+
+[HighwayIntersectionInfo_0x0000A120]
+;Added by Tropod 06/10/04.
+;railxgroundhighway puzzle piece
+Piece = -8.0, 8.0, 1, 0, 0x53263750
+PreviewEffect = preview_rail_puzzlepiece007
+
+CellLayout = ...
+CellLayout = .A.<
+CellLayout = .B.
+CellLayout = .^..
+
+CheckType  = A - rail: 0x02000200 groundhighway: 0x04020002
+CheckType  = B - rail: 0x02000200 groundhighway: 0x00020402
+
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .^.
+
+AutoTileBase=	0x53263700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a055
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A120]
+CopyFrom    = 0xA120
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A120]
+CopyFrom    = 0xA120
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A120]
+CopyFrom    = 0xA120
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A120]
+CopyFrom    = 0xA120
+[HighwayIntersectionInfo_0x0005A120]
+CopyFrom    = 0x1A120
+[HighwayIntersectionInfo_0x0006A120]
+CopyFrom    = 0x2A120
+[HighwayIntersectionInfo_0x0007A120]
+CopyFrom    = 0x3A120
+
+
+[HighwayIntersectionInfo_0x0000A109]
+; railx diagonal rail puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080000
+PreviewEffect = preview_rail_puzzlepiece010
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a015
+Costs       = 100
+[HighwayIntersectionInfo_0x0001A109]
+CopyFrom    = 0xA109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A109]
+CopyFrom    = 0xA109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A109]
+CopyFrom    = 0xA109
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A109]
+CopyFrom    = 0xA109
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A109]
+CopyFrom    = 0x4A109
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A109]
+CopyFrom    = 0x4A109
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A109]
+CopyFrom    = 0x4A109
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A10A]
+;rail diagonal x diagonal rail puzzle piece
+;Added by ArkenbergeJoe 03/13/08
+Piece = 0.0, 0.0, 0, 0, 0x53266D00
+PreviewEffect = preview_rail_puzzlepiece023
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x01000003
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53266D00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266D00
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A10A]
+CopyFrom    = 0xA10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A10A]
+CopyFrom    = 0xA10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A10A]
+CopyFrom    = 0xA10A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A10A]
+CopyFrom    = 0xA10A
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A10A]
+CopyFrom    = 0x4A10A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A10A]
+CopyFrom    = 0x4A10A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A10A]
+CopyFrom    = 0x4A10A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A108]
+; railx double diagonal rail puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080010
+PreviewEffect = preview_rail_puzzlepiece011
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a015
+Costs       = 100
+[HighwayIntersectionInfo_0x0001A108]
+CopyFrom    = 0xA108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A108]
+CopyFrom    = 0xA108
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003A108]
+CopyFrom    = 0x2A108
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004A108]
+CopyFrom    = 0xA108
+[HighwayIntersectionInfo_0x0005A108]
+CopyFrom    = 0x1A108
+[HighwayIntersectionInfo_0x0006A108]
+CopyFrom    = 0x2A108
+[HighwayIntersectionInfo_0x0007A108]
+CopyFrom    = 0x3A108
+
+
+
+[HighwayIntersectionInfo_0x0000A10D]
+; railx diagonal road puzzle piece
+;Added by ArkenbergeJoe 1/11/08
+Piece = 0.0, 0.0, 0, 0, 0x5313c804
+PreviewEffect = preview_rail_puzzlepiece019
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 street:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase= 0x5313c800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313c800
+Costs = 75
+[HighwayIntersectionInfo_0x0001A10D]
+CopyFrom = 0xA10D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002A10D]
+CopyFrom = 0xA10D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003A10D]
+CopyFrom = 0xA10D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004A10D]
+CopyFrom = 0xA10D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A10D]
+CopyFrom = 0x4A10D
+Rotate = 1
+[HighwayIntersectionInfo_0x0006A10D]
+CopyFrom = 0x4A10D
+Rotate = 2
+[HighwayIntersectionInfo_0x0007A10D]
+CopyFrom = 0x4A10D
+Rotate = 3
+
+
+
+[HighwayIntersectionInfo_0x0000A112]
+; railx diagonal road puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080020
+PreviewEffect = preview_rail_puzzlepiece012
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 road:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a025
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A112]
+CopyFrom    = 0xA112
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A112]
+CopyFrom    = 0xA112
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A112]
+CopyFrom    = 0xA112
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A112]
+CopyFrom    = 0xA112
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A112]
+CopyFrom    = 0x4A112
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A112]
+CopyFrom    = 0x4A112
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A112]
+CopyFrom    = 0x4A112
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A111]
+; railx double diagonal road puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080030
+PreviewEffect = preview_rail_puzzlepiece013
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 road:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a025
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A111]
+CopyFrom    = 0xA111
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A111]
+CopyFrom    = 0xA111
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003A111]
+CopyFrom    = 0x2A111
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004A111]
+CopyFrom    = 0xA111
+[HighwayIntersectionInfo_0x0005A111]
+CopyFrom    = 0x1A111
+[HighwayIntersectionInfo_0x0006A111]
+CopyFrom    = 0x2A111
+[HighwayIntersectionInfo_0x0007A111]
+CopyFrom    = 0x3A111
+
+
+[HighwayIntersectionInfo_0x0000A118]
+; railx diagonal onewayroad puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080040
+PreviewEffect = preview_rail_puzzlepiece014
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 onewayroad:0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a035
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A118]
+CopyFrom    = 0xA118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A118]
+CopyFrom    = 0xA118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A118]
+CopyFrom    = 0xA118
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A118]
+CopyFrom    = 0xA118
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A118]
+CopyFrom    = 0x4A118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A118]
+CopyFrom    = 0x4A118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A118]
+CopyFrom    = 0x4A118
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A117]
+; railx double diagonal onewayroad puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080050
+PreviewEffect = preview_rail_puzzlepiece015
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x00020002 onewayroad:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53080050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a035
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A117]
+CopyFrom    = 0xA117
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A117]
+CopyFrom    = 0xA117
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003A117]
+CopyFrom    = 0x2A117
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004A117]
+CopyFrom    = 0xA117
+[HighwayIntersectionInfo_0x0005A117]
+CopyFrom    = 0x1A117
+[HighwayIntersectionInfo_0x0006A117]
+CopyFrom    = 0x2A117
+[HighwayIntersectionInfo_0x0007A117]
+CopyFrom    = 0x3A117
+
+
+[HighwayIntersectionInfo_0x0000A11D]
+; railx diagonal avenue puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x53080080
+PreviewEffect = preview_rail_puzzlepiece016
+
+CellLayout =........
+CellLayout =...A....
+CellLayout =...B...<
+CellLayout =...C....
+CellLayout =...^....
+
+CheckType = A - rail:0x02000200 avenue:0x01000003
+CheckType = B - rail:0x02000200 avenue:0x01030103
+CheckType = C - rail:0x02000200 avenue:0x00030100
+
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...+...<
+ConsLayout =...+....
+ConsLayout =...^....
+
+AutoTileBase=	0x53080080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a045
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A11D]
+CopyFrom    = 0xA11D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A11D]
+CopyFrom    = 0xA11D
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003A11D]
+CopyFrom    = 0x2A11D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004A11D]
+CopyFrom    = 0xA11D
+[HighwayIntersectionInfo_0x0005A11D]
+CopyFrom    = 0x1A11D
+[HighwayIntersectionInfo_0x0006A11D]
+CopyFrom    = 0x2A11D
+[HighwayIntersectionInfo_0x0007A11D]
+CopyFrom    = 0x3A11D
+
+
+[HighwayIntersectionInfo_0x0000A121]
+; railx diagonal groundhighway puzzle piece
+;Added by Tropod 01/29/05
+Piece = 0.0, 0.0, 0, 0, 0x530800C0
+PreviewEffect = preview_rail_puzzlepiece017
+
+CellLayout =..........
+CellLayout =....A.....
+CellLayout =....B....<
+CellLayout =....C.....
+CellLayout =....^.....
+
+CheckType = A - rail:0x02000000 groundhighway:0x03010000
+CheckType = B - rail:0x02000200 groundhighway:0x03010301
+CheckType = C - rail:0x00000200 groundhighway:0x00000301
+
+ConsLayout =..........
+ConsLayout =....+.....
+ConsLayout =....+....<
+ConsLayout =....+.....
+ConsLayout =....^.....
+
+AutoTileBase=	0x530800C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a055
+Costs       = 200
+[HighwayIntersectionInfo_0x0001A121]
+CopyFrom    = 0xA121
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A121]
+CopyFrom    = 0xA121
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003A121]
+CopyFrom    = 0x2A121
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004A121]
+CopyFrom    = 0xA121
+[HighwayIntersectionInfo_0x0005A121]
+CopyFrom    = 0x1A121
+[HighwayIntersectionInfo_0x0006A121]
+CopyFrom    = 0x2A121
+[HighwayIntersectionInfo_0x0007A121]
+CopyFrom    = 0x3A121
+
+
+[HighwayIntersectionInfo_0x0000A124]
+;Added by Tropod 04/01/05.
+;railxrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53191020
+PreviewEffect = preview_rail_puzzlepiece018
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53191020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000A1F0
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A124]
+CopyFrom    = 0xA124
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A124]
+CopyFrom    = 0xA124
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A124]
+CopyFrom    = 0xA124
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A124]
+CopyFrom    = 0xA124
+[HighwayIntersectionInfo_0x0005A124]
+CopyFrom    = 0x1A124
+[HighwayIntersectionInfo_0x0006A124]
+CopyFrom    = 0x2A124
+[HighwayIntersectionInfo_0x0007A124]
+CopyFrom    = 0x3A124
+
+
+
+[HighwayIntersectionInfo_0x0000A103]
+;Added by Swamper77 03/19/07.
+;railxcurved blank terrain puzzle piece 
+Piece = 0.0, 0.0, 0, 0, 0x53265100
+PreviewEffect = preview_rail_puzzlepiece00a
+
+CellLayout =........
+CellLayout =....a..
+CellLayout =....b<..
+CellLayout =....^...
+
+CheckType = a - rail: 0x02010000
+CheckType = b - rail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xb000a014
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A103]
+CopyFrom    = 0xA103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A103]
+CopyFrom    = 0xA103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A103]
+CopyFrom    = 0xA103
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A103]
+CopyFrom    = 0xA103
+PlaceQueryID = 0xb000a016
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A103]
+CopyFrom    = 0x4A103
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A103]
+CopyFrom    = 0x4A103
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A103]
+CopyFrom    = 0x4A103
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A10E]
+;diagonalrailxstreet puzzle piece
+;Added by Swamper77 03/19/07.
+Piece = 0.0, 0.0, 0, 0, 0x53265200
+PreviewEffect = preview_rail_puzzlepiece00b
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 street: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a018
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A10E]
+CopyFrom    = 0xA10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A10E]
+CopyFrom    = 0xA10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A10E]
+CopyFrom    = 0xA10E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A10E]
+CopyFrom    = 0xA10E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A10E]
+CopyFrom    = 0x4A10E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A10E]
+CopyFrom    = 0x4A10E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A10E]
+CopyFrom    = 0x4A10E
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A10F]
+;raildiagonalxstreetdiagonal puzzle piece
+;Added by ArkenbergeJoe 03/03/08.
+Piece = 0.0, 0.0, 0, 0, 0x53266200
+PreviewEffect = preview_rail_puzzlepiece024
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 street: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53266200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266200
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A10F]
+CopyFrom    = 0xA10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A10F]
+CopyFrom    = 0xA10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A10F]
+CopyFrom    = 0xA10F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A10F]
+CopyFrom    = 0xA10F
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A10F]
+CopyFrom    = 0x4A10F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A10F]
+CopyFrom    = 0x4A10F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A10F]
+CopyFrom    = 0x4A10F
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A113]
+;Added by Swamper77 03/19/07.
+;raildiagonalxroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53265300
+PreviewEffect = preview_rail_puzzlepiece00c
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 road: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a026
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A113]
+CopyFrom    = 0xA113
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A113]
+CopyFrom    = 0xA113
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A113]
+CopyFrom    = 0xA113
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A113]
+CopyFrom    = 0xA113
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A113]
+CopyFrom    = 0x4A113
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A113]
+CopyFrom    = 0x4A113
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A113]
+CopyFrom    = 0x4A113
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0000A114]
+;raildiagonalxstreetdiagonal puzzle piece
+;Added by ArkenbergeJoe 03/10/08
+Piece = 0.0, 0.0, 0, 0, 0x53266300
+PreviewEffect = preview_rail_puzzlepiece025
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 road: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53266300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266300
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A114]
+CopyFrom    = 0xA114
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A114]
+CopyFrom    = 0xA114
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A114]
+CopyFrom    = 0xA114
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A114]
+CopyFrom    = 0xA114
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A114]
+CopyFrom    = 0x4A114
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A114]
+CopyFrom    = 0x4A114
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A114]
+CopyFrom    = 0x4A114
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000A119]
+;Added by Swamper77 03/19/07.
+;raildiagonalxonewayroad puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53265400
+PreviewEffect = preview_rail_puzzlepiece00d
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x03010000 onewayroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000a036
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A119]
+CopyFrom    = 0xA119
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A119]
+CopyFrom    = 0xA119
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A119]
+CopyFrom    = 0xA119
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A119]
+CopyFrom    = 0xA119
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A119]
+CopyFrom    = 0x4A119
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A119]
+CopyFrom    = 0x4A119
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A119]
+CopyFrom    = 0x4A119
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0000A115]
+; diagonalrailx double diagonal road puzzle piece
+;Added by ArkenbergeJoe 08/12/08
+Piece = 0.0, 0.0, 0, 0, 0x53266604
+PreviewEffect = preview_rail_puzzlepiece01f
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x03010000 road:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=   0x53266600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266600
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A115]
+CopyFrom    = 0xA115
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A115]
+CopyFrom    = 0xA115
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A115]
+CopyFrom    = 0xA115
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A115]
+CopyFrom    = 0xA115
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005A115]
+CopyFrom    = 0x4A115
+Rotate                 = 1
+[HighwayIntersectionInfo_0x0006A115]
+CopyFrom    = 0x4A115
+Rotate                 = 2
+[HighwayIntersectionInfo_0x0007A115]
+CopyFrom    = 0x4A115
+Rotate                 = 3
+
+[HighwayIntersectionInfo_0x0000A101]
+;Added by ArkenbergeJoe 10/01/07
+;rail start/end diagonal Puzzle Piece
+Piece = -24.0, 8.0, 0, 0, 0x53264000
+PreviewEffect = preview_rail_puzzlepiece020
+
+CellLayout = ....b.
+CellLayout = ...bc<
+CellLayout = ..bc..
+CellLayout = .bc...
+CellLayout = ac....
+CellLayout = ....^.
+
+CheckType = a - rail: 0x00010000, 0x0000ff00 check
+CheckType = b - rail: 0x03010000
+CheckType = c - rail: 0x00000301
+
+ConsLayout = ..../.
+ConsLayout = ...//<
+ConsLayout = ..//..
+ConsLayout = .//...
+ConsLayout = ./....
+ConsLayout = ....^.
+
+AutoTileBase = 0x53264200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53264000
+Costs       = 290
+[HighwayIntersectionInfo_0x0001A101]
+CopyFrom    = 0xA101
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A101]
+CopyFrom    = 0xA101
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A101]
+CopyFrom    = 0xA101
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A101]
+CopyFrom    = 0xA101
+Transpose       = 1
+[HighwayIntersectionInfo_0x0005A101]
+CopyFrom    = 0x4A101
+Rotate          = 1
+[HighwayIntersectionInfo_0x0006A101]
+CopyFrom    = 0x4A101
+Rotate          =2
+[HighwayIntersectionInfo_0x0007A101]
+CopyFrom    = 0x4A101
+Rotate          =3
+
+
+[HighwayIntersectionInfo_0x0000A10B]
+;Added by GoaSkin 03/20/07.
+;raildiagonalxrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x53265D00
+PreviewEffect = preview_rail_puzzlepiece00e
+
+CellLayout =...
+CellLayout =.Z.<
+CellLayout =.^.
+
+CheckType = Z - rail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53265D00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53265D00
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A10B]
+CopyFrom    = 0xA10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A10B]
+CopyFrom    = 0xA10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A10B]
+CopyFrom    = 0xA10B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A10B]
+CopyFrom    = 0xA10B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A10B]
+CopyFrom    = 0x4A10B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A10B]
+CopyFrom    = 0x4A10B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A10B]
+CopyFrom    = 0x4A10B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000A105]
+;Added by ArkenbergeJoe 11/02/07.
+;Rail Junction Orthogonal Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x53264100
+PreviewEffect = preview_rail_puzzlepiece021
+
+CellLayout =.......
+CellLayout =....a..
+CellLayout =....b<.
+CellLayout =....^..
+
+CheckType = a - rail: 0x02010200
+CheckType = b - rail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53264110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53264100
+Costs       = 200
+[HighwayIntersectionInfo_0x0001A105]
+CopyFrom    = 0xA105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A105]
+CopyFrom    = 0xA105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A105]
+CopyFrom    = 0xA105
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A105]
+CopyFrom    = 0xA105
+PlaceQueryID = 0x53264110
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A105]
+CopyFrom    = 0x4A105
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A105]
+CopyFrom    = 0x4A105
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A105]
+CopyFrom    = 0x4A105
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A106]
+;Added by ArkenbergeJoe 11/10/07.
+;Rail Diagonal Junction Puzzle Piece
+Piece       = 0.0, 0.0, 0, 0, 0x53264130
+PreviewEffect = preview_rail_puzzlepiece022
+
+
+CellLayout  =.........
+CellLayout  =....a...<
+CellLayout  =....b....
+CellLayout  =....^....
+
+CheckType = a - rail: 0x03010200
+CheckType = b - rail: 0x00000301
+
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....+....
+ConsLayout  =....^....
+
+AutoTileBase=	0x53264140
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53264140
+Costs       = 200
+[HighwayIntersectionInfo_0x0001A106]
+CopyFrom    = 0xA106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A106]
+CopyFrom    = 0xA106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A106]
+CopyFrom    = 0xA106
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A106]
+CopyFrom    = 0xA106
+PlaceQueryID = 0x53264150
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A106]
+CopyFrom    = 0x4A106
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A106]
+CopyFrom    = 0x4A106
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A106]
+CopyFrom    = 0x4A106
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A11A]
+;raildiagonalxonewaydiagonal puzzle piece
+;Added by ArkenbergeJoe 04/07/08
+Piece = 0.0, 0.0, 0, 0, 0x53266400
+PreviewEffect = preview_rail_puzzlepiece026
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 onewayroad: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53266400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266400
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A11A]
+CopyFrom    = 0xA11A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A11A]
+CopyFrom    = 0xA11A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A11A]
+CopyFrom    = 0xA11A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A11A]
+CopyFrom    = 0xA11A
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A11A]
+CopyFrom    = 0x4A11A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A11A]
+CopyFrom    = 0x4A11A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A11A]
+CopyFrom    = 0x4A11A
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0000A11B]
+; diagonalrailx double diagonal onewayroad puzzle piece
+;Added by ArkenbergeJoe 04/07/08
+Piece = 0.0, 0.0, 0, 0, 0x53266500
+PreviewEffect = preview_rail_puzzlepiece027
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail:0x03010000 onewayroad:0x01030103
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x53266500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266500
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A11B]
+CopyFrom    = 0xA11B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A11B]
+CopyFrom    = 0xA11B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A11B]
+CopyFrom    = 0xA11B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A11B]
+CopyFrom    = 0xA11B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A11B]
+CopyFrom    = 0x4A11B
+Rotate	              = 1
+[HighwayIntersectionInfo_0x0006A11B]
+CopyFrom    = 0x4A11B
+Rotate	              = 2
+[HighwayIntersectionInfo_0x0007A11B]
+CopyFrom    = 0x4A11B
+Rotate	              = 3
+
+[HighwayIntersectionInfo_0x0000A127]
+;diagonalrailxGLR puzzle piece
+;Added by ArkenbergeJoe 04/09/08.
+Piece = 0.0, 0.0, 0, 0, 0x53266e00
+PreviewEffect = preview_rail_puzzlepiece028
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53266e00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266e00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A127]
+CopyFrom    = 0xA127
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A127]
+CopyFrom    = 0xA127
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A127]
+CopyFrom    = 0xA127
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A127]
+CopyFrom    = 0xA127
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A127]
+CopyFrom    = 0x4A127
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A127]
+CopyFrom    = 0x4A127
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A127]
+CopyFrom    = 0x4A127
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A128]
+;raildiagonalxGLRdiagonal puzzle piece
+;Added by ArkenbergeJoe 04/09/08.
+Piece = 0.0, 0.0, 0, 0, 0x53266f00
+PreviewEffect = preview_rail_puzzlepiece029
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000 lightrail: 0x01000003
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53266f00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53266f00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001A128]
+CopyFrom    = 0xA128
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A128]
+CopyFrom    = 0xA128
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A128]
+CopyFrom    = 0xA128
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A128]
+CopyFrom    = 0xA128
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A128]
+CopyFrom    = 0x4A128
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A128]
+CopyFrom    = 0x4A128
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A128]
+CopyFrom    = 0x4A128
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000A11E]
+;diagonalrailxavenue puzzle piece
+;Added by ArkenbergeJoe 17/11/08.
+Piece = -8.0, 0.0, 0, 0, 0x53267005
+PreviewEffect = preview_rail_puzzlepiece01b
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...cb...<
+CellLayout =...d.....
+CellLayout =....^....
+
+CheckType = a - rail: 0x03010000 avenue: 0x02000204
+CheckType = b - rail: 0x00000301 avenue: 0x02000204
+CheckType = c - rail: 0x03010000 avenue: 0x02040200
+CheckType = d - rail: 0x00000301 avenue: 0x02040200
+
+ConsLayout =.........
+ConsLayout =..../....
+ConsLayout =...//...<
+ConsLayout =.../.....
+ConsLayout =....^....
+
+AutoTileBase=   0x53267000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53267000
+Costs       = 250
+[HighwayIntersectionInfo_0x0001A11E]
+CopyFrom    = 0xA11E
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A11E]
+CopyFrom    = 0xA11E
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A11E]
+CopyFrom    = 0xA11E
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A11E]
+CopyFrom    = 0xA11E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A11E]
+CopyFrom    = 0x4A11E
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A11E]
+CopyFrom    = 0x4A11E
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A11E]
+CopyFrom    = 0x4A11E
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000A11F]
+;raildiagonalxdiagonalAvenue puzzle piece
+;Added by ArkenbergeJoe 17/11/08.
+Piece = 0.0, 0.0, 0, 0, 0x53267405
+PreviewEffect = preview_rail_puzzlepiece01c
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...cb...<
+CellLayout =....^....
+
+CheckType = a - rail: 0x03010000 avenue: 0x01000003
+CheckType = b - rail: 0x00000301 avenue: 0x01030103
+CheckType = c - rail: 0x03010000 avenue: 0x00030100
+
+ConsLayout =.........
+ConsLayout =..../....
+ConsLayout =...//...<
+ConsLayout =....^....
+
+AutoTileBase=   0x53267400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53267400
+Costs       = 200
+[HighwayIntersectionInfo_0x0001A11F]
+CopyFrom    = 0xA11F
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A11F]
+CopyFrom    = 0xA11F
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A11F]
+CopyFrom    = 0xA11F
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A11F]
+CopyFrom    = 0xA11F
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005A11F]
+CopyFrom    = 0x4A11F
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A11F]
+CopyFrom    = 0x4A11F
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A11F]
+CopyFrom    = 0x4A11F
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000A122]
+;diagonalrailxgroundhighway puzzle piece
+;Added by ArkenbergeJoe 21/11/08.
+Piece = -8.0, 0.0, 0, 0, 0x53267205
+PreviewEffect = preview_rail_puzzlepiece01d
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...cb...<
+CellLayout =...d.....
+CellLayout =....^....
+
+CheckType = a - rail: 0x03010000 groundhighway: 0x02000204
+CheckType = b - rail: 0x00000301 groundhighway: 0x02000204
+CheckType = c - rail: 0x03010000 groundhighway: 0x02040200
+CheckType = d - rail: 0x00000301 groundhighway: 0x02040200
+
+ConsLayout =.........
+ConsLayout =..../....
+ConsLayout =...//...<
+ConsLayout =.../.....
+ConsLayout =....^....
+
+AutoTileBase=   0x53267200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53267200
+Costs       = 300
+[HighwayIntersectionInfo_0x0001A122]
+CopyFrom    = 0xA122
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A122]
+CopyFrom    = 0xA122
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A122]
+CopyFrom    = 0xA122
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A122]
+CopyFrom    = 0xA122
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A122]
+CopyFrom    = 0x4A122
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A122]
+CopyFrom    = 0x4A122
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A122]
+CopyFrom    = 0x4A122
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000A123]
+;raildiagonalxdiagonalAvenue puzzle piece
+;Added by ArkenbergeJoe 21/11/08.
+Piece = 0.0, 0.0, 0, 0, 0x53267605
+PreviewEffect = preview_rail_puzzlepiece01e
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...cb...<
+CellLayout =....^....
+
+CheckType = a - rail: 0x03010000 groundhighway: 0x01000003
+CheckType = b - rail: 0x00000301 groundhighway: 0x01030103
+CheckType = c - rail: 0x03010000 groundhighway: 0x00030100
+
+ConsLayout =.........
+ConsLayout =..../....
+ConsLayout =...//...<
+ConsLayout =....^....
+
+AutoTileBase=   0x53267600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53267600
+Costs       = 250
+[HighwayIntersectionInfo_0x0001A123]
+CopyFrom    = 0xA123
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A123]
+CopyFrom    = 0xA123
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A123]
+CopyFrom    = 0xA123
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A123]
+CopyFrom    = 0xA123
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005A123]
+CopyFrom    = 0x4A123
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A123]
+CopyFrom    = 0x4A123
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A123]
+CopyFrom    = 0x4A123
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x0000A125]
+;Added by smoncrie 03/15/05.
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks - undo by Chrisim to prevent CTD
+;RailxGround Light Rail Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x5313b704
+PreviewEffect = preview_rail_puzzlepiece030
+
+CellLayout =.........
+CellLayout =....Z....<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x02000200 lightrail: 0x00000000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x5313b700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313b700
+Costs       = 75
+[HighwayIntersectionInfo_0x0001A125]
+CopyFrom    = 0xA125
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A125]
+CopyFrom    = 0xA125
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A125]
+CopyFrom    = 0xA125
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A125]
+CopyFrom    = 0xA125
+[HighwayIntersectionInfo_0x0005A125]
+CopyFrom    = 0x1A125
+[HighwayIntersectionInfo_0x0006A125]
+CopyFrom    = 0x2A125
+[HighwayIntersectionInfo_0x0007A125]
+CopyFrom    = 0x3A125
+
+
+[HighwayIntersectionInfo_0x0000A126]
+; RailxDiagonal Ground Light Rail Puzzle Piece
+;Edited by memo 04/29/07 to enable to place puzzle piece on dragged GLR tracks
+;Added by smoncrie 03/15/05
+Piece = 0.0, 0.0, 0, 0, 0x5313c704
+PreviewEffect = preview_rail_puzzlepiece031
+
+CellLayout =..........
+CellLayout =....Z....<
+CellLayout =....^.....
+
+CheckType = Z - rail: 0x00020002 lightrail: 0x03010000
+
+ConsLayout =..........
+ConsLayout =....+....<
+ConsLayout =....^.....
+
+AutoTileBase=	0x5313c700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5313c700
+Costs       = 100
+[HighwayIntersectionInfo_0x0001A126]
+CopyFrom    = 0xA126
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002A126]
+CopyFrom    = 0xA126
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003A126]
+CopyFrom    = 0xA126
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004A126]
+CopyFrom    = 0xA126
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005A126]
+CopyFrom    = 0x4A126
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006A126]
+CopyFrom    = 0x4A126
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007A126]
+CopyFrom    = 0x4A126
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000A12B]
+;Added by smoncrie 12/06/04.
+;edited by memo 09/23/12 for onslope colour fix.
+;T Rail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x534b5705
+PreviewEffect = preview_rail_puzzlepiece032
+
+CellLayout = ....
+CellLayout = .a.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - road: 0x00020002 rail: 0x02000200, 0x00000000 optional
+
+ConsLayout = ...
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .^.
+
+;AutoTileBase = 0x534b5700
+AutoTileBase = 0x534b6730
+AutoPathBase = 0x534b6710
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x534b5700
+Costs       = 290
+[HighwayIntersectionInfo_0x0001A12B]
+CopyFrom    = 0xA12B
+Rotate		= 1
+AutoTileBase = 0x534b6750
+[HighwayIntersectionInfo_0x0002A12B]
+CopyFrom    = 0xA12B
+Rotate		= 2
+AutoTileBase = 0x534b6770
+[HighwayIntersectionInfo_0x0003A12B]
+CopyFrom    = 0xA12B
+Rotate		= 3
+AutoTileBase = 0x534b6790
+[HighwayIntersectionInfo_0x0004A12B]
+CopyFrom    = 0xA12B
+[HighwayIntersectionInfo_0x0005A12B]
+CopyFrom    = 0x1A12B
+[HighwayIntersectionInfo_0x0006A12B]
+CopyFrom    = 0x2A12B
+[HighwayIntersectionInfo_0x0007A12B]
+CopyFrom    = 0x3A12B
+
+
+[HighwayIntersectionInfo_0x0000A12C]
+;Added by smoncrie 12/06/04.
+;edited by memo 09/23/12 for onslope colour fix.
+;Straight Rail OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x534b6705
+PreviewEffect = preview_rail_puzzlepiece033
+
+CellLayout = ....
+CellLayout = .a..
+CellLayout = .b.<
+CellLayout = .+..
+CellLayout = .^..
+
+CheckType = a - rail: 0x02000000, 0x00000000 optional
+CheckType = b - rail: 0x02000200
+
+ConsLayout = ...
+ConsLayout = ...
+ConsLayout = .+.
+ConsLayout = .+.<
+ConsLayout = .+.
+ConsLayout = .^.
+
+;AutoTileBase = 0x534b6700
+AutoTileBase = 0x534b6720
+AutoPathBase = 0x534b6700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x534b6700
+Costs       = 290
+[HighwayIntersectionInfo_0x0001A12C]
+CopyFrom    = 0xA12C
+Rotate		= 1
+AutoTileBase = 0x534b6740
+[HighwayIntersectionInfo_0x0002A12C]
+CopyFrom    = 0xA12C
+Rotate		= 2
+AutoTileBase = 0x534b6760
+[HighwayIntersectionInfo_0x0003A12C]
+CopyFrom    = 0xA12C
+Rotate		= 3
+AutoTileBase = 0x534b6780
+[HighwayIntersectionInfo_0x0004A12C]
+CopyFrom    = 0xA12C
+[HighwayIntersectionInfo_0x0005A12C]
+CopyFrom    = 0x1A12C
+[HighwayIntersectionInfo_0x0006A12C]
+CopyFrom    = 0x2A12C
+[HighwayIntersectionInfo_0x0007A12C]
+CopyFrom    = 0x3A12C
+
+
+
+[HighwayIntersectionInfo_0x0000A12D]
+;Added by ArkenbergeJoe 06/11/08.
+;edited by memo 09/23/12 for onslope colour fix.
+;Diagonal Rail OnSlope Puzzle Piece
+Piece = 16.0, -16.0,0, 0, 0x534b6800
+PreviewEffect = preview_rail_puzzlepiece01a
+
+CellLayout = .....
+CellLayout = ..a..
+CellLayout = .cb.<
+CellLayout = .d...
+CellLayout = .^...
+
+CheckType = a - rail: 0x03010000
+CheckType = b - rail: 0x00000301
+CheckType = c - rail: 0x03010000
+CheckType = d - rail: 0x00000300, 0x00000000 optional
+
+ConsLayout = .....
+ConsLayout = ..+..
+ConsLayout = .++.<
+ConsLayout = .^...
+
+;AutoTileBase = 0x534b6800
+AutoTileBase = 0x534b6820
+AutoPathBase = 0x534b6800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x534b6800
+Costs = 290
+[HighwayIntersectionInfo_0x0001A12D]
+CopyFrom = 0xA12D
+Rotate = 1
+AutoTileBase = 0x534b6840
+[HighwayIntersectionInfo_0x0002A12D]
+CopyFrom = 0xA12D
+Rotate = 2
+AutoTileBase = 0x534b6860
+[HighwayIntersectionInfo_0x0003A12D]
+CopyFrom = 0xA12D
+Rotate = 3
+AutoTileBase = 0x534b6880
+[HighwayIntersectionInfo_0x0004A12D]
+CopyFrom = 0xA12D
+Transpose = 1
+AutoTileBase = 0x534b6840
+[HighwayIntersectionInfo_0x0005A12D]
+CopyFrom = 0x4A12D
+Rotate = 1
+AutoTileBase = 0x534b6860
+[HighwayIntersectionInfo_0x0006A12D]
+CopyFrom = 0x4A12D
+Rotate = 2
+AutoTileBase = 0x534b6880
+[HighwayIntersectionInfo_0x0007A12D]
+CopyFrom = 0x4A12D
+Rotate = 3
+AutoTileBase = 0x534b6820
+
+

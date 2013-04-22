@@ -1,0 +1,691 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;PEDESTRIAN BUTTON SECTION
+;PEDESTRIAN BUTTON SECTION
+;PEDESTRIAN BUTTON SECTION
+; 0x6###
+;ped Puzzle Pieces Button
+
+;ped mall
+RotationRing = 6000, 16000, 26000, 36000 ;ped mall tile 1x1 centre pole
+;AddTypes     = 6001, 16001, 26001, 36001 ;Ped Mall x Elevated Highway Puzzle Piece
+;AddTypes     = 6002, 16002, 26002, 36002 ;Ped Mall x Elevated Highway Puzzle Piece
+AddTypes     = 6003, 16003, 26003, 36003 ;ped mall tile 1x1 open paved
+AddTypes     = 6004, 16004, 26004, 36004 ;pedxCobbleStone
+AddTypes     = 6005, 16005, 26005, 36005 ;pedxPavement
+AddTypes     = 6006, 16006, 26006, 36006 ;pedxSandstone
+AddTypes     = 6007, 16007, 26007, 36007 ;pedxGrass
+;footbridge
+AddTypes     = 6008, 16008, 26008, 36008 ;ped footbridge start/end section puzzle piece
+AddTypes     = 6009, 16009, 26009, 36009 ;ped footbridgexblank straight puzzle piece
+AddTypes     = 600A, 1600A, 2600A, 3600A ;ped footbridgexstreet puzzle piece
+AddTypes     = 600B, 1600B, 2600B, 3600B ;ped footbridgexroad puzzle piece
+AddTypes     = 600C, 1600C, 2600C, 3600C ;ped footbridgexrail puzzle piece
+AddTypes     = 600D, 1600D, 2600D, 3600D ;ped footbridgexoneway puzzle piece
+AddTypes     = 600E, 1600E, 2600E, 3600E ;ped footbridgexavenue puzzle piece
+AddTypes     = 600F, 1600F, 2600F, 3600F ;ped footbridgexgroundhighway puzzle piece
+AddTypes     = 6010, 16010, 26010, 36010 ;ped footbridgexgroundlightrail puzzle piece
+AddTypes     = 6011, 16011, 26011, 36011 ;Ped OnSlope Puzzle Piece
+;mountain trails
+AddTypes     = 6012, 16012, 26012, 36012 ;mountain trail - straight
+AddTypes     = 6013, 16013, 26013, 36013 ;mountain trail - curved
+AddTypes     = 6014, 16014, 26014, 36014 ;mountain trail - T intersection
+AddTypes     = 6015, 16015, 26015, 36015 ;mountain trail - + intersection
+;to be moved into highway puzzle piece menu
+AddTypes     = 6016, 16016, 26016, 36016 ;Ped Mall x Elevated Highway Puzzle Piece
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;PED SECTION
+;PED SECTION
+;NOTE: PED is based on the use of Street & Road rule-based coding.
+;Use Road, as using Street could play havoke with AutoStreets function.
+;Ped Mall pieces; remember that one of them must be connected to a MT building, in order to be used properly.
+;Any others connected to one Ped Mall tile, that is connected to a MT building, will work just fine. This is
+; just the current way in which it's being done. This is because of the Pedestrian Paths of the networks in general.
+;
+;Pedestrian Malls
+[HighwayIntersectionInfo_0x00006000]
+;Added by Tropod 06/14/04.
+;PedxCentrePole
+Piece = 0.0, 0.0, 0, 0, 0x55267100
+PreviewEffect = preview_ped_malls_tiles_001
+
+CellLayout =.....
+CellLayout =..a..<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+..<
+ConsLayout =..^..
+
+AutoTileBase=	0x55267100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0006005
+Costs = 10
+[HighwayIntersectionInfo_0x00016000]
+CopyFrom = 0x6000
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026000]
+CopyFrom = 0x6000
+Rotate	= 2
+[HighwayIntersectionInfo_0x00036000]
+CopyFrom = 0x6000
+Rotate	= 3
+
+[HighwayIntersectionInfo_0x00006003]
+;Added by Tropod 06/14/04.
+;PedxOpen Paved
+Piece = 0.0, 0.0, 0, 0, 0x55267200
+PreviewEffect = preview_ped_malls_tiles_002
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x55267100
+AutoTileBase=	0x55267200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0006015
+Costs = 10
+[HighwayIntersectionInfo_0x00016003]
+CopyFrom = 0x6003
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026003]
+CopyFrom = 0x6003
+[HighwayIntersectionInfo_0x00036003]
+CopyFrom = 0x16003
+
+
+[HighwayIntersectionInfo_0x00006004]
+;Added by Tropod 10/10/04.
+;PedxCobbleStone
+Piece = 0.0, 0.0, 0, 0, 0x553F2000
+PreviewEffect = preview_ped_malls_tiles_003
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x55267100
+AutoTileBase=	0x553F2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000608a
+Costs = 10
+[HighwayIntersectionInfo_0x00016004]
+CopyFrom = 0x6004
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026004]
+CopyFrom = 0x6004
+[HighwayIntersectionInfo_0x00036004]
+CopyFrom = 0x16004
+
+
+[HighwayIntersectionInfo_0x00006005]
+;Added by Tropod 10/10/04.
+;PedxPavement
+Piece = 0.0, 0.0, 0, 0, 0x553F2010
+PreviewEffect = preview_ped_malls_tiles_004
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x55267100
+AutoTileBase=	0x553F2010
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000609a
+Costs = 10
+[HighwayIntersectionInfo_0x00016005]
+CopyFrom = 0x6005
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026005]
+CopyFrom = 0x6005
+[HighwayIntersectionInfo_0x00036005]
+CopyFrom = 0x16005
+
+
+[HighwayIntersectionInfo_0x00006007]
+;Added by Tropod 10/10/04.
+;PedxGrass
+Piece = 0.0, 0.0, 0, 0, 0x553F2020
+PreviewEffect = preview_ped_malls_tiles_005
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x55267100
+AutoTileBase=	0x553F2020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB00060aa
+Costs = 10
+[HighwayIntersectionInfo_0x00016007]
+CopyFrom = 0x6007
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026007]
+CopyFrom = 0x6007
+[HighwayIntersectionInfo_0x00036007]
+CopyFrom = 0x16007
+
+
+[HighwayIntersectionInfo_0x00006008]
+;Added by Tropod 10/10/04.
+;Ped FootbridgexStart/end Piece
+Piece = 0.0, 0.0, 0, 0, 0x55120200
+PreviewEffect = preview_peds_puzzlepiece006
+
+CellLayout =....
+CellLayout =.c.<
+CellLayout =.^..
+
+CheckType = c - road: 0x00000000
+
+ConsLayout =....
+ConsLayout =.+.<
+ConsLayout =.^..
+
+AutoTileBase=	0x55120200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB0006006
+Costs = 200
+[HighwayIntersectionInfo_0x00016008]
+CopyFrom = 0x6008
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026008]
+CopyFrom = 0x6008
+Rotate	= 2
+[HighwayIntersectionInfo_0x00036008]
+CopyFrom = 0x6008
+Rotate	= 3
+
+[HighwayIntersectionInfo_0x00006009]
+;Added by Tropod 10/10/04.
+;Ped FootbridgexStraight blank terrain piece
+Piece = 0.0, 0.0, 0, 0, 0x5520A700
+PreviewEffect = preview_peds_puzzlepiece000
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5520A700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000600A
+Costs = 75
+[HighwayIntersectionInfo_0x00016009]
+CopyFrom = 0x6009
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026009]
+CopyFrom = 0x6009
+[HighwayIntersectionInfo_0x00036009]
+CopyFrom = 0x16009
+
+
+[HighwayIntersectionInfo_0x0000600B]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexroad piece
+Piece = 0.0, 0.0, 0, 0, 0x5520A300
+PreviewEffect = preview_peds_puzzlepiece001
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road:0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5520A300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000601A
+Costs = 75
+[HighwayIntersectionInfo_0x0001600B]
+CopyFrom = 0x600B
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600B]
+CopyFrom = 0x600B
+[HighwayIntersectionInfo_0x0003600B]
+CopyFrom = 0x1600B
+
+
+[HighwayIntersectionInfo_0x0000600C]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x03121000
+PreviewEffect = preview_peds_puzzlepiece002
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - road:0x00000000 rail:0x02000200
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x55120300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000602A
+Costs = 100
+[HighwayIntersectionInfo_0x0001600C]
+CopyFrom = 0x600C
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600C]
+CopyFrom = 0x600C
+[HighwayIntersectionInfo_0x0003600C]
+CopyFrom = 0x1600C
+
+
+[HighwayIntersectionInfo_0x0000600A]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexstreet piece
+Piece = 0.0, 0.0, 0, 0, 0x5520B300
+PreviewEffect = preview_peds_puzzlepiece003
+
+CellLayout =.....
+CellLayout =..Z..<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000 street: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5520B300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000603A
+Costs = 50
+[HighwayIntersectionInfo_0x0001600A]
+CopyFrom = 0x600A
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600A]
+CopyFrom = 0x600A
+[HighwayIntersectionInfo_0x0003600A]
+CopyFrom = 0x1600A
+
+
+[HighwayIntersectionInfo_0x0000600D]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexonewayroad piece
+Piece = 0.0, 0.0, 0, 0, 0x5520C300
+PreviewEffect = preview_peds_puzzlepiece004
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType  = Z - road: 0x00000000 onewayroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x5520C300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000604A
+Costs = 75
+[HighwayIntersectionInfo_0x0001600D]
+CopyFrom = 0x600D
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600D]
+CopyFrom = 0x600D
+[HighwayIntersectionInfo_0x0003600D]
+CopyFrom = 0x1600D
+
+
+[HighwayIntersectionInfo_0x0000600E]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexavenue piece
+Piece = 8.0, 0.0, 0, 0, 0x5520CF00
+PreviewEffect = preview_peds_puzzlepiece005
+
+CellLayout = ......
+CellLayout = ..cd.<
+CellLayout = ..^...
+
+CheckType = c - avenue: 0x02040200 road: 0x00020002
+CheckType = d - avenue: 0x02000204 road: 0x00020002
+
+ConsLayout = ......
+ConsLayout = ..++.<
+ConsLayout = ..^...
+
+AutoTileBase=	0x5520D300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000605A
+Costs = 100
+[HighwayIntersectionInfo_0x0001600E]
+CopyFrom = 0x600E
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600E]
+CopyFrom = 0x600E
+[HighwayIntersectionInfo_0x0003600E]
+CopyFrom = 0x1600E
+
+
+[HighwayIntersectionInfo_0x0000600F]
+;Added by Tropod 10/10/04.
+;Ped Footbridgexgroundhighway piece
+Piece = 8.0, 0.0, 0, 0, 0x552623F0
+PreviewEffect = preview_peds_puzzlepiece007
+
+CellLayout = ......
+CellLayout = ..cd.<
+CellLayout = ..^...
+
+CheckType = c - groundhighway: 0x02040200
+CheckType = d - groundhighway: 0x02000204
+
+ConsLayout = ......
+ConsLayout = ..++.<
+ConsLayout = ..^...
+
+AutoTileBase=	0x55262300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB000606A
+Costs = 150
+[HighwayIntersectionInfo_0x0001600F]
+CopyFrom = 0x600F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002600F]
+CopyFrom = 0x600F
+[HighwayIntersectionInfo_0x0003600F]
+CopyFrom = 0x1600F
+
+
+[HighwayIntersectionInfo_0x00006010]
+;Added by GoaSkin 04/01/05.
+;Ped Footbridgexgroundlightrail puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5520E300
+PreviewEffect = preview_peds_puzzlepiece008
+
+CellLayout =......
+CellLayout =..Z..<
+CellLayout =..^...
+
+CheckType = Z - lightrail:0x00000000
+
+ConsLayout =......
+ConsLayout =..+..<
+ConsLayout =..^...
+
+AutoTileBase=	0x5520E300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB00060DA
+Costs = 100
+[HighwayIntersectionInfo_0x00016010]
+CopyFrom = 0x6010
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026010]
+CopyFrom = 0x6010
+[HighwayIntersectionInfo_0x00036010]
+CopyFrom = 0x16010
+
+
+[HighwayIntersectionInfo_0x00006006]
+;Added by GoaSkin 04/03/05.
+;PedxSandstone
+Piece = 0.0, 0.0, 0, 0, 0x553F2030
+PreviewEffect = preview_ped_malls_tiles_008
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x55267100
+AutoTileBase=	0x553F2030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0xB00060EA
+Costs = 10
+[HighwayIntersectionInfo_0x00016006]
+CopyFrom = 0x6006
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026006]
+CopyFrom = 0x6006
+[HighwayIntersectionInfo_0x00036006]
+CopyFrom = 0x16006
+
+
+[HighwayIntersectionInfo_0x00006011]
+;Added by smoncrie 12/07/04.
+;Ped OnSlope Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x554b7705
+PreviewEffect = preview_peds_puzzlepiece030
+
+CellLayout =.....
+CellLayout =..Z.<
+CellLayout =..^..
+
+CheckType = Z - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoTileBase=	0x554b7700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x554b7700
+Costs = 75
+[HighwayIntersectionInfo_0x00016011]
+CopyFrom = 0x6011
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026011]
+CopyFrom = 0x6011
+Rotate	= 2
+[HighwayIntersectionInfo_0x00036011]
+CopyFrom = 0x6011
+Rotate	= 3
+
+
+[HighwayIntersectionInfo_0x00006012]
+;Added by GoaSkin 04/03/05. Updated by Swamper77 2/22/06.
+;Mountain Trails - straight
+Piece = 0.0, 0.0, 0, 0, 0x553F20A4
+PreviewEffect = preview_ped_malls_tiles_006
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x553F20A0
+AutoTileBase=	0x553F20A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553F20A0
+Costs = 10
+[HighwayIntersectionInfo_0x00016012]
+CopyFrom = 0x6012
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026012]
+CopyFrom = 0x6012
+Rotate = 2
+[HighwayIntersectionInfo_0x00036012]
+CopyFrom = 0x6012
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00006013]
+;Added by Swamper77 12/11/05. Updated by Swamper77 2/22/06.
+;Mountain Trails - curve
+Piece = 0.0, 0.0, 0, 0, 0x553F20B4
+PreviewEffect = preview_ped_malls_tiles_007
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x553F20B0
+AutoTileBase=	0x553F20B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553F20B0
+Costs = 10
+[HighwayIntersectionInfo_0x00016013]
+CopyFrom = 0x6013
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026013]
+CopyFrom = 0x6013
+Rotate = 2
+[HighwayIntersectionInfo_0x00036013]
+CopyFrom = 0x6013
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00006014]
+;Added by Swamper77 12/11/05. Updated by Swamper77 2/22/06.
+;Mountain Trails - T Intersection
+Piece = 0.0, 0.0, 0, 0, 0x553F20C4
+PreviewEffect = preview_ped_malls_tiles_00a
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x553F20C0
+AutoTileBase=	0x553F20C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553F20C0
+Costs = 10
+[HighwayIntersectionInfo_0x00016014]
+CopyFrom = 0x6014
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026014]
+CopyFrom = 0x6014
+Rotate = 2
+[HighwayIntersectionInfo_0x00036014]
+CopyFrom = 0x6014
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00006015]
+;Added by Swamper77 12/11/05. Updated by Swamper77 2/22/06.
+;Mountain Trails - straight
+Piece = 0.0, 0.0, 0, 0, 0x553F20D4
+PreviewEffect = preview_ped_malls_tiles_009
+
+CellLayout =.....
+CellLayout =..a.<
+CellLayout =..^..
+
+CheckType = a - road: 0x00000000
+
+ConsLayout =.....
+ConsLayout =..+.<
+ConsLayout =..^..
+
+AutoPathBase=	0x553F20D0
+AutoTileBase=	0x553F20D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553F20D0
+Costs = 10
+[HighwayIntersectionInfo_0x00016015]
+CopyFrom = 0x6015
+Rotate	= 1
+[HighwayIntersectionInfo_0x00026015]
+CopyFrom = 0x6015
+Rotate = 2
+[HighwayIntersectionInfo_0x00036015]
+CopyFrom = 0x6015
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00006016]
+;Added by Swamper77 12/11/05 ## moved to highway puzzle piece menu by GoaSkin 12/20/06
+;Ped Mall X Elevated Highway Puzzle Piece
+Piece = 0.0, 0.0, 0, 0, 0x55262505
+PreviewEffect = preview_rail_dualnetwork02a
+
+CellLayout =........
+CellLayout =...ace...
+CellLayout =...bdf..<
+CellLayout =....^....
+
+CheckType = a - highway: 0x04020002, 0x00000000 optional
+CheckType = b - highway: 0x00020402, 0x00000000 optional
+CheckType = c - road: 0x00000000 highway: 0x04020002
+CheckType = d - road: 0x00000000 highway: 0x00020402
+CheckType = e - highway: 0x04020002, 0x00000000 optional
+CheckType = f - highway: 0x00020402, 0x00000000 optional
+
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x55262500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x55262500
+Costs       = 20
+[HighwayIntersectionInfo_0x00016016]
+CopyFrom    = 0x6016
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026016]
+CopyFrom    = 0x6016
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036016]
+CopyFrom    = 0x6016
+Rotate		= 3
+
+

@@ -1,0 +1,6420 @@
+;
+;
+;RHW Ramp Interface Pieces
+;0xR51##
+
+RotationRing = 5100, 15100, 25100, 35100, 45100, 55100, 65100, 75100, 85100, 95100, A5100, B5100, C5100, D5100, E5100, F5100 ;RHW-4 Type A1
+AddTypes     = 5101, 15101, 25101, 35101, 45101, 55101, 65101, 75101, 85101, 95101, A5101, B5101, C5101, D5101, E5101, F5101 ;RHW-4 Type A1 Diagonal
+AddTypes     = 5102, 15102, 25102, 35102, 45102, 55102, 65102, 75102, 85102, 95102, A5102, B5102, C5102, D5102, E5102, F5102 ;RHW-4 Type B1
+AddTypes     = 5103, 15103, 25103, 35103, 45103, 55103, 65103, 75103, 85103, 95103, A5103, B5103, C5103, D5103, E5103, F5103 ;RHW-4 Type B1 Diagonal
+AddTypes     = 5104, 15104, 25104, 35104, 45104, 55104, 65104, 75104, 85104, 95104, A5104, B5104, C5104, D5104, E5104, F5104 ;RHW-4 Type A1 Inside
+AddTypes     = 5105, 15105, 25105, 35105, 45105, 55105, 65105, 75105, 85105, 95105, A5105, B5105, C5105, D5105, E5105, F5105 ;RHW-4 Type A1 Wide
+;AddTypes     = 5106, 15106, 25106, 35106, 45106, 55106, 65106, 75106, 85106, 95106, A5106, B5106, C5106, D5106, E5106, F5106 ;RHW-4 Type B1 Inside
+AddTypes     = 5107, 15107, 25107, 35107, 45107, 55107, 65107, 75107, 85107, 95107, A5107, B5107, C5107, D5107, E5107, F5107 ;RHW-4 Type D1
+AddTypes     = 5108, 15108, 25108, 35108, 45108, 55108, 65108, 75108, 85108, 95108, A5108, B5108, C5108, D5108, E5108, F5108 ;RHW-4 Type E1
+AddTypes     = 5109, 15109, 25109, 35109, 45109, 55109, 65109, 75109, 85109, 95109, A5109, B5109, C5109, D5109, E5109, F5109 ;RHW-4 Type E1 Wye
+AddTypes     = 510A, 1510A, 2510A, 3510A, 4510A, 5510A, 6510A, 7510A, 8510A, 9510A, A510A, B510A, C510A, D510A, E510A, F510A ;ERHW-4 Type A1
+AddTypes     = 510B, 1510B, 2510B, 3510B, 4510B, 5510B, 6510B, 7510B, 8510B, 9510B, A510B, B510B, C510B, D510B, E510B, F510B ;ERHW-4 Type A1 Inside
+AddTypes     = 510C, 1510C, 2510C, 3510C, 4510C, 5510C, 6510C, 7510C, 8510C, 9510C, A510C, B510C, C510C, D510C, E510C, F510C ;RHW-2 Type A1
+AddTypes     = 510D, 1510D, 2510D, 3510D, 4510D, 5510D, 6510D, 7510D, 8510D, 9510D, A510D, B510D, C510D, D510D, E510D, F510D ;RHW-2 Type A1 Dual
+AddTypes     = 510E, 1510E, 2510E, 3510E, 4510E, 5510E, 6510E, 7510E, 8510E, 9510E, A510E, B510E, C510E, D510E, E510E, F510E ;RHW-2 Type B1
+AddTypes     = 510F, 1510F, 2510F, 3510F, 4510F, 5510F, 6510F, 7510F, 8510F, 9510F, A510F, B510F, C510F, D510F, E510F, F510F ;RHW-2 Type B1 Dual
+AddTypes     = 5110, 15110, 25110, 35110, 45110, 55110, 65110, 75110, 85110, 95110, A5110, B5110, C5110, D5110, E5110, F5110 ;RHW-2 Type D1
+AddTypes     = 5111, 15111, 25111, 35111, 45111, 55111, 65111, 75111, 85111, 95111, A5111, B5111, C5111, D5111, E5111, F5111 ;RHW-2 Type D1 Wye
+AddTypes     = 5112, 15112, 25112, 35112, 45112, 55112, 65112, 75112, 85112, 95112, A5112, B5112, C5112, D5112, E5112, F5112 ;RHW-2 Type D1 Folded
+AddTypes     = 5113, 15113, 25113, 35113, 45113, 55113, 65113, 75113, 85113, 95113, A5113, B5113, C5113, D5113, E5113, F5113 ;RHW-2 Type E1
+AddTypes     = 5114, 15114, 25114, 35114, 45114, 55114, 65114, 75114, 85114, 95114, A5114, B5114, C5114, D5114, E5114, F5114 ;RHW-2 Type E1 Wye
+AddTypes     = 5115, 15115, 25115, 35115, 45115, 55115, 65115, 75115, 85115, 95115, A5115, B5115, C5115, D5115, E5115, F5115 ;ERHW-2 Type A1
+AddTypes     = 5116, 15116, 25116, 35116, 45116, 55116, 65116, 75116, 85116, 95116, A5116, B5116, C5116, D5116, E5116, F5116 ;RHW-3 Type A1
+AddTypes     = 5117, 15117, 25117, 35117, 45117, 55117, 65117, 75117, 85117, 95117, A5117, B5117, C5117, D5117, E5117, F5117 ;RHW-3 Type B1
+AddTypes     = 5118, 15118, 25118, 35118, 45118, 55118, 65118, 75118, 85118, 95118, A5118, B5118, C5118, D5118, E5118, F5118 ;RHW-3 Type A1/Type B1 Dual
+AddTypes     = 5119, 15119, 25119, 35119, 45119, 55119, 65119, 75119, 85119, 95119, A5119, B5119, C5119, D5119, E5119, F5119 ;RHW-6S Type A1
+AddTypes     = 511A, 1511A, 2511A, 3511A, 4511A, 5511A, 6511A, 7511A, 8511A, 9511A, A511A, B511A, C511A, D511A, E511A, F511A ;RHW-6S Type B1
+AddTypes     = 511B, 1511B, 2511B, 3511B, 4511B, 5511B, 6511B, 7511B, 8511B, 9511B, A511B, B511B, C511B, D511B, E511B, F511B ;RHW-6S Type A1 Wide
+AddTypes     = 511C, 1511C, 2511C, 3511C, 4511C, 5511C, 6511C, 7511C, 8511C, 9511C, A511C, B511C, C511C, D511C, E511C, F511C ;RHW-6S Type D1
+AddTypes     = 511D, 1511D, 2511D, 3511D, 4511D, 5511D, 6511D, 7511D, 8511D, 9511D, A511D, B511D, C511D, D511D, E511D, F511D ;RHW-6S Type E1
+AddTypes     = 511E, 1511E, 2511E, 3511E, 4511E, 5511E, 6511E, 7511E, 8511E, 9511E, A511E, B511E, C511E, D511E, E511E, F511E ;RHW-6S Type A2
+AddTypes     = 511F, 1511F, 2511F, 3511F, 4511F, 5511F, 6511F, 7511F, 8511F, 9511F, A511F, B511F, C511F, D511F, E511F, F511F ;RHW-6S Type B2
+AddTypes     = 5120, 15120, 25120, 35120, 45120, 55120, 65120, 75120, 85120, 95120, A5120, B5120, C5120, D5120, E5120, F5120 ;ERHW-6S Type D1
+AddTypes     = 5121, 15121, 25121, 35121, 45121, 55121, 65121, 75121, 85121, 95121, A5121, B5121, C5121, D5121, E5121, F5121 ;RHW-6C Type A1
+AddTypes     = 5122, 15122, 25122, 35122, 45122, 55122, 65122, 75122, 85122, 95122, A5122, B5122, C5122, D5122, E5122, F5122 ;RHW-6C Type B1
+AddTypes     = 5123, 15123, 25123, 35123, 45123, 55123, 65123, 75123, 85123, 95123, A5123, B5123, C5123, D5123, E5123, F5123 ;RHW-6C Type D1 Dual Shift
+AddTypes     = 5124, 15124, 25124, 35124, 45124, 55124, 65124, 75124, 85124, 95124, A5124, B5124, C5124, D5124, E5124, F5124 ;RHW-8S Type D1 Dual Shift
+AddTypes     = 5125, 15125, 25125, 35125, 45125, 55125, 65125, 75125, 85125, 95125, A5125, B5125, C5125, D5125, E5125, F5125 ;RHW-6C Type D1 Dual Inside Shift
+AddTypes     = 5126, 15126, 25126, 35126, 45126, 55126, 65126, 75126, 85126, 95126, A5126, B5126, C5126, D5126, E5126, F5126 ;RHW-8S Type A1
+AddTypes     = 5127, 15127, 25127, 35127, 45127, 55127, 65127, 75127, 85127, 95127, A5127, B5127, C5127, D5127, E5127, F5127 ;RHW-8S Type B1
+AddTypes     = 5128, 15128, 25128, 35128, 45128, 55128, 65128, 75128, 85128, 95128, A5128, B5128, C5128, D5128, E5128, F5128 ;RHW-8S Type D1
+AddTypes     = 5129, 15129, 25129, 35129, 45129, 55129, 65129, 75129, 85129, 95129, A5129, B5129, C5129, D5129, E5129, F5129 ;RHW-8S Type E1
+AddTypes     = 512A, 1512A, 2512A, 3512A, 4512A, 5512A, 6512A, 7512A, 8512A, 9512A, A512A, B512A, C512A, D512A, E512A, F512A ;RHW-8S Type D2
+AddTypes     = 512B, 1512B, 2512B, 3512B, 4512B, 5512B, 6512B, 7512B, 8512B, 9512B, A512B, B512B, C512B, D512B, E512B, F512B ;RHW-8S Type E2
+AddTypes     = 512C, 1512C, 2512C, 3512C, 4512C, 5512C, 6512C, 7512C, 8512C, 9512C, A512C, B512C, C512C, D512C, E512C, F512C ;RHW-8C Type A1
+AddTypes     = 512D, 1512D, 2512D, 3512D, 4512D, 5512D, 6512D, 7512D, 8512D, 9512D, A512D, B512D, C512D, D512D, E512D, F512D ;RHW-8C Type B1
+AddTypes     = 512E, 1512E, 2512E, 3512E, 4512E, 5512E, 6512E, 7512E, 8512E, 9512E, A512E, B512E, C512E, D512E, E512E, F512E ;RHW-8C Type D1
+AddTypes     = 512F, 1512F, 2512F, 3512F, 4512F, 5512F, 6512F, 7512F, 8512F, 9512F, A512F, B512F, C512F, D512F, E512F, F512F ;RHW-8C Type E1
+AddTypes     = 5130, 15130, 25130, 35130, 45130, 55130, 65130, 75130, 85130, 95130, A5130, B5130, C5130, D5130, E5130, F5130 ;RHW-10S Type A1
+AddTypes     = 5131, 15131, 25131, 35131, 45131, 55131, 65131, 75131, 85131, 95131, A5131, B5131, C5131, D5131, E5131, F5131 ;RHW-10S Type B1
+AddTypes     = 5132, 15132, 25132, 35132, 45132, 55132, 65132, 75132, 85132, 95132, A5132, B5132, C5132, D5132, E5132, F5132 ;RHW-10S Type D1
+AddTypes     = 5133, 15133, 25133, 35133, 45133, 55133, 65133, 75133, 85133, 95133, A5133, B5133, C5133, D5133, E5133, F5133 ;RHW-10S Type E1
+AddTypes     = 5134, 15134, 25134, 35134, 45134, 55134, 65134, 75134, 85134, 95134, A5134, B5134, C5134, D5134, E5134, F5134 ;RHW-10 Type D2
+AddTypes     = 5135, 15135, 25135, 35135, 45135, 55135, 65135, 75135, 85135, 95135, A5135, B5135, C5135, D5135, E5135, F5135 ;RHW-10 Type E2
+AddTypes     = 5136, 15136, 25136, 35136, 45136, 55136, 65136, 75136, 85136, 95136, A5136, B5136, C5136, D5136, E5136, F5136 ;DDRHW-4 Type A1
+
+;Specialized Crossing Pieces
+AddTypes     = 5137, 15137, 25137, 35137, 45137, 55137, 65137, 75137 ;Type 4-A1 Volleyball Intersection
+AddTypes     = 5138, 15138, 25138, 35138, 45138, 55138, 65138, 75138 ;Type 4-D1 Volleyball Intersection
+
+;###separator###
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RHW RAMP INTERFACES
+
+
+[HighwayIntersectionInfo_0x00005100]
+;Added by Tarkus 8/13/2007.
+;RHW-4/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb0005
+PreviewEffect = preview_draggable_mis___001
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..dc...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000202
+CheckType = d - dirtroad: 0x02020000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5ceb0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015100]
+CopyFrom    = 0x5100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025100]
+CopyFrom    = 0x5100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035100]
+CopyFrom    = 0x5100
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045100]
+;Added by Tarkus 10/21/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb0205
+PreviewEffect = preview_draggable_mis___002
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055100]
+CopyFrom    = 0x45100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065100]
+CopyFrom    = 0x45100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075100]
+CopyFrom    = 0x45100
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085100]
+CopyFrom    = 0x5100
+[HighwayIntersectionInfo_0x00095100]
+CopyFrom    = 0x15100
+[HighwayIntersectionInfo_0x000A5100]
+CopyFrom    = 0x25100
+[HighwayIntersectionInfo_0x000B5100]
+CopyFrom    = 0x35100
+[HighwayIntersectionInfo_0x000C5100]
+CopyFrom    = 0x45100
+[HighwayIntersectionInfo_0x000D5100]
+CopyFrom    = 0x55100
+[HighwayIntersectionInfo_0x000E5100]
+CopyFrom    = 0x65100
+[HighwayIntersectionInfo_0x000F5100]
+CopyFrom    = 0x75100
+
+
+
+
+[HighwayIntersectionInfo_0x00005101]
+;Added by Tarkus 10/05/2008.
+;RHW-4/MIS-1 Exit Ramp-Style A--Diagonal
+Piece = -16.0, -16.0, 0, 0, 0x5ceb0035
+PreviewEffect = preview_draggable_mis___037
+
+CellLayout =......
+CellLayout =.ha...
+CellLayout =..ba.<
+CellLayout =..cg..
+CellLayout =..de..
+CellLayout =...f..
+CellLayout =...^..
+
+CheckType = a - dirtroad: 0x01000003
+CheckType = b - dirtroad: 0x02030100
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x00030100
+CheckType = e - dirtroad: 0x01000003
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x01010000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100 Lightrail: 0x00020200, 0xffffffff optional
+CheckType = h - dirtroad: 0x00030100 Lightrail: 0x00020200, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =..\...
+ConsLayout =..|\.<
+ConsLayout =..|...
+ConsLayout =..\\..
+ConsLayout =......
+ConsLayout =...^..
+
+AutoTileBase=	0x5ceb0030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0030
+Costs       = 400
+[HighwayIntersectionInfo_0x00015101]
+CopyFrom    = 0x5101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025101]
+CopyFrom    = 0x5101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035101]
+CopyFrom    = 0x5101
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045101]
+;Added by Tarkus 10/21/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style A--Diagonal
+Piece = 0.0, 0.0, 0, 1, 0x5ceb0035
+PreviewEffect = preview_draggable_mis___037
+
+CellLayout =......
+CellLayout =...ah<
+CellLayout =..ab..
+CellLayout =..gc..
+CellLayout =..ed..
+CellLayout =..f...
+CellLayout =...^..
+
+
+CheckType = a - dirtroad: 0x03010000
+CheckType = b - dirtroad: 0x02000301
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x00000301
+CheckType = e - dirtroad: 0x03010000
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x03000003, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301 Lightrail: 0x00000202, 0xffffffff optional
+CheckType = h - dirtroad: 0x00000301 Lightrail: 0x00000202, 0xffffffff optional
+
+ConsLayout =......
+ConsLayout =.../.<
+ConsLayout =../|..
+ConsLayout =...|..
+ConsLayout =..//..
+ConsLayout =......
+ConsLayout =...^..
+
+AutoTileBase=	0x5ceb0230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0230
+Costs       = 400
+[HighwayIntersectionInfo_0x00055101]
+CopyFrom    = 0x45101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065101]
+CopyFrom    = 0x45101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075101]
+CopyFrom    = 0x45101
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085101]
+CopyFrom    = 0x5101
+[HighwayIntersectionInfo_0x00095101]
+CopyFrom    = 0x15101
+[HighwayIntersectionInfo_0x000A5101]
+CopyFrom    = 0x25101
+[HighwayIntersectionInfo_0x000B5101]
+CopyFrom    = 0x35101
+[HighwayIntersectionInfo_0x000C5101]
+CopyFrom    = 0x45101
+[HighwayIntersectionInfo_0x000D5101]
+CopyFrom    = 0x55101
+[HighwayIntersectionInfo_0x000E5101]
+CopyFrom    = 0x65101
+[HighwayIntersectionInfo_0x000F5101]
+CopyFrom    = 0x75101
+
+
+
+
+[HighwayIntersectionInfo_0x00005104]
+;Added by Tarkus 8/13/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style A-Inside--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ceb0A05
+PreviewEffect = preview_draggable_mis___031
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb0A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0A00
+Costs       = 400
+[HighwayIntersectionInfo_0x00015104]
+CopyFrom    = 0x5104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025104]
+CopyFrom    = 0x5104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035104]
+CopyFrom    = 0x5104
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045104]
+;Added by Tarkus 10/21/2007.
+;RHW-4/MIS-1 Exit Ramp-Style A-Inside--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ceb0C05
+PreviewEffect = preview_draggable_mis___032
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb0C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0C00
+Costs       = 400
+[HighwayIntersectionInfo_0x00055104]
+CopyFrom    = 0x45104
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065104]
+CopyFrom    = 0x45104
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075104]
+CopyFrom    = 0x45104
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085104]
+CopyFrom    = 0x5104
+[HighwayIntersectionInfo_0x00095104]
+CopyFrom    = 0x15104
+[HighwayIntersectionInfo_0x000A5104]
+CopyFrom    = 0x25104
+[HighwayIntersectionInfo_0x000B5104]
+CopyFrom    = 0x35104
+[HighwayIntersectionInfo_0x000C5104]
+CopyFrom    = 0x45104
+[HighwayIntersectionInfo_0x000D5104]
+CopyFrom    = 0x55104
+[HighwayIntersectionInfo_0x000E5104]
+CopyFrom    = 0x65104
+[HighwayIntersectionInfo_0x000F5104]
+CopyFrom    = 0x75104
+
+
+[HighwayIntersectionInfo_0x00005105]
+;Added by Tarkus 8/13/2007.
+;RHW-4/MIS-1 Exit Ramp-Style A--Wide
+Piece = -16.0, 0.0, 0, 0, 0x5ceb0405
+PreviewEffect = preview_draggable_mis___033
+
+CellLayout =.......
+CellLayout =....a..
+CellLayout =...+b<.
+CellLayout =...dc..
+CellLayout =..def..
+CellLayout =..b+...
+CellLayout =..g....
+CellLayout =....^..
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x00000301
+CheckType = f - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =....|<.
+ConsLayout =.../|..
+ConsLayout =..//...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =....^..
+
+AutoTileBase=	0x5ceb0400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0400
+Costs       = 400
+[HighwayIntersectionInfo_0x00015105]
+CopyFrom    = 0x5105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025105]
+CopyFrom    = 0x5105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035105]
+CopyFrom    = 0x5105
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045105]
+;Added by Tarkus 10/21/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style A--Wide
+Piece = 16.0, 0.0, 0, 0, 0x5ceb0705
+PreviewEffect = preview_draggable_mis___034
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+.<.
+CellLayout =..cd...
+CellLayout =..fed..
+CellLayout =...+b..
+CellLayout =....g..
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00030100
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|..<.
+ConsLayout =..|\...
+ConsLayout =...\\..
+ConsLayout =....|..
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb0700
+Costs       = 400
+[HighwayIntersectionInfo_0x00055105]
+CopyFrom    = 0x45105
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065105]
+CopyFrom    = 0x45105
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075105]
+CopyFrom    = 0x45105
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085105]
+CopyFrom    = 0x5105
+[HighwayIntersectionInfo_0x00095105]
+CopyFrom    = 0x15105
+[HighwayIntersectionInfo_0x000A5105]
+CopyFrom    = 0x25105
+[HighwayIntersectionInfo_0x000B5105]
+CopyFrom    = 0x35105
+[HighwayIntersectionInfo_0x000C5105]
+CopyFrom    = 0x45105
+[HighwayIntersectionInfo_0x000D5105]
+CopyFrom    = 0x55105
+[HighwayIntersectionInfo_0x000E5105]
+CopyFrom    = 0x65105
+[HighwayIntersectionInfo_0x000F5105]
+CopyFrom    = 0x75105
+
+
+
+
+[HighwayIntersectionInfo_0x00005102]
+;Added by Tarkus 8/13/2007.
+;RHW-4/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, -16.0, 0, 0, 0x5ceb1005
+PreviewEffect = preview_draggable_mis___003
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b....
+CellLayout =...+b...<
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =.../|....
+ConsLayout =.../|...<
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ceb1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb1000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015102]
+CopyFrom    = 0x5102
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025102]
+CopyFrom    = 0x5102
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035102]
+CopyFrom    = 0x5102
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045102]
+;Added by Tarkus 11/07/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style B--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb1205
+PreviewEffect = preview_draggable_mis___004
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+....
+CellLayout =...b+...<
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|\....
+ConsLayout =...|\...<
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5ceb1200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb1200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055102]
+CopyFrom    = 0x45102
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065102]
+CopyFrom    = 0x45102
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075102]
+CopyFrom    = 0x45102
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085102]
+CopyFrom    = 0x5102
+[HighwayIntersectionInfo_0x00095102]
+CopyFrom    = 0x15102
+[HighwayIntersectionInfo_0x000A5102]
+CopyFrom    = 0x25102
+[HighwayIntersectionInfo_0x000B5102]
+CopyFrom    = 0x35102
+[HighwayIntersectionInfo_0x000C5102]
+CopyFrom    = 0x45102
+[HighwayIntersectionInfo_0x000D5102]
+CopyFrom    = 0x55102
+[HighwayIntersectionInfo_0x000E5102]
+CopyFrom    = 0x65102
+[HighwayIntersectionInfo_0x000F5102]
+CopyFrom    = 0x75102
+
+
+
+[HighwayIntersectionInfo_0x00005103]
+;Added by Jondor 4/21/2011.
+;RHW-4/MIS-1 Exit Ramp-Style B--Diagonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb1045
+PreviewEffect = preview_draggable_mis___040
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...bc...<
+CellLayout =...+da...
+CellLayout =....e....
+CellLayout =....f....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x01000003 Lightrail: 0x00020200, 0xffffffff optional
+CheckType = b - dirtroad: 0x00030100 
+CheckType = c - dirtroad: 0x01000003
+CheckType = d - dirtroad: 0x02030100
+CheckType = e - dirtroad: 0x02000200 
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...\.....
+ConsLayout =...\\...<
+ConsLayout =...+\\...
+ConsLayout =....\....
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ceb1040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb1040
+Costs       = 400
+[HighwayIntersectionInfo_0x00015103]
+CopyFrom    = 0x5103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025103]
+CopyFrom    = 0x5103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035103]
+CopyFrom    = 0x5103
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045103]
+;Added by Jondor 4/21/2011.
+;RHW-4/MIS-1 Entrance Ramp-Style B--Diagonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb1045
+PreviewEffect = preview_draggable_mis___040
+
+CellLayout =.........
+CellLayout =.....a...
+CellLayout =....cb..<
+CellLayout =...ad+...
+CellLayout =....e....
+CellLayout =....f....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x03010000 Lightrail: 0x00000202, 0xffffffff optional
+CheckType = b - dirtroad: 0x00000301 
+CheckType = c - dirtroad: 0x03010000
+CheckType = d - dirtroad: 0x02000301
+CheckType = e - dirtroad: 0x02000200 
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...../...
+ConsLayout =....//..<
+ConsLayout =...//+...
+ConsLayout =..../....
+ConsLayout =....|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ceb1240
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb1240
+Costs       = 400
+[HighwayIntersectionInfo_0x00055103]
+CopyFrom    = 0x45103
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065103]
+CopyFrom    = 0x45103
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075103]
+CopyFrom    = 0x45103
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085103]
+CopyFrom    = 0x5103
+[HighwayIntersectionInfo_0x00095103]
+CopyFrom    = 0x15103
+[HighwayIntersectionInfo_0x000A5103]
+CopyFrom    = 0x25103
+[HighwayIntersectionInfo_0x000B5103]
+CopyFrom    = 0x35103
+[HighwayIntersectionInfo_0x000C5103]
+CopyFrom    = 0x45103
+[HighwayIntersectionInfo_0x000D5103]
+CopyFrom    = 0x55103
+[HighwayIntersectionInfo_0x000E5103]
+CopyFrom    = 0x65103
+[HighwayIntersectionInfo_0x000F5103]
+CopyFrom    = 0x75103
+
+
+
+[HighwayIntersectionInfo_0x0000511C]
+;Added by Tarkus 12/16/2007.
+;RHW-4/MIS-1 Exit Ramp-Style C--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb2005
+PreviewEffect = preview_draggable_mis___007
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =...^...
+
+AutoTileBase=	0x5ceb2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001511C]
+CopyFrom    = 0x511C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511C]
+CopyFrom    = 0x511C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511C]
+CopyFrom    = 0x511C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004511C]
+;Added by Tarkus 12/16/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style C--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb2205
+PreviewEffect = preview_draggable_mis___008
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..|....
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb2200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2200
+Costs       = 400
+[HighwayIntersectionInfo_0x0005511C]
+CopyFrom    = 0x4511C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511C]
+CopyFrom    = 0x4511C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511C]
+CopyFrom    = 0x4511C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511C]
+CopyFrom    = 0x511C
+[HighwayIntersectionInfo_0x0009511C]
+CopyFrom    = 0x1511C
+[HighwayIntersectionInfo_0x000A511C]
+CopyFrom    = 0x2511C
+[HighwayIntersectionInfo_0x000B511C]
+CopyFrom    = 0x3511C
+[HighwayIntersectionInfo_0x000C511C]
+CopyFrom    = 0x4511C
+[HighwayIntersectionInfo_0x000D511C]
+CopyFrom    = 0x5511C
+[HighwayIntersectionInfo_0x000E511C]
+CopyFrom    = 0x6511C
+[HighwayIntersectionInfo_0x000F511C]
+CopyFrom    = 0x7511C
+
+
+
+[HighwayIntersectionInfo_0x0000511D]
+;Added by Tarkus 12/16/2007.
+;RHW-6 Exit Ramp-Style E1--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb2805
+PreviewEffect = preview_draggable_mis___045
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =.fb....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =...^...
+
+AutoTileBase=	0x5ceb2800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2800
+Costs       = 400
+[HighwayIntersectionInfo_0x0001511D]
+CopyFrom    = 0x511D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511D]
+CopyFrom    = 0x511D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511D]
+CopyFrom    = 0x511D
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004511D]
+;Added by Tarkus 12/16/2007.
+;RHW-4/MIS-1 Entrance Ramp-Style D--Orthogonal
+Piece = 16.0, 16.0, 0, 1, 0x5ceb2a05
+PreviewEffect = preview_draggable_mis___046
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...bf..
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..|....
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =..||...
+ConsLayout =...|\..
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb2a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2a00
+Costs       = 400
+[HighwayIntersectionInfo_0x0005511D]
+CopyFrom    = 0x4511D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511D]
+CopyFrom    = 0x4511D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511D]
+CopyFrom    = 0x4511D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511D]
+CopyFrom    = 0x511D
+[HighwayIntersectionInfo_0x0009511D]
+CopyFrom    = 0x1511D
+[HighwayIntersectionInfo_0x000A511D]
+CopyFrom    = 0x2511D
+[HighwayIntersectionInfo_0x000B511D]
+CopyFrom    = 0x3511D
+[HighwayIntersectionInfo_0x000C511D]
+CopyFrom    = 0x4511D
+[HighwayIntersectionInfo_0x000D511D]
+CopyFrom    = 0x5511D
+[HighwayIntersectionInfo_0x000E511D]
+CopyFrom    = 0x6511D
+[HighwayIntersectionInfo_0x000F511D]
+CopyFrom    = 0x7511D
+
+
+
+[HighwayIntersectionInfo_0x00005108]
+;Added by Tarkus 11/09/2007
+;RHW-4/MIS-1 Dual Splitter-Style A-1
+Piece = -16.0, 0.0, 0, 0, 0x5cbe3005
+PreviewEffect = preview_draggable_mis___029
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =...+b....
+CellLayout =...cd....
+CellLayout =..fbe....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =....|...<
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =.../.....
+ConsLayout =....^....
+
+AutoTileBase=	0x5cbe3000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe3000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015108]
+CopyFrom    = 0x5108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025108]
+CopyFrom    = 0x5108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035108]
+CopyFrom    = 0x5108
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045108]
+;Added by Tarkus 11/10/2007.
+;RHW-4/MIS-1 Dual Splitter-Style A-2
+Piece = 0.0, 0.0, 0, 0, 0x5cbe3205
+PreviewEffect = preview_draggable_mis___030
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b....<
+CellLayout =...b+....
+CellLayout =...cd....
+CellLayout =...ebf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =....\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cbe3200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe3200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055108]
+CopyFrom    = 0x45108
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065108]
+CopyFrom    = 0x45108
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075108]
+CopyFrom    = 0x45108
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085108]
+CopyFrom    = 0x5108
+[HighwayIntersectionInfo_0x00095108]
+CopyFrom    = 0x15108
+[HighwayIntersectionInfo_0x000A5108]
+CopyFrom    = 0x25108
+[HighwayIntersectionInfo_0x000B5108]
+CopyFrom    = 0x35108
+[HighwayIntersectionInfo_0x000C5108]
+CopyFrom    = 0x45108
+[HighwayIntersectionInfo_0x000D5108]
+CopyFrom    = 0x55108
+[HighwayIntersectionInfo_0x000E5108]
+CopyFrom    = 0x65108
+[HighwayIntersectionInfo_0x000F5108]
+CopyFrom    = 0x75108
+
+
+
+[HighwayIntersectionInfo_0x00005107]
+; Added by Tarkus 05/11/2010
+; RHW-4/Dual MIS Splitter B1
+Piece = 0.0, 0.0, 0, 0, 0x5cbe2005
+PreviewEffect = preview_draggable_mis___049
+
+CellLayout =.....
+CellLayout =.aa..
+CellLayout =.zz.<
+CellLayout =.zz..
+CellLayout =.zz..
+CellLayout =.b...
+CellLayout =.^...
+
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 road: 0x01000001, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.||..
+ConsLayout =.||..
+ConsLayout =.....
+ConsLayout =.^...
+
+AutoTileBase=   0x5cbe2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe2000
+Costs       = 640
+[HighwayIntersectionInfo_0x00015107]
+CopyFrom    = 0x5107
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025107]
+CopyFrom    = 0x5107
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035107]
+CopyFrom    = 0x5107
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00045107]
+; Added by Tarkus 05/11/2010
+; RHW-4/Dual MIS Splitter B1
+Piece = 0.0, 0.0, 0, 0, 0x5cbe2035
+PreviewEffect = preview_draggable_mis___050
+
+CellLayout =.....
+CellLayout =.aa..
+CellLayout =.zz.<
+CellLayout =.zz..
+CellLayout =.zz..
+CellLayout =.b...
+CellLayout =.^...
+
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 road: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.||..
+ConsLayout =.||..
+ConsLayout =.....
+ConsLayout =.^...
+
+
+AutoTileBase=   0x5cbe2030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe2030
+Costs       = 640
+[HighwayIntersectionInfo_0x00055107]
+CopyFrom    = 0x45107
+Rotate      = 1
+[HighwayIntersectionInfo_0x00065107]
+CopyFrom    = 0x45107
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075107]
+CopyFrom    = 0x45107
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00085107]
+; Added by Tarkus 05/11/2010
+; RHW-4/Dual MIS Splitter B1
+Piece = 16.0, 0.0, 0, 1, 0x5cbe2005
+PreviewEffect = preview_draggable_mis___049
+
+CellLayout =.....
+CellLayout =.aa..
+CellLayout =.zz.<
+CellLayout =.zz..
+CellLayout =.zz..
+CellLayout =..b..
+CellLayout =.^...
+
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 road: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.||..
+ConsLayout =.||..
+ConsLayout =.....
+ConsLayout =.^...
+
+AutoTileBase=   0x5cbe2200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe2200
+Costs       = 640
+[HighwayIntersectionInfo_0x00095107]
+CopyFrom    = 0x85107
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A5107]
+CopyFrom    = 0x85107
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B5107]
+CopyFrom    = 0x85107
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x000C5107]
+; Added by Tarkus 05/11/2010
+; RHW-4/Dual MIS Splitter B1
+Piece = 16.0, 0.0, 0, 1, 0x5cbe2035
+PreviewEffect = preview_draggable_mis___050
+
+CellLayout =.....
+CellLayout =.aa..
+CellLayout =.zz.<
+CellLayout =.zz..
+CellLayout =.zz..
+CellLayout =..b..
+CellLayout =.^...
+
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 road: 0x01000001, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.||.<
+ConsLayout =.||..
+ConsLayout =.||..
+ConsLayout =.....
+ConsLayout =.^...
+
+AutoTileBase=   0x5cbe2230
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe2230
+Costs       = 640
+[HighwayIntersectionInfo_0x000D5107]
+CopyFrom    = 0xC5107
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E5107]
+CopyFrom    = 0xC5107
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F5107]
+CopyFrom    = 0xC5107
+Rotate      = 3
+
+
+
+
+
+
+[HighwayIntersectionInfo_0x0000510A]
+;Added by Tarkus 8/13/2007.
+;ERHW-4/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb4005
+PreviewEffect = preview_draggable_mis___043
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..dc...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000202
+CheckType = d - dirtroad: 0x02020000
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+
+AutoTileBase=	0x5ceb4000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb4000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001510A]
+CopyFrom    = 0x510A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510A]
+CopyFrom    = 0x510A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510A]
+CopyFrom    = 0x510A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004510A]
+;Added by Tarkus 10/21/2007.
+;ERHW-4/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb4205
+PreviewEffect = preview_draggable_mis___044
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb4200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb4200
+Costs       = 400
+[HighwayIntersectionInfo_0x0005510A]
+CopyFrom    = 0x4510A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006510A]
+CopyFrom    = 0x4510A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007510A]
+CopyFrom    = 0x4510A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008510A]
+CopyFrom    = 0x510A
+[HighwayIntersectionInfo_0x0009510A]
+CopyFrom    = 0x1510A
+[HighwayIntersectionInfo_0x000A510A]
+CopyFrom    = 0x2510A
+[HighwayIntersectionInfo_0x000B510A]
+CopyFrom    = 0x3510A
+[HighwayIntersectionInfo_0x000C510A]
+CopyFrom    = 0x4510A
+[HighwayIntersectionInfo_0x000D510A]
+CopyFrom    = 0x5510A
+[HighwayIntersectionInfo_0x000E510A]
+CopyFrom    = 0x6510A
+[HighwayIntersectionInfo_0x000F510A]
+CopyFrom    = 0x7510A
+
+
+
+
+[HighwayIntersectionInfo_0x0000510C]
+;Added by Tarkus 5/17/2008.
+;RHW-2/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cea0005
+PreviewEffect = preview_draggable_mis___011
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..bb...
+CellLayout =..fe...
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02000202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cea0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea0000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001510C]
+CopyFrom    = 0x510C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510C]
+CopyFrom    = 0x510C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510C]
+CopyFrom    = 0x510C
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004510C]
+;Added by Tarkus 05/17/2008.
+;RHW-2/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cea0205
+PreviewEffect = preview_draggable_mis___012
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..bb...
+CellLayout =..ef...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cea0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea0200
+Costs       = 400
+[HighwayIntersectionInfo_0x0005510C]
+CopyFrom    = 0x4510C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006510C]
+CopyFrom    = 0x4510C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007510C]
+CopyFrom    = 0x4510C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008510C]
+CopyFrom    = 0x510C
+[HighwayIntersectionInfo_0x0009510C]
+CopyFrom    = 0x1510C
+[HighwayIntersectionInfo_0x000A510C]
+CopyFrom    = 0x2510C
+[HighwayIntersectionInfo_0x000B510C]
+CopyFrom    = 0x3510C
+[HighwayIntersectionInfo_0x000C510C]
+CopyFrom    = 0x4510C
+[HighwayIntersectionInfo_0x000D510C]
+CopyFrom    = 0x5510C
+[HighwayIntersectionInfo_0x000E510C]
+CopyFrom    = 0x6510C
+[HighwayIntersectionInfo_0x000F510C]
+CopyFrom    = 0x7510C
+
+
+
+[HighwayIntersectionInfo_0x0000510D]
+;Added by Tarkus 5/17/2007.
+;RHW-2/MIS-1 Exit Ramp-Style A-Dual--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cea0405
+PreviewEffect = preview_draggable_mis___015
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b+<.
+CellLayout =..cdc..
+CellLayout =..bbb..
+CellLayout =..fgh..
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000202
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = h - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|||<.
+ConsLayout =..|||..
+ConsLayout =..|||..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cea0400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea0400
+Costs       = 500
+[HighwayIntersectionInfo_0x0001510D]
+CopyFrom    = 0x510D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510D]
+CopyFrom    = 0x510D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510D]
+CopyFrom    = 0x510D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004510D]
+CopyFrom    = 0x510D
+[HighwayIntersectionInfo_0x0005510D]
+CopyFrom    = 0x1510D
+[HighwayIntersectionInfo_0x0006510D]
+CopyFrom    = 0x2510D
+[HighwayIntersectionInfo_0x0007510D]
+CopyFrom    = 0x3510D
+[HighwayIntersectionInfo_0x0008510D]
+CopyFrom    = 0x510D
+[HighwayIntersectionInfo_0x0009510D]
+CopyFrom    = 0x1510D
+[HighwayIntersectionInfo_0x000A510D]
+CopyFrom    = 0x2510D
+[HighwayIntersectionInfo_0x000B510D]
+CopyFrom    = 0x3510D
+[HighwayIntersectionInfo_0x000C510D]
+CopyFrom    = 0x4510D
+[HighwayIntersectionInfo_0x000D510D]
+CopyFrom    = 0x5510D
+[HighwayIntersectionInfo_0x000E510D]
+CopyFrom    = 0x6510D
+[HighwayIntersectionInfo_0x000F510D]
+CopyFrom    = 0x7510D
+
+
+
+[HighwayIntersectionInfo_0x0000510E]
+;Added by Tarkus 5/17/2008.
+;RHW-2/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cea1005
+PreviewEffect = preview_draggable_mis___013
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b...<
+CellLayout =...+b....
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5cea1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea1000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001510E]
+CopyFrom    = 0x510E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510E]
+CopyFrom    = 0x510E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510E]
+CopyFrom    = 0x510E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004510E]
+;Added by Tarkus 5/17/2008.
+;RHW-2/MIS-1 Entrance Ramp-Style B--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cea1205
+PreviewEffect = preview_draggable_mis___014
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+....
+CellLayout =...b+...<
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|.....
+ConsLayout =...|....<
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cea1200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea1200
+Costs       = 400
+[HighwayIntersectionInfo_0x0005510E]
+CopyFrom    = 0x4510E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006510E]
+CopyFrom    = 0x4510E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007510E]
+CopyFrom    = 0x4510E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008510E]
+CopyFrom    = 0x510E
+[HighwayIntersectionInfo_0x0009510E]
+CopyFrom    = 0x1510E
+[HighwayIntersectionInfo_0x000A510E]
+CopyFrom    = 0x2510E
+[HighwayIntersectionInfo_0x000B510E]
+CopyFrom    = 0x3510E
+[HighwayIntersectionInfo_0x000C510E]
+CopyFrom    = 0x4510E
+[HighwayIntersectionInfo_0x000D510E]
+CopyFrom    = 0x5510E
+[HighwayIntersectionInfo_0x000E510E]
+CopyFrom    = 0x6510E
+[HighwayIntersectionInfo_0x000F510E]
+CopyFrom    = 0x7510E
+
+
+
+[HighwayIntersectionInfo_0x0000510F]
+;Added by Tarkus 5/17/2008.
+;RHW-2/MIS-1 Exit Ramp-Style B-Dual--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cea1405
+PreviewEffect = preview_draggable_mis___016
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b+..<
+CellLayout =...cdf...
+CellLayout =...bbb...
+CellLayout =..hgeij..
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 
+CheckType = g - dirtroad: 0x00000301
+CheckType = h - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = i - dirtroad: 0x00030100
+CheckType = j - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =.../|\...
+ConsLayout =.../|\..<
+ConsLayout =.../|\...
+ConsLayout =..-/|\...
+ConsLayout =....^....
+
+AutoTileBase=	0x5cea1400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea1400
+Costs       = 400
+[HighwayIntersectionInfo_0x0001510F]
+CopyFrom    = 0x510F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510F]
+CopyFrom    = 0x510F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510F]
+CopyFrom    = 0x510F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004510F]
+CopyFrom    = 0x510F
+[HighwayIntersectionInfo_0x0005510F]
+CopyFrom    = 0x1510F
+[HighwayIntersectionInfo_0x0006510F]
+CopyFrom    = 0x2510F
+[HighwayIntersectionInfo_0x0007510F]
+CopyFrom    = 0x3510F
+[HighwayIntersectionInfo_0x0008510F]
+CopyFrom    = 0x510F
+[HighwayIntersectionInfo_0x0009510F]
+CopyFrom    = 0x1510F
+[HighwayIntersectionInfo_0x000A510F]
+CopyFrom    = 0x2510F
+[HighwayIntersectionInfo_0x000B510F]
+CopyFrom    = 0x3510F
+[HighwayIntersectionInfo_0x000C510F]
+CopyFrom    = 0x4510F
+[HighwayIntersectionInfo_0x000D510F]
+CopyFrom    = 0x5510F
+[HighwayIntersectionInfo_0x000E510F]
+CopyFrom    = 0x6510F
+[HighwayIntersectionInfo_0x000F510F]
+CopyFrom    = 0x7510F
+
+
+
+[HighwayIntersectionInfo_0x00005113]
+;Added by Tarkus 11/09/2007
+;RHW-2/MIS-1 Dual Splitter-Style A-1
+Piece = 0.0, -16.0, 0, 1, 0x5cae3205
+PreviewEffect = preview_draggable_mis___006
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b....
+CellLayout =...cd...<
+CellLayout =..fbe....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =.../|...<
+ConsLayout =.../|....
+ConsLayout =..-/|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5cae3000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae3000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015113]
+CopyFrom    = 0x5113
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025113]
+CopyFrom    = 0x5113
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035113]
+CopyFrom    = 0x5113
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045113]
+;Added by Tarkus 11/10/2007.
+;RHW-2/MIS-1 Dual Splitter-Style A-2
+Piece = 0.0, 0.0, 0, 0, 0x5cae3205
+PreviewEffect = preview_draggable_mis___006
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+...<
+CellLayout =...cd....
+CellLayout =...ebf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|\...<
+ConsLayout =...|\....
+ConsLayout =...|\-...
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cae3200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae3200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055113]
+CopyFrom    = 0x45113
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065113]
+CopyFrom    = 0x45113
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075113]
+CopyFrom    = 0x45113
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085113]
+CopyFrom    = 0x5113
+[HighwayIntersectionInfo_0x00095113]
+CopyFrom    = 0x15113
+[HighwayIntersectionInfo_0x000A5113]
+CopyFrom    = 0x25113
+[HighwayIntersectionInfo_0x000B5113]
+CopyFrom    = 0x35113
+[HighwayIntersectionInfo_0x000C5113]
+CopyFrom    = 0x45113
+[HighwayIntersectionInfo_0x000D5113]
+CopyFrom    = 0x55113
+[HighwayIntersectionInfo_0x000E5113]
+CopyFrom    = 0x65113
+[HighwayIntersectionInfo_0x000F5113]
+CopyFrom    = 0x75113
+
+[HighwayIntersectionInfo_0x00005116]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style A1--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce70005
+PreviewEffect = preview_rhw-3_ramp-a1_exit
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02000202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =..|....
+ConsLayout =...^...
+
+AutoTileBase=	0x5ce70000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015116]
+CopyFrom    = 0x5116
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025116]
+CopyFrom    = 0x5116
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035116]
+CopyFrom    = 0x5116
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045116]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Entrance Ramp-Style A1--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ce70205
+PreviewEffect = preview_rhw-3_ramp-a1_entrance
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b.<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..|....
+ConsLayout =..|.<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =...|...
+ConsLayout =..^....
+
+AutoTileBase=	0x5ce70200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055116]
+CopyFrom    = 0x45116
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065116]
+CopyFrom    = 0x45116
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075116]
+CopyFrom    = 0x45116
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085116]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style A2--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce70405
+PreviewEffect = preview_rhw-3_ramp-a2_exit
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02000202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =..|....
+ConsLayout =...^...
+
+AutoTileBase=	0x5ce70400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70400
+Costs       = 400
+[HighwayIntersectionInfo_0x00095116]
+CopyFrom    = 0x85116
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A5116]
+CopyFrom    = 0x85116
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B5116]
+CopyFrom    = 0x85116
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C5116]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Entrance Ramp-Style A2--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ce70605
+PreviewEffect = preview_rhw-3_ramp-a2_entrance
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b.<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..|....
+ConsLayout =..|.<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =...|...
+ConsLayout =..^....
+
+AutoTileBase=	0x5ce70600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70600
+Costs       = 400
+[HighwayIntersectionInfo_0x000D5116]
+CopyFrom    = 0xC5116
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E5116]
+CopyFrom    = 0xC5116
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F5116]
+CopyFrom    = 0xC5116
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00005117]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style B1--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce71005
+PreviewEffect = preview_rhw-3_ramp-b1_exit
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =...+b....
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ce71000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015117]
+CopyFrom    = 0x5117
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025117]
+CopyFrom    = 0x5117
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035117]
+CopyFrom    = 0x5117
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045117]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Entrance Ramp-Style B1--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ce71205
+PreviewEffect = preview_rhw-3_ramp-b1_entrance
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b....<
+CellLayout =...b+....
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|....<
+ConsLayout =...|.....
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5ce71200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055117]
+CopyFrom    = 0x45117
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065117]
+CopyFrom    = 0x45117
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075117]
+CopyFrom    = 0x45117
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085117]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style B2--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce71405
+PreviewEffect = preview_rhw-3_ramp-b2_exit
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =...+b....
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ce71400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71400
+Costs       = 400
+[HighwayIntersectionInfo_0x00095117]
+CopyFrom    = 0x85117
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A5117]
+CopyFrom    = 0x85117
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B5117]
+CopyFrom    = 0x85117
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C5117]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Entrance Ramp-Style B2--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ce71605
+PreviewEffect = preview_rhw-3_ramp-b2_entrance
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b....<
+CellLayout =...b+....
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|....<
+ConsLayout =...|.....
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5ce71600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71600
+Costs       = 400
+[HighwayIntersectionInfo_0x000D5117]
+CopyFrom    = 0xC5117
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E5117]
+CopyFrom    = 0xC5117
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F5117]
+CopyFrom    = 0xC5117
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00005118]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style Dual A1--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce70805
+PreviewEffect = preview_rhw-3_ramp-a1_dual
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b..<
+CellLayout =..cdc..
+CellLayout =..bgb..
+CellLayout =..f.h..
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000202
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = h - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...|..<
+ConsLayout =../|\..
+ConsLayout =..|.|..
+ConsLayout =..|.|..
+ConsLayout =...^...
+
+AutoTileBase=	0x5ce70800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70800
+Costs       = 400
+[HighwayIntersectionInfo_0x00015118]
+CopyFrom    = 0x5118
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025118]
+CopyFrom    = 0x5118
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035118]
+CopyFrom    = 0x5118
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045118]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Entrance Ramp-Style Dual A2--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce70b05
+PreviewEffect = preview_rhw-3_ramp-a2_dual
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b..<
+CellLayout =..cdc..
+CellLayout =..bgb..
+CellLayout =..f.h..
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02020000
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000202
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = h - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...|..<
+ConsLayout =../|\..
+ConsLayout =..|.|..
+ConsLayout =..|.|..
+ConsLayout =...^...
+
+AutoTileBase=	0x5ce70b00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce70b00
+Costs       = 400
+[HighwayIntersectionInfo_0x00055118]
+CopyFrom    = 0x45118
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065118]
+CopyFrom    = 0x45118
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075118]
+CopyFrom    = 0x45118
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085118]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style Dual B1--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce71805
+PreviewEffect = preview_rhw-3_ramp-b1_dual
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =...cdf...
+CellLayout =...bbb...
+CellLayout =..hgeij..
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 
+CheckType = g - dirtroad: 0x00000301
+CheckType = h - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = i - dirtroad: 0x00030100
+CheckType = j - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =.../|\...
+ConsLayout =.../|\...
+ConsLayout =..-/|\...
+ConsLayout =....^....
+AutoTileBase=	0x5ce71800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71800
+Costs       = 400
+[HighwayIntersectionInfo_0x00095118]
+CopyFrom    = 0x85118
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A5118]
+CopyFrom    = 0x85118
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B5118]
+CopyFrom    = 0x85118
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C5118]
+;Added by MRTNRLN 8/22/2010.
+;RHW-3/MIS-1 Exit Ramp-Style Dual B2--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ce71B05
+PreviewEffect = preview_rhw-3_ramp-b2_dual
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =...cdf...
+CellLayout =...bbb...
+CellLayout =..hgeij..
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000000, 0x00ffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = f - dirtroad: 0x02000200 
+CheckType = g - dirtroad: 0x00000301
+CheckType = h - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = i - dirtroad: 0x00030100
+CheckType = j - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =.../|\...
+ConsLayout =.../|\...
+ConsLayout =..-/|\...
+ConsLayout =....^....
+AutoTileBase=	0x5ce71B00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ce71B00
+Costs       = 400
+[HighwayIntersectionInfo_0x000D5118]
+CopyFrom    = 0xC5118
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E5118]
+CopyFrom    = 0xC5118
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F5118]
+CopyFrom    = 0xC5118
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00005119]
+;Added by Tarkus 01/16/2011.
+;RHW-6S/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cec1a05
+PreviewEffect = preview_draggable_mis___051
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000202
+CheckType = d - dirtroad: 0x02020000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cec1a00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1a00
+Costs       = 600
+[HighwayIntersectionInfo_0x00015119]
+CopyFrom    = 0x5119
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025119]
+CopyFrom    = 0x5119
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035119]
+CopyFrom    = 0x5119
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045119]
+;Added by Tarkus 01/16/2011.
+;RHW-6S/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cec1c05
+PreviewEffect = preview_draggable_mis___052
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec1c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1c00
+Costs       = 600
+[HighwayIntersectionInfo_0x00055119]
+CopyFrom    = 0x45119
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065119]
+CopyFrom    = 0x45119
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075119]
+CopyFrom    = 0x45119
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085119]
+CopyFrom    = 0x5119
+[HighwayIntersectionInfo_0x00095119]
+CopyFrom    = 0x15119
+[HighwayIntersectionInfo_0x000A5119]
+CopyFrom    = 0x25119
+[HighwayIntersectionInfo_0x000B5119]
+CopyFrom    = 0x35119
+[HighwayIntersectionInfo_0x000C5119]
+CopyFrom    = 0x45119
+[HighwayIntersectionInfo_0x000D5119]
+CopyFrom    = 0x55119
+[HighwayIntersectionInfo_0x000E5119]
+CopyFrom    = 0x65119
+[HighwayIntersectionInfo_0x000F5119]
+CopyFrom    = 0x75119
+
+[HighwayIntersectionInfo_0x00005123]
+; Added by J.M. van Leeuwen 05/27/2009
+; RHW-4 to RHW-6C transition with 2 MIS-ramps right
+Piece = 0.0, 0.0, 0, 0, 0x5ceb2035
+PreviewEffect = preview_rhw4misrampstyleaxdr
+
+CellLayout =......
+CellLayout =.eacd.
+CellLayout =.zzzz<
+CellLayout =.zzzz.
+CellLayout =.zzzz.
+CellLayout =.zzzz.
+CellLayout =.abc..
+CellLayout =.^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =.||||<
+ConsLayout =.||||.
+ConsLayout =.||||.
+ConsLayout =.||||.
+ConsLayout =......
+ConsLayout =.^....
+
+AutoTileBase=   0x5ceb2030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2030
+Costs       = 1280
+[HighwayIntersectionInfo_0x00015123]
+CopyFrom    = 0x5123
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025123]
+CopyFrom    = 0x5123
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035123]
+CopyFrom    = 0x5123
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00045123]
+; Added by J.M. van Leeuwen 05/31/2009
+; RHW-4 to RHW-6C transition with 2 MIS-ramps left
+Piece = 0.0, 0.0, 0, 0, 0x5ceb2435
+PreviewEffect = preview_rhw4misrampstyleaxdl
+
+CellLayout =......
+CellLayout =.eacd.
+CellLayout =.zzzz<
+CellLayout =.zzzz.
+CellLayout =.zzzz.
+CellLayout =.zzzz.
+CellLayout =..abc.
+CellLayout =.^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =.||||<
+ConsLayout =.||||.
+ConsLayout =.||||.
+ConsLayout =.||||.
+ConsLayout =......
+ConsLayout =.^....
+
+AutoTileBase=   0x5ceb2430
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb2430
+Costs       = 1280
+[HighwayIntersectionInfo_0x00055123]
+CopyFrom    = 0x45123
+Rotate      = 1
+[HighwayIntersectionInfo_0x00065123]
+CopyFrom    = 0x45123
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075123]
+CopyFrom    = 0x45123
+Rotate      = 3
+
+;clones for rotation
+[HighwayIntersectionInfo_0x00085123]
+CopyFrom    = 0x5123
+[HighwayIntersectionInfo_0x00095123]
+CopyFrom    = 0x5123
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A5123]
+CopyFrom    = 0x5123
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B5123]
+CopyFrom    = 0x5123
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C5123]
+CopyFrom    = 0x45123
+[HighwayIntersectionInfo_0x000D5123]
+CopyFrom    = 0x45123
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E5123]
+CopyFrom    = 0x45123
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F5123]
+CopyFrom    = 0x45123
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00005115]
+;Added by Tarkus 01/31/2011.
+;ERHW-2/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cea4005
+PreviewEffect = preview_draggable_mis___053
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x03000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000202
+CheckType = d - dirtroad: 0x02020000
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x03000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cea4000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea4000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015115]
+CopyFrom    = 0x5115
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025115]
+CopyFrom    = 0x5115
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035115]
+CopyFrom    = 0x5115
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045115]
+;Added by Tarkus 01/31/2011.
+;ERHW-2/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cea4205
+PreviewEffect = preview_draggable_mis___054
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x03000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x03000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cea4200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cea4200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055115]
+CopyFrom    = 0x45115
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065115]
+CopyFrom    = 0x45115
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075115]
+CopyFrom    = 0x45115
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085115]
+CopyFrom    = 0x5115
+[HighwayIntersectionInfo_0x00095115]
+CopyFrom    = 0x15115
+[HighwayIntersectionInfo_0x000A5115]
+CopyFrom    = 0x25115
+[HighwayIntersectionInfo_0x000B5115]
+CopyFrom    = 0x35115
+[HighwayIntersectionInfo_0x000C5115]
+CopyFrom    = 0x45115
+[HighwayIntersectionInfo_0x000D5115]
+CopyFrom    = 0x55115
+[HighwayIntersectionInfo_0x000E5115]
+CopyFrom    = 0x65115
+[HighwayIntersectionInfo_0x000F5115]
+CopyFrom    = 0x75115
+
+
+
+[HighwayIntersectionInfo_0x0000510B]
+;Added by Tarkus 8/13/2007.
+;ERHW-4/MIS-1 Entrance Ramp-Style A-Inside--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ceb4A05
+PreviewEffect = preview_draggable_mis___057
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb4A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb4A00
+Costs       = 1000
+[HighwayIntersectionInfo_0x0001510B]
+CopyFrom    = 0x510B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002510B]
+CopyFrom    = 0x510B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003510B]
+CopyFrom    = 0x510B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004510B]
+;Added by Tarkus 10/21/2007.
+;ERHW-4/MIS-1 Exit Ramp-Style A-Inside--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ceb4C05
+PreviewEffect = preview_draggable_mis___058
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb4C00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb4C00
+Costs       = 1000
+[HighwayIntersectionInfo_0x0005510B]
+CopyFrom    = 0x4510B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006510B]
+CopyFrom    = 0x4510B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007510B]
+CopyFrom    = 0x4510B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008510B]
+CopyFrom    = 0x510B
+[HighwayIntersectionInfo_0x0009510B]
+CopyFrom    = 0x1510B
+[HighwayIntersectionInfo_0x000A510B]
+CopyFrom    = 0x2510B
+[HighwayIntersectionInfo_0x000B510B]
+CopyFrom    = 0x3510B
+[HighwayIntersectionInfo_0x000C510B]
+CopyFrom    = 0x4510B
+[HighwayIntersectionInfo_0x000D510B]
+CopyFrom    = 0x5510B
+[HighwayIntersectionInfo_0x000E510B]
+CopyFrom    = 0x6510B
+[HighwayIntersectionInfo_0x000F510B]
+CopyFrom    = 0x7510B
+
+
+
+[HighwayIntersectionInfo_0x0000511B]
+;Added by Tarkus 11/08/2008.
+;RHW-6S/MIS-1 Exit Ramp-Style A-Wide--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5cec0005
+PreviewEffect = preview_draggable_mis___041
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+c<..
+CellLayout =..cc...
+CellLayout =.ccc...
+CellLayout =.ccc...
+CellLayout =.c.a...
+CellLayout =.f.....
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x03000003, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020200
+CheckType = e - dirtroad: 0x02000002
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|<..
+ConsLayout =..||...
+ConsLayout =.|||...
+ConsLayout =.|||...
+ConsLayout =.|.....
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001511B]
+CopyFrom    = 0x511B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511B]
+CopyFrom    = 0x511B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511B]
+CopyFrom    = 0x511B
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004511B]
+;Added by Tarkus 11/08/2008.
+;RHW-6S/MIS-1 Entrance Ramp-Style A-Wide--Orthogonal
+Piece = 16.0, 0.0, 0, 0, 0x5cec0305
+PreviewEffect = preview_draggable_mis___042
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..c+<..
+CellLayout =..cc...
+CellLayout =..ccc..
+CellLayout =..ccc..
+CellLayout =..a.c..
+CellLayout =....f..
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020200
+CheckType = e - dirtroad: 0x02000002
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|.<..
+ConsLayout =..|....
+ConsLayout =..||...
+ConsLayout =..|||..
+ConsLayout =..|.|..
+ConsLayout =....|..
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0300
+Costs       = 400
+[HighwayIntersectionInfo_0x0005511B]
+CopyFrom    = 0x4511B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511B]
+CopyFrom    = 0x4511B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511B]
+CopyFrom    = 0x4511B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511B]
+CopyFrom    = 0x511B
+[HighwayIntersectionInfo_0x0009511B]
+CopyFrom    = 0x1511B
+[HighwayIntersectionInfo_0x000A511B]
+CopyFrom    = 0x2511B
+[HighwayIntersectionInfo_0x000B511B]
+CopyFrom    = 0x3511B
+[HighwayIntersectionInfo_0x000C511B]
+CopyFrom    = 0x4511B
+[HighwayIntersectionInfo_0x000D511B]
+CopyFrom    = 0x5511B
+[HighwayIntersectionInfo_0x000E511B]
+CopyFrom    = 0x6511B
+[HighwayIntersectionInfo_0x000F511B]
+CopyFrom    = 0x7511B
+
+
+
+[HighwayIntersectionInfo_0x0000511A]
+;Added by Tarkus 8/13/2007.
+;RHW-6S/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cec1005
+PreviewEffect = preview_draggable_mis___038
+
+CellLayout =.........
+CellLayout =.....a...
+CellLayout =....+c..<
+CellLayout =....+c...
+CellLayout =...hef...
+CellLayout =.....a...
+CellLayout =.....^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02020202
+CheckType = f - dirtroad: 0x02020200
+CheckType = g - dirtroad: 0x00030100
+CheckType = h - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.....|..<
+ConsLayout =..../|...
+ConsLayout =...//|...
+ConsLayout =.........
+ConsLayout =.....^...
+
+AutoTileBase=	0x5cec1100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1000
+Costs       = 400
+[HighwayIntersectionInfo_0x0001511A]
+CopyFrom    = 0x511A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511A]
+CopyFrom    = 0x511A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511A]
+CopyFrom    = 0x511A
+Rotate		= 3
+
+
+
+
+[HighwayIntersectionInfo_0x0004511A]
+;Added by Tarkus 11/06/2008
+;RHW-6/MIS-1 Entrance Ramp-Style B
+Piece = 16.0, 0, 0, 1, 0x5cec1305
+PreviewEffect = preview_draggable_mis___039
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...c+...<
+CellLayout =...c+....
+CellLayout =...feh...
+CellLayout =...a.....
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02020202
+CheckType = f - dirtroad: 0x02020200
+CheckType = g - dirtroad: 0x00030100
+CheckType = h - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...|\....
+ConsLayout =...|\\...
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cec1300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1300
+Costs       = 400
+[HighwayIntersectionInfo_0x0005511A]
+CopyFrom    = 0x4511A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511A]
+CopyFrom    = 0x4511A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511A]
+CopyFrom    = 0x4511A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511A]
+CopyFrom    = 0x511A
+[HighwayIntersectionInfo_0x0009511A]
+CopyFrom    = 0x1511A
+[HighwayIntersectionInfo_0x000A511A]
+CopyFrom    = 0x2511A
+[HighwayIntersectionInfo_0x000B511A]
+CopyFrom    = 0x3511A
+[HighwayIntersectionInfo_0x000C511A]
+CopyFrom    = 0x4511A
+[HighwayIntersectionInfo_0x000D511A]
+CopyFrom    = 0x5511A
+[HighwayIntersectionInfo_0x000E511A]
+CopyFrom    = 0x6511A
+[HighwayIntersectionInfo_0x000F511A]
+CopyFrom    = 0x7511A
+
+
+
+[HighwayIntersectionInfo_0x00005128]
+;Added by MRTNRLN 4/17/2011.
+;RHW-6S/MIS-1 Exit Ramp-Style C--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5cec0835
+PreviewEffect = preview_rhw6s_ramp_c0
+
+CellLayout =.......
+CellLayout =...ae..
+CellLayout =...bb<.
+CellLayout =...bb..
+CellLayout =...bb..
+CellLayout =...fg..
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...||..
+ConsLayout =...||<.
+ConsLayout =...||..
+ConsLayout =...||..
+ConsLayout =...||..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cec0830
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0830
+Costs       = 400
+[HighwayIntersectionInfo_0x00015128]
+CopyFrom    = 0x5128
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025128]
+CopyFrom    = 0x5128
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035128]
+CopyFrom    = 0x5128
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045128]
+;Added by MRTNRLN 4/17/2011.
+;RHW-10/MIS-1 Entrance Ramp-Style C--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cec0A35
+PreviewEffect = preview_rhw6s_ramp_c1
+
+
+CellLayout =.......
+CellLayout =.ea....
+CellLayout =.bb.<..
+CellLayout =.bb....
+CellLayout =.bb....
+CellLayout =.gf....
+CellLayout =.......
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.||....
+ConsLayout =.||.<..
+ConsLayout =.||....
+ConsLayout =.||....
+ConsLayout =.||....
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec0A30
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0A30
+Costs       = 400
+[HighwayIntersectionInfo_0x00055128]
+CopyFrom    = 0x45128
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065128]
+CopyFrom    = 0x45128
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075128]
+CopyFrom    = 0x45128
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085128]
+CopyFrom    = 0x5128
+[HighwayIntersectionInfo_0x00095128]
+CopyFrom    = 0x15128
+[HighwayIntersectionInfo_0x000A5128]
+CopyFrom    = 0x25128
+[HighwayIntersectionInfo_0x000B5128]
+CopyFrom    = 0x35128
+[HighwayIntersectionInfo_0x000C5128]
+CopyFrom    = 0x45128
+[HighwayIntersectionInfo_0x000D5128]
+CopyFrom    = 0x55128
+[HighwayIntersectionInfo_0x000E5128]
+CopyFrom    = 0x65128
+[HighwayIntersectionInfo_0x000F5128]
+CopyFrom    = 0x75128
+
+
+
+[HighwayIntersectionInfo_0x00005129]
+;Added by Tarkus 10/18/2008.
+;RHW-6S/MIS-1 Exit Ramp-Style D--Orthogonal
+Piece = -32.0, 0.0, 0, 0, 0x5cec2405
+PreviewEffect = preview_rhw6s_ramp_d0
+
+CellLayout =.........
+CellLayout =....ag...
+CellLayout =....bb..<
+CellLayout =....db...
+CellLayout =...cdb...
+CellLayout =..fb.e...
+CellLayout =.....^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....||...
+ConsLayout =....||..<
+ConsLayout =....||...
+ConsLayout =.../||...
+ConsLayout =..//||...
+ConsLayout =.....^...
+
+AutoTileBase=	0x5cec2400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1400
+Costs       = 400
+[HighwayIntersectionInfo_0x00015129]
+CopyFrom    = 0x5129
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025129]
+CopyFrom    = 0x5129
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035129]
+CopyFrom    = 0x5129
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00045129]
+;Added by Tarkus 10/18/2008.
+;RHW-6S/MIS-1 Entrance Ramp-Style D--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5cec2705
+PreviewEffect = preview_rhw6s_ramp_d1
+
+CellLayout =.........
+CellLayout =..ga.....
+CellLayout =..bb....<
+CellLayout =..bc.....
+CellLayout =..bcd....
+CellLayout =..e.bf...
+CellLayout =..^......
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =..||.....
+ConsLayout =..||....<
+ConsLayout =..||.....
+ConsLayout =..||\....
+ConsLayout =..||\\...
+ConsLayout =..^......
+
+AutoTileBase=	0x5cec2700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1700
+Costs       = 400
+[HighwayIntersectionInfo_0x00055129]
+CopyFrom    = 0x45129
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065129]
+CopyFrom    = 0x45129
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075129]
+CopyFrom    = 0x45129
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085129]
+CopyFrom    = 0x5129
+[HighwayIntersectionInfo_0x00095129]
+CopyFrom    = 0x15129
+[HighwayIntersectionInfo_0x000A5129]
+CopyFrom    = 0x25129
+[HighwayIntersectionInfo_0x000B5129]
+CopyFrom    = 0x35129
+[HighwayIntersectionInfo_0x000C5129]
+CopyFrom    = 0x45129
+[HighwayIntersectionInfo_0x000D5129]
+CopyFrom    = 0x55129
+[HighwayIntersectionInfo_0x000E5129]
+CopyFrom    = 0x65129
+[HighwayIntersectionInfo_0x000F5129]
+CopyFrom    = 0x75129
+
+
+
+[HighwayIntersectionInfo_0x00005121]
+;Added by Tarkus 8/13/2007.
+;RHW-6C/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cec0075
+PreviewEffect = preview_draggable_mis___017
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..ce...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cec0070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0070
+Costs       = 400
+[HighwayIntersectionInfo_0x00015121]
+CopyFrom    = 0x5121
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025121]
+CopyFrom    = 0x5121
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035121]
+CopyFrom    = 0x5121
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045121]
+;Added by Tarkus 10/21/2007.
+;RHW-6C/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cec0275
+PreviewEffect = preview_draggable_mis___018
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec0270
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0270
+Costs       = 400
+[HighwayIntersectionInfo_0x00055121]
+CopyFrom    = 0x45121
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065121]
+CopyFrom    = 0x45121
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075121]
+CopyFrom    = 0x45121
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085121]
+CopyFrom    = 0x5121
+[HighwayIntersectionInfo_0x00095121]
+CopyFrom    = 0x15121
+[HighwayIntersectionInfo_0x000A5121]
+CopyFrom    = 0x25121
+[HighwayIntersectionInfo_0x000B5121]
+CopyFrom    = 0x35121
+[HighwayIntersectionInfo_0x000C5121]
+CopyFrom    = 0x45121
+[HighwayIntersectionInfo_0x000D5121]
+CopyFrom    = 0x55121
+[HighwayIntersectionInfo_0x000E5121]
+CopyFrom    = 0x65121
+[HighwayIntersectionInfo_0x000F5121]
+CopyFrom    = 0x75121
+
+
+
+[HighwayIntersectionInfo_0x00005122]
+;Added by Tarkus 8/13/2007.
+;RHW-6C/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cec1075
+PreviewEffect = preview_draggable_mis___019
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b...<
+CellLayout =...cd....
+CellLayout =...cd....
+CellLayout =..fbe....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.../|....
+ConsLayout =.../|...<
+ConsLayout =.../|....
+ConsLayout =.../.....
+ConsLayout =....^....
+
+AutoTileBase=	0x5cec1070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1070
+Costs       = 400
+[HighwayIntersectionInfo_0x00015122]
+CopyFrom    = 0x5122
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025122]
+CopyFrom    = 0x5122
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035122]
+CopyFrom    = 0x5122
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045122]
+;Added by Tarkus 11/07/2007.
+;RHW-6C/MIS-1 Entrance Ramp-Style B--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cec1275
+PreviewEffect = preview_draggable_mis___020
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+....
+CellLayout =...bc...<
+CellLayout =...bd....
+CellLayout =...ebf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|\....
+ConsLayout =...|\...<
+ConsLayout =...|\....
+ConsLayout =....\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cec1270
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1270
+Costs       = 400
+[HighwayIntersectionInfo_0x00055122]
+CopyFrom    = 0x45122
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065122]
+CopyFrom    = 0x45122
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075122]
+CopyFrom    = 0x45122
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085122]
+CopyFrom    = 0x5122
+[HighwayIntersectionInfo_0x00095122]
+CopyFrom    = 0x15122
+[HighwayIntersectionInfo_0x000A5122]
+CopyFrom    = 0x25122
+[HighwayIntersectionInfo_0x000B5122]
+CopyFrom    = 0x35122
+[HighwayIntersectionInfo_0x000C5122]
+CopyFrom    = 0x45122
+[HighwayIntersectionInfo_0x000D5122]
+CopyFrom    = 0x55122
+[HighwayIntersectionInfo_0x000E5122]
+CopyFrom    = 0x65122
+[HighwayIntersectionInfo_0x000F5122]
+CopyFrom    = 0x75122
+
+
+
+[HighwayIntersectionInfo_0x00005124]
+; Added by J.M. van Leeuwen 02/27/2009 Updated 03/29/2009
+; RHW-8 to RHW-6C transition with 2 MIS-ramps right
+Piece = 0.0, 0.0, 0, 0, 0x5cec0485 ; eerste geeft aan waar cursor in preview model komt te staan
+PreviewEffect = preview_draggable_mis___900
+
+CellLayout =.......
+CellLayout =.eabcd.
+CellLayout =.zzzzz<
+CellLayout =.zzzzz.
+CellLayout =.zzzzz.
+CellLayout =.zzzzz.
+CellLayout =.zzzz..
+CellLayout =.facg..
+CellLayout =.^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.|||||<
+ConsLayout =.|||||.
+ConsLayout =.|||||.
+ConsLayout =.|||||.
+ConsLayout =.||||..
+ConsLayout =.......
+ConsLayout =.^.....
+
+AutoTileBase=   0x5cec0480
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0480
+Costs       = 1600 ; Costed 1200 before update
+[HighwayIntersectionInfo_0x00015124]
+CopyFrom    = 0x5124
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025124]
+CopyFrom    = 0x5124
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035124]
+CopyFrom    = 0x5124
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00045124]
+; Added by J.M. van Leeuwen 04/03/2009
+; RHW-8 to RHW-6C transition with 2 MIS-ramps left
+Piece = 0.0, 0.0, 0, 0, 0x5cec0985 ; eerste geeft aan waar cursor in preview model komt te staan
+PreviewEffect = preview_draggable_mis___901
+
+CellLayout =.......
+CellLayout =.eabcd.
+CellLayout =.zzzzz<
+CellLayout =.zzzzz.
+CellLayout =.zzzzz.
+CellLayout =.zzzzz.
+CellLayout =..zzzz.
+CellLayout =..facg.
+CellLayout =.^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.|||||<
+ConsLayout =.|||||.
+ConsLayout =.|||||.
+ConsLayout =.|||||.
+ConsLayout =..||||.
+ConsLayout =.......
+ConsLayout =.^.....
+
+AutoTileBase=   0x5cec0980
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec0980
+Costs       = 1600
+[HighwayIntersectionInfo_0x00055124]
+CopyFrom    = 0x45124
+Rotate      = 1
+[HighwayIntersectionInfo_0x00065124]
+CopyFrom    = 0x45124
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075124]
+CopyFrom    = 0x45124
+Rotate      = 3
+[HighwayIntersectionInfo_0x00085124]
+CopyFrom    = 0x5124
+[HighwayIntersectionInfo_0x00095124]
+CopyFrom    = 0x15124
+[HighwayIntersectionInfo_0x000A5124]
+CopyFrom    = 0x25124
+[HighwayIntersectionInfo_0x000B5124]
+CopyFrom    = 0x35124
+[HighwayIntersectionInfo_0x000C5124]
+CopyFrom    = 0x45124
+[HighwayIntersectionInfo_0x000D5124]
+CopyFrom    = 0x55124
+[HighwayIntersectionInfo_0x000E5124]
+CopyFrom    = 0x65124
+[HighwayIntersectionInfo_0x000F5124]
+CopyFrom    = 0x75124
+
+
+
+[HighwayIntersectionInfo_0x0000511E]
+;Added by Tarkus 12/16/2007.
+;RHW-6S/Dual RHW-4 Splitter-Exit Ramp
+Piece = -16.0, 0.0, 0, 0, 0x5cec2005
+PreviewEffect = preview_draggable_mis___009
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cec2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec2000
+Costs       = 600
+[HighwayIntersectionInfo_0x0001511E]
+CopyFrom    = 0x511E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511E]
+CopyFrom    = 0x511E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511E]
+CopyFrom    = 0x511E
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004511E]
+;Added by Tarkus 12/16/2007.
+;RHW-6S/Dual RHW-4 Splitter-Entrance Ramp
+Piece = 16.0, 0.0, 0, 1, 0x5cec2205
+PreviewEffect = preview_draggable_mis___010
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..bb<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..||<..
+ConsLayout =..||...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cec2200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec2200
+Costs       = 600
+[HighwayIntersectionInfo_0x0005511E]
+CopyFrom    = 0x4511E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511E]
+CopyFrom    = 0x4511E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511E]
+CopyFrom    = 0x4511E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511E]
+CopyFrom    = 0x511E
+[HighwayIntersectionInfo_0x0009511E]
+CopyFrom    = 0x1511E
+[HighwayIntersectionInfo_0x000A511E]
+CopyFrom    = 0x2511E
+[HighwayIntersectionInfo_0x000B511E]
+CopyFrom    = 0x3511E
+[HighwayIntersectionInfo_0x000C511E]
+CopyFrom    = 0x4511E
+[HighwayIntersectionInfo_0x000D511E]
+CopyFrom    = 0x5511E
+[HighwayIntersectionInfo_0x000E511E]
+CopyFrom    = 0x6511E
+[HighwayIntersectionInfo_0x000F511E]
+CopyFrom    = 0x7511E
+
+[HighwayIntersectionInfo_0x0000511F]
+;Added by mrtnrln 12/23/2009.
+;RHW-6S/Dual RHW-4 Splitter-Exit Ramp B
+Piece = -32.0, 0.0, 0, 0, 0x5cec3005
+PreviewEffect = preview_rhw6_to_dualrhw4sp_b
+
+CellLayout =.......
+CellLayout =....a..
+CellLayout =...bb<.
+CellLayout =...bb..
+CellLayout =..+bb..
+CellLayout =..dce..
+CellLayout =.hc....
+CellLayout =....^..
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00000301
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x03000003, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x03000003, 0xffffffff optional
+CheckType = h - dirtroad: 0x03010000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...||<.
+ConsLayout =...||..
+ConsLayout =..#||..
+ConsLayout =..//...
+ConsLayout =../....
+ConsLayout =....^..
+
+AutoTileBase=	0x5cec3000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec3000
+Costs       = 1000
+[HighwayIntersectionInfo_0x0001511F]
+CopyFrom    = 0x511F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002511F]
+CopyFrom    = 0x511F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003511F]
+CopyFrom    = 0x511F
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0004511F]
+;Added by mrtnrln 12/23/2009.
+;RHW-6S/Dual RHW-4 Splitter-Entrance Ramp B
+Piece = 0.0, 0.0, 0, 0, 0x5cec3805
+PreviewEffect = preview_rhw6_to_dualrhw4sp_b2
+
+CellLayout =.......
+CellLayout =.a.....
+CellLayout =.bb<...
+CellLayout =.bb....
+CellLayout =.bb+...
+CellLayout =.ecd...
+CellLayout =...ch..
+CellLayout =.^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x00030100 Lightrail: 0x00020200, 0xffffffff optional
+;CheckType = g - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+CheckType = h - dirtroad: 0x01000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.||<...
+ConsLayout =.||....
+ConsLayout =.||#...
+ConsLayout =..\\...
+ConsLayout =...\...
+ConsLayout =.^.....
+
+AutoTileBase=	0x5cec3800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec3800
+Costs       = 1000
+[HighwayIntersectionInfo_0x0005511F]
+CopyFrom    = 0x4511F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006511F]
+CopyFrom    = 0x4511F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007511F]
+CopyFrom    = 0x4511F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008511F]
+CopyFrom    = 0x511F
+[HighwayIntersectionInfo_0x0009511F]
+CopyFrom    = 0x1511F
+[HighwayIntersectionInfo_0x000A511F]
+CopyFrom    = 0x2511F
+[HighwayIntersectionInfo_0x000B511F]
+CopyFrom    = 0x3511F
+[HighwayIntersectionInfo_0x000C511F]
+CopyFrom    = 0x4511F
+[HighwayIntersectionInfo_0x000D511F]
+CopyFrom    = 0x5511F
+[HighwayIntersectionInfo_0x000E511F]
+CopyFrom    = 0x6511F
+[HighwayIntersectionInfo_0x000F511F]
+CopyFrom    = 0x7511F
+
+
+[HighwayIntersectionInfo_0x00005126]
+;Added by Tarkus 8/13/2007.
+;RHW-8/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ced0005
+PreviewEffect = preview_draggable_mis___021
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5ced0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced0000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015126]
+CopyFrom    = 0x5126
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025126]
+CopyFrom    = 0x5126
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035126]
+CopyFrom    = 0x5126
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045126]
+;Added by Tarkus 11/07/2007.
+;RHW-8/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ced0205
+PreviewEffect = preview_draggable_mis___022
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b.<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|.<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ced0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced0200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055126]
+CopyFrom    = 0x45126
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065126]
+CopyFrom    = 0x45126
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075126]
+CopyFrom    = 0x45126
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085126]
+CopyFrom    = 0x5126
+[HighwayIntersectionInfo_0x00095126]
+CopyFrom    = 0x15126
+[HighwayIntersectionInfo_0x000A5126]
+CopyFrom    = 0x25126
+[HighwayIntersectionInfo_0x000B5126]
+CopyFrom    = 0x35126
+[HighwayIntersectionInfo_0x000C5126]
+CopyFrom    = 0x45126
+[HighwayIntersectionInfo_0x000D5126]
+CopyFrom    = 0x55126
+[HighwayIntersectionInfo_0x000E5126]
+CopyFrom    = 0x65126
+[HighwayIntersectionInfo_0x000F5126]
+CopyFrom    = 0x75126
+
+
+
+[HighwayIntersectionInfo_0x00005127]
+;Added by Tarkus 10/18/2008.
+;RHW-8/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ced1805
+PreviewEffect = preview_draggable_mis___025
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b...<
+CellLayout =...+b....
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =.../|...<
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ced1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced1800
+Costs       = 400
+[HighwayIntersectionInfo_0x00015127]
+CopyFrom    = 0x5127
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025127]
+CopyFrom    = 0x5127
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035127]
+CopyFrom    = 0x5127
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045127]
+;Added by Tarkus 10/18/2008.
+;RHW-8/MIS-1 Entrance Ramp-Style B--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5ced1A05
+PreviewEffect = preview_draggable_mis___026
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+...<
+CellLayout =...b+....
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|\...<
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5ced1A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced1A00
+Costs       = 400
+[HighwayIntersectionInfo_0x00055127]
+CopyFrom    = 0x45127
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065127]
+CopyFrom    = 0x45127
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075127]
+CopyFrom    = 0x45127
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085127]
+CopyFrom    = 0x5127
+[HighwayIntersectionInfo_0x00095127]
+CopyFrom    = 0x15127
+[HighwayIntersectionInfo_0x000A5127]
+CopyFrom    = 0x25127
+[HighwayIntersectionInfo_0x000B5127]
+CopyFrom    = 0x35127
+[HighwayIntersectionInfo_0x000C5127]
+CopyFrom    = 0x45127
+[HighwayIntersectionInfo_0x000D5127]
+CopyFrom    = 0x55127
+[HighwayIntersectionInfo_0x000E5127]
+CopyFrom    = 0x65127
+[HighwayIntersectionInfo_0x000F5127]
+CopyFrom    = 0x75127
+
+
+
+[HighwayIntersectionInfo_0x00005132]
+;Added by MRTNRLN 4/21/2011.
+;RHW-8S/MIS-1 Exit Ramp-Style C--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ced0405
+PreviewEffect = preview_rhw8s_ramp_c0
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...b<..
+CellLayout =..bc...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...|<..
+ConsLayout =../|...
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =...^...
+
+AutoTileBase=	0x5ced0400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced0400
+Costs       = 400
+[HighwayIntersectionInfo_0x00015132]
+CopyFrom    = 0x5132
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025132]
+CopyFrom    = 0x5132
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035132]
+CopyFrom    = 0x5132
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045132]
+;Added by MRTNRLN 4/21/2011.
+;RHW-8S/MIS-1 Entrance Ramp-Style C--Orthogonal
+Piece = 0, 0.0, 0, 0, 0x5ced0605
+PreviewEffect = preview_rhw8s_ramp_c1
+
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b.<..
+CellLayout =..cd....
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..|....
+ConsLayout =..|.<..
+ConsLayout =..|\...
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =..^....
+
+AutoTileBase=	0x5ced0600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced0600
+Costs       = 400
+[HighwayIntersectionInfo_0x00055132]
+CopyFrom    = 0x45132
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065132]
+CopyFrom    = 0x45132
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075132]
+CopyFrom    = 0x45132
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085132]
+CopyFrom    = 0x5132
+[HighwayIntersectionInfo_0x00095132]
+CopyFrom    = 0x15132
+[HighwayIntersectionInfo_0x000A5132]
+CopyFrom    = 0x25132
+[HighwayIntersectionInfo_0x000B5132]
+CopyFrom    = 0x35132
+[HighwayIntersectionInfo_0x000C5132]
+CopyFrom    = 0x45132
+[HighwayIntersectionInfo_0x000D5132]
+CopyFrom    = 0x55132
+[HighwayIntersectionInfo_0x000E5132]
+CopyFrom    = 0x65132
+[HighwayIntersectionInfo_0x000F5132]
+CopyFrom    = 0x75132
+
+
+
+[HighwayIntersectionInfo_0x00005133]
+;Added by MRTNRLN 4/21/2011.
+;RHW-8S/MIS-1 Exit Ramp-Style D--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ced1405
+PreviewEffect = preview_rhw8s_ramp_d0
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =....b...<
+CellLayout =....d....
+CellLayout =...cd....
+CellLayout =..fbe....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =....|...<
+ConsLayout =....|....
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+AutoTileBase=	0x5ced1400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced1400
+Costs       = 400
+[HighwayIntersectionInfo_0x00015133]
+CopyFrom    = 0x5133
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025133]
+CopyFrom    = 0x5133
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035133]
+CopyFrom    = 0x5133
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045133]
+;Added by MRTNRLN 4/21/2011.
+;RHW-8S/MIS-1 Entrance Ramp-Style D--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ced1605
+PreviewEffect = preview_rhw8s_ramp_d1
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b....<
+CellLayout =...c.....
+CellLayout =...cd....
+CellLayout =...ebf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|....<
+ConsLayout =...|.....
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5ced1600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ced1600
+Costs       = 400
+[HighwayIntersectionInfo_0x00055133]
+CopyFrom    = 0x45133
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065133]
+CopyFrom    = 0x45133
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075133]
+CopyFrom    = 0x45133
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085133]
+CopyFrom    = 0x5133
+[HighwayIntersectionInfo_0x00095133]
+CopyFrom    = 0x15133
+[HighwayIntersectionInfo_0x000A5133]
+CopyFrom    = 0x25133
+[HighwayIntersectionInfo_0x000B5133]
+CopyFrom    = 0x35133
+[HighwayIntersectionInfo_0x000C5133]
+CopyFrom    = 0x45133
+[HighwayIntersectionInfo_0x000D5133]
+CopyFrom    = 0x55133
+[HighwayIntersectionInfo_0x000E5133]
+CopyFrom    = 0x65133
+[HighwayIntersectionInfo_0x000F5133]
+CopyFrom    = 0x75133
+
+
+
+[HighwayIntersectionInfo_0x0000512A]
+;Added by Tarkus 10/18/2008.
+;RHW-8/Dual RHW-4 Splitter 1
+Piece = 0.0, 0.0, 0, 0, 0x5cdb0005
+PreviewEffect = preview_draggable_mis___035
+
+CellLayout =.......
+CellLayout =..bb...
+CellLayout =..cc<..
+CellLayout =..cc...
+CellLayout =..cc...
+CellLayout =..cc...
+CellLayout =..ab...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ..||<..
+ConsLayout = ..||...
+ConsLayout = ..||...
+ConsLayout = ..||...
+ConsLayout = .......
+ConsLayout = ..^....
+
+AutoTileBase=	0x5cdb0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cdb0000
+Costs       = 800
+[HighwayIntersectionInfo_0x0001512A]
+CopyFrom    = 0x512A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512A]
+CopyFrom    = 0x512A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512A]
+CopyFrom    = 0x512A
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0004512A]
+;Added by Tarkus 10/18/2008.
+;RHW-8/Dual RHW-4 Splitter 2
+Piece = 0.0, 0.0, 0, 0, 0x5cdb0205
+PreviewEffect = preview_draggable_mis___036
+
+CellLayout =.......
+CellLayout =..bb...
+CellLayout =..cc<..
+CellLayout =..cc...
+CellLayout =..cc...
+CellLayout =..cc...
+CellLayout =..ba...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ..||<..
+ConsLayout = ..||...
+ConsLayout = ..||...
+ConsLayout = ..||...
+ConsLayout = .......
+ConsLayout = ..^....
+
+AutoTileBase=	0x5cdb0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cdb0200
+Costs       = 800
+[HighwayIntersectionInfo_0x0005512A]
+CopyFrom    = 0x4512A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512A]
+CopyFrom    = 0x4512A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512A]
+CopyFrom    = 0x4512A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512A]
+CopyFrom    = 0x512A
+[HighwayIntersectionInfo_0x0009512A]
+CopyFrom    = 0x1512A
+[HighwayIntersectionInfo_0x000A512A]
+CopyFrom    = 0x2512A
+[HighwayIntersectionInfo_0x000B512A]
+CopyFrom    = 0x3512A
+[HighwayIntersectionInfo_0x000C512A]
+CopyFrom    = 0x4512A
+[HighwayIntersectionInfo_0x000D512A]
+CopyFrom    = 0x5512A
+[HighwayIntersectionInfo_0x000E512A]
+CopyFrom    = 0x6512A
+[HighwayIntersectionInfo_0x000F512A]
+CopyFrom    = 0x7512A
+
+
+
+[HighwayIntersectionInfo_0x0000512B]
+;Added by mrtnrln 12/24/2009.
+;RHW-8/Dual RHW-4 Splitter-Exit Ramp B
+Piece = -32.0, 0.0, 0, 0, 0x5cdb1005
+PreviewEffect = rhw8_to_dualrhw4sp_b1
+
+CellLayout =.......
+CellLayout =...ag..
+CellLayout =...bb<.
+CellLayout =...bb..
+CellLayout =..+bb..
+CellLayout =..dce..
+CellLayout =.hc....
+CellLayout =....^..
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00000301
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x03000003, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = h - dirtroad: 0x03010000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...||<.
+ConsLayout =...||..
+ConsLayout =..#||..
+ConsLayout =..//...
+ConsLayout =../....
+ConsLayout =....^..
+
+AutoTileBase=	0x5cdb1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cdb1000
+Costs       = 1000
+[HighwayIntersectionInfo_0x0001512B]
+CopyFrom    = 0x512B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512B]
+CopyFrom    = 0x512B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512B]
+CopyFrom    = 0x512B
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0004512B]
+;Added by mrtnrln 14/23/2009.
+;RHW-8/Dual RHW-4 Splitter-Entrance Ramp B
+Piece = 0.0, 0.0, 0, 0, 0x5cdb1305
+PreviewEffect = rhw8_to_dualrhw4sp_b2
+
+CellLayout =.......
+CellLayout =.ga....
+CellLayout =.bb<...
+CellLayout =.bb....
+CellLayout =.bb+...
+CellLayout =.ecd...
+CellLayout =...ch..
+CellLayout =.^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x00030100 Lightrail: 0x00020200, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = h - dirtroad: 0x01000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.||<...
+ConsLayout =.||....
+ConsLayout =.||#...
+ConsLayout =..\\...
+ConsLayout =...\...
+ConsLayout =.^.....
+
+AutoTileBase=	0x5cdb1300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cdb1300
+Costs       = 1000
+[HighwayIntersectionInfo_0x0005512B]
+CopyFrom    = 0x4512B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512B]
+CopyFrom    = 0x4512B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512B]
+CopyFrom    = 0x4512B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512B]
+CopyFrom    = 0x512B
+[HighwayIntersectionInfo_0x0009512B]
+CopyFrom    = 0x1512B
+[HighwayIntersectionInfo_0x000A512B]
+CopyFrom    = 0x2512B
+[HighwayIntersectionInfo_0x000B512B]
+CopyFrom    = 0x3512B
+[HighwayIntersectionInfo_0x000C512B]
+CopyFrom    = 0x4512B
+[HighwayIntersectionInfo_0x000D512B]
+CopyFrom    = 0x5512B
+[HighwayIntersectionInfo_0x000E512B]
+CopyFrom    = 0x6512B
+[HighwayIntersectionInfo_0x000F512B]
+CopyFrom    = 0x7512B
+
+
+
+[HighwayIntersectionInfo_0x0000512C]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Exit Ramp Style A
+Piece = 0.0, -16.0, 0, 1, 0x5CED0085
+PreviewEffect = preview_rhw8cramp__a_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =..AA...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =../|..<
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced0080
+PlaceQueryID = 0x5ced0080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512C]
+CopyFrom    = 0x512C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512C]
+CopyFrom    = 0x512C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512C]
+CopyFrom    = 0x512C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512C]
+CopyFrom    = 0x512C
+[HighwayIntersectionInfo_0x0009512C]
+CopyFrom    = 0x1512C
+[HighwayIntersectionInfo_0x000A512C]
+CopyFrom    = 0x2512C
+[HighwayIntersectionInfo_0x000B512C]
+CopyFrom    = 0x3512C
+
+
+
+[HighwayIntersectionInfo_0x0004512C]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style A
+Piece = 16.0, -16.0, 0, 1, 0x5CED0285
+PreviewEffect = preview_rhw8cramp__a_2__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...AA..
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...|\.<
+ConsLayout =...||..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced0280
+PlaceQueryID = 0x5ced0280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512C]
+CopyFrom    = 0x4512C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512C]
+CopyFrom    = 0x4512C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512C]
+CopyFrom    = 0x4512C
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512C]
+CopyFrom    = 0x4512C
+[HighwayIntersectionInfo_0x000D512C]
+CopyFrom    = 0x5512C
+[HighwayIntersectionInfo_0x000E512C]
+CopyFrom    = 0x6512C
+[HighwayIntersectionInfo_0x000F512C]
+CopyFrom    = 0x7512C
+
+[HighwayIntersectionInfo_0x0000512D]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Exit Ramp Style B
+Piece = 0.0, 0.0, 0, 0, 0x5CED1085
+PreviewEffect = preview_rhw8cramp__b_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =.CBA...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =..||..<
+ConsLayout =../|...
+ConsLayout =../....
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced1080
+PlaceQueryID = 0x5ced1080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512D]
+CopyFrom    = 0x512D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512D]
+CopyFrom    = 0x512D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512D]
+CopyFrom    = 0x512D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512D]
+CopyFrom    = 0x512D
+[HighwayIntersectionInfo_0x0009512D]
+CopyFrom    = 0x1512D
+[HighwayIntersectionInfo_0x000A512D]
+CopyFrom    = 0x2512D
+[HighwayIntersectionInfo_0x000B512D]
+CopyFrom    = 0x3512D
+
+
+
+[HighwayIntersectionInfo_0x0004512D]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style B
+Piece = 0.0, 0.0, 0, 1, 0x5CED1085
+PreviewEffect = preview_rhw8cramp__b_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...ABC.
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...||.<
+ConsLayout =...|\..
+ConsLayout =....\..
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced1280
+PlaceQueryID = 0x5ced1280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512D]
+CopyFrom    = 0x4512D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512D]
+CopyFrom    = 0x4512D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512D]
+CopyFrom    = 0x4512D
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512D]
+CopyFrom    = 0x4512D
+[HighwayIntersectionInfo_0x000D512D]
+CopyFrom    = 0x5512D
+[HighwayIntersectionInfo_0x000E512D]
+CopyFrom    = 0x6512D
+[HighwayIntersectionInfo_0x000F512D]
+CopyFrom    = 0x7512D
+
+
+
+[HighwayIntersectionInfo_0x0000512E]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Exit Ramp Style C
+Piece = 0.0, 0.0, 0, 0, 0x5CED2085
+PreviewEffect = preview_rhw8cramp__c_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BC...
+CellLayout =..A....
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =../|..<
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED2080
+PlaceQueryID = 0x5CED2080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512E]
+CopyFrom    = 0x512E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512E]
+CopyFrom    = 0x512E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512E]
+CopyFrom    = 0x512E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512E]
+CopyFrom    = 0x512E
+[HighwayIntersectionInfo_0x0009512E]
+CopyFrom    = 0x1512E
+[HighwayIntersectionInfo_0x000A512E]
+CopyFrom    = 0x2512E
+[HighwayIntersectionInfo_0x000B512E]
+CopyFrom    = 0x3512E
+
+
+
+[HighwayIntersectionInfo_0x0004512E]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style C
+Piece = 0.0, 0.0, 0, 1, 0x5CED2285
+PreviewEffect = preview_rhw8cramp__c_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...CB..
+CellLayout =....A..
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...|\.<
+ConsLayout =....|..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED2280
+PlaceQueryID = 0x5CED2280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512E]
+CopyFrom    = 0x4512E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512E]
+CopyFrom    = 0x4512E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512E]
+CopyFrom    = 0x4512E
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512E]
+CopyFrom    = 0x4512E
+[HighwayIntersectionInfo_0x000D512E]
+CopyFrom    = 0x5512E
+[HighwayIntersectionInfo_0x000E512E]
+CopyFrom    = 0x6512E
+[HighwayIntersectionInfo_0x000F512E]
+CopyFrom    = 0x7512E
+
+
+
+[HighwayIntersectionInfo_0x0000512F]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Exit Ramp Style D
+Piece = 0.0, 0.0, 0, 0, 0x5CED3085
+PreviewEffect = preview_rhw8cramp__d_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...B...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =.CBD...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =..||..<
+ConsLayout =../|...
+ConsLayout =../....
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED3080
+PlaceQueryID = 0x5CED3080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512F]
+CopyFrom    = 0x512F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512F]
+CopyFrom    = 0x512F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512F]
+CopyFrom    = 0x512F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512F]
+CopyFrom    = 0x512F
+[HighwayIntersectionInfo_0x0009512F]
+CopyFrom    = 0x1512F
+[HighwayIntersectionInfo_0x000A512F]
+CopyFrom    = 0x2512F
+[HighwayIntersectionInfo_0x000B512F]
+CopyFrom    = 0x3512F
+
+
+
+[HighwayIntersectionInfo_0x0004512F]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style D
+Piece = 0.0, 0.0, 0, 1, 0x5CED3085
+PreviewEffect = preview_rhw8cramp__d_1__000
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...B...
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...DBC.
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|...
+ConsLayout =...||.<
+ConsLayout =...|\..
+ConsLayout =....\..
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED3280
+PlaceQueryID = 0x5CED3280
+Costs        = 400
+
+
+[HighwayIntersectionInfo_0x0005512F]
+CopyFrom    = 0x4512F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512F]
+CopyFrom    = 0x4512F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512F]
+CopyFrom    = 0x4512F
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512F]
+CopyFrom    = 0x4512F
+[HighwayIntersectionInfo_0x000D512F]
+CopyFrom    = 0x5512F
+[HighwayIntersectionInfo_0x000E512F]
+CopyFrom    = 0x6512F
+[HighwayIntersectionInfo_0x000F512F]
+CopyFrom    = 0x7512F
+
+
+
+[HighwayIntersectionInfo_0x00005130]
+;Added by Tarkus 8/13/2007.
+;RHW-10/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cef0005
+PreviewEffect = preview_draggable_mis___023
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..cd...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cef0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cef0000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015130]
+CopyFrom    = 0x5130
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025130]
+CopyFrom    = 0x5130
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035130]
+CopyFrom    = 0x5130
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045130]
+;Added by Tarkus 11/07/2007.
+;RHW-10/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cef0205
+PreviewEffect = preview_draggable_mis___024
+
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|.<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cef0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cef0200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055130]
+CopyFrom    = 0x45130
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065130]
+CopyFrom    = 0x45130
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075130]
+CopyFrom    = 0x45130
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x00085130]
+CopyFrom    = 0x5130
+[HighwayIntersectionInfo_0x00095130]
+CopyFrom    = 0x15130
+[HighwayIntersectionInfo_0x000A5130]
+CopyFrom    = 0x25130
+[HighwayIntersectionInfo_0x000B5130]
+CopyFrom    = 0x35130
+[HighwayIntersectionInfo_0x000C5130]
+CopyFrom    = 0x45130
+[HighwayIntersectionInfo_0x000D5130]
+CopyFrom    = 0x55130
+[HighwayIntersectionInfo_0x000E5130]
+CopyFrom    = 0x65130
+[HighwayIntersectionInfo_0x000F5130]
+CopyFrom    = 0x75130
+
+
+
+[HighwayIntersectionInfo_0x00005131]
+;Added by Tarkus 10/18/2008.
+;RHW-10/MIS-1 Exit Ramp-Style B--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cef1805
+PreviewEffect = preview_draggable_mis___027
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...+b...<
+CellLayout =...+b....
+CellLayout =...dc....
+CellLayout =..fge....
+CellLayout =....^....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000201
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =....|....
+ConsLayout =.../|...<
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =.../|....
+ConsLayout =....^....
+
+
+AutoTileBase=	0x5cef1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cef1800
+Costs       = 400
+[HighwayIntersectionInfo_0x00015131]
+CopyFrom    = 0x5131
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025131]
+CopyFrom    = 0x5131
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035131]
+CopyFrom    = 0x5131
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045131]
+;Added by Tarkus 10/18/2008.
+;RHW-10/MIS-1 Entrance Ramp-Style B--Orthogonal
+Piece = 16.0, 0.0, 0, 1, 0x5cef1A05
+PreviewEffect = preview_draggable_mis___028
+
+CellLayout =.........
+CellLayout =...a.....
+CellLayout =...b+...<
+CellLayout =...b+....
+CellLayout =...cd....
+CellLayout =...egf...
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02030200
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = g - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =...|.....
+ConsLayout =...|\...<
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...|\....
+ConsLayout =...^.....
+
+AutoTileBase=	0x5cef1A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cef1A00
+Costs       = 400
+[HighwayIntersectionInfo_0x00055131]
+CopyFrom    = 0x45131
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065131]
+CopyFrom    = 0x45131
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075131]
+CopyFrom    = 0x45131
+Rotate		= 3
+;clones for rotation
+[HighwayIntersectionInfo_0x00085131]
+CopyFrom    = 0x5131
+[HighwayIntersectionInfo_0x00095131]
+CopyFrom    = 0x15131
+[HighwayIntersectionInfo_0x000A5131]
+CopyFrom    = 0x25131
+[HighwayIntersectionInfo_0x000B5131]
+CopyFrom    = 0x35131
+[HighwayIntersectionInfo_0x000C5131]
+CopyFrom    = 0x45131
+[HighwayIntersectionInfo_0x000D5131]
+CopyFrom    = 0x55131
+[HighwayIntersectionInfo_0x000E5131]
+CopyFrom    = 0x65131
+[HighwayIntersectionInfo_0x000F5131]
+CopyFrom    = 0x75131
+
+
+
+
+[HighwayIntersectionInfo_0x0000512C]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style A
+Piece = 0.0, 0.0, 0, 0, 0x5CED0085
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =..AA...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =../|..<
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced0080
+PlaceQueryID = 0x5ced0080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512C]
+CopyFrom    = 0x512C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512C]
+CopyFrom    = 0x512C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512C]
+CopyFrom    = 0x512C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512C]
+CopyFrom    = 0x512C
+[HighwayIntersectionInfo_0x0009512C]
+CopyFrom    = 0x1512C
+[HighwayIntersectionInfo_0x000A512C]
+CopyFrom    = 0x2512C
+[HighwayIntersectionInfo_0x000B512C]
+CopyFrom    = 0x3512C
+
+
+
+[HighwayIntersectionInfo_0x0004512C]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 ExitRamp Style A
+Piece = 0.0, 0.0, 0, 0, 0x5CED0285
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...AA..
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...|\.<
+ConsLayout =...||..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced0280
+PlaceQueryID = 0x5ced0280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512C]
+CopyFrom    = 0x4512C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512C]
+CopyFrom    = 0x4512C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512C]
+CopyFrom    = 0x4512C
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512C]
+CopyFrom    = 0x4512C
+[HighwayIntersectionInfo_0x000D512C]
+CopyFrom    = 0x5512C
+[HighwayIntersectionInfo_0x000E512C]
+CopyFrom    = 0x6512C
+[HighwayIntersectionInfo_0x000F512C]
+CopyFrom    = 0x7512C
+
+
+
+[HighwayIntersectionInfo_0x0000512D]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style B
+Piece = 0.0, 0.0, 0, 0, 0x5CED1085
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =.CBA...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =..||..<
+ConsLayout =../|...
+ConsLayout =../....
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced1080
+PlaceQueryID = 0x5ced1080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512D]
+CopyFrom    = 0x512D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512D]
+CopyFrom    = 0x512D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512D]
+CopyFrom    = 0x512D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512D]
+CopyFrom    = 0x512D
+[HighwayIntersectionInfo_0x0009512D]
+CopyFrom    = 0x1512D
+[HighwayIntersectionInfo_0x000A512D]
+CopyFrom    = 0x2512D
+[HighwayIntersectionInfo_0x000B512D]
+CopyFrom    = 0x3512D
+
+
+
+[HighwayIntersectionInfo_0x0004512D]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 ExitRamp Style B
+Piece = 0.0, 0.0, 0, 0, 0x5CED1285
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...ABC.
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...||.<
+ConsLayout =...|\..
+ConsLayout =....\..
+ConsLayout =...^...
+
+AutoTileBase = 0x5ced1280
+PlaceQueryID = 0x5ced1280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512D]
+CopyFrom    = 0x4512D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512D]
+CopyFrom    = 0x4512D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512D]
+CopyFrom    = 0x4512D
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512D]
+CopyFrom    = 0x4512D
+[HighwayIntersectionInfo_0x000D512D]
+CopyFrom    = 0x5512D
+[HighwayIntersectionInfo_0x000E512D]
+CopyFrom    = 0x6512D
+[HighwayIntersectionInfo_0x000F512D]
+CopyFrom    = 0x7512D
+
+
+
+
+[HighwayIntersectionInfo_0x0000512E]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style C
+Piece = 0.0, 0.0, 0, 0, 0x5CED2085
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =..AC...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =../|..<
+ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED2080
+PlaceQueryID = 0x5CED2080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512E]
+CopyFrom    = 0x512E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512E]
+CopyFrom    = 0x512E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512E]
+CopyFrom    = 0x512E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512E]
+CopyFrom    = 0x512E
+[HighwayIntersectionInfo_0x0009512E]
+CopyFrom    = 0x1512E
+[HighwayIntersectionInfo_0x000A512E]
+CopyFrom    = 0x2512E
+[HighwayIntersectionInfo_0x000B512E]
+CopyFrom    = 0x3512E
+
+
+
+[HighwayIntersectionInfo_0x0004512E]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 ExitRamp Style C
+Piece = 0.0, 0.0, 0, 0, 0x5CED2285
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...CA..
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...|\.<
+ConsLayout =...||..
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED2280
+PlaceQueryID = 0x5CED2280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512E]
+CopyFrom    = 0x4512E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512E]
+CopyFrom    = 0x4512E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512E]
+CopyFrom    = 0x4512E
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512E]
+CopyFrom    = 0x4512E
+[HighwayIntersectionInfo_0x000D512E]
+CopyFrom    = 0x5512E
+[HighwayIntersectionInfo_0x000E512E]
+CopyFrom    = 0x6512E
+[HighwayIntersectionInfo_0x000F512E]
+CopyFrom    = 0x7512E
+
+
+
+[HighwayIntersectionInfo_0x0000512F]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 Entrance Ramp Style D
+Piece = 0.0, 0.0, 0, 0, 0x5CED3085
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =..BB...
+CellLayout =..BB..<
+CellLayout =..BB...
+CellLayout =.CBA...
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|...
+ConsLayout =..||..<
+ConsLayout =../|...
+ConsLayout =../....
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED3080
+PlaceQueryID = 0x5CED3080
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0001512F]
+CopyFrom    = 0x512F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002512F]
+CopyFrom    = 0x512F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003512F]
+CopyFrom    = 0x512F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008512F]
+CopyFrom    = 0x512F
+[HighwayIntersectionInfo_0x0009512F]
+CopyFrom    = 0x1512F
+[HighwayIntersectionInfo_0x000A512F]
+CopyFrom    = 0x2512F
+[HighwayIntersectionInfo_0x000B512F]
+CopyFrom    = 0x3512F
+
+
+
+[HighwayIntersectionInfo_0x0004512F]
+;Added by Blue Lightning 10/11/2009
+;RHW-8C/MIS-1 ExitRamp Style D
+Piece = 0.0, 0.0, 0, 0, 0x5CED3285
+PreviewEffect = preview_test_00
+
+CellLayout =.......
+CellLayout =...A...
+CellLayout =...BB..
+CellLayout =...BB.<
+CellLayout =...BB..
+CellLayout =...ABC.
+CellLayout =...^...
+
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|\..
+ConsLayout =...||.<
+ConsLayout =...|\..
+ConsLayout =....\..
+ConsLayout =...^...
+
+AutoTileBase = 0x5CED3280
+PlaceQueryID = 0x5CED3280
+Costs        = 400
+
+[HighwayIntersectionInfo_0x0005512F]
+CopyFrom    = 0x4512F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006512F]
+CopyFrom    = 0x4512F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007512F]
+CopyFrom    = 0x4512F
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C512F]
+CopyFrom    = 0x4512F
+[HighwayIntersectionInfo_0x000D512F]
+CopyFrom    = 0x5512F
+[HighwayIntersectionInfo_0x000E512F]
+CopyFrom    = 0x6512F
+[HighwayIntersectionInfo_0x000F512F]
+CopyFrom    = 0x7512F
+
+
+
+[HighwayIntersectionInfo_0x00005125]
+;Added by deathtopumpkins 07/02/09.
+;RHW-6C to 4+2 Transition
+Piece = 0.0, 0.0, 0, 0, 0x5cff0005
+PreviewEffect = preview_rhw6c_transition4_2
+
+CellLayout =.....
+CellLayout =.EDB.
+CellLayout =.AAA<
+CellLayout =.AAA.
+CellLayout =.AAA.
+CellLayout =.AAA.
+CellLayout =.ACA.
+CellLayout =.E.B.
+CellLayout =..^..
+
+CheckType  = A - dirtroad: 0x02000200
+CheckType  = B - dirtroad: 0x02000200 Road: 0x00010100, 0xFFFFFFFF optional
+CheckType  = C - dirtroad: 0x00000200, 0x0000FF00 check optional
+CheckType  = D - dirtroad: 0x02000200 Road: 0x00030300, 0xFFFFFFFF optional
+CheckType  = E - dirtroad: 0x02000200 Road: 0x01000001, 0xFFFFFFFF optional
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.|||<
+ConsLayout =.|||.
+ConsLayout =.|||.
+ConsLayout =.|||.
+ConsLayout =.|.|.
+ConsLayout =..^..
+ConsLayout =.....
+
+AutoTileBase = 0x5cff0000
+PlaceQueryID = 0x5cff0000
+Costs = 650
+
+[HighwayIntersectionInfo_0x00015125]
+CopyFrom    = 0x5125
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025125]
+CopyFrom    = 0x5125
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035125]
+CopyFrom    = 0x5125
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045125]
+CopyFrom    = 0x5125
+[HighwayIntersectionInfo_0x00055125]
+CopyFrom    = 0x15125
+[HighwayIntersectionInfo_0x00065125]
+CopyFrom    = 0x25125
+[HighwayIntersectionInfo_0x00075125]
+CopyFrom    = 0x35125
+[HighwayIntersectionInfo_0x00085125]
+CopyFrom    = 0x5125
+[HighwayIntersectionInfo_0x00095125]
+CopyFrom    = 0x15125
+[HighwayIntersectionInfo_0x000A5125]
+CopyFrom    = 0x25125
+[HighwayIntersectionInfo_0x000B5125]
+CopyFrom    = 0x35125
+[HighwayIntersectionInfo_0x000C5125]
+CopyFrom    = 0x5125
+[HighwayIntersectionInfo_0x000D5125]
+CopyFrom    = 0x15125
+[HighwayIntersectionInfo_0x000E5125]
+CopyFrom    = 0x25125
+[HighwayIntersectionInfo_0x000F5125]
+CopyFrom    = 0x35125
+
+
+
+[HighwayIntersectionInfo_0x00005110]
+; Added by J.M. van Leeuwen 07/07/2009
+; RHW-2 to 2 parallel MIS-ramps left
+Piece = 0.0, 0.0, 0, 0, 0x5cae2005
+PreviewEffect = preview_rhw2_to_2misl
+
+CellLayout =....
+CellLayout =.cb.
+CellLayout =.zz<
+CellLayout =.zz.
+CellLayout =.zz.
+CellLayout =.a..
+CellLayout =.^..
+
+CheckType = a - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = b - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.||<
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase=   0x5cae2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae2000
+Costs       = 640
+[HighwayIntersectionInfo_0x00015110]
+CopyFrom    = 0x5110
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025110]
+CopyFrom    = 0x5110
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035110]
+CopyFrom    = 0x5110
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00045110]
+; Added by J.M. van Leeuwen 07/07/2009
+; RHW-2 to 2 parallel MIS-ramps right
+Piece = 0.0, 0.0, 0, 0, 0x5cae2205
+PreviewEffect = preview_rhw2_to_2misr
+
+CellLayout =....
+CellLayout =.cb.
+CellLayout =.zz<
+CellLayout =.zz.
+CellLayout =.zz.
+CellLayout =..a.
+CellLayout =.^..
+
+CheckType = a - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = b - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.||<
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase=   0x5cae2200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae2200
+Costs       = 640
+[HighwayIntersectionInfo_0x00055110]
+CopyFrom    = 0x45110
+Rotate      = 1
+[HighwayIntersectionInfo_0x00065110]
+CopyFrom    = 0x45110
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075110]
+CopyFrom    = 0x45110
+Rotate      = 3
+
+;clones for rotation
+[HighwayIntersectionInfo_0x00085110]
+CopyFrom    = 0x5110
+[HighwayIntersectionInfo_0x00095110]
+CopyFrom    = 0x15110
+[HighwayIntersectionInfo_0x000A5110]
+CopyFrom    = 0x25110
+[HighwayIntersectionInfo_0x000B5110]
+CopyFrom    = 0x35110
+[HighwayIntersectionInfo_0x000C5110]
+CopyFrom    = 0x45110
+[HighwayIntersectionInfo_0x000D5110]
+CopyFrom    = 0x55110
+[HighwayIntersectionInfo_0x000E5110]
+CopyFrom    = 0x65110
+[HighwayIntersectionInfo_0x000F5110]
+CopyFrom    = 0x75110
+
+[HighwayIntersectionInfo_0x00005111]
+; Added by mrtnrln 05/28/2010
+; RHW-2 to 2 parallel MIS-ramps symetrical
+Piece = 0.0, 0.0, 0, 0, 0x5cae2405
+PreviewEffect = rhw2_to_2miss
+
+CellLayout =.....
+CellLayout =.c.b.
+CellLayout =.zzz<
+CellLayout =.zzz.
+CellLayout =.zzz.
+CellLayout =..a..
+CellLayout =.^...
+
+CheckType = a - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = b - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =.....
+ConsLayout =.....
+ConsLayout =.|||<
+ConsLayout =.|||.
+ConsLayout =.|||.
+ConsLayout =.....
+ConsLayout =.^...
+
+AutoTileBase=   0x5cae2400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae2400
+Costs       = 960
+[HighwayIntersectionInfo_0x00015111]
+CopyFrom    = 0x5111
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025111]
+CopyFrom    = 0x5111
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035111]
+CopyFrom    = 0x5111
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045111]
+CopyFrom    = 0x5111
+[HighwayIntersectionInfo_0x00055111]
+CopyFrom    = 0x15111
+[HighwayIntersectionInfo_0x00065111]
+CopyFrom    = 0x25111
+[HighwayIntersectionInfo_0x00075111]
+CopyFrom    = 0x35111
+[HighwayIntersectionInfo_0x00085111]
+CopyFrom    = 0x5111
+[HighwayIntersectionInfo_0x00095111]
+CopyFrom    = 0x15111
+[HighwayIntersectionInfo_0x000A5111]
+CopyFrom    = 0x25111
+[HighwayIntersectionInfo_0x000B5111]
+CopyFrom    = 0x35111
+[HighwayIntersectionInfo_0x000C5111]
+CopyFrom    = 0x5111
+[HighwayIntersectionInfo_0x000D5111]
+CopyFrom    = 0x15111
+[HighwayIntersectionInfo_0x000E5111]
+CopyFrom    = 0x25111
+[HighwayIntersectionInfo_0x000F5111]
+CopyFrom    = 0x35111
+
+
+[HighwayIntersectionInfo_0x00005112]
+; Added by J.M. van Leeuwen 07/08/2009
+; RHW-2 to MIS sidesplit
+; 0x02040000
+; 02/04/00/00
+; South/East/North/West
+
+Piece = 0.0, 0.0, 0, 0, 0x5cae2045
+PreviewEffect = preview_rhw2_to_missp
+
+CellLayout =......
+CellLayout =......
+CellLayout =bzzzb<
+CellLayout =..z...
+CellLayout =..a...
+CellLayout =.^....
+
+CheckType = a - dirtroad: 0x00000200, 0xffff00ff optional
+CheckType = b - dirtroad: 0x00020002 OneWayRoad: 0x00000101, 0xffffffff optional
+CheckType = z - dirtroad: 0x02000200
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =.|||.<
+ConsLayout =..|...
+ConsLayout =......
+ConsLayout =.^....
+
+AutoTileBase=   0x5cae2040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae2040
+Costs       = 320
+[HighwayIntersectionInfo_0x00015112]
+CopyFrom    = 0x5112
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025112]
+CopyFrom    = 0x5112
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035112]
+CopyFrom    = 0x5112
+Rotate      = 3
+;clones for rotation
+[HighwayIntersectionInfo_0x00045112]
+CopyFrom    = 0x5112
+[HighwayIntersectionInfo_0x00055112]
+CopyFrom    = 0x15112
+[HighwayIntersectionInfo_0x00065112]
+CopyFrom    = 0x25112
+[HighwayIntersectionInfo_0x00075112]
+CopyFrom    = 0x35112
+[HighwayIntersectionInfo_0x00085112]
+CopyFrom    = 0x5112
+[HighwayIntersectionInfo_0x00095112]
+CopyFrom    = 0x15112
+[HighwayIntersectionInfo_0x000A5112]
+CopyFrom    = 0x25112
+[HighwayIntersectionInfo_0x000B5112]
+CopyFrom    = 0x35112
+[HighwayIntersectionInfo_0x000C5112]
+CopyFrom    = 0x5112
+[HighwayIntersectionInfo_0x000D5112]
+CopyFrom    = 0x15112
+[HighwayIntersectionInfo_0x000E5112]
+CopyFrom    = 0x25112
+[HighwayIntersectionInfo_0x000F5112]
+CopyFrom    = 0x35112
+
+
+
+[HighwayIntersectionInfo_0x00005114]
+; Added by Tarkus 05/11/2010
+; RHW-2/Dual MIS Splitter C
+Piece = 0.0, 0.0, 0, 0, 0x5cae1005
+PreviewEffect = preview_draggable_mis___047
+
+CellLayout =.....
+CellLayout =.a.c.
+CellLayout =.b+d<
+CellLayout =.+e+.
+CellLayout =..f..
+CellLayout =..^..
+
+CheckType = a - dirtroad: 0x00030100
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x03010000
+CheckType = d - dirtroad: 0x00000301
+CheckType = e - dirtroad: 0x02000200
+CheckType = f - dirtroad: 0x00000200, 0xff000000 optional
+
+ConsLayout =.....
+ConsLayout =.\./.
+ConsLayout =.\|/<
+ConsLayout =..|..
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase=   0x5cae1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cae1000
+Costs       = 640
+[HighwayIntersectionInfo_0x00015114]
+CopyFrom    = 0x5114
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025114]
+CopyFrom    = 0x5114
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035114]
+CopyFrom    = 0x5114
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045114]
+CopyFrom    = 0x5114
+[HighwayIntersectionInfo_0x00055114]
+CopyFrom    = 0x5114
+Rotate      = 1
+[HighwayIntersectionInfo_0x00065114]
+CopyFrom    = 0x5114
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075114]
+CopyFrom    = 0x5114
+Rotate      = 3
+[HighwayIntersectionInfo_0x00085114]
+CopyFrom    = 0x5114
+[HighwayIntersectionInfo_0x00095114]
+CopyFrom    = 0x5114
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A5114]
+CopyFrom    = 0x5114
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B5114]
+CopyFrom    = 0x5114
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C5114]
+CopyFrom    = 0x5114
+[HighwayIntersectionInfo_0x000D5114]
+CopyFrom    = 0x5114
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E5114]
+CopyFrom    = 0x5114
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F5114]
+CopyFrom    = 0x5114
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00005109]
+; Added by Tarkus 05/11/2010
+; RHW-4/Dual MIS Splitter C
+Piece = 0.0, 0.0, 0, 0, 0x5cbe1005
+PreviewEffect = preview_draggable_mis___048
+
+CellLayout =.....
+CellLayout =.a.c.
+CellLayout =.b+d<
+CellLayout =.+e+.
+CellLayout =..f..
+CellLayout =..^..
+
+CheckType = a - dirtroad: 0x00030100
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x03010000
+CheckType = d - dirtroad: 0x00000301
+CheckType = e - dirtroad: 0x02000200
+CheckType = f - dirtroad: 0x00000200, 0xff000000 optional
+
+ConsLayout =.....
+ConsLayout =.\./.
+ConsLayout =.\|/<
+ConsLayout =..|..
+ConsLayout =.....
+ConsLayout =..^..
+
+AutoTileBase=   0x5cbe1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbe1000
+Costs       = 640
+[HighwayIntersectionInfo_0x00015109]
+CopyFrom    = 0x5109
+Rotate      = 1
+[HighwayIntersectionInfo_0x00025109]
+CopyFrom    = 0x5109
+Rotate      = 2
+[HighwayIntersectionInfo_0x00035109]
+CopyFrom    = 0x5109
+Rotate      = 3
+[HighwayIntersectionInfo_0x00045109]
+CopyFrom    = 0x5109
+Transpose = 1
+[HighwayIntersectionInfo_0x00055109]
+CopyFrom    = 0x45109
+Rotate      = 3
+[HighwayIntersectionInfo_0x00065109]
+CopyFrom    = 0x45109
+Rotate      = 2
+[HighwayIntersectionInfo_0x00075109]
+CopyFrom    = 0x45109
+Rotate      = 1
+[HighwayIntersectionInfo_0x00085109]
+CopyFrom    = 0x5109
+[HighwayIntersectionInfo_0x00095109]
+CopyFrom    = 0x15109
+[HighwayIntersectionInfo_0x000A5109]
+CopyFrom    = 0x25109
+[HighwayIntersectionInfo_0x000B5109]
+CopyFrom    = 0x35109
+[HighwayIntersectionInfo_0x000C5109]
+CopyFrom    = 0x45109
+[HighwayIntersectionInfo_0x000D5109]
+CopyFrom    = 0x55109
+[HighwayIntersectionInfo_0x000E5109]
+CopyFrom    = 0x65109
+[HighwayIntersectionInfo_0x000F5109]
+CopyFrom    = 0x75109
+
+
+[HighwayIntersectionInfo_0x00005134]
+;Added by mrtnrln 05/29/2009.
+;RHW-10/RHW-6S+4 Splitter-Exit Ramp A
+Piece = -16.0, 0.0, 0, 0, 0x5cdb0305
+PreviewEffect = rhw-10s-splitter-a2
+
+CellLayout =.......
+CellLayout =..ba...
+CellLayout =..cc<..
+CellLayout =.ccc...
+CellLayout =.ccc...
+CellLayout =.c.d...
+CellLayout =.e.....
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ..||<..
+ConsLayout = .|||...
+ConsLayout = .|||...
+ConsLayout = .|.....
+ConsLayout = .......
+ConsLayout = ..^....
+
+AutoTileBase=	0x5cfb0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cfb0300
+Costs       = 800
+[HighwayIntersectionInfo_0x00015134]
+CopyFrom    = 0x5134
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025134]
+CopyFrom    = 0x5134
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035134]
+CopyFrom    = 0x5134
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00045134]
+;Added by mrtnrln 05/29/2009.
+;RHW-10/RHW-6S+4 Splitter-Entrance Ramp A
+Piece = 0.0, 0.0, 0, 0, 0x5cfb0005
+PreviewEffect = rhw-10s-splitter-a1
+
+CellLayout =.......
+CellLayout =..ab...
+CellLayout =..cc<..
+CellLayout =..ccc..
+CellLayout =..ccc..
+CellLayout =..d.c..
+CellLayout =....e..
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ..||<..
+ConsLayout = ..|||..
+ConsLayout = ..|||..
+ConsLayout = ....|..
+ConsLayout = .......
+ConsLayout = ..^....
+
+AutoTileBase=	0x5cfb0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cfb0000
+Costs       = 800
+[HighwayIntersectionInfo_0x00055134]
+CopyFrom    = 0x45134
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065134]
+CopyFrom    = 0x45134
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075134]
+CopyFrom    = 0x45134
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085134]
+CopyFrom    = 0x5134
+[HighwayIntersectionInfo_0x00095134]
+CopyFrom    = 0x15134
+[HighwayIntersectionInfo_0x000A5134]
+CopyFrom    = 0x25134
+[HighwayIntersectionInfo_0x000B5134]
+CopyFrom    = 0x35134
+[HighwayIntersectionInfo_0x000C5134]
+CopyFrom    = 0x45134
+[HighwayIntersectionInfo_0x000D5134]
+CopyFrom    = 0x55134
+[HighwayIntersectionInfo_0x000E5134]
+CopyFrom    = 0x65134
+[HighwayIntersectionInfo_0x000F5134]
+CopyFrom    = 0x75134
+
+
+
+[HighwayIntersectionInfo_0x00005135]
+;Added by mrtnrln 05/29/2009.
+;RHW-10/RHW-6S+4 Splitter-Exit Ramp B
+Piece = -32.0, 0.0, 0, 0, 0x5cfb1305
+PreviewEffect = rhw-10s-splitter-b2
+
+CellLayout =.......
+CellLayout =...ga..
+CellLayout =...bb<.
+CellLayout =..+bb..
+CellLayout =..+bb..
+CellLayout =..dcb..
+CellLayout =.hc.e..
+CellLayout =....^..
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00000301
+CheckType = d - dirtroad: 0x03010000
+CheckType = e - dirtroad: 0x02000200 Road: 0x01030003, 0xffffffff optional
+CheckType = f - dirtroad: 0x03000001 Lightrail: 0x03000003, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = h - dirtroad: 0x03010000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...||<.
+ConsLayout =..#||..
+ConsLayout =..#||..
+ConsLayout =..//|..
+ConsLayout =../....
+ConsLayout =....^..
+
+AutoTileBase=	0x5cfb1300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cfb1300
+Costs       = 1000
+[HighwayIntersectionInfo_0x00015135]
+CopyFrom    = 0x5135
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025135]
+CopyFrom    = 0x5135
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035135]
+CopyFrom    = 0x5135
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00045135]
+;Added by mrtnrln 05/29/2009.
+;RHW-10/RHW-6S+4 Splitter-Entrance Ramp B
+Piece = 0.0, 0.0, 0, 0, 0x5cfb1005
+PreviewEffect = rhw-10s-splitter-b1
+
+CellLayout =.......
+CellLayout =.ag....
+CellLayout =.bb<...
+CellLayout =.bb+...
+CellLayout =.bb+...
+CellLayout =.bcd...
+CellLayout =.e.ch..
+CellLayout =.^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030103, 0xffffffff optional
+CheckType = f - dirtroad: 0x00030100 Lightrail: 0x00020200, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = h - dirtroad: 0x01000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.||<...
+ConsLayout =.||#...
+ConsLayout =.||#...
+ConsLayout =.|\\...
+ConsLayout =...\...
+ConsLayout =.^.....
+
+AutoTileBase=	0x5cfb1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cfb1000
+Costs       = 1000
+[HighwayIntersectionInfo_0x00055135]
+CopyFrom    = 0x45135
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065135]
+CopyFrom    = 0x45135
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075135]
+CopyFrom    = 0x45135
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085135]
+CopyFrom    = 0x5135
+[HighwayIntersectionInfo_0x00095135]
+CopyFrom    = 0x15135
+[HighwayIntersectionInfo_0x000A5135]
+CopyFrom    = 0x25135
+[HighwayIntersectionInfo_0x000B5135]
+CopyFrom    = 0x35135
+[HighwayIntersectionInfo_0x000C5135]
+CopyFrom    = 0x45135
+[HighwayIntersectionInfo_0x000D5135]
+CopyFrom    = 0x55135
+[HighwayIntersectionInfo_0x000E5135]
+CopyFrom    = 0x65135
+[HighwayIntersectionInfo_0x000F5135]
+CopyFrom    = 0x75135
+
+
+
+[HighwayIntersectionInfo_0x00005120]
+;Added by MRTNRLN 4/14/2011.
+;ERHW-4/MIS-1 Exit Ramp-Style C--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5ceb5005
+PreviewEffect = preview_erhw-4_ramp_c0
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..+b<..
+CellLayout =..dc...
+CellLayout =..be...
+CellLayout =..f....
+CellLayout =...^...
+
+CheckType = a - highway: 0x04020302 dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000202
+CheckType = d - dirtroad: 0x02020000
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+
+AutoTileBase=	0x5ceb5000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb5000
+Costs       = 400
+[HighwayIntersectionInfo_0x00015120]
+CopyFrom    = 0x5120
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025120]
+CopyFrom    = 0x5120
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035120]
+CopyFrom    = 0x5120
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045120]
+;Added by MRTNRLN 4/14/2011.
+;ERHW-4/MIS-1 Entrance Ramp-Style C--Orthogonal
+Piece = 0.0, 0.0, 0, 0, 0x5ceb5205
+PreviewEffect = preview_erhw-4_ramp_c1
+
+CellLayout =.......
+CellLayout =..a....
+CellLayout =..b+<..
+CellLayout =..cd...
+CellLayout =..eb...
+CellLayout =...f...
+CellLayout =..^....
+
+CheckType = a - highway: 0x03020402 dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02020200
+CheckType = d - dirtroad: 0x02000002
+CheckType = e - dirtroad: 0x02000200 lightrail: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 lightrail: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5ceb5200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5ceb5200
+Costs       = 400
+[HighwayIntersectionInfo_0x00055120]
+CopyFrom    = 0x45120
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065120]
+CopyFrom    = 0x45120
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075120]
+CopyFrom    = 0x45120
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085120]
+CopyFrom    = 0x5120
+[HighwayIntersectionInfo_0x00095120]
+CopyFrom    = 0x15120
+[HighwayIntersectionInfo_0x000A5120]
+CopyFrom    = 0x25120
+[HighwayIntersectionInfo_0x000B5120]
+CopyFrom    = 0x35120
+[HighwayIntersectionInfo_0x000C5120]
+CopyFrom    = 0x45120
+[HighwayIntersectionInfo_0x000D5120]
+CopyFrom    = 0x55120
+[HighwayIntersectionInfo_0x000E5120]
+CopyFrom    = 0x65120
+[HighwayIntersectionInfo_0x000F5120]
+CopyFrom    = 0x75120
+
+
+[HighwayIntersectionInfo_0x00005136]
+;Added by Tarkus 06/26/2011.
+;DDRHW-4/MIS-1 Exit Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cebF005
+PreviewEffect = preview_draggable_mis___055
+
+CellLayout =.......
+CellLayout =.......
+CellLayout =..+c<..
+CellLayout =..dc...
+CellLayout =..b....
+CellLayout =.......
+CellLayout =...^...
+
+;CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020000
+;CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+;CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+
+AutoTileBase=	0x5cebF000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cebF000
+Costs       = 4000
+[HighwayIntersectionInfo_0x00015136]
+CopyFrom    = 0x5136
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025136]
+CopyFrom    = 0x5136
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035136]
+CopyFrom    = 0x5136
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00045136]
+;Added by Tarkus 06/26/2011.
+;DDRHW-4/MIS-1 Entrance Ramp-Style A--Orthogonal
+Piece = -16.0, 0.0, 0, 0, 0x5cebF205
+PreviewEffect = preview_draggable_mis___056
+
+CellLayout =.......
+CellLayout =.......
+CellLayout =..+c<..
+CellLayout =..dc...
+CellLayout =..b....
+CellLayout =.......
+CellLayout =...^...
+
+;CheckType = a - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 
+CheckType = c - dirtroad: 0x02000200
+CheckType = d - dirtroad: 0x02020000
+;CheckType = e - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+;CheckType = f - dirtroad: 0x02000200 lightrail: 0x03000003, 0xffffffff optional
+
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =../|<..
+ConsLayout =../|...
+ConsLayout =..|....
+ConsLayout =.......
+ConsLayout =...^...
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|\<..
+ConsLayout =..|\...
+ConsLayout =...|...
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x5cebF200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cebF200
+Costs       = 4000
+[HighwayIntersectionInfo_0x00055136]
+CopyFrom    = 0x45136
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065136]
+CopyFrom    = 0x45136
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075136]
+CopyFrom    = 0x45136
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085136]
+CopyFrom    = 0x5136
+PlaceQueryID = 0x5cebF001
+Transpose = 1
+[HighwayIntersectionInfo_0x00095136]
+CopyFrom    = 0x85136
+Rotate = 3
+[HighwayIntersectionInfo_0x000A5136]
+CopyFrom    = 0x85136
+Rotate = 2
+[HighwayIntersectionInfo_0x000B5136]
+CopyFrom    = 0x85136
+Rotate = 1
+[HighwayIntersectionInfo_0x000C5136]
+CopyFrom    = 0x45136
+PlaceQueryID = 0x5cebF201
+Transpose = 1
+[HighwayIntersectionInfo_0x000D5136]
+CopyFrom    = 0xC5136
+Rotate = 3
+[HighwayIntersectionInfo_0x000E5136]
+CopyFrom    = 0xC5136
+Rotate = 2
+[HighwayIntersectionInfo_0x000F5136]
+CopyFrom    = 0xC5136
+Rotate = 1
+
+;END RHW RAMP INTERFACES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;SPECIALIZED CROSSING PIECES (SCPs)
+[HighwayIntersectionInfo_0x00005137]
+;Added by jdenm8 2013/01/09.
+;Type 4-A1 Volleyball Specialised Crossing Piece (SCP)
+Piece =  0.0, 0.0, 0, 0, 0x57e00005
+PreviewEffect = preview_4_a1_volleyball
+
+CellLayout=..h...
+CellLayout=..ab..
+CellLayout=icdek<
+CellLayout=.fg...
+CellLayout=..j...
+CellLayout=..^...
+
+CheckType = a - dirtroad: 0x02030200
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x01020002
+CheckType = d - avenue: 0x02020202
+CheckType = e - dirtroad: 0x00020100
+CheckType = f - dirtroad: 0x00030100
+CheckType = g - dirtroad: 0x02000203
+CheckType = h - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = i - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = j - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = k - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout=......
+ConsLayout=..|\..
+ConsLayout=.-#-.<
+ConsLayout=.\|...
+ConsLayout=......
+ConsLayout=..^...
+
+AutoTileBase = 0x57e00000
+PlaceQueryID = 0x57e00000
+Costs = 750
+[HighwayIntersectionInfo_0x00015137]
+CopyFrom = 0x5137
+Rotate = 1
+[HighwayIntersectionInfo_0x00025137]
+CopyFrom = 0x5137
+Rotate = 2
+[HighwayIntersectionInfo_0x00035137]
+CopyFrom = 0x5137
+Rotate = 3
+;rotational clones
+[HighwayIntersectionInfo_0x00055137]
+CopyFrom = 0x5137
+[HighwayIntersectionInfo_0x00055137]
+CopyFrom = 0x15137
+[HighwayIntersectionInfo_0x00065137]
+CopyFrom = 0x25137
+[HighwayIntersectionInfo_0x00075137]
+CopyFrom = 0x35137
+
+
+[HighwayIntersectionInfo_0x00005138]
+;Added by jdenm8 2013/01/10.
+;Type 4-D1 Volleyball Specialised Crossing Piece (SCP)
+Piece =  0.0, 0.0, 0, 0, 0x57E00905
+PreviewEffect = preview_4_d1_volleyball_scp
+
+CellLayout=..h...
+CellLayout=..ab..
+CellLayout=icdek<
+CellLayout=.fg...
+CellLayout=..j...
+CellLayout=..^...
+
+CheckType = a - dirtroad: 0x02030200
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x01020002
+CheckType = d - road: 0x02020202
+CheckType = e - dirtroad: 0x00020100
+CheckType = f - dirtroad: 0x00030100
+CheckType = g - dirtroad: 0x02000203
+CheckType = h - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = i - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = j - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = k - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout=......
+ConsLayout=..|\..
+ConsLayout=.-#-.<
+ConsLayout=.\|...
+ConsLayout=......
+ConsLayout=..^...
+
+AutoTileBase = 0x57e00900
+PlaceQueryID = 0x57e00900
+Costs = 750
+[HighwayIntersectionInfo_0x00015138]
+CopyFrom = 0x5138
+Rotate = 1
+[HighwayIntersectionInfo_0x00025138]
+CopyFrom = 0x5138
+Rotate = 2
+[HighwayIntersectionInfo_0x00035138]
+CopyFrom = 0x5138
+Rotate = 3
+;rotational clones
+[HighwayIntersectionInfo_0x00045138]
+CopyFrom = 0x5138
+[HighwayIntersectionInfo_0x00055138]
+CopyFrom = 0x15138
+[HighwayIntersectionInfo_0x00065138]
+CopyFrom = 0x25138
+[HighwayIntersectionInfo_0x00075138]
+CopyFrom = 0x35138
+
+;End RHW SECTION

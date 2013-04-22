@@ -1,0 +1,160 @@
+;Rail Subviaduct Button Section
+;0xA7###
+;0xA700 and 0x701 reserved for draggable diagonal railbridge
+Rotationring = A702, 1A702, 2A702, 3A702, 4A702, 5A702, 6A702, 7A702, 8A702 ;Rail Subviaduct Diagonal Blank
+AddTypes = A703, 1A703, 2A703, 3A703, 4A703, 5A703, 6A703, 7A703, 8A703 ;Rail Subviaduct to Steelbridge Diagonal
+AddTypes = A704, 1A704, 2A704, 3A704, 4A704, 5A704, 6A704, 7A704, 8A704 ;Rail Steelbridge Diagonal Blank
+AddTypes = A705, 1A705, 2A705, 3A705, 4A705, 5A705, 6A705, 7A705, 8A705 ;Rail Steelbridge with Column Diagonal
+
+
+;###separator###
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;BEGINN SUBVIADUCT
+
+[HighwayIntersectionInfo_0x0000A702]
+;raildiagonal_subviaduct blank puzzle piece
+;Added by ArkenbergeJoe 02/28/11
+Piece = 0.0, 0.0, 0, 0, 0x53111005
+PreviewEffect = preview_rail_subviaduct_000
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - rail: 0x03010000
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoPathBase=   0x53266A00
+AutoTileBase=   0x53111000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53111000
+Costs       = 150
+[HighwayIntersectionInfo_0x0001A702]
+CopyFrom    = 0xA702
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A702]
+CopyFrom    = 0xA702
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A702]
+CopyFrom    = 0xA702
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A702]
+CopyFrom    = 0xA702
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A702]
+CopyFrom    = 0x4A702
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A702]
+CopyFrom    = 0x5A702
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A702]
+CopyFrom    = 0x6A702
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000A703]
+;raildiagonal_subviaduct to steelbridge puzzle piece
+;Added by ArkenbergeJoe 02/28/11
+CopyFrom    = 0xA702
+Piece = 0.0, 0.0, 0, 0, 0x53111105
+PreviewEffect = preview_rail_subviaduct_001
+AutoPathBase=   0x53266A00
+AutoTileBase=   0x53111100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53111100
+;Costs       = 150
+[HighwayIntersectionInfo_0x0001A703]
+CopyFrom    = 0xA703
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A703]
+CopyFrom    = 0xA703
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A703]
+CopyFrom    = 0xA703
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A703]
+CopyFrom    = 0xA703
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A703]
+CopyFrom    = 0x4A703
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A703]
+CopyFrom    = 0x5A703
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A703]
+CopyFrom    = 0x6A703
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000A704]
+;raildiagonal_steelbridge blank puzzle piece
+;Added by ArkenbergeJoe 02/28/11
+CopyFrom    = 0xA703
+Piece = 0.0, 0.0, 0, 0, 0x53111205
+PreviewEffect = preview_rail_subviaduct_002
+AutoPathBase=   0x53266A00
+AutoTileBase=   0x53111200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53111200
+;Costs       = 150
+[HighwayIntersectionInfo_0x0001A704]
+CopyFrom    = 0xA704
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A704]
+CopyFrom    = 0xA704
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A704]
+CopyFrom    = 0xA704
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A704]
+CopyFrom    = 0xA704
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A704]
+CopyFrom    = 0x4A704
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A704]
+CopyFrom    = 0x5A704
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A704]
+CopyFrom    = 0x6A704
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000A705]
+;raildiagonal_steelbridge with column puzzle piece
+;Added by ArkenbergeJoe 02/28/11
+CopyFrom    = 0xA704
+Piece = 0.0, 0.0, 0, 0, 0x53111305
+PreviewEffect = preview_rail_subviaduct_003
+AutoPathBase=   0x53266A00
+AutoTileBase=   0x53111300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x53111300
+;Costs       = 150
+[HighwayIntersectionInfo_0x0001A705]
+CopyFrom    = 0xA705
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A705]
+CopyFrom    = 0xA705
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A705]
+CopyFrom    = 0xA705
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A705]
+CopyFrom    = 0xA705
+Transpose = 1
+[HighwayIntersectionInfo_0x0005A705]
+CopyFrom    = 0x4A705
+Rotate      = 1
+[HighwayIntersectionInfo_0x0006A705]
+CopyFrom    = 0x5A705
+Rotate      = 2
+[HighwayIntersectionInfo_0x0007A705]
+CopyFrom    = 0x6A705
+Rotate      = 3
+
+;;END SUBVIADUCT
+;;END SUBVIADUCT
+;

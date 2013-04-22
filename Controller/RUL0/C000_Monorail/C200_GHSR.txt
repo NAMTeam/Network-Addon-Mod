@@ -1,0 +1,1302 @@
+;
+;GHSR Section
+;C200
+RotationRing = C200, 1C200, 2C200, 3C200, 4C200, 5C200, 6C200, 7C200, 8C200, 9C200, AC200, BC200, CC200, DC200, EC200, FC200 ;GHSR starter
+AddTypes     = C201, 1C201, 2C201, 3C201, 4C201, 5C201, 6C201, 7C201, 8C201, 9C201, AC201, BC201, CC201, DC201, EC201, FC201 ;Orth/Diag Road x Orth GHSR
+AddTypes     = C202, 1C202, 2C202, 3C202, 4C202, 5C202, 6C202, 7C202, 8C202, 9C202, AC202, BC202, CC202, DC202, EC202, FC202 ;Orth/Diag OWR x Orth GHSR
+AddTypes     = C203, 1C203, 2C203, 3C203, 4C203, 5C203, 6C203, 7C203, 8C203, 9C203, AC203, BC203, CC203, DC203, EC203, FC203 ;Orth/Diag Rail x Orth GHSR
+AddTypes     = C204, 1C204, 2C204, 3C204, 4C204, 5C204, 6C204, 7C204, 8C204, 9C204, AC204, BC204, CC204, DC204, EC204, FC204 ;Orth Ave x Orth GHSR
+AddTypes     = C205, 1C205, 2C205, 3C205, 4C205, 5C205, 6C205, 7C205, 8C205, 9C205, AC205, BC205, CC205, DC205, EC205, FC205 ;Orth Highway x Orth GHSR
+AddTypes     = C206, 1C206, 2C206, 3C206, 4C206, 5C206, 6C206, 7C206, 8C206, 9C206, AC206, BC206, CC206, DC206, EC206, FC206 ;Orth El-Rail x Orth GHSR
+AddTypes     = C207, 1C207, 2C207, 3C207, 4C207, 5C207, 6C207, 7C207, 8C207, 9C207, AC207, BC207, CC207, DC207, EC207, FC207 ;Orth High El-Rail x Orth GHSR
+AddTypes     = C208, 1C208, 2C208, 3C208, 4C208, 5C208, 6C208, 7C208, 8C208, 9C208, AC208, BC208, CC208, DC208, EC208, FC208 ;Orth Monorail x Orth GHSR
+AddTypes     = C209, 1C209, 2C209, 3C209, 4C209, 5C209, 6C209, 7C209, 8C209, 9C209, AC209, BC209, CC209, DC209, EC209, FC209 ;Orth High Monorail x Orth GHSR
+AddTypes     = C20A, 1C20A, 2C20A, 3C20A, 4C20A, 5C20A, 6C20A, 7C20A, 8C20A, 9C20A, AC20A, BC20A, CC20A, DC20A, EC20A, FC20A ;Orth HSR x Orth GHSR
+;AddTypes     = C20B, 1C20B, 2C20B, 3C20B, 4C20B, 5C20B, 6C20B, 7C20B, 8C20B, 9C20B, AC20B, BC20B, CC20B, DC20B, EC20B, FC20B ;Orth/Diag Road x Diag GHSR - all below that are commented out are to be added in at a later version.
+;AddTypes     = C20C, 1C20C, 2C20C, 3C20C, 4C20C, 5C20C, 6C20C, 7C20C, 8C20C, 9C20C, AC20C, BC20C, CC20C, DC20C, EC20C, FC20C ;Orth/Diag OWR x Diag GHSR
+;AddTypes     = C20D, 1C20D, 2C20D, 3C20D, 4C20D, 5C20D, 6C20D, 7C20D, 8C20D, 9C20D, AC20D, BC20D, CC20D, DC20D, EC20D, FC20D ;Orth Diag Rail x Diag GHSR
+;AddTypes     = C20E, 1C20E, 2C20E, 3C20E, 4C20E, 5C20E, 6C20E, 7C20E, 8C20E, 9C20E, AC20E, BC20E, CC20E, DC20E, EC20E, FC20E ;Orth/Diag Ave x Diag GHSR
+;AddTypes     = C20F, 1C20F, 2C20F, 3C20F, 4C20F, 5C20F, 6C20F, 7C20F, 8C20F, 9C20F, AC20F, BC20F, CC20F, DC20F, EC20F, FC20F ;Orth/Diag Highway x Diag GHSR
+;AddTypes     = C210, 1C210, 2C210, 3C210, 4C210, 5C210, 6C210, 7C210, 8C210, 9C210, AC210, BC210, CC210, DC210, EC210, FC210 ;Orth/Diag El-Rail x Diag GHSR
+;AddTypes     = C211, 1C211, 2C211, 3C211, 4C211, 5C211, 6C211, 7C211, 8C211, 9C211, AC211, BC211, CC211, DC211, EC211, FC211 ;Orth/Diag Monorai x Diag GHSR
+;AddTypes     = C212, 1C212, 2C212, 3C212, 4C212, 5C212, 6C212, 7C212, 8C212, 9C212, AC212, BC212, CC212, DC212, EC212, FC212 ;Orth/Diag HSR x Diag GHSR
+AddTypes     = C213, 1C213, 2C213, 3C213, 4C213, 5C213, 6C213, 7C213, 8C213, 9C213, AC213, BC213, CC213, DC213, EC213, FC213 ;GHSR 1 Tile Shift (S-Curve)
+AddTypes     = C214, 1C214, 2C214, 3C214, 4C214, 5C214, 6C214, 7C214, 8C214, 9C214, AC214, BC214, CC214, DC214, EC214, FC214 ;GHSR <> HSR Ramp
+AddTypes     = C215, 1C215, 2C215, 3C215, 4C215, 5C215, 6C215, 7C215, 8C215, 9C215, AC215, BC215, CC215, DC215, EC215, FC215 ;GHSR <> HSR Orth Onslope
+AddTypes     = C216, 1C216, 2C216, 3C216, 4C216, 5C216, 6C216, 7C216, 8C216, 9C216, AC216, BC216, CC216, DC216, EC216, FC216 ;GHSR <> HSR Diag Onslope
+AddTypes     = C217, 1C217, 2C217, 3C217, 9C217, 4C217, BC217, 6C217, 8C217, 7C217, AC217, 5C217, CC217, DC217, EC217, FC217 ;Underpass under GHSR ground high speed rail
+AddTypes     = C218, 1C218, 2C218, 3C218, 4C218, 5C218, 6C218, 7C218, C219, 1C219, 2C219, 3C219, 4C219, 5C219, 6C219, 7C219 ;RailUHSR GHSR Straight and Diagonal Rail Straight Perpendicular
+AddTypes     = C21A, 1C21A, 2C21A, 3C21A, 4C21A, 5C21A, 6C21A, 7C21A, C21B, 1C21B, 2C21B, 3C21B, 4C21B, 5C21B, 6C21B, 7C21B ;RailUHSR GHSR Straight and Diagonal Rail Diagonal
+
+;###separator###
+
+[HighwayIntersectionInfo_0x0000C218]
+;Added by ebina 08/22/2010.
+;railhsr Dual - GHSR Straight, Rail Straight Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D105
+PreviewEffect = preview_hsrp_subrail____000
+
+CellLayout =.........
+CellLayout =...bZc..<
+CellLayout =....^....
+
+CheckType = b - monorail: 0x00020000, 0x00ff0000 optional
+CheckType = c - monorail: 0x00000002, 0x000000ff optional
+CheckType = Z - rail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase = 0x59F3D100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D100
+Costs       = 100
+[HighwayIntersectionInfo_0x0001C218]
+CopyFrom	= 0xC218
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C218]
+CopyFrom	= 0xC218
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C218]
+CopyFrom	= 0xC218
+Rotate		= 3
+;rotational clones
+[HighwayIntersectionInfo_0x0004C218]
+CopyFrom    = 0xC218
+[HighwayIntersectionInfo_0x0005C218]
+CopyFrom    = 0x1C218
+[HighwayIntersectionInfo_0x0006C218]
+CopyFrom    = 0x2C218
+[HighwayIntersectionInfo_0x0007C218]
+CopyFrom    = 0x3C218
+
+
+[HighwayIntersectionInfo_0x0000C219]
+;Added by ebina 08/22/2010.
+;railhsr Dual - GHSR Diagonal, Rail Straight Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D115
+PreviewEffect = preview_hsrp_subrail____001
+
+CellLayout =.....
+CellLayout =..Ys.<
+CellLayout =.rZ..
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00010000, 0x00ff0000 optional
+CheckType = s - monorail: 0x00000001, 0x000000ff optional
+CheckType = Y - rail: 0x02000200 monorail: 0x03010000
+CheckType = Z - rail: 0x02000200 monorail: 0x00000301
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D110
+Costs = 150
+[HighwayIntersectionInfo_0x0001C219]
+CopyFrom	= 0xC219
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C219]
+CopyFrom	= 0xC219
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C219]
+CopyFrom	= 0xC219
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C219]
+CopyFrom	= 0xC219
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C219]
+CopyFrom	= 0x4C219
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C219]
+CopyFrom	= 0x4C219
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C219]
+CopyFrom	= 0x4C219
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C21A]
+;Added by ebina 08/22/2010.
+;railhsr Dual - GHSR Straight, Rail Diagonal Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D135
+PreviewEffect = preview_hsrp_subrail____002
+
+CellLayout =.r.
+CellLayout =.Y.<
+CellLayout =.Z.
+CellLayout =.s.
+CellLayout =.^.
+
+CheckType = r - monorail: 0x02000000, 0xff000000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x02000200
+CheckType = Z - rail: 0x00000301 monorail: 0x02000200
+CheckType = s - monorail: 0x00000200, 0x0000ff00 optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D130
+Costs = 150
+[HighwayIntersectionInfo_0x0001C21A]
+CopyFrom	= 0xC21A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C21A]
+CopyFrom	= 0xC21A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C21A]
+CopyFrom	= 0xC21A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C21A]
+CopyFrom	= 0xC21A
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C21A]
+CopyFrom	= 0x4C21A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C21A]
+CopyFrom	= 0x4C21A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C21A]
+CopyFrom	= 0x4C21A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000C21B]
+;Added by ebina 08/22/2010.
+;railhsr Dual - GHSR Diagonal, Rail Diagonal Perpendicular Piece
+Piece = 0.0, 0.0, 0, 0, 0x59F3D155
+PreviewEffect = preview_hsrp_subrail____003
+
+CellLayout =.....
+CellLayout =.rY..<
+CellLayout =..Zs.
+CellLayout =..^..
+
+CheckType = r - monorail: 0x00030000, 0x00ff0000 optional
+CheckType = Y - rail: 0x03010000 monorail: 0x01000003
+CheckType = Z - rail: 0x00000301 monorail: 0x00030100
+CheckType = s - monorail: 0x00000003, 0x000000ff optional
+
+ConsLayout =...
+ConsLayout =.+.<
+ConsLayout =.+.
+ConsLayout =.^.
+
+AutoTileBase = 0x59F3D150
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x59F3D150
+Costs = 150
+[HighwayIntersectionInfo_0x0001C21B]
+CopyFrom	= 0xC21B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C21B]
+CopyFrom	= 0xC21B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C21B]
+CopyFrom	= 0xC21B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C21B]
+CopyFrom	= 0xC21B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C21B]
+CopyFrom	= 0x4C21B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C21B]
+CopyFrom	= 0x4C21B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C21B]
+CopyFrom	= 0x4C21B
+Rotate		= 3
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;GHSR SECTION
+;GHSR SECTION
+
+[HighwayIntersectionInfo_0x0000C200]
+;Added by Warrior 03/27/08.
+;modified by memo 01/17/2013 for use with Vanishing Construction Lot
+;GHSR starter piece
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsrstarterpiece000
+
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =...^...
+
+CheckType = Z - monorail: 0x00000000		; former 0x02000200 to disable shadow edge remapping ~ memo
+CheckType = a - monorail: 0x02000200 rail: 0x00010100 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase = 0x55387000		; former 0x5dcf0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C200]
+CopyFrom    = 0xC200
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C200]
+CopyFrom    = 0xC200
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C200]
+CopyFrom    = 0xC200
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C200]
+CopyFrom    = 0xC200
+[HighwayIntersectionInfo_0x0005C200]
+CopyFrom    = 0x1C200
+[HighwayIntersectionInfo_0x0006C200]
+CopyFrom    = 0x2C200
+[HighwayIntersectionInfo_0x0007C200]
+CopyFrom    = 0x3C200
+[HighwayIntersectionInfo_0x0008C200]
+CopyFrom    = 0xC200
+[HighwayIntersectionInfo_0x0009C200]
+CopyFrom    = 0x1C200
+[HighwayIntersectionInfo_0x000AC200]
+CopyFrom    = 0x2C200
+[HighwayIntersectionInfo_0x000BC200]
+CopyFrom    = 0x3C200
+[HighwayIntersectionInfo_0x000CC200]
+CopyFrom    = 0xC200
+[HighwayIntersectionInfo_0x000DC200]
+CopyFrom    = 0x1C200
+[HighwayIntersectionInfo_0x000EC200]
+CopyFrom    = 0x2C200
+[HighwayIntersectionInfo_0x000FC200]
+CopyFrom    = 0x3C200
+
+[HighwayIntersectionInfo_0x0000C201]
+;Added by Warrior 04/04/08.
+;O Road x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxoroadpiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 road: 0x00020002 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0100
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C201]
+;D road x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxdroadpiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 road: 0x01000003 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0101
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0101
+Costs       = 8
+[HighwayIntersectionInfo_0x0002C201]
+CopyFrom    = 0xC201
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003C201]
+CopyFrom    = 0x1C201
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004C201]
+CopyFrom    = 0xC201
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005C201]
+CopyFrom    = 0x1C201
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006C201]
+CopyFrom    = 0xC201
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007C201]
+CopyFrom    = 0x1C201
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C201]
+CopyFrom    = 0xC201
+[HighwayIntersectionInfo_0x0009C201]
+CopyFrom    = 0x1C201
+Transpose	= 1
+[HighwayIntersectionInfo_0x000AC201]
+CopyFrom    = 0xC201
+Rotate		= 1
+[HighwayIntersectionInfo_0x000BC201]
+CopyFrom    = 0x1C201
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x000CC201]
+CopyFrom    = 0xC201
+Rotate		= 2
+[HighwayIntersectionInfo_0x000DC201]
+CopyFrom    = 0x1C201
+Rotate		= 2
+Transpose	= 1
+[HighwayIntersectionInfo_0x000EC201]
+CopyFrom    = 0xC201
+Rotate		= 3
+[HighwayIntersectionInfo_0x000FC201]
+CopyFrom    = 0x1C201
+Rotate		= 3
+Transpose	= 1
+
+[HighwayIntersectionInfo_0x0000C202]
+;Added by Warrior 04/04/08.
+;O OWR x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxoowr_piece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 onewayroad: 0x00020002 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0200
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C202]
+;D road x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxdowr_piece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 onewayroad: 0x01000003 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0201
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0201
+Costs       = 8
+[HighwayIntersectionInfo_0x0002C202]
+CopyFrom    = 0xC202
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003C202]
+CopyFrom    = 0x1C202
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004C202]
+CopyFrom    = 0xC202
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005C202]
+CopyFrom    = 0x1C202
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006C202]
+CopyFrom    = 0xC202
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007C202]
+CopyFrom    = 0x1C202
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C202]
+CopyFrom    = 0xC202
+[HighwayIntersectionInfo_0x0009C202]
+CopyFrom    = 0x1C202
+Transpose	= 1
+[HighwayIntersectionInfo_0x000AC202]
+CopyFrom    = 0xC202
+Rotate		= 1
+[HighwayIntersectionInfo_0x000BC202]
+CopyFrom    = 0x1C202
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x000CC202]
+CopyFrom    = 0xC202
+Rotate		= 2
+[HighwayIntersectionInfo_0x000DC202]
+CopyFrom    = 0x1C202
+Rotate		= 2
+Transpose	= 1
+[HighwayIntersectionInfo_0x000EC202]
+CopyFrom    = 0xC202
+Rotate		= 3
+[HighwayIntersectionInfo_0x000FC202]
+CopyFrom    = 0x1C202
+Rotate		= 3
+Transpose	= 1
+
+[HighwayIntersectionInfo_0x0000C203]
+;Added by Warrior 04/04/08.
+;O Rail x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxorailpiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 rail: 0x00020002 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0300
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C203]
+;D road x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxdrailpiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 rail: 0x01000003 
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0301
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0301
+Costs       = 8
+[HighwayIntersectionInfo_0x0002C203]
+CopyFrom    = 0xC203
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003C203]
+CopyFrom    = 0x1C203
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004C203]
+CopyFrom    = 0xC203
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005C203]
+CopyFrom    = 0x1C203
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006C203]
+CopyFrom    = 0xC203
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007C203]
+CopyFrom    = 0x1C203
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C203]
+CopyFrom    = 0xC203
+[HighwayIntersectionInfo_0x0009C203]
+CopyFrom    = 0x1C203
+Transpose	= 1
+[HighwayIntersectionInfo_0x000AC203]
+CopyFrom    = 0xC203
+Rotate		= 1
+[HighwayIntersectionInfo_0x000BC203]
+CopyFrom    = 0x1C203
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x000CC203]
+CopyFrom    = 0xC203
+Rotate		= 2
+[HighwayIntersectionInfo_0x000DC203]
+CopyFrom    = 0x1C203
+Rotate		= 2
+Transpose	= 1
+[HighwayIntersectionInfo_0x000EC203]
+CopyFrom    = 0xC203
+Rotate		= 3
+[HighwayIntersectionInfo_0x000FC203]
+CopyFrom    = 0x1C203
+Rotate		= 3
+Transpose	= 1
+
+[HighwayIntersectionInfo_0x0000C204]
+;Added by Warrior 04/04/08.
+;O GHSR x  O Avenue
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxoave_piece000
+
+CellLayout =...B...
+CellLayout =...b..<
+CellLayout =...^...
+
+CheckType = b - monorail: 0x02000200 avenue: 0x00020402
+CheckType = B - monorail: 0x02000200 avenue: 0x04020002
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0400
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C204]
+CopyFrom    = 0xC204
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C204]
+CopyFrom    = 0xC204
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C204]
+CopyFrom    = 0xC204
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C204]
+CopyFrom    = 0xC204
+[HighwayIntersectionInfo_0x0005C204]
+CopyFrom    = 0x1C204
+[HighwayIntersectionInfo_0x0006C204]
+CopyFrom    = 0x2C204
+[HighwayIntersectionInfo_0x0007C204]
+CopyFrom    = 0x3C204
+[HighwayIntersectionInfo_0x0008C204]
+CopyFrom    = 0xC204
+[HighwayIntersectionInfo_0x0009C204]
+CopyFrom    = 0x1C204
+[HighwayIntersectionInfo_0x000AC204]
+CopyFrom    = 0x2C204
+[HighwayIntersectionInfo_0x000BC204]
+CopyFrom    = 0x3C204
+[HighwayIntersectionInfo_0x000CC204]
+CopyFrom    = 0xC204
+[HighwayIntersectionInfo_0x000DC204]
+CopyFrom    = 0x1C204
+[HighwayIntersectionInfo_0x000EC204]
+CopyFrom    = 0x2C204
+[HighwayIntersectionInfo_0x000FC204]
+CopyFrom    = 0x3C204
+
+[HighwayIntersectionInfo_0x0000C205]
+;Added by Warrior 04/04/08.
+;O GHSR x O El-highway
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsrxelhighpiece000
+
+CellLayout =..ABC..
+CellLayout =..abc.<
+CellLayout =...^...
+
+CheckType = A - highway: 0x04020000 optional
+CheckType = a - highway: 0x00020400 optional
+CheckType = b - monorail: 0x02000200 highway: 0x00020402
+CheckType = B - monorail: 0x02000200 highway: 0x04020002
+CheckType = C - highway: 0x04000002 optional
+CheckType = c - highway: 0x00000402 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0500
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C205]
+CopyFrom    = 0xC205
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C205]
+CopyFrom    = 0xC205
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C205]
+CopyFrom    = 0xC205
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C205]
+CopyFrom    = 0xC205
+[HighwayIntersectionInfo_0x0005C205]
+CopyFrom    = 0x1C205
+[HighwayIntersectionInfo_0x0006C205]
+CopyFrom    = 0x2C205
+[HighwayIntersectionInfo_0x0007C205]
+CopyFrom    = 0x3C205
+[HighwayIntersectionInfo_0x0008C205]
+CopyFrom    = 0xC205
+[HighwayIntersectionInfo_0x0009C205]
+CopyFrom    = 0x1C205
+[HighwayIntersectionInfo_0x000AC205]
+CopyFrom    = 0x2C205
+[HighwayIntersectionInfo_0x000BC205]
+CopyFrom    = 0x3C205
+[HighwayIntersectionInfo_0x000CC205]
+CopyFrom    = 0xC205
+[HighwayIntersectionInfo_0x000DC205]
+CopyFrom    = 0x1C205
+[HighwayIntersectionInfo_0x000EC205]
+CopyFrom    = 0x2C205
+[HighwayIntersectionInfo_0x000FC205]
+CopyFrom    = 0x3C205
+
+[HighwayIntersectionInfo_0x0000C206]
+;Added by Warrior 04/04/08.
+;O M El-Rail x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxoelr_piece000
+
+CellLayout =.......
+CellLayout =..abc.<
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x00020000 optional
+CheckType = b - monorail: 0x02000200 lightrail: 0x00020002
+CheckType = c - lightrail: 0x00000002 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0600
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C206]
+CopyFrom    = 0xC206
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C206]
+CopyFrom    = 0xC206
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C206]
+CopyFrom    = 0xC206
+Rotate		= 3
+;Rotation Clones
+[HighwayIntersectionInfo_0x0004C206]
+CopyFrom    = 0xC206
+[HighwayIntersectionInfo_0x0005C206]
+CopyFrom    = 0x1C206
+[HighwayIntersectionInfo_0x0006C206]
+CopyFrom    = 0x2C206
+[HighwayIntersectionInfo_0x0007C206]
+CopyFrom    = 0x3C206
+[HighwayIntersectionInfo_0x0008C206]
+CopyFrom    = 0xC206
+[HighwayIntersectionInfo_0x0009C206]
+CopyFrom    = 0x1C206
+[HighwayIntersectionInfo_0x000AC206]
+CopyFrom    = 0x2C206
+[HighwayIntersectionInfo_0x000BC206]
+CopyFrom    = 0x3C206
+[HighwayIntersectionInfo_0x000CC206]
+CopyFrom    = 0xC206
+[HighwayIntersectionInfo_0x000DC206]
+CopyFrom    = 0x1C206
+[HighwayIntersectionInfo_0x000EC206]
+CopyFrom    = 0x2C206
+[HighwayIntersectionInfo_0x000FC206]
+CopyFrom    = 0x3C206
+
+[HighwayIntersectionInfo_0x0000C207]
+;Added by Warrior 07-Apr-08
+;O High M El-Rail x O GHSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_oghsrxohelrpiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - lightrail: 0x02000200 monorail: 0x00020002
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0700
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C207]
+CopyFrom    = 0xC207
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C207]
+CopyFrom    = 0xC207
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C207]
+CopyFrom    = 0xC207
+Rotate		= 3
+;Rotation Clones
+[HighwayIntersectionInfo_0x0004C207]
+CopyFrom    = 0xC207
+[HighwayIntersectionInfo_0x0005C207]
+CopyFrom    = 0x1C207
+[HighwayIntersectionInfo_0x0006C207]
+CopyFrom    = 0x2C207
+[HighwayIntersectionInfo_0x0007C207]
+CopyFrom    = 0x3C207
+[HighwayIntersectionInfo_0x0008C207]
+CopyFrom    = 0xC207
+[HighwayIntersectionInfo_0x0009C207]
+CopyFrom    = 0x1C207
+[HighwayIntersectionInfo_0x000AC207]
+CopyFrom    = 0x2C207
+[HighwayIntersectionInfo_0x000BC207]
+CopyFrom    = 0x3C207
+[HighwayIntersectionInfo_0x000CC207]
+CopyFrom    = 0xC207
+[HighwayIntersectionInfo_0x000DC207]
+CopyFrom    = 0x1C207
+[HighwayIntersectionInfo_0x000EC207]
+CopyFrom    = 0x2C207
+[HighwayIntersectionInfo_0x000FC207]
+CopyFrom    = 0x3C207
+
+[HighwayIntersectionInfo_0x0000C208]
+;Added by Warrior 04/04/08.
+;GHSR x Monorail
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsr_x_monopiece000
+
+CellLayout =.......
+CellLayout =..abc.<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x00020000 optional
+CheckType = b - monorail: 0x02020202
+CheckType = c - monorail: 0x00000002 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0800
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C208]
+CopyFrom    = 0xC208
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C208]
+CopyFrom    = 0xC208
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C208]
+CopyFrom    = 0xC208
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C208]
+CopyFrom    = 0xC208
+[HighwayIntersectionInfo_0x0005C208]
+CopyFrom    = 0x1C208
+[HighwayIntersectionInfo_0x0006C208]
+CopyFrom    = 0x2C208
+[HighwayIntersectionInfo_0x0007C208]
+CopyFrom    = 0x3C208
+[HighwayIntersectionInfo_0x0008C208]
+CopyFrom    = 0xC208
+[HighwayIntersectionInfo_0x0009C208]
+CopyFrom    = 0x1C208
+[HighwayIntersectionInfo_0x000AC208]
+CopyFrom    = 0x2C208
+[HighwayIntersectionInfo_0x000BC208]
+CopyFrom    = 0x3C208
+[HighwayIntersectionInfo_0x000CC208]
+CopyFrom    = 0xC208
+[HighwayIntersectionInfo_0x000DC208]
+CopyFrom    = 0x1C208
+[HighwayIntersectionInfo_0x000EC208]
+CopyFrom    = 0x2C208
+[HighwayIntersectionInfo_0x000FC208]
+CopyFrom    = 0x3C208
+
+[HighwayIntersectionInfo_0x0000C209]
+;Added by Warrior 07-Apr-08
+;GHSR x High Monorail
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsr_xhmonopiece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02020202
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0900
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C209]
+CopyFrom    = 0xC209
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C209]
+CopyFrom    = 0xC209
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C209]
+CopyFrom    = 0xC209
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C209]
+CopyFrom    = 0xC209
+[HighwayIntersectionInfo_0x0005C209]
+CopyFrom    = 0x1C209
+[HighwayIntersectionInfo_0x0006C209]
+CopyFrom    = 0x2C209
+[HighwayIntersectionInfo_0x0007C209]
+CopyFrom    = 0x3C209
+[HighwayIntersectionInfo_0x0008C209]
+CopyFrom    = 0xC209
+[HighwayIntersectionInfo_0x0009C209]
+CopyFrom    = 0x1C209
+[HighwayIntersectionInfo_0x000AC209]
+CopyFrom    = 0x2C209
+[HighwayIntersectionInfo_0x000BC209]
+CopyFrom    = 0x3C209
+[HighwayIntersectionInfo_0x000CC209]
+CopyFrom    = 0xC209
+[HighwayIntersectionInfo_0x000DC209]
+CopyFrom    = 0x1C209
+[HighwayIntersectionInfo_0x000EC209]
+CopyFrom    = 0x2C209
+[HighwayIntersectionInfo_0x000FC209]
+CopyFrom    = 0x3C209
+
+[HighwayIntersectionInfo_0x0000C20A]
+;Added by Warrior 04/04/08.
+;GHSR x HSR
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsr_x_hsr_piece000
+
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02020202
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf0A00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf0A00
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C20A]
+CopyFrom    = 0xC20A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C20A]
+CopyFrom    = 0xC20A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C20A]
+CopyFrom    = 0xC20A
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C20A]
+CopyFrom    = 0xC20A
+[HighwayIntersectionInfo_0x0005C20A]
+CopyFrom    = 0x1C20A
+[HighwayIntersectionInfo_0x0006C20A]
+CopyFrom    = 0x2C20A
+[HighwayIntersectionInfo_0x0007C20A]
+CopyFrom    = 0x3C20A
+[HighwayIntersectionInfo_0x0008C20A]
+CopyFrom    = 0xC20A
+[HighwayIntersectionInfo_0x0009C20A]
+CopyFrom    = 0x1C20A
+[HighwayIntersectionInfo_0x000AC20A]
+CopyFrom    = 0x2C20A
+[HighwayIntersectionInfo_0x000BC20A]
+CopyFrom    = 0x3C20A
+[HighwayIntersectionInfo_0x000CC20A]
+CopyFrom    = 0xC20A
+[HighwayIntersectionInfo_0x000DC20A]
+CopyFrom    = 0x1C20A
+[HighwayIntersectionInfo_0x000EC20A]
+CopyFrom    = 0x2C20A
+[HighwayIntersectionInfo_0x000FC20A]
+CopyFrom    = 0x3C20A
+
+
+;Lots of puzzle pieces
+
+
+
+[HighwayIntersectionInfo_0x0000C213]
+;Added by Warrior 08-Apr-08
+;GHSR S-Curve
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsrscurve_piece000
+
+CellLayout =....z..
+CellLayout =....A.<
+CellLayout =....A..
+CellLayout =...CE..
+CellLayout =...DF..
+CellLayout =...A...
+CellLayout =...A...
+CellLayout =...z...
+CellLayout =....^..
+
+CheckType = F - monorail: 0x00000103
+CheckType = D - monorail: 0x02010200
+Checktype = E - monorail: 0x02000201
+CheckType = C - monorail: 0x03010000
+CheckType = A - monorail: 0x02000200
+CheckType = z - monorail: 0x02000200 optional
+
+ConsLayout =....#..
+ConsLayout =....#.<
+ConsLayout =....#..
+ConsLayout =...##..
+ConsLayout =...##..
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =....^..
+
+AutoTileBase=	0x5dcf1500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf1500
+Costs       = 800
+[HighwayIntersectionInfo_0x0001C213]
+CopyFrom    = 0xC213
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C213]
+CopyFrom    = 0xC213
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C213]
+CopyFrom    = 0xC213
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004C213]
+CopyFrom    = 0xC213
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005C213]
+CopyFrom    = 0x4C213
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C213]
+CopyFrom    = 0x4C213
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C213]
+CopyFrom    = 0x4C213
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C213]
+CopyFrom    = 0xC213
+[HighwayIntersectionInfo_0x0009C213]
+CopyFrom    = 0xC213
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AC213]
+CopyFrom    = 0xC213
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BC213]
+CopyFrom    = 0xC213
+Rotate		= 3
+[HighwayIntersectionInfo_0x000CC213]
+CopyFrom    = 0x4C213
+[HighwayIntersectionInfo_0x000DC213]
+CopyFrom    = 0x4C213
+Rotate		= 1
+[HighwayIntersectionInfo_0x000EC213]
+CopyFrom    = 0x4C213
+Rotate		= 2
+[HighwayIntersectionInfo_0x000FC213]
+CopyFrom    = 0x4C213
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x0000C214]
+;Added by Warrior 04/04/08.
+;GHSR <> HSR Ramp
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_ghsrhsrramppiece000
+
+CellLayout =...H...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...R...
+CellLayout =...G..<
+CellLayout =...^...
+
+CheckType = H - monorail: 0x02000200 road: 0x00010100 optional
+CheckType = R - monorail: 0x02000200
+CheckType = G - monorail: 0x02000200 rail: 0x00010100 optional
+
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#...
+ConsLayout =...#..<
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf1700
+Costs       = 400
+[HighwayIntersectionInfo_0x0001C214]
+CopyFrom    = 0xC214
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C214]
+CopyFrom    = 0xC214
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C214]
+CopyFrom    = 0xC214
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C214]
+CopyFrom    = 0xC214
+[HighwayIntersectionInfo_0x0005C214]
+CopyFrom    = 0x1C214
+[HighwayIntersectionInfo_0x0006C214]
+CopyFrom    = 0x2C214
+[HighwayIntersectionInfo_0x0007C214]
+CopyFrom    = 0x3C214
+[HighwayIntersectionInfo_0x0008C214]
+CopyFrom    = 0xC214
+[HighwayIntersectionInfo_0x0009C214]
+CopyFrom    = 0x1C214
+[HighwayIntersectionInfo_0x000AC214]
+CopyFrom    = 0x2C214
+[HighwayIntersectionInfo_0x000BC214]
+CopyFrom    = 0x3C214
+[HighwayIntersectionInfo_0x000CC214]
+CopyFrom    = 0xC214
+[HighwayIntersectionInfo_0x000DC214]
+CopyFrom    = 0x1C214
+[HighwayIntersectionInfo_0x000EC214]
+CopyFrom    = 0x2C214
+[HighwayIntersectionInfo_0x000FC214]
+CopyFrom    = 0x3C214
+
+[HighwayIntersectionInfo_0x0000C215]
+;Added by Warrior 12-Apr-08
+;GHSR <> HSR OnSlope Orth - With HSR starter
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_hsronslope_piece000
+
+CellLayout =...a...
+CellLayout =...b..<
+CellLayout =...b...
+CellLayout =...c...
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 rail: 0x00010100 optional
+CheckType = b - monorail: 0x02000200
+CheckType = c - monorail: 0x02000200 road: 0x00010100 optional
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf1800
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C215]
+CopyFrom    = 0xC215
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C215]
+CopyFrom    = 0xC215
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C215]
+CopyFrom    = 0xC215
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C215]
+CopyFrom    = 0xC215
+[HighwayIntersectionInfo_0x0005C215]
+CopyFrom    = 0x1C215
+[HighwayIntersectionInfo_0x0006C215]
+CopyFrom    = 0x2C215
+[HighwayIntersectionInfo_0x0007C215]
+CopyFrom    = 0x3C215
+[HighwayIntersectionInfo_0x0008C215]
+CopyFrom    = 0xC215
+[HighwayIntersectionInfo_0x0009C215]
+CopyFrom    = 0x1C215
+[HighwayIntersectionInfo_0x000AC215]
+CopyFrom    = 0x2C215
+[HighwayIntersectionInfo_0x000BC215]
+CopyFrom    = 0x3C215
+[HighwayIntersectionInfo_0x000CC215]
+CopyFrom    = 0xC215
+[HighwayIntersectionInfo_0x000DC215]
+CopyFrom    = 0x1C215
+[HighwayIntersectionInfo_0x000EC215]
+CopyFrom    = 0x2C215
+[HighwayIntersectionInfo_0x000FC215]
+CopyFrom    = 0x3C215
+
+[HighwayIntersectionInfo_0x0000C216]
+;Added by Warrior 12-Apr-08
+;GHSR <> HSR OnSlope Orth - Without HSR starter
+Piece = 0.0, 0.0, 0, 0, 0x5d2d1000
+PreviewEffect = preview_hsronslope2piece000
+
+CellLayout =...a...
+CellLayout =...b..<
+CellLayout =...b...
+CellLayout =...^...
+
+CheckType = a - monorail: 0x02000200 rail: 0x00010100 optional
+CheckType = b - monorail: 0x02000200
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5dcf1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dcf1801
+Costs       = 8
+[HighwayIntersectionInfo_0x0001C216]
+CopyFrom    = 0xC216
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002C216]
+CopyFrom    = 0xC216
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003C216]
+CopyFrom    = 0xC216
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x0004C216]
+CopyFrom    = 0xC216
+[HighwayIntersectionInfo_0x0005C216]
+CopyFrom    = 0x1C216
+[HighwayIntersectionInfo_0x0006C216]
+CopyFrom    = 0x2C216
+[HighwayIntersectionInfo_0x0007C216]
+CopyFrom    = 0x3C216
+[HighwayIntersectionInfo_0x0008C216]
+CopyFrom    = 0xC216
+[HighwayIntersectionInfo_0x0009C216]
+CopyFrom    = 0x1C216
+[HighwayIntersectionInfo_0x000AC216]
+CopyFrom    = 0x2C216
+[HighwayIntersectionInfo_0x000BC216]
+CopyFrom    = 0x3C216
+[HighwayIntersectionInfo_0x000CC216]
+CopyFrom    = 0xC216
+[HighwayIntersectionInfo_0x000DC216]
+CopyFrom    = 0x1C216
+[HighwayIntersectionInfo_0x000EC216]
+CopyFrom    = 0x2C216
+[HighwayIntersectionInfo_0x000FC216]
+CopyFrom    = 0x3C216
+
+[HighwayIntersectionInfo_0x0000C217]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road Crossing - Straight GHSR Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66c00
+PreviewEffect = preview_subroad_53e66c00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 monorail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66c00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66c00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001C217]
+CopyFrom    = 0xC217
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0002C217]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road Crossing - Straight GHSR Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66e00
+PreviewEffect = preview_subroad_53e66e00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 monorail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66e00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66e00
+Costs       = 50
+[HighwayIntersectionInfo_0x0003C217]
+CopyFrom    = 0x2C217
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0004C217]
+;Added by Chrisim 24 October 2009.
+;roadUroad Dual - Road corner - Straight GHSR Piece
+Piece = 0.0, 0.0, 0, 0, 0x53e66d00
+PreviewEffect = preview_subroad_53e66d00_ch
+
+CellLayout =.........
+CellLayout =....Z...<
+CellLayout =....^....
+
+CheckType = Z - lightrail: 0x00000000 monorail: 0x02000200
+
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+
+AutoTileBase=	0x53e66d00
+ReplacementIntersection0 = 0, 0
+PlaceQueryID = 0x53e66d00
+Costs       = 50
+[HighwayIntersectionInfo_0x0005C217]
+CopyFrom    = 0x4C217
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006C217]
+CopyFrom    = 0x4C217
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007C217]
+CopyFrom    = 0x4C217
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008C217]
+CopyFrom    = 0x4C217
+Transpose = 1
+[HighwayIntersectionInfo_0x0009C217]
+CopyFrom    = 0x8C217
+Rotate		= 1
+[HighwayIntersectionInfo_0x000AC217]
+CopyFrom    = 0x8C217
+Rotate		= 2
+[HighwayIntersectionInfo_0x000BC217]
+CopyFrom    = 0x8C217
+Rotate		= 3
+;rotation clones
+[HighwayIntersectionInfo_0x000CC217]
+CopyFrom    = 0xC217
+[HighwayIntersectionInfo_0x000DC217]
+CopyFrom    = 0x1C217
+[HighwayIntersectionInfo_0x000EC217]
+CopyFrom    = 0x2C217
+[HighwayIntersectionInfo_0x000FC217]
+CopyFrom    = 0x3C217
+

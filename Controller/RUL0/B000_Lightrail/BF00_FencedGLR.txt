@@ -1,0 +1,413 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;FENCED GROUND LIGHT RAIL BUTTON SECTION
+;FENCED GROUND LIGHT RAIL BUTTON SECTION
+; 0xBF##
+RotationRing = BF00, 1BF00, 2BF00, 3BF00 ;Fenced GLR - Straight
+AddTypes     = BF01, 1BF01, 2BF01, 3BF01 ;Fenced GLR - 90 Turn
+AddTypes     = BF02, 1BF02, 2BF02, 3BF02 ;Fenced GLR - Right Turn Diagonal
+AddTypes     = BF03, 1BF03, 2BF03, 3BF03 ;Fenced GLR - Left Turn Diagonal
+AddTypes     = BF04, 1BF04, 2BF04, 3BF04 ;Fenced GLR - Diagonal
+AddTypes     = BF05, 1BF05, 2BF05, 3BF05 ;Fenced GLR - T Junction
+AddTypes     = BF06, 1BF06, 2BF06, 3BF06 ;Fenced GLR - Right Junction
+AddTypes     = BF07, 1BF07, 2BF07, 3BF07 ;Fenced GLR - Left Junction
+AddTypes     = BF08, 1BF08, 2BF08, 3BF08 ;Fenced GLR - Diagonal Right Junction
+AddTypes     = BF09, 1BF09, 2BF09, 3BF09 ;Fenced GLR - Diagonal Left Junction
+AddTypes     = BF0A, 1BF0A, 2BF0A, 3BF0A ;Fenced GLR - Y Junction
+AddTypes     = BF0B, 1BF0B, 2BF0B, 3BF0B ;Fenced GLR - W Junction
+AddTypes     = BF0C, 1BF0C, 2BF0C, 3BF0C ;Fenced GLR - Straight (Single-Sided)
+
+
+;###separator###
+
+;FENCED GLR BUTTON SECTION
+;FENCED GLR BUTTON SECTION
+;Fenced Ground Light Rail Networking
+;;;
+;comment by memo: this section isn't tested for compatibilily with NAM and
+;correctness of the used values, since it isn't part of the NAM itself, but
+;this section was just added to ensure compatibility with cogeo's fenced GLR.
+
+[HighwayIntersectionInfo_0x0000BF00]
+;Fenced GLR - Straight Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF00
+PreviewEffect = preview_rail_dualnetwork209
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+CheckType = Z - lightrail: 0x00000000
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+AutoTileBase=	0x58FFFF00
+AutoPathBase=	0x580cc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF00
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BF00]
+CopyFrom    = 0xBF00
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF00]
+CopyFrom    = 0xBF00
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF00]
+CopyFrom    = 0xBF00
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF01]
+;Fenced GLR - 90? Turn Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF10
+PreviewEffect = preview_rail_dualnetwork211
+CellLayout  =........
+CellLayout  =....Z<..
+CellLayout  =....^...
+CheckType  = Z - lightrail: 0x00000000
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....^....
+AutoTileBase=	0x58FFFF10
+AutoPathBase=	0x580ce700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF10
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BF01]
+CopyFrom    = 0xBF01
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF01]
+CopyFrom    = 0xBF01
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF01]
+CopyFrom    = 0xBF01
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF02]
+;Fenced GLR - Long Turn Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF20
+PreviewEffect = preview_rail_dualnetwork214
+CellLayout =........
+CellLayout =....a..
+CellLayout =....a<..
+CellLayout =....^...
+CheckType = a - lightrail: 0x00000000
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+AutoTileBase=	0x58FFFF20
+AutoPathBase=	0x580d1700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF20
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF02]
+CopyFrom    = 0xBF02
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF02]
+CopyFrom    = 0xBF02
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF02]
+CopyFrom    = 0xBF02
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF03]
+;Fenced GLR - Long Turn Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF40
+PreviewEffect = preview_rail_dualnetwork215
+CellLayout =........
+CellLayout =....a..
+CellLayout =....a<..
+CellLayout =....^...
+CheckType = a - lightrail: 0x00000000
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+AutoTileBase=	0x58FFFF40
+AutoPathBase=	0x580d2700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF40
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF03]
+CopyFrom    = 0xBF03
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF03]
+CopyFrom    = 0xBF03
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF03]
+CopyFrom    = 0xBF03
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF04]
+;Fenced GLR - Diagonal Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF60
+PreviewEffect = preview_rail_dualnetwork216
+CellLayout =........
+CellLayout =....Z<..
+CellLayout =....^...
+CheckType = Z - lightrail: 0x00000000
+ConsLayout =.........
+ConsLayout =....+...<
+ConsLayout =....^....
+AutoTileBase = 0x58FFFF60
+AutoPathBase= 0x580d3700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF60
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BF04]
+CopyFrom    = 0xBF04
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF04]
+CopyFrom    = 0xBF04
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF04]
+CopyFrom    = 0xBF04
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF05]
+;Fenced GLR - T-junction
+;Added by cogeo 03/30/07.
+Piece       = 0.0, 0.0, 0, 0, 0x58FFFF70
+PreviewEffect = preview_rail_dualnetwork241
+CellLayout  =.........
+CellLayout  =....Z...<
+CellLayout  =....^....
+CheckType  = Z - lightrail: 0x02020200
+ConsLayout  =.........
+ConsLayout  =....+...<
+ConsLayout  =....^....
+AutoTileBase=	0x58FFFF70
+AutoPathBase= 0x580e9800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF70
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BF05]
+CopyFrom    = 0xBF05
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF05]
+CopyFrom    = 0xBF05
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF05]
+CopyFrom    = 0xBF05
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF06]
+;Fenced GLR - Junction Right Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFF80
+PreviewEffect = preview_rail_dualnetwork219
+CellLayout =.......
+CellLayout =....a..
+CellLayout =....a<.
+CellLayout =....^..
+CheckType = a - lightrail: 0x00000000
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+AutoTileBase=	0x58FFFF80
+AutoPathBase= 0x580d6700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFF80
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF06]
+CopyFrom    = 0xBF06
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF06]
+CopyFrom    = 0xBF06
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF06]
+CopyFrom    = 0xBF06
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF07]
+;Fenced GLR - Junction Left Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFFA0
+PreviewEffect = preview_rail_dualnetwork220
+CellLayout =.......
+CellLayout =....a..
+CellLayout =....a<.
+CellLayout =....^..
+CheckType = a - lightrail: 0x00000000
+ConsLayout =.........
+ConsLayout =....+....
+ConsLayout =....+...<
+ConsLayout =....^....
+AutoTileBase=	0x58FFFFA0
+AutoPathBase= 0x580d7700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFFA0
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF07]
+CopyFrom    = 0xBF07
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF07]
+CopyFrom    = 0xBF07
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF07]
+CopyFrom    = 0xBF07
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF08]
+;Fenced GLR - Diagonal Junction Right Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece       = 0.0, 0.0, 0, 0, 0x58FFFFC0
+PreviewEffect = preview_rail_dualnetwork248
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =....^....
+CheckType  = a - lightrail: 0x00000000
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =....^....
+AutoTileBase = 0x58FFFFC0
+AutoPathBase = 0x580ee000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFFC0
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF08]
+CopyFrom    = 0xBF08
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF08]
+CopyFrom    = 0xBF08
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF08]
+CopyFrom    = 0xBF08
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF09]
+;Fenced GLR - Diagonal Junction Left Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece       = 0.0, 0.0, 0, 0, 0x58FFFFE0
+PreviewEffect = preview_rail_dualnetwork247
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =....^....
+CheckType  = a - lightrail: 0x00000000
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =....^....
+AutoTileBase = 0x58FFFFE0
+AutoPathBase = 0x580f0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFFE0
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF09]
+CopyFrom    = 0xBF09
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF09]
+CopyFrom    = 0xBF09
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF09]
+CopyFrom    = 0xBF09
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF0A]
+;Fenced GLR - Y-Junction Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece       = 0.0, 0.0, 0, 0, 0x58FFFE00
+PreviewEffect = preview_rail_dualnetwork249
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =.........
+CellLayout  =....^....
+CheckType  = a - lightrail: 0x00000000
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =.........
+ConsLayout  =....^....
+AutoTileBase = 0x58FFFE00
+AutoPathBase = 0x580d4000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFE00
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF0A]
+CopyFrom    = 0xBF0A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF0A]
+CopyFrom    = 0xBF0A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF0A]
+CopyFrom    = 0xBF0A
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF0B]
+;Fenced GLR - W-Junction Puzzle Piece
+;Added by cogeo 03/30/07.
+Piece       = 0.0, 0.0, 0, 0, 0x58FFFE20
+PreviewEffect = preview_rail_dualnetwork250
+CellLayout  =.........
+CellLayout  =....a....
+CellLayout  =....a...<
+CellLayout  =.........
+CellLayout  =....^....
+CheckType  = a - lightrail: 0x00000000
+ConsLayout  =.........
+ConsLayout  =....+....
+ConsLayout  =....+...<
+ConsLayout  =.........
+ConsLayout  =....^....
+AutoTileBase = 0x58FFFE20
+AutoPathBase = 0x580d5000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFE20
+Costs       = 16
+[HighwayIntersectionInfo_0x0001BF0B]
+CopyFrom    = 0xBF0B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF0B]
+CopyFrom    = 0xBF0B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF0B]
+CopyFrom    = 0xBF0B
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x0000BF0C]
+;Fenced GLR - Straight Piece (Single-Sided)
+;Added by cogeo 03/30/07.
+Piece = 0.0, 0.0, 0, 0, 0x58FFFE40
+PreviewEffect = preview_rail_dualnetworkS09
+CellLayout =.......
+CellLayout =...Z<..
+CellLayout =...^...
+CheckType = Z - lightrail: 0x00000000
+ConsLayout =........
+ConsLayout =...+...<
+ConsLayout =...^....
+AutoTileBase=	0x58FFFE40
+AutoPathBase=	0x580cc700
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58FFFE40
+Costs       = 8
+[HighwayIntersectionInfo_0x0001BF0C]
+CopyFrom    = 0xBF0C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002BF0C]
+CopyFrom    = 0xBF0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003BF0C]
+CopyFrom    = 0xBF0C
+Rotate		= 3
+
+

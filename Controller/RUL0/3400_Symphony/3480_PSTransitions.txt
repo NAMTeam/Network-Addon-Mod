@@ -1,0 +1,752 @@
+;TRANSITIONS
+RotationRing = 3480, 13480, 23480, 33480, 43480, 53480, 63480, 73480, 83480, 93480, A3480, B3480, C3480, D3480, E3480, F3480 ;MIS L0-to-L1
+AddTypes     = 3481, 13481, 23481, 33481, 43481, 53481, 63481, 73481, 83481, 93481, A3481, B3481, C3481, D3481, E3481, F3481 ;MIS L1-to-L2
+AddTypes     = 3482, 13482, 23482, 33482, 43482, 53482, 63482, 73482, 83482, 93482, A3482, B3482, C3482, D3482, E3482, F3482 ;MHW-to-RHW-4 Bridge Connector
+AddTypes     = 3483, 13483, 23483, 33483, 43483, 53483, 63483, 73483, 83483, 93483, A3483, B3483, C3483, D3483, E3483, F3483 ;MHW L0-to-L2 transition
+AddTypes     = 3484, F3484, 13484, 83484, 23484, D3484, 33484, A3484, 43484, B3484, 53484, E3484, 63484, 93484, 73484, C3484 ;MHW Straight-OnSlope
+AddTypes     = 3485, F3485, 13485, 83485, 23485, D3485, 33485, A3485, 43485, B3485, 53485, E3485, 63485, 93485, 73485, C3485 ;MHW T-OnSlope
+AddTypes     = 3486, F3486, 13486, 83486, 23486, D3486, 33486, A3486, 43486, B3486, 53486, E3486, 63486, 93486, 73486, C3486 ;MHW Double T-OnSlope
+
+;###separator###
+
+[HighwayIntersectionInfo_0x00003480]
+;Added by MandelSoft 09/08/2012
+;MIS L0-to-L1 Transition
+Piece = 0.0, 0.0, 0, 0, 0x5A600005
+PreviewEffect = preview_symphony_mis_trans_l0_l1
+
+CellLayout =...
+CellLayout =...
+CellLayout =.a.
+CellLayout =.a<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - DirtRoad: 0x02000200
+CheckType = b - Monorail: 0x04000000 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x01000001, 0xffffffff optional 
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.|.
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase = 0x5A600000
+PlaceQueryID = 0x5A600000
+Costs = 150
+
+[HighwayIntersectionInfo_0x00013480]
+CopyFrom = 0x3480
+Rotate   = 1
+[HighwayIntersectionInfo_0x00023480]
+CopyFrom = 0x3480
+Rotate   = 2
+[HighwayIntersectionInfo_0x00033480]
+CopyFrom = 0x3480
+Rotate   = 3
+[HighwayIntersectionInfo_0x00043480]
+CopyFrom = 0x3480
+[HighwayIntersectionInfo_0x00053480]
+CopyFrom = 0x13480
+[HighwayIntersectionInfo_0x00063480]
+CopyFrom = 0x23480
+[HighwayIntersectionInfo_0x00073480]
+CopyFrom = 0x33480
+
+[HighwayIntersectionInfo_0x00083480]
+;Added by MandelSoft 09/08/2012
+;MIS L1-to-L0 Transition
+Piece = 0.0, 0.0, 0, 0, 0x5A600035
+PreviewEffect = preview_symphony_mis_trans_l1_l2
+
+CellLayout =...
+CellLayout =...
+CellLayout =.a.
+CellLayout =.a<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = b - Monorail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional 
+CheckType = a - Dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.|.
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase = 0x5A600030
+PlaceQueryID = 0x5A600030
+Costs = 150
+
+[HighwayIntersectionInfo_0x00093480]
+CopyFrom = 0x83480
+Rotate   = 1
+[HighwayIntersectionInfo_0x000A3480]
+CopyFrom = 0x83480
+Rotate   = 2
+[HighwayIntersectionInfo_0x000B3480]
+CopyFrom = 0x83480
+Rotate   = 3
+[HighwayIntersectionInfo_0x000C3480]
+CopyFrom = 0x83480
+[HighwayIntersectionInfo_0x000D3480]
+CopyFrom = 0x93480
+[HighwayIntersectionInfo_0x000E3480]
+CopyFrom = 0xA3480
+[HighwayIntersectionInfo_0x000F3480]
+CopyFrom = 0xB3480
+
+[HighwayIntersectionInfo_0x00003481]
+;Added by MandelSoft 09/08/2012
+;MIS L1-to-L2 Transition
+Piece = 0.0, 0.0, 0, 0, 0x5A600105
+PreviewEffect = preview_symphony_mis_trans_l1_l0
+
+CellLayout =...
+CellLayout =...
+CellLayout =.a.
+CellLayout =.a<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - DirtRoad: 0x02000200
+CheckType = b - Monorail: 0x04000000 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x01000001, 0xffffffff optional 
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.|.
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase = 0x5A600100
+PlaceQueryID = 0x5A600100
+Costs = 150
+
+[HighwayIntersectionInfo_0x00013481]
+CopyFrom = 0x3481
+Rotate   = 1
+[HighwayIntersectionInfo_0x00023481]
+CopyFrom = 0x3481
+Rotate   = 2
+[HighwayIntersectionInfo_0x00033481]
+CopyFrom = 0x3481
+Rotate   = 3
+[HighwayIntersectionInfo_0x00043481]
+CopyFrom = 0x3481
+[HighwayIntersectionInfo_0x00053481]
+CopyFrom = 0x13481
+[HighwayIntersectionInfo_0x00063481]
+CopyFrom = 0x23481
+[HighwayIntersectionInfo_0x00073481]
+CopyFrom = 0x33481
+
+[HighwayIntersectionInfo_0x00083481]
+;Added by MandelSoft 09/08/2012
+;MIS L2-to-L1 Transition
+Piece = 0.0, 0.0, 0, 0, 0x5A600135
+PreviewEffect = preview_symphony_mis_trans_l2_l1
+
+CellLayout =...
+CellLayout =...
+CellLayout =.a.
+CellLayout =.a<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = b - Monorail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional 
+CheckType = a - Dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.|.
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase = 0x5A600130
+PlaceQueryID = 0x5A600130
+Costs = 150
+
+[HighwayIntersectionInfo_0x00093481]
+CopyFrom = 0x83481
+Rotate   = 1
+[HighwayIntersectionInfo_0x000A3481]
+CopyFrom = 0x83481
+Rotate   = 2
+[HighwayIntersectionInfo_0x000B3481]
+CopyFrom = 0x83481
+Rotate   = 3
+[HighwayIntersectionInfo_0x000C3481]
+CopyFrom = 0x83481
+[HighwayIntersectionInfo_0x000D3481]
+CopyFrom = 0x93481
+[HighwayIntersectionInfo_0x000E3481]
+CopyFrom = 0xA3481
+[HighwayIntersectionInfo_0x000F3481]
+CopyFrom = 0xB3481
+
+[HighwayIntersectionInfo_0x00003482]
+;Added by MandelSoft 11/16/2012
+;MHW-to-RHW-4 Bridge Connector
+Piece = 0.0, 0.0, 0, 0, 0x523FE225
+PreviewEffect = preview_symphony_bridge_connector
+
+CellLayout =...
+CellLayout =...
+CellLayout =.a<
+CellLayout =.b.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - groundhighway:0x04020002
+CheckType = b - groundhighway:0x00020402
+
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.-<
+ConsLayout =.-.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase = 0x523FE220
+PlaceQueryID = 0x523FE220
+Costs = 150
+
+[HighwayIntersectionInfo_0x00013482]
+CopyFrom = 0x3482
+Rotate   = 1
+[HighwayIntersectionInfo_0x00023482]
+CopyFrom = 0x3482
+Rotate   = 2
+[HighwayIntersectionInfo_0x00033482]
+CopyFrom = 0x3482
+Rotate   = 3
+[HighwayIntersectionInfo_0x00043482]
+CopyFrom = 0x3482
+[HighwayIntersectionInfo_0x00053482]
+CopyFrom = 0x13482
+[HighwayIntersectionInfo_0x00063482]
+CopyFrom = 0x23482
+[HighwayIntersectionInfo_0x00073482]
+CopyFrom = 0x33482
+[HighwayIntersectionInfo_0x00083482]
+CopyFrom = 0x3482
+[HighwayIntersectionInfo_0x00093482]
+CopyFrom = 0x13482
+[HighwayIntersectionInfo_0x000A3482]
+CopyFrom = 0x23482
+[HighwayIntersectionInfo_0x000B3482]
+CopyFrom = 0x33482
+[HighwayIntersectionInfo_0x000C3482]
+CopyFrom = 0x3482
+[HighwayIntersectionInfo_0x000D3482]
+CopyFrom = 0x13482
+[HighwayIntersectionInfo_0x000E3482]
+CopyFrom = 0x23482
+[HighwayIntersectionInfo_0x000F3482]
+CopyFrom = 0x33482
+
+
+[HighwayIntersectionInfo_0x00003483]
+;Added 10/22/04 by CryinG.FreeM4n 
+;HighwayxGroundHighway custom extended transition
+Piece = 8.0, 0.0, 0, 0, 0x523feff0
+PreviewEffect = preview_fm_highwayjunction
+
+CellLayout =....ef....
+CellLayout =....CD....
+CellLayout =....CD....
+CellLayout =....CD....
+CellLayout =....YZ...<
+CellLayout =....cd....
+CellLayout =....cd....
+CellLayout =....cd....
+CellLayout =....kl....
+CellLayout =....^.....
+
+CheckType = c - highway:0x02040200
+CheckType = d - highway:0x02000204
+CheckType = C - groundhighway:0x02040200
+CheckType = D - groundhighway:0x02000204
+CheckType = e - groundhighway:0x02040000,0xffff00ff check
+CheckType = f - groundhighway:0x02000004,0xffff00ff check
+CheckType = k - highway:0x00040200,0x00ffffff check
+CheckType = l - highway:0x00000204,0x00ffffff check
+CheckType = Y - highway:0x02040000 groundhighway:0x00040200
+CheckType = Z - highway:0x02000004 groundhighway:0x00000204
+
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....||...<
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....||....
+ConsLayout =....^.....
+
+AutoTileBase = 0x523fe000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0xB000E820
+PlaceQueryID = 0xB000E820
+Costs       = 2000
+
+[HighwayIntersectionInfo_0x00013483]
+CopyFrom = 0x3483
+Rotate      = 1
+[HighwayIntersectionInfo_0x00023483]
+CopyFrom = 0x3483
+Rotate      = 2
+[HighwayIntersectionInfo_0x00033483]
+CopyFrom = 0x3483
+Rotate      = 3
+[HighwayIntersectionInfo_0x00043483]
+CopyFrom = 0x3483
+[HighwayIntersectionInfo_0x00053483]
+CopyFrom = 0x13483
+[HighwayIntersectionInfo_0x00063483]
+CopyFrom = 0x23483
+[HighwayIntersectionInfo_0x00073483]
+CopyFrom = 0x33483
+[HighwayIntersectionInfo_0x00083483]
+;Added 11/07/12 by MandelSoft
+;HighwayxGroundHighway custom extended transition
+Piece = 8.0, 8.0, 0, 0, 0x523fe205
+PreviewEffect = preview_symphony_mhw_l0_to_l2_trans_diag
+
+CellLayout =..........
+CellLayout =.dc.......
+CellLayout =.abc......
+CellLayout =..abc.....
+CellLayout =...abg...<
+CellLayout =....efg...
+CellLayout =.....efg..
+CellLayout =......eh..
+CellLayout =....^.....
+
+CheckType = a - groundhighway: 0x00030100
+CheckType = b - groundhighway: 0x01030103
+CheckType = c - groundhighway: 0x01000003
+CheckType = d - groundhighway: 0x01030000, 0xFFFF0000 check
+CheckType = e - highway: 0x00030100
+CheckType = f - highway: 0x01030103
+CheckType = g - highway: 0x01000003
+CheckType = h - highway: 0x00000103, 0x0000FFFF check
+
+
+ConsLayout =..........
+ConsLayout =.\\.......
+ConsLayout =.\\\......
+ConsLayout =..\\\.....
+ConsLayout =...\\\...<
+ConsLayout =....\\\...
+ConsLayout =.....\\\..
+ConsLayout =......\\..
+ConsLayout =....^.....
+
+AutoTileBase = 0x523fe200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x523fe200
+Costs       = 2000
+[HighwayIntersectionInfo_0x00093483]
+CopyFrom = 0x83483
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A3483]
+CopyFrom = 0x83483
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B3483]
+CopyFrom = 0x83483
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C3483]
+CopyFrom = 0x83483
+[HighwayIntersectionInfo_0x000D3483]
+CopyFrom = 0x93483
+[HighwayIntersectionInfo_0x000E3483]
+CopyFrom = 0xA3483
+[HighwayIntersectionInfo_0x000F3483]
+CopyFrom = 0xB3483
+
+[HighwayIntersectionInfo_0x00003484]
+;Added 05/03/06 by smoncrie
+;Orthogonal Straight Highway OnSlope
+Piece = 0.0, 0.0, 0, 0, 0x5a131005
+PreviewEffect = preview_hw____onslope
+
+CellLayout =.......
+CellLayout =.ac+eg.<
+CellLayout =.bd+fh..
+CellLayout =..^....
+
+CheckType = a - groundhighway:0x04020000,0x00ff0000 optional
+CheckType = b - groundhighway:0x00020400,0x00ff0000 optional
+CheckType = c - groundhighway:0x04020002
+CheckType = d - groundhighway:0x00020402
+CheckType = e - highway:0x04020002
+CheckType = f - highway:0x00020402
+CheckType = g - highway:0x04000002,0x000000ff optional
+CheckType = h - highway:0x00000402,0x000000ff optional
+
+ConsLayout =........
+ConsLayout =.--+--.<
+ConsLayout =.--+--..
+ConsLayout =..^.....
+
+AutoTileBase = 0x5a131000
+AutoPathBase = 0x5a131000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a131000
+Costs       = 1400
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x00013484]
+CopyFrom    = 0x3484
+Rotate      = 1
+AutoTileBase = 0x5a131300
+[HighwayIntersectionInfo_0x00023484]
+CopyFrom    = 0x3484
+Rotate      = 2
+AutoTileBase = 0x5a131600
+[HighwayIntersectionInfo_0x00033484]
+CopyFrom    = 0x3484
+Rotate      = 3
+AutoTileBase = 0x5a131900
+[HighwayIntersectionInfo_0x00043484]
+CopyFrom = 0x3484
+[HighwayIntersectionInfo_0x00053484]
+CopyFrom = 0x13484
+[HighwayIntersectionInfo_0x00063484]
+CopyFrom = 0x23484
+[HighwayIntersectionInfo_0x00073484]
+CopyFrom = 0x33484
+[HighwayIntersectionInfo_0x00083484]
+;Added 12/17/06 by smoncrie
+;Edited 04/07/2008 by smoncrie fix wrong tile when plopped on Highway
+;                  added missing AutoPathBase
+;Diagonal Straight Highway OnSlope
+Piece = 0.0, 0.0, 0, 0, 0x5a131005
+PreviewEffect = preview_hw_d__onslope
+
+CellLayout =.......
+CellLayout =....fI.
+CellLayout =...+gJ.
+CellLayout =..c+h..<
+CellLayout =.Ad+...
+CellLayout =.Be....
+CellLayout =....^..
+
+CheckType = A - highway:0x03010000,0x00000000 optional
+CheckType = B - highway:0x00010300,0x00FFFF00 optional
+CheckType = c - highway:0x03010000
+CheckType = d - highway:0x03010301
+CheckType = e - highway:0x00000301
+CheckType = f - groundhighway:0x03010000
+CheckType = g - groundhighway:0x03010301
+CheckType = h - groundhighway:0x00000301
+CheckType = I - groundhighway:0x03000001,0xFF0000FF optional
+CheckType = J - groundhighway:0x00000301,0x00000000 optional
+
+ConsLayout =.......
+ConsLayout =....//.
+ConsLayout =...+//.
+ConsLayout =../+/..<
+ConsLayout =.//+...
+ConsLayout =.//....
+ConsLayout =....^..
+
+AutoTileBase = 0x5a4c1000
+AutoPathBase = 0x5a4c1000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a131000
+Costs       = 1400
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x00093484]
+CopyFrom     = 0x83484
+AutoTileBase = 0x5a4c1300
+Rotate       = 1
+[HighwayIntersectionInfo_0x000A3484]
+CopyFrom     = 0x83484
+AutoTileBase = 0x5a4c1600
+Rotate       = 2
+[HighwayIntersectionInfo_0x000B3484]
+CopyFrom     = 0x83484
+AutoTileBase = 0x5a4c1900
+Rotate       = 3
+[HighwayIntersectionInfo_0x000C3484]
+CopyFrom = 0x83484
+AutoTileBase = 0x5a4c1300
+Transpose    = 1
+[HighwayIntersectionInfo_0x000D3484]
+CopyFrom = 0x83484
+AutoTileBase = 0x5a4c1000
+Rotate       = 1
+Transpose    = 1
+[HighwayIntersectionInfo_0x000E3484]
+CopyFrom = 0x83484
+AutoTileBase = 0x5a4c1900
+Rotate       = 2
+Transpose    = 1
+[HighwayIntersectionInfo_0x000F3484]
+CopyFrom = 0x83484
+AutoTileBase = 0x5a4c1600
+Rotate       = 3
+Transpose    = 1
+
+[HighwayIntersectionInfo_0x00003485]
+;Added 12/06/04 by smoncrie
+;Orthogonal T Highway OnSlope
+Piece = 0.0, 0.0, 0, 0, 0x5a131006
+PreviewEffect = preview_hw_t__onslope
+
+CellLayout =.......
+CellLayout =.ac+f.<
+CellLayout =.bd+g..
+CellLayout =..^....
+
+CheckType = a - groundhighway:0x04020000,0x00ff0000 optional
+CheckType = b - groundhighway:0x00020400,0x00ff0000 optional
+CheckType = c - groundhighway:0x04020002
+CheckType = d - groundhighway:0x00020402
+CheckType = f - highway:0x04020002 street:0x02000200,0x000000ff optional
+CheckType = g - highway:0x00020402 street:0x02000200,0x000000ff optional
+
+ConsLayout =.......
+ConsLayout =.--+#.<
+ConsLayout =.--+#..
+ConsLayout =..^....
+
+AutoTileBase = 0x5a131000
+AutoPathBase = 0x5a131000
+ReplacementIntersection = 0, 0
+ConvertQueryID = 0x5a131001
+PlaceQueryID = 0x5a131001
+Costs       = 800
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x00013485]
+CopyFrom = 0x3485
+Rotate      = 1
+AutoTileBase = 0x5a131300
+[HighwayIntersectionInfo_0x00023485]
+CopyFrom = 0x3485
+Rotate      = 2
+AutoTileBase = 0x5a131600
+[HighwayIntersectionInfo_0x00033485]
+CopyFrom = 0x3485
+Rotate      = 3
+AutoTileBase = 0x5a131900
+[HighwayIntersectionInfo_0x00043485]
+CopyFrom = 0x3485
+[HighwayIntersectionInfo_0x00053485]
+CopyFrom = 0x13485
+[HighwayIntersectionInfo_0x00063485]
+CopyFrom = 0x23485
+[HighwayIntersectionInfo_0x00073485]
+CopyFrom = 0x33485
+[HighwayIntersectionInfo_0x00083485]
+;Added 12/17/06 by smoncrie
+;Diagonal T Highway OnSlope
+;Edited 04/07/2008 by smoncrie fix wrong tile when plopped on gHighway
+Piece = 0.0, 0.0, 0, 0, 0x5a4c1105
+PreviewEffect = preview_hw_dt_onslope
+
+CellLayout =......
+CellLayout =...dG.
+CellLayout =..+eH.
+CellLayout =.a+f..<
+CellLayout =.b+...
+CellLayout =.c....
+CellLayout =...^..
+
+CheckType = a - highway:0x03010000 street:0x02000200,0x00000000 optional
+CheckType = b - highway:0x03010301 street:0x02000200,0x00000000 optional
+CheckType = c - highway:0x00000301 street:0x02000200,0x00000000 optional
+CheckType = d - groundhighway:0x03010000
+CheckType = e - groundhighway:0x03010301
+CheckType = f - groundhighway:0x00000301
+CheckType = G - groundhighway:0x03000001,0xff0000ff optional
+CheckType = H - groundhighway:0x00000301,0x00000000 optional
+
+ConsLayout =......
+ConsLayout =...//.
+ConsLayout =..+//.
+ConsLayout =.#+/..<
+ConsLayout =.#+...
+ConsLayout =.#....
+ConsLayout =...^..
+
+AutoTileBase = 0x5a4c1100
+AutoPathBase = 0x5a4c1100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a131001
+Costs        = 1400
+[HighwayIntersectionInfo_0x00093485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1400
+Rotate       = 1
+[HighwayIntersectionInfo_0x000A3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1700
+Rotate       = 2
+[HighwayIntersectionInfo_0x000B3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1A00
+Rotate       = 3
+[HighwayIntersectionInfo_0x000C3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1400
+Transpose    = 1
+[HighwayIntersectionInfo_0x000D3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1100
+Rotate       = 1
+Transpose    = 1
+[HighwayIntersectionInfo_0x000E3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1a00
+Rotate       = 2
+Transpose    = 1
+[HighwayIntersectionInfo_0x000F3485]
+CopyFrom = 0x83485
+AutoTileBase = 0x5a4c1700
+Rotate       = 3
+Transpose    = 1
+
+[HighwayIntersectionInfo_0x00003486]
+;Added 05/03/06 by smoncrie
+;Orthogonal Double T Highway OnSlope
+Piece = 0.0, 0.0, 0, 0, 0x5a131105
+PreviewEffect = preview_hw_tt_onslope
+
+CellLayout = .c...
+CellLayout = ad+g<
+CellLayout = be+h.
+CellLayout = .f...
+CellLayout = .^...
+
+CheckType = a - groundhighway: 0x04020000,0x00000000 optional
+CheckType = b - groundhighway: 0x00020400,0x00000000 optional
+CheckType = c - lightrail: 0x02000000,0x00000000 optional
+CheckType = d - lightrail: 0x02000200 groundhighway: 0x04020002,0x00000000 optional
+CheckType = e - lightrail: 0x02000200 groundhighway: 0x00020402,0x00000000 optional
+CheckType = f - lightrail: 0x00000200,0x00000000 optional
+CheckType = g - highway:0x04020002 Street:0x02000200,0x000000ff optional
+CheckType = h - highway:0x00020402 Street:0x02000200,0x000000ff optional
+
+ConsLayout = .|...
+ConsLayout = -#+#<
+ConsLayout = -#+#.
+ConsLayout = .|...
+ConsLayout = .^...
+
+AutoTileBase = 0x5a131100
+AutoPathBase = 0x5a131100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a131100
+Costs       = 600
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x00013486]
+CopyFrom = 0x3486
+Rotate      = 1
+AutoTileBase = 0x5a131400
+[HighwayIntersectionInfo_0x00023486]
+CopyFrom = 0x3486
+Rotate      = 2
+AutoTileBase = 0x5a131700
+[HighwayIntersectionInfo_0x00033486]
+CopyFrom = 0x3486
+Rotate      = 3
+AutoTileBase = 0x5a131A00
+[HighwayIntersectionInfo_0x00043486]
+CopyFrom = 0x3486
+[HighwayIntersectionInfo_0x00053486]
+CopyFrom = 0x13486
+[HighwayIntersectionInfo_0x00063486]
+CopyFrom = 0x23486
+[HighwayIntersectionInfo_0x00073486]
+CopyFrom = 0x33486
+[HighwayIntersectionInfo_0x00083486]
+;Added 12/17/06 by smoncrie
+;Diagonal Double T Highway OnSlope
+Piece = 0.0, 0.0, 0, 0, 0x5a4c1106
+PreviewEffect = preview_hw_dttonslope
+
+CellLayout =.....
+CellLayout =...d.
+CellLayout =...e.
+CellLayout =..+f.
+CellLayout =.a+g.<
+CellLayout =.b+h.
+CellLayout =.c...
+CellLayout =...^.
+
+CheckType = a - highway:0x03010000 street:0x02000200,0x00000000 optional
+CheckType = b - highway:0x03010301 street:0x02000200,0x00000000 optional
+CheckType = c - highway:0x00000301 street:0x02000200,0x00000000 optional
+CheckType = d - lightrail: 0x02000000,0x00000000 optional
+CheckType = e - lightrail: 0x02000200 groundhighway:0x03010000,0x00000000 optional
+CheckType = f - lightrail: 0x02000200 groundhighway:0x03010301,0x00000000 optional
+CheckType = g - lightrail: 0x02000200 groundhighway:0x00000301,0x00000000 optional
+CheckType = h - lightrail: 0x00000200,0x00000000 optional
+
+ConsLayout =.....
+ConsLayout =...|.
+ConsLayout =...#.
+ConsLayout =..+#.
+ConsLayout =.#+#.<
+ConsLayout =.#+|.
+ConsLayout =.#...
+ConsLayout =...^.
+
+AutoTileBase = 0x5a4c1110
+AutoPathBase = 0x5a4c1110
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5a131100
+Costs        = 1400
+; A different AutoTileBase for each rotation for OnSlope color fix.
+[HighwayIntersectionInfo_0x00093486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1410
+Rotate       = 1
+[HighwayIntersectionInfo_0x000A3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1710
+Rotate       = 2
+[HighwayIntersectionInfo_0x000B3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1a10
+Rotate       = 3
+[HighwayIntersectionInfo_0x000C3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1410
+Transpose    = 1
+[HighwayIntersectionInfo_0x000D3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1110
+Rotate       = 1
+Transpose    = 1
+[HighwayIntersectionInfo_0x000E3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1a10
+Rotate       = 2
+Transpose    = 1
+[HighwayIntersectionInfo_0x000F3486]
+CopyFrom = 0x83486
+AutoTileBase = 0x5a4c1710
+Rotate       = 3
+Transpose    = 1
+
