@@ -17,8 +17,8 @@ AddTypes     = E014, 1E014, 2E014, 3E014 ;Highwayxonewayroad straight run-off on
 AddTypes     = E015, 1E015, 2E015, 3E015 ;Highwayxonewayroad straight run-off offramp
 AddTypes     = E016, 1E016, 2E016, 3E016 ;Highwayxonewayroad perpendicular onramp forward
 AddTypes     = E017, 1E017, 2E017, 3E017 ;Highwayxonewayroad perpendicular offramp forward
-AddTypes     = E018, 1E018, 2E018, 3E018 ;Highwayxonewayroad perpendicular onramp reverse
-AddTypes     = E019, 1E019, 2E019, 3E019 ;Highwayxonewayroad perpendicular offramp reverse
+AddTypes     = E019, 1E019, 2E019, 3E019 ;Highwayxonewayroad perpendicular onramp reverse
+AddTypes     = E018, 1E018, 2E018, 3E018 ;Highwayxonewayroad perpendicular offramp reverse
 
 ;###separator###
 
@@ -286,7 +286,7 @@ CopyFrom    = 0xE017
 Rotate      = 3
 
 
-[HighwayIntersectionInfo_0x0000E019]
+[HighwayIntersectionInfo_0x0000E018]
 ;highwayxonewayroad Perpendicular *off*ramp Reverse
 ;Added by Tropod 06.30.04
 Piece = -8.0, -24.0, 2, 1, 0x52279005
@@ -324,21 +324,6 @@ ConvertQueryID = 0xB000E5A0
 PlaceQueryID = 0xB000E5A0
 HandleOffset = -1, 0
 Costs       = 250
-[HighwayIntersectionInfo_0x0001E019]
-CopyFrom    = 0xE019
-Rotate      = 1
-[HighwayIntersectionInfo_0x0002E019]
-CopyFrom    = 0xE019
-Rotate      = 2
-[HighwayIntersectionInfo_0x0003E019]
-CopyFrom    = 0xE019
-Rotate      = 3
-
-
-[HighwayIntersectionInfo_0x0000E018]
-;highwayxonewayroad Perpendicular *On*ramp Reverse
-CopyFrom    = 0xE019
-Transpose   = 1
 [HighwayIntersectionInfo_0x0001E018]
 CopyFrom    = 0xE018
 Rotate      = 1
@@ -347,6 +332,21 @@ CopyFrom    = 0xE018
 Rotate      = 2
 [HighwayIntersectionInfo_0x0003E018]
 CopyFrom    = 0xE018
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E019]
+;highwayxonewayroad Perpendicular *On*ramp Reverse
+CopyFrom    = 0xE018
+Transpose   = 1
+[HighwayIntersectionInfo_0x0001E019]
+CopyFrom    = 0xE019
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E019]
+CopyFrom    = 0xE019
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E019]
+CopyFrom    = 0xE019
 Rotate      = 3
 
 
