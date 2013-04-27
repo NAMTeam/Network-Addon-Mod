@@ -1,0 +1,23 @@
+;------------------------------------------
+;OneWayRoad Arrows Reduction Plugin; makes some intersections with avenues
+;and this plugin installed work again ;-)
+;added 010108 ~ memo
+;avenue diagonal x onewayroad orthogonal/orthogonal forked transition
+0x5f940300,1,0,0x5F471E00,1,0=0x09004d00,3,0,0x5F471E00,1,0
+0x5f940300,1,0,0x5F471E00,2,0=0x09004d00,1,1,0x5F471E00,2,0
+0x5f940300,3,0,0x5F471E00,1,0=0x09004d00,3,0,0x5F471E00,1,0
+0x5f940300,3,0,0x5F471E00,2,0=0x09004d00,1,1,0x5F471E00,2,0
+;avenue diagonal with curved end into orthogonal onewayroad non-forked transition
+0x5f940300,1,0,0x5F471100,2,0=0x09004d00,1,1,0x5F471100,2,0
+0x5f940300,3,0,0x5F471100,2,0=0x09004d00,1,1,0x5F471100,2,0
+0x5f940300,1,0,0x5F471100,0,1=0x09004d00,3,0,0x5F471100,0,1
+0x5f940300,3,0,0x5F471100,0,1=0x09004d00,3,0,0x5F471100,0,1
+;avenue diagonal x onewayroad orthogonal/diagonal forked transition
+0x5f940300,1,0,0x5F471000,1,0=0x09004d00,3,0,0x5F471000,1,0
+0x5f940300,1,0,0x5F471000,2,0=0x09004d00,1,1,0x5F471000,2,0
+0x5f940300,1,0,0x5F471000,3,1=0x09004d00,1,1,0x5F471000,3,1
+0x5f940300,3,0,0x5F471000,1,0=0x09004d00,3,0,0x5F471000,1,0
+0x5f940300,3,0,0x5F471000,3,1=0x09004d00,1,1,0x5F471000,3,1
+;
+;End OneWayRoad Arrows
+;------------------------------------------
