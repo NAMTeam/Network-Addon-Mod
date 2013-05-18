@@ -955,48 +955,22 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x57F28000
 Costs       = 400
 [HighwayIntersectionInfo_0x00015018]
-;Added by Blue Lightning 12/21/2009. (Origonally created in 07/??/2009)
-;L2 Elevated RHW-6C Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x57F28005
-PreviewEffect = preview_starter_l2rhw6c_000
-
-CellLayout =.......
-CellLayout =..bac..
-CellLayout =...Z..<
-CellLayout =...^...
-
-CheckType = Z - dirtroad: 0x02000200
-CheckType = a - dirtroad: 0x02000200 highway: 0x00040004, 0xffffffff optional
-CheckType = b - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
-
-ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
-ConsLayout =...^...
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F28000
-Costs       = 400
+CopyFrom    = 0x5018
+Rotate		= 1
 [HighwayIntersectionInfo_0x00025018]
 CopyFrom    = 0x5018
-Rotate		= 1
+Rotate		= 2
 [HighwayIntersectionInfo_0x00035018]
-CopyFrom    = 0x15018
-Rotate		= 1
+CopyFrom    = 0x5018
+Rotate		= 3
 [HighwayIntersectionInfo_0x00045018]
 CopyFrom    = 0x5018
-Rotate		= 2
 [HighwayIntersectionInfo_0x00055018]
 CopyFrom    = 0x15018
-Rotate		= 2
 [HighwayIntersectionInfo_0x00065018]
-CopyFrom    = 0x5018
-Rotate		= 3
+CopyFrom    = 0x25018
 [HighwayIntersectionInfo_0x00075018]
-CopyFrom    = 0x15018
-Rotate		= 3
+CopyFrom    = 0x35018
 
 
 
@@ -1206,48 +1180,22 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x57F18000
 Costs       = 400
 [HighwayIntersectionInfo_0x0001500F]
-;Added by Tarkus on 01/28/2012
-;L1 Elevated RHW-6C Starter Piece
-Piece = 0.0, 0.0, 0, 1, 0x57F18005
-PreviewEffect = preview_starter_l1rhw6c_000
-
-CellLayout =.......
-CellLayout =..bac..
-CellLayout =...Z..<
-CellLayout =...^...
-
-CheckType = Z - dirtroad: 0x02000200
-CheckType = a - dirtroad: 0x02000200 highway: 0x00040001, 0xffffffff optional
-CheckType = b - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
-
-ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
-ConsLayout =...^...
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57F18000
-Costs       = 400
+CopyFrom    = 0x500F
+Rotate		= 1
 [HighwayIntersectionInfo_0x0002500F]
 CopyFrom    = 0x500F
-Rotate		= 1
+Rotate		= 2
 [HighwayIntersectionInfo_0x0003500F]
-CopyFrom    = 0x1500F
-Rotate		= 1
+CopyFrom    = 0x500F
+Rotate		= 3
 [HighwayIntersectionInfo_0x0004500F]
 CopyFrom    = 0x500F
-Rotate		= 2
 [HighwayIntersectionInfo_0x0005500F]
 CopyFrom    = 0x1500F
-Rotate		= 2
 [HighwayIntersectionInfo_0x0006500F]
-CopyFrom    = 0x500F
-Rotate		= 3
+CopyFrom    = 0x2500F
 [HighwayIntersectionInfo_0x0007500F]
-CopyFrom    = 0x1500F
-Rotate		= 3
+CopyFrom    = 0x3500F
 
 
 
