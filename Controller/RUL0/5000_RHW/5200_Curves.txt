@@ -18,53 +18,61 @@ AddTypes     = 520E, 4520E, 1520E, 5520E, 2520E, 6520E, 3520E, 7520E ;RHW-3 S-Cu
 AddTypes     = 8520E, C520E, 9520E, D520E, A520E, E520E, B520E, F520E ;RHW-3 S-Curve 2
 AddTypes     = 520F, 4520F, 1520F, 5520F, 2520F, 6520F, 3520F, 7520F ;RHW-3 45-Curve 1
 AddTypes     = 8520F, C520F, 9520F, D520F, A520F, E520F, B520F, F520F ;RHW-3 45-Curve 2
-;AddTypes     = 5210, 45210, 15210, 55210, 25210, 65210, 35210, 75210 ;RHW-6S Orth-Diagonal Outer
-;AddTypes     = 5211, 45211, 15211, 55211, 25211, 65211, 35211, 75211 ;RHW-6S Orth-Diagonal Inner
-;AddTypes     = 5212, 15212, 25212, 35212, 45212, 55212, 65212, 75212 ;RHW-6S Diagonal
+;AddTypes     = 5212, 15212, 25212, 35212, 45212, 55212, 65212, 75212 ;RHW-6S Double Curve
+AddTypes     = 5210, 45210, 15210, 55210, 25210, 65210, 35210, 75210 ;RHW-6S Outer Curve
+AddTypes     = 5211, 45211, 15211, 55211, 25211, 65211, 35211, 75211 ;RHW-6S Inner Curve
 ;AddTypes     = 5213, 45213, 15213, 55213, 25213, 65213, 35213, 75213 ;RHW-6S Diagonal Fillers
-;AddTypes     = 5214, 45214, 15214, 55214, 25214, 65214, 35214, 75214 ;RHW-8 Orth-Diagonal Outer
-;AddTypes     = 5215, 45215, 15215, 55215, 25215, 65215, 35215, 75215 ;RHW-8 Orth-Diagonal Inner
+AddTypes     = 5214, 45214, 15214, 55214, 25214, 65214, 35214, 75214 ;RHW-8 Outer Curve
+AddTypes     = 5215, 45215, 15215, 55215, 25215, 65215, 35215, 75215 ;RHW-8 Inner Curve
 ;AddTypes     = 5216, 15216, 25216, 35216, 45216, 55216, 65216, 75216 ;RHW-8 Diagonal
 ;AddTypes     = 5217, 45217, 15217, 55217, 25217, 65217, 35217, 75217 ;RHW-8S Diagonal Fillers
-;AddTypes     = 5218, 45218, 15218, 55218, 25218, 65218, 35218, 75218 ;RHW-10 Orth-Diagonal Outer
-;AddTypes     = 5219, 45219, 15219, 55219, 25219, 65219, 35219, 75219 ;RHW-10 Orth-Diagonal Inner
+AddTypes     = 5218, 45218, 15218, 55218, 25218, 65218, 35218, 75218 ;RHW-10 Outer Curve
+AddTypes     = 5219, 45219, 15219, 55219, 25219, 65219, 35219, 75219 ;RHW-10 Inner Curve
 ;AddTypes     = 521A, 1521A, 2521A, 3521A, 4521A, 5521A, 6521A, 7521A ;RHW-10 Diagonal
 
 ;###separator###
 
 [HighwayIntersectionInfo_0x00005210]
-;Added by Tarkus 11/10/2008.
-;RHW-6S Orth-Diag 1
-Piece = -16.0, 0.0, 0, 0, 0x5cccc005
-PreviewEffect = preview_diagonal_rhw6s__001
+;Added by MandelSoft 05/17/2013
+;Real Highway RHW-6S Outer Curve
+Piece = 0.0, 0.0, 0, 0, 0x57941005
+PreviewEffect = preview_rhw-6s_45curve_out
 
-CellLayout =.......
-CellLayout =...X..<
-CellLayout =..XY...
-CellLayout =..ZW...
-CellLayout =...V...
-CellLayout =...^...
+CellLayout =a.....
+CellLayout =b....<
+CellLayout =b.....
+CellLayout =b.....
+CellLayout =b+...
+CellLayout =cd....
+CellLayout =.cd...
+CellLayout =..cd..
+CellLayout =^..e..
 
-CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
-CheckType = W - dirtroad: 0x00000301
-CheckType = X - dirtroad: 0x03010000
-CheckType = Y - dirtroad: 0x03010301
-CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
 
-ConsLayout =.......
-ConsLayout =.../..<
-ConsLayout =..//...
-ConsLayout =..|/...
-ConsLayout =.......
-ConsLayout =...^...
+ConsLayout = |.....
+ConsLayout = |....<
+ConsLayout = |.....
+ConsLayout = |.....
+ConsLayout = ||....
+ConsLayout = \\....
+ConsLayout = .\\..
+ConsLayout = ..\\..
+ConsLayout = ^..\..
+             
 
-AutoTileBase=	0x5cccc000
+AutoTileBase = 0x57941000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cccc000
-Costs       = 400
+PlaceQueryID = 0x57941000
+Costs = 375
 [HighwayIntersectionInfo_0x00015210]
 CopyFrom    = 0x5210
-Rotate		= 1
+Rotate  	= 1
 [HighwayIntersectionInfo_0x00025210]
 CopyFrom    = 0x5210
 Rotate		= 2
@@ -87,35 +95,43 @@ Rotate		= 1
 
 
 [HighwayIntersectionInfo_0x00005211]
-;Added by Tarkus 11/10/2008.
-;RHW-6S Orth-Diag 2
-Piece = -16.0, 0.0, 0, 0, 0x5cccc035
-PreviewEffect = preview_diagonal_rhw6s__002
+;Added by MandelSoft 05/17/2013
+;Real Highway RHW-6S Inner Curve
+Piece = 0.0, 0.0, 0, 0, 0x57941105
+PreviewEffect = preview_rhw-6s_45curve_in
 
-CellLayout =.......
-CellLayout =...X..<
-CellLayout =..XY...
-CellLayout =..ZW...
-CellLayout =..V....
-CellLayout =...^...
+CellLayout =.a....
+CellLayout =.b+..<
+CellLayout =.b+...
+CellLayout =.b+...
+CellLayout =..d+..
+CellLayout =..cd..
+CellLayout =...cf.
+CellLayout =......
+CellLayout =.^....
 
-CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
-CheckType = W - dirtroad: 0x00000301
-CheckType = X - dirtroad: 0x03010000
-CheckType = Y - dirtroad: 0x03010301
-CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
 
-ConsLayout =.......
-ConsLayout =.../..<
-ConsLayout =..//...
-ConsLayout =..|/...
-ConsLayout =.......
-ConsLayout =...^...
+ConsLayout = .|....
+ConsLayout = .||..<
+ConsLayout = .||...
+ConsLayout = .||...
+ConsLayout = ..\\..
+ConsLayout = ..\\..
+ConsLayout = ...\\.
+ConsLayout = ......
+ConsLayout = .^....
+             
 
-AutoTileBase=	0x5cccc030
+AutoTileBase = 0x57941100
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cccc030
-Costs       = 400
+PlaceQueryID = 0x57941100
+Costs = 375
 [HighwayIntersectionInfo_0x00015211]
 CopyFrom    = 0x5211
 Rotate		= 1
@@ -141,31 +157,43 @@ Rotate		= 1
 
 
 [HighwayIntersectionInfo_0x00005212]
-;Added by Tarkus 11/10/2008.
-;RHW-6S Diagonal
-Piece = 0.0, 0.0, 0, 0, 0x5cccc205
-PreviewEffect = preview_diagonal_rhw6s__003
+;Added by MandelSoft 05/17/2013
+;Real Highway RHW-6S Double Curve
+Piece = 0.0, 0.0, 0, 0, 0x57941005
+PreviewEffect = preview_rhw-6s_45curve_dual
 
-CellLayout =.......
-CellLayout =...Y..<
-CellLayout =...Z...
-CellLayout =...X...
-CellLayout =...^...
+CellLayout =aa....
+CellLayout =bb+..<
+CellLayout =bb+...
+CellLayout =bb+...
+CellLayout =bcd+..
+CellLayout =cdcd..
+CellLayout =.cdcf.
+CellLayout =..cd..
+CellLayout =^..e..
 
-CheckType = X - dirtroad: 0x00000301
-CheckType = Y - dirtroad: 0x03010000
-CheckType = Z - dirtroad: 0x03010301
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
 
-ConsLayout =.......
-ConsLayout =.../..<
-ConsLayout =.../...
-ConsLayout =.../...
-ConsLayout =...^...
+ConsLayout = ||....
+ConsLayout = |||..<
+ConsLayout = |||...
+ConsLayout = |||...
+ConsLayout = |\\\..
+ConsLayout = \\\\..
+ConsLayout = .\\\\.
+ConsLayout = ..\\..
+ConsLayout = ^.....
+             
 
-AutoTileBase=	0x5cccc200
+AutoTileBase = 0x57941000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cccc200
-Costs       = 200
+PlaceQueryID = 0x57941000
+Costs = 375
 [HighwayIntersectionInfo_0x00015212]
 CopyFrom    = 0x5212
 Rotate		= 1
@@ -180,13 +208,13 @@ CopyFrom    = 0x5212
 Transpose	= 1
 [HighwayIntersectionInfo_0x00055212]
 CopyFrom    = 0x45212
-Rotate		= 3
+Rotate		= 1
 [HighwayIntersectionInfo_0x00065212]
 CopyFrom    = 0x45212
 Rotate		= 2
 [HighwayIntersectionInfo_0x00075212]
 CopyFrom    = 0x45212
-Rotate		= 1
+Rotate		= 3
 
 
 
@@ -262,36 +290,44 @@ Rotate		= 3
 
 
 [HighwayIntersectionInfo_0x00005214]
-;Added by Tarkus 11/10/2008.
-;RHW-8 Orth-Diag 1
-Piece = -16.0, 0.0, 0, 0, 0x5cddd005
-PreviewEffect = preview_diagonal_rhw8___001
+;Added by MandelSoft 05/20/2013
+;Real Highway RHW-8S Outer Curve
+Piece = 0.0, 0.0, 0, 0, 0x57951005
+PreviewEffect = preview_rhw-8s_45curve_out
 
-CellLayout =.......
-CellLayout =...X..<
-CellLayout =..XY...
-CellLayout =..ZX...
-CellLayout =..ZY...
-CellLayout =..VV...
-CellLayout =...^...
+CellLayout =aa.....
+CellLayout =bb....<
+CellLayout =bb.....
+CellLayout =bb.....
+CellLayout =bb+....
+CellLayout =.cd....
+CellLayout =.dcd...
+CellLayout =..dcd..
+CellLayout =..cde..
+CellLayout =.^.e...
 
-CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
-CheckType = X - dirtroad: 0x03010000
-CheckType = Y - dirtroad: 0x00000301
-CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
 
-ConsLayout =.......
-ConsLayout =.../..<
-ConsLayout =..//...
-ConsLayout =..|/...
-ConsLayout =..||...
-ConsLayout =.......
-ConsLayout =...^...
+ConsLayout = ||.....
+ConsLayout = ||....<
+ConsLayout = ||.....
+ConsLayout = ||.....
+ConsLayout = |||....
+ConsLayout = .\\....
+ConsLayout = .\\\...
+ConsLayout = ..\\\..
+ConsLayout = ..\\\..
+ConsLayout = .^.\...
 
-AutoTileBase=	0x5cddd000
+AutoTileBase = 0x57951000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cddd000
-Costs       = 400
+PlaceQueryID = 0x57951000
+Costs = 375
 [HighwayIntersectionInfo_0x00015214]
 CopyFrom    = 0x5214
 Rotate		= 1
@@ -317,36 +353,43 @@ Rotate		= 1
 
 
 [HighwayIntersectionInfo_0x00005215]
-;Added by Tarkus 11/10/2008.
-;RHW-8 Orth-Diag 2
-Piece = -16.0, 0.0, 0, 0, 0x5cddd045
-PreviewEffect = preview_diagonal_rhw8___002
+;Added by MandelSoft 05/17/2013
+;Real Highway RHW-8S Inner Curve
+Piece = 0.0, 0.0, 0, 0, 0x57951205
+PreviewEffect = preview_rhw-8s_45curve_in
 
-CellLayout =.......
-CellLayout =...X..<
-CellLayout =..XY...
-CellLayout =..ZX...
-CellLayout =..ZY...
-CellLayout =..VV...
-CellLayout =...^...
+CellLayout =.aa...
+CellLayout =.b+..<
+CellLayout =.bd...
+CellLayout =.bcd..
+CellLayout =..dcd.
+CellLayout =..cdcf
+CellLayout =...cf.
+CellLayout =......
+CellLayout =.^....
 
-CheckType = V - dirtroad: 0x00000200,0x0000ff00 check
-CheckType = X - dirtroad: 0x03010000
-CheckType = Y - dirtroad: 0x00000301
-CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
 
-ConsLayout =.......
-ConsLayout =.../..<
-ConsLayout =..//...
-ConsLayout =..|/...
-ConsLayout =..||...
-ConsLayout =.......
-ConsLayout =...^...
+ConsLayout = .||...
+ConsLayout = .||..<
+ConsLayout = .||...
+ConsLayout = .||\..
+ConsLayout = ..\\\.
+ConsLayout = ..\\\\
+ConsLayout = ...\\.
+ConsLayout = ......
+ConsLayout = .^....
+             
 
-AutoTileBase=	0x5cddd040
+AutoTileBase = 0x57951200
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cddd040
-Costs       = 500
+PlaceQueryID = 0x57951200
+Costs = 375
 [HighwayIntersectionInfo_0x00015215]
 CopyFrom    = 0x5215
 Rotate		= 1
@@ -368,7 +411,6 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x00075215]
 CopyFrom    = 0x45215
 Rotate		= 1
-
 
 
 [HighwayIntersectionInfo_0x00005216]
@@ -492,8 +534,128 @@ CopyFrom    = 0x45217
 Rotate		= 3
 
 
-; === RHW-10C Cosmetic Transitions ===
-; === Placeholder ===
+[HighwayIntersectionInfo_0x00005218]
+;Added by MandelSoft 05/20/2013
+;Real Highway RHW-10S Outer Curve
+Piece = 0.0, 0.0, 0, 0, 0x57961005
+PreviewEffect = preview_rhw-10s_45curve_out
+
+CellLayout =aa.....
+CellLayout =bb....<
+CellLayout =bb.....
+CellLayout =bb.....
+CellLayout =bb+....
+CellLayout =.cd....
+CellLayout =.dcd...
+CellLayout =..dcd..
+CellLayout =..cde..
+CellLayout =.^.e...
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
+
+ConsLayout = ||.....
+ConsLayout = ||....<
+ConsLayout = ||.....
+ConsLayout = ||.....
+ConsLayout = |||....
+ConsLayout = .\\....
+ConsLayout = .\\\...
+ConsLayout = ..\\\..
+ConsLayout = ..\\\..
+ConsLayout = .^.\...
+
+AutoTileBase = 0x57961000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57961000
+Costs = 375
+[HighwayIntersectionInfo_0x00015218]
+CopyFrom    = 0x5218
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025218]
+CopyFrom    = 0x5218
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035218]
+CopyFrom    = 0x5218
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045218]
+CopyFrom    = 0x5218
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055218]
+CopyFrom    = 0x45218
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065218]
+CopyFrom    = 0x45218
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075218]
+CopyFrom    = 0x45218
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x00005219]
+;Added by MandelSoft 05/17/2013
+;Real Highway RHW-8S Inner Curve
+Piece = 0.0, 0.0, 0, 0, 0x57961205
+PreviewEffect = preview_rhw-10s_45curve_in
+
+CellLayout =.aa...
+CellLayout =.b+..<
+CellLayout =.bd...
+CellLayout =.bcd..
+CellLayout =..dcd.
+CellLayout =..cdcf
+CellLayout =...cf.
+CellLayout =......
+CellLayout =.^....
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x01000003
+CheckType = e - dirtroad: 0x00000100,0x0000ff00 check
+CheckType = f - dirtroad: 0x00000003,0x000000ff check
+
+ConsLayout = .||...
+ConsLayout = .||..<
+ConsLayout = .||...
+ConsLayout = .||\..
+ConsLayout = ..\\\.
+ConsLayout = ..\\\\
+ConsLayout = ...\\.
+ConsLayout = ......
+ConsLayout = .^....
+             
+
+AutoTileBase = 0x57961200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57961200
+Costs = 375
+[HighwayIntersectionInfo_0x00015219]
+CopyFrom    = 0x5219
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025219]
+CopyFrom    = 0x5219
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035219]
+CopyFrom    = 0x5219
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045219]
+CopyFrom    = 0x5219
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055219]
+CopyFrom    = 0x45219
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065219]
+CopyFrom    = 0x45219
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075219]
+CopyFrom    = 0x45219
+Rotate		= 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;RHW Wide Curve Piece Section
@@ -1559,4 +1721,3 @@ Rotate = 2
 [HighwayIntersectionInfo_0x000F520F]
 CopyFrom = 0xC520F
 Rotate = 1
-
