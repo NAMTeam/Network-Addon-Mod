@@ -518,8 +518,8 @@ Transpose = 1
 
 [HighwayIntersectionInfo_0x0000A35F]; (added by dedgren 081226)
 ;Added by dedgren 12/26/2008
-;Diagonal Double Track Switch to Orthogonal Double Track (textures by dedgren); edited by Swamper 090219 ;edited by bighead 13/09/2009
-Piece = 0.0, 0.0, 0, 0, 0x53B33005
+;Diagonal Double Track Switch to Orthogonal Double Track (textures by dedgren); edited by Swamper 090219 ;edited by bighead 13/09/2009; edited by Swordmaster 06/10/13
+Piece = 0.0, -16.0, 0, 0, 0x53B33005
 PreviewEffect = preview_lrsw_puzzlepiece004
 
 ;CellLayout =............
@@ -538,10 +538,10 @@ PreviewEffect = preview_lrsw_puzzlepiece004
 ;CheckType = c - Rail: 0x00020002
 
 CellLayout =............
-CellLayout =..za.......<
-CellLayout =...ba+......
+CellLayout =...z........
+CellLayout =...ba+.....<
 CellLayout =....ba++....
-CellLayout =.....edcccx.
+CellLayout =.....edccx..
 CellLayout =......y.....
 CellLayout =...^........
 
@@ -553,19 +553,19 @@ CheckType = d - Rail: 0x01020003
 CheckType = e - Rail: 0x00030100
 CheckType = x - Rail: 0x00000002,0x000000ff check
 CheckType = y - Rail: 0x00000100,0x0000ff00 check
-CheckType = z - Rail: 0x00030000,0x00ff0000 check
+CheckType = z - Rail: 0x01000000,0xff000000 check
 
 
 ConsLayout =............
-ConsLayout =...\.......<
-ConsLayout =...\\\......
+ConsLayout =............
+ConsLayout =...\\\.....<
 ConsLayout =....\\\\....
-ConsLayout =.....\\---..
+ConsLayout =.....\\--...
 ConsLayout =............
 ConsLayout =...^........
 
 Autoplace= 1
-AutoTileBase=   0x53B33000
+AutoTileBase=   0x53B33010
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x53B33000
 Costs = 168; edited by dedgren 081229
