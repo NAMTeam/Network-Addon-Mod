@@ -104,7 +104,7 @@ Rotate = 3
 ;
 [HighwayIntersectionInfo_0x0000A359]
 ;Rail 45 degree curve (textures by dedgren); edited by dedgren 081229
-;Added by Memo 05/05/06
+;Added by Memo 05/05/06; reduced footprint by Swordmaster 3 Jul 2013
 Piece = 0.0, 0.0, 0, 0, 0x53131ff0
 PreviewEffect = preview_rail_smoothcurve
 
@@ -134,8 +134,7 @@ CellLayout =cb+..
 CellLayout =d+...
 CellLayout =d+...
 CellLayout =d....
-CellLayout =d...<
-CellLayout =z....
+CellLayout =z...<
 CellLayout =^....
 
 CheckType   = a - rail:0x03010000
@@ -152,11 +151,9 @@ ConsLayout = ||...
 ConsLayout = |X...
 ConsLayout = |....
 ConsLayout = |...<
-ConsLayout = |....
 ConsLayout = ^....
 
 
-Autoplace = 1
 AutoTileBase = 0x53131000
 ConvertQueryID = 0x53131000
 PlaceQueryID = 0x53131000
@@ -189,6 +186,7 @@ Rotate = 3
 [HighwayIntersectionInfo_0x0000A358]
 ;Added by Tarkus 05/27/2007
 ;Rail S-Curve (textures by dedgren); edited by dedgren 081229 ;edited by bighead 13/09/2009
+;edited by Swordmaster 3 Jun 2013
 Piece = 0.0, 0.0, 0, 0, 0x53132005
 PreviewEffect = preview_farr_puzzlepiece001
 
@@ -241,19 +239,19 @@ Transpose = 1
 [HighwayIntersectionInfo_0x0000A35A]
 ;Added by Tarkus 05/27/2008
 ;Rail 90 degree curve (textures by dedgren); edited by dedgren 081229
+;reduced footprint by Swordmaster 3 Jul 2013
 Piece = 0, 0.0, 0, 0, 0x53133005
 PreviewEffect = preview_farr_puzzlepiece002
 
 CellLayout =..............
 CellLayout =..............
-CellLayout =..abbbdf.....<
+CellLayout =...abbdf.....<
 CellLayout =.....+cef.....
 CellLayout =.......cef....
 CellLayout =.........cf...
 CellLayout =.........+cf..
 CellLayout =..........+c..
 CellLayout =..........+h..
-CellLayout =...........h..
 CellLayout =...........h..
 CellLayout =...........i..
 CellLayout =...^..........
@@ -270,7 +268,7 @@ CheckType = i - rail: 0x00000200,0x0000ff00 check
 
 ConsLayout =..............
 ConsLayout =..............
-ConsLayout =...--\\\.....<
+ConsLayout =....-\\\.....<
 ConsLayout =.....\\\\.....
 ConsLayout =.......\\\....
 ConsLayout =.........\\...
@@ -278,11 +276,10 @@ ConsLayout =..........\\..
 ConsLayout =...........\..
 ConsLayout =...........\..
 ConsLayout =...........|..
-ConsLayout =...........|..
 ConsLayout =..............
 ConsLayout =...^..........
 
-AutoTileBase=	0x53133000
+AutoTileBase=	0x53133100
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x53133000
 Costs = 120; edited by dedgren 081229
