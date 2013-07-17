@@ -1,11 +1,28 @@
-;===TRANSITIONS===
+;===TRANSITIONS=== 
 ;5f0 and 5f1
-RotationRing = 5F00, 45F00, 15F00, 55F00, 25F00, 65F00, 35F00, 75F00 ;FAMIS to FARHW-4 transition A
-AddTypes = 85F00, C5F00, 95F00, D5F00, A5F00, E5F00, B5F00, F5F00 ;FAMIS to FARHW-4 transition B
-AddTypes = 5F01, 45F01, 15F01, 55F01, 25F01, 65F01, 35F01, 75F01 ;FAD-44 Type A Full
-AddTypes = 5F02, 45F02, 15F02, 55F02, 25F02, 65F02, 35F02, 75F02 ;FAD-44 Type A In/Out
-;AddTypes = 85F02, C5F02, 95F02, D5F02, A5F02, E5F02, B5F02, F5F02 ;FAD-44 Type B In/Out
-AddTypes = 5F03, 15F03, 25F03, 35F03, 45F03, 55F03, 65F03, 75F03 ;FAMIS/AVE-2 Full Diamond
+; Beginning of Ring, FA Transitions
+RotationRing = 5F00, 45F00, 15F00, 55F00, 25F00, 65F00, 35F00, 75F00; MIS/4 Trans A
+AddTypes = 85F00, C5F00, 95F00, D5F00, A5F00, E5F00, B5F00, F5F00; MIS/4 Trans B
+;AddTypes = 5f01, 15f01, 25f01, 35f01, 45f01, 55f01, 65f01, 75f01, 85f01; 4/6S Trans A
+;AddTypes = 85f01, 95f01, a5f01, b5f01, c5f01, d5f01, e5f01, f5f01; 4/6S Trans B
+;AddTypes = 5f02, 15f02, 25f02, 35f02, 45f02, 55f02, 65f02, 75f02; MIS/6S Trans A
+;AddTypes = 85f02, 95f02, a5f02, b5f02, c5f02, d5f02, e5f02, f5f02; MIS/6S Trans B
+; Avenue Full FADs
+AddTypes = 85f03, 95f03, a5f03, b5f03, c5f03, d5f03, e5f03, f5f03; FAD M4A Full (arranged in increasing width)
+AddTypes = 5f03, 15f03, 25f03, 35f03, 45f03, 55f03, 65f03, 75f03; FAD 44A Full
+AddTypes = 5f04, 15f04, 25f04, 35f04, 45f04, 55f04, 65f04, 75f04; FAD 44B Full
+AddTypes = 85f04, 95f04, a5f04, b5f04, c5f04, d5f04, e5f04, f5f04; FAD 64B Full
+AddTypes = 85f05, 95f05, a5f05, b5f05, c5f05, d5f05, e5f05, f5f05; FAD M4 TuLEPless Full (also arranged in increasing width)
+AddTypes = 5f05, 15f05, 25f05, 35f05, 45f05, 55f05, 65f05, 75f05; FAD 44 TuLEPless Full
+; Avenue Half FADs
+AddTypes = 5f06, 15f06, 25f06, 35f06, 45f06, 55f06, 65f06, 75f06; FAD 44A Halves
+;AddTypes = 5f07, 15f07, 25f07, 35f07, 45f07, 55f07, 65f07, 75f07; FAD M4A Halves
+;AddTypes = 5f08, 15f08, 25f08, 35f08, 45f08, 55f08, 65f08, 75f08; FAD 44B Halves
+;AddTypes = 5f09, 15f09, 25f09, 35f09, 45f09, 55f09, 65f09, 75f09; FAD 64B Halves
+;AddTypes = 85f06, 95f06, a5f06, b5f06, 85f07, 95f07, a5f07, b5f07; FAD 44 and M4 TuLEPless Halves
+; Road/AVE-2 Full FADs
+AddTypes = 5F0f, 15F0f, 25F0f, 35F0f, 45F0f, 55F0f, 65F0f, 75F0f ; FAD M2A Full
+; Road/AVE-2 Half FADs
 
 
 
@@ -35,7 +52,6 @@ AutoTileBase = 0x5e100000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5e100000
 Costs       = 200
-
 [HighwayIntersectionInfo_0x00015F00]
 CopyFrom = 0x5F00
 Rotate = 1
@@ -43,23 +59,18 @@ Rotate = 1
 [HighwayIntersectionInfo_0x00025F00]
 CopyFrom = 0x5F00
 Rotate = 2
-
 [HighwayIntersectionInfo_0x00035F00]
 CopyFrom = 0x5F00
 Rotate = 3
-
 [HighwayIntersectionInfo_0x00045F00]
 CopyFrom = 0x5F00
 Transpose = 1
-
 [HighwayIntersectionInfo_0x00055F00]
 CopyFrom = 0x45F00
 Rotate = 1
-
 [HighwayIntersectionInfo_0x00065F00]
 CopyFrom = 0x45F00
 Rotate = 2
-
 [HighwayIntersectionInfo_0x00075F00]
 CopyFrom = 0x45F00
 Rotate = 3
@@ -88,31 +99,24 @@ AutoTileBase = 0x5e100020
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5e100020
 Costs       = 200
-
 [HighwayIntersectionInfo_0x00095F00]
 CopyFrom = 0x85F00
 Rotate = 1
-
 [HighwayIntersectionInfo_0x000A5F00]
 CopyFrom = 0x85F00
 Rotate = 2
-
 [HighwayIntersectionInfo_0x000B5F00]
 CopyFrom = 0x85F00
 Rotate = 3
-
 [HighwayIntersectionInfo_0x000C5F00]
 CopyFrom = 0x85F00
 Transpose = 1
-
 [HighwayIntersectionInfo_0x000D5F00]
 CopyFrom = 0xC5F00
 Rotate = 1
-
 [HighwayIntersectionInfo_0x000E5F00]
 CopyFrom = 0xC5F00
 Rotate = 2
-
 [HighwayIntersectionInfo_0x000F5F00]
 CopyFrom = 0xC5F00
 Rotate = 3
@@ -254,7 +258,475 @@ Rotate = 2
 CopyFrom = 0x45F02
 Rotate = 3
 
-[HighwayIntersectionInfo_0x00005F03]
+[HighwayIntersectionInfo_0x00005f03]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_44a_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e100305
+PreviewEffect = preview_rhw_special_fad_44a_full_out_ave4
+
+CellLayout =.....
+CellLayout =.abc<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =.--+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e100300
+PlaceQueryID = 0x5e100300
+Costs = 75
+[HighwayIntersectionInfo_0x00015f03]
+CopyFrom = 0x5f03
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025f03]
+CopyFrom = 0x5f03
+Rotate = 2
+[HighwayIntersectionInfo_0x00035f03]
+CopyFrom = 0x5f03
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045f03]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_44a_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100605
+PreviewEffect = preview_rhw_special_fad_44a_full_in_ave4
+
+CellLayout =......
+CellLayout =.dbe.<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+--.<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100600
+PlaceQueryID = 0x5e100600
+Costs = 75
+[HighwayIntersectionInfo_0x00055f03]
+CopyFrom = 0x45f03
+Rotate	= 1
+[HighwayIntersectionInfo_0x00065f03]
+CopyFrom = 0x45f03
+Rotate = 2
+[HighwayIntersectionInfo_0x00075f03]
+CopyFrom = 0x45f03
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00085f03]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_m4a_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e100325
+PreviewEffect = preview_rhw_special_fad_m4a_full_out_ave4
+
+CellLayout =.....
+CellLayout =..ac<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =..-+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e100320
+PlaceQueryID = 0x5e100320
+Costs = 75
+[HighwayIntersectionInfo_0x00095f03]
+CopyFrom = 0x85f03
+Rotate	= 1
+[HighwayIntersectionInfo_0x000a5f03]
+CopyFrom = 0x85f03
+Rotate = 2
+[HighwayIntersectionInfo_0x000b5f03]
+CopyFrom = 0x85f03
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000c5f03]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_m4a_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100625
+PreviewEffect = preview_rhw_special_fad_m4a_full_in_ave4
+
+CellLayout =......
+CellLayout =.de..<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+-..<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100620
+PlaceQueryID = 0x5e100620
+Costs = 75
+[HighwayIntersectionInfo_0x000d5f03]
+CopyFrom = 0xc5f03
+Rotate	= 1
+[HighwayIntersectionInfo_0x000e5f03]
+CopyFrom = 0xc5f03
+Rotate = 2
+[HighwayIntersectionInfo_0x000f5f03]
+CopyFrom = 0xc5f03
+Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00005f04]
+;Added by Ganaram Inukshuk 7/8/2013
+;rhw_special_fad_44b_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e100345
+PreviewEffect = preview_rhw_special_fad_44b_full_out_ave4
+
+CellLayout =.....
+CellLayout =.abc<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =.--+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e100340
+PlaceQueryID = 0x5e100340
+Costs = 75
+[HighwayIntersectionInfo_0x00015f04]
+CopyFrom = 0x5f04
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025f04]
+CopyFrom = 0x5f04
+Rotate = 2
+[HighwayIntersectionInfo_0x00035f04]
+CopyFrom = 0x5f04
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045f04]
+;Added by Ganaram Inukshuk 7/8/2013
+;rhw_special_fad_44b_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100645
+PreviewEffect = preview_rhw_special_fad_44b_full_in_ave4
+
+CellLayout =......
+CellLayout =.dbe.<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+--.<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100640
+PlaceQueryID = 0x5e100640
+Costs = 75
+[HighwayIntersectionInfo_0x00055f04]
+CopyFrom = 0x45f04
+Rotate	= 1
+[HighwayIntersectionInfo_0x00065f04]
+CopyFrom = 0x45f04
+Rotate = 2
+[HighwayIntersectionInfo_0x00075f04]
+CopyFrom = 0x45f04
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00085f04]
+;Added by Ganaram Inukshuk 7/8/2013
+;rhw_special_fad_64b_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e100365
+PreviewEffect = preview_rhw_special_fad_64b_full_out_ave4
+
+CellLayout =.....
+CellLayout =.abc<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =.--+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e100360
+PlaceQueryID = 0x5e100360
+Costs = 75
+[HighwayIntersectionInfo_0x00095f04]
+CopyFrom = 0x85f04
+Rotate	= 1
+[HighwayIntersectionInfo_0x000a5f04]
+CopyFrom = 0x85f04
+Rotate = 2
+[HighwayIntersectionInfo_0x000b5f04]
+CopyFrom = 0x85f04
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000c5f04]
+;Added by Ganaram Inukshuk 7/8/2013
+;rhw_special_fad_64b_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100665
+PreviewEffect = preview_rhw_special_fad_64b_full_in_ave4
+
+CellLayout =......
+CellLayout =.dbe.<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+--.<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100660
+PlaceQueryID = 0x5e100660
+Costs = 75
+[HighwayIntersectionInfo_0x000d5f04]
+CopyFrom = 0xc5f04
+Rotate	= 1
+[HighwayIntersectionInfo_0x000e5f04]
+CopyFrom = 0xc5f04
+Rotate = 2
+[HighwayIntersectionInfo_0x000f5f04]
+CopyFrom = 0xc5f04
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00005f05]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_44_tulepless_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e1000c5
+PreviewEffect = preview_rhw_special_fad_44_tulepless_full_out_ave4
+
+CellLayout =.....
+CellLayout =.abc<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =.--+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e1000c0
+PlaceQueryID = 0x5e1000c0
+Costs = 75
+[HighwayIntersectionInfo_0x00015f05]
+CopyFrom = 0x5f05
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025f05]
+CopyFrom = 0x5f05
+Rotate = 2
+[HighwayIntersectionInfo_0x00035f05]
+CopyFrom = 0x5f05
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045f05]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_44_tulepless_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100bc5
+PreviewEffect = preview_rhw_special_fad_44_tulepless_full_in_ave4
+
+CellLayout =......
+CellLayout =.dbe.<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+--.<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100bc0
+PlaceQueryID = 0x5e100bc0
+Costs = 75
+[HighwayIntersectionInfo_0x00055f05]
+CopyFrom = 0x45f05
+Rotate	= 1
+[HighwayIntersectionInfo_0x00065f05]
+CopyFrom = 0x45f05
+Rotate = 2
+[HighwayIntersectionInfo_0x00075f05]
+CopyFrom = 0x45f05
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00085f05]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_m4_tulepless_full_out_ave4
+Piece = -32, 0.0, 0, 0, 0x5e1000e5
+PreviewEffect = preview_rhw_special_fad_m4_tulepless_full_out_ave4
+
+CellLayout =.....
+CellLayout =..ac<
+CellLayout =.abc.
+CellLayout =...^.
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+
+ConsLayout =......
+ConsLayout =..-+.<
+ConsLayout =.--+..
+ConsLayout =...^..
+
+AutoTileBase=	0x5e1000e0
+PlaceQueryID = 0x5e1000e0
+Costs = 75
+[HighwayIntersectionInfo_0x00095f05]
+CopyFrom = 0x85f05
+Rotate	= 1
+[HighwayIntersectionInfo_0x000a5f05]
+CopyFrom = 0x85f05
+Rotate = 2
+[HighwayIntersectionInfo_0x000b5f05]
+CopyFrom = 0x85f05
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000c5f05]
+;Added by Ganaram Inukshuk 7/10/2013
+;rhw_special_fad_m4_tulepless_full_in_ave4
+Piece = 0, 0.0, 0, 0, 0x5e100be5
+PreviewEffect = preview_rhw_special_fad_m4_tulepless_full_in_ave4
+
+CellLayout =......
+CellLayout =.de..<
+CellLayout =.dbe..
+CellLayout =.^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =......
+ConsLayout =.+-..<
+ConsLayout =.+--..
+ConsLayout =.^....
+
+AutoTileBase=	0x5e100be0
+PlaceQueryID = 0x5e100be0
+Costs = 75
+[HighwayIntersectionInfo_0x000d5f05]
+CopyFrom = 0xc5f05
+Rotate	= 1
+[HighwayIntersectionInfo_0x000e5f05]
+CopyFrom = 0xc5f05
+Rotate = 2
+[HighwayIntersectionInfo_0x000f5f05]
+CopyFrom = 0xc5f05
+Rotate = 3
+
+; Avenue Half FADs
+[HighwayIntersectionInfo_0x00005F06]
+;Added by SA 05/16/2011
+;FAD-44 Type A Half - Out
+Piece = -32, 0.0, 0, 0, 0x5e100385
+PreviewEffect = preview_fad44_type_a_out002
+
+CellLayout =.......
+CellLayout =.abcd.<
+CellLayout =.abcd..
+CellLayout =...^...
+
+CheckType = a - dirtroad:0x00020000
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000202
+CheckType = d - avenue:0x02000204 road:0x02000200
+
+ConsLayout =.......
+ConsLayout =.--++.<
+ConsLayout =.--++..
+ConsLayout =...^...
+
+AutoTileBase=	0x5e100380
+PlaceQueryID =  0x5e100380
+Costs = 75
+[HighwayIntersectionInfo_0x00015F06]
+CopyFrom = 0x5F06
+Rotate	= 1
+[HighwayIntersectionInfo_0x00025F06]
+CopyFrom = 0x5F06
+Rotate = 2
+[HighwayIntersectionInfo_0x00035F06]
+CopyFrom = 0x5F06
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045F06]
+;Added by SA 05/16/2011
+;FAD-44 Type A Half - In
+Piece = -16, 0.0, 0, 0, 0x5e100785
+PreviewEffect = preview_fad44_type_a_in_003
+
+CellLayout =.......
+CellLayout =.cdbe.<
+CellLayout =.cdbe..
+CellLayout =..^....
+
+CheckType = b - dirtroad:0x00020002
+CheckType = c - avenue:0x02040200 road:0x02000200
+CheckType = d - avenue:0x02000204 road:0x02020200
+CheckType = e - dirtroad:0x00000002
+
+ConsLayout =.......
+ConsLayout =.++--.<
+ConsLayout =.++--..
+ConsLayout =..^....
+
+AutoTileBase=	0x5e100780
+PlaceQueryID =  0x5e100780
+Costs = 75
+[HighwayIntersectionInfo_0x00055F06]
+CopyFrom = 0x45F06
+Rotate	= 1
+[HighwayIntersectionInfo_0x00065F06]
+CopyFrom = 0x45F06
+Rotate = 2
+[HighwayIntersectionInfo_0x00075F06]
+CopyFrom = 0x45F06
+Rotate = 3
+
+
+; Road/AVE-2 Full FADs
+[HighwayIntersectionInfo_0x00005F0f]
 ;Added by GDO29Anagram 06/26/2011.
 ;FAMIS/AVE-2 Full Diamond
 Piece = -16.0, -16.0, 0, 0, 0x5B036005
@@ -279,30 +751,29 @@ ConsLayout =...^...
 
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5B036000
-Costs = 450
+Costs = 50
 AutoTileBase = 0x5B036000
 
-[HighwayIntersectionInfo_0x00015F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00015F0f]
+CopyFrom = 0x5F0f
 Rotate = 1
-[HighwayIntersectionInfo_0x00025F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00025F0f]
+CopyFrom = 0x5F0f
 Rotate = 2
-[HighwayIntersectionInfo_0x00035F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00035F0f]
+CopyFrom = 0x5F0f
 Rotate = 3
-[HighwayIntersectionInfo_0x00045F03]
-CopyFrom = 0x5F03
-[HighwayIntersectionInfo_0x00055F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00045F0f]
+CopyFrom = 0x5F0f
+[HighwayIntersectionInfo_0x00055F0f]
+CopyFrom = 0x5F0f
 Rotate = 1
-[HighwayIntersectionInfo_0x00065F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00065F0f]
+CopyFrom = 0x5F0f
 Rotate = 2
-[HighwayIntersectionInfo_0x00075F03]
-CopyFrom = 0x5F03
+[HighwayIntersectionInfo_0x00075F0f]
+CopyFrom = 0x5F0f
 Rotate = 3
-
 
 
 ;End RHW Wide Curve Piece Section SECTION
