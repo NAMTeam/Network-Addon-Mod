@@ -16,6 +16,14 @@ AddTypes     = 9529, 19529, 29529, 39529, 49529, 59529, 69529, 79529 ;avenuexroa
 ;AddTypes     = 952D, 1952D, 2952D, 3952D, 4952D, 5952D, 6952D, 7952D ;Tulep Ave-4 Roundabout T in	
 ;AddTypes     = 952E, 1952E, 2952E, 3952E, 4952E, 5952E, 6952E, 7952E ;Tulep Ave-4 Roundabout T out
 
+AddTypes     = 9540, 19540, 29540, 39540, 49540, 59540, 69540, 79540 ;AVE-4 x ARD-3 Turbo-Roundabout
+AddTypes     = 9541, 19541, 29541, 39541, 49541, 59541, 69541, 79541 ;RD-4  x ARD-3 Turbo-Roundabout
+AddTypes     = 9542, 19542, 29542, 39542, 49542, 59542, 69542, 79542 ;RD-6  x ARD-3 Turbo-Roundabout
+
+AddTypes     = 89540, 99540, A9540, B9540, C9540, D9540, E9540, F9540 ;AVE-4 x ARD-3 Common Roundabout
+AddTypes     = 89541, 99541, A9541, B9541, C9541, D9541, E9541, F9541 ;RD-4  x ARD-3 Common Roundabout
+AddTypes     = 89542, 99542, A9542, B9542, C9542, D9542, E9542, F9542 ;RD-6  x ARD-3 Common Roundabout
+
 ;###separator###
 
 [HighwayIntersectionInfo_0x00009529]
@@ -1073,3 +1081,490 @@ CopyFrom = 0x29527
 [HighwayIntersectionInfo_0x00079527]
 CopyFrom = 0x39527
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;AVENUE TURBO ROUNDABOUTS
+
+[HighwayIntersectionInfo_0x00009540]
+;Created by MandelSoft on 2013/03/31
+;Turbo-Roundabout 3-way AVE-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B880005
+PreviewEffect = preview_turbo_rab_3way_AVE-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aaa...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - avenue: 0x04020002
+CheckType = e - avenue: 0x00020402
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..###...
+ConsLayout =...^....
+
+
+AutoTileBase = 0x5B880000
+PlaceQueryID = 0x5B880000
+Costs = 100
+[HighwayIntersectionInfo_0x00019540]
+CopyFrom    = 0x9540
+Rotate      = 1
+[HighwayIntersectionInfo_0x00029540]
+CopyFrom    = 0x9540
+Rotate      = 2
+[HighwayIntersectionInfo_0x00039540]
+CopyFrom    = 0x9540
+Rotate      = 3
+[HighwayIntersectionInfo_0x00049540]
+;Created by MandelSoft on 2013/03/31
+;Turbo-Roundabout 4-way AVE-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B880045
+PreviewEffect = preview_turbo_rab_4way_AVE-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - avenue: 0x04020002
+CheckType = e - avenue: 0x00020402
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B880040
+PlaceQueryID = 0x5B880040
+Costs = 100
+[HighwayIntersectionInfo_0x00059540]
+CopyFrom    = 0x49540
+Rotate      = 1
+[HighwayIntersectionInfo_0x00069540]
+CopyFrom    = 0x49540
+Rotate      = 2
+[HighwayIntersectionInfo_0x00079540]
+CopyFrom    = 0x49540
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x00009541]
+;Created by MandelSoft on 2013/08/14
+;Turbo-Roundabout 3-way RD-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B880085
+PreviewEffect = preview_turbo_rab_3way_rd-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aaa...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..###...
+ConsLayout =...^....
+
+
+AutoTileBase = 0x5B880080
+PlaceQueryID = 0x5B880080
+Costs = 100
+[HighwayIntersectionInfo_0x00019541]
+CopyFrom    = 0x9541
+Rotate      = 1
+[HighwayIntersectionInfo_0x00029541]
+CopyFrom    = 0x9541
+Rotate      = 2
+[HighwayIntersectionInfo_0x00039541]
+CopyFrom    = 0x9541
+Rotate      = 3
+[HighwayIntersectionInfo_0x00049541]
+;Created by MandelSoft on 2013/08/14
+;Turbo-Roundabout 4-way RD-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B8800C5
+PreviewEffect = preview_turbo_rab_4way_rd-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B8800C0
+PlaceQueryID = 0x5B8800C0
+Costs = 100
+[HighwayIntersectionInfo_0x00059541]
+CopyFrom    = 0x49541
+Rotate      = 1
+[HighwayIntersectionInfo_0x00069541]
+CopyFrom    = 0x49541
+Rotate      = 2
+[HighwayIntersectionInfo_0x00079541]
+CopyFrom    = 0x49541
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x00009542]
+;Created by MandelSoft on 2013/08/14
+;Turbo-Roundabout 3-way RD-6 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B880505
+PreviewEffect = preview_turbo_rab_3way_rd-6xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.aabaa..
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =.aaaaa..
+CellLayout =........
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.##|##..
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =.#####..
+ConsLayout =........
+ConsLayout =...^....
+
+AutoTileBase = 0x5B880500
+PlaceQueryID = 0x5B880500
+Costs = 100
+[HighwayIntersectionInfo_0x00019542]
+CopyFrom    = 0x9542
+Rotate      = 1
+[HighwayIntersectionInfo_0x00029542]
+CopyFrom    = 0x9542
+Rotate      = 2
+[HighwayIntersectionInfo_0x00039542]
+CopyFrom    = 0x9542
+Rotate      = 3
+[HighwayIntersectionInfo_0x00049542]
+;Created by MandelSoft on 2013/08/14
+;Turbo-Roundabout 4-way RD-6 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B880555
+PreviewEffect = preview_turbo_rab_4way_rd-6xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.aabaa..
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =.aabaa..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.##|##..
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =.##|##..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B880550
+PlaceQueryID = 0x5B880550
+Costs = 100
+[HighwayIntersectionInfo_0x00059542]
+CopyFrom    = 0x49542
+Rotate      = 1
+[HighwayIntersectionInfo_0x00069542]
+CopyFrom    = 0x49542
+Rotate      = 2
+[HighwayIntersectionInfo_0x00079542]
+CopyFrom    = 0x49542
+Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00089540]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 3-way AVE-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B881005
+PreviewEffect = preview_turbo_rab_3way_AVE-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aaa...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - avenue: 0x04020002
+CheckType = e - avenue: 0x00020402
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..###...
+ConsLayout =...^....
+
+
+AutoTileBase = 0x5B881000
+PlaceQueryID = 0x5B881000
+Costs = 100
+[HighwayIntersectionInfo_0x00099540]
+CopyFrom    = 0x89540
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A9540]
+CopyFrom    = 0x89540
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B9540]
+CopyFrom    = 0x89540
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C9540]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 4-way AVE-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B881045
+PreviewEffect = preview_turbo_rab_4way_AVE-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - avenue: 0x04020002
+CheckType = e - avenue: 0x00020402
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B881040
+PlaceQueryID = 0x5B881040
+Costs = 100
+[HighwayIntersectionInfo_0x000D9540]
+CopyFrom    = 0xC9540
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E9540]
+CopyFrom    = 0xC9540
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F9540]
+CopyFrom    = 0xC9540
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x00089541]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 3-way RD-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B881085
+PreviewEffect = preview_turbo_rab_3way_rd-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aaa...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..###...
+ConsLayout =...^....
+
+
+AutoTileBase = 0x5B881080
+PlaceQueryID = 0x5B881080
+Costs = 100
+[HighwayIntersectionInfo_0x00099541]
+CopyFrom    = 0x89541
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A9541]
+CopyFrom    = 0x89541
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B9541]
+CopyFrom    = 0x89541
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C9541]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 4-way RD-4 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B8810C5
+PreviewEffect = preview_turbo_rab_4way_rd-4xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B8810C0
+PlaceQueryID = 0x5B8810C0
+Costs = 100
+[HighwayIntersectionInfo_0x000D9541]
+CopyFrom    = 0xC9541
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E9541]
+CopyFrom    = 0xC9541
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F9541]
+CopyFrom    = 0xC9541
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x00089542]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 3-way RD-6 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B881505
+PreviewEffect = preview_turbo_rab_3way_rd-6xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.aabaa..
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =.aaaaa..
+CellLayout =........
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.##|##..
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =.#####..
+ConsLayout =........
+ConsLayout =...^....
+
+
+AutoTileBase = 0x5B881500
+PlaceQueryID = 0x5B881500
+Costs = 100
+[HighwayIntersectionInfo_0x00099542]
+CopyFrom    = 0x89542
+Rotate      = 1
+[HighwayIntersectionInfo_0x000A9542]
+CopyFrom    = 0x89542
+Rotate      = 2
+[HighwayIntersectionInfo_0x000B9542]
+CopyFrom    = 0x89542
+Rotate      = 3
+[HighwayIntersectionInfo_0x000C9542]
+;Created by MandelSoft on 2013/08/14
+;Common Roundabout 4-way RD-6 x ARD-3.
+Piece = 0.0, 0.0, 0, 0, 0x5B881555
+PreviewEffect = preview_turbo_rab_4way_rd-6xard-3
+
+CellLayout =........
+CellLayout =..aba...
+CellLayout =.aabaa..
+CellLayout =.ddddd.<
+CellLayout =.eeeee..
+CellLayout =.aabaa..
+CellLayout =..aba...
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200
+CheckType = d - road: 0x00020002
+CheckType = e - road: 0x00020002
+
+
+ConsLayout =........
+ConsLayout =..#|#...
+ConsLayout =.##|##..
+ConsLayout =.-----.<
+ConsLayout =.-----..
+ConsLayout =.##|##..
+ConsLayout =..#|#...
+ConsLayout =...^....
+
+AutoTileBase = 0x5B881550
+PlaceQueryID = 0x5B881550
+Costs = 100
+[HighwayIntersectionInfo_0x000D9542]
+CopyFrom    = 0xC9542
+Rotate      = 1
+[HighwayIntersectionInfo_0x000E9542]
+CopyFrom    = 0xC9542
+Rotate      = 2
+[HighwayIntersectionInfo_0x000F9542]
+CopyFrom    = 0xC9542
+Rotate      = 3
