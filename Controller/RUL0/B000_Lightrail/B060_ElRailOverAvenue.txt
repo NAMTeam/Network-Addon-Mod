@@ -1,0 +1,419 @@
+
+RotationRing = B060, 1B060, 2B060, 3B060, 4B060, 5B060, 6B060, 7B060 ;El-Rail over Avenue straight
+AddTypes     = B061, 1B061, 2B061, 3B061, 4B061, 5B061, 6B061, 7B061 ;El-Rail over Avenue straight (no support)
+AddTypes     = B062, 1B062, 2B062, 3B062, 4B062, 5B062, 6B062, 7B062 ;El-Rail over Road-4 straight
+AddTypes     = B063, 1B063, 2B063, 3B063, 4B063, 5B063, 6B063, 7B063 ;El-Rail over Road-4 straight (no support)
+AddTypes     = B064, 1B064, 2B064, 3B064, 4B064, 5B064, 6B064, 7B064 ;El-Rail over Road-2 straight
+AddTypes     = B065, 1B065, 2B065, 3B065, 4B065, 5B065, 6B065, 7B065 ;El-Rail over Road-2 straight (no support)
+
+
+;###separator###
+
+
+
+[HighwayIntersectionInfo_0x0000B060]
+;Added by memo 2013/03/12.
+;El-Rail over Avenue straight
+Piece = -32.0, 0, 0, 0, 0x5f85000e
+PreviewEffect = preview_elrail-over-ave_straight
+
+CellLayout =........
+CellLayout =.bca...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x01040000, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x03000004, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85000e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B060]
+Piece = -16.0, -16, 0, 0, 0x5f85000e
+PreviewEffect = preview_elrail-over-ave_straight
+
+CellLayout =..bc....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x01040000, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x03000004, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85000e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B060]
+CopyFrom = 0xB060
+Rotate	= 1
+[HighwayIntersectionInfo_0x0003B060]
+CopyFrom = 0x1B060
+Rotate	= 1
+[HighwayIntersectionInfo_0x0004B060]
+CopyFrom = 0xB060
+Transpose = 1
+Rotate = 1
+[HighwayIntersectionInfo_0x0005B060]
+CopyFrom = 0x1B063
+Rotate = 2
+Piece = 16.0, 16, 2, 0, 0x5f85000e
+PreviewEffect = preview_elrail-over-ave_straight
+PlaceQueryID = 0x5f85000e
+[HighwayIntersectionInfo_0x0006B060]
+CopyFrom = 0x4B060
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B060]
+CopyFrom = 0x5B060
+Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0000B061]
+;Added by memo 2013/03/12.
+;El-Rail over Avenue straight (no support)
+Piece = -32.0, 0, 0, 0, 0x5f85008e
+PreviewEffect = preview_elrail-over-ave_no_pylon
+
+CellLayout =........
+CellLayout =.bca...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00040100, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x00000304, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85008e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B061]
+Piece = -16.0, -16, 0, 0, 0x5f85008e
+PreviewEffect = preview_elrail-over-ave_no_pylon
+
+CellLayout =..bc....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00040100, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x00000304, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85008e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B061]
+CopyFrom = 0xB061
+Rotate = 1
+[HighwayIntersectionInfo_0x0003B061]
+CopyFrom = 0x1B061
+Rotate = 1
+[HighwayIntersectionInfo_0x0004B061]
+CopyFrom = 0xB061
+Transpose = 1
+Rotate = 1
+[HighwayIntersectionInfo_0x0005B061]
+CopyFrom = 0x1B062
+Rotate = 2
+Piece = 16.0, 16, 2, 0, 0x5f85008e
+PreviewEffect = preview_elrail-over-ave_no_pylon
+PlaceQueryID = 0x5f85008e
+[HighwayIntersectionInfo_0x0006B061]
+CopyFrom = 0x4B061
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B061]
+CopyFrom = 0x5B061
+Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0000B062]
+;Added by memo 2013/03/12.
+;El-Rail over Road-4 straight
+Piece = -32.0, 0, 0, 0, 0x5f85000f
+PreviewEffect = preview_elrail-over-rd4_straight
+
+CellLayout =........
+CellLayout =.bca...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x03040000, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x01000004, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85000f
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B062]
+Piece = -16.0, -16, 0, 0, 0x5f85000f
+PreviewEffect = preview_elrail-over-rd4_straight
+
+CellLayout =..bc....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x03040000, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x01000004, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85000f
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B062]
+CopyFrom = 0xB062
+Rotate = 1
+[HighwayIntersectionInfo_0x0003B062]
+CopyFrom = 0x1B062
+Rotate = 1
+[HighwayIntersectionInfo_0x0004B062]
+CopyFrom = 0xB062
+Transpose = 1
+Rotate = 1
+[HighwayIntersectionInfo_0x0005B062]
+CopyFrom = 1B061
+Rotate = 2
+Piece = 16.0, 16, 2, 0, 0x5f85000f
+PreviewEffect = preview_elrail-over-rd4_straight
+PlaceQueryID = 0x5f85000f
+[HighwayIntersectionInfo_0x0006B062]
+CopyFrom = 0x4B062
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B062]
+CopyFrom = 0x5B062
+Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0000B063]
+;Added by memo 2013/03/12.
+;El-Rail over Road-4 straight (no support)
+Piece = -32.0, 0, 0, 0, 0x5f85008f
+PreviewEffect = preview_elrail-over-rd4_no_pylon
+
+CellLayout =........
+CellLayout =.bca...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00040300, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x00000104, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85008f
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B063]
+Piece = -16.0, -16, 0, 0, 0x5f85008f
+PreviewEffect = preview_elrail-over-rd4_no_pylon
+
+CellLayout =..bc....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00040300, 0xffffffff optional
+CheckType = c - road: 0x02000200 lightrail: 0x00000104, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85008f
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B063]
+CopyFrom = 0xB063
+Rotate = 1
+[HighwayIntersectionInfo_0x0003B063]
+CopyFrom = 0x1B063
+Rotate = 1
+[HighwayIntersectionInfo_0x0004B063]
+CopyFrom = 0xB063
+Transpose = 1
+Rotate = 1
+[HighwayIntersectionInfo_0x0005B063]
+CopyFrom = 0x1B060
+Rotate = 2
+Piece = 16.0, 16, 2, 0, 0x5f85008f
+PreviewEffect = preview_elrail-over-rd4_no_pylon
+PlaceQueryID = 0x5f85008f
+[HighwayIntersectionInfo_0x0006B063]
+CopyFrom = 0x4B063
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B063]
+CopyFrom = 0x5B063
+Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0000B064]
+;Added by memo 2013/05/06.
+;El-Rail over Road-2 straight
+Piece = -16.0, 0.0, 0, 0, 0x53263800
+PreviewEffect = preview_rail_dualnetwork001
+
+CellLayout =........
+CellLayout =..ba...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x01000000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85800e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B064]
+Piece = 0.0, -16.0, 0, 0, 0x53263800
+PreviewEffect = preview_rail_dualnetwork001
+
+CellLayout =...b....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x01000000, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85800e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B064]
+CopyFrom = 0xB064
+Rotate = 1
+[HighwayIntersectionInfo_0x0003B064]
+CopyFrom = 0x1B064
+Rotate = 1
+[HighwayIntersectionInfo_0x0004B064]
+CopyFrom = 0xB065
+Rotate = 2
+Piece = -16.0, 0.0, 0, 0, 0x53263800
+PreviewEffect = preview_rail_dualnetwork001
+PlaceQueryID = 0x5f85800e
+[HighwayIntersectionInfo_0x0005B064]
+CopyFrom = 0x1B065
+Rotate = 2
+Piece = 0.0, -16.0, 0, 0, 0x53263800
+PreviewEffect = preview_rail_dualnetwork001
+PlaceQueryID = 0x5f85800e
+[HighwayIntersectionInfo_0x0006B064]
+CopyFrom = 0x4B064
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B064]
+CopyFrom = 0x5B064
+Rotate = 1
+
+
+[HighwayIntersectionInfo_0x0000B065]
+;Added by memo 2013/05/06.
+;El-Rail over Road-2 straight (no support)
+Piece = -16.0, 0.0, 0, 0, 0x532cf704
+PreviewEffect = preview_rail_dualnetwork620
+
+CellLayout =........
+CellLayout =..ba...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00000100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85808e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0001B065]
+Piece = 0.0, -16.0, 0, 0, 0x532cf704
+PreviewEffect = preview_rail_dualnetwork620
+
+CellLayout =...b....
+CellLayout =...a...<
+CellLayout =...^....
+
+CheckType = a - road: 0x00000000
+CheckType = b - road: 0x02000200 lightrail: 0x00000100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =..+...<
+ConsLayout =..^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f85808e
+Costs = 50
+
+[HighwayIntersectionInfo_0x0002B065]
+CopyFrom = 0xB065
+Rotate = 1
+[HighwayIntersectionInfo_0x0003B065]
+CopyFrom = 0x1B065
+Rotate = 1
+[HighwayIntersectionInfo_0x0004B065]
+CopyFrom = 0xB064
+Rotate = 2
+Piece = -16.0, 0.0, 0, 0, 0x532cf704
+PreviewEffect = preview_rail_dualnetwork620
+PlaceQueryID = 0x5f85808e
+[HighwayIntersectionInfo_0x0005B065]
+CopyFrom = 0x1B064
+Rotate = 2
+Piece = 0.0, -16.0, 0, 0, 0x532cf704
+PreviewEffect = preview_rail_dualnetwork620
+PlaceQueryID = 0x5f85808e
+[HighwayIntersectionInfo_0x0006B065]
+CopyFrom = 0x4B065
+Rotate = 1
+[HighwayIntersectionInfo_0x0007B065]
+CopyFrom = 0x5B065
+Rotate = 1
