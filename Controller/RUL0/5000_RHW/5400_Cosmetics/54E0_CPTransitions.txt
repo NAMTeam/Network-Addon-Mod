@@ -11,12 +11,81 @@ AddTypes     = 54E8, 154E8, 254E8, 354E8, 454E8, 554E8, 654E8, 754E8 ;RHW-8S-to-
 AddTypes     = 54E9, 154E9, 254E9, 354E9, 454E9, 554E9, 654E9, 754E9 ;RHW-6C-to-RHW-8C Transition BM1
 ;AddTypes     = 54EA, 154EA, 254EA, 354EA, 454EA, 554EA, 654EA, 754EA ;RHW-2 CP Transition NEL Single
 ;AddTypes     = 1054EA, 1154EA, 1254EA, 1354EA, 1454EA, 1554EA, 1654EA, 1754EA ;RHW-2 CP Transition NEL Dual
+AddTypes     = 54EB, 154EB, 254EB, 354EB, 454EB, 554EB, 654EB, 754EB ;RHW-3 CP Transition BM1
 
 ;###separator###
 
 
 ; === RHW-2 Cosmetic Transitions ===
 
+
+; === RHW-3 Cosmetic Transitions ===
+
+[HighwayIntersectionInfo_0x000054EB]
+;Added by MandelSoft 10/20/2013
+;RHW-3 BM1 Transition
+Piece = 0.0, 0.0, 0, 0, 0x57D10005
+PreviewEffect =  preview_rhw-3_ct_bm1a
+
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =...a.....
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...|.....
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D10000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D10000
+Costs = 15
+
+[HighwayIntersectionInfo_0x000154EB]
+CopyFrom = 0x54EB
+Rotate = 1
+[HighwayIntersectionInfo_0x000254EB]
+CopyFrom = 0x54EB
+Rotate = 2
+[HighwayIntersectionInfo_0x000354EB]
+CopyFrom = 0x54EB
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000454EB]
+;Added by MandelSoft 10/20/2013
+;RHW-3 BM1 Transition
+Piece = 0.0, 0.0, 0, 0, 0x57D10025
+PreviewEffect =  preview_rhw-3_ct_bm1b
+
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =...a.....
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...|.....
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D10020
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D10020
+Costs = 15
+
+[HighwayIntersectionInfo_0x000554EB]
+CopyFrom = 0x454EB
+Rotate = 1
+[HighwayIntersectionInfo_0x000654EB]
+CopyFrom = 0x454EB
+Rotate = 2
+[HighwayIntersectionInfo_0x000754EB]
+CopyFrom = 0x454EB
+Rotate = 3
 
 ; === RHW-4 Cosmetic Transitions ===
 
