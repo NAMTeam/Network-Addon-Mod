@@ -42,6 +42,18 @@ AddTypes     = 305407, 315407, 325407, 335407, 345407, 355407, 365407, 375407 ;R
 AddTypes     =   5408,  15408,  25408,  35408,  45408,  55408,  65408,  75408 ;RHW-3 CP DS1 UM
 AddTypes     = 105408, 115408, 125408, 135408, 145408, 155408, 165408, 175408 ;RHW-3 CP DS1 LRA IN
 
+
+AddTypes     = 405407, 415407, 425407, 435407, 445407, 455407, 465407, 475407 ;RHW-3 CP BM1 EA in
+AddTypes     = 505407, 515407, 525407, 535407, 545407, 555407, 565407, 575407 ;RHW-3 CP BM1 EA+TrA in
+AddTypes     = 605407, 615407, 625407, 635407, 645407, 655407, 665407, 675407 ;RHW-3 CP BM1 SpA in
+AddTypes     = 705407, 715407, 725407, 735407, 745407, 755407, 765407, 775407 ;RHW-3 CP SM1 UM
+AddTypes     = 805407, 815407, 825407, 835407, 845407, 855407, 865407, 875407 ;RHW-3 CP SM1 EA in
+AddTypes     = 905407, 915407, 925407, 935407, 945407, 955407, 965407, 975407 ;RHW-3 CP SM1 EA+TrA in
+AddTypes     = A05407, A15407, A25407, A35407, A45407, A55407, A65407, A75407 ;RHW-3 CP SM1 SpA
+AddTypes     =   5410,  15410,  25410,  35410,  45410,  55410,  65410,  75410 ;RHW-3 x RHW-2 TuLEP intersection
+AddTypes     = 105410, 115410, 125410, 135410, 145410, 155410, 165410, 175410 ;RHW-3 x RHW-3 TuLEP intersection
+AddTypes     = 205410, 215410, 225410, 235410, 245410, 255410, 265410, 275410 ;RHW-3 x WRHW-2 TuLEP intersection
+
 AddTypes     =   5409,  15409,  25409,  35409,  45409,  55409,  65409,  75409 ;RHW-4 CP RM LRA OUT
 AddTypes     = 105409, 115409, 125409, 135409, 145409, 155409, 165409, 175409 ;RHW-4 CP RM LRA IN
 AddTypes     = 205409, 215409, 225409, 235409, 245409, 255409, 265409, 275409 ;RHW-4 CP RM TpA OUT
@@ -1454,6 +1466,686 @@ CopyFrom = 0x145408
 Rotate = 2
 [HighwayIntersectionInfo_0x00175408]
 CopyFrom = 0x145408
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00405407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in
+Piece = 0.0, 0.0, 0, 0, 0x57C11125
+PreviewEffect =  preview_rhw-3_cp_bm1_ea_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11120
+Costs = 15
+
+[HighwayIntersectionInfo_0x00415407]
+CopyFrom = 0x405407
+Rotate = 1
+[HighwayIntersectionInfo_0x00425407]
+CopyFrom = 0x405407
+Rotate = 2
+[HighwayIntersectionInfo_0x00435407]
+CopyFrom = 0x405407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00445407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C11125
+PreviewEffect =  preview_rhw-3_cp_bm1_ea_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11120
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11120
+Costs = 15
+
+[HighwayIntersectionInfo_0x00455407]
+CopyFrom = 0x445407
+Rotate = 1
+[HighwayIntersectionInfo_0x00465407]
+CopyFrom = 0x445407
+Rotate = 2
+[HighwayIntersectionInfo_0x00475407]
+CopyFrom = 0x445407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00505407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA TrA in
+Piece = 0.0, 0.0, 0, 0, 0x57C11135
+PreviewEffect =  preview_rhw-3_cp_bm1_ea_tra_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11130
+Costs = 15
+
+[HighwayIntersectionInfo_0x00515407]
+CopyFrom = 0x505407
+Rotate = 1
+[HighwayIntersectionInfo_0x00525407]
+CopyFrom = 0x505407
+Rotate = 2
+[HighwayIntersectionInfo_0x00535407]
+CopyFrom = 0x505407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00545407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA TrA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C11135
+PreviewEffect =  preview_rhw-3_cp_bm1_ea_tra_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11130
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11130
+Costs = 15
+
+[HighwayIntersectionInfo_0x00555407]
+CopyFrom = 0x545407
+Rotate = 1
+[HighwayIntersectionInfo_0x00565407]
+CopyFrom = 0x545407
+Rotate = 2
+[HighwayIntersectionInfo_0x00575407]
+CopyFrom = 0x545407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00605407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in
+Piece = 0.0, 0.0, 0, 0, 0x57C11055
+PreviewEffect =  preview_rhw-3_cp_bm1_spa
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11050
+Costs = 15
+
+[HighwayIntersectionInfo_0x00615407]
+CopyFrom = 0x605407
+Rotate = 1
+[HighwayIntersectionInfo_0x00625407]
+CopyFrom = 0x605407
+Rotate = 2
+[HighwayIntersectionInfo_0x00635407]
+CopyFrom = 0x605407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00645407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C11055
+PreviewEffect =  preview_rhw-3_cp_bm1_spa
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11050
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11050
+Costs = 15
+
+[HighwayIntersectionInfo_0x00655407]
+CopyFrom = 0x645407
+Rotate = 1
+[HighwayIntersectionInfo_0x00665407]
+CopyFrom = 0x645407
+Rotate = 2
+[HighwayIntersectionInfo_0x00675407]
+CopyFrom = 0x645407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00705407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP SM1 UM
+Piece = 0.0, 0.0, 0, 0, 0x57C11085
+PreviewEffect =  preview_rhw-3_cp_sm1_um
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11080
+Costs = 15
+
+[HighwayIntersectionInfo_0x00715407]
+CopyFrom = 0x705407
+Rotate = 1
+[HighwayIntersectionInfo_0x00725407]
+CopyFrom = 0x705407
+Rotate = 2
+[HighwayIntersectionInfo_0x00735407]
+CopyFrom = 0x705407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00745407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP SM1 UM - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C11085
+PreviewEffect =  preview_rhw-3_cp_sm1_um
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C11080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C11080
+Costs = 15
+
+[HighwayIntersectionInfo_0x00755407]
+CopyFrom = 0x745407
+Rotate = 1
+[HighwayIntersectionInfo_0x00765407]
+CopyFrom = 0x745407
+Rotate = 2
+[HighwayIntersectionInfo_0x00775407]
+CopyFrom = 0x745407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00805407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP SM1 EA in
+Piece = 0.0, 0.0, 0, 0, 0x57C110A5
+PreviewEffect =  preview_rhw-3_cp_sm1_ea_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110A0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00815407]
+CopyFrom = 0x805407
+Rotate = 1
+[HighwayIntersectionInfo_0x00825407]
+CopyFrom = 0x805407
+Rotate = 2
+[HighwayIntersectionInfo_0x00835407]
+CopyFrom = 0x805407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00845407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C110B5
+PreviewEffect =  preview_rhw-3_cp_sm1_ea_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110A0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00855407]
+CopyFrom = 0x845407
+Rotate = 1
+[HighwayIntersectionInfo_0x00865407]
+CopyFrom = 0x845407
+Rotate = 2
+[HighwayIntersectionInfo_0x00875407]
+CopyFrom = 0x845407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00905407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA TrA in
+Piece = 0.0, 0.0, 0, 0, 0x57C110B5
+PreviewEffect =  preview_rhw-3_cp_sm1_ea_tra_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110B0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00915407]
+CopyFrom = 0x905407
+Rotate = 1
+[HighwayIntersectionInfo_0x00925407]
+CopyFrom = 0x905407
+Rotate = 2
+[HighwayIntersectionInfo_0x00935407]
+CopyFrom = 0x905407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00945407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA TrA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C110B5
+PreviewEffect =  preview_rhw-3_cp_sm1_ea_tra_in
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110B0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00955407]
+CopyFrom = 0x945407
+Rotate = 1
+[HighwayIntersectionInfo_0x00965407]
+CopyFrom = 0x945407
+Rotate = 2
+[HighwayIntersectionInfo_0x00975407]
+CopyFrom = 0x945407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00A05407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in
+Piece = 0.0, 0.0, 0, 0, 0x57C110D5
+PreviewEffect =  preview_rhw-3_cp_sm1_spa
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110D0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00A15407]
+CopyFrom = 0xA05407
+Rotate = 1
+[HighwayIntersectionInfo_0x00A25407]
+CopyFrom = 0xA05407
+Rotate = 2
+[HighwayIntersectionInfo_0x00A35407]
+CopyFrom = 0xA05407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00A45407]
+;Added by MandelSoft 10/20/2013
+;RHW-3 CP BM1 EA in - Starter Override
+Piece = 0.0, 0.0, 0, 0, 0x57C110D5
+PreviewEffect =  preview_rhw-3_cp_sm1_spa
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57C110D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57C110D0
+Costs = 15
+
+[HighwayIntersectionInfo_0x00A55407]
+CopyFrom = 0xA45407
+Rotate = 1
+[HighwayIntersectionInfo_0x00A65407]
+CopyFrom = 0xA45407
+Rotate = 2
+[HighwayIntersectionInfo_0x00A75407]
+CopyFrom = 0xA45407
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00005410]
+;Added by MandelSoft 10/20/2013
+;RHW-3 x RHW-2 TuLEP T
+Piece = 0.0, 0.0, 0, 0, 0x57D12005
+PreviewEffect =  preview_rhw-3_tulep_rhw-2_t
+
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =...b.....
+CellLayout =...a.....
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+CheckType = b - dirtroad: 0x02000202
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...+.....
+ConsLayout =...|.....
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D12000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D12000
+Costs = 15
+
+[HighwayIntersectionInfo_0x00015410]
+CopyFrom = 0x5410
+Rotate = 1
+[HighwayIntersectionInfo_0x00025410]
+CopyFrom = 0x5410
+Rotate = 2
+[HighwayIntersectionInfo_0x00035410]
+CopyFrom = 0x5410
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00045410]
+;Added by MandelSoft 10/20/2013
+;RHW-3 x RHW-2 TuLEP X
+Piece = 0.0, 0.0, 0, 0, 0x57D12035
+PreviewEffect =  preview_rhw-3_tulep_rhw-3_x
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02020202
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D12030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D12030
+Costs = 15
+
+[HighwayIntersectionInfo_0x00055410]
+CopyFrom = 0x45410
+Rotate = 1
+[HighwayIntersectionInfo_0x00065410]
+CopyFrom = 0x45410
+Rotate = 2
+[HighwayIntersectionInfo_0x00075410]
+CopyFrom = 0x45410
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00105410]
+;Added by MandelSoft 10/20/2013
+;RHW-3 x RHW-3 TuLEP T
+Piece = 0.0, 0.0, 0, 0, 0x57D12045
+PreviewEffect =  preview_rhw-3_tulep_rhw-3_t
+
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =...b.....
+CellLayout =...a.....
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02000200
+CheckType = b - dirtroad: 0x02000202
+
+ConsLayout =.........
+ConsLayout =...|....<
+ConsLayout =...+.....
+ConsLayout =...|.....
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D12040
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D12040
+Costs = 15
+
+[HighwayIntersectionInfo_0x00115410]
+CopyFrom = 0x105410
+Rotate = 1
+[HighwayIntersectionInfo_0x00125410]
+CopyFrom = 0x105410
+Rotate = 2
+[HighwayIntersectionInfo_0x00135410]
+CopyFrom = 0x105410
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00145410]
+;Added by MandelSoft 10/20/2013
+;RHW-3 x RHW-3 TuLEP X
+Piece = 0.0, 0.0, 0, 0, 0x57D12075
+PreviewEffect =  preview_rhw-3_tulep_rhw-3_x
+
+CellLayout =.........
+CellLayout =.........
+CellLayout =...a....<
+CellLayout =.........
+CellLayout =...^.....
+
+CheckType = a - dirtroad: 0x02020202
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D12070
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D12070
+Costs = 15
+
+[HighwayIntersectionInfo_0x00155410]
+CopyFrom = 0x145410
+Rotate = 1
+[HighwayIntersectionInfo_0x00165410]
+CopyFrom = 0x145410
+Rotate = 2
+[HighwayIntersectionInfo_0x00175410]
+CopyFrom = 0x145410
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00205410]
+;Added by MandelSoft 10/20/2013
+;RHW-3 x WRHW-2 TuLEP T
+Piece = 0.0, 0.0, 0, 0, 0x57D12105
+PreviewEffect =  preview_rhw-3_tulep_wrhw-2_t
+
+CellLayout =.........
+CellLayout =..+a....<
+CellLayout =..cb.....
+CellLayout =..+a.....
+CellLayout =..^......
+
+CheckType = a - dirtroad: 0x02000200
+CheckType = b - dirtroad: 0x02000202
+CheckType = c - dirtroad: 0x00020002
+
+ConsLayout =.........
+ConsLayout =...-|...<
+ConsLayout =...-+....
+ConsLayout =...-|....
+ConsLayout =...^.....
+
+AutoTileBase=	0x57D12100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D12100
+Costs = 15
+
+[HighwayIntersectionInfo_0x00215410]
+CopyFrom = 0x205410
+Rotate = 1
+[HighwayIntersectionInfo_0x00225410]
+CopyFrom = 0x205410
+Rotate = 2
+[HighwayIntersectionInfo_0x00235410]
+CopyFrom = 0x205410
+Rotate = 3
+[HighwayIntersectionInfo_0x00245410]
+CopyFrom = 0x205410
+[HighwayIntersectionInfo_0x00255410]
+CopyFrom = 0x215410
+Rotate = 1
+[HighwayIntersectionInfo_0x00265410]
+CopyFrom = 0x225410
+Rotate = 2
+[HighwayIntersectionInfo_0x00275410]
+CopyFrom = 0x235410
 Rotate = 3
 
 ; === RHW-4 Cosmetic Fillers ===
