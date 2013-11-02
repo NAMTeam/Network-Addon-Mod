@@ -1,0 +1,212 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;REALRAILWAY SECTION;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Button for WRCs
+
+RotationRing = A900, 1A900, 2A900, 3A900, 4A900, 5A900, 6A900, 7A900 ;DTR S-Curve
+AddTypes     = 5A901, A901, 6A901, 1A901, 7A901, 2A901, 4A901, 3A901 ;DTR 45-Curve
+AddTypes     = A902, 1A902, 2A902, 3A902, 4A902, 5A902, 6A902, 7A902 ;DTR 90-Curve
+AddTypes     = A903, 1A903, 2A903, 3A903, 4A903, 5A903, 6A903, 7A903 ;DTR Diagonal S-Curve
+AddTypes     = A904, 1A904, 2A904, 3A904, 4A904, 5A904, 6A904, 7A904 ;DTR A2 Switch
+AddTypes     = A905, 1A905, 2A905, 3A905, 4A905, 5A905, 6A905, 7A905 ;DTR B2 Switch
+AddTypes     = A906, 1A906, 2A906, 3A906, 4A906, 5A906, 6A906, 7A906 ;DTR Diagonal B2 Switch
+AddTypes     = A907, 1A907, 2A907, 3A907, 4A907, 5A907, 6A907, 7A907 ;DTR Ortho Crossover
+AddTypes     = A908, 1A908, 2A908, 3A908, 4A908, 5A908, 6A908, 7A908 ;DTR Wye
+
+
+;###separator###
+
+;Duplicate entries from the A358 WideRadiusCurves file
+[HighwayIntersectionInfo_0x0000A900]
+CopyFrom = 0xA358
+[HighwayIntersectionInfo_0x0001A900]
+CopyFrom = 0x1A358
+[HighwayIntersectionInfo_0x0002A900]
+CopyFrom = 0x2A358
+[HighwayIntersectionInfo_0x0003A900]
+CopyFrom = 0x3A358
+[HighwayIntersectionInfo_0x0004A900]
+CopyFrom = 0x4A358
+[HighwayIntersectionInfo_0x0005A900]
+CopyFrom = 0x5A358
+[HighwayIntersectionInfo_0x0006A900]
+CopyFrom = 0x6A358
+[HighwayIntersectionInfo_0x0007A900]
+CopyFrom = 0x7A358
+
+[HighwayIntersectionInfo_0x0000A901]
+CopyFrom = 0xA359
+[HighwayIntersectionInfo_0x0001A901]
+CopyFrom = 0x1A359
+[HighwayIntersectionInfo_0x0002A901]
+CopyFrom = 0x2A359
+[HighwayIntersectionInfo_0x0003A901]
+CopyFrom = 0x3A359
+[HighwayIntersectionInfo_0x0004A901]
+CopyFrom = 0x4A359
+[HighwayIntersectionInfo_0x0005A901]
+CopyFrom = 0x5A359
+[HighwayIntersectionInfo_0x0006A901]
+CopyFrom = 0x6A359
+[HighwayIntersectionInfo_0x0007A901]
+CopyFrom = 0x7A359
+
+[HighwayIntersectionInfo_0x0000A902]
+CopyFrom = 0xA35A
+[HighwayIntersectionInfo_0x0001A902]
+CopyFrom = 0x1A35A
+[HighwayIntersectionInfo_0x0002A902]
+CopyFrom = 0x2A35A
+[HighwayIntersectionInfo_0x0003A902]
+CopyFrom = 0x3A35A
+[HighwayIntersectionInfo_0x0004A902]
+CopyFrom = 0x4A35A
+[HighwayIntersectionInfo_0x0005A902]
+CopyFrom = 0x5A35A
+[HighwayIntersectionInfo_0x0006A902]
+CopyFrom = 0x6A35A
+[HighwayIntersectionInfo_0x0007A902]
+CopyFrom = 0x7A35A
+
+[HighwayIntersectionInfo_0x0000A903]
+CopyFrom = 0xA35C
+[HighwayIntersectionInfo_0x0001A903]
+CopyFrom = 0x1A35C
+[HighwayIntersectionInfo_0x0002A903]
+CopyFrom = 0x2A35C
+[HighwayIntersectionInfo_0x0003A903]
+CopyFrom = 0x3A35C
+[HighwayIntersectionInfo_0x0004A903]
+CopyFrom = 0x4A35C
+[HighwayIntersectionInfo_0x0005A903]
+CopyFrom = 0x5A35C
+[HighwayIntersectionInfo_0x0006A903]
+CopyFrom = 0x6A35C
+[HighwayIntersectionInfo_0x0007A903]
+CopyFrom = 0x7A35C
+
+[HighwayIntersectionInfo_0x0000A904]
+CopyFrom = 0xA35D
+[HighwayIntersectionInfo_0x0001A904]
+CopyFrom = 0x1A35D
+[HighwayIntersectionInfo_0x0002A904]
+CopyFrom = 0x2A35D
+[HighwayIntersectionInfo_0x0003A904]
+CopyFrom = 0x3A35D
+[HighwayIntersectionInfo_0x0004A904]
+CopyFrom = 0x4A35D
+[HighwayIntersectionInfo_0x0005A904]
+CopyFrom = 0x5A35D
+[HighwayIntersectionInfo_0x0006A904]
+CopyFrom = 0x6A35D
+[HighwayIntersectionInfo_0x0007A904]
+CopyFrom = 0x7A35D
+
+[HighwayIntersectionInfo_0x0000A905]
+CopyFrom = 0xA35E
+[HighwayIntersectionInfo_0x0001A905]
+CopyFrom = 0x1A35E
+[HighwayIntersectionInfo_0x0002A905]
+CopyFrom = 0x2A35E
+[HighwayIntersectionInfo_0x0003A905]
+CopyFrom = 0x3A35E
+[HighwayIntersectionInfo_0x0004A905]
+CopyFrom = 0x4A35E
+[HighwayIntersectionInfo_0x0005A905]
+CopyFrom = 0x5A35E
+[HighwayIntersectionInfo_0x0006A905]
+CopyFrom = 0x6A35E
+[HighwayIntersectionInfo_0x0007A905]
+CopyFrom = 0x7A35E
+
+[HighwayIntersectionInfo_0x0000A906]
+CopyFrom = 0xA35F
+[HighwayIntersectionInfo_0x0001A906]
+CopyFrom = 0x1A35F
+[HighwayIntersectionInfo_0x0002A906]
+CopyFrom = 0x2A35F
+[HighwayIntersectionInfo_0x0003A906]
+CopyFrom = 0x3A35F
+[HighwayIntersectionInfo_0x0004A906]
+CopyFrom = 0x4A35F
+[HighwayIntersectionInfo_0x0005A906]
+CopyFrom = 0x5A35F
+[HighwayIntersectionInfo_0x0006A906]
+CopyFrom = 0x6A35F
+[HighwayIntersectionInfo_0x0007A906]
+CopyFrom = 0x7A35F
+
+[HighwayIntersectionInfo_0x0000A907]
+CopyFrom = 0xA360
+[HighwayIntersectionInfo_0x0001A907]
+CopyFrom = 0x1A360
+[HighwayIntersectionInfo_0x0002A907]
+CopyFrom = 0x2A360
+[HighwayIntersectionInfo_0x0003A907]
+CopyFrom = 0x3A360
+[HighwayIntersectionInfo_0x0004A907]
+CopyFrom = 0x4A360
+[HighwayIntersectionInfo_0x0005A907]
+CopyFrom = 0x5A360
+[HighwayIntersectionInfo_0x0006A907]
+CopyFrom = 0x6A360
+[HighwayIntersectionInfo_0x0007A907]
+CopyFrom = 0x7A360
+
+
+[HighwayIntersectionInfo_0x0000A908]
+;Created by Swordmaster on 2013/10/29
+;DTR orthogonal Y splitter
+Piece = -32.0, -80.0, 0, 0, 0x53b35005
+PreviewEffect = preview_rrw_dtr_ysplitter
+
+CellLayout = .............
+CellLayout = ...xd...ey...
+CellLayout = ....b+.+c....
+CellLayout = .....+.+.....
+CellLayout = .....+++.....
+CellLayout = ......+......
+CellLayout = ......a.....<
+CellLayout = ......z......
+CellLayout = ......^......
+
+CheckType = a - Rail: 0x02000200
+CheckType = b - Rail: 0x00030100
+CheckType = c - Rail: 0x00000301
+CheckType = d - Rail: 0x01000003
+CheckType = e - Rail: 0x03010000
+CheckType = x - Rail: 0x00030000,0x00ff0000 check
+CheckType = y - Rail: 0x00000001,0x000000ff check
+CheckType = z - Rail: 0x00000200,0x0000ff00 check
+
+ConsLayout = .............
+ConsLayout = ....\.../....
+ConsLayout = ....\\.//....
+ConsLayout = .....\./.....
+ConsLayout = .....\|/.....
+ConsLayout = ......|......
+ConsLayout = ......|.....<
+ConsLayout = .............
+ConsLayout = ......^......
+
+AutoTileBase = 0x53B35000
+PlaceQueryID = 0x53B35000
+Costs = 100
+[HighwayIntersectionInfo_0x0001A908]
+CopyFrom    = 0xA908
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002A908]
+CopyFrom    = 0xA908
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003A908]
+CopyFrom    = 0xA908
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004A908]
+CopyFrom    = 0xA908
+[HighwayIntersectionInfo_0x0005A908]
+CopyFrom    = 0x1A908
+[HighwayIntersectionInfo_0x0006A908]
+CopyFrom    = 0x2A908
+[HighwayIntersectionInfo_0x0007A908]
+CopyFrom    = 0x3A908
