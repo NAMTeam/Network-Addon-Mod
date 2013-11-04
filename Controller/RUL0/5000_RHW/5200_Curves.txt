@@ -29,6 +29,10 @@ AddTypes     = 5215, 45215, 15215, 55215, 25215, 65215, 35215, 75215 ;RHW-8 Inne
 AddTypes     = 5218, 45218, 15218, 55218, 25218, 65218, 35218, 75218 ;RHW-10 Outer Curve
 AddTypes     = 5219, 45219, 15219, 55219, 25219, 65219, 35219, 75219 ;RHW-10 Inner Curve
 ;AddTypes     = 521A, 1521A, 2521A, 3521A, 4521A, 5521A, 6521A, 7521A ;RHW-10 Diagonal
+AddTypes     = 521B, 4521B, 1521B, 5521B, 2521B, 6521B, 3521B, 7521B ;RHW-6S Single Lane Shift
+AddTypes     = 521C, 4521C, 1521C, 5521C, 2521C, 6521C, 3521C, 7521C ;RHW-6S Dual Lane Shift
+AddTypes     = 521d, 1521d, 2521d, 3521d, 4521d, 5521d, 6521d, 7521d ;RHW-6C S-Curve Half
+AddTypes     = 521e, 1521e, 2521e, 3521e, 4521e, 5521e, 6521e, 7521e ;RHW-8C S-Curve Half
 
 ;###separator###
 
@@ -1721,3 +1725,242 @@ Rotate = 2
 [HighwayIntersectionInfo_0x000F520F]
 CopyFrom = 0xC520F
 Rotate = 1
+
+[HighwayIntersectionInfo_0x0000521B]
+;Added by droric 09/17/2013
+;Real Highway RHW-6S Single Lane Shift
+Piece = -32.0, 0.0, 0, 0, 0x57940105
+PreviewEffect = preview_rhw6s_single_lane_shift
+
+CellLayout =..a.
+CellLayout =..b<
+CellLayout =.bb.
+CellLayout =.bb.
+CellLayout =.bb.
+CellLayout =.b..
+CellLayout =.b..
+CellLayout =.e..
+CellLayout =..^.
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout = ....
+ConsLayout = ..|<
+ConsLayout = .||.
+ConsLayout = .||.
+ConsLayout = .||.
+ConsLayout = .|..
+ConsLayout = .|..
+ConsLayout = ..^.
+
+AutoTileBase = 0x57940100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57940000
+Costs = 500
+
+[HighwayIntersectionInfo_0x0001521B]
+CopyFrom = 0x521B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002521B]
+CopyFrom = 0x521B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003521B]
+CopyFrom = 0x521B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004521B]
+CopyFrom = 0x521B
+Transpose = 1
+[HighwayIntersectionInfo_0x0005521B]
+CopyFrom = 0x521B
+Rotate = 1
+Transpose = 1
+[HighwayIntersectionInfo_0x0006521B]
+CopyFrom = 0x521B
+Rotate = 2
+Transpose = 1
+[HighwayIntersectionInfo_0x0007521B]
+CopyFrom = 0x521B
+Rotate = 3
+Transpose = 1
+
+[HighwayIntersectionInfo_0x0000521C]
+;Added by droric 09/15/2013
+;Real Highway RHW-6S Dual Lane Shift
+Piece = -32.0, 0.0, 0, 0, 0x57940265
+PreviewEffect = preview_rhw6s_dual_lane_shift
+
+CellLayout =.aa.
+CellLayout =.bb<
+CellLayout =bbb.
+CellLayout =bbb.
+CellLayout =bbb.
+CellLayout =bbb.
+CellLayout =bb..
+CellLayout =ee..
+CellLayout =.^..
+
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
+CheckType = b - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x00000200,0x0000ff00 check
+
+ConsLayout = ....
+ConsLayout = .||<
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = |||.
+ConsLayout = ||..
+ConsLayout = ....
+ConsLayout = .^..
+
+AutoTileBase = 0x57940360
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57940260
+Costs = 500
+
+[HighwayIntersectionInfo_0x0001521C]
+CopyFrom = 0x521C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002521C]
+CopyFrom = 0x521C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003521C]
+CopyFrom = 0x521C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004521C]
+CopyFrom = 0x521C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005521C]
+CopyFrom = 0x521C
+Rotate = 1
+Transpose = 1
+[HighwayIntersectionInfo_0x0006521C]
+CopyFrom = 0x521C
+Rotate = 2
+Transpose = 1
+[HighwayIntersectionInfo_0x0007521C]
+CopyFrom = 0x521C
+Rotate = 3
+Transpose = 1
+
+[HighwayIntersectionInfo_0x0000521d]
+;Added by Ganaram Inukshuk 8/16/2013
+;rhw_6c_s_curve_half
+Piece = -16, 0.0, 0, 0, 0x57980005
+PreviewEffect = preview_rhw_6c_s_curve_half
+
+CellLayout =....
+CellLayout =..a.
+CellLayout =..b<
+CellLayout =..b.
+CellLayout =..b.
+CellLayout =.cb.
+CellLayout =.bb.
+CellLayout =.bb.
+CellLayout =.dd.
+CellLayout =..^.
+
+CheckType = a - dirtroad:0x02000000, 0xff000000 check
+CheckType = b - dirtroad:0x02000200
+CheckType = c - dirtroad:0x02000000
+CheckType = d - dirtroad:0x00000200, 0x0000ff00 check
+
+ConsLayout =....
+ConsLayout =..|.
+ConsLayout =..|<
+ConsLayout =..|.
+ConsLayout =..|.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =..^.
+
+AutoTileBase=	0x57980000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57980000
+Costs       = 600
+
+[HighwayIntersectionInfo_0x0001521d]
+CopyFrom = 0x521d
+Rotate = 1
+[HighwayIntersectionInfo_0x0002521d]
+CopyFrom = 0x521d
+Rotate = 2
+[HighwayIntersectionInfo_0x0003521d]
+CopyFrom = 0x521d
+Rotate = 3
+[HighwayIntersectionInfo_0x0004521d]
+CopyFrom = 0x521d
+Transpose = 1
+[HighwayIntersectionInfo_0x0005521d]
+CopyFrom = 0x4521d
+Rotate = 1
+[HighwayIntersectionInfo_0x0006521d]
+CopyFrom = 0x4521d
+Rotate = 2
+[HighwayIntersectionInfo_0x0007521d]
+CopyFrom = 0x4521d
+Rotate = 3
+
+[HighwayIntersectionInfo_0x0000521e]
+;Added by Ganaram Inukshuk 8/16/2013
+;rhw_8c_s_curve_half
+Piece = -16, 0.0, 0, 0, 0x57990005
+PreviewEffect = preview_rhw_8c_s_curve_half
+
+CellLayout =....
+CellLayout =..a.
+CellLayout =..b<
+CellLayout =..b.
+CellLayout =.cb.
+CellLayout =.bb.
+CellLayout =.bb.
+CellLayout =.bb.
+CellLayout =.dd.
+CellLayout =..^.
+
+CheckType = a - dirtroad:0x02000000, 0xff000000 check
+CheckType = b - dirtroad:0x02000200
+CheckType = c - dirtroad:0x02000000
+CheckType = d - dirtroad:0x00000200, 0x0000ff00 check
+
+ConsLayout =....
+ConsLayout =..|.
+ConsLayout =..|<
+ConsLayout =..|.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =.||.
+ConsLayout =..^.
+
+AutoTileBase=	0x57990000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57990000
+Costs       = 700
+
+[HighwayIntersectionInfo_0x0001521e]
+CopyFrom = 0x521e
+Rotate = 1
+[HighwayIntersectionInfo_0x0002521e]
+CopyFrom = 0x521e
+Rotate = 2
+[HighwayIntersectionInfo_0x0003521e]
+CopyFrom = 0x521e
+Rotate = 3
+[HighwayIntersectionInfo_0x0004521e]
+CopyFrom = 0x521e
+Transpose = 1
+[HighwayIntersectionInfo_0x0005521e]
+CopyFrom = 0x4521e
+Rotate = 1
+[HighwayIntersectionInfo_0x0006521e]
+CopyFrom = 0x4521e
+Rotate = 2
+[HighwayIntersectionInfo_0x0007521e]
+CopyFrom = 0x4521e
+Rotate = 3
