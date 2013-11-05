@@ -5,8 +5,8 @@ RotationRing = 7500, 47500, 17500, 57500, 27500, 67500, 37500, 77500, 87500, C75
 AddTypes     = 7501, 47501, 17501, 57501, 27501, 67501, 37501, 77501, 87501, C7501, 97501, D7501, A7501, E7501, B7501, F7501 ;Road 45-Curve
 AddTypes     = 7502, 17502, 27502, 37502, 47502, 57502, 67502, 77502, 87502, 97502, A7502, B7502, C7502, D7502, E7502, F7502 ;Road 90-Curve (Small)
 AddTypes     = 7503, 17503, 27503, 37503, 47503, 57503, 67503, 77503, 87503, 97503, A7503, B7503, C7503, D7503, E7503, F7503 ;Road 90-Curve (Large)
-AddTypes 	 = 7504, 17504, 27504, 37504, 47504, 57504, 67504, 77504, 87504, 97504, A7504, B7504, C7504, D7504, E7504, F7504 ;One-Way Road S-Curve
-AddTypes     = 7505, 47505, 17505, 57505, 27505, 67505, 37505, 77505, 87505, C7505, 97505, D7505, A7505, E7505, B7505, F7505 ;One-Way Road 45-Curve
+AddTypes     = 7504, 17504, 27504, 37504, 47504, 57504, 67504, 77504, 87504, 97504, A7504, B7504, C7504, D7504, E7504, F7504 ;One-Way Road S-Curve
+AddTypes     = 7505, 87505, C7505, 47505, 17505, 97505, F7505, 77505, 27505, A7505, E7505, 67505, 37505, B7505, D7505, 57505 ;One-Way Road 45-Curve
 AddTypes     = 7506, 17506, 27506, 37506, 47506, 57506, 67506, 77506, 87506, 97506, A7506, B7506, C7506, D7506, E7506, F7506 ;One-Way Road 90-Curve (Small)
 AddTypes     = 7507, 17507, 27507, 37507, 47507, 57507, 67507, 77507, 87507, 97507, A7507, B7507, C7507, D7507, E7507, F7507 ;One-Way Road 90-Curve (Large)
 AddTypes     = 7508, 17508, 27508, 37508, 47508, 57508, 67508, 77508, 87508, 97508, A7508, B7508, C7508, D7508, E7508, F7508 ;Street 45-Curve
@@ -613,7 +613,7 @@ AutoTileBase=	0x59461000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x59461000
 Costs = 50; edited by dedgren 081229
-OneWayDir = 0
+OneWayDir = 1
 
 [HighwayIntersectionInfo_0x00017505]
 CopyFrom = 0x7505
@@ -627,7 +627,6 @@ Rotate = 3
 [HighwayIntersectionInfo_0x00047505]
 CopyFrom = 0x7505
 PreviewEffect =  preview_owrd_curve_piece003
-OneWayDir = 4
 Transpose = 1
 [HighwayIntersectionInfo_0x00057505]
 CopyFrom = 0x47505
@@ -643,7 +642,7 @@ Rotate = 1
 CopyFrom = 0x7505
 AutoPathBase= 0x79461000
 PreviewEffect =  preview_owrd_curve_piece003
-OneWayDir = 4
+OneWayDir = 5
 PlaceQueryID = 0x59461001
 [HighwayIntersectionInfo_0x00097505]
 CopyFrom = 0x87505
@@ -658,7 +657,7 @@ Rotate = 3
 CopyFrom = 0x7505
 PreviewEffect =  preview_owrd_curve_piece002
 AutoPathBase= 0x79461000
-OneWayDir = 0
+OneWayDir = 5
 Transpose = 1
 PlaceQueryID = 0x59461001
 [HighwayIntersectionInfo_0x000D7505]
@@ -710,7 +709,7 @@ AutoTileBase=	0x59462000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x59462000
 Costs = 100; edited by dedgren 081229
-OneWayDir = 0
+OneWayDir = 1
 [HighwayIntersectionInfo_0x00017507]
 CopyFrom = 0x7507
 Rotate = 1
@@ -725,7 +724,7 @@ Rotate = 3
 CopyFrom = 0x7507
 PreviewEffect =  preview_owrd_curve_piece005
 AutoPathBase= 0x79462000
-OneWayDir = 4
+OneWayDir = 5
 [HighwayIntersectionInfo_0x00057507]
 CopyFrom = 0x47507
 Rotate = 1
@@ -783,7 +782,7 @@ AutoTileBase=	0x59464000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x59464000
 Costs = 30; edited by dedgren 081229
-OneWayDir = 0
+OneWayDir = 1
 [HighwayIntersectionInfo_0x00017506]
 CopyFrom = 0x7506
 Rotate = 1
@@ -797,7 +796,7 @@ Rotate = 3
 CopyFrom = 0x7506
 PreviewEffect =  preview_owrd_curve_piece007
 AutoPathBase= 0x79464000
-OneWayDir = 4
+OneWayDir = 5
 [HighwayIntersectionInfo_0x00057506]
 CopyFrom = 0x47506
 Rotate = 1
