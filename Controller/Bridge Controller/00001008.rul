@@ -1,0 +1,2840 @@
+# light rail bridge specializations
+#
+# added by choco 02/09
+#
+# Refer to the Rail bridge specializations for format.
+# File is in use. Do not remove nor change the file TGI ID. 
+#
+#OVERDECK TRUSS GLR
+
+bridge 8
+
+section s
+	piece <0x0c2c3000, 2>
+end
+
+section r
+	piece <0x0c1b3000, 0>
+end
+
+section a1
+	piece <0x0c4d3000, 2>
+end
+
+section a2
+	piece <0x0c4e3000, 0>
+end
+
+section a3
+	piece <0x0c4d3000, 0>
+end
+
+section sa
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c563000, 0>:570
+end
+
+section ma
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c563000, 0>:570
+end
+
+section la
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c563000, 0>:570
+end
+
+section end2
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c2c3000, 0>
+end
+
+section end3
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c2c3000, 0>
+end
+
+section end4
+	piece <0x0c4d3000, 2>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4e3000, 0>
+	piece <0x0c4d3000, 0>
+	piece <0x0c2c3000, 0>
+end
+
+	length 4	
+		piece s r r s
+	end	
+		
+	length 5	
+		piece s r r r s
+	end	
+		
+	length 6	
+		piece s end2
+	end	
+		
+	length 7	
+		piece s end3
+	end	
+		
+	length 8	
+		piece s end4
+	end	
+		
+	length 9	
+		piece s r end4
+	end	
+		
+	length 10	
+		piece s a1 a2 a2 a3 end2
+	end	
+		
+	length 11	
+		piece s sa end2
+	end	
+		
+	length 12	
+		piece s ma end2
+	end	
+		
+	length 13	
+		piece s ma end3
+	end	
+		
+	length 14	
+		piece s la end3
+	end	
+		
+	length 15	
+		piece s la end4
+	end	
+		
+	length 16	
+		piece s sa sa end2
+	end	
+		
+	length 17	
+		piece s sa ma end2
+	end	
+		
+	length 18	
+		piece s ma ma end2
+	end	
+		
+	length 19	
+		piece s ma ma end3
+	end	
+		
+	length 20	
+		piece s ma la end3
+	end	
+		
+	length 21	
+		piece s la la end3
+	end	
+		
+	length 22	
+		piece s la la end4
+	end	
+		
+	length 23	
+		piece s sa ma ma end2
+	end	
+		
+	length 24	
+		piece s ma ma ma end2
+	end	
+		
+	length 25	
+		piece s ma ma ma end3
+	end	
+		
+	length 26	
+		piece s ma la ma end3
+	end	
+		
+	length 27	
+		piece s ma la la end3
+	end	
+		
+	length 28	
+		piece s la la la end3
+	end	
+		
+	length 29	
+		piece s la la la end4
+	end	
+		
+	length 30	
+		piece s sa ma 1*la ma end2
+	end	
+		
+	length 31	
+		piece s ma ma 1*la ma end2
+	end	
+		
+	length 32	
+		piece s ma ma 1*la ma end3
+	end	
+		
+	length 33	
+		piece s ma la 1*la ma end3
+	end	
+		
+	length 34	
+		piece s ma la 1*la la end3
+	end	
+		
+	length 35	
+		piece s la la 1*la la end3
+	end	
+		
+	length 36	
+		piece s la la 1*la la end4
+	end	
+		
+	length 37	
+		piece s sa ma 2*la ma end2
+	end	
+		
+	length 38	
+		piece s ma ma 2*la ma end2
+	end	
+		
+	length 39	
+		piece s ma ma 2*la ma end3
+	end	
+		
+	length 40	
+		piece s ma la 2*la ma end3
+	end	
+		
+	length 41	
+		piece s ma la 2*la la end3
+	end	
+		
+	length 42	
+		piece s la la 2*la la end3
+	end	
+		
+	length 43	
+		piece s la la 2*la la end4
+	end	
+		
+	length 44	
+		piece s sa ma 3*la ma end2
+	end	
+		
+	length 45	
+		piece s ma ma 3*la ma end2
+	end	
+		
+	length 46	
+		piece s ma ma 3*la ma end3
+	end	
+		
+	length 47	
+		piece s ma la 3*la ma end3
+	end	
+		
+	length 48	
+		piece s ma la 3*la la end3
+	end	
+		
+	length 49	
+		piece s la la 3*la la end3
+	end	
+		
+	length 50	
+		piece s la la 3*la la end4
+	end	
+		
+	length 51	
+		piece s sa ma 4*la ma end2
+	end	
+		
+	length 52	
+		piece s ma ma 4*la ma end2
+	end	
+		
+	length 53	
+		piece s ma ma 4*la ma end3
+	end	
+		
+	length 54	
+		piece s ma la 4*la ma end3
+	end	
+		
+	length 55	
+		piece s ma la 4*la la end3
+	end	
+		
+	length 56	
+		piece s la la 4*la la end3
+	end	
+		
+	length 57	
+		piece s la la 4*la la end4
+	end	
+		
+	length 58	
+		piece s sa ma 5*la ma end2
+	end	
+		
+	length 59	
+		piece s ma ma 5*la ma end2
+	end	
+		
+	length 60	
+		piece s ma ma 5*la ma end3
+	end	
+		
+	length 61	
+		piece s ma la 5*la ma end3
+	end	
+		
+	length 62	
+		piece s ma la 5*la la end3
+	end	
+		
+	length 63	
+		piece s la la 5*la la end3
+	end	
+		
+	length 64	
+		piece s la la 5*la la end4
+	end	
+		
+	length 65	
+		piece s sa ma 6*la ma end2
+	end	
+		
+	length 66	
+		piece s ma ma 6*la ma end2
+	end	
+		
+	length 67	
+		piece s ma ma 6*la ma end3
+	end	
+		
+	length 68	
+		piece s ma la 6*la ma end3
+	end	
+		
+	length 69	
+		piece s ma la 6*la la end3
+	end	
+		
+	length 70	
+		piece s la la 6*la la end3
+	end	
+		
+	length 71	
+		piece s la la 6*la la end4
+	end	
+		
+	length 72	
+		piece s sa ma 7*la ma end2
+	end	
+		
+	length 73	
+		piece s ma ma 7*la ma end2
+	end	
+		
+	length 74	
+		piece s ma ma 7*la ma end3
+	end	
+		
+	length 75	
+		piece s ma la 7*la ma end3
+	end	
+		
+	length 76	
+		piece s ma la 7*la la end3
+	end	
+		
+	length 77	
+		piece s la la 7*la la end3
+	end	
+		
+	length 78	
+		piece s la la 7*la la end4
+	end	
+		
+	length 79	
+		piece s sa ma 8*la ma end2
+	end	
+		
+	length 80	
+		piece s ma ma 8*la ma end2
+	end	
+		
+	length 81	
+		piece s ma ma 8*la ma end3
+	end	
+		
+	length 82	
+		piece s ma la 8*la ma end3
+	end	
+		
+	length 83	
+		piece s ma la 8*la la end3
+	end	
+		
+	length 84	
+		piece s la la 8*la la end3
+	end	
+		
+	length 85	
+		piece s la la 8*la la end4
+	end	
+		
+	length 86	
+		piece s sa ma 9*la ma end2
+	end	
+		
+	length 87	
+		piece s ma ma 9*la ma end2
+	end	
+		
+	length 88	
+		piece s ma ma 9*la ma end3
+	end	
+		
+	length 89	
+		piece s ma la 9*la ma end3
+	end	
+		
+	length 90	
+		piece s ma la 9*la la end3
+	end	
+		
+	length 91	
+		piece s la la 9*la la end3
+	end	
+		
+	length 92	
+		piece s la la 9*la la end4
+	end	
+		
+	length 93	
+		piece s sa ma 10*la ma end2
+	end	
+		
+	length 94	
+		piece s ma ma 10*la ma end2
+	end	
+		
+	length 95	
+		piece s ma ma 10*la ma end3
+	end	
+		
+	length 96	
+		piece s ma la 10*la ma end3
+	end	
+		
+	length 97	
+		piece s ma la 10*la la end3
+	end	
+		
+	length 98	
+		piece s la la 10*la la end3
+	end	
+		
+	length 99	
+		piece s la la 10*la la end4
+	end	
+		
+	length 100	
+		piece s sa ma 11*la ma end2
+	end	
+		
+	length 101	
+		piece s ma ma 11*la ma end2
+	end	
+		
+	length 102	
+		piece s ma ma 11*la ma end3
+	end	
+		
+	length 103	
+		piece s ma la 11*la ma end3
+	end	
+		
+	length 104	
+		piece s ma la 11*la la end3
+	end	
+		
+	length 105	
+		piece s la la 11*la la end3
+	end	
+		
+	length 106	
+		piece s la la 11*la la end4
+	end	
+		
+	length 107	
+		piece s sa ma 12*la ma end2
+	end	
+		
+	length 108	
+		piece s ma ma 12*la ma end2
+	end	
+		
+	length 109	
+		piece s ma ma 12*la ma end3
+	end	
+		
+	length 110	
+		piece s ma la 12*la ma end3
+	end	
+		
+	length 111	
+		piece s ma la 12*la la end3
+	end	
+		
+	length 112	
+		piece s la la 12*la la end3
+	end	
+		
+	length 113	
+		piece s la la 12*la la end4
+	end	
+		
+	length 114	
+		piece s sa ma 13*la ma end2
+	end	
+		
+	length 115	
+		piece s ma ma 13*la ma end2
+	end	
+		
+	length 116	
+		piece s ma ma 13*la ma end3
+	end	
+		
+	length 117	
+		piece s ma la 13*la ma end3
+	end	
+		
+	length 118	
+		piece s ma la 13*la la end3
+	end	
+		
+	length 119	
+		piece s la la 13*la la end3
+	end	
+		
+	length 120	
+		piece s la la 13*la la end4
+	end	
+		
+	length 121	
+		piece s sa ma 14*la ma end2
+	end	
+		
+	length 122	
+		piece s ma ma 14*la ma end2
+	end	
+		
+	length 123	
+		piece s ma ma 14*la ma end3
+	end	
+		
+	length 124	
+		piece s ma la 14*la ma end3
+	end	
+		
+	length 125	
+		piece s ma la 14*la la end3
+	end	
+		
+	length 126	
+		piece s la la 14*la la end3
+	end	
+		
+	length 127	
+		piece s la la 14*la la end4
+	end	
+		
+	length 128	
+		piece s sa ma 15*la ma end2
+	end	
+		
+	length 129	
+		piece s ma ma 15*la ma end2
+	end	
+		
+	length 130	
+		piece s ma ma 15*la ma end3
+	end	
+		
+	length 131	
+		piece s ma la 15*la ma end3
+	end	
+		
+	length 132	
+		piece s ma la 15*la la end3
+	end	
+		
+	length 133	
+		piece s la la 15*la la end3
+	end	
+		
+	length 134	
+		piece s la la 15*la la end4
+	end	
+		
+	length 135	
+		piece s sa ma 16*la ma end2
+	end	
+		
+	length 136	
+		piece s ma ma 16*la ma end2
+	end	
+		
+	length 137	
+		piece s ma ma 16*la ma end3
+	end	
+		
+	length 138	
+		piece s ma la 16*la ma end3
+	end	
+		
+	length 139	
+		piece s ma la 16*la la end3
+	end	
+		
+	length 140	
+		piece s la la 16*la la end3
+	end	
+		
+	length 141	
+		piece s la la 16*la la end4
+	end	
+		
+	length 142	
+		piece s sa ma 17*la ma end2
+	end	
+		
+	length 143	
+		piece s ma ma 17*la ma end2
+	end	
+		
+	length 144	
+		piece s ma ma 17*la ma end3
+	end	
+		
+	length 145	
+		piece s ma la 17*la ma end3
+	end	
+		
+	length 146	
+		piece s ma la 17*la la end3
+	end	
+		
+	length 147	
+		piece s la la 17*la la end3
+	end	
+		
+	length 148	
+		piece s la la 17*la la end4
+	end	
+		
+	length 149	
+		piece s sa ma 18*la ma end2
+	end	
+		
+	length 150	
+		piece s ma ma 18*la ma end2
+	end	
+		
+	length 151	
+		piece s ma ma 18*la ma end3
+	end	
+		
+	length 152	
+		piece s ma la 18*la ma end3
+	end	
+		
+	length 153	
+		piece s ma la 18*la la end3
+	end	
+		
+	length 154	
+		piece s la la 18*la la end3
+	end	
+		
+	length 155	
+		piece s la la 18*la la end4
+	end	
+		
+	length 156	
+		piece s sa ma 19*la ma end2
+	end	
+		
+	length 157	
+		piece s ma ma 19*la ma end2
+	end	
+		
+	length 158	
+		piece s ma ma 19*la ma end3
+	end	
+		
+	length 159	
+		piece s ma la 19*la ma end3
+	end	
+		
+	length 160	
+		piece s ma la 19*la la end3
+	end	
+		
+	length 161	
+		piece s la la 19*la la end3
+	end	
+		
+	length 162	
+		piece s la la 19*la la end4
+	end	
+		
+	length 163	
+		piece s sa ma 20*la ma end2
+	end	
+		
+	length 164	
+		piece s ma ma 20*la ma end2
+	end	
+		
+	length 165	
+		piece s ma ma 20*la ma end3
+	end	
+		
+	length 166	
+		piece s ma la 20*la ma end3
+	end	
+		
+	length 167	
+		piece s ma la 20*la la end3
+	end	
+		
+	length 168	
+		piece s la la 20*la la end3
+	end	
+		
+	length 169	
+		piece s la la 20*la la end4
+	end	
+		
+	length 170	
+		piece s sa ma 21*la ma end2
+	end	
+		
+	length 171	
+		piece s ma ma 21*la ma end2
+	end	
+		
+	length 172	
+		piece s ma ma 21*la ma end3
+	end	
+		
+	length 173	
+		piece s ma la 21*la ma end3
+	end	
+		
+	length 174	
+		piece s ma la 21*la la end3
+	end	
+		
+	length 175	
+		piece s la la 21*la la end3
+	end	
+		
+	length 176	
+		piece s la la 21*la la end4
+	end	
+		
+	length 177	
+		piece s sa ma 22*la ma end2
+	end	
+		
+	length 178	
+		piece s ma ma 22*la ma end2
+	end	
+		
+	length 179	
+		piece s ma ma 22*la ma end3
+	end	
+		
+	length 180	
+		piece s ma la 22*la ma end3
+	end	
+		
+	length 181	
+		piece s ma la 22*la la end3
+	end	
+		
+	length 182	
+		piece s la la 22*la la end3
+	end	
+		
+	length 183	
+		piece s la la 22*la la end4
+	end	
+		
+	length 184	
+		piece s sa ma 23*la ma end2
+	end	
+		
+	length 185	
+		piece s ma ma 23*la ma end2
+	end	
+		
+	length 186	
+		piece s ma ma 23*la ma end3
+	end	
+		
+	length 187	
+		piece s ma la 23*la ma end3
+	end	
+		
+	length 188	
+		piece s ma la 23*la la end3
+	end	
+		
+	length 189	
+		piece s la la 23*la la end3
+	end	
+		
+	length 190	
+		piece s la la 23*la la end4
+	end	
+		
+	length 191	
+		piece s sa ma 24*la ma end2
+	end	
+		
+	length 192	
+		piece s ma ma 24*la ma end2
+	end	
+		
+	length 193	
+		piece s ma ma 24*la ma end3
+	end	
+		
+	length 194	
+		piece s ma la 24*la ma end3
+	end	
+		
+	length 195	
+		piece s ma la 24*la la end3
+	end	
+		
+	length 196	
+		piece s la la 24*la la end3
+	end	
+		
+	length 197	
+		piece s la la 24*la la end4
+	end	
+		
+	length 198	
+		piece s sa ma 25*la ma end2
+	end	
+		
+	length 199	
+		piece s ma ma 25*la ma end2
+	end	
+		
+	length 200	
+		piece s ma ma 25*la ma end3
+	end	
+		
+	length 201	
+		piece s ma la 25*la ma end3
+	end	
+		
+	length 202	
+		piece s ma la 25*la la end3
+	end	
+		
+	length 203	
+		piece s la la 25*la la end3
+	end	
+		
+	length 204	
+		piece s la la 25*la la end4
+	end	
+		
+	length 205	
+		piece s sa ma 26*la ma end2
+	end	
+		
+	length 206	
+		piece s ma ma 26*la ma end2
+	end	
+		
+	length 207	
+		piece s ma ma 26*la ma end3
+	end	
+		
+	length 208	
+		piece s ma la 26*la ma end3
+	end	
+		
+	length 209	
+		piece s ma la 26*la la end3
+	end	
+		
+	length 210	
+		piece s la la 26*la la end3
+	end	
+		
+	length 211	
+		piece s la la 26*la la end4
+	end	
+		
+	length 212	
+		piece s sa ma 27*la ma end2
+	end	
+		
+	length 213	
+		piece s ma ma 27*la ma end2
+	end	
+		
+	length 214	
+		piece s ma ma 27*la ma end3
+	end	
+		
+	length 215	
+		piece s ma la 27*la ma end3
+	end	
+		
+	length 216	
+		piece s ma la 27*la la end3
+	end	
+		
+	length 217	
+		piece s la la 27*la la end3
+	end	
+		
+	length 218	
+		piece s la la 27*la la end4
+	end	
+		
+	length 219	
+		piece s sa ma 28*la ma end2
+	end	
+		
+	length 220	
+		piece s ma ma 28*la ma end2
+	end	
+		
+	length 221	
+		piece s ma ma 28*la ma end3
+	end	
+		
+	length 222	
+		piece s ma la 28*la ma end3
+	end	
+		
+	length 223	
+		piece s ma la 28*la la end3
+	end	
+		
+	length 224	
+		piece s la la 28*la la end3
+	end	
+		
+	length 225	
+		piece s la la 28*la la end4
+	end	
+		
+	length 226	
+		piece s sa ma 29*la ma end2
+	end	
+		
+	length 227	
+		piece s ma ma 29*la ma end2
+	end	
+		
+	length 228	
+		piece s ma ma 29*la ma end3
+	end	
+		
+	length 229	
+		piece s ma la 29*la ma end3
+	end	
+		
+	length 230	
+		piece s ma la 29*la la end3
+	end	
+		
+	length 231	
+		piece s la la 29*la la end3
+	end	
+		
+	length 232	
+		piece s la la 29*la la end4
+	end	
+		
+	length 233	
+		piece s sa ma 30*la ma end2
+	end	
+		
+	length 234	
+		piece s ma ma 30*la ma end2
+	end	
+		
+	length 235	
+		piece s ma ma 30*la ma end3
+	end	
+		
+	length 236	
+		piece s ma la 30*la ma end3
+	end	
+		
+	length 237	
+		piece s ma la 30*la la end3
+	end	
+		
+	length 238	
+		piece s la la 30*la la end3
+	end	
+		
+	length 239	
+		piece s la la 30*la la end4
+	end	
+		
+	length 240	
+		piece s sa ma 31*la ma end2
+	end	
+		
+	length 241	
+		piece s ma ma 31*la ma end2
+	end	
+		
+	length 242	
+		piece s ma ma 31*la ma end3
+	end	
+		
+	length 243	
+		piece s ma la 31*la ma end3
+	end	
+		
+	length 244	
+		piece s ma la 31*la la end3
+	end	
+		
+	length 245	
+		piece s la la 31*la la end3
+	end	
+		
+	length 246	
+		piece s la la 31*la la end4
+	end	
+		
+	length 247	
+		piece s sa ma 32*la ma end2
+	end	
+		
+	length 248	
+		piece s ma ma 32*la ma end2
+	end	
+		
+	length 249	
+		piece s ma ma 32*la ma end3
+	end	
+		
+	length 250	
+		piece s ma la 32*la ma end3
+	end	
+		
+	length 251	
+		piece s ma la 32*la la end3
+	end	
+		
+	length 252	
+		piece s la la 32*la la end3
+	end	
+		
+	length 253	
+		piece s la la 32*la la end4
+	end	
+		
+	length 254	
+		piece s sa ma 33*la ma end2
+	end	
+		
+	length 255	
+		piece s ma ma 33*la ma end2
+	end
+end
+
+# cable stayed elr bridge
+
+bridge 6
+
+section st
+	piece <0x38080000, 0>
+	piece <0x380c0000, 0>
+end
+
+section a3
+	piece <0x380c0000, 0>
+	piece <0x38090000, 0>
+	piece <0x380c0000, 0>
+end
+
+section fs
+	piece <0x380b0000, 0>
+end
+
+section fa
+	piece <0x380c0000, 0>
+end
+
+section te
+	piece <0x380c0000, 0>
+	piece <0x38070000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380a0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+end
+
+section tm
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380a0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+	piece <0x380b0000, 0>
+end
+	length 56
+		piece st a3 te rev(te) a3 rev(st) 
+	end
+
+	length 57
+		piece st a3 te fs rev(te) a3 rev(st) 
+	end
+
+	length 58
+		piece st a3 fa te rev(te) fa a3 rev(st) 
+	end
+
+	length 59
+		piece st a3 fa te fs rev(te) fa a3 rev(st) 
+	end
+
+	length 60
+		piece st fa a3 fa te rev(te) fa a3 fa rev(st) 
+	end
+
+	length 61
+		piece st fa a3 fa te fs rev(te) fa a3 fa rev(st) 
+	end
+
+	length 62
+		piece st 2*a3 te rev(te) 2*a3 rev(st) 
+	end
+
+	length 63
+		piece st 2*a3 te fs rev(te) 2*a3 rev(st) 
+	end
+
+	length 64
+		piece st 2*a3 fa te rev(te) fa 2*a3 rev(st) 
+	end
+
+	length 65
+		piece st 2*a3 fa te fs rev(te) fa 2*a3 rev(st) 
+	end
+
+	length 66
+		piece st fa 2*a3 fa te rev(te) fa 2*a3 fa rev(st) 
+	end
+
+	length 67
+		piece st fa 2*a3 fa te fs rev(te) fa 2*a3 fa rev(st) 
+	end
+
+	length 68
+		piece st 3*a3 te rev(te) 3*a3 rev(st)  
+	end
+
+	length 69
+		piece st 3*a3 te fs rev(te) 3*a3 rev(st) 
+	end
+
+	length 70
+		piece st 3*a3 fa te rev(te) fa 3*a3 rev(st) 
+	end
+
+	length 71
+		piece st 3*a3 fa te fs rev(te) fa 3*a3 rev(st) 
+	end
+
+	length 72
+		piece st fa 3*a3 fa te rev(te) fa 3*a3 fa rev(st) 
+	end
+
+	length 73
+		piece st fa 3*a3 fa te fs rev(te) fa 3*a3 fa rev(st) 
+	end
+
+	length 74
+		piece st 4*a3 te rev(te) 4*a3 rev(st) 
+	end
+
+	length 75
+		piece st 4*a3 te fs rev(te) 4*a3 rev(st) 
+	end
+
+	length 76
+		piece st 4*a3 fa te rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 77
+		piece st 4*a3 fa te fs rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 78
+		piece st fa 4*a3 fa te rev(te) fa 4*a3 fa rev(st) 
+	end
+
+	length 79
+		piece st fa 4*a3 fa te fs rev(te) fa 4*a3 fa rev(st) 
+	end
+
+	length 80
+		piece st 5*a3 te rev(te) 5*a3 rev(st) 
+	end
+
+	length 81
+		piece st 5*a3 te fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 82
+		piece st 5*a3 fa te rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 83
+		piece st 5*a3 fa te fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 84
+		piece st fa 5*a3 fa te rev(te) fa 5*a3 fa rev(st) 
+	end
+
+	length 85
+		piece st fa 5*a3 fa te fs rev(te) fa 5*a3 fa rev(st) 
+	end
+
+	length 86
+		piece st 6*a3 te rev(te) 6*a3 rev(st) 
+	end
+
+	length 87
+		piece st 6*a3 te fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 88
+		piece st 6*a3 fa te rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 89
+		piece st 6*a3 fa te fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 90
+		piece st fa 6*a3 fa te rev(te) fa 6*a3 fa rev(st) 
+	end
+
+	length 91
+		piece st fa 6*a3 fa te fs rev(te) fa 6*a3 fa rev(st) 
+	end
+
+	length 92
+		piece st 7*a3 te rev(te) 7*a3 rev(st) 
+	end
+
+	length 93
+		piece st 7*a3 te fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 94
+		piece st 7*a3 fa te rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 95
+		piece st 7*a3 fa te fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 96
+		piece st fa 7*a3 fa te rev(te) fa 7*a3 fa rev(st) 
+	end
+
+	length 97
+		piece st fa 7*a3 fa te fs rev(te) fa 7*a3 fa rev(st) 
+	end
+
+	length 98
+		piece st 5*a3 te tm rev(te) 4*a3 rev(st) 
+	end
+
+	length 99
+		piece st 5*a3 te tm rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 100
+		piece st 5*a3 te fs tm fs rev(te) 4*a3 rev(st) 
+	end
+
+	length 101
+		piece st 5*a3 te tm rev(te) 5*a3 rev(st) 
+	end
+
+	length 102
+		piece st 5*a3 fa te tm rev(te) 5*a3 rev(st) 
+	end
+
+	length 103
+		piece st 5*a3 te fs tm fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 104
+		piece st 5*a3 fa te fs tm fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 105
+		piece st 5*a3 fa te fs tm fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 106
+		piece st fa 5*a3 fa te fs tm fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 107
+		piece st 6*a3 te tm rev(te) 6*a3 rev(st) 
+	end
+
+	length 108
+		piece st 6*a3 fa te tm rev(te) 6*a3 rev(st) 
+	end
+
+	length 109
+		piece st 6*a3 te fs tm fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 110
+		piece st 6*a3 fa te fs tm fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 111
+		piece st 6*a3 fa te fs tm fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 112
+		piece st fa 6*a3 fa te fs tm fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 113
+		piece st 7*a3 te tm rev(te) 7*a3 rev(st) 
+	end
+
+	length 114
+		piece st 7*a3 fa te tm rev(te) 7*a3 rev(st) 
+	end
+
+	length 115
+		piece st 7*a3 te fs tm fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 116
+		piece st 7*a3 fa te fs tm fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 117
+		piece st 7*a3 fa te fs tm fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 118
+		piece st fa 7*a3 fa te fs tm fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 119
+		piece st 8*a3 te tm rev(te) 8*a3 rev(st) 
+	end
+
+	length 120
+		piece st 8*a3 fa te tm rev(te) 8*a3 rev(st) 
+	end
+
+	length 121
+		piece st 8*a3 te fs tm fs rev(te) 8*a3 rev(st) 
+	end
+
+	length 122
+		piece st 8*a3 fa te fs tm fs rev(te) 8*a3 rev(st) 
+	end
+
+	length 123
+		piece st 8*a3 fa te fs tm fs rev(te) fa 8*a3 rev(st) 
+	end
+
+	length 124
+		piece st fa 8*a3 fa te fs tm fs rev(te) fa 8*a3 rev(st) 
+	end
+
+	length 125
+		piece st 9*a3 te tm rev(te) 9*a3 rev(st) 
+	end
+
+	length 126
+		piece st 9*a3 fa te tm rev(te) 9*a3 rev(st) 
+	end
+
+	length 127
+		piece st 9*a3 te fs tm fs rev(te) 9*a3 rev(st) 
+	end
+
+	length 128
+		piece st 9*a3 fa te fs tm fs rev(te) 9*a3 rev(st) 
+	end
+
+	length 129
+		piece st 9*a3 fa te fs tm fs rev(te) fa 9*a3 rev(st) 
+	end
+
+	length 130
+		piece st fa 9*a3 fa te fs tm fs rev(te) fa 9*a3 rev(st) 
+	end
+
+	length 131
+		piece st 10*a3 te tm rev(te) 10*a3 rev(st) 
+	end
+
+	length 132
+		piece st 10*a3 fa te tm rev(te) 10*a3 rev(st) 
+	end
+
+	length 133
+		piece st 10*a3 te fs tm fs rev(te) 10*a3 rev(st) 
+	end
+
+	length 134
+		piece st 10*a3 fa te fs tm fs rev(te) 10*a3 rev(st) 
+	end
+
+	length 135
+		piece st 10*a3 fa te fs tm fs rev(te) fa 10*a3 rev(st) 
+	end
+
+	length 136
+		piece st fa 10*a3 fa te fs tm fs rev(te) fa 10*a3 rev(st) 
+	end
+
+	length 137
+		piece st 11*a3 te tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 138
+		piece st 11*a3 fa te tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 139
+		piece st 11*a3 te fs tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 140
+		piece st 11*a3 fa te fs tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 141
+		piece st 11*a3 fa te fs tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 142
+		piece st fa 11*a3 fa te fs tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 143
+		piece st 12*a3 te tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 144
+		piece st 12*a3 fa te tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 145
+		piece st 12*a3 te fs tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 146
+		piece st 12*a3 fa te fs tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 147
+		piece st 12*a3 fa te fs tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 148
+		piece st fa 12*a3 fa te fs tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 149
+		piece st 13*a3 te tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 150
+		piece st 13*a3 fa te tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 151
+		piece st 13*a3 te fs tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 152
+		piece st 13*a3 fa te fs tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 153
+		piece st 13*a3 fa te fs tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 154
+		piece st fa 13*a3 fa te fs tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 155
+		piece st 11*a3 fa te 2*tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 156
+		piece st 11*a3 te fs 2*tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 157
+		piece st 11*a3 fa te fs 2*tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 158
+		piece st 11*a3 fa te fs 2*tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 159
+		piece st fa 11*a3 fa te fs 2*tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 160
+		piece st 12*a3 te 2*tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 161
+		piece st 12*a3 fa te 2*tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 162
+		piece st 12*a3 te fs 2*tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 163
+		piece st 12*a3 fa te fs 2*tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 164
+		piece st 12*a3 fa te fs 2*tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 165
+		piece st fa 12*a3 fa te fs 2*tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 166
+		piece st 13*a3 te 2*tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 167
+		piece st 13*a3 fa te 2*tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 168
+		piece st 13*a3 te fs 2*tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 169
+		piece st 13*a3 fa te fs 2*tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 170
+		piece st 13*a3 fa te fs 2*tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 171
+		piece st fa 13*a3 fa te fs 2*tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 172
+		piece st 14*a3 te 2*tm rev(te) 14*a3 rev(st) 
+	end
+
+	length 173
+		piece st 14*a3 fa te 2*tm rev(te) 14*a3 rev(st) 
+	end
+
+	length 174
+		piece st 14*a3 te fs 2*tm fs rev(te) 14*a3 rev(st) 
+	end
+
+	length 175
+		piece st 14*a3 fa te fs 2*tm fs rev(te) 14*a3 rev(st) 
+	end
+
+	length 176
+		piece st 14*a3 fa te fs 2*tm fs rev(te) fa 14*a3 rev(st) 
+	end
+
+	length 177
+		piece st fa 14*a3 fa te fs 2*tm fs rev(te) fa 14*a3 rev(st) 
+	end
+
+	length 178
+		piece st 15*a3 te 2*tm rev(te) 15*a3 rev(st) 
+	end
+
+	length 179
+		piece st 15*a3 fa te 2*tm rev(te) 15*a3 rev(st) 
+	end
+
+	length 180
+		piece st 15*a3 te fs 2*tm fs rev(te) 15*a3 rev(st) 
+	end
+
+	length 181
+		piece st 15*a3 fa te fs 2*tm fs rev(te) 15*a3 rev(st) 
+	end
+
+	length 182
+		piece st 15*a3 fa te fs 2*tm fs rev(te) fa 15*a3 rev(st) 
+	end
+
+	length 183
+		piece st fa 15*a3 fa te fs 2*tm fs rev(te) fa 15*a3 rev(st) 
+	end
+
+	length 184
+		piece st 16*a3 te 2*tm rev(te) 16*a3 rev(st) 
+	end
+
+	length 185
+		piece st 16*a3 fa te 2*tm rev(te) 16*a3 rev(st) 
+	end
+
+	length 186
+		piece st 16*a3 te fs 2*tm fs rev(te) 16*a3 rev(st) 
+	end
+
+	length 187
+		piece st 16*a3 fa te fs 2*tm fs rev(te) 16*a3 rev(st) 
+	end
+
+	length 188
+		piece st 16*a3 fa te fs 2*tm fs rev(te) fa 16*a3 rev(st) 
+	end
+
+	length 189
+		piece st fa 16*a3 fa te fs 2*tm fs rev(te) fa 16*a3 rev(st) 
+	end
+
+	length 190
+		piece st 17*a3 te 2*tm rev(te) 17*a3 rev(st) 
+	end
+
+	length 191
+		piece st 17*a3 fa te 2*tm rev(te) 17*a3 rev(st) 
+	end
+
+	length 192
+		piece st 17*a3 te fs 2*tm fs rev(te) 17*a3 rev(st) 
+	end
+
+	length 193
+		piece st 17*a3 fa te fs 2*tm fs rev(te) 17*a3 rev(st) 
+	end
+
+	length 194
+		piece st 17*a3 fa te fs 2*tm fs rev(te) fa 17*a3 rev(st) 
+	end
+
+	length 195
+		piece st fa 17*a3 fa te fs 2*tm fs rev(te) fa 17*a3 rev(st) 
+	end
+
+	length 196
+		piece st 18*a3 te 2*tm rev(te) 18*a3 rev(st) 
+	end
+
+	length 197
+		piece st 18*a3 fa te 2*tm rev(te) 18*a3 rev(st) 
+	end
+
+	length 198
+		piece st 18*a3 te fs 2*tm fs rev(te) 18*a3 rev(st) 
+	end
+
+	length 199
+		piece st 18*a3 fa te fs 2*tm fs rev(te) 18*a3 rev(st) 
+	end
+
+	length 200
+		piece st 18*a3 fa te fs 2*tm fs rev(te) fa 18*a3 rev(st) 
+	end
+
+	length 201
+		piece st fa 18*a3 fa te fs 2*tm fs rev(te) fa 18*a3 rev(st) 
+	end
+
+	length 202
+		piece st 19*a3 te 2*tm rev(te) 19*a3 rev(st) 
+	end
+
+	length 203
+		piece st 19*a3 fa te 2*tm rev(te) 19*a3 rev(st) 
+	end
+
+	length 204
+		piece st 19*a3 te fs 2*tm fs rev(te) 19*a3 rev(st) 
+	end
+
+	length 205
+		piece st 19*a3 fa te fs 2*tm fs rev(te) 19*a3 rev(st) 
+	end
+
+	length 206
+		piece st 19*a3 fa te fs 2*tm fs rev(te) fa 19*a3 rev(st) 
+	end
+
+	length 207
+		piece st fa 19*a3 fa te fs 2*tm fs rev(te) fa 19*a3 rev(st) 
+	end
+
+	length 208
+		piece st 20*a3 te 2*tm rev(te) 20*a3 rev(st) 
+	end
+
+	length 209
+		piece st 20*a3 fa te 2*tm rev(te) 20*a3 rev(st) 
+	end
+
+	length 210
+		piece st 20*a3 te fs 2*tm fs rev(te) 20*a3 rev(st) 
+	end
+
+	length 211
+		piece st 20*a3 fa te fs 2*tm fs rev(te) 20*a3 rev(st) 
+	end
+
+	length 212
+		piece st 20*a3 fa te fs 2*tm fs rev(te) fa 20*a3 rev(st) 
+	end
+
+	length 213
+		piece st fa 20*a3 fa te fs 2*tm fs rev(te) fa 20*a3 rev(st) 
+	end
+
+	length 214
+		piece st 21*a3 te 2*tm rev(te) 21*a3 rev(st) 
+	end
+
+	length 215
+		piece st 21*a3 fa te 2*tm rev(te) 21*a3 rev(st) 
+	end
+
+	length 216
+		piece st 21*a3 te fs 2*tm fs rev(te) 21*a3 rev(st) 
+	end
+
+	length 217
+		piece st 21*a3 fa te fs 2*tm fs rev(te) 21*a3 rev(st) 
+	end
+
+	length 218
+		piece st 21*a3 fa te fs 2*tm fs rev(te) fa 21*a3 rev(st) 
+	end
+
+	length 219
+		piece st fa 21*a3 fa te fs 2*tm fs rev(te) fa 21*a3 rev(st) 
+	end
+
+	length 220
+		piece st 22*a3 te 2*tm rev(te) 22*a3 rev(st) 
+	end
+
+	length 221
+		piece st 22*a3 fa te 2*tm rev(te) 22*a3 rev(st) 
+	end
+
+	length 222
+		piece st 22*a3 te fs 2*tm fs rev(te) 22*a3 rev(st) 
+	end
+
+	length 223
+		piece st 22*a3 fa te fs 2*tm fs rev(te) 22*a3 rev(st) 
+	end
+
+	length 224
+		piece st 22*a3 fa te fs 2*tm fs rev(te) fa 22*a3 rev(st) 
+	end
+
+	length 225
+		piece st fa 22*a3 fa te fs 2*tm fs rev(te) fa 22*a3 rev(st) 
+	end
+
+	length 226
+		piece st 23*a3 te 2*tm rev(te) 23*a3 rev(st) 
+	end
+
+	length 227
+		piece st 23*a3 fa te 2*tm rev(te) 23*a3 rev(st) 
+	end
+
+	length 228
+		piece st 23*a3 te fs 2*tm fs rev(te) 23*a3 rev(st) 
+	end
+
+	length 229
+		piece st 23*a3 fa te fs 2*tm fs rev(te) 23*a3 rev(st) 
+	end
+
+	length 230
+		piece st 23*a3 fa te fs 2*tm fs rev(te) fa 23*a3 rev(st) 
+	end
+
+	length 231
+		piece st fa 23*a3 fa te fs 2*tm fs rev(te) fa 23*a3 rev(st) 
+	end
+
+	length 232
+		piece st 24*a3 te 2*tm rev(te) 24*a3 rev(st) 
+	end
+
+	length 233
+		piece st 24*a3 fa te 2*tm rev(te) 24*a3 rev(st) 
+	end
+
+	length 234
+		piece st 24*a3 te fs 2*tm fs rev(te) 24*a3 rev(st) 
+	end
+
+	length 235
+		piece st 24*a3 fa te fs 2*tm fs rev(te) 24*a3 rev(st) 
+	end
+
+	length 236
+		piece st 24*a3 fa te fs 2*tm fs rev(te) fa 24*a3 rev(st) 
+	end
+
+	length 237
+		piece st fa 24*a3 fa te fs 2*tm fs rev(te) fa 24*a3 rev(st) 
+	end
+
+	length 238
+		piece st 25*a3 te 2*tm rev(te) 25*a3 rev(st) 
+	end
+
+	length 239
+		piece st 25*a3 fa te 2*tm rev(te) 25*a3 rev(st) 
+	end
+
+	length 240
+		piece st 25*a3 te fs 2*tm fs rev(te) 25*a3 rev(st) 
+	end
+
+	length 241
+		piece st 25*a3 fa te fs 2*tm fs rev(te) 25*a3 rev(st) 
+	end
+
+	length 242
+		piece st 25*a3 fa te fs 2*tm fs rev(te) fa 25*a3 rev(st) 
+	end
+
+	length 243
+		piece st fa 25*a3 fa te fs 2*tm fs rev(te) fa 25*a3 rev(st) 
+	end
+
+	length 244
+		piece st 26*a3 te 2*tm rev(te) 26*a3 rev(st) 
+	end
+
+	length 245
+		piece st 26*a3 fa te 2*tm rev(te) 26*a3 rev(st) 
+	end
+
+	length 246
+		piece st 26*a3 te fs 2*tm fs rev(te) 26*a3 rev(st) 
+	end
+
+	length 247
+		piece st 26*a3 fa te fs 2*tm fs rev(te) 26*a3 rev(st) 
+	end
+
+	length 248
+		piece st 26*a3 fa te fs 2*tm fs rev(te) fa 26*a3 rev(st) 
+	end
+
+	length 249
+		piece st fa 26*a3 fa te fs 2*tm fs rev(te) fa 26*a3 rev(st) 
+	end
+
+	length 250
+		piece st 27*a3 te 2*tm rev(te) 27*a3 rev(st) 
+	end
+
+	length 251
+		piece st 27*a3 fa te 2*tm rev(te) 27*a3 rev(st) 
+	end
+
+	length 252
+		piece st 27*a3 te fs 2*tm fs rev(te) 27*a3 rev(st) 
+	end
+
+	length 253
+		piece st 27*a3 fa te fs 2*tm fs rev(te) 27*a3 rev(st) 
+	end
+
+	length 254
+		piece st 27*a3 fa te fs 2*tm fs rev(te) fa 27*a3 rev(st) 
+	end
+
+	length 255
+		piece st fa 27*a3 fa te fs 2*tm fs rev(te) fa 27*a3 rev(st) 
+	end
+end
+
+# cable stayed GLR
+
+bridge 7
+
+section st
+	piece <0x38081000, 0>
+	piece <0x380c1000, 0>
+end
+
+section a3
+	piece <0x380c1000, 0>
+	piece <0x38091000, 0>
+	piece <0x380c1000, 0>
+end
+
+section fs
+	piece <0x380b1000, 0>
+end
+
+section fa
+	piece <0x380c1000, 0>
+end
+
+section te
+	piece <0x380c1000, 0>
+	piece <0x38071000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380a1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+end
+
+section tm
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380a1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+	piece <0x380b1000, 0>
+end
+	length 56
+		piece st a3 te rev(te) a3 rev(st) 
+	end
+
+	length 57
+		piece st a3 te fs rev(te) a3 rev(st) 
+	end
+
+	length 58
+		piece st a3 fa te rev(te) fa a3 rev(st) 
+	end
+
+	length 59
+		piece st a3 fa te fs rev(te) fa a3 rev(st) 
+	end
+
+	length 60
+		piece st fa a3 fa te rev(te) fa a3 fa rev(st) 
+	end
+
+	length 61
+		piece st fa a3 fa te fs rev(te) fa a3 fa rev(st) 
+	end
+
+	length 62
+		piece st 2*a3 te rev(te) 2*a3 rev(st) 
+	end
+
+	length 63
+		piece st 2*a3 te fs rev(te) 2*a3 rev(st) 
+	end
+
+	length 64
+		piece st 2*a3 fa te rev(te) fa 2*a3 rev(st) 
+	end
+
+	length 65
+		piece st 2*a3 fa te fs rev(te) fa 2*a3 rev(st) 
+	end
+
+	length 66
+		piece st fa 2*a3 fa te rev(te) fa 2*a3 fa rev(st) 
+	end
+
+	length 67
+		piece st fa 2*a3 fa te fs rev(te) fa 2*a3 fa rev(st) 
+	end
+
+	length 68
+		piece st 3*a3 te rev(te) 3*a3 rev(st)  
+	end
+
+	length 69
+		piece st 3*a3 te fs rev(te) 3*a3 rev(st) 
+	end
+
+	length 70
+		piece st 3*a3 fa te rev(te) fa 3*a3 rev(st) 
+	end
+
+	length 71
+		piece st 3*a3 fa te fs rev(te) fa 3*a3 rev(st) 
+	end
+
+	length 72
+		piece st fa 3*a3 fa te rev(te) fa 3*a3 fa rev(st) 
+	end
+
+	length 73
+		piece st fa 3*a3 fa te fs rev(te) fa 3*a3 fa rev(st) 
+	end
+
+	length 74
+		piece st 4*a3 te rev(te) 4*a3 rev(st) 
+	end
+
+	length 75
+		piece st 4*a3 te fs rev(te) 4*a3 rev(st) 
+	end
+
+	length 76
+		piece st 4*a3 fa te rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 77
+		piece st 4*a3 fa te fs rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 78
+		piece st fa 4*a3 fa te rev(te) fa 4*a3 fa rev(st) 
+	end
+
+	length 79
+		piece st fa 4*a3 fa te fs rev(te) fa 4*a3 fa rev(st) 
+	end
+
+	length 80
+		piece st 5*a3 te rev(te) 5*a3 rev(st) 
+	end
+
+	length 81
+		piece st 5*a3 te fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 82
+		piece st 5*a3 fa te rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 83
+		piece st 5*a3 fa te fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 84
+		piece st fa 5*a3 fa te rev(te) fa 5*a3 fa rev(st) 
+	end
+
+	length 85
+		piece st fa 5*a3 fa te fs rev(te) fa 5*a3 fa rev(st) 
+	end
+
+	length 86
+		piece st 6*a3 te rev(te) 6*a3 rev(st) 
+	end
+
+	length 87
+		piece st 6*a3 te fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 88
+		piece st 6*a3 fa te rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 89
+		piece st 6*a3 fa te fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 90
+		piece st fa 6*a3 fa te rev(te) fa 6*a3 fa rev(st) 
+	end
+
+	length 91
+		piece st fa 6*a3 fa te fs rev(te) fa 6*a3 fa rev(st) 
+	end
+
+	length 92
+		piece st 7*a3 te rev(te) 7*a3 rev(st) 
+	end
+
+	length 93
+		piece st 7*a3 te fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 94
+		piece st 7*a3 fa te rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 95
+		piece st 7*a3 fa te fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 96
+		piece st fa 7*a3 fa te rev(te) fa 7*a3 fa rev(st) 
+	end
+
+	length 97
+		piece st fa 7*a3 fa te fs rev(te) fa 7*a3 fa rev(st) 
+	end
+
+	length 98
+		piece st 5*a3 te tm rev(te) 4*a3 rev(st) 
+	end
+
+	length 99
+		piece st 5*a3 te tm rev(te) fa 4*a3 rev(st) 
+	end
+
+	length 100
+		piece st 5*a3 te fs tm fs rev(te) 4*a3 rev(st) 
+	end
+
+	length 101
+		piece st 5*a3 te tm rev(te) 5*a3 rev(st) 
+	end
+
+	length 102
+		piece st 5*a3 fa te tm rev(te) 5*a3 rev(st) 
+	end
+
+	length 103
+		piece st 5*a3 te fs tm fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 104
+		piece st 5*a3 fa te fs tm fs rev(te) 5*a3 rev(st) 
+	end
+
+	length 105
+		piece st 5*a3 fa te fs tm fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 106
+		piece st fa 5*a3 fa te fs tm fs rev(te) fa 5*a3 rev(st) 
+	end
+
+	length 107
+		piece st 6*a3 te tm rev(te) 6*a3 rev(st) 
+	end
+
+	length 108
+		piece st 6*a3 fa te tm rev(te) 6*a3 rev(st) 
+	end
+
+	length 109
+		piece st 6*a3 te fs tm fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 110
+		piece st 6*a3 fa te fs tm fs rev(te) 6*a3 rev(st) 
+	end
+
+	length 111
+		piece st 6*a3 fa te fs tm fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 112
+		piece st fa 6*a3 fa te fs tm fs rev(te) fa 6*a3 rev(st) 
+	end
+
+	length 113
+		piece st 7*a3 te tm rev(te) 7*a3 rev(st) 
+	end
+
+	length 114
+		piece st 7*a3 fa te tm rev(te) 7*a3 rev(st) 
+	end
+
+	length 115
+		piece st 7*a3 te fs tm fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 116
+		piece st 7*a3 fa te fs tm fs rev(te) 7*a3 rev(st) 
+	end
+
+	length 117
+		piece st 7*a3 fa te fs tm fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 118
+		piece st fa 7*a3 fa te fs tm fs rev(te) fa 7*a3 rev(st) 
+	end
+
+	length 119
+		piece st 8*a3 te tm rev(te) 8*a3 rev(st) 
+	end
+
+	length 120
+		piece st 8*a3 fa te tm rev(te) 8*a3 rev(st) 
+	end
+
+	length 121
+		piece st 8*a3 te fs tm fs rev(te) 8*a3 rev(st) 
+	end
+
+	length 122
+		piece st 8*a3 fa te fs tm fs rev(te) 8*a3 rev(st) 
+	end
+
+	length 123
+		piece st 8*a3 fa te fs tm fs rev(te) fa 8*a3 rev(st) 
+	end
+
+	length 124
+		piece st fa 8*a3 fa te fs tm fs rev(te) fa 8*a3 rev(st) 
+	end
+
+	length 125
+		piece st 9*a3 te tm rev(te) 9*a3 rev(st) 
+	end
+
+	length 126
+		piece st 9*a3 fa te tm rev(te) 9*a3 rev(st) 
+	end
+
+	length 127
+		piece st 9*a3 te fs tm fs rev(te) 9*a3 rev(st) 
+	end
+
+	length 128
+		piece st 9*a3 fa te fs tm fs rev(te) 9*a3 rev(st) 
+	end
+
+	length 129
+		piece st 9*a3 fa te fs tm fs rev(te) fa 9*a3 rev(st) 
+	end
+
+	length 130
+		piece st fa 9*a3 fa te fs tm fs rev(te) fa 9*a3 rev(st) 
+	end
+
+	length 131
+		piece st 10*a3 te tm rev(te) 10*a3 rev(st) 
+	end
+
+	length 132
+		piece st 10*a3 fa te tm rev(te) 10*a3 rev(st) 
+	end
+
+	length 133
+		piece st 10*a3 te fs tm fs rev(te) 10*a3 rev(st) 
+	end
+
+	length 134
+		piece st 10*a3 fa te fs tm fs rev(te) 10*a3 rev(st) 
+	end
+
+	length 135
+		piece st 10*a3 fa te fs tm fs rev(te) fa 10*a3 rev(st) 
+	end
+
+	length 136
+		piece st fa 10*a3 fa te fs tm fs rev(te) fa 10*a3 rev(st) 
+	end
+
+	length 137
+		piece st 11*a3 te tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 138
+		piece st 11*a3 fa te tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 139
+		piece st 11*a3 te fs tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 140
+		piece st 11*a3 fa te fs tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 141
+		piece st 11*a3 fa te fs tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 142
+		piece st fa 11*a3 fa te fs tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 143
+		piece st 12*a3 te tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 144
+		piece st 12*a3 fa te tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 145
+		piece st 12*a3 te fs tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 146
+		piece st 12*a3 fa te fs tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 147
+		piece st 12*a3 fa te fs tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 148
+		piece st fa 12*a3 fa te fs tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 149
+		piece st 13*a3 te tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 150
+		piece st 13*a3 fa te tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 151
+		piece st 13*a3 te fs tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 152
+		piece st 13*a3 fa te fs tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 153
+		piece st 13*a3 fa te fs tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 154
+		piece st fa 13*a3 fa te fs tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 155
+		piece st 11*a3 fa te 2*tm rev(te) 11*a3 rev(st) 
+	end
+
+	length 156
+		piece st 11*a3 te fs 2*tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 157
+		piece st 11*a3 fa te fs 2*tm fs rev(te) 11*a3 rev(st) 
+	end
+
+	length 158
+		piece st 11*a3 fa te fs 2*tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 159
+		piece st fa 11*a3 fa te fs 2*tm fs rev(te) fa 11*a3 rev(st) 
+	end
+
+	length 160
+		piece st 12*a3 te 2*tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 161
+		piece st 12*a3 fa te 2*tm rev(te) 12*a3 rev(st) 
+	end
+
+	length 162
+		piece st 12*a3 te fs 2*tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 163
+		piece st 12*a3 fa te fs 2*tm fs rev(te) 12*a3 rev(st) 
+	end
+
+	length 164
+		piece st 12*a3 fa te fs 2*tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 165
+		piece st fa 12*a3 fa te fs 2*tm fs rev(te) fa 12*a3 rev(st) 
+	end
+
+	length 166
+		piece st 13*a3 te 2*tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 167
+		piece st 13*a3 fa te 2*tm rev(te) 13*a3 rev(st) 
+	end
+
+	length 168
+		piece st 13*a3 te fs 2*tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 169
+		piece st 13*a3 fa te fs 2*tm fs rev(te) 13*a3 rev(st) 
+	end
+
+	length 170
+		piece st 13*a3 fa te fs 2*tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 171
+		piece st fa 13*a3 fa te fs 2*tm fs rev(te) fa 13*a3 rev(st) 
+	end
+
+	length 172
+		piece st 14*a3 te 2*tm rev(te) 14*a3 rev(st) 
+	end
+
+	length 173
+		piece st 14*a3 fa te 2*tm rev(te) 14*a3 rev(st) 
+	end
+
+	length 174
+		piece st 14*a3 te fs 2*tm fs rev(te) 14*a3 rev(st) 
+	end
+
+	length 175
+		piece st 14*a3 fa te fs 2*tm fs rev(te) 14*a3 rev(st) 
+	end
+
+	length 176
+		piece st 14*a3 fa te fs 2*tm fs rev(te) fa 14*a3 rev(st) 
+	end
+
+	length 177
+		piece st fa 14*a3 fa te fs 2*tm fs rev(te) fa 14*a3 rev(st) 
+	end
+
+	length 178
+		piece st 15*a3 te 2*tm rev(te) 15*a3 rev(st) 
+	end
+
+	length 179
+		piece st 15*a3 fa te 2*tm rev(te) 15*a3 rev(st) 
+	end
+
+	length 180
+		piece st 15*a3 te fs 2*tm fs rev(te) 15*a3 rev(st) 
+	end
+
+	length 181
+		piece st 15*a3 fa te fs 2*tm fs rev(te) 15*a3 rev(st) 
+	end
+
+	length 182
+		piece st 15*a3 fa te fs 2*tm fs rev(te) fa 15*a3 rev(st) 
+	end
+
+	length 183
+		piece st fa 15*a3 fa te fs 2*tm fs rev(te) fa 15*a3 rev(st) 
+	end
+
+	length 184
+		piece st 16*a3 te 2*tm rev(te) 16*a3 rev(st) 
+	end
+
+	length 185
+		piece st 16*a3 fa te 2*tm rev(te) 16*a3 rev(st) 
+	end
+
+	length 186
+		piece st 16*a3 te fs 2*tm fs rev(te) 16*a3 rev(st) 
+	end
+
+	length 187
+		piece st 16*a3 fa te fs 2*tm fs rev(te) 16*a3 rev(st) 
+	end
+
+	length 188
+		piece st 16*a3 fa te fs 2*tm fs rev(te) fa 16*a3 rev(st) 
+	end
+
+	length 189
+		piece st fa 16*a3 fa te fs 2*tm fs rev(te) fa 16*a3 rev(st) 
+	end
+
+	length 190
+		piece st 17*a3 te 2*tm rev(te) 17*a3 rev(st) 
+	end
+
+	length 191
+		piece st 17*a3 fa te 2*tm rev(te) 17*a3 rev(st) 
+	end
+
+	length 192
+		piece st 17*a3 te fs 2*tm fs rev(te) 17*a3 rev(st) 
+	end
+
+	length 193
+		piece st 17*a3 fa te fs 2*tm fs rev(te) 17*a3 rev(st) 
+	end
+
+	length 194
+		piece st 17*a3 fa te fs 2*tm fs rev(te) fa 17*a3 rev(st) 
+	end
+
+	length 195
+		piece st fa 17*a3 fa te fs 2*tm fs rev(te) fa 17*a3 rev(st) 
+	end
+
+	length 196
+		piece st 18*a3 te 2*tm rev(te) 18*a3 rev(st) 
+	end
+
+	length 197
+		piece st 18*a3 fa te 2*tm rev(te) 18*a3 rev(st) 
+	end
+
+	length 198
+		piece st 18*a3 te fs 2*tm fs rev(te) 18*a3 rev(st) 
+	end
+
+	length 199
+		piece st 18*a3 fa te fs 2*tm fs rev(te) 18*a3 rev(st) 
+	end
+
+	length 200
+		piece st 18*a3 fa te fs 2*tm fs rev(te) fa 18*a3 rev(st) 
+	end
+
+	length 201
+		piece st fa 18*a3 fa te fs 2*tm fs rev(te) fa 18*a3 rev(st) 
+	end
+
+	length 202
+		piece st 19*a3 te 2*tm rev(te) 19*a3 rev(st) 
+	end
+
+	length 203
+		piece st 19*a3 fa te 2*tm rev(te) 19*a3 rev(st) 
+	end
+
+	length 204
+		piece st 19*a3 te fs 2*tm fs rev(te) 19*a3 rev(st) 
+	end
+
+	length 205
+		piece st 19*a3 fa te fs 2*tm fs rev(te) 19*a3 rev(st) 
+	end
+
+	length 206
+		piece st 19*a3 fa te fs 2*tm fs rev(te) fa 19*a3 rev(st) 
+	end
+
+	length 207
+		piece st fa 19*a3 fa te fs 2*tm fs rev(te) fa 19*a3 rev(st) 
+	end
+
+	length 208
+		piece st 20*a3 te 2*tm rev(te) 20*a3 rev(st) 
+	end
+
+	length 209
+		piece st 20*a3 fa te 2*tm rev(te) 20*a3 rev(st) 
+	end
+
+	length 210
+		piece st 20*a3 te fs 2*tm fs rev(te) 20*a3 rev(st) 
+	end
+
+	length 211
+		piece st 20*a3 fa te fs 2*tm fs rev(te) 20*a3 rev(st) 
+	end
+
+	length 212
+		piece st 20*a3 fa te fs 2*tm fs rev(te) fa 20*a3 rev(st) 
+	end
+
+	length 213
+		piece st fa 20*a3 fa te fs 2*tm fs rev(te) fa 20*a3 rev(st) 
+	end
+
+	length 214
+		piece st 21*a3 te 2*tm rev(te) 21*a3 rev(st) 
+	end
+
+	length 215
+		piece st 21*a3 fa te 2*tm rev(te) 21*a3 rev(st) 
+	end
+
+	length 216
+		piece st 21*a3 te fs 2*tm fs rev(te) 21*a3 rev(st) 
+	end
+
+	length 217
+		piece st 21*a3 fa te fs 2*tm fs rev(te) 21*a3 rev(st) 
+	end
+
+	length 218
+		piece st 21*a3 fa te fs 2*tm fs rev(te) fa 21*a3 rev(st) 
+	end
+
+	length 219
+		piece st fa 21*a3 fa te fs 2*tm fs rev(te) fa 21*a3 rev(st) 
+	end
+
+	length 220
+		piece st 22*a3 te 2*tm rev(te) 22*a3 rev(st) 
+	end
+
+	length 221
+		piece st 22*a3 fa te 2*tm rev(te) 22*a3 rev(st) 
+	end
+
+	length 222
+		piece st 22*a3 te fs 2*tm fs rev(te) 22*a3 rev(st) 
+	end
+
+	length 223
+		piece st 22*a3 fa te fs 2*tm fs rev(te) 22*a3 rev(st) 
+	end
+
+	length 224
+		piece st 22*a3 fa te fs 2*tm fs rev(te) fa 22*a3 rev(st) 
+	end
+
+	length 225
+		piece st fa 22*a3 fa te fs 2*tm fs rev(te) fa 22*a3 rev(st) 
+	end
+
+	length 226
+		piece st 23*a3 te 2*tm rev(te) 23*a3 rev(st) 
+	end
+
+	length 227
+		piece st 23*a3 fa te 2*tm rev(te) 23*a3 rev(st) 
+	end
+
+	length 228
+		piece st 23*a3 te fs 2*tm fs rev(te) 23*a3 rev(st) 
+	end
+
+	length 229
+		piece st 23*a3 fa te fs 2*tm fs rev(te) 23*a3 rev(st) 
+	end
+
+	length 230
+		piece st 23*a3 fa te fs 2*tm fs rev(te) fa 23*a3 rev(st) 
+	end
+
+	length 231
+		piece st fa 23*a3 fa te fs 2*tm fs rev(te) fa 23*a3 rev(st) 
+	end
+
+	length 232
+		piece st 24*a3 te 2*tm rev(te) 24*a3 rev(st) 
+	end
+
+	length 233
+		piece st 24*a3 fa te 2*tm rev(te) 24*a3 rev(st) 
+	end
+
+	length 234
+		piece st 24*a3 te fs 2*tm fs rev(te) 24*a3 rev(st) 
+	end
+
+	length 235
+		piece st 24*a3 fa te fs 2*tm fs rev(te) 24*a3 rev(st) 
+	end
+
+	length 236
+		piece st 24*a3 fa te fs 2*tm fs rev(te) fa 24*a3 rev(st) 
+	end
+
+	length 237
+		piece st fa 24*a3 fa te fs 2*tm fs rev(te) fa 24*a3 rev(st) 
+	end
+
+	length 238
+		piece st 25*a3 te 2*tm rev(te) 25*a3 rev(st) 
+	end
+
+	length 239
+		piece st 25*a3 fa te 2*tm rev(te) 25*a3 rev(st) 
+	end
+
+	length 240
+		piece st 25*a3 te fs 2*tm fs rev(te) 25*a3 rev(st) 
+	end
+
+	length 241
+		piece st 25*a3 fa te fs 2*tm fs rev(te) 25*a3 rev(st) 
+	end
+
+	length 242
+		piece st 25*a3 fa te fs 2*tm fs rev(te) fa 25*a3 rev(st) 
+	end
+
+	length 243
+		piece st fa 25*a3 fa te fs 2*tm fs rev(te) fa 25*a3 rev(st) 
+	end
+
+	length 244
+		piece st 26*a3 te 2*tm rev(te) 26*a3 rev(st) 
+	end
+
+	length 245
+		piece st 26*a3 fa te 2*tm rev(te) 26*a3 rev(st) 
+	end
+
+	length 246
+		piece st 26*a3 te fs 2*tm fs rev(te) 26*a3 rev(st) 
+	end
+
+	length 247
+		piece st 26*a3 fa te fs 2*tm fs rev(te) 26*a3 rev(st) 
+	end
+
+	length 248
+		piece st 26*a3 fa te fs 2*tm fs rev(te) fa 26*a3 rev(st) 
+	end
+
+	length 249
+		piece st fa 26*a3 fa te fs 2*tm fs rev(te) fa 26*a3 rev(st) 
+	end
+
+	length 250
+		piece st 27*a3 te 2*tm rev(te) 27*a3 rev(st) 
+	end
+
+	length 251
+		piece st 27*a3 fa te 2*tm rev(te) 27*a3 rev(st) 
+	end
+
+	length 252
+		piece st 27*a3 te fs 2*tm fs rev(te) 27*a3 rev(st) 
+	end
+
+	length 253
+		piece st 27*a3 fa te fs 2*tm fs rev(te) 27*a3 rev(st) 
+	end
+
+	length 254
+		piece st 27*a3 fa te fs 2*tm fs rev(te) fa 27*a3 rev(st) 
+	end
+
+	length 255
+		piece st fa 27*a3 fa te fs 2*tm fs rev(te) fa 27*a3 rev(st) 
+	end
+end
+

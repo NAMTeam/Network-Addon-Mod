@@ -1,0 +1,4405 @@
+# File added by Tropod 19/04/04. 
+# OneWayRoad bridge specializations
+#
+# Refer to the Road bridge specializations for format.
+# File is in use. Do not remove nor change the file TGI ID.
+#
+#
+
+#WARREN UNDER TRUSS
+section warren_undertruss_start
+	piece <0x0ae10000, 1>
+end
+
+section warren_undertruss_repeat
+	piece <0x0adf0000, 1>
+end
+
+section warren_undertruss_support
+	piece <0x0ae00000, 1>
+end
+
+section warren_undertruss_sectional
+	piece <0x0adf0000, 1>
+	piece <0x0ae00000, 1>
+	piece <0x0adf0000, 1>
+end
+
+#
+# Bridge specializations
+#
+# Bridges are referenced here by the ID of the bridge as specified in
+# networks.ini:
+#
+#     [AvenueBridgeExemplars]
+#     16 = 0x6534284a, 0xa82ca30f, 0x04000000, goofy bridge
+#
+# The ID in this case would be 16.
+#
+
+bridge 3
+
+	# Specify specializations for this bridge here, by length
+	# in steps (tiles along direction of bridge).  Lengths not
+	# specified here will be generated from the exemplar.
+	#
+	# Piece syntax is the same as for sections, except that you
+	# can also reference different lengths of the same bridge
+	# via length(nn) and rev(length(nn)) syntax.
+
+	
+	# Use this to vertically offset the start of the bridge.
+	#
+	# height 15.5
+
+	length 4
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 5
+		piece warren_undertruss_start
+		piece 3*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 6
+		piece warren_undertruss_start
+		piece 4*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 7
+		piece warren_undertruss_start
+		piece warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 8
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 9
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 10
+		piece warren_undertruss_start
+		piece 3*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 11
+		piece warren_undertruss_start
+		piece 3*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 3*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 12
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 13
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+	
+	length 14
+		piece warren_undertruss_start
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+	
+	length 15
+		piece warren_undertruss_start
+		piece 3*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+
+	length 16
+		piece warren_undertruss_start
+		piece 3*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 2*warren_undertruss_repeat
+		piece warren_undertruss_sectional
+		piece 3*warren_undertruss_repeat
+		piece rev(warren_undertruss_start)
+	end
+end
+
+#SMALL STEEL ARCH
+
+bridge 7
+
+section st
+	piece <0x0bad0000, 3>:580
+end
+
+section a8
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a2
+	piece <0x0ba80000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a9
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a10
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section sta8
+	piece st a8
+end
+
+section sta2
+	piece st a2
+end
+
+section sta10
+	piece st a10
+end
+
+section sta9
+	piece st a9
+end
+	
+	length 10
+		piece sta8 rev(st)
+	end
+
+	length 11
+		piece sta9 rev(st)
+	end
+
+	length 12
+		piece sta10 rev(st)
+	end
+
+	length 13
+		piece sta2 sta8 rev(st)
+	end
+
+	length 14
+		piece sta2 sta9 rev(st)
+	end
+
+	length 15
+		piece sta2 sta10 rev(st)
+	end
+
+	length 16
+		piece sta2 sta8 sta2 rev(st)
+	end
+
+	length 17
+		piece sta2 sta9 sta2 rev(st)
+	end
+
+	length 18
+		piece sta2 sta10 sta2 rev(st)
+	end
+
+	length 19					
+		piece sta8 sta8 rev(st)				
+	end					
+						
+	length 20					
+		piece sta9 sta8 rev(st)				
+	end					
+						
+	length 21					
+		piece sta10 sta8 rev(st)				
+	end					
+						
+	length 22					
+		piece sta2 sta8 sta8 rev(st)				
+	end					
+						
+	length 23					
+		piece sta2 sta9 sta8 rev(st)				
+	end					
+						
+	length 24					
+		piece sta2 sta9 sta9 rev(st)				
+	end					
+						
+	length 25					
+		piece sta2 sta8 sta8 sta2 rev(st)				
+	end					
+						
+	length 26					
+		piece sta2 sta9 sta8 sta2 rev(st)				
+	end					
+						
+	length 27					
+		piece sta2 sta9 sta9 sta2 rev(st)				
+	end					
+						
+	length 28	
+		piece sta8 2*sta8 rev(st)
+	end	
+
+	length 29	
+		piece sta9 2*sta8 rev(st)
+	end	
+
+	length 30	
+		piece sta10 2*sta8 rev(st)
+	end	
+
+	length 31	
+		piece sta2 sta8 2*sta8 rev(st)
+	end	
+
+	length 32	
+		piece sta2 sta9 2*sta8 rev(st)
+	end	
+
+	length 33	
+		piece sta2 sta10 2*sta8 rev(st)
+	end	
+
+	length 34	
+		piece sta2 sta8 2*sta8 sta2 rev(st)
+	end	
+
+	length 35	
+		piece sta2 sta9 2*sta8 sta2 rev(st)
+	end	
+
+	length 36	
+		piece sta2 sta10 2*sta8 sta2 rev(st)
+	end	
+
+	length 37	
+		piece sta8 3*sta8 rev(st)
+	end	
+
+	length 38	
+		piece sta9 3*sta8 rev(st)
+	end	
+
+	length 39	
+		piece sta10 3*sta8 rev(st)
+	end	
+
+	length 40	
+		piece sta2 sta8 3*sta8 rev(st)
+	end	
+
+	length 41	
+		piece sta2 sta9 3*sta8 rev(st)
+	end	
+
+	length 42	
+		piece sta2 sta10 3*sta8 rev(st)
+	end	
+
+	length 43	
+		piece sta2 sta8 3*sta8 sta2 rev(st)
+	end	
+
+	length 44	
+		piece sta2 sta9 3*sta8 sta2 rev(st)
+	end	
+
+	length 45	
+		piece sta2 sta10 3*sta8 sta2 rev(st)
+	end	
+
+	length 46	
+		piece sta8 4*sta8 rev(st)
+	end	
+
+	length 47	
+		piece sta9 4*sta8 rev(st)
+	end	
+
+	length 48	
+		piece sta10 4*sta8 rev(st)
+	end	
+
+	length 49	
+		piece sta2 sta8 4*sta8 rev(st)
+	end	
+
+	length 50	
+		piece sta2 sta9 4*sta8 rev(st)
+	end	
+
+	length 51	
+		piece sta2 sta10 4*sta8 rev(st)
+	end	
+
+	length 52	
+		piece sta2 sta8 4*sta8 sta2 rev(st)
+	end	
+
+	length 53	
+		piece sta2 sta9 4*sta8 sta2 rev(st)
+	end	
+
+	length 54	
+		piece sta2 sta10 4*sta8 sta2 rev(st)
+	end	
+
+	length 55	
+		piece sta8 5*sta8 rev(st)
+	end	
+
+	length 56	
+		piece sta9 5*sta8 rev(st)
+	end	
+
+	length 57	
+		piece sta10 5*sta8 rev(st)
+	end	
+
+	length 58	
+		piece sta2 sta8 5*sta8 rev(st)
+	end	
+
+	length 59	
+		piece sta2 sta9 5*sta8 rev(st)
+	end	
+
+	length 60	
+		piece sta2 sta10 5*sta8 rev(st)
+	end	
+
+	length 61	
+		piece sta2 sta8 5*sta8 sta2 rev(st)
+	end	
+
+	length 62	
+		piece sta2 sta9 5*sta8 sta2 rev(st)
+	end	
+
+	length 63	
+		piece sta2 sta10 5*sta8 sta2 rev(st)
+	end	
+
+	length 64	
+		piece sta8 6*sta8 rev(st)
+	end	
+
+	length 65	
+		piece sta9 6*sta8 rev(st)
+	end	
+
+	length 66	
+		piece sta10 6*sta8 rev(st)
+	end	
+
+	length 67	
+		piece sta2 sta8 6*sta8 rev(st)
+	end	
+
+	length 68	
+		piece sta2 sta9 6*sta8 rev(st)
+	end	
+
+	length 69	
+		piece sta2 sta10 6*sta8 rev(st)
+	end	
+
+	length 70	
+		piece sta2 sta8 6*sta8 sta2 rev(st)
+	end	
+
+	length 71	
+		piece sta2 sta9 6*sta8 sta2 rev(st)
+	end	
+
+	length 72	
+		piece sta2 sta10 6*sta8 sta2 rev(st)
+	end	
+
+	length 73	
+		piece sta8 7*sta8 rev(st)
+	end	
+
+	length 74	
+		piece sta9 7*sta8 rev(st)
+	end	
+
+	length 75	
+		piece sta10 7*sta8 rev(st)
+	end	
+
+	length 76	
+		piece sta2 sta8 7*sta8 rev(st)
+	end	
+
+	length 77	
+		piece sta2 sta9 7*sta8 rev(st)
+	end	
+
+	length 78	
+		piece sta2 sta10 7*sta8 rev(st)
+	end	
+
+	length 79	
+		piece sta2 sta8 7*sta8 sta2 rev(st)
+	end	
+
+	length 80	
+		piece sta2 sta9 7*sta8 sta2 rev(st)
+	end	
+
+	length 81	
+		piece sta2 sta10 7*sta8 sta2 rev(st)
+	end	
+
+	length 82	
+		piece sta8 8*sta8 rev(st)
+	end	
+
+	length 83	
+		piece sta9 8*sta8 rev(st)
+	end	
+
+	length 84	
+		piece sta10 8*sta8 rev(st)
+	end	
+
+	length 85	
+		piece sta2 sta8 8*sta8 rev(st)
+	end	
+
+	length 86	
+		piece sta2 sta9 8*sta8 rev(st)
+	end	
+
+	length 87	
+		piece sta2 sta10 8*sta8 rev(st)
+	end	
+
+	length 88	
+		piece sta2 sta8 8*sta8 sta2 rev(st)
+	end	
+
+	length 89	
+		piece sta2 sta9 8*sta8 sta2 rev(st)
+	end	
+
+	length 90	
+		piece sta2 sta10 8*sta8 sta2 rev(st)
+	end	
+
+	length 91	
+		piece sta8 9*sta8 rev(st)
+	end	
+
+	length 92	
+		piece sta9 9*sta8 rev(st)
+	end	
+
+	length 93	
+		piece sta10 9*sta8 rev(st)
+	end	
+
+	length 94	
+		piece sta2 sta8 9*sta8 rev(st)
+	end	
+
+	length 95	
+		piece sta2 sta9 9*sta8 rev(st)
+	end	
+
+	length 96	
+		piece sta2 sta10 9*sta8 rev(st)
+	end	
+
+	length 97	
+		piece sta2 sta8 9*sta8 sta2 rev(st)
+	end	
+
+	length 98	
+		piece sta2 sta9 9*sta8 sta2 rev(st)
+	end	
+
+	length 99	
+		piece sta2 sta10 9*sta8 sta2 rev(st)
+	end	
+
+	length 100	
+		piece sta8 10*sta8 rev(st)
+	end	
+
+	length 101	
+		piece sta9 10*sta8 rev(st)
+	end	
+
+	length 102	
+		piece sta10 10*sta8 rev(st)
+	end	
+
+	length 103	
+		piece sta2 sta8 10*sta8 rev(st)
+	end	
+
+	length 104	
+		piece sta2 sta9 10*sta8 rev(st)
+	end	
+
+	length 105	
+		piece sta2 sta10 10*sta8 rev(st)
+	end	
+
+	length 106	
+		piece sta2 sta8 10*sta8 sta2 rev(st)
+	end	
+
+	length 107	
+		piece sta2 sta9 10*sta8 sta2 rev(st)
+	end	
+
+	length 108	
+		piece sta2 sta10 10*sta8 sta2 rev(st)
+	end	
+
+	length 109	
+		piece sta8 11*sta8 rev(st)
+	end	
+
+	length 110	
+		piece sta9 11*sta8 rev(st)
+	end	
+
+	length 111	
+		piece sta10 11*sta8 rev(st)
+	end	
+
+	length 112	
+		piece sta2 sta8 11*sta8 rev(st)
+	end	
+
+	length 113	
+		piece sta2 sta9 11*sta8 rev(st)
+	end	
+
+	length 114	
+		piece sta2 sta10 11*sta8 rev(st)
+	end	
+
+	length 115	
+		piece sta2 sta8 11*sta8 sta2 rev(st)
+	end	
+
+	length 116	
+		piece sta2 sta9 11*sta8 sta2 rev(st)
+	end	
+
+	length 117	
+		piece sta2 sta10 11*sta8 sta2 rev(st)
+	end	
+
+	length 118	
+		piece sta8 12*sta8 rev(st)
+	end	
+
+	length 119	
+		piece sta9 12*sta8 rev(st)
+	end	
+
+	length 120	
+		piece sta10 12*sta8 rev(st)
+	end	
+
+	length 121	
+		piece sta2 sta8 12*sta8 rev(st)
+	end	
+
+	length 122	
+		piece sta2 sta9 12*sta8 rev(st)
+	end	
+
+	length 123	
+		piece sta2 sta10 12*sta8 rev(st)
+	end	
+
+	length 124	
+		piece sta2 sta8 12*sta8 sta2 rev(st)
+	end	
+
+	length 125	
+		piece sta2 sta9 12*sta8 sta2 rev(st)
+	end	
+
+	length 126	
+		piece sta2 sta10 12*sta8 sta2 rev(st)
+	end	
+
+	length 127	
+		piece sta8 13*sta8 rev(st)
+	end	
+
+	length 128	
+		piece sta9 13*sta8 rev(st)
+	end	
+
+	length 129	
+		piece sta10 13*sta8 rev(st)
+	end	
+
+	length 130	
+		piece sta2 sta8 13*sta8 rev(st)
+	end	
+
+	length 131	
+		piece sta2 sta9 13*sta8 rev(st)
+	end	
+
+	length 132	
+		piece sta2 sta10 13*sta8 rev(st)
+	end	
+
+	length 133	
+		piece sta2 sta8 13*sta8 sta2 rev(st)
+	end	
+
+	length 134	
+		piece sta2 sta9 13*sta8 sta2 rev(st)
+	end	
+
+	length 135	
+		piece sta2 sta10 13*sta8 sta2 rev(st)
+	end	
+
+	length 136	
+		piece sta8 14*sta8 rev(st)
+	end	
+
+	length 137	
+		piece sta9 14*sta8 rev(st)
+	end	
+
+	length 138	
+		piece sta10 14*sta8 rev(st)
+	end	
+
+	length 139	
+		piece sta2 sta8 14*sta8 rev(st)
+	end	
+
+	length 140	
+		piece sta2 sta9 14*sta8 rev(st)
+	end	
+
+	length 141	
+		piece sta2 sta10 14*sta8 rev(st)
+	end	
+
+	length 142	
+		piece sta2 sta8 14*sta8 sta2 rev(st)
+	end	
+
+	length 143	
+		piece sta2 sta9 14*sta8 sta2 rev(st)
+	end	
+
+	length 144	
+		piece sta2 sta10 14*sta8 sta2 rev(st)
+	end	
+
+	length 145	
+		piece sta8 15*sta8 rev(st)
+	end	
+
+	length 146	
+		piece sta9 15*sta8 rev(st)
+	end	
+
+	length 147	
+		piece sta10 15*sta8 rev(st)
+	end	
+
+	length 148	
+		piece sta2 sta8 15*sta8 rev(st)
+	end	
+
+	length 149	
+		piece sta2 sta9 15*sta8 rev(st)
+	end	
+
+	length 150	
+		piece sta2 sta10 15*sta8 rev(st)
+	end	
+
+	length 151	
+		piece sta2 sta8 15*sta8 sta2 rev(st)
+	end	
+
+	length 152	
+		piece sta2 sta9 15*sta8 sta2 rev(st)
+	end	
+
+	length 153	
+		piece sta2 sta10 15*sta8 sta2 rev(st)
+	end	
+
+	length 154	
+		piece sta8 16*sta8 rev(st)
+	end	
+
+	length 155	
+		piece sta9 16*sta8 rev(st)
+	end	
+
+	length 156	
+		piece sta10 16*sta8 rev(st)
+	end	
+
+	length 157	
+		piece sta2 sta8 16*sta8 rev(st)
+	end	
+
+	length 158	
+		piece sta2 sta9 16*sta8 rev(st)
+	end	
+
+	length 159	
+		piece sta2 sta10 16*sta8 rev(st)
+	end	
+
+	length 160	
+		piece sta2 sta8 16*sta8 sta2 rev(st)
+	end	
+
+	length 161	
+		piece sta2 sta9 16*sta8 sta2 rev(st)
+	end	
+
+	length 162	
+		piece sta2 sta10 16*sta8 sta2 rev(st)
+	end	
+
+	length 163	
+		piece sta8 17*sta8 rev(st)
+	end	
+
+	length 164	
+		piece sta9 17*sta8 rev(st)
+	end	
+
+	length 165	
+		piece sta10 17*sta8 rev(st)
+	end	
+
+	length 166	
+		piece sta2 sta8 17*sta8 rev(st)
+	end	
+
+	length 167	
+		piece sta2 sta9 17*sta8 rev(st)
+	end	
+
+	length 168	
+		piece sta2 sta10 17*sta8 rev(st)
+	end	
+
+	length 169	
+		piece sta2 sta8 17*sta8 sta2 rev(st)
+	end	
+
+	length 170	
+		piece sta2 sta9 17*sta8 sta2 rev(st)
+	end	
+
+	length 171	
+		piece sta2 sta10 17*sta8 sta2 rev(st)
+	end	
+
+	length 172	
+		piece sta8 18*sta8 rev(st)
+	end	
+
+	length 173	
+		piece sta9 18*sta8 rev(st)
+	end	
+
+	length 174	
+		piece sta10 18*sta8 rev(st)
+	end	
+
+	length 175	
+		piece sta2 sta8 18*sta8 rev(st)
+	end	
+
+	length 176	
+		piece sta2 sta9 18*sta8 rev(st)
+	end	
+
+	length 177	
+		piece sta2 sta10 18*sta8 rev(st)
+	end	
+
+	length 178	
+		piece sta2 sta8 18*sta8 sta2 rev(st)
+	end	
+
+	length 179	
+		piece sta2 sta9 18*sta8 sta2 rev(st)
+	end	
+
+	length 180	
+		piece sta2 sta10 18*sta8 sta2 rev(st)
+	end	
+
+	length 181	
+		piece sta8 19*sta8 rev(st)
+	end	
+
+	length 182	
+		piece sta9 19*sta8 rev(st)
+	end	
+
+	length 183	
+		piece sta10 19*sta8 rev(st)
+	end	
+
+	length 184	
+		piece sta2 sta8 19*sta8 rev(st)
+	end	
+
+	length 185	
+		piece sta2 sta9 19*sta8 rev(st)
+	end	
+
+	length 186	
+		piece sta2 sta10 19*sta8 rev(st)
+	end	
+
+	length 187	
+		piece sta2 sta8 19*sta8 sta2 rev(st)
+	end	
+
+	length 188	
+		piece sta2 sta9 19*sta8 sta2 rev(st)
+	end	
+
+	length 189	
+		piece sta2 sta10 19*sta8 sta2 rev(st)
+	end	
+
+	length 190	
+		piece sta8 20*sta8 rev(st)
+	end	
+
+	length 191	
+		piece sta9 20*sta8 rev(st)
+	end	
+
+	length 192	
+		piece sta10 20*sta8 rev(st)
+	end	
+
+	length 193	
+		piece sta2 sta8 20*sta8 rev(st)
+	end	
+
+	length 194	
+		piece sta2 sta9 20*sta8 rev(st)
+	end	
+
+	length 195	
+		piece sta2 sta10 20*sta8 rev(st)
+	end	
+
+	length 196	
+		piece sta2 sta8 20*sta8 sta2 rev(st)
+	end	
+
+	length 197	
+		piece sta2 sta9 20*sta8 sta2 rev(st)
+	end	
+
+	length 198	
+		piece sta2 sta10 20*sta8 sta2 rev(st)
+	end	
+
+	length 199	
+		piece sta8 21*sta8 rev(st)
+	end	
+
+	length 200	
+		piece sta9 21*sta8 rev(st)
+	end	
+
+	length 201	
+		piece sta10 21*sta8 rev(st)
+	end	
+
+	length 202	
+		piece sta2 sta8 21*sta8 rev(st)
+	end	
+
+	length 203	
+		piece sta2 sta9 21*sta8 rev(st)
+	end	
+
+	length 204	
+		piece sta2 sta10 21*sta8 rev(st)
+	end	
+
+	length 205	
+		piece sta2 sta8 21*sta8 sta2 rev(st)
+	end	
+
+	length 206	
+		piece sta2 sta9 21*sta8 sta2 rev(st)
+	end	
+
+	length 207	
+		piece sta2 sta10 21*sta8 sta2 rev(st)
+	end	
+
+	length 208	
+		piece sta8 22*sta8 rev(st)
+	end	
+
+	length 209	
+		piece sta9 22*sta8 rev(st)
+	end	
+
+	length 210	
+		piece sta10 22*sta8 rev(st)
+	end	
+
+	length 211	
+		piece sta2 sta8 22*sta8 rev(st)
+	end	
+
+	length 212	
+		piece sta2 sta9 22*sta8 rev(st)
+	end	
+
+	length 213	
+		piece sta2 sta10 22*sta8 rev(st)
+	end	
+
+	length 214	
+		piece sta2 sta8 22*sta8 sta2 rev(st)
+	end	
+
+	length 215	
+		piece sta2 sta9 22*sta8 sta2 rev(st)
+	end	
+
+	length 216	
+		piece sta2 sta10 22*sta8 sta2 rev(st)
+	end	
+
+	length 217	
+		piece sta8 23*sta8 rev(st)
+	end	
+
+	length 218	
+		piece sta9 23*sta8 rev(st)
+	end	
+
+	length 219	
+		piece sta10 23*sta8 rev(st)
+	end	
+
+	length 220	
+		piece sta2 sta8 23*sta8 rev(st)
+	end	
+
+	length 221	
+		piece sta2 sta9 23*sta8 rev(st)
+	end	
+
+	length 222	
+		piece sta2 sta10 23*sta8 rev(st)
+	end	
+
+	length 223	
+		piece sta2 sta8 23*sta8 sta2 rev(st)
+	end	
+
+	length 224	
+		piece sta2 sta9 23*sta8 sta2 rev(st)
+	end	
+
+	length 225	
+		piece sta2 sta10 23*sta8 sta2 rev(st)
+	end	
+
+	length 226	
+		piece sta8 24*sta8 rev(st)
+	end	
+
+	length 227	
+		piece sta9 24*sta8 rev(st)
+	end	
+
+	length 228	
+		piece sta10 24*sta8 rev(st)
+	end	
+
+	length 229	
+		piece sta2 sta8 24*sta8 rev(st)
+	end	
+
+	length 230	
+		piece sta2 sta9 24*sta8 rev(st)
+	end	
+
+	length 231	
+		piece sta2 sta10 24*sta8 rev(st)
+	end	
+
+	length 232	
+		piece sta2 sta8 24*sta8 sta2 rev(st)
+	end	
+
+	length 233	
+		piece sta2 sta9 24*sta8 sta2 rev(st)
+	end	
+
+	length 234	
+		piece sta2 sta10 24*sta8 sta2 rev(st)
+	end	
+
+	length 235	
+		piece sta8 25*sta8 rev(st)
+	end	
+
+	length 236	
+		piece sta9 25*sta8 rev(st)
+	end	
+
+	length 237	
+		piece sta10 25*sta8 rev(st)
+	end	
+
+	length 238	
+		piece sta2 sta8 25*sta8 rev(st)
+	end	
+
+	length 239	
+		piece sta2 sta9 25*sta8 rev(st)
+	end	
+
+	length 240	
+		piece sta2 sta10 25*sta8 rev(st)
+	end	
+
+	length 241	
+		piece sta2 sta8 25*sta8 sta2 rev(st)
+	end	
+
+	length 242	
+		piece sta2 sta9 25*sta8 sta2 rev(st)
+	end	
+
+	length 243	
+		piece sta2 sta10 25*sta8 sta2 rev(st)
+	end	
+
+	length 244	
+		piece sta8 26*sta8 rev(st)
+	end	
+
+	length 245	
+		piece sta9 26*sta8 rev(st)
+	end	
+
+	length 246	
+		piece sta10 26*sta8 rev(st)
+	end	
+
+	length 247	
+		piece sta2 sta8 26*sta8 rev(st)
+	end	
+
+	length 248	
+		piece sta2 sta9 26*sta8 rev(st)
+	end	
+
+	length 249	
+		piece sta2 sta10 26*sta8 rev(st)
+	end	
+
+	length 250	
+		piece sta2 sta8 26*sta8 sta2 rev(st)
+	end	
+
+	length 251	
+		piece sta2 sta9 26*sta8 sta2 rev(st)
+	end	
+
+	length 252	
+		piece sta2 sta10 26*sta8 sta2 rev(st)
+	end	
+
+	length 253	
+		piece sta8 27*sta8 rev(st)
+	end	
+
+	length 254	
+		piece sta9 27*sta8 rev(st)
+	end	
+
+	length 255	
+		piece sta10 27*sta8 rev(st)
+	end		
+end
+
+#STONE ARCH
+
+bridge 6
+
+section st
+	piece <0x0c914080, 3>
+end
+
+section aa
+	piece <0x0c914010, 3>:560
+	piece <0x0bf30000, 3>:560
+end
+
+section ba
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+end
+
+section ca
+	piece <0x0be40000, 3>:560
+	piece <0x0be50000, 3>
+	piece <0x0be60000, 3>
+	piece <0x0bf50000, 3>
+	piece <0x0bf60000, 3>:560
+end
+
+section a1
+	piece <0x0c914080, 3>
+end
+
+section a2
+	piece <0x0c914080, 3>
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+end
+
+section a3
+	piece <0x0c914080, 3>
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+end
+
+section a4
+	piece <0x0c914080, 3>
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+	piece <0x0be20000, 3>:560
+	piece <0x0be30000, 3>
+	piece <0x0bf40000, 3>:560
+end
+
+section a5
+	piece <0x0c914080, 3>
+	piece <0x0c914010, 3>:560
+	piece <0x0bf30000, 3>:560
+end
+
+
+	length 4
+		piece st aa rev(st)
+	end
+
+	length 5
+		piece st ba rev(st)
+	end
+	
+	length 6
+		piece st aa aa rev(st)
+	end
+
+	length 7
+		piece st ca rev(st)
+	end
+
+	length 8
+		piece st ba ba rev(st)
+	end
+
+	length 9
+		piece st aa ba aa rev(st)
+	end
+
+	length 10
+		piece st 4*aa rev(st)
+	end
+	
+	length 11
+		piece st aa ca aa rev(st)
+	end
+
+	length 12
+		piece st aa ba ba aa rev(st)
+	end
+
+	length 13
+		piece st 2*aa ba 2*aa rev(st)
+	end
+
+	length 14
+		piece st 4*ba rev(st)
+	end
+
+	length 15
+		piece st 2*aa ca 2*aa rev(st)
+	end
+
+	length 16
+		piece st aa 2*ca aa rev(st)
+	end
+
+	length 17
+		piece st 3*ca rev(st)
+	end
+
+	length 18
+		piece st ba 2*ca ba rev(st)
+	end
+
+	length 19
+		piece st 2*ba ca 2*ba rev(st)
+	end
+
+	length 20
+		piece st 2*aa 2*ca 2*aa rev(st)
+	end
+
+	length 21
+		piece st aa 3*ca aa rev(st)
+	end
+
+	length 22
+		piece st 4*ca rev(st)
+	end
+
+	length 23
+		piece st ba 3*ca ba rev(st)
+	end
+
+	length 24
+		piece st 2*ba 2*ca 2*ba rev(st)
+	end
+
+	length 25
+		piece st 2*aa 3*ca 2*aa rev(st)
+	end
+
+	length 26
+		piece st 8*ba rev(st)
+	end
+
+ 	length 27	
+		piece a1 5*ca rev(a1)
+	end	
+
+ 	length 28	
+		piece a2 4*ca rev(a2)
+	end	
+
+ 	length 29	
+		piece a3 3*ca rev(a3)
+	end	
+
+ 	length 30	
+		piece a4 2*ca rev(a4)
+	end	
+
+ 	length 31	
+		piece a5 5*ca rev(a5)
+	end	
+
+ 	length 32	
+		piece a1 6*ca rev(a1)
+	end	
+
+ 	length 33	
+		piece a2 5*ca rev(a2)
+	end	
+
+ 	length 34	
+		piece a3 4*ca rev(a3)
+	end	
+
+ 	length 35	
+		piece a4 3*ca rev(a4)
+	end	
+
+ 	length 36	
+		piece a5 6*ca rev(a5)
+	end	
+
+ 	length 37	
+		piece a1 7*ca rev(a1)
+	end	
+
+ 	length 38	
+		piece a2 6*ca rev(a2)
+	end	
+
+ 	length 39	
+		piece a3 5*ca rev(a3)
+	end	
+
+ 	length 40	
+		piece a4 4*ca rev(a4)
+	end	
+
+ 	length 41	
+		piece a5 7*ca rev(a5)
+	end	
+
+ 	length 42	
+		piece a1 8*ca rev(a1)
+	end	
+
+ 	length 43	
+		piece a2 7*ca rev(a2)
+	end	
+
+ 	length 44	
+		piece a3 6*ca rev(a3)
+	end	
+
+ 	length 45	
+		piece a4 5*ca rev(a4)
+	end	
+
+ 	length 46	
+		piece a5 8*ca rev(a5)
+	end	
+
+ 	length 47	
+		piece a1 9*ca rev(a1)
+	end	
+
+ 	length 48	
+		piece a2 8*ca rev(a2)
+	end	
+
+ 	length 49	
+		piece a3 7*ca rev(a3)
+	end	
+
+ 	length 50	
+		piece a4 6*ca rev(a4)
+	end	
+
+ 	length 51	
+		piece a5 9*ca rev(a5)
+	end	
+
+ 	length 52	
+		piece a1 10*ca rev(a1)
+	end	
+
+ 	length 53	
+		piece a2 9*ca rev(a2)
+	end	
+
+ 	length 54	
+		piece a3 8*ca rev(a3)
+	end	
+
+ 	length 55	
+		piece a4 7*ca rev(a4)
+	end	
+
+ 	length 56	
+		piece a5 10*ca rev(a5)
+	end	
+
+ 	length 57	
+		piece a1 11*ca rev(a1)
+	end	
+
+ 	length 58	
+		piece a2 10*ca rev(a2)
+	end	
+
+ 	length 59	
+		piece a3 9*ca rev(a3)
+	end	
+
+ 	length 60	
+		piece a4 8*ca rev(a4)
+	end	
+
+ 	length 61	
+		piece a5 11*ca rev(a5)
+	end	
+
+ 	length 62	
+		piece a1 12*ca rev(a1)
+	end	
+
+ 	length 63	
+		piece a2 11*ca rev(a2)
+	end	
+
+ 	length 64	
+		piece a3 10*ca rev(a3)
+	end	
+
+ 	length 65	
+		piece a4 9*ca rev(a4)
+	end	
+
+ 	length 66	
+		piece a5 12*ca rev(a5)
+	end	
+
+ 	length 67	
+		piece a1 13*ca rev(a1)
+	end	
+
+ 	length 68	
+		piece a2 12*ca rev(a2)
+	end	
+
+ 	length 69	
+		piece a3 11*ca rev(a3)
+	end	
+
+ 	length 70	
+		piece a4 10*ca rev(a4)
+	end	
+
+ 	length 71	
+		piece a5 13*ca rev(a5)
+	end	
+
+ 	length 72	
+		piece a1 14*ca rev(a1)
+	end	
+
+ 	length 73	
+		piece a2 13*ca rev(a2)
+	end	
+
+ 	length 74	
+		piece a3 12*ca rev(a3)
+	end	
+
+ 	length 75	
+		piece a4 11*ca rev(a4)
+	end	
+
+ 	length 76	
+		piece a5 14*ca rev(a5)
+	end	
+
+ 	length 77	
+		piece a1 15*ca rev(a1)
+	end	
+
+ 	length 78	
+		piece a2 14*ca rev(a2)
+	end	
+
+ 	length 79	
+		piece a3 13*ca rev(a3)
+	end	
+
+ 	length 80	
+		piece a4 12*ca rev(a4)
+	end	
+
+ 	length 81	
+		piece a5 15*ca rev(a5)
+	end	
+
+ 	length 82	
+		piece a1 16*ca rev(a1)
+	end	
+
+ 	length 83	
+		piece a2 15*ca rev(a2)
+	end	
+
+ 	length 84	
+		piece a3 14*ca rev(a3)
+	end	
+
+ 	length 85	
+		piece a4 13*ca rev(a4)
+	end	
+
+ 	length 86	
+		piece a5 16*ca rev(a5)
+	end	
+
+ 	length 87	
+		piece a1 17*ca rev(a1)
+	end	
+
+ 	length 88	
+		piece a2 16*ca rev(a2)
+	end	
+
+ 	length 89	
+		piece a3 15*ca rev(a3)
+	end	
+
+ 	length 90	
+		piece a4 14*ca rev(a4)
+	end	
+
+ 	length 91	
+		piece a5 17*ca rev(a5)
+	end	
+
+ 	length 92	
+		piece a1 18*ca rev(a1)
+	end	
+
+ 	length 93	
+		piece a2 17*ca rev(a2)
+	end	
+
+ 	length 94	
+		piece a3 16*ca rev(a3)
+	end	
+
+ 	length 95	
+		piece a4 15*ca rev(a4)
+	end	
+
+ 	length 96	
+		piece a5 18*ca rev(a5)
+	end	
+
+ 	length 97	
+		piece a1 19*ca rev(a1)
+	end	
+
+ 	length 98	
+		piece a2 18*ca rev(a2)
+	end	
+
+ 	length 99	
+		piece a3 17*ca rev(a3)
+	end	
+
+ 	length 100	
+		piece a4 16*ca rev(a4)
+	end	
+
+ 	length 101	
+		piece a5 19*ca rev(a5)
+	end	
+
+ 	length 102	
+		piece a1 20*ca rev(a1)
+	end	
+
+ 	length 103	
+		piece a2 19*ca rev(a2)
+	end	
+
+ 	length 104	
+		piece a3 18*ca rev(a3)
+	end	
+
+ 	length 105	
+		piece a4 17*ca rev(a4)
+	end	
+
+ 	length 106	
+		piece a5 20*ca rev(a5)
+	end	
+
+ 	length 107	
+		piece a1 21*ca rev(a1)
+	end	
+
+ 	length 108	
+		piece a2 20*ca rev(a2)
+	end	
+
+ 	length 109	
+		piece a3 19*ca rev(a3)
+	end	
+
+ 	length 110	
+		piece a4 18*ca rev(a4)
+	end	
+
+ 	length 111	
+		piece a5 21*ca rev(a5)
+	end	
+
+ 	length 112	
+		piece a1 22*ca rev(a1)
+	end	
+
+ 	length 113	
+		piece a2 21*ca rev(a2)
+	end	
+
+ 	length 114	
+		piece a3 20*ca rev(a3)
+	end	
+
+ 	length 115	
+		piece a4 19*ca rev(a4)
+	end	
+
+ 	length 116	
+		piece a5 22*ca rev(a5)
+	end	
+
+ 	length 117	
+		piece a1 23*ca rev(a1)
+	end	
+
+ 	length 118	
+		piece a2 22*ca rev(a2)
+	end	
+
+ 	length 119	
+		piece a3 21*ca rev(a3)
+	end	
+
+ 	length 120	
+		piece a4 20*ca rev(a4)
+	end	
+
+ 	length 121	
+		piece a5 23*ca rev(a5)
+	end	
+
+ 	length 122	
+		piece a1 24*ca rev(a1)
+	end	
+
+ 	length 123	
+		piece a2 23*ca rev(a2)
+	end	
+
+ 	length 124	
+		piece a3 22*ca rev(a3)
+	end	
+
+ 	length 125	
+		piece a4 21*ca rev(a4)
+	end	
+
+ 	length 126	
+		piece a5 24*ca rev(a5)
+	end	
+
+ 	length 127	
+		piece a1 25*ca rev(a1)
+	end	
+
+ 	length 128	
+		piece a2 24*ca rev(a2)
+	end	
+
+ 	length 129	
+		piece a3 23*ca rev(a3)
+	end	
+
+ 	length 130	
+		piece a4 22*ca rev(a4)
+	end	
+
+ 	length 131	
+		piece a5 25*ca rev(a5)
+	end	
+
+ 	length 132	
+		piece a1 26*ca rev(a1)
+	end	
+
+ 	length 133	
+		piece a2 25*ca rev(a2)
+	end	
+
+ 	length 134	
+		piece a3 24*ca rev(a3)
+	end	
+
+ 	length 135	
+		piece a4 23*ca rev(a4)
+	end	
+
+ 	length 136	
+		piece a5 26*ca rev(a5)
+	end	
+
+ 	length 137	
+		piece a1 27*ca rev(a1)
+	end	
+
+ 	length 138	
+		piece a2 26*ca rev(a2)
+	end	
+
+ 	length 139	
+		piece a3 25*ca rev(a3)
+	end	
+
+ 	length 140	
+		piece a4 24*ca rev(a4)
+	end	
+
+ 	length 141	
+		piece a5 27*ca rev(a5)
+	end	
+
+ 	length 142	
+		piece a1 28*ca rev(a1)
+	end	
+
+ 	length 143	
+		piece a2 27*ca rev(a2)
+	end	
+
+ 	length 144	
+		piece a3 26*ca rev(a3)
+	end	
+
+ 	length 145	
+		piece a4 25*ca rev(a4)
+	end	
+
+ 	length 146	
+		piece a5 28*ca rev(a5)
+	end	
+
+ 	length 147	
+		piece a1 29*ca rev(a1)
+	end	
+
+ 	length 148	
+		piece a2 28*ca rev(a2)
+	end	
+
+ 	length 149	
+		piece a3 27*ca rev(a3)
+	end	
+
+ 	length 150	
+		piece a4 26*ca rev(a4)
+	end	
+
+ 	length 151	
+		piece a5 29*ca rev(a5)
+	end	
+
+ 	length 152	
+		piece a1 30*ca rev(a1)
+	end	
+
+ 	length 153	
+		piece a2 29*ca rev(a2)
+	end	
+
+ 	length 154	
+		piece a3 28*ca rev(a3)
+	end	
+
+ 	length 155	
+		piece a4 27*ca rev(a4)
+	end	
+
+ 	length 156	
+		piece a5 30*ca rev(a5)
+	end	
+
+ 	length 157	
+		piece a1 31*ca rev(a1)
+	end	
+
+ 	length 158	
+		piece a2 30*ca rev(a2)
+	end	
+
+ 	length 159	
+		piece a3 29*ca rev(a3)
+	end	
+
+ 	length 160	
+		piece a4 28*ca rev(a4)
+	end	
+
+ 	length 161	
+		piece a5 31*ca rev(a5)
+	end	
+
+ 	length 162	
+		piece a1 32*ca rev(a1)
+	end	
+
+ 	length 163	
+		piece a2 31*ca rev(a2)
+	end	
+
+ 	length 164	
+		piece a3 30*ca rev(a3)
+	end	
+
+ 	length 165	
+		piece a4 29*ca rev(a4)
+	end	
+
+ 	length 166	
+		piece a5 32*ca rev(a5)
+	end	
+
+ 	length 167	
+		piece a1 33*ca rev(a1)
+	end	
+
+ 	length 168	
+		piece a2 32*ca rev(a2)
+	end	
+
+ 	length 169	
+		piece a3 31*ca rev(a3)
+	end	
+
+ 	length 170	
+		piece a4 30*ca rev(a4)
+	end	
+
+ 	length 171	
+		piece a5 33*ca rev(a5)
+	end	
+
+ 	length 172	
+		piece a1 34*ca rev(a1)
+	end	
+
+ 	length 173	
+		piece a2 33*ca rev(a2)
+	end	
+
+ 	length 174	
+		piece a3 32*ca rev(a3)
+	end	
+
+ 	length 175	
+		piece a4 31*ca rev(a4)
+	end	
+
+ 	length 176	
+		piece a5 34*ca rev(a5)
+	end	
+
+ 	length 177	
+		piece a1 35*ca rev(a1)
+	end	
+
+ 	length 178	
+		piece a2 34*ca rev(a2)
+	end	
+
+ 	length 179	
+		piece a3 33*ca rev(a3)
+	end	
+
+ 	length 180	
+		piece a4 32*ca rev(a4)
+	end	
+
+ 	length 181	
+		piece a5 35*ca rev(a5)
+	end	
+
+ 	length 182	
+		piece a1 36*ca rev(a1)
+	end	
+
+ 	length 183	
+		piece a2 35*ca rev(a2)
+	end	
+
+ 	length 184	
+		piece a3 34*ca rev(a3)
+	end	
+
+ 	length 185	
+		piece a4 33*ca rev(a4)
+	end	
+
+ 	length 186	
+		piece a5 36*ca rev(a5)
+	end	
+
+ 	length 187	
+		piece a1 37*ca rev(a1)
+	end	
+
+ 	length 188	
+		piece a2 36*ca rev(a2)
+	end	
+
+ 	length 189	
+		piece a3 35*ca rev(a3)
+	end	
+
+ 	length 190	
+		piece a4 34*ca rev(a4)
+	end	
+
+ 	length 191	
+		piece a5 37*ca rev(a5)
+	end	
+
+ 	length 192	
+		piece a1 38*ca rev(a1)
+	end	
+
+ 	length 193	
+		piece a2 37*ca rev(a2)
+	end	
+
+ 	length 194	
+		piece a3 36*ca rev(a3)
+	end	
+
+ 	length 195	
+		piece a4 35*ca rev(a4)
+	end	
+
+ 	length 196	
+		piece a5 38*ca rev(a5)
+	end	
+
+ 	length 197	
+		piece a1 39*ca rev(a1)
+	end	
+
+ 	length 198	
+		piece a2 38*ca rev(a2)
+	end	
+
+ 	length 199	
+		piece a3 37*ca rev(a3)
+	end	
+
+ 	length 200	
+		piece a4 36*ca rev(a4)
+	end	
+
+ 	length 201	
+		piece a5 39*ca rev(a5)
+	end	
+
+ 	length 202	
+		piece a1 40*ca rev(a1)
+	end	
+
+ 	length 203	
+		piece a2 39*ca rev(a2)
+	end	
+
+ 	length 204	
+		piece a3 38*ca rev(a3)
+	end	
+
+ 	length 205	
+		piece a4 37*ca rev(a4)
+	end	
+
+ 	length 206	
+		piece a5 40*ca rev(a5)
+	end	
+
+ 	length 207	
+		piece a1 41*ca rev(a1)
+	end	
+
+ 	length 208	
+		piece a2 40*ca rev(a2)
+	end	
+
+ 	length 209	
+		piece a3 39*ca rev(a3)
+	end	
+
+ 	length 210	
+		piece a4 38*ca rev(a4)
+	end	
+
+ 	length 211	
+		piece a5 41*ca rev(a5)
+	end	
+
+ 	length 212	
+		piece a1 42*ca rev(a1)
+	end	
+
+ 	length 213	
+		piece a2 41*ca rev(a2)
+	end	
+
+ 	length 214	
+		piece a3 40*ca rev(a3)
+	end	
+
+ 	length 215	
+		piece a4 39*ca rev(a4)
+	end	
+
+ 	length 216	
+		piece a5 42*ca rev(a5)
+	end	
+
+ 	length 217	
+		piece a1 43*ca rev(a1)
+	end	
+
+ 	length 218	
+		piece a2 42*ca rev(a2)
+	end	
+
+ 	length 219	
+		piece a3 41*ca rev(a3)
+	end	
+
+ 	length 220	
+		piece a4 40*ca rev(a4)
+	end	
+
+ 	length 221	
+		piece a5 43*ca rev(a5)
+	end	
+
+ 	length 222	
+		piece a1 44*ca rev(a1)
+	end	
+
+ 	length 223	
+		piece a2 43*ca rev(a2)
+	end	
+
+ 	length 224	
+		piece a3 42*ca rev(a3)
+	end	
+
+ 	length 225	
+		piece a4 41*ca rev(a4)
+	end	
+
+ 	length 226	
+		piece a5 44*ca rev(a5)
+	end	
+
+ 	length 227	
+		piece a1 45*ca rev(a1)
+	end	
+
+ 	length 228	
+		piece a2 44*ca rev(a2)
+	end	
+
+ 	length 229	
+		piece a3 43*ca rev(a3)
+	end	
+
+ 	length 230	
+		piece a4 42*ca rev(a4)
+	end	
+
+ 	length 231	
+		piece a5 45*ca rev(a5)
+	end	
+
+ 	length 232	
+		piece a1 46*ca rev(a1)
+	end	
+
+ 	length 233	
+		piece a2 45*ca rev(a2)
+	end	
+
+ 	length 234	
+		piece a3 44*ca rev(a3)
+	end	
+
+ 	length 235	
+		piece a4 43*ca rev(a4)
+	end	
+
+ 	length 236	
+		piece a5 46*ca rev(a5)
+	end	
+
+ 	length 237	
+		piece a1 47*ca rev(a1)
+	end	
+
+ 	length 238	
+		piece a2 46*ca rev(a2)
+	end	
+
+ 	length 239	
+		piece a3 45*ca rev(a3)
+	end	
+
+ 	length 240	
+		piece a4 44*ca rev(a4)
+	end	
+
+ 	length 241	
+		piece a5 47*ca rev(a5)
+	end	
+
+ 	length 242	
+		piece a1 48*ca rev(a1)
+	end	
+
+ 	length 243	
+		piece a2 47*ca rev(a2)
+	end	
+
+ 	length 244	
+		piece a3 46*ca rev(a3)
+	end	
+
+ 	length 245	
+		piece a4 45*ca rev(a4)
+	end	
+
+ 	length 246	
+		piece a5 48*ca rev(a5)
+	end	
+
+ 	length 247	
+		piece a1 49*ca rev(a1)
+	end	
+
+ 	length 248	
+		piece a2 48*ca rev(a2)
+	end	
+
+ 	length 249	
+		piece a3 47*ca rev(a3)
+	end	
+
+ 	length 250	
+		piece a4 46*ca rev(a4)
+	end	
+
+ 	length 251	
+		piece a5 49*ca rev(a5)
+	end	
+
+ 	length 252	
+		piece a1 50*ca rev(a1)
+	end	
+
+ 	length 253	
+		piece a2 49*ca rev(a2)
+	end	
+
+ 	length 254	
+		piece a3 48*ca rev(a3)
+	end	
+
+ 	length 255	
+		piece a4 47*ca rev(a4)
+	end	
+end
+
+#CANTILEVER TRUSS
+
+bridge 8
+
+section s
+	piece <0x0c071000, 2>
+end
+
+section r
+	piece <0x0c051000, 2>
+end
+
+section mr
+	piece <0x0c151000, 2>
+end
+
+section m1
+	piece <0x0c101000, 2>
+end
+
+section m2
+	piece <0x0c111000, 2>
+end
+
+section m3
+	piece <0x0c121000, 2>
+end
+
+section m4
+	piece <0x0c121000, 0>
+end
+
+section m5
+	piece <0x0c111000, 0>
+end
+
+section m6
+	piece <0x0c101000, 0>
+end
+
+section la
+	piece <0x0c101000, 2>
+	piece <0x0c111000, 2>
+	piece <0x0c121000, 2>
+	piece <0x0c131000, 2>
+	piece <0x0c141000, 2>:557
+	piece <0x0c141000, 0>:557
+	piece <0x0c131000, 0>
+	piece <0x0c121000, 0>
+	piece <0x0c111000, 0>
+	piece <0x0c101000, 0>
+end
+
+	length 12	
+		piece s 1*la rev(s)
+	end	
+		
+	length 13	
+		piece s r 1*la rev(s)
+	end	
+		
+	length 14	
+		piece s r 1*la r rev(s)
+	end	
+		
+	length 15	
+		piece s r r 1*la r rev(s)
+	end	
+		
+	length 16	
+		piece s r r 1*la r r rev(s)
+	end	
+		
+	length 17	
+		piece s r r r 1*la r r rev(s)
+	end	
+		
+	length 18	
+		piece s m1 m2 m3 m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 19	
+		piece s m1 m2 m3 mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 20	
+		piece s m1 m2 m3 2*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 21	
+		piece s m1 m2 m3 3*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 22	
+		piece s 1*la 1*la rev(s)
+	end	
+		
+	length 23	
+		piece s r 1*la 1*la rev(s)
+	end	
+		
+	length 24	
+		piece s 1*la m1 m6 1*la rev(s)
+	end	
+		
+	length 25	
+		piece s r 1*la m1 m6 1*la rev(s)
+	end	
+		
+	length 26	
+		piece s 1*la m1 m2 m5 m6 1*la rev(s)
+	end	
+		
+	length 27	
+		piece s r 1*la m1 m2 m5 m6 1*la rev(s)
+	end	
+		
+	length 28	
+		piece s 1*la m1 m2 m3 m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 29	
+		piece s 1*la m1 m2 m3 mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 30	
+		piece s 1*la m1 m2 m3 2*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 31	
+		piece s 1*la m1 m2 m3 3*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 32	
+		piece s 2*la 1*la rev(s)
+	end	
+		
+	length 33	
+		piece s r 2*la 1*la rev(s)
+	end	
+		
+	length 34	
+		piece s 2*la m1 m6 1*la rev(s)
+	end	
+		
+	length 35	
+		piece s r 2*la m1 m6 1*la rev(s)
+	end	
+		
+	length 36	
+		piece s 2*la m1 m2 m5 m6 1*la rev(s)
+	end	
+		
+	length 37	
+		piece s r 2*la m1 m2 m5 m6 1*la rev(s)
+	end	
+		
+	length 38	
+		piece s 2*la m1 m2 m3 m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 39	
+		piece s 2*la m1 m2 m3 mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 40	
+		piece s 2*la m1 m2 m3 2*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 41	
+		piece s 2*la m1 m2 m3 3*mr m4 m5 m6 1*la rev(s)
+	end	
+		
+	length 42	
+		piece s 2*la 2*la rev(s)
+	end	
+		
+	length 43	
+		piece s r 2*la 2*la rev(s)
+	end	
+		
+	length 44	
+		piece s 2*la m1 m6 2*la rev(s)
+	end	
+		
+	length 45	
+		piece s r 2*la m1 m6 2*la rev(s)
+	end	
+		
+	length 46	
+		piece s 2*la m1 m2 m5 m6 2*la rev(s)
+	end	
+		
+	length 47	
+		piece s r 2*la m1 m2 m5 m6 2*la rev(s)
+	end	
+		
+	length 48	
+		piece s 2*la m1 m2 m3 m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 49	
+		piece s 2*la m1 m2 m3 mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 50	
+		piece s 2*la m1 m2 m3 2*mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 51	
+		piece s 2*la m1 m2 m3 3*mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 52	
+		piece s 3*la 2*la rev(s)
+	end	
+		
+	length 53	
+		piece s r 3*la 2*la rev(s)
+	end	
+		
+	length 54	
+		piece s 3*la m1 m6 2*la rev(s)
+	end	
+		
+	length 55	
+		piece s r 3*la m1 m6 2*la rev(s)
+	end	
+		
+	length 56	
+		piece s 3*la m1 m2 m5 m6 2*la rev(s)
+	end	
+		
+	length 57	
+		piece s r 3*la m1 m2 m5 m6 2*la rev(s)
+	end	
+		
+	length 58	
+		piece s 3*la m1 m2 m3 m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 59	
+		piece s 3*la m1 m2 m3 mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 60	
+		piece s 3*la m1 m2 m3 2*mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 61	
+		piece s 3*la m1 m2 m3 3*mr m4 m5 m6 2*la rev(s)
+	end	
+		
+	length 62	
+		piece s 3*la 3*la rev(s)
+	end	
+		
+	length 63	
+		piece s r 3*la 3*la rev(s)
+	end	
+		
+	length 64	
+		piece s 3*la m1 m6 3*la rev(s)
+	end	
+		
+	length 65	
+		piece s r 3*la m1 m6 3*la rev(s)
+	end	
+		
+	length 66	
+		piece s 3*la m1 m2 m5 m6 3*la rev(s)
+	end	
+		
+	length 67	
+		piece s r 3*la m1 m2 m5 m6 3*la rev(s)
+	end	
+		
+	length 68	
+		piece s 3*la m1 m2 m3 m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 69	
+		piece s 3*la m1 m2 m3 mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 70	
+		piece s 3*la m1 m2 m3 2*mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 71	
+		piece s 3*la m1 m2 m3 3*mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 72	
+		piece s 4*la 3*la rev(s)
+	end	
+		
+	length 73	
+		piece s r 4*la 3*la rev(s)
+	end	
+		
+	length 74	
+		piece s 4*la m1 m6 3*la rev(s)
+	end	
+		
+	length 75	
+		piece s r 4*la m1 m6 3*la rev(s)
+	end	
+		
+	length 76	
+		piece s 4*la m1 m2 m5 m6 3*la rev(s)
+	end	
+		
+	length 77	
+		piece s r 4*la m1 m2 m5 m6 3*la rev(s)
+	end	
+		
+	length 78	
+		piece s 4*la m1 m2 m3 m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 79	
+		piece s 4*la m1 m2 m3 mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 80	
+		piece s 4*la m1 m2 m3 2*mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 81	
+		piece s 4*la m1 m2 m3 3*mr m4 m5 m6 3*la rev(s)
+	end	
+		
+	length 82	
+		piece s 4*la 4*la rev(s)
+	end	
+		
+	length 83	
+		piece s r 4*la 4*la rev(s)
+	end	
+		
+	length 84	
+		piece s 4*la m1 m6 4*la rev(s)
+	end	
+		
+	length 85	
+		piece s r 4*la m1 m6 4*la rev(s)
+	end	
+		
+	length 86	
+		piece s 4*la m1 m2 m5 m6 4*la rev(s)
+	end	
+		
+	length 87	
+		piece s r 4*la m1 m2 m5 m6 4*la rev(s)
+	end	
+		
+	length 88	
+		piece s 4*la m1 m2 m3 m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 89	
+		piece s 4*la m1 m2 m3 mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 90	
+		piece s 4*la m1 m2 m3 2*mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 91	
+		piece s 4*la m1 m2 m3 3*mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 92	
+		piece s 5*la 4*la rev(s)
+	end	
+		
+	length 93	
+		piece s r 5*la 4*la rev(s)
+	end	
+		
+	length 94	
+		piece s 5*la m1 m6 4*la rev(s)
+	end	
+		
+	length 95	
+		piece s r 5*la m1 m6 4*la rev(s)
+	end	
+		
+	length 96	
+		piece s 5*la m1 m2 m5 m6 4*la rev(s)
+	end	
+		
+	length 97	
+		piece s r 5*la m1 m2 m5 m6 4*la rev(s)
+	end	
+		
+	length 98	
+		piece s 5*la m1 m2 m3 m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 99	
+		piece s 5*la m1 m2 m3 mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 100	
+		piece s 5*la m1 m2 m3 2*mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 101	
+		piece s 5*la m1 m2 m3 3*mr m4 m5 m6 4*la rev(s)
+	end	
+		
+	length 102	
+		piece s 5*la 5*la rev(s)
+	end	
+		
+	length 103	
+		piece s r 5*la 5*la rev(s)
+	end	
+		
+	length 104	
+		piece s 5*la m1 m6 5*la rev(s)
+	end	
+		
+	length 105	
+		piece s r 5*la m1 m6 5*la rev(s)
+	end	
+		
+	length 106	
+		piece s 5*la m1 m2 m5 m6 5*la rev(s)
+	end	
+		
+	length 107	
+		piece s r 5*la m1 m2 m5 m6 5*la rev(s)
+	end	
+		
+	length 108	
+		piece s 5*la m1 m2 m3 m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 109	
+		piece s 5*la m1 m2 m3 mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 110	
+		piece s 5*la m1 m2 m3 2*mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 111	
+		piece s 5*la m1 m2 m3 3*mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 112	
+		piece s 6*la 5*la rev(s)
+	end	
+		
+	length 113	
+		piece s r 6*la 5*la rev(s)
+	end	
+		
+	length 114	
+		piece s 6*la m1 m6 5*la rev(s)
+	end	
+		
+	length 115	
+		piece s r 6*la m1 m6 5*la rev(s)
+	end	
+		
+	length 116	
+		piece s 6*la m1 m2 m5 m6 5*la rev(s)
+	end	
+		
+	length 117	
+		piece s r 6*la m1 m2 m5 m6 5*la rev(s)
+	end	
+		
+	length 118	
+		piece s 6*la m1 m2 m3 m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 119	
+		piece s 6*la m1 m2 m3 mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 120	
+		piece s 6*la m1 m2 m3 2*mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 121	
+		piece s 6*la m1 m2 m3 3*mr m4 m5 m6 5*la rev(s)
+	end	
+		
+	length 122	
+		piece s 6*la 6*la rev(s)
+	end	
+		
+	length 123	
+		piece s r 6*la 6*la rev(s)
+	end	
+		
+	length 124	
+		piece s 6*la m1 m6 6*la rev(s)
+	end	
+		
+	length 125	
+		piece s r 6*la m1 m6 6*la rev(s)
+	end	
+		
+	length 126	
+		piece s 6*la m1 m2 m5 m6 6*la rev(s)
+	end	
+		
+	length 127	
+		piece s r 6*la m1 m2 m5 m6 6*la rev(s)
+	end	
+		
+	length 128	
+		piece s 6*la m1 m2 m3 m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 129	
+		piece s 6*la m1 m2 m3 mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 130	
+		piece s 6*la m1 m2 m3 2*mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 131	
+		piece s 6*la m1 m2 m3 3*mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 132	
+		piece s 7*la 6*la rev(s)
+	end	
+		
+	length 133	
+		piece s r 7*la 6*la rev(s)
+	end	
+		
+	length 134	
+		piece s 7*la m1 m6 6*la rev(s)
+	end	
+		
+	length 135	
+		piece s r 7*la m1 m6 6*la rev(s)
+	end	
+		
+	length 136	
+		piece s 7*la m1 m2 m5 m6 6*la rev(s)
+	end	
+		
+	length 137	
+		piece s r 7*la m1 m2 m5 m6 6*la rev(s)
+	end	
+		
+	length 138	
+		piece s 7*la m1 m2 m3 m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 139	
+		piece s 7*la m1 m2 m3 mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 140	
+		piece s 7*la m1 m2 m3 2*mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 141	
+		piece s 7*la m1 m2 m3 3*mr m4 m5 m6 6*la rev(s)
+	end	
+		
+	length 142	
+		piece s 7*la 7*la rev(s)
+	end	
+		
+	length 143	
+		piece s r 7*la 7*la rev(s)
+	end	
+		
+	length 144	
+		piece s 7*la m1 m6 7*la rev(s)
+	end	
+		
+	length 145	
+		piece s r 7*la m1 m6 7*la rev(s)
+	end	
+		
+	length 146	
+		piece s 7*la m1 m2 m5 m6 7*la rev(s)
+	end	
+		
+	length 147	
+		piece s r 7*la m1 m2 m5 m6 7*la rev(s)
+	end	
+		
+	length 148	
+		piece s 7*la m1 m2 m3 m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 149	
+		piece s 7*la m1 m2 m3 mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 150	
+		piece s 7*la m1 m2 m3 2*mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 151	
+		piece s 7*la m1 m2 m3 3*mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 152	
+		piece s 8*la 7*la rev(s)
+	end	
+		
+	length 153	
+		piece s r 8*la 7*la rev(s)
+	end	
+		
+	length 154	
+		piece s 8*la m1 m6 7*la rev(s)
+	end	
+		
+	length 155	
+		piece s r 8*la m1 m6 7*la rev(s)
+	end	
+		
+	length 156	
+		piece s 8*la m1 m2 m5 m6 7*la rev(s)
+	end	
+		
+	length 157	
+		piece s r 8*la m1 m2 m5 m6 7*la rev(s)
+	end	
+		
+	length 158	
+		piece s 8*la m1 m2 m3 m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 159	
+		piece s 8*la m1 m2 m3 mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 160	
+		piece s 8*la m1 m2 m3 2*mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 161	
+		piece s 8*la m1 m2 m3 3*mr m4 m5 m6 7*la rev(s)
+	end	
+		
+	length 162	
+		piece s 8*la 8*la rev(s)
+	end	
+		
+	length 163	
+		piece s r 8*la 8*la rev(s)
+	end	
+		
+	length 164	
+		piece s 8*la m1 m6 8*la rev(s)
+	end	
+		
+	length 165	
+		piece s r 8*la m1 m6 8*la rev(s)
+	end	
+		
+	length 166	
+		piece s 8*la m1 m2 m5 m6 8*la rev(s)
+	end	
+		
+	length 167	
+		piece s r 8*la m1 m2 m5 m6 8*la rev(s)
+	end	
+		
+	length 168	
+		piece s 8*la m1 m2 m3 m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 169	
+		piece s 8*la m1 m2 m3 mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 170	
+		piece s 8*la m1 m2 m3 2*mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 171	
+		piece s 8*la m1 m2 m3 3*mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 172	
+		piece s 9*la 8*la rev(s)
+	end	
+		
+	length 173	
+		piece s r 9*la 8*la rev(s)
+	end	
+		
+	length 174	
+		piece s 9*la m1 m6 8*la rev(s)
+	end	
+		
+	length 175	
+		piece s r 9*la m1 m6 8*la rev(s)
+	end	
+		
+	length 176	
+		piece s 9*la m1 m2 m5 m6 8*la rev(s)
+	end	
+		
+	length 177	
+		piece s r 9*la m1 m2 m5 m6 8*la rev(s)
+	end	
+		
+	length 178	
+		piece s 9*la m1 m2 m3 m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 179	
+		piece s 9*la m1 m2 m3 mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 180	
+		piece s 9*la m1 m2 m3 2*mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 181	
+		piece s 9*la m1 m2 m3 3*mr m4 m5 m6 8*la rev(s)
+	end	
+		
+	length 182	
+		piece s 9*la 9*la rev(s)
+	end	
+		
+	length 183	
+		piece s r 9*la 9*la rev(s)
+	end	
+		
+	length 184	
+		piece s 9*la m1 m6 9*la rev(s)
+	end	
+		
+	length 185	
+		piece s r 9*la m1 m6 9*la rev(s)
+	end	
+		
+	length 186	
+		piece s 9*la m1 m2 m5 m6 9*la rev(s)
+	end	
+		
+	length 187	
+		piece s r 9*la m1 m2 m5 m6 9*la rev(s)
+	end	
+		
+	length 188	
+		piece s 9*la m1 m2 m3 m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 189	
+		piece s 9*la m1 m2 m3 mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 190	
+		piece s 9*la m1 m2 m3 2*mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 191	
+		piece s 9*la m1 m2 m3 3*mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 192	
+		piece s 10*la 9*la rev(s)
+	end	
+		
+	length 193	
+		piece s r 10*la 9*la rev(s)
+	end	
+		
+	length 194	
+		piece s 10*la m1 m6 9*la rev(s)
+	end	
+		
+	length 195	
+		piece s r 10*la m1 m6 9*la rev(s)
+	end	
+		
+	length 196	
+		piece s 10*la m1 m2 m5 m6 9*la rev(s)
+	end	
+		
+	length 197	
+		piece s r 10*la m1 m2 m5 m6 9*la rev(s)
+	end	
+		
+	length 198	
+		piece s 10*la m1 m2 m3 m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 199	
+		piece s 10*la m1 m2 m3 mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 200	
+		piece s 10*la m1 m2 m3 2*mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 201	
+		piece s 10*la m1 m2 m3 3*mr m4 m5 m6 9*la rev(s)
+	end	
+		
+	length 202	
+		piece s 10*la 10*la rev(s)
+	end	
+		
+	length 203	
+		piece s r 10*la 10*la rev(s)
+	end	
+		
+	length 204	
+		piece s 10*la m1 m6 10*la rev(s)
+	end	
+		
+	length 205	
+		piece s r 10*la m1 m6 10*la rev(s)
+	end	
+		
+	length 206	
+		piece s 10*la m1 m2 m5 m6 10*la rev(s)
+	end	
+		
+	length 207	
+		piece s r 10*la m1 m2 m5 m6 10*la rev(s)
+	end	
+		
+	length 208	
+		piece s 10*la m1 m2 m3 m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 209	
+		piece s 10*la m1 m2 m3 mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 210	
+		piece s 10*la m1 m2 m3 2*mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 211	
+		piece s 10*la m1 m2 m3 3*mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 212	
+		piece s 11*la 10*la rev(s)
+	end	
+		
+	length 213	
+		piece s r 11*la 10*la rev(s)
+	end	
+		
+	length 214	
+		piece s 11*la m1 m6 10*la rev(s)
+	end	
+		
+	length 215	
+		piece s r 11*la m1 m6 10*la rev(s)
+	end	
+		
+	length 216	
+		piece s 11*la m1 m2 m5 m6 10*la rev(s)
+	end	
+		
+	length 217	
+		piece s r 11*la m1 m2 m5 m6 10*la rev(s)
+	end	
+		
+	length 218	
+		piece s 11*la m1 m2 m3 m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 219	
+		piece s 11*la m1 m2 m3 mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 220	
+		piece s 11*la m1 m2 m3 2*mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 221	
+		piece s 11*la m1 m2 m3 3*mr m4 m5 m6 10*la rev(s)
+	end	
+		
+	length 222	
+		piece s 11*la 11*la rev(s)
+	end	
+		
+	length 223	
+		piece s r 11*la 11*la rev(s)
+	end	
+		
+	length 224	
+		piece s 11*la m1 m6 11*la rev(s)
+	end	
+		
+	length 225	
+		piece s r 11*la m1 m6 11*la rev(s)
+	end	
+		
+	length 226	
+		piece s 11*la m1 m2 m5 m6 11*la rev(s)
+	end	
+		
+	length 227	
+		piece s r 11*la m1 m2 m5 m6 11*la rev(s)
+	end	
+		
+	length 228	
+		piece s 11*la m1 m2 m3 m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 229	
+		piece s 11*la m1 m2 m3 mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 230	
+		piece s 11*la m1 m2 m3 2*mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 231	
+		piece s 11*la m1 m2 m3 3*mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 232	
+		piece s 12*la 11*la rev(s)
+	end	
+		
+	length 233	
+		piece s r 12*la 11*la rev(s)
+	end	
+		
+	length 234	
+		piece s 12*la m1 m6 11*la rev(s)
+	end	
+		
+	length 235	
+		piece s r 12*la m1 m6 11*la rev(s)
+	end	
+		
+	length 236	
+		piece s 12*la m1 m2 m5 m6 11*la rev(s)
+	end	
+		
+	length 237	
+		piece s r 12*la m1 m2 m5 m6 11*la rev(s)
+	end	
+		
+	length 238	
+		piece s 12*la m1 m2 m3 m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 239	
+		piece s 12*la m1 m2 m3 mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 240	
+		piece s 12*la m1 m2 m3 2*mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 241	
+		piece s 12*la m1 m2 m3 3*mr m4 m5 m6 11*la rev(s)
+	end	
+		
+	length 242	
+		piece s 12*la 12*la rev(s)
+	end	
+		
+	length 243	
+		piece s r 12*la 12*la rev(s)
+	end	
+		
+	length 244	
+		piece s 12*la m1 m6 12*la rev(s)
+	end	
+		
+	length 245	
+		piece s r 12*la m1 m6 12*la rev(s)
+	end	
+		
+	length 246	
+		piece s 12*la m1 m2 m5 m6 12*la rev(s)
+	end	
+		
+	length 247	
+		piece s r 12*la m1 m2 m5 m6 12*la rev(s)
+	end	
+		
+	length 248	
+		piece s 12*la m1 m2 m3 m4 m5 m6 12*la rev(s)
+	end	
+		
+	length 249	
+		piece s 12*la m1 m2 m3 mr m4 m5 m6 12*la rev(s)
+	end	
+		
+	length 250	
+		piece s 12*la m1 m2 m3 2*mr m4 m5 m6 12*la rev(s)
+	end	
+		
+	length 251	
+		piece s 12*la m1 m2 m3 3*mr m4 m5 m6 12*la rev(s)
+	end	
+		
+	length 252	
+		piece s 13*la 12*la rev(s)
+	end	
+		
+	length 253	
+		piece s r 13*la 12*la rev(s)
+	end	
+		
+	length 254	
+		piece s 13*la m1 m6 12*la rev(s)
+	end	
+		
+	length 255	
+		piece s r 13*la m1 m6 12*la rev(s)
+	end	
+end
+
+#OVERDECK TRUSS
+
+bridge 9 
+
+section s
+	piece <0x0c0f1000, 2>
+end
+
+section r
+	piece <0x0c0e1000, 0>
+end
+
+section a1
+	piece <0x0c5b1000, 2>
+end
+
+section a2
+	piece <0x0c4c1000, 0>
+end
+
+section a3
+	piece <0x0c5b1000, 0>
+end
+
+section sa
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c551000, 0>:570
+end
+
+section ma
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c551000, 0>:570
+end
+
+section la
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c551000, 0>:570
+end
+
+section end2
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c0f1000, 0>
+end
+
+section end3
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c0f1000, 0>
+end
+
+section end4
+	piece <0x0c5b1000, 2>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c4c1000, 0>
+	piece <0x0c5b1000, 0>
+	piece <0x0c0f1000, 0>
+end
+
+	length 4	
+		piece s r r s
+	end	
+		
+	length 5	
+		piece s r r r s
+	end	
+		
+	length 6	
+		piece s end2
+	end	
+		
+	length 7	
+		piece s end3
+	end	
+		
+	length 8	
+		piece s end4
+	end	
+		
+	length 9	
+		piece s r end4
+	end	
+		
+	length 10	
+		piece s a1 a2 a2 a3 end2
+	end	
+		
+	length 11	
+		piece s sa end2
+	end	
+		
+	length 12	
+		piece s ma end2
+	end	
+		
+	length 13	
+		piece s ma end3
+	end	
+		
+	length 14	
+		piece s la end3
+	end	
+		
+	length 15	
+		piece s la end4
+	end	
+		
+	length 16	
+		piece s sa sa end2
+	end	
+		
+	length 17	
+		piece s sa ma end2
+	end	
+		
+	length 18	
+		piece s ma ma end2
+	end	
+		
+	length 19	
+		piece s ma ma end3
+	end	
+		
+	length 20	
+		piece s ma la end3
+	end	
+		
+	length 21	
+		piece s la la end3
+	end	
+		
+	length 22	
+		piece s la la end4
+	end	
+		
+	length 23	
+		piece s sa ma ma end2
+	end	
+		
+	length 24	
+		piece s ma ma ma end2
+	end	
+		
+	length 25	
+		piece s ma ma ma end3
+	end	
+		
+	length 26	
+		piece s ma la ma end3
+	end	
+		
+	length 27	
+		piece s ma la la end3
+	end	
+		
+	length 28	
+		piece s la la la end3
+	end	
+		
+	length 29	
+		piece s la la la end4
+	end	
+		
+	length 30	
+		piece s sa ma 1*la ma end2
+	end	
+		
+	length 31	
+		piece s ma ma 1*la ma end2
+	end	
+		
+	length 32	
+		piece s ma ma 1*la ma end3
+	end	
+		
+	length 33	
+		piece s ma la 1*la ma end3
+	end	
+		
+	length 34	
+		piece s ma la 1*la la end3
+	end	
+		
+	length 35	
+		piece s la la 1*la la end3
+	end	
+		
+	length 36	
+		piece s la la 1*la la end4
+	end	
+		
+	length 37	
+		piece s sa ma 2*la ma end2
+	end	
+		
+	length 38	
+		piece s ma ma 2*la ma end2
+	end	
+		
+	length 39	
+		piece s ma ma 2*la ma end3
+	end	
+		
+	length 40	
+		piece s ma la 2*la ma end3
+	end	
+		
+	length 41	
+		piece s ma la 2*la la end3
+	end	
+		
+	length 42	
+		piece s la la 2*la la end3
+	end	
+		
+	length 43	
+		piece s la la 2*la la end4
+	end	
+		
+	length 44	
+		piece s sa ma 3*la ma end2
+	end	
+		
+	length 45	
+		piece s ma ma 3*la ma end2
+	end	
+		
+	length 46	
+		piece s ma ma 3*la ma end3
+	end	
+		
+	length 47	
+		piece s ma la 3*la ma end3
+	end	
+		
+	length 48	
+		piece s ma la 3*la la end3
+	end	
+		
+	length 49	
+		piece s la la 3*la la end3
+	end	
+		
+	length 50	
+		piece s la la 3*la la end4
+	end	
+		
+	length 51	
+		piece s sa ma 4*la ma end2
+	end	
+		
+	length 52	
+		piece s ma ma 4*la ma end2
+	end	
+		
+	length 53	
+		piece s ma ma 4*la ma end3
+	end	
+		
+	length 54	
+		piece s ma la 4*la ma end3
+	end	
+		
+	length 55	
+		piece s ma la 4*la la end3
+	end	
+		
+	length 56	
+		piece s la la 4*la la end3
+	end	
+		
+	length 57	
+		piece s la la 4*la la end4
+	end	
+		
+	length 58	
+		piece s sa ma 5*la ma end2
+	end	
+		
+	length 59	
+		piece s ma ma 5*la ma end2
+	end	
+		
+	length 60	
+		piece s ma ma 5*la ma end3
+	end	
+		
+	length 61	
+		piece s ma la 5*la ma end3
+	end	
+		
+	length 62	
+		piece s ma la 5*la la end3
+	end	
+		
+	length 63	
+		piece s la la 5*la la end3
+	end	
+		
+	length 64	
+		piece s la la 5*la la end4
+	end	
+		
+	length 65	
+		piece s sa ma 6*la ma end2
+	end	
+		
+	length 66	
+		piece s ma ma 6*la ma end2
+	end	
+		
+	length 67	
+		piece s ma ma 6*la ma end3
+	end	
+		
+	length 68	
+		piece s ma la 6*la ma end3
+	end	
+		
+	length 69	
+		piece s ma la 6*la la end3
+	end	
+		
+	length 70	
+		piece s la la 6*la la end3
+	end	
+		
+	length 71	
+		piece s la la 6*la la end4
+	end	
+		
+	length 72	
+		piece s sa ma 7*la ma end2
+	end	
+		
+	length 73	
+		piece s ma ma 7*la ma end2
+	end	
+		
+	length 74	
+		piece s ma ma 7*la ma end3
+	end	
+		
+	length 75	
+		piece s ma la 7*la ma end3
+	end	
+		
+	length 76	
+		piece s ma la 7*la la end3
+	end	
+		
+	length 77	
+		piece s la la 7*la la end3
+	end	
+		
+	length 78	
+		piece s la la 7*la la end4
+	end	
+		
+	length 79	
+		piece s sa ma 8*la ma end2
+	end	
+		
+	length 80	
+		piece s ma ma 8*la ma end2
+	end	
+		
+	length 81	
+		piece s ma ma 8*la ma end3
+	end	
+		
+	length 82	
+		piece s ma la 8*la ma end3
+	end	
+		
+	length 83	
+		piece s ma la 8*la la end3
+	end	
+		
+	length 84	
+		piece s la la 8*la la end3
+	end	
+		
+	length 85	
+		piece s la la 8*la la end4
+	end	
+		
+	length 86	
+		piece s sa ma 9*la ma end2
+	end	
+		
+	length 87	
+		piece s ma ma 9*la ma end2
+	end	
+		
+	length 88	
+		piece s ma ma 9*la ma end3
+	end	
+		
+	length 89	
+		piece s ma la 9*la ma end3
+	end	
+		
+	length 90	
+		piece s ma la 9*la la end3
+	end	
+		
+	length 91	
+		piece s la la 9*la la end3
+	end	
+		
+	length 92	
+		piece s la la 9*la la end4
+	end	
+		
+	length 93	
+		piece s sa ma 10*la ma end2
+	end	
+		
+	length 94	
+		piece s ma ma 10*la ma end2
+	end	
+		
+	length 95	
+		piece s ma ma 10*la ma end3
+	end	
+		
+	length 96	
+		piece s ma la 10*la ma end3
+	end	
+		
+	length 97	
+		piece s ma la 10*la la end3
+	end	
+		
+	length 98	
+		piece s la la 10*la la end3
+	end	
+		
+	length 99	
+		piece s la la 10*la la end4
+	end	
+		
+	length 100	
+		piece s sa ma 11*la ma end2
+	end	
+		
+	length 101	
+		piece s ma ma 11*la ma end2
+	end	
+		
+	length 102	
+		piece s ma ma 11*la ma end3
+	end	
+		
+	length 103	
+		piece s ma la 11*la ma end3
+	end	
+		
+	length 104	
+		piece s ma la 11*la la end3
+	end	
+		
+	length 105	
+		piece s la la 11*la la end3
+	end	
+		
+	length 106	
+		piece s la la 11*la la end4
+	end	
+		
+	length 107	
+		piece s sa ma 12*la ma end2
+	end	
+		
+	length 108	
+		piece s ma ma 12*la ma end2
+	end	
+		
+	length 109	
+		piece s ma ma 12*la ma end3
+	end	
+		
+	length 110	
+		piece s ma la 12*la ma end3
+	end	
+		
+	length 111	
+		piece s ma la 12*la la end3
+	end	
+		
+	length 112	
+		piece s la la 12*la la end3
+	end	
+		
+	length 113	
+		piece s la la 12*la la end4
+	end	
+		
+	length 114	
+		piece s sa ma 13*la ma end2
+	end	
+		
+	length 115	
+		piece s ma ma 13*la ma end2
+	end	
+		
+	length 116	
+		piece s ma ma 13*la ma end3
+	end	
+		
+	length 117	
+		piece s ma la 13*la ma end3
+	end	
+		
+	length 118	
+		piece s ma la 13*la la end3
+	end	
+		
+	length 119	
+		piece s la la 13*la la end3
+	end	
+		
+	length 120	
+		piece s la la 13*la la end4
+	end	
+		
+	length 121	
+		piece s sa ma 14*la ma end2
+	end	
+		
+	length 122	
+		piece s ma ma 14*la ma end2
+	end	
+		
+	length 123	
+		piece s ma ma 14*la ma end3
+	end	
+		
+	length 124	
+		piece s ma la 14*la ma end3
+	end	
+		
+	length 125	
+		piece s ma la 14*la la end3
+	end	
+		
+	length 126	
+		piece s la la 14*la la end3
+	end	
+		
+	length 127	
+		piece s la la 14*la la end4
+	end	
+		
+	length 128	
+		piece s sa ma 15*la ma end2
+	end	
+		
+	length 129	
+		piece s ma ma 15*la ma end2
+	end	
+		
+	length 130	
+		piece s ma ma 15*la ma end3
+	end	
+		
+	length 131	
+		piece s ma la 15*la ma end3
+	end	
+		
+	length 132	
+		piece s ma la 15*la la end3
+	end	
+		
+	length 133	
+		piece s la la 15*la la end3
+	end	
+		
+	length 134	
+		piece s la la 15*la la end4
+	end	
+		
+	length 135	
+		piece s sa ma 16*la ma end2
+	end	
+		
+	length 136	
+		piece s ma ma 16*la ma end2
+	end	
+		
+	length 137	
+		piece s ma ma 16*la ma end3
+	end	
+		
+	length 138	
+		piece s ma la 16*la ma end3
+	end	
+		
+	length 139	
+		piece s ma la 16*la la end3
+	end	
+		
+	length 140	
+		piece s la la 16*la la end3
+	end	
+		
+	length 141	
+		piece s la la 16*la la end4
+	end	
+		
+	length 142	
+		piece s sa ma 17*la ma end2
+	end	
+		
+	length 143	
+		piece s ma ma 17*la ma end2
+	end	
+		
+	length 144	
+		piece s ma ma 17*la ma end3
+	end	
+		
+	length 145	
+		piece s ma la 17*la ma end3
+	end	
+		
+	length 146	
+		piece s ma la 17*la la end3
+	end	
+		
+	length 147	
+		piece s la la 17*la la end3
+	end	
+		
+	length 148	
+		piece s la la 17*la la end4
+	end	
+		
+	length 149	
+		piece s sa ma 18*la ma end2
+	end	
+		
+	length 150	
+		piece s ma ma 18*la ma end2
+	end	
+		
+	length 151	
+		piece s ma ma 18*la ma end3
+	end	
+		
+	length 152	
+		piece s ma la 18*la ma end3
+	end	
+		
+	length 153	
+		piece s ma la 18*la la end3
+	end	
+		
+	length 154	
+		piece s la la 18*la la end3
+	end	
+		
+	length 155	
+		piece s la la 18*la la end4
+	end	
+		
+	length 156	
+		piece s sa ma 19*la ma end2
+	end	
+		
+	length 157	
+		piece s ma ma 19*la ma end2
+	end	
+		
+	length 158	
+		piece s ma ma 19*la ma end3
+	end	
+		
+	length 159	
+		piece s ma la 19*la ma end3
+	end	
+		
+	length 160	
+		piece s ma la 19*la la end3
+	end	
+		
+	length 161	
+		piece s la la 19*la la end3
+	end	
+		
+	length 162	
+		piece s la la 19*la la end4
+	end	
+		
+	length 163	
+		piece s sa ma 20*la ma end2
+	end	
+		
+	length 164	
+		piece s ma ma 20*la ma end2
+	end	
+		
+	length 165	
+		piece s ma ma 20*la ma end3
+	end	
+		
+	length 166	
+		piece s ma la 20*la ma end3
+	end	
+		
+	length 167	
+		piece s ma la 20*la la end3
+	end	
+		
+	length 168	
+		piece s la la 20*la la end3
+	end	
+		
+	length 169	
+		piece s la la 20*la la end4
+	end	
+		
+	length 170	
+		piece s sa ma 21*la ma end2
+	end	
+		
+	length 171	
+		piece s ma ma 21*la ma end2
+	end	
+		
+	length 172	
+		piece s ma ma 21*la ma end3
+	end	
+		
+	length 173	
+		piece s ma la 21*la ma end3
+	end	
+		
+	length 174	
+		piece s ma la 21*la la end3
+	end	
+		
+	length 175	
+		piece s la la 21*la la end3
+	end	
+		
+	length 176	
+		piece s la la 21*la la end4
+	end	
+		
+	length 177	
+		piece s sa ma 22*la ma end2
+	end	
+		
+	length 178	
+		piece s ma ma 22*la ma end2
+	end	
+		
+	length 179	
+		piece s ma ma 22*la ma end3
+	end	
+		
+	length 180	
+		piece s ma la 22*la ma end3
+	end	
+		
+	length 181	
+		piece s ma la 22*la la end3
+	end	
+		
+	length 182	
+		piece s la la 22*la la end3
+	end	
+		
+	length 183	
+		piece s la la 22*la la end4
+	end	
+		
+	length 184	
+		piece s sa ma 23*la ma end2
+	end	
+		
+	length 185	
+		piece s ma ma 23*la ma end2
+	end	
+		
+	length 186	
+		piece s ma ma 23*la ma end3
+	end	
+		
+	length 187	
+		piece s ma la 23*la ma end3
+	end	
+		
+	length 188	
+		piece s ma la 23*la la end3
+	end	
+		
+	length 189	
+		piece s la la 23*la la end3
+	end	
+		
+	length 190	
+		piece s la la 23*la la end4
+	end	
+		
+	length 191	
+		piece s sa ma 24*la ma end2
+	end	
+		
+	length 192	
+		piece s ma ma 24*la ma end2
+	end	
+		
+	length 193	
+		piece s ma ma 24*la ma end3
+	end	
+		
+	length 194	
+		piece s ma la 24*la ma end3
+	end	
+		
+	length 195	
+		piece s ma la 24*la la end3
+	end	
+		
+	length 196	
+		piece s la la 24*la la end3
+	end	
+		
+	length 197	
+		piece s la la 24*la la end4
+	end	
+		
+	length 198	
+		piece s sa ma 25*la ma end2
+	end	
+		
+	length 199	
+		piece s ma ma 25*la ma end2
+	end	
+		
+	length 200	
+		piece s ma ma 25*la ma end3
+	end	
+		
+	length 201	
+		piece s ma la 25*la ma end3
+	end	
+		
+	length 202	
+		piece s ma la 25*la la end3
+	end	
+		
+	length 203	
+		piece s la la 25*la la end3
+	end	
+		
+	length 204	
+		piece s la la 25*la la end4
+	end	
+		
+	length 205	
+		piece s sa ma 26*la ma end2
+	end	
+		
+	length 206	
+		piece s ma ma 26*la ma end2
+	end	
+		
+	length 207	
+		piece s ma ma 26*la ma end3
+	end	
+		
+	length 208	
+		piece s ma la 26*la ma end3
+	end	
+		
+	length 209	
+		piece s ma la 26*la la end3
+	end	
+		
+	length 210	
+		piece s la la 26*la la end3
+	end	
+		
+	length 211	
+		piece s la la 26*la la end4
+	end	
+		
+	length 212	
+		piece s sa ma 27*la ma end2
+	end	
+		
+	length 213	
+		piece s ma ma 27*la ma end2
+	end	
+		
+	length 214	
+		piece s ma ma 27*la ma end3
+	end	
+		
+	length 215	
+		piece s ma la 27*la ma end3
+	end	
+		
+	length 216	
+		piece s ma la 27*la la end3
+	end	
+		
+	length 217	
+		piece s la la 27*la la end3
+	end	
+		
+	length 218	
+		piece s la la 27*la la end4
+	end	
+		
+	length 219	
+		piece s sa ma 28*la ma end2
+	end	
+		
+	length 220	
+		piece s ma ma 28*la ma end2
+	end	
+		
+	length 221	
+		piece s ma ma 28*la ma end3
+	end	
+		
+	length 222	
+		piece s ma la 28*la ma end3
+	end	
+		
+	length 223	
+		piece s ma la 28*la la end3
+	end	
+		
+	length 224	
+		piece s la la 28*la la end3
+	end	
+		
+	length 225	
+		piece s la la 28*la la end4
+	end	
+		
+	length 226	
+		piece s sa ma 29*la ma end2
+	end	
+		
+	length 227	
+		piece s ma ma 29*la ma end2
+	end	
+		
+	length 228	
+		piece s ma ma 29*la ma end3
+	end	
+		
+	length 229	
+		piece s ma la 29*la ma end3
+	end	
+		
+	length 230	
+		piece s ma la 29*la la end3
+	end	
+		
+	length 231	
+		piece s la la 29*la la end3
+	end	
+		
+	length 232	
+		piece s la la 29*la la end4
+	end	
+		
+	length 233	
+		piece s sa ma 30*la ma end2
+	end	
+		
+	length 234	
+		piece s ma ma 30*la ma end2
+	end	
+		
+	length 235	
+		piece s ma ma 30*la ma end3
+	end	
+		
+	length 236	
+		piece s ma la 30*la ma end3
+	end	
+		
+	length 237	
+		piece s ma la 30*la la end3
+	end	
+		
+	length 238	
+		piece s la la 30*la la end3
+	end	
+		
+	length 239	
+		piece s la la 30*la la end4
+	end	
+		
+	length 240	
+		piece s sa ma 31*la ma end2
+	end	
+		
+	length 241	
+		piece s ma ma 31*la ma end2
+	end	
+		
+	length 242	
+		piece s ma ma 31*la ma end3
+	end	
+		
+	length 243	
+		piece s ma la 31*la ma end3
+	end	
+		
+	length 244	
+		piece s ma la 31*la la end3
+	end	
+		
+	length 245	
+		piece s la la 31*la la end3
+	end	
+		
+	length 246	
+		piece s la la 31*la la end4
+	end	
+		
+	length 247	
+		piece s sa ma 32*la ma end2
+	end	
+		
+	length 248	
+		piece s ma ma 32*la ma end2
+	end	
+		
+	length 249	
+		piece s ma ma 32*la ma end3
+	end	
+		
+	length 250	
+		piece s ma la 32*la ma end3
+	end	
+		
+	length 251	
+		piece s ma la 32*la la end3
+	end	
+		
+	length 252	
+		piece s la la 32*la la end3
+	end	
+		
+	length 253	
+		piece s la la 32*la la end4
+	end	
+		
+	length 254	
+		piece s sa ma 33*la ma end2
+	end	
+		
+	length 255	
+		piece s ma ma 33*la ma end2
+	end
+end

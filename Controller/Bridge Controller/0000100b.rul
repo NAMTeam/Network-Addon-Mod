@@ -1,0 +1,2168 @@
+# Dirt Road bridge specializations
+#
+#
+# Sections
+#
+# These are chunks of tiles that can be included into bridges. The
+# syntax for specifying pieces:
+#
+#    piece <instance, rotation>                         Simple piece
+#    piece <instance, rotation, htdelta, yoffset>       Sloped piece with the given height change over the tile and model Y offset
+#    piece <instance, rotation>:depth                   Simple piece with support column (: syntax also works for long form)
+#    piece section-name                                 Reference a section
+#
+# You can specify more than one piece/section in a line and you can
+# also reverse a section while referencing it:
+#
+#    piece rev(foobar)
+
+
+
+#
+# Bridge specializations
+#
+# Bridges are referenced here by the ID of the bridge as specified in
+# networks.ini:
+#
+#     [AvenueBridgeExemplars]
+#     16 = 0x6534284a, 0xa82ca30f, 0x04000000, goofy bridge
+#
+# The ID in this case would be 16.
+#
+
+
+	# Specify specializations for this bridge here, by length
+	# in steps (tiles along direction of bridge).  Lengths not
+	# specified here will be generated from the exemplar.
+	#
+	# Piece syntax is the same as for sections, except that you
+	# can also reference different lengths of the same bridge
+	# via length(nn) and rev(length(nn)) syntax.
+
+	
+	# Use this to vertically offset the start of the bridge.
+	#
+	# height 15.5
+
+
+# small steel arch RHW-4
+
+bridge 3
+
+section st
+	piece <0x3302a000, 3>:580
+end
+
+section py
+	piece <0x33020000, 3>:580
+end
+
+section en
+	piece <0x3302b000, 3>:580
+end
+
+section ssaa4
+	piece <0x33021000, 3>
+	piece <0x33022000, 3>
+	piece <0x33023000, 3>
+	piece <0x33024000, 3>
+end
+
+section ssab
+	piece <0x33025000, 3>
+end
+
+section ssac4
+	piece <0x33026000, 3>
+	piece <0x33027000, 3>
+	piece <0x33028000, 3>
+	piece <0x33029000, 3>
+end
+
+section a2
+	piece <0x33021000, 3>
+	piece <0x33029000, 3>
+end
+
+section a6
+	piece <0x33021000, 3>
+	piece <0x33022000, 3>
+	piece <0x33023000, 3>
+	piece <0x33027000, 3>
+	piece <0x33028000, 3>
+	piece <0x33029000, 3>
+end
+
+section a8
+	piece ssaa4 ssac4
+end
+
+section a9
+	piece ssaa4 ssab ssac4
+end
+
+section a10
+	piece ssaa4 2*ssab ssac4
+end
+
+section pya2
+	piece py a2
+end
+
+section pya8
+	piece py a8
+end
+
+section pya9
+	piece py a9
+end
+
+section pya10
+	piece py a10
+end
+
+	length 10
+		piece st a8 en
+	end
+
+	length 11
+		piece st a9 en
+	end
+
+	length 12
+		piece st a10 en
+	end
+
+	length 13
+		piece st ssaa4 3*ssab ssac4 en
+	end
+
+	length 14
+		piece st a9 pya2 en
+	end
+
+	length 15
+		piece st a6 py a6 en
+	end
+
+	length 16
+		piece st a2 pya8 pya2 en
+	end
+
+	length 17
+		piece st a6 pya8 en
+	end
+
+	length 18
+		piece st a6 pya9 en
+	end
+
+	length 19					
+		piece st a8 pya8 en				
+	end					
+						
+	length 20					
+		piece st a9 pya8 en				
+	end					
+						
+	length 21					
+		piece st a9 pya9 en				
+	end					
+						
+	length 22					
+		piece st a10 pya9 en				
+	end					
+						
+	length 23					
+		piece st a10 pya10 en				
+	end					
+						
+	length 24					
+		piece st a6 pya8 py a6 en				
+	end					
+						
+	length 25					
+		piece st a6 pya9 py a6 en				
+	end					
+						
+	length 26					
+		piece st a6 pya8 pya8 en				
+	end					
+						
+	length 27					
+		piece st a6 pya9 pya8 en				
+	end					
+						
+	length 28	
+		piece st a8 2*pya8 en
+	end	
+
+	length 29	
+		piece st a8 pya9 pya8 en
+	end	
+
+	length 30	
+		piece st a9 pya8 pya9 en
+	end	
+
+	length 31	
+		piece st a9 2*pya9 en
+	end	
+
+	length 32	
+		piece st a9 pya10 pya9 en
+	end	
+
+	length 33	
+		piece st a6 2*pya8 py a6 en
+	end	
+
+	length 34	
+		piece st a6 pya8 pya9 py a6 en
+	end	
+
+	length 35
+		piece st a6 3*pya8 en
+	end	
+
+	length 36	
+		piece st a6 pya8 pya9 pya8 en
+	end	
+
+	length 37	
+		piece st a8 3*pya8 en
+	end	
+
+	length 38	
+		piece st a8 pya9 2*pya8 en
+	end	
+
+	length 39	
+		piece st a8 2*pya9 pya8 en
+	end	
+
+	length 40	
+		piece st a9 2*pya9 pya8 en
+	end	
+
+	length 41	
+		piece st a9 3*pya9 en
+	end	
+
+	length 42	
+		piece st a9 pya10 2*pya9 en
+	end	
+
+	length 43	
+		piece st a9 2*pya10 pya9 en
+	end	
+
+	length 44	
+		piece st a10 2*pya10 pya9 en
+	end	
+
+	length 45	
+		piece st a10 3*pya10 en
+	end	
+
+	length 46	
+		piece st a8 4*pya8 en
+	end	
+
+	length 47	
+		piece st a8 pya8 pya9 2*pya8 en
+	end	
+
+	length 48	
+		piece st a8 pya9 pya8 pya9 pya8 en
+	end	
+
+	length 49	
+		piece st a8 3*pya9 pya8 en
+	end	
+
+	length 50	
+		piece st a9 pya9 pya8 2*pya9 en
+	end	
+
+	length 51	
+		piece st a9 4*pya9 en
+	end	
+
+	length 52	
+		piece st a9 pya9 pya10 2*pya9 en
+	end	
+
+	length 53	
+		piece st a9 pya10 pya9 pya10 pya9 en
+	end	
+
+	length 54	
+		piece st a9 3*pya10 pya9 en
+	end	
+
+	length 55	
+		piece st a8 5*pya8 en
+	end	
+
+	length 56	
+		piece st a8 pya8 pya9 3*pya8 en
+	end	
+
+	length 57	
+		piece st a8 pya8 2*pya9 2*pya8 en
+	end	
+
+	length 58	
+		piece st a8 3*pya9 2*pya8 en
+	end	
+
+	length 59	
+		piece st a8 4*pya9 pya8 en
+	end	
+
+	length 60	
+		piece st a9 4*pya9 pya8 en
+	end	
+
+	length 61	
+		piece st a9 5*pya9 en
+	end	
+
+	length 62	
+		piece st a9 pya9 pya10 3*pya9 pya2 en
+	end	
+
+	length 63	
+		piece st a9 pya9 2*pya10 2*pya9 en
+	end	
+
+	length 64	
+		piece st a8 6*pya8 en
+	end	
+
+	length 65	
+		piece st a8 2*pya8 pya9 3*pya8 en
+	end	
+
+	length 66	
+		piece st a8 pya8 pya9 pya8 pya9 2*pya8 en
+	end	
+
+	length 67	
+		piece st a8 pya8 3*pya9 2*pya8 en
+	end	
+
+	length 68	
+		piece st a8 2*pya9 pya8 2*pya9 pya8 en
+	end	
+
+	length 69	
+		piece st a8 5*pya9 pya8 en
+	end	
+
+	length 70	
+		piece st a9 2*pya9 pya8 3*pya9 en
+	end	
+
+	length 71	
+		piece st a9 6*pya9 en
+	end	
+
+	length 72	
+		piece st a9 2*pya9 pya10 3*pya9 en
+	end	
+
+	length 73	
+		piece st a8 7*pya8 en
+	end	
+
+	length 74	
+		piece st a8 2*pya8 pya9 4*pya8 en
+	end	
+
+	length 75	
+		piece st a8 2*pya8 2*pya9 3*pya8 en
+	end	
+
+	length 76	
+		piece st a8 pya8 3*pya9 3*pya8 en
+	end	
+
+	length 77	
+		piece st a8 pya8 4*pya9 2*pya8 en
+	end	
+
+	length 78	
+		piece st a8 5*pya9 2*pya8 en
+	end	
+
+	length 79	
+		piece st a8 6*pya9 pya8 en
+	end	
+
+	length 80	
+		piece st a9 6*pya9 pya8 en
+	end	
+
+	length 81	
+		piece st a9 7*pya9 en
+	end	
+
+	length 82	
+		piece st a8 8*pya8 en
+	end	
+
+	length 83	
+		piece st a8 3*pya8 pya9 4*pya8 en
+	end	
+
+	length 84	
+		piece st a8 2*pya8 pya9 pya8 pya9 3*pya8 en
+	end	
+
+	length 85	
+		piece st a8 2*pya8 3*pya9 3*pya8 en
+	end	
+
+	length 86	
+		piece st a8 pya8 2*pya9 pya8 2*pya9 2*pya8 en
+	end	
+
+	length 87	
+		piece st a8 pya8 5*pya9 2*pya8 en
+	end	
+
+	length 88	
+		piece st a8 3*pya9 pya8 3*pya9 pya8 en
+	end	
+
+	length 89	
+		piece st a8 7*pya9 pya8 en
+	end	
+
+	length 90	
+		piece st a9 3*pya9 pya8 4*pya9 en
+	end	
+
+	length 91	
+		piece st a8 9*pya8 en
+	end	
+
+	length 92	
+		piece st a8 3*pya8 pya9 5*pya8 en
+	end	
+
+	length 93	
+		piece st a8 3*pya8 2*pya9 4*pya8 en
+	end	
+
+	length 94	
+		piece st a8 2*pya8 3*pya9 4*pya8 en
+	end	
+
+	length 95	
+		piece st a8 2*pya8 4*pya9 3*pya8 en
+	end	
+
+	length 96	
+		piece st a8 pya8 5*pya9 3*pya8 en
+	end	
+
+	length 97	
+		piece st a8 pya8 6*pya9 2*pya8 en
+	end	
+
+	length 98	
+		piece st a8 7*pya9 2*pya8 en
+	end	
+
+	length 99	
+		piece st a8 8*pya9 2*pya8 en
+	end	
+
+	length 100	
+		piece st a8 10*pya8 en
+	end	
+
+	length 101	
+		piece st a8 4*pya8 pya9 5*pya8 en
+	end	
+
+	length 102	
+		piece st a8 3*pya8 pya9 pya8 pya9 4*pya8 en
+	end	
+
+	length 103	
+		piece st a8 3*pya8 3*pya9 4*pya8 en
+	end	
+
+	length 104	
+		piece st a8 2*pya8 2*pya9 pya8 2*pya9 3*pya8 en
+	end	
+
+	length 105	
+		piece st a8 2*pya8 5*pya9 3*pya8 en
+	end	
+
+	length 106	
+		piece st a8 pya8 3*pya9 pya8 3*pya9 2*pya8 en
+	end	
+
+	length 107	
+		piece st a8 pya8 7*pya9 2*pya8 en
+	end	
+
+	length 108	
+		piece st a8 4*pya9 pya8 4*pya9 pya8 en
+	end	
+
+	length 109	
+		piece st a8 11*pya8 en
+	end	
+
+	length 110	
+		piece st a8 4*pya8 pya9 6*pya8 en
+	end	
+
+	length 111	
+		piece st a8 4*pya8 2*pya9 5*pya8 en
+	end	
+
+	length 112	
+		piece st a8 3*pya8 3*pya9 5*pya8 en
+	end	
+
+	length 113	
+		piece st a8 3*pya8 4*pya9 4*pya8 en
+	end	
+
+	length 114	
+		piece st a8 2*pya8 5*pya9 4*pya8 en
+	end	
+
+	length 115	
+		piece st a8 2*pya8 6*pya9 3*pya8 en
+	end	
+
+	length 116	
+		piece st a8 pya8 7*pya9 3*pya8 en
+	end	
+
+	length 117	
+		piece st a8 pya8 8*pya9 2*pya8 en
+	end	
+
+	length 118	
+		piece st a8 12*pya8 en
+	end	
+
+       length 119
+               piece st a8 5*pya8 pya9 6*pya8 en
+       end
+
+       length 120
+               piece st a8 4*pya8 pya9 pya8 pya9 5*pya8 en
+       end
+
+       length 121
+               piece st a8 4*pya8 3*pya9 5*pya8 en
+       end
+
+       length 122
+               piece st a8 3*pya8 2*pya9 pya8 2*pya9 4*pya8 en
+       end
+
+       length 123
+               piece st a8 3*pya8 5*pya9 4*pya8 en
+       end
+
+       length 124
+               piece st a8 2*pya8 3*pya9 pya8 3*pya9 3*pya8 en
+       end
+
+       length 125
+               piece st a8 2*pya8 7*pya9 3*pya8 en
+       end
+
+       length 126
+               piece st a8 pya8 4*pya9 pya8 4*pya9 2*pya8 en
+       end
+
+       length 127
+               piece st a8 13*pya8 en
+       end
+
+       length 128
+               piece st a8 5*pya8 pya9 7*pya8 en
+       end
+
+       length 129
+               piece st a8 5*pya8 2*pya9 6*pya8 en
+       end
+
+       length 130
+               piece st a8 4*pya8 3*pya9 6*pya8 en
+       end
+
+       length 131
+               piece st a8 4*pya8 4*pya9 5*pya8 en
+       end
+
+       length 132
+               piece st a8 3*pya8 5*pya9 5*pya8 en
+       end
+
+       length 133
+               piece st a8 3*pya8 6*pya9 4*pya8 en
+       end
+
+       length 134
+               piece st a8 2*pya8 7*pya9 4*pya8 en
+       end
+
+       length 135
+               piece st a8 2*pya8 8*pya9 3*pya8 en
+       end
+
+       length 136
+               piece st a8 14*pya8 en
+       end
+
+       length 137
+               piece st a8 6*pya8 pya9 7*pya8 en
+       end
+
+       length 138
+               piece st a8 5*pya8 pya9 pya8 pya9 6*pya8 en
+       end
+
+       length 139
+               piece st a8 5*pya8 3*pya9 6*pya8 en
+       end
+
+       length 140
+               piece st a8 4*pya8 2*pya9 pya8 2*pya9 5*pya8 en
+       end
+
+       length 141
+               piece st a8 4*pya8 5*pya9 5*pya8 en
+       end
+
+       length 142
+               piece st a8 3*pya8 3*pya9 pya8 3*pya9 4*pya8 en
+       end
+
+       length 143
+               piece st a8 3*pya8 7*pya9 4*pya8 en
+       end
+
+       length 144
+               piece st a8 2*pya8 4*pya9 pya8 4*pya9 3*pya8 en
+       end
+
+       length 145
+               piece st a8 15*pya8 en
+       end
+
+       length 146
+               piece st a8 6*pya8 pya9 8*pya8 en
+       end
+
+       length 147
+               piece st a8 6*pya8 2*pya9 7*pya8 en
+       end
+
+       length 148
+               piece st a8 5*pya8 3*pya9 7*pya8 en
+       end
+
+       length 149
+               piece st a8 5*pya8 4*pya9 6*pya8 en
+       end
+
+       length 150
+               piece st a8 4*pya8 5*pya9 6*pya8 en
+       end
+
+       length 151
+               piece st a8 4*pya8 6*pya9 5*pya8 en
+       end
+
+       length 152
+               piece st a8 3*pya8 7*pya9 5*pya8 en
+       end
+
+       length 153
+               piece st a8 3*pya8 8*pya9 4*pya8 en
+       end
+
+       length 154
+               piece st a8 16*pya8 en
+       end
+
+       length 155
+               piece st a8 7*pya8 pya9 8*pya8 en
+       end
+
+       length 156
+               piece st a8 6*pya8 pya9 pya8 pya9 7*pya8 en
+       end
+
+       length 157
+               piece st a8 6*pya8 3*pya9 7*pya8 en
+       end
+
+       length 158
+               piece st a8 5*pya8 2*pya9 pya8 2*pya9 6*pya8 en
+       end
+
+       length 159
+               piece st a8 5*pya8 5*pya9 6*pya8 en
+       end
+
+       length 160
+               piece st a8 4*pya8 3*pya9 pya8 3*pya9 5*pya8 en
+       end
+
+       length 161
+               piece st a8 4*pya8 7*pya9 5*pya8 en
+       end
+
+       length 162
+               piece st a8 3*pya8 4*pya9 pya8 4*pya9 4*pya8 en
+       end
+
+       length 163
+               piece st a8 17*pya8 en
+       end
+
+       length 164
+               piece st a8 7*pya8 pya9 9*pya8 en
+       end
+
+       length 165
+               piece st a8 7*pya8 2*pya9 8*pya8 en
+       end
+
+       length 166
+               piece st a8 6*pya8 3*pya9 8*pya8 en
+       end
+
+       length 167
+               piece st a8 6*pya8 4*pya9 7*pya8 en
+       end
+
+       length 168
+               piece st a8 5*pya8 5*pya9 7*pya8 en
+       end
+
+       length 169
+               piece st a8 5*pya8 6*pya9 6*pya8 en
+       end
+
+       length 170
+               piece st a8 4*pya8 7*pya9 6*pya8 en
+       end
+
+       length 171
+               piece st a8 4*pya8 8*pya9 5*pya8 en
+       end
+
+       length 172
+               piece st a8 18*pya8 en
+       end
+
+       length 173
+               piece st a8 8*pya8 pya9 9*pya8 en
+       end
+
+       length 174
+               piece st a8 7*pya8 pya9 pya8 pya9 8*pya8 en
+       end
+
+       length 175
+               piece st a8 7*pya8 3*pya9 8*pya8 en
+       end
+
+       length 176
+               piece st a8 6*pya8 2*pya9 pya8 2*pya9 7*pya8 en
+       end
+
+       length 177
+               piece st a8 6*pya8 5*pya9 7*pya8 en
+       end
+
+       length 178
+               piece st a8 5*pya8 3*pya9 pya8 3*pya9 6*pya8 en
+       end
+
+       length 179
+               piece st a8 5*pya8 7*pya9 6*pya8 en
+       end
+
+       length 180
+               piece st a8 4*pya8 4*pya9 pya8 4*pya9 5*pya8 en
+       end
+
+       length 181
+               piece st a8 19*pya8 en
+       end
+
+       length 182
+               piece st a8 8*pya8 pya9 10*pya8 en
+       end
+
+       length 183
+               piece st a8 8*pya8 2*pya9 9*pya8 en
+       end
+
+       length 184
+               piece st a8 7*pya8 3*pya9 9*pya8 en
+       end
+
+       length 185
+               piece st a8 7*pya8 4*pya9 8*pya8 en
+       end
+
+       length 186
+               piece st a8 6*pya8 5*pya9 8*pya8 en
+       end
+
+       length 187
+               piece st a8 6*pya8 6*pya9 7*pya8 en
+       end
+
+       length 188
+               piece st a8 5*pya8 7*pya9 7*pya8 en
+       end
+
+       length 189
+               piece st a8 5*pya8 8*pya9 6*pya8 en
+       end
+
+       length 190
+               piece st a8 20*pya8 en
+       end
+
+       length 191
+               piece st a8 9*pya8 pya9 10*pya8 en
+       end
+
+       length 192
+               piece st a8 8*pya8 pya9 pya8 pya9 9*pya8 en
+       end
+
+       length 193
+               piece st a8 8*pya8 3*pya9 9*pya8 en
+       end
+
+       length 194
+               piece st a8 7*pya8 2*pya9 pya8 2*pya9 8*pya8 en
+       end
+
+       length 195
+               piece st a8 7*pya8 5*pya9 8*pya8 en
+       end
+
+       length 196
+               piece st a8 6*pya8 3*pya9 pya8 3*pya9 7*pya8 en
+       end
+
+       length 197
+               piece st a8 6*pya8 7*pya9 7*pya8 en
+       end
+
+       length 198
+               piece st a8 5*pya8 4*pya9 pya8 4*pya9 6*pya8 en
+       end
+
+       length 199
+               piece st a8 21*pya8 en
+       end
+
+       length 200
+               piece st a8 9*pya8 pya9 11*pya8 en
+       end
+
+       length 201
+               piece st a8 9*pya8 2*pya9 10*pya8 en
+       end
+
+       length 202
+               piece st a8 8*pya8 3*pya9 10*pya8 en
+       end
+
+       length 203
+               piece st a8 8*pya8 4*pya9 9*pya8 en
+       end
+
+       length 204
+               piece st a8 7*pya8 5*pya9 9*pya8 en
+       end
+
+       length 205
+               piece st a8 7*pya8 6*pya9 8*pya8 en
+       end
+
+       length 206
+               piece st a8 6*pya8 7*pya9 8*pya8 en
+       end
+
+       length 207
+               piece st a8 6*pya8 8*pya9 7*pya8 en
+       end
+
+       length 208
+               piece st a8 22*pya8 en
+       end
+
+       length 209
+               piece st a8 10*pya8 pya9 11*pya8 en
+       end
+
+       length 210
+               piece st a8 9*pya8 pya9 pya8 pya9 10*pya8 en
+       end
+
+       length 211
+               piece st a8 9*pya8 3*pya9 10*pya8 en
+       end
+
+       length 212
+               piece st a8 8*pya8 2*pya9 pya8 2*pya9 9*pya8 en
+       end
+
+       length 213
+               piece st a8 8*pya8 5*pya9 9*pya8 en
+       end
+
+       length 214
+               piece st a8 7*pya8 3*pya9 pya8 3*pya9 8*pya8 en
+       end
+
+       length 215
+               piece st a8 7*pya8 7*pya9 8*pya8 en
+       end
+
+       length 216
+               piece st a8 6*pya8 4*pya9 pya8 4*pya9 7*pya8 en
+       end
+
+       length 217
+               piece st a8 23*pya8 en
+       end
+
+       length 218
+               piece st a8 10*pya8 pya9 12*pya8 en
+       end
+
+       length 219
+               piece st a8 10*pya8 2*pya9 11*pya8 en
+       end
+
+       length 220
+               piece st a8 9*pya8 3*pya9 11*pya8 en
+       end
+
+       length 221
+               piece st a8 9*pya8 4*pya9 10*pya8 en
+       end
+
+       length 222
+               piece st a8 8*pya8 5*pya9 10*pya8 en
+       end
+
+       length 223
+               piece st a8 8*pya8 6*pya9 9*pya8 en
+       end
+
+       length 224
+               piece st a8 7*pya8 7*pya9 9*pya8 en
+       end
+
+       length 225
+               piece st a8 7*pya8 8*pya9 8*pya8 en
+       end
+
+       length 226
+               piece st a8 24*pya8 en
+       end
+
+       length 227
+               piece st a8 11*pya8 pya9 12*pya8 en
+       end
+
+       length 228
+               piece st a8 10*pya8 pya9 pya8 pya9 11*pya8 en
+       end
+
+       length 229
+               piece st a8 10*pya8 3*pya9 11*pya8 en
+       end
+
+       length 230
+               piece st a8 9*pya8 2*pya9 pya8 2*pya9 10*pya8 en
+       end
+
+       length 231
+               piece st a8 9*pya8 5*pya9 10*pya8 en
+       end
+
+       length 232
+               piece st a8 8*pya8 3*pya9 pya8 3*pya9 9*pya8 en
+       end
+
+       length 233
+               piece st a8 8*pya8 7*pya9 9*pya8 en
+       end
+
+       length 234
+               piece st a8 7*pya8 4*pya9 pya8 4*pya9 8*pya8 en
+       end
+
+       length 235
+               piece st a8 25*pya8 en
+       end
+
+       length 236
+               piece st a8 11*pya8 pya9 13*pya8 en
+       end
+
+       length 237
+               piece st a8 11*pya8 2*pya9 12*pya8 en
+       end
+
+       length 238
+               piece st a8 10*pya8 3*pya9 12*pya8 en
+       end
+
+       length 239
+               piece st a8 10*pya8 4*pya9 11*pya8 en
+       end
+
+       length 240
+               piece st a8 9*pya8 5*pya9 11*pya8 en
+       end
+
+       length 241
+               piece st a8 9*pya8 6*pya9 10*pya8 en
+       end
+
+       length 242
+               piece st a8 8*pya8 7*pya9 10*pya8 en
+       end
+
+       length 243
+               piece st a8 8*pya8 8*pya9 9*pya8 en
+       end
+
+       length 244
+               piece st a8 26*pya8 en
+       end
+
+       length 245
+               piece st a8 12*pya8 pya9 13*pya8 en
+       end
+
+       length 246
+               piece st a8 11*pya8 pya9 pya8 pya9 12*pya8 en
+       end
+
+       length 247
+               piece st a8 11*pya8 3*pya9 12*pya8 en
+       end
+
+       length 248
+               piece st a8 10*pya8 2*pya9 pya8 2*pya9 11*pya8 en
+       end
+
+       length 249
+               piece st a8 10*pya8 5*pya9 11*pya8 en
+       end
+
+       length 250
+               piece st a8 9*pya8 3*pya9 pya8 3*pya9 10*pya8 en
+       end
+
+       length 251
+               piece st a8 9*pya8 7*pya9 10*pya8 en
+       end
+
+       length 252
+               piece st a8 8*pya8 4*pya9 pya8 4*pya9 9*pya8 en
+       end
+
+       length 253
+               piece st a8 27*pya8 en
+       end
+
+       length 254
+               piece st a8 12*pya8 pya9 14*pya8 en
+       end
+
+       length 255
+               piece st a8 12*pya8 2*pya9 13*pya8 en
+       end
+end
+
+# small steel arch RHW-2
+
+bridge 1
+
+section st
+	piece <0x3305a000, 3>:580
+end
+
+section py
+	piece <0x3305c000, 3>:580
+end
+
+section en
+	piece <0x3305b000, 3>:580
+end
+
+section ssaa4
+	piece <0x33051000, 3>
+	piece <0x33052000, 3>
+	piece <0x33053000, 3>
+	piece <0x33054000, 3>
+end
+
+section ssab
+	piece <0x33055000, 3>
+end
+
+section ssac4
+	piece <0x33056000, 3>
+	piece <0x33057000, 3>
+	piece <0x33058000, 3>
+	piece <0x33059000, 3>
+end
+
+section a2
+	piece <0x33051000, 3>
+	piece <0x33059000, 3>
+end
+
+section a6
+	piece <0x33051000, 3>
+	piece <0x33052000, 3>
+	piece <0x33053000, 3>
+	piece <0x33057000, 3>
+	piece <0x33058000, 3>
+	piece <0x33059000, 3>
+end
+
+section a8
+	piece ssaa4 ssac4
+end
+
+section a9
+	piece ssaa4 ssab ssac4
+end
+
+section a10
+	piece ssaa4 2*ssab ssac4
+end
+
+section pya2
+	piece py a2
+end
+
+section pya8
+	piece py a8
+end
+
+section pya9
+	piece py a9
+end
+
+section pya10
+	piece py a10
+end
+
+	length 10
+		piece st a8 en
+	end
+
+	length 11
+		piece st a9 en
+	end
+
+	length 12
+		piece st a10 en
+	end
+
+	length 13
+		piece st ssaa4 3*ssab ssac4 en
+	end
+
+	length 14
+		piece st a9 pya2 en
+	end
+
+	length 15
+		piece st a6 py a6 en
+	end
+
+	length 16
+		piece st a2 pya8 pya2 en
+	end
+
+	length 17
+		piece st a6 pya8 en
+	end
+
+	length 18
+		piece st a6 pya9 en
+	end
+
+	length 19					
+		piece st a8 pya8 en				
+	end					
+						
+	length 20					
+		piece st a9 pya8 en				
+	end					
+						
+	length 21					
+		piece st a9 pya9 en				
+	end					
+						
+	length 22					
+		piece st a10 pya9 en				
+	end					
+						
+	length 23					
+		piece st a10 pya10 en				
+	end					
+						
+	length 24					
+		piece st a6 pya8 py a6 en				
+	end					
+						
+	length 25					
+		piece st a6 pya9 py a6 en				
+	end					
+						
+	length 26					
+		piece st a6 pya8 pya8 en				
+	end					
+						
+	length 27					
+		piece st a6 pya9 pya8 en				
+	end					
+						
+	length 28	
+		piece st a8 2*pya8 en
+	end	
+
+	length 29	
+		piece st a8 pya9 pya8 en
+	end	
+
+	length 30	
+		piece st a9 pya8 pya9 en
+	end	
+
+	length 31	
+		piece st a9 2*pya9 en
+	end	
+
+	length 32	
+		piece st a9 pya10 pya9 en
+	end	
+
+	length 33	
+		piece st a6 2*pya8 py a6 en
+	end	
+
+	length 34	
+		piece st a6 pya8 pya9 py a6 en
+	end	
+
+	length 35
+		piece st a6 3*pya8 en
+	end	
+
+	length 36	
+		piece st a6 pya8 pya9 pya8 en
+	end	
+
+	length 37	
+		piece st a8 3*pya8 en
+	end	
+
+	length 38	
+		piece st a8 pya9 2*pya8 en
+	end	
+
+	length 39	
+		piece st a8 2*pya9 pya8 en
+	end	
+
+	length 40	
+		piece st a9 2*pya9 pya8 en
+	end	
+
+	length 41	
+		piece st a9 3*pya9 en
+	end	
+
+	length 42	
+		piece st a9 pya10 2*pya9 en
+	end	
+
+	length 43	
+		piece st a9 2*pya10 pya9 en
+	end	
+
+	length 44	
+		piece st a10 2*pya10 pya9 en
+	end	
+
+	length 45	
+		piece st a10 3*pya10 en
+	end	
+
+	length 46	
+		piece st a8 4*pya8 en
+	end	
+
+	length 47	
+		piece st a8 pya8 pya9 2*pya8 en
+	end	
+
+	length 48	
+		piece st a8 pya9 pya8 pya9 pya8 en
+	end	
+
+	length 49	
+		piece st a8 3*pya9 pya8 en
+	end	
+
+	length 50	
+		piece st a9 pya9 pya8 2*pya9 en
+	end	
+
+	length 51	
+		piece st a9 4*pya9 en
+	end	
+
+	length 52	
+		piece st a9 pya9 pya10 2*pya9 en
+	end	
+
+	length 53	
+		piece st a9 pya10 pya9 pya10 pya9 en
+	end	
+
+	length 54	
+		piece st a9 3*pya10 pya9 en
+	end	
+
+	length 55	
+		piece st a8 5*pya8 en
+	end	
+
+	length 56	
+		piece st a8 pya8 pya9 3*pya8 en
+	end	
+
+	length 57	
+		piece st a8 pya8 2*pya9 2*pya8 en
+	end	
+
+	length 58	
+		piece st a8 3*pya9 2*pya8 en
+	end	
+
+	length 59	
+		piece st a8 4*pya9 pya8 en
+	end	
+
+	length 60	
+		piece st a9 4*pya9 pya8 en
+	end	
+
+	length 61	
+		piece st a9 5*pya9 en
+	end	
+
+	length 62	
+		piece st a9 pya9 pya10 3*pya9 pya2 en
+	end	
+
+	length 63	
+		piece st a9 pya9 2*pya10 2*pya9 en
+	end	
+
+	length 64	
+		piece st a8 6*pya8 en
+	end	
+
+	length 65	
+		piece st a8 2*pya8 pya9 3*pya8 en
+	end	
+
+	length 66	
+		piece st a8 pya8 pya9 pya8 pya9 2*pya8 en
+	end	
+
+	length 67	
+		piece st a8 pya8 3*pya9 2*pya8 en
+	end	
+
+	length 68	
+		piece st a8 2*pya9 pya8 2*pya9 pya8 en
+	end	
+
+	length 69	
+		piece st a8 5*pya9 pya8 en
+	end	
+
+	length 70	
+		piece st a9 2*pya9 pya8 3*pya9 en
+	end	
+
+	length 71	
+		piece st a9 6*pya9 en
+	end	
+
+	length 72	
+		piece st a9 2*pya9 pya10 3*pya9 en
+	end	
+
+	length 73	
+		piece st a8 7*pya8 en
+	end	
+
+	length 74	
+		piece st a8 2*pya8 pya9 4*pya8 en
+	end	
+
+	length 75	
+		piece st a8 2*pya8 2*pya9 3*pya8 en
+	end	
+
+	length 76	
+		piece st a8 pya8 3*pya9 3*pya8 en
+	end	
+
+	length 77	
+		piece st a8 pya8 4*pya9 2*pya8 en
+	end	
+
+	length 78	
+		piece st a8 5*pya9 2*pya8 en
+	end	
+
+	length 79	
+		piece st a8 6*pya9 pya8 en
+	end	
+
+	length 80	
+		piece st a9 6*pya9 pya8 en
+	end	
+
+	length 81	
+		piece st a9 7*pya9 en
+	end	
+
+	length 82	
+		piece st a8 8*pya8 en
+	end	
+
+	length 83	
+		piece st a8 3*pya8 pya9 4*pya8 en
+	end	
+
+	length 84	
+		piece st a8 2*pya8 pya9 pya8 pya9 3*pya8 en
+	end	
+
+	length 85	
+		piece st a8 2*pya8 3*pya9 3*pya8 en
+	end	
+
+	length 86	
+		piece st a8 pya8 2*pya9 pya8 2*pya9 2*pya8 en
+	end	
+
+	length 87	
+		piece st a8 pya8 5*pya9 2*pya8 en
+	end	
+
+	length 88	
+		piece st a8 3*pya9 pya8 3*pya9 pya8 en
+	end	
+
+	length 89	
+		piece st a8 7*pya9 pya8 en
+	end	
+
+	length 90	
+		piece st a9 3*pya9 pya8 4*pya9 en
+	end	
+
+	length 91	
+		piece st a8 9*pya8 en
+	end	
+
+	length 92	
+		piece st a8 3*pya8 pya9 5*pya8 en
+	end	
+
+	length 93	
+		piece st a8 3*pya8 2*pya9 4*pya8 en
+	end	
+
+	length 94	
+		piece st a8 2*pya8 3*pya9 4*pya8 en
+	end	
+
+	length 95	
+		piece st a8 2*pya8 4*pya9 3*pya8 en
+	end	
+
+	length 96	
+		piece st a8 pya8 5*pya9 3*pya8 en
+	end	
+
+	length 97	
+		piece st a8 pya8 6*pya9 2*pya8 en
+	end	
+
+	length 98	
+		piece st a8 7*pya9 2*pya8 en
+	end	
+
+	length 99	
+		piece st a8 8*pya9 2*pya8 en
+	end	
+
+	length 100	
+		piece st a8 10*pya8 en
+	end	
+
+	length 101	
+		piece st a8 4*pya8 pya9 5*pya8 en
+	end	
+
+	length 102	
+		piece st a8 3*pya8 pya9 pya8 pya9 4*pya8 en
+	end	
+
+	length 103	
+		piece st a8 3*pya8 3*pya9 4*pya8 en
+	end	
+
+	length 104	
+		piece st a8 2*pya8 2*pya9 pya8 2*pya9 3*pya8 en
+	end	
+
+	length 105	
+		piece st a8 2*pya8 5*pya9 3*pya8 en
+	end	
+
+	length 106	
+		piece st a8 pya8 3*pya9 pya8 3*pya9 2*pya8 en
+	end	
+
+	length 107	
+		piece st a8 pya8 7*pya9 2*pya8 en
+	end	
+
+	length 108	
+		piece st a8 4*pya9 pya8 4*pya9 pya8 en
+	end	
+
+	length 109	
+		piece st a8 11*pya8 en
+	end	
+
+	length 110	
+		piece st a8 4*pya8 pya9 6*pya8 en
+	end	
+
+	length 111	
+		piece st a8 4*pya8 2*pya9 5*pya8 en
+	end	
+
+	length 112	
+		piece st a8 3*pya8 3*pya9 5*pya8 en
+	end	
+
+	length 113	
+		piece st a8 3*pya8 4*pya9 4*pya8 en
+	end	
+
+	length 114	
+		piece st a8 2*pya8 5*pya9 4*pya8 en
+	end	
+
+	length 115	
+		piece st a8 2*pya8 6*pya9 3*pya8 en
+	end	
+
+	length 116	
+		piece st a8 pya8 7*pya9 3*pya8 en
+	end	
+
+	length 117	
+		piece st a8 pya8 8*pya9 2*pya8 en
+	end	
+
+	length 118	
+		piece st a8 12*pya8 en
+	end	
+
+        length 119
+                piece st a8 5*pya8 pya9 6*pya8 en
+        end
+
+        length 120
+                piece st a8 4*pya8 pya9 pya8 pya9 5*pya8 en
+        end
+
+        length 121
+                piece st a8 4*pya8 3*pya9 5*pya8 en
+        end
+
+        length 122
+                piece st a8 3*pya8 2*pya9 pya8 2*pya9 4*pya8 en
+        end
+
+        length 123
+                piece st a8 3*pya8 5*pya9 4*pya8 en
+        end
+
+        length 124
+                piece st a8 2*pya8 3*pya9 pya8 3*pya9 3*pya8 en
+        end
+
+        length 125
+                piece st a8 2*pya8 7*pya9 3*pya8 en
+        end
+
+        length 126
+                piece st a8 pya8 4*pya9 pya8 4*pya9 2*pya8 en
+        end
+
+        length 127
+                piece st a8 13*pya8 en
+        end
+
+        length 128
+                piece st a8 5*pya8 pya9 7*pya8 en
+        end
+
+        length 129
+                piece st a8 5*pya8 2*pya9 6*pya8 en
+        end
+
+        length 130
+                piece st a8 4*pya8 3*pya9 6*pya8 en
+        end
+
+        length 131
+                piece st a8 4*pya8 4*pya9 5*pya8 en
+        end
+
+        length 132
+                piece st a8 3*pya8 5*pya9 5*pya8 en
+        end
+
+        length 133
+                piece st a8 3*pya8 6*pya9 4*pya8 en
+        end
+
+        length 134
+                piece st a8 2*pya8 7*pya9 4*pya8 en
+        end
+
+        length 135
+                piece st a8 2*pya8 8*pya9 3*pya8 en
+        end
+
+        length 136
+                piece st a8 14*pya8 en
+        end
+
+        length 137
+                piece st a8 6*pya8 pya9 7*pya8 en
+        end
+
+        length 138
+                piece st a8 5*pya8 pya9 pya8 pya9 6*pya8 en
+        end
+
+        length 139
+                piece st a8 5*pya8 3*pya9 6*pya8 en
+        end
+
+        length 140
+                piece st a8 4*pya8 2*pya9 pya8 2*pya9 5*pya8 en
+        end
+
+        length 141
+                piece st a8 4*pya8 5*pya9 5*pya8 en
+        end
+
+        length 142
+                piece st a8 3*pya8 3*pya9 pya8 3*pya9 4*pya8 en
+        end
+
+        length 143
+                piece st a8 3*pya8 7*pya9 4*pya8 en
+        end
+
+        length 144
+                piece st a8 2*pya8 4*pya9 pya8 4*pya9 3*pya8 en
+        end
+
+        length 145
+                piece st a8 15*pya8 en
+        end
+
+        length 146
+                piece st a8 6*pya8 pya9 8*pya8 en
+        end
+
+        length 147
+                piece st a8 6*pya8 2*pya9 7*pya8 en
+        end
+
+        length 148
+                piece st a8 5*pya8 3*pya9 7*pya8 en
+        end
+
+        length 149
+                piece st a8 5*pya8 4*pya9 6*pya8 en
+        end
+
+        length 150
+                piece st a8 4*pya8 5*pya9 6*pya8 en
+        end
+
+        length 151
+                piece st a8 4*pya8 6*pya9 5*pya8 en
+        end
+
+        length 152
+                piece st a8 3*pya8 7*pya9 5*pya8 en
+        end
+
+        length 153
+                piece st a8 3*pya8 8*pya9 4*pya8 en
+        end
+
+        length 154
+                piece st a8 16*pya8 en
+        end
+
+        length 155
+                piece st a8 7*pya8 pya9 8*pya8 en
+        end
+
+        length 156
+                piece st a8 6*pya8 pya9 pya8 pya9 7*pya8 en
+        end
+
+        length 157
+                piece st a8 6*pya8 3*pya9 7*pya8 en
+        end
+
+        length 158
+                piece st a8 5*pya8 2*pya9 pya8 2*pya9 6*pya8 en
+        end
+
+        length 159
+                piece st a8 5*pya8 5*pya9 6*pya8 en
+        end
+
+        length 160
+                piece st a8 4*pya8 3*pya9 pya8 3*pya9 5*pya8 en
+        end
+
+        length 161
+                piece st a8 4*pya8 7*pya9 5*pya8 en
+        end
+
+        length 162
+                piece st a8 3*pya8 4*pya9 pya8 4*pya9 4*pya8 en
+        end
+
+        length 163
+                piece st a8 17*pya8 en
+        end
+
+        length 164
+                piece st a8 7*pya8 pya9 9*pya8 en
+        end
+
+        length 165
+                piece st a8 7*pya8 2*pya9 8*pya8 en
+        end
+
+        length 166
+                piece st a8 6*pya8 3*pya9 8*pya8 en
+        end
+
+        length 167
+                piece st a8 6*pya8 4*pya9 7*pya8 en
+        end
+
+        length 168
+                piece st a8 5*pya8 5*pya9 7*pya8 en
+        end
+
+        length 169
+                piece st a8 5*pya8 6*pya9 6*pya8 en
+        end
+
+        length 170
+                piece st a8 4*pya8 7*pya9 6*pya8 en
+        end
+
+        length 171
+                piece st a8 4*pya8 8*pya9 5*pya8 en
+        end
+
+        length 172
+                piece st a8 18*pya8 en
+        end
+
+        length 173
+                piece st a8 8*pya8 pya9 9*pya8 en
+        end
+
+        length 174
+                piece st a8 7*pya8 pya9 pya8 pya9 8*pya8 en
+        end
+
+        length 175
+                piece st a8 7*pya8 3*pya9 8*pya8 en
+        end
+
+        length 176
+                piece st a8 6*pya8 2*pya9 pya8 2*pya9 7*pya8 en
+        end
+
+        length 177
+                piece st a8 6*pya8 5*pya9 7*pya8 en
+        end
+
+        length 178
+                piece st a8 5*pya8 3*pya9 pya8 3*pya9 6*pya8 en
+        end
+
+        length 179
+                piece st a8 5*pya8 7*pya9 6*pya8 en
+        end
+
+        length 180
+                piece st a8 4*pya8 4*pya9 pya8 4*pya9 5*pya8 en
+        end
+
+        length 181
+                piece st a8 19*pya8 en
+        end
+
+        length 182
+                piece st a8 8*pya8 pya9 10*pya8 en
+        end
+
+        length 183
+                piece st a8 8*pya8 2*pya9 9*pya8 en
+        end
+
+        length 184
+                piece st a8 7*pya8 3*pya9 9*pya8 en
+        end
+
+        length 185
+                piece st a8 7*pya8 4*pya9 8*pya8 en
+        end
+
+        length 186
+                piece st a8 6*pya8 5*pya9 8*pya8 en
+        end
+
+        length 187
+                piece st a8 6*pya8 6*pya9 7*pya8 en
+        end
+
+        length 188
+                piece st a8 5*pya8 7*pya9 7*pya8 en
+        end
+
+        length 189
+                piece st a8 5*pya8 8*pya9 6*pya8 en
+        end
+
+        length 190
+                piece st a8 20*pya8 en
+        end
+
+        length 191
+                piece st a8 9*pya8 pya9 10*pya8 en
+        end
+
+        length 192
+                piece st a8 8*pya8 pya9 pya8 pya9 9*pya8 en
+        end
+
+        length 193
+                piece st a8 8*pya8 3*pya9 9*pya8 en
+        end
+
+        length 194
+                piece st a8 7*pya8 2*pya9 pya8 2*pya9 8*pya8 en
+        end
+
+        length 195
+                piece st a8 7*pya8 5*pya9 8*pya8 en
+        end
+
+        length 196
+                piece st a8 6*pya8 3*pya9 pya8 3*pya9 7*pya8 en
+        end
+
+        length 197
+                piece st a8 6*pya8 7*pya9 7*pya8 en
+        end
+
+        length 198
+                piece st a8 5*pya8 4*pya9 pya8 4*pya9 6*pya8 en
+        end
+
+        length 199
+                piece st a8 21*pya8 en
+        end
+
+        length 200
+                piece st a8 9*pya8 pya9 11*pya8 en
+        end
+
+        length 201
+                piece st a8 9*pya8 2*pya9 10*pya8 en
+        end
+
+        length 202
+                piece st a8 8*pya8 3*pya9 10*pya8 en
+        end
+
+        length 203
+                piece st a8 8*pya8 4*pya9 9*pya8 en
+        end
+
+        length 204
+                piece st a8 7*pya8 5*pya9 9*pya8 en
+        end
+
+        length 205
+                piece st a8 7*pya8 6*pya9 8*pya8 en
+        end
+
+        length 206
+                piece st a8 6*pya8 7*pya9 8*pya8 en
+        end
+
+        length 207
+                piece st a8 6*pya8 8*pya9 7*pya8 en
+        end
+
+        length 208
+                piece st a8 22*pya8 en
+        end
+
+        length 209
+                piece st a8 10*pya8 pya9 11*pya8 en
+        end
+
+        length 210
+                piece st a8 9*pya8 pya9 pya8 pya9 10*pya8 en
+        end
+
+        length 211
+                piece st a8 9*pya8 3*pya9 10*pya8 en
+        end
+
+        length 212
+                piece st a8 8*pya8 2*pya9 pya8 2*pya9 9*pya8 en
+        end
+
+        length 213
+                piece st a8 8*pya8 5*pya9 9*pya8 en
+        end
+
+        length 214
+                piece st a8 7*pya8 3*pya9 pya8 3*pya9 8*pya8 en
+        end
+
+        length 215
+                piece st a8 7*pya8 7*pya9 8*pya8 en
+        end
+
+        length 216
+                piece st a8 6*pya8 4*pya9 pya8 4*pya9 7*pya8 en
+        end
+
+        length 217
+                piece st a8 23*pya8 en
+        end
+
+        length 218
+                piece st a8 10*pya8 pya9 12*pya8 en
+        end
+
+        length 219
+                piece st a8 10*pya8 2*pya9 11*pya8 en
+        end
+
+        length 220
+                piece st a8 9*pya8 3*pya9 11*pya8 en
+        end
+
+        length 221
+                piece st a8 9*pya8 4*pya9 10*pya8 en
+        end
+
+        length 222
+                piece st a8 8*pya8 5*pya9 10*pya8 en
+        end
+
+        length 223
+                piece st a8 8*pya8 6*pya9 9*pya8 en
+        end
+
+        length 224
+                piece st a8 7*pya8 7*pya9 9*pya8 en
+        end
+
+        length 225
+                piece st a8 7*pya8 8*pya9 8*pya8 en
+        end
+
+        length 226
+                piece st a8 24*pya8 en
+        end
+
+        length 227
+                piece st a8 11*pya8 pya9 12*pya8 en
+        end
+
+        length 228
+                piece st a8 10*pya8 pya9 pya8 pya9 11*pya8 en
+        end
+
+        length 229
+                piece st a8 10*pya8 3*pya9 11*pya8 en
+        end
+
+        length 230
+                piece st a8 9*pya8 2*pya9 pya8 2*pya9 10*pya8 en
+        end
+
+        length 231
+                piece st a8 9*pya8 5*pya9 10*pya8 en
+        end
+
+        length 232
+                piece st a8 8*pya8 3*pya9 pya8 3*pya9 9*pya8 en
+        end
+
+        length 233
+                piece st a8 8*pya8 7*pya9 9*pya8 en
+        end
+
+        length 234
+                piece st a8 7*pya8 4*pya9 pya8 4*pya9 8*pya8 en
+        end
+
+        length 235
+                piece st a8 25*pya8 en
+        end
+
+        length 236
+                piece st a8 11*pya8 pya9 13*pya8 en
+        end
+
+        length 237
+                piece st a8 11*pya8 2*pya9 12*pya8 en
+        end
+
+        length 238
+                piece st a8 10*pya8 3*pya9 12*pya8 en
+        end
+
+        length 239
+                piece st a8 10*pya8 4*pya9 11*pya8 en
+        end
+
+        length 240
+                piece st a8 9*pya8 5*pya9 11*pya8 en
+        end
+
+        length 241
+                piece st a8 9*pya8 6*pya9 10*pya8 en
+        end
+
+        length 242
+                piece st a8 8*pya8 7*pya9 10*pya8 en
+        end
+
+        length 243
+                piece st a8 8*pya8 8*pya9 9*pya8 en
+        end
+
+        length 244
+                piece st a8 26*pya8 en
+        end
+
+        length 245
+                piece st a8 12*pya8 pya9 13*pya8 en
+        end
+
+        length 246
+                piece st a8 11*pya8 pya9 pya8 pya9 12*pya8 en
+        end
+
+        length 247
+                piece st a8 11*pya8 3*pya9 12*pya8 en
+        end
+
+        length 248
+                piece st a8 10*pya8 2*pya9 pya8 2*pya9 11*pya8 en
+        end
+
+        length 249
+                piece st a8 10*pya8 5*pya9 11*pya8 en
+        end
+
+        length 250
+                piece st a8 9*pya8 3*pya9 pya8 3*pya9 10*pya8 en
+        end
+
+        length 251
+                piece st a8 9*pya8 7*pya9 10*pya8 en
+        end
+
+        length 252
+                piece st a8 8*pya8 4*pya9 pya8 4*pya9 9*pya8 en
+        end
+
+        length 253
+                piece st a8 27*pya8 en
+        end
+
+        length 254
+                piece st a8 12*pya8 pya9 14*pya8 en
+        end
+
+        length 255
+                piece st a8 12*pya8 2*pya9 13*pya8 en
+        end
+end
