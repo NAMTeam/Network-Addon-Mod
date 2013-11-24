@@ -163,7 +163,7 @@ CopyFrom    = 0x751F1
 [HighwayIntersectionInfo_0x000051F2]
 ;Added by Tarkus 6/2/2012.
 ;FlexRamp Type D1-Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5780300F
+Piece = 0.0, 0.0, 0, 0, 0x5783300F
 PreviewEffect = preview_flexramp_d1orth_000
 
 CellLayout =.......
@@ -189,7 +189,7 @@ ConsLayout =..^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780300F
+PlaceQueryID = 0x5783300F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151F2]
 CopyFrom    = 0x51F2
@@ -306,7 +306,7 @@ CopyFrom    = 0x751F3
 ;Added by Tarkus 5/17/2008.
 ;FlexRamp Type B1-Diagonal Off/Exit Ramp
 Piece = 0.0, 0.0, 0, 0, 0x5cea0005
-PreviewEffect = preview_draggable_mis___011
+PreviewEffect = preview_flexramp_a1diag_000
 
 CellLayout =.......
 CellLayout =.......
@@ -332,7 +332,7 @@ ConsLayout =..^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cea0000
+PlaceQueryID = 0x5780600F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151F5]
 CopyFrom    = 0x51F5
@@ -379,7 +379,7 @@ CopyFrom    = 0x751F5
 ;Added by Tarkus 2/18/2013.
 ;FlexRamp Type A1-Diagonal Off/Exit Ramp
 Piece = 0.0, 0.0, 0, 0, 0x5cea0005
-PreviewEffect = preview_draggable_mis___011
+PreviewEffect = preview_flexramp_b1diag_000
 
 CellLayout =.......
 CellLayout =...a...
@@ -403,7 +403,7 @@ ConsLayout =..^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cea0000
+PlaceQueryID = 0x5780700F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151F4]
 CopyFrom    = 0x51F4
@@ -448,12 +448,12 @@ CopyFrom    = 0x751F4
 [HighwayIntersectionInfo_0x000051FC]
 ;Added by Tarkus 5/17/2008.
 ;FLEXRamp Type A2
-Piece = 0.0, 0.0, 0, 0, 0x5780000F
-PreviewEffect = preview_flexramp_a1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5764000F
+PreviewEffect = preview_flexramp_a2orth_000
 
 CellLayout =.......
-CellLayout =..Z....
-CellLayout =..ab<..
+CellLayout =..Z.<..
+CellLayout =..ab...
 CellLayout =..ab...
 CellLayout =..cc...
 CellLayout =.......
@@ -466,8 +466,8 @@ CheckType = d - dirtroad: 0x02020000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
 ConsLayout =.......
-ConsLayout =..|....
-ConsLayout =....<..
+ConsLayout =..|.<..
+ConsLayout =.......
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =.......
@@ -520,12 +520,12 @@ CopyFrom    = 0x751FC
 [HighwayIntersectionInfo_0x000051FD]
 ;Added by Tarkus 5/17/2008.
 ;FLEXRamp Type D2
-Piece = 0.0, 0.0, 0, 0, 0x5780000F
-PreviewEffect = preview_flexramp_a1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5765300F
+PreviewEffect = preview_flexramp_d2orth_000
 
 CellLayout =.......
-CellLayout =..Z....
-CellLayout =..db<..
+CellLayout =..Z.<..
+CellLayout =..db...
 CellLayout =..db...
 CellLayout =..cc...
 CellLayout =..cc...
@@ -538,8 +538,8 @@ CheckType = d - dirtroad: 0x02040400, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
 ConsLayout =.......
-ConsLayout =..|....
-ConsLayout =....<..
+ConsLayout =..|.<..
+ConsLayout =.......
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =.......
@@ -547,7 +547,7 @@ ConsLayout =..^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780000F
+PlaceQueryID = 0x5765300F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151FD]
 CopyFrom    = 0x51FD
@@ -592,11 +592,12 @@ CopyFrom    = 0x751FD
 [HighwayIntersectionInfo_0x000051FE]
 ;Added by Tarkus 5/17/2008.
 ;FlexRamp Type B2-Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5780100F
-PreviewEffect = preview_flexramp_b1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5764100F
+PreviewEffect = preview_flexramp_b2orth_000
 
-CellLayout =...Z.....
-CellLayout =...db...<
+CellLayout =.........
+CellLayout =...Z....<
+CellLayout =...db....
 CellLayout =...ab....
 CellLayout =...cc....
 CellLayout =..fe.....
@@ -610,9 +611,9 @@ CheckType = e - dirtroad: 0x00000301, 0xffffffff optional
 CheckType = f - dirtroad: 0x03010000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
-
 ConsLayout =.........
-ConsLayout =...||...<
+ConsLayout =........<
+ConsLayout =...||....
 ConsLayout =...||....
 ConsLayout =...||....
 ConsLayout =.........
@@ -620,7 +621,7 @@ ConsLayout =...^.....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780C00F
+PlaceQueryID = 0x5764100F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151FE]
 CopyFrom    = 0x51FE
@@ -665,11 +666,12 @@ CopyFrom    = 0x751FE
 [HighwayIntersectionInfo_0x000051FF]
 ;Added by Tarkus 5/17/2008.
 ;FlexRamp Type E2-Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5780100F
-PreviewEffect = preview_flexramp_b1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5765400F
+PreviewEffect = preview_flexramp_e2orth_000
 
-CellLayout =...Z.....
-CellLayout =...db...<
+CellLayout =.........
+CellLayout =...Z....<
+CellLayout =...db....
 CellLayout =...ab....
 CellLayout =...cc....
 CellLayout =..fe.....
@@ -683,9 +685,9 @@ CheckType = e - dirtroad: 0x00000301, 0xffffffff optional
 CheckType = f - dirtroad: 0x03010000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
-
 ConsLayout =.........
-ConsLayout =...||...<
+ConsLayout =........<
+ConsLayout =...||....
 ConsLayout =...||....
 ConsLayout =...||....
 ConsLayout =.........
@@ -693,7 +695,7 @@ ConsLayout =...^.....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780C00F
+PlaceQueryID = 0x5765400F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151FF]
 CopyFrom    = 0x51FF
@@ -737,8 +739,8 @@ CopyFrom    = 0x751FF
 [HighwayIntersectionInfo_0x000051EF]
 ;Added by Tarkus 5/17/2008.
 ;FlexRamp Type A1 Inside-Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5780000F
-PreviewEffect = preview_flexramp_a1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5783070F
+PreviewEffect = preview_flexramp_a1orthi000
 
 CellLayout =.......
 CellLayout =.......
@@ -764,7 +766,7 @@ ConsLayout =..^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780000F
+PlaceQueryID = 0x5783070F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151EF]
 CopyFrom    = 0x51EF
@@ -809,8 +811,8 @@ CopyFrom    = 0x751EF
 [HighwayIntersectionInfo_0x000051EE]
 ;Added by Tarkus 5/17/2008.
 ;FlexRamp Type B1-Inside Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5780100F
-PreviewEffect = preview_flexramp_b1orth_000
+Piece = 0.0, 0.0, 0, 0, 0x5783190F
+PreviewEffect = preview_flexramp_b1orthi000
 
 CellLayout =.........
 CellLayout =...Zc...<
@@ -835,7 +837,7 @@ ConsLayout =...^.....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5780100F
+PlaceQueryID = 0x5783190F
 Costs       = 400
 [HighwayIntersectionInfo_0x000151EE]
 CopyFrom    = 0x51EE
