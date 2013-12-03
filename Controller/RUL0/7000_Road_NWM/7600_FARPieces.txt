@@ -15,8 +15,10 @@ AddTypes     = 760A, 1760A, 2760A, 3760A, 4760A, 5760A, 6760A, 7760A, 8760A, 976
 AddTypes     = 760B, 1760B, 2760B, 3760B, 4760B, 5760B, 6760B, 7760B, 8760B, 9760B, A760B, B760B, C760B, D760B, E760B, F760B ;OWFAR Long Curve
 AddTypes     = 760C, 1760C, 2760C, 3760C, 4760C, 5760C, 6760C, 7760C, 8760C, 9760C, A760C, B760C, C760C, D760C, E760C, F760C ;OWFAR Straight Piece
 AddTypes     = 760D, 1760D, 2760D, 3760D, 4760D, 5760D, 6760D, 7760D, 8760D, 9760D, A760D, B760D, C760D, D760D, E760D, F760D ;45 Degree to OWFAR Transition
-AddTypes	 = 760E, 4760E, 1760E, 5760E, 2760E, 6760E, 3760E, 7760E, 8760E, 9760E, A760E, B760E, C760E, D760E, E760E, F760E ;AVE to FA-AVE Transition
+AddTypes	 = 760E, 4760E, 1760E, 5760E, 2760E, 6760E, 3760E, 7760E, 8760E, 9760E, A760E, B760E, C760E, D760E, E760E, F760E ;Ortho AVE to FA-AVE Transition
 AddTypes	 = 760F, 4760F, 1760F, 5760F, 2760F, 6760F, 3760F, 7760F, 8760F, 9760F, A760F, B760F, C760F, D760F, E760F, F760F ;FA-AVE Straight Piece
+AddTypes	 = 761F, 4761F, 1761F, 5761F, 2761F, 6761F, 3761F, 7761F, 8761F, 9761F, A761F, B761F, C761F, D761F, E761F, F761F ;Dia AVE to FA-AVE Transition
+
 
 ;###separator###
 
@@ -1158,4 +1160,69 @@ CopyFrom    = 0x6760F
 CopyFrom    = 0x7760F
 
 
+[HighwayIntersectionInfo_0x0000761F]
+;Added by Swordmaster 2 Dec 2013
+;Dia AVE to FA-AVE Transition
+Piece = 0.0, 0.0, 0, 0, 0x54600805
+PreviewEffect = preview_faave_to_dia_ave_001
 
+CellLayout =........
+CellLayout =..aa...<
+CellLayout =..aaa...
+CellLayout =..aacy..
+CellLayout =....bz..
+CellLayout =..^.....
+
+CheckType = a - avenue:0x04020000
+CheckType = b - avenue:0x00030100
+CheckType = c - avenue:0x01030103
+CheckType = y - avenue:0x01000003, 0xFFFFFFFF optional
+CheckType = z - avenue:0x00000103, 0x0000FFFF optional
+
+ConsLayout =........
+ConsLayout =..--...<
+ConsLayout =..--\...
+ConsLayout =..--\...
+ConsLayout =....\...
+ConsLayout =..^.....
+
+AutoTileBase=	0x54600800
+PlaceQueryID = 0x54600800
+Costs = 75
+[HighwayIntersectionInfo_0x0001761F]
+CopyFrom = 0x761F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0002761F]
+CopyFrom = 0x761F
+Rotate = 2
+[HighwayIntersectionInfo_0x0003761F]
+CopyFrom = 0x761F
+Rotate = 3
+[HighwayIntersectionInfo_0x0004761F]
+CopyFrom = 0x761F
+Transpose = 1
+[HighwayIntersectionInfo_0x0005761F]
+CopyFrom = 0x4761F
+Rotate	= 1
+[HighwayIntersectionInfo_0x0006761F]
+CopyFrom = 0x4761F
+Rotate	= 2
+[HighwayIntersectionInfo_0x0007761F]
+CopyFrom = 0x4761F
+Rotate	= 3
+[HighwayIntersectionInfo_0x0008761F]
+CopyFrom    = 0x761F
+[HighwayIntersectionInfo_0x0009761F]
+CopyFrom    = 0x1761F
+[HighwayIntersectionInfo_0x000A761F]
+CopyFrom    = 0x2761F
+[HighwayIntersectionInfo_0x000B761F]
+CopyFrom    = 0x3761F
+[HighwayIntersectionInfo_0x000C761F]
+CopyFrom    = 0x4761F
+[HighwayIntersectionInfo_0x000D761F]
+CopyFrom    = 0x5761F
+[HighwayIntersectionInfo_0x000E761F]
+CopyFrom    = 0x6761F
+[HighwayIntersectionInfo_0x000F761F]
+CopyFrom    = 0x7761F
