@@ -38,6 +38,7 @@ AddTypes     = 511F, 1511F, 2511F, 3511F, 4511F, 5511F, 6511F, 7511F, 8511F, 951
 AddTypes     = 5120, 15120, 25120, 35120, 45120, 55120, 65120, 75120, 85120, 95120, A5120, B5120, C5120, D5120, E5120, F5120 ;ERHW-6S Type D1
 AddTypes     = 5121, 15121, 25121, 35121, 45121, 55121, 65121, 75121, 85121, 95121, A5121, B5121, C5121, D5121, E5121, F5121 ;RHW-6C Type A1
 AddTypes     = 5122, 15122, 25122, 35122, 45122, 55122, 65122, 75122, 85122, 95122, A5122, B5122, C5122, D5122, E5122, F5122 ;RHW-6C Type B1
+AddTypes     = 5139, 15139, 25139, 35139, 45139, 55139, 65139, 75139, 85139, 95139, A5139, B5139, C5139, D5139, E5139, F5139 ;Diagonal RHW-6C Type A1
 AddTypes     = 5123, 15123, 25123, 35123, 45123, 55123, 65123, 75123, 85123, 95123, A5123, B5123, C5123, D5123, E5123, F5123 ;RHW-6C Type D1 Dual Shift
 AddTypes     = 5124, 15124, 25124, 35124, 45124, 55124, 65124, 75124, 85124, 95124, A5124, B5124, C5124, D5124, E5124, F5124 ;RHW-8S Type D1 Dual Shift
 AddTypes     = 5125, 15125, 25125, 35125, 45125, 55125, 65125, 75125, 85125, 95125, A5125, B5125, C5125, D5125, E5125, F5125 ;RHW-6C Type D1 Dual Inside Shift
@@ -6416,5 +6417,113 @@ CopyFrom = 0x15138
 CopyFrom = 0x25138
 [HighwayIntersectionInfo_0x00075138]
 CopyFrom = 0x35138
+
+
+
+[HighwayIntersectionInfo_0x00005139]
+;Added by jdenm8 2011/10/5.
+;RHW-6C/MIS-1 Exit Ramp-Style B--Diagonal
+Piece = -16.0, -32.0, 0, 0, 0x5cec1475
+PreviewEffect = preview_drhw6cb1
+
+CellLayout =........
+CellLayout =...g....
+CellLayout =..dc....
+CellLayout =...ab...
+CellLayout =..dbaf.<
+CellLayout =...e....
+CellLayout =....^...
+
+CheckType = a - dirtroad: 0x00030100 
+CheckType = b - dirtroad: 0x01000003 
+CheckType = c - dirtroad: 0x01000203 
+CheckType = d - dirtroad: 0x00030000, 0x00ff0000 optional
+CheckType = e - dirtroad: 0x00000100, 0x0000ff00 optional
+CheckType = f - dirtroad: 0x00000003, 0x000000ff optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =...+....
+ConsLayout =...\\...
+ConsLayout =...\\..<
+ConsLayout =........
+ConsLayout =....^...
+
+AutoTileBase=	0x5cec1470
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1470
+Costs       = 400
+[HighwayIntersectionInfo_0x00015139]
+CopyFrom    = 0x5139
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025139]
+CopyFrom    = 0x5139
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035139]
+CopyFrom    = 0x5139
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00045139]
+;Added by jdenm8 2011/10/5.
+;RHW-6C/MIS-1 Entrance Ramp-Style B - Diagonal
+Piece = -16.0, -32.0, 0, 0, 0x5cec1675
+PreviewEffect = preview_drhw6cb1_mirror
+
+CellLayout =........
+CellLayout =....g...
+CellLayout =....cd..
+CellLayout =...ba...
+CellLayout =..fabd.<
+CellLayout =....e...
+CellLayout =....^...
+
+CheckType = a - dirtroad: 0x00000301
+CheckType = b - dirtroad: 0x03010000 
+CheckType = c - dirtroad: 0x03010200
+CheckType = d - dirtroad: 0x00000001, 0x000000ff optional
+CheckType = e - dirtroad: 0x00000300, 0x0000ff00 optional
+CheckType = f - dirtroad: 0x00010000, 0x00ff0000 optional
+CheckType = g - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+
+ConsLayout =........
+ConsLayout =........
+ConsLayout =....+...
+ConsLayout =...//...
+ConsLayout =...//..<
+ConsLayout =........
+ConsLayout =....^...
+
+AutoTileBase=	0x5cec1670
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cec1670
+Costs       = 400
+[HighwayIntersectionInfo_0x00055139]
+CopyFrom    = 0x45139
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065139]
+CopyFrom    = 0x45139
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075139]
+CopyFrom    = 0x45139
+Rotate		= 3
+[HighwayIntersectionInfo_0x00085139]
+CopyFrom    = 0x5139
+[HighwayIntersectionInfo_0x00095139]
+CopyFrom    = 0x15139
+[HighwayIntersectionInfo_0x000A5139]
+CopyFrom    = 0x25139
+[HighwayIntersectionInfo_0x000B5139]
+CopyFrom    = 0x35139
+[HighwayIntersectionInfo_0x000C5139]
+CopyFrom    = 0x45139
+[HighwayIntersectionInfo_0x000D5139]
+CopyFrom    = 0x55139
+[HighwayIntersectionInfo_0x000E5139]
+CopyFrom    = 0x65139
+[HighwayIntersectionInfo_0x000F5139]
+CopyFrom    = 0x75139
+
 
 ;End RHW SECTION
