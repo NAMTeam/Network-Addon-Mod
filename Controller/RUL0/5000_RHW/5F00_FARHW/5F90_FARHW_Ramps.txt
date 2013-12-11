@@ -15,15 +15,15 @@ AddTypes =  5FB0, 45FB0, 15FB0, 55FB0, 25FB0, 65FB0, 35FB0, 75FB0 ;RHW-4 Type C1
 AddTypes = 85FB0, C5FB0, 95FB0, D5FB0, A5FB0, E5FB0, B5FB0, F5FB0 ;RHW-4 Type C1 Inside
 AddTypes =  5FB1, 45FB1, 15FB1, 55FB1, 25FB1, 65FB1, 35FB1, 75FB1 ;RHW-4 Type C1 diagonal
 AddTypes =  5FB2, 45FB2, 15FB2, 55FB2, 25FB2, 65FB2, 35FB2, 75FB2 ;RHW-4 Type F1
-
+AddTypes = 85FB2, C5FB2, 95FB2, D5FB2, A5FB2, E5FB2, B5FB2, F5FB2 ;RHW-4 Type F1 diagonal
 ;
 ;FARHW-6 h3ids 5fc
 AddTypes =  5FC0, 45FC0, 15FC0, 55FC0, 25FC0, 65FC0, 35FC0, 75FC0 ;RHW-6S Type C1
-;AddTypes = 85FC1, C5FC1, 95FC1, D5FC1, A5FC1, E5FC1, B5FC1, F5FC1 ;reserved for future use
 AddTypes =  5FC2, 45FC2, 15FC2, 55FC2, 25FC2, 65FC2, 35FC2, 75FC2 ;RHW-6S Type C1 diagonal
 AddTypes =  5FC3, 45FC3, 15FC3, 55FC3, 25FC3, 65FC3, 35FC3, 75FC3 ;RHW-6S Type C2
 ;AddTypes = 85FC3, C5FC3, 95FC3, D5FC3, A5FC3, E5FC3, B5FC3, F5FC3 ;reserved for future use
 AddTypes =  5FC1, 45FC1, 15FC1, 55FC1, 25FC1, 65FC1, 35FC1, 75FC1 ;RHW-6S Type F1
+AddTypes = 85FC1, C5FC1, 95FC1, D5FC1, A5FC1, E5FC1, B5FC1, F5FC1 ;RHW-6S Type F1 diagonal
 AddTypes = 85FC0, C5FC0, 95FC0, D5FC0, A5FC0, E5FC0, B5FC0, F5FC0 ;RHW-6C Type C1
 AddTypes =  5FC4, 45FC4, 15FC4, 55FC4, 25FC4, 65FC4, 35FC4, 75FC4 ;RHW-6S Type F2
 ;
@@ -1273,6 +1273,91 @@ Rotate = 2
 CopyFrom = 0x45FB1
 Rotate = 3
 
+[HighwayIntersectionInfo_0x00085FB2]
+;Added by MandelSoft 2013/11/11
+;Diagonal RHW-4 Ramp Type F1
+Piece = 0.0, 0.0, 0, 0, 0x5e131465
+PreviewEffect = preview_farhw4_ramp_f1_01
+
+CellLayout =.........
+CellLayout =....a....
+CellLayout =...bc+...
+CellLayout =..bc+....
+CellLayout =.bc+....<
+CellLayout =.d.......
+CellLayout =.^.......
+
+CheckType = a - dirtroad: 0x03010000, 0xffffffff optional
+CheckType = b - dirtroad: 0x03010000
+CheckType = c - dirtroad: 0x00000301
+CheckType = d - dirtroad: 0x00000301, 0xffffffff optional
+
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...//-...
+ConsLayout =..//-....
+ConsLayout =.//-....<
+ConsLayout =./.......
+ConsLayout =.^.......
+
+AutoTileBase = 0x5e131460
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e131460
+Costs = 75
+
+[HighwayIntersectionInfo_0x00095FB2]
+CopyFrom = 0x85FB2
+Rotate = 1
+[HighwayIntersectionInfo_0x000A5FB2]
+CopyFrom = 0x85FB2
+Rotate = 2
+[HighwayIntersectionInfo_0x000B5FB2]
+CopyFrom = 0x85FB2
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000C5FB2]
+;Added by MandelSoft 2013/11/11
+;Diagonal RHW-4 Ramp Type F1
+Piece = 0.0, 0.0, 0, 0, 0x5e131935
+PreviewEffect = preview_farhw4_ramp_f1_02
+
+CellLayout =.........
+CellLayout =..a......
+CellLayout =.+cb.....
+CellLayout =..+cb....
+CellLayout =...+cb..<
+CellLayout =.....d...
+CellLayout =.....^...
+
+CheckType = a - dirtroad: 0x01000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x00030100
+CheckType = d - dirtroad: 0x00030100, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.-\\.....
+ConsLayout =..-\\....
+ConsLayout =...-\\..<
+ConsLayout =.....\...
+ConsLayout =.....^...
+
+AutoTileBase = 0x5e131960
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e131960
+Costs = 75
+
+[HighwayIntersectionInfo_0x000D5FB2]
+CopyFrom = 0xC5FB2
+Rotate = 1
+[HighwayIntersectionInfo_0x000E5FB2]
+CopyFrom = 0xC5FB2
+Rotate = 2
+[HighwayIntersectionInfo_0x000F5FB2]
+CopyFrom = 0xC5FB2
+Rotate = 3
+
 
 [HighwayIntersectionInfo_0x00005FF0]
 ;Added by SA 08/30/2011
@@ -1438,6 +1523,84 @@ CopyFrom = 0x45FC2
 Rotate = 2
 [HighwayIntersectionInfo_0x00075FC2]
 CopyFrom = 0x45FC2
+Rotate = 3
+
+[HighwayIntersectionInfo_0x00085FC1]
+;Added by MandelSoft 06/09/2010
+;Diagonal RHW-6S Ramp Type F1
+Piece = -32.0, 0.0, 0, 0, 0x5e132035
+PreviewEffect = preview_farhw6s_ramp_f1_01
+
+CellLayout =.........
+CellLayout =....A....
+CellLayout =...bc+..<
+CellLayout =..bc+....
+CellLayout =.Ac+.....
+CellLayout =....^....
+
+CheckType = A - dirtroad: 0x03010000, 0xffffffff optional
+CheckType = b - dirtroad: 0x03010000
+CheckType = c - dirtroad: 0x00000301
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =...//-..<
+ConsLayout =..//-....
+ConsLayout =..//.....
+ConsLayout =....^....
+
+AutoTileBase = 0x5e132030
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e132030
+Costs = 75
+
+[HighwayIntersectionInfo_0x00095FC1]
+CopyFrom = 0x85FC1
+Rotate = 1
+[HighwayIntersectionInfo_0x000A5FC1]
+CopyFrom = 0x85FC1
+Rotate = 2
+[HighwayIntersectionInfo_0x000B5FC1]
+CopyFrom = 0x85FC1
+Rotate = 3
+
+[HighwayIntersectionInfo_0x000C5FC1]
+;Added by MandelSoft 06/09/2013
+;Diagonal RHW-6S Ramp Type F1
+Piece = -16.0, 0.0, 0, 0, 0x5e132435
+PreviewEffect = preview_farhw6s_ramp_f1_02
+
+CellLayout =.........
+CellLayout =..A......
+CellLayout =.+cb....<
+CellLayout =..+cb....
+CellLayout =...+cA...
+CellLayout =..^......
+
+CheckType = A - dirtroad: 0x01000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x00030100
+
+ConsLayout =.........
+ConsLayout =.........
+ConsLayout =.-\\....<
+ConsLayout =..-\\....
+ConsLayout =...\\....
+ConsLayout =..^......
+
+AutoTileBase = 0x5e132430
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5e132430
+Costs = 75
+
+[HighwayIntersectionInfo_0x000D5FC1]
+CopyFrom = 0xC5FC1
+Rotate = 1
+[HighwayIntersectionInfo_0x000E5FC1]
+CopyFrom = 0xC5FC1
+Rotate = 2
+[HighwayIntersectionInfo_0x000F5FC1]
+CopyFrom = 0xC5FC1
 Rotate = 3
 
 
