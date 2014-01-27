@@ -5,6 +5,7 @@ AddTypes     = B062, 1B062, 2B062, 3B062, 4B062, 5B062, 6B062, 7B062 ;El-Rail ov
 AddTypes     = B063, 1B063, 2B063, 3B063, 4B063, 5B063, 6B063, 7B063 ;El-Rail over Road-4 straight (no support)
 AddTypes     = B064, 1B064, 2B064, 3B064, 4B064, 5B064, 6B064, 7B064 ;El-Rail over Road-2 straight
 AddTypes     = B065, 1B065, 2B065, 3B065, 4B065, 5B065, 6B065, 7B065 ;El-Rail over Road-2 straight (no support)
+AddTypes     = B066, 1B066, 2B066, 3B066, 4B066, 5B066, 6B066, 7B066 ;El-Rail over Avenue to Tram in Avenue
 
 
 ;###separator###
@@ -417,3 +418,59 @@ Rotate = 1
 [HighwayIntersectionInfo_0x0007B065]
 CopyFrom = 0x5B065
 Rotate = 1
+
+[HighwayIntersectionInfo_0x0000B066]
+;Added by droric 1/25/2014.
+;El-Over-Ave to Tram in Ave
+Piece = 0.0, 0.0, 0, 0, 0x58460005
+PreviewEffect = preview_eloverave_to_tia
+
+CellLayout =......
+CellLayout =......
+CellLayout =..aa<.
+CellLayout =..aa..
+CellLayout =..aa..
+CellLayout =..aa..
+CellLayout =......
+CellLayout =...^..
+
+CheckType = a - road: 0x02000200
+
+ConsLayout =......
+ConsLayout =......
+ConsLayout =..||<.
+ConsLayout =..||..
+ConsLayout =..||..
+ConsLayout =..||..
+ConsLayout =......
+ConsLayout =...^..
+
+AutoTileBase = 0x58460000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58460000
+Costs       = 100
+
+[HighwayIntersectionInfo_0x0001B066]
+CopyFrom = 0xB066
+Rotate = 1
+[HighwayIntersectionInfo_0x0002B066]
+CopyFrom = 0xB066
+Rotate = 2
+[HighwayIntersectionInfo_0x0003B066]
+CopyFrom = 0xB066
+Rotate = 3
+[HighwayIntersectionInfo_0x0004B066]
+CopyFrom = 0xB066
+Transpose = 1
+[HighwayIntersectionInfo_0x0005B066]
+CopyFrom = 0xB066
+Rotate = 1
+Transpose = 1
+[HighwayIntersectionInfo_0x0006B066]
+CopyFrom = 0xB066
+Rotate = 2
+Transpose = 1
+[HighwayIntersectionInfo_0x0007B066]
+CopyFrom = 0xB066
+Rotate = 3
+Transpose = 1
