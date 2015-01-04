@@ -2788,51 +2788,52 @@ Rotate		= 1
 
 
 [HighwayIntersectionInfo_0x0000532B]
-;Added by Tarkus 01/24/2011
-;DDRHW-4-to-Dual-ERHW-4 (15m/22.5m) Connector
-Piece = 0.0, 0.0, 0, 0, 0x5cbe6005
-PreviewEffect = preview_draggable_ddrhw_003
+;edited by eggman121 8/10/2014
+;Real Highway L3-L2 RHW to DDRHW Piece 1
+Piece = 0.0, 0.0, 0, 0, 0x5cbe7000
+PreviewEffect = preview_ddrhw_transition_2
 
-CellLayout =.....
-CellLayout =.fb.<
-CellLayout =.cd..
-CellLayout =.e...
-CellLayout =.a...
-CellLayout =..^..
+CellLayout = ..a...
+CellLayout = ..b...
+CellLayout = ..b...
+CellLayout = ..bb.<
+CellLayout = ..bb..
+CellLayout = ..cb..
+CellLayout = ...b..
+CellLayout = ...d..
+CellLayout = ..^...
 
-CheckType = a - rail: 0x02000200 dirtroad: 0x00010100, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000000,0xff000000 check
 CheckType = b - dirtroad: 0x02000200
-CheckType = c - dirtroad: 0x02000200
-CheckType = d - dirtroad: 0x02000200
-CheckType = e - dirtroad: 0x02000200
-CheckType = f - dirtroad: 0x02000200 lightrail: 0x01000001, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 , 0xffffffff check
+CheckType = d - dirtroad: 0x02000200 , 0xffffffff check
 
-ConsLayout =.....
-ConsLayout =..|.<
-ConsLayout =./|..
-ConsLayout =.|...
-ConsLayout =.....
-ConsLayout =..^..
+ConsLayout = ......
+ConsLayout = ..|...
+ConsLayout = ..|...
+ConsLayout = ..||.<
+ConsLayout = ..||..
+ConsLayout = ..||..
+ConsLayout = ...|..
+ConsLayout = ......
+ConsLayout = ..^...
 
-AutoTileBase=	0x5cbe6000
+AutoTileBase = 0x5cbe7000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5cbe6000
-Costs       = 3000
+PlaceQueryID = 0x5cbe7000
+Costs = 375
 [HighwayIntersectionInfo_0x0001532B]
-CopyFrom    = 0x532B
-Rotate		= 1
+CopyFrom = 0x532B
+Rotate = 1
 [HighwayIntersectionInfo_0x0002532B]
-CopyFrom    = 0x532B
-Rotate		= 2
+CopyFrom = 0x532B
+Rotate = 2
 [HighwayIntersectionInfo_0x0003532B]
-CopyFrom    = 0x532B
-Rotate		= 3
+CopyFrom = 0x532B
+Rotate = 3
 [HighwayIntersectionInfo_0x0004532B]
 CopyFrom    = 0x532B
-Transpose	= 1
-CheckType = a - rail: 0x00020002 dirtroad: 0x01010000, 0xffffffff optional
-CheckType = f - dirtroad: 0x00020002 lightrail: 0x00000101, 0xffffffff optional
-;CheckType = g - dirtroad: 0x00020002 lightrail: 0x01010000, 0xffffffff optional
+Transpose = 1
 [HighwayIntersectionInfo_0x0005532B]
 CopyFrom    = 0x4532B
 Rotate		= 3
@@ -2842,7 +2843,6 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x0007532B]
 CopyFrom    = 0x4532B
 Rotate		= 1
-
 
 
 [HighwayIntersectionInfo_0x0000532C]
