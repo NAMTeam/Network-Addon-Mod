@@ -274,10 +274,12 @@ object CompileFlexFlyRul0And1 {
   }
 
   def printRul0(file: File, resolver: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+    printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
     for (hid <- hid0 until hid0 + 40) {
       val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
-      printer.println(f"AddTypes = $numbers ; flexfly")
+      val tag = if (hid == hid0) "RotationRing" else "AddTypes"
+      printer.println(f"$tag = $numbers ; flexfly")
     }
     printer.println()
     printer.println(";###separator###")
@@ -299,6 +301,7 @@ object CompileFlexFlyRul0And1 {
   }
 
   def printRul1(file: File, resolve: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+    printer.println(";This file was generated automatically. DO NOT EDIT!")
     for (seg <- flexFlySegs) {
       val idTile = resolve(seg)
       val falsie = convertVirtualTile(seg)
@@ -310,8 +313,8 @@ object CompileFlexFlyRul0And1 {
     * 'target/FlexFlyRUL1.txt'.
     */
   def main(args: Array[String]): Unit = {
-    val rul0File = new File("target/FlexFlyRUL0.txt")
-    val rul1File = new File("target/FlexFlyRUL1.txt")
+    val rul0File = new File("Controller/RUL0/5000_RHW/5B00_FlexFly5x5_MANAGED.txt")
+    val rul1File = new File("Controller/RUL1/09_Dirtroad/11_FlexFly_falsies_MANAGED.txt")
     val resolver = new FlexFlyResolver
     printRul0(rul0File, resolver)
     printRul1(rul1File, resolver)

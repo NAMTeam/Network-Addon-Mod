@@ -11,7 +11,7 @@ object Main extends AbstractMain {
 
   lazy val resolve: IdResolver = new RhwResolver orElse new MiscResolver orElse new NwmResolver
   lazy val generator: RuleGenerator = new RhwRuleGenerator(resolve)
-  lazy val file = new File("target/output.txt")
+  lazy val file = new File("./Controller/RUL2/07_RHW/RhwMetaGenerated_MANAGED.txt")
 }
 
 abstract class AbstractMain {
@@ -27,6 +27,7 @@ abstract class AbstractMain {
     // TODO to be revised, later, in order to make more efficient
     val printer = new PrintWriter(file)
     try {
+      printer.println(";This file was generated automatically. DO NOT EDIT!")
       val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
       for (rule <- generator.queue if seen.add(new EquivRule(rule))) {
         printer.println(rule(0) + "," + rule(1) + "=" + rule(2) + "," + rule(3))

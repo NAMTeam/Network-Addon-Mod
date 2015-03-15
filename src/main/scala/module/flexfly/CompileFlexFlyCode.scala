@@ -10,6 +10,6 @@ object CompileFlexFlyCode extends module.AbstractMain {
 
   lazy val resolve: IdResolver = new FlexFlyResolver
   lazy val generator: RuleGenerator = new FlexFlyRuleGenerator(resolve)
-  lazy val file = new File("target/FlexFlyRUL2.txt")
+  lazy val file = new File("Controller/RUL2/07_RHW/Sec7j_FLEXFly/Sec7j_FLEXFly_MANAGED.txt")
 
 }

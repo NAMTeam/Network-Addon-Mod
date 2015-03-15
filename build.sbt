@@ -15,6 +15,8 @@ scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-target:jvm-1.6")
 
+mainClass in Compile := Some("metarules.module.CompileAllMetarules")
+
 initialCommands in console := """
 import metarules._, meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}
