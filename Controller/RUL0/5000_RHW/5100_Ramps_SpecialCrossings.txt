@@ -63,6 +63,9 @@ AddTypes     = 5136, 15136, 25136, 35136, 45136, 55136, 65136, 75136, 85136, 951
 ;Specialized Crossing Pieces
 AddTypes     = 5137, 15137, 25137, 35137, 45137, 55137, 65137, 75137 ;Type 4-A1 Volleyball Intersection
 AddTypes     = 5138, 15138, 25138, 35138, 45138, 55138, 65138, 75138 ;Type 4-D1 Volleyball Intersection
+AddTypes = 513C, 1513C, 2513C, 3513C, 4513C, 5513C, 6513C, 7513C ;Type 4-A2A Volleyball SCP
+AddTypes = 513A, 1513A, 2513A, 3513A, 4513A, 5513A, 6513A, 7513A ;Type 4-A2B Volleyball SCP
+AddTypes = 513B, 1513B, 2513B, 3513B, 4513B, 5513B, 6513B, 7513B ;Type 4-A2C Volleyball SCP
 
 ;###separator###
 
@@ -6524,6 +6527,168 @@ CopyFrom    = 0x55139
 CopyFrom    = 0x65139
 [HighwayIntersectionInfo_0x000F5139]
 CopyFrom    = 0x75139
+
+
+[HighwayIntersectionInfo_0x0000513C]
+;Created by jdenm8 on 2014/07/28
+;Type 4-A2A Volleyball Specialised Crossing Piece (SCP)
+Piece = 16.0, 16.0, 0, 0, 0x57E00305
+PreviewEffect = preview_4_a2a_volleyball_scp
+
+
+CellLayout = ...h...
+CellLayout = ...ab..
+CellLayout = .icdek<
+CellLayout = ..fg...
+CellLayout = ...j...
+CellLayout = ...^...
+
+CheckType = a - dirtroad: 0x02030200
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - avenue: 0x01020002
+CheckType = d - avenue: 0x02020202
+CheckType = e - dirtroad: 0x00020102
+CheckType = f - dirtroad: 0x00030100
+CheckType = g - avenue: 0x02000203
+CheckType = h - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = i - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = j - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = k - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = ...|\..
+ConsLayout = ..-#-.<
+ConsLayout = ..\|...
+ConsLayout = .......
+ConsLayout = ...^...
+
+AutoTileBase = 0x57E00300
+PlaceQueryID = 0x57E00300
+Costs = 750
+[HighwayIntersectionInfo_0x0001513C]
+CopyFrom    = 0x513C
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002513C]
+CopyFrom    = 0x513C
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003513C]
+CopyFrom    = 0x513C
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004513C]
+CopyFrom    = 0x0513C
+[HighwayIntersectionInfo_0x0005513C]
+CopyFrom    = 0x1513C
+[HighwayIntersectionInfo_0x0006513C]
+CopyFrom    = 0x2513C
+[HighwayIntersectionInfo_0x0007513C]
+CopyFrom    = 0x3513C
+
+[HighwayIntersectionInfo_0x0000513A]
+;Created by jdenm8 on 2014/09/08
+;Type 4-A2B Volleyball ACP
+Piece = 0.0, 0.0, 0, 0, 0x57E00605
+PreviewEffect = type_4-a2bvolleyball_preview
+
+CellLayout = ...h...
+CellLayout = ...ab..
+CellLayout = .icdek<
+CellLayout = ..fg...
+CellLayout = ...j...
+CellLayout = ...^...
+
+CheckType = a - avenue: 0x02030200
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - dirtroad: 0x01020002
+CheckType = d - avenue: 0x02020202
+CheckType = e - avenue: 0x00020102
+CheckType = f - dirtroad: 0x00030100
+CheckType = g - dirtroad: 0x02000203
+CheckType = h - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = i - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = j - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = k - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = ...|\..
+ConsLayout = ..-#-.<
+ConsLayout = ..\|...
+ConsLayout = .......
+ConsLayout = ...^...
+
+AutoTileBase = 0x57E00600
+PlaceQueryID = 0x57E00600
+Costs = 100
+[HighwayIntersectionInfo_0x0001513A]
+CopyFrom    = 0x513A
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002513A]
+CopyFrom    = 0x513A
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003513A]
+CopyFrom    = 0x513A
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004513A]
+CopyFrom    = 0x0513A
+[HighwayIntersectionInfo_0x0005513A]
+CopyFrom    = 0x1513A
+[HighwayIntersectionInfo_0x0006513A]
+CopyFrom    = 0x2513A
+[HighwayIntersectionInfo_0x0007513A]
+CopyFrom    = 0x3513A
+
+[HighwayIntersectionInfo_0x0000513B]
+;Created by jdenm8 on 2014/09/08
+;Type 4-A2C Volleyball SCP
+Piece = 0.0, 0.0, 0, 0, 0x57E00C05
+PreviewEffect = type_4-a2cvolleyball_preview
+
+CellLayout = ...h...
+CellLayout = ...ab..
+CellLayout = .icdek<
+CellLayout = ..fg...
+CellLayout = ...j...
+CellLayout = ...^...
+
+CheckType = a - avenue: 0x02030200
+CheckType = b - dirtroad: 0x01000003
+CheckType = c - avenue: 0x01020002
+CheckType = d - dirtroad: 0x02020202
+CheckType = e - avenue: 0x00020102
+CheckType = f - dirtroad: 0x00030100
+CheckType = g - avenue: 0x02000203
+CheckType = h - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = i - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = j - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = k - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = ...|\..
+ConsLayout = ..-#-.<
+ConsLayout = ..\|...
+ConsLayout = .......
+ConsLayout = ...^...
+
+AutoTileBase = 0x57E00C00
+PlaceQueryID = 0x57E00C00
+Costs = 100
+[HighwayIntersectionInfo_0x0001513B]
+CopyFrom    = 0x513B
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002513B]
+CopyFrom    = 0x513B
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003513B]
+CopyFrom    = 0x513B
+Rotate      = 3
+[HighwayIntersectionInfo_0x0004513B]
+CopyFrom    = 0x0513B
+[HighwayIntersectionInfo_0x0005513B]
+CopyFrom    = 0x1513B
+[HighwayIntersectionInfo_0x0006513B]
+CopyFrom    = 0x2513B
+[HighwayIntersectionInfo_0x0007513B]
+CopyFrom    = 0x3513B
+
 
 
 ;End RHW SECTION
