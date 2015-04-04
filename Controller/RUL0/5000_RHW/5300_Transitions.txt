@@ -13,7 +13,7 @@ AddTypes     = 5309, 15309, 25309, 35309, 45309, 55309, 65309, 75309 ;RHW-8S to 
 AddTypes     = 85309, 95309, A5309, B5309, C5309, D5309, E5309, F5309 ;RHW-8S to RHW-8C Compact Transition
 AddTypes     = 530A, 1530A, 2530A, 3530A, 4530A, 5530A, 6530A, 7530A ;RHW-6C to RHW-8C transition
 AddTypes     = 530B, 1530B, 2530B, 3530B, 4530B, 5530B, 6530B, 7530B ; RHW-6C-to-8 Transition
-AddTypes     = 530C, 1530C, 2530C, 3530C, 4530C, 5530C, 6530C, 7530C ;MIS-to-RHW-4 Transition
+AddTypes     = 533D, 1533D, 2533D, 3533D, 4533D, 5533D, 6533D, 7533D ;RHW4-MIS Transition L0
 AddTypes     = 530D, 1530D, 2530D, 3530D, 4530D, 5530D, 6530D, 7530D ;RHW-2-to-3 Transition
 AddTypes     = 530E, 1530E, 2530E, 3530E, 4530E, 5530E, 6530E, 7530E ;RHW-2-to-WRHW-2 Transition
 AddTypes     = 530F, 1530F, 2530F, 3530F, 4530F, 5530F, 6530F, 7530F ;WRHW-2-to-RHW-3 Transition
@@ -23,10 +23,12 @@ AddTypes     = 105302, 115302, 125302, 135302, 145302, 155302, 165302, 175302 ;L
 AddTypes     = 105303, 115303, 125303, 135303, 145303, 155303, 165303, 175303 ;L1 RHW-6S-to-8S Transition Style A
 AddTypes     = 105304, 115304, 125304, 135304, 145304, 155304, 165304, 175304 ;L1 RHW-8S-to-10S Transition Style A
 AddTypes     = 10530A, 11530A, 12530A, 13530A, 14530A, 15530A, 16530A, 17530A ;L1 RHW-6C to RHW-8C transition
+AddTypes     = 533C, 1533C, 2533C, 3533C, 4533C, 5533C, 6533C, 7533C ;RHW4-MIS Transition L1
 AddTypes     = 205302, 215302, 225302, 235302, 245302, 255302, 265302, 275302 ;L2 RHW-4-to-RHW-6S Transition Style A
 AddTypes     = 205303, 215303, 225303, 235303, 245303, 255303, 265303, 275303 ;L2 RHW-6S-to-8S Transition Style A
 AddTypes     = 205304, 215304, 225304, 235304, 245304, 255304, 265304, 275304 ;L2 RHW-8S-to-10S Transition Style A
 AddTypes     = 20530A, 21530A, 22530A, 23530A, 24530A, 25530A, 26530A, 27530A ;L2 RHW-6C to RHW-8C transition
+AddTypes     = 533E, 1533E, 2533E, 3533E, 4533E, 5533E, 6533E, 7533E ;RHW4-MIS Transition L2
 
 RotationRing     = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FLEXOnSlope L0-L1
 AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2
@@ -4053,3 +4055,155 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x0027530A]
 CopyFrom    = 0x24530A
 Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000533D]
+;Added by eggman121 22/11/2014
+;Real Highway MIS to RHW4 Transition L0
+Piece = 0.0, 0.0, 0, 0, 0x57732085
+PreviewEffect = preview_mis_rhw_trans_000
+
+CellLayout = ......
+CellLayout = ..c...
+CellLayout = ..b..<
+CellLayout = ..b...
+CellLayout = ..d...
+CellLayout = ..^...
+
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200 , 0xffffffff check
+CheckType = d - dirtroad: 0x02000200 , 0xffffffff check
+
+ConsLayout = ......
+ConsLayout = ......
+ConsLayout = ..|..<
+ConsLayout = ..|...
+ConsLayout = ......
+ConsLayout = ..^...
+
+AutoTileBase = 0x57732080
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57732080
+Costs = 375
+[HighwayIntersectionInfo_0x0001533D]
+CopyFrom = 0x533D
+Rotate = 1
+[HighwayIntersectionInfo_0x0002533D]
+CopyFrom = 0x533D
+Rotate = 2
+[HighwayIntersectionInfo_0x0003533D]
+CopyFrom = 0x533D
+Rotate = 3
+[HighwayIntersectionInfo_0x0004533D]
+CopyFrom    = 0x533D
+Transpose = 1
+[HighwayIntersectionInfo_0x0005533D]
+CopyFrom    = 0x4533D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0006533D]
+CopyFrom    = 0x4533D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007533D]
+CopyFrom    = 0x4533D
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0000533C]
+;Added by eggman121 22/11/2014
+;Real Highway MIS to RHW4 Elevated Transition L1
+Piece = 0.0, 0.0, 0, 0, 0x57732385
+PreviewEffect = preview_mis_rhw_trans_001
+
+CellLayout = ......
+CellLayout = ..c...
+CellLayout = ..b..<
+CellLayout = ..b...
+CellLayout = ..d...
+CellLayout = ..^...
+
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200 , 0xffffffff check
+CheckType = d - dirtroad: 0x02000200 , 0xffffffff check
+
+ConsLayout = ......
+ConsLayout = ......
+ConsLayout = ..|..<
+ConsLayout = ..|...
+ConsLayout = ......
+ConsLayout = ..^...
+
+AutoTileBase = 0x57732380
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57732380
+Costs = 375
+[HighwayIntersectionInfo_0x0001533C]
+CopyFrom = 0x533C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002533C]
+CopyFrom = 0x533C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003533C]
+CopyFrom = 0x533C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004533C]
+CopyFrom    = 0x533C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005533C]
+CopyFrom    = 0x4533C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0006533C]
+CopyFrom    = 0x4533C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007533C]
+CopyFrom    = 0x4533C
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x0000533E]
+;Added by eggman121 23/11/2014
+;Real Highway MIS to RHW4 Elevated Transition L2
+Piece = 0.0, 0.0, 0, 0, 0x57732685
+PreviewEffect = preview_mis_rhw_trans_002
+
+CellLayout = ......
+CellLayout = ..c...
+CellLayout = ..b..<
+CellLayout = ..b...
+CellLayout = ..d...
+CellLayout = ..^...
+
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x02000200 , 0xffffffff check
+CheckType = d - dirtroad: 0x02000200 , 0xffffffff check
+
+ConsLayout = ......
+ConsLayout = ......
+ConsLayout = ..|..<
+ConsLayout = ..|...
+ConsLayout = ......
+ConsLayout = ..^...
+
+AutoTileBase = 0x57732680
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57732680
+Costs = 375
+[HighwayIntersectionInfo_0x0001533E]
+CopyFrom = 0x533E
+Rotate = 1
+[HighwayIntersectionInfo_0x0002533E]
+CopyFrom = 0x533E
+Rotate = 2
+[HighwayIntersectionInfo_0x0003533E]
+CopyFrom = 0x533E
+Rotate = 3
+[HighwayIntersectionInfo_0x0004533E]
+CopyFrom    = 0x533E
+Transpose = 1
+[HighwayIntersectionInfo_0x0005533E]
+CopyFrom    = 0x4533E
+Rotate		= 3
+[HighwayIntersectionInfo_0x0006533E]
+CopyFrom    = 0x4533E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007533E]
+CopyFrom    = 0x4533E
+Rotate		= 1
