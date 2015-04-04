@@ -51,6 +51,7 @@ AddTypes     =  5021, 15021, 25021, 35021, 45021, 55021, 65021, 75021 ;L4 RHW-6S
 ;---DD Starters---
 AddTypes     =  5022, 15022, 25022, 35022, 45022, 55022, 65022, 75022 ;L2/L3 DDRHW-4 Starter
 ;AddTypes     =  5023, 15023, 25023, 35023, 45023, 55023, 65023, 75023 ;DDRHW-4 New Starter
+AddTypes     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024 ;Disconnector Tile
 
 ;###separator###
 
@@ -2442,4 +2443,45 @@ CopyFrom    = 0x25023
 [HighwayIntersectionInfo_0x00075023]
 CopyFrom    = 0x35023
 
+[HighwayIntersectionInfo_0x00005024]
+;Added by Ganaram Inukshuk 6/5/2014
+;rhw_disconnector_tile
+Piece = 0.0, 0.0, 0, 0, 0x57F00005
+PreviewEffect = preview_rhw_disconnector_tile
 
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x04040404
+
+ConsLayout =.......
+ConsLayout =......<
+ConsLayout =...^...
+
+AutoTileBase=   0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57F00000
+Costs       = 120
+
+[HighwayIntersectionInfo_0x00015024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 street: 0x04040404
+[HighwayIntersectionInfo_0x00025024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 road: 0x04040404
+[HighwayIntersectionInfo_0x00035024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 onewayroad: 0x04040404
+[HighwayIntersectionInfo_0x00045024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 avenue: 0x04040404
+[HighwayIntersectionInfo_0x00055024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 rail: 0x04040404
+[HighwayIntersectionInfo_0x00065024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 lightrail: 0x04040404
+[HighwayIntersectionInfo_0x00075024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 monorail: 0x04040404
