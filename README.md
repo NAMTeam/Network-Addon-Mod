@@ -12,3 +12,6 @@ in this directory, which generates proper RUL files and drops them in specific l
 the "Controller" directory. This script needs to be executed every time the metarules are
 updated or you checkout a different branch (which may update the metarules) in order to
 assert that the generated files are always up-to-date.
+
+Moreover, the script builds the INRUL files which can be found in the directory "target/INRULs"
+after running the script.

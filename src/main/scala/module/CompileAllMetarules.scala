@@ -10,6 +10,7 @@ object CompileAllMetarules {
   def main(args: Array[String]): Unit = {
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
     flexfly.CompileFlexFlyCode.main(Array.empty)
+    CompileInruls.main(Array.empty)
   }
 
 }
