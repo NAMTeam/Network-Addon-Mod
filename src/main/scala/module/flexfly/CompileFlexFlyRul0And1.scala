@@ -182,7 +182,7 @@ object CompileFlexFlyRul0And1 {
     |ConsLayout=......^.
     |
     |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x5CAB0000
+    |PlaceQueryID = 0x$previewId90%08X
     |Costs = 600
     |
     |[HighwayIntersectionInfo_0x${hid+0x10000}%08X]
@@ -237,7 +237,7 @@ object CompileFlexFlyRul0And1 {
     |ConsLayout=......^.
     |
     |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x5CAB0000
+    |PlaceQueryID = 0x$previewId45%08X
     |Costs = 600
     |
     |[HighwayIntersectionInfo_0x${hid+0x10001}%08X]
