@@ -1,5 +1,7 @@
 ;RHW Transition Pieces
 ;0xR53##
+
+;Width Transitions
 RotationRing = 5300, 15300, 25300, 35300, 45300, 55300, 65300, 75300 ;RHW-2-to-RHW-4 Transition A
 AddTypes     = 5301, 15301, 25301, 35301, 45301, 55301, 65301, 75301 ;RHW-2-to-RHW-4 Transition B
 AddTypes     = 5302, 15302, 25302, 35302, 45302, 55302, 65302, 75302 ;RHW-4-to-RHW-6S Transition Style A
@@ -29,14 +31,18 @@ AddTypes     = 205303, 215303, 225303, 235303, 245303, 255303, 265303, 275303 ;L
 AddTypes     = 205304, 215304, 225304, 235304, 245304, 255304, 265304, 275304 ;L2 RHW-8S-to-10S Transition Style A
 AddTypes     = 20530A, 21530A, 22530A, 23530A, 24530A, 25530A, 26530A, 27530A ;L2 RHW-6C to RHW-8C transition
 AddTypes     = 533E, 1533E, 2533E, 3533E, 4533E, 5533E, 6533E, 7533E ;RHW4-MIS Transition L2
+AddTypes     = 532B, 1532B, 2532B, 3532B, 4532B, 5532B, 6532B, 7532B ;DDRHW-4-to-Dual-ERHW-4 (L1/L2) Connector
 
+;Height Transitions (FLEX)
 RotationRing     = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FLEXOnSlope L0-L1
 AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2
 AddTypes     = 5332, 15332, 25332, 35332, 45332, 55332, 65332, 75332 ;FlexHT L0-L1 4 Tiles
 ;AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L2 4 Tiles
 AddTypes     = 5334, 15334, 25334, 35334, 45334, 55334, 65334, 75334 ;FlexHT L0-L2 7 Tiles
 
-
+;Height Transitions (Static)
+;BUTTON EFFECTIVELY OBSOLETE
+;Tarkus 07092015
 RotationRing = 5312, 15312, 25312, 35312, 45312, 55312, 65312, 75312 ;RHW-4 Ground-to-Elevated ON
 AddTypes     = 5313, 15313, 25313, 35313, 45313, 55313, 65313, 75313 ;RHW-4 Ground-to-Elevated OFF
 AddTypes     = 5314, 15314, 25314, 35314, 45314, 55314, 65314, 75314 ;RHW-4 Ground-to-Elevated On-Slope ON
@@ -62,7 +68,6 @@ AddTypes     = 5327, 15327, 25327, 35327, 45327, 55327, 65327, 75327 ;L2-ERHW-4 
 AddTypes     = 5328, 15328, 25328, 35328, 45328, 55328, 65328, 75328 ;RHW-4 Ground-to-Mid-Elevated L3 Starterless
 AddTypes     = 5329, 15329, 25329, 35329, 45329, 55329, 65329, 75329 ;MIS L2-to-L3 Starterless
 AddTypes     = 532A, 1532A, 2532A, 3532A, 4532A, 5532A, 6532A, 7532A ;MIS Ground-to-Mid-Elevated L3 Starterless
-AddTypes     = 532B, 1532B, 2532B, 3532B, 4532B, 5532B, 6532B, 7532B ;DDRHW-4-to-Dual-ERHW-4 (L2/L3) Connector
 ;AddTypes     = 532C, 1532C, 2532C, 3532C, 4532C, 5532C, 6532C, 7532C ;MIS Ground-to-Elevated L1
 ;AddTypes     = 532D, 1532D, 2532D, 3532D, 4532D, 5532D, 6532D, 7532D ;MIS Ground-to-Elevated L1
 ;AddTypes     = 532E, 1532E, 2532E, 3532E, 4532E, 5532E, 6532E, 7532E ;MIS Ground-to-Elevated On-Slope L1
@@ -487,7 +492,7 @@ Piece = 0.0, 0.0, 0, 0, 0x5ccb1005
 PreviewEffect = preview_rhw4_to_rhw6c___001
 
 CellLayout =........
-CellLayout =..abc...
+CellLayout =..ebf...
 CellLayout =..ddd<..
 CellLayout =..ddd...
 CellLayout =..ddd...
@@ -501,6 +506,9 @@ CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+
 
 ConsLayout = ........
 ConsLayout = ........
@@ -734,12 +742,12 @@ CellLayout =..cccc..
 CellLayout =...de...
 CellLayout =..^....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
-CheckType = f - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =........
 ConsLayout =........
@@ -785,12 +793,12 @@ CellLayout =.cccc...
 CellLayout =..de....
 CellLayout =..^.....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
-CheckType = f - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =........
 ConsLayout =........
@@ -835,12 +843,12 @@ CellLayout =.ccccc..
 CellLayout =..d.e...
 CellLayout =..^.....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
-CheckType = f - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =........
 ConsLayout =........
@@ -1014,9 +1022,9 @@ CellLayout =.B.
 CellLayout =.C.
 CellLayout =.^.
 
-CheckType = A - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 road: 0x01000001, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 
 ConsLayout =...
 ConsLayout =...
@@ -1044,9 +1052,9 @@ CellLayout =.B..
 CellLayout =.C..
 CellLayout =.^..
 
-CheckType = A - dirtroad: 0x02000200 road: 0x01000001, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 onewayroad: 0x00010100, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 
 ConsLayout =....
 ConsLayout =....
@@ -1087,7 +1095,7 @@ Piece = -16.0, 0.0, 0, 0, 0x5cdc1005
 PreviewEffect = preview_rhw6c_to_rhw8_right
 
 CellLayout =.....
-CellLayout =.abc.
+CellLayout =.dbe.
 CellLayout =.zzz<
 CellLayout =zzzz.
 CellLayout =zzzz.
@@ -1099,6 +1107,8 @@ CellLayout =.^...
 CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
@@ -1136,7 +1146,7 @@ Piece = -16.0, 0.0, 0, 0, 0x5cdc1005
 PreviewEffect = preview_rhw6c_to_rhw8_left
 
 CellLayout =.....
-CellLayout =abc..
+CellLayout =dbe..
 CellLayout =zzz.<
 CellLayout =zzzz.
 CellLayout =zzzz.
@@ -1148,6 +1158,8 @@ CellLayout =.^...
 CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = d - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
@@ -1858,10 +1870,10 @@ CellLayout =.eab.
 CellLayout =..^..
 
 CheckType = a - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
-CheckType = b - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200 highway: 0x00040004, 0xffffffff optional
-CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 
 ConsLayout =.....
 ConsLayout =.|||.
@@ -1910,9 +1922,9 @@ CellLayout =.ddd.<
 CellLayout =.aec..
 CellLayout =..^...
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 highway: 0x00040004, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200
 CheckType = e - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 
@@ -3310,8 +3322,8 @@ CellLayout=..c.
 CellLayout=..d.
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x02020202
 CheckType = c - dirtroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
 
@@ -3363,8 +3375,8 @@ CellLayout=..c.
 CellLayout=..d.
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = a - rail: 0x03040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x02020202
 CheckType = c - dirtroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
 

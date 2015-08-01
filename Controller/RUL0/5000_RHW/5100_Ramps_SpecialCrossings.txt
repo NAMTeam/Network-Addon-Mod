@@ -3,7 +3,24 @@
 ;RHW Ramp Interface Pieces
 ;0xR51##
 
-RotationRing = 5100, 15100, 25100, 35100, 45100, 55100, 65100, 75100, 85100, 95100, A5100, B5100, C5100, D5100, E5100, F5100 ;RHW-4 Type A1
+;Still Viable Static Ramps
+RotationRing     = 5118, 15118, 25118, 35118, 45118, 55118, 65118, 75118, 85118, 95118, A5118, B5118, C5118, D5118, E5118, F5118 ;RHW-3 Type A1/Type B1 Dual
+AddTypes     = 5123, 15123, 25123, 35123, 45123, 55123, 65123, 75123, 85123, 95123, A5123, B5123, C5123, D5123, E5123, F5123 ;RHW-6C Type D1 Dual Shift
+AddTypes     = 5124, 15124, 25124, 35124, 45124, 55124, 65124, 75124, 85124, 95124, A5124, B5124, C5124, D5124, E5124, F5124 ;RHW-8S Type D1 Dual Shift
+AddTypes     = 5125, 15125, 25125, 35125, 45125, 55125, 65125, 75125, 85125, 95125, A5125, B5125, C5125, D5125, E5125, F5125 ;RHW-6C Type D1 Dual Inside Shift
+AddTypes     = 5139, 15139, 25139, 35139, 45139, 55139, 65139, 75139, 85139, 95139, A5139, B5139, C5139, D5139, E5139, F5139 ;Diagonal RHW-6C Type A1
+AddTypes     = 5134, 15134, 25134, 35134, 45134, 55134, 65134, 75134, 85134, 95134, A5134, B5134, C5134, D5134, E5134, F5134 ;RHW-10S Type D2
+AddTypes     = 5135, 15135, 25135, 35135, 45135, 55135, 65135, 75135, 85135, 95135, A5135, B5135, C5135, D5135, E5135, F5135 ;RHW-10S Type E2
+
+;Specialized Crossing Pieces
+AddTypes     = 5137, 15137, 25137, 35137, 45137, 55137, 65137, 75137, 85137, 95137, A5137, B5137, C5137, D5137, E5137, F5137 ;Type 4-A1 Volleyball Intersection
+AddTypes     = 5138, 15138, 25138, 35138, 45138, 55138, 65138, 75138, 85138, 95138, A5138, B5138, C5138, D5138, E5138, F5138 ;Type 4-D1 Volleyball Intersection
+AddTypes 	 = 513C, 1513C, 2513C, 3513C, 4513C, 5513C, 6513C, 7513C, 8513C, 9513C, A513C, B513C, C513C, D513C, E513C, F513C ;Type 4-A2A Volleyball SCP
+AddTypes 	 = 513A, 1513A, 2513A, 3513A, 4513A, 5513A, 6513A, 7513A, 8513A, 9513A, A513A, B513A, C513A, D513A, E513A, F513A ;Type 4-A2B Volleyball SCP
+AddTypes 	 = 513B, 1513B, 2513B, 3513B, 4513B, 5513B, 6513B, 7513B, 8513B, 9513B, A513B, B513B, C513B, D513B, E513B, F513B ;Type 4-A2C Volleyball SCP
+
+;Deprecated Viable Static Ramps
+AddTypes	 = 5100, 15100, 25100, 35100, 45100, 55100, 65100, 75100, 85100, 95100, A5100, B5100, C5100, D5100, E5100, F5100 ;RHW-4 Type A1
 AddTypes     = 5101, 15101, 25101, 35101, 45101, 55101, 65101, 75101, 85101, 95101, A5101, B5101, C5101, D5101, E5101, F5101 ;RHW-4 Type A1 Diagonal
 AddTypes     = 5102, 15102, 25102, 35102, 45102, 55102, 65102, 75102, 85102, 95102, A5102, B5102, C5102, D5102, E5102, F5102 ;RHW-4 Type B1
 AddTypes     = 5103, 15103, 25103, 35103, 45103, 55103, 65103, 75103, 85103, 95103, A5103, B5103, C5103, D5103, E5103, F5103 ;RHW-4 Type B1 Diagonal
@@ -15,6 +32,8 @@ AddTypes     = 5108, 15108, 25108, 35108, 45108, 55108, 65108, 75108, 85108, 951
 AddTypes     = 5109, 15109, 25109, 35109, 45109, 55109, 65109, 75109, 85109, 95109, A5109, B5109, C5109, D5109, E5109, F5109 ;RHW-4 Type E1 Wye
 AddTypes     = 510A, 1510A, 2510A, 3510A, 4510A, 5510A, 6510A, 7510A, 8510A, 9510A, A510A, B510A, C510A, D510A, E510A, F510A ;ERHW-4 Type A1
 AddTypes     = 510B, 1510B, 2510B, 3510B, 4510B, 5510B, 6510B, 7510B, 8510B, 9510B, A510B, B510B, C510B, D510B, E510B, F510B ;ERHW-4 Type A1 Inside
+AddTypes	 = 5116, 15116, 25116, 35116, 45116, 55116, 65116, 75116, 85116, 95116, A5116, B5116, C5116, D5116, E5116, F5116 ;RHW-3 Type A1
+AddTypes     = 5117, 15117, 25117, 35117, 45117, 55117, 65117, 75117, 85117, 95117, A5117, B5117, C5117, D5117, E5117, F5117 ;RHW-3 Type B1
 AddTypes     = 510C, 1510C, 2510C, 3510C, 4510C, 5510C, 6510C, 7510C, 8510C, 9510C, A510C, B510C, C510C, D510C, E510C, F510C ;RHW-2 Type A1
 AddTypes     = 510D, 1510D, 2510D, 3510D, 4510D, 5510D, 6510D, 7510D, 8510D, 9510D, A510D, B510D, C510D, D510D, E510D, F510D ;RHW-2 Type A1 Dual
 AddTypes     = 510E, 1510E, 2510E, 3510E, 4510E, 5510E, 6510E, 7510E, 8510E, 9510E, A510E, B510E, C510E, D510E, E510E, F510E ;RHW-2 Type B1
@@ -25,9 +44,6 @@ AddTypes     = 5112, 15112, 25112, 35112, 45112, 55112, 65112, 75112, 85112, 951
 AddTypes     = 5113, 15113, 25113, 35113, 45113, 55113, 65113, 75113, 85113, 95113, A5113, B5113, C5113, D5113, E5113, F5113 ;RHW-2 Type E1
 AddTypes     = 5114, 15114, 25114, 35114, 45114, 55114, 65114, 75114, 85114, 95114, A5114, B5114, C5114, D5114, E5114, F5114 ;RHW-2 Type E1 Wye
 AddTypes     = 5115, 15115, 25115, 35115, 45115, 55115, 65115, 75115, 85115, 95115, A5115, B5115, C5115, D5115, E5115, F5115 ;ERHW-2 Type A1
-AddTypes     = 5116, 15116, 25116, 35116, 45116, 55116, 65116, 75116, 85116, 95116, A5116, B5116, C5116, D5116, E5116, F5116 ;RHW-3 Type A1
-AddTypes     = 5117, 15117, 25117, 35117, 45117, 55117, 65117, 75117, 85117, 95117, A5117, B5117, C5117, D5117, E5117, F5117 ;RHW-3 Type B1
-AddTypes     = 5118, 15118, 25118, 35118, 45118, 55118, 65118, 75118, 85118, 95118, A5118, B5118, C5118, D5118, E5118, F5118 ;RHW-3 Type A1/Type B1 Dual
 AddTypes     = 5119, 15119, 25119, 35119, 45119, 55119, 65119, 75119, 85119, 95119, A5119, B5119, C5119, D5119, E5119, F5119 ;RHW-6S Type A1
 AddTypes     = 511A, 1511A, 2511A, 3511A, 4511A, 5511A, 6511A, 7511A, 8511A, 9511A, A511A, B511A, C511A, D511A, E511A, F511A ;RHW-6S Type B1
 AddTypes     = 511B, 1511B, 2511B, 3511B, 4511B, 5511B, 6511B, 7511B, 8511B, 9511B, A511B, B511B, C511B, D511B, E511B, F511B ;RHW-6S Type A1 Wide
@@ -38,10 +54,6 @@ AddTypes     = 511F, 1511F, 2511F, 3511F, 4511F, 5511F, 6511F, 7511F, 8511F, 951
 AddTypes     = 5120, 15120, 25120, 35120, 45120, 55120, 65120, 75120, 85120, 95120, A5120, B5120, C5120, D5120, E5120, F5120 ;ERHW-6S Type D1
 AddTypes     = 5121, 15121, 25121, 35121, 45121, 55121, 65121, 75121, 85121, 95121, A5121, B5121, C5121, D5121, E5121, F5121 ;RHW-6C Type A1
 AddTypes     = 5122, 15122, 25122, 35122, 45122, 55122, 65122, 75122, 85122, 95122, A5122, B5122, C5122, D5122, E5122, F5122 ;RHW-6C Type B1
-AddTypes     = 5139, 15139, 25139, 35139, 45139, 55139, 65139, 75139, 85139, 95139, A5139, B5139, C5139, D5139, E5139, F5139 ;Diagonal RHW-6C Type A1
-AddTypes     = 5123, 15123, 25123, 35123, 45123, 55123, 65123, 75123, 85123, 95123, A5123, B5123, C5123, D5123, E5123, F5123 ;RHW-6C Type D1 Dual Shift
-AddTypes     = 5124, 15124, 25124, 35124, 45124, 55124, 65124, 75124, 85124, 95124, A5124, B5124, C5124, D5124, E5124, F5124 ;RHW-8S Type D1 Dual Shift
-AddTypes     = 5125, 15125, 25125, 35125, 45125, 55125, 65125, 75125, 85125, 95125, A5125, B5125, C5125, D5125, E5125, F5125 ;RHW-6C Type D1 Dual Inside Shift
 AddTypes     = 5126, 15126, 25126, 35126, 45126, 55126, 65126, 75126, 85126, 95126, A5126, B5126, C5126, D5126, E5126, F5126 ;RHW-8S Type A1
 AddTypes     = 5127, 15127, 25127, 35127, 45127, 55127, 65127, 75127, 85127, 95127, A5127, B5127, C5127, D5127, E5127, F5127 ;RHW-8S Type B1
 AddTypes     = 5128, 15128, 25128, 35128, 45128, 55128, 65128, 75128, 85128, 95128, A5128, B5128, C5128, D5128, E5128, F5128 ;RHW-8S Type D1
@@ -56,16 +68,7 @@ AddTypes     = 5130, 15130, 25130, 35130, 45130, 55130, 65130, 75130, 85130, 951
 AddTypes     = 5131, 15131, 25131, 35131, 45131, 55131, 65131, 75131, 85131, 95131, A5131, B5131, C5131, D5131, E5131, F5131 ;RHW-10S Type B1
 AddTypes     = 5132, 15132, 25132, 35132, 45132, 55132, 65132, 75132, 85132, 95132, A5132, B5132, C5132, D5132, E5132, F5132 ;RHW-10S Type D1
 AddTypes     = 5133, 15133, 25133, 35133, 45133, 55133, 65133, 75133, 85133, 95133, A5133, B5133, C5133, D5133, E5133, F5133 ;RHW-10S Type E1
-AddTypes     = 5134, 15134, 25134, 35134, 45134, 55134, 65134, 75134, 85134, 95134, A5134, B5134, C5134, D5134, E5134, F5134 ;RHW-10 Type D2
-AddTypes     = 5135, 15135, 25135, 35135, 45135, 55135, 65135, 75135, 85135, 95135, A5135, B5135, C5135, D5135, E5135, F5135 ;RHW-10 Type E2
 AddTypes     = 5136, 15136, 25136, 35136, 45136, 55136, 65136, 75136, 85136, 95136, A5136, B5136, C5136, D5136, E5136, F5136 ;DDRHW-4 Type A1
-
-;Specialized Crossing Pieces
-AddTypes     = 5137, 15137, 25137, 35137, 45137, 55137, 65137, 75137 ;Type 4-A1 Volleyball Intersection
-AddTypes     = 5138, 15138, 25138, 35138, 45138, 55138, 65138, 75138 ;Type 4-D1 Volleyball Intersection
-AddTypes = 513C, 1513C, 2513C, 3513C, 4513C, 5513C, 6513C, 7513C ;Type 4-A2A Volleyball SCP
-AddTypes = 513A, 1513A, 2513A, 3513A, 4513A, 5513A, 6513A, 7513A ;Type 4-A2B Volleyball SCP
-AddTypes = 513B, 1513B, 2513B, 3513B, 4513B, 5513B, 6513B, 7513B ;Type 4-A2C Volleyball SCP
 
 ;###separator###
 
@@ -2431,7 +2434,7 @@ CellLayout =.zzzz<
 CellLayout =.zzzz.
 CellLayout =.zzzz.
 CellLayout =.zzzz.
-CellLayout =.abc..
+CellLayout =.fbg..
 CellLayout =.^....
 
 CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
@@ -2439,6 +2442,8 @@ CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
 
 ConsLayout =......
@@ -2478,7 +2483,7 @@ CellLayout =.zzzz<
 CellLayout =.zzzz.
 CellLayout =.zzzz.
 CellLayout =.zzzz.
-CellLayout =..abc.
+CellLayout =..fbg.
 CellLayout =.^....
 
 CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
@@ -2486,6 +2491,8 @@ CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
 
 ConsLayout =......
@@ -3206,11 +3213,11 @@ CellLayout =..ce...
 CellLayout =..f....
 CellLayout =...^...
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200
-CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 
 ConsLayout =.......
@@ -3251,11 +3258,11 @@ CellLayout =..eb...
 CellLayout =...f...
 CellLayout =..^....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200
-CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = f - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 
 ConsLayout =.......
@@ -3312,11 +3319,11 @@ CellLayout =...cd....
 CellLayout =..fbe....
 CellLayout =....^....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200
-CheckType = e - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = f - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
 
 ConsLayout =.........
@@ -3357,11 +3364,11 @@ CellLayout =...bd....
 CellLayout =...ebf...
 CellLayout =...^.....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200
 CheckType = c - dirtroad: 0x02000200
 CheckType = d - dirtroad: 0x02000200
-CheckType = e - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = f - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
 
 ConsLayout =.........
@@ -3417,16 +3424,16 @@ CellLayout =.zzzzz.
 CellLayout =.zzzzz.
 CellLayout =.zzzzz.
 CellLayout =.zzzz..
-CellLayout =.facg..
+CellLayout =.afgc..
 CellLayout =.^.....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
-CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
-CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
 
 ConsLayout =.......
@@ -3468,16 +3475,16 @@ CellLayout =.zzzzz.
 CellLayout =.zzzzz.
 CellLayout =.zzzzz.
 CellLayout =..zzzz.
-CellLayout =..facg.
+CellLayout =..afgc.
 CellLayout =.^.....
 
-CheckType = a - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 CheckType = d - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = e - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
-CheckType = f - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
-CheckType = g - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000200 Road: 0x01000001, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000200 Road: 0x00010100, 0xffffffff optional
 CheckType = z - dirtroad: 0x02000200
 
 ConsLayout =.......
@@ -4389,15 +4396,16 @@ Piece = 0.0, -16.0, 0, 1, 0x5CED0085
 PreviewEffect = preview_rhw8cramp__a_1__000
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =..BB...
 CellLayout =..BB..<
 CellLayout =..BB...
-CellLayout =..AA...
+CellLayout =..AC...
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -4438,15 +4446,16 @@ Piece = 16.0, -16.0, 0, 1, 0x5CED0285
 PreviewEffect = preview_rhw8cramp__a_2__000
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =...BB..
 CellLayout =...BB.<
 CellLayout =...BB..
-CellLayout =...AA..
+CellLayout =...CA..
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -4492,7 +4501,7 @@ CellLayout =..BB...
 CellLayout =.CBA...
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
 
@@ -4542,7 +4551,7 @@ CellLayout =...BB..
 CellLayout =...ABC.
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
 
@@ -4585,16 +4594,17 @@ Piece = 0.0, 0.0, 0, 0, 0x5CED2085
 PreviewEffect = preview_rhw8cramp__c_1__000
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =..BB...
 CellLayout =..BB..<
-CellLayout =..BC...
+CellLayout =..BD...
 CellLayout =..A....
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -4635,16 +4645,17 @@ Piece = 0.0, 0.0, 0, 1, 0x5CED2285
 PreviewEffect = preview_rhw8cramp__c_1__000
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =...BB..
 CellLayout =...BB.<
-CellLayout =...CB..
+CellLayout =...DB..
 CellLayout =....A..
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -4692,10 +4703,10 @@ CellLayout =..BB...
 CellLayout =.CBD...
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
-CheckType = D - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 
 
 ConsLayout =.......
@@ -4744,10 +4755,10 @@ CellLayout =...BB..
 CellLayout =...DBC.
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x01000001, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
-CheckType = D - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5008,15 +5019,16 @@ Piece = 0.0, 0.0, 0, 0, 0x5CED0085
 PreviewEffect = preview_test_00
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =..BB...
 CellLayout =..BB..<
 CellLayout =..BB...
-CellLayout =..AA...
+CellLayout =..AC...
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5057,15 +5069,16 @@ Piece = 0.0, 0.0, 0, 0, 0x5CED0285
 PreviewEffect = preview_test_00
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...C...
 CellLayout =...BB..
 CellLayout =...BB.<
 CellLayout =...BB..
-CellLayout =...AA..
+CellLayout =...CA..
 CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
+CheckType = C - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5113,7 +5126,7 @@ CellLayout =..BB...
 CellLayout =.CBA...
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
 
@@ -5163,7 +5176,7 @@ CellLayout =...BB..
 CellLayout =...ABC.
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
 
@@ -5207,7 +5220,7 @@ Piece = 0.0, 0.0, 0, 0, 0x5CED2085
 PreviewEffect = preview_test_00
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...D...
 CellLayout =..BB...
 CellLayout =..BB..<
 CellLayout =..BB...
@@ -5216,7 +5229,8 @@ CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 Road:0x01000001, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5257,7 +5271,7 @@ Piece = 0.0, 0.0, 0, 0, 0x5CED2285
 PreviewEffect = preview_test_00
 
 CellLayout =.......
-CellLayout =...A...
+CellLayout =...D...
 CellLayout =...BB..
 CellLayout =...BB.<
 CellLayout =...BB..
@@ -5266,7 +5280,8 @@ CellLayout =...^...
 
 CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
-CheckType = C - dirtroad: 0x02000200 Road:0x00010100, 0xffffffff optional
+CheckType = C - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5311,12 +5326,13 @@ CellLayout =...A...
 CellLayout =..BB...
 CellLayout =..BB..<
 CellLayout =..BB...
-CellLayout =.CBA...
+CellLayout =.CBD...
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00030300, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x03000001 Lightrail: 0x01000001, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5361,12 +5377,13 @@ CellLayout =...A...
 CellLayout =...BB..
 CellLayout =...BB.<
 CellLayout =...BB..
-CellLayout =...ABC.
+CellLayout =...DBC.
 CellLayout =...^...
 
-CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x00010100, 0xffffffff optional
+CheckType = A - dirtroad: 0x02000200 OneWayRoad: 0x03000003, 0xffffffff optional
 CheckType = B - dirtroad: 0x02000200
 CheckType = C - dirtroad: 0x01030000 Lightrail: 0x03030000, 0xffffffff optional
+CheckType = D - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -5407,7 +5424,7 @@ Piece = 0.0, 0.0, 0, 0, 0x5cff0005
 PreviewEffect = preview_rhw6c_transition4_2
 
 CellLayout =.....
-CellLayout =.EDB.
+CellLayout =.FDG.
 CellLayout =.AAA<
 CellLayout =.AAA.
 CellLayout =.AAA.
@@ -5421,6 +5438,9 @@ CheckType  = B - dirtroad: 0x02000200 Road: 0x00010100, 0xFFFFFFFF optional
 CheckType  = C - dirtroad: 0x00000200, 0x0000FF00 check optional
 CheckType  = D - dirtroad: 0x02000200 Road: 0x00030300, 0xFFFFFFFF optional
 CheckType  = E - dirtroad: 0x02000200 Road: 0x01000001, 0xFFFFFFFF optional
+CheckType = F - dirtroad: 0x02000200 Road: 0x00030001, 0xffffffff optional
+CheckType = G - dirtroad: 0x02000200 Road: 0x00010003, 0xffffffff optional
+
 
 ConsLayout =.....
 ConsLayout =.....
@@ -6365,6 +6385,22 @@ CopyFrom = 0x15137
 CopyFrom = 0x25137
 [HighwayIntersectionInfo_0x00075137]
 CopyFrom = 0x35137
+[HighwayIntersectionInfo_0x00085137]
+CopyFrom    = 0x05137
+[HighwayIntersectionInfo_0x00095137]
+CopyFrom    = 0x15137
+[HighwayIntersectionInfo_0x000A5137]
+CopyFrom    = 0x25137
+[HighwayIntersectionInfo_0x000B5137]
+CopyFrom    = 0x35137
+[HighwayIntersectionInfo_0x000C5137]
+CopyFrom    = 0x05137
+[HighwayIntersectionInfo_0x000D5137]
+CopyFrom    = 0x15137
+[HighwayIntersectionInfo_0x000E5137]
+CopyFrom    = 0x25137
+[HighwayIntersectionInfo_0x000F5137]
+CopyFrom    = 0x35137
 
 
 [HighwayIntersectionInfo_0x00005138]
@@ -6420,7 +6456,22 @@ CopyFrom = 0x15138
 CopyFrom = 0x25138
 [HighwayIntersectionInfo_0x00075138]
 CopyFrom = 0x35138
-
+[HighwayIntersectionInfo_0x00085138]
+CopyFrom    = 0x05138
+[HighwayIntersectionInfo_0x00095138]
+CopyFrom    = 0x15138
+[HighwayIntersectionInfo_0x000A5138]
+CopyFrom    = 0x25138
+[HighwayIntersectionInfo_0x000B5138]
+CopyFrom    = 0x35138
+[HighwayIntersectionInfo_0x000C5138]
+CopyFrom    = 0x05138
+[HighwayIntersectionInfo_0x000D5138]
+CopyFrom    = 0x15138
+[HighwayIntersectionInfo_0x000E5138]
+CopyFrom    = 0x25138
+[HighwayIntersectionInfo_0x000F5138]
+CopyFrom    = 0x35138
 
 
 [HighwayIntersectionInfo_0x00005139]
@@ -6532,8 +6583,8 @@ CopyFrom    = 0x75139
 [HighwayIntersectionInfo_0x0000513C]
 ;Created by jdenm8 on 2014/07/28
 ;Type 4-A2A Volleyball Specialised Crossing Piece (SCP)
-Piece = 16.0, 16.0, 0, 0, 0x57E00305
-PreviewEffect = preview_4_a2a_volleyball_scp
+Piece = 0.0, 0.0, 0, 0, 0x57E00305
+PreviewEffect = preview_type-a2a_volleyball
 
 
 CellLayout = ...h...
@@ -6575,12 +6626,28 @@ Rotate      = 2
 CopyFrom    = 0x513C
 Rotate      = 3
 [HighwayIntersectionInfo_0x0004513C]
-CopyFrom    = 0x0513C
+CopyFrom    = 0x513C
 [HighwayIntersectionInfo_0x0005513C]
 CopyFrom    = 0x1513C
 [HighwayIntersectionInfo_0x0006513C]
 CopyFrom    = 0x2513C
 [HighwayIntersectionInfo_0x0007513C]
+CopyFrom    = 0x3513C
+[HighwayIntersectionInfo_0x0008513C]
+CopyFrom    = 0x513C
+[HighwayIntersectionInfo_0x0009513C]
+CopyFrom    = 0x1513C
+[HighwayIntersectionInfo_0x000A513C]
+CopyFrom    = 0x2513C
+[HighwayIntersectionInfo_0x000B513C]
+CopyFrom    = 0x3513C
+[HighwayIntersectionInfo_0x000C513C]
+CopyFrom    = 0x513C
+[HighwayIntersectionInfo_0x000D513C]
+CopyFrom    = 0x1513C
+[HighwayIntersectionInfo_0x000E513C]
+CopyFrom    = 0x2513C
+[HighwayIntersectionInfo_0x000F513C]
 CopyFrom    = 0x3513C
 
 [HighwayIntersectionInfo_0x0000513A]
@@ -6628,12 +6695,28 @@ Rotate      = 2
 CopyFrom    = 0x513A
 Rotate      = 3
 [HighwayIntersectionInfo_0x0004513A]
-CopyFrom    = 0x0513A
+CopyFrom    = 0x513A
 [HighwayIntersectionInfo_0x0005513A]
 CopyFrom    = 0x1513A
 [HighwayIntersectionInfo_0x0006513A]
 CopyFrom    = 0x2513A
 [HighwayIntersectionInfo_0x0007513A]
+CopyFrom    = 0x3513A
+[HighwayIntersectionInfo_0x0008513A]
+CopyFrom    = 0x513A
+[HighwayIntersectionInfo_0x0009513A]
+CopyFrom    = 0x1513A
+[HighwayIntersectionInfo_0x000A513A]
+CopyFrom    = 0x2513A
+[HighwayIntersectionInfo_0x000B513A]
+CopyFrom    = 0x3513A
+[HighwayIntersectionInfo_0x000C513A]
+CopyFrom    = 0x513A
+[HighwayIntersectionInfo_0x000D513A]
+CopyFrom    = 0x1513A
+[HighwayIntersectionInfo_0x000E513A]
+CopyFrom    = 0x2513A
+[HighwayIntersectionInfo_0x000F513A]
 CopyFrom    = 0x3513A
 
 [HighwayIntersectionInfo_0x0000513B]
@@ -6681,14 +6764,29 @@ Rotate      = 2
 CopyFrom    = 0x513B
 Rotate      = 3
 [HighwayIntersectionInfo_0x0004513B]
-CopyFrom    = 0x0513B
+CopyFrom    = 0x513B
 [HighwayIntersectionInfo_0x0005513B]
 CopyFrom    = 0x1513B
 [HighwayIntersectionInfo_0x0006513B]
 CopyFrom    = 0x2513B
 [HighwayIntersectionInfo_0x0007513B]
 CopyFrom    = 0x3513B
-
+[HighwayIntersectionInfo_0x0008513B]
+CopyFrom    = 0x513B
+[HighwayIntersectionInfo_0x0009513B]
+CopyFrom    = 0x1513B
+[HighwayIntersectionInfo_0x000A513B]
+CopyFrom    = 0x2513B
+[HighwayIntersectionInfo_0x000B513B]
+CopyFrom    = 0x3513B
+[HighwayIntersectionInfo_0x000C513B]
+CopyFrom    = 0x513B
+[HighwayIntersectionInfo_0x000D513B]
+CopyFrom    = 0x1513B
+[HighwayIntersectionInfo_0x000E513B]
+CopyFrom    = 0x2513B
+[HighwayIntersectionInfo_0x000F513B]
+CopyFrom    = 0x3513B
 
 
 ;End RHW SECTION
