@@ -4120,11 +4120,14 @@ Rotate		= 2
 CopyFrom    = 0x4533D
 Rotate		= 1
 
+
 [HighwayIntersectionInfo_0x0000533C]
 ;Added by eggman121 22/11/2014
 ;Real Highway MIS to RHW4 Elevated Transition L1
-Piece = 0.0, 0.0, 0, 0, 0x57732385
+Piece = 0.0, 0.0, 0, 0, 0x57732006
 PreviewEffect = preview_mis_rhw_trans_001
+
+;Modified to follow extrapolation of Maarten's WT IID scheme
 
 CellLayout = ......
 CellLayout = ..c...
@@ -4144,7 +4147,7 @@ ConsLayout = ..|...
 ConsLayout = ......
 ConsLayout = ..^...
 
-AutoTileBase = 0x57732380
+AutoTileBase = 0x57732001
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x57732380
 Costs = 375
@@ -4170,10 +4173,11 @@ Rotate		= 2
 CopyFrom    = 0x4533C
 Rotate		= 1
 
+
 [HighwayIntersectionInfo_0x0000533E]
 ;Added by eggman121 23/11/2014
 ;Real Highway MIS to RHW4 Elevated Transition L2
-Piece = 0.0, 0.0, 0, 0, 0x57732685
+Piece = 0.0, 0.0, 0, 0, 0x57732007
 PreviewEffect = preview_mis_rhw_trans_002
 
 CellLayout = ......
@@ -4194,7 +4198,7 @@ ConsLayout = ..|...
 ConsLayout = ......
 ConsLayout = ..^...
 
-AutoTileBase = 0x57732680
+AutoTileBase = 0x57732002
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x57732680
 Costs = 375
