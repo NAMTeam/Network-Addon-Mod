@@ -163,12 +163,12 @@ CopyFrom    = 0x751F1
 [HighwayIntersectionInfo_0x000051F2]
 ;Added by Tarkus 6/2/2012.
 ;FlexRamp Type D1-Orthogonal Off/Exit Ramp
-Piece = 0.0, 0.0, 0, 0, 0x5783300F
+Piece = 0.0, -16.0, 0, 0, 0x5783300F
 PreviewEffect = preview_flexramp_d1orth_000
 
 CellLayout =.......
-CellLayout =..Z.<..
-CellLayout =..dc...
+CellLayout =.......
+CellLayout =..Zc<..
 CellLayout =..ab...
 CellLayout =..cc...
 CellLayout =.......
@@ -177,12 +177,12 @@ CellLayout =..^....
 CheckType = a - dirtroad: 0x02040004, 0xffffffff optional
 CheckType = b - dirtroad: 0x02040204, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
-CheckType = d - dirtroad: 0x00000000, 0xffffffff optional
+;CheckType = d - dirtroad: 0x00000000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
 ConsLayout =.......
-ConsLayout =..|.<..
-ConsLayout =..||...
+ConsLayout =.......
+ConsLayout =..||<..
 ConsLayout =..||...
 ConsLayout =..||...
 ConsLayout =.......
@@ -522,20 +522,21 @@ CopyFrom    = 0x751FC
 [HighwayIntersectionInfo_0x000051FD]
 ;Added by Tarkus 5/17/2008.
 ;FLEXRamp Type D2
+;!!! MODIFIED BY GANARAM INUKSHUK 10 AUG 15 !!!
 Piece = 0.0, 0.0, 0, 0, 0x5765300F
 PreviewEffect = preview_flexramp_d2orth_000
 
 CellLayout =.......
-CellLayout =..Zb<..
+CellLayout =..Zc<..
 CellLayout =..db...
-CellLayout =..cc...
-CellLayout =..cc...
+CellLayout =..cb...
+CellLayout =..c....
 CellLayout =.......
 CellLayout =..^....
 
 CheckType = b - dirtroad: 0x02000204, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
-CheckType = d - dirtroad: 0x02040400, 0xffffffff optional
+CheckType = d - dirtroad: 0x02040000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
 
 ConsLayout =.......
@@ -591,6 +592,7 @@ CopyFrom    = 0x751FD
 
 [HighwayIntersectionInfo_0x000051FE]
 ;Added by Tarkus 5/17/2008.
+;!!! REWRITTEN BY GANARAM INUKSHUK 10 AUG 15 !!!
 ;FlexRamp Type B2-Orthogonal Off/Exit Ramp
 Piece = 0.0, 0.0, 0, 0, 0x5764100F
 PreviewEffect = preview_flexramp_b2orth_000
@@ -602,10 +604,10 @@ CellLayout =...cc....
 CellLayout =..fe.....
 CellLayout =...^.....
 
-CheckType = a - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = a - dirtroad: 0x02040000, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000204, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
-;Checktype = d - dirtroad: 0x00000204, 0xffffffff optional
+;Checktype = d - dirtroad: 0x04000204, 0xffffffff optional
 CheckType = e - dirtroad: 0x00000301, 0xffffffff optional
 CheckType = f - dirtroad: 0x03010000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
@@ -664,21 +666,22 @@ CopyFrom    = 0x751FE
 
 [HighwayIntersectionInfo_0x000051FF]
 ;Added by Tarkus 5/17/2008.
+;!!! REWRITTEN BY GANARAM INUKSHUK 10 AUG 15 !!!
 ;FlexRamp Type E2-Orthogonal Off/Exit Ramp
 Piece = 0.0, 0.0, 0, 0, 0x5765400F
 PreviewEffect = preview_flexramp_e2orth_000
 
 CellLayout =.........
-CellLayout =...Zb...<
+CellLayout =...Zq...<
 CellLayout =...ab....
 CellLayout =...cb....
 CellLayout =..fe.....
 CellLayout =...^.....
 
-CheckType = a - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = a - dirtroad: 0x04040000, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000204, 0xffffffff optional
 CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
-;Checktype = d - dirtroad: 0x00000404, 0xffffffff optional
+Checktype = q - dirtroad: 0x04000204, 0xffffffff optional
 CheckType = e - dirtroad: 0x00000301, 0xffffffff optional
 CheckType = f - dirtroad: 0x03010000, 0xffffffff optional
 CheckType = Z - dirtroad: 0x00000000
