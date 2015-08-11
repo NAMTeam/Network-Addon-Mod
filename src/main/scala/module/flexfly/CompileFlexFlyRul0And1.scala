@@ -153,7 +153,7 @@ object CompileFlexFlyRul0And1 {
     |[HighwayIntersectionInfo_0x$hid%08X]
     |;Added by memo 2014/11/16
     |;FlexFly 90
-    |Piece = -80.0, 0.0, 0, 1, 0x$previewId90%08X
+    |Piece = -48.0, 0.0, 0, 1, 0x$previewId90%08X
     |PreviewEffect = $previewName90
     |
     |CellLayout=........
@@ -161,8 +161,8 @@ object CompileFlexFlyRul0And1 {
     |CellLayout=...cY...
     |CellLayout=....dY..
     |CellLayout=.....e..
-    |CellLayout=.....fZ<
-    |CellLayout=......^.
+    |CellLayout=....Zf.<
+    |CellLayout=....^...
     |
     |CheckType = Z - dirtroad: 0x02020202
     |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -178,8 +178,8 @@ object CompileFlexFlyRul0And1 {
     |ConsLayout=........
     |ConsLayout=........
     |ConsLayout=........
-    |ConsLayout=......+<
-    |ConsLayout=......^.
+    |ConsLayout=....+..<
+    |ConsLayout=....^...
     |
     |AutoTileBase = 0x55387000
     |PlaceQueryID = 0x$previewId90%08X
@@ -211,15 +211,15 @@ object CompileFlexFlyRul0And1 {
     |[HighwayIntersectionInfo_0x${hid+1}%08X]
     |;Added by memo 2014/11/16
     |;FlexFly 45
-    |Piece = -32.0, 0.0, 0, 1, 0x$previewId45%08X
+    |Piece = 0.0, 0.0, 0, 1, 0x$previewId45%08X
     |PreviewEffect = $previewName45
     |
     |CellLayout=........
     |CellLayout=...Xc...
     |CellLayout=....dY..
     |CellLayout=.....e..
-    |CellLayout=.....fZ<
-    |CellLayout=......^.
+    |CellLayout=....Zf.<
+    |CellLayout=....^...
     |
     |CheckType = Z - dirtroad: 0x02020202
     |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -233,8 +233,8 @@ object CompileFlexFlyRul0And1 {
     |ConsLayout=........
     |ConsLayout=........
     |ConsLayout=........
-    |ConsLayout=......+<
-    |ConsLayout=......^.
+    |ConsLayout=....+..<
+    |ConsLayout=....^...
     |
     |AutoTileBase = 0x55387000
     |PlaceQueryID = 0x$previewId45%08X
