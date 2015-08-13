@@ -49,9 +49,14 @@ AddTypes     =  501F, 1501F, 2501F, 3501F, 4501F, 5501F, 6501F, 7501F ;L4 RHW-4 
 AddTypes     =  5020, 15020, 25020, 35020, 45020, 55020, 65020, 75020 ;L4 MIS Starter
 AddTypes     =  5021, 15021, 25021, 35021, 45021, 55021, 65021, 75021 ;L4 RHW-6S Starter
 ;---DD Starters---
-AddTypes     =  5022, 15022, 25022, 35022, 45022, 55022, 65022, 75022 ;L2/L3 DDRHW-4 Starter
+AddTypes     =  5022, 15022, 25022, 35022, 45022, 55022, 65022, 75022 ;L1/L2 DDRHW-4 Starter
 ;AddTypes     =  5023, 15023, 25023, 35023, 45023, 55023, 65023, 75023 ;DDRHW-4 New Starter
-AddTypes     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024 ;Disconnector Tile
+;AddTypes     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024 ;Disconnector Tile
+
+
+;---Disconnector---
+RotationRing     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024, 85024, 95024 ;Disconnector Tile
+
 
 ;###separator###
 
@@ -2485,3 +2490,9 @@ CheckType = Z - dirtroad: 0x04040404 lightrail: 0x04040404
 [HighwayIntersectionInfo_0x00075024]
 CopyFrom    = 0x5024
 CheckType = Z - dirtroad: 0x04040404 monorail: 0x04040404
+[HighwayIntersectionInfo_0x00085024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 highway: 0x04040404
+[HighwayIntersectionInfo_0x00095024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 groundhighway: 0x04040404
