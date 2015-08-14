@@ -63,7 +63,6 @@ AddTypes     = 85071, 95071, A5071, B5071, C5071, D5071, E5071, F5071 ;Diag L4 R
 ;---DD Fillers---
 AddTypes     =  5072, 15072, 25072, 35072, 45072, 55072, 65072, 75072 ;L2/L3 DDRHW-4 Filler
 AddTypes     = 85072, 95072, A5072, B5072, C5072, D5072, E5072, F5072 ;Diag DDRHW-4 Filler Pieces
-AddTypes     =  5074, 15074, 25074, 35074, 45074, 55074, 65074, 75074 ;TEST 
 ;NextFree     = 5074
 
 ;###separator###
@@ -3078,90 +3077,3 @@ CopyFrom    = 0x25063
 [HighwayIntersectionInfo_0x00075063]
 CopyFrom    = 0x35063
 
-;TEST PIECE FOR REMOVAL
-[HighwayIntersectionInfo_0x00005074]
-;Added by Tarkus 09/28/2013.
-;TEST
-Piece = 0.0, 0.0, 0, 0, 0x57729005
-PreviewEffect = preview_180curve_1level_000
-
-CellLayout =........
-CellLayout =........
-CellLayout =..YaZZ.<
-CellLayout =....ZZ..
-CellLayout =.....ZZ.
-CellLayout =.....ZZ.
-CellLayout =....ZZ..
-CellLayout =...bZZ..
-CellLayout =..^.....
-
-CheckType = a - dirtroad: 0x00020002 street: 0x04040301, 0xffffffff optional
-CheckType = Y - dirtroad: 0x00000000
-CheckType = Z - dirtroad: 0x00020002, 0xffffffff optional
-CheckType = b - dirtroad: 0x00020002 street: 0x04040101, 0xffffffff optional
-
-ConsLayout =........
-ConsLayout =........
-ConsLayout =...---.<
-ConsLayout =....--..
-ConsLayout =.....--.
-ConsLayout =.....--.
-ConsLayout =....--..
-ConsLayout =...---..
-ConsLayout =..^.....
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57729000
-Costs       = 800
-[HighwayIntersectionInfo_0x00015074]
-CopyFrom    = 0x5074
-Rotate		= 1
-[HighwayIntersectionInfo_0x00025074]
-CopyFrom    = 0x5074
-Rotate		= 2
-[HighwayIntersectionInfo_0x00035074]
-CopyFrom    = 0x5074
-Rotate		= 3
-[HighwayIntersectionInfo_0x00045074]
-Piece = 0.0, 0.0, 2, 1, 0x57729005
-PreviewEffect = preview_180curve_1level_000
-
-CellLayout =........
-CellLayout =........
-CellLayout =..YaZZ.<
-CellLayout =....ZZ..
-CellLayout =.....ZZ.
-CellLayout =.....ZZ.
-CellLayout =....ZZ..
-CellLayout =...bZZ..
-CellLayout =..^.....
-
-CheckType = a - dirtroad: 0x00020002 street: 0x01040401, 0xffffffff optional
-CheckType = Y - dirtroad: 0x00000000
-CheckType = Z - dirtroad: 0x00020002, 0xffffffff optional
-CheckType = b - dirtroad: 0x00020002 street: 0x03040401, 0xffffffff optional
-
-ConsLayout =........
-ConsLayout =........
-ConsLayout =...---.<
-ConsLayout =....--..
-ConsLayout =.....--.
-ConsLayout =.....--.
-ConsLayout =....--..
-ConsLayout =...---..
-ConsLayout =..^.....
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57729000
-Costs       = 800
-[HighwayIntersectionInfo_0x00055074]
-CopyFrom    = 0x45074
-Rotate		= 3
-[HighwayIntersectionInfo_0x00065074]
-CopyFrom    = 0x45074
-Rotate		= 2
-[HighwayIntersectionInfo_0x00075074]
-CopyFrom    = 0x45074
-Rotate		= 1
