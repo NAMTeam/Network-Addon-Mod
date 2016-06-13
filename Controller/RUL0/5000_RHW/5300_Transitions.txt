@@ -3214,7 +3214,6 @@ Rotate		= 1
 
 ;End RHW Transition Piece Section SECTION
 
-
 [HighwayIntersectionInfo_0x00005330]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L1
@@ -3230,7 +3229,7 @@ CellLayout=..^.
 
 CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
 CheckType = b - dirtroad: 0x00000000
-CheckType = c - dirtroad: 0x04000400, 0x0000FF00 optional
+CheckType = c - groundhighway: 0x04040404 dirtroad: 0x04020402, 0xFFFFFFFF optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
@@ -3277,7 +3276,7 @@ CellLayout=..^.
 
 CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
 CheckType = b - dirtroad: 0x00000000
-CheckType = c - dirtroad: 0x04000400, 0x0000FF00 optional
+CheckType = c - groundhighway: 0x04020402 dirtroad: 0x02040204, 0xFFFFFFFF optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
