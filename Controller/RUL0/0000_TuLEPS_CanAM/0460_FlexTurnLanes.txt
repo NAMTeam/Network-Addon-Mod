@@ -10,7 +10,8 @@ AddTypes     = 0463, 10463, 20463, 30463, 40463, 50463, 60463, 70463 ;TLA3-to-TL
 AddTypes     = 0464, 10464, 20464, 30464, 40464, 50464, 60464, 70464 ;AVE2-to-TL starter
 AddTypes     = 0465, 10465, 20465, 30465, 40465, 50465, 60465, 70465 ;AVE4-to-TL 120 starter
 AddTypes     = 0466, 10466, 20466, 30466, 40466, 50466, 60466, 70466 ;AVE4-to-TL 220 starter
-
+AddTypes     = 0467, 10467, 20467, 30467, 40467, 50467, 60467, 70467 ;TLA7-to-TL starter
+AddTypes     = 0468, 10468, 20468, 30468, 40468, 50468, 60468, 70468 ;AVE6-to-TL starter
 
 
 
@@ -245,7 +246,7 @@ CopyFrom    = 0x30464
 
 [HighwayIntersectionInfo_0x00000465]
 ;Added by Tarkus 2014/01/20
-;AVE4-to-TL starter
+;AVE4-to-TL starter Type 120
 Piece = 0.0, 16.0, 0, 0, 0x5B224005
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B224005
 PreviewEffect = preview_flex_turn_lane_transition_av4_tl
@@ -293,7 +294,7 @@ CopyFrom    = 0x30465
 
 [HighwayIntersectionInfo_0x00000466]
 ;Added by Tarkus 2014/01/20
-;AVE4-to-TL starter
+;AVE4-to-TL starter Type 220
 Piece = 0.0, 16.0, 0, 0, 0x5B224105
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B224105
 PreviewEffect = preview_flex_turn_lane_transition_av4_t2
@@ -341,3 +342,94 @@ CopyFrom    = 0x20466
 [HighwayIntersectionInfo_0x00070466]
 CopyFrom    = 0x30466
 
+
+
+[HighwayIntersectionInfo_0x00000467]
+;Added by Tarkus 2016/09/11
+;TLA7-to-TL starter
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204105
+PreviewEffect = preview_flex_turn_lane_transition_tla3_tl
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000304, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204105
+Costs       = 20
+
+[HighwayIntersectionInfo_0x00010467]
+CopyFrom    = 0x0467
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020467]
+CopyFrom    = 0x0467
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030467]
+CopyFrom    = 0x0467
+Rotate		= 3
+[HighwayIntersectionInfo_0x00040467]
+CopyFrom    = 0x0467
+[HighwayIntersectionInfo_0x00050467]
+CopyFrom    = 0x10467
+[HighwayIntersectionInfo_0x00060467]
+CopyFrom    = 0x20467
+[HighwayIntersectionInfo_0x00070467]
+CopyFrom    = 0x30467
+
+
+
+[HighwayIntersectionInfo_0x00000468]
+;Added by Tarkus 2016/09/11
+;AVE6-to-TL starter
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204105
+PreviewEffect = preview_flex_turn_lane_transition_ave2_tl
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000104, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204105
+Costs       = 20
+
+[HighwayIntersectionInfo_0x00010468]
+CopyFrom    = 0x0468
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020468]
+CopyFrom    = 0x0468
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030468]
+CopyFrom    = 0x0468
+Rotate		= 3
+[HighwayIntersectionInfo_0x00040468]
+CopyFrom    = 0x0468
+[HighwayIntersectionInfo_0x00050468]
+CopyFrom    = 0x10468
+[HighwayIntersectionInfo_0x00060468]
+CopyFrom    = 0x20468
+[HighwayIntersectionInfo_0x00070468]
+CopyFrom    = 0x30468
