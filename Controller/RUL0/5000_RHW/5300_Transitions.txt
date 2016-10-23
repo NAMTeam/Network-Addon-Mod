@@ -34,12 +34,20 @@ AddTypes     = 533E, 1533E, 2533E, 3533E, 4533E, 5533E, 6533E, 7533E ;RHW4-MIS T
 AddTypes     = 532B, 1532B, 2532B, 3532B, 4532B, 5532B, 6532B, 7532B ;DDRHW-4-to-Dual-ERHW-4 (L1/L2) Connector
 
 ;Height Transitions (FLEX)
-RotationRing     = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FLEXOnSlope L0-L1
+RotationRing = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FLEXOnSlope L0-L1
 AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2
 AddTypes     = 5332, 15332, 25332, 35332, 45332, 55332, 65332, 75332 ;FlexHT L0-L1 4 Tiles
-;AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L2 4 Tiles
+;AddTypes	 = 5341, 15341, 25341, 35341, 45341, 55341, 65341, 75341 ;FLEXHT L0-L1 Diag 6 Tiles
 AddTypes     = 5334, 15334, 25334, 35334, 45334, 55334, 65334, 75334 ;FlexHT L0-L2 7 Tiles
-AddTypes     =  5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree MIS H1 Transition
+AddTypes     = 5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree MIS H1 Transition
+;AddTypes     = 5336, 45336, 15336, 55336, 25336, 65336, 35336, 75336 ;FLEX-WT 1-Lane
+;AddTypes     = 5337, 45337, 15337, 55337, 25337, 65337, 35337, 75337 ;FLEX-WT S-to-C
+;AddTypes     = 5339, 45339, 15339, 55339, 25339, 65339, 35339, 75339 ;FLEX-WT S-to-C Sym
+;AddTypes     = 5338, 45338, 15338, 55338, 25338, 65338, 35338, 75338 ;FLEX-WT 2-to-4
+;AddTypes     = 533A, 1533A, 2533A, 3533A, 4533A, 5533A, 6533A, 7533A ;FLEX-WT 2-to-4 Sym
+;AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L1 MIS 90-Degree Transition A
+;AddTypes     = 533B, 1533B, 2533B, 3533B, 4533B, 5533B, 6533B, 7533B ;FlexHT L0-L1 MIS 90-Degree Transition B
+;AddTypes     = 5340, 15340, 25340, 35340, 45340, 55340, 65340, 75340 ;FlexHT L0-L1 MIS 45-Degree Transition A
 
 ;Height Transitions (Static)
 ;BUTTON EFFECTIVELY OBSOLETE
@@ -3504,6 +3512,477 @@ Rotate		= 1
 
 
 
+[HighwayIntersectionInfo_0x00005336]
+;Added by Tarkus 07.20.2016
+;RHW FlexWT Ortho
+Piece = 0.0, 16.0, 0, 0, 0x57710400
+PreviewEffect = preview_flexwtrans_1l___000
+
+CellLayout=....
+CellLayout=..b<
+CellLayout=..c.
+CellLayout=..a.
+CellLayout=..d.
+CellLayout=..c.
+CellLayout=..^.
+
+CheckType = a - dirtroad: 0x04040200, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x02000200, 0xFF00FF00 optional
+CheckType = d - dirtroad: 0x02000400, 0xFFFFFFFF optional
+
+;1,0,2,4,4
+;2,7,0,4,0,2
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57710000
+Costs = 200
+[HighwayIntersectionInfo_0x00015336]
+CopyFrom	=	0x5336
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025336]
+CopyFrom	=	0x5336
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035336]
+CopyFrom	=	0x5336
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045336]
+CopyFrom	=	0x5336
+Transpose = 1
+Piece = 0.0, 16.0, 0, 0, 0x57710006
+PreviewEffect = preview_flexwtrans_1l_m_000
+[HighwayIntersectionInfo_0x00055336]
+CopyFrom	=	0x45336
+Rotate	=	3
+[HighwayIntersectionInfo_0x00065336]
+CopyFrom	=	0x45336
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075336]
+CopyFrom	=	0x45336
+Rotate	=	1
+
+
+
+[HighwayIntersectionInfo_0x00005337]
+;Added by Tarkus 07.20.2016
+;RHW FlexWT Ortho S-to-C
+Piece = 0.0, 16.0, 0, 0, 0x57710400
+PreviewEffect = preview_flexwtrans_1lsc_000
+
+CellLayout=.......
+CellLayout=..b...<
+CellLayout=..aaa..
+CellLayout=..aaa..
+CellLayout=..cde..
+CellLayout=..cddf.
+CellLayout=..cdde.
+CellLayout=..aaaa.
+CellLayout=.......
+CellLayout=..^....
+
+;1,4,2,4,2
+;2,1,0,2,4,2
+;2,2,0,2,4,2
+;2,3,4,2,4,2
+;2,4,4,2,0,2
+;2,5,4,2,4,2
+;2,6,4,2,4,2
+;2,7,4,2,4,2
+;2,8,0,2,4,2
+;2,17,4,0,0,2
+;2,18,4,2,0,2
+;2-3-4
+;1-0-5-17
+;8-7-6-18
+
+CheckType = a - dirtroad: 0x02000200, 0xFF00FF00 optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x02040200, 0xFF00FF00 optional
+CheckType = d - dirtroad: 0x02040204, 0xFF00FF00 optional
+CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
+CheckType = f - dirtroad: 0x02000004, 0xFF00FF00 optional
+
+ConsLayout=.......
+ConsLayout=..+...<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=..^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57783000
+Costs = 600
+[HighwayIntersectionInfo_0x00015337]
+CopyFrom	=	0x5337
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025337]
+CopyFrom	=	0x5337
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035337]
+CopyFrom	=	0x5337
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045337]
+CopyFrom	=	0x5337
+Transpose = 1
+Piece = 0.0, 16.0, 0, 0, 0x57701400
+PreviewEffect = preview_flexwtrans_1lscm000
+[HighwayIntersectionInfo_0x00055337]
+CopyFrom	=	0x45337
+Rotate	=	3
+[HighwayIntersectionInfo_0x00065337]
+CopyFrom	=	0x45337
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075337]
+CopyFrom	=	0x45337
+Rotate	=	1
+
+
+
+[HighwayIntersectionInfo_0x00005338]
+;Added by Tarkus 07.30.2016
+;RHW FlexWT Ortho 2-to-4
+Piece = 0.0, 16.0, 0, 0, 0x57730004
+PreviewEffect = preview_flexwtrans_1l24_000
+
+CellLayout=.......
+CellLayout=..b...<
+CellLayout=..a....
+CellLayout=..c....
+CellLayout=..cd...
+CellLayout=..ce...
+CellLayout=..ce...
+CellLayout=..aa...
+CellLayout=.......
+CellLayout=..^....
+
+CheckType = a - dirtroad: 0x02000200, 0xFF00FF00 optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x02040200, 0xFF00FF00 optional
+CheckType = d - dirtroad: 0x02000004, 0xFF00FF00 optional
+CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
+
+ConsLayout=.......
+ConsLayout=..+...<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=..^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57730000
+Costs = 600
+[HighwayIntersectionInfo_0x00015338]
+CopyFrom	=	0x5338
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025338]
+CopyFrom	=	0x5338
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035338]
+CopyFrom	=	0x5338
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045338]
+CopyFrom	=	0x5338
+Transpose	=	1
+Piece = 0.0, 16.0, 0, 0, 0x57730004
+PreviewEffect = preview_flexwtrans_1l24m000
+[HighwayIntersectionInfo_0x00055338]
+CopyFrom	=	0x45338
+Rotate	=	3
+[HighwayIntersectionInfo_0x00065338]
+CopyFrom	=	0x45338
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075338]
+CopyFrom	=	0x45338
+Rotate	=	1
+
+
+
+[HighwayIntersectionInfo_0x00005339]
+;Added by Tarkus 07.20.2016
+;RHW FlexWT Ortho S-to-C Symmetrical
+Piece = 0.0, 16.0, 0, 0, 0x57710400
+PreviewEffect = preview_flexwtrans_1lsc_001
+
+CellLayout=.......
+CellLayout=..b...<
+CellLayout=..aaa..
+CellLayout=..aaa..
+CellLayout=..cde..
+CellLayout=.gdddf.
+CellLayout=.ce.ce.
+CellLayout=.aa.aa.
+CellLayout=.......
+CellLayout=..^....
+
+;Above
+;2,13,0,2,0,2
+
+;Row 1
+;2,2,0,2,4,2
+;2,3,4,2,4,2
+;2,4,4,2,0,2
+
+;Row 2
+;2,9,0,0,4,2
+;1,4,2,4,2
+;2,1,4,2,4,2
+;2,5,4,2,4,2
+;2,17,4,0,0,2
+;Row 3
+;2,24,0,2,4,2
+;2,8,4,2,0,2
+;Tile 7 Blank
+;2,6,0,2,4,2
+;2,18,4,2,0,2
+;11-12-13-14-15
+;10-02-03-04-16
+;09-01|00|05-17
+;24-08-07-06-18
+;23-22-21-20-19
+
+CheckType = a - dirtroad: 0x02000200, 0xFF00FF00 optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x02040200, 0xFF00FF00 optional
+CheckType = d - dirtroad: 0x02040204, 0xFF00FF00 optional
+CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
+CheckType = f - dirtroad: 0x02000004, 0xFF00FF00 optional
+CheckType = g - dirtroad: 0x02040000, 0xFF00FF00 optional
+;CheckType = h - dirtroad: 0x00040204, 0xFF00FF00 optional
+
+ConsLayout=.......
+ConsLayout=..+...<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=..^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57783001
+Costs = 600
+[HighwayIntersectionInfo_0x00015339]
+CopyFrom	=	0x5339
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025339]
+CopyFrom	=	0x5339
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035339]
+CopyFrom	=	0x5339
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045339]
+CopyFrom	=	0x5339
+[HighwayIntersectionInfo_0x00055339]
+CopyFrom	=	0x15339
+[HighwayIntersectionInfo_0x00065339]
+CopyFrom	=	0x25339
+[HighwayIntersectionInfo_0x00075339]
+CopyFrom	=	0x35339
+
+
+
+
+[HighwayIntersectionInfo_0x0000533A]
+;Added by Tarkus 07.30.2016
+;RHW FlexWT Ortho 2-to-4 Symmetrical
+Piece = 0.0, 16.0, 0, 0, 0x57710400
+PreviewEffect = preview_flexwtrans_1l24_001
+
+CellLayout=.......
+CellLayout=..b...<
+CellLayout=..a....
+CellLayout=..c....
+CellLayout=.gcd...
+CellLayout=.hfe...
+CellLayout=.h.e...
+CellLayout=.a.a...
+CellLayout=.......
+CellLayout=..^....
+
+;1,4,2,4,2
+;2,1,0,0,4,2
+;2,3,4,2,4,2
+;2,5,4,0,0,2
+;2,6,4,2,0,2
+;2,7,4,2,4,0
+;2,8,0,2,4,2
+;2,13,0,2,0,2
+;2,20,4,2,0,2
+;2,22,0,2,4,2
+
+CheckType = a - dirtroad: 0x02000200, 0xFF00FF00 optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x02040204, 0xFF00FF00 optional
+CheckType = d - dirtroad: 0x02000004, 0xFF00FF00 optional
+CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
+CheckType = f - dirtroad: 0x00040204, 0xFF00FF00 optional
+CheckType = g - dirtroad: 0x02040000, 0xFF00FF00 optional
+CheckType = h - dirtroad: 0x02040200, 0xFF00FF00 optional
+
+ConsLayout=.......
+ConsLayout=..+...<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=..^....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57730001
+Costs = 600
+[HighwayIntersectionInfo_0x0001533A]
+CopyFrom	=	0x533A
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002533A]
+CopyFrom	=	0x533A
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003533A]
+CopyFrom	=	0x533A
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004533A]
+CopyFrom	=	0x533A
+[HighwayIntersectionInfo_0x0005533A]
+CopyFrom	=	0x1533A
+[HighwayIntersectionInfo_0x0006533A]
+CopyFrom	=	0x2533A
+[HighwayIntersectionInfo_0x0007533A]
+CopyFrom	=	0x3533A
+
+
+
+[HighwayIntersectionInfo_0x00005333]
+;Added by Tarkus 3 Aug 2016
+;L0-L1 MIS 90-Transition A
+Piece = -48.0, 0.0, 0, 1, 0x5CA6C005
+PreviewEffect = preview_flexfly5ca6c005
+
+CellLayout=........
+CellLayout=.aYY....
+CellLayout=...YY...
+CellLayout=....YY..
+CellLayout=.....Y..
+CellLayout=....Zf.<
+CellLayout=....^...
+
+CheckType = Z - dirtroad: 0x02020202
+CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = a - avenue: 0x04040403 dirtroad: 0x04040402, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x04040104 dirtroad: 0x04040402, 0xFFFFFFFF optional
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=....+..<
+ConsLayout=....^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57727000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015333]
+CopyFrom=0x00005333
+Rotate=1
+[HighwayIntersectionInfo_0x00025333]
+CopyFrom=0x00005333
+Rotate=2
+[HighwayIntersectionInfo_0x00035333]
+CopyFrom=0x00005333
+Rotate=3
+[HighwayIntersectionInfo_0x00045333]
+CopyFrom=0x00005333
+Transpose=1
+[HighwayIntersectionInfo_0x00055333]
+CopyFrom=0x00045333
+Rotate=1
+[HighwayIntersectionInfo_0x00065333]
+CopyFrom=0x00045333
+Rotate=2
+[HighwayIntersectionInfo_0x00075333]
+CopyFrom=0x00045333
+Rotate=3
+
+
+
+[HighwayIntersectionInfo_0x0000533B]
+;Added by Tarkus 3 Aug 2016
+;L0-L1 MIS 90-Transition B
+Piece = -48.0, 0.0, 0, 1, 0x5CA6D005
+PreviewEffect = preview_flexfly5ca6d005
+
+CellLayout=........
+CellLayout=.aYY....
+CellLayout=...YY...
+CellLayout=....YY..
+CellLayout=.....Y..
+CellLayout=....Zf.<
+CellLayout=....^...
+
+CheckType = Z - dirtroad: 0x02020202
+CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = a - avenue: 0x03040304 dirtroad: 0x04040402, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x03030403 dirtroad: 0x04040402, 0xFFFFFFFF optional
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=....+..<
+ConsLayout=....^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57727001
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001533B]
+CopyFrom=0x0000533B
+Rotate=1
+[HighwayIntersectionInfo_0x0002533B]
+CopyFrom=0x0000533B
+Rotate=2
+[HighwayIntersectionInfo_0x0003533B]
+CopyFrom=0x0000533B
+Rotate=3
+[HighwayIntersectionInfo_0x0004533B]
+CopyFrom=0x0000533B
+Transpose=1
+[HighwayIntersectionInfo_0x0005533B]
+CopyFrom=0x0004533B
+Rotate=1
+[HighwayIntersectionInfo_0x0006533B]
+CopyFrom=0x0004533B
+Rotate=2
+[HighwayIntersectionInfo_0x0007533B]
+CopyFrom=0x0004533B
+Rotate=3
+
+
+
+
+
 [HighwayIntersectionInfo_0x00105302]
 ;Added by MandelSoft 2013/11/05
 ;L1 RHW-6S-to-RHW-4 Transition Style A
@@ -4313,3 +4792,115 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x0007533E]
 CopyFrom    = 0x4533E
 Rotate		= 1
+
+
+[HighwayIntersectionInfo_0x00005340]
+;Added by Tarkus 10 Aug 2016
+;FlexFly 45
+Piece = 0.0, 0.0, 0, 1, 0x5CA6C105
+PreviewEffect = preview_flexfly5ca6c105
+
+CellLayout=........
+CellLayout=....c...
+CellLayout=....YY..
+CellLayout=.....Y..
+CellLayout=....Zd.<
+CellLayout=....^...
+
+CheckType = Z - dirtroad: 0x02020202
+CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = c - avenue: 0x04000302 dirtroad: 0x04000103, 0xFFFFFFFF optional
+CheckType = d - avenue: 0x04000301 dirtroad: 0x04000103, 0xFFFFFFFF optional
+
+;Type0=0x04000302,0x04000103,0x57727200,0,0
+;Type0=0x04000301,0x04000103,0x57727240,0,0
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=........
+ConsLayout=....+..<
+ConsLayout=....^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5CA6C105
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015340]
+CopyFrom=0x00005340
+Rotate=1
+[HighwayIntersectionInfo_0x00025340]
+CopyFrom=0x00005340
+Rotate=2
+[HighwayIntersectionInfo_0x00035340]
+CopyFrom=0x00005340
+Rotate=3
+[HighwayIntersectionInfo_0x00045340]
+CopyFrom=0x00005340
+Transpose=1
+[HighwayIntersectionInfo_0x00055340]
+CopyFrom=0x00045340
+Rotate=1
+[HighwayIntersectionInfo_0x00065340]
+CopyFrom=0x00045340
+Rotate=2
+[HighwayIntersectionInfo_0x00075340]
+CopyFrom=0x00045340
+Rotate=3
+
+
+
+[HighwayIntersectionInfo_0x00005341]
+;Added by Tarkus 09.23.2012
+;RHW FlexHT-L0-to-L1 Diag
+Piece = 16.0, 0.0, 0, 0, 0x57700805
+PreviewEffect = preview_flexhtrans_l1___001
+
+CellLayout=......
+CellLayout=...ba<
+CellLayout=...dc.
+CellLayout=..dc..
+CellLayout=..e...
+CellLayout=......
+CellLayout=...^..
+
+CheckType = a - lightrail: 0x04020000 dirtroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x02020202
+CheckType = c - dirtroad: 0x00000301, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = e - lightrail: 0x04000000 dirtroad: 0x00000301, 0xFFFFFFFF optional
+
+ConsLayout=......
+ConsLayout=...+.<
+ConsLayout=......
+ConsLayout=......
+ConsLayout=......
+ConsLayout=......
+ConsLayout=...^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57700800
+Costs = 800
+
+[HighwayIntersectionInfo_0x00015341]
+CopyFrom	=	0x5341
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025341]
+CopyFrom	=	0x5341
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035341]
+CopyFrom	=	0x5341
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045341]
+CopyFrom	=	0x5341
+Transpose	=	1
+[HighwayIntersectionInfo_0x00055341]
+CopyFrom	=	0x45341
+Rotate	=	3
+[HighwayIntersectionInfo_0x00065341]
+CopyFrom	=	0x45341
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075341]
+CopyFrom	=	0x45341
+Rotate	=	1
+
