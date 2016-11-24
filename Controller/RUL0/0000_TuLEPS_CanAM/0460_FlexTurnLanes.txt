@@ -259,8 +259,8 @@ CellLayout=.^..
 CheckType = a - avenue: 0x02040200
 CheckType = b - avenue: 0x02040200 street: 0x00000100, 0xffffffff optional
 CheckType = c - avenue: 0x02000204, 0xffffffff optional
-;###LHD###CheckType = a - avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = c - avenue: 0x02000204 street: 0x00000300, 0xffffffff optional
+;###LHD###CheckType = b - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - avenue: 0x02000204 street: 0x01000000, 0xffffffff optional
 
 
 ConsLayout=....
@@ -306,11 +306,11 @@ CellLayout=.bc.
 CellLayout=.^..
 
 CheckType = a - avenue: 0x02040200
-CheckType = b - avenue: 0x02040200 street: 0x00030100, 0xffffffff optional
+CheckType = b - avenue: 0x02040200 street: 0x00000300, 0xffffffff optional
 CheckType = c - avenue: 0x02000204, 0xffffffff optional
 CheckType = d - avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = b - avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = c - avenue: 0x02000204 street: 0x00000300, 0xffffffff optional
+;###LHD###CheckType = c - avenue: 0x02000204 street: 0x03000000, 0xffffffff optional
 
 
 ConsLayout=....
