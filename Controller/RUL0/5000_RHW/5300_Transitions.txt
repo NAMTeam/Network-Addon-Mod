@@ -48,6 +48,8 @@ AddTypes     = 5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree
 ;AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L1 MIS 90-Degree Transition A
 ;AddTypes     = 533B, 1533B, 2533B, 3533B, 4533B, 5533B, 6533B, 7533B ;FlexHT L0-L1 MIS 90-Degree Transition B
 ;AddTypes     = 5340, 15340, 25340, 35340, 45340, 55340, 65340, 75340 ;FlexHT L0-L1 MIS 45-Degree Transition A
+AddTypes     = 5342, 15342, 25342, 35342, 45342, 55342, 65342, 75342 ;Diag FLEXOnSlope L0-L1
+AddTypes     = 5343, 15343, 25343, 35343, 45343, 55343, 65343, 75343 ;Diag FLEXOnSlope L0-L2
 
 ;Height Transitions (Static)
 ;BUTTON EFFECTIVELY OBSOLETE
@@ -4904,3 +4906,138 @@ Rotate	=	2
 CopyFrom	=	0x45341
 Rotate	=	1
 
+
+
+[HighwayIntersectionInfo_0x00005342]
+;Added by eggman121 27 Jan 2017
+;RHW FLEX-diagonal-OST 1-LEVEL
+Piece = 0.0, -32.0, 0, 0, 0x5770fa0f
+PreviewEffect = preview_rhw_dost_flex_001
+
+CellLayout=....
+CellLayout=..ad
+CellLayout=.ec.
+CellLayout=.b.<
+CellLayout=.^..
+
+CheckType = a - rail: 0x04040400 dirtroad: 0x04010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x00000004 dirtroad: 0x00000401, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x04000404, 0x0000FF00 optional
+CheckType = e - dirtroad: 0x04040400, 0xFF000000 optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=.+.<
+ConsLayout=.^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5770fa0f
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015342]
+CopyFrom	=	0x5342
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025342]
+CopyFrom	=	0x5342
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035342]
+CopyFrom	=	0x5342
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045342]
+CopyFrom	=	0x25342
+Transpose = 1
+[HighwayIntersectionInfo_0x00055342]
+CopyFrom	=	0x45342
+Rotate	=	1
+[HighwayIntersectionInfo_0x00065342]
+CopyFrom	=	0x45342
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075342]
+CopyFrom	=	0x45342
+Rotate	=	3
+[HighwayIntersectionInfo_0x00085342]
+CopyFrom	=	0x5342
+[HighwayIntersectionInfo_0x00095342]
+CopyFrom	=	0x15342
+[HighwayIntersectionInfo_0x000A5342]
+CopyFrom	=	0x25342
+[HighwayIntersectionInfo_0x000B5342]
+CopyFrom	=	0x35342
+[HighwayIntersectionInfo_0x000C5342]
+CopyFrom	=	0x45342
+[HighwayIntersectionInfo_0x000D5342]
+CopyFrom	=	0x55342
+[HighwayIntersectionInfo_0x000E5342]
+CopyFrom	=	0x65342
+[HighwayIntersectionInfo_0x000F5342]
+CopyFrom	=	0x75342
+
+
+[HighwayIntersectionInfo_0x00005343]
+;Added by eggman121 27 Jan 2017
+;RHW FLEX-diagonal-OST 2-LEVEL
+Piece = 0.0, -32.0, 0, 0, 0x5770fa0f
+PreviewEffect = preview_rhw_dost_flex_001
+
+CellLayout=....
+CellLayout=..ad
+CellLayout=.ec.
+CellLayout=.b.<
+CellLayout=.^..
+
+CheckType = a - rail: 0x00040004 dirtroad: 0x04010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x00040000 dirtroad: 0x00000401, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x04000404, 0x0000FF00 optional
+CheckType = e - dirtroad: 0x04040400, 0xFF000000 optional
+
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=.+.<
+ConsLayout=.^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57707A0f
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015343]
+CopyFrom	=	0x5343
+Rotate	=	1
+[HighwayIntersectionInfo_0x00025343]
+CopyFrom	=	0x5343
+Rotate	=	2
+[HighwayIntersectionInfo_0x00035343]
+CopyFrom	=	0x5343
+Rotate	=	3
+[HighwayIntersectionInfo_0x00045343]
+CopyFrom	=	0x25343
+Transpose = 1
+[HighwayIntersectionInfo_0x00055343]
+CopyFrom	=	0x45343
+Rotate	=	1
+[HighwayIntersectionInfo_0x00065343]
+CopyFrom	=	0x45343
+Rotate	=	2
+[HighwayIntersectionInfo_0x00075343]
+CopyFrom	=	0x45343
+Rotate	=	3
+[HighwayIntersectionInfo_0x00085343]
+CopyFrom	=	0x5343
+[HighwayIntersectionInfo_0x00095343]
+CopyFrom	=	0x15343
+[HighwayIntersectionInfo_0x000A5343]
+CopyFrom	=	0x25343
+[HighwayIntersectionInfo_0x000B5343]
+CopyFrom	=	0x35343
+[HighwayIntersectionInfo_0x000C5343]
+CopyFrom	=	0x45343
+[HighwayIntersectionInfo_0x000D5343]
+CopyFrom	=	0x55343
+[HighwayIntersectionInfo_0x000E5343]
+CopyFrom	=	0x65343
+[HighwayIntersectionInfo_0x000F5343]
+CopyFrom	=	0x75343
