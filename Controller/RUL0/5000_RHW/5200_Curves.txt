@@ -8,6 +8,8 @@ AddTypes     = 5204, 45204, 15204, 55204, 25204, 65204, 35204, 75204 ;RHW-4 Dual
 AddTypes     = 5220, 45220, 15220, 55220, 25220, 65220, 35220, 75220 ;FLEX-MRC R2 45
 AddTypes     = 5221, 45221, 15221, 55221, 25221, 65221, 35221, 75221 ;FLEX-MRC R2 90
 AddTypes     = 5222, 45222, 15222, 55222, 25222, 65222, 35222, 75222 ;FLEX-MRC R3 45
+AddTypes     = 5223, 45223, 15223, 55223, 25223, 65223, 35223, 75223 ;FLEX-MRC R4 45
+AddTypes     = 5224, 45224, 15224, 55224, 25224, 65224, 35224, 75224 ;FLEX-MRC R5 45
 AddTypes     = 5205, 45205, 15205, 55205, 25205, 65205, 35205, 75205 ;MIS S-Curve 1
 ;AddTypes     = 5206, 45206, 15206, 55206, 25206, 65206, 35206, 75206 ;MIS S-Curve 2
 AddTypes     = 5207, 45207, 15207, 55207, 25207, 65207, 35207, 75207 ;MIS 45-Curve 1
@@ -2181,3 +2183,121 @@ Rotate  	= 2
 [HighwayIntersectionInfo_0x00075222]
 CopyFrom    = 0x45222
 Rotate  	= 1
+
+[HighwayIntersectionInfo_0x00005223]
+; (flexible) multi Radius Curve R4 RHW Flex
+; Added by eggman121 04/25/2016
+Piece = 0.0, -16.0, 0, 0, 0x57907005
+PreviewEffect = preview_mrc_r4_rhw_flex_001
+
+CellLayout =aabc...........
+CellLayout =X.debc........<
+CellLayout =....dfg........
+CellLayout =......ih.......
+CellLayout =^..............
+
+;senw
+CheckType = X - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - dirtroad: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - dirtroad: 0x01000004, 0xFFFFFFFF optional
+CheckType = h - dirtroad: 0x01000003, 0xFFFFFFFF optional
+CheckType = i - dirtroad: 0x00030100, 0xFFFFFFFF optional
+
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57907005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00015223]
+CopyFrom    = 0x5223
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025223]
+CopyFrom    = 0x5223
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035223]
+CopyFrom    = 0x5223
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045223]
+CopyFrom    = 0x5223
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055223]
+CopyFrom    = 0x45223
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065223]
+CopyFrom    = 0x45223
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075223]
+CopyFrom    = 0x45223
+Rotate		= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x00005224]
+; (flexible) multi Radius Curve R5 RHW Flex
+; Added by eggman121 04/25/2016
+Piece = 0.0, -16.0, 0, 0, 0x57908005
+PreviewEffect = preview_mrc_r5_rhw_flex_001
+
+CellLayout =aabbc..........
+CellLayout =X.deebc.......<
+CellLayout =.....dfg.......
+CellLayout =.......hi......
+CellLayout =^.......ji.....
+
+;senw
+CheckType = X - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - dirtroad: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - dirtroad: 0x04000004, 0xFFFFFFFF optional
+CheckType = h - dirtroad: 0x00030400, 0xFFFFFFFF optional
+CheckType = i - dirtroad: 0x01000003, 0xFFFFFFFF optional
+CheckType = j - dirtroad: 0x00030100, 0xFFFFFFFF optional
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57908005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00015224]
+CopyFrom    = 0x5224
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025224]
+CopyFrom    = 0x5224
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035224]
+CopyFrom    = 0x5224
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045224]
+CopyFrom    = 0x5224
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055224]
+CopyFrom    = 0x45224
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065224]
+CopyFrom    = 0x45224
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075224]
+CopyFrom    = 0x45224
+Rotate		= 1
