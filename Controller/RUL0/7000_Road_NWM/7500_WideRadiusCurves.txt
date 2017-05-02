@@ -16,6 +16,10 @@ AddTypes     = 750B, 1750B, 2750B, 3750B, 4750B, 5750B, 6750B, 7750B, 8750B, 975
 AddTypes     = 750C, 1750C, 2750C, 3750C, 4750C, 5750C, 6750C, 7750C, 8750C, 9750C, A750C, B750C, C750C, D750C, E750C, F750C ;Avenue Long 90 Turn Puzzle Piece
 ;AddTypes     = 750D, 1750D, 2750D, 3750D, 4750D, 5750D, 6750D, 7750D ;Avenue Long S-Curve Puzzle Piece
 AddTypes     = 750E, F750E, 9750E, 6750E, 1750E, E750E, A750E, 5750E, 2750E, D750E, B750E, 4750E, 3750E, C750E, 8750E, 7750E ;(flexible) wide-radius Avenue 45 degree curve
+AddTypes     = 7510, F7510, 97510, 67510, 17510, E7510, A7510, 57510, 27510, D7510, B7510, 47510, 37510, C7510, 87510, 77510 ;MRC R3 Road 45 degree
+AddTypes     = 7511, F7511, 97511, 67511, 17511, E7511, A7511, 57511, 27511, D7511, B7511, 47511, 37511, C7511, 87511, 77511 ;MRC R4 Road 45 degree
+AddTypes     = 7512, F7512, 97512, 67512, 17512, E7512, A7512, 57512, 27512, D7512, B7512, 47512, 37512, C7512, 87512, 77512 ;MRC R5 Road 45 degree
+
 
 ;###separator###
 
@@ -1192,6 +1196,182 @@ Transpose   = 1
 CopyFrom    = 0x3750D
 Transpose   = 1
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;Road_FlexMRC_R3 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007510]
+Piece = 0.0, -16.0, 0, 0, 0x5f094005
+PreviewEffect = preview_mrc_r3_road_flex_001
+
+CellLayout = .............
+CellLayout = ..aabc.......
+CellLayout = ..A.def.....<
+CellLayout = ......gh.....
+CellLayout = .......i.....
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x00020002, 0xFFFFFFFF optional
+CheckType = b - road:0x02020002, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00040200, 0xFFFFFFFF optional
+CheckType = e - road:0x00040404, 0xFFFFFFFF optional
+CheckType = f - road:0x01000004, 0xFFFFFFFF optional
+CheckType = g - road:0x00030100, 0xFFFFFFFF optional
+CheckType = h - road:0x01000003, 0xFFFFFFFF optional
+CheckType = i - road:0x00000100, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f094005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017510]
+CopyFrom    = 0x7510
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027510]
+CopyFrom    = 0x7510
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037510]
+CopyFrom    = 0x7510
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047510]
+CopyFrom    = 0x7510
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057510]
+CopyFrom    = 0x47510
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067510]
+CopyFrom    = 0x47510
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077510]
+CopyFrom    = 0x47510
+Rotate  	= 1
+
+[HighwayIntersectionInfo_0x00007511]
+; (flexible) multi Radius Curve R4 Road Flex
+; Added by eggman121 02/14/2017
+Piece = 0.0, -16.0, 0, 0, 0x5f095005
+PreviewEffect = preview_mrc_r4_road_flex_001
+
+CellLayout =aabc...........
+CellLayout =X.debc........<
+CellLayout =....dfg........
+CellLayout =......ih.......
+CellLayout =^..............
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x01000004, 0xFFFFFFFF optional
+CheckType = h - road: 0x01000003, 0xFFFFFFFF optional
+CheckType = i - road: 0x00030100, 0xFFFFFFFF optional
+
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f095005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017511]
+CopyFrom    = 0x7511
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027511]
+CopyFrom    = 0x7511
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037511]
+CopyFrom    = 0x7511
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047511]
+CopyFrom    = 0x7511
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057511]
+CopyFrom    = 0x47511
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067511]
+CopyFrom    = 0x47511
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077511]
+CopyFrom    = 0x47511
+Rotate		= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x00007512]
+; (flexible) multi Radius Curve R5 Road Flex
+; Added by eggman121 03/14/2017
+Piece = 0.0, 0.0, 0, 0, 0x5f095005
+PreviewEffect = preview_mrc_r5_road_flex_001
+
+CellLayout =aabbc..........
+CellLayout =X.deebc.......<
+CellLayout =.....dfg.......
+CellLayout =.......hi......
+CellLayout =^.......ji.....
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x04000004, 0xFFFFFFFF optional
+CheckType = h - road: 0x00030400, 0xFFFFFFFF optional
+CheckType = i - road: 0x01000003, 0xFFFFFFFF optional
+CheckType = j - road: 0x00030100, 0xFFFFFFFF optional
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f095005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017512]
+CopyFrom    = 0x7512
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027512]
+CopyFrom    = 0x7512
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037512]
+CopyFrom    = 0x7512
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047512]
+CopyFrom    = 0x7512
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057512]
+CopyFrom    = 0x47512
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067512]
+CopyFrom    = 0x47512
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077512]
+CopyFrom    = 0x47512
+Rotate		= 1
 
 
