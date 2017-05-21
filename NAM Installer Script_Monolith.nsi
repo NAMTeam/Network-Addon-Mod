@@ -48,7 +48,7 @@ BrandingText "Network Addon Mod Setup"
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Network Addon Mod"
-!define PRODUCT_VERSION "36"
+!define PRODUCT_VERSION "36-Alpha01"
 !define PRODUCT_PUBLISHER "The NAM Team"
 !define PRODUCT_WEB_SITE "http://www.sc4devotion.com"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -162,7 +162,7 @@ ${StrStr}             ;This makes no sense at all.  But it's necessary...
 ${StrLoc}
 
 ; Add splash screen
-!define UMUI_LEFTIMAGE_BMP "NAM35Sidebar.bmp"
+!define UMUI_LEFTIMAGE_BMP "NAM36Sidebar-Alpha.bmp"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "NAM.bmp" ; the logo on the left of the first installer screen - 164x314 pixels by default
 !define MUI_WELCOMEPAGE_TITLE_3LINES ; default is 2 lines, but 3 might be better if you have a long title
 !define MUI_FINISHPAGE_TITLE_3LINES
@@ -886,7 +886,7 @@ SectionIn 2 3 4
 SectionEnd
 
 SectionGroup "Rail" sec33
-Section /o "RealRailway (RRW)" rail1
+Section "RealRailway (RRW)" rail1
   SetOutPath "$z___NAM\y_RealRailway"
   SetOverwrite ifnewer
   File "Rail\RealRailway\*.dat"
@@ -923,36 +923,34 @@ Section /o "RealRailway (RRW)" rail1
   Call RRW
 SectionEnd
 
-Section "Single Track Rail (STR)" rail2
+SectionGroup /e "Maxis Rail" rail0
+Section /o "Single Track Rail (STR) (Maxis-spec)" rail2
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail\Railway Addon Mod"
   SetOverwrite ifnewer
   File "Rail\Railway Addon Mod\RailwayAddonMod_STR_WideRadiusCurves.dat"
   File "Rail\Railway Addon Mod\RailroadAddonMod_Viaducts.dat"
-  ${If} ${SectionIsSelected} ${rail1}
-    File "Rail\Railway Addon Mod\RailwayAddonMod_STR_WideRadiusCurves_RRW.dat"
-  ${Else}
-    File "Rail\Railway Addon Mod\RailwayAddonMod_STR_DraggableNetwork.dat"
-  ${EndIf}
+  File "Rail\Railway Addon Mod\RailwayAddonMod_STR_DraggableNetwork.dat"
   ${If} $bRight = 0
     SetOutPath "$INSTDIR\z_Left Hand Plugin"
     File "z_Left Hand Plugin\RailwayAddonMod_STR_LEFT_HAND_VERSIONS_ONLY_Required_Additional_Plugin.dat"
   ${EndIf}
 SectionEnd
 
-Section "Underground Rail" rail5
+Section /o "Underground Rail" rail5
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail"
   SetOverwrite ifnewer
   File /r "Rail\Underground Rail"
 SectionEnd
 
-Section "Viaduct Rail" rail6
+Section /o "Viaduct Rail Puzzle Pieces" rail6
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail"
   SetOverwrite ifnewer
   File "Rail\NetworkAddonMod_RailViaducts.dat"
 SectionEnd
+SectionGroupEnd
 SectionGroupEnd
 
 !define RHWLevel `!insertmacro _RHWLevel`
@@ -1062,6 +1060,9 @@ Function SamCore
       ${If} $0 = 10
         File "z_Left Hand Plugin\SAM - 10 - Japanese Streets (Moonlinght)_LHD.dat"
       ${EndIf}
+	  ${If} $0 = 11
+        File "z_Left Hand Plugin\SAM - 11 - IndustrieSAM_LHD.dat"
+      ${EndIf}
       SetOutPath "$INSTDIR\Street Addon Mod\Textures"
     ${EndIf}
     StrCpy $CalledSAMCore 1
@@ -1079,6 +1080,7 @@ ${SamSection} 7 "Asphalt Streets"
 ${SamSection} 8 "Cobblestone Streets"
 ${SamSection} 9 "Brick Streets"
 ${SamSection} 10 "Japanese Streets"
+${SamSection} 11 "Industrial Streets"
 SectionGroupEnd
 SectionGroupEnd
 
@@ -2794,11 +2796,11 @@ SectionIn 3 4
   File "INRUL Overrides\NetworkAddonMod_TurningLanes_Avenues_Plugin_INRULs.dat"
 SectionEnd
 
-Section "Turning Lane Extension Plugin (Basic)" turn3
+Section "FLEX Turn Lanes (FTLs)" turn4
 SectionIn 3 4
   SetOutPath "$INSTDIR\Turning Lanes"
   SetOverwrite ifnewer
-  File "Turning Lanes\NetworkAddonMod_TurningLanes_Extension_Plugin.dat"
+  File "Turning Lanes\NetworkAddonMod_TurningLanes_Flexible.dat"
 SectionEnd
 
 Section "One-Way Road Signalized Intersections and Turn Arrows (SITAP)" turn5
@@ -2808,13 +2810,14 @@ SectionIn 3 4
   File "Turning Lanes\NetworkAddonMod_TurningLanes_OneWayRoadSignalization_Plugin.dat"
 SectionEnd
 
-/*
-Section "Turning Lane Extension Plugin (Advanced)" turn4
+Section "Turning Lane Extension Plugin (TuLEP) (Old/Deprecated)" turn3
 SectionIn 3 4
   SetOutPath "$INSTDIR\Turning Lanes"
   SetOverwrite ifnewer
-  File "Turning Lanes\NetworkAddonMod_TurningLanes_Extension_Plugin_Advanced.dat"
+  File "Turning Lanes\NetworkAddonMod_TurningLanes_Extension_Plugin.dat"
 SectionEnd
+
+/*
 */
 SectionGroupEnd
 
@@ -2864,9 +2867,15 @@ Function FLUPs
 FunctionEnd
 
 Function RRW
+	/*
   ${If} ${SectionIsSelected} ${rail2}
     File "Rail\RealRailway\RealRailway_Networks_STR.dat"
   ${EndIf}
+  ${If} ${SectionIsSelected} ${rail6}
+    File "Rail\RealRailway\RealRailway_Networks_L1_DTR.dat"
+	File "Rail\RealRailway\RealRailway_Networks_L2_DTR.dat"
+  ${EndIf}
+  */
   ${If} ${SectionIsSelected} ${road_texture1}
   ${OrIf} ${SectionIsSelected} ${road_texture2}
     File "Rail\RealRailway\Props\RealRailway_Props_US.dat"
@@ -3416,6 +3425,7 @@ Zones2:
   ${ShowConfirmation} ${nwmgroup2} "Legacy Transition Piece Wealthification" 2
   ${ShowConfirmation} ${sec28} "Ped Malls" 1
   ${ShowConfirmation} ${sec33} "Rail" 1
+  ${ShowConfirmation} ${rail0} "Maxis Rail Options" 2
   ${ShowConfirmation} ${rail1} "RealRailway (RRW)" 2
   ${ShowConfirmation} ${rail2} "Single Track Rail (STR)" 2
   ${ShowConfirmation} ${rail5} "Underground Rail" 2
@@ -3441,6 +3451,7 @@ Zones2:
   ${ShowConfirmation} ${sam8} "SAM Set 8 - Cobblestone Streets" 2
   ${ShowConfirmation} ${sam9} "SAM Set 9 - Brick Streets" 2
   ${ShowConfirmation} ${sam10} "SAM Set 10 - Japanese Streets" 2
+  ${ShowConfirmation} ${sam11} "SAM Set 11 - IndustrieSAM" 2
   !insertmacro UMUI_CONFIRMPAGE_TEXTBOX_ADDLINE ""
   !insertmacro UMUI_CONFIRMPAGE_TEXTBOX_ADDLINE "The following stations, ports, and network transitions will be installed:"
   ${ShowConfirmation} ${transit1} "Upgraded Maxis Transit Lots" 1
@@ -3684,9 +3695,9 @@ Zones2:
   ${ShowConfirmation} ${sec9} "Turning Lanes" 1
   ${ShowConfirmation} ${turn2} "Road Turning Lanes" 2
   ${ShowConfirmation} ${turn1} "Avenue Turning Lanes" 2
-  ${ShowConfirmation} ${turn3} "Turning Lane Extension Plugin (Basic)" 2
+  ${ShowConfirmation} ${turn4} "FLEX Turn Lanes (FTLs)" 2
   ${ShowConfirmation} ${turn5} "One-Way Road Signalized Intersection and Turn Arrow Plugin (SITAP)" 2
-;  ${ShowConfirmation} ${turn4} "Turning Lane Extension Plugin (Advanced)" 2
+  ${ShowConfirmation} ${turn3} "Turning Lane Extension Plugin (TuLEP) (Old/Deprecated)" 2
   ${ShowConfirmation} ${sec13} "Wide Radius Curves" 1
   ${ShowConfirmation} ${curve1} "Wide Curves for Streets, Roads, and Avenues" 2
   ${ShowConfirmation} ${curve2} "Wide Curves for Rails" 2
@@ -3880,11 +3891,12 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${rail_texture1} "This option contains darker Rail textures for zoom 1 to 4 in order to fix the color shift between Maxis and custom textures."
   !insertmacro MUI_DESCRIPTION_TEXT ${rail_texture2} "This option contains a completely new Rail texture style that looks closer to reality."
   !insertmacro MUI_DESCRIPTION_TEXT ${rail_texture3} "This option keeps the default Maxis Rail textures (not recommended)."
-  !insertmacro MUI_DESCRIPTION_TEXT ${rail1} "Changes the look of the default heavy rail network to a more realistic look and adds functionality."
-  !insertmacro MUI_DESCRIPTION_TEXT ${rail2} "Installs Single-Track Railroads."
+  !insertmacro MUI_DESCRIPTION_TEXT ${rail0} "Includes expansion options for the default Maxis-spec version of the Rail network.  Note that no future additions to functionality are planned for Maxis-spec Rail.  Selecting RealRailway will unselect this section."
+  !insertmacro MUI_DESCRIPTION_TEXT ${rail1} "Changes the look of the default heavy rail network to a more realistic look and adds considerable new functionality.  Selecting Maxis-spec Rail will unselect this section."
+  !insertmacro MUI_DESCRIPTION_TEXT ${rail2} "Installs Single-Track Railroads for Maxis-spec Rail."
 ;  !insertmacro MUI_DESCRIPTION_TEXT ${rail3} "Installs Triple-Track Railroads."
   !insertmacro MUI_DESCRIPTION_TEXT ${rail5} "Installs the Underground Rail network, which is an underground version of the standard heavy rail network."
-  !insertmacro MUI_DESCRIPTION_TEXT ${rail6} "Installs the Viaduct Rail network, which is an elevated version of the standard heavy rail network."
+  !insertmacro MUI_DESCRIPTION_TEXT ${rail6} "Installs Viaduct Rail, which is an elevated version of the standard heavy rail network.  This option includes puzzle pieces in Maxis-spec Rail form.  Draggable Rail Viaducts are only available in RealRailway form."
   !insertmacro MUI_DESCRIPTION_TEXT ${rhw_op1} "Installs RHW-compatible Region Transport View.  Not compatible with other Region Transport View Mods.  PLEASE READ DOCUMENTATION."
   !insertmacro MUI_DESCRIPTION_TEXT ${rhw_op2} "Installs single median barriers between the roadways of compact RHW networks (currently RHW-6C and RHW-8C), instead of the old double barriers."
   !insertmacro MUI_DESCRIPTION_TEXT ${rhw_op3} "Installs button to access deprecated RHW height transitions, now made obsolete by the FlexHeight system."
@@ -3932,7 +3944,8 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${sam7} "This installs the Asphalt Street Textures."
   !insertmacro MUI_DESCRIPTION_TEXT ${sam8} "This installs the Cobblestone Street Textures."
   !insertmacro MUI_DESCRIPTION_TEXT ${sam9} "This installs the Brick Street Textures."
-  !insertmacro MUI_DESCRIPTION_TEXT ${sam10} "This installs the Japanese Street Textures created by Moonlinght."
+  !insertmacro MUI_DESCRIPTION_TEXT ${sam10} "This installs the Japanese Street Textures, created by Moonlinght."
+  !insertmacro MUI_DESCRIPTION_TEXT ${sam11} "This installs the IndustrieSAM Street Textures, created by mgb204."
   !insertmacro MUI_DESCRIPTION_TEXT ${sec1} "The Network Addon Mod will introduce numerous network and traffic enhancements to the game."
   !insertmacro MUI_DESCRIPTION_TEXT ${sec2} "This will install the documentation for the Network Addon Mod."
   !insertmacro MUI_DESCRIPTION_TEXT ${sec3} "The traffic driving side is usually set automatically, but can be changed here if necessary."
@@ -4008,9 +4021,9 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${tulep3} "This option allows you to select Riiga's Euro TuLEP (Turning Lane Extension Project) style."
   !insertmacro MUI_DESCRIPTION_TEXT ${tulep4} "This option allows you to select the UK Old Euro TuLEP (Turning Lane Extension Project) style."
   !insertmacro MUI_DESCRIPTION_TEXT ${turn1} "With this option, Avenue intersections will have turning lanes."
-  !insertmacro MUI_DESCRIPTION_TEXT ${turn2} "With this option, Road intersections can have turning lanes.  To activate these turning lanes, plop a single one-way road piece on the intersection."
-  !insertmacro MUI_DESCRIPTION_TEXT ${turn3} "With this option, you can build additional turning lanes."
-;  !insertmacro MUI_DESCRIPTION_TEXT ${turn4} "This option gives you even more ways to build additional turning lanes, slip lanes, and road connectors."
+  !insertmacro MUI_DESCRIPTION_TEXT ${turn2} "With this option, Road intersections can have turning lanes.  To activate these turning lanes, plop a single one-way road tile on top of the intersection (they no longer automatically appear)."
+  !insertmacro MUI_DESCRIPTION_TEXT ${turn3} "With this option, you can build puzzle piece-based turn lane setups.  Please note that this feature is deprecated, and will not receive any future updates or improvements."
+  !insertmacro MUI_DESCRIPTION_TEXT ${turn4} "With this option, you can build a variety of FLEX/draggable turn lane setups."
   !insertmacro MUI_DESCRIPTION_TEXT ${turn5} "With this option, you can build signalized intersections with turn arrows for the One-Way Road.  To activate these signals, transition to Road one-tile before reaching the intersection, and overclick with One-Way Road if intersecting two One-Way Roads.  See documentation for more detail."
   !insertmacro MUI_DESCRIPTION_TEXT ${viaduct_rail0} "A modern Viaduct Rail station by Brenda Xne with bus and subway service, as well as car parking.  It has a translucent roof (made by Swamper77).  Drag the Rail tool through the station to activate it."
   !insertmacro MUI_DESCRIPTION_TEXT ${viaduct_rail1} "A modern overhanging Viaduct Rail station by Xyloxadoria that includes bus and subway service.  Be sure to plop the Viaduct Rail Other Side lot in the far column and then click on both columns with the rail tool."
@@ -4678,7 +4691,8 @@ Function .onSelChange
   ${FlipOptions} ${sec19} $InstalledRHW ${bridge9} ${rhw_bridge1} ${rhw_bridge2} ${rhw_bridge16} ${rhw_bridge3} ${rhw_bridge4} ${rhw_bridge5} ${rhw_bridge5a} ${rhw_bridge6} ${rhw_bridge7} 1
   ${FlipOptions} ${sec19} $InstalledRHW ${rhw_bridge8} ${rhw_bridge8} ${rhw_bridge9} ${rhw_bridge10} ${rhw_bridge11} ${rhw_bridge12} ${rhw_bridge13} ${rhw_bridge14} ${rhw_bridge15} ${brt3} 1
   ${FlipOptions} ${sec19} $InstalledRHW ${brt4} ${brt_filter0} ${brt_filter1} ${brt_filter2} 0 0 0 0 0 0 0
-  ${FlipOptions} ${rail1} $InstalledRRW ${bridge16} ${rrw_bridge1} ${rrw_bridge2} ${rrw_bridge3} ${rrw_bridge4} 0 0 0 0 0 0
+  ${FlipOptions} ${rail1} $InstalledRRW ${bridge16} ${rrw_bridge1} ${rrw_bridge2} ${rrw_bridge3} ${rrw_bridge4} ${rail_bridge5} ${rail_bridge9} ${rail_bridge10} ${rail_bridge11} ${wooden_trestle_rail_bridge1} 1
+  ${FlipOptions} ${rail1} $InstalledRRW ${wooden_trestle_rail_bridge2} ${wooden_trestle_rail_bridge3} ${rail_station2} ${viaduct_rail0} ${viaduct_rail1} ${viaduct_rail2} ${viaduct_rail3} ${viaduct_rail4} ${viaduct_rail5} ${viaduct_rail6} 0
   ${FlipOptions} ${sec21} $InstalledSAM ${bridge12} 0 0 0 0 0 0 0 0 0 0
   StrCpy $0 $InstalledSTR
   ${FlipOptions} ${rail2} $InstalledSTR ${rail_bridge5} ${rail_bridge9} ${rail_bridge10} ${rail_bridge11} ${wooden_trestle_rail_bridge1} ${wooden_trestle_rail_bridge2} ${wooden_trestle_rail_bridge3} 0 0 0 0
@@ -6566,6 +6580,7 @@ Automata:
     ${SetComponentState} "Street Addon Mod\Textures\SAM - 8 *.dat" ${sam8} 2 0 31 0
     ${SetComponentState} "Street Addon Mod\Textures\SAM - 9 *.dat" ${sam9} 2 0 31 0
     ${SetComponentState} "Street Addon Mod\Textures\SAM - 10 *.dat" ${sam10} 2 0 31 0
+	${SetComponentState} "Street Addon Mod\Textures\SAM - 11 *.dat" ${sam11} 2 0 36 0
     StrCpy $LastLoadDir 1
     ${SetComponentState} "Mass Transit Lots\Maxis Airports - Medium.dat" ${air2} 1 0 31 0
     ${SetComponentState} "Mass Transit Lots\Maxis Airports - Large.dat" ${air3} 1 0 31 0
@@ -6895,6 +6910,7 @@ Automata:
   ${IfThen} ${SectionIsSelected} ${tram3} ${|} StrCpy $InstalledTramInRoad 1 ${|}
   ${IfThen} ${SectionIsSelected} ${tram4} ${|} StrCpy $InstalledTramInStreet 1 ${|}
   ${IfThen} ${SectionIsSelected} ${rail6} ${|} StrCpy $InstalledViaductRail 1 ${|}
+
   Call .onSelChange
   ClearErrors
   ReadRegDWORD $0 HKCU "Software\Network Addon Mod" "Decoupled Networks and Rules"
