@@ -56,6 +56,11 @@ RotationRing = A130, 1A130, 2A130, 3A130, 4A130, 5A130, 6A130, 7A130 ;Rail OnSlo
 AddTypes     = A131, 1A131, 2A131, 3A131, 4A131, 5A131, 6A131, 7A131 ;Rail OnSlope flex L2
 AddTypes     = A132, 1A132, 2A132, 3A132, 4A132, 5A132, 6A132, 7A132 ;Rail D-OnSlope flex L1
 AddTypes     = A133, 1A133, 2A133, 3A133, 4A133, 5A133, 6A133, 7A133 ;Rail D-OnSlope flex L2
+AddTypes     = A134, 1A134, 2A134, 3A134, 4A134, 5A134, 6A134, 7A134 ;Rail flexht L1 orthogonal 5 tiles
+AddTypes     = A135, 1A135, 2A135, 3A135, 4A135, 5A135, 6A135, 7A135 ;Rail flexht L2 orthogonal 9 tiles
+;AddTypes     = A136, 1A136, 2A136, 3A136, 4A136, 5A136, 6A136, 7A136 ;Rail flexht L2 orthogonal 5 tiles (Commented out till fix -eggman121)
+;AddTypes     = A137, 1A137, 2A137, 3A137, 4A137, 5A137, 6A137, 7A137 ;Rail flexht Diagonal L1 orthogonal 5 tiles (Commented out till fix -eggman121) 
+;AddTypes     = A138, 1A138, 2A138, 3A138, 4A138, 5A138, 6A138, 7A138 ;Rail flexht Diagonal L2 orthogonal 9 tiles (Commented out till paths -eggman121)
 
 
 ;###separator###
@@ -72,8 +77,8 @@ AddTypes     = A133, 1A133, 2A133, 3A133, 4A133, 5A133, 6A133, 7A133 ;Rail D-OnS
 [HighwayIntersectionInfo_0x0000A130]
 ;Added by Swordmaster 26 Jan 2016
 ;Rail FLEX-OST 1-LEVEL
-Piece = 0.0, 0.0, 2, 0, 0x5caee006
-PreviewEffect = preview_rail_puzzlepiece033
+Piece = 0.0, 0.0, 2, 0, 0x5d7f000f
+PreviewEffect = preview_rail_errwo_01a
 
 CellLayout=....
 CellLayout=..a.
@@ -131,8 +136,8 @@ CopyFrom	=	0x3A130
 [HighwayIntersectionInfo_0x0000A131]
 ;Added by Swordmaster 26 Jan 2016
 ;Rail FLEX-OST 2-LEVEL
-Piece = 0.0, 0.0, 2, 0, 0x5caee006
-PreviewEffect = preview_rail_puzzlepiece033
+Piece = 0.0, 0.0, 2, 0, 0x5d7f000f
+PreviewEffect = preview_rail_errwo_01a
 
 CellLayout=....
 CellLayout=..a.
@@ -190,8 +195,8 @@ CopyFrom	=	0x3A131
 [HighwayIntersectionInfo_0x0000A132]
 ;Added by Swordmaster 27 Jan 2016
 ;Rail FLEX-diagonal-OST 1-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
-PreviewEffect = preview_rail_puzzlepiece01a
+Piece = 0.0, -16.0, 0, 0, 0x5d7f010f
+PreviewEffect = preview_rail_errwd_01a
 
 CellLayout=....
 CellLayout=..a.
@@ -255,8 +260,8 @@ CopyFrom	=	0x7A132
 [HighwayIntersectionInfo_0x0000A133]
 ;Added by Swordmaster 27 Jan 2016
 ;Rail FLEX-diagonal-OST 2-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
-PreviewEffect = preview_rail_puzzlepiece01a
+Piece = 0.0, -16.0, 0, 0, 0x5d7f010f
+PreviewEffect = preview_rail_errwd_01a
 
 CellLayout=....
 CellLayout=..a.
@@ -315,6 +320,362 @@ CopyFrom	=	0x5A133
 CopyFrom	=	0x6A133
 [HighwayIntersectionInfo_0x000FA133]
 CopyFrom	=	0x7A133
+
+;;Flex Height Pieces;;
+
+[HighwayIntersectionInfo_0x0000A134]
+;Added by eggman121
+;Rail FLEX-Ramp 1-LEVEL 6 Tile
+Piece = 0.0, -16.0, 0, 0, 0x5d6e0005
+PreviewEffect = preview_errw_rampo9__100
+
+CellLayout=....
+CellLayout=....
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..a.
+CellLayout=..b<
+CellLayout=..^.
+
+CheckType = a - rail: 0x02000200 dirtroad: 0x01040400, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x02000200, 0xFFFFFFFF optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d6e0005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A134]
+CopyFrom	=	0xA134
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A134]
+CopyFrom	=	0xA134
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A134]
+CopyFrom	=	0xA134
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A134]
+CopyFrom	=	0xA134
+[HighwayIntersectionInfo_0x0005A134]
+CopyFrom	=	0x1A134
+[HighwayIntersectionInfo_0x0006A134]
+CopyFrom	=	0x2A134
+[HighwayIntersectionInfo_0x0007A134]
+CopyFrom	=	0x3A134
+[HighwayIntersectionInfo_0x0008A134]
+CopyFrom	=	0xA134
+[HighwayIntersectionInfo_0x0009A134]
+CopyFrom	=	0x1A134
+[HighwayIntersectionInfo_0x000AA134]
+CopyFrom	=	0x2A134
+[HighwayIntersectionInfo_0x000BA134]
+CopyFrom	=	0x3A134
+[HighwayIntersectionInfo_0x000CA134]
+CopyFrom	=	0xA134
+[HighwayIntersectionInfo_0x000DA134]
+CopyFrom	=	0x1A134
+[HighwayIntersectionInfo_0x000EA134]
+CopyFrom	=	0x2A134
+[HighwayIntersectionInfo_0x000FA134]
+CopyFrom	=	0x3A134
+
+[HighwayIntersectionInfo_0x0000A136]
+;Added by eggman121
+;Rail FLEX-Ramp 2-LEVEL 6 Tile
+Piece = 0.0, -16.0, 0, 0, 0x5d6e0005
+PreviewEffect = preview_errw_rampo9__100
+
+CellLayout=....
+CellLayout=....
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..a.
+CellLayout=..b<
+CellLayout=..^.
+
+CheckType = a - rail: 0x02000200 dirtroad: 0x00040401, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x02000200, 0xFFFFFFFF optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d6e0005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A136]
+CopyFrom	=	0xA136
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A136]
+CopyFrom	=	0xA136
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A136]
+CopyFrom	=	0xA136
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A136]
+CopyFrom	=	0xA136
+[HighwayIntersectionInfo_0x0005A136]
+CopyFrom	=	0x1A136
+[HighwayIntersectionInfo_0x0006A136]
+CopyFrom	=	0x2A136
+[HighwayIntersectionInfo_0x0007A136]
+CopyFrom	=	0x3A136
+[HighwayIntersectionInfo_0x0008A136]
+CopyFrom	=	0xA136
+[HighwayIntersectionInfo_0x0009A136]
+CopyFrom	=	0x1A136
+[HighwayIntersectionInfo_0x000AA136]
+CopyFrom	=	0x2A136
+[HighwayIntersectionInfo_0x000BA136]
+CopyFrom	=	0x3A136
+[HighwayIntersectionInfo_0x000CA136]
+CopyFrom	=	0xA136
+[HighwayIntersectionInfo_0x000DA136]
+CopyFrom	=	0x1A136
+[HighwayIntersectionInfo_0x000EA136]
+CopyFrom	=	0x2A136
+[HighwayIntersectionInfo_0x000FA136]
+CopyFrom	=	0x3A136
+
+[HighwayIntersectionInfo_0x0000A135]
+;Added by eggman121
+;Rail FLEX-Ramp 2-LEVEL 9 Tile
+Piece = 0.0, -16.0, 0, 0, 0x5d7e000f
+PreviewEffect = preview_errw_rampo9__000
+
+CellLayout=....
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..a.
+CellLayout=..b<
+CellLayout=..^.
+
+CheckType = a - rail: 0x02000200 dirtroad: 0x03040400, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x02000200, 0xFFFFFFFF optional
+
+ConsLayout=....
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d7e000f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A135]
+CopyFrom	=	0xA135
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A135]
+CopyFrom	=	0xA135
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A135]
+CopyFrom	=	0xA135
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A135]
+CopyFrom	=	0xA135
+[HighwayIntersectionInfo_0x0005A135]
+CopyFrom	=	0x1A135
+[HighwayIntersectionInfo_0x0006A135]
+CopyFrom	=	0x2A135
+[HighwayIntersectionInfo_0x0007A135]
+CopyFrom	=	0x3A135
+[HighwayIntersectionInfo_0x0008A135]
+CopyFrom	=	0xA135
+[HighwayIntersectionInfo_0x0009A135]
+CopyFrom	=	0x1A135
+[HighwayIntersectionInfo_0x000AA135]
+CopyFrom	=	0x2A135
+[HighwayIntersectionInfo_0x000BA135]
+CopyFrom	=	0x3A135
+[HighwayIntersectionInfo_0x000CA135]
+CopyFrom	=	0xA135
+[HighwayIntersectionInfo_0x000DA135]
+CopyFrom	=	0x1A135
+[HighwayIntersectionInfo_0x000EA135]
+CopyFrom	=	0x2A135
+[HighwayIntersectionInfo_0x000FA135]
+CopyFrom	=	0x3A135
+
+[HighwayIntersectionInfo_0x0000A137]
+;Added by eggman121
+;Rail FLEX-Ramp Diagonal 1-LEVEL 9 Tile
+Piece = 32.0, -48.0, 0, 0, 0x5d6e100f
+PreviewEffect = preview_errw_rampd9__100
+
+CellLayout=...............
+CellLayout=...............
+CellLayout=...............
+CellLayout=....dc.........
+CellLayout=...dc..........
+CellLayout=..dc...........
+CellLayout=..a............
+CellLayout=..b...........<
+CellLayout=..^............
+
+CheckType = a - rail: 0x00000301 dirtroad: 0x00000101, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x00000301, 0xFFFFFFFF optional
+CheckType = d - rail: 0x03010000, 0xFFFFFFFF optional
+
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=..+...........<
+ConsLayout=..^............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d6e100f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A137]
+CopyFrom	=	0xA137
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A137]
+CopyFrom	=	0xA137
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A137]
+CopyFrom	=	0xA137
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A137]
+CopyFrom	=	0xA137
+[HighwayIntersectionInfo_0x0005A137]
+CopyFrom	=	0x1A137
+[HighwayIntersectionInfo_0x0006A137]
+CopyFrom	=	0x2A137
+[HighwayIntersectionInfo_0x0007A137]
+CopyFrom	=	0x3A137
+[HighwayIntersectionInfo_0x0008A137]
+CopyFrom	=	0xA137
+[HighwayIntersectionInfo_0x0009A137]
+CopyFrom	=	0x1A137
+[HighwayIntersectionInfo_0x000AA137]
+CopyFrom	=	0x2A137
+[HighwayIntersectionInfo_0x000BA137]
+CopyFrom	=	0x3A137
+[HighwayIntersectionInfo_0x000CA137]
+CopyFrom	=	0xA137
+[HighwayIntersectionInfo_0x000DA137]
+CopyFrom	=	0x1A137
+[HighwayIntersectionInfo_0x000EA137]
+CopyFrom	=	0x2A137
+[HighwayIntersectionInfo_0x000FA137]
+CopyFrom	=	0x3A137
+
+[HighwayIntersectionInfo_0x0000A138]
+;Added by eggman121
+;Rail FLEX-Ramp Diagonal 2-LEVEL 13 Tile
+Piece = 48.0, -64.0, 0, 0, 0x5d7e100f
+PreviewEffect = preview_errw_rampd13__000
+
+CellLayout=...............
+CellLayout=...............
+CellLayout=...............
+CellLayout=........d......
+CellLayout=.......dc......
+CellLayout=......dc.......
+CellLayout=.....dc........
+CellLayout=....dc.........
+CellLayout=...dc..........
+CellLayout=..ac...........
+CellLayout=..b...........<
+CellLayout=..^............
+
+CheckType = a - rail: 0x03010000 dirtroad: 0x00030300, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x00000301, 0xFFFFFFFF optional
+CheckType = d - rail: 0x03010000, 0xFFFFFFFF optional
+
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=......../......
+ConsLayout=.......//......
+ConsLayout=......//.......
+ConsLayout=.....//........
+ConsLayout=....//.........
+ConsLayout=...//..........
+ConsLayout=.../...........
+ConsLayout=..+...........<
+ConsLayout=..^............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d7e100f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A138]
+CopyFrom	=	0xA138
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A138]
+CopyFrom	=	0xA138
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A138]
+CopyFrom	=	0xA138
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A138]
+CopyFrom	=	0xA138
+[HighwayIntersectionInfo_0x0005A138]
+CopyFrom	=	0x1A138
+[HighwayIntersectionInfo_0x0006A138]
+CopyFrom	=	0x2A138
+[HighwayIntersectionInfo_0x0007A138]
+CopyFrom	=	0x3A138
+[HighwayIntersectionInfo_0x0008A138]
+CopyFrom	=	0xA138
+[HighwayIntersectionInfo_0x0009A138]
+CopyFrom	=	0x1A138
+[HighwayIntersectionInfo_0x000AA138]
+CopyFrom	=	0x2A138
+[HighwayIntersectionInfo_0x000BA138]
+CopyFrom	=	0x3A138
+[HighwayIntersectionInfo_0x000CA138]
+CopyFrom	=	0xA138
+[HighwayIntersectionInfo_0x000DA138]
+CopyFrom	=	0x1A138
+[HighwayIntersectionInfo_0x000EA138]
+CopyFrom	=	0x2A138
+[HighwayIntersectionInfo_0x000FA138]
+CopyFrom	=	0x3A138
 
 
 ;;STATIC PIECES
