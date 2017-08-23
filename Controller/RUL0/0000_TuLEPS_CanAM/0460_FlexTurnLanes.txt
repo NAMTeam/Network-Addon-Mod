@@ -1,16 +1,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ; FLEX TURN LANE (FTL) STARTER PIECES ;
-; FLEX TURN LANE (FTL) STARTER PIECES  ;
-; FLEX TURN LANE (FTL) STARTER PIECES  ;
+; FLEX TURN LANE (FTL) STARTER PIECES ;
+; FLEX TURN LANE (FTL) STARTER PIECES ;
 
+;Single-Tile Networks
 RotationRing = 0460, 10460, 20460, 30460, 40460, 50460, 60460, 70460 ;RD2-to-TL 110 starter
 AddTypes     = 0461, 10461, 20461, 30461, 40461, 50461, 60461, 70461 ;RD2-to-ML 110 starter
 AddTypes     = 0462, 10462, 20462, 30462, 40462, 50462, 60462, 70462 ;ARD3-to-TL 110 starter
 AddTypes     = 0463, 10463, 20463, 30463, 40463, 50463, 60463, 70463 ;TLA3-to-TL 110 starter
 AddTypes     = 0464, 10464, 20464, 30464, 40464, 50464, 60464, 70464 ;AVE2-to-TL 110 starter
+;Dual-Tile Networks
 AddTypes     = 0465, 10465, 20465, 30465, 40465, 50465, 60465, 70465 ;AVE4/TLA5-to-TL 120 starter
 ;AddTypes     = 047C, 1047C, 2047C, 3047C, 4047C, 5047C, 6047C, 7047C ;RD4-to-TL 120 Starter
 AddTypes     = 0466, 10466, 20466, 30466, 40466, 50466, 60466, 70466 ;AVE4/TLA5-to-TL 220 starter
+;Triple-Tile Networks
 AddTypes     = 0467, 10467, 20467, 30467, 40467, 50467, 60467, 70467 ;TLA7-to-TL 130 starter
 AddTypes     = 0468, 10468, 20468, 30468, 40468, 50468, 60468, 70468 ;AVE6-to-TL 130 starter
 ;AddTypes     = 0469, 10469, 20469, 30469, 40469, 50469, 60469, 70469 ;TLA7-to-TL 230 starter
@@ -22,10 +25,26 @@ AddTypes     = 0473, 10473, 20473, 30473, 40473, 50473, 60473, 70473 ;FTL Triple
 AddTypes     = 0474, 10474, 20474, 30474, 40474, 50474, 60474, 70474 ;FTL Triple-Tile (end) x Dual-Tile (thru) T-Intersection Helper
 AddTypes     = 0475, 10475, 20475, 30475, 40475, 50475, 60475, 70475 ;FTL Triple-Tile x Triple-Tile +-Intersection Helper
 AddTypes     = 0476, 10476, 20476, 30476, 40476, 50476, 60476, 70476 ;FTL Triple-Tile (end) x Triple-Tile (thru) T-Intersection Helper
-AddTypes     = 047A, 1047A, 2047A, 3047A, 4047A, 5047A, 6047A, 7047A ;QuickFTL Test
-AddTypes     = 047B, 1047B, 2047B, 3047B, 4047B, 5047B, 6047B, 7047B ;QuickFTL Test
-AddTypes     = 0477, 10477, 20477, 30477, 40477, 50477, 60477, 70477 ;QuickFTL Test
-AddTypes     = 0478, 10478, 20478, 30478, 40478, 50478, 60478, 70478 ;QuickFTL Test
+
+;----QuickFTLs----
+;Single-Tile Networks
+RotationRing     = 04A0, 104A0, 204A0, 304A0, 04A1, 104A1, 204A1, 304A1, 404A0, 504A0, 604A0, 704A0, 404A1, 504A1, 604A1, 704A1 ;QuickFTL Type 110 x Type 110 +/T
+
+;Dual-Tile Networks
+AddTypes     = 04B7, 104B7, 204B7, 304B7, 04B8, 104B8, 204B8, 304B8, 404B7, 504B7, 604B7, 704B7, 404B8, 504B8, 604B8, 704B8 ;QuickFTL Type 120 x Type 110 +/T
+AddTypes     = 04B0, 104B0, 204B0, 304B0, 04B1, 104B1, 204B1, 304B1, 404B0, 504B0, 604B0, 704B0, 404B1, 504B1, 604B1, 704B1 ;QuickFTL Type 120 x Type 120 +/T
+AddTypes     = 04B2, 104B2, 204B2, 304B2, 04B3, 104B3, 204B3, 304B3, 04B4, 104B4, 204B4, 304B4, 404B2, 504B2, 604B2, 704B2 ;QuickFTL Type 220 x Type 120 +/T
+AddTypes     = 04B5, 104B5, 204B5, 304B5, 04B6, 104B6, 204B6, 304B6, 404B5, 504B5, 604B5, 704B5, 404B6, 504B6, 604B6, 704B6 ;QuickFTL Type 220 x Type 220 +/T
+
+;Triple-Tile Networks
+AddTypes     = 04C8, 104C8, 204C8, 304C8, 04C9, 104C9, 204C9, 304C9, 404C8, 504C8, 604C8, 704C8, 404C9, 504C9, 604C9, 704C9 ;QuickFTL Type 130 x Type 110 +/T
+AddTypes     = 04C0, 104C0, 204C0, 304C0, 04C1, 104C1, 204C1, 304C1, 04C2, 104C2, 204C2, 304C2, 404C0, 504C0, 604C0, 704C0 ;QuickFTL Type 130 x Type 120 +/T
+AddTypes     = 04C3, 104C3, 204C3, 304C3, 04C4, 104C4, 204C4, 304C4, 04C5, 104C5, 204C5, 304C5, 404C3, 504C3, 604C3, 704C3 ;QuickFTL Type 130 x Type 220 +
+AddTypes     = 04C6, 104C6, 204C6, 304C6, 04C7, 104C7, 204C7, 304C7, 404C6, 504C6, 604C6, 704C6, 404C7, 504C7, 604C7, 704C7 ;QuickFTL Type 130 x Type 130 +
+
+
+
+;Random/No Longer Needed
 ;AddTypes     = 0479, 10479, 20479, 30479, 40479, 50479, 60479, 70479 ;Single Slip Lane
 
 
@@ -961,149 +980,6 @@ CopyFrom    = 0x30476
 
 
 
-[HighwayIntersectionInfo_0x00000477]
-;Added by Tarkus 2017/02/13
-;QuickFTL Type 120 Default +-Intersection
-Piece = 0.0, 16.0, 0, 0, 0x5B229007
-;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_____q01
-;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_lhd_q01
-
-CellLayout=...........
-CellLayout=....a.....<
-CellLayout=....jk.....
-CellLayout=....fg.....
-CellLayout=....fg.....
-CellLayout=.nhhbchhp..
-CellLayout=.oiiediiq..
-CellLayout=....fg.....
-CellLayout=....fg.....
-CellLayout=....lm.....
-CellLayout=...........
-CellLayout=....^......
-
-CheckType = a - avenue: 0x02040200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
-CheckType = f - avenue: 0x02040200, 0xffffffff optional
-CheckType = g - avenue: 0x02000204, 0xffffffff optional
-CheckType = h - avenue: 0x04020002, 0xffffffff optional
-CheckType = i - avenue: 0x00020402, 0xffffffff optional
-CheckType = j - avenue: 0x02040200, 0xffffffff optional
-CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
-CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
-CheckType = m - avenue: 0x02000204, 0xffffffff optional
-CheckType = n - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
-CheckType = o - avenue: 0x00020402, 0xffffffff optional
-CheckType = p - avenue: 0x04020002, 0xffffffff optional
-CheckType = q - avenue: 0x00020402 onewayroad: 0x04000001, 0xffffffff optional
-
-
-ConsLayout=...........
-ConsLayout=....+.....<
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=....^......
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B229000
-Costs       = 2000
-
-[HighwayIntersectionInfo_0x00010477]
-CopyFrom    = 0x0477
-Rotate		= 1
-[HighwayIntersectionInfo_0x00020477]
-CopyFrom    = 0x0477
-Rotate		= 2
-[HighwayIntersectionInfo_0x00030477]
-CopyFrom    = 0x0477
-Rotate		= 3
-[HighwayIntersectionInfo_0x00040477]
-CopyFrom    = 0x0477
-[HighwayIntersectionInfo_0x00050477]
-CopyFrom    = 0x10477
-[HighwayIntersectionInfo_0x00060477]
-CopyFrom    = 0x20477
-[HighwayIntersectionInfo_0x00070477]
-CopyFrom    = 0x30477
-
-
-
-[HighwayIntersectionInfo_0x00000478]
-;Added by Tarkus 2017/02/13
-;QuickFTL Type 120 Default T-Intersection
-Piece = 0.0, 16.0, 0, 0, 0x5B229007
-;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_____q01
-;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_lhd_q01
-
-CellLayout=...........
-CellLayout=....a.....<
-CellLayout=....jk.....
-CellLayout=....fg.....
-CellLayout=....fg.....
-CellLayout=.nhhbc.....
-CellLayout=.oiied.....
-CellLayout=...........
-CellLayout=....^......
-
-CheckType = a - avenue: 0x02040200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
-CheckType = f - avenue: 0x02040200, 0xffffffff optional
-CheckType = g - avenue: 0x02000204, 0xffffffff optional
-CheckType = h - avenue: 0x04020002, 0xffffffff optional
-CheckType = i - avenue: 0x00020402, 0xffffffff optional
-CheckType = j - avenue: 0x02040200, 0xffffffff optional
-CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
-CheckType = n - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
-CheckType = o - avenue: 0x00020402, 0xffffffff optional
-
-ConsLayout=...........
-ConsLayout=....+.....<
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=...........
-ConsLayout=....^......
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B229000
-Costs       = 2000
-
-[HighwayIntersectionInfo_0x00010478]
-CopyFrom    = 0x0478
-Rotate		= 1
-[HighwayIntersectionInfo_0x00020478]
-CopyFrom    = 0x0478
-Rotate		= 2
-[HighwayIntersectionInfo_0x00030478]
-CopyFrom    = 0x0478
-Rotate		= 3
-[HighwayIntersectionInfo_0x00040478]
-CopyFrom    = 0x0478
-[HighwayIntersectionInfo_0x00050478]
-CopyFrom    = 0x10478
-[HighwayIntersectionInfo_0x00060478]
-CopyFrom    = 0x20478
-[HighwayIntersectionInfo_0x00070478]
-CopyFrom    = 0x30478
-
-
-
 [HighwayIntersectionInfo_0x00000479]
 ;Added by Tarkus 2017/02/20
 ;Single Slip Lane
@@ -1174,132 +1050,6 @@ Rotate		= 3
 
 
 
-[HighwayIntersectionInfo_0x0000047A]
-;Added by Tarkus 2017/02/13
-;QuickFTL Type 110 Default T-Intersection
-Piece = 0.0, 16.0, 0, 0, 0x5B208006
-;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_1x1_____q01
-;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_1x1_lhd_q01
-
-CellLayout=..........
-CellLayout=....a....<
-CellLayout=....b.....
-CellLayout=....c.....
-CellLayout=....c.....
-CellLayout=.deefeeg..
-CellLayout=....c.....
-CellLayout=....c.....
-CellLayout=....h.....
-CellLayout=..........
-CellLayout=....^.....
-
-CheckType = a - road: 0x02000200
-CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
-CheckType = c - road: 0x02000200, 0xffffffff optional
-CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
-CheckType = e - road: 0x00020002, 0xffffffff optional
-CheckType = f - road: 0x02020202, 0xffffffff optional
-CheckType = g - road: 0x00020002 street: 0x00000001, 0xffffffff optional
-CheckType = h - road: 0x02000200 street: 0x00000100, 0xffffffff optional
-
-ConsLayout=..........
-ConsLayout=....+....<
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=....^.....
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B208000
-Costs       = 500
-
-[HighwayIntersectionInfo_0x0001047A]
-CopyFrom    = 0x047A
-Rotate		= 1
-[HighwayIntersectionInfo_0x0002047A]
-CopyFrom    = 0x047A
-Rotate		= 2
-[HighwayIntersectionInfo_0x0003047A]
-CopyFrom    = 0x047A
-Rotate		= 3
-[HighwayIntersectionInfo_0x0004047A]
-CopyFrom    = 0x047A
-[HighwayIntersectionInfo_0x0005047A]
-CopyFrom    = 0x1047A
-[HighwayIntersectionInfo_0x0006047A]
-CopyFrom    = 0x2047A
-[HighwayIntersectionInfo_0x0007047A]
-CopyFrom    = 0x3047A
-
-
-
-
-[HighwayIntersectionInfo_0x0000047B]
-;Added by Tarkus 2017/02/13
-;QuickFTL Type 110 Default T-Intersection
-Piece = 0.0, 16.0, 0, 0, 0x5B208007
-;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_1x1_____q01
-;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_1x1_lhd_q01
-
-CellLayout=..........
-CellLayout=....a....<
-CellLayout=....b.....
-CellLayout=....c.....
-CellLayout=....c.....
-CellLayout=.deefg....
-CellLayout=..........
-CellLayout=..........
-CellLayout=....^.....
-
-CheckType = a - road: 0x02000200
-CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
-CheckType = c - road: 0x02000200, 0xffffffff optional
-CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
-CheckType = e - road: 0x00020002, 0xffffffff optional
-CheckType = f - road: 0x00020202, 0xffffffff optional
-CheckType = g - road: 0x00020002 street: 0x00000401, 0xffffffff optional
-
-ConsLayout=..........
-ConsLayout=....+....<
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=..........
-ConsLayout=....^.....
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B208000
-Costs       = 500
-
-[HighwayIntersectionInfo_0x0001047B]
-CopyFrom    = 0x047B
-Rotate		= 1
-[HighwayIntersectionInfo_0x0002047B]
-CopyFrom    = 0x047B
-Rotate		= 2
-[HighwayIntersectionInfo_0x0003047B]
-CopyFrom    = 0x047B
-Rotate		= 3
-[HighwayIntersectionInfo_0x0004047B]
-CopyFrom    = 0x047B
-[HighwayIntersectionInfo_0x0005047B]
-CopyFrom    = 0x1047B
-[HighwayIntersectionInfo_0x0006047B]
-CopyFrom    = 0x2047B
-[HighwayIntersectionInfo_0x0007047B]
-CopyFrom    = 0x3047B
-
-
-
 [HighwayIntersectionInfo_0x0000047C]
 ;Added by Tarkus 2014/01/20
 ;RD4-to-TL starter Type 120
@@ -1351,5 +1101,1662 @@ CopyFrom    = 0x1047C
 CopyFrom    = 0x2047C
 [HighwayIntersectionInfo_0x0007047C]
 CopyFrom    = 0x3047C
+
+
+
+[HighwayIntersectionInfo_0x000004A0]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 110 Default T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B208006
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_1x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_1x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=.deefeeg..
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=....h.....
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x00020002 street: 0x00030000, 0xffffffff optional
+CheckType = e - road: 0x00020002, 0xffffffff optional
+CheckType = f - road: 0x02020202, 0xffffffff optional
+CheckType = g - road: 0x00020002 street: 0x00000001, 0xffffffff optional
+;###LHD###CheckType = g - road: 0x00020002 street: 0x00000003, 0xffffffff optional
+CheckType = h - road: 0x02000200 street: 0x00000100, 0xffffffff optional
+;###LHD###CheckType = h - road: 0x02000200 street: 0x00000300, 0xffffffff optional
+
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B208007
+Costs       = 500
+
+[HighwayIntersectionInfo_0x000104A0]
+CopyFrom    = 0x04A0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204A0]
+CopyFrom    = 0x04A0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304A0]
+CopyFrom    = 0x04A0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404A0]
+CopyFrom    = 0x04A0
+[HighwayIntersectionInfo_0x000504A0]
+CopyFrom    = 0x104A0
+[HighwayIntersectionInfo_0x000604A0]
+CopyFrom    = 0x204A0
+[HighwayIntersectionInfo_0x000704A0]
+CopyFrom    = 0x304A0
+
+
+
+
+[HighwayIntersectionInfo_0x000004A1]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 110 Default T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B208007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_1x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_1x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+;###RHD###CellLayout=.deefg....
+;###LHD###CellLayout=...gfeed..
+CellLayout=..........
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x00020002 street: 0x00000003, 0xffffffff optional
+CheckType = e - road: 0x00020002, 0xffffffff optional
+CheckType = f - road: 0x00020202, 0xffffffff optional
+CheckType = g - road: 0x00020002 street: 0x00000401, 0xffffffff optional
+;###LHD###CheckType = g - road: 0x00020002 street: 0x00030400, 0xffffffff optional
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B208107
+Costs       = 500
+
+[HighwayIntersectionInfo_0x000104A1]
+CopyFrom    = 0x04A1
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204A1]
+CopyFrom    = 0x04A1
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304A1]
+CopyFrom    = 0x04A1
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404A1]
+CopyFrom    = 0x04A1
+[HighwayIntersectionInfo_0x000504A1]
+CopyFrom    = 0x104A1
+[HighwayIntersectionInfo_0x000604A1]
+CopyFrom    = 0x204A1
+[HighwayIntersectionInfo_0x000704A1]
+CopyFrom    = 0x304A1
+
+
+
+[HighwayIntersectionInfo_0x000004B0]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 120 Default +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B229007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_lhd_q01
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=.nhhbchhp..
+CellLayout=.oiiediiq..
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....lm.....
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x02040200, 0xffffffff optional
+CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = m - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+CheckType = n - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+;###LHD###CheckType = n - avenue: 0x04020002, 0xffffffff optional
+CheckType = o - avenue: 0x00020402, 0xffffffff optional
+;###LHD###CheckType = o - avenue: 0x00020402 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = p - avenue: 0x04020002, 0xffffffff optional
+;###LHD###CheckType = p - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = q - avenue: 0x00020402 onewayroad: 0x04000001, 0xffffffff optional
+;###LHD###CheckType = q - avenue: 0x00020402, 0xffffffff optional
+
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B229007
+Costs       = 2000
+
+[HighwayIntersectionInfo_0x000104B0]
+CopyFrom    = 0x04B0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B0]
+CopyFrom    = 0x04B0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B0]
+CopyFrom    = 0x04B0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B0]
+CopyFrom    = 0x04B0
+[HighwayIntersectionInfo_0x000504B0]
+CopyFrom    = 0x104B0
+[HighwayIntersectionInfo_0x000604B0]
+CopyFrom    = 0x204B0
+[HighwayIntersectionInfo_0x000704B0]
+CopyFrom    = 0x304B0
+
+
+
+[HighwayIntersectionInfo_0x000004B1]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 120 Default T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B229007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_lhd_q01
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+;###RHD###CellLayout=.nhhbc.....
+;###RHD###CellLayout=.oiied.....
+;###LHD###CellLayout=....bchhn..
+;###LHD###CellLayout=....ediio..
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = n - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - avenue: 0x00020402, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B229107
+Costs       = 2000
+
+[HighwayIntersectionInfo_0x000104B1]
+CopyFrom    = 0x04B1
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B1]
+CopyFrom    = 0x04B1
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B1]
+CopyFrom    = 0x04B1
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B1]
+CopyFrom    = 0x04B1
+[HighwayIntersectionInfo_0x000504B1]
+CopyFrom    = 0x104B1
+[HighwayIntersectionInfo_0x000604B1]
+CopyFrom    = 0x204B1
+[HighwayIntersectionInfo_0x000704B1]
+CopyFrom    = 0x304B1
+
+
+
+
+[HighwayIntersectionInfo_0x000004B2]
+;Added by Tarkus 2017/06/23
+;QuickFTL Type 220 x 120 Default +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B22A007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_____q02
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_lhd_q02
+
+CellLayout=.............
+CellLayout=.....a......<
+CellLayout=.....jk......
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.nhhhbchhhp..
+CellLayout=.oiiiediiiq..
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.....lm......
+CellLayout=.............
+CellLayout=.....^.......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = m - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###RHD###CheckType = n - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - avenue: 0x04020002, 0xffffffff optional
+;###RHD###CheckType = o - avenue: 0x00020402, 0xffffffff optional
+;###LHD###CheckType = o - avenue: 0x00020402 onewayroad: 0x04000003, 0xffffffff optional
+;###RHD###CheckType = p - avenue: 0x04020002, 0xffffffff optional
+;###LHD###CheckType = p - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+;###RHD###CheckType = q - avenue: 0x00020402 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - avenue: 0x00020402, 0xffffffff optional
+
+
+ConsLayout=.............
+ConsLayout=.....+......<
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.....^.......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B22A007
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104B2]
+CopyFrom    = 0x04B2
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B2]
+CopyFrom    = 0x04B2
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B2]
+CopyFrom    = 0x04B2
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B2]
+CopyFrom    = 0x04B2
+[HighwayIntersectionInfo_0x000504B2]
+CopyFrom    = 0x104B2
+[HighwayIntersectionInfo_0x000604B2]
+CopyFrom    = 0x204B2
+[HighwayIntersectionInfo_0x000704B2]
+CopyFrom    = 0x304B2
+
+
+
+[HighwayIntersectionInfo_0x000004B3]
+;Added by Tarkus 2017/06/23
+;QuickFTL Type 220 x 120 Default T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B22A107
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_____q02
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_lhd_q02
+
+CellLayout=............
+CellLayout=.....a.....<
+CellLayout=.....jk.....
+CellLayout=.....fg.....
+CellLayout=.....fg.....
+;###RHD###CellLayout=.nhhhbc.....
+;###RHD###CellLayout=.oiiied.....
+;###LHD###CellLayout=.....bchhhn.
+;###LHD###CellLayout=.....ediiio.
+CellLayout=............
+CellLayout=.....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = n - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+CheckType = o - avenue: 0x00020402, 0xffffffff optional
+
+ConsLayout=............
+ConsLayout=.....+.....<
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=.....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B22A107
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104B3]
+CopyFrom    = 0x04B3
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B3]
+CopyFrom    = 0x04B3
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B3]
+CopyFrom    = 0x04B3
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B3]
+CopyFrom    = 0x04B3
+[HighwayIntersectionInfo_0x000504B3]
+CopyFrom    = 0x104B3
+[HighwayIntersectionInfo_0x000604B3]
+CopyFrom    = 0x204B3
+[HighwayIntersectionInfo_0x000704B3]
+CopyFrom    = 0x304B3
+
+
+
+[HighwayIntersectionInfo_0x000004B4]
+;Added by Tarkus 2017/06/23
+;QuickFTL Type 120 x 220 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B22A307
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_____q03
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_lhd_q03
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+;###RHD###CellLayout=.nhhbc.....
+;###RHD###CellLayout=.oiied.....
+;###LHD###CellLayout=....bchhn..
+;###LHD###CellLayout=....ediio..
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = n - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - avenue: 0x00020402, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B22A307
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104B4]
+CopyFrom    = 0x04B4
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B4]
+CopyFrom    = 0x04B4
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B4]
+CopyFrom    = 0x04B4
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B4]
+CopyFrom    = 0x04B4
+[HighwayIntersectionInfo_0x000504B4]
+CopyFrom    = 0x104B4
+[HighwayIntersectionInfo_0x000604B4]
+CopyFrom    = 0x204B4
+[HighwayIntersectionInfo_0x000704B4]
+CopyFrom    = 0x304B4
+
+
+
+
+[HighwayIntersectionInfo_0x000004B5]
+;Added by Tarkus 2017/06/23
+;QuickFTL Type 220 x 220 Default +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B22A507
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_____q03
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_2x2_lhd_q03
+
+CellLayout=.............
+CellLayout=.....a......<
+CellLayout=.....jk......
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.nhhhbchhhp..
+CellLayout=.oiiiediiiq..
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.....fg......
+CellLayout=.....lm......
+CellLayout=.............
+CellLayout=.....^.......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = l - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = m - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = n - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - avenue: 0x04020002, 0xffffffff optional
+;###RHD###CheckType = o - avenue: 0x00020402, 0xffffffff optional
+;###LHD###CheckType = o - avenue: 0x00020402 onewayroad: 0x04000003, 0xffffffff optional
+;###RHD###CheckType = p - avenue: 0x04020002, 0xffffffff optional
+;###LHD###CheckType = p - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+;###RHD###CheckType = q - avenue: 0x00020402 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - avenue: 0x00020402, 0xffffffff optional
+
+
+ConsLayout=.............
+ConsLayout=.....+......<
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.....^.......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B22A507
+Costs       = 4000
+
+[HighwayIntersectionInfo_0x000104B5]
+CopyFrom    = 0x04B5
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B5]
+CopyFrom    = 0x04B5
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B5]
+CopyFrom    = 0x04B5
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B5]
+CopyFrom    = 0x04B5
+[HighwayIntersectionInfo_0x000504B5]
+CopyFrom    = 0x104B5
+[HighwayIntersectionInfo_0x000604B5]
+CopyFrom    = 0x204B5
+[HighwayIntersectionInfo_0x000704B5]
+CopyFrom    = 0x304B5
+
+
+
+[HighwayIntersectionInfo_0x000004B6]
+;Added by Tarkus 2017/06/23
+;QuickFTL Type 220 x 220 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B229007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_____q04
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x2_lhd_q04
+
+CellLayout=............
+CellLayout=.....a.....<
+CellLayout=.....jk.....
+CellLayout=.....fg.....
+CellLayout=.....fg.....
+CellLayout=.....fg.....
+;###RHD###CellLayout=.nhhhbc.....
+;###RHD###CellLayout=.oiiied.....
+;###LHD###CellLayout=.....bchhhn.
+;###LHD###CellLayout=.....ediiio.
+CellLayout=............
+CellLayout=.....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - avenue: 0x04020002, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = n - avenue: 0x04020002 onewayroad: 0x00030400, 0xffffffff optional
+CheckType = o - avenue: 0x00020402, 0xffffffff optional
+
+ConsLayout=............
+ConsLayout=.....+.....<
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=.....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B22A607
+Costs       = 4000
+
+[HighwayIntersectionInfo_0x000104B6]
+CopyFrom    = 0x04B6
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B6]
+CopyFrom    = 0x04B6
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B6]
+CopyFrom    = 0x04B6
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B6]
+CopyFrom    = 0x04B6
+[HighwayIntersectionInfo_0x000504B6]
+CopyFrom    = 0x104B6
+[HighwayIntersectionInfo_0x000604B6]
+CopyFrom    = 0x204B6
+[HighwayIntersectionInfo_0x000704B6]
+CopyFrom    = 0x304B6
+
+;CellLayout=......
+;CellLayout=..a..<
+;CellLayout=.cbd..
+;CellLayout=......
+;CellLayout=..^...
+
+;CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 onewayroad: 0x00000104, 0xffffffff optional
+;CheckType = c - road: 0x02000200 onewayroad: 0x04000003, 0xffffffff optional
+;CheckType = d - road: 0x02000200 onewayroad: 0x00030400, 0xffffffff optional
+
+
+
+[HighwayIntersectionInfo_0x000004B7]
+;Added by Tarkus 2017/06/28
+;QuickFTL Type 120 x 110 +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B228006
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_2x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_2x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=.deefeeg..
+CellLayout=.ijjkjjl..
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=....h.....
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+;###LHD###CheckType = d - avenue: 0x04020002, 0xffffffff optional
+CheckType = e - avenue: 0x04020002, 0xffffffff optional
+CheckType = f - avenue: 0x04020002 road: 0x02000200, 0xffffffff optional
+CheckType = g - avenue: 0x04020002, 0xffffffff optional
+;###LHD###CheckType = g - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = h - road: 0x02000200 street: 0x00000100, 0xffffffff optional
+;###LHD###CheckType = h - road: 0x02000200 street: 0x00000300, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+;###LHD###CheckType = i - avenue: 0x00020402 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = j - avenue: 0x00020402, 0xffffffff optional
+CheckType = k - avenue: 0x00020402 road: 0x02000200, 0xffffffff optional
+CheckType = l - avenue: 0x00020402 onewayroad: 0x04000001, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x00020402, 0xffffffff optional
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B228007
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x000104B7]
+CopyFrom    = 0x04B7
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B7]
+CopyFrom    = 0x04B7
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B7]
+CopyFrom    = 0x04B7
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B7]
+CopyFrom    = 0x04B7
+[HighwayIntersectionInfo_0x000504B7]
+CopyFrom    = 0x104B7
+[HighwayIntersectionInfo_0x000604B7]
+CopyFrom    = 0x204B7
+[HighwayIntersectionInfo_0x000704B7]
+CopyFrom    = 0x304B7
+
+
+
+[HighwayIntersectionInfo_0x000004B8]
+;Added by Tarkus 2017/06/28
+;QuickFTL Type 120 x 110 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B228106
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+;###RHD###CellLayout=.deef.....
+;###RHD###CellLayout=.hiij.....
+;###LHD###CellLayout=....feed..
+;###LHD###CellLayout=....jiih..
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - avenue: 0x04020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = e - avenue: 0x04020002, 0xffffffff optional
+CheckType = f - avenue: 0x04020002 road: 0x02000200, 0xffffffff optional
+CheckType = g - avenue: 0x04020002, 0xffffffff optional
+CheckType = h - avenue: 0x00020402, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+CheckType = j - avenue: 0x00020402 road: 0x00000200, 0xffffffff optional
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B228107
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x000104B8]
+CopyFrom    = 0x04B8
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204B8]
+CopyFrom    = 0x04B8
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304B8]
+CopyFrom    = 0x04B8
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404B8]
+CopyFrom    = 0x04B8
+[HighwayIntersectionInfo_0x000504B8]
+CopyFrom    = 0x104B8
+[HighwayIntersectionInfo_0x000604B8]
+CopyFrom    = 0x204B8
+[HighwayIntersectionInfo_0x000704B8]
+CopyFrom    = 0x304B8
+
+
+
+
+[HighwayIntersectionInfo_0x000004C0]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 120 +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B269007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_3x2_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_3x2_lhd_q01
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=.ohhbchho..
+CellLayout=.nhhrshhq..
+CellLayout=.phhedhhp..
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....lm.....
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = m - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B269007
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104C0]
+CopyFrom    = 0x04C0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C0]
+CopyFrom    = 0x04C0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C0]
+CopyFrom    = 0x04C0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C0]
+CopyFrom    = 0x04C0
+[HighwayIntersectionInfo_0x000504C0]
+CopyFrom    = 0x104C0
+[HighwayIntersectionInfo_0x000604C0]
+CopyFrom    = 0x204C0
+[HighwayIntersectionInfo_0x000704C0]
+CopyFrom    = 0x304C0
+
+
+
+[HighwayIntersectionInfo_0x000004C1]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 120 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B229007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_lhd_q01
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+;###RHD###CellLayout=.ohhbco....
+;###RHD###CellLayout=.nhhrsq....
+;###RHD###CellLayout=.phhedp....
+;###LHD###CellLayout=...obchho..
+;###LHD###CellLayout=...qrshhn..
+;###LHD###CellLayout=...pedhhp..
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = q - road: 0x00020002 Rail: 0x04030000, 0xffffffff optional
+;CheckType = q - road: 0x00020002 Rail: 0x01040000, 0xffffffff optional ;TLA Version
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+CheckType = t - road: 0x00000002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = u - road: 0x00000002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = v - road: 0x00000002 Rail: 0x04030000, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B269507
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104C1]
+CopyFrom    = 0x04C1
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C1]
+CopyFrom    = 0x04C1
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C1]
+CopyFrom    = 0x04C1
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C1]
+CopyFrom    = 0x04C1
+[HighwayIntersectionInfo_0x000504C1]
+CopyFrom    = 0x104C1
+[HighwayIntersectionInfo_0x000604C1]
+CopyFrom    = 0x204C1
+[HighwayIntersectionInfo_0x000704C1]
+CopyFrom    = 0x304C1
+
+
+
+[HighwayIntersectionInfo_0x000004C2]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 120 x 130 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B269007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_____q02
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_lhd_q02
+
+CellLayout=...........
+CellLayout=....a.....<
+;###LHD###CellLayout=....jk.....
+;###LHD###CellLayout=....fg.....
+;###LHD###CellLayout=....fg.....
+CellLayout=.ohhbc.....
+CellLayout=.nhhrs.....
+CellLayout=.phhed.....
+;###RHD###CellLayout=....fg.....
+;###RHD###CellLayout=....fg.....
+;###RHD###CellLayout=....lm.....
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04000204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02000404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = l - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04000404 road: 0x02000202, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B269807
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104C2]
+CopyFrom    = 0x04C2
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C2]
+CopyFrom    = 0x04C2
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C2]
+CopyFrom    = 0x04C2
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C2]
+CopyFrom    = 0x04C2
+[HighwayIntersectionInfo_0x000504C2]
+CopyFrom    = 0x104C2
+[HighwayIntersectionInfo_0x000604C2]
+CopyFrom    = 0x204C2
+[HighwayIntersectionInfo_0x000704C2]
+CopyFrom    = 0x304C2
+
+
+
+
+[HighwayIntersectionInfo_0x000004C3]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 220 +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B26A007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_3x2_____q02
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_3x2_lhd_q02
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=.ohhbchho..
+CellLayout=.nhhrshhq..
+CellLayout=.phhedhhp..
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....lm.....
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = l - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = l - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = m - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B26A007
+Costs       = 4000
+
+[HighwayIntersectionInfo_0x000104C3]
+CopyFrom    = 0x04C3
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C3]
+CopyFrom    = 0x04C3
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C3]
+CopyFrom    = 0x04C3
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C3]
+CopyFrom    = 0x04C3
+[HighwayIntersectionInfo_0x000504C3]
+CopyFrom    = 0x104C3
+[HighwayIntersectionInfo_0x000604C3]
+CopyFrom    = 0x204C3
+[HighwayIntersectionInfo_0x000704C3]
+CopyFrom    = 0x304C3
+
+
+
+[HighwayIntersectionInfo_0x000004C4]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 220 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B22A007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_____q03
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_lhd_q03
+
+CellLayout=...........
+CellLayout=....a.....<
+CellLayout=....jk.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+CellLayout=....fg.....
+;###RHD###CellLayout=.ohhbco....
+;###RHD###CellLayout=.nhhrsq....
+;###RHD###CellLayout=.phhedp....
+;###LHD###CellLayout=...obchho..
+;###LHD###CellLayout=...qrshhn..
+;###LHD###CellLayout=...pedhhp..
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+;###RHD###CheckType = j - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = k - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = k - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = q - road: 0x00020002 Rail: 0x04030000, 0xffffffff optional
+;CheckType = q - road: 0x00020002 Rail: 0x01040000, 0xffffffff optional ;TLA Version
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B26A507
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104C4]
+CopyFrom    = 0x04C4
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C4]
+CopyFrom    = 0x04C4
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C4]
+CopyFrom    = 0x04C4
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C4]
+CopyFrom    = 0x04C4
+[HighwayIntersectionInfo_0x000504C4]
+CopyFrom    = 0x104C4
+[HighwayIntersectionInfo_0x000604C4]
+CopyFrom    = 0x204C4
+[HighwayIntersectionInfo_0x000704C4]
+CopyFrom    = 0x304C4
+
+
+
+[HighwayIntersectionInfo_0x000004C5]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 220 x 130 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B269007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_____q04
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x2_lhd_q04
+
+CellLayout=...........
+CellLayout=....a.....<
+;###LHD###CellLayout=....jk.....
+;###LHD###CellLayout=....fg.....
+;###LHD###CellLayout=....fg.....
+;###LHD###CellLayout=....fg.....
+CellLayout=.ohhbc.....
+CellLayout=.nhhrs.....
+CellLayout=.phhed.....
+;###RHD###CellLayout=....fg.....
+;###RHD###CellLayout=....fg.....
+;###RHD###CellLayout=....fg.....
+;###RHD###CellLayout=....lm.....
+CellLayout=...........
+CellLayout=....^......
+
+CheckType = a - avenue: 0x02040200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04000204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02000404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x02040200, 0xffffffff optional
+CheckType = g - avenue: 0x02000204, 0xffffffff optional
+CheckType = h - road: 	0x00020002, 0xffffffff optional
+CheckType = j - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = k - avenue: 0x02000204, 0xffffffff optional
+CheckType = l - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = m - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = r - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = s - avenue: 0x04000404 road: 0x02000202, 0xffffffff optional
+
+ConsLayout=...........
+ConsLayout=....+.....<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=....^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B26A807
+Costs       = 3000
+
+[HighwayIntersectionInfo_0x000104C5]
+CopyFrom    = 0x04C5
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C5]
+CopyFrom    = 0x04C5
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C5]
+CopyFrom    = 0x04C5
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C5]
+CopyFrom    = 0x04C5
+[HighwayIntersectionInfo_0x000504C5]
+CopyFrom    = 0x104C5
+[HighwayIntersectionInfo_0x000604C5]
+CopyFrom    = 0x204C5
+[HighwayIntersectionInfo_0x000704C5]
+CopyFrom    = 0x304C5
+
+
+
+[HighwayIntersectionInfo_0x000004C6]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 130 +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B26B007
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_3x3_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_3x3_lhd_q01
+
+CellLayout=............
+CellLayout=....a......<
+CellLayout=....krl.....
+CellLayout=....mmm.....
+CellLayout=....mmm.....
+CellLayout=.ottbhctto..
+CellLayout=.nttfjgttq..
+CellLayout=.ptteidttp..
+CellLayout=....mmm.....
+CellLayout=....mmm.....
+CellLayout=....ksl.....
+CellLayout=............
+CellLayout=....^.......
+
+CheckType = a - road: 0x02000200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+CheckType = h - avenue: 0x04040204 road: 0x02020002, 0xffffffff optional
+CheckType = i - avenue: 0x02040404 road: 0x00020202, 0xffffffff optional
+CheckType = j - avenue: 0x04040404 road: 0x02020202, 0xffffffff optional
+CheckType = k - road: 0x02000200 onewayroad: 0x04000003, 0xffffffff optional
+CheckType = l - road: 0x02000200 onewayroad: 0x00030400, 0xffffffff optional
+CheckType = m - road: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+;###RHD###CheckType = r - road: 0x02000200 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = r - road: 0x02000200 onewayroad: 0x01040000, 0xffffffff optional
+;###RHD###CheckType = s - road: 0x02000200 onewayroad: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = s - road: 0x02000200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = t - road: 0x00020002, 0xffffffff optional
+
+ConsLayout=............
+ConsLayout=....+......<
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=....^.......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B26B007
+Costs       = 5000
+
+[HighwayIntersectionInfo_0x000104C6]
+CopyFrom    = 0x04C6
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C6]
+CopyFrom    = 0x04C6
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C6]
+CopyFrom    = 0x04C6
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C6]
+CopyFrom    = 0x04C6
+[HighwayIntersectionInfo_0x000504C6]
+CopyFrom    = 0x104C6
+[HighwayIntersectionInfo_0x000604C6]
+CopyFrom    = 0x204C6
+[HighwayIntersectionInfo_0x000704C6]
+CopyFrom    = 0x304C6
+
+
+
+[HighwayIntersectionInfo_0x000004C7]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x 130 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B26B307
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x3_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x3_lhd_q01
+
+CellLayout=............
+CellLayout=....a......<
+CellLayout=....krl.....
+CellLayout=....mmm.....
+CellLayout=....mmm.....
+;###RHD###CellLayout=.ottbhco....
+;###RHD###CellLayout=.nttfjgq....
+;###RHD###CellLayout=.ptteidp....
+;###LHD###CellLayout=...obhctto..
+;###LHD###CellLayout=...qfjgttn..
+;###LHD###CellLayout=...peidttp..
+CellLayout=............
+CellLayout=....^.......
+
+CheckType = a - road: 0x02000200
+CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+CheckType = h - avenue: 0x04040204 road: 0x02020002, 0xffffffff optional
+CheckType = i - avenue: 0x00040404 road: 0x00020202, 0xffffffff optional
+CheckType = j - avenue: 0x04040404 road: 0x02020202, 0xffffffff optional
+CheckType = k - road: 0x02000200 onewayroad: 0x04000003, 0xffffffff optional
+CheckType = l - road: 0x02000200 onewayroad: 0x00030400, 0xffffffff optional
+CheckType = m - road: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = q - road: 0x00020002 Rail: 0x04030000, 0xffffffff optional
+;CheckType = q - road: 0x00020002 Rail: 0x01040000, 0xffffffff optional ;TLA Version
+;###RHD###CheckType = r - road: 0x02000200 onewayroad: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = r - road: 0x02000200 onewayroad: 0x01040000, 0xffffffff optional
+CheckType = t - road: 0x00020002, 0xffffffff optional
+
+ConsLayout=............
+ConsLayout=....+......<
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=............
+ConsLayout=....^.......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B26B307
+Costs       = 5000
+
+[HighwayIntersectionInfo_0x000104C7]
+CopyFrom    = 0x04C7
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C7]
+CopyFrom    = 0x04C7
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C7]
+CopyFrom    = 0x04C7
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C7]
+CopyFrom    = 0x04C7
+[HighwayIntersectionInfo_0x000504C7]
+CopyFrom    = 0x104C7
+[HighwayIntersectionInfo_0x000604C7]
+CopyFrom    = 0x204C7
+[HighwayIntersectionInfo_0x000704C7]
+CopyFrom    = 0x304C7
+
+
+
+[HighwayIntersectionInfo_0x000004C8]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x Type 110 +-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B268006
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_x_3x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_x_3x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=.oeefeeo..
+CellLayout=.neefeeq..
+CellLayout=.peefeep..
+CellLayout=....c.....
+CellLayout=....c.....
+CellLayout=....h.....
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x00020002 street: 0x00030000, 0xffffffff optional
+CheckType = e - road: 0x00020002, 0xffffffff optional
+CheckType = f - road: 0x02020202, 0xffffffff optional
+CheckType = g - road: 0x00020002 street: 0x00000001, 0xffffffff optional
+;###LHD###CheckType = g - road: 0x00020002 street: 0x00000003, 0xffffffff optional
+CheckType = h - road: 0x02000200 street: 0x00000100, 0xffffffff optional
+;###LHD###CheckType = h - road: 0x02000200 street: 0x00000300, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x00010400, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+;###RHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000003, 0xffffffff optional
+;###LHD###CheckType = q - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B268007
+Costs       = 1500
+
+[HighwayIntersectionInfo_0x000104C8]
+CopyFrom    = 0x04C8
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C8]
+CopyFrom    = 0x04C8
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C8]
+CopyFrom    = 0x04C8
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C8]
+CopyFrom    = 0x04C8
+[HighwayIntersectionInfo_0x000504C8]
+CopyFrom    = 0x104C8
+[HighwayIntersectionInfo_0x000604C8]
+CopyFrom    = 0x204C8
+[HighwayIntersectionInfo_0x000704C8]
+CopyFrom    = 0x304C8
+
+
+
+[HighwayIntersectionInfo_0x000004C9]
+;Added by Tarkus 2017/02/13
+;QuickFTL Type 130 x Type 110 T-Intersection
+Piece = 0.0, 16.0, 0, 0, 0x5B268006
+;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_3x1_____q01
+;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_3x1_lhd_q01
+
+CellLayout=..........
+CellLayout=....a....<
+CellLayout=....b.....
+CellLayout=....c.....
+CellLayout=....c.....
+;###RHD###CellLayout=.oeefo....
+;###RHD###CellLayout=.neefq....
+;###RHD###CellLayout=.peeip....
+;###LHD###CellLayout=...ofeeo..
+;###LHD###CellLayout=...qfeen..
+;###LHD###CellLayout=...pieep..
+CellLayout=..........
+CellLayout=....^.....
+
+CheckType = a - road: 0x02000200
+CheckType = b - road: 0x02000200 street: 0x01000000, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03000000, 0xffffffff optional
+CheckType = c - road: 0x02000200, 0xffffffff optional
+CheckType = d - road: 0x00020002 street: 0x00010000, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x00020002 street: 0x00030000, 0xffffffff optional
+CheckType = e - road: 0x00020002, 0xffffffff optional
+CheckType = f - road: 0x02020202, 0xffffffff optional
+CheckType = g - road: 0x00020002 street: 0x00000001, 0xffffffff optional
+;###LHD###CheckType = g - road: 0x00020002 street: 0x00000003, 0xffffffff optional
+CheckType = h - road: 0x02000200 street: 0x00000100, 0xffffffff optional
+;###LHD###CheckType = h - road: 0x02000200 street: 0x00000300, 0xffffffff optional
+CheckType = i - road: 0x00020202, 0xffffffff optional
+;###RHD###CheckType = n - road: 0x00020002 onewayroad: 0x00030400, 0xffffffff optional
+;###LHD###CheckType = n - road: 0x00020002 onewayroad: 0x04000001, 0xffffffff optional
+CheckType = o - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
+CheckType = p - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = q - road: 0x00020002 Rail: 0x04030000, 0xffffffff optional
+;CheckType = q - road: 0x00020002 Rail: 0x01040000, 0xffffffff optional ;TLA Version
+
+
+ConsLayout=..........
+ConsLayout=....+....<
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=..........
+ConsLayout=....^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B268107
+Costs       = 1500
+
+[HighwayIntersectionInfo_0x000104C9]
+CopyFrom    = 0x04C9
+Rotate		= 1
+[HighwayIntersectionInfo_0x000204C9]
+CopyFrom    = 0x04C9
+Rotate		= 2
+[HighwayIntersectionInfo_0x000304C9]
+CopyFrom    = 0x04C9
+Rotate		= 3
+[HighwayIntersectionInfo_0x000404C9]
+CopyFrom    = 0x04C9
+[HighwayIntersectionInfo_0x000504C9]
+CopyFrom    = 0x104C9
+[HighwayIntersectionInfo_0x000604C9]
+CopyFrom    = 0x204C9
+[HighwayIntersectionInfo_0x000704C9]
+CopyFrom    = 0x304C9
+
 
 
