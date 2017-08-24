@@ -48,7 +48,7 @@ BrandingText "Network Addon Mod Setup"
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Network Addon Mod"
-!define PRODUCT_VERSION "36-Alpha01"
+!define PRODUCT_VERSION "36-Alpha02"
 !define PRODUCT_PUBLISHER "The NAM Team"
 !define PRODUCT_WEB_SITE "http://www.sc4devotion.com"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -924,7 +924,7 @@ Section "RealRailway (RRW)" rail1
 SectionEnd
 
 SectionGroup /e "Maxis Rail" rail0
-Section /o "Single Track Rail (STR) (Maxis-spec)" rail2
+Section "Single Track Rail (STR) (Maxis-spec)" rail2
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail\Railway Addon Mod"
   SetOverwrite ifnewer
@@ -936,21 +936,45 @@ SectionIn 2 3 4
     File "z_Left Hand Plugin\RailwayAddonMod_STR_LEFT_HAND_VERSIONS_ONLY_Required_Additional_Plugin.dat"
   ${EndIf}
 SectionEnd
+SectionGroup "Maxis Rail Texture Style" sec14
+Section "Darker textures by SFBT" rail_texture1
+SectionIn 2 3 4
+  SetOutPath "$INSTDIR\Rail Textures"
+  SetOverwrite ifnewer
+  Delete "$OUTDIR\Rail* Addon*\zzz_Dual_Rail_Texture_*.dat"
+  File "Rail\Rail Textures\SFBT_Rail Textures Mod_Darker Textures.dat"
+SectionEnd
 
-Section /o "Underground Rail" rail5
+Section /o "Alternative textures by dedgren" rail_texture2
+  SetOutPath "$INSTDIR\Railway Addon Mod"
+  SetOverwrite ifnewer
+  Delete "$INSTDIR\*\SFBT_Rail Textures Mod_Darker Textures.dat"
+  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_Maxis_Upgrade.dat"
+  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_NAM_Upgrade.dat"
+  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_STR_Upgrade.dat"
+SectionEnd
+
+Section /o "Maxis default (not recommended)" rail_texture3
+  Delete "$INSTDIR\*\SFBT_Rail Textures Mod_Darker Textures.dat"
+  Delete "$INSTDIR\Rail* Addon*\zzz_Dual_Rail_Texture_*.dat"
+SectionEnd
+SectionGroupEnd
+SectionGroupEnd
+
+Section "Underground Rail" rail5
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail"
   SetOverwrite ifnewer
   File /r "Rail\Underground Rail"
 SectionEnd
 
-Section /o "Viaduct Rail Puzzle Pieces" rail6
+Section "Viaduct Rail Puzzle Pieces" rail6
 SectionIn 2 3 4
   SetOutPath "$INSTDIR\Rail"
   SetOverwrite ifnewer
   File "Rail\NetworkAddonMod_RailViaducts.dat"
 SectionEnd
-SectionGroupEnd
+
 SectionGroupEnd
 
 !define RHWLevel `!insertmacro _RHWLevel`
@@ -1019,7 +1043,7 @@ Function RHWCore
   ${EndIf}
 FunctionEnd
 
-SectionGroup "Real Highway Mod (RHW)" sec19
+SectionGroup "RealHighway Mod (RHW)" sec19
 ${RHWLevel} 0 L0
 ${RHWLevel} 1 L1
 ${RHWLevel} 2 L2
@@ -1029,6 +1053,33 @@ SectionGroup "DDRHW Networks" rhw5
 ${RHWSection} 5 3 DDRHW RHW-4
 SectionGroupEnd
 ${RHWSection} 6 0 FARHW FARHW
+SectionGroup "RealHighway Additional Options" sec34
+	Section /o "RealHighway Regional Transport View" rhw_op1
+		SetOutPath "$INSTDIR\Real Highway Mod"
+		SetOverwrite ifnewer
+		${If} ${SectionIsSelected} ${sec19}
+		${OrIf} ${SectionIsPartiallySelected} ${sec19}
+		${OrIf} ${SectionIsSelected} ${sec23}
+		File "Real Highway Mod\RealHighway_Regional_Transport_Map.dat"
+		${EndIf}
+	SectionEnd
+
+	Section "Single Median Barriers for Compact RHW Networks" rhw_op2
+		SectionIn 2 3 4
+		SetOutPath "$z___NAM\Cosmetic Addons\RHW Single Median Barriers"
+		SetOverwrite ifnewer
+		File "Cosmetic Addons\RHW-Ctype_SingleMedianBarriers\*.dat"
+		${If} $bRight = 0
+		File /r "z_LHD_Support"
+		${EndIf}
+	SectionEnd
+
+	Section "Legacy Deprecated Height Transitions" rhw_op3
+		SetOutPath "$INSTDIR\Real Highway Mod"
+		SetOverwrite ifnewer
+		File "Real Highway Mod\a_RealHighwayMod_LegacyButtons.dat"
+	SectionEnd
+	SectionGroupEnd
 SectionGroupEnd
 
 Section "Rural Roads Plugin" rurp1
@@ -1057,12 +1108,6 @@ Function SamCore
     ${If} $bRight = 0
       SetOutPath "$INSTDIR\z_Left Hand Plugin"
       File "z_Left Hand Plugin\StreetAddonMod_LEFT_HAND_VERSIONS_ONLY_Required_Additional_Plugin.dat"
-      ${If} $0 = 10
-        File "z_Left Hand Plugin\SAM - 10 - Japanese Streets (Moonlinght)_LHD.dat"
-      ${EndIf}
-	  ${If} $0 = 11
-        File "z_Left Hand Plugin\SAM - 11 - IndustrieSAM_LHD.dat"
-      ${EndIf}
       SetOutPath "$INSTDIR\Street Addon Mod\Textures"
     ${EndIf}
     StrCpy $CalledSAMCore 1
@@ -2404,32 +2449,7 @@ Section /o "Eliminate One-Way Arrows at Roundabouts" arrow3
 SectionEnd
 SectionGroupEnd
 
-SectionGroup "Rail Texture Style" sec14
-Section "Darker textures by SFBT" rail_texture1
-SectionIn 2 3 4
-  SetOutPath "$INSTDIR\Rail Textures"
-  SetOverwrite ifnewer
-  Delete "$OUTDIR\Rail* Addon*\zzz_Dual_Rail_Texture_*.dat"
-  File "Rail\Rail Textures\SFBT_Rail Textures Mod_Darker Textures.dat"
-  
-SectionEnd
-
-Section /o "Alternative textures by dedgren" rail_texture2
-  SetOutPath "$INSTDIR\Railway Addon Mod"
-  SetOverwrite ifnewer
-  Delete "$INSTDIR\*\SFBT_Rail Textures Mod_Darker Textures.dat"
-  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_Maxis_Upgrade.dat"
-  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_NAM_Upgrade.dat"
-  File "Rail\Rail Textures\zzz_Dual_Rail_Texture_STR_Upgrade.dat"
-SectionEnd
-
-Section /o "Maxis default (not recommended)" rail_texture3
-  Delete "$INSTDIR\*\SFBT_Rail Textures Mod_Darker Textures.dat"
-  Delete "$INSTDIR\Rail* Addon*\zzz_Dual_Rail_Texture_*.dat"
-SectionEnd
-SectionGroupEnd
-
-SectionGroup "Rail Viaduct Style" sec6
+SectionGroup "Rail Viaduct Puzzle Piece Style" sec6
 Section "Grey Rocks (default)" style1
 SectionIn 2 3 4
   Delete "$OUTDIR\NetworkAddonMod_Rail_Viaduct_Style_*.dat"
@@ -2447,34 +2467,6 @@ Section /o "Red Bricks" style3
   SetOutPath "$INSTDIR\Rail Textures"
   SetOverwrite ifnewer
   File "Rail\Rail Textures\NetworkAddonMod_Rail_Viaduct_Style_Red.dat"
-SectionEnd
-SectionGroupEnd
-
-SectionGroup "Real Highway Options" sec34
-Section /o "Real Highway Regional Transport View" rhw_op1
-  SetOutPath "$INSTDIR\Real Highway Mod"
-  SetOverwrite ifnewer
-  ${If} ${SectionIsSelected} ${sec19}
-  ${OrIf} ${SectionIsPartiallySelected} ${sec19}
-  ${OrIf} ${SectionIsSelected} ${sec23}
-    File "Real Highway Mod\RealHighway_Regional_Transport_Map.dat"
-  ${EndIf}
-SectionEnd
-
-Section "Single Median Barriers for Compact RHW Networks" rhw_op2
-SectionIn 2 3 4
-  SetOutPath "$z___NAM\Cosmetic Addons\RHW Single Median Barriers"
-  SetOverwrite ifnewer
-  File "Cosmetic Addons\RHW-Ctype_SingleMedianBarriers\*.dat"
-  ${If} $bRight = 0
-    File /r "z_LHD_Support"
-  ${EndIf}
-SectionEnd
-
-Section /o "Legacy Deprecated Height Transitions" rhw_op3
-  SetOutPath "$INSTDIR\Real Highway Mod"
-  SetOverwrite ifnewer
-  File "Real Highway Mod\a_RealHighwayMod_LegacyButtons.dat"
 SectionEnd
 SectionGroupEnd
 
@@ -4666,15 +4658,44 @@ Function .onSelChange
   ${Else}
     !insertmacro UnselectSection ${road_texture7a}
   ${EndIf}
+
   ${If} ${SectionIsSelected} ${rail1}
   ${OrIf} ${SectionIsPartiallySelected} ${rail1}
     StrCpy $InstalledRRW 1
     StrCpy $InstalledRailTexture $ButtonGroup4
+    !insertmacro UnselectSection ${rail2}
     !insertmacro UnselectSection ${sec14}
   ${ElseIf} $InstalledRRW = 1
     StrCpy $InstalledRRW 1
     StrCpy $ButtonGroup4 $InstalledRailTexture
   ${EndIf}
+  
+    ${If} ${SectionIsSelected} ${rail1}
+    ${OrIf} ${SectionIsSelected} ${rail0}
+    ${OrIf} ${SectionIsSelected} ${tulep3}
+    ${OrIf} ${SectionIsSelected} ${tulep4}
+      Push $2
+      StrCpy $2 ${SF_SELECTED}
+      SectionGetFlags ${rail1} $0
+      IntOp $2 $2 & $0
+      SectionGetFlags ${rail0} $0
+      IntOp $2 $2 & $0
+      StrCmp $2 0 skip11
+
+        SectionSetFlags ${rail1} 0
+        SectionSetFlags ${rail0} 0
+
+  skip11:
+  Pop $2
+
+  ;${If} ${SectionIsSelected} ${rail0}
+  ;${OrIf} ${SectionIsSelected} ${rail1}
+    !insertmacro StartRadioButtons $ButtonGroup11
+      !insertmacro RadioButton ${rail0}
+      !insertmacro RadioButton ${rail1}
+    !insertmacro EndRadioButtons
+  ${EndIf}
+  
   ${FlipOptions} ${btm1} $InstalledBTM ${monorail4} 0 0 0 0 0 0 0 0 0 0
   ${FlipOptions} ${plugin6} $InstalledDoubleHeightMonorail ${monorail3} 0 0 0 0 0 0 0 0 0 0
   ${FlipOptions} ${elrail3} $InstalledDoubleHeightElRail ${eltrain6} 0 0 0 0 0 0 0 0 0 0
