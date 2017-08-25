@@ -48,7 +48,7 @@ BrandingText "Network Addon Mod Setup"
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Network Addon Mod"
-!define PRODUCT_VERSION "36-Alpha02"
+!define PRODUCT_VERSION "36-Alpha03"
 !define PRODUCT_PUBLISHER "The NAM Team"
 !define PRODUCT_WEB_SITE "http://www.sc4devotion.com"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -233,7 +233,7 @@ Page custom GetOldComponents                ; Must be separate page so it never 
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_TEXT "&Install/Start Traffic Simulator Configuration Tool                                                     (also allows customization of new Data Views)"
 !define MUI_FINISHPAGE_RUN_FUNCTION LaunchTSCT
-!define MUI_FINISHPAGE_SHOWREADME "$NAMAuxDir\Documentation\Read First-NAM 34.htm" ; the path of your readme file, once it is installed
+!define MUI_FINISHPAGE_SHOWREADME "$NAMAuxDir\Documentation\1-start.html" ; the path of your readme file, once it is installed
 !define MUI_PAGE_CUSTOMFUNCTION_PRE CheckTSCT
 !insertmacro MUI_PAGE_FINISH
 !define MUI_CUSTOMFUNCTION_ABORT AbortNAM
@@ -890,36 +890,44 @@ Section "RealRailway (RRW)" rail1
   SetOutPath "$z___NAM\y_RealRailway"
   SetOverwrite ifnewer
   File "Rail\RealRailway\*.dat"
+  SetOutPath "$z___NAM\y_RealRailway\Textures" ;Adds new Textures Folder
+  File "Rail\RealRailway\Textures\*.dat"
+;Main Crossings
+  File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_Generic.dat"
+ ;INRULs 
   SetOutPath "$INSTDIR\INRUL Overrides"
   File "INRUL Overrides\RealRailway_Core_INRULs.dat"
+  ;LHD Support
   ${If} $bRight = 0
     SetOutPath "$INSTDIR\z_Left Hand Plugin\z_RealRailway"
-    File "z_Left Hand Plugin\RealRailway_LHD.dat"
+     File "z_Left Hand Plugin\z_RealRailway\RealRailway_LHD.dat"
   ${EndIf}
+  ;Crosslink Files for Cosmetic Mods
   ${Unless} ${SectionIsSelected} ${btm1}
     SetOutPath "$z___NAM\y_RealRailway"
-	Delete "$OUTDIR\zML Shinkansen MOD for STR RRW.dat"
+	Delete "$OUTDIR\z_RealRailway_ML Shinkansen MOD Patch.dat" ;MGB - Modified File Name to remove STR
   ${EndIf}
   ${If} ${SectionIsSelected} ${btm1}
 	SetOutPath "$z___NAM\y_RealRailway"
-    File "Rail\RealRailway\zML Shinkansen MOD for STR RRW.dat"
+    File "Rail\RealRailway\z_RealRailway_ML Shinkansen MOD Patch.dat" ;MGB - Modified File Name to remove STR
   ${EndIf}
   ${Unless} ${SectionIsSelected} ${elrail_alt1}
     SetOutPath "$z___NAM\y_RealRailway"
-	Delete "$OUTDIR\zML JPN EL Rail 2013 for STR RRW.dat"
+	Delete "$OUTDIR\z_RealRailway_ML JPN EL Rail 2013 Patch.dat"
   ${EndIf}
   ${If} ${SectionIsSelected} ${elrail_alt1}
 	SetOutPath "$z___NAM\y_RealRailway"
-    File "Rail\RealRailway\zML JPN EL Rail 2013 for STR RRW.dat"
+    File "Rail\RealRailway\z_RealRailway_ML JPN EL Rail 2013 Patch.dat" 
   ${EndIf}
   ${Unless} ${SectionIsSelected} ${sec23}
     SetOutPath "$z___NAM\y_RealRailway"
-	Delete "$OUTDIR\z_RRW_MHO_Patch.dat"
+	Delete "$OUTDIR\z_RealRailway_MHO_Patch.dat"
   ${EndIf}
   ${If} ${SectionIsSelected} ${sec23}
 	SetOutPath "$z___NAM\y_RealRailway"
-    File "Rail\RealRailway\z_RRW_MHO_Patch.dat"
+    File "Rail\RealRailway\z_RealRailway_MHO_Patch.dat"
   ${EndIf}
+  ;Calls US/EU Texture and Prop Variations, plus SAM Crosslinks
   Call RRW
 SectionEnd
 
@@ -2874,6 +2882,68 @@ Function RRW
   ${Else}
     File "Rail\RealRailway\Props\RealRailway_Props_EU.dat"
   ${EndIf}
+	${If} ${SectionIsSelected} ${road_texture1} ;US
+	${OrIf} ${SectionIsSelected} ${road_texture2}
+		${If} $bRight = 1 ;RHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_US_RHD.dat"
+		${Else} ;LHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_US_LHD.dat"
+		${EndIf}
+	${Else} ;EU
+  		${If} $bRight = 1 ;RHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_EU_RHD.dat"
+		${Else} ;LHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_EU_LHD.dat"
+		${EndIf}
+  ${EndIf}
+;SAM Crossings
+  ${If} ${SectionIsSelected} ${sam2};SAM2
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM2.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam3} ;SAM3
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM3.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam4} ;SAM4
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM4.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam5} ;SAM5
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM5.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam6} ;SAM6
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM6.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam8} ;SAM8
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM8.dat"
+  ${EndIf}
+  ${If} ${SectionIsSelected} ${sam9} ;SAM9
+	File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM9.dat"
+  ${EndIf}
+;Specials (DrivingSide or US/EU)
+  ${If} ${SectionIsSelected} ${sam7}
+		${If} $bRight = 1 ;SAM7 + RHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM7_RHD.dat"
+		${Else} ;SAM7 + LHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM7_LHD.dat"
+		${EndIf}
+  ${EndIf}
+  
+  ${If} ${SectionIsSelected} ${sam10} ;SAM10 + RHD
+		${If} $bRight = 1
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM10_RHD.dat"
+		${Else} ;SAM10 + LHD
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM10_LHD.dat"
+		${EndIf}
+  ${EndIf}
+  
+  ${If} ${SectionIsSelected} ${sam11} ;SAM11 + US
+		${If} ${SectionIsSelected} ${road_texture1}
+		${OrIf} ${SectionIsSelected} ${road_texture2}
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM11_US.dat"
+		${Else} ;SAM11 + EU
+		File "Rail\RealRailway\Textures\Crossings\RealRailway_Textures_Crossings_SAM11_EU.dat"
+		${EndIf}
+  ${EndIf}
+
 FunctionEnd
 
 Function ClearStation0              ; Root function
@@ -5620,6 +5690,8 @@ Function ProcessSAMNode
       ${SetNode} ${sam9} ${sec21}
     ${Case} "Set 10 - Japanese Streets"
       ${SetNode} ${sam10} ${sec21}
+    ${Case} "Set 11 - Industrial Streets"
+      ${SetNode} ${sam11} ${sec21}
     ${CaseElse}
   ${EndSelect}
 FunctionEnd
@@ -5668,7 +5740,7 @@ Function SaveRNetworkState
   StrCpy $SavedRHW1 $0
   ${GetNetworkState} ${rhw3} ${rhw60}
   StrCpy $SavedRHW2 $0
-  ${GetNetworkState} ${sec21} ${sam10}
+  ${GetNetworkState} ${sec21} ${sam11}
   StrCpy $SavedSAM $0
   Pop $1
   Pop $0
@@ -5771,7 +5843,7 @@ Function CheckRNetworkStates
   ${CheckNetworkState} $SavedRHW1 ${sec19} ${rhw28}
   ${CheckNetworkState} $SavedRHW2 ${rhw3} ${rhw60}
   StrCpy $RHWNR $R6
-  ${CheckNetworkState} $SavedSAM ${sec21} ${sam10}
+  ${CheckNetworkState} $SavedSAM ${sec21} ${sam11}
   ${If} $R0 = 1
     StrCpy $WriteController -1
     Call ProcessController
