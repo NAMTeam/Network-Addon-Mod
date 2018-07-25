@@ -1,0 +1,832 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;MULTI RADIUS ROAD CURVES
+;MULTI RADIUS ROAD CURVES
+
+RotationRing = 7900, F7900, 97900, 67900, 17900, E7900, A7900, 57900, 27900, D7900, B7900, 47900, 37900, C7900, 87900, 77900 ;MRC R2 Road 45 degree
+AddTypes     = 7901, F7901, 97901, 67901, 17901, E7901, A7901, 57901, 27901, D7901, B7901, 47901, 37901, C7901, 87901, 77901 ;MRC R3 Road 45 degree
+AddTypes     = 7902, F7902, 97902, 67902, 17902, E7902, A7902, 57902, 27902, D7902, B7902, 47902, 37902, C7902, 87902, 77902 ;MRC R4 Road 45 degree
+AddTypes     = 7903, F7903, 97903, 67903, 17903, E7903, A7903, 57903, 27903, D7903, B7903, 47903, 37903, C7903, 87903, 77903 ;MRC R5 Road 45 degree
+AddTypes     = 7904, F7904, 97904, 67904, 17904, E7904, A7904, 57904, 27904, D7904, B7904, 47904, 37904, C7904, 87904, 77904 ;MRC R3 TLA3 45 degree
+AddTypes     = 7905, F7905, 97905, 67905, 17905, E7905, A7905, 57905, 27905, D7905, B7905, 47905, 37905, C7905, 87905, 77905 ;MRC R4 TLA3 45 degree
+AddTypes     = 7906, F7906, 97906, 67906, 17906, E7906, A7906, 57906, 27906, D7906, B7906, 47906, 37906, C7906, 87906, 77906 ;MRC R5 TLA3 45 degree
+AddTypes     = 7907, F7907, 97907, 67907, 17907, E7907, A7907, 57907, 27907, D7907, B7907, 47907, 37907, C7907, 87907, 77907 ;MRC R3 TLA5 45 degree
+AddTypes     = 7908, F7908, 97908, 67908, 17908, E7908, A7908, 57908, 27908, D7908, B7908, 47908, 37908, C7908, 87908, 77908 ;MRC R4 TLA5 45 degree
+AddTypes     = 7909, F7909, 97909, 67909, 17909, E7909, A7909, 57909, 27909, D7909, B7909, 47909, 37909, C7909, 87909, 77909 ;MRC R5 TLA5 45 degree
+AddTypes     = 790A, F790A, 9790A, 6790A, 1790A, E790A, A790A, 5790A, 2790A, D790A, B790A, 4790A, 3790A, C790A, 8790A, 7790A ;MRC R3 RD-4 45 degree
+AddTypes     = 790B, F790B, 9790B, 6790B, 1790B, E790B, B790B, 5790B, 2790B, D790B, B790B, 4790B, 3790B, C790B, 8790B, 7790B ;MRC R4 RD-4 45 degree
+AddTypes     = 790C, F790C, 9790C, 6790C, 1790C, E790C, A790C, 5790C, 2790C, D790C, B790C, 4790C, 3790C, C790C, 8790C, 7790C ;MRC R5 RD-4 45 degree
+;AddTypes     = 790D, F790D, 9790D, 6790D, 1790D, E790D, A790D, 5790D, 2790D, D790D, B790D, 4790D, 3790D, C790D, 8790D, 7790D ;MRC R3 TLA7 45 degree
+;AddTypes     = 790E, F790E, 9790E, 6790E, 1790E, E790E, A790E, 5790E, 2790E, D790E, B790E, 4790E, 3790E, C790E, 8790E, 7790E ;MRC R4 TLA7 45 degree
+;AddTypes     = 790F, F790F, 9790F, 6790F, 1790F, E790F, A790F, 5790F, 2790F, D790F, B790F, 4790F, 3790F, C790F, 8790F, 7790F ;MRC R5 TLA7 45 degree
+
+;###separator###
+
+;ROAD MULTI RADIUS CURVES PIECES
+;ROAD MULTI RADIUS CURVES PIECES
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Road_FlexMRC_R2 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007900]
+Piece = 0.0, -16.0, 0, 0, 0x5f093005
+PreviewEffect = preview_mrc_r2_road_flex_45_001
+
+CellLayout = .............
+CellLayout = ..abc........
+CellLayout = ..Adef......<
+CellLayout = .....h.......
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x00020002, 0xFFFFFFFF optional
+CheckType = b - road:0x04020002, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00020400, 0xFFFFFFFF optional
+CheckType = e - road:0x00040402, 0xFFFFFFFF optional
+CheckType = f - road:0x01000004, 0xFFFFFFFF optional
+CheckType = h - road:0x00000100, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f093005
+Costs = 400
+
+[HighwayIntersectionInfo_0x00017900]
+CopyFrom    = 0x7900
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027900]
+CopyFrom    = 0x7900
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037900]
+CopyFrom    = 0x7900
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047900]
+CopyFrom    = 0x7900
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057900]
+CopyFrom    = 0x47900
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067900]
+CopyFrom    = 0x47900
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077900]
+CopyFrom    = 0x47900
+Rotate		= 1
+
+;Road_FlexMRC_R3 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007901]
+Piece = 0.0, -16.0, 0, 0, 0x5f094005
+PreviewEffect = preview_mrc_r3_road_flex_001
+
+CellLayout = .............
+CellLayout = ..aabc.......
+CellLayout = ..A.def.....<
+CellLayout = ......gh.....
+CellLayout = .......i.....
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x00020002, 0xFFFFFFFF optional
+CheckType = b - road:0x02020002, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00040200, 0xFFFFFFFF optional
+CheckType = e - road:0x00040404, 0xFFFFFFFF optional
+CheckType = f - road:0x01000004, 0xFFFFFFFF optional
+CheckType = g - road:0x00030100, 0xFFFFFFFF optional
+CheckType = h - road:0x01000003, 0xFFFFFFFF optional
+CheckType = i - road:0x00000100, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f094005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017901]
+CopyFrom    = 0x7901
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027901]
+CopyFrom    = 0x7901
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037901]
+CopyFrom    = 0x7901
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047901]
+CopyFrom    = 0x7901
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057901]
+CopyFrom    = 0x47901
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067901]
+CopyFrom    = 0x47901
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077901]
+CopyFrom    = 0x47901
+Rotate  	= 1
+
+[HighwayIntersectionInfo_0x00007902]
+; (flexible) multi Radius Curve R4 Road Flex
+; Added by eggman121 02/14/2017
+Piece = 0.0, -16.0, 0, 0, 0x5f095005
+PreviewEffect = preview_mrc_r4_road_flex_001
+
+CellLayout =aabc...........
+CellLayout =X.debc........<
+CellLayout =....dfg........
+CellLayout =......ih.......
+CellLayout =^..............
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x01000004, 0xFFFFFFFF optional
+CheckType = h - road: 0x01000003, 0xFFFFFFFF optional
+CheckType = i - road: 0x00030100, 0xFFFFFFFF optional
+
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f095005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017902]
+CopyFrom    = 0x7902
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027902]
+CopyFrom    = 0x7902
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037902]
+CopyFrom    = 0x7902
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047902]
+CopyFrom    = 0x7902
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057902]
+CopyFrom    = 0x47902
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067902]
+CopyFrom    = 0x47902
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077902]
+CopyFrom    = 0x47902
+Rotate		= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x00007903]
+; (flexible) multi Radius Curve R5 Road Flex
+; Added by eggman121 03/14/2017
+Piece = 0.0, 0.0, 0, 0, 0x5f096005
+PreviewEffect = preview_mrc_r5_road_flex_001
+
+CellLayout =aabbc..........
+CellLayout =X.deebc.......<
+CellLayout =.....dfg.......
+CellLayout =.......hi......
+CellLayout =^.......ji.....
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x04000004, 0xFFFFFFFF optional
+CheckType = h - road: 0x00030400, 0xFFFFFFFF optional
+CheckType = i - road: 0x01000003, 0xFFFFFFFF optional
+CheckType = j - road: 0x00030100, 0xFFFFFFFF optional
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f096005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017903]
+CopyFrom    = 0x7903
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027903]
+CopyFrom    = 0x7903
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037903]
+CopyFrom    = 0x7903
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047903]
+CopyFrom    = 0x7903
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057903]
+CopyFrom    = 0x47903
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067903]
+CopyFrom    = 0x47903
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077903]
+CopyFrom    = 0x47903
+Rotate		= 1
+
+;TLA-3_FlexMRC_R3 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007904]
+Piece = 0.0, -16.0, 0, 0, 0x51903005
+PreviewEffect = preview_mrc_r3_tla_3_flex_001
+
+CellLayout = .............
+CellLayout = ..abbc.......
+CellLayout = ..Adefg.....<
+CellLayout = .....hij.....
+CellLayout = .............
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x00020002, 0xFFFFFFFF optional
+CheckType = b - road:0x04020002, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00020400, 0xFFFFFFFF optional
+CheckType = e - road:0x00020402, 0xFFFFFFFF optional
+CheckType = f - road:0x04040402, 0xFFFFFFFF optional
+CheckType = g - road:0x04000004, 0xFFFFFFFF optional
+CheckType = h - road:0x00040400, 0xFFFFFFFF optional
+CheckType = i - road:0x00030404, 0xFFFFFFFF optional
+CheckType = j - road:0x01000003, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51903005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017904]
+CopyFrom    = 0x7904
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027904]
+CopyFrom    = 0x7904
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037904]
+CopyFrom    = 0x7904
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047904]
+CopyFrom    = 0x7904
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057904]
+CopyFrom    = 0x47904
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067904]
+CopyFrom    = 0x47904
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077904]
+CopyFrom    = 0x47904
+Rotate  	= 1
+
+[HighwayIntersectionInfo_0x00007905]
+; (flexible) multi Radius Curve R4 TLA-3 Flex
+; Added by eggman121 02/14/2017
+Piece = 0.0, -16.0, 0, 0, 0x51904005
+PreviewEffect = preview_mrc_r4_tla_3_flex_001
+
+CellLayout =abbc...........
+CellLayout =Xdefgc........<
+CellLayout =....dfh........
+CellLayout =......i........
+CellLayout =^..............
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x04020004, 0xFFFFFFFF optional
+CheckType = h - road: 0x01000004, 0xFFFFFFFF optional
+CheckType = i - road: 0x00030100, 0xFFFFFFFF optional
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51904005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017905]
+CopyFrom    = 0x7905
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027905]
+CopyFrom    = 0x7905
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037905]
+CopyFrom    = 0x7905
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047905]
+CopyFrom    = 0x7905
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057905]
+CopyFrom    = 0x47905
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067905]
+CopyFrom    = 0x47905
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077905]
+CopyFrom    = 0x47905
+Rotate		= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[HighwayIntersectionInfo_0x00007906]
+; (flexible) multi Radius Curve R5 TLA-3 Flex
+; Added by eggman121 03/14/2017
+Piece = 0.0, -16.0, 0, 0, 0x51905005
+PreviewEffect = preview_mrc_r5_tla_3_flex_001
+
+CellLayout =abbbc..........
+CellLayout =Xdeefjc.......<
+CellLayout =.....dgc.......
+CellLayout =......dfh......
+CellLayout =^.......i......
+
+;senw
+CheckType = X - road: 0x00000000
+CheckType = a - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x04020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x04000002, 0xFFFFFFFF optional
+CheckType = d - road: 0x00020400, 0xFFFFFFFF optional
+CheckType = e - road: 0x00020402, 0xFFFFFFFF optional
+CheckType = f - road: 0x00040402, 0xFFFFFFFF optional
+CheckType = g - road: 0x04020402, 0xFFFFFFFF optional
+CheckType = h - road: 0x01000004, 0xFFFFFFFF optional
+CheckType = i - road: 0x00030100, 0xFFFFFFFF optional
+CheckType = j - road: 0x04020004, 0xFFFFFFFF optional
+
+ConsLayout =...............
+ConsLayout =+.............<
+ConsLayout =...............
+ConsLayout =...............
+ConsLayout =^..............
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51905005
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017906]
+CopyFrom    = 0x7906
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027906]
+CopyFrom    = 0x7906
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037906]
+CopyFrom    = 0x7906
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047906]
+CopyFrom    = 0x7906
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057906]
+CopyFrom    = 0x47906
+Rotate		= 3
+[HighwayIntersectionInfo_0x00067906]
+CopyFrom    = 0x47906
+Rotate		= 2
+[HighwayIntersectionInfo_0x00077906]
+CopyFrom    = 0x47906
+Rotate		= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;TLA-5_FlexMRC_R3 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007907]
+Piece = 0.0, -16.0, 0, 0, 0x51983005
+PreviewEffect = preview_mrc_r3_tla_5_flex_001
+
+CellLayout = .............
+CellLayout = ..aaac.......
+CellLayout = ..bbeeac.....
+CellLayout = ..A.dbeec...<
+CellLayout = ......fgh....
+CellLayout = .............
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00020400, 0xFFFFFFFF optional
+CheckType = e - road:0x04020402, 0xFFFFFFFF optional
+CheckType = f - road:0x00040400, 0xFFFFFFFF optional
+CheckType = g - road:0x01040404, 0xFFFFFFFF optional
+CheckType = h - road:0x00030404, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51983005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017907]
+CopyFrom    = 0x7907
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027907]
+CopyFrom    = 0x7907
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037907]
+CopyFrom    = 0x7907
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047907]
+CopyFrom    = 0x7907
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057907]
+CopyFrom    = 0x47907
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067907]
+CopyFrom    = 0x47907
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077907]
+CopyFrom    = 0x47907
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;TLA-5_FlexMRC_R4 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007908]
+Piece = 0.0, -16.0, 0, 0, 0x51984005
+PreviewEffect = preview_mrc_r4_tla_5_flex_001
+
+CellLayout = ................
+CellLayout = ..iaac..........
+CellLayout = ..ibeeac........
+CellLayout = ..A.dbbegj.....<
+CellLayout = .......fhkl.....
+CellLayout = ........mnm....
+CellLayout = ..^.............
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00020400, 0xFFFFFFFF optional
+CheckType = e - road:0x04020402, 0xFFFFFFFF optional
+CheckType = f - road:0x00030400, 0xFFFFFFFF optional
+CheckType = g - road:0x04040002, 0xFFFFFFFF optional
+CheckType = h - road:0x01030403, 0xFFFFFFFF optional
+CheckType = i - road:0x00020002, 0xFFFFFFFF optional
+CheckType = j - road:0x01000004, 0xFFFFFFFF optional
+CheckType = k - road:0x01030103, 0xFFFFFFFF optional
+CheckType = l - road:0x01000003, 0xFFFFFFFF optional
+CheckType = m - road:0x00030100, 0xFFFFFFFF optional
+CheckType = n - road:0x01000103, 0xFFFFFFFF optional
+
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ..+............<
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ..^.............
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51984005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017908]
+CopyFrom    = 0x7908
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027908]
+CopyFrom    = 0x7908
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037908]
+CopyFrom    = 0x7908
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047908]
+CopyFrom    = 0x7908
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057908]
+CopyFrom    = 0x47908
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067908]
+CopyFrom    = 0x47908
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077908]
+CopyFrom    = 0x47908
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;TLA-5_FlexMRC_R5 (Extended) - RUL0
+[HighwayIntersectionInfo_0x00007909]
+Piece = 0.0, -16.0, 0, 0, 0x51985005
+PreviewEffect = preview_mrc_r5_tla_5_flex_001
+
+CellLayout = ................
+CellLayout = ..aaaac.........
+CellLayout = ..bbeeeac.......
+CellLayout = ..A.dbbeeac....<
+CellLayout = .......dbfgn....
+CellLayout = .........ijl....
+CellLayout = ..........mn....
+CellLayout = ..^.............
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x00020400, 0xFFFFFFFF optional
+CheckType = e - road:0x04020402, 0xFFFFFFFF optional
+CheckType = f - road:0x04040402, 0xFFFFFFFF optional
+CheckType = g - road:0x04030404, 0xFFFFFFFF optional
+CheckType = h - road:0x01030403, 0xFFFFFFFF optional
+CheckType = i - road:0x00040400, 0xFFFFFFFF optional
+CheckType = j - road:0x01040404, 0xFFFFFFFF optional
+CheckType = l - road:0x00030104, 0xFFFFFFFF optional
+CheckType = m - road:0x00030100, 0xFFFFFFFF optional
+CheckType = n - road:0x01000003, 0xFFFFFFFF optional
+
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ..+............<
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ................
+ConsLayout = ..^.............
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x51985005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017909]
+CopyFrom    = 0x7909
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00027909]
+CopyFrom    = 0x7909
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00037909]
+CopyFrom    = 0x7909
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00047909]
+CopyFrom    = 0x7909
+Transpose	= 1
+[HighwayIntersectionInfo_0x00057909]
+CopyFrom    = 0x47909
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00067909]
+CopyFrom    = 0x47909
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00077909]
+CopyFrom    = 0x47909
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;RD-4_FlexMRC_R3 (Extended) - RUL0
+[HighwayIntersectionInfo_0x0000790A]
+Piece = 0.0, -16.0, 0, 0, 0x519b3005
+PreviewEffect = preview_mrc_r3_rd_4_flex_001
+
+CellLayout = .............
+CellLayout = ..aac........
+CellLayout = ..bbdac......
+CellLayout = ..A.ebfg....<
+CellLayout = ......hi.....
+CellLayout = .............
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x04020402, 0xFFFFFFFF optional
+CheckType = e - road:0x00020400, 0xFFFFFFFF optional
+CheckType = f - road:0x04040402, 0xFFFFFFFF optional
+CheckType = g - road:0x01000004, 0xFFFFFFFF optional
+CheckType = h - road:0x00030400, 0xFFFFFFFF optional
+CheckType = i - road:0x01030103, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x519b3005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001790A]
+CopyFrom    = 0x790A
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002790A]
+CopyFrom    = 0x790A
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003790A]
+CopyFrom    = 0x790A
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004790A]
+CopyFrom    = 0x790A
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005790A]
+CopyFrom    = 0x4790A
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006790A]
+CopyFrom    = 0x4790A
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007790A]
+CopyFrom    = 0x4790A
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;RD-4_FlexMRC_R4 (Extended) - RUL0
+[HighwayIntersectionInfo_0x0000790B]
+Piece = 0.0, -16.0, 0, 0, 0x519b4005
+PreviewEffect = preview_mrc_r4_rd_4_flex_001
+
+CellLayout = .............
+CellLayout = ..aoac.......
+CellLayout = ..boddac.....
+CellLayout = ..A.ebdfg...<
+CellLayout = ......ekjm...
+CellLayout = ........ni...
+CellLayout = ..^..........
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x04020402, 0xFFFFFFFF optional
+CheckType = e - road:0x00020400, 0xFFFFFFFF optional
+CheckType = f - road:0x04040402, 0xFFFFFFFF optional
+CheckType = g - road:0x01000004, 0xFFFFFFFF optional
+CheckType = h - road:0x00030400, 0xFFFFFFFF optional
+CheckType = i - road:0x01030103, 0xFFFFFFFF optional
+CheckType = j - road:0x01030104, 0xFFFFFFFF optional
+CheckType = k - road:0x00040402, 0xFFFFFFFF optional
+CheckType = m - road:0x01000003, 0xFFFFFFFF optional
+CheckType = n - road:0x00030100, 0xFFFFFFFF optional
+CheckType = o - road:0x00020002, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x519b4005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001790B]
+CopyFrom    = 0x790B
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002790B]
+CopyFrom    = 0x790B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003790B]
+CopyFrom    = 0x790B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004790B]
+CopyFrom    = 0x790B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005790B]
+CopyFrom    = 0x4790B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006790B]
+CopyFrom    = 0x4790B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007790B]
+CopyFrom    = 0x4790B
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;RD-4_FlexMRC_R5 (Extended) - RUL0
+[HighwayIntersectionInfo_0x0000790C]
+Piece = 0.0, -16.0, 0, 0, 0x519b5005
+PreviewEffect = preview_mrc_r5_rd_4_flex_001
+
+CellLayout = ...............
+CellLayout = ..mamc.........
+CellLayout = ..mbmdac.......
+CellLayout = ..A..ebdac....<
+CellLayout = .......ebfg....
+CellLayout = .........hig...
+CellLayout = ..........hl...
+CellLayout = ..^............
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x04020002, 0xFFFFFFFF optional
+CheckType = b - road:0x00020402, 0xFFFFFFFF optional
+CheckType = c - road:0x04000002, 0xFFFFFFFF optional
+CheckType = d - road:0x04020402, 0xFFFFFFFF optional
+CheckType = e - road:0x00020400, 0xFFFFFFFF optional
+CheckType = f - road:0x04040402, 0xFFFFFFFF optional
+CheckType = g - road:0x04000004, 0xFFFFFFFF optional
+CheckType = h - road:0x00040400, 0xFFFFFFFF optional
+CheckType = i - road:0x04040404, 0xFFFFFFFF optional
+CheckType = l - road:0x01030404, 0xFFFFFFFF optional
+CheckType = m - road:0x00020002, 0xFFFFFFFF optional
+
+ConsLayout = ...............
+ConsLayout = ...............
+ConsLayout = ...............
+ConsLayout = ..+...........<
+ConsLayout = ...............
+ConsLayout = ...............
+ConsLayout = ...............
+ConsLayout = ..^............
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x519b5005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001790C]
+CopyFrom    = 0x790C
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002790C]
+CopyFrom    = 0x790C
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003790C]
+CopyFrom    = 0x790C
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004790C]
+CopyFrom    = 0x790C
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005790C]
+CopyFrom    = 0x4790C
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006790C]
+CopyFrom    = 0x4790C
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007790C]
+CopyFrom    = 0x4790C
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;-<>-TLA-7-R3
+
+;-<>-TLA-7-R4
+
+;-<>-TLA-7-R5
