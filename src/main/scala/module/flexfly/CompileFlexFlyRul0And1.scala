@@ -276,7 +276,7 @@ object CompileFlexFlyRul0And1 {
   def printRul0(file: File, resolver: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
-    for (hid <- hid0 until hid0 + 40 if (hid % 0x100) % 20 < 12) { // skips L3 and L4, for now
+    for (hid <- hid0 until hid0 + 40) { 
       val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
       val tag = if (hid == hid0) "RotationRing" else "AddTypes"
       printer.println(f"$tag = $numbers ; flexfly")
