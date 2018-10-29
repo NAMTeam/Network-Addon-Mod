@@ -6369,408 +6369,6 @@ bridge 3
 	end
 end
 
-#RHW-6S Compact Steel Arch Bridge
-
-bridge 27
-
-section ast
-	piece <0x33520000, 2> <0x33530000, 0>
-end
-
-section arep
-	piece <0x33500000, 2> <0x33500000, 0>
-end
-
-section asup
-	piece <0x33510000, 2> <0x33510000, 0>
-end
-
-section arch
-	piece <0x33510000, 2> <0x33570000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33560000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33510000, 2> <0x33570000, 0>
-end
-
-section aen
-	piece <0x33530000, 2> <0x33520000, 0>
-end
-
-	length 8
-		piece ast 6*arep aen
-	end
-
-	length 9
-		piece ast 7*arep aen
-	end
-
-	length 10
-		piece ast 8*arep aen
-	end
-
-	length 11
-		piece ast 4*arep asup 4*arep aen
-	end
-
-	length 12
-		piece ast 5*arep asup 4*arep aen
-	end
-
-	length 13
-		piece ast 5*arep asup 5*arep aen
-	end
-
-	length 14
-		piece ast 6*arep asup 5*arep aen
-	end
-
-	length 15
-		piece ast 6*arep asup 6*arep aen
-	end
-
-	length 16
-		piece ast 7*arep asup 6*arep aen
-	end
-
-	length 17
-		piece ast 7*arep asup 7*arep aen
-	end
-
-	length 18
-		piece ast 8*arep asup 7*arep aen
-	end
-
-	length 19
-		piece ast 8*arep asup 8*arep aen
-	end
-
-	length 20
-		piece ast 4*arep asup 8*arep asup 4*arep aen
-	end
-
-	length 21
-		piece ast 5*arep asup 8*arep asup 5*arep aen
-	end
-
-	length 22
-		piece ast 5*arep asup 8*arep asup 5*arep aen
-	end
-
-	length 23
-		piece ast 6*arep asup 8*arep asup 6*arep aen
-	end
-
-	length 24
-		piece ast 6*arep asup 8*arep asup 6*arep aen
-	end
-
-	length 25
-		piece ast 7*arep asup 8*arep asup 7*arep aen
-	end
-
-	length 26
-		piece ast 7*arep asup 8*arep asup 7*arep aen
-	end
-
-	length 27
-		piece ast 2*arep arch 2*arep aen
-	end
-
-	length 28
-		piece ast 2*arep arch 3*arep aen
-	end
-
-	length 29
-		piece ast 3*arep arch 3*arep aen
-	end
-
-	length 30
-		piece ast 3*arep arch 4*arep aen
-	end
-
-	length 31
-		piece ast 4*arep arch 4*arep aen
-	end
-
-	length 32
-		piece ast 4*arep arch 5*arep aen
-	end
-
-	length 33
-		piece ast 5*arep arch 5*arep aen
-	end
-
-	length 34
-		piece ast 5*arep arch 6*arep aen
-	end
-
-	length 35
-		piece ast 6*arep arch 6*arep aen
-	end
-
-	length 36
-		piece ast 2*arep asup 3*arep arch 3*arep asup 3*arep aen
-	end
-
-	length 37
-		piece ast 3*arep asup 3*arep arch 3*arep asup 3*arep aen
-	end
-
-	length 38
-		piece ast 3*arep asup 3*arep arch 4*arep asup 3*arep aen
-	end
-
-	length 39
-		piece ast 3*arep asup 4*arep arch 4*arep asup 3*arep aen
-	end
-
-	length 40
-		piece ast 3*arep asup 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 41
-		piece ast 4*arep asup 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 42
-		piece ast 4*arep asup 4*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 43
-		piece ast 4*arep asup 5*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 44
-		piece ast 4*arep asup 5*arep arch 5*arep asup 5*arep aen
-	end
-
-	length 45
-		piece ast 5*arep asup 5*arep arch 5*arep asup 5*arep aen
-	end
-
-	length 46
-		piece ast 5*arep asup 5*arep arch 6*arep asup 5*arep aen
-	end
-
-	length 47
-		piece ast 5*arep asup 6*arep arch 6*arep asup 5*arep aen
-	end
-
-	length 48
-		piece ast 5*arep asup 6*arep arch 6*arep asup 6*arep aen
-	end
-
-	length 49
-		piece ast 6*arep asup 6*arep arch 6*arep asup 6*arep aen
-	end
-
-	length 50
-		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 51
-		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 52
-		piece ast 4*arep asup 4*arep asup 4*arep arch 5*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 53
-		piece ast 4*arep asup 4*arep asup 5*arep arch 5*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 54
-		piece ast 4*arep asup 4*arep asup 5*arep arch 5*arep asup 5*arep asup 4*arep aen
-	end
-
-	length 55
-		piece ast 4*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 4*arep aen
-	end
-
-	length 56
-		piece ast 4*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 57
-		piece ast 5*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 58
-		piece ast 5*arep asup 5*arep asup 5*arep arch 6*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 59
-		piece ast 5*arep asup 5*arep asup 6*arep arch 6*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 60
-		piece ast 5*arep asup 5*arep asup 6*arep arch 6*arep asup 6*arep asup 5*arep aen
-	end
-
-	length 61
-		piece ast 5*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 5*arep aen
-	end
-
-	length 62
-		piece ast 5*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 6*arep aen
-	end
-
-	length 63
-		piece ast 6*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 6*arep aen
-	end
-
-	length 64
-		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep asup 3*arep aen
-	end
-
-	length 65
-		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 66
-		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 67
-		piece ast 4*arep asup 4*arep arch 4*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 68
-		piece ast 4*arep asup 5*arep arch 4*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 69
-		piece ast 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep aen
-	end
-
-	length 70
-		piece ast 5*arep asup 5*arep arch 4*arep arch 6*arep asup 5*arep aen
-	end
-
-	length 71
-		piece ast 5*arep asup 6*arep arch 4*arep arch 6*arep asup 5*arep aen
-	end
-
-	length 72
-		piece ast 5*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep aen
-	end
-
-	length 73
-		piece ast 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep aen
-	end
-
-	length 74
-		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 3*arep aen
-	end
-
-	length 75
-		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 76
-		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 77
-		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep arch 5*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 78
-		piece ast 4*arep asup 4*arep asup 5*arep arch 4*arep arch 5*arep asup 4*arep asup 4*arep aen
-	end
-
-	length 79
-		piece ast 4*arep asup 4*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 4*arep aen
-	end
-
-	length 80
-		piece ast 4*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 4*arep aen
-	end
-
-	length 81
-		piece ast 4*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 82
-		piece ast 5*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 83
-		piece ast 5*arep asup 5*arep asup 5*arep arch 4*arep arch 6*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 84
-		piece ast 5*arep asup 5*arep asup 6*arep arch 4*arep arch 6*arep asup 5*arep asup 5*arep aen
-	end
-
-	length 85
-		piece ast 5*arep asup 5*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 5*arep aen
-	end
-
-	length 86
-		piece ast 5*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 5*arep aen
-	end
-
-	length 87
-		piece ast 5*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 6*arep aen
-	end
-
-	length 88
-		piece ast 6*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 6*arep aen
-	end
-
-	length 89
-		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 3*arep aen
-	end
-
-	length 90
-		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 91
-		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 4*arep aen
-	end
-
-	length 92
-		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 93
-		piece ast 4*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 4*arep aen
-	end
-
-	length 94
-		piece ast 4*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 5*arep aen
-	end
-
-	length 95
-		piece ast 5*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 5*arep aen
-	end
-
-	length 96
-		piece ast 5*arep asup 5*arep arch 4*arep arch 5*arep arch 5*arep asup 5*arep aen
-	end
-
-end
-
 #rhw8 undertruss choco 08/09
 
 bridge 15
@@ -8984,6 +8582,176 @@ section p
 	piece <0x33340000, 0> <0x33341000, 2>
 end
 
+section m
+	piece <0x33330000, 0> <0x33331000, 2>
+	piece <0x33391000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33350000, 0> <0x33351000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33340000, 0> <0x33341000, 2>
+	piece <0x33390000, 0> <0x33341000, 2>
+	piece <0x33330000, 0> <0x33331000, 2>
+end
+	length 33
+		piece s m e
+	end	
+
+	length 34
+		piece s m r e
+	end
+
+	length 35
+		piece s r m r e
+	end
+
+	length 36
+		piece s r m a2r e
+	end
+
+	length 37
+		piece s a2 m a2r e
+	end
+
+	length 38
+		piece s a2 m a3r e
+	end
+
+	length 39
+		piece s a3 m a3r e
+	end
+
+	length 40
+		piece s a3 m a3r r e
+	end
+
+	length 41
+		piece s r a3 m a3r r e
+	end
+
+	length 42
+		piece s r a3 m a3r a2r e
+	end
+
+	length 43
+		piece s a2 a3 m a3r a2r e
+	end
+
+	length 44
+		piece s a2 a3 m 2*a3r e
+	end
+
+	length 45
+		piece s 2*a3 m 2*a3r e
+	end
+
+	length 46
+		piece s 2*a3 m 2*a3r r e
+	end
+
+	length 47
+		piece s r 2*a3 m 2*a3r r e	
+	end
+
+	length 48
+		piece s r 2*a3 m 2*a3r a2r e
+	end
+
+	length 49
+		piece s a2 2*a3 m 2*a3r a2r e
+	end
+
+	length 50
+		piece s a2 2*a3 m 3*a3r e
+	end
+
+	length 51
+		piece s 3*a3 m 3*a3r e
+	end
+
+	length 52
+		piece s 3*a3 m 3*a3r r e
+	end
+
+	length 53
+		piece s r 3*a3 m 3*a3r r e
+	end
+
+	length 54
+		piece s r 3*a3 m 3*a3r a2r e
+	end
+
+	length 55
+		piece s a2 3*a3 m 3*a3r a2r e
+	end
+
+	length 56
+		piece s a2 3*a3 m 4*a3r e
+	end
+
+	length 57
+		piece s 4*a3 m 4*a3r e
+	end
+
+	length 58
+		piece s 4*a3 m 4*a3r r e
+	end
+
+	length 59
+		piece s r 4*a3 m 4*a3r r e
+	end	
+
+	length 60
+		piece s mp pm e
+	end
+
+	length 61
+		piece s mp pm r e
+
+	end
+	length 62
+		piece s r mp pm r e
+	end
+
+	length 63
+		piece s r mp pm a2r e
+	end
+
+	length 64
+		piece s a2 mp pm a2r e
+	end
+
+	length 65 
+		piece s a2 mp pm a3r e
+	end
+	length 66	
+		piece s a3 mp pm a3r e
+	end
+
+	length 67
+		piece s a3 mp pm a3r r e
+	end
+
 	length 68
 		piece s r a3 mp pm a3r r e
 	end
@@ -10715,583 +10483,6 @@ end
 	end	
 end
 
-#RHW-6S Compact Cable Stayed Bridge
-
-bridge 25
-
-section st
-	piece <0x33520000, 2> <0x33530000, 0>
-end
-
-section rep
-	piece <0x33500000, 2> <0x33500000, 0>
-end
-
-section sup
-	piece <0x33510000, 2> <0x33510000, 0>
-end
-
-section tow1
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33540000, 2> <0x33550000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-end
-
-section tow2
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33550000, 2> <0x33540000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-	piece <0x33500000, 2> <0x33500000, 0>
-end
-
-section en
-	piece <0x33530000, 2> <0x33520000, 0>
-end
-	length 8
-		piece st 6*rep en
-	end
-
-	length 9
-		piece st 7*rep en
-	end
-
-	length 10
-		piece st 8*rep en
-	end
-
-	length 11
-		piece st 4*rep sup 4*rep en
-	end
-
-	length 12
-		piece st 5*rep sup 4*rep en
-	end
-
-	length 13
-		piece st 5*rep sup 5*rep en
-	end
-
-	length 14
-		piece st 6*rep sup 5*rep en
-	end
-
-	length 15
-		piece st 6*rep sup 6*rep en
-	end
-
-	length 16
-		piece st 7*rep sup 6*rep en
-	end
-
-	length 17
-		piece st 7*rep sup 7*rep en
-	end
-
-	length 18
-		piece st 8*rep sup 7*rep en
-	end
-
-	length 19
-		piece st 8*rep sup 8*rep en
-	end
-
-	length 20
-		piece st 4*rep sup 8*rep sup 4*rep en
-	end
-
-	length 21
-		piece st 5*rep sup 8*rep sup 5*rep en
-	end
-
-	length 22
-		piece st 5*rep sup 8*rep sup 5*rep en
-	end
-
-	length 23
-		piece st 6*rep sup 8*rep sup 6*rep en
-	end
-
-	length 24
-		piece st 6*rep sup 8*rep sup 6*rep en
-	end
-
-	length 25
-		piece st 7*rep sup 8*rep sup 7*rep en
-	end
-
-	length 26
-		piece st 7*rep sup 8*rep sup 7*rep en
-	end
-
-	length 27
-		piece st tow1 sup 3*rep en
-	end
-
-	length 28
-		piece st tow1 sup 4*rep en
-	end
-
-	length 29
-		piece st tow1 sup 5*rep en
-	end
-
-	length 30
-		piece st tow1 sup 6*rep en
-	end
-
-	length 31
-		piece st tow1 sup 7*rep en
-	end
-
-	length 32
-		piece st 4*rep sup tow1 sup 3*rep en
-	end
-
-	length 33
-		piece st 4*rep sup tow1 sup 4*rep en
-	end
-
-	length 34
-		piece st 5*rep sup tow1 sup 4*rep en
-	end
-
-	length 35
-		piece st 5*rep sup tow1 sup 5*rep en
-	end
-
-	length 36
-		piece st 6*rep sup tow1 sup 5*rep en
-	end
-
-	length 37
-		piece st 6*rep sup tow1 sup 6*rep en
-	end
-
-	length 38
-		piece st 6*rep sup tow1 sup 7*rep en
-	end
-
-	length 39
-		piece st 7*rep sup tow1 sup 7*rep en
-	end
-
-	length 40
-		piece st 3*rep sup 4*rep sup tow1 sup 3*rep sup 3*rep en
-	end
-
-	length 41
-		piece st 3*rep sup 4*rep sup tow1 sup 4*rep sup 3*rep en
-	end
-
-	length 42
-		piece st 4*rep sup 4*rep sup tow1 sup 4*rep sup 3*rep en
-	end
-
-	length 43
-		piece st 4*rep sup 4*rep sup tow1 sup 4*rep sup 4*rep en
-	end
-
-	length 44
-		piece st tow1 tow2 en
-	end
-
-	length 45
-		piece st tow1 rep tow2 en
-	end
-
-	length 46
-		piece st rep tow1 tow2 rep en
-	end
-
-	length 47
-		piece st rep tow1 rep tow2 rep en
-	end
-
-	length 48
-		piece st 2*rep tow1 tow2 2*rep en
-	end
-
-	length 49
-		piece st 2*rep tow1 rep tow2 2*rep en
-	end
-
-	length 50
-		piece st 3*rep tow1 tow2 3*rep en
-	end
-
-	length 51
-		piece st 3*rep tow1 rep tow2 3*rep en
-	end
-
-	length 52
-		piece st 3*rep sup tow1 tow2 sup 3*rep en
-	end
-
-	length 53
-		piece st 3*rep sup tow1 rep tow2 sup 3*rep en
-	end
-
-	length 54
-		piece st 4*rep sup tow1 tow2 sup 4*rep en
-	end
-
-	length 55
-		piece st 4*rep sup tow1 rep tow2 sup 4*rep en
-	end
-
-	length 56
-		piece st 5*rep sup tow1 tow2 sup 5*rep en
-	end
-
-	length 57
-		piece st 5*rep sup tow1 rep tow2 sup 5*rep en
-	end
-
-	length 58
-		piece st 6*rep sup tow1 tow2 sup 6*rep en
-	end
-
-	length 59
-		piece st 6*rep sup tow1 rep tow2 sup 6*rep en
-	end
-
-	length 60
-		piece st 7*rep sup tow1 tow2 sup 7*rep en
-	end
-
-	length 61
-		piece st 7*rep sup tow1 rep tow2 sup 7*rep en
-	end
-
-	length 62
-		piece st 3*rep sup 4*rep sup tow1 tow2 sup 4*rep sup 3*rep en
-	end
-
-	length 63
-		piece st 3*rep sup 4*rep sup tow1 rep tow2 sup 4*rep sup 3*rep en
-	end
-
-	length 64
-		piece st 4*rep sup 4*rep sup tow1 tow2 sup 4*rep sup 4*rep en
-	end
-
-	length 65
-		piece st 4*rep sup 4*rep sup tow1 rep tow2 sup 4*rep sup 4*rep en
-	end
-
-	length 66
-		piece st 4*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 4*rep en
-	end
-
-	length 67
-		piece st 4*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 4*rep en
-	end
-
-	length 68
-		piece st 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep en
-	end
-
-	length 69
-		piece st 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep en
-	end
-
-	length 70
-		piece st 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep en
-	end
-
-	length 71
-		piece st 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep en
-	end
-
-	length 72
-		piece st 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep en
-	end
-
-	length 73
-		piece st 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep en
-	end
-
-	length 74
-		piece st 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep en
-	end
-
-	length 75
-		piece st 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep en
-	end
-
-	length 76
-		piece st 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep en
-	end
-
-	length 77
-		piece st 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep en
-	end
-
-	length 78
-		piece st 4*rep sup 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep sup 4*rep en
-	end
-
-	length 79
-		piece st 4*rep sup 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep sup 4*rep en
-	end
-
-	length 80
-		piece st 5*rep sup 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 81
-		piece st 5*rep sup 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 82
-		piece st 5*rep sup 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 83
-		piece st 5*rep sup 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 84
-		piece st 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 85
-		piece st 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 86
-		piece st 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 87
-		piece st 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 88
-		piece st 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 89
-		piece st 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 90
-		piece st 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 91
-		piece st 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 92
-		piece st 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 93
-		piece st 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 94
-		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 95
-		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 96
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 97
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 98
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 99
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 100
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 101
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 102
-		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 103
-		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 104
-		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 105
-		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 106
-		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 107
-		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 108
-		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 109
-		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 110
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 111
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep en
-	end
-
-	length 112
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 113
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 6*rep sup 6*rep en
-	end
-
-	length 114
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 115
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 116
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 117
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 116
-		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 117
-		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-
-	length 116
-		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 117
-		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
-	end
-
-	length 116
-		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 117
-		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
-	end
-
-	length 118
-		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 119
-		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
-	end
-
-	length 120
-		piece st 5*rep sup 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 121
-		piece st 5*rep sup 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 122
-		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 123
-		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
-	end
-
-	length 124
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 125
-		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
-	end
-
-	length 126
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 127
-		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
-	end
-
-	length 128
-		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
-	end
-end
-
-
 #RHW-8 LARGE STEEL ARCH
 
 bridge 19
@@ -12268,4 +11459,982 @@ end
  	length 255	
 		piece sasl 3*saf sasp 4*saf sasp 3*saf sat saa sat saa sat saa sat saa sat saa sat saa sat saa sat saa sat saa sat 3*saf sasp 3*saf sasp 3*saf saslr
 	end	
+end
+
+#RHW-6S Compact Cable Stayed Bridge
+
+bridge 25
+
+section st
+	piece <0x33520000, 2> <0x33530000, 0>
+end
+
+section rep
+	piece <0x33500000, 2> <0x33500000, 0>
+end
+
+section sup
+	piece <0x33510000, 2> <0x33510000, 0>
+end
+
+section tow1
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33540000, 2> <0x33550000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+end
+
+section tow2
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33550000, 2> <0x33540000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+end
+
+section en
+	piece <0x33530000, 2> <0x33520000, 0>
+end
+	length 8
+		piece st 6*rep en
+	end
+
+	length 9
+		piece st 7*rep en
+	end
+
+	length 10
+		piece st 8*rep en
+	end
+
+	length 11
+		piece st 4*rep sup 4*rep en
+	end
+
+	length 12
+		piece st 5*rep sup 4*rep en
+	end
+
+	length 13
+		piece st 5*rep sup 5*rep en
+	end
+
+	length 14
+		piece st 6*rep sup 5*rep en
+	end
+
+	length 15
+		piece st 6*rep sup 6*rep en
+	end
+
+	length 16
+		piece st 7*rep sup 6*rep en
+	end
+
+	length 17
+		piece st 7*rep sup 7*rep en
+	end
+
+	length 18
+		piece st 8*rep sup 7*rep en
+	end
+
+	length 19
+		piece st 8*rep sup 8*rep en
+	end
+
+	length 20
+		piece st 4*rep sup 8*rep sup 4*rep en
+	end
+
+	length 21
+		piece st 5*rep sup 8*rep sup 5*rep en
+	end
+
+	length 22
+		piece st 5*rep sup 8*rep sup 5*rep en
+	end
+
+	length 23
+		piece st 6*rep sup 8*rep sup 6*rep en
+	end
+
+	length 24
+		piece st 6*rep sup 8*rep sup 6*rep en
+	end
+
+	length 25
+		piece st 7*rep sup 8*rep sup 7*rep en
+	end
+
+	length 26
+		piece st 7*rep sup 8*rep sup 7*rep en
+	end
+
+	length 27
+		piece st tow1 sup 3*rep en
+	end
+
+	length 28
+		piece st tow1 sup 4*rep en
+	end
+
+	length 29
+		piece st tow1 sup 5*rep en
+	end
+
+	length 30
+		piece st tow1 sup 6*rep en
+	end
+
+	length 31
+		piece st tow1 sup 7*rep en
+	end
+
+	length 32
+		piece st 4*rep sup tow1 sup 3*rep en
+	end
+
+	length 33
+		piece st 4*rep sup tow1 sup 4*rep en
+	end
+
+	length 34
+		piece st 5*rep sup tow1 sup 4*rep en
+	end
+
+	length 35
+		piece st 5*rep sup tow1 sup 5*rep en
+	end
+
+	length 36
+		piece st 6*rep sup tow1 sup 5*rep en
+	end
+
+	length 37
+		piece st 6*rep sup tow1 sup 6*rep en
+	end
+
+	length 38
+		piece st 6*rep sup tow1 sup 7*rep en
+	end
+
+	length 39
+		piece st 7*rep sup tow1 sup 7*rep en
+	end
+
+	length 40
+		piece st 3*rep sup 4*rep sup tow1 sup 3*rep sup 3*rep en
+	end
+
+	length 41
+		piece st 3*rep sup 4*rep sup tow1 sup 4*rep sup 3*rep en
+	end
+
+	length 42
+		piece st 4*rep sup 4*rep sup tow1 sup 4*rep sup 3*rep en
+	end
+
+	length 43
+		piece st 4*rep sup 4*rep sup tow1 sup 4*rep sup 4*rep en
+	end
+
+	length 44
+		piece st tow1 tow2 en
+	end
+
+	length 45
+		piece st tow1 rep tow2 en
+	end
+
+	length 46
+		piece st rep tow1 tow2 rep en
+	end
+
+	length 47
+		piece st rep tow1 rep tow2 rep en
+	end
+
+	length 48
+		piece st 2*rep tow1 tow2 2*rep en
+	end
+
+	length 49
+		piece st 2*rep tow1 rep tow2 2*rep en
+	end
+
+	length 50
+		piece st 3*rep tow1 tow2 3*rep en
+	end
+
+	length 51
+		piece st 3*rep tow1 rep tow2 3*rep en
+	end
+
+	length 52
+		piece st 3*rep sup tow1 tow2 sup 3*rep en
+	end
+
+	length 53
+		piece st 3*rep sup tow1 rep tow2 sup 3*rep en
+	end
+
+	length 54
+		piece st 4*rep sup tow1 tow2 sup 4*rep en
+	end
+
+	length 55
+		piece st 4*rep sup tow1 rep tow2 sup 4*rep en
+	end
+
+	length 56
+		piece st 5*rep sup tow1 tow2 sup 5*rep en
+	end
+
+	length 57
+		piece st 5*rep sup tow1 rep tow2 sup 5*rep en
+	end
+
+	length 58
+		piece st 6*rep sup tow1 tow2 sup 6*rep en
+	end
+
+	length 59
+		piece st 6*rep sup tow1 rep tow2 sup 6*rep en
+	end
+
+	length 60
+		piece st 7*rep sup tow1 tow2 sup 7*rep en
+	end
+
+	length 61
+		piece st 7*rep sup tow1 rep tow2 sup 7*rep en
+	end
+
+	length 62
+		piece st 3*rep sup 4*rep sup tow1 tow2 sup 4*rep sup 3*rep en
+	end
+
+	length 63
+		piece st 3*rep sup 4*rep sup tow1 rep tow2 sup 4*rep sup 3*rep en
+	end
+
+	length 64
+		piece st 4*rep sup 4*rep sup tow1 tow2 sup 4*rep sup 4*rep en
+	end
+
+	length 65
+		piece st 4*rep sup 4*rep sup tow1 rep tow2 sup 4*rep sup 4*rep en
+	end
+
+	length 66
+		piece st 4*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 4*rep en
+	end
+
+	length 67
+		piece st 4*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 4*rep en
+	end
+
+	length 68
+		piece st 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep en
+	end
+
+	length 69
+		piece st 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep en
+	end
+
+	length 70
+		piece st 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep en
+	end
+
+	length 71
+		piece st 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep en
+	end
+
+	length 72
+		piece st 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep en
+	end
+
+	length 73
+		piece st 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep en
+	end
+
+	length 74
+		piece st 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep en
+	end
+
+	length 75
+		piece st 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep en
+	end
+
+	length 76
+		piece st 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep en
+	end
+
+	length 77
+		piece st 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep en
+	end
+
+	length 78
+		piece st 4*rep sup 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep sup 4*rep en
+	end
+
+	length 79
+		piece st 4*rep sup 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep sup 4*rep en
+	end
+
+	length 80
+		piece st 5*rep sup 5*rep sup 5*rep sup tow1 tow2 sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 81
+		piece st 5*rep sup 5*rep sup 5*rep sup tow1 rep tow2 sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 82
+		piece st 5*rep sup 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 83
+		piece st 5*rep sup 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 84
+		piece st 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 85
+		piece st 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 86
+		piece st 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 87
+		piece st 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 88
+		piece st 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 89
+		piece st 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 90
+		piece st 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 91
+		piece st 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 92
+		piece st 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 93
+		piece st 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 94
+		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 95
+		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 96
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 97
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 98
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 99
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 100
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 101
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 102
+		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 103
+		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 104
+		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 105
+		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 106
+		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 107
+		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 108
+		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 109
+		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 110
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 111
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep en
+	end
+
+	length 112
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 113
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 6*rep sup 6*rep en
+	end
+
+	length 114
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 115
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 116
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 117
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 116
+		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 117
+		piece st 6*rep sup 6*rep sup 6*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+
+	length 116
+		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 117
+		piece st 6*rep sup 6*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 6*rep sup 6*rep en
+	end
+
+	length 116
+		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 117
+		piece st 6*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 6*rep en
+	end
+
+	length 118
+		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 119
+		piece st 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup tow1 rep tow2 sup 7*rep sup 7*rep sup 7*rep sup 7*rep sup 7*rep en
+	end
+
+	length 120
+		piece st 5*rep sup 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 121
+		piece st 5*rep sup 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 122
+		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 123
+		piece st 5*rep sup 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep sup 5*rep en
+	end
+
+	length 124
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 125
+		piece st 5*rep sup 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep sup 5*rep en
+	end
+
+	length 126
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 127
+		piece st 5*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 rep tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 5*rep en
+	end
+
+	length 128
+		piece st 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup tow1 tow2 sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep sup 6*rep en
+	end
+end
+
+#RHW-6S Compact Steel Arch Bridge
+
+bridge 27
+
+section ast
+	piece <0x33520000, 2> <0x33530000, 0>
+end
+
+section arep
+	piece <0x33500000, 2> <0x33500000, 0>
+end
+
+section asup
+	piece <0x33510000, 2> <0x33510000, 0>
+end
+
+section arch
+	piece <0x33510000, 2> <0x33570000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33560000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33500000, 2> <0x33500000, 0>
+	piece <0x33510000, 2> <0x33570000, 0>
+end
+
+section aen
+	piece <0x33530000, 2> <0x33520000, 0>
+end
+
+	length 8
+		piece ast 6*arep aen
+	end
+
+	length 9
+		piece ast 7*arep aen
+	end
+
+	length 10
+		piece ast 8*arep aen
+	end
+
+	length 11
+		piece ast 4*arep asup 4*arep aen
+	end
+
+	length 12
+		piece ast 5*arep asup 4*arep aen
+	end
+
+	length 13
+		piece ast 5*arep asup 5*arep aen
+	end
+
+	length 14
+		piece ast 6*arep asup 5*arep aen
+	end
+
+	length 15
+		piece ast 6*arep asup 6*arep aen
+	end
+
+	length 16
+		piece ast 7*arep asup 6*arep aen
+	end
+
+	length 17
+		piece ast 7*arep asup 7*arep aen
+	end
+
+	length 18
+		piece ast 8*arep asup 7*arep aen
+	end
+
+	length 19
+		piece ast 8*arep asup 8*arep aen
+	end
+
+	length 20
+		piece ast 4*arep asup 8*arep asup 4*arep aen
+	end
+
+	length 21
+		piece ast 5*arep asup 8*arep asup 5*arep aen
+	end
+
+	length 22
+		piece ast 5*arep asup 8*arep asup 5*arep aen
+	end
+
+	length 23
+		piece ast 6*arep asup 8*arep asup 6*arep aen
+	end
+
+	length 24
+		piece ast 6*arep asup 8*arep asup 6*arep aen
+	end
+
+	length 25
+		piece ast 7*arep asup 8*arep asup 7*arep aen
+	end
+
+	length 26
+		piece ast 7*arep asup 8*arep asup 7*arep aen
+	end
+
+	length 27
+		piece ast 2*arep arch 2*arep aen
+	end
+
+	length 28
+		piece ast 2*arep arch 3*arep aen
+	end
+
+	length 29
+		piece ast 3*arep arch 3*arep aen
+	end
+
+	length 30
+		piece ast 3*arep arch 4*arep aen
+	end
+
+	length 31
+		piece ast 4*arep arch 4*arep aen
+	end
+
+	length 32
+		piece ast 4*arep arch 5*arep aen
+	end
+
+	length 33
+		piece ast 5*arep arch 5*arep aen
+	end
+
+	length 34
+		piece ast 5*arep arch 6*arep aen
+	end
+
+	length 35
+		piece ast 6*arep arch 6*arep aen
+	end
+
+	length 36
+		piece ast 2*arep asup 3*arep arch 3*arep asup 3*arep aen
+	end
+
+	length 37
+		piece ast 3*arep asup 3*arep arch 3*arep asup 3*arep aen
+	end
+
+	length 38
+		piece ast 3*arep asup 3*arep arch 4*arep asup 3*arep aen
+	end
+
+	length 39
+		piece ast 3*arep asup 4*arep arch 4*arep asup 3*arep aen
+	end
+
+	length 40
+		piece ast 3*arep asup 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 41
+		piece ast 4*arep asup 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 42
+		piece ast 4*arep asup 4*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 43
+		piece ast 4*arep asup 5*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 44
+		piece ast 4*arep asup 5*arep arch 5*arep asup 5*arep aen
+	end
+
+	length 45
+		piece ast 5*arep asup 5*arep arch 5*arep asup 5*arep aen
+	end
+
+	length 46
+		piece ast 5*arep asup 5*arep arch 6*arep asup 5*arep aen
+	end
+
+	length 47
+		piece ast 5*arep asup 6*arep arch 6*arep asup 5*arep aen
+	end
+
+	length 48
+		piece ast 5*arep asup 6*arep arch 6*arep asup 6*arep aen
+	end
+
+	length 49
+		piece ast 6*arep asup 6*arep arch 6*arep asup 6*arep aen
+	end
+
+	length 50
+		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 51
+		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 52
+		piece ast 4*arep asup 4*arep asup 4*arep arch 5*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 53
+		piece ast 4*arep asup 4*arep asup 5*arep arch 5*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 54
+		piece ast 4*arep asup 4*arep asup 5*arep arch 5*arep asup 5*arep asup 4*arep aen
+	end
+
+	length 55
+		piece ast 4*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 4*arep aen
+	end
+
+	length 56
+		piece ast 4*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 57
+		piece ast 5*arep asup 5*arep asup 5*arep arch 5*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 58
+		piece ast 5*arep asup 5*arep asup 5*arep arch 6*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 59
+		piece ast 5*arep asup 5*arep asup 6*arep arch 6*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 60
+		piece ast 5*arep asup 5*arep asup 6*arep arch 6*arep asup 6*arep asup 5*arep aen
+	end
+
+	length 61
+		piece ast 5*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 5*arep aen
+	end
+
+	length 62
+		piece ast 5*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 6*arep aen
+	end
+
+	length 63
+		piece ast 6*arep asup 6*arep asup 6*arep arch 6*arep asup 6*arep asup 6*arep aen
+	end
+
+	length 64
+		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep asup 3*arep aen
+	end
+
+	length 65
+		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 66
+		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 67
+		piece ast 4*arep asup 4*arep arch 4*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 68
+		piece ast 4*arep asup 5*arep arch 4*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 69
+		piece ast 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep aen
+	end
+
+	length 70
+		piece ast 5*arep asup 5*arep arch 4*arep arch 6*arep asup 5*arep aen
+	end
+
+	length 71
+		piece ast 5*arep asup 6*arep arch 4*arep arch 6*arep asup 5*arep aen
+	end
+
+	length 72
+		piece ast 5*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep aen
+	end
+
+	length 73
+		piece ast 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep aen
+	end
+
+	length 74
+		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 3*arep aen
+	end
+
+	length 75
+		piece ast 3*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 76
+		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep arch 4*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 77
+		piece ast 4*arep asup 4*arep asup 4*arep arch 4*arep arch 5*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 78
+		piece ast 4*arep asup 4*arep asup 5*arep arch 4*arep arch 5*arep asup 4*arep asup 4*arep aen
+	end
+
+	length 79
+		piece ast 4*arep asup 4*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 4*arep aen
+	end
+
+	length 80
+		piece ast 4*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 4*arep aen
+	end
+
+	length 81
+		piece ast 4*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 82
+		piece ast 5*arep asup 5*arep asup 5*arep arch 4*arep arch 5*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 83
+		piece ast 5*arep asup 5*arep asup 5*arep arch 4*arep arch 6*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 84
+		piece ast 5*arep asup 5*arep asup 6*arep arch 4*arep arch 6*arep asup 5*arep asup 5*arep aen
+	end
+
+	length 85
+		piece ast 5*arep asup 5*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 5*arep aen
+	end
+
+	length 86
+		piece ast 5*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 5*arep aen
+	end
+
+	length 87
+		piece ast 5*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 6*arep aen
+	end
+
+	length 88
+		piece ast 6*arep asup 6*arep asup 6*arep arch 4*arep arch 6*arep asup 6*arep asup 6*arep aen
+	end
+
+	length 89
+		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 3*arep aen
+	end
+
+	length 90
+		piece ast 3*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 91
+		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep arch 4*arep asup 4*arep aen
+	end
+
+	length 92
+		piece ast 4*arep asup 4*arep arch 4*arep arch 4*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 93
+		piece ast 4*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 4*arep aen
+	end
+
+	length 94
+		piece ast 4*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 5*arep aen
+	end
+
+	length 95
+		piece ast 5*arep asup 5*arep arch 4*arep arch 4*arep arch 5*arep asup 5*arep aen
+	end
+
+	length 96
+		piece ast 5*arep asup 5*arep arch 4*arep arch 5*arep arch 5*arep asup 5*arep aen
+	end
+
 end
