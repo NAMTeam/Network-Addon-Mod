@@ -16,8 +16,8 @@ AddTypes     = AC02, 1AC02, 2AC02, 3AC02, 4AC02, 5AC02, 6AC02, 7AC02 ;RealRailwa
 ;AddTypes     = AC0A, 1AC0A, 2AC0A, 3AC0A, 4AC0A, 5AC0A, 6AC0A, 7AC0A ;RealRailway S3 Curve
 ;AddTypes     = AC0B, 1AC0B, 2AC0B, 3AC0B, 4AC0B, 5AC0B, 6AC0B, 7AC0B ;RealRailway S4 Curve
 ;AddTypes     = AC0C, 1AC0C, 2AC0C, 3AC0C, 4AC0C, 5AC0C, 6AC0C, 7AC0C ;RealRailway Flex Signals Orthgonal
-AddTypes     = AC0D, 1AC0D, 2AC0D, 3AC0D, 4AC0D, 5AC0D, 6AC0D, 7AC0D ;RealRailway Flex Catenary 1
-AddTypes     = AC0E, 1AC0E, 2AC0E, 3AC0E, 4AC0E, 5AC0E, 6AC0E, 7AC0E ;RealRailway Flex Catenary 2
+;AddTypes     = AC0D, 1AC0D, 2AC0D, 3AC0D, 4AC0D, 5AC0D, 6AC0D, 7AC0D ;RealRailway Flex Catenary 1
+;AddTypes     = AC0E, 1AC0E, 2AC0E, 3AC0E, 4AC0E, 5AC0E, 6AC0E, 7AC0E ;RealRailway ;Flex Catenary 2
 ;AddTypes     = AC0F, 1AC0F, 2AC0F, 3AC0F, 4AC0F, 5AC0F, 6AC0F, 7AC0F ;RealRailway Flex Swordmaster to Retext Ballast
 
 ;RealRailway-FLEXPiece-Turnout-Section
@@ -616,8 +616,8 @@ Rotate  	= 1
 
 ;<>-RRW-2_FlexTurnout_Turnout Wye (45) - RUL0
 [HighwayIntersectionInfo_0x0000AC12]
-Piece = 0.0, -16.0, 0, 0, 0x5d54150f
-PreviewEffect = preview_mc_rrw_flex_45_wye_001
+Piece = 0.0, -16.0, 0, 0, 0x5d544F05
+PreviewEffect = preview_mac_rrw_flex_45_wye_001
 
 CellLayout = .........
 CellLayout = ....df...
@@ -643,7 +643,7 @@ ConsLayout = ..^......
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5d54150f
+PlaceQueryID = 0x5d544F05
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001AC12]
@@ -672,7 +672,7 @@ Rotate  	= 1
 
 ;<>-RRW-2_FlexTurnout_Turnout Wye (S) - RUL0
 [HighwayIntersectionInfo_0x0000AC13]
-Piece = 0.0, -16.0, 0, 0, 0x5d54170f
+Piece = 0.0, -16.0, 0, 0, 0x5d545205
 PreviewEffect = preview_mac_rrw_flex_s_wye_001
 
 CellLayout = ..........
@@ -699,7 +699,7 @@ ConsLayout = ..^.......
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5d54170f
+PlaceQueryID = 0x5d545205
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001AC13]
@@ -728,8 +728,8 @@ Rotate  	= 1
 
 ;<>-RRW-2_FlexTurnout_Turnout Wye (45-S) - RUL0
 [HighwayIntersectionInfo_0x0000AC14]
-Piece = 0.0, -16.0, 0, 0, 0x5d54260f
-PreviewEffect = preview_mc_rrw_flex_s_45_wye_001
+Piece = 0.0, -16.0, 0, 0, 0x5d545505
+PreviewEffect = preview_mac_rrw_flex_s_45_wye_001
 
 CellLayout = ..........
 CellLayout = ....dfh...
@@ -756,7 +756,7 @@ ConsLayout = ..^......
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5d54260f
+PlaceQueryID = 0x5d545505
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001AC14]

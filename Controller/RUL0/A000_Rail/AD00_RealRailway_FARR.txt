@@ -3,8 +3,7 @@
 ;REALRAILWAY FLEXFARR SECTION
 ; 0xAD##
 ;RealRailway-FLEXPiece-FA-Curve-Section
-RotationRing = AD00, 1AD00, 2AD00, 3AD00, 4AD00, 5AD00, 6AD00, 7AD00 ;RealRailway DTR Straight FA-6
-AddTypes     = AD01, 1AD01, 2AD01, 3AD01, 4AD01, 5AD01, 6AD01, 7AD01 ;RealRailway DTR Orthogonal -> FA-6 Curve
+RotationRing = AD00, 1AD00, 2AD00, 3AD00, 4AD00, 5AD00, 6AD00, 7AD00 ;RealRailway DTR Orthogonal -> FA-6 Curve
 AddTypes     = AD02, 1AD02, 2AD02, 3AD02, 4AD02, 5AD02, 6AD02, 7AD02 ;RealRailway DTR FA-6 -> FA-3 Curve
 ;AddTypes     = AD03, 1AD03, 2AD03, 3AD03, 4AD03, 5AD03, 6AD03, 7AD03 ;RealRailway DTR Straight FA-3
 AddTypes     = AD04, 1AD04, 2AD04, 3AD04, 4AD04, 5AD04, 6AD04, 7AD04 ;RealRailway DTR Orthogonal -> FA-3 Curve
@@ -37,59 +36,9 @@ AddTypes     = AD0D, 1AD0D, 2AD0D, 3AD0D, 4AD0D, 5AD0D, 6AD0D, 7AD0D ;RealRailwa
 ;<>-[RealRailway FA Curves];;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;<>-RRW-2_FlexFARR-6 Straight - RUL0
-[HighwayIntersectionInfo_0x0000AD00]
-Piece = 0.0, -16.0, 0, 0, 0x53760005
-PreviewEffect = preview_farr_6_rrw_flex_001
-
-CellLayout = .............
-CellLayout = ..aabc.......
-CellLayout = ..A.dbaa....<
-CellLayout = .............
-CellLayout = ..^..........
-
-;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - rail:0x00020002, 0xFFFFFFFF optional
-CheckType = b - rail:0x04020402, 0xFFFFFFFF optional
-CheckType = c - rail:0x04000002, 0xFFFFFFFF optional
-CheckType = d - rail:0x00020400, 0xFFFFFFFF optional
-
-ConsLayout = .............
-ConsLayout = .............
-ConsLayout = ..+.........<
-ConsLayout = .............
-ConsLayout = ..^..........
-
-AutoTileBase = 0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x53760005
-Costs = 600
-
-[HighwayIntersectionInfo_0x0001AD00]
-CopyFrom    = 0xAD00
-Rotate  	= 1
-[HighwayIntersectionInfo_0x0002AD00]
-CopyFrom    = 0xAD00
-Rotate  	= 2
-[HighwayIntersectionInfo_0x0003AD00]
-CopyFrom    = 0xAD00
-Rotate  	= 3
-[HighwayIntersectionInfo_0x0004AD00]
-CopyFrom    = 0xAD00
-Transpose	= 1
-[HighwayIntersectionInfo_0x0005AD00]
-CopyFrom    = 0x4AD00
-Rotate  	= 3
-[HighwayIntersectionInfo_0x0006AD00]
-CopyFrom    = 0x4AD00
-Rotate  	= 2
-[HighwayIntersectionInfo_0x0007AD00]
-CopyFrom    = 0x4AD00
-Rotate  	= 1
 
 ;<>-RRW-2_FlexFARR-6 Curve Orthogonal - RUL0
-[HighwayIntersectionInfo_0x0000AD01]
+[HighwayIntersectionInfo_0x0000AD00]
 Piece = 0.0, -16.0, 0, 0, 0x53761005
 PreviewEffect = preview_farr_6_orth_rrw_flex_001
 
@@ -116,26 +65,26 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x53761005
 Costs = 600
 
-[HighwayIntersectionInfo_0x0001AD01]
-CopyFrom    = 0xAD01
+[HighwayIntersectionInfo_0x0001AD00]
+CopyFrom    = 0xAD00
 Rotate  	= 1
-[HighwayIntersectionInfo_0x0002AD01]
-CopyFrom    = 0xAD01
+[HighwayIntersectionInfo_0x0002AD00]
+CopyFrom    = 0xAD00
 Rotate  	= 2
-[HighwayIntersectionInfo_0x0003AD01]
-CopyFrom    = 0xAD01
+[HighwayIntersectionInfo_0x0003AD00]
+CopyFrom    = 0xAD00
 Rotate  	= 3
-[HighwayIntersectionInfo_0x0004AD01]
-CopyFrom    = 0xAD01
+[HighwayIntersectionInfo_0x0004AD00]
+CopyFrom    = 0xAD00
 Transpose	= 1
-[HighwayIntersectionInfo_0x0005AD01]
-CopyFrom    = 0x4AD01
+[HighwayIntersectionInfo_0x0005AD00]
+CopyFrom    = 0x4AD00
 Rotate  	= 3
-[HighwayIntersectionInfo_0x0006AD01]
-CopyFrom    = 0x4AD01
+[HighwayIntersectionInfo_0x0006AD00]
+CopyFrom    = 0x4AD00
 Rotate  	= 2
-[HighwayIntersectionInfo_0x0007AD01]
-CopyFrom    = 0x4AD01
+[HighwayIntersectionInfo_0x0007AD00]
+CopyFrom    = 0x4AD00
 Rotate  	= 1
 
 ;<>-RRW-2_FlexFARR-6 FLexFARR-3 Curve - RUL0
@@ -344,14 +293,14 @@ Rotate  	= 1
 
 ;<>-RRW-2_FlexFARR-3 <=> FlexFARR-2 - RUL0
 [HighwayIntersectionInfo_0x0000AD06]
-Piece = 16.0, -16.0, 0, 0, 0x53743005
+Piece = 0.0, -32.0, 0, 0, 0x53743005
 PreviewEffect = preview_farr_3_farr_2_rrw_flex_001
 
 CellLayout = .............
-CellLayout = ..ab.........
-CellLayout = ..Acade.....<
-CellLayout = .....fg......
-CellLayout = ..^..........
+CellLayout = ...b.........
+CellLayout = ...cade......
+CellLayout = ...A.fg.....<
+CellLayout = ...^.........
 
 ;senw
 CheckType = A - dirtroad:0x00000000
@@ -365,9 +314,9 @@ CheckType = g - rail:0x00020204, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = .............
-ConsLayout = ..+.........<
 ConsLayout = .............
-ConsLayout = ..^..........
+ConsLayout = ...+........<
+ConsLayout = ...^.........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
