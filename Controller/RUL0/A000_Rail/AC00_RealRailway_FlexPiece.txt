@@ -15,7 +15,7 @@ AddTypes     = AC02, 1AC02, 2AC02, 3AC02, 4AC02, 5AC02, 6AC02, 7AC02 ;RealRailwa
 ;AddTypes     = AC09, 1AC09, 2AC09, 3AC09, 4AC09, 5AC09, 6AC09, 7AC09 ;RealRailway S1 Diagonal Curve
 ;AddTypes     = AC0A, 1AC0A, 2AC0A, 3AC0A, 4AC0A, 5AC0A, 6AC0A, 7AC0A ;RealRailway S3 Curve
 ;AddTypes     = AC0B, 1AC0B, 2AC0B, 3AC0B, 4AC0B, 5AC0B, 6AC0B, 7AC0B ;RealRailway S4 Curve
-;AddTypes     = AC0C, 1AC0C, 2AC0C, 3AC0C, 4AC0C, 5AC0C, 6AC0C, 7AC0C ;RealRailway Flex Signals Orthgonal
+;AddTypes     = AC0C, 1AC0C, 2AC0C, 3AC0C, 4AC0C, 5AC0C, 6AC0C, 7AC0C ;RealRailway Flex Signals
 ;AddTypes     = AC0D, 1AC0D, 2AC0D, 3AC0D, 4AC0D, 5AC0D, 6AC0D, 7AC0D ;RealRailway Flex Catenary 1
 ;AddTypes     = AC0E, 1AC0E, 2AC0E, 3AC0E, 4AC0E, 5AC0E, 6AC0E, 7AC0E ;RealRailway ;Flex Catenary 2
 ;AddTypes     = AC0F, 1AC0F, 2AC0F, 3AC0F, 4AC0F, 5AC0F, 6AC0F, 7AC0F ;RealRailway Flex Swordmaster to Retext Ballast
@@ -2309,14 +2309,13 @@ PreviewEffect = preview_signal_ortho_rrw_flex_001
 CellLayout = ......
 CellLayout = ......
 CellLayout = ..Aa.<
-CellLayout = ...b..
+CellLayout = ......
 CellLayout = ......
 CellLayout = ..^...
 
 ;senw
 CheckType = A - dirtroad:0x00000000
-CheckType = a - rail:0x04040204, 0xFFFFFFFF optional
-CheckType = b - rail:0x02040404, 0xFFFFFFFF optional
+CheckType = a - rail: 0x02000200 monorail:0x00010100, 0xFFFFFFFF optional
 
 
 ConsLayout = ......
