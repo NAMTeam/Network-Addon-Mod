@@ -1,3 +1,34 @@
+#RoadRules#
+;Contains the initial/main Rules for the OneWayRoad Tool network item.
+1,00,00,00,00
+3,0,0x09000100,0,0
+;;
+;;
+;----------------------------
+; Start of OneWayRoad Arrows Reduction Section
+; Added by memo on 5/19/07
+;
+;diagonal
+1,00,00,01,03
+3,0,0x5f940200,0,0
+1,00,01,03,00
+3,0,0x5f940200,3,0
+1,01,03,00,00
+3,0,0x5f940200,2,0
+1,03,00,00,01
+3,0,0x5f940200,1,0
+;
+;straight
+1,00,02,00,02
+3,0,0x5f940300,0,0
+1,02,00,02,00
+3,0,0x5f940300,3,0
+;;
+;;
+; End of OneWayRoad Arrows Reduction Section
+;---------------------------
+;
+;
 1,00,00,00,01
 3,0,0x09000200,0,0
 1,00,00,00,02
