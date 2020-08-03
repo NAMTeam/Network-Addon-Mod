@@ -10,7 +10,9 @@ object CompileAllMetarules {
   def main(args: Array[String]): Unit = {
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
     flexfly.CompileFlexFlyCode.main(Array.empty)
-    CompileInruls.main(Array.empty)
+    // For the time being, INRUL compilation is disabled as the INRULs have been
+    // merged into single files again.
+    // CompileInruls.main(Array.empty)
   }
 
 }

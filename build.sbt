@@ -27,9 +27,9 @@ def transduce(rule: Rule[Tile]): Unit = RuleTransducer(rule) foreach println
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
 
-resolvers += "memo33-gdrive-repo" at "https://googledrive.com/host/0B9r6o2oTyY34ZVc4SFBWMV9yb0E/repo/releases/"
+resolvers += "memo33-bintray" at "https://dl.bintray.com/memo33/maven"
 
 // for some reason, sbt cannot seem to handle repository locations of transitive dependencies
-resolvers += "stephenjudkins-bintray" at "http://dl.bintray.com/stephenjudkins/maven"
+resolvers += "stephenjudkins-bintray" at "https://dl.bintray.com/stephenjudkins/maven"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.1"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.2"
