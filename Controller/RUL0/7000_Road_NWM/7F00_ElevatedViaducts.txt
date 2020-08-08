@@ -17,6 +17,9 @@ AddTypes = 7F0C, 17F0C, 27F0C, 37F0C, 47F0C, 57F0C, 67F0C, 77F0C, 87F0C, 97F0C, 
 AddTypes = 7F0D, 17F0D, 27F0D, 37F0D, 47F0D, 57F0D, 67F0D, 77F0D, 87F0D, 97F0D, A7F0D, B7F0D, C7F0D, D7F0D, E7F0D, F7F0D ;Avenue 2-Level FLEX-HT
 AddTypes = 7F08, 17F08, 27F08, 37F08, 47F08, 57F08, 67F08, 77F08, 87F08, 97F08, A7F08, B7F08, C7F08, D7F08, E7F08, F7F08 ;All-Roadway 1-Level FLEX-OST
 AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, A7F09, B7F09, C7F09, D7F09, E7F09, F7F09 ;All-Roadway 2-Level FLEX-OST
+AddTypes = 7F10, 17F10, 27F10, 37F10, 47F10, 57F10, 67F10, 77F10, 87F10, 97F10, A7F10, B7F10, C7F10, D7F10, E7F10, F7F10 ;Road 1-Level FLEX-HT Diag Test
+AddTypes = 7F11, 17F11, 27F11, 37F11, 47F11, 57F11, 67F11, 77F11, 87F11, 97F11, A7F11, B7F11, C7F11, D7F11, E7F11, F7F11 ;One-Way Road 1-Level FLEX-HT Diag Test
+AddTypes = 7F12, 17F12, 27F12, 37F12, 47F12, 57F12, 67F12, 77F12, 87F12, 97F12, A7F12, B7F12, C7F12, D7F12, E7F12, F7F12 ;Avenue 1-Level FLEX-HT Diag Test
 
 ;###separator###
 
@@ -275,7 +278,7 @@ CellLayout =....a..
 CellLayout =...Zb.<
 CellLayout =...^...
 
-CheckType = Z - road: 0x00020402
+CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00030400, 0xFFFFFFFF optional
 CheckType = b - avenue: 0x00020402 lightrail: 0x03000004, 0xFFFFFFFF optional
 
@@ -337,7 +340,7 @@ CellLayout =....a..
 CellLayout =...Zb.<
 CellLayout =...^...
 
-CheckType = Z - road: 0x00020402
+CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00010400, 0xFFFFFFFF optional
 CheckType = b - avenue: 0x00020402 lightrail: 0x01000004, 0xFFFFFFFF optional
 
@@ -938,6 +941,264 @@ CopyFrom	=	0x27F0D
 [HighwayIntersectionInfo_0x000F7F0D]
 CopyFrom	=	0x37F0D
 
+[HighwayIntersectionInfo_0x00007F10]
+;Added by Tarkus 09.23.2012
+;Road FlexHT-L0-to-L1 Diag
+Piece = 0.0, 16.0, 0, 0, 0x5C060805
+PreviewEffect = preview_flexhtrans_l1rd_001
+
+CellLayout=...........
+CellLayout=......ab..<
+CellLayout=.....cd....
+CellLayout=....cd.....
+CellLayout=...ed......
+CellLayout=...........
+CellLayout=.......^...
+
+CheckType = a - road: 0x03010000, 0xFFFFFFFF optional
+CheckType = b - road: 0x00000000
+CheckType = c - road: 0x03010000, 0xFFFFFFFF optional
+CheckType = d - road: 0x00000301, 0xFFFFFFFF optional
+CheckType = e - road: 0x03010000 dirtroad: 0x02040000, 0xFFFFFFFF optional
+
+ConsLayout=...........
+ConsLayout=.......+..<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=.......^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C060200
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F10]
+CopyFrom	=	0x7F10
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F10]
+CopyFrom	=	0x7F10
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F10]
+CopyFrom	=	0x7F10
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047F10]
+CopyFrom	=	0x7F10
+Transpose	=	1
+[HighwayIntersectionInfo_0x00057F10]
+CopyFrom	=	0x47F10
+Rotate	=	3
+[HighwayIntersectionInfo_0x00067F10]
+CopyFrom	=	0x47F10
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F10]
+CopyFrom	=	0x47F10
+Rotate	=	1
+[HighwayIntersectionInfo_0x00087F10]
+CopyFrom	=	0x7F10
+[HighwayIntersectionInfo_0x00097F10]
+CopyFrom	=	0x17F10
+[HighwayIntersectionInfo_0x000A7F10]
+CopyFrom	=	0x27F10
+[HighwayIntersectionInfo_0x000B7F10]
+CopyFrom	=	0x37F10
+[HighwayIntersectionInfo_0x000C7F10]
+CopyFrom	=	0x47F10
+[HighwayIntersectionInfo_0x000D7F10]
+CopyFrom	=	0x57F10
+[HighwayIntersectionInfo_0x000E7F10]
+CopyFrom	=	0x67F10
+[HighwayIntersectionInfo_0x000F7F10]
+CopyFrom	=	0x77F10
+
+
+[HighwayIntersectionInfo_0x00007F11]
+;Added by Tarkus 09.23.2012
+;One-Way Road FlexHT-L0-to-L1 Diag
+Piece = 0.0, 16.0, 0, 0, 0x5C070805
+PreviewEffect = preview_flexhtrans_l1owr001
+
+CellLayout=...........
+CellLayout=......ab..<
+CellLayout=.....cd....
+CellLayout=....cd.....
+CellLayout=...ed......
+CellLayout=...........
+CellLayout=.......^...
+
+CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00000000
+CheckType = c - onewayroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = d - onewayroad: 0x00000301, 0xFFFFFFFF optional
+CheckType = e - onewayroad: 0x03010000 dirtroad: 0x02040000, 0xFFFFFFFF optional
+
+ConsLayout=...........
+ConsLayout=.......+..<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=.......^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070200
+OneWayDir = 3
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F11]
+CopyFrom	=	0x7F11
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F11]
+CopyFrom	=	0x7F11
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F11]
+CopyFrom	=	0x7F11
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047F11]
+CopyFrom	=	0x7F11
+Transpose	=	1
+PreviewEffect = preview_flexhtrans_l1owr002
+[HighwayIntersectionInfo_0x00057F11]
+CopyFrom	=	0x47F11
+Rotate	=	3
+[HighwayIntersectionInfo_0x00067F11]
+CopyFrom	=	0x47F11
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F11]
+CopyFrom	=	0x47F11
+Rotate	=	1
+[HighwayIntersectionInfo_0x00087F11]
+Piece = 0.0, 16.0, 0, 0, 0x5C070806
+PreviewEffect = preview_flexhtrans_l1owr002
+
+CellLayout=...........
+CellLayout=......ab..<
+CellLayout=.....cd....
+CellLayout=....cd.....
+CellLayout=...ed......
+CellLayout=...........
+CellLayout=.......^...
+
+CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00000000
+CheckType = c - onewayroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = d - onewayroad: 0x00000301, 0xFFFFFFFF optional
+CheckType = e - onewayroad: 0x03010000 dirtroad: 0x02040000, 0xFFFFFFFF optional
+
+ConsLayout=...........
+ConsLayout=.......+..<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=.......^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070200
+OneWayDir = 7
+Costs = 600
+[HighwayIntersectionInfo_0x00097F11]
+CopyFrom	=	0x87F11
+Rotate	=	1
+[HighwayIntersectionInfo_0x000A7F11]
+CopyFrom	=	0x87F11
+Rotate	=	2
+[HighwayIntersectionInfo_0x000B7F11]
+CopyFrom	=	0x87F11
+Rotate	=	3
+[HighwayIntersectionInfo_0x000C7F11]
+Piece = 0.0, 16.0, 0, 0, 0x5C070805
+CopyFrom	=	0x87F11
+Transpose	=	1
+PreviewEffect = preview_flexhtrans_l1owr001
+[HighwayIntersectionInfo_0x000D7F11]
+CopyFrom	=	0xC7F11
+Rotate	=	3
+[HighwayIntersectionInfo_0x000E7F11]
+CopyFrom	=	0xC7F11
+Rotate	=	2
+[HighwayIntersectionInfo_0x000F7F11]
+CopyFrom	=	0xC7F11
+Rotate	=	1
+
+
+
+[HighwayIntersectionInfo_0x00007F12]
+;Added by Tarkus 09.23.2012
+;Avenue FlexHT-L0-to-L1 Diag
+Piece = -16.0, 0.0, 0, 0, 0x5C080805
+PreviewEffect = preview_flexhtrans_l1ave001
+
+CellLayout=...........
+CellLayout=......ab..<
+CellLayout=.....cdf...
+CellLayout=....cdf....
+CellLayout=...edf.....
+CellLayout=...ig......
+CellLayout=...........
+CellLayout=.......^...
+
+CheckType = a - avenue: 0x03010000, 0xffffffff optional
+CheckType = b - road: 0x00000301
+CheckType = c - avenue: 0x03010000, 0xffffffff optional
+CheckType = d - avenue: 0x03010301, 0xffffffff optional
+CheckType = e - avenue: 0x03010000 dirtroad: 0x00030003, 0xffffffff optional
+CheckType = f - avenue: 0x00000301, 0xffffffff optional
+CheckType = g - avenue: 0x00000301 dirtroad: 0x01000100, 0xffffffff optional
+CheckType = h - avenue: 0x03000001, 0xffffffff optional
+CheckType = i - avenue: 0x00010300, 0xffffffff optional
+
+
+ConsLayout=...........
+ConsLayout=.......+..<
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=...........
+ConsLayout=.......^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C080200
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F12]
+CopyFrom	=	0x7F12
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F12]
+CopyFrom	=	0x7F12
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F12]
+CopyFrom	=	0x7F12
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047F12]
+CopyFrom	=	0x7F12
+Transpose	=	1
+[HighwayIntersectionInfo_0x00057F12]
+CopyFrom	=	0x47F12
+Rotate	=	3
+[HighwayIntersectionInfo_0x00067F12]
+CopyFrom	=	0x47F12
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F12]
+CopyFrom	=	0x47F12
+Rotate	=	1
+[HighwayIntersectionInfo_0x00087F12]
+CopyFrom	=	0x7F12
+[HighwayIntersectionInfo_0x00097F12]
+CopyFrom	=	0x17F12
+[HighwayIntersectionInfo_0x000A7F12]
+CopyFrom	=	0x27F12
+[HighwayIntersectionInfo_0x000B7F12]
+CopyFrom	=	0x37F12
+[HighwayIntersectionInfo_0x000C7F12]
+CopyFrom	=	0x47F12
+[HighwayIntersectionInfo_0x000D7F12]
+CopyFrom	=	0x57F12
+[HighwayIntersectionInfo_0x000E7F12]
+CopyFrom	=	0x67F12
+[HighwayIntersectionInfo_0x000F7F12]
+CopyFrom	=	0x77F12
 
 
 ;;Road Puzzle Pieces
