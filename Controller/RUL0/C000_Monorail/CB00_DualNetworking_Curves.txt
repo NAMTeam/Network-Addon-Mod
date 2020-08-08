@@ -1,0 +1,759 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DUALNETWORKING SECTION
+;DUALNETWORKING SECTION
+; 0xCB##
+RotationRing = CB00, 1CB00, 2CB00, 3CB00, 4CB00, 5CB00, 6CB00, 7CB00 ;DN Orthogonal Helper Piece 3 Tile
+AddTypes     = CB01, 1CB01, 2CB01, 3CB01, 4CB01, 5CB01, 6CB01, 7CB01 ;DN Orthogonal Helper Piece 5 Tile
+AddTypes     = CB02, 1CB02, 2CB02, 3CB02, 4CB02, 5CB02, 6CB02, 7CB02 ;DN Diagonal Helper Piece 4 Tile
+AddTypes     = CB03, 1CB03, 2CB03, 3CB03, 4CB03, 5CB03, 6CB03, 7CB03 ;DN Diagonal Helper Piece 6 Tile
+AddTypes     = CB04, 1CB04, 2CB04, 3CB04, 4CB04, 5CB04, 6CB04, 7CB04 ;DN R1 Macro Curve
+AddTypes     = CB05, 1CB05, 2CB05, 3CB05, 4CB05, 5CB05, 6CB05, 7CB05 ;DN R2 MRC Curve
+AddTypes     = CB06, 1CB06, 2CB06, 3CB06, 4CB06, 5CB06, 6CB06, 7CB06 ;DN R3 MRC Curve
+AddTypes     = CB07, 1CB07, 2CB07, 3CB07, 4CB07, 5CB07, 6CB07, 7CB07 ;DN R4 MRC Curve
+AddTypes     = CB08, 1CB08, 2CB08, 3CB08, 4CB08, 5CB08, 6CB08, 7CB08 ;DN R5 MRC Curve
+AddTypes     = CB09, 1CB09, 2CB09, 3CB09, 4CB09, 5CB09, 6CB09, 7CB09 ;DN S1 MRC Curve
+;AddTypes     = CB0A, 1CB0A, 2CB0A, 3CB0A, 4CB0A, 5CB0A, 6CB0A, 7CB0A ;DN S2 MRC Curve
+AddTypes     = CB0B, 1CB0B, 2CB0B, 3CB0B, 4CB0B, 5CB0B, 6CB0B, 7CB0B ;DN L1 Orthogonal OST
+AddTypes     = CB0C, 1CB0C, 2CB0C, 3CB0C, 4CB0C, 5CB0C, 6CB0C, 7CB0C ;DN L1 Diagonal OST
+AddTypes     = CB0D, 1CB0D, 2CB0D, 3CB0D, 4CB0D, 5CB0D, 6CB0D, 7CB0D ;DN Orthogonal L1 Elevated-RealRailway-Piece 
+
+;###separator###
+
+;<>-DN-2_FlexHelper-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CB00]
+Piece = 16.0, 0.0, 0, 0, 0x5da4003f
+PreviewEffect = preview_dn_orth_3_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ...b....
+CellLayout = ...c....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00040004 rail: 0x02000000 optional
+CheckType = b - monorail: 0x00040004 rail: 0x02000200 optional
+CheckType = c - monorail: 0x00040004 rail: 0x00000200 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4003f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB00]
+CopyFrom    = 0xCB00
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB00]
+CopyFrom    = 0xCB00
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB00]
+CopyFrom    = 0xCB00
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB00]
+CopyFrom    = 0xCB00
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB00]
+CopyFrom    = 0x4CB00
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB00]
+CopyFrom    = 0x4CB00
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB00]
+CopyFrom    = 0x4CB00
+Rotate  	= 1
+
+
+;<>-DN-2_FlexHelper-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CB01]
+Piece = 16.0, 0.0, 0, 0, 0x5da4005f
+PreviewEffect = preview_dn_orth_5_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ...b....
+CellLayout = ...b....
+CellLayout = ...b....
+CellLayout = ...c....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00040004 rail: 0x02000000 optional
+CheckType = b - monorail: 0x00040004 rail: 0x02000200 optional
+CheckType = c - monorail: 0x00040004 rail: 0x00000200 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4005f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB01]
+CopyFrom    = 0xCB01
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB01]
+CopyFrom    = 0xCB01
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB01]
+CopyFrom    = 0xCB01
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB01]
+CopyFrom    = 0xCB01
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB01]
+CopyFrom    = 0x4CB01
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB01]
+CopyFrom    = 0x4CB01
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB01]
+CopyFrom    = 0x4CB01
+Rotate  	= 1
+
+;<>-DN-2_FlexL1-RRW-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CB0D]
+Piece = 16.0, 0.0, 0, 0, 0x5dac001f
+PreviewEffect = preview_dn_rrw_l1_1_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ........
+CellLayout = ........
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00040004 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dac001f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB0D]
+CopyFrom    = 0xCB0D
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB0D]
+CopyFrom    = 0xCB0D
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB0D]
+CopyFrom    = 0xCB0D
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB0D]
+CopyFrom    = 0xCB0D
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB0D]
+CopyFrom    = 0x4CB0D
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB0D]
+CopyFrom    = 0x4CB0D
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB0D]
+CopyFrom    = 0x4CB0D
+Rotate  	= 1
+
+;<>-DN-2_FlexHelper-Diagonal - RUL0
+[HighwayIntersectionInfo_0x0000CB02]
+Piece = 16.0, 0.0, 0, 0, 0x5da4014f
+PreviewEffect = preview_dn_diag_4_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ..bc....
+CellLayout = ..d.....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000404 rail: 0x03000000 optional
+CheckType = b - monorail: 0x00000404 rail: 0x03010000 optional
+CheckType = c - monorail: 0x04040000 rail: 0x00000301 optional
+CheckType = d - monorail: 0x04040000 rail: 0x00000300 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+/...<
+ConsLayout = ..//....
+ConsLayout = ../.....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4014f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB02]
+CopyFrom    = 0xCB02
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB02]
+CopyFrom    = 0xCB02
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB02]
+CopyFrom    = 0xCB02
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB02]
+CopyFrom    = 0xCB02
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB02]
+CopyFrom    = 0x4CB02
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB02]
+CopyFrom    = 0x4CB02
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB02]
+CopyFrom    = 0x4CB02
+Rotate  	= 1
+
+[HighwayIntersectionInfo_0x0000CB03]
+Piece = 16.0, 0.0, 0, 0, 0x5da4016f
+PreviewEffect = preview_dn_diag_6_001
+
+CellLayout = .........
+CellLayout = .........
+CellLayout = ....Aa..<
+CellLayout = ....bc...
+CellLayout = ...bc....
+CellLayout = ...d.....
+CellLayout = .........
+CellLayout = ....^....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000404 rail: 0x03000000 optional
+CheckType = b - monorail: 0x00000404 rail: 0x03010000 optional
+CheckType = c - monorail: 0x04040000 rail: 0x00000301 optional
+CheckType = d - monorail: 0x04040000 rail: 0x00000300 optional
+
+ConsLayout = .........
+ConsLayout = .........
+ConsLayout = ....+/..<
+ConsLayout = ....//...
+ConsLayout = ...//....
+ConsLayout = .../.....
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4016f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB03]
+CopyFrom    = 0xCB03
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB03]
+CopyFrom    = 0xCB03
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB03]
+CopyFrom    = 0xCB03
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB03]
+CopyFrom    = 0xCB03
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB03]
+CopyFrom    = 0x4CB03
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB03]
+CopyFrom    = 0x4CB03
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB03]
+CopyFrom    = 0x4CB03
+Rotate  	= 1
+
+;<>-DN-2_FlexCurve Radius-1 (45) - RUL0
+[HighwayIntersectionInfo_0x0000CB04]
+Piece = 0.0, -16.0, 0, 0, 0x5da4055f
+PreviewEffect = preview_dn_mac_4_2_001
+
+CellLayout = ..........
+CellLayout = .abbc.....
+CellLayout = ..A.de...<
+CellLayout = .....f....
+CellLayout = ..^.......
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00040400 rail: 0x01000002 optional
+CheckType = d - monorail: 0x04000004 rail: 0x00030100 optional
+CheckType = e - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = f - monorail: 0x04000004 rail: 0x00000100 optional
+
+ConsLayout = .........
+ConsLayout = .........
+ConsLayout = ..+.....<
+ConsLayout = .........
+ConsLayout = ..^......
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4055f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB04]
+CopyFrom    = 0xCB04
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB04]
+CopyFrom    = 0xCB04
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB04]
+CopyFrom    = 0xCB04
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB04]
+CopyFrom    = 0xCB04
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB04]
+CopyFrom    = 0x4CB04
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB04]
+CopyFrom    = 0x4CB04
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB04]
+CopyFrom    = 0x4CB04
+Rotate  	= 1
+
+;<>-DN-2_FlexCurve Radius-2 (45) - RUL0
+[HighwayIntersectionInfo_0x0000CB05]
+Piece = 0.0, -16.0, 0, 0, 0x5da5008f
+PreviewEffect = preview_dn_mrc_6_3_001
+
+CellLayout = .............
+CellLayout = .abbcd.......
+CellLayout = ..A.egf.....<
+CellLayout = ......gf.....
+CellLayout = .......h.....
+CellLayout = ..^..........
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00000400 rail: 0x02020002 optional
+CheckType = d - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = e - monorail: 0x00040004 rail: 0x00000200 optional
+CheckType = f - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = g - monorail: 0x04000004 rail: 0x00030100 optional
+CheckType = h - monorail: 0x04000004 rail: 0x00000100 optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da5008f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB05]
+CopyFrom    = 0xCB05
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB05]
+CopyFrom    = 0xCB05
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB05]
+CopyFrom    = 0xCB05
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB05]
+CopyFrom    = 0xCB05
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB05]
+CopyFrom    = 0x4CB05
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB05]
+CopyFrom    = 0x4CB05
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB05]
+CopyFrom    = 0x4CB05
+Rotate  	= 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;<>-DN-2_FlexCurve (S-1) - RUL0
+[HighwayIntersectionInfo_0x0000CB09]
+Piece = 0.0, -16.0, 0, 0, 0x5Da5803F
+PreviewEffect = preview_mac_s_dn_5_2_001
+
+CellLayout = ..........
+CellLayout = .abbc.....
+CellLayout = ..A.dbbe.<
+CellLayout = ..........
+CellLayout = ..^.......
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00040400 rail: 0x04000002 optional
+CheckType = d - monorail: 0x04000004 rail: 0x00020400 optional
+CheckType = e - monorail: 0x04000402 rail: 0x00000002 optional
+
+ConsLayout = .........
+ConsLayout = .........
+ConsLayout = ..+.....<
+ConsLayout = .........
+ConsLayout = ..^......
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5Da5803F
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB09]
+CopyFrom    = 0xCB09
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB09]
+CopyFrom    = 0xCB09
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB09]
+CopyFrom    = 0xCB09
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB09]
+CopyFrom    = 0xCB09
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB09]
+CopyFrom    = 0x4CB09
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB09]
+CopyFrom    = 0x4CB09
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB09]
+CopyFrom    = 0x4CB09
+Rotate  	= 1
+
+;<>-DN-2_FlexCurve Radius-3 (45) - RUL0
+[HighwayIntersectionInfo_0x0000CB06]
+Piece = 0.0, -16.0, 0, 0, 0x5DA5109F
+PreviewEffect = preview_dn_mrc_7_4_001
+
+CellLayout = .............
+CellLayout = .abbbc.......
+CellLayout = ..A..def....<
+CellLayout = .......df....
+CellLayout = ........dg...
+CellLayout = ..^..........
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00000002 rail: 0x01000000 optional
+CheckType = d - monorail: 0x04000004 rail: 0x00030100 optional
+CheckType = e - monorail: 0x00000400 rail: 0x00030003 optional
+CheckType = f - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = g - monorail: 0x00040400 rail: 0x00000003 optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5DA5109F
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB06]
+CopyFrom    = 0xCB06
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB06]
+CopyFrom    = 0xCB06
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB06]
+CopyFrom    = 0xCB06
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB06]
+CopyFrom    = 0xCB06
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB06]
+CopyFrom    = 0x4CB06
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB06]
+CopyFrom    = 0x4CB06
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB06]
+CopyFrom    = 0x4CB06
+Rotate  	= 1
+
+;<>-DN-2_FlexOST-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CB0B]
+Piece = 0.0, -48.0, 0, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout = ........
+CellLayout = ..a.....
+CellLayout = ..b.....
+CellLayout = ..c.....
+CellLayout = ..X....<
+CellLayout = ..^.....
+
+;senw
+CheckType = X - rail:0x00000000
+CheckType = a - monorail: 0x00040004 rail: 0x00000200 optional
+CheckType = b - dirtroad: 0x02000200 monorail: 0x04000404 optional
+CheckType = c - monorail: 0x00040004 rail: 0x02000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dc40009
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB0B]
+CopyFrom    = 0xCB0B
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB0B]
+CopyFrom    = 0xCB0B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB0B]
+CopyFrom    = 0xCB0B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB0B]
+Piece = 0.0, -48.0, 0, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout = ........
+CellLayout = ..a.....
+CellLayout = ..b.....
+CellLayout = ..c.....
+CellLayout = ..X....<
+CellLayout = ..^.....
+
+;senw
+CheckType = X - rail:0x00000000
+CheckType = a - monorail: 0x00040004 rail: 0x04000400 optional
+CheckType = b - dirtroad: 0x02000200 monorail: 0x04000404 optional
+CheckType = c - monorail: 0x00040004 rail: 0x02000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5dc4000E
+Costs = 600
+
+[HighwayIntersectionInfo_0x0005CB0B]
+CopyFrom    = 0x4CB0B
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0006CB0B]
+CopyFrom    = 0x4CB0B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB0B]
+CopyFrom    = 0x4CB0B
+Rotate  	= 3
+
+[HighwayIntersectionInfo_0x0000CB0C]
+;Added by eggman121 17072020
+;Rail FLEX-diagonal-OST 1-LEVEL
+Piece = -8.0, 8.0, 3, 1, 0x5750001f
+PreviewEffect = preview_ost_diag_alt_flex_001
+
+CellLayout=....
+CellLayout=..a.
+CellLayout=..c<
+CellLayout=..b
+CellLayout=..^.
+
+CheckType = a - monorail: 0x04040400 dirtroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = b - rail: 0x00000000
+CheckType = c - monorail: 0x00000004 dirtroad: 0x03010000, 0xFFFFFFFF optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d6f0100
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB0C]
+CopyFrom	=	0xCB0C
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002CB0C]
+CopyFrom	=	0xCB0C
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003CB0C]
+CopyFrom	=	0xCB0C
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004CB0C]
+CopyFrom	=	0x2CB0C
+Transpose = 1
+[HighwayIntersectionInfo_0x0005CB0C]
+CopyFrom	=	0x4CB0C
+Rotate	=	1
+[HighwayIntersectionInfo_0x0006CB0C]
+CopyFrom	=	0x4CB0C
+Rotate	=	2
+[HighwayIntersectionInfo_0x0007CB0C]
+CopyFrom	=	0x4CB0C
+Rotate	=	3
+
+;<>-DN-2_FlexCurve Radius-4 (45) - RUL0
+[HighwayIntersectionInfo_0x0000CB07]
+Piece = 0.0, -16.0, 0, 0, 0x5DA520CF
+PreviewEffect = preview_dn_mrc_8_4_001
+
+CellLayout = .............
+CellLayout = .abbgd.......
+CellLayout = ..A.cELj....<
+CellLayout = ......fkj....
+CellLayout = ........ki...
+CellLayout = ..^..........
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00020000 rail: 0x00000100 optional
+CheckType = d - monorail: 0x00000002 rail: 0x01000000 optional
+CheckType = E - monorail: 0x00030003 rail: 0x00020402 optional
+CheckType = f - monorail: 0x00040004 rail: 0x00000200 optional
+CheckType = g - monorail: 0x00000400 rail: 0x02020002 optional
+CheckType = i - monorail: 0x00040400 rail: 0x00000003 optional
+CheckType = j - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = k - monorail: 0x04000004 rail: 0x00030100 optional
+CheckType = L - monorail: 0x01000100 rail: 0x02010200 optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5DA520CF
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB07]
+CopyFrom    = 0xCB07
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB07]
+CopyFrom    = 0xCB07
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB07]
+CopyFrom    = 0xCB07
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB07]
+CopyFrom    = 0xCB07
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB07]
+CopyFrom    = 0x4CB07
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB07]
+CopyFrom    = 0x4CB07
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB07]
+CopyFrom    = 0x4CB07
+Rotate  	= 1
+
+;<>-DN-2_FlexCurve Radius-5 (45) - RUL0
+[HighwayIntersectionInfo_0x0000CB08]
+Piece = 0.0, -16.0, 0, 0, 0x5DA530FF
+PreviewEffect = preview_dn_mrc_9_5_001
+
+CellLayout = .............
+CellLayout = .abbce.......
+CellLayout = ..A.dfZYj...<
+CellLayout = .......gkj...
+CellLayout = .........kj..
+CellLayout = ..^.......ki.
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x04000400 rail: 0x00020000 optional
+CheckType = b - monorail: 0x04000400 rail: 0x00020002 optional
+CheckType = c - monorail: 0x00000400 rail: 0x02020002 optional
+CheckType = d - monorail: 0x00020000 rail: 0x00000100 optional
+CheckType = e - monorail: 0x00000002 rail: 0x01000000 optional
+CheckType = f - monorail: 0x04000000 rail: 0x00020202 optional
+CheckType = g - monorail: 0x00040004 rail: 0x00000200 optional
+CheckType = i - monorail: 0x00040400 rail: 0x00000003 optional
+CheckType = j - monorail: 0x00040400 rail: 0x01000003 optional
+CheckType = k - monorail: 0x04000004 rail: 0x00030100 optional
+CheckType = Y - monorail: 0x01000100 rail: 0x02010000 optional
+CheckType = Z - monorail: 0x00030003 rail: 0x00010300 optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5DA530FF
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CB08]
+CopyFrom    = 0xCB08
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CB08]
+CopyFrom    = 0xCB08
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CB08]
+CopyFrom    = 0xCB08
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CB08]
+CopyFrom    = 0xCB08
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CB08]
+CopyFrom    = 0x4CB08
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CB08]
+CopyFrom    = 0x4CB08
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CB08]
+CopyFrom    = 0x4CB08
+Rotate  	= 1
