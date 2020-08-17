@@ -55,7 +55,8 @@ AddTypes     =  5022, 15022, 25022, 35022, 45022, 55022, 65022, 75022 ;L1/L2 DDR
 
 
 ;---Disconnector---
-RotationRing     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024, 85024, 95024 ;Disconnector Tile
+;RotationRing     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024, 85024, 95024 ;Disconnector Tile
+RotationRing     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024, 85024, 95024, A5024, B5024, C5024, D5024, E5024, F5024, 105024, 115024, 125024, 135024, 145024, 155024, 165024, 175024, 185024, 195024, 1A5024, 1B5024, 1C5024, 1D5024, 1E5024, 1F5024, 205024, 215024, 225024, 235024, 245024, 255024, 265024, 275024, 285024, 295024, 2A5024, 2B5024, 2C5024, 2D5024, 2E5024, 2F5024, 305024, 315024, 325024, 335024, 345024, 355024, 365024, 375024, 385024, 395024, 3A5024, 3B5024, 3C5024, 3D5024, 3E5024, 3F5024, 405024, 415024, 425024, 435024, 445024, 455024, 465024, 475024, 485024, 495024, 4A5024, 4B5024, 4C5024, 4D5024, 4E5024, 4F5024, 505024, 515024, 525024, 535024, 545024, 555024, 565024, 575024, 585024, 595024, 5A5024, 5B5024, 5C5024, 5D5024, 5E5024, 5F5024, 605024, 615024, 625024, 635024, 645024, 655024, 665024, 675024, 685024, 695024, 6A5024, 6B5024, 6C5024, 6D5024, 6E5024, 6F5024, 705024, 715024, 725024, 735024, 745024, 755024, 765024, 775024, 785024 ;Disconnector Tile
 
 
 ;###separator###
@@ -2496,3 +2497,455 @@ CheckType = Z - dirtroad: 0x04040404 highway: 0x04040404
 [HighwayIntersectionInfo_0x00095024]
 CopyFrom    = 0x5024
 CheckType = Z - dirtroad: 0x04040404 groundhighway: 0x04040404
+[HighwayIntersectionInfo_0x000A5024]
+CopyFrom    = 0x5024
+CheckType = Z - dirtroad: 0x04040404 subway: 0x04040404
+;--Road--
+[HighwayIntersectionInfo_0x000B5024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404
+
+[HighwayIntersectionInfo_0x000C5024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x000D5024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x000E5024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x000F5024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00105024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00115024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00125024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00135024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00145024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00155024]
+CopyFrom    = 0x5024
+CheckType = Z - road: 0x04040404 subway: 0x04040404
+
+;--Street--
+[HighwayIntersectionInfo_0x00165024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404
+
+[HighwayIntersectionInfo_0x00175024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00185024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00195024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x001A5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x001B5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x001C5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x001D5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x001E5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x001F5024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00205024]
+CopyFrom    = 0x5024
+CheckType = Z - street: 0x04040404 subway: 0x04040404
+
+;--One-Way Road--
+[HighwayIntersectionInfo_0x00215024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00225024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x00235024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00245024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x00255024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00265024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00275024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00285024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00295024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x002A5024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x002B5024]
+CopyFrom    = 0x5024
+CheckType = Z - onewayroad: 0x04040404 subway: 0x04040404
+
+;--Avenue--
+[HighwayIntersectionInfo_0x002C5024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x002D5024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x002E5024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x002F5024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00305024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00315024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00325024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00335024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00345024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00355024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00365024]
+CopyFrom    = 0x5024
+CheckType = Z - avenue: 0x04040404 subway: 0x04040404
+
+;--Rail--
+[HighwayIntersectionInfo_0x00375024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00385024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x00395024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x003A5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x003B5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x003C5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x003D5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x003E5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x003F5024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00405024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00415024]
+CopyFrom    = 0x5024
+CheckType = Z - rail: 0x04040404 subway: 0x04040404
+
+;--Light Rail--
+[HighwayIntersectionInfo_0x00425024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00435024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x00445024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00455024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00465024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x00475024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00485024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00495024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x004A5024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x004B5024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x004C5024]
+CopyFrom    = 0x5024
+CheckType = Z - lightrail: 0x04040404 subway: 0x04040404
+
+;--Monorail--
+[HighwayIntersectionInfo_0x004D5024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x004E5024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x004F5024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00505024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00515024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x00525024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00535024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00545024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00555024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00565024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00575024]
+CopyFrom    = 0x5024
+CheckType = Z - monorail: 0x04040404 subway: 0x04040404
+
+;--Highway--
+[HighwayIntersectionInfo_0x00585024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00595024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x005A5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x005B5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x005C5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x005D5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x005E5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x005F5024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00605024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00615024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00625024]
+CopyFrom    = 0x5024
+CheckType = Z - highway: 0x04040404 subway: 0x04040404
+
+;--Ground Highway--
+[HighwayIntersectionInfo_0x00635024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00645024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x00655024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00665024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00675024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x00685024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00695024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x006A5024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x006B5024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x006C5024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 dirtroad: 0x04040404
+
+[HighwayIntersectionInfo_0x006D5024]
+CopyFrom    = 0x5024
+CheckType = Z - groundhighway: 0x04040404 subway: 0x04040404
+
+;--Subway--
+[HighwayIntersectionInfo_0x006E5024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404
+
+[HighwayIntersectionInfo_0x006F5024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 street: 0x04040404
+
+[HighwayIntersectionInfo_0x00705024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 road: 0x04040404
+
+[HighwayIntersectionInfo_0x00715024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 onewayroad: 0x04040404
+
+[HighwayIntersectionInfo_0x00725024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 avenue: 0x04040404
+
+[HighwayIntersectionInfo_0x00735024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 rail: 0x04040404
+
+[HighwayIntersectionInfo_0x00745024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 lightrail: 0x04040404
+
+[HighwayIntersectionInfo_0x00755024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 monorail: 0x04040404
+
+[HighwayIntersectionInfo_0x00765024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 highway: 0x04040404
+
+[HighwayIntersectionInfo_0x00775024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 groundhighway: 0x04040404
+
+[HighwayIntersectionInfo_0x00785024]
+CopyFrom    = 0x5024
+CheckType = Z - subway: 0x04040404 dirtroad: 0x04040404
