@@ -28,7 +28,7 @@ AddTypes     = 7813, 17813, 27813, 37813, 47813, 57813, 67813, 77813, 87813, 978
 AddTypes     = 7816, 17816, 27816, 37816, 47816, 57816, 67816, 77816, 87816, 97816, A7816, B7816, C7816, D7816, E7816, F7816 ;Underpass under RHW MIS 2 4 6c
 AddTypes     = 7817, 17817, 27817, 37817, 47817, 57817, 67817, 77817, 87817, 97817, A7817, B7817, C7817, D7817, E7817, F7817 ;Underpass under RHW 6 8 10
 AddTypes     = 7818, 17818, 27818, 37818, 47818, 57818, 67818, 77818, 87818, 97818, A7818, B7818, C7818, D7818, E7818, F7818 ;RHW2 ramp
-;AddTypes     = 7819, 17819, 27819, 37819, 47819, 57819, 67819, 77819, 87819, 97819, A7819, B7819, C7819, D7819, E7819, F7819 ;RHW2 ramp FLEX
+AddTypes     = 7819, 17819, 27819, 37819, 47819, 57819, 67819, 77819, 87819, 97819, A7819, B7819, C7819, D7819, E7819, F7819 ;RHW2 ramp FLEX
 
 
 ;###separator###
@@ -1666,7 +1666,76 @@ CopyFrom    = 0x27818
 [HighwayIntersectionInfo_0x000F7818]
 CopyFrom    = 0x37818
 
+[HighwayIntersectionInfo_0x00007819]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs URHW Portal
+Piece = 0.0, 40.0, 0, 0, 0x53e63700
+PreviewEffect = preview_subroad_53e63700_ch
 
+CellLayout =...
+;CellLayout =.c.
+CellLayout =.Z<
+CellLayout =.c.
+CellLayout =.a.
+CellLayout =.a.
+CellLayout =.d.
+CellLayout =.b.
+CellLayout =.^.
+
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x00000200, 0x0000ff00 optional
+;CheckType = c - subway: 0x02000200 rail:0x00010100, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 highway: 0x00030300, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x02000200 highway: 0x00010300, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+;ConsLayout =...
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63700
+Costs       = 100
+[HighwayIntersectionInfo_0x00017819]
+CopyFrom    = 0x7819
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027819]
+CopyFrom    = 0x7819
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037819]
+CopyFrom    = 0x7819
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047819]
+CopyFrom    = 0x7819
+[HighwayIntersectionInfo_0x00057819]
+CopyFrom    = 0x17819
+[HighwayIntersectionInfo_0x00067819]
+CopyFrom    = 0x27819
+[HighwayIntersectionInfo_0x00077819]
+CopyFrom    = 0x37819
+[HighwayIntersectionInfo_0x00087819]
+CopyFrom    = 0x7819
+[HighwayIntersectionInfo_0x00097819]
+CopyFrom    = 0x17819
+[HighwayIntersectionInfo_0x000A7819]
+CopyFrom    = 0x27819
+[HighwayIntersectionInfo_0x000B7819]
+CopyFrom    = 0x37819
+[HighwayIntersectionInfo_0x000C7819]
+CopyFrom    = 0x7819
+[HighwayIntersectionInfo_0x000D7819]
+CopyFrom    = 0x17819
+[HighwayIntersectionInfo_0x000E7819]
+CopyFrom    = 0x27819
+[HighwayIntersectionInfo_0x000F7819]
+CopyFrom    = 0x37819
 
 
 ;End Road/RHW Overpass/Interface Piece Section
