@@ -525,12 +525,12 @@ CellLayout = ..X....<
 CellLayout = ..^.....
 
 ;senw
-CheckType = X - rail:0x00000000
-CheckType = a - monorail: 0x00040004 rail: 0x00000200 optional
-;CheckType = b - dirtroad: 0x02000200 monorail: 0x04000404 optional
+CheckType = X - rail: 0x00000000 monorail: 0x00000000
+CheckType = a - monorail: 0x00040004 rail: 0x00000200, 0x0000FF00 optional
+;CheckType = b - dirtroad: 0x02000200 monorail: 0x04000404, 0x00000000 optional
 ;Test by Tarkus 8 Aug 2020
-CheckType = b - monorail: 0x04000404 rail: 0x02000200 optional
-;CheckType = c - monorail: 0x00040004 rail: 0x02000000 optional
+CheckType = b - monorail: 0x04000404 rail: 0x02000000, 0x00000000 optional
+CheckType = c - monorail: 0x00040004 rail: 0x02000000, 0xFF000000 optional
 
 ConsLayout = ........
 ConsLayout = ........
