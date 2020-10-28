@@ -1,0 +1,79 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ALTERATIVE VIADUCTS BUTTON SECTION
+;ALTERATIVE VIADUCTS BUTTON SECTION
+; 0xF12#
+
+RotationRing	= F120, 1F120, 2F120, 3F120, 4F120, 5F120, 6F120, 7F120 ;(1) Road Stone Viaduct
+AddTypes		= F121, 1F121, 2F121, 3F121, 4F121, 5F121, 6F121, 7F121 ;(2) Road Arch Viaduct
+
+;###separator###
+
+;<>-Viaduct Stone Viaduct Start piece - RUL0
+[HighwayIntersectionInfo_0x0000F120]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x02000000 street:0x00000100 optional
+CheckType = b - rail:0x00000400 dirtroad:0x02000200, 0xFFFFFFFF optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5c160005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001F120]
+CopyFrom    = 0xF120
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002F120]
+CopyFrom    = 0xF120
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003F120]
+CopyFrom    = 0xF120
+Rotate  	= 3
+
+;<>-Viaduct Steel Arch Viaduct Start piece - RUL0
+[HighwayIntersectionInfo_0x0000F121]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - road:0x00000000
+CheckType = a - road:0x02000000 street:0x00000300 optional
+CheckType = b - rail:0x00000400 dirtroad:0x02000200, 0xFFFFFFFF optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5c260005
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001F121]
+CopyFrom    = 0xF121
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002F121]
+CopyFrom    = 0xF121
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003F121]
+CopyFrom    = 0xF121
+Rotate  	= 3
