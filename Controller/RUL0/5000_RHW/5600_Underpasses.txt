@@ -1,0 +1,704 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;RHW FLUPs BUTTON SECTION
+;RHW FLUPs BUTTON SECTION
+;RHW FLUPs BUTTON SECTION
+
+RotationRing = 5600, 15600, 25600, 35600, 45600, 55600, 65600, 75600, 85600, 95600, A5600, B5600, C5600, D5600, E5600, F5600 ;RHW FLUPs FLEX Portal
+AddTypes     = 5601, 15601, 25601, 35601, 45601, 55601, 65601, 75601, 85601, 95601, A5601, B5601, C5601, D5601, E5601, F5601 ;Street Overcrossing FLEX
+AddTypes     = 5602, 15602, 25602, 35602, 45602, 55602, 65602, 75602, 85602, 95602, A5602, B5602, C5602, D5602, E5602, F5602 ;Road Overcrossing FLEX
+AddTypes     = 5603, 15603, 25603, 35603, 45603, 55603, 65603, 75603, 85603, 95603, A5603, B5603, C5603, D5603, E5603, F5603 ;One-Way Road Overcrossing FLEX
+AddTypes     = 5604, 15604, 25604, 35604, 45604, 55604, 65604, 75604, 85604, 95604, A5604, B5604, C5604, D5604, E5604, F5604 ;Avenue Overcrossing FLEX
+AddTypes     = 5605, 15605, 25605, 35605, 45605, 55605, 65605, 75605, 85605, 95605, A5605, B5605, C5605, D5605, E5605, F5605 ;RHW Overcrossing FLEX
+AddTypes     = 5606, 15606, 25606, 35606, 45606, 55606, 65606, 75606, 85606, 95606, A5606, B5606, C5606, D5606, E5606, F5606 ;Rail Overcrossing FLEX
+AddTypes     = 5607, 15607, 25607, 35607, 45607, 55607, 65607, 75607, 85607, 95607, A5607, B5607, C5607, D5607, E5607, F5607 ;Lightrail Overcrossing FLEX
+AddTypes     = 5608, 15608, 25608, 35608, 45608, 55608, 65608, 75608, 85608, 95608, A5608, B5608, C5608, D5608, E5608, F5608 ;Monorail Overcrossing FLEX
+AddTypes     = 5609, 15609, 25609, 35609, 45609, 55609, 65609, 75609, 85609, 95609, A5609, B5609, C5609, D5609, E5609, F5609 ;Ground Highway Overcrossing FLEX
+AddTypes     = 560A, 1560A, 2560A, 3560A, 4560A, 5560A, 6560A, 7560A, 8560A, 9560A, A560A, B560A, C560A, D560A, E560A, F560A ;Elevated Highway Overcrossing FLEX
+
+[HighwayIntersectionInfo_0x00005600]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs URHW Portal
+Piece = 0.0, 56.0, 0, 0, 0x53e63700
+PreviewEffect = preview_subroad_53e63700_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.e.
+CellLayout =.c.
+CellLayout =.a.
+CellLayout =.a.
+CellLayout =.d.
+CellLayout =.b.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x00000200, 0x0000ff00 optional
+;CheckType = c - subway: 0x02000200 rail:0x00010100, 0xFFFFFFFF optional
+CheckType = c - dirtroad: 0x02000200 highway: 0x00030300, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x02000200 highway: 0x00010300, 0xFFFFFFFF optional
+CheckType = e - subway: 0x02000200 onewayroad: 0x00010100, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =.|.
+ConsLayout =...
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e63700
+Costs       = 100
+[HighwayIntersectionInfo_0x00015600]
+CopyFrom    = 0x5600
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025600]
+CopyFrom    = 0x5600
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035600]
+CopyFrom    = 0x5600
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045600]
+CopyFrom    = 0x5600
+[HighwayIntersectionInfo_0x00055600]
+CopyFrom    = 0x15600
+[HighwayIntersectionInfo_0x00065600]
+CopyFrom    = 0x25600
+[HighwayIntersectionInfo_0x00075600]
+CopyFrom    = 0x35600
+[HighwayIntersectionInfo_0x00085600]
+CopyFrom    = 0x5600
+[HighwayIntersectionInfo_0x00095600]
+CopyFrom    = 0x15600
+[HighwayIntersectionInfo_0x000A5600]
+CopyFrom    = 0x25600
+[HighwayIntersectionInfo_0x000B5600]
+CopyFrom    = 0x35600
+[HighwayIntersectionInfo_0x000C5600]
+CopyFrom    = 0x5600
+[HighwayIntersectionInfo_0x000D5600]
+CopyFrom    = 0x15600
+[HighwayIntersectionInfo_0x000E5600]
+CopyFrom    = 0x25600
+[HighwayIntersectionInfo_0x000F5600]
+CopyFrom    = 0x35600
+
+
+
+[HighwayIntersectionInfo_0x00005602]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs Road Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701105
+PreviewEffect = preview_subroad_06701100_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - road: 0x02040204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - road: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64000
+Costs       = 100
+[HighwayIntersectionInfo_0x00015602]
+CopyFrom    = 0x5602
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025602]
+CopyFrom    = 0x5602
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035602]
+CopyFrom    = 0x5602
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045602]
+CopyFrom    = 0x5602
+[HighwayIntersectionInfo_0x00055602]
+CopyFrom    = 0x15602
+[HighwayIntersectionInfo_0x00065602]
+CopyFrom    = 0x25602
+[HighwayIntersectionInfo_0x00075602]
+CopyFrom    = 0x35602
+[HighwayIntersectionInfo_0x00085602]
+CopyFrom    = 0x5602
+[HighwayIntersectionInfo_0x00095602]
+CopyFrom    = 0x15602
+[HighwayIntersectionInfo_0x000A5602]
+CopyFrom    = 0x25602
+[HighwayIntersectionInfo_0x000B5602]
+CopyFrom    = 0x35602
+[HighwayIntersectionInfo_0x000C5602]
+CopyFrom    = 0x5602
+[HighwayIntersectionInfo_0x000D5602]
+CopyFrom    = 0x15602
+[HighwayIntersectionInfo_0x000E5602]
+CopyFrom    = 0x25602
+[HighwayIntersectionInfo_0x000F5602]
+CopyFrom    = 0x35602
+
+
+
+[HighwayIntersectionInfo_0x00005603]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs One-Way Road Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701205
+PreviewEffect = preview_subroad_06701200_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - road: 0x03040304 onewayroad: 0x04020402, 0xffffffff optional
+CheckType = Z - onewayroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e67000
+Costs       = 100
+[HighwayIntersectionInfo_0x00015603]
+CopyFrom    = 0x5603
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025603]
+CopyFrom    = 0x5603
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035603]
+CopyFrom    = 0x5603
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045603]
+CopyFrom    = 0x5603
+[HighwayIntersectionInfo_0x00055603]
+CopyFrom    = 0x15603
+[HighwayIntersectionInfo_0x00065603]
+CopyFrom    = 0x25603
+[HighwayIntersectionInfo_0x00075603]
+CopyFrom    = 0x35603
+[HighwayIntersectionInfo_0x00085603]
+CopyFrom    = 0x5603
+[HighwayIntersectionInfo_0x00095603]
+CopyFrom    = 0x15603
+[HighwayIntersectionInfo_0x000A5603]
+CopyFrom    = 0x25603
+[HighwayIntersectionInfo_0x000B5603]
+CopyFrom    = 0x35603
+[HighwayIntersectionInfo_0x000C5603]
+CopyFrom    = 0x5603
+[HighwayIntersectionInfo_0x000D5603]
+CopyFrom    = 0x15603
+[HighwayIntersectionInfo_0x000E5603]
+CopyFrom    = 0x25603
+[HighwayIntersectionInfo_0x000F5603]
+CopyFrom    = 0x35603
+
+
+
+[HighwayIntersectionInfo_0x00005604]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs Avenue Road Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701305
+PreviewEffect = preview_subroad_06701300_ch
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.ab.
+CellLayout =....
+CellLayout =.^..
+
+CheckType = a - avenue: 0x02040200 road: 0x04030403, 0xffffffff optional
+CheckType = b - avenue: 0x02000204 road: 0x04030403, 0xffffffff optional
+CheckType = Z - avenue: 0x02040200
+
+ConsLayout =....
+ConsLayout =.|.<
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e65000
+Costs       = 100
+[HighwayIntersectionInfo_0x00015604]
+CopyFrom    = 0x5604
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025604]
+CopyFrom    = 0x5604
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035604]
+CopyFrom    = 0x5604
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045604]
+CopyFrom    = 0x5604
+[HighwayIntersectionInfo_0x00055604]
+CopyFrom    = 0x15604
+[HighwayIntersectionInfo_0x00065604]
+CopyFrom    = 0x25604
+[HighwayIntersectionInfo_0x00075604]
+CopyFrom    = 0x35604
+[HighwayIntersectionInfo_0x00085604]
+CopyFrom    = 0x5604
+[HighwayIntersectionInfo_0x00095604]
+CopyFrom    = 0x15604
+[HighwayIntersectionInfo_0x000A5604]
+CopyFrom    = 0x25604
+[HighwayIntersectionInfo_0x000B5604]
+CopyFrom    = 0x35604
+[HighwayIntersectionInfo_0x000C5604]
+CopyFrom    = 0x5604
+[HighwayIntersectionInfo_0x000D5604]
+CopyFrom    = 0x15604
+[HighwayIntersectionInfo_0x000E5604]
+CopyFrom    = 0x25604
+[HighwayIntersectionInfo_0x000F5604]
+CopyFrom    = 0x35604
+
+
+
+[HighwayIntersectionInfo_0x00005605]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs RHW Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701a00_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - dirtroad: 0x02040200 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - dirtroad: 0x02000200
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e6a000
+Costs       = 100
+[HighwayIntersectionInfo_0x00015605]
+CopyFrom    = 0x5605
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025605]
+CopyFrom    = 0x5605
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035605]
+CopyFrom    = 0x5605
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045605]
+CopyFrom    = 0x5605
+[HighwayIntersectionInfo_0x00055605]
+CopyFrom    = 0x15605
+[HighwayIntersectionInfo_0x00065605]
+CopyFrom    = 0x25605
+[HighwayIntersectionInfo_0x00075605]
+CopyFrom    = 0x35605
+[HighwayIntersectionInfo_0x00085605]
+CopyFrom    = 0x5605
+[HighwayIntersectionInfo_0x00095605]
+CopyFrom    = 0x15605
+[HighwayIntersectionInfo_0x000A5605]
+CopyFrom    = 0x25605
+[HighwayIntersectionInfo_0x000B5605]
+CopyFrom    = 0x35605
+[HighwayIntersectionInfo_0x000C5605]
+CopyFrom    = 0x5605
+[HighwayIntersectionInfo_0x000D5605]
+CopyFrom    = 0x15605
+[HighwayIntersectionInfo_0x000E5605]
+CopyFrom    = 0x25605
+[HighwayIntersectionInfo_0x000F5605]
+CopyFrom    = 0x35605
+
+
+
+[HighwayIntersectionInfo_0x00005601]
+;Added by Tarkus 27 August 2020
+;FLEXFLUPs Street Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701000_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - street: 0x02040204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - street: 0x02000200
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x00015601]
+CopyFrom    = 0x5601
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025601]
+CopyFrom    = 0x5601
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035601]
+CopyFrom    = 0x5601
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045601]
+CopyFrom    = 0x5601
+[HighwayIntersectionInfo_0x00055601]
+CopyFrom    = 0x15601
+[HighwayIntersectionInfo_0x00065601]
+CopyFrom    = 0x25601
+[HighwayIntersectionInfo_0x00075601]
+CopyFrom    = 0x35601
+[HighwayIntersectionInfo_0x00085601]
+CopyFrom    = 0x5601
+[HighwayIntersectionInfo_0x00095601]
+CopyFrom    = 0x15601
+[HighwayIntersectionInfo_0x000A5601]
+CopyFrom    = 0x25601
+[HighwayIntersectionInfo_0x000B5601]
+CopyFrom    = 0x35601
+[HighwayIntersectionInfo_0x000C5601]
+CopyFrom    = 0x5601
+[HighwayIntersectionInfo_0x000D5601]
+CopyFrom    = 0x15601
+[HighwayIntersectionInfo_0x000E5601]
+CopyFrom    = 0x25601
+[HighwayIntersectionInfo_0x000F5601]
+CopyFrom    = 0x35601
+
+
+
+[HighwayIntersectionInfo_0x00005606]
+;Added by Tarkus 10 September 2020
+;FLEXFLUPs Rail Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701500_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - rail: 0x02040204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - rail: 0x02000200
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x00015606]
+CopyFrom    = 0x5606
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025606]
+CopyFrom    = 0x5606
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035606]
+CopyFrom    = 0x5606
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045606]
+CopyFrom    = 0x5606
+[HighwayIntersectionInfo_0x00055606]
+CopyFrom    = 0x15606
+[HighwayIntersectionInfo_0x00065606]
+CopyFrom    = 0x25606
+[HighwayIntersectionInfo_0x00075606]
+CopyFrom    = 0x35606
+[HighwayIntersectionInfo_0x00085606]
+CopyFrom    = 0x5606
+[HighwayIntersectionInfo_0x00095606]
+CopyFrom    = 0x15606
+[HighwayIntersectionInfo_0x000A5606]
+CopyFrom    = 0x25606
+[HighwayIntersectionInfo_0x000B5606]
+CopyFrom    = 0x35606
+[HighwayIntersectionInfo_0x000C5606]
+CopyFrom    = 0x5606
+[HighwayIntersectionInfo_0x000D5606]
+CopyFrom    = 0x15606
+[HighwayIntersectionInfo_0x000E5606]
+CopyFrom    = 0x25606
+[HighwayIntersectionInfo_0x000F5606]
+CopyFrom    = 0x35606
+
+
+
+[HighwayIntersectionInfo_0x00005607]
+;Added by Tarkus 10 September 2020
+;FLEXFLUPs Lightrail Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701720_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - lightrail: 0x02040204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - lightrail: 0x02000200
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x00015607]
+CopyFrom    = 0x5607
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025607]
+CopyFrom    = 0x5607
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035607]
+CopyFrom    = 0x5607
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045607]
+CopyFrom    = 0x5607
+[HighwayIntersectionInfo_0x00055607]
+CopyFrom    = 0x15607
+[HighwayIntersectionInfo_0x00065607]
+CopyFrom    = 0x25607
+[HighwayIntersectionInfo_0x00075607]
+CopyFrom    = 0x35607
+[HighwayIntersectionInfo_0x00085607]
+CopyFrom    = 0x5607
+[HighwayIntersectionInfo_0x00095607]
+CopyFrom    = 0x15607
+[HighwayIntersectionInfo_0x000A5607]
+CopyFrom    = 0x25607
+[HighwayIntersectionInfo_0x000B5607]
+CopyFrom    = 0x35607
+[HighwayIntersectionInfo_0x000C5607]
+CopyFrom    = 0x5607
+[HighwayIntersectionInfo_0x000D5607]
+CopyFrom    = 0x15607
+[HighwayIntersectionInfo_0x000E5607]
+CopyFrom    = 0x25607
+[HighwayIntersectionInfo_0x000F5607]
+CopyFrom    = 0x35607
+
+
+
+[HighwayIntersectionInfo_0x00005608]
+;Added by Tarkus 10 September 2020
+;FLEXFLUPs Monorail Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701920_ch
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - monorail: 0x02040204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - monorail: 0x02000200
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x00015608]
+CopyFrom    = 0x5608
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025608]
+CopyFrom    = 0x5608
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035608]
+CopyFrom    = 0x5608
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045608]
+CopyFrom    = 0x5608
+[HighwayIntersectionInfo_0x00055608]
+CopyFrom    = 0x15608
+[HighwayIntersectionInfo_0x00065608]
+CopyFrom    = 0x25608
+[HighwayIntersectionInfo_0x00075608]
+CopyFrom    = 0x35608
+[HighwayIntersectionInfo_0x00085608]
+CopyFrom    = 0x5608
+[HighwayIntersectionInfo_0x00095608]
+CopyFrom    = 0x15608
+[HighwayIntersectionInfo_0x000A5608]
+CopyFrom    = 0x25608
+[HighwayIntersectionInfo_0x000B5608]
+CopyFrom    = 0x35608
+[HighwayIntersectionInfo_0x000C5608]
+CopyFrom    = 0x5608
+[HighwayIntersectionInfo_0x000D5608]
+CopyFrom    = 0x15608
+[HighwayIntersectionInfo_0x000E5608]
+CopyFrom    = 0x25608
+[HighwayIntersectionInfo_0x000F5608]
+CopyFrom    = 0x35608
+
+
+
+[HighwayIntersectionInfo_0x00005609]
+;Added by Tarkus 10 September 2020
+;FLEXFLUPs Ground Highway Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701400_ch
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.ab.
+CellLayout =....
+CellLayout =.^..
+
+CheckType = a - groundhighway: 0x02040200 avenue: 0x04030403, 0xffffffff optional
+CheckType = b - groundhighway: 0x02000204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - groundhighway: 0x02040200
+
+ConsLayout =....
+ConsLayout =.|.<
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x00015609]
+CopyFrom    = 0x5609
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025609]
+CopyFrom    = 0x5609
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035609]
+CopyFrom    = 0x5609
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045609]
+CopyFrom    = 0x5609
+[HighwayIntersectionInfo_0x00055609]
+CopyFrom    = 0x15609
+[HighwayIntersectionInfo_0x00065609]
+CopyFrom    = 0x25609
+[HighwayIntersectionInfo_0x00075609]
+CopyFrom    = 0x35609
+[HighwayIntersectionInfo_0x00085609]
+CopyFrom    = 0x5609
+[HighwayIntersectionInfo_0x00095609]
+CopyFrom    = 0x15609
+[HighwayIntersectionInfo_0x000A5609]
+CopyFrom    = 0x25609
+[HighwayIntersectionInfo_0x000B5609]
+CopyFrom    = 0x35609
+[HighwayIntersectionInfo_0x000C5609]
+CopyFrom    = 0x5609
+[HighwayIntersectionInfo_0x000D5609]
+CopyFrom    = 0x15609
+[HighwayIntersectionInfo_0x000E5609]
+CopyFrom    = 0x25609
+[HighwayIntersectionInfo_0x000F5609]
+CopyFrom    = 0x35609
+
+
+
+[HighwayIntersectionInfo_0x0000560A]
+;Added by Tarkus 10 September 2020
+;FLEXFLUPs Elevated Highway Overpass
+Piece = 0.0, 16.0, 0, 0, 0x06701A05
+PreviewEffect = preview_subroad_06701420_ch
+
+CellLayout =....
+CellLayout =.Z.<
+CellLayout =.ab.
+CellLayout =....
+CellLayout =.^..
+
+CheckType = a - highway: 0x02040200 avenue: 0x04030403, 0xffffffff optional
+CheckType = b - highway: 0x02000204 avenue: 0x04030403, 0xffffffff optional
+CheckType = Z - highway: 0x02040200
+
+ConsLayout =....
+ConsLayout =.|.<
+ConsLayout =....
+ConsLayout =....
+ConsLayout =.^..
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID= 0x53e64800
+Costs       = 100
+[HighwayIntersectionInfo_0x0001560A]
+CopyFrom    = 0x560A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002560A]
+CopyFrom    = 0x560A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003560A]
+CopyFrom    = 0x560A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004560A]
+CopyFrom    = 0x560A
+[HighwayIntersectionInfo_0x0005560A]
+CopyFrom    = 0x1560A
+[HighwayIntersectionInfo_0x0006560A]
+CopyFrom    = 0x2560A
+[HighwayIntersectionInfo_0x0007560A]
+CopyFrom    = 0x3560A
+[HighwayIntersectionInfo_0x0008560A]
+CopyFrom    = 0x560A
+[HighwayIntersectionInfo_0x0009560A]
+CopyFrom    = 0x1560A
+[HighwayIntersectionInfo_0x000A560A]
+CopyFrom    = 0x2560A
+[HighwayIntersectionInfo_0x000B560A]
+CopyFrom    = 0x3560A
+[HighwayIntersectionInfo_0x000C560A]
+CopyFrom    = 0x560A
+[HighwayIntersectionInfo_0x000D560A]
+CopyFrom    = 0x1560A
+[HighwayIntersectionInfo_0x000E560A]
+CopyFrom    = 0x2560A
+[HighwayIntersectionInfo_0x000F560A]
+CopyFrom    = 0x3560A
+
