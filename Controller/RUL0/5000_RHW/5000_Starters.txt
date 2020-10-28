@@ -50,6 +50,7 @@ AddTypes     =  5020, 15020, 25020, 35020, 45020, 55020, 65020, 75020 ;L4 MIS St
 AddTypes     =  5021, 15021, 25021, 35021, 45021, 55021, 65021, 75021 ;L4 RHW-6S Starter
 ;---DD Starters---
 AddTypes     =  5022, 15022, 25022, 35022, 45022, 55022, 65022, 75022 ;L1/L2 DDRHW-4 Starter
+;AddTypes     =  5025, 15025, 25025, 35025, 45025, 55025, 65025, 75025 ;L1/L2 DDRHW-8 Starter
 ;AddTypes     =  5023, 15023, 25023, 35023, 45023, 55023, 65023, 75023 ;DDRHW-4 New Starter
 ;AddTypes     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024 ;Disconnector Tile
 
@@ -2427,7 +2428,7 @@ ConsLayout =.......
 ConsLayout =...|..<
 ConsLayout =...^...
 
-AutoTileBase=	0x57F53000
+AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x57F53000
 Costs       = 1000
@@ -2448,6 +2449,53 @@ CopyFrom    = 0x15023
 CopyFrom    = 0x25023
 [HighwayIntersectionInfo_0x00075023]
 CopyFrom    = 0x35023
+
+
+
+[HighwayIntersectionInfo_0x00005025]
+;Added by Tarkus 12-Sep-2020
+;DDRHW-8 Starter Piece
+Piece = 0.0, 0.0, 0, 0, 0x57F33005
+PreviewEffect = preview_starter_ddrhw4__000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...ab..
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - highway: 0x02040200 dirtroad: 0x04030000, 0xffffffff optional
+CheckType = b - highway: 0x02000204, 0xffffffff optional
+CheckType = Z - dirtroad: 0x02000200 highway: 0x02040200 
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57F33000
+Costs       = 1000
+[HighwayIntersectionInfo_0x00015025]
+CopyFrom    = 0x5025
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025025]
+CopyFrom    = 0x5025
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035025]
+CopyFrom    = 0x5025
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045025]
+CopyFrom    = 0x5025
+[HighwayIntersectionInfo_0x00055025]
+CopyFrom    = 0x15025
+[HighwayIntersectionInfo_0x00065025]
+CopyFrom    = 0x25025
+[HighwayIntersectionInfo_0x00075025]
+CopyFrom    = 0x35025
+
 
 [HighwayIntersectionInfo_0x00005024]
 ;Added by Ganaram Inukshuk 6/5/2014
