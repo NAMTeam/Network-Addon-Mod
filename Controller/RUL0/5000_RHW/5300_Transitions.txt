@@ -52,8 +52,8 @@ AddTypes     = 5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree
 ;AddTypes     = 5340, 15340, 25340, 35340, 45340, 55340, 65340, 75340 ;FlexHT L0-L1 MIS 45-Degree Transition A
 ;AddTypes     = 5342, 15342, 25342, 35342, 45342, 55342, 65342, 75342 ;Diag FLEXOnSlope L0-L1 (Old)
 ;AddTypes     = 5343, 15343, 25343, 35343, 45343, 55343, 65343, 75343 ;Diag FLEXOnSlope L0-L2 (Old)
-;AddTypes	 = 5344, 15344, 25344, 35344, 45344, 55344, 65344, 75344 ;FLEXOnSlope L0-L1 (Old)
-;AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2 (Old)
+AddTypes	 = 5344, 15344, 25344, 35344, 45344, 55344, 65344, 75344 ;FLEXOnSlope L0-L1 (Old)
+AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2 (Old)
 
 ;Height Transitions (Static)
 ;BUTTON EFFECTIVELY OBSOLETE
@@ -3239,17 +3239,23 @@ CellLayout=..c.
 CellLayout=..a.
 CellLayout=..d.
 CellLayout=..b<
+CellLayout=....
 CellLayout=..^.
 
+;Original Tarkus Fix 23Sep2020 - needed RUL1 work to finish
 CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x02000200
+;CheckType = c - dirtroad: 0x02000200, 0x0000FF00 optional
 CheckType = c - dirtroad: 0x04000400, 0x0000FF00 optional
+;CheckType = c - groundhighway: 0x04040404 dirtroad: 0x04020402, 0xFFFFFFFF optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
+ConsLayout=....
 ConsLayout=..+<
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -3289,8 +3295,9 @@ CellLayout=..b<
 CellLayout=..^.
 
 CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x02000200
 CheckType = c - dirtroad: 0x04000400, 0x0000FF00 optional
+;CheckType = c - groundhighway: 0x04020402 dirtroad: 0x02040204, 0xFFFFFFFF optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
@@ -3334,17 +3341,27 @@ CellLayout=..c.
 CellLayout=..a.
 CellLayout=..d.
 CellLayout=..b<
+CellLayout=....
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
-CheckType = c - dirtroad: 0x02020202, 0xFFFFFFFF optional
+;CheckType = a - dirtroad: 0x00030400, 0x00000000 optional
+CheckType = a - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00000200, 0x0000FF00 optional
+;CheckType = c - dirtroad: 0x02000200, 0x0000FF00 optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
+;CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - dirtroad: 0x00000000
+;CheckType = c - dirtroad: 0x02000200 groundhighway: 0x04020402, 0xFFFFFFFF optional
+;CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
+
+ConsLayout=....
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
 ConsLayout=..+<
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -3381,17 +3398,25 @@ CellLayout=..c.
 CellLayout=..a.
 CellLayout=..d.
 CellLayout=..b<
+CellLayout=....
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
-CheckType = c - dirtroad: 0x02020202, 0xFFFFFFFF optional
+;CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - dirtroad: 0x02000200
+;CheckType = c - groundhighway: 0x02020204, 0xFFFFFFFF optional
+;CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
+
+CheckType = a - lightrail: 0x04000404 dirtroad: 0x02000000, 0x00000000 optional
+CheckType = b - dirtroad: 0x02000200
+CheckType = c - dirtroad: 0x00000200, 0x0000FF00 optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
+ConsLayout=....
 ConsLayout=..+<
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
