@@ -1,0 +1,142 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ALTERATIVE VIADUCTS BUTTON SECTION
+;ALTERATIVE VIADUCTS BUTTON SECTION
+; 0x0000#7E0#
+
+RotationRing = 7E00, 17E00, 27E00, 37E00, 47E00, 57E00, 67E00, 77E00;(1) Road Stone Viaduct
+AddTypes     = 7E01, 17E01, 27E01, 37E01, 47E01, 57E01, 67E01, 77E01;(2) Road Arch Viaduct
+AddTypes     = 7E02, 17E02, 27E02, 37E02, 47E02, 57E02, 67E02, 77E02;(3) Japanese Facelift Viaduct
+
+;###separator###
+
+;<>-Viaduct Stone Viaduct Start piece - RUL0
+[HighwayIntersectionInfo_0x00007E00]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ........
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - dirtroad: 0x00000000
+CheckType = a - road: 0x02000000 street: 0x00000100, 0x00000000 optional
+CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c160005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017E00]
+CopyFrom	=	0x7E00
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027E00]
+CopyFrom	=	0x7E00
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037E00]
+CopyFrom	=	0x7E00
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047E00]
+CopyFrom	=	0x7E00
+[HighwayIntersectionInfo_0x00057E00]
+CopyFrom	=	0x17E00
+[HighwayIntersectionInfo_0x00067E00]
+CopyFrom	=	0x27E00
+[HighwayIntersectionInfo_0x00077E00]
+CopyFrom	=	0x37E00
+
+;<>-Viaduct Steel Arch Viaduct Start piece - RUL0
+[HighwayIntersectionInfo_0x00007E01]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ........
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - dirtroad: 0x00000000
+CheckType = a - road: 0x02000000 street: 0x00000300, 0x00000000 optional
+CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c260005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017E01]
+CopyFrom	=	0x7E01
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027E01]
+CopyFrom	=	0x7E01
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037E01]
+CopyFrom	=	0x7E01
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047E01]
+CopyFrom	=	0x7E01
+[HighwayIntersectionInfo_0x00057E01]
+CopyFrom	=	0x17E01
+[HighwayIntersectionInfo_0x00067E01]
+CopyFrom	=	0x27E01
+[HighwayIntersectionInfo_0x00077E01]
+CopyFrom	=	0x37E01
+
+;<>-Viaduct Japanese Viaduct Start piece - RUL0
+[HighwayIntersectionInfo_0x00007E02]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ........
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - dirtroad: 0x00000000
+CheckType = a - road: 0x02000000 street: 0x00000303, 0x00000000 optional
+CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c360005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017E02]
+CopyFrom	=	0x7E02
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027E02]
+CopyFrom	=	0x7E02
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037E02]
+CopyFrom	=	0x7E02
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047E02]
+CopyFrom	=	0x7E02
+[HighwayIntersectionInfo_0x00057E02]
+CopyFrom	=	0x17E02
+[HighwayIntersectionInfo_0x00067E02]
+CopyFrom	=	0x27E02
+[HighwayIntersectionInfo_0x00077E02]
+CopyFrom	=	0x37E02
