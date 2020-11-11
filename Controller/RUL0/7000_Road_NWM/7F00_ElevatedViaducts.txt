@@ -544,7 +544,7 @@ CellLayout=..a.
 CellLayout=..b<
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = a - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
 CheckType = b - road: 0x00000000
 ;CheckType = c - road: 0x00000200, 0x0000FF00 optional
 ;CheckType = d - road: 0x02000000, 0xFF000000 optional
@@ -608,7 +608,7 @@ CellLayout=..a.
 CellLayout=..b<
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = a - lightrail: 0x04000404 dirtroad: 0x02000000, 0x00000000 optional
 CheckType = b - dirtroad: 0x00000000
 CheckType = c - dirtroad: 0x04000400, 0x0000FF00 optional
 CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
