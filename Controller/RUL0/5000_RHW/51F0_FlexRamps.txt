@@ -197,6 +197,7 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x000751F1]
 CopyFrom    = 0x451F1
 Rotate		= 3
+
 [HighwayIntersectionInfo_0x000851F1]
 ;Added by Tarkus 2/18/2013.
 ;FlexRamp Type B1-Diagonal Off/Exit Ramp
@@ -307,22 +308,62 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x000751F2]
 CopyFrom    = 0x451F2
 Rotate		= 3
+
 [HighwayIntersectionInfo_0x000851F2]
-CopyFrom    = 0x51F2
+;Added by Tarkus 12/9/2020.
+;FlexRamp Type D1-Diagonal Off/Exit Ramp
+Piece = 0.0, 0.0, 0, 0, 0x57839005
+PreviewEffect = preview_flexramp_d1diag_000
+
+CellLayout =.......
+CellLayout =.......
+CellLayout =..ba...
+CellLayout =..eba..
+CellLayout =..Zcd.<
+CellLayout =.......
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x01000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x04030100, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = d - dirtroad: 0x00030100, 0xffffffff optional
+CheckType = e - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = Z - dirtroad: 0x00000000
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..\\...
+ConsLayout =..\\\..
+ConsLayout =..\|\.<
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5783900F
+Costs       = 400
+
 [HighwayIntersectionInfo_0x000951F2]
-CopyFrom    = 0x151F2
+CopyFrom    = 0x851F2
+Rotate		= 1
 [HighwayIntersectionInfo_0x000A51F2]
-CopyFrom    = 0x251F2
+CopyFrom    = 0x851F2
+Rotate		= 2
 [HighwayIntersectionInfo_0x000B51F2]
-CopyFrom    = 0x351F2
+CopyFrom    = 0x851F2
+Rotate		= 3
 [HighwayIntersectionInfo_0x000C51F2]
-CopyFrom    = 0x451F2
+CopyFrom    = 0x851F2
+Transpose = 1
 [HighwayIntersectionInfo_0x000D51F2]
-CopyFrom    = 0x551F2
+CopyFrom    = 0xC51F2
+Rotate		= 1
 [HighwayIntersectionInfo_0x000E51F2]
-CopyFrom    = 0x651F2
+CopyFrom    = 0xC51F2
+Rotate		= 2
 [HighwayIntersectionInfo_0x000F51F2]
-CopyFrom    = 0x751F2
+CopyFrom    = 0xC51F2
+Rotate		= 3
 
 
 
@@ -386,22 +427,58 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x000751F3]
 CopyFrom    = 0x451F3
 Rotate		= 3
+
 [HighwayIntersectionInfo_0x000851F3]
-CopyFrom    = 0x51F3
+;Added by Tarkus 2/18/2013.
+;FlexRamp Type B1-Diagonal Off/Exit Ramp
+Piece = 0.0, 0.0, 0, 0, 0x5cea0005
+PreviewEffect = preview_flexramp_e1diag_000
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =..Zba.<
+CellLayout =...cb..
+CellLayout =...da..
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x01000003, 0xffffffff optional
+CheckType = b - dirtroad: 0x04030100, 0xffffffff optional
+CheckType = c - dirtroad: 0x01000200, 0xffffffff optional
+CheckType = d - dirtroad: 0x00030100, 0xffffffff optional
+CheckType = Z - dirtroad: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...\...
+ConsLayout =...\\.<
+ConsLayout =...|...
+ConsLayout =...\\..
+ConsLayout =..^....
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5780700F
+Costs       = 400
 [HighwayIntersectionInfo_0x000951F3]
-CopyFrom    = 0x151F3
+CopyFrom    = 0x851F3
+Rotate		= 1
 [HighwayIntersectionInfo_0x000A51F3]
-CopyFrom    = 0x251F3
+CopyFrom    = 0x851F3
+Rotate		= 2
 [HighwayIntersectionInfo_0x000B51F3]
-CopyFrom    = 0x351F3
+CopyFrom    = 0x851F3
+Rotate		= 3
 [HighwayIntersectionInfo_0x000C51F3]
-CopyFrom    = 0x451F3
+CopyFrom    = 0x851F3
+Transpose = 1
 [HighwayIntersectionInfo_0x000D51F3]
-CopyFrom    = 0x551F3
+CopyFrom    = 0xC51F3
+Rotate		= 1
 [HighwayIntersectionInfo_0x000E51F3]
-CopyFrom    = 0x651F3
+CopyFrom    = 0xC51F3
+Rotate		= 2
 [HighwayIntersectionInfo_0x000F51F3]
-CopyFrom    = 0x751F3
+CopyFrom    = 0xC51F3
+Rotate		= 3
+
 
 
 
