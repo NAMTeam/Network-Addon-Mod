@@ -10,7 +10,11 @@ AddTypes    	= 6906, 6916 ; 15.5m raiser/hole digger lot
 AddTypes    	= 6907, 6917 ; 22.5m raiser/hole digger lot
 AddTypes    	= 6908, 6918 ; 24m raiser/hole digger lot
 AddTypes    	= 6909, 6919 ; 30m raiser/hole digger lot
-
+AddTypes    	= 690A, 691A ; 0.1m raiser/hole digger lot	rivit
+AddTypes    	= 690B, 691B ; 0.5m raiser/hole digger lot	rivit
+AddTypes    	= 690C, 691C ; 1m raiser/hole digger lot		rivit
+AddTypes    	= 690D, 691D ; 2m raiser/hole digger lot		rivit
+AddTypes    	= 690E, 691E ; 5m raiser/hole digger lot		rivit
 
 ;###separator###
 
@@ -19,6 +23,7 @@ AddTypes    	= 6909, 6919 ; 30m raiser/hole digger lot
 ;==================================================
 ;JENX raiser/hole digger lots, created by xannepan
 ;Added by memo on 01/28/2013
+;Extended by rivit 8 May 2020
 ;==================================================
 [HighwayIntersectionInfo_0x00006900]
 Piece = 0.0, 0.0, 0, 0, 0x55387205
@@ -200,6 +205,95 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x55387290
 Costs       = 8
 
+[HighwayIntersectionInfo_0x0000690A]
+Piece = 0.0, 0.0, 0, 0, 0x553872A5
+PreviewEffect = preview_jenx_raiser_01
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553872A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553872A0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000690B]
+Piece = 0.0, 0.0, 0, 0, 0x553872B5
+PreviewEffect = preview_jenx_raiser_05
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553872B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553872B0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000690C]
+Piece = 0.0, 0.0, 0, 0, 0x553872C5
+PreviewEffect = preview_jenx_raiser_1
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553872C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553872C0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000690D]
+Piece = 0.0, 0.0, 0, 0, 0x553872D5
+PreviewEffect = preview_jenx_raiser_2
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553872D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553872D0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000690E]
+Piece = 0.0, 0.0, 0, 0, 0x553872E5
+PreviewEffect = preview_jenx_raiser_5
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553872E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553872E0
+Costs       = 8
 
 [HighwayIntersectionInfo_0x00006910]
 Piece = 0.0, 0.0, 0, 0, 0x55387305
@@ -381,3 +475,92 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x55387390
 Costs       = 8
 
+[HighwayIntersectionInfo_0x0000691A]
+Piece = 0.0, 0.0, 0, 0, 0x553873A5
+PreviewEffect = preview_jenx_digger_01
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553873A0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553873A0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000691B]
+Piece = 0.0, 0.0, 0, 0, 0x553873B5
+PreviewEffect = preview_jenx_digger_05
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553873B0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553873B0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000691C]
+Piece = 0.0, 0.0, 0, 0, 0x553873C5
+PreviewEffect = preview_jenx_digger_1
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553873C0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553873C0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000691D]
+Piece = 0.0, 0.0, 0, 0, 0x553873D5
+PreviewEffect = preview_jenx_digger_2
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553873D0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553873D0
+Costs       = 8
+
+[HighwayIntersectionInfo_0x0000691E]
+Piece = 0.0, 0.0, 0, 0, 0x553873E5
+PreviewEffect = preview_jenx_digger_5
+CellLayout =.......
+CellLayout =...a..<
+CellLayout =...^...
+
+CheckType = a - street: 0x00000000
+
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x553873E0
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x553873E0
+Costs       = 8
