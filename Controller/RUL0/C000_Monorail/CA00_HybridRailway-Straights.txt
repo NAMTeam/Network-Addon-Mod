@@ -1,0 +1,236 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HybridRailway SECTION
+;HybridRailway SECTION
+; 0xCA##
+RotationRing = CA00, 1CA00, 2CA00, 3CA00, 4CA00, 5CA00, 6CA00, 7CA00 ;HRW Orthogonal Helper Piece 3 Tile
+AddTypes     = CA01, 1CA01, 2CA01, 3CA01, 4CA01, 5CA01, 6CA01, 7CA01 ;HRW Orthogonal Helper Piece 5 Tile
+;AddTypes     = CA02, 1CA02, 2CA02, 3CA02, 4CA02, 5CA02, 6CA02, 7CA02 ;HRW Orthogonal Helper Piece 7 Tile
+;AddTypes     = CA03, 1CA03, 2CA03, 3CA03, 4CA03, 5CA03, 6CA03, 7CA03 ;HRW Orthogonal Helper Piece 9 Tile
+AddTypes     = CA04, 1CA04, 2CA04, 3CA04, 4CA04, 5CA04, 6CA04, 7CA04 ;HRW Diagonal Helper Piece 4 Tile
+AddTypes     = CA05, 1CA05, 2CA05, 3CA05, 4CA05, 5CA05, 6CA05, 7CA05 ;HRW Diagonal Helper Piece 6 Tile
+;AddTypes     = CA06, 1CA06, 2CA06, 3CA06, 4CA06, 5CA06, 6CA06, 7CA06 ;HRW Diagonal Helper Piece 8 Tile
+;AddTypes     = CA07, 1CA07, 2CA07, 3CA07, 4CA07, 5CA07, 6CA07, 7CA07 ;HRW Diagonal Helper Piece 10 Tile
+;AddTypes     = CA08, 1CA08, 2CA08, 3CA08, 4CA08, 5CA08, 6CA08, 7CA08 ;HRW FA-2-ALT Helper Piece 3 Tile
+;AddTypes     = CA09, 1CA09, 2CA09, 3CA09, 4CA09, 5CA09, 6CA09, 7CA09 ;HRW FA-2-ALT Helper Piece 5 Tile
+
+;###separator###
+
+;<>-DN-2_FlexHelper-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CA00]
+Piece = 16.0, 0.0, 0, 0, 0x5da4003f
+PreviewEffect = preview_dn_orth_3_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ...b....
+CellLayout = ...c....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000000 rail: 0x02000000 optional
+CheckType = b - monorail: 0x00000000 rail: 0x02000200 optional
+CheckType = c - monorail: 0x00000000 rail: 0x00000200 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4003f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CA00]
+CopyFrom    = 0xCA00
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CA00]
+CopyFrom    = 0xCA00
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CA00]
+CopyFrom    = 0xCA00
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CA00]
+CopyFrom    = 0xCA00
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CA00]
+CopyFrom    = 0x4CA00
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CA00]
+CopyFrom    = 0x4CA00
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CA00]
+CopyFrom    = 0x4CA00
+Rotate  	= 1
+
+
+;<>-DN-2_FlexHelper-Orthogonal - RUL0
+[HighwayIntersectionInfo_0x0000CA01]
+Piece = 16.0, 0.0, 0, 0, 0x5da4005f
+PreviewEffect = preview_dn_orth_5_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ...b....
+CellLayout = ...b....
+CellLayout = ...b....
+CellLayout = ...c....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000000 rail: 0x02000000 optional
+CheckType = b - monorail: 0x00000000 rail: 0x02000200 optional
+CheckType = c - monorail: 0x00000000 rail: 0x00000200 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4005f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CA01]
+CopyFrom    = 0xCA01
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CA01]
+CopyFrom    = 0xCA01
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CA01]
+CopyFrom    = 0xCA01
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CA01]
+CopyFrom    = 0xCA01
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CA01]
+CopyFrom    = 0x4CA01
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CA01]
+CopyFrom    = 0x4CA01
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CA01]
+CopyFrom    = 0x4CA01
+Rotate  	= 1
+
+
+
+;<>-DN-2_FlexHelper-Diagonal - RUL0
+[HighwayIntersectionInfo_0x0000CA04]
+Piece = 16.0, 0.0, 0, 0, 0x5da4014f
+PreviewEffect = preview_dn_diag_4_001
+
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ..bc....
+CellLayout = ..d.....
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000000 rail: 0x03000000 optional
+CheckType = b - monorail: 0x00000000 rail: 0x03010000 optional
+CheckType = c - monorail: 0x00000000 rail: 0x00000301 optional
+CheckType = d - monorail: 0x00000000 rail: 0x00000300 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+/...<
+ConsLayout = ..//....
+ConsLayout = ../.....
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4014f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CA04]
+CopyFrom    = 0xCA04
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CA04]
+CopyFrom    = 0xCA04
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CA04]
+CopyFrom    = 0xCA04
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CA04]
+CopyFrom    = 0xCA04
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CA04]
+CopyFrom    = 0x4CA04
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CA04]
+CopyFrom    = 0x4CA04
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CA04]
+CopyFrom    = 0x4CA04
+Rotate  	= 1
+
+[HighwayIntersectionInfo_0x0000CA05]
+Piece = 16.0, 0.0, 0, 0, 0x5da4016f
+PreviewEffect = preview_dn_diag_6_001
+
+CellLayout = .........
+CellLayout = .........
+CellLayout = ....Aa..<
+CellLayout = ....bc...
+CellLayout = ...bc....
+CellLayout = ...d.....
+CellLayout = .........
+CellLayout = ....^....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000000 rail: 0x03000000 optional
+CheckType = b - monorail: 0x00000000 rail: 0x03010000 optional
+CheckType = c - monorail: 0x00000000 rail: 0x00000301 optional
+CheckType = d - monorail: 0x00000000 rail: 0x00000300 optional
+
+ConsLayout = .........
+ConsLayout = .........
+ConsLayout = ....+/..<
+ConsLayout = ....//...
+ConsLayout = ...//....
+ConsLayout = .../.....
+ConsLayout = .........
+ConsLayout = ....^....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5da4016f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CA05]
+CopyFrom    = 0xCA05
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CA05]
+CopyFrom    = 0xCA05
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CA05]
+CopyFrom    = 0xCA05
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CA05]
+CopyFrom    = 0xCA05
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CA05]
+CopyFrom    = 0x4CA05
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CA05]
+CopyFrom    = 0x4CA05
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CA05]
+CopyFrom    = 0x4CA05
+Rotate  	= 1
