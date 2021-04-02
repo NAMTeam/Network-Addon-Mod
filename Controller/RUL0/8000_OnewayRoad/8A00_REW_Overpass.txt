@@ -1,0 +1,105 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; REW FLEX OVERPASS						 ;
+; REW FLEX OVERPASS						 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;OWR/REW Flex Overpass section
+;OWR/REW Flex Overpass section
+RotationRing = 8A00, 18A00, 28A00, 38A00, 48A00, 58A00, 68A00, 78A00 ;REW-2_L1_FlexOST_Orthogonal
+AddTypes     = 8A01, 18A01, 28A01, 38A01, 48A01, 58A01, 68A01, 78A01 ;REW-2 L1_FLEXOST_Diagonal
+
+;###separator###
+
+;<>-RealExpressway Steel Girder Viaduct Orthogonal Start piece - RUL0
+[HighwayIntersectionInfo_0x00008A00]
+Piece = 0.0, -16.0, 2, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout = ........
+CellLayout = ..b.....
+CellLayout = ..a.....
+CellLayout = ..A....<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - onewayroad: 0x00000000
+CheckType = a - onewayroad: 0x02040004 dirtroad: 0x00030300, 0x00000000 optional
+CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c260005
+Costs = 600
+
+[HighwayIntersectionInfo_0x00018A00]
+CopyFrom	=	0x8A00
+Rotate	=	1
+[HighwayIntersectionInfo_0x00028A00]
+CopyFrom	=	0x8A00
+Rotate	=	2
+[HighwayIntersectionInfo_0x00038A00]
+CopyFrom	=	0x8A00
+Rotate	=	3
+[HighwayIntersectionInfo_0x00048A00]
+CopyFrom	=	0x8A00
+[HighwayIntersectionInfo_0x00058A00]
+CopyFrom	=	0x18A00
+[HighwayIntersectionInfo_0x00068A00]
+CopyFrom	=	0x28A00
+[HighwayIntersectionInfo_0x00078A00]
+CopyFrom	=	0x38A00
+
+[HighwayIntersectionInfo_0x00008A01]
+;Added by eggman121 27 Jan 2017
+;RHW FLEX-diagonal-OST 1-LEVEL
+Piece = 16.0, -16.0, 0, 0, 0x5750001f
+PreviewEffect = preview_ost_diag_alt_flex_001
+
+CellLayout=....
+CellLayout=..a.
+CellLayout=.ec.
+CellLayout=.b.<
+CellLayout=.^..
+
+CheckType = a - lightrail: 0x04040400 dirtroad: 0x00010000, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - lightrail: 0x00000004 dirtroad: 0x00000001, 0xFFFFFFFF optional
+;CheckType = d - dirtroad: 0x04000404, 0x0000FF00 optional
+CheckType = e - onewayroad: 0x04000401 dirtroad: 0x00010100, 0xFFFFFFFF optional
+;CheckType = f - dirtroad: 0x02000202, 0xFF00FFFF optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=.+.<
+ConsLayout=.^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5750001f
+Costs = 600
+
+[HighwayIntersectionInfo_0x00018A01]
+CopyFrom	=	0x8A01
+Rotate	=	1
+[HighwayIntersectionInfo_0x00028A01]
+CopyFrom	=	0x8A01
+Rotate	=	2
+[HighwayIntersectionInfo_0x00038A01]
+CopyFrom	=	0x8A01
+Rotate	=	3
+[HighwayIntersectionInfo_0x00048A01]
+CopyFrom	=	0x28A01
+Transpose = 1
+[HighwayIntersectionInfo_0x00058A01]
+CopyFrom	=	0x48A01
+Rotate	=	1
+[HighwayIntersectionInfo_0x00068A01]
+CopyFrom	=	0x48A01
+Rotate	=	2
+[HighwayIntersectionInfo_0x00078A01]
+CopyFrom	=	0x48A01
+Rotate	=	3

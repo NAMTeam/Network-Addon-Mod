@@ -11,27 +11,35 @@ AddTypes     = 8B03, 18B03, 28B03, 38B03, 48B03, 58B03, 68B03, 78B03 ;REW_Ramp_A
 AddTypes     = 8B04, 18B04, 28B04, 38B04, 48B04, 58B04, 68B04, 78B04 ;REW_Ramp_B2
 AddTypes     = 8B05, 18B05, 28B05, 38B05, 48B05, 58B05, 68B05, 78B05 ;REW_Ramp_D1
 AddTypes     = 8B06, 18B06, 28B06, 38B06, 48B06, 58B06, 68B06, 78B06 ;REW_Ramp_D2
-AddTypes     = 8B07, 18B07, 28B07, 38B07, 48B07, 58B07, 68B07, 78B07 ;REW_Ramp_E1
-AddTypes     = 8B08, 18B08, 28B08, 38B08, 48B08, 58B08, 68B08, 78B08 ;REW_Ramp_E2
+AddTypes     = 8B07, 18B07, 28B07, 38B07, 48B07, 58B07, 68B07, 78B07 ;REW_Ramp_D2-Alternative
+AddTypes     = 8B08, 18B08, 28B08, 38B08, 48B08, 58B08, 68B08, 78B08 ;REW_Ramp_E1
+AddTypes     = 8B09, 18B09, 28B09, 38B09, 48B09, 58B09, 68B09, 78B09 ;REW_Ramp_E2
+AddTypes     = 8B0A, 18B0A, 28B0A, 38B0A, 48B0A, 58B0A, 68B0A, 78B0A ;REW_Ramp_E2-Alternative
+AddTypes     = 8B0B, 18B0B, 28B0B, 38B0B, 48B0B, 58B0B, 68B0B, 78B0B ;REW_Ramp_A1-Diagonal
+AddTypes     = 8B0C, 18B0C, 28B0C, 38B0C, 48B0C, 58B0C, 68B0C, 78B0C ;REW_Ramp_B1-Diagonal-Wide
+AddTypes     = 8B0D, 18B0D, 28B0D, 38B0D, 48B0D, 58B0D, 68B0D, 78B0D ;REW_Ramp_B1-Diagonal-Inside-Wide
+AddTypes     = 8B0E, 18B0E, 28B0E, 38B0E, 48B0E, 58B0E, 68B0E, 78B0E ;REW_Ramp_E1-Diagonal
+;AddTypes     = 8B0F, 18B0F, 28B0F, 38B0F, 48B0F, 58B0F, 68B0F, 78B0F ;REW_Ramp_E2-Diagonal
 
 ;###separator###
 
 ;<>-REW-2_FlexRamp_A1_- RUL0
 [HighwayIntersectionInfo_0x00008B00]
-Piece = 16.0, 0.0, 0, 0, 0x5160000f
+Piece = 16.0, 0.0, 0, 0, 0x51600005
 PreviewEffect = preview_ramp_a1_owr_flex_001
 
 CellLayout = .............
 CellLayout = ..Aa........<
 CellLayout = ..cb.........
-CellLayout = ..aa.........
+CellLayout = ..d..........
 CellLayout = ..^..........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02000400, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ..+.........<
@@ -41,7 +49,7 @@ ConsLayout = ..^..........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5160000f
+PlaceQueryID = 0x51600005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B00]
@@ -68,25 +76,25 @@ Rotate		= 1
 
 ;<>-REW-2_FlexRamp_A1_Wide- RUL0
 [HighwayIntersectionInfo_0x00008B01]
-Piece = 16.0, 0.0, 0, 0, 0x5160008f
+Piece = 16.0, 0.0, 0, 0, 0x51600085
 PreviewEffect = preview_ramp_a18_owr_flex_001
 
 CellLayout = .............
 CellLayout = ....Aa......<
 CellLayout = ....cb.......
-CellLayout = ....da.......
+CellLayout = ....d........
 CellLayout = ...fe........
 CellLayout = ...g.........
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x03040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x03000300, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x00000301, 0xFFFFFFFF optional
-CheckType = f - onewayroad:0x04010000, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = e - onewayroad:0x00000402, 0xFFFFFFFF optional
+CheckType = f - onewayroad:0x04020000, 0xFFFFFFFF optional
 CheckType = g - onewayroad:0x02000400, 0xFFFFFFFF optional
 
 ConsLayout = .............
@@ -99,7 +107,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5160008f
+PlaceQueryID = 0x51600085
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B01]
@@ -126,25 +134,26 @@ Rotate		= 1
 
 ;<>-REW-2_FlexRamp_B1_Wide- RUL0
 [HighwayIntersectionInfo_0x00008B02]
-Piece = 16.0, 0.0, 0, 0, 0x5160408f
+Piece = 16.0, 0.0, 0, 0, 0x51604085
 PreviewEffect = preview_ramp_b18_owr_flex_001
 
 CellLayout = .............
 CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....da.......
+CellLayout = ....db.......
+CellLayout = ....gc.......
 CellLayout = ...fe........
 CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x03040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x03000300, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x00000301, 0xFFFFFFFF optional
-CheckType = f - onewayroad:0x03010000, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04000402, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x02000402, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04020000, 0xFFFFFFFF optional
+CheckType = e - onewayroad:0x00000404, 0xFFFFFFFF optional
+CheckType = f - onewayroad:0x03040000, 0xFFFFFFFF optional
+CheckType = g - onewayroad:0x04020400, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -156,7 +165,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5160408f
+PlaceQueryID = 0x51604085
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B02]
@@ -183,23 +192,26 @@ Rotate		= 1
 
 ;<>-REW-2_FlexRamp_A2_- RUL0
 [HighwayIntersectionInfo_0x00008B03]
-Piece = 16.0, 0.0, 0, 0, 0x5162100f
+Piece = 16.0, 0.0, 0, 0, 0x51621005
 PreviewEffect = preview_ramp_a2_owr_flex_001
 
 CellLayout = .............
 CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....db.......
-CellLayout = ....aa.......
+CellLayout = ....eb.......
+CellLayout = ....fc.......
+CellLayout = ....gd.......
 CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x02040200, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04000204, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02000402, 0xFFFFFFFF optional
+CheckType = e - onewayroad:0x02040000, 0xFFFFFFFF optional
+CheckType = f - onewayroad:0x04040200, 0xFFFFFFFF optional
+CheckType = g - onewayroad:0x02020400, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -211,7 +223,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5162100f
+PlaceQueryID = 0x51621005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B03]
@@ -238,25 +250,27 @@ Rotate		= 1
 
 ;<>-REW-2_FlexRamp_B2_- RUL0
 [HighwayIntersectionInfo_0x00008B04]
-Piece = 16.0, 0.0, 0, 0, 0x5162500f
+Piece = 16.0, 0.0, 0, 0, 0x51625005
 PreviewEffect = preview_ramp_b2_owr_flex_001
 
 CellLayout = .............
-CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....db.......
-CellLayout = ...fea.......
+CellLayout = ....Zn......<
+CellLayout = ....cd.......
+CellLayout = ....ba.......
+CellLayout = ...yih.......
 CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000204, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04040200, 0xFFFFFFFF optional
 CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x04040200, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x00000401, 0xFFFFFFFF optional
-CheckType = f - onewayroad:0x03010000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x00040404, 0xFFFFFFFF optional
+CheckType = n - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = y - onewayroad:0x03040000, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -268,7 +282,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5162500f
+PlaceQueryID = 0x51625005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B04]
@@ -285,34 +299,34 @@ CopyFrom    = 0x8B04
 Transpose	= 1
 [HighwayIntersectionInfo_0x00058B04]
 CopyFrom    = 0x48B04
-Rotate		= 3
+Rotate  	= 3
 [HighwayIntersectionInfo_0x00068B04]
 CopyFrom    = 0x48B04
-Rotate		= 2
+Rotate  	= 2
 [HighwayIntersectionInfo_0x00078B04]
 CopyFrom    = 0x48B04
-Rotate		= 1
+Rotate  	= 1
 
 ;<>-REW-2_FlexRamp_D1_- RUL0
 [HighwayIntersectionInfo_0x00008B05]
-Piece = 16.0, 0.0, 0, 0, 0x5162808f
-PreviewEffect = preview_ramp_d18_owr_flex_001
+Piece = 16.0, 0.0, 0, 0, 0x51626005
+PreviewEffect = preview_ramp_d1o_owr_flex_001
 
 CellLayout = .............
-CellLayout = ....Aa......<
+CellLayout = ....Za......<
 CellLayout = ....cb.......
 CellLayout = ....de.......
-CellLayout = ....aa.......
+CellLayout = .............
 CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04000404, 0xFFFFFFFF optional
 CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x02020400, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x02000202, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02040400, 0xFFFFFFFF optional
+CheckType = e - onewayroad:0x02000404, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -324,7 +338,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5162808f
+PlaceQueryID = 0x51626005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B05]
@@ -351,24 +365,26 @@ Rotate		= 1
 
 ;<>-REW-2_FlexRamp_D2_- RUL0
 [HighwayIntersectionInfo_0x00008B06]
-Piece = 16.0, 0.0, 0, 0, 0x51629080f
-PreviewEffect = preview_ramp_d2_owr_flex_001
+Piece = 16.0, 0.0, 0, 0, 0x51628085
+PreviewEffect = preview_ramp_d18_owr_flex_001
 
 CellLayout = .............
-CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....de.......
-CellLayout = ....aa.......
-CellLayout = ....aa.......
+CellLayout = ....An......<
+CellLayout = ....cd.......
+CellLayout = ....ba.......
+CellLayout = ....ih.......
+CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x04000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x02040200, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000404, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04040400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000404, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x02040400, 0xFFFFFFFF optional
+CheckType = n - onewayroad:0x04000200, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -380,7 +396,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5162900f
+PlaceQueryID = 0x51628085
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B06]
@@ -405,28 +421,30 @@ Rotate		= 2
 CopyFrom    = 0x48B06
 Rotate		= 1
 
-;<>-REW-2_FlexRamp_E1_- RUL0
+;<>-REW-2_FlexRamp_D2_Alt_- RUL0
 [HighwayIntersectionInfo_0x00008B07]
-Piece = 16.0, 0.0, 0, 0, 0x5162c00f
-PreviewEffect = preview_ramp_e1_owr_flex_001
+Piece = 16.0, 0.0, 0, 0, 0x51629005
+PreviewEffect = preview_ramp_d2_owr_flex_001
 
 CellLayout = .............
-CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....de.......
-CellLayout = ...fga.......
-CellLayout = .............
+CellLayout = ....An......<
+CellLayout = ....cd.......
+CellLayout = ....ba.......
+CellLayout = ....ih.......
+CellLayout = ....wv.......
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x02000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x04020400, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x02000202, 0xFFFFFFFF optional
-CheckType = f - onewayroad:0x03010000, 0xFFFFFFFF optional
-CheckType = g - onewayroad:0x00000401, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x02040400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04020000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000402, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x04000204, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x04040200, 0xFFFFFFFF optional
+CheckType = n - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = v - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = w - onewayroad:0x02040400, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -438,7 +456,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5162c00f
+PlaceQueryID = 0x51629005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B07]
@@ -463,28 +481,26 @@ Rotate		= 2
 CopyFrom    = 0x48B07
 Rotate		= 1
 
-;<>-REW-2_FlexRamp_E2_- RUL0
+;<>-REW-2_FlexRamp_E1_- RUL0
 [HighwayIntersectionInfo_0x00008B08]
-Piece = 16.0, 0.0, 0, 0, 0x5163d00f
-PreviewEffect = preview_ramp_e2_owr_flex_001
+Piece = 16.0, 0.0, 0, 0, 0x51627005
+PreviewEffect = preview_ramp_e1_owr_flex_001
 
 CellLayout = .............
-CellLayout = ....Aa......<
-CellLayout = ....cb.......
-CellLayout = ....de.......
-CellLayout = ...fga.......
+CellLayout = ....Ad......<
+CellLayout = ....ba.......
+CellLayout = ....ih.......
+CellLayout = .............
 CellLayout = .............
 CellLayout = ....^........
 
 ;senw
-CheckType = A - dirtroad:0x00000000
-CheckType = a - onewayroad:0x02000200, 0xFFFFFFFF optional
-CheckType = b - onewayroad:0x04000204, 0xFFFFFFFF optional
-CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
-CheckType = d - onewayroad:0x04040400, 0xFFFFFFFF optional
-CheckType = e - onewayroad:0x02000404, 0xFFFFFFFF optional
-CheckType = f - onewayroad:0x03010000, 0xFFFFFFFF optional
-CheckType = g - onewayroad:0x00000401, 0xFFFFFFFF optional
+CheckType = A - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000404, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000400, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x00000401, 0xFFFFFFFF optional
 
 ConsLayout = .............
 ConsLayout = ....+.......<
@@ -496,7 +512,7 @@ ConsLayout = ....^........
 
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5163d00f
+PlaceQueryID = 0x51627005
 Costs = 400
 
 [HighwayIntersectionInfo_0x00018B08]
@@ -519,4 +535,422 @@ CopyFrom    = 0x48B08
 Rotate		= 2
 [HighwayIntersectionInfo_0x00078B08]
 CopyFrom    = 0x48B08
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_E2_- RUL0
+[HighwayIntersectionInfo_0x00008B09]
+Piece = 16.0, 0.0, 0, 0, 0x5163d005
+PreviewEffect = preview_ramp_e2_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....Zn......<
+CellLayout = ....cd.......
+CellLayout = ....ba.......
+CellLayout = ...yih.......
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000204, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x04040200, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x02040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000400, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x00000404, 0xFFFFFFFF optional
+CheckType = n - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = y - onewayroad:0x03040000, 0xFFFFFFFF optional
+
+
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5163d005
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B09]
+CopyFrom    = 0x8B09
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B09]
+CopyFrom    = 0x8B09
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B09]
+CopyFrom    = 0x8B09
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B09]
+CopyFrom    = 0x8B09
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B09]
+CopyFrom    = 0x48B09
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B09]
+CopyFrom    = 0x48B09
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B09]
+CopyFrom    = 0x48B09
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_E2_Alternative_- RUL0
+[HighwayIntersectionInfo_0x00008B0A]
+Piece = 16.0, 0.0, 0, 0, 0x5162c005
+PreviewEffect = preview_ramp_e2i_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....Zn......<
+CellLayout = ....cd.......
+CellLayout = ....ba.......
+CellLayout = ...yih.......
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04000204, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x02040400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04040000, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000404, 0xFFFFFFFF optional
+CheckType = i - onewayroad:0x00040204, 0xFFFFFFFF optional
+CheckType = n - onewayroad:0x04000200, 0xFFFFFFFF optional
+CheckType = y - onewayroad:0x03040000, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5162c005
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0A]
+CopyFrom    = 0x8B0A
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0A]
+CopyFrom    = 0x8B0A
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0A]
+CopyFrom    = 0x8B0A
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0A]
+CopyFrom    = 0x8B0A
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0A]
+CopyFrom    = 0x48B0A
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0A]
+CopyFrom    = 0x48B0A
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0A]
+CopyFrom    = 0x48B0A
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_A1_Diagonal_- RUL0
+[HighwayIntersectionInfo_0x00008B0B]
+Piece = 0.0, -16.0, 0, 0, 0x5162800f
+PreviewEffect = preview_ramp_a1d_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....cd.......
+CellLayout = ....Za......<
+CellLayout = .....h.......
+CellLayout = .....vu......
+CellLayout = .............
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04030100, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x00040100, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x01000004, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x01000400, 0xFFFFFFFF optional
+CheckType = u - onewayroad:0x01000004, 0xFFFFFFFF optional
+CheckType = v - onewayroad:0x00040100, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5162800f
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0B]
+CopyFrom    = 0x8B0B
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0B]
+CopyFrom    = 0x8B0B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0B]
+CopyFrom    = 0x8B0B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0B]
+CopyFrom    = 0x8B0B
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0B]
+CopyFrom    = 0x48B0B
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0B]
+CopyFrom    = 0x48B0B
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0B]
+CopyFrom    = 0x48B0B
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_B1_Diagonal_- RUL0
+[HighwayIntersectionInfo_0x00008B0C]
+Piece = 0.0, -16.0, 0, 0, 0x5162a00f
+PreviewEffect = preview_ramp_b1d_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....lm.......
+CellLayout = ....Zcd.....<
+CellLayout = .....ba......
+CellLayout = ......h......
+CellLayout = ......v......
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04030403, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x00030400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04020400, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000002, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x04000400, 0xFFFFFFFF optional
+CheckType = l - onewayroad:0x00040100, 0xFFFFFFFF optional
+CheckType = m - onewayroad:0x04000004, 0xFFFFFFFF optional
+CheckType = v - onewayroad:0x02000400, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5162a00f
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0C]
+CopyFrom    = 0x8B0C
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0C]
+CopyFrom    = 0x8B0C
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0C]
+CopyFrom    = 0x8B0C
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0C]
+CopyFrom    = 0x8B0C
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0C]
+CopyFrom    = 0x48B0C
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0C]
+CopyFrom    = 0x48B0C
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0C]
+CopyFrom    = 0x48B0C
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_B1_Diagonal_- RUL0
+[HighwayIntersectionInfo_0x00008B0D]
+Piece = 0.0, -16.0, 0, 0, 0x5162a80f
+PreviewEffect = preview_ramp_b1di_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....lm.......
+CellLayout = ....Zcd.....<
+CellLayout = .....ba......
+CellLayout = ......h......
+CellLayout = ......v......
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04030403, 0xFFFFFFFF optional
+CheckType = b - onewayroad:0x00030400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x04040100, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000004, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x04000400, 0xFFFFFFFF optional
+CheckType = l - onewayroad:0x00040100, 0xFFFFFFFF optional
+CheckType = m - onewayroad:0x01000004, 0xFFFFFFFF optional
+CheckType = v - onewayroad:0x02000400, 0xFFFFFFFF optional
+	
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5162a80f
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0D]
+CopyFrom    = 0x8B0D
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0D]
+CopyFrom    = 0x8B0D
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0D]
+CopyFrom    = 0x8B0D
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0D]
+CopyFrom    = 0x8B0D
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0D]
+CopyFrom    = 0x48B0D
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0D]
+CopyFrom    = 0x48B0D
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0D]
+CopyFrom    = 0x48B0D
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_E1_Diagonal_Inside_- RUL0
+[HighwayIntersectionInfo_0x00008B0E]
+Piece = 0.0, -16.0, 0, 0, 0x5162e00f
+PreviewEffect = preview_ramp_e1d_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....m........
+CellLayout = ....cd.......
+CellLayout = ....Zaf.....<
+CellLayout = .....hg......
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04030400, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x00030400, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x04000003, 0xFFFFFFFF optional
+CheckType = f - onewayroad:0x04000003, 0xFFFFFFFF optional
+CheckType = g - onewayroad:0x00030400, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x02000400, 0xFFFFFFFF optional
+CheckType = m - onewayroad:0x04000003, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5163e00f
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0E]
+CopyFrom    = 0x8B0E
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0E]
+CopyFrom    = 0x8B0E
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0E]
+CopyFrom    = 0x8B0E
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0E]
+CopyFrom    = 0x8B0E
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0E]
+CopyFrom    = 0x48B0E
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0E]
+CopyFrom    = 0x48B0E
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0E]
+CopyFrom    = 0x48B0E
+Rotate		= 1
+
+;<>-REW-2_FlexRamp_B1_Diagonal_- RUL0
+[HighwayIntersectionInfo_0x00008B0F]
+Piece = 16.0, 0.0, 0, 0, 0x5163d00f
+PreviewEffect = preview_ramp_e2i_owr_flex_001
+
+CellLayout = .............
+CellLayout = ....cd.......
+CellLayout = ....Za......<
+CellLayout = .....h.......
+CellLayout = .....vu......
+CellLayout = .............
+CellLayout = .............
+CellLayout = ....^........
+
+;senw
+CheckType = Z - onewayroad:0x00000000
+CheckType = a - onewayroad:0x04030100, 0xFFFFFFFF optional
+CheckType = c - onewayroad:0x00040100, 0xFFFFFFFF optional
+CheckType = d - onewayroad:0x01000004, 0xFFFFFFFF optional
+CheckType = h - onewayroad:0x01000400, 0xFFFFFFFF optional
+CheckType = u - onewayroad:0x01000004, 0xFFFFFFFF optional
+CheckType = v - onewayroad:0x00040100, 0xFFFFFFFF optional
+	
+ConsLayout = .............	
+ConsLayout = .............
+ConsLayout = ....+.......<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ....^........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5163d00f
+Costs = 400
+
+[HighwayIntersectionInfo_0x00018B0F]
+CopyFrom    = 0x8B0F
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00028B0F]
+CopyFrom    = 0x8B0F
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00038B0F]
+CopyFrom    = 0x8B0F
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00048B0F]
+CopyFrom    = 0x8B0F
+Transpose	= 1
+[HighwayIntersectionInfo_0x00058B0F]
+CopyFrom    = 0x48B0F
+Rotate		= 3
+[HighwayIntersectionInfo_0x00068B0F]
+CopyFrom    = 0x48B0F
+Rotate		= 2
+[HighwayIntersectionInfo_0x00078B0F]
+CopyFrom    = 0x48B0F
 Rotate		= 1
