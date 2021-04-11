@@ -15,6 +15,10 @@ AddTypes     = 5608, 15608, 25608, 35608, 45608, 55608, 65608, 75608, 85608, 956
 AddTypes     = 5609, 15609, 25609, 35609, 45609, 55609, 65609, 75609, 85609, 95609, A5609, B5609, C5609, D5609, E5609, F5609 ;Ground Highway Overcrossing FLEX
 AddTypes     = 560A, 1560A, 2560A, 3560A, 4560A, 5560A, 6560A, 7560A, 8560A, 9560A, A560A, B560A, C560A, D560A, E560A, F560A ;Elevated Highway Overcrossing FLEX
 ;AddTypes	 = 560B, 1560B, 2560B, 3560B, 4560B, 5560B, 6560B, 7560B, 8560B, 9560B, A560B, B560B, C560B, D560B, E560B, F560B ;Type A1 Underground Ramp Interface
+AddTypes     = 5610, 15610, 25610, 35610, 45610, 55610, 65610, 75610, 85610, 95610, A5610, B5610, C5610, D5610, E5610, F5610 ;URoad-2 Starter
+AddTypes     = 5611, 15611, 25611, 35611, 45611, 55611, 65611, 75611, 85611, 95611, A5611, B5611, C5611, D5611, E5611, F5611 ;URoad-3 Starter
+AddTypes     = 5612, 15612, 25612, 35612, 45612, 55612, 65612, 75612, 85612, 95612, A5612, B5612, C5612, D5612, E5612, F5612 ;URamp Starter
+AddTypes     = 5613, 15613, 25613, 35613, 45613, 55613, 65613, 75613, 85613, 95613, A5613, B5613, C5613, D5613, E5613, F5613 ;URoad-4 Starter
 
 ;###separator###
 
@@ -42,7 +46,7 @@ CheckType = b - dirtroad: 0x00000200, 0x0000ff00 optional
 ;CheckType = c - subway: 0x02000200 rail:0x00010100, 0xFFFFFFFF optional
 CheckType = c - dirtroad: 0x02000200 highway: 0x00030300, 0xFFFFFFFF optional
 CheckType = d - dirtroad: 0x02000200 highway: 0x00010300, 0xFFFFFFFF optional
-CheckType = e - subway: 0x02000200 onewayroad: 0x00010100, 0xFFFFFFFF optional
+;CheckType = e - subway: 0x02000200 onewayroad: 0x00010100, 0xFFFFFFFF optional
 CheckType = Z - dirtroad: 0x02020202
 
 ConsLayout =...
@@ -783,4 +787,253 @@ CopyFrom    = 0x5560B
 CopyFrom    = 0x6560B
 [HighwayIntersectionInfo_0x000F560B]
 CopyFrom    = 0x7560B
+
+
+[HighwayIntersectionInfo_0x00005610]
+;Added by Tarkus 5 April 2021
+;FLEXFLUPs URoad-2 Starter
+Piece = 0.0, 0.0, 0, 0, 0x57F00005
+PreviewEffect = preview_starter_l1rhw2__000
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - subway: 0x02000200 onewayroad: 0x00010100, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x0670000F
+Costs       = 500
+[HighwayIntersectionInfo_0x00015610]
+CopyFrom    = 0x5610
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025610]
+CopyFrom    = 0x5610
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035610]
+CopyFrom    = 0x5610
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045610]
+CopyFrom    = 0x5610
+[HighwayIntersectionInfo_0x00055610]
+CopyFrom    = 0x15610
+[HighwayIntersectionInfo_0x00065610]
+CopyFrom    = 0x25610
+[HighwayIntersectionInfo_0x00075610]
+CopyFrom    = 0x35610
+[HighwayIntersectionInfo_0x00085610]
+CopyFrom    = 0x5610
+[HighwayIntersectionInfo_0x00095610]
+CopyFrom    = 0x15610
+[HighwayIntersectionInfo_0x000A5610]
+CopyFrom    = 0x25610
+[HighwayIntersectionInfo_0x000B5610]
+CopyFrom    = 0x35610
+[HighwayIntersectionInfo_0x000C5610]
+CopyFrom    = 0x5610
+[HighwayIntersectionInfo_0x000D5610]
+CopyFrom    = 0x15610
+[HighwayIntersectionInfo_0x000E5610]
+CopyFrom    = 0x25610
+[HighwayIntersectionInfo_0x000F5610]
+CopyFrom    = 0x35610
+
+
+
+[HighwayIntersectionInfo_0x00005611]
+;Added by Tarkus 5 April 2021
+;FLEXFLUPs URoad-3 Starter
+Piece = 0.0, 0.0, 0, 0, 0x57F00005
+PreviewEffect = preview_starter_l1rhw3__000
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - subway: 0x02000200 onewayroad: 0x00010300, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x0671000F
+Costs       = 500
+[HighwayIntersectionInfo_0x00015611]
+CopyFrom    = 0x5611
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025611]
+CopyFrom    = 0x5611
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035611]
+CopyFrom    = 0x5611
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045611]
+CopyFrom    = 0x5611
+[HighwayIntersectionInfo_0x00055611]
+CopyFrom    = 0x15611
+[HighwayIntersectionInfo_0x00065611]
+CopyFrom    = 0x25611
+[HighwayIntersectionInfo_0x00075611]
+CopyFrom    = 0x35611
+[HighwayIntersectionInfo_0x00085611]
+CopyFrom    = 0x5611
+[HighwayIntersectionInfo_0x00095611]
+CopyFrom    = 0x15611
+[HighwayIntersectionInfo_0x000A5611]
+CopyFrom    = 0x25611
+[HighwayIntersectionInfo_0x000B5611]
+CopyFrom    = 0x35611
+[HighwayIntersectionInfo_0x000C5611]
+CopyFrom    = 0x5611
+[HighwayIntersectionInfo_0x000D5611]
+CopyFrom    = 0x15611
+[HighwayIntersectionInfo_0x000E5611]
+CopyFrom    = 0x25611
+[HighwayIntersectionInfo_0x000F5611]
+CopyFrom    = 0x35611
+
+
+
+[HighwayIntersectionInfo_0x00005612]
+;Added by Tarkus 5 April 2021
+;FLEXFLUPs URamp Starter
+Piece = 0.0, 0.0, 0, 0, 0x57F00005
+PreviewEffect = preview_starter_l1mis___000
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - subway: 0x02000200 onewayroad: 0x00030300, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x0672000F
+Costs       = 500
+[HighwayIntersectionInfo_0x00015612]
+CopyFrom    = 0x5612
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025612]
+CopyFrom    = 0x5612
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035612]
+CopyFrom    = 0x5612
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045612]
+CopyFrom    = 0x5612
+[HighwayIntersectionInfo_0x00055612]
+CopyFrom    = 0x15612
+[HighwayIntersectionInfo_0x00065612]
+CopyFrom    = 0x25612
+[HighwayIntersectionInfo_0x00075612]
+CopyFrom    = 0x35612
+[HighwayIntersectionInfo_0x00085612]
+CopyFrom    = 0x5612
+[HighwayIntersectionInfo_0x00095612]
+CopyFrom    = 0x15612
+[HighwayIntersectionInfo_0x000A5612]
+CopyFrom    = 0x25612
+[HighwayIntersectionInfo_0x000B5612]
+CopyFrom    = 0x35612
+[HighwayIntersectionInfo_0x000C5612]
+CopyFrom    = 0x5612
+[HighwayIntersectionInfo_0x000D5612]
+CopyFrom    = 0x15612
+[HighwayIntersectionInfo_0x000E5612]
+CopyFrom    = 0x25612
+[HighwayIntersectionInfo_0x000F5612]
+CopyFrom    = 0x35612
+
+
+
+[HighwayIntersectionInfo_0x00005613]
+;Added by Tarkus 5 April 2021
+;FLEXFLUPs URoad-4 Starter
+Piece = 0.0, 0.0, 0, 0, 0x57F00005
+PreviewEffect = preview_starter_l1rhw4__000
+
+CellLayout =...
+CellLayout =.Z<
+CellLayout =.a.
+CellLayout =...
+CellLayout =.^.
+
+CheckType = a - subway: 0x02000200 onewayroad: 0x00010400, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =...
+ConsLayout =.|<
+ConsLayout =...
+ConsLayout =...
+ConsLayout =...
+ConsLayout =.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x0673000F
+Costs       = 500
+[HighwayIntersectionInfo_0x00015613]
+CopyFrom    = 0x5613
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025613]
+CopyFrom    = 0x5613
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035613]
+CopyFrom    = 0x5613
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045613]
+CopyFrom    = 0x5613
+[HighwayIntersectionInfo_0x00055613]
+CopyFrom    = 0x15613
+[HighwayIntersectionInfo_0x00065613]
+CopyFrom    = 0x25613
+[HighwayIntersectionInfo_0x00075613]
+CopyFrom    = 0x35613
+[HighwayIntersectionInfo_0x00085613]
+CopyFrom    = 0x5613
+[HighwayIntersectionInfo_0x00095613]
+CopyFrom    = 0x15613
+[HighwayIntersectionInfo_0x000A5613]
+CopyFrom    = 0x25613
+[HighwayIntersectionInfo_0x000B5613]
+CopyFrom    = 0x35613
+[HighwayIntersectionInfo_0x000C5613]
+CopyFrom    = 0x5613
+[HighwayIntersectionInfo_0x000D5613]
+CopyFrom    = 0x15613
+[HighwayIntersectionInfo_0x000E5613]
+CopyFrom    = 0x25613
+[HighwayIntersectionInfo_0x000F5613]
+CopyFrom    = 0x35613
+
+
 
