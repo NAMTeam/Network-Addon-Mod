@@ -10,6 +10,8 @@ AddTypes     = 9526, 19526, 29526, 39526, 49526, 59526, 69526, 79526 ;Roundabout
 AddTypes     = 9527, 19527, 29527, 39527, 49527, 59527, 69527, 79527 ;Roundabout GLRavenue xhighway 
 AddTypes     = 9528, 19528, 29528, 39528, 49528, 59528, 69528, 79528 ;Avenue Y-Stack
 AddTypes     = 9529, 19529, 29529, 39529, 49529, 59529, 69529, 79529 ;avenuexroad ramp
+AddTypes     = 89520, 99520, A9520, B9520, C9520, D9520, E9520, F9520 ;avenue x street with median
+
 ;AddTypes     = 952A, 1952A, 2952A, 3952A, 4952A, 5952A, 6952A, 7952A ;Tulep Ave-4 Roundabout X
 ;AddTypes     = 952B, 1952B, 2952B, 3952B, 4952B, 5952B, 6952B, 7952B ;Tulep Ave-4 Roundabout X in
 ;AddTypes     = 952C, 1952C, 2952C, 3952C, 4952C, 5952C, 6952C, 7952C ;Tulep Ave-4 Roundabout X out
@@ -1568,3 +1570,51 @@ Rotate      = 2
 [HighwayIntersectionInfo_0x000F9542]
 CopyFrom    = 0xC9542
 Rotate      = 3
+
+
+
+[HighwayIntersectionInfo_0x00089520]
+;Added by Durfsurn 06/04/2021
+; Ave x Street with Median
+Piece = 0.0, 16.0, 0, 0, 0x54589520
+PreviewEffect = preview_ave_x_street_with_median
+
+CellLayout=.....
+CellLayout=..a.<
+CellLayout=..b..
+CellLayout=..c..
+CellLayout=.....
+CellLayout=..^..
+
+CheckType = a - road: 0x02000002
+CheckType = b - avenue: 0x04020002 street: 0x02040200, 0xffffffff optional
+CheckType = c - avenue: 0x00020402 street: 0x02040204, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x54589520
+Costs = 20
+
+[HighwayIntersectionInfo_0x00099520]
+CopyFrom = 0x89520
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A9520]
+CopyFrom = 0x89520
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B9520]
+CopyFrom = 0x89520
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C9520]
+CopyFrom = 0x89520
+[HighwayIntersectionInfo_0x000D9520]
+CopyFrom = 0x99520
+[HighwayIntersectionInfo_0x000E9520]
+CopyFrom = 0xA9520
+[HighwayIntersectionInfo_0x000F9520]
+CopyFrom = 0xB9520
