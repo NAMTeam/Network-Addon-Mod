@@ -672,7 +672,7 @@ CellLayout=.b.
 CellLayout=.^.
 
 CheckType = a - road: 0x02000200
-CheckType = b - street: 0x00020002 monorail: 0x00010002, 0xffffffff optional
+CheckType = b - street: 0x00020002 onewayroad: 0x00010004, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -682,7 +682,7 @@ ConsLayout=.^.
 AutoTileBase = 0x55387000
 ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5E5C3400
-Costs = 20
+Costs = 19
 
 [HighwayIntersectionInfo_0x0001670D]
 CopyFrom    = 0x670D

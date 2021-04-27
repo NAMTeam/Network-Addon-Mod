@@ -6,6 +6,8 @@
 ;OWR/REW Flex Overpass section
 RotationRing = 8A00, 18A00, 28A00, 38A00, 48A00, 58A00, 68A00, 78A00 ;REW-2_L1_FlexOST_Orthogonal
 AddTypes     = 8A01, 18A01, 28A01, 38A01, 48A01, 58A01, 68A01, 78A01 ;REW-3 L1_FlexOST_Orthogonal
+AddTypes     = 8A02, 18A02, 28A02, 38A02, 48A02, 58A02, 68A02, 78A02 ;REW-3 L1_E-REW-2
+AddTypes     = 8A03, 18A03, 28A03, 38A03, 48A03, 58A03, 68A03, 78A03 ;REW-3 L1_E-REW-3
 
 ;###separator###
 
@@ -100,3 +102,82 @@ Rotate	=	2
 [HighwayIntersectionInfo_0x00078A01]
 CopyFrom	=	0x48A01
 Rotate	=	3
+
+;<>-RealExpressway Steel Girder Viaduct Orthogonal Repeat piece (OWR-2) - RUL0
+[HighwayIntersectionInfo_0x00008A02]
+Piece = 16.0, 0.0, 2, 0, 0x5c110000
+PreviewEffect = preview_rew_e_2_002
+
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - onewayroad: 0x00000000
+CheckType = a - onewayroad: 0x01000100, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c110000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00018A02]
+CopyFrom	=	0x8A02
+Rotate	=	1
+[HighwayIntersectionInfo_0x00028A02]
+CopyFrom	=	0x8A02
+Rotate	=	2
+[HighwayIntersectionInfo_0x00038A02]
+CopyFrom	=	0x8A02
+Rotate	=	3
+[HighwayIntersectionInfo_0x00048A02]
+CopyFrom	=	0x8A02
+[HighwayIntersectionInfo_0x00058A02]
+CopyFrom	=	0x18A02
+[HighwayIntersectionInfo_0x00068A02]
+CopyFrom	=	0x28A02
+[HighwayIntersectionInfo_0x00078A02]
+CopyFrom	=	0x38A02
+
+
+;<>-RealExpressway Steel Girder Viaduct Orthogonal Repeat piece (OWR-3) - RUL0
+[HighwayIntersectionInfo_0x00008A03]
+Piece = 16.0, 0.0, 2, 0, 0x5c410000
+PreviewEffect = preview_rew_e_3_002
+
+CellLayout = ........
+CellLayout = ..Aa...<
+CellLayout = ..^.....
+
+;senw
+CheckType = A - onewayroad: 0x00000000
+CheckType = a - onewayroad: 0x03000300, 0x00000000 optional
+
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5c410000
+Costs = 600
+
+[HighwayIntersectionInfo_0x00018A03]
+CopyFrom	=	0x8A03
+Rotate	=	1
+[HighwayIntersectionInfo_0x00028A03]
+CopyFrom	=	0x8A03
+Rotate	=	2
+[HighwayIntersectionInfo_0x00038A03]
+CopyFrom	=	0x8A03
+Rotate	=	3
+[HighwayIntersectionInfo_0x00048A03]
+CopyFrom	=	0x8A03
+[HighwayIntersectionInfo_0x00058A03]
+CopyFrom	=	0x18A03
+[HighwayIntersectionInfo_0x00068A03]
+CopyFrom	=	0x28A03
+[HighwayIntersectionInfo_0x00078A03]
+CopyFrom	=	0x38A03
