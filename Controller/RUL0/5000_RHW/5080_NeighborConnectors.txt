@@ -2,6 +2,7 @@
 ;RHW Neighbor Connector Pieces
 ;0xR508#
 RotationRing = 5080, 15080, 25080, 35080, 45080, 55080, 65080, 75080 ;Neighbor Connector Underground Loop
+AddTypes	 = 5090, 15090, 25090, 35090, 45090, 55090, 65090, 75090 ;RHW FLEX Neighbor Connector
 AddTypes     = 5081, 15081, 25081, 35081, 45081, 55081, 65081, 75081 ;RHW-4 Neighbor Connector
 AddTypes     = 5082, 15082, 25082, 35082, 45082, 55082, 65082, 75082 ;MIS Neighbor Connector
 AddTypes     = 5083, 15083, 25083, 35083, 45083, 55083, 65083, 75083 ;RHW-6S Neighbor Connector
@@ -541,3 +542,45 @@ CopyFrom    = 0x2508B
 CopyFrom    = 0x3508B
 
 
+[HighwayIntersectionInfo_0x00005090]
+;Added by Tarkus 5/8/2009.
+;FLEX Neighbor Connector (FLEX-NC) Piece
+Piece = 0.0, -16.0, 0, 0, 0x5700fa05
+PreviewEffect = preview_nborcon_flexpc__001
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = a - dirtroad: 0x02040000 groundhighway: 0x00040200, 0xffffffff optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5700FA00
+Costs       = 1
+[HighwayIntersectionInfo_0x00015090]
+CopyFrom    = 0x5090
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025090]
+CopyFrom    = 0x5090
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035090]
+CopyFrom    = 0x5090
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045090]
+CopyFrom    = 0x5090
+[HighwayIntersectionInfo_0x00055090]
+CopyFrom    = 0x15090
+[HighwayIntersectionInfo_0x00065090]
+CopyFrom    = 0x25090
+[HighwayIntersectionInfo_0x00075090]
+CopyFrom    = 0x35090
