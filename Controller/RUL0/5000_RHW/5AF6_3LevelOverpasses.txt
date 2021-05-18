@@ -13,14 +13,14 @@ Piece = 0.0, 16.0, 1, 0, 0x57a00000
 PreviewEffect = preview_3-level-overpass_00
 
 CellLayout =.....
-CellLayout =..a.<
+CellLayout =..Z.<
+CellLayout =..a..
 CellLayout =..b..
-CellLayout =..c..
 CellLayout =..^..
 
-CheckType = a - dirtroad: 0x00000000
-CheckType = b - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
-CheckType = c - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
+CheckType = Z - dirtroad: 0x02020202
+CheckType = a - groundhighway: 0x03040102 dirtroad: 0x02040204, 0xFFFFFFFF optional
+CheckType = b - groundhighway: 0x01020304 dirtroad: 0x02040204, 0xFFFFFFFF optional
 
 ConsLayout =.....
 ConsLayout =..+.<
@@ -72,26 +72,19 @@ Piece = 0.0, 16.0, 1, 0, 0x57a00001
 PreviewEffect = preview_3-level-overpass_01
 
 CellLayout =.......
-CellLayout =..UaV.<
-CellLayout =.ZdbeY.
-CellLayout =.ZfcgY.
-CellLayout =..W.X..
+CellLayout =...Z..<
+CellLayout =..eac..
+CellLayout =..dbf..
+CellLayout =.......
 CellLayout =...^...
 
-CheckType = a - dirtroad: 0x00000000
-CheckType = b - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
-CheckType = c - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
-CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
-CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
-CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
-CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
-
-CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
-CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
-CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
-CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
-CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
-CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+CheckType = Z - dirtroad: 0x02020202
+CheckType = a - groundhighway: 0x03040102 dirtroad: 0x02040204, 0xFFFFFFFF optional
+CheckType = b - groundhighway: 0x01020304 dirtroad: 0x02040204, 0xFFFFFFFF optional
+CheckType = c - groundhighway: 0x04010203 dirtroad: 0x00040304, 0xFFFFFFFF optional
+CheckType = d - groundhighway: 0x02030401 dirtroad: 0x03040004, 0xFFFFFFFF optional
+CheckType = e - groundhighway: 0x04010203 dirtroad: 0x00040104, 0xFFFFFFFF optional
+CheckType = f - groundhighway: 0x02030401 dirtroad: 0x01040004, 0xFFFFFFFF optional
 
 ConsLayout =.......
 ConsLayout =...+..<
@@ -144,33 +137,20 @@ Piece = 0.0, 32.0, 0, 0, 0x57a00002
 PreviewEffect = preview_3-level-overpass_02
 
 CellLayout =........
-CellLayout =..Ua.V.<
-CellLayout =.ZdpqeY.
-CellLayout =.ZhBChY.
-CellLayout =.ZfrsgY.
-CellLayout =..W..X..
+CellLayout =...Z...<
+CellLayout =..efcd..
+CellLayout =...ab...
+CellLayout =..cdef..
+CellLayout =........
 CellLayout =...^....
 
-CheckType = a - dirtroad: 0x00000000
-CheckType = B - dirtroad: 0x03040102 groundhighway: 0x00020000,0xffffffff optional
-CheckType = C - dirtroad: 0x01020304 groundhighway: 0x00000002,0xffffffff optional
-CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
-CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
-CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
-CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
-CheckType = h - dirtroad: 0x00020002, 0x00ff00ff optional
-
-CheckType = p - dirtroad: 0x01000003, 0xff0000ff optional
-CheckType = q - dirtroad: 0x03010000, 0xffff0000 optional
-CheckType = r - dirtroad: 0x00000301, 0x0000ffff optional
-CheckType = s - dirtroad: 0x00030100, 0x00ffff00 optional
-
-CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
-CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
-CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
-CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
-CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
-CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+CheckType = Z - dirtroad: 0x02020202
+CheckType = a - groundhighway: 0x02030401 dirtroad: 0x04020402, 0xFFFFFFFF optional
+CheckType = b - groundhighway: 0x04010203 dirtroad: 0x04020402, 0xFFFFFFFF optional
+CheckType = c - groundhighway: 0x02030401 dirtroad: 0x03040004, 0xFFFFFFFF optional
+CheckType = d - groundhighway: 0x04010203 dirtroad: 0x00040304, 0xFFFFFFFF optional
+CheckType = e - groundhighway: 0x04010203 dirtroad: 0x00040104, 0xFFFFFFFF optional
+CheckType = f - groundhighway: 0x02030401 dirtroad: 0x01040004, 0xFFFFFFFF optional
 
 ConsLayout =........
 ConsLayout =...+...<
@@ -224,29 +204,21 @@ Piece = 0.0, 32.0, 1, 0, 0x57a00003
 PreviewEffect = preview_3-level-overpass_03
 
 CellLayout =.........
-CellLayout =..U.a.V.<
-CellLayout =.ZdghfeY.
-CellLayout =.ZhdBehY.
-CellLayout =.ZhfCghY.
-CellLayout =.ZfehdgY.
-CellLayout =..W...X..
+CellLayout =....Z...<
+CellLayout =..ef.dc..
+CellLayout =...eac...
+CellLayout =...dbf...
+CellLayout =..dc.ef..
+CellLayout =.........
 CellLayout =....^....
 
-CheckType = a - dirtroad: 0x00000000
-CheckType = B - dirtroad: 0x04010003 groundhighway: 0x02000000,0xffff00ff optional
-CheckType = C - dirtroad: 0x00030401 groundhighway: 0x00000200,0x00ffffff optional
-CheckType = d - dirtroad: 0x00030102, 0x00ffffff optional
-CheckType = e - dirtroad: 0x00020301, 0x00ffffff optional
-CheckType = f - dirtroad: 0x03010002, 0xffff00ff optional
-CheckType = g - dirtroad: 0x01020003, 0xffff00ff optional
-CheckType = h - dirtroad: 0x00020002, 0x00ff00ff optional
-
-CheckType = U - dirtroad: 0x01000000, 0xff000000 optional
-CheckType = V - dirtroad: 0x03000000, 0xff000000 optional
-CheckType = W - dirtroad: 0x00000300, 0x0000ff00 optional
-CheckType = X - dirtroad: 0x00000100, 0x0000ff00 optional
-CheckType = Y - dirtroad: 0x00000002, 0x000000ff optional
-CheckType = Z - dirtroad: 0x00020000, 0x00ff0000 optional
+CheckType = Z - dirtroad: 0x02020202
+CheckType = a - groundhighway: 0x03040102 dirtroad: 0x02040204, 0xFFFFFFFF optional
+CheckType = b - groundhighway: 0x01020304 dirtroad: 0x02040204, 0xFFFFFFFF optional
+CheckType = c - groundhighway: 0x04010203 dirtroad: 0x00040304, 0xFFFFFFFF optional
+CheckType = d - groundhighway: 0x02030401 dirtroad: 0x03040004, 0xFFFFFFFF optional
+CheckType = e - groundhighway: 0x04010203 dirtroad: 0x00040104, 0xFFFFFFFF optional
+CheckType = f - groundhighway: 0x02030401 dirtroad: 0x01040004, 0xFFFFFFFF optional
 
 ConsLayout =.........
 ConsLayout =....+...<
