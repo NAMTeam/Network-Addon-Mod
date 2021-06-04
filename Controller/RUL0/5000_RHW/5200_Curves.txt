@@ -38,6 +38,8 @@ AddTypes = 521e, 1521e, 2521e, 3521e, 4521e, 5521e, 6521e, 7521e ;RHW-8C S-Curve
 AddTypes     = 5218, 45218, 15218, 55218, 25218, 65218, 35218, 75218 ;RHW-10 Outer Curve
 AddTypes     = 5219, 45219, 15219, 55219, 25219, 65219, 35219, 75219 ;RHW-10 Inner Curve
 ;AddTypes     = 521A, 1521A, 2521A, 3521A, 4521A, 5521A, 6521A, 7521A ;RHW-10 Diagonal
+AddTypes      = 521F, 1521F, 2521F, 3521F, 4521F, 5521F, 6521F, 7521F ;RHW-4S S Curve [7x2]
+AddTypes      = 5230, 15230, 25230, 35230, 45230, 55230, 65230, 75230 ;RHW-4S Basketweave-[7x2]
 
 ;###separator###
 
@@ -2300,4 +2302,133 @@ CopyFrom    = 0x45224
 Rotate		= 2
 [HighwayIntersectionInfo_0x00075224]
 CopyFrom    = 0x45224
+Rotate		= 1
+
+
+
+[HighwayIntersectionInfo_0x0000521F]
+;RHW-S Curve FLEX
+Piece = -0.0, -96.0, 0, 1, 0x5793A00F
+PreviewEffect = preview_rhw_orth_s_7_001
+
+CellLayout = .......
+CellLayout = .......
+CellLayout = ..a....
+CellLayout = ..f....
+CellLayout = .ce....
+CellLayout = .gh....
+CellLayout = .bd....
+CellLayout = .a.....
+CellLayout = .a.Z..<
+CellLayout = ...^...
+
+CheckType = Z - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02040400, 0xffffffff optional
+CheckType = c - dirtroad: 0x04040000, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000404, 0xffffffff optional
+CheckType = e - dirtroad: 0x04000404, 0xffffffff optional
+CheckType = f - dirtroad: 0x04000200, 0xffffffff optional
+CheckType = g - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = h - dirtroad: 0x04000400, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ...+..<
+ConsLayout = ...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5793A00F
+Costs = 100
+
+[HighwayIntersectionInfo_0x0001521F]
+CopyFrom    = 0x521F
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002521F]
+CopyFrom    = 0x521F
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003521F]
+CopyFrom    = 0x521F
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004521F]
+CopyFrom    = 0x521F
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005521F]
+CopyFrom    = 0x4521F
+Rotate		= 3
+[HighwayIntersectionInfo_0x0006521F]
+CopyFrom    = 0x4521F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007521F]
+CopyFrom    = 0x4521F
+Rotate		= 1
+
+[HighwayIntersectionInfo_0x00005230]
+;RHW-S Curve FLEX Basketweave
+Piece = -0.0, -96.0, 0, 1, 0x5793A02F
+PreviewEffect = preview_rhw_orth_bw_7_001
+
+CellLayout = .......
+CellLayout = .......
+CellLayout = .bc....
+CellLayout = .cf....
+CellLayout = .ih....
+CellLayout = .gg....
+CellLayout = .de....
+CellLayout = .fb....
+CellLayout = .abZ..<
+CellLayout = ...^...
+
+CheckType = Z - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x02000400, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = c - dirtroad: 0x04000200, 0xffffffff optional
+CheckType = d - dirtroad: 0x04040200, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000204, 0xffffffff optional
+CheckType = f - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000400, 0xffffffff optional
+CheckType = h - dirtroad: 0x04000404, 0xffffffff optional
+CheckType = i - dirtroad: 0x04040400, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ...+..<
+ConsLayout = ...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5793A02F
+Costs = 100
+
+[HighwayIntersectionInfo_0x00015230]
+CopyFrom    = 0x5230
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025230]
+CopyFrom    = 0x5230
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035230]
+CopyFrom    = 0x5230
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045230]
+CopyFrom    = 0x5230
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055230]
+CopyFrom    = 0x45230
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065230]
+CopyFrom    = 0x45230
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075230]
+CopyFrom    = 0x45230
 Rotate		= 1
