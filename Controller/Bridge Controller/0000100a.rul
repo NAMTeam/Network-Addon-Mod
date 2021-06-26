@@ -158,1058 +158,8 @@ bridge 3
 		piece 3*warren_undertruss_repeat
 		piece rev(warren_undertruss_start)
 	end
+
 end
-
-#SMALL STEEL ARCH
-
-bridge 7
-
-section st
-	piece <0x0bad0000, 3>:580
-end
-
-section a8
-	piece <0x0ba80000, 3>
-	piece <0x0ba90000, 3>
-	piece <0x0baa0000, 3>
-	piece <0x0bab0000, 3>
-	piece <0x0bf70000, 3>
-	piece <0x0bf80000, 3>
-	piece <0x0bf90000, 3>
-	piece <0x0bfa0000, 3>
-end
-
-section a2
-	piece <0x0ba80000, 3>
-	piece <0x0bfa0000, 3>
-end
-
-section a9
-	piece <0x0ba80000, 3>
-	piece <0x0ba90000, 3>
-	piece <0x0baa0000, 3>
-	piece <0x0bab0000, 3>
-	piece <0x0bae0000, 3>
-	piece <0x0bf70000, 3>
-	piece <0x0bf80000, 3>
-	piece <0x0bf90000, 3>
-	piece <0x0bfa0000, 3>
-end
-
-section a10
-	piece <0x0ba80000, 3>
-	piece <0x0ba90000, 3>
-	piece <0x0baa0000, 3>
-	piece <0x0bab0000, 3>
-	piece <0x0bae0000, 3>
-	piece <0x0bae0000, 3>
-	piece <0x0bf70000, 3>
-	piece <0x0bf80000, 3>
-	piece <0x0bf90000, 3>
-	piece <0x0bfa0000, 3>
-end
-
-section sta8
-	piece st a8
-end
-
-section sta2
-	piece st a2
-end
-
-section sta10
-	piece st a10
-end
-
-section sta9
-	piece st a9
-end
-	
-	length 10
-		piece sta8 rev(st)
-	end
-
-	length 11
-		piece sta9 rev(st)
-	end
-
-	length 12
-		piece sta10 rev(st)
-	end
-
-	length 13
-		piece sta2 sta8 rev(st)
-	end
-
-	length 14
-		piece sta2 sta9 rev(st)
-	end
-
-	length 15
-		piece sta2 sta10 rev(st)
-	end
-
-	length 16
-		piece sta2 sta8 sta2 rev(st)
-	end
-
-	length 17
-		piece sta2 sta9 sta2 rev(st)
-	end
-
-	length 18
-		piece sta2 sta10 sta2 rev(st)
-	end
-
-	length 19					
-		piece sta8 sta8 rev(st)				
-	end					
-						
-	length 20					
-		piece sta9 sta8 rev(st)				
-	end					
-						
-	length 21					
-		piece sta10 sta8 rev(st)				
-	end					
-						
-	length 22					
-		piece sta2 sta8 sta8 rev(st)				
-	end					
-						
-	length 23					
-		piece sta2 sta9 sta8 rev(st)				
-	end					
-						
-	length 24					
-		piece sta2 sta9 sta9 rev(st)				
-	end					
-						
-	length 25					
-		piece sta2 sta8 sta8 sta2 rev(st)				
-	end					
-						
-	length 26					
-		piece sta2 sta9 sta8 sta2 rev(st)				
-	end					
-						
-	length 27					
-		piece sta2 sta9 sta9 sta2 rev(st)				
-	end					
-						
-	length 28	
-		piece sta8 2*sta8 rev(st)
-	end	
-
-	length 29	
-		piece sta9 2*sta8 rev(st)
-	end	
-
-	length 30	
-		piece sta10 2*sta8 rev(st)
-	end	
-
-	length 31	
-		piece sta2 sta8 2*sta8 rev(st)
-	end	
-
-	length 32	
-		piece sta2 sta9 2*sta8 rev(st)
-	end	
-
-	length 33	
-		piece sta2 sta10 2*sta8 rev(st)
-	end	
-
-	length 34	
-		piece sta2 sta8 2*sta8 sta2 rev(st)
-	end	
-
-	length 35	
-		piece sta2 sta9 2*sta8 sta2 rev(st)
-	end	
-
-	length 36	
-		piece sta2 sta10 2*sta8 sta2 rev(st)
-	end	
-
-	length 37	
-		piece sta8 3*sta8 rev(st)
-	end	
-
-	length 38	
-		piece sta9 3*sta8 rev(st)
-	end	
-
-	length 39	
-		piece sta10 3*sta8 rev(st)
-	end	
-
-	length 40	
-		piece sta2 sta8 3*sta8 rev(st)
-	end	
-
-	length 41	
-		piece sta2 sta9 3*sta8 rev(st)
-	end	
-
-	length 42	
-		piece sta2 sta10 3*sta8 rev(st)
-	end	
-
-	length 43	
-		piece sta2 sta8 3*sta8 sta2 rev(st)
-	end	
-
-	length 44	
-		piece sta2 sta9 3*sta8 sta2 rev(st)
-	end	
-
-	length 45	
-		piece sta2 sta10 3*sta8 sta2 rev(st)
-	end	
-
-	length 46	
-		piece sta8 4*sta8 rev(st)
-	end	
-
-	length 47	
-		piece sta9 4*sta8 rev(st)
-	end	
-
-	length 48	
-		piece sta10 4*sta8 rev(st)
-	end	
-
-	length 49	
-		piece sta2 sta8 4*sta8 rev(st)
-	end	
-
-	length 50	
-		piece sta2 sta9 4*sta8 rev(st)
-	end	
-
-	length 51	
-		piece sta2 sta10 4*sta8 rev(st)
-	end	
-
-	length 52	
-		piece sta2 sta8 4*sta8 sta2 rev(st)
-	end	
-
-	length 53	
-		piece sta2 sta9 4*sta8 sta2 rev(st)
-	end	
-
-	length 54	
-		piece sta2 sta10 4*sta8 sta2 rev(st)
-	end	
-
-	length 55	
-		piece sta8 5*sta8 rev(st)
-	end	
-
-	length 56	
-		piece sta9 5*sta8 rev(st)
-	end	
-
-	length 57	
-		piece sta10 5*sta8 rev(st)
-	end	
-
-	length 58	
-		piece sta2 sta8 5*sta8 rev(st)
-	end	
-
-	length 59	
-		piece sta2 sta9 5*sta8 rev(st)
-	end	
-
-	length 60	
-		piece sta2 sta10 5*sta8 rev(st)
-	end	
-
-	length 61	
-		piece sta2 sta8 5*sta8 sta2 rev(st)
-	end	
-
-	length 62	
-		piece sta2 sta9 5*sta8 sta2 rev(st)
-	end	
-
-	length 63	
-		piece sta2 sta10 5*sta8 sta2 rev(st)
-	end	
-
-	length 64	
-		piece sta8 6*sta8 rev(st)
-	end	
-
-	length 65	
-		piece sta9 6*sta8 rev(st)
-	end	
-
-	length 66	
-		piece sta10 6*sta8 rev(st)
-	end	
-
-	length 67	
-		piece sta2 sta8 6*sta8 rev(st)
-	end	
-
-	length 68	
-		piece sta2 sta9 6*sta8 rev(st)
-	end	
-
-	length 69	
-		piece sta2 sta10 6*sta8 rev(st)
-	end	
-
-	length 70	
-		piece sta2 sta8 6*sta8 sta2 rev(st)
-	end	
-
-	length 71	
-		piece sta2 sta9 6*sta8 sta2 rev(st)
-	end	
-
-	length 72	
-		piece sta2 sta10 6*sta8 sta2 rev(st)
-	end	
-
-	length 73	
-		piece sta8 7*sta8 rev(st)
-	end	
-
-	length 74	
-		piece sta9 7*sta8 rev(st)
-	end	
-
-	length 75	
-		piece sta10 7*sta8 rev(st)
-	end	
-
-	length 76	
-		piece sta2 sta8 7*sta8 rev(st)
-	end	
-
-	length 77	
-		piece sta2 sta9 7*sta8 rev(st)
-	end	
-
-	length 78	
-		piece sta2 sta10 7*sta8 rev(st)
-	end	
-
-	length 79	
-		piece sta2 sta8 7*sta8 sta2 rev(st)
-	end	
-
-	length 80	
-		piece sta2 sta9 7*sta8 sta2 rev(st)
-	end	
-
-	length 81	
-		piece sta2 sta10 7*sta8 sta2 rev(st)
-	end	
-
-	length 82	
-		piece sta8 8*sta8 rev(st)
-	end	
-
-	length 83	
-		piece sta9 8*sta8 rev(st)
-	end	
-
-	length 84	
-		piece sta10 8*sta8 rev(st)
-	end	
-
-	length 85	
-		piece sta2 sta8 8*sta8 rev(st)
-	end	
-
-	length 86	
-		piece sta2 sta9 8*sta8 rev(st)
-	end	
-
-	length 87	
-		piece sta2 sta10 8*sta8 rev(st)
-	end	
-
-	length 88	
-		piece sta2 sta8 8*sta8 sta2 rev(st)
-	end	
-
-	length 89	
-		piece sta2 sta9 8*sta8 sta2 rev(st)
-	end	
-
-	length 90	
-		piece sta2 sta10 8*sta8 sta2 rev(st)
-	end	
-
-	length 91	
-		piece sta8 9*sta8 rev(st)
-	end	
-
-	length 92	
-		piece sta9 9*sta8 rev(st)
-	end	
-
-	length 93	
-		piece sta10 9*sta8 rev(st)
-	end	
-
-	length 94	
-		piece sta2 sta8 9*sta8 rev(st)
-	end	
-
-	length 95	
-		piece sta2 sta9 9*sta8 rev(st)
-	end	
-
-	length 96	
-		piece sta2 sta10 9*sta8 rev(st)
-	end	
-
-	length 97	
-		piece sta2 sta8 9*sta8 sta2 rev(st)
-	end	
-
-	length 98	
-		piece sta2 sta9 9*sta8 sta2 rev(st)
-	end	
-
-	length 99	
-		piece sta2 sta10 9*sta8 sta2 rev(st)
-	end	
-
-	length 100	
-		piece sta8 10*sta8 rev(st)
-	end	
-
-	length 101	
-		piece sta9 10*sta8 rev(st)
-	end	
-
-	length 102	
-		piece sta10 10*sta8 rev(st)
-	end	
-
-	length 103	
-		piece sta2 sta8 10*sta8 rev(st)
-	end	
-
-	length 104	
-		piece sta2 sta9 10*sta8 rev(st)
-	end	
-
-	length 105	
-		piece sta2 sta10 10*sta8 rev(st)
-	end	
-
-	length 106	
-		piece sta2 sta8 10*sta8 sta2 rev(st)
-	end	
-
-	length 107	
-		piece sta2 sta9 10*sta8 sta2 rev(st)
-	end	
-
-	length 108	
-		piece sta2 sta10 10*sta8 sta2 rev(st)
-	end	
-
-	length 109	
-		piece sta8 11*sta8 rev(st)
-	end	
-
-	length 110	
-		piece sta9 11*sta8 rev(st)
-	end	
-
-	length 111	
-		piece sta10 11*sta8 rev(st)
-	end	
-
-	length 112	
-		piece sta2 sta8 11*sta8 rev(st)
-	end	
-
-	length 113	
-		piece sta2 sta9 11*sta8 rev(st)
-	end	
-
-	length 114	
-		piece sta2 sta10 11*sta8 rev(st)
-	end	
-
-	length 115	
-		piece sta2 sta8 11*sta8 sta2 rev(st)
-	end	
-
-	length 116	
-		piece sta2 sta9 11*sta8 sta2 rev(st)
-	end	
-
-	length 117	
-		piece sta2 sta10 11*sta8 sta2 rev(st)
-	end	
-
-	length 118	
-		piece sta8 12*sta8 rev(st)
-	end	
-
-	length 119	
-		piece sta9 12*sta8 rev(st)
-	end	
-
-	length 120	
-		piece sta10 12*sta8 rev(st)
-	end	
-
-	length 121	
-		piece sta2 sta8 12*sta8 rev(st)
-	end	
-
-	length 122	
-		piece sta2 sta9 12*sta8 rev(st)
-	end	
-
-	length 123	
-		piece sta2 sta10 12*sta8 rev(st)
-	end	
-
-	length 124	
-		piece sta2 sta8 12*sta8 sta2 rev(st)
-	end	
-
-	length 125	
-		piece sta2 sta9 12*sta8 sta2 rev(st)
-	end	
-
-	length 126	
-		piece sta2 sta10 12*sta8 sta2 rev(st)
-	end	
-
-	length 127	
-		piece sta8 13*sta8 rev(st)
-	end	
-
-	length 128	
-		piece sta9 13*sta8 rev(st)
-	end	
-
-	length 129	
-		piece sta10 13*sta8 rev(st)
-	end	
-
-	length 130	
-		piece sta2 sta8 13*sta8 rev(st)
-	end	
-
-	length 131	
-		piece sta2 sta9 13*sta8 rev(st)
-	end	
-
-	length 132	
-		piece sta2 sta10 13*sta8 rev(st)
-	end	
-
-	length 133	
-		piece sta2 sta8 13*sta8 sta2 rev(st)
-	end	
-
-	length 134	
-		piece sta2 sta9 13*sta8 sta2 rev(st)
-	end	
-
-	length 135	
-		piece sta2 sta10 13*sta8 sta2 rev(st)
-	end	
-
-	length 136	
-		piece sta8 14*sta8 rev(st)
-	end	
-
-	length 137	
-		piece sta9 14*sta8 rev(st)
-	end	
-
-	length 138	
-		piece sta10 14*sta8 rev(st)
-	end	
-
-	length 139	
-		piece sta2 sta8 14*sta8 rev(st)
-	end	
-
-	length 140	
-		piece sta2 sta9 14*sta8 rev(st)
-	end	
-
-	length 141	
-		piece sta2 sta10 14*sta8 rev(st)
-	end	
-
-	length 142	
-		piece sta2 sta8 14*sta8 sta2 rev(st)
-	end	
-
-	length 143	
-		piece sta2 sta9 14*sta8 sta2 rev(st)
-	end	
-
-	length 144	
-		piece sta2 sta10 14*sta8 sta2 rev(st)
-	end	
-
-	length 145	
-		piece sta8 15*sta8 rev(st)
-	end	
-
-	length 146	
-		piece sta9 15*sta8 rev(st)
-	end	
-
-	length 147	
-		piece sta10 15*sta8 rev(st)
-	end	
-
-	length 148	
-		piece sta2 sta8 15*sta8 rev(st)
-	end	
-
-	length 149	
-		piece sta2 sta9 15*sta8 rev(st)
-	end	
-
-	length 150	
-		piece sta2 sta10 15*sta8 rev(st)
-	end	
-
-	length 151	
-		piece sta2 sta8 15*sta8 sta2 rev(st)
-	end	
-
-	length 152	
-		piece sta2 sta9 15*sta8 sta2 rev(st)
-	end	
-
-	length 153	
-		piece sta2 sta10 15*sta8 sta2 rev(st)
-	end	
-
-	length 154	
-		piece sta8 16*sta8 rev(st)
-	end	
-
-	length 155	
-		piece sta9 16*sta8 rev(st)
-	end	
-
-	length 156	
-		piece sta10 16*sta8 rev(st)
-	end	
-
-	length 157	
-		piece sta2 sta8 16*sta8 rev(st)
-	end	
-
-	length 158	
-		piece sta2 sta9 16*sta8 rev(st)
-	end	
-
-	length 159	
-		piece sta2 sta10 16*sta8 rev(st)
-	end	
-
-	length 160	
-		piece sta2 sta8 16*sta8 sta2 rev(st)
-	end	
-
-	length 161	
-		piece sta2 sta9 16*sta8 sta2 rev(st)
-	end	
-
-	length 162	
-		piece sta2 sta10 16*sta8 sta2 rev(st)
-	end	
-
-	length 163	
-		piece sta8 17*sta8 rev(st)
-	end	
-
-	length 164	
-		piece sta9 17*sta8 rev(st)
-	end	
-
-	length 165	
-		piece sta10 17*sta8 rev(st)
-	end	
-
-	length 166	
-		piece sta2 sta8 17*sta8 rev(st)
-	end	
-
-	length 167	
-		piece sta2 sta9 17*sta8 rev(st)
-	end	
-
-	length 168	
-		piece sta2 sta10 17*sta8 rev(st)
-	end	
-
-	length 169	
-		piece sta2 sta8 17*sta8 sta2 rev(st)
-	end	
-
-	length 170	
-		piece sta2 sta9 17*sta8 sta2 rev(st)
-	end	
-
-	length 171	
-		piece sta2 sta10 17*sta8 sta2 rev(st)
-	end	
-
-	length 172	
-		piece sta8 18*sta8 rev(st)
-	end	
-
-	length 173	
-		piece sta9 18*sta8 rev(st)
-	end	
-
-	length 174	
-		piece sta10 18*sta8 rev(st)
-	end	
-
-	length 175	
-		piece sta2 sta8 18*sta8 rev(st)
-	end	
-
-	length 176	
-		piece sta2 sta9 18*sta8 rev(st)
-	end	
-
-	length 177	
-		piece sta2 sta10 18*sta8 rev(st)
-	end	
-
-	length 178	
-		piece sta2 sta8 18*sta8 sta2 rev(st)
-	end	
-
-	length 179	
-		piece sta2 sta9 18*sta8 sta2 rev(st)
-	end	
-
-	length 180	
-		piece sta2 sta10 18*sta8 sta2 rev(st)
-	end	
-
-	length 181	
-		piece sta8 19*sta8 rev(st)
-	end	
-
-	length 182	
-		piece sta9 19*sta8 rev(st)
-	end	
-
-	length 183	
-		piece sta10 19*sta8 rev(st)
-	end	
-
-	length 184	
-		piece sta2 sta8 19*sta8 rev(st)
-	end	
-
-	length 185	
-		piece sta2 sta9 19*sta8 rev(st)
-	end	
-
-	length 186	
-		piece sta2 sta10 19*sta8 rev(st)
-	end	
-
-	length 187	
-		piece sta2 sta8 19*sta8 sta2 rev(st)
-	end	
-
-	length 188	
-		piece sta2 sta9 19*sta8 sta2 rev(st)
-	end	
-
-	length 189	
-		piece sta2 sta10 19*sta8 sta2 rev(st)
-	end	
-
-	length 190	
-		piece sta8 20*sta8 rev(st)
-	end	
-
-	length 191	
-		piece sta9 20*sta8 rev(st)
-	end	
-
-	length 192	
-		piece sta10 20*sta8 rev(st)
-	end	
-
-	length 193	
-		piece sta2 sta8 20*sta8 rev(st)
-	end	
-
-	length 194	
-		piece sta2 sta9 20*sta8 rev(st)
-	end	
-
-	length 195	
-		piece sta2 sta10 20*sta8 rev(st)
-	end	
-
-	length 196	
-		piece sta2 sta8 20*sta8 sta2 rev(st)
-	end	
-
-	length 197	
-		piece sta2 sta9 20*sta8 sta2 rev(st)
-	end	
-
-	length 198	
-		piece sta2 sta10 20*sta8 sta2 rev(st)
-	end	
-
-	length 199	
-		piece sta8 21*sta8 rev(st)
-	end	
-
-	length 200	
-		piece sta9 21*sta8 rev(st)
-	end	
-
-	length 201	
-		piece sta10 21*sta8 rev(st)
-	end	
-
-	length 202	
-		piece sta2 sta8 21*sta8 rev(st)
-	end	
-
-	length 203	
-		piece sta2 sta9 21*sta8 rev(st)
-	end	
-
-	length 204	
-		piece sta2 sta10 21*sta8 rev(st)
-	end	
-
-	length 205	
-		piece sta2 sta8 21*sta8 sta2 rev(st)
-	end	
-
-	length 206	
-		piece sta2 sta9 21*sta8 sta2 rev(st)
-	end	
-
-	length 207	
-		piece sta2 sta10 21*sta8 sta2 rev(st)
-	end	
-
-	length 208	
-		piece sta8 22*sta8 rev(st)
-	end	
-
-	length 209	
-		piece sta9 22*sta8 rev(st)
-	end	
-
-	length 210	
-		piece sta10 22*sta8 rev(st)
-	end	
-
-	length 211	
-		piece sta2 sta8 22*sta8 rev(st)
-	end	
-
-	length 212	
-		piece sta2 sta9 22*sta8 rev(st)
-	end	
-
-	length 213	
-		piece sta2 sta10 22*sta8 rev(st)
-	end	
-
-	length 214	
-		piece sta2 sta8 22*sta8 sta2 rev(st)
-	end	
-
-	length 215	
-		piece sta2 sta9 22*sta8 sta2 rev(st)
-	end	
-
-	length 216	
-		piece sta2 sta10 22*sta8 sta2 rev(st)
-	end	
-
-	length 217	
-		piece sta8 23*sta8 rev(st)
-	end	
-
-	length 218	
-		piece sta9 23*sta8 rev(st)
-	end	
-
-	length 219	
-		piece sta10 23*sta8 rev(st)
-	end	
-
-	length 220	
-		piece sta2 sta8 23*sta8 rev(st)
-	end	
-
-	length 221	
-		piece sta2 sta9 23*sta8 rev(st)
-	end	
-
-	length 222	
-		piece sta2 sta10 23*sta8 rev(st)
-	end	
-
-	length 223	
-		piece sta2 sta8 23*sta8 sta2 rev(st)
-	end	
-
-	length 224	
-		piece sta2 sta9 23*sta8 sta2 rev(st)
-	end	
-
-	length 225	
-		piece sta2 sta10 23*sta8 sta2 rev(st)
-	end	
-
-	length 226	
-		piece sta8 24*sta8 rev(st)
-	end	
-
-	length 227	
-		piece sta9 24*sta8 rev(st)
-	end	
-
-	length 228	
-		piece sta10 24*sta8 rev(st)
-	end	
-
-	length 229	
-		piece sta2 sta8 24*sta8 rev(st)
-	end	
-
-	length 230	
-		piece sta2 sta9 24*sta8 rev(st)
-	end	
-
-	length 231	
-		piece sta2 sta10 24*sta8 rev(st)
-	end	
-
-	length 232	
-		piece sta2 sta8 24*sta8 sta2 rev(st)
-	end	
-
-	length 233	
-		piece sta2 sta9 24*sta8 sta2 rev(st)
-	end	
-
-	length 234	
-		piece sta2 sta10 24*sta8 sta2 rev(st)
-	end	
-
-	length 235	
-		piece sta8 25*sta8 rev(st)
-	end	
-
-	length 236	
-		piece sta9 25*sta8 rev(st)
-	end	
-
-	length 237	
-		piece sta10 25*sta8 rev(st)
-	end	
-
-	length 238	
-		piece sta2 sta8 25*sta8 rev(st)
-	end	
-
-	length 239	
-		piece sta2 sta9 25*sta8 rev(st)
-	end	
-
-	length 240	
-		piece sta2 sta10 25*sta8 rev(st)
-	end	
-
-	length 241	
-		piece sta2 sta8 25*sta8 sta2 rev(st)
-	end	
-
-	length 242	
-		piece sta2 sta9 25*sta8 sta2 rev(st)
-	end	
-
-	length 243	
-		piece sta2 sta10 25*sta8 sta2 rev(st)
-	end	
-
-	length 244	
-		piece sta8 26*sta8 rev(st)
-	end	
-
-	length 245	
-		piece sta9 26*sta8 rev(st)
-	end	
-
-	length 246	
-		piece sta10 26*sta8 rev(st)
-	end	
-
-	length 247	
-		piece sta2 sta8 26*sta8 rev(st)
-	end	
-
-	length 248	
-		piece sta2 sta9 26*sta8 rev(st)
-	end	
-
-	length 249	
-		piece sta2 sta10 26*sta8 rev(st)
-	end	
-
-	length 250	
-		piece sta2 sta8 26*sta8 sta2 rev(st)
-	end	
-
-	length 251	
-		piece sta2 sta9 26*sta8 sta2 rev(st)
-	end	
-
-	length 252	
-		piece sta2 sta10 26*sta8 sta2 rev(st)
-	end	
-
-	length 253	
-		piece sta8 27*sta8 rev(st)
-	end	
-
-	length 254	
-		piece sta9 27*sta8 rev(st)
-	end	
-
-	length 255	
-		piece sta10 27*sta8 rev(st)
-	end		
-end
-
 #STONE ARCH
 
 bridge 6
@@ -2285,6 +1235,1057 @@ end
  	length 255	
 		piece a4 47*ca rev(a4)
 	end	
+end
+
+
+#SMALL STEEL ARCH
+
+bridge 7
+
+section st
+	piece <0x0bad0000, 3>:580
+end
+
+section a8
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a2
+	piece <0x0ba80000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a9
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section a10
+	piece <0x0ba80000, 3>
+	piece <0x0ba90000, 3>
+	piece <0x0baa0000, 3>
+	piece <0x0bab0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bae0000, 3>
+	piece <0x0bf70000, 3>
+	piece <0x0bf80000, 3>
+	piece <0x0bf90000, 3>
+	piece <0x0bfa0000, 3>
+end
+
+section sta8
+	piece st a8
+end
+
+section sta2
+	piece st a2
+end
+
+section sta10
+	piece st a10
+end
+
+section sta9
+	piece st a9
+end
+	
+	length 10
+		piece sta8 rev(st)
+	end
+
+	length 11
+		piece sta9 rev(st)
+	end
+
+	length 12
+		piece sta10 rev(st)
+	end
+
+	length 13
+		piece sta2 sta8 rev(st)
+	end
+
+	length 14
+		piece sta2 sta9 rev(st)
+	end
+
+	length 15
+		piece sta2 sta10 rev(st)
+	end
+
+	length 16
+		piece sta2 sta8 sta2 rev(st)
+	end
+
+	length 17
+		piece sta2 sta9 sta2 rev(st)
+	end
+
+	length 18
+		piece sta2 sta10 sta2 rev(st)
+	end
+
+	length 19					
+		piece sta8 sta8 rev(st)				
+	end					
+						
+	length 20					
+		piece sta9 sta8 rev(st)				
+	end					
+						
+	length 21					
+		piece sta10 sta8 rev(st)				
+	end					
+						
+	length 22					
+		piece sta2 sta8 sta8 rev(st)				
+	end					
+						
+	length 23					
+		piece sta2 sta9 sta8 rev(st)				
+	end					
+						
+	length 24					
+		piece sta2 sta9 sta9 rev(st)				
+	end					
+						
+	length 25					
+		piece sta2 sta8 sta8 sta2 rev(st)				
+	end					
+						
+	length 26					
+		piece sta2 sta9 sta8 sta2 rev(st)				
+	end					
+						
+	length 27					
+		piece sta2 sta9 sta9 sta2 rev(st)				
+	end					
+						
+	length 28	
+		piece sta8 2*sta8 rev(st)
+	end	
+
+	length 29	
+		piece sta9 2*sta8 rev(st)
+	end	
+
+	length 30	
+		piece sta10 2*sta8 rev(st)
+	end	
+
+	length 31	
+		piece sta2 sta8 2*sta8 rev(st)
+	end	
+
+	length 32	
+		piece sta2 sta9 2*sta8 rev(st)
+	end	
+
+	length 33	
+		piece sta2 sta10 2*sta8 rev(st)
+	end	
+
+	length 34	
+		piece sta2 sta8 2*sta8 sta2 rev(st)
+	end	
+
+	length 35	
+		piece sta2 sta9 2*sta8 sta2 rev(st)
+	end	
+
+	length 36	
+		piece sta2 sta10 2*sta8 sta2 rev(st)
+	end	
+
+	length 37	
+		piece sta8 3*sta8 rev(st)
+	end	
+
+	length 38	
+		piece sta9 3*sta8 rev(st)
+	end	
+
+	length 39	
+		piece sta10 3*sta8 rev(st)
+	end	
+
+	length 40	
+		piece sta2 sta8 3*sta8 rev(st)
+	end	
+
+	length 41	
+		piece sta2 sta9 3*sta8 rev(st)
+	end	
+
+	length 42	
+		piece sta2 sta10 3*sta8 rev(st)
+	end	
+
+	length 43	
+		piece sta2 sta8 3*sta8 sta2 rev(st)
+	end	
+
+	length 44	
+		piece sta2 sta9 3*sta8 sta2 rev(st)
+	end	
+
+	length 45	
+		piece sta2 sta10 3*sta8 sta2 rev(st)
+	end	
+
+	length 46	
+		piece sta8 4*sta8 rev(st)
+	end	
+
+	length 47	
+		piece sta9 4*sta8 rev(st)
+	end	
+
+	length 48	
+		piece sta10 4*sta8 rev(st)
+	end	
+
+	length 49	
+		piece sta2 sta8 4*sta8 rev(st)
+	end	
+
+	length 50	
+		piece sta2 sta9 4*sta8 rev(st)
+	end	
+
+	length 51	
+		piece sta2 sta10 4*sta8 rev(st)
+	end	
+
+	length 52	
+		piece sta2 sta8 4*sta8 sta2 rev(st)
+	end	
+
+	length 53	
+		piece sta2 sta9 4*sta8 sta2 rev(st)
+	end	
+
+	length 54	
+		piece sta2 sta10 4*sta8 sta2 rev(st)
+	end	
+
+	length 55	
+		piece sta8 5*sta8 rev(st)
+	end	
+
+	length 56	
+		piece sta9 5*sta8 rev(st)
+	end	
+
+	length 57	
+		piece sta10 5*sta8 rev(st)
+	end	
+
+	length 58	
+		piece sta2 sta8 5*sta8 rev(st)
+	end	
+
+	length 59	
+		piece sta2 sta9 5*sta8 rev(st)
+	end	
+
+	length 60	
+		piece sta2 sta10 5*sta8 rev(st)
+	end	
+
+	length 61	
+		piece sta2 sta8 5*sta8 sta2 rev(st)
+	end	
+
+	length 62	
+		piece sta2 sta9 5*sta8 sta2 rev(st)
+	end	
+
+	length 63	
+		piece sta2 sta10 5*sta8 sta2 rev(st)
+	end	
+
+	length 64	
+		piece sta8 6*sta8 rev(st)
+	end	
+
+	length 65	
+		piece sta9 6*sta8 rev(st)
+	end	
+
+	length 66	
+		piece sta10 6*sta8 rev(st)
+	end	
+
+	length 67	
+		piece sta2 sta8 6*sta8 rev(st)
+	end	
+
+	length 68	
+		piece sta2 sta9 6*sta8 rev(st)
+	end	
+
+	length 69	
+		piece sta2 sta10 6*sta8 rev(st)
+	end	
+
+	length 70	
+		piece sta2 sta8 6*sta8 sta2 rev(st)
+	end	
+
+	length 71	
+		piece sta2 sta9 6*sta8 sta2 rev(st)
+	end	
+
+	length 72	
+		piece sta2 sta10 6*sta8 sta2 rev(st)
+	end	
+
+	length 73	
+		piece sta8 7*sta8 rev(st)
+	end	
+
+	length 74	
+		piece sta9 7*sta8 rev(st)
+	end	
+
+	length 75	
+		piece sta10 7*sta8 rev(st)
+	end	
+
+	length 76	
+		piece sta2 sta8 7*sta8 rev(st)
+	end	
+
+	length 77	
+		piece sta2 sta9 7*sta8 rev(st)
+	end	
+
+	length 78	
+		piece sta2 sta10 7*sta8 rev(st)
+	end	
+
+	length 79	
+		piece sta2 sta8 7*sta8 sta2 rev(st)
+	end	
+
+	length 80	
+		piece sta2 sta9 7*sta8 sta2 rev(st)
+	end	
+
+	length 81	
+		piece sta2 sta10 7*sta8 sta2 rev(st)
+	end	
+
+	length 82	
+		piece sta8 8*sta8 rev(st)
+	end	
+
+	length 83	
+		piece sta9 8*sta8 rev(st)
+	end	
+
+	length 84	
+		piece sta10 8*sta8 rev(st)
+	end	
+
+	length 85	
+		piece sta2 sta8 8*sta8 rev(st)
+	end	
+
+	length 86	
+		piece sta2 sta9 8*sta8 rev(st)
+	end	
+
+	length 87	
+		piece sta2 sta10 8*sta8 rev(st)
+	end	
+
+	length 88	
+		piece sta2 sta8 8*sta8 sta2 rev(st)
+	end	
+
+	length 89	
+		piece sta2 sta9 8*sta8 sta2 rev(st)
+	end	
+
+	length 90	
+		piece sta2 sta10 8*sta8 sta2 rev(st)
+	end	
+
+	length 91	
+		piece sta8 9*sta8 rev(st)
+	end	
+
+	length 92	
+		piece sta9 9*sta8 rev(st)
+	end	
+
+	length 93	
+		piece sta10 9*sta8 rev(st)
+	end	
+
+	length 94	
+		piece sta2 sta8 9*sta8 rev(st)
+	end	
+
+	length 95	
+		piece sta2 sta9 9*sta8 rev(st)
+	end	
+
+	length 96	
+		piece sta2 sta10 9*sta8 rev(st)
+	end	
+
+	length 97	
+		piece sta2 sta8 9*sta8 sta2 rev(st)
+	end	
+
+	length 98	
+		piece sta2 sta9 9*sta8 sta2 rev(st)
+	end	
+
+	length 99	
+		piece sta2 sta10 9*sta8 sta2 rev(st)
+	end	
+
+	length 100	
+		piece sta8 10*sta8 rev(st)
+	end	
+
+	length 101	
+		piece sta9 10*sta8 rev(st)
+	end	
+
+	length 102	
+		piece sta10 10*sta8 rev(st)
+	end	
+
+	length 103	
+		piece sta2 sta8 10*sta8 rev(st)
+	end	
+
+	length 104	
+		piece sta2 sta9 10*sta8 rev(st)
+	end	
+
+	length 105	
+		piece sta2 sta10 10*sta8 rev(st)
+	end	
+
+	length 106	
+		piece sta2 sta8 10*sta8 sta2 rev(st)
+	end	
+
+	length 107	
+		piece sta2 sta9 10*sta8 sta2 rev(st)
+	end	
+
+	length 108	
+		piece sta2 sta10 10*sta8 sta2 rev(st)
+	end	
+
+	length 109	
+		piece sta8 11*sta8 rev(st)
+	end	
+
+	length 110	
+		piece sta9 11*sta8 rev(st)
+	end	
+
+	length 111	
+		piece sta10 11*sta8 rev(st)
+	end	
+
+	length 112	
+		piece sta2 sta8 11*sta8 rev(st)
+	end	
+
+	length 113	
+		piece sta2 sta9 11*sta8 rev(st)
+	end	
+
+	length 114	
+		piece sta2 sta10 11*sta8 rev(st)
+	end	
+
+	length 115	
+		piece sta2 sta8 11*sta8 sta2 rev(st)
+	end	
+
+	length 116	
+		piece sta2 sta9 11*sta8 sta2 rev(st)
+	end	
+
+	length 117	
+		piece sta2 sta10 11*sta8 sta2 rev(st)
+	end	
+
+	length 118	
+		piece sta8 12*sta8 rev(st)
+	end	
+
+	length 119	
+		piece sta9 12*sta8 rev(st)
+	end	
+
+	length 120	
+		piece sta10 12*sta8 rev(st)
+	end	
+
+	length 121	
+		piece sta2 sta8 12*sta8 rev(st)
+	end	
+
+	length 122	
+		piece sta2 sta9 12*sta8 rev(st)
+	end	
+
+	length 123	
+		piece sta2 sta10 12*sta8 rev(st)
+	end	
+
+	length 124	
+		piece sta2 sta8 12*sta8 sta2 rev(st)
+	end	
+
+	length 125	
+		piece sta2 sta9 12*sta8 sta2 rev(st)
+	end	
+
+	length 126	
+		piece sta2 sta10 12*sta8 sta2 rev(st)
+	end	
+
+	length 127	
+		piece sta8 13*sta8 rev(st)
+	end	
+
+	length 128	
+		piece sta9 13*sta8 rev(st)
+	end	
+
+	length 129	
+		piece sta10 13*sta8 rev(st)
+	end	
+
+	length 130	
+		piece sta2 sta8 13*sta8 rev(st)
+	end	
+
+	length 131	
+		piece sta2 sta9 13*sta8 rev(st)
+	end	
+
+	length 132	
+		piece sta2 sta10 13*sta8 rev(st)
+	end	
+
+	length 133	
+		piece sta2 sta8 13*sta8 sta2 rev(st)
+	end	
+
+	length 134	
+		piece sta2 sta9 13*sta8 sta2 rev(st)
+	end	
+
+	length 135	
+		piece sta2 sta10 13*sta8 sta2 rev(st)
+	end	
+
+	length 136	
+		piece sta8 14*sta8 rev(st)
+	end	
+
+	length 137	
+		piece sta9 14*sta8 rev(st)
+	end	
+
+	length 138	
+		piece sta10 14*sta8 rev(st)
+	end	
+
+	length 139	
+		piece sta2 sta8 14*sta8 rev(st)
+	end	
+
+	length 140	
+		piece sta2 sta9 14*sta8 rev(st)
+	end	
+
+	length 141	
+		piece sta2 sta10 14*sta8 rev(st)
+	end	
+
+	length 142	
+		piece sta2 sta8 14*sta8 sta2 rev(st)
+	end	
+
+	length 143	
+		piece sta2 sta9 14*sta8 sta2 rev(st)
+	end	
+
+	length 144	
+		piece sta2 sta10 14*sta8 sta2 rev(st)
+	end	
+
+	length 145	
+		piece sta8 15*sta8 rev(st)
+	end	
+
+	length 146	
+		piece sta9 15*sta8 rev(st)
+	end	
+
+	length 147	
+		piece sta10 15*sta8 rev(st)
+	end	
+
+	length 148	
+		piece sta2 sta8 15*sta8 rev(st)
+	end	
+
+	length 149	
+		piece sta2 sta9 15*sta8 rev(st)
+	end	
+
+	length 150	
+		piece sta2 sta10 15*sta8 rev(st)
+	end	
+
+	length 151	
+		piece sta2 sta8 15*sta8 sta2 rev(st)
+	end	
+
+	length 152	
+		piece sta2 sta9 15*sta8 sta2 rev(st)
+	end	
+
+	length 153	
+		piece sta2 sta10 15*sta8 sta2 rev(st)
+	end	
+
+	length 154	
+		piece sta8 16*sta8 rev(st)
+	end	
+
+	length 155	
+		piece sta9 16*sta8 rev(st)
+	end	
+
+	length 156	
+		piece sta10 16*sta8 rev(st)
+	end	
+
+	length 157	
+		piece sta2 sta8 16*sta8 rev(st)
+	end	
+
+	length 158	
+		piece sta2 sta9 16*sta8 rev(st)
+	end	
+
+	length 159	
+		piece sta2 sta10 16*sta8 rev(st)
+	end	
+
+	length 160	
+		piece sta2 sta8 16*sta8 sta2 rev(st)
+	end	
+
+	length 161	
+		piece sta2 sta9 16*sta8 sta2 rev(st)
+	end	
+
+	length 162	
+		piece sta2 sta10 16*sta8 sta2 rev(st)
+	end	
+
+	length 163	
+		piece sta8 17*sta8 rev(st)
+	end	
+
+	length 164	
+		piece sta9 17*sta8 rev(st)
+	end	
+
+	length 165	
+		piece sta10 17*sta8 rev(st)
+	end	
+
+	length 166	
+		piece sta2 sta8 17*sta8 rev(st)
+	end	
+
+	length 167	
+		piece sta2 sta9 17*sta8 rev(st)
+	end	
+
+	length 168	
+		piece sta2 sta10 17*sta8 rev(st)
+	end	
+
+	length 169	
+		piece sta2 sta8 17*sta8 sta2 rev(st)
+	end	
+
+	length 170	
+		piece sta2 sta9 17*sta8 sta2 rev(st)
+	end	
+
+	length 171	
+		piece sta2 sta10 17*sta8 sta2 rev(st)
+	end	
+
+	length 172	
+		piece sta8 18*sta8 rev(st)
+	end	
+
+	length 173	
+		piece sta9 18*sta8 rev(st)
+	end	
+
+	length 174	
+		piece sta10 18*sta8 rev(st)
+	end	
+
+	length 175	
+		piece sta2 sta8 18*sta8 rev(st)
+	end	
+
+	length 176	
+		piece sta2 sta9 18*sta8 rev(st)
+	end	
+
+	length 177	
+		piece sta2 sta10 18*sta8 rev(st)
+	end	
+
+	length 178	
+		piece sta2 sta8 18*sta8 sta2 rev(st)
+	end	
+
+	length 179	
+		piece sta2 sta9 18*sta8 sta2 rev(st)
+	end	
+
+	length 180	
+		piece sta2 sta10 18*sta8 sta2 rev(st)
+	end	
+
+	length 181	
+		piece sta8 19*sta8 rev(st)
+	end	
+
+	length 182	
+		piece sta9 19*sta8 rev(st)
+	end	
+
+	length 183	
+		piece sta10 19*sta8 rev(st)
+	end	
+
+	length 184	
+		piece sta2 sta8 19*sta8 rev(st)
+	end	
+
+	length 185	
+		piece sta2 sta9 19*sta8 rev(st)
+	end	
+
+	length 186	
+		piece sta2 sta10 19*sta8 rev(st)
+	end	
+
+	length 187	
+		piece sta2 sta8 19*sta8 sta2 rev(st)
+	end	
+
+	length 188	
+		piece sta2 sta9 19*sta8 sta2 rev(st)
+	end	
+
+	length 189	
+		piece sta2 sta10 19*sta8 sta2 rev(st)
+	end	
+
+	length 190	
+		piece sta8 20*sta8 rev(st)
+	end	
+
+	length 191	
+		piece sta9 20*sta8 rev(st)
+	end	
+
+	length 192	
+		piece sta10 20*sta8 rev(st)
+	end	
+
+	length 193	
+		piece sta2 sta8 20*sta8 rev(st)
+	end	
+
+	length 194	
+		piece sta2 sta9 20*sta8 rev(st)
+	end	
+
+	length 195	
+		piece sta2 sta10 20*sta8 rev(st)
+	end	
+
+	length 196	
+		piece sta2 sta8 20*sta8 sta2 rev(st)
+	end	
+
+	length 197	
+		piece sta2 sta9 20*sta8 sta2 rev(st)
+	end	
+
+	length 198	
+		piece sta2 sta10 20*sta8 sta2 rev(st)
+	end	
+
+	length 199	
+		piece sta8 21*sta8 rev(st)
+	end	
+
+	length 200	
+		piece sta9 21*sta8 rev(st)
+	end	
+
+	length 201	
+		piece sta10 21*sta8 rev(st)
+	end	
+
+	length 202	
+		piece sta2 sta8 21*sta8 rev(st)
+	end	
+
+	length 203	
+		piece sta2 sta9 21*sta8 rev(st)
+	end	
+
+	length 204	
+		piece sta2 sta10 21*sta8 rev(st)
+	end	
+
+	length 205	
+		piece sta2 sta8 21*sta8 sta2 rev(st)
+	end	
+
+	length 206	
+		piece sta2 sta9 21*sta8 sta2 rev(st)
+	end	
+
+	length 207	
+		piece sta2 sta10 21*sta8 sta2 rev(st)
+	end	
+
+	length 208	
+		piece sta8 22*sta8 rev(st)
+	end	
+
+	length 209	
+		piece sta9 22*sta8 rev(st)
+	end	
+
+	length 210	
+		piece sta10 22*sta8 rev(st)
+	end	
+
+	length 211	
+		piece sta2 sta8 22*sta8 rev(st)
+	end	
+
+	length 212	
+		piece sta2 sta9 22*sta8 rev(st)
+	end	
+
+	length 213	
+		piece sta2 sta10 22*sta8 rev(st)
+	end	
+
+	length 214	
+		piece sta2 sta8 22*sta8 sta2 rev(st)
+	end	
+
+	length 215	
+		piece sta2 sta9 22*sta8 sta2 rev(st)
+	end	
+
+	length 216	
+		piece sta2 sta10 22*sta8 sta2 rev(st)
+	end	
+
+	length 217	
+		piece sta8 23*sta8 rev(st)
+	end	
+
+	length 218	
+		piece sta9 23*sta8 rev(st)
+	end	
+
+	length 219	
+		piece sta10 23*sta8 rev(st)
+	end	
+
+	length 220	
+		piece sta2 sta8 23*sta8 rev(st)
+	end	
+
+	length 221	
+		piece sta2 sta9 23*sta8 rev(st)
+	end	
+
+	length 222	
+		piece sta2 sta10 23*sta8 rev(st)
+	end	
+
+	length 223	
+		piece sta2 sta8 23*sta8 sta2 rev(st)
+	end	
+
+	length 224	
+		piece sta2 sta9 23*sta8 sta2 rev(st)
+	end	
+
+	length 225	
+		piece sta2 sta10 23*sta8 sta2 rev(st)
+	end	
+
+	length 226	
+		piece sta8 24*sta8 rev(st)
+	end	
+
+	length 227	
+		piece sta9 24*sta8 rev(st)
+	end	
+
+	length 228	
+		piece sta10 24*sta8 rev(st)
+	end	
+
+	length 229	
+		piece sta2 sta8 24*sta8 rev(st)
+	end	
+
+	length 230	
+		piece sta2 sta9 24*sta8 rev(st)
+	end	
+
+	length 231	
+		piece sta2 sta10 24*sta8 rev(st)
+	end	
+
+	length 232	
+		piece sta2 sta8 24*sta8 sta2 rev(st)
+	end	
+
+	length 233	
+		piece sta2 sta9 24*sta8 sta2 rev(st)
+	end	
+
+	length 234	
+		piece sta2 sta10 24*sta8 sta2 rev(st)
+	end	
+
+	length 235	
+		piece sta8 25*sta8 rev(st)
+	end	
+
+	length 236	
+		piece sta9 25*sta8 rev(st)
+	end	
+
+	length 237	
+		piece sta10 25*sta8 rev(st)
+	end	
+
+	length 238	
+		piece sta2 sta8 25*sta8 rev(st)
+	end	
+
+	length 239	
+		piece sta2 sta9 25*sta8 rev(st)
+	end	
+
+	length 240	
+		piece sta2 sta10 25*sta8 rev(st)
+	end	
+
+	length 241	
+		piece sta2 sta8 25*sta8 sta2 rev(st)
+	end	
+
+	length 242	
+		piece sta2 sta9 25*sta8 sta2 rev(st)
+	end	
+
+	length 243	
+		piece sta2 sta10 25*sta8 sta2 rev(st)
+	end	
+
+	length 244	
+		piece sta8 26*sta8 rev(st)
+	end	
+
+	length 245	
+		piece sta9 26*sta8 rev(st)
+	end	
+
+	length 246	
+		piece sta10 26*sta8 rev(st)
+	end	
+
+	length 247	
+		piece sta2 sta8 26*sta8 rev(st)
+	end	
+
+	length 248	
+		piece sta2 sta9 26*sta8 rev(st)
+	end	
+
+	length 249	
+		piece sta2 sta10 26*sta8 rev(st)
+	end	
+
+	length 250	
+		piece sta2 sta8 26*sta8 sta2 rev(st)
+	end	
+
+	length 251	
+		piece sta2 sta9 26*sta8 sta2 rev(st)
+	end	
+
+	length 252	
+		piece sta2 sta10 26*sta8 sta2 rev(st)
+	end	
+
+	length 253	
+		piece sta8 27*sta8 rev(st)
+	end	
+
+	length 254	
+		piece sta9 27*sta8 rev(st)
+	end	
+
+	length 255	
+		piece sta10 27*sta8 rev(st)
+	end		
 end
 
 #CANTILEVER TRUSS
