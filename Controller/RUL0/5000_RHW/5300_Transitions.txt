@@ -48,7 +48,7 @@ AddTypes     = 5339, 45339, 15339, 55339, 25339, 65339, 35339, 75339 ;FLEX-WT S-
 AddTypes     = 5338, 45338, 15338, 55338, 25338, 65338, 35338, 75338 ;FLEX-WT 2-to-4
 AddTypes     = 533A, 1533A, 2533A, 3533A, 4533A, 5533A, 6533A, 7533A ;FLEX-WT 2-to-4 Sym
 AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L1 MIS 90-Degree Transition A
-AddTypes     = 533B, 1533B, 2533B, 3533B, 4533B, 5533B, 6533B, 7533B ;FlexHT L0-L1 MIS 90-Degree Transition B
+;AddTypes     = 533B, 1533B, 2533B, 3533B, 4533B, 5533B, 6533B, 7533B ;FlexHT L0-L1 MIS 90-Degree Transition B
 ;AddTypes     = 5340, 15340, 25340, 35340, 45340, 55340, 65340, 75340 ;FlexHT L0-L1 MIS 45-Degree Transition A
 ;AddTypes     = 5342, 15342, 25342, 35342, 45342, 55342, 65342, 75342 ;Diag FLEXOnSlope L0-L1 (Old)
 ;AddTypes     = 5343, 15343, 25343, 35343, 45343, 55343, 65343, 75343 ;Diag FLEXOnSlope L0-L2 (Old)
@@ -3670,7 +3670,7 @@ ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x57710000
+PlaceQueryID = 0x57710400
 Costs = 200
 [HighwayIntersectionInfo_0x00015336]
 CopyFrom	=	0x5336
@@ -3686,6 +3686,7 @@ CopyFrom	=	0x5336
 Transpose = 1
 Piece = 0.0, 16.0, 0, 0, 0x57710006
 PreviewEffect = preview_flexwtrans_1l_m_000
+PlaceQueryID = 0x57701400
 [HighwayIntersectionInfo_0x00055336]
 CopyFrom	=	0x45336
 Rotate	=	3
@@ -3708,7 +3709,7 @@ CellLayout=.......
 CellLayout=..b...<
 CellLayout=..aaa..
 CellLayout=..aaa..
-CellLayout=..cde..
+CellLayout=..cdeh.
 CellLayout=..cddf.
 CellLayout=..cdde.
 CellLayout=..aaaa.
@@ -3736,6 +3737,7 @@ CheckType = c - dirtroad: 0x02040200, 0xFF00FF00 optional
 CheckType = d - dirtroad: 0x02040204, 0xFF00FF00 optional
 CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
 CheckType = f - dirtroad: 0x02000004, 0xFF00FF00 optional
+CheckType = h - dirtroad: 0x00000000, 0xFF00FF00 optional
 
 ConsLayout=.......
 ConsLayout=..+...<
@@ -3850,7 +3852,7 @@ CellLayout=.......
 CellLayout=..b...<
 CellLayout=..aaa..
 CellLayout=..aaa..
-CellLayout=..cde..
+CellLayout=.hcdeh.
 CellLayout=.gdddf.
 CellLayout=.ce.ce.
 CellLayout=.aa.aa.
@@ -3890,6 +3892,7 @@ CheckType = d - dirtroad: 0x02040204, 0xFF00FF00 optional
 CheckType = e - dirtroad: 0x02000204, 0xFF00FF00 optional
 CheckType = f - dirtroad: 0x02000004, 0xFF00FF00 optional
 CheckType = g - dirtroad: 0x02040000, 0xFF00FF00 optional
+CheckType = h - dirtroad: 0x00000000, 0xFF00FF00 optional
 ;CheckType = h - dirtroad: 0x00040204, 0xFF00FF00 optional
 
 ConsLayout=.......
@@ -3904,7 +3907,7 @@ ConsLayout=.......
 ConsLayout=..^....
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x57783001
+PlaceQueryID = 0x57783C00
 Costs = 600
 [HighwayIntersectionInfo_0x00015339]
 CopyFrom	=	0x5339
@@ -4009,23 +4012,25 @@ CellLayout=.aYY...
 CellLayout=..YYY..
 CellLayout=...YY..
 CellLayout=...Zf.<
-CellLayout=....^..
+CellLayout=.......
+CellLayout=...^...
 
 CheckType = Z - dirtroad: 0x02020202
 CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-CheckType = a - dirtroad: 0x00000004 avenue: 0x04040403, 0xFFFFFFFF optional
+CheckType = a - dirtroad: 0x00020004 highway: 0x04040104, 0xFFFFFFFF optional
 ;CheckType = a - dirtroad: 0x00020002, 0xFFFFFFFF optional
-CheckType = f - dirtroad: 0x04040402 avenue: 0x04040104, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x04000200 highway: 0x04040104, 0xFFFFFFFF optional
 
-ConsLayout=........
-ConsLayout=........
-ConsLayout=........
-ConsLayout=........
-ConsLayout=....|..<
-ConsLayout=....^...
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=...|..<
+ConsLayout=.......
+ConsLayout=...^...
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x57727000
+PlaceQueryID = 0x57707000
 Costs = 600
 
 [HighwayIntersectionInfo_0x00015333]
@@ -4038,8 +4043,36 @@ Rotate=2
 CopyFrom=0x00005333
 Rotate=3
 [HighwayIntersectionInfo_0x00045333]
-CopyFrom=0x00005333
-Transpose=1
+;Added by Tarkus 3 Aug 2016
+;L0-L1 MIS 90-Transition B
+Piece = 32.0, 0.0, 0, 0, 0x57727105
+PreviewEffect = preview_mis_ramp_002
+
+CellLayout=.......
+CellLayout=.aYY...
+CellLayout=..YYY..
+CellLayout=...YY..
+CellLayout=...Zf.<
+CellLayout=.......
+CellLayout=...^...
+
+CheckType = Z - dirtroad: 0x02020202
+CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = a - dirtroad: 0x00020004 highway: 0x04030404, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x04000200 highway: 0x04030404, 0xFFFFFFFF optional
+
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=...|..<
+ConsLayout=.......
+ConsLayout=...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57727001
+Costs = 600
+
 [HighwayIntersectionInfo_0x00055333]
 CopyFrom=0x00045333
 Rotate=1
@@ -4055,7 +4088,7 @@ Rotate=3
 [HighwayIntersectionInfo_0x0000533B]
 ;Added by Tarkus 3 Aug 2016
 ;L0-L1 MIS 90-Transition B
-Piece = 0.0, 0.0, 0, 0, 0x57727105
+Piece = 32.0, 0.0, 0, 0, 0x57727105
 PreviewEffect = preview_mis_ramp_003
 
 CellLayout=.......
@@ -4063,19 +4096,21 @@ CellLayout=.aYY...
 CellLayout=..YYY..
 CellLayout=...YY..
 CellLayout=...Zf.<
-CellLayout=....^..
+CellLayout=.......
+CellLayout=...^...
 
 CheckType = Z - dirtroad: 0x02020202
 CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-CheckType = a - highway: 0x03040304 dirtroad: 0x04040402, 0xFFFFFFFF optional
-CheckType = f - highway: 0x03030403 dirtroad: 0x04040402, 0xFFFFFFFF optional
+CheckType = a - dirtroad: 0x00020004 highway: 0x04040401, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x04000200 highway: 0x04040101, 0xFFFFFFFF optional
 
-ConsLayout=........
-ConsLayout=........
-ConsLayout=........
-ConsLayout=........
-ConsLayout=....|..<
-ConsLayout=....^...
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=...|..<
+ConsLayout=.......
+ConsLayout=...^...
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x57727001
@@ -4091,8 +4126,35 @@ Rotate=2
 CopyFrom=0x0000533B
 Rotate=3
 [HighwayIntersectionInfo_0x0004533B]
-CopyFrom=0x0000533B
-Transpose=1
+;Added by Tarkus 3 Aug 2016
+;L0-L1 MIS 90-Transition B
+Piece = 32.0, 0.0, 0, 0, 0x57727105
+PreviewEffect = preview_mis_ramp_004
+
+CellLayout=.......
+CellLayout=.aYY...
+CellLayout=..YYY..
+CellLayout=...YY..
+CellLayout=...Zf.<
+CellLayout=.......
+CellLayout=...^...
+
+CheckType = Z - dirtroad: 0x02020202
+CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = a - dirtroad: 0x00020004 highway: 0x04040304, 0xFFFFFFFF optional
+CheckType = f - dirtroad: 0x04000200 highway: 0x04030304, 0xFFFFFFFF optional
+
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=...|..<
+ConsLayout=.......
+ConsLayout=...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57727001
+Costs = 600
 [HighwayIntersectionInfo_0x0005533B]
 CopyFrom=0x0004533B
 Rotate=1
