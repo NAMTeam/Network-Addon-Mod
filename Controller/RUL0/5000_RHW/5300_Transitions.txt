@@ -3706,18 +3706,19 @@ Rotate	=	1
 ;Added by Tarkus 07.20.2016
 ;RHW FlexWT Ortho S-to-C
 Piece = 0.0, 16.0, 0, 0, 0x57710400
-PreviewEffect = preview_flexwtrans_1lsc_000
+;###RHD###PreviewEffect = preview_flexwtrans_1lsc_000
+;###LHD###PreviewEffect = preview_flexwtrans_1lscm000
 
 CellLayout=.......
-CellLayout=..b...<
+CellLayout=...b..<
 CellLayout=..aaa..
-CellLayout=..cde..
+CellLayout=..aaa..
 CellLayout=..cdeh.
 CellLayout=..cddf.
 CellLayout=..cdde.
 CellLayout=..aaaa.
 CellLayout=.......
-CellLayout=..^....
+CellLayout=...^...
 
 ;1,4,2,4,2
 ;2,1,0,2,4,2
@@ -3730,72 +3731,9 @@ CellLayout=..^....
 ;2,8,0,2,4,2
 ;2,17,4,0,0,2
 ;2,18,4,2,0,2
-;3,0,0x57783680,0,0
-;3,1,0x57783600,0,0
-;3,2,0x57783400,0,0
-;3,3,0x57783480,0,0
-;3,4,0x57783580,0,0
-;3,5,0x57783780,0,0
-;3,6,0x57783980,0,0
-;3,7,0x57783880,0,0
-;3,8,0x57783800,0,0
-;3,16,0x57783500,0,0
-;3,17,0x57783700,0,0
-;3,18,0x57783900,0,0
-;x-x-x
-;x-x-x
 ;2-3-4
 ;1-0-5-17
 ;8-7-6-18
-;x-x-x-x
-
-;12-13-14 would be above
-;22-21-20-19 would be below
-
-;1,4,2,4,2
-;2,1,0,2,4,2
-;2,2,0,2,4,2
-;2,3,4,2,4,2
-;2,4,4,2,0,2
-;2,5,4,2,0,2
-;2,6,4,2,4,2
-;2,7,4,2,4,2
-;2,8,0,2,4,2
-;2,12,0,2,4,2
-;2,13,4,2,4,2
-;2,14,4,2,0,2
-;2,18,4,0,0,2
-;2,19,4,2,0,2
-;2,20,4,2,4,2
-;2,21,4,2,4,2
-;2,22,0,2,4,2
-;3,0,0x57783480,0,0
-;3,1,0x57783400,0,0
-;3,2,0x57783200,0,0
-;3,3,0x57783280,0,0
-;3,4,0x57783300,0,0
-;3,5,0x57783580,0,0
-;3,6,0x57783780,0,0
-;3,7,0x57783680,0,0
-;3,8,0x57783600,0,0
-;3,12,0x57783000,0,0
-;3,13,0x57783080,0,0
-;3,14,0x57783100,0,0
-;3,18,0x57783700,0,0
-;3,19,0x57783900,0,0
-;3,20,0x57783980,0,0
-;3,21,0x57783880,0,0
-;3,22,0x57783800,0,0
-
-
-;x-x-x    -> 12-13-14
-;x-x-x    -> 2--3--4
-;2-3-4	  -> 1--0--5
-;1-0-5-17 -> 8--7--6--18
-;8-7-6-18 -> 22-21-20-19
-;x-x-x-x
-
-
 
 CheckType = a - dirtroad: 0x02000200, 0xFF00FF00 optional
 CheckType = b - dirtroad: 0x02020202
@@ -3831,17 +3769,18 @@ Rotate	=	3
 [HighwayIntersectionInfo_0x00045337]
 CopyFrom	=	0x5337
 Transpose = 1
-Piece = 0.0, 16.0, 0, 0, 0x57701400
-PreviewEffect = preview_flexwtrans_1lscm000
+Piece = 0.0, 16.0, 0, 0, 0x57710400
+;###RHD###PreviewEffect = preview_flexwtrans_1lscm000
+;###LHD###PreviewEffect = preview_flexwtrans_1lsc_000
 [HighwayIntersectionInfo_0x00055337]
 CopyFrom	=	0x45337
-Rotate	=	3
+Rotate	=	1
 [HighwayIntersectionInfo_0x00065337]
 CopyFrom	=	0x45337
 Rotate	=	2
 [HighwayIntersectionInfo_0x00075337]
 CopyFrom	=	0x45337
-Rotate	=	1
+Rotate	=	3
 
 
 
@@ -3849,7 +3788,8 @@ Rotate	=	1
 ;Added by Tarkus 07.30.2016
 ;RHW FlexWT Ortho 2-to-4
 Piece = 0.0, 16.0, 0, 0, 0x57730004
-PreviewEffect = preview_flexwtrans_1l24_000
+;###RHD###PreviewEffect = preview_flexwtrans_1l24_000
+;###LHD###PreviewEffect = preview_flexwtrans_1l24m000
 
 CellLayout=.......
 CellLayout=..b...<
@@ -3895,7 +3835,8 @@ Rotate	=	3
 CopyFrom	=	0x5338
 Transpose	=	1
 Piece = 0.0, 16.0, 0, 0, 0x57730004
-PreviewEffect = preview_flexwtrans_1l24m000
+;###RHD###PreviewEffect = preview_flexwtrans_1l24m000
+;###LHD###PreviewEffect = preview_flexwtrans_1l24_000
 [HighwayIntersectionInfo_0x00055338]
 CopyFrom	=	0x45338
 Rotate	=	3
