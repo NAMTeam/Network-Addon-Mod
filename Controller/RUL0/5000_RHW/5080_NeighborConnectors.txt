@@ -1,8 +1,11 @@
 ;
 ;RHW Neighbor Connector Pieces
-;0xR508#
-RotationRing = 5080, 15080, 25080, 35080, 45080, 55080, 65080, 75080 ;Neighbor Connector Underground Loop
-AddTypes	 = 5090, 15090, 25090, 35090, 45090, 55090, 65090, 75090 ;RHW FLEX Neighbor Connector
+;0xR508#/0xR509#
+RotationRing	 = 5090, 15090, 25090, 35090, 45090, 55090, 65090, 75090 ;RHW FLEX Neighbor Connector
+AddTypes = 5080, 15080, 25080, 35080, 45080, 55080, 65080, 75080 ;Neighbor Connector Underground Loop
+
+;Legacy RHW Neighbor Connector Pieces
+RotationRing = 508C, 1508C, 2508C, 3508C, 4508C, 5508C, 6508C, 7508C ;Neighbor Connector Underground Loop
 AddTypes     = 5081, 15081, 25081, 35081, 45081, 55081, 65081, 75081 ;RHW-4 Neighbor Connector
 AddTypes     = 5082, 15082, 25082, 35082, 45082, 55082, 65082, 75082 ;MIS Neighbor Connector
 AddTypes     = 5083, 15083, 25083, 35083, 45083, 55083, 65083, 75083 ;RHW-6S Neighbor Connector
@@ -540,6 +543,49 @@ CopyFrom    = 0x1508B
 CopyFrom    = 0x2508B
 [HighwayIntersectionInfo_0x0007508B]
 CopyFrom    = 0x3508B
+
+
+
+[HighwayIntersectionInfo_0x0000508C]
+;Added by Tarkus 5/8/2009.
+;Loop Connector Piece
+Piece = 0.0, 0.0, 0, 0, 0x5cbbf105
+PreviewEffect = preview_nborconn_piece__002
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00020002
+
+ConsLayout =.......
+ConsLayout =......<
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x5cbbf100
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5cbbf100
+Costs       = 1
+[HighwayIntersectionInfo_0x0001508C]
+CopyFrom    = 0x508C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002508C]
+CopyFrom    = 0x508C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003508C]
+CopyFrom    = 0x508C
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004508C]
+CopyFrom    = 0x508C
+[HighwayIntersectionInfo_0x0005508C]
+CopyFrom    = 0x1508C
+[HighwayIntersectionInfo_0x0006508C]
+CopyFrom    = 0x2508C
+[HighwayIntersectionInfo_0x0007508C]
+CopyFrom    = 0x3508C
+
 
 
 [HighwayIntersectionInfo_0x00005090]
