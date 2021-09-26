@@ -1,0 +1,556 @@
+;RHW FTL Starter Pieces
+;0xR59##
+;---L0 Starters---
+RotationRing 	=	5900, 15900, 25900, 35900, 45900, 55900, 65900, 75900 ;RHW-2 Type 110 FTL Starter
+AddTypes 		=	5901, 15901, 25901, 35901, 45901, 55901, 65901, 75901 ;RHW-2 Type 110 Median FTL Starter
+AddTypes 		=	5903, 15903, 25903, 35903, 45903, 55903, 65903, 75903 ;MIS Dual-Lane FTL Starter
+AddTypes 		=	5904, 15904, 25904, 35904, 45904, 55904, 65904, 75904 ;MIS Triple-Lane FTL Starter
+AddTypes 		=	5910, 15910, 25910, 35910, 45910, 55910, 65910, 75910 ;RHW-2 SITAP Signals OxO
+AddTypes 		=	5911, 15911, 25911, 35911, 45911, 55911, 65911, 75911 ;RHW-2 SITAP Signals OxO Dual
+AddTypes 		=	5912, 15912, 25912, 35912, 45912, 55912, 65912, 75912 ;OWR SITAP Signals OxO +
+AddTypes 		=	5913, 15913, 25913, 35913, 45913, 55913, 65913, 75913 ;OWR SITAP Signals OxO T
+AddTypes 		=	5914, 15914, 25914, 35914, 45914, 55914, 65914, 75914 ;OWR SITAP Signals OxO + 2x2 Test
+
+;###separator###
+
+;RHW FTL SECTION
+;RHW FTL SECTION
+
+
+[HighwayIntersectionInfo_0x00005900]
+;Added by Tarkus 28-Aug-2021.
+;RHW-2 Type 110 FLEX Turn Lane Starter Piece
+Piece = 0.0, 0.0, 0, 0, 0x57D04005
+PreviewEffect = preview_starter_rhw2ftl_000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =...b...
+CellLayout =...c...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x03040000, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 onewayroad: 0x01040000, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D04000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015900]
+CopyFrom    = 0x5900
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025900]
+CopyFrom    = 0x5900
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035900]
+CopyFrom    = 0x5900
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045900]
+CopyFrom    = 0x5900
+[HighwayIntersectionInfo_0x00055900]
+CopyFrom    = 0x15900
+[HighwayIntersectionInfo_0x00065900]
+CopyFrom    = 0x25900
+[HighwayIntersectionInfo_0x00075900]
+CopyFrom    = 0x35900
+
+
+
+[HighwayIntersectionInfo_0x00005901]
+;Added by Tarkus 28-Aug-2021.
+;RHW-2 Type 110 FLEX Turn Lane Median Starter Piece
+Piece = 0.0, 0.0, 0, 0, 0x57D04105
+PreviewEffect = preview_starter_rhw2ftl_001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =...b...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x01040000, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D04100
+Costs       = 8
+[HighwayIntersectionInfo_0x00015901]
+CopyFrom    = 0x5901
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025901]
+CopyFrom    = 0x5901
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035901]
+CopyFrom    = 0x5901
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045901]
+CopyFrom    = 0x5901
+[HighwayIntersectionInfo_0x00055901]
+CopyFrom    = 0x15901
+[HighwayIntersectionInfo_0x00065901]
+CopyFrom    = 0x25901
+[HighwayIntersectionInfo_0x00075901]
+CopyFrom    = 0x35901
+
+
+[HighwayIntersectionInfo_0x00005903]
+;Added by Tarkus 28-Aug-2021.
+;MIS FLEX Dual Turn Lane
+Piece = 0.0, 0.0, 0, 0, 0x57D04105
+PreviewEffect = preview_starter_rhw2ftl_001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...b...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00040304, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D04100
+Costs       = 8
+[HighwayIntersectionInfo_0x00015903]
+CopyFrom    = 0x5903
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025903]
+CopyFrom    = 0x5903
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035903]
+CopyFrom    = 0x5903
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045903]
+CopyFrom    = 0x5903
+[HighwayIntersectionInfo_0x00055903]
+CopyFrom    = 0x15903
+[HighwayIntersectionInfo_0x00065903]
+CopyFrom    = 0x25903
+[HighwayIntersectionInfo_0x00075903]
+CopyFrom    = 0x35903
+
+
+
+[HighwayIntersectionInfo_0x00005904]
+;Added by Tarkus 28-Aug-2021.
+;MIS FLEX Triple Turn Lane
+Piece = 0.0, 0.0, 0, 0, 0x57D04105
+PreviewEffect = preview_starter_rhw2ftl_001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...b...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00040104, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D04100
+Costs       = 8
+[HighwayIntersectionInfo_0x00015904]
+CopyFrom    = 0x5904
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025904]
+CopyFrom    = 0x5904
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035904]
+CopyFrom    = 0x5904
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045904]
+CopyFrom    = 0x5904
+[HighwayIntersectionInfo_0x00055904]
+CopyFrom    = 0x15904
+[HighwayIntersectionInfo_0x00065904]
+CopyFrom    = 0x25904
+[HighwayIntersectionInfo_0x00075904]
+CopyFrom    = 0x35904
+
+
+
+[HighwayIntersectionInfo_0x00005910]
+;Added by Tarkus 28-Aug-2021.
+;RHW-2 SITAP Signalized +-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...b...
+CellLayout =..cae..
+CellLayout =...d...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - road: 0x02020202, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015910]
+CopyFrom    = 0x5910
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025910]
+CopyFrom    = 0x5910
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035910]
+CopyFrom    = 0x5910
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045910]
+;Added by Tarkus 28-Aug-2021.
+;RHW-2 SITAP Signalized T-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...b...
+CellLayout =...ae..
+CellLayout =...d...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - road: 0x02020200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00055910]
+CopyFrom    = 0x45910
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065910]
+CopyFrom    = 0x45910
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075910]
+CopyFrom    = 0x45910
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x00005911]
+;Added by Tarkus 31-Aug-2021.
+;RHW-2 SITAP Signalized +-Intersection-Dual
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap002
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...bb..
+CellLayout =..caae.
+CellLayout =...dd..
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - road: 0x02020202, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015911]
+CopyFrom    = 0x5911
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025911]
+CopyFrom    = 0x5911
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035911]
+CopyFrom    = 0x5911
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045911]
+;Added by Tarkus 31-Aug-2021.
+;RHW-2 SITAP Signalized T-Intersection-Dual
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap003
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...cc..
+CellLayout =...abe.
+CellLayout =...dd..
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - road: 0x02020200, 0xffffffff optional
+CheckType = b - road: 0x02020202, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000000, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00055911]
+CopyFrom    = 0x45911
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065911]
+CopyFrom    = 0x45911
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075911]
+CopyFrom    = 0x45911
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00005912]
+;Added by Tarkus 28-Aug-2021.
+;OWR SITAP Signalized +-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200 road: 0x02000200
+CheckType = a - road: 0x02020404 onewayroad: 0x04040202, 0xffffffff optional
+;CheckType = a - road: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
+;CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+;CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+;CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015912]
+CopyFrom    = 0x5912
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025912]
+CopyFrom    = 0x5912
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035912]
+CopyFrom    = 0x5912
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045912]
+CopyFrom    = 0x5912
+[HighwayIntersectionInfo_0x00055912]
+CopyFrom    = 0x15912
+[HighwayIntersectionInfo_0x00065912]
+CopyFrom    = 0x25912
+[HighwayIntersectionInfo_0x00075912]
+CopyFrom    = 0x35912
+
+
+
+[HighwayIntersectionInfo_0x00005913]
+;Added by Tarkus 28-Aug-2021.
+;OWR SITAP Signalized T-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200 road: 0x02000200
+CheckType = a - road: 0x02020400 onewayroad: 0x04040200, 0xffffffff optional
+;CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+;CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+;CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015913]
+CopyFrom    = 0x5913
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025913]
+CopyFrom    = 0x5913
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035913]
+CopyFrom    = 0x5913
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045913]
+;Added by Tarkus 28-Aug-2021.
+;RHW-2 SITAP Signalized T-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200 road: 0x02000200
+CheckType = a - road: 0x04020200 onewayroad: 0x02040400, 0xffffffff optional
+;CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+;CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+;CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00055913]
+CopyFrom    = 0x45913
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065913]
+CopyFrom    = 0x45913
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075913]
+CopyFrom    = 0x45913
+Rotate		= 3
+
+
+[HighwayIntersectionInfo_0x00005914]
+;Added by Tarkus 28-Aug-2021.
+;OWR SITAP Signalized +-Intersection
+Piece = 0.0, 0.0, 0, 0, 0x57D07005
+PreviewEffect = preview_starter_rhwsitap000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...aa..
+CellLayout =...aa..
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - onewayroad: 0x02000200 road: 0x02000200
+CheckType = a - road: 0x02020404 onewayroad: 0x04040202, 0xffffffff optional
+;CheckType = a - road: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
+;CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00020000, 0xffffffff optional
+;CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+;CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D07000
+Costs       = 8
+[HighwayIntersectionInfo_0x00015914]
+CopyFrom    = 0x5914
+Rotate		= 1
+[HighwayIntersectionInfo_0x00025914]
+CopyFrom    = 0x5914
+Rotate		= 2
+[HighwayIntersectionInfo_0x00035914]
+CopyFrom    = 0x5914
+Rotate		= 3
+[HighwayIntersectionInfo_0x00045914]
+CopyFrom    = 0x5914
+[HighwayIntersectionInfo_0x00055914]
+CopyFrom    = 0x15914
+[HighwayIntersectionInfo_0x00065914]
+CopyFrom    = 0x25914
+[HighwayIntersectionInfo_0x00075914]
+CopyFrom    = 0x35914
