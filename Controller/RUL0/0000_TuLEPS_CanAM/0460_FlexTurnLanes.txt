@@ -9,6 +9,9 @@ AddTypes     = 0461, 10461, 20461, 30461, 40461, 50461, 60461, 70461 ;RD2-to-ML 
 AddTypes     = 0462, 10462, 20462, 30462, 40462, 50462, 60462, 70462 ;ARD3-to-TL 110 starter
 AddTypes     = 0463, 10463, 20463, 30463, 40463, 50463, 60463, 70463 ;TLA3-to-TL 110 starter
 AddTypes     = 0464, 10464, 20464, 30464, 40464, 50464, 60464, 70464 ;AVE2-to-TL 110 starter
+AddTypes     = 0477, 10477, 20477, 30477, 40477, 50477, 60477, 70477 ;Dual TL 110 starter
+;AddTypes     = 0478, 10478, 20478, 30478, 40478, 50478, 60478, 70478 ;RD2 TL 010 Base Network starter
+AddTypes     = 0479, 10479, 20479, 30479, 40479, 50479, 60479, 70479 ;OWR2 TL 020 Base Network starter
 ;Dual-Tile Networks
 AddTypes     = 0465, 10465, 20465, 30465, 40465, 50465, 60465, 70465 ;AVE4/TLA5-to-TL 120 starter
 AddTypes     = 047C, 1047C, 2047C, 3047C, 4047C, 5047C, 6047C, 7047C ;RD4-to-TL 120 Starter
@@ -18,6 +21,7 @@ AddTypes     = 0467, 10467, 20467, 30467, 40467, 50467, 60467, 70467 ;TLA7-to-TL
 AddTypes     = 0468, 10468, 20468, 30468, 40468, 50468, 60468, 70468 ;AVE6-to-TL 130 starter
 AddTypes     = 0469, 10469, 20469, 30469, 40469, 50469, 60469, 70469 ;TLA7-to-TL 230 starter
 AddTypes     = 046A, 1046A, 2046A, 3046A, 4046A, 5046A, 6046A, 7046A ;AVE6-to-TL 230 starter
+;FLEX Intersections
 AddTypes     = 0470, 10470, 20470, 30470, 40470, 50470, 60470, 70470 ;FTL Dual-Tile x Dual-Tile +-Intersection Helper
 AddTypes     = 0471, 10471, 20471, 30471, 40471, 50471, 60471, 70471 ;FTL Dual-Tile x Dual-Tile T-Intersection Helper
 AddTypes     = 0472, 10472, 20472, 30472, 40472, 50472, 60472, 70472 ;FTL Triple-Tile x Dual-Tile +-Intersection Helper
@@ -45,8 +49,6 @@ AddTypes     = 04C6, 104C6, 204C6, 304C6, 04C7, 104C7, 204C7, 304C7, 404C6, 504C
 
 
 ;Random/No Longer Needed
-;AddTypes     = 0479, 10479, 20479, 30479, 40479, 50479, 60479, 70479 ;Single Slip Lane
-
 
 
 ;###separator###
@@ -656,9 +658,10 @@ CellLayout=.ed..
 CellLayout=.....
 CellLayout=.^...
 
+
 CheckType = a - avenue: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+CheckType = b - avenue: 0x04040202 road: 0x00020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x00000002, 0xffffffff optional
 CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
 CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
 
@@ -710,10 +713,10 @@ CellLayout=.....
 CellLayout=.^...
 
 CheckType = a - avenue: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+CheckType = b - avenue: 0x04040402 road: 0x02020000, 0xffffffff optional
+CheckType = c - avenue: 0x04020404 road: 0x02000002, 0xffffffff optional
+CheckType = d - avenue: 0x04020404 road: 0x00000202, 0xffffffff optional
+CheckType = e - avenue: 0x04040402 road: 0x00020200, 0xffffffff optional
 CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
 CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
 
@@ -760,18 +763,35 @@ Piece = 0.0, 16.0, 0, 0, 0x5B269505
 CellLayout=.....
 CellLayout=.a..<
 CellLayout=.bc..
+CellLayout=.de..
 CellLayout=.fg..
-CellLayout=.ed..
+;CellLayout=.bc..
+;CellLayout=.fg..
+;CellLayout=.ed..
 CellLayout=.....
 CellLayout=.^...
 
+;0x00020402,0x00040402 
+;0x00020402,0x00020404
+;Trial 2
+;0x00020204,0x04040402
+;0x00040202,0x04020404
+
 CheckType = a - avenue: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
-CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
-CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+CheckType = b - avenue: 0x04040402 road: 0x00000204, 0xffffffff optional
+CheckType = c - avenue: 0x04020404 road: 0x00040200, 0xffffffff optional
+CheckType = d - avenue: 0x04040402 road: 0x02020400, 0xffffffff optional
+CheckType = e - avenue: 0x04020404 road: 0x04000204, 0xffffffff optional
+;redo below
+CheckType = f - avenue: 0x04040402 road: 0x00020204, 0xffffffff optional
+CheckType = g - avenue: 0x04020404 road: 0x00040202, 0xffffffff optional
+
+;CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+;CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+;CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
+;CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
+;CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+;CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=.+..<
@@ -812,6 +832,7 @@ CopyFrom    = 0x30473
 Piece = 0.0, 16.0, 0, 0, 0x5B269805
 ;###RHD###PreviewEffect = preview_flex_turn_lane_int_t_2x3_____001
 ;###LHD###PreviewEffect = preview_flex_turn_lane_int_t_2x3_lhd_001
+
 
 CellLayout=.....
 CellLayout=.a..<
@@ -878,14 +899,14 @@ CellLayout=.....
 CellLayout=.^...
 
 CheckType = a - road: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
-CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
-CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
-CheckType = h - avenue: 0x04040204 road: 0x02020002, 0xffffffff optional
-CheckType = i - avenue: 0x02040404 road: 0x00020202, 0xffffffff optional
+CheckType = b - avenue: 0x04040202 road: 0x02040000, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x04000002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x00000204, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020400, 0xffffffff optional
+CheckType = f - avenue: 0x04040402 road: 0x04020200, 0xffffffff optional
+CheckType = g - avenue: 0x04020404 road: 0x02000402, 0xffffffff optional
+CheckType = h - avenue: 0x04040204 road: 0x02020004, 0xffffffff optional
+CheckType = i - avenue: 0x02040404 road: 0x00040202, 0xffffffff optional
 CheckType = j - avenue: 0x04040404 road: 0x02020202, 0xffffffff optional
 
 ConsLayout=.....
@@ -930,22 +951,22 @@ Piece = 0.0, 16.0, 0, 0, 0x5B26B105
 
 CellLayout=.....
 CellLayout=.a..<
-CellLayout=.bhc.
-CellLayout=.fjg.
-CellLayout=.eid.
+CellLayout=.bcd.
+CellLayout=.efg.
+CellLayout=.hij.
 CellLayout=.....
 CellLayout=.^...
-
+; 0x00000204,0x04040402 - next to try for b
 CheckType = a - road: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
-CheckType = d - avenue: 0x00020404 road: 0x00000202, 0xffffffff optional
-CheckType = e - avenue: 0x00040402 road: 0x00020200, 0xffffffff optional
-CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
-CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
-CheckType = h - avenue: 0x04040204 road: 0x02020002, 0xffffffff optional
-CheckType = i - avenue: 0x00040404 road: 0x00020202, 0xffffffff optional
-CheckType = j - avenue: 0x04040404 road: 0x02020202, 0xffffffff optional
+CheckType = b - avenue: 0x04020402 road: 0x00000204, 0xffffffff optional
+CheckType = c - avenue: 0x02040404 road: 0x04020202, 0xffffffff optional
+CheckType = d - avenue: 0x04020402 road: 0x00040200, 0xffffffff optional
+CheckType = e - avenue: 0x04040402 road: 0x04020400, 0xffffffff optional
+CheckType = f - avenue: 0x04040404 road: 0x04020202, 0xffffffff optional
+CheckType = g - avenue: 0x04020404 road: 0x02000404, 0xffffffff optional
+CheckType = h - avenue: 0x00040402 road: 0x00020204, 0xffffffff optional
+CheckType = i - avenue: 0x00040404 road: 0x00020204, 0xffffffff optional
+CheckType = j - avenue: 0x00020404 road: 0x04000202, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=.+..<
@@ -980,30 +1001,77 @@ CopyFrom    = 0x30476
 
 
 
-[HighwayIntersectionInfo_0x00000479]
-;Added by Tarkus 2017/02/20
-;Single Slip Lane
-;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5B2A0005
-;###LHD###Piece = 0.0, 0.0, 0, 0, 0x5B2A0005
-PreviewEffect = preview_flex_turn_lane_slip_lane__single
+[HighwayIntersectionInfo_0x00000477]
+;Added by Tarkus 1-Oct-2021
+;Dual Type 110 starter
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204205
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204205
+PreviewEffect = preview_flex_turn_lane_transition_d110tl
 
-CellLayout=....
-CellLayout=.ba<
-CellLayout=....
-CellLayout=..^.
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
 
-CheckType = a - road: 0x02000200 avenue: 0x02040200
-CheckType = b - road: 0x03010400, 0xffffffff optional
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 avenue: 0x00000104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 avenue: 0x01040000, 0xffffffff optional
 
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=..^.
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B2A0000
-Costs       = 40
+PlaceQueryID = 0x5B210000
+Costs       = 20
+
+[HighwayIntersectionInfo_0x00010477]
+CopyFrom    = 0x0477
+Rotate		= 1
+[HighwayIntersectionInfo_0x00020477]
+CopyFrom    = 0x0477
+Rotate		= 2
+[HighwayIntersectionInfo_0x00030477]
+CopyFrom    = 0x0477
+Rotate		= 3
+[HighwayIntersectionInfo_0x00040477]
+CopyFrom    = 0x0477
+[HighwayIntersectionInfo_0x00050477]
+CopyFrom    = 0x10477
+[HighwayIntersectionInfo_0x00060477]
+CopyFrom    = 0x20477
+[HighwayIntersectionInfo_0x00070477]
+CopyFrom    = 0x30477
+
+
+[HighwayIntersectionInfo_0x00000479]
+;Added by Tarkus 14-October-2021
+;OWR2 Type 020 Base Network starter
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5F941100
+Costs       = 20
+OneWayDir 	= 2
 
 [HighwayIntersectionInfo_0x00010479]
 CopyFrom    = 0x0479
@@ -1015,38 +1083,15 @@ Rotate		= 2
 CopyFrom    = 0x0479
 Rotate		= 3
 [HighwayIntersectionInfo_0x00040479]
-;Added by Tarkus 2017/02/20
-;Single Slip Lane
-;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5B2A0005
-;###LHD###Piece = 0.0, 0.0, 0, 0, 0x5B2A0005
-PreviewEffect = preview_flex_turn_lane_slip_lane__single
-
-CellLayout=....
-CellLayout=.ba<
-CellLayout=....
-CellLayout=..^.
-
-CheckType = a - onewayroad: 0x02000200 dirtroad: 0x02000200
-CheckType = b - road: 0x03010400, 0xffffffff optional
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B2A0000
-Costs       = 40
+CopyFrom    = 0x0479
 [HighwayIntersectionInfo_0x00050479]
-CopyFrom    = 0x40479
-Rotate		= 1
+CopyFrom    = 0x10479
 [HighwayIntersectionInfo_0x00060479]
-CopyFrom    = 0x40479
-Rotate		= 2
+CopyFrom    = 0x20479
 [HighwayIntersectionInfo_0x00070479]
-CopyFrom    = 0x40479
-Rotate		= 3
+CopyFrom    = 0x30479
+
+
 
 
 
