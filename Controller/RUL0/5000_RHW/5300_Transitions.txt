@@ -49,6 +49,7 @@ AddTypes     = 5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree
 ;AddTypes     = 5343, 15343, 25343, 35343, 45343, 55343, 65343, 75343 ;Diag FLEXOnSlope L0-L2 (Old)
 ;AddTypes	 = 5344, 15344, 25344, 35344, 45344, 55344, 65344, 75344 ;FLEXOnSlope L0-L1 (Old)
 ;AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2 (Old)
+AddTypes     = 534A, 1534A, 2534A, 3534A, 4534A, 5534A, 6534A, 7534A ;180-Degree MIS H1 Transition
 
 ;Width Transitions (FLEX)
 RotationRing = 5336, 45336, 15336, 55336, 25336, 65336, 35336, 75336 ;FLEX-WT 1-Lane
@@ -94,6 +95,71 @@ AddTypes     = 532A, 1532A, 2532A, 3532A, 4532A, 5532A, 6532A, 7532A ;MIS Ground
 
 
 ;###separator###
+
+[HighwayIntersectionInfo_0x0000534A]
+;Added by Tarkus 12/23/2007.
+;RHW-4 Starter Piece
+Piece = 16.0, 16.0, 0, 0, 0x57F03005
+PreviewEffect = preview_starter_l0rhw4__000
+
+CellLayout =.......
+CellLayout =.......
+CellLayout =...Za.<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...+..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57F03000
+Costs       = 8
+[HighwayIntersectionInfo_0x0001534A]
+;Added by Tarkus 12/23/2007.
+;RHW-4 Starter Piece
+Piece = 0.0, 0.0, 0, 1, 0x57F03005
+PreviewEffect = preview_starter_l0rhw4__000
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 Road: 0x00000101, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57F03000
+Costs       = 8
+[HighwayIntersectionInfo_0x0002534A]
+CopyFrom    = 0x534A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003534A]
+CopyFrom    = 0x1534A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004534A]
+CopyFrom    = 0x534A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005534A]
+CopyFrom    = 0x1534A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006534A]
+CopyFrom    = 0x534A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007534A]
+CopyFrom    = 0x1534A
+Rotate		= 3
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;RHW Transition Piece Section
