@@ -978,7 +978,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 x OWR SITAP Signalized +-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09505
-PreviewEffect = preview_starter_rhwsitap004
+PreviewEffect = preview_starter_rhwsitap013
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1023,7 +1023,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 (Thru) x OWR (End) SITAP Signalized T-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09605
-PreviewEffect = preview_starter_rhwsitap005
+PreviewEffect = preview_starter_rhwsitap014
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1067,7 +1067,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 (End) x OWR (Thru) SITAP Signalized T-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09705
-PreviewEffect = preview_starter_rhwsitap006
+PreviewEffect = preview_starter_rhwsitap015
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1077,7 +1077,7 @@ CellLayout =.......
 CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x02000200
-CheckType = a - road: 0x02020400 onewayroad: 0x04040200, 0xffffffff optional
+CheckType = a - road: 0x04020200 onewayroad: 0x02040400, 0xffffffff optional
 CheckType = b - dirtroad: 0x00000002, 0xffffffff optional
 
 ConsLayout =.......
@@ -1105,7 +1105,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 (End) x OWR (Thru) SITAP Signalized T-Intersection
 Piece = 0.0, 0.0, 0, 1, 0x57D09705
-PreviewEffect = preview_starter_rhwsitap006
+PreviewEffect = preview_starter_rhwsitap015
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1114,8 +1114,9 @@ CellLayout =.......
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200 road: 0x02000200
-CheckType = a - road: 0x02000402 onewayroad: 0x04000204, 0xffffffff optional
+CheckType = a - road: 0x04000202 onewayroad: 0x02000404, 0xffffffff optional
 CheckType = b - dirtroad: 0x00020000, 0xffffffff optional
+
 
 ConsLayout =.......
 ConsLayout =...|..<
@@ -1142,7 +1143,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 x OWR SITAP 2x1 Signalized +-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09507
-PreviewEffect = preview_starter_rhwsitap007
+PreviewEffect = preview_starter_rhwsitap016
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1187,7 +1188,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 x OWR SITAP 2x1 Signalized T-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09607
-PreviewEffect = preview_starter_rhwsitap008
+PreviewEffect = preview_starter_rhwsitap017
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1249,7 +1250,7 @@ CopyFrom    = 0x75916
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 x OWR SITAP 1x2 Signalized +-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09506
-PreviewEffect = preview_starter_rhwsitap009
+PreviewEffect = preview_starter_rhwsitap018
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1296,7 +1297,7 @@ Rotate		= 3
 ;Added by Tarkus 30-Sep-2021.
 ;RHW-2 x OWR SITAP 1x2 Signalized T-Intersection
 Piece = 0.0, 0.0, 0, 0, 0x57D09606
-PreviewEffect = preview_starter_rhwsitap010
+PreviewEffect = preview_starter_rhwsitap019
 
 CellLayout =.......
 CellLayout =...Z..<
@@ -1308,7 +1309,7 @@ CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x02000200
 CheckType = a - road: 0x02040202 onewayroad: 0x04020404, 0xffffffff optional
-CheckType = b - road: 0x02020004 onewayroad: 0x04040002, 0xffffffff optional
+CheckType = b - road: 0x02040002 onewayroad: 0x04020004, 0xffffffff optional
 CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
 CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
 
@@ -1362,7 +1363,7 @@ Rotate		= 3
 ;;Added by Tarkus 30-Sep-2021.
 ;;RHW-2 x OWR/Road SITAP 1x3 Signalized +-Intersection (for AVE-8/TLA-9)
 ;Piece = 0.0, 0.0, 0, 0, 0x57D09007
-;PreviewEffect = preview_starter_rhwsitap011
+;PreviewEffect = preview_starter_rhwsitap021
 ;
 ;CellLayout =.......
 ;CellLayout =...Z..<
