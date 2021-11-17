@@ -65,6 +65,7 @@ AddTypes     = B45C, 1B45C, 2B45C, 3B45C, 4B45C, 5B45C, 6B45C, 7B45C ;groundligh
 AddTypes     = 2B45D, 7B45D, 3B45D, 4B45D, B45D, 5B45D, 1B45D, 6B45D ;groundlightrailxavenue Dual - Orthogonal-Diagonal Piece
 AddTypes     = 2B45E, 7B45E, 3B45E, 4B45E, B45E, 5B45E, 1B45E, 6B45E ;groundlightrailxavenue Dual - Diagonal-Orthogonal Transition
 AddTypes     = B45F, 2B45F, 1B45F, 3B45F, 4B45F, 6B45F, 5B45F, 7B45F ;groundlightrailxavenue Dual - Diagonal Piece double
+;AddTypes     = B460, 2B460, 1B460, 3B460, 4B460, 6B460, 5B460, 7B460 ;Tram-in-One-Way-Road Ortho FLEX
 
 ;###separator###
 
@@ -3631,6 +3632,54 @@ CopyFrom    = 0x4B446
 Rotate		= 2
 [HighwayIntersectionInfo_0x0007B446]
 CopyFrom    = 0x4B446
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000B460]
+;Added by Tarkus 11 Aug 2021
+;groundlightrailxavenue Dual - Diagonal half-avenue Piece
+Piece = 0.0, 0.0, 0, 0, 0x58430F05
+PreviewEffect = preview_avexglr_dual_84
+
+;temporary cursor placement while using existing puzzle assets for preview
+CellLayout = ..........
+CellLayout = ....Z.....
+CellLayout = ....a....<
+CellLayout = ....^.....
+
+CheckType = Z - onewayroad: 0x02000200
+CheckType = a - lightrail: 0x00000000 onewayroad: 0x02000400, 0xFFFFFFFF optional
+
+ConsLayout = ..........
+ConsLayout = ....+.....
+ConsLayout = .........<
+ConsLayout = ....^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x58430F00
+Costs       = 50
+[HighwayIntersectionInfo_0x0001B460]
+CopyFrom    = 0xB460
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002B460]
+CopyFrom    = 0xB460
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003B460]
+CopyFrom    = 0xB460
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004B460]
+CopyFrom    = 0xB460
+Transpose   = 1
+[HighwayIntersectionInfo_0x0005B460]
+CopyFrom    = 0x4B460
+Rotate		= 1
+[HighwayIntersectionInfo_0x0006B460]
+CopyFrom    = 0x4B460
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007B460]
+CopyFrom    = 0x4B460
 Rotate		= 3
 
 
