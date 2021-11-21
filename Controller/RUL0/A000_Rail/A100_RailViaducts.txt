@@ -61,6 +61,7 @@ AddTypes     = A135, 1A135, 2A135, 3A135, 4A135, 5A135, 6A135, 7A135 ;Rail flexh
 ;AddTypes     = A136, 1A136, 2A136, 3A136, 4A136, 5A136, 6A136, 7A136 ;Rail flexht L2 orthogonal 5 tiles (Commented out till fix -eggman121)
 ;AddTypes     = A137, 1A137, 2A137, 3A137, 4A137, 5A137, 6A137, 7A137 ;Rail flexht Diagonal L1 orthogonal 5 tiles (Commented out till fix -eggman121) 
 ;AddTypes     = A138, 1A138, 2A138, 3A138, 4A138, 5A138, 6A138, 7A138 ;Rail flexht Diagonal L2 orthogonal 9 tiles (Commented out till paths -eggman121)
+AddTypes     = A139, 1A139, 2A139, 3A139, 4A139, 5A139, 6A139, 7A139 ;Rail flexht L1 to L2 orthogonal 5 tiles (flann 11/21/2021)
 
 
 ;###separator###
@@ -676,6 +677,74 @@ CopyFrom	=	0x1A138
 CopyFrom	=	0x2A138
 [HighwayIntersectionInfo_0x000FA138]
 CopyFrom	=	0x3A138
+
+[HighwayIntersectionInfo_0x0000A139]
+;Added by flann
+;Rail FLEX-Ramp L1 to L2 5 tiles
+Piece = 0.0, -16.0, 0, 0, 0x5d7e0905
+PreviewEffect = preview_errw_rampo9__110
+
+CellLayout=....
+CellLayout=....
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..c.
+CellLayout=..a.
+CellLayout=..b<
+CellLayout=..^.
+
+CheckType = a - rail: 0x02000200 dirtroad: 0x01040401, 0xFFFFFFFF optional
+CheckType = b - dirtroad: 0x00000000
+CheckType = c - rail: 0x02000200, 0xFFFFFFFF optional
+
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=..|.
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5d7e0905
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001A139]
+CopyFrom	=	0xA139
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002A139]
+CopyFrom	=	0xA139
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003A139]
+CopyFrom	=	0xA139
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004A139]
+CopyFrom	=	0xA139
+[HighwayIntersectionInfo_0x0005A139]
+CopyFrom	=	0x1A139
+[HighwayIntersectionInfo_0x0006A139]
+CopyFrom	=	0x2A139
+[HighwayIntersectionInfo_0x0007A139]
+CopyFrom	=	0x3A139
+[HighwayIntersectionInfo_0x0008A139]
+CopyFrom	=	0xA139
+[HighwayIntersectionInfo_0x0009A139]
+CopyFrom	=	0x1A139
+[HighwayIntersectionInfo_0x000AA139]
+CopyFrom	=	0x2A139
+[HighwayIntersectionInfo_0x000BA139]
+CopyFrom	=	0x3A139
+[HighwayIntersectionInfo_0x000CA139]
+CopyFrom	=	0xA139
+[HighwayIntersectionInfo_0x000DA139]
+CopyFrom	=	0x1A139
+[HighwayIntersectionInfo_0x000EA139]
+CopyFrom	=	0x2A139
+[HighwayIntersectionInfo_0x000FA139]
+CopyFrom	=	0x3A139
 
 
 ;;STATIC PIECES
