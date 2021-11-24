@@ -56,6 +56,7 @@ AddTypes     = AC40, 1AC40, 2AC40, 3AC40, 4AC40, 5AC40, 6AC40, 7AC40 ;RealRailwa
 AddTypes     = AC41, 1AC41, 2AC41, 3AC41, 4AC41, 5AC41, 6AC41, 7AC41 ;RealRailway DTR Orthogonal X Diagonal
 AddTypes     = AC42, 1AC42, 2AC42, 3AC42, 4AC42, 5AC42, 6AC42, 7AC42 ;RealRailway DTR FA2 (Orthogonal)
 AddTypes     = AC43, 1AC43, 2AC43, 3AC43, 4AC43, 5AC43, 6AC43, 7AC43 ;RealRailway DTR FA2 (Diagonal)
+AddTypes     = AC44, 1AC44, 2AC44, 3AC44, 4AC44, 5AC44, 6AC44, 7AC44 ;RealRailway DTR Expanded Median
 
 ;###separator###
 
@@ -2734,6 +2735,58 @@ CopyFrom    = 0x4AC43
 Rotate  	= 2
 [HighwayIntersectionInfo_0x0007AC43]
 CopyFrom    = 0x4AC43
+Rotate  	= 1
+
+;<>-RRW-2_FlexTurnout_DTR_Expanded_Median- RUL0
+[HighwayIntersectionInfo_0x0000AC44]
+Piece = 16.0, 0.0, 0, 1, 0x5d571105
+PreviewEffect = preview_dtr_wide_median1
+
+CellLayout = .........
+CellLayout = ..Aa....<
+CellLayout = ...b.....
+CellLayout = ...c.....
+CellLayout = .........
+CellLayout = ..^......
+
+;senw
+CheckType = A - dirtroad:0x00000000
+CheckType = a - rail:0x04000200, 0xFFFFFFFF optional
+CheckType = b - rail:0x04000404, 0xFFFFFFFF optional
+CheckType = c - rail:0x02000404, 0xFFFFFFFF optional
+
+ConsLayout = ........
+ConsLayout = ..+|...<
+ConsLayout = ...|....
+ConsLayout = ...|....
+ConsLayout = ........
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5d571105
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001AC44]
+CopyFrom    = 0xAC44
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002AC44]
+CopyFrom    = 0xAC44
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003AC44]
+CopyFrom    = 0xAC44
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004AC44]
+CopyFrom    = 0xAC44
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005AC44]
+CopyFrom    = 0x4AC44
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006AC44]
+CopyFrom    = 0x4AC44
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007AC44]
+CopyFrom    = 0x4AC44
 Rotate  	= 1
 
 ;
