@@ -251,29 +251,55 @@ Rotate		= 2
 CopyFrom    = 0x5905
 Rotate		= 3
 [HighwayIntersectionInfo_0x00045905]
-CopyFrom    = 0x5905
+;Added by Tarkus 28-Aug-2021.
+;MIS FLEX Dual Turn Lane
+Piece = 0.0, 0.0, 0, 0, 0x57D27085
+PreviewEffect = preview_starter_mis2ftl_001
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00030404, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D27085
+Costs       = 8
 [HighwayIntersectionInfo_0x00055905]
-CopyFrom    = 0x15905
+CopyFrom    = 0x45905
+Rotate 		= 1
 [HighwayIntersectionInfo_0x00065905]
-CopyFrom    = 0x25905
+CopyFrom    = 0x45905
+Rotate 		= 2
 [HighwayIntersectionInfo_0x00075905]
+CopyFrom    = 0x45905
+Rotate 		= 3
+[HighwayIntersectionInfo_0x00085905]
+CopyFrom    = 0x5905
+[HighwayIntersectionInfo_0x00095905]
+CopyFrom    = 0x15905
+[HighwayIntersectionInfo_0x000A5905]
+CopyFrom    = 0x25905
+[HighwayIntersectionInfo_0x000B5905]
 CopyFrom    = 0x35905
-[HighwayIntersectionInfo_0x00085904]
-CopyFrom    = 0x5904
-[HighwayIntersectionInfo_0x00095904]
-CopyFrom    = 0x15904
-[HighwayIntersectionInfo_0x000A5904]
-CopyFrom    = 0x25904
-[HighwayIntersectionInfo_0x000B5904]
-CopyFrom    = 0x35904
-[HighwayIntersectionInfo_0x000C5904]
-CopyFrom    = 0x5904
-[HighwayIntersectionInfo_0x000D5904]
-CopyFrom    = 0x15904
-[HighwayIntersectionInfo_0x000E5904]
-CopyFrom    = 0x25904
-[HighwayIntersectionInfo_0x000F5904]
-CopyFrom    = 0x35904
+[HighwayIntersectionInfo_0x000C5905]
+CopyFrom    = 0x45905
+[HighwayIntersectionInfo_0x000D5905]
+CopyFrom    = 0x55905
+[HighwayIntersectionInfo_0x000E5905]
+CopyFrom    = 0x65905
+[HighwayIntersectionInfo_0x000F5905]
+CopyFrom    = 0x75905
 
 
 
@@ -312,13 +338,39 @@ Rotate		= 2
 CopyFrom    = 0x5906
 Rotate		= 3
 [HighwayIntersectionInfo_0x00045906]
-CopyFrom    = 0x5906
+;Added by Tarkus 28-Aug-2021.
+;MIS FLEX Triple Turn Lane
+Piece = 0.0, 0.0, 0, 0, 0x57D27105
+PreviewEffect = preview_starter_mis3ftl_000
+
+CellLayout =.......
+CellLayout =...Z..<
+CellLayout =...a...
+CellLayout =.......
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x02000200
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x00010404, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =...|..<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57D27105
+Costs       = 8
 [HighwayIntersectionInfo_0x00055906]
-CopyFrom    = 0x15906
+CopyFrom    = 0x45906
+Rotate		= 1
 [HighwayIntersectionInfo_0x00065906]
-CopyFrom    = 0x25906
+CopyFrom    = 0x45906
+Rotate		= 2
 [HighwayIntersectionInfo_0x00075906]
-CopyFrom    = 0x35906
+CopyFrom    = 0x45906
+Rotate		= 3
 [HighwayIntersectionInfo_0x00085906]
 CopyFrom    = 0x5906
 [HighwayIntersectionInfo_0x00095906]
@@ -328,13 +380,13 @@ CopyFrom    = 0x25906
 [HighwayIntersectionInfo_0x000B5906]
 CopyFrom    = 0x35906
 [HighwayIntersectionInfo_0x000C5906]
-CopyFrom    = 0x5906
+CopyFrom    = 0x45906
 [HighwayIntersectionInfo_0x000D5906]
-CopyFrom    = 0x15906
+CopyFrom    = 0x55906
 [HighwayIntersectionInfo_0x000E5906]
-CopyFrom    = 0x25906
+CopyFrom    = 0x65906
 [HighwayIntersectionInfo_0x000F5906]
-CopyFrom    = 0x35906
+CopyFrom    = 0x75906
 
 
 
