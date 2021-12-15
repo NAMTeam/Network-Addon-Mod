@@ -916,10 +916,20 @@ CellLayout=.....
 CellLayout=.^...
 
 CheckType = a - road: 0x02000200
-CheckType = b - avenue: 0x04040202 road: 0x02040000, 0xffffffff optional
-CheckType = c - avenue: 0x04020204 road: 0x04000002, 0xffffffff optional
-CheckType = d - avenue: 0x02020404 road: 0x00000204, 0xffffffff optional
-CheckType = e - avenue: 0x02040402 road: 0x00020400, 0xffffffff optional
+;CheckType = b - avenue: 0x04040202 road: 0x02020000, 0xffffffff optional
+;CheckType = c - avenue: 0x04020204 road: 0x02000002, 0xffffffff optional
+;CheckType = d - avenue: 0x02020404 road: 0x00000202, 0xffffffff optional
+;CheckType = e - avenue: 0x02040402 road: 0x00020200, 0xffffffff optional
+;CheckType = f - avenue: 0x04040402 road: 0x02020200, 0xffffffff optional
+;CheckType = g - avenue: 0x04020404 road: 0x02000202, 0xffffffff optional
+;CheckType = h - avenue: 0x04040204 road: 0x02020002, 0xffffffff optional
+;CheckType = i - avenue: 0x02040404 road: 0x00020202, 0xffffffff optional
+;CheckType = j - avenue: 0x04040404 road: 0x02020202, 0xffffffff optional
+
+CheckType = b - avenue: 0x04040202 road: 0x02020400, 0xffffffff optional
+CheckType = c - avenue: 0x04020204 road: 0x02040002, 0xffffffff optional
+CheckType = d - avenue: 0x02020404 road: 0x04000202, 0xffffffff optional
+CheckType = e - avenue: 0x02040402 road: 0x00020204, 0xffffffff optional
 CheckType = f - avenue: 0x04040402 road: 0x04020200, 0xffffffff optional
 CheckType = g - avenue: 0x04020404 road: 0x02000402, 0xffffffff optional
 CheckType = h - avenue: 0x04040204 road: 0x02020004, 0xffffffff optional
