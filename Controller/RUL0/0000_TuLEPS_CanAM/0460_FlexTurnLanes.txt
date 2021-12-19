@@ -361,10 +361,10 @@ CellLayout=.bc.
 CellLayout=.^..
 
 CheckType = a - avenue: 0x02040200 road: 0x02000200
-CheckType = b - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
-CheckType = c - avenue: 0x02000204, 0xffffffff optional
-CheckType = d - avenue: 0x02040200, 0xffffffff optional
-CheckType = e - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = b - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = c - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = d - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = e - avenue: 0x02000204, 0xffffffff optional
 ;###LHD###CheckType = b - avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = c - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
 ;###LHD###CheckType = d - avenue: 0x02040200, 0xffffffff optional
@@ -1126,7 +1126,7 @@ CopyFrom    = 0x30479
 ;Added by Tarkus 2014/01/20
 ;RD4-to-TL starter Type 120
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B224605
-;###LHD###Piece = 0.0, 0.0, 0, 1, 0x5B224605
+;###LHD###Piece = 16.0, 16.0, 0, 1, 0x5B224605
 PreviewEffect = preview_flex_turn_lane_transition_rd4_tl
 
 CellLayout=....
