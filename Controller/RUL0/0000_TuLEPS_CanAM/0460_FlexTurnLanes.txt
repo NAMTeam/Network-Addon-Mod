@@ -1076,8 +1076,8 @@ CopyFrom    = 0x30477
 [HighwayIntersectionInfo_0x00000479]
 ;Added by Tarkus 14-October-2021
 ;OWR2 Type 020 Base Network starter
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5F941105
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5F941105
+Piece = 0.0, 16.0, 0, 0, 0x5F941105
+Piece = 0.0, 16.0, 0, 1, 0x5F941105
 PreviewEffect = preview_flex_turn_lane_transition_ow2_tl
 
 CellLayout=...
@@ -1086,8 +1086,8 @@ CellLayout=.b.
 CellLayout=.^.
 
 CheckType = a - onewayroad: 0x02000200
-;###RHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
-;###LHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
