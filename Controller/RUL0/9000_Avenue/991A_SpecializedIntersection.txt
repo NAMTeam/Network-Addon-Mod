@@ -1,0 +1,257 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;SPECIALIZED INTERSECTION BUTTON SECTION
+;SPECIALIZED INTERSECTION BUTTON SECTION
+
+RotationRing  	= 991A, 8991A, 1991A, 9991A, 2991A, A991A, 3991A, B991A, 4991A, C991A, 5991A, D991A, 6991A, E991A, 7991A, F991A ;FlexSPUI Revamp
+;AddTypes     	= 991B, 8991B, 1991B, 9991B, 2991B, A991B, 3991B, B991B, 4991B, C991B, 5991B, D991B, 6991B, E991B, 7991B, F991B ;FlexSPUI Revamp Type 130
+AddTypes     	= 991C, 8991C, 1991C, 9991C, 2991C, A991C, 3991C, B991C, 4991C, C991C, 5991C, D991C, 6991C, E991C, 7991C, F991C ;FlexDDI
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;Avenue/RHW Overpass/Interface Piece Section
+
+;
+
+[HighwayIntersectionInfo_0x0000991A]
+;Added by Tarkus 11/10/16
+;FlexSPUI New
+;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5CE45005
+;###LHD###Piece = 0.0, 80.0, 2, 1, 0x5CE45005
+PreviewEffect = preview_flexspui_type20_001
+
+CellLayout=.......
+CellLayout=..a....
+CellLayout=.Za...<
+;###RHD###CellLayout=.ajd...
+;###LHD###CellLayout=.aad...
+CellLayout=.ebg...
+CellLayout=.fch...
+;###RHD###CellLayout=.aad...
+;###LHD###CellLayout=.ajd...
+CellLayout=..a....
+CellLayout=..a....
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = e - avenue: 0x04040102 dirtroad: 0x00000200, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x03040402 dirtroad: 0x02000000, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x04020302 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x01020402 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = j - road: 0x02000200, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.+....<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57E10000
+Costs = 1000
+[HighwayIntersectionInfo_0x0001991A]
+CopyFrom = 0x991A
+Rotate = 1
+[HighwayIntersectionInfo_0x0002991A]
+CopyFrom = 0x991A
+Rotate = 2
+[HighwayIntersectionInfo_0x0003991A]
+CopyFrom = 0x991A
+Rotate = 3
+[HighwayIntersectionInfo_0x0004991A]
+CopyFrom = 0x991A
+[HighwayIntersectionInfo_0x0005991A]
+CopyFrom = 0x1991A
+[HighwayIntersectionInfo_0x0006991A]
+CopyFrom = 0x2991A
+[HighwayIntersectionInfo_0x0007991A]
+CopyFrom = 0x3991A
+[HighwayIntersectionInfo_0x0008991A]
+CopyFrom = 0x991A
+[HighwayIntersectionInfo_0x0009991A]
+CopyFrom = 0x1991A
+[HighwayIntersectionInfo_0x000A991A]
+CopyFrom = 0x2991A
+[HighwayIntersectionInfo_0x000B991A]
+CopyFrom = 0x3991A
+[HighwayIntersectionInfo_0x000C991A]
+CopyFrom = 0x991A
+[HighwayIntersectionInfo_0x000D991A]
+CopyFrom = 0x1991A
+[HighwayIntersectionInfo_0x000E991A]
+CopyFrom = 0x2991A
+[HighwayIntersectionInfo_0x000F991A]
+CopyFrom = 0x3991A
+
+
+
+[HighwayIntersectionInfo_0x0000991B]
+;Added by Tarkus 11/10/16
+;FlexSPUI New Type 130
+Piece = 0.0, 0.0, 0, 0, 0x5CE45005
+PreviewEffect = preview_flexspui_type30_001
+
+CellLayout=.......
+CellLayout=..a....
+CellLayout=.Za...<
+CellLayout=.ajd...
+CellLayout=.ebg...
+CellLayout=.bbb...
+CellLayout=.fch...
+CellLayout=.aad...
+CellLayout=..a....
+CellLayout=..a....
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = e - avenue: 0x04040102 dirtroad: 0x00000200, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x03040402 dirtroad: 0x02000000, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x04020302 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x01020402 dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = j - road: 0x02000200, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.+....<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57E12000
+Costs = 2000
+[HighwayIntersectionInfo_0x0001991B]
+CopyFrom = 0x991B
+Rotate = 1
+[HighwayIntersectionInfo_0x0002991B]
+CopyFrom = 0x991B
+Rotate = 2
+[HighwayIntersectionInfo_0x0003991B]
+CopyFrom = 0x991B
+Rotate = 3
+[HighwayIntersectionInfo_0x0004991B]
+CopyFrom = 0x991B
+[HighwayIntersectionInfo_0x0005991B]
+CopyFrom = 0x1991B
+[HighwayIntersectionInfo_0x0006991B]
+CopyFrom = 0x2991B
+[HighwayIntersectionInfo_0x0007991B]
+CopyFrom = 0x3991B
+[HighwayIntersectionInfo_0x0008991B]
+CopyFrom = 0x991B
+[HighwayIntersectionInfo_0x0009991B]
+CopyFrom = 0x1991B
+[HighwayIntersectionInfo_0x000A991B]
+CopyFrom = 0x2991B
+[HighwayIntersectionInfo_0x000B991B]
+CopyFrom = 0x3991B
+[HighwayIntersectionInfo_0x000C991B]
+CopyFrom = 0x991B
+[HighwayIntersectionInfo_0x000D991B]
+CopyFrom = 0x1991B
+[HighwayIntersectionInfo_0x000E991B]
+CopyFrom = 0x2991B
+[HighwayIntersectionInfo_0x000F991B]
+CopyFrom = 0x3991B
+
+
+[HighwayIntersectionInfo_0x0000991C]
+;Added by Tarkus 03-Jan-2022
+;FlexDDI New
+;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5CE45005
+;###LHD###Piece = 0.0, 80.0, 2, 1, 0x5CE45005
+PreviewEffect = preview_flex_ddi_type20_001
+
+CellLayout=.......
+CellLayout=..a....
+CellLayout=.Za...<
+;###RHD###CellLayout=.ajd...
+;###LHD###CellLayout=.aad...
+CellLayout=.ebg...
+CellLayout=.fch...
+;###RHD###CellLayout=.aad...
+;###LHD###CellLayout=.ajd...
+CellLayout=..a....
+CellLayout=..a....
+CellLayout=.......
+CellLayout=.^.....
+
+CheckType = a - dirtroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = c - road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - dirtroad: 0x00000000, 0xFFFFFFFF optional
+CheckType = e - avenue: 0x04040102 onewayroad: 0x00000200, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x03040402 onewayroad: 0x02000000, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x04020302 onewayroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x01020402 onewayroad: 0x02000200, 0xFFFFFFFF optional
+CheckType = j - road: 0x02000200, 0xFFFFFFFF optional
+CheckType = Z - dirtroad: 0x02020202
+
+ConsLayout=.......
+ConsLayout=.+....<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x57E20000
+Costs = 1000
+[HighwayIntersectionInfo_0x0001991C]
+CopyFrom = 0x991C
+Rotate = 1
+[HighwayIntersectionInfo_0x0002991C]
+CopyFrom = 0x991C
+Rotate = 2
+[HighwayIntersectionInfo_0x0003991C]
+CopyFrom = 0x991C
+Rotate = 3
+[HighwayIntersectionInfo_0x0004991C]
+CopyFrom = 0x991C
+[HighwayIntersectionInfo_0x0005991C]
+CopyFrom = 0x1991C
+[HighwayIntersectionInfo_0x0006991C]
+CopyFrom = 0x2991C
+[HighwayIntersectionInfo_0x0007991C]
+CopyFrom = 0x3991C
+[HighwayIntersectionInfo_0x0008991C]
+CopyFrom = 0x991C
+[HighwayIntersectionInfo_0x0009991C]
+CopyFrom = 0x1991C
+[HighwayIntersectionInfo_0x000A991C]
+CopyFrom = 0x2991C
+[HighwayIntersectionInfo_0x000B991C]
+CopyFrom = 0x3991C
+[HighwayIntersectionInfo_0x000C991C]
+CopyFrom = 0x991C
+[HighwayIntersectionInfo_0x000D991C]
+CopyFrom = 0x1991C
+[HighwayIntersectionInfo_0x000E991C]
+CopyFrom = 0x2991C
+[HighwayIntersectionInfo_0x000F991C]
+CopyFrom = 0x3991C
