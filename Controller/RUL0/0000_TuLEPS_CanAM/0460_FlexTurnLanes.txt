@@ -12,6 +12,8 @@ AddTypes     = 0464, 10464, 20464, 30464, 40464, 50464, 60464, 70464 ;AVE2-to-TL
 ;AddTypes     = 0477, 10477, 20477, 30477, 40477, 50477, 60477, 70477 ;Dual TL 110 starter
 ;AddTypes     = 0478, 10478, 20478, 30478, 40478, 50478, 60478, 70478 ;RD2 TL 010 Base Network starter
 AddTypes     = 0479, 10479, 20479, 30479, 40479, 50479, 60479, 70479 ;OWR2 TL 020 Base Network starter
+AddTypes     = 047A, 1047A, 2047A, 3047A, 4047A, 5047A, 6047A, 7047A ;AVE4 TL 020 Base Network starter
+
 ;Dual-Tile Networks
 AddTypes     = 0465, 10465, 20465, 30465, 40465, 50465, 60465, 70465 ;AVE4/TLA5-to-TL 120 starter
 AddTypes     = 047C, 1047C, 2047C, 3047C, 4047C, 5047C, 6047C, 7047C ;RD4-to-TL 120 Starter
@@ -1076,8 +1078,8 @@ CopyFrom    = 0x30477
 [HighwayIntersectionInfo_0x00000479]
 ;Added by Tarkus 14-October-2021
 ;OWR2 Type 020 Base Network starter
-Piece = 0.0, 16.0, 0, 0, 0x5F941105
-Piece = 0.0, 16.0, 0, 1, 0x5F941105
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5F941105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5F941105
 PreviewEffect = preview_flex_turn_lane_transition_ow2_tl
 
 CellLayout=...
@@ -1086,8 +1088,8 @@ CellLayout=.b.
 CellLayout=.^.
 
 CheckType = a - onewayroad: 0x02000200
-CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
-CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+;###RHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = b - onewayroad: 0x02000200 road: 0x01040000, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -1117,6 +1119,55 @@ CopyFrom    = 0x10479
 CopyFrom    = 0x20479
 [HighwayIntersectionInfo_0x00070479]
 CopyFrom    = 0x30479
+
+
+
+[HighwayIntersectionInfo_0x0000047A]
+;Added by Tarkus 14-October-2021
+;AVE Type 020 Base Network starter
+Piece = 0.0, 16.0, 0, 0, 0x5F441105
+Piece = 0.0, 16.0, 0, 1, 0x5F441105
+PreviewEffect = preview_flex_turn_lane_transition_av4_t3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+;###RHD###CheckType = a - avenue: 0x02000204
+;###LHD###CheckType = a - avenue: 0x02040200
+;###RHD###CheckType = b - avenue: 0x02000204 road: 0x01040000, 0xffffffff optional
+;###LHD###CheckType = b - avenue: 0x02040200 road: 0x01040000, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5F441100
+Costs       = 20
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001047A]
+CopyFrom    = 0x047A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002047A]
+CopyFrom    = 0x047A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003047A]
+CopyFrom    = 0x047A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004047A]
+CopyFrom    = 0x047A
+[HighwayIntersectionInfo_0x0005047A]
+CopyFrom    = 0x1047A
+[HighwayIntersectionInfo_0x0006047A]
+CopyFrom    = 0x2047A
+[HighwayIntersectionInfo_0x0007047A]
+CopyFrom    = 0x3047A
+
 
 
 
