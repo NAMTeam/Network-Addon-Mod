@@ -45,6 +45,9 @@ AddTypes =  5FE4, 15FE4, 25FE4, 35FE4, 45FE4, 55FE4, 65FE4, 75FE4 ;RHW-10S Type 
 AddTypes =  5FF0, 45FF0, 15FF0, 55FF0, 25FF0, 65FF0, 35FF0, 75FF0 ;MIS/FAMIS Ramp Type C1 - out
 ;AddTypes = 85FF0, C5FF0, 95FF0, D5FF0, A5FF0, E5FF0, B5FF0, F5FF0 ;MIS/FAMIS Ramp Type C1 - in
 
+;AVENUE h3ids 5ff1
+AddTypes     = 5FF1, 15FF1, 25FF1, 35FF1, 45FF1, 55FF1, 65FF1, 75FF1 ;AVE-4/MIS Ramp C1
+
 ;###separator###
 
 [HighwayIntersectionInfo_0x00005FB0]
@@ -2302,5 +2305,91 @@ Rotate = 2
 [HighwayIntersectionInfo_0x00075FD0]
 CopyFrom = 0x45FD0
 Rotate = 3
+
+
+[HighwayIntersectionInfo_0x00005FF1]
+;Added by SA 11/05/2009
+;Edited by mrtnrln 05/29/2010
+;Moved to FARHW Ramps Puzzle Button by Tarkus 10-Jan-2021
+;AVE-4 Ramp Type C1 - Exit Ramp
+Piece = -16.0, 0.0, 0, 0, 0x5CE40405
+PreviewEffect = ave-4-ramp-e1
+
+CellLayout =...........
+CellLayout =...........
+CellLayout =.....X.....
+CellLayout =....+A....<
+CellLayout =....+A.....
+CellLayout =....+A.....
+CellLayout =.....X.....
+CellLayout =.....^.....
+
+CheckType = X - avenue: 0x02040200, 0xffffffff optional
+CheckType = A - avenue: 0x02040200
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....+|....<
+ConsLayout =....+|.....
+ConsLayout =....+|.....
+ConsLayout =...........
+ConsLayout =.....^.....
+
+AutoTileBase = 0x5CE40400
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE40400
+Costs       = 400
+[HighwayIntersectionInfo_0x00015FF1]
+CopyFrom = 0x5FF1
+Rotate = 1
+[HighwayIntersectionInfo_0x00025FF1]
+CopyFrom = 0x5FF1
+Rotate = 2
+[HighwayIntersectionInfo_0x00035FF1]
+CopyFrom = 0x5FF1
+Rotate = 3
+[HighwayIntersectionInfo_0x00045FF1]
+;Added by SA 11/05/2009
+;Edited by mrtnrln 05/29/2010
+;AVE-4 Ramp Type E - Entrance Ramp
+Piece = 0.0, 0.0, 0, 0, 0x5CE40605
+PreviewEffect = ave-4-ramp-e2
+
+CellLayout =...........
+CellLayout =...........
+CellLayout =....X......
+CellLayout =....A+....<
+CellLayout =....A+.....
+CellLayout =....A+.....
+CellLayout =....X......
+CellLayout =....^......
+
+CheckType = X - avenue: 0x02000204, 0xffffffff optional
+CheckType = A - avenue: 0x02000204
+
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =...........
+ConsLayout =....|+....<
+ConsLayout =....|+.....
+ConsLayout =....|+.....
+ConsLayout =...........
+ConsLayout =.....^.....
+
+AutoTileBase = 0x5CE40600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5CE40600
+Costs       = 400
+[HighwayIntersectionInfo_0x00055FF1]
+CopyFrom = 0x45FF1
+Rotate = 1
+[HighwayIntersectionInfo_0x00065FF1]
+CopyFrom = 0x45FF1
+Rotate = 2
+[HighwayIntersectionInfo_0x00075FF1]
+CopyFrom = 0x45FF1
+Rotate = 3
+
 
 ;END FARHW SECTION
