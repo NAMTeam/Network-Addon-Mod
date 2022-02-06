@@ -1546,56 +1546,15 @@ PlaceQueryID = 0x57D24055
 Costs = 600
 
 [HighwayIntersectionInfo_0x00015920]
-;Added by Tarkus 30-Jan-2022
-;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Up Right Turn
-Piece = 0.0, 16.0, 0, 0, 0x5caee405
-PreviewEffect = preview_flexhtrans_l1___000
-
-CellLayout=....
-CellLayout=..Z<
-CellLayout=..a.
-CellLayout=..b.
-CellLayout=..c.
-CellLayout=..d.
-CellLayout=..^.
-
-CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x02000200, 0xFF00FF00 optional
-CheckType = c - onewayroad: 0x00040304 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = Z - dirtroad: 0x02020202
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase = 0x55387000
-PlaceQueryID = 0x57D24056
-Costs = 600
-
+CopyFrom	=	0x5920
+Rotate	=	1
 [HighwayIntersectionInfo_0x00025920]
 CopyFrom	=	0x5920
-Rotate	=	1
+Rotate	=	2
 [HighwayIntersectionInfo_0x00035920]
-CopyFrom	=	0x15920
-Rotate	=	1
+CopyFrom	=	0x5920
+Rotate	=	3
 [HighwayIntersectionInfo_0x00045920]
-CopyFrom	=	0x5920
-Rotate	=	2
-[HighwayIntersectionInfo_0x00055920]
-CopyFrom	=	0x15920
-Rotate	=	2
-[HighwayIntersectionInfo_0x00065920]
-CopyFrom	=	0x5920
-Rotate	=	3
-[HighwayIntersectionInfo_0x00075920]
-CopyFrom	=	0x15920
-Rotate	=	3
-[HighwayIntersectionInfo_0x00085920]
 ;Added by Tarkus 30-Jan-2022
 ;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Down Left Turn
 Piece = 0.0, 16.0, 0, 0, 0x5caee405
@@ -1627,53 +1586,197 @@ AutoTileBase = 0x55387000
 PlaceQueryID = 0x57D24055
 Costs = 600
 
-[HighwayIntersectionInfo_0x00095920]
-;Added by Tarkus 30-Jan-2022
-;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Up Left Turn
-Piece = 0.0, 16.0, 0, 0, 0x5caee405
-PreviewEffect = preview_flexhtrans_l1___000
-
-CellLayout=....
-CellLayout=..Z<
-CellLayout=..a.
-CellLayout=..b.
-CellLayout=..c.
-CellLayout=..d.
-CellLayout=..^.
-
-CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x02000200, 0xFF00FF00 optional
-CheckType = c - onewayroad: 0x00030404 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = Z - dirtroad: 0x02020202
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase = 0x55387000
-PlaceQueryID = 0x57D24056
-Costs = 600
-
-[HighwayIntersectionInfo_0x000A5920]
-CopyFrom	=	0x85920
-Rotate	=	1
-[HighwayIntersectionInfo_0x00035920]
-CopyFrom	=	0x95920
-Rotate	=	1
-[HighwayIntersectionInfo_0x00045920]
-CopyFrom	=	0x85920
-Rotate	=	2
 [HighwayIntersectionInfo_0x00055920]
-CopyFrom	=	0x95920
-Rotate	=	2
+CopyFrom	=	0x45920
+Rotate	=	1
 [HighwayIntersectionInfo_0x00065920]
-CopyFrom	=	0x85920
-Rotate	=	3
+CopyFrom	=	0x45920
+Rotate	=	2
 [HighwayIntersectionInfo_0x00075920]
-CopyFrom	=	0x95920
+CopyFrom	=	0x45920
 Rotate	=	3
+[HighwayIntersectionInfo_0x00085920]
+CopyFrom	=	0x5920
+[HighwayIntersectionInfo_0x00095920]
+CopyFrom	=	0x15920
+[HighwayIntersectionInfo_0x000A5920]
+CopyFrom	=	0x25920
+[HighwayIntersectionInfo_0x000B5920]
+CopyFrom	=	0x35920
+[HighwayIntersectionInfo_0x000C5920]
+CopyFrom	=	0x45920
+[HighwayIntersectionInfo_0x000D5920]
+CopyFrom	=	0x55920
+[HighwayIntersectionInfo_0x000E5920]
+CopyFrom	=	0x65920
+[HighwayIntersectionInfo_0x000F5920]
+CopyFrom	=	0x75920
+
+
+
+;;re-enable when L1 MIS FTLs are ready for use
+
+;[HighwayIntersectionInfo_0x00005920]
+;;Added by Tarkus 30-Jan-2022
+;;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Down Right Turn
+;Piece = 0.0, 16.0, 0, 0, 0x5caee405
+;PreviewEffect = preview_flexhtrans_l1___000
+
+;CellLayout=....
+;CellLayout=..Z<
+;CellLayout=..a.
+;CellLayout=..b.
+;CellLayout=..c.
+;CellLayout=..d.
+;CellLayout=..^.
+
+;CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - onewayroad: 0x03040004 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = c - dirtroad: 0x02000200, 0xFF00FF00 optional
+;CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = Z - dirtroad: 0x02020202
+
+;ConsLayout=....
+;ConsLayout=..+<
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=..^.
+
+;AutoTileBase = 0x55387000
+;PlaceQueryID = 0x57D24055
+;Costs = 600
+
+;[HighwayIntersectionInfo_0x00015920]
+;;Added by Tarkus 30-Jan-2022
+;;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Up Right Turn
+;Piece = 0.0, 16.0, 0, 0, 0x5caee405
+;PreviewEffect = preview_flexhtrans_l1___000
+
+;CellLayout=....
+;CellLayout=..Z<
+;CellLayout=..a.
+;CellLayout=..b.
+;CellLayout=..c.
+;CellLayout=..d.
+;CellLayout=..^.
+
+;CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - dirtroad: 0x02000200, 0xFF00FF00 optional
+;CheckType = c - onewayroad: 0x00040304 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = Z - dirtroad: 0x02020202
+
+;ConsLayout=....
+;ConsLayout=..+<
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=..^.
+
+;AutoTileBase = 0x55387000
+;PlaceQueryID = 0x57D24056
+;Costs = 600
+
+;[HighwayIntersectionInfo_0x00025920]
+;CopyFrom	=	0x5920
+;Rotate	=	1
+;[HighwayIntersectionInfo_0x00035920]
+;CopyFrom	=	0x15920
+;Rotate	=	1
+;[HighwayIntersectionInfo_0x00045920]
+;CopyFrom	=	0x5920
+;Rotate	=	2
+;[HighwayIntersectionInfo_0x00055920]
+;CopyFrom	=	0x15920
+;Rotate	=	2
+;[HighwayIntersectionInfo_0x00065920]
+;CopyFrom	=	0x5920
+;Rotate	=	3
+;[HighwayIntersectionInfo_0x00075920]
+;CopyFrom	=	0x15920
+;Rotate	=	3
+;[HighwayIntersectionInfo_0x00085920]
+;;Added by Tarkus 30-Jan-2022
+;;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Down Left Turn
+;Piece = 0.0, 16.0, 0, 0, 0x5caee405
+;PreviewEffect = preview_flexhtrans_l1___000
+
+;CellLayout=....
+;CellLayout=..Z<
+;CellLayout=..a.
+;CellLayout=..b.
+;CellLayout=..c.
+;CellLayout=..d.
+;CellLayout=..^.
+
+;CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - onewayroad: 0x04040003 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = c - dirtroad: 0x02000200, 0xFF00FF00 optional
+;CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = Z - dirtroad: 0x02020202
+
+;ConsLayout=....
+;ConsLayout=..+<
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=..^.
+
+;AutoTileBase = 0x55387000
+;PlaceQueryID = 0x57D24055
+;Costs = 600
+
+;[HighwayIntersectionInfo_0x00095920]
+;;Added by Tarkus 30-Jan-2022
+;;RHW MIS 2-Lane FTL FlexHT-L0-to-L1 Ortho Up Left Turn
+;Piece = 0.0, 16.0, 0, 0, 0x5caee405
+;PreviewEffect = preview_flexhtrans_l1___000
+
+;CellLayout=....
+;CellLayout=..Z<
+;CellLayout=..a.
+;CellLayout=..b.
+;CellLayout=..c.
+;CellLayout=..d.
+;CellLayout=..^.
+
+;CheckType = a - rail: 0x00040400 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = b - dirtroad: 0x02000200, 0xFF00FF00 optional
+;CheckType = c - onewayroad: 0x00030404 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = d - rail: 0x00040404 dirtroad: 0x02000200, 0xFFFFFFFF optional
+;CheckType = Z - dirtroad: 0x02020202
+
+;ConsLayout=....
+;ConsLayout=..+<
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=....
+;ConsLayout=..^.
+
+;AutoTileBase = 0x55387000
+;PlaceQueryID = 0x57D24056
+;Costs = 600
+
+;[HighwayIntersectionInfo_0x000A5920]
+;CopyFrom	=	0x85920
+;Rotate	=	1
+;[HighwayIntersectionInfo_0x000B5920]
+;CopyFrom	=	0x95920
+;Rotate	=	1
+;[HighwayIntersectionInfo_0x000C5920]
+;CopyFrom	=	0x85920
+;Rotate	=	2
+;[HighwayIntersectionInfo_0x000D5920]
+;CopyFrom	=	0x95920
+;Rotate	=	2
+;[HighwayIntersectionInfo_0x000E5920]
+;CopyFrom	=	0x85920
+;Rotate	=	3
+;[HighwayIntersectionInfo_0x000F5920]
+;CopyFrom	=	0x95920
+;Rotate	=	3
