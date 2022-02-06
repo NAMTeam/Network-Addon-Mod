@@ -10,6 +10,7 @@ AddTypes     = 0462, 10462, 20462, 30462, 40462, 50462, 60462, 70462 ;ARD3-to-TL
 AddTypes     = 0463, 10463, 20463, 30463, 40463, 50463, 60463, 70463 ;TLA3-to-TL 110 starter
 AddTypes     = 0464, 10464, 20464, 30464, 40464, 50464, 60464, 70464 ;AVE2-to-TL 110 starter
 ;AddTypes     = 0477, 10477, 20477, 30477, 40477, 50477, 60477, 70477 ;Dual TL 110 starter
+;AddTypes     = 047B, 1047B, 2047B, 3047B, 4047B, 5047B, 6047B, 7047B ;Dual TL 110 transition starter
 ;AddTypes     = 0478, 10478, 20478, 30478, 40478, 50478, 60478, 70478 ;RD2 TL 010 Base Network starter
 AddTypes     = 0479, 10479, 20479, 30479, 40479, 50479, 60479, 70479 ;OWR2 TL 020 Base Network starter
 AddTypes     = 047A, 1047A, 2047A, 3047A, 4047A, 5047A, 6047A, 7047A ;AVE4 TL 020 Base Network starter
@@ -18,11 +19,19 @@ AddTypes     = 047A, 1047A, 2047A, 3047A, 4047A, 5047A, 6047A, 7047A ;AVE4 TL 02
 AddTypes     = 0465, 10465, 20465, 30465, 40465, 50465, 60465, 70465 ;AVE4/TLA5-to-TL 120 starter
 AddTypes     = 047C, 1047C, 2047C, 3047C, 4047C, 5047C, 6047C, 7047C ;RD4-to-TL 120 Starter
 AddTypes     = 0466, 10466, 20466, 30466, 40466, 50466, 60466, 70466 ;AVE4/TLA5-to-TL 220 starter
+;AddTypes     = 047D, 1047D, 2047D, 3047D, 4047D, 5047D, 6047D, 7047D ;AVE4/TLA5-to-TL Dual 120 starter
 ;Triple-Tile Networks
 AddTypes     = 0467, 10467, 20467, 30467, 40467, 50467, 60467, 70467 ;TLA7-to-TL 130 starter
 AddTypes     = 0468, 10468, 20468, 30468, 40468, 50468, 60468, 70468 ;AVE6-to-TL 130 starter
 AddTypes     = 0469, 10469, 20469, 30469, 40469, 50469, 60469, 70469 ;TLA7-to-TL 230 starter
 AddTypes     = 046A, 1046A, 2046A, 3046A, 4046A, 5046A, 6046A, 7046A ;AVE6-to-TL 230 starter
+;Elevated Transitions
+;AddTypes     = 0480, 10480, 20480, 30480, 40480, 50480, 60480, 70480 ;RD-to-TL 110 L1 Transition Up
+;AddTypes     = 0481, 10481, 20481, 30481, 40481, 50481, 60481, 70481 ;RD-to-TL 110 Dual L1 Transition Up
+AddTypes     = 0482, 10482, 20482, 30482, 40482, 50482, 60482, 70482 ;AVE-to-TL 120 L1 Transition Up
+;AddTypes     = 0483, 10483, 20483, 30483, 40483, 50483, 60483, 70483 ;AVE-to-TL 220 L1 Transition Up
+;AddTypes     = 0484, 10484, 20484, 30484, 40484, 50484, 60484, 70484 ;AVE-to-TL 120 Dual L1 Transition Up
+
 ;FLEX Intersections
 AddTypes     = 0470, 10470, 20470, 30470, 40470, 50470, 60470, 70470 ;FTL Dual-Tile x Dual-Tile +-Intersection Helper
 AddTypes     = 0471, 10471, 20471, 30471, 40471, 50471, 60471, 70471 ;FTL Dual-Tile x Dual-Tile T-Intersection Helper
@@ -1169,6 +1178,49 @@ CopyFrom    = 0x2047A
 CopyFrom    = 0x3047A
 
 
+[HighwayIntersectionInfo_0x0000047B]
+;Added by Tarkus 2022/01/23
+;RD2-to-Dual TL starter
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204B05
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204B05
+PreviewEffect = preview_flex_turn_lane_transition_rd2_t2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 avenue: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 avenue: 0x03040000, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204B00
+Costs       = 20
+
+[HighwayIntersectionInfo_0x0001047B]
+CopyFrom    = 0x047B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002047B]
+CopyFrom    = 0x047B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003047B]
+CopyFrom    = 0x047B
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004047B]
+CopyFrom    = 0x047B
+[HighwayIntersectionInfo_0x0005047B]
+CopyFrom    = 0x1047B
+[HighwayIntersectionInfo_0x0006047B]
+CopyFrom    = 0x2047B
+[HighwayIntersectionInfo_0x0007047B]
+CopyFrom    = 0x3047B
 
 
 
@@ -1224,6 +1276,341 @@ CopyFrom    = 0x1047C
 CopyFrom    = 0x2047C
 [HighwayIntersectionInfo_0x0007047C]
 CopyFrom    = 0x3047C
+
+
+
+[HighwayIntersectionInfo_0x0000047D]
+;Added by Tarkus 2022/01/23
+;AVE4-to-TL starter Dual Type 120
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B225005
+;###LHD###Piece = 16.0, 16.0, 0, 1, 0x5B225005
+PreviewEffect = preview_flex_turn_lane_transition_av4_t4
+
+CellLayout=....
+CellLayout=.a.<
+CellLayout=.de.
+CellLayout=.bc.
+CellLayout=.^..
+
+CheckType = a - avenue: 0x02040200 road: 0x02000200
+;###RHD###CheckType = b - avenue: 0x02040200 road: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = c - avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = d - avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = e - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = b - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - avenue: 0x02000204 road: 0x03040000, 0xffffffff optional
+;###LHD###CheckType = d - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = e - avenue: 0x02000204, 0xffffffff optional
+
+
+ConsLayout=....
+ConsLayout=.+.<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=.^..
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B225000
+Costs       = 20
+
+[HighwayIntersectionInfo_0x0001047D]
+CopyFrom    = 0x047D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002047D]
+CopyFrom    = 0x047D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003047D]
+CopyFrom    = 0x047D
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004047D]
+CopyFrom    = 0x047D
+[HighwayIntersectionInfo_0x0005047D]
+CopyFrom    = 0x1047D
+[HighwayIntersectionInfo_0x0006047D]
+CopyFrom    = 0x2047D
+[HighwayIntersectionInfo_0x0007047D]
+CopyFrom    = 0x3047D
+
+
+
+[HighwayIntersectionInfo_0x00000480]
+;Added by Tarkus 09.23.2012
+;Road Type 110 Up FlexHT-L0-to-L1 Ortho
+Piece = 0.0, 16.0, 0, 0, 0x5C060205
+PreviewEffect = preview_flexhtrans_l1rd_002
+
+CellLayout=....
+CellLayout=..b<
+CellLayout=..a.
+CellLayout=..c.
+CellLayout=..e.
+CellLayout=..d.
+CellLayout=..^.
+
+CheckType = a - monorail: 0x00000400 road: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - road: 0x00000000
+CheckType = c - road: 0x02000200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
+;###RHD###CheckType = e - road: 0x02000200 street: 0x00000100, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x02000200 street: 0x00000300, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C061200
+Costs = 600
+
+[HighwayIntersectionInfo_0x00010480]
+CopyFrom	=	0x0480
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020480]
+CopyFrom	=	0x0480
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030480]
+CopyFrom	=	0x0480
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040480]
+CopyFrom	=	0x0480
+[HighwayIntersectionInfo_0x00050480]
+CopyFrom	=	0x10480
+[HighwayIntersectionInfo_0x00060480]
+CopyFrom	=	0x20480
+[HighwayIntersectionInfo_0x00070480]
+CopyFrom	=	0x30480
+
+
+
+[HighwayIntersectionInfo_0x00000481]
+;Added by Tarkus 09.23.2012
+;Road Type 110 Up FlexHT-L0-to-L1 Ortho
+Piece = 0.0, 16.0, 0, 0, 0x5C060205
+PreviewEffect = preview_flexhtrans_l1rd_004
+
+CellLayout=....
+CellLayout=..b<
+CellLayout=..a.
+CellLayout=..c.
+CellLayout=..e.
+CellLayout=..d.
+CellLayout=..^.
+
+CheckType = a - monorail: 0x00000400 road: 0x02000200, 0xFFFFFFFF optional
+CheckType = b - road: 0x00000000
+CheckType = c - road: 0x02000200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
+;###RHD###CheckType = e - road: 0x02000200 avenue: 0x00000304, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x02000200 avenue: 0x03040000, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C061A00
+Costs = 600
+
+[HighwayIntersectionInfo_0x00010481]
+CopyFrom	=	0x0481
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020481]
+CopyFrom	=	0x0481
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030481]
+CopyFrom	=	0x0481
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040481]
+CopyFrom	=	0x0481
+[HighwayIntersectionInfo_0x00050481]
+CopyFrom	=	0x10481
+[HighwayIntersectionInfo_0x00060481]
+CopyFrom	=	0x20481
+[HighwayIntersectionInfo_0x00070481]
+CopyFrom	=	0x30481
+
+
+
+
+[HighwayIntersectionInfo_0x00000482]
+;Added by Tarkus 30-Jan-2022
+;Avenue Type 120 Up FlexHT-L0-to-L1 Ortho
+Piece = 0.0, 0.0, 0, 0, 0x5C080205
+PreviewEffect = preview_flexhtrans_l1av_002
+
+CellLayout=.....
+CellLayout=..b.<
+CellLayout=..ae.
+CellLayout=..cf.
+CellLayout=..hi.
+CellLayout=..dg.
+CellLayout=..^..
+
+CheckType = a - monorail: 0x00000400 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x00000000
+CheckType = c - avenue: 0x02040200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x00000400 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
+CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = i - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = h - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = i - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C081200
+Costs = 600
+
+[HighwayIntersectionInfo_0x00010482]
+CopyFrom	=	0x0482
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020482]
+CopyFrom	=	0x0482
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030482]
+CopyFrom	=	0x0482
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040482]
+CopyFrom	=	0x0482
+[HighwayIntersectionInfo_0x00050482]
+CopyFrom	=	0x10482
+[HighwayIntersectionInfo_0x00060482]
+CopyFrom	=	0x20482
+[HighwayIntersectionInfo_0x00070482]
+CopyFrom	=	0x30482
+
+
+[HighwayIntersectionInfo_0x00000483]
+;Added by Tarkus 30-Jan-2022
+;Avenue Type 220 Up FlexHT-L0-to-L1 Ortho
+Piece = 0.0, 0.0, 0, 0, 0x5C081605
+PreviewEffect = preview_flexhtrans_l1av_003
+
+CellLayout=.....
+CellLayout=..b.<
+CellLayout=..ae.
+CellLayout=..cf.
+CellLayout=..hi.
+CellLayout=..dg.
+CellLayout=..^..
+
+CheckType = a - monorail: 0x00000400 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x00000000
+CheckType = c - avenue: 0x02040200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x00000400 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
+CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
+;###RHD###CheckType = h - avenue: 0x02040200 onewayroad: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = i - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = h - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = i - avenue: 0x02000204 onewayroad: 0x03040000, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C081600
+Costs = 600
+
+[HighwayIntersectionInfo_0x00010483]
+CopyFrom	=	0x0483
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020483]
+CopyFrom	=	0x0483
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030483]
+CopyFrom	=	0x0483
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040483]
+CopyFrom	=	0x0483
+[HighwayIntersectionInfo_0x00050483]
+CopyFrom	=	0x10483
+[HighwayIntersectionInfo_0x00060483]
+CopyFrom	=	0x20483
+[HighwayIntersectionInfo_0x00070483]
+CopyFrom	=	0x30483
+
+
+
+[HighwayIntersectionInfo_0x00000484]
+;Added by Tarkus 30-Jan-2022
+;Avenue Type 120 Dual Up FlexHT-L0-to-L1 Ortho
+Piece = 0.0, 0.0, 0, 0, 0x5C081A05
+PreviewEffect = preview_flexhtrans_l1av_004
+
+CellLayout=.....
+CellLayout=..b.<
+CellLayout=..ae.
+CellLayout=..cf.
+CellLayout=..hi.
+CellLayout=..dg.
+CellLayout=..^..
+
+CheckType = a - monorail: 0x00000400 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x00000000
+CheckType = c - avenue: 0x02040200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x00000400 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
+CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
+;###RHD###CheckType = h - avenue: 0x02040200 road: 0x00000304, 0xffffffff optional
+;###RHD###CheckType = i - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = h - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = i - avenue: 0x02000204 road: 0x03040000, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C081A00
+Costs = 600
+
+[HighwayIntersectionInfo_0x00010484]
+CopyFrom	=	0x0484
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020484]
+CopyFrom	=	0x0484
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030484]
+CopyFrom	=	0x0484
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040484]
+CopyFrom	=	0x0484
+[HighwayIntersectionInfo_0x00050484]
+CopyFrom	=	0x10484
+[HighwayIntersectionInfo_0x00060484]
+CopyFrom	=	0x20484
+[HighwayIntersectionInfo_0x00070484]
+CopyFrom	=	0x30484
 
 
 
