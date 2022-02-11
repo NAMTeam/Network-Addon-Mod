@@ -7307,7 +7307,7 @@ end
 	end
 end
 
-# Göltzschtalbrücke - choco 02/10
+# GÃ¶ltzschtalbrÃ¼cke - choco 02/10
 
 bridge 22
 
@@ -9395,5 +9395,5275 @@ end
 
 	length 255
 		piece st 2*ap2 36*ap3 pp 36*ap3r 2*ap2r rev(st)
+	end
+end
+
+
+# RRW STR L0 Viaduct Bridge Type2 by rivit - 12/21
+
+bridge 29
+
+# Short Start 
+section ss
+	piece <0x40023100, 0>
+end 
+
+# Short End
+section se
+	piece <0x40023100, 2>
+end 
+
+# normal MidArch
+section ma
+	piece <0x40023110, 0>
+end
+
+# Pylon
+section py
+	piece <0x40023120, 0>:102.2
+end
+
+# Halfarch Start
+section hs
+	piece <0x40023130, 0>
+end
+
+section he
+	piece <0x40023130, 2>
+end
+
+section sa
+	piece ss
+	piece ma
+end
+
+section pa
+	piece py
+	piece ma
+end
+
+
+	length 4
+	piece sa py he
+	end
+
+	length 5
+	piece hs pa py he
+	end
+
+	length 6
+	piece sa pa py he
+	end
+
+	length 7
+	piece sa 2*pa se
+	end
+
+	length 8
+	piece sa 2*pa py he
+	end
+
+	length 9
+	piece hs 3*pa py he
+	end
+
+	length 10
+	piece sa 3*pa py he
+	end
+
+	length 11
+	piece sa 4*pa se
+	end
+
+	length 12
+	piece sa 4*pa py he
+	end
+
+	length 13
+	piece hs 5*pa py he
+	end
+
+	length 14
+	piece sa 5*pa py he
+	end
+
+	length 15
+	piece sa 6*pa se
+	end
+
+	length 16
+	piece sa 6*pa py he
+	end
+
+	length 17
+	piece hs 7*pa py he
+	end
+
+	length 18
+	piece sa 7*pa py he
+	end
+
+	length 19
+	piece sa 8*pa se
+	end
+
+	length 20
+	piece sa 8*pa py he
+	end
+
+	length 21
+	piece hs 9*pa py he
+	end
+
+	length 22
+	piece sa 9*pa py he
+	end
+
+	length 23
+	piece sa 10*pa se
+	end
+
+	length 24
+	piece sa 10*pa py he
+	end
+
+	length 25
+	piece hs 11*pa py he
+	end
+
+	length 26
+	piece sa 11*pa py he
+	end
+
+	length 27
+	piece sa 12*pa se
+	end
+
+	length 28
+	piece sa 12*pa py he
+	end
+
+	length 29
+	piece hs 13*pa py he
+	end
+
+	length 30
+	piece sa 13*pa py he
+	end
+
+	length 31
+	piece sa 14*pa se
+	end
+
+	length 32
+	piece sa 14*pa py he
+	end
+
+	length 33
+	piece hs 15*pa py he
+	end
+
+	length 34
+	piece sa 15*pa py he
+	end
+
+	length 35
+	piece sa 16*pa se
+	end
+
+	length 36
+	piece sa 16*pa py he
+	end
+
+	length 37
+	piece hs 17*pa py he
+	end
+
+	length 38
+	piece sa 17*pa py he
+	end
+
+	length 39
+	piece sa 18*pa se
+	end
+
+	length 40
+	piece sa 18*pa py he
+	end
+
+	length 41
+	piece hs 19*pa py he
+	end
+
+	length 42
+	piece sa 19*pa py he
+	end
+
+	length 43
+	piece sa 20*pa se
+	end
+
+	length 44
+	piece sa 20*pa py he
+	end
+
+	length 45
+	piece hs 21*pa py he
+	end
+
+	length 46
+	piece sa 21*pa py he
+	end
+
+	length 47
+	piece sa 22*pa se
+	end
+
+	length 48
+	piece sa 22*pa py he
+	end
+
+	length 49
+	piece hs 23*pa py he
+	end
+
+	length 50
+	piece sa 23*pa py he
+	end
+
+	length 51
+	piece sa 24*pa se
+	end
+
+	length 52
+	piece sa 24*pa py he
+	end
+
+	length 53
+	piece hs 25*pa py he
+	end
+
+	length 54
+	piece sa 25*pa py he
+	end
+
+	length 55
+	piece sa 26*pa se
+	end
+
+	length 56
+	piece sa 26*pa py he
+	end
+
+	length 57
+	piece hs 27*pa py he
+	end
+
+	length 58
+	piece sa 27*pa py he
+	end
+
+	length 59
+	piece sa 28*pa se
+	end
+
+	length 60
+	piece sa 28*pa py he
+	end
+
+	length 61
+	piece hs 29*pa py he
+	end
+
+	length 62
+	piece sa 29*pa py he
+	end
+
+	length 63
+	piece sa 30*pa se
+	end
+
+	length 64
+	piece sa 30*pa py he
+	end
+
+	length 65
+	piece hs 31*pa py he
+	end
+
+	length 66
+	piece sa 31*pa py he
+	end
+
+	length 67
+	piece sa 32*pa se
+	end
+
+	length 68
+	piece sa 32*pa py he
+	end
+
+	length 69
+	piece hs 33*pa py he
+	end
+
+	length 70
+	piece sa 33*pa py he
+	end
+
+	length 71
+	piece sa 34*pa se
+	end
+
+	length 72
+	piece sa 34*pa py he
+	end
+
+	length 73
+	piece hs 35*pa py he
+	end
+
+	length 74
+	piece sa 35*pa py he
+	end
+
+	length 75
+	piece sa 36*pa se
+	end
+
+	length 76
+	piece sa 36*pa py he
+	end
+
+	length 77
+	piece hs 37*pa py he
+	end
+
+	length 78
+	piece sa 37*pa py he
+	end
+
+	length 79
+	piece sa 38*pa se
+	end
+
+	length 80
+	piece sa 38*pa py he
+	end
+
+	length 81
+	piece hs 39*pa py he
+	end
+
+	length 82
+	piece sa 39*pa py he
+	end
+
+	length 83
+	piece sa 40*pa se
+	end
+
+	length 84
+	piece sa 40*pa py he
+	end
+
+	length 85
+	piece hs 41*pa py he
+	end
+
+	length 86
+	piece sa 41*pa py he
+	end
+
+	length 87
+	piece sa 42*pa se
+	end
+
+	length 88
+	piece sa 42*pa py he
+	end
+
+	length 89
+	piece hs 43*pa py he
+	end
+
+	length 90
+
+	piece sa 43*pa py he
+	end
+
+	length 91
+	piece sa 44*pa se
+	end
+
+	length 92
+	piece sa 44*pa py he
+	end
+
+	length 93
+	piece hs 45*pa py he
+	end
+
+	length 94
+	piece sa 45*pa py he
+	end
+
+	length 95
+	piece sa 46*pa se
+	end
+
+	length 96
+	piece sa 46*pa py he
+	end
+
+	length 97
+	piece hs 47*pa py he
+	end
+
+	length 98
+	piece sa 47*pa py he
+	end
+
+	length 99
+	piece sa 48*pa se
+	end
+
+	length 100
+	piece sa 48*pa py he
+	end
+
+	length 101
+	piece hs 49*pa py he
+	end
+
+	length 102
+	piece sa 49*pa py he
+	end
+
+	length 103
+	piece sa 50*pa se
+	end
+
+	length 104
+	piece sa 50*pa py he
+	end
+
+	length 105
+	piece hs 51*pa py he
+	end
+
+	length 106
+	piece sa 51*pa py he
+	end
+
+	length 107
+	piece sa 52*pa se
+	end
+
+	length 108
+	piece sa 52*pa py he
+	end
+
+	length 109
+	piece hs 53*pa py he
+	end
+
+	length 110
+	piece sa 53*pa py he
+	end
+
+	length 111
+	piece sa 54*pa se
+	end
+
+	length 112
+	piece sa 54*pa py he
+	end
+
+	length 113
+	piece hs 55*pa py he
+	end
+
+	length 114
+	piece sa 55*pa py he
+	end
+
+	length 115
+	piece sa 56*pa se
+	end
+
+	length 116
+	piece sa 56*pa py he
+	end
+
+	length 117
+	piece hs 57*pa py he
+	end
+
+	length 118
+	piece sa 57*pa py he
+	end
+
+	length 119
+	piece sa 58*pa se
+	end
+
+	length 120
+	piece sa 58*pa py he
+	end
+
+	length 121
+	piece hs 59*pa py he
+	end
+
+	length 122
+	piece sa 59*pa py he
+	end
+
+	length 123
+	piece sa 60*pa se
+	end
+
+	length 124
+	piece sa 60*pa py he
+	end
+
+	length 125
+	piece hs 61*pa py he
+	end
+
+	length 126
+	piece sa 61*pa py he
+	end
+
+	length 127
+	piece sa 62*pa se
+	end
+
+	length 128
+	piece sa 62*pa py he
+	end
+
+	length 129
+	piece hs 63*pa py he
+	end
+
+	length 130
+	piece sa 63*pa py he
+	end
+
+	length 131
+	piece sa 64*pa se
+	end
+
+	length 132
+	piece sa 64*pa py he
+	end
+
+	length 133
+	piece hs 65*pa py he
+	end
+
+	length 134
+	piece sa 65*pa py he
+	end
+
+	length 135
+	piece sa 66*pa se
+	end
+
+	length 136
+	piece sa 66*pa py he
+	end
+
+	length 137
+	piece hs 67*pa py he
+	end
+
+	length 138
+	piece sa 67*pa py he
+	end
+
+	length 139
+	piece sa 68*pa se
+	end
+
+	length 140
+	piece sa 68*pa py he
+	end
+
+	length 141
+	piece hs 69*pa py he
+	end
+
+	length 142
+	piece sa 69*pa py he
+	end
+
+	length 143
+	piece sa 70*pa se
+	end
+
+	length 144
+	piece sa 70*pa py he
+	end
+
+	length 145
+	piece hs 71*pa py he
+	end
+
+	length 146
+	piece sa 71*pa py he
+	end
+
+	length 147
+	piece sa 72*pa se
+	end
+
+	length 148
+	piece sa 72*pa py he
+	end
+
+	length 149
+	piece hs 73*pa py he
+	end
+
+	length 150
+	piece sa 73*pa py he
+	end
+
+	length 151
+	piece sa 74*pa se
+	end
+
+	length 152
+	piece sa 74*pa py he
+	end
+
+	length 153
+	piece hs 75*pa py he
+	end
+
+	length 154
+	piece sa 75*pa py he
+	end
+
+	length 155
+	piece sa 76*pa se
+	end
+
+	length 156
+	piece sa 76*pa py he
+	end
+
+	length 157
+	piece hs 77*pa py he
+	end
+
+	length 158
+	piece sa 77*pa py he
+	end
+
+	length 159
+	piece sa 78*pa se
+	end
+
+	length 160
+	piece sa 78*pa py he
+	end
+
+	length 161
+	piece hs 79*pa py he
+	end
+
+	length 162
+	piece sa 79*pa py he
+	end
+
+	length 163
+	piece sa 80*pa se
+	end
+
+	length 164
+	piece sa 80*pa py he
+	end
+
+	length 165
+	piece hs 81*pa py he
+	end
+
+	length 166
+	piece sa 81*pa py he
+	end
+
+	length 167
+	piece sa 82*pa se
+	end
+
+	length 168
+	piece sa 82*pa py he
+	end
+
+	length 169
+	piece hs 83*pa py he
+	end
+
+	length 170
+	piece sa 83*pa py he
+	end
+
+	length 171
+	piece sa 84*pa se
+	end
+
+	length 172
+	piece sa 84*pa py he
+	end
+
+	length 173
+	piece hs 85*pa py he
+	end
+
+	length 174
+	piece sa 85*pa py he
+	end
+
+	length 175
+	piece sa 86*pa se
+	end
+
+	length 176
+	piece sa 86*pa py he
+	end
+
+	length 177
+	piece hs 87*pa py he
+	end
+
+	length 178
+	piece sa 87*pa py he
+	end
+
+	length 179
+	piece sa 88*pa se
+	end
+
+	length 180
+	piece sa 88*pa py he
+	end
+
+	length 181
+	piece hs 89*pa py he
+	end
+
+	length 182
+	piece sa 89*pa py he
+	end
+
+	length 183
+	piece sa 90*pa se
+	end
+
+	length 184
+	piece sa 90*pa py he
+	end
+
+	length 185
+	piece hs 91*pa py he
+	end
+
+	length 186
+	piece sa 91*pa py he
+	end
+
+	length 187
+	piece sa 92*pa se
+	end
+
+	length 188
+	piece sa 92*pa py he
+	end
+
+	length 189
+	piece hs 93*pa py he
+	end
+
+	length 190
+	piece sa 93*pa py he
+	end
+
+	length 191
+	piece sa 94*pa se
+	end
+
+	length 192
+	piece sa 94*pa py he
+	end
+
+	length 193
+	piece hs 95*pa py he
+	end
+
+	length 194
+	piece sa 95*pa py he
+	end
+
+	length 195
+	piece sa 96*pa se
+	end
+
+	length 196
+	piece sa 96*pa py he
+	end
+
+	length 197
+	piece hs 97*pa py he
+	end
+
+	length 198
+	piece sa 97*pa py he
+	end
+
+	length 199
+	piece sa 98*pa se
+	end
+
+	length 200
+	piece sa 98*pa py he
+	end
+
+	length 201
+	piece hs 99*pa py he
+	end
+
+	length 202
+	piece sa 99*pa py he
+	end
+
+	length 203
+	piece sa 100*pa se
+	end
+
+	length 204
+	piece sa 100*pa py he
+	end
+
+	length 205
+	piece hs 101*pa py he
+	end
+
+	length 206
+	piece sa 101*pa py he
+	end
+
+	length 207
+	piece sa 102*pa se
+	end
+
+	length 208
+	piece sa 102*pa py he
+	end
+
+	length 209
+	piece hs 103*pa py he
+	end
+
+	length 210
+	piece sa 103*pa py he
+	end
+
+	length 211
+	piece sa 104*pa se
+	end
+
+	length 212
+	piece sa 104*pa py he
+	end
+
+	length 213
+	piece hs 105*pa py he
+	end
+
+	length 214
+	piece sa 105*pa py he
+	end
+
+	length 215
+	piece sa 106*pa se
+	end
+
+	length 216
+	piece sa 106*pa py he
+	end
+
+	length 217
+	piece hs 107*pa py he
+	end
+
+	length 218
+	piece sa 107*pa py he
+	end
+
+	length 219
+	piece sa 108*pa se
+	end
+
+	length 220
+	piece sa 108*pa py he
+	end
+
+	length 221
+	piece hs 109*pa py he
+	end
+
+	length 222
+	piece sa 109*pa py he
+	end
+
+	length 223
+	piece sa 110*pa se
+	end
+
+	length 224
+	piece sa 110*pa py he
+	end
+
+	length 225
+	piece hs 111*pa py he
+	end
+
+	length 226
+	piece sa 111*pa py he
+	end
+
+	length 227
+	piece sa 112*pa se
+	end
+
+	length 228
+	piece sa 112*pa py he
+	end
+
+	length 229
+	piece hs 113*pa py he
+	end
+
+	length 230
+	piece sa 113*pa py he
+	end
+
+	length 231
+	piece sa 114*pa se
+	end
+
+	length 232
+	piece sa 114*pa py he
+	end
+
+	length 233
+	piece hs 115*pa py he
+	end
+
+	length 234
+	piece sa 115*pa py he
+	end
+
+	length 235
+	piece sa 116*pa se
+	end
+
+	length 236
+	piece sa 116*pa py he
+	end
+
+	length 237
+	piece hs 117*pa py he
+	end
+
+	length 238
+	piece sa 117*pa py he
+	end
+
+	length 239
+	piece sa 118*pa se
+	end
+
+	length 240
+	piece sa 118*pa py he
+	end
+
+	length 241
+	piece hs 119*pa py he
+	end
+
+	length 242
+	piece sa 119*pa py he
+	end
+
+	length 243
+	piece sa 120*pa se
+	end
+
+	length 244
+	piece sa 120*pa py he
+	end
+
+	length 245
+	piece hs 121*pa py he
+	end
+
+	length 246
+	piece sa 121*pa py he
+	end
+
+	length 247
+	piece sa 122*pa se
+	end
+
+	length 248
+	piece sa 122*pa py he
+	end
+
+	length 249
+	piece hs 123*pa py he
+	end
+
+	length 250
+	piece sa 123*pa py he
+	end
+
+	length 251
+	piece sa 124*pa se
+	end
+
+	length 252
+	piece sa 124*pa py he
+	end
+
+	length 253
+	piece hs 125*pa py he
+	end
+
+	length 254
+	piece sa 125*pa py he
+	end
+
+	length 255
+	piece sa 126*pa se
+	end
+end
+
+# RRW STR L1 Viaduct Bridge Type2 by rivit - 12/21
+
+bridge 30
+
+# Short Start 
+section ss
+	piece <0x40023140, 0>
+end 
+
+# Short End
+section se
+	piece <0x40023140, 2>
+end 
+
+# normal MidArch
+section ma
+	piece <0x40023150, 0>
+end
+
+# Pylon
+section py
+	piece <0x40023160, 0>:94.2
+end
+
+# Halfarch Start
+section hs
+	piece <0x40023170, 0>
+end
+
+section he
+	piece <0x40023170, 2>
+end
+
+section sa
+	piece ss
+	piece ma
+end
+
+section pa
+	piece py
+	piece ma
+end
+
+
+	length 4
+	piece sa py he
+	end
+
+	length 5
+	piece hs pa py he
+	end
+
+	length 6
+	piece sa pa py he
+	end
+
+	length 7
+	piece sa 2*pa se
+	end
+
+	length 8
+	piece sa 2*pa py he
+	end
+
+	length 9
+	piece hs 3*pa py he
+	end
+
+	length 10
+	piece sa 3*pa py he
+	end
+
+	length 11
+	piece sa 4*pa se
+	end
+
+	length 12
+	piece sa 4*pa py he
+	end
+
+	length 13
+	piece hs 5*pa py he
+	end
+
+	length 14
+	piece sa 5*pa py he
+	end
+
+	length 15
+	piece sa 6*pa se
+	end
+
+	length 16
+	piece sa 6*pa py he
+	end
+
+	length 17
+	piece hs 7*pa py he
+	end
+
+	length 18
+	piece sa 7*pa py he
+	end
+
+	length 19
+	piece sa 8*pa se
+	end
+
+	length 20
+	piece sa 8*pa py he
+	end
+
+	length 21
+	piece hs 9*pa py he
+	end
+
+	length 22
+	piece sa 9*pa py he
+	end
+
+	length 23
+	piece sa 10*pa se
+	end
+
+	length 24
+	piece sa 10*pa py he
+	end
+
+	length 25
+	piece hs 11*pa py he
+	end
+
+	length 26
+	piece sa 11*pa py he
+	end
+
+	length 27
+	piece sa 12*pa se
+	end
+
+	length 28
+	piece sa 12*pa py he
+	end
+
+	length 29
+	piece hs 13*pa py he
+	end
+
+	length 30
+	piece sa 13*pa py he
+	end
+
+	length 31
+	piece sa 14*pa se
+	end
+
+	length 32
+	piece sa 14*pa py he
+	end
+
+	length 33
+	piece hs 15*pa py he
+	end
+
+	length 34
+	piece sa 15*pa py he
+	end
+
+	length 35
+	piece sa 16*pa se
+	end
+
+	length 36
+	piece sa 16*pa py he
+	end
+
+	length 37
+	piece hs 17*pa py he
+	end
+
+	length 38
+	piece sa 17*pa py he
+	end
+
+	length 39
+	piece sa 18*pa se
+	end
+
+	length 40
+	piece sa 18*pa py he
+	end
+
+	length 41
+	piece hs 19*pa py he
+	end
+
+	length 42
+	piece sa 19*pa py he
+	end
+
+	length 43
+	piece sa 20*pa se
+	end
+
+	length 44
+	piece sa 20*pa py he
+	end
+
+	length 45
+	piece hs 21*pa py he
+	end
+
+	length 46
+	piece sa 21*pa py he
+	end
+
+	length 47
+	piece sa 22*pa se
+	end
+
+	length 48
+	piece sa 22*pa py he
+	end
+
+	length 49
+	piece hs 23*pa py he
+	end
+
+	length 50
+	piece sa 23*pa py he
+	end
+
+	length 51
+	piece sa 24*pa se
+	end
+
+	length 52
+	piece sa 24*pa py he
+	end
+
+	length 53
+	piece hs 25*pa py he
+	end
+
+	length 54
+	piece sa 25*pa py he
+	end
+
+	length 55
+	piece sa 26*pa se
+	end
+
+	length 56
+	piece sa 26*pa py he
+	end
+
+	length 57
+	piece hs 27*pa py he
+	end
+
+	length 58
+	piece sa 27*pa py he
+	end
+
+	length 59
+	piece sa 28*pa se
+	end
+
+	length 60
+	piece sa 28*pa py he
+	end
+
+	length 61
+	piece hs 29*pa py he
+	end
+
+	length 62
+	piece sa 29*pa py he
+	end
+
+	length 63
+	piece sa 30*pa se
+	end
+
+	length 64
+	piece sa 30*pa py he
+	end
+
+	length 65
+	piece hs 31*pa py he
+	end
+
+	length 66
+	piece sa 31*pa py he
+	end
+
+	length 67
+	piece sa 32*pa se
+	end
+
+	length 68
+	piece sa 32*pa py he
+	end
+
+	length 69
+	piece hs 33*pa py he
+	end
+
+	length 70
+	piece sa 33*pa py he
+	end
+
+	length 71
+	piece sa 34*pa se
+	end
+
+	length 72
+	piece sa 34*pa py he
+	end
+
+	length 73
+	piece hs 35*pa py he
+	end
+
+	length 74
+	piece sa 35*pa py he
+	end
+
+	length 75
+	piece sa 36*pa se
+	end
+
+	length 76
+	piece sa 36*pa py he
+	end
+
+	length 77
+	piece hs 37*pa py he
+	end
+
+	length 78
+	piece sa 37*pa py he
+	end
+
+	length 79
+	piece sa 38*pa se
+	end
+
+	length 80
+	piece sa 38*pa py he
+	end
+
+	length 81
+	piece hs 39*pa py he
+	end
+
+	length 82
+	piece sa 39*pa py he
+	end
+
+	length 83
+	piece sa 40*pa se
+	end
+
+	length 84
+	piece sa 40*pa py he
+	end
+
+	length 85
+	piece hs 41*pa py he
+	end
+
+	length 86
+	piece sa 41*pa py he
+	end
+
+	length 87
+	piece sa 42*pa se
+	end
+
+	length 88
+	piece sa 42*pa py he
+	end
+
+	length 89
+	piece hs 43*pa py he
+	end
+
+	length 90
+
+	piece sa 43*pa py he
+	end
+
+	length 91
+	piece sa 44*pa se
+	end
+
+	length 92
+	piece sa 44*pa py he
+	end
+
+	length 93
+	piece hs 45*pa py he
+	end
+
+	length 94
+	piece sa 45*pa py he
+	end
+
+	length 95
+	piece sa 46*pa se
+	end
+
+	length 96
+	piece sa 46*pa py he
+	end
+
+	length 97
+	piece hs 47*pa py he
+	end
+
+	length 98
+	piece sa 47*pa py he
+	end
+
+	length 99
+	piece sa 48*pa se
+	end
+
+	length 100
+	piece sa 48*pa py he
+	end
+
+	length 101
+	piece hs 49*pa py he
+	end
+
+	length 102
+	piece sa 49*pa py he
+	end
+
+	length 103
+	piece sa 50*pa se
+	end
+
+	length 104
+	piece sa 50*pa py he
+	end
+
+	length 105
+	piece hs 51*pa py he
+	end
+
+	length 106
+	piece sa 51*pa py he
+	end
+
+	length 107
+	piece sa 52*pa se
+	end
+
+	length 108
+	piece sa 52*pa py he
+	end
+
+	length 109
+	piece hs 53*pa py he
+	end
+
+	length 110
+	piece sa 53*pa py he
+	end
+
+	length 111
+	piece sa 54*pa se
+	end
+
+	length 112
+	piece sa 54*pa py he
+	end
+
+	length 113
+	piece hs 55*pa py he
+	end
+
+	length 114
+	piece sa 55*pa py he
+	end
+
+	length 115
+	piece sa 56*pa se
+	end
+
+	length 116
+	piece sa 56*pa py he
+	end
+
+	length 117
+	piece hs 57*pa py he
+	end
+
+	length 118
+	piece sa 57*pa py he
+	end
+
+	length 119
+	piece sa 58*pa se
+	end
+
+	length 120
+	piece sa 58*pa py he
+	end
+
+	length 121
+	piece hs 59*pa py he
+	end
+
+	length 122
+	piece sa 59*pa py he
+	end
+
+	length 123
+	piece sa 60*pa se
+	end
+
+	length 124
+	piece sa 60*pa py he
+	end
+
+	length 125
+	piece hs 61*pa py he
+	end
+
+	length 126
+	piece sa 61*pa py he
+	end
+
+	length 127
+	piece sa 62*pa se
+	end
+
+	length 128
+	piece sa 62*pa py he
+	end
+
+	length 129
+	piece hs 63*pa py he
+	end
+
+	length 130
+	piece sa 63*pa py he
+	end
+
+	length 131
+	piece sa 64*pa se
+	end
+
+	length 132
+	piece sa 64*pa py he
+	end
+
+	length 133
+	piece hs 65*pa py he
+	end
+
+	length 134
+	piece sa 65*pa py he
+	end
+
+	length 135
+	piece sa 66*pa se
+	end
+
+	length 136
+	piece sa 66*pa py he
+	end
+
+	length 137
+	piece hs 67*pa py he
+	end
+
+	length 138
+	piece sa 67*pa py he
+	end
+
+	length 139
+	piece sa 68*pa se
+	end
+
+	length 140
+	piece sa 68*pa py he
+	end
+
+	length 141
+	piece hs 69*pa py he
+	end
+
+	length 142
+	piece sa 69*pa py he
+	end
+
+	length 143
+	piece sa 70*pa se
+	end
+
+	length 144
+	piece sa 70*pa py he
+	end
+
+	length 145
+	piece hs 71*pa py he
+	end
+
+	length 146
+	piece sa 71*pa py he
+	end
+
+	length 147
+	piece sa 72*pa se
+	end
+
+	length 148
+	piece sa 72*pa py he
+	end
+
+	length 149
+	piece hs 73*pa py he
+	end
+
+	length 150
+	piece sa 73*pa py he
+	end
+
+	length 151
+	piece sa 74*pa se
+	end
+
+	length 152
+	piece sa 74*pa py he
+	end
+
+	length 153
+	piece hs 75*pa py he
+	end
+
+	length 154
+	piece sa 75*pa py he
+	end
+
+	length 155
+	piece sa 76*pa se
+	end
+
+	length 156
+	piece sa 76*pa py he
+	end
+
+	length 157
+	piece hs 77*pa py he
+	end
+
+	length 158
+	piece sa 77*pa py he
+	end
+
+	length 159
+	piece sa 78*pa se
+	end
+
+	length 160
+	piece sa 78*pa py he
+	end
+
+	length 161
+	piece hs 79*pa py he
+	end
+
+	length 162
+	piece sa 79*pa py he
+	end
+
+	length 163
+	piece sa 80*pa se
+	end
+
+	length 164
+	piece sa 80*pa py he
+	end
+
+	length 165
+	piece hs 81*pa py he
+	end
+
+	length 166
+	piece sa 81*pa py he
+	end
+
+	length 167
+	piece sa 82*pa se
+	end
+
+	length 168
+	piece sa 82*pa py he
+	end
+
+	length 169
+	piece hs 83*pa py he
+	end
+
+	length 170
+	piece sa 83*pa py he
+	end
+
+	length 171
+	piece sa 84*pa se
+	end
+
+	length 172
+	piece sa 84*pa py he
+	end
+
+	length 173
+	piece hs 85*pa py he
+	end
+
+	length 174
+	piece sa 85*pa py he
+	end
+
+	length 175
+	piece sa 86*pa se
+	end
+
+	length 176
+	piece sa 86*pa py he
+	end
+
+	length 177
+	piece hs 87*pa py he
+	end
+
+	length 178
+	piece sa 87*pa py he
+	end
+
+	length 179
+	piece sa 88*pa se
+	end
+
+	length 180
+	piece sa 88*pa py he
+	end
+
+	length 181
+	piece hs 89*pa py he
+	end
+
+	length 182
+	piece sa 89*pa py he
+	end
+
+	length 183
+	piece sa 90*pa se
+	end
+
+	length 184
+	piece sa 90*pa py he
+	end
+
+	length 185
+	piece hs 91*pa py he
+	end
+
+	length 186
+	piece sa 91*pa py he
+	end
+
+	length 187
+	piece sa 92*pa se
+	end
+
+	length 188
+	piece sa 92*pa py he
+	end
+
+	length 189
+	piece hs 93*pa py he
+	end
+
+	length 190
+	piece sa 93*pa py he
+	end
+
+	length 191
+	piece sa 94*pa se
+	end
+
+	length 192
+	piece sa 94*pa py he
+	end
+
+	length 193
+	piece hs 95*pa py he
+	end
+
+	length 194
+	piece sa 95*pa py he
+	end
+
+	length 195
+	piece sa 96*pa se
+	end
+
+	length 196
+	piece sa 96*pa py he
+	end
+
+	length 197
+	piece hs 97*pa py he
+	end
+
+	length 198
+	piece sa 97*pa py he
+	end
+
+	length 199
+	piece sa 98*pa se
+	end
+
+	length 200
+	piece sa 98*pa py he
+	end
+
+	length 201
+	piece hs 99*pa py he
+	end
+
+	length 202
+	piece sa 99*pa py he
+	end
+
+	length 203
+	piece sa 100*pa se
+	end
+
+	length 204
+	piece sa 100*pa py he
+	end
+
+	length 205
+	piece hs 101*pa py he
+	end
+
+	length 206
+	piece sa 101*pa py he
+	end
+
+	length 207
+	piece sa 102*pa se
+	end
+
+	length 208
+	piece sa 102*pa py he
+	end
+
+	length 209
+	piece hs 103*pa py he
+	end
+
+	length 210
+	piece sa 103*pa py he
+	end
+
+	length 211
+	piece sa 104*pa se
+	end
+
+	length 212
+	piece sa 104*pa py he
+	end
+
+	length 213
+	piece hs 105*pa py he
+	end
+
+	length 214
+	piece sa 105*pa py he
+	end
+
+	length 215
+	piece sa 106*pa se
+	end
+
+	length 216
+	piece sa 106*pa py he
+	end
+
+	length 217
+	piece hs 107*pa py he
+	end
+
+	length 218
+	piece sa 107*pa py he
+	end
+
+	length 219
+	piece sa 108*pa se
+	end
+
+	length 220
+	piece sa 108*pa py he
+	end
+
+	length 221
+	piece hs 109*pa py he
+	end
+
+	length 222
+	piece sa 109*pa py he
+	end
+
+	length 223
+	piece sa 110*pa se
+	end
+
+	length 224
+	piece sa 110*pa py he
+	end
+
+	length 225
+	piece hs 111*pa py he
+	end
+
+	length 226
+	piece sa 111*pa py he
+	end
+
+	length 227
+	piece sa 112*pa se
+	end
+
+	length 228
+	piece sa 112*pa py he
+	end
+
+	length 229
+	piece hs 113*pa py he
+	end
+
+	length 230
+	piece sa 113*pa py he
+	end
+
+	length 231
+	piece sa 114*pa se
+	end
+
+	length 232
+	piece sa 114*pa py he
+	end
+
+	length 233
+	piece hs 115*pa py he
+	end
+
+	length 234
+	piece sa 115*pa py he
+	end
+
+	length 235
+	piece sa 116*pa se
+	end
+
+	length 236
+	piece sa 116*pa py he
+	end
+
+	length 237
+	piece hs 117*pa py he
+	end
+
+	length 238
+	piece sa 117*pa py he
+	end
+
+	length 239
+	piece sa 118*pa se
+	end
+
+	length 240
+	piece sa 118*pa py he
+	end
+
+	length 241
+	piece hs 119*pa py he
+	end
+
+	length 242
+	piece sa 119*pa py he
+	end
+
+	length 243
+	piece sa 120*pa se
+	end
+
+	length 244
+	piece sa 120*pa py he
+	end
+
+	length 245
+	piece hs 121*pa py he
+	end
+
+	length 246
+	piece sa 121*pa py he
+	end
+
+	length 247
+	piece sa 122*pa se
+	end
+
+	length 248
+	piece sa 122*pa py he
+	end
+
+	length 249
+	piece hs 123*pa py he
+	end
+
+	length 250
+	piece sa 123*pa py he
+	end
+
+	length 251
+	piece sa 124*pa se
+	end
+
+	length 252
+	piece sa 124*pa py he
+	end
+
+	length 253
+	piece hs 125*pa py he
+	end
+
+	length 254
+	piece sa 125*pa py he
+	end
+
+	length 255
+	piece sa 126*pa se
+	end
+end
+
+# RRW DTR L0 Viaduct Bridge Type2 by rivit - 12/21
+
+bridge 31
+
+# Short Start 
+section ss
+	piece <0x40023200, 0>
+end 
+
+# Short End
+section se
+	piece <0x40023200, 2>
+end 
+
+# normal MidArch
+section ma
+	piece <0x40023210, 0>
+end
+
+# Pylon
+section py
+	piece <0x40023220, 0>:102.2
+end
+
+# Halfarch Start
+section hs
+	piece <0x40023230, 0>
+end
+
+section he
+	piece <0x40023230, 2>
+end
+
+section sa
+	piece ss
+	piece ma
+end
+
+section pa
+	piece py
+	piece ma
+end
+
+
+	length 4
+	piece sa py he
+	end
+
+	length 5
+	piece hs pa py he
+	end
+
+	length 6
+	piece sa pa py he
+	end
+
+	length 7
+	piece sa 2*pa se
+	end
+
+	length 8
+	piece sa 2*pa py he
+	end
+
+	length 9
+	piece hs 3*pa py he
+	end
+
+	length 10
+	piece sa 3*pa py he
+	end
+
+	length 11
+	piece sa 4*pa se
+	end
+
+	length 12
+	piece sa 4*pa py he
+	end
+
+	length 13
+	piece hs 5*pa py he
+	end
+
+	length 14
+	piece sa 5*pa py he
+	end
+
+	length 15
+	piece sa 6*pa se
+	end
+
+	length 16
+	piece sa 6*pa py he
+	end
+
+	length 17
+	piece hs 7*pa py he
+	end
+
+	length 18
+	piece sa 7*pa py he
+	end
+
+	length 19
+	piece sa 8*pa se
+	end
+
+	length 20
+	piece sa 8*pa py he
+	end
+
+	length 21
+	piece hs 9*pa py he
+	end
+
+	length 22
+	piece sa 9*pa py he
+	end
+
+	length 23
+	piece sa 10*pa se
+	end
+
+	length 24
+	piece sa 10*pa py he
+	end
+
+	length 25
+	piece hs 11*pa py he
+	end
+
+	length 26
+	piece sa 11*pa py he
+	end
+
+	length 27
+	piece sa 12*pa se
+	end
+
+	length 28
+	piece sa 12*pa py he
+	end
+
+	length 29
+	piece hs 13*pa py he
+	end
+
+	length 30
+	piece sa 13*pa py he
+	end
+
+	length 31
+	piece sa 14*pa se
+	end
+
+	length 32
+	piece sa 14*pa py he
+	end
+
+	length 33
+	piece hs 15*pa py he
+	end
+
+	length 34
+	piece sa 15*pa py he
+	end
+
+	length 35
+	piece sa 16*pa se
+	end
+
+	length 36
+	piece sa 16*pa py he
+	end
+
+	length 37
+	piece hs 17*pa py he
+	end
+
+	length 38
+	piece sa 17*pa py he
+	end
+
+	length 39
+	piece sa 18*pa se
+	end
+
+	length 40
+	piece sa 18*pa py he
+	end
+
+	length 41
+	piece hs 19*pa py he
+	end
+
+	length 42
+	piece sa 19*pa py he
+	end
+
+	length 43
+	piece sa 20*pa se
+	end
+
+	length 44
+	piece sa 20*pa py he
+	end
+
+	length 45
+	piece hs 21*pa py he
+	end
+
+	length 46
+	piece sa 21*pa py he
+	end
+
+	length 47
+	piece sa 22*pa se
+	end
+
+	length 48
+	piece sa 22*pa py he
+	end
+
+	length 49
+	piece hs 23*pa py he
+	end
+
+	length 50
+	piece sa 23*pa py he
+	end
+
+	length 51
+	piece sa 24*pa se
+	end
+
+	length 52
+	piece sa 24*pa py he
+	end
+
+	length 53
+	piece hs 25*pa py he
+	end
+
+	length 54
+	piece sa 25*pa py he
+	end
+
+	length 55
+	piece sa 26*pa se
+	end
+
+	length 56
+	piece sa 26*pa py he
+	end
+
+	length 57
+	piece hs 27*pa py he
+	end
+
+	length 58
+	piece sa 27*pa py he
+	end
+
+	length 59
+	piece sa 28*pa se
+	end
+
+	length 60
+	piece sa 28*pa py he
+	end
+
+	length 61
+	piece hs 29*pa py he
+	end
+
+	length 62
+	piece sa 29*pa py he
+	end
+
+	length 63
+	piece sa 30*pa se
+	end
+
+	length 64
+	piece sa 30*pa py he
+	end
+
+	length 65
+	piece hs 31*pa py he
+	end
+
+	length 66
+	piece sa 31*pa py he
+	end
+
+	length 67
+	piece sa 32*pa se
+	end
+
+	length 68
+	piece sa 32*pa py he
+	end
+
+	length 69
+	piece hs 33*pa py he
+	end
+
+	length 70
+	piece sa 33*pa py he
+	end
+
+	length 71
+	piece sa 34*pa se
+	end
+
+	length 72
+	piece sa 34*pa py he
+	end
+
+	length 73
+	piece hs 35*pa py he
+	end
+
+	length 74
+	piece sa 35*pa py he
+	end
+
+	length 75
+	piece sa 36*pa se
+	end
+
+	length 76
+	piece sa 36*pa py he
+	end
+
+	length 77
+	piece hs 37*pa py he
+	end
+
+	length 78
+	piece sa 37*pa py he
+	end
+
+	length 79
+	piece sa 38*pa se
+	end
+
+	length 80
+	piece sa 38*pa py he
+	end
+
+	length 81
+	piece hs 39*pa py he
+	end
+
+	length 82
+	piece sa 39*pa py he
+	end
+
+	length 83
+	piece sa 40*pa se
+	end
+
+	length 84
+	piece sa 40*pa py he
+	end
+
+	length 85
+	piece hs 41*pa py he
+	end
+
+	length 86
+	piece sa 41*pa py he
+	end
+
+	length 87
+	piece sa 42*pa se
+	end
+
+	length 88
+	piece sa 42*pa py he
+	end
+
+	length 89
+	piece hs 43*pa py he
+	end
+
+	length 90
+	piece sa 43*pa py he
+	end
+
+	length 91
+	piece sa 44*pa se
+	end
+
+	length 92
+	piece sa 44*pa py he
+	end
+
+	length 93
+	piece hs 45*pa py he
+	end
+
+	length 94
+	piece sa 45*pa py he
+	end
+
+	length 95
+	piece sa 46*pa se
+	end
+
+	length 96
+	piece sa 46*pa py he
+	end
+
+	length 97
+	piece hs 47*pa py he
+	end
+
+	length 98
+	piece sa 47*pa py he
+	end
+
+	length 99
+	piece sa 48*pa se
+	end
+
+	length 100
+	piece sa 48*pa py he
+	end
+
+	length 101
+	piece hs 49*pa py he
+	end
+
+	length 102
+	piece sa 49*pa py he
+	end
+
+	length 103
+	piece sa 50*pa se
+	end
+
+	length 104
+	piece sa 50*pa py he
+	end
+
+	length 105
+	piece hs 51*pa py he
+	end
+
+	length 106
+	piece sa 51*pa py he
+	end
+
+	length 107
+	piece sa 52*pa se
+	end
+
+	length 108
+	piece sa 52*pa py he
+	end
+
+	length 109
+	piece hs 53*pa py he
+	end
+
+	length 110
+	piece sa 53*pa py he
+	end
+
+	length 111
+	piece sa 54*pa se
+	end
+
+	length 112
+	piece sa 54*pa py he
+	end
+
+	length 113
+	piece hs 55*pa py he
+	end
+
+	length 114
+	piece sa 55*pa py he
+	end
+
+	length 115
+	piece sa 56*pa se
+	end
+
+	length 116
+	piece sa 56*pa py he
+	end
+
+	length 117
+	piece hs 57*pa py he
+	end
+
+	length 118
+	piece sa 57*pa py he
+	end
+
+	length 119
+	piece sa 58*pa se
+	end
+
+	length 120
+	piece sa 58*pa py he
+	end
+
+	length 121
+	piece hs 59*pa py he
+	end
+
+	length 122
+	piece sa 59*pa py he
+	end
+
+	length 123
+	piece sa 60*pa se
+	end
+
+	length 124
+	piece sa 60*pa py he
+	end
+
+	length 125
+	piece hs 61*pa py he
+	end
+
+	length 126
+	piece sa 61*pa py he
+	end
+
+	length 127
+	piece sa 62*pa se
+	end
+
+	length 128
+	piece sa 62*pa py he
+	end
+
+	length 129
+	piece hs 63*pa py he
+	end
+
+	length 130
+	piece sa 63*pa py he
+	end
+
+	length 131
+	piece sa 64*pa se
+	end
+
+	length 132
+	piece sa 64*pa py he
+	end
+
+	length 133
+	piece hs 65*pa py he
+	end
+
+	length 134
+	piece sa 65*pa py he
+	end
+
+	length 135
+	piece sa 66*pa se
+	end
+
+	length 136
+	piece sa 66*pa py he
+	end
+
+	length 137
+	piece hs 67*pa py he
+	end
+
+	length 138
+	piece sa 67*pa py he
+	end
+
+	length 139
+	piece sa 68*pa se
+	end
+
+	length 140
+	piece sa 68*pa py he
+	end
+
+	length 141
+	piece hs 69*pa py he
+	end
+
+	length 142
+	piece sa 69*pa py he
+	end
+
+	length 143
+	piece sa 70*pa se
+	end
+
+	length 144
+	piece sa 70*pa py he
+	end
+
+	length 145
+	piece hs 71*pa py he
+	end
+
+	length 146
+	piece sa 71*pa py he
+	end
+
+	length 147
+	piece sa 72*pa se
+	end
+
+	length 148
+	piece sa 72*pa py he
+	end
+
+	length 149
+	piece hs 73*pa py he
+	end
+
+	length 150
+	piece sa 73*pa py he
+	end
+
+	length 151
+	piece sa 74*pa se
+	end
+
+	length 152
+	piece sa 74*pa py he
+	end
+
+	length 153
+	piece hs 75*pa py he
+	end
+
+	length 154
+	piece sa 75*pa py he
+	end
+
+	length 155
+	piece sa 76*pa se
+	end
+
+	length 156
+	piece sa 76*pa py he
+	end
+
+	length 157
+	piece hs 77*pa py he
+	end
+
+	length 158
+	piece sa 77*pa py he
+	end
+
+	length 159
+	piece sa 78*pa se
+	end
+
+	length 160
+	piece sa 78*pa py he
+	end
+
+	length 161
+	piece hs 79*pa py he
+	end
+
+	length 162
+	piece sa 79*pa py he
+	end
+
+	length 163
+	piece sa 80*pa se
+	end
+
+	length 164
+	piece sa 80*pa py he
+	end
+
+	length 165
+	piece hs 81*pa py he
+	end
+
+	length 166
+	piece sa 81*pa py he
+	end
+
+	length 167
+	piece sa 82*pa se
+	end
+
+	length 168
+	piece sa 82*pa py he
+	end
+
+	length 169
+	piece hs 83*pa py he
+	end
+
+	length 170
+	piece sa 83*pa py he
+	end
+
+	length 171
+	piece sa 84*pa se
+	end
+
+	length 172
+	piece sa 84*pa py he
+	end
+
+	length 173
+	piece hs 85*pa py he
+	end
+
+	length 174
+	piece sa 85*pa py he
+	end
+
+	length 175
+	piece sa 86*pa se
+	end
+
+	length 176
+	piece sa 86*pa py he
+	end
+
+	length 177
+	piece hs 87*pa py he
+	end
+
+	length 178
+	piece sa 87*pa py he
+	end
+
+	length 179
+	piece sa 88*pa se
+	end
+
+	length 180
+	piece sa 88*pa py he
+	end
+
+	length 181
+	piece hs 89*pa py he
+	end
+
+	length 182
+	piece sa 89*pa py he
+	end
+
+	length 183
+	piece sa 90*pa se
+	end
+
+	length 184
+	piece sa 90*pa py he
+	end
+
+	length 185
+	piece hs 91*pa py he
+	end
+
+	length 186
+	piece sa 91*pa py he
+	end
+
+	length 187
+	piece sa 92*pa se
+	end
+
+	length 188
+	piece sa 92*pa py he
+	end
+
+	length 189
+	piece hs 93*pa py he
+	end
+
+	length 190
+	piece sa 93*pa py he
+	end
+
+	length 191
+	piece sa 94*pa se
+	end
+
+	length 192
+	piece sa 94*pa py he
+	end
+
+	length 193
+	piece hs 95*pa py he
+	end
+
+	length 194
+	piece sa 95*pa py he
+	end
+
+	length 195
+	piece sa 96*pa se
+	end
+
+	length 196
+	piece sa 96*pa py he
+	end
+
+	length 197
+	piece hs 97*pa py he
+	end
+
+	length 198
+	piece sa 97*pa py he
+	end
+
+	length 199
+	piece sa 98*pa se
+	end
+
+	length 200
+	piece sa 98*pa py he
+	end
+
+	length 201
+	piece hs 99*pa py he
+	end
+
+	length 202
+	piece sa 99*pa py he
+	end
+
+	length 203
+	piece sa 100*pa se
+	end
+
+	length 204
+	piece sa 100*pa py he
+	end
+
+	length 205
+	piece hs 101*pa py he
+	end
+
+	length 206
+	piece sa 101*pa py he
+	end
+
+	length 207
+	piece sa 102*pa se
+	end
+
+	length 208
+	piece sa 102*pa py he
+	end
+
+	length 209
+	piece hs 103*pa py he
+	end
+
+	length 210
+	piece sa 103*pa py he
+	end
+
+	length 211
+	piece sa 104*pa se
+	end
+
+	length 212
+	piece sa 104*pa py he
+	end
+
+	length 213
+	piece hs 105*pa py he
+	end
+
+	length 214
+	piece sa 105*pa py he
+	end
+
+	length 215
+	piece sa 106*pa se
+	end
+
+	length 216
+	piece sa 106*pa py he
+	end
+
+	length 217
+	piece hs 107*pa py he
+	end
+
+	length 218
+	piece sa 107*pa py he
+	end
+
+	length 219
+	piece sa 108*pa se
+	end
+
+	length 220
+	piece sa 108*pa py he
+	end
+
+	length 221
+	piece hs 109*pa py he
+	end
+
+	length 222
+	piece sa 109*pa py he
+	end
+
+	length 223
+	piece sa 110*pa se
+	end
+
+	length 224
+	piece sa 110*pa py he
+	end
+
+	length 225
+	piece hs 111*pa py he
+	end
+
+	length 226
+	piece sa 111*pa py he
+	end
+
+	length 227
+	piece sa 112*pa se
+	end
+
+	length 228
+	piece sa 112*pa py he
+	end
+
+	length 229
+	piece hs 113*pa py he
+	end
+
+	length 230
+	piece sa 113*pa py he
+	end
+
+	length 231
+	piece sa 114*pa se
+	end
+
+	length 232
+	piece sa 114*pa py he
+	end
+
+	length 233
+	piece hs 115*pa py he
+	end
+
+	length 234
+	piece sa 115*pa py he
+	end
+
+	length 235
+	piece sa 116*pa se
+	end
+
+	length 236
+	piece sa 116*pa py he
+	end
+
+	length 237
+	piece hs 117*pa py he
+	end
+
+	length 238
+	piece sa 117*pa py he
+	end
+
+	length 239
+	piece sa 118*pa se
+	end
+
+	length 240
+	piece sa 118*pa py he
+	end
+
+	length 241
+	piece hs 119*pa py he
+	end
+
+	length 242
+	piece sa 119*pa py he
+	end
+
+	length 243
+	piece sa 120*pa se
+	end
+
+	length 244
+	piece sa 120*pa py he
+	end
+
+	length 245
+	piece hs 121*pa py he
+	end
+
+	length 246
+	piece sa 121*pa py he
+	end
+
+	length 247
+	piece sa 122*pa se
+	end
+
+	length 248
+	piece sa 122*pa py he
+	end
+
+	length 249
+	piece hs 123*pa py he
+	end
+
+	length 250
+	piece sa 123*pa py he
+	end
+
+	length 251
+	piece sa 124*pa se
+	end
+
+	length 252
+	piece sa 124*pa py he
+	end
+
+	length 253
+	piece hs 125*pa py he
+	end
+
+	length 254
+	piece sa 125*pa py he
+	end
+
+	length 255
+	piece sa 126*pa se
+	end
+end
+
+# RRW DTR L1 Viaduct Bridge Type2 by rivit - 12/21
+
+bridge 32
+
+# Short Start 
+section ss
+	piece <0x40023240, 0>
+end 
+
+# Short End
+section se
+	piece <0x40023240, 2>
+end 
+
+# normal MidArch
+section ma
+	piece <0x40023250, 0>
+end
+
+# Pylon
+section py
+	piece <0x40023260, 0>:94.2
+end
+
+# Halfarch Start
+section hs
+	piece <0x40023270, 0>
+end
+
+section he
+	piece <0x40023270, 2>
+end
+
+section sa
+	piece ss
+	piece ma
+end
+
+section pa
+	piece py
+	piece ma
+end
+
+
+	length 4
+	piece sa py he
+	end
+
+	length 5
+	piece hs pa py he
+	end
+
+	length 6
+	piece sa pa py he
+	end
+
+	length 7
+	piece sa 2*pa se
+	end
+
+	length 8
+	piece sa 2*pa py he
+	end
+
+	length 9
+	piece hs 3*pa py he
+	end
+
+	length 10
+	piece sa 3*pa py he
+	end
+
+	length 11
+	piece sa 4*pa se
+	end
+
+	length 12
+	piece sa 4*pa py he
+	end
+
+	length 13
+	piece hs 5*pa py he
+	end
+
+	length 14
+	piece sa 5*pa py he
+	end
+
+	length 15
+	piece sa 6*pa se
+	end
+
+	length 16
+	piece sa 6*pa py he
+	end
+
+	length 17
+	piece hs 7*pa py he
+	end
+
+	length 18
+	piece sa 7*pa py he
+	end
+
+	length 19
+	piece sa 8*pa se
+	end
+
+	length 20
+	piece sa 8*pa py he
+	end
+
+	length 21
+	piece hs 9*pa py he
+	end
+
+	length 22
+	piece sa 9*pa py he
+	end
+
+	length 23
+	piece sa 10*pa se
+	end
+
+	length 24
+	piece sa 10*pa py he
+	end
+
+	length 25
+	piece hs 11*pa py he
+	end
+
+	length 26
+	piece sa 11*pa py he
+	end
+
+	length 27
+	piece sa 12*pa se
+	end
+
+	length 28
+	piece sa 12*pa py he
+	end
+
+	length 29
+	piece hs 13*pa py he
+	end
+
+	length 30
+	piece sa 13*pa py he
+	end
+
+	length 31
+	piece sa 14*pa se
+	end
+
+	length 32
+	piece sa 14*pa py he
+	end
+
+	length 33
+	piece hs 15*pa py he
+	end
+
+	length 34
+	piece sa 15*pa py he
+	end
+
+	length 35
+	piece sa 16*pa se
+	end
+
+	length 36
+	piece sa 16*pa py he
+	end
+
+	length 37
+	piece hs 17*pa py he
+	end
+
+	length 38
+	piece sa 17*pa py he
+	end
+
+	length 39
+	piece sa 18*pa se
+	end
+
+	length 40
+	piece sa 18*pa py he
+	end
+
+	length 41
+	piece hs 19*pa py he
+	end
+
+	length 42
+	piece sa 19*pa py he
+	end
+
+	length 43
+	piece sa 20*pa se
+	end
+
+	length 44
+	piece sa 20*pa py he
+	end
+
+	length 45
+	piece hs 21*pa py he
+	end
+
+	length 46
+	piece sa 21*pa py he
+	end
+
+	length 47
+	piece sa 22*pa se
+	end
+
+	length 48
+	piece sa 22*pa py he
+	end
+
+	length 49
+	piece hs 23*pa py he
+	end
+
+	length 50
+	piece sa 23*pa py he
+	end
+
+	length 51
+	piece sa 24*pa se
+	end
+
+	length 52
+	piece sa 24*pa py he
+	end
+
+	length 53
+	piece hs 25*pa py he
+	end
+
+	length 54
+	piece sa 25*pa py he
+	end
+
+	length 55
+	piece sa 26*pa se
+	end
+
+	length 56
+	piece sa 26*pa py he
+	end
+
+	length 57
+	piece hs 27*pa py he
+	end
+
+	length 58
+	piece sa 27*pa py he
+	end
+
+	length 59
+	piece sa 28*pa se
+	end
+
+	length 60
+	piece sa 28*pa py he
+	end
+
+	length 61
+	piece hs 29*pa py he
+	end
+
+	length 62
+	piece sa 29*pa py he
+	end
+
+	length 63
+	piece sa 30*pa se
+	end
+
+	length 64
+	piece sa 30*pa py he
+	end
+
+	length 65
+	piece hs 31*pa py he
+	end
+
+	length 66
+	piece sa 31*pa py he
+	end
+
+	length 67
+	piece sa 32*pa se
+	end
+
+	length 68
+	piece sa 32*pa py he
+	end
+
+	length 69
+	piece hs 33*pa py he
+	end
+
+	length 70
+	piece sa 33*pa py he
+	end
+
+	length 71
+	piece sa 34*pa se
+	end
+
+	length 72
+	piece sa 34*pa py he
+	end
+
+	length 73
+	piece hs 35*pa py he
+	end
+
+	length 74
+	piece sa 35*pa py he
+	end
+
+	length 75
+	piece sa 36*pa se
+	end
+
+	length 76
+	piece sa 36*pa py he
+	end
+
+	length 77
+	piece hs 37*pa py he
+	end
+
+	length 78
+	piece sa 37*pa py he
+	end
+
+	length 79
+	piece sa 38*pa se
+	end
+
+	length 80
+	piece sa 38*pa py he
+	end
+
+	length 81
+	piece hs 39*pa py he
+	end
+
+	length 82
+	piece sa 39*pa py he
+	end
+
+	length 83
+	piece sa 40*pa se
+	end
+
+	length 84
+	piece sa 40*pa py he
+	end
+
+	length 85
+	piece hs 41*pa py he
+	end
+
+	length 86
+	piece sa 41*pa py he
+	end
+
+	length 87
+	piece sa 42*pa se
+	end
+
+	length 88
+	piece sa 42*pa py he
+	end
+
+	length 89
+	piece hs 43*pa py he
+	end
+
+	length 90
+
+	piece sa 43*pa py he
+	end
+
+	length 91
+	piece sa 44*pa se
+	end
+
+	length 92
+	piece sa 44*pa py he
+	end
+
+	length 93
+	piece hs 45*pa py he
+	end
+
+	length 94
+	piece sa 45*pa py he
+	end
+
+	length 95
+	piece sa 46*pa se
+	end
+
+	length 96
+	piece sa 46*pa py he
+	end
+
+	length 97
+	piece hs 47*pa py he
+	end
+
+	length 98
+	piece sa 47*pa py he
+	end
+
+	length 99
+	piece sa 48*pa se
+	end
+
+	length 100
+	piece sa 48*pa py he
+	end
+
+	length 101
+	piece hs 49*pa py he
+	end
+
+	length 102
+	piece sa 49*pa py he
+	end
+
+	length 103
+	piece sa 50*pa se
+	end
+
+	length 104
+	piece sa 50*pa py he
+	end
+
+	length 105
+	piece hs 51*pa py he
+	end
+
+	length 106
+	piece sa 51*pa py he
+	end
+
+	length 107
+	piece sa 52*pa se
+	end
+
+	length 108
+	piece sa 52*pa py he
+	end
+
+	length 109
+	piece hs 53*pa py he
+	end
+
+	length 110
+	piece sa 53*pa py he
+	end
+
+	length 111
+	piece sa 54*pa se
+	end
+
+	length 112
+	piece sa 54*pa py he
+	end
+
+	length 113
+	piece hs 55*pa py he
+	end
+
+	length 114
+	piece sa 55*pa py he
+	end
+
+	length 115
+	piece sa 56*pa se
+	end
+
+	length 116
+	piece sa 56*pa py he
+	end
+
+	length 117
+	piece hs 57*pa py he
+	end
+
+	length 118
+	piece sa 57*pa py he
+	end
+
+	length 119
+	piece sa 58*pa se
+	end
+
+	length 120
+	piece sa 58*pa py he
+	end
+
+	length 121
+	piece hs 59*pa py he
+	end
+
+	length 122
+	piece sa 59*pa py he
+	end
+
+	length 123
+	piece sa 60*pa se
+	end
+
+	length 124
+	piece sa 60*pa py he
+	end
+
+	length 125
+	piece hs 61*pa py he
+	end
+
+	length 126
+	piece sa 61*pa py he
+	end
+
+	length 127
+	piece sa 62*pa se
+	end
+
+	length 128
+	piece sa 62*pa py he
+	end
+
+	length 129
+	piece hs 63*pa py he
+	end
+
+	length 130
+	piece sa 63*pa py he
+	end
+
+	length 131
+	piece sa 64*pa se
+	end
+
+	length 132
+	piece sa 64*pa py he
+	end
+
+	length 133
+	piece hs 65*pa py he
+	end
+
+	length 134
+	piece sa 65*pa py he
+	end
+
+	length 135
+	piece sa 66*pa se
+	end
+
+	length 136
+	piece sa 66*pa py he
+	end
+
+	length 137
+	piece hs 67*pa py he
+	end
+
+	length 138
+	piece sa 67*pa py he
+	end
+
+	length 139
+	piece sa 68*pa se
+	end
+
+	length 140
+	piece sa 68*pa py he
+	end
+
+	length 141
+	piece hs 69*pa py he
+	end
+
+	length 142
+	piece sa 69*pa py he
+	end
+
+	length 143
+	piece sa 70*pa se
+	end
+
+	length 144
+	piece sa 70*pa py he
+	end
+
+	length 145
+	piece hs 71*pa py he
+	end
+
+	length 146
+	piece sa 71*pa py he
+	end
+
+	length 147
+	piece sa 72*pa se
+	end
+
+	length 148
+	piece sa 72*pa py he
+	end
+
+	length 149
+	piece hs 73*pa py he
+	end
+
+	length 150
+	piece sa 73*pa py he
+	end
+
+	length 151
+	piece sa 74*pa se
+	end
+
+	length 152
+	piece sa 74*pa py he
+	end
+
+	length 153
+	piece hs 75*pa py he
+	end
+
+	length 154
+	piece sa 75*pa py he
+	end
+
+	length 155
+	piece sa 76*pa se
+	end
+
+	length 156
+	piece sa 76*pa py he
+	end
+
+	length 157
+	piece hs 77*pa py he
+	end
+
+	length 158
+	piece sa 77*pa py he
+	end
+
+	length 159
+	piece sa 78*pa se
+	end
+
+	length 160
+	piece sa 78*pa py he
+	end
+
+	length 161
+	piece hs 79*pa py he
+	end
+
+	length 162
+	piece sa 79*pa py he
+	end
+
+	length 163
+	piece sa 80*pa se
+	end
+
+	length 164
+	piece sa 80*pa py he
+	end
+
+	length 165
+	piece hs 81*pa py he
+	end
+
+	length 166
+	piece sa 81*pa py he
+	end
+
+	length 167
+	piece sa 82*pa se
+	end
+
+	length 168
+	piece sa 82*pa py he
+	end
+
+	length 169
+	piece hs 83*pa py he
+	end
+
+	length 170
+	piece sa 83*pa py he
+	end
+
+	length 171
+	piece sa 84*pa se
+	end
+
+	length 172
+	piece sa 84*pa py he
+	end
+
+	length 173
+	piece hs 85*pa py he
+	end
+
+	length 174
+	piece sa 85*pa py he
+	end
+
+	length 175
+	piece sa 86*pa se
+	end
+
+	length 176
+	piece sa 86*pa py he
+	end
+
+	length 177
+	piece hs 87*pa py he
+	end
+
+	length 178
+	piece sa 87*pa py he
+	end
+
+	length 179
+	piece sa 88*pa se
+	end
+
+	length 180
+	piece sa 88*pa py he
+	end
+
+	length 181
+	piece hs 89*pa py he
+	end
+
+	length 182
+	piece sa 89*pa py he
+	end
+
+	length 183
+	piece sa 90*pa se
+	end
+
+	length 184
+	piece sa 90*pa py he
+	end
+
+	length 185
+	piece hs 91*pa py he
+	end
+
+	length 186
+	piece sa 91*pa py he
+	end
+
+	length 187
+	piece sa 92*pa se
+	end
+
+	length 188
+	piece sa 92*pa py he
+	end
+
+	length 189
+	piece hs 93*pa py he
+	end
+
+	length 190
+	piece sa 93*pa py he
+	end
+
+	length 191
+	piece sa 94*pa se
+	end
+
+	length 192
+	piece sa 94*pa py he
+	end
+
+	length 193
+	piece hs 95*pa py he
+	end
+
+	length 194
+	piece sa 95*pa py he
+	end
+
+	length 195
+	piece sa 96*pa se
+	end
+
+	length 196
+	piece sa 96*pa py he
+	end
+
+	length 197
+	piece hs 97*pa py he
+	end
+
+	length 198
+	piece sa 97*pa py he
+	end
+
+	length 199
+	piece sa 98*pa se
+	end
+
+	length 200
+	piece sa 98*pa py he
+	end
+
+	length 201
+	piece hs 99*pa py he
+	end
+
+	length 202
+	piece sa 99*pa py he
+	end
+
+	length 203
+	piece sa 100*pa se
+	end
+
+	length 204
+	piece sa 100*pa py he
+	end
+
+	length 205
+	piece hs 101*pa py he
+	end
+
+	length 206
+	piece sa 101*pa py he
+	end
+
+	length 207
+	piece sa 102*pa se
+	end
+
+	length 208
+	piece sa 102*pa py he
+	end
+
+	length 209
+	piece hs 103*pa py he
+	end
+
+	length 210
+	piece sa 103*pa py he
+	end
+
+	length 211
+	piece sa 104*pa se
+	end
+
+	length 212
+	piece sa 104*pa py he
+	end
+
+	length 213
+	piece hs 105*pa py he
+	end
+
+	length 214
+	piece sa 105*pa py he
+	end
+
+	length 215
+	piece sa 106*pa se
+	end
+
+	length 216
+	piece sa 106*pa py he
+	end
+
+	length 217
+	piece hs 107*pa py he
+	end
+
+	length 218
+	piece sa 107*pa py he
+	end
+
+	length 219
+	piece sa 108*pa se
+	end
+
+	length 220
+	piece sa 108*pa py he
+	end
+
+	length 221
+	piece hs 109*pa py he
+	end
+
+	length 222
+	piece sa 109*pa py he
+	end
+
+	length 223
+	piece sa 110*pa se
+	end
+
+	length 224
+	piece sa 110*pa py he
+	end
+
+	length 225
+	piece hs 111*pa py he
+	end
+
+	length 226
+	piece sa 111*pa py he
+	end
+
+	length 227
+	piece sa 112*pa se
+	end
+
+	length 228
+	piece sa 112*pa py he
+	end
+
+	length 229
+	piece hs 113*pa py he
+	end
+
+	length 230
+	piece sa 113*pa py he
+	end
+
+	length 231
+	piece sa 114*pa se
+	end
+
+	length 232
+	piece sa 114*pa py he
+	end
+
+	length 233
+	piece hs 115*pa py he
+	end
+
+	length 234
+	piece sa 115*pa py he
+	end
+
+	length 235
+	piece sa 116*pa se
+	end
+
+	length 236
+	piece sa 116*pa py he
+	end
+
+	length 237
+	piece hs 117*pa py he
+	end
+
+	length 238
+	piece sa 117*pa py he
+	end
+
+	length 239
+	piece sa 118*pa se
+	end
+
+	length 240
+	piece sa 118*pa py he
+	end
+
+	length 241
+	piece hs 119*pa py he
+	end
+
+	length 242
+	piece sa 119*pa py he
+	end
+
+	length 243
+	piece sa 120*pa se
+	end
+
+	length 244
+	piece sa 120*pa py he
+	end
+
+	length 245
+	piece hs 121*pa py he
+	end
+
+	length 246
+	piece sa 121*pa py he
+	end
+
+	length 247
+	piece sa 122*pa se
+	end
+
+	length 248
+	piece sa 122*pa py he
+	end
+
+	length 249
+	piece hs 123*pa py he
+	end
+
+	length 250
+	piece sa 123*pa py he
+	end
+
+	length 251
+	piece sa 124*pa se
+	end
+
+	length 252
+	piece sa 124*pa py he
+	end
+
+	length 253
+	piece hs 125*pa py he
+	end
+
+	length 254
+	piece sa 125*pa py he
+	end
+
+	length 255
+	piece sa 126*pa se
+	end
+end
+
+# RRW DTR L2 Viaduct Bridge Type2 by rivit - 12/21
+
+bridge 33
+
+# Short Start 
+section ss
+	piece <0x40023280, 0>
+end 
+
+# Short End
+section se
+	piece <0x40023280, 2>
+end 
+
+# normal MidArch
+section ma
+	piece <0x40023290, 0>
+end
+
+# Pylon
+section py
+	piece <0x400232a0, 0>:86.7
+end
+
+# Halfarch Start
+section hs
+	piece <0x400232b0, 0>
+end
+
+section he
+	piece <0x400232b0, 2>
+end
+
+section sa
+	piece ss
+	piece ma
+end
+
+section pa
+	piece py
+	piece ma
+end
+
+
+	length 4
+	piece sa py he
+	end
+
+	length 5
+	piece hs pa py he
+	end
+
+	length 6
+	piece sa pa py he
+	end
+
+	length 7
+	piece sa 2*pa se
+	end
+
+	length 8
+	piece sa 2*pa py he
+	end
+
+	length 9
+	piece hs 3*pa py he
+	end
+
+	length 10
+	piece sa 3*pa py he
+	end
+
+	length 11
+	piece sa 4*pa se
+	end
+
+	length 12
+	piece sa 4*pa py he
+	end
+
+	length 13
+	piece hs 5*pa py he
+	end
+
+	length 14
+	piece sa 5*pa py he
+	end
+
+	length 15
+	piece sa 6*pa se
+	end
+
+	length 16
+	piece sa 6*pa py he
+	end
+
+	length 17
+	piece hs 7*pa py he
+	end
+
+	length 18
+	piece sa 7*pa py he
+	end
+
+	length 19
+	piece sa 8*pa se
+	end
+
+	length 20
+	piece sa 8*pa py he
+	end
+
+	length 21
+	piece hs 9*pa py he
+	end
+
+	length 22
+	piece sa 9*pa py he
+	end
+
+	length 23
+	piece sa 10*pa se
+	end
+
+	length 24
+	piece sa 10*pa py he
+	end
+
+	length 25
+	piece hs 11*pa py he
+	end
+
+	length 26
+	piece sa 11*pa py he
+	end
+
+	length 27
+	piece sa 12*pa se
+	end
+
+	length 28
+	piece sa 12*pa py he
+	end
+
+	length 29
+	piece hs 13*pa py he
+	end
+
+	length 30
+	piece sa 13*pa py he
+	end
+
+	length 31
+	piece sa 14*pa se
+	end
+
+	length 32
+	piece sa 14*pa py he
+	end
+
+	length 33
+	piece hs 15*pa py he
+	end
+
+	length 34
+	piece sa 15*pa py he
+	end
+
+	length 35
+	piece sa 16*pa se
+	end
+
+	length 36
+	piece sa 16*pa py he
+	end
+
+	length 37
+	piece hs 17*pa py he
+	end
+
+	length 38
+	piece sa 17*pa py he
+	end
+
+	length 39
+	piece sa 18*pa se
+	end
+
+	length 40
+	piece sa 18*pa py he
+	end
+
+	length 41
+	piece hs 19*pa py he
+	end
+
+	length 42
+	piece sa 19*pa py he
+	end
+
+	length 43
+	piece sa 20*pa se
+	end
+
+	length 44
+	piece sa 20*pa py he
+	end
+
+	length 45
+	piece hs 21*pa py he
+	end
+
+	length 46
+	piece sa 21*pa py he
+	end
+
+	length 47
+	piece sa 22*pa se
+	end
+
+	length 48
+	piece sa 22*pa py he
+	end
+
+	length 49
+	piece hs 23*pa py he
+	end
+
+	length 50
+	piece sa 23*pa py he
+	end
+
+	length 51
+	piece sa 24*pa se
+	end
+
+	length 52
+	piece sa 24*pa py he
+	end
+
+	length 53
+	piece hs 25*pa py he
+	end
+
+	length 54
+	piece sa 25*pa py he
+	end
+
+	length 55
+	piece sa 26*pa se
+	end
+
+	length 56
+	piece sa 26*pa py he
+	end
+
+	length 57
+	piece hs 27*pa py he
+	end
+
+	length 58
+	piece sa 27*pa py he
+	end
+
+	length 59
+	piece sa 28*pa se
+	end
+
+	length 60
+	piece sa 28*pa py he
+	end
+
+	length 61
+	piece hs 29*pa py he
+	end
+
+	length 62
+	piece sa 29*pa py he
+	end
+
+	length 63
+	piece sa 30*pa se
+	end
+
+	length 64
+	piece sa 30*pa py he
+	end
+
+	length 65
+	piece hs 31*pa py he
+	end
+
+	length 66
+	piece sa 31*pa py he
+	end
+
+	length 67
+	piece sa 32*pa se
+	end
+
+	length 68
+	piece sa 32*pa py he
+	end
+
+	length 69
+	piece hs 33*pa py he
+	end
+
+	length 70
+	piece sa 33*pa py he
+	end
+
+	length 71
+	piece sa 34*pa se
+	end
+
+	length 72
+	piece sa 34*pa py he
+	end
+
+	length 73
+	piece hs 35*pa py he
+	end
+
+	length 74
+	piece sa 35*pa py he
+	end
+
+	length 75
+	piece sa 36*pa se
+	end
+
+	length 76
+	piece sa 36*pa py he
+	end
+
+	length 77
+	piece hs 37*pa py he
+	end
+
+	length 78
+	piece sa 37*pa py he
+	end
+
+	length 79
+	piece sa 38*pa se
+	end
+
+	length 80
+	piece sa 38*pa py he
+	end
+
+	length 81
+	piece hs 39*pa py he
+	end
+
+	length 82
+	piece sa 39*pa py he
+	end
+
+	length 83
+	piece sa 40*pa se
+	end
+
+	length 84
+	piece sa 40*pa py he
+	end
+
+	length 85
+	piece hs 41*pa py he
+	end
+
+	length 86
+	piece sa 41*pa py he
+	end
+
+	length 87
+	piece sa 42*pa se
+	end
+
+	length 88
+	piece sa 42*pa py he
+	end
+
+	length 89
+	piece hs 43*pa py he
+	end
+
+	length 90
+
+	piece sa 43*pa py he
+	end
+
+	length 91
+	piece sa 44*pa se
+	end
+
+	length 92
+	piece sa 44*pa py he
+	end
+
+	length 93
+	piece hs 45*pa py he
+	end
+
+	length 94
+	piece sa 45*pa py he
+	end
+
+	length 95
+	piece sa 46*pa se
+	end
+
+	length 96
+	piece sa 46*pa py he
+	end
+
+	length 97
+	piece hs 47*pa py he
+	end
+
+	length 98
+	piece sa 47*pa py he
+	end
+
+	length 99
+	piece sa 48*pa se
+	end
+
+	length 100
+	piece sa 48*pa py he
+	end
+
+	length 101
+	piece hs 49*pa py he
+	end
+
+	length 102
+	piece sa 49*pa py he
+	end
+
+	length 103
+	piece sa 50*pa se
+	end
+
+	length 104
+	piece sa 50*pa py he
+	end
+
+	length 105
+	piece hs 51*pa py he
+	end
+
+	length 106
+	piece sa 51*pa py he
+	end
+
+	length 107
+	piece sa 52*pa se
+	end
+
+	length 108
+	piece sa 52*pa py he
+	end
+
+	length 109
+	piece hs 53*pa py he
+	end
+
+	length 110
+	piece sa 53*pa py he
+	end
+
+	length 111
+	piece sa 54*pa se
+	end
+
+	length 112
+	piece sa 54*pa py he
+	end
+
+	length 113
+	piece hs 55*pa py he
+	end
+
+	length 114
+	piece sa 55*pa py he
+	end
+
+	length 115
+	piece sa 56*pa se
+	end
+
+	length 116
+	piece sa 56*pa py he
+	end
+
+	length 117
+	piece hs 57*pa py he
+	end
+
+	length 118
+	piece sa 57*pa py he
+	end
+
+	length 119
+	piece sa 58*pa se
+	end
+
+	length 120
+	piece sa 58*pa py he
+	end
+
+	length 121
+	piece hs 59*pa py he
+	end
+
+	length 122
+	piece sa 59*pa py he
+	end
+
+	length 123
+	piece sa 60*pa se
+	end
+
+	length 124
+	piece sa 60*pa py he
+	end
+
+	length 125
+	piece hs 61*pa py he
+	end
+
+	length 126
+	piece sa 61*pa py he
+	end
+
+	length 127
+	piece sa 62*pa se
+	end
+
+	length 128
+	piece sa 62*pa py he
+	end
+
+	length 129
+	piece hs 63*pa py he
+	end
+
+	length 130
+	piece sa 63*pa py he
+	end
+
+	length 131
+	piece sa 64*pa se
+	end
+
+	length 132
+	piece sa 64*pa py he
+	end
+
+	length 133
+	piece hs 65*pa py he
+	end
+
+	length 134
+	piece sa 65*pa py he
+	end
+
+	length 135
+	piece sa 66*pa se
+	end
+
+	length 136
+	piece sa 66*pa py he
+	end
+
+	length 137
+	piece hs 67*pa py he
+	end
+
+	length 138
+	piece sa 67*pa py he
+	end
+
+	length 139
+	piece sa 68*pa se
+	end
+
+	length 140
+	piece sa 68*pa py he
+	end
+
+	length 141
+	piece hs 69*pa py he
+	end
+
+	length 142
+	piece sa 69*pa py he
+	end
+
+	length 143
+	piece sa 70*pa se
+	end
+
+	length 144
+	piece sa 70*pa py he
+	end
+
+	length 145
+	piece hs 71*pa py he
+	end
+
+	length 146
+	piece sa 71*pa py he
+	end
+
+	length 147
+	piece sa 72*pa se
+	end
+
+	length 148
+	piece sa 72*pa py he
+	end
+
+	length 149
+	piece hs 73*pa py he
+	end
+
+	length 150
+	piece sa 73*pa py he
+	end
+
+	length 151
+	piece sa 74*pa se
+	end
+
+	length 152
+	piece sa 74*pa py he
+	end
+
+	length 153
+	piece hs 75*pa py he
+	end
+
+	length 154
+	piece sa 75*pa py he
+	end
+
+	length 155
+	piece sa 76*pa se
+	end
+
+	length 156
+	piece sa 76*pa py he
+	end
+
+	length 157
+	piece hs 77*pa py he
+	end
+
+	length 158
+	piece sa 77*pa py he
+	end
+
+	length 159
+	piece sa 78*pa se
+	end
+
+	length 160
+	piece sa 78*pa py he
+	end
+
+	length 161
+	piece hs 79*pa py he
+	end
+
+	length 162
+	piece sa 79*pa py he
+	end
+
+	length 163
+	piece sa 80*pa se
+	end
+
+	length 164
+	piece sa 80*pa py he
+	end
+
+	length 165
+	piece hs 81*pa py he
+	end
+
+	length 166
+	piece sa 81*pa py he
+	end
+
+	length 167
+	piece sa 82*pa se
+	end
+
+	length 168
+	piece sa 82*pa py he
+	end
+
+	length 169
+	piece hs 83*pa py he
+	end
+
+	length 170
+	piece sa 83*pa py he
+	end
+
+	length 171
+	piece sa 84*pa se
+	end
+
+	length 172
+	piece sa 84*pa py he
+	end
+
+	length 173
+	piece hs 85*pa py he
+	end
+
+	length 174
+	piece sa 85*pa py he
+	end
+
+	length 175
+	piece sa 86*pa se
+	end
+
+	length 176
+	piece sa 86*pa py he
+	end
+
+	length 177
+	piece hs 87*pa py he
+	end
+
+	length 178
+	piece sa 87*pa py he
+	end
+
+	length 179
+	piece sa 88*pa se
+	end
+
+	length 180
+	piece sa 88*pa py he
+	end
+
+	length 181
+	piece hs 89*pa py he
+	end
+
+	length 182
+	piece sa 89*pa py he
+	end
+
+	length 183
+	piece sa 90*pa se
+	end
+
+	length 184
+	piece sa 90*pa py he
+	end
+
+	length 185
+	piece hs 91*pa py he
+	end
+
+	length 186
+	piece sa 91*pa py he
+	end
+
+	length 187
+	piece sa 92*pa se
+	end
+
+	length 188
+	piece sa 92*pa py he
+	end
+
+	length 189
+	piece hs 93*pa py he
+	end
+
+	length 190
+	piece sa 93*pa py he
+	end
+
+	length 191
+	piece sa 94*pa se
+	end
+
+	length 192
+	piece sa 94*pa py he
+	end
+
+	length 193
+	piece hs 95*pa py he
+	end
+
+	length 194
+	piece sa 95*pa py he
+	end
+
+	length 195
+	piece sa 96*pa se
+	end
+
+	length 196
+	piece sa 96*pa py he
+	end
+
+	length 197
+	piece hs 97*pa py he
+	end
+
+	length 198
+	piece sa 97*pa py he
+	end
+
+	length 199
+	piece sa 98*pa se
+	end
+
+	length 200
+	piece sa 98*pa py he
+	end
+
+	length 201
+	piece hs 99*pa py he
+	end
+
+	length 202
+	piece sa 99*pa py he
+	end
+
+	length 203
+	piece sa 100*pa se
+	end
+
+	length 204
+	piece sa 100*pa py he
+	end
+
+	length 205
+	piece hs 101*pa py he
+	end
+
+	length 206
+	piece sa 101*pa py he
+	end
+
+	length 207
+	piece sa 102*pa se
+	end
+
+	length 208
+	piece sa 102*pa py he
+	end
+
+	length 209
+	piece hs 103*pa py he
+	end
+
+	length 210
+	piece sa 103*pa py he
+	end
+
+	length 211
+	piece sa 104*pa se
+	end
+
+	length 212
+	piece sa 104*pa py he
+	end
+
+	length 213
+	piece hs 105*pa py he
+	end
+
+	length 214
+	piece sa 105*pa py he
+	end
+
+	length 215
+	piece sa 106*pa se
+	end
+
+	length 216
+	piece sa 106*pa py he
+	end
+
+	length 217
+	piece hs 107*pa py he
+	end
+
+	length 218
+	piece sa 107*pa py he
+	end
+
+	length 219
+	piece sa 108*pa se
+	end
+
+	length 220
+	piece sa 108*pa py he
+	end
+
+	length 221
+	piece hs 109*pa py he
+	end
+
+	length 222
+	piece sa 109*pa py he
+	end
+
+	length 223
+	piece sa 110*pa se
+	end
+
+	length 224
+	piece sa 110*pa py he
+	end
+
+	length 225
+	piece hs 111*pa py he
+	end
+
+	length 226
+	piece sa 111*pa py he
+	end
+
+	length 227
+	piece sa 112*pa se
+	end
+
+	length 228
+	piece sa 112*pa py he
+	end
+
+	length 229
+	piece hs 113*pa py he
+	end
+
+	length 230
+	piece sa 113*pa py he
+	end
+
+	length 231
+	piece sa 114*pa se
+	end
+
+	length 232
+	piece sa 114*pa py he
+	end
+
+	length 233
+	piece hs 115*pa py he
+	end
+
+	length 234
+	piece sa 115*pa py he
+	end
+
+	length 235
+	piece sa 116*pa se
+	end
+
+	length 236
+	piece sa 116*pa py he
+	end
+
+	length 237
+	piece hs 117*pa py he
+	end
+
+	length 238
+	piece sa 117*pa py he
+	end
+
+	length 239
+	piece sa 118*pa se
+	end
+
+	length 240
+	piece sa 118*pa py he
+	end
+
+	length 241
+	piece hs 119*pa py he
+	end
+
+	length 242
+	piece sa 119*pa py he
+	end
+
+	length 243
+	piece sa 120*pa se
+	end
+
+	length 244
+	piece sa 120*pa py he
+	end
+
+	length 245
+	piece hs 121*pa py he
+	end
+
+	length 246
+	piece sa 121*pa py he
+	end
+
+	length 247
+	piece sa 122*pa se
+	end
+
+	length 248
+	piece sa 122*pa py he
+	end
+
+	length 249
+	piece hs 123*pa py he
+	end
+
+	length 250
+	piece sa 123*pa py he
+	end
+
+	length 251
+	piece sa 124*pa se
+	end
+
+	length 252
+	piece sa 124*pa py he
+	end
+
+	length 253
+	piece hs 125*pa py he
+	end
+
+	length 254
+	piece sa 125*pa py he
+	end
+
+	length 255
+	piece sa 126*pa se
 	end
 end
