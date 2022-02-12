@@ -49,6 +49,9 @@ AddTypes     = 5335, 15335, 25335, 35335, 45335, 55335, 65335, 75335 ;180-Degree
 ;AddTypes     = 5343, 15343, 25343, 35343, 45343, 55343, 65343, 75343 ;Diag FLEXOnSlope L0-L2 (Old)
 ;AddTypes	 = 5344, 15344, 25344, 35344, 45344, 55344, 65344, 75344 ;FLEXOnSlope L0-L1 (Old)
 ;AddTypes     = 5331, 15331, 25331, 35331, 45331, 55331, 65331, 75331 ;FLEXOnSlope L0-L2 (Old)
+AddTypes     = 5348, 15348, 25348, 35348, 45348, 55348, 65348, 75348 ;45-Degree RHW-2 Flex Ht L0-L1 Transition A
+AddTypes     = 5349, 15349, 25349, 35349, 45349, 55349, 65349, 75349 ;45-Degree RHW-2 Flex Ht L1-L0 Transition B
+
 
 ;Width Transitions (FLEX)
 RotationRing = 5336, 45336, 15336, 55336, 25336, 65336, 35336, 75336 ;FLEX-WT 1-Lane
@@ -5370,3 +5373,119 @@ CopyFrom	=	0x55347
 CopyFrom	=	0x65347
 [HighwayIntersectionInfo_0x000F5347]
 CopyFrom	=	0x75347
+
+;RHW_MRC_FlexHT_R3-[L0-L1] (Extended) - RUL0
+[HighwayIntersectionInfo_0x00005348]
+Piece = 16.0, 0.0, 0, 0, 0x5770a00f
+PreviewEffect = preview_r3_rhw2_flexhtmrc_up_001
+
+CellLayout = .............
+CellLayout = .Zjbaf......<
+CellLayout = ....hgs......
+CellLayout = ......ti.....
+CellLayout = .............
+CellLayout = .^...........
+
+;senw
+CheckType = Z - dirtroad:0x00000000
+CheckType = i - dirtroad:0x00000004, 0xFFFFFFFF optional
+CheckType = a - dirtroad:0x04020002, 0xFFFFFFFF optional
+CheckType = b - dirtroad:0x00020002, 0xFFFFFFFF optional
+CheckType = f - dirtroad:0x04000002, 0xFFFFFFFF optional
+CheckType = g - dirtroad:0x00040404, 0xFFFFFFFF optional
+CheckType = h - dirtroad:0x00040400, 0xFFFFFFFF optional
+CheckType = j - dirtroad:0x00020000, 0xFFFFFFFF optional
+CheckType = s - dirtroad:0x01000004, 0xFFFFFFFF optional
+CheckType = t - dirtroad:0x00040100, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .+..........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = .^...........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5770a00f
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015348]
+CopyFrom    = 0x5348
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025348]
+CopyFrom    = 0x5348
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035348]
+CopyFrom    = 0x5348
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045348]
+CopyFrom    = 0x5348
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055348]
+CopyFrom    = 0x45348
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00065348]
+CopyFrom    = 0x45348
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00075348]
+CopyFrom    = 0x45348
+Rotate  	= 1
+
+;RHW_MRC_FlexHT_R3-[L1-L0] (Extended) - RUL0
+[HighwayIntersectionInfo_0x00005349]
+Piece = 16.0, 0.0, 0, 0, 0x5770f00f
+PreviewEffect = preview_r3_rhw2_flexhtmrc_down_001
+
+CellLayout = .............
+CellLayout = .Zjbaf......<
+CellLayout = ....hgs......
+CellLayout = ......ti.....
+CellLayout = .............
+CellLayout = .^...........
+
+;senw
+CheckType = Z - dirtroad:0x00000000
+CheckType = i - dirtroad:0x00000003, 0xFFFFFFFF optional
+CheckType = a - dirtroad:0x04020002, 0xFFFFFFFF optional
+CheckType = b - dirtroad:0x00020002, 0xFFFFFFFF optional
+CheckType = f - dirtroad:0x04000002, 0xFFFFFFFF optional
+CheckType = g - dirtroad:0x00040404, 0xFFFFFFFF optional
+CheckType = h - dirtroad:0x00040400, 0xFFFFFFFF optional
+CheckType = j - dirtroad:0x00020000, 0xFFFFFFFF optional
+CheckType = s - dirtroad:0x04000004, 0xFFFFFFFF optional
+CheckType = t - dirtroad:0x00030400, 0xFFFFFFFF optional
+
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..+.........<
+ConsLayout = .............
+ConsLayout = .............
+ConsLayout = ..^..........
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5770f00f
+Costs = 600
+
+[HighwayIntersectionInfo_0x00015349]
+CopyFrom    = 0x5349
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025349]
+CopyFrom    = 0x5349
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035349]
+CopyFrom    = 0x5349
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045349]
+CopyFrom    = 0x5349
+Transpose	= 1
+[HighwayIntersectionInfo_0x00055349]
+CopyFrom    = 0x45349
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00065349]
+CopyFrom    = 0x45349
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00075349]
+CopyFrom    = 0x45349
+Rotate  	= 1
