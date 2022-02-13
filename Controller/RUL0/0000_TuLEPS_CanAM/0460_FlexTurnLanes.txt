@@ -31,6 +31,7 @@ AddTypes     = 046A, 1046A, 2046A, 3046A, 4046A, 5046A, 6046A, 7046A ;AVE6-to-TL
 AddTypes     = 0482, 10482, 20482, 30482, 40482, 50482, 60482, 70482 ;AVE-to-TL 120 L1 Transition Up
 ;AddTypes     = 0483, 10483, 20483, 30483, 40483, 50483, 60483, 70483 ;AVE-to-TL 220 L1 Transition Up
 ;AddTypes     = 0484, 10484, 20484, 30484, 40484, 50484, 60484, 70484 ;AVE-to-TL 120 Dual L1 Transition Up
+AddTypes     = 0487, 10487, 20487, 30487, 40487, 50487, 60487, 70487 ;AVE-to-TL 120 L2 Transition Up
 
 ;FLEX Intersections
 AddTypes     = 0470, 10470, 20470, 30470, 40470, 50470, 60470, 70470 ;FTL Dual-Tile x Dual-Tile +-Intersection Helper
@@ -1338,7 +1339,7 @@ CopyFrom    = 0x3047D
 ;Added by Tarkus 09.23.2012
 ;Road Type 110 Up FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 16.0, 0, 0, 0x5C060205
-PreviewEffect = preview_flexhtrans_l1rd_002
+PreviewEffect = preview_flexhtrans_t110_000
 
 CellLayout=....
 CellLayout=..b<
@@ -1391,7 +1392,7 @@ CopyFrom	=	0x30480
 ;Added by Tarkus 09.23.2012
 ;Road Type 110 Up FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 16.0, 0, 0, 0x5C060205
-PreviewEffect = preview_flexhtrans_l1rd_004
+PreviewEffect = preview_flexhtrans_d110_000
 
 CellLayout=....
 CellLayout=..b<
@@ -1445,7 +1446,7 @@ CopyFrom	=	0x30481
 ;Added by Tarkus 30-Jan-2022
 ;Avenue Type 120 Up FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 0.0, 0, 0, 0x5C081205
-PreviewEffect = preview_flexhtrans_l1av_002
+PreviewEffect = preview_flexhtrans_t120_000
 
 CellLayout=.....
 CellLayout=..b.<
@@ -1502,7 +1503,7 @@ CopyFrom	=	0x30482
 ;Added by Tarkus 30-Jan-2022
 ;Avenue Type 220 Up FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 0.0, 0, 0, 0x5C081605
-PreviewEffect = preview_flexhtrans_l1av_003
+PreviewEffect = preview_flexhtrans_t220_000
 
 CellLayout=.....
 CellLayout=..b.<
@@ -1560,7 +1561,7 @@ CopyFrom	=	0x30483
 ;Added by Tarkus 30-Jan-2022
 ;Avenue Type 120 Dual Up FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 0.0, 0, 0, 0x5C081A05
-PreviewEffect = preview_flexhtrans_l1av_004
+PreviewEffect = preview_flexhtrans_d120_000
 
 CellLayout=.....
 CellLayout=..b.<
@@ -1611,6 +1612,71 @@ CopyFrom	=	0x10484
 CopyFrom	=	0x20484
 [HighwayIntersectionInfo_0x00070484]
 CopyFrom	=	0x30484
+
+
+
+[HighwayIntersectionInfo_0x00000487]
+;Added by Tarkus 30-Jan-2022
+;Avenue Type 120 Up FlexHT-L0-to-L2 Ortho
+Piece = 0.0, 0.0, 0, 0, 0x5C081305
+PreviewEffect = preview_flexhtrans_t120_001
+
+CellLayout=.....
+CellLayout=..b.<
+CellLayout=..ae.
+CellLayout=..cf.
+CellLayout=..hi.
+CellLayout=..dg.
+CellLayout=..cf.
+CellLayout=..cf.
+CellLayout=..dg.
+CellLayout=..^..
+
+CheckType = a - monorail: 0x00000400 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x00000000
+CheckType = c - avenue: 0x02040200, 0xFF00FF00 optional
+CheckType = d - monorail: 0x00040404 avenue: 0x02040200, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x00000400 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
+CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x02040200 onewayroad: 0x00000104, 0xffffffff optional
+CheckType = i - avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = h - avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = i - avenue: 0x02000204 onewayroad: 0x01040000, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C081300
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00010487]
+CopyFrom	=	0x0487
+Rotate	=	1
+[HighwayIntersectionInfo_0x00020487]
+CopyFrom	=	0x0487
+Rotate	=	2
+[HighwayIntersectionInfo_0x00030487]
+CopyFrom	=	0x0487
+Rotate	=	3
+[HighwayIntersectionInfo_0x00040487]
+CopyFrom	=	0x0487
+[HighwayIntersectionInfo_0x00050487]
+CopyFrom	=	0x10487
+[HighwayIntersectionInfo_0x00060487]
+CopyFrom	=	0x20487
+[HighwayIntersectionInfo_0x00070487]
+CopyFrom	=	0x30487
+
 
 
 
