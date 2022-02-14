@@ -15,10 +15,10 @@ AddTypes     = 750A, 1750A, 2750A, 3750A, 4750A, 5750A, 6750A, 7750A, 8750A, 975
 AddTypes     = 750B, 1750B, 2750B, 3750B, 4750B, 5750B, 6750B, 7750B, 8750B, 9750B, A750B, B750B, C750B, D750B, E750B, F750B ;Avenue Long Turn Puzzle Piece
 AddTypes     = 750C, 1750C, 2750C, 3750C, 4750C, 5750C, 6750C, 7750C, 8750C, 9750C, A750C, B750C, C750C, D750C, E750C, F750C ;Avenue Long 90 Turn Puzzle Piece
 ;AddTypes     = 750D, 1750D, 2750D, 3750D, 4750D, 5750D, 6750D, 7750D ;Avenue Long S-Curve Puzzle Piece
-AddTypes     = 750E, F750E, 9750E, 6750E, 1750E, E750E, A750E, 5750E, 2750E, D750E, B750E, 4750E, 3750E, C750E, 8750E, 7750E ;(flexible) wide-radius Avenue 45 degree curve
-AddTypes     = 7510, F7510, 97510, 67510, 17510, E7510, A7510, 57510, 27510, D7510, B7510, 47510, 37510, C7510, 87510, 77510 ;MRC R3 Road 45 degree
-AddTypes     = 7511, F7511, 97511, 67511, 17511, E7511, A7511, 57511, 27511, D7511, B7511, 47511, 37511, C7511, 87511, 77511 ;MRC R4 Road 45 degree
-AddTypes     = 7512, F7512, 97512, 67512, 17512, E7512, A7512, 57512, 27512, D7512, B7512, 47512, 37512, C7512, 87512, 77512 ;MRC R5 Road 45 degree
+;disabled due to new versions under new MRC button
+;AddTypes     = 7510, F7510, 97510, 67510, 17510, E7510, A7510, 57510, 27510, D7510, B7510, 47510, 37510, C7510, 87510, 77510 ;MRC R3 Road 45 degree
+;AddTypes     = 7511, F7511, 97511, 67511, 17511, E7511, A7511, 57511, 27511, D7511, B7511, 47511, 37511, C7511, 87511, 77511 ;MRC R4 Road 45 degree
+;AddTypes     = 7512, F7512, 97512, 67512, 17512, E7512, A7512, 57512, 27512, D7512, B7512, 47512, 37512, C7512, 87512, 77512 ;MRC R5 Road 45 degree
 
 ;###separator###
 
@@ -909,140 +909,7 @@ CopyFrom    = 0x6750B
 CopyFrom    = 0x7750B
 
 
-[HighwayIntersectionInfo_0x0000750E]
-; (flexible) wide-radius Avenue 45 degree curve A
-; Added by memo 09/25/2012
-Piece = -32.0, 0.0, 0, 0, 0x542BFFF1
-PreviewEffect = preview_avenuelongtu_flex_a
 
-CellLayout =xy..
-CellLayout =abW<
-CellLayout =abk.
-CellLayout =gie.
-CellLayout =dchf
-CellLayout =.dch
-CellLayout =..dz
-CellLayout =..^.
-
-;senw
-CheckType = W - road: 0x00000000
-CheckType = a - avenue: 0x02040200, 0xFFFFFFFF optional
-CheckType = b - avenue: 0x02000204, 0xFFFFFFFF optional
-CheckType = c - avenue: 0x01030103, 0xFFFFFFFF optional
-CheckType = d - avenue: 0x00030100, 0xFFFFFFFF optional
-CheckType = e - avenue: 0x04000002, 0xFFFFFFFF optional
-CheckType = f - avenue: 0x00000100, 0xFFFFFFFF optional
-CheckType = g - avenue: 0x01040200, 0xFFFFFFFF optional
-CheckType = h - avenue: 0x01000003, 0xFFFFFFFF optional
-CheckType = i - avenue: 0x01000204, 0xFFFFFFFF optional
-CheckType = k - avenue: 0x02040000, 0xFFFFFFFF optional
-CheckType = x - avenue: 0x02040000, 0xFFFF0000 optional
-CheckType = y - avenue: 0x02000004, 0xFF0000FF optional
-CheckType = z - avenue: 0x00000103, 0x0000FFFF optional
-
-ConsLayout =||..
-ConsLayout =||.<
-ConsLayout =||X.
-ConsLayout =||\.
-ConsLayout =X||X
-ConsLayout =.\\\
-ConsLayout =..\\
-ConsLayout =..^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x542B9550
-Costs       = 50
-
-[HighwayIntersectionInfo_0x0001750E]
-CopyFrom    = 0x750E
-Rotate		= 1
-[HighwayIntersectionInfo_0x0002750E]
-CopyFrom    = 0x750E
-Rotate		= 2
-[HighwayIntersectionInfo_0x0003750E]
-CopyFrom    = 0x750E
-Rotate		= 3
-[HighwayIntersectionInfo_0x0004750E]
-CopyFrom    = 0x750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x0005750E]
-CopyFrom    = 0x1750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x0006750E]
-CopyFrom    = 0x2750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x0007750E]
-CopyFrom    = 0x3750E
-Transpose   = 1
-
-
-[HighwayIntersectionInfo_0x0008750E]
-; (flexible) wide-radius Avenue 45 degree curve B
-; Added by memo 09/25/2012
-Piece = 16.0, 0.0, 0, 0, 0x542BFFF2
-PreviewEffect = preview_avenuelongtu_flex_b
-
-CellLayout =.xy..
-CellLayout =Wab.<
-CellLayout =.abk.
-CellLayout =.gie.
-CellLayout =.dchf
-CellLayout =..dch
-CellLayout =...dz
-CellLayout =^....
-
-;senw
-CheckType = W - road: 0x00000000
-CheckType = a - avenue: 0x02040200, 0xFFFFFFFF optional
-CheckType = b - avenue: 0x02000204, 0xFFFFFFFF optional
-CheckType = c - avenue: 0x01030103, 0xFFFFFFFF optional
-CheckType = d - avenue: 0x00030100, 0xFFFFFFFF optional
-CheckType = e - avenue: 0x04000002, 0xFFFFFFFF optional
-CheckType = f - avenue: 0x00000100, 0xFFFFFFFF optional
-CheckType = g - avenue: 0x01040200, 0xFFFFFFFF optional
-CheckType = h - avenue: 0x01000003, 0xFFFFFFFF optional
-CheckType = i - avenue: 0x01000204, 0xFFFFFFFF optional
-CheckType = k - avenue: 0x02040000, 0xFFFFFFFF optional
-CheckType = x - avenue: 0x02040000, 0xFFFF0000 optional
-CheckType = y - avenue: 0x02000004, 0xFF0000FF optional
-CheckType = z - avenue: 0x00000103, 0x0000FFFF optional
-
-ConsLayout =.||..
-ConsLayout =.||.<
-ConsLayout =.||X.
-ConsLayout =.||\.
-ConsLayout =.X||X
-ConsLayout =..\\\
-ConsLayout =...\\
-ConsLayout =^....
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x542B9550
-Costs       = 50
-
-[HighwayIntersectionInfo_0x0009750E]
-CopyFrom    = 0x8750E
-Rotate		= 1
-[HighwayIntersectionInfo_0x000A750E]
-CopyFrom    = 0x8750E
-Rotate		= 2
-[HighwayIntersectionInfo_0x000B750E]
-CopyFrom    = 0x8750E
-Rotate		= 3
-[HighwayIntersectionInfo_0x000C750E]
-CopyFrom    = 0x8750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x000D750E]
-CopyFrom    = 0x9750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x000E750E]
-CopyFrom    = 0xA750E
-Transpose   = 1
-[HighwayIntersectionInfo_0x000F750E]
-CopyFrom    = 0xB750E
-Transpose   = 1
 
 
 [HighwayIntersectionInfo_0x0000750C]
