@@ -854,11 +854,11 @@
 0x08ffff00,3,0,0x08aa6300,3,0=0x08aa6600,3,0,0x08aa6300,3,0
 0x08ffff00,1,0,0x08aa6300,1,0=0x08aa6600,3,0,0x08aa6300,1,0
 0x08ffff00,0,0,0x082a5900,3,0=0x08aa6600,3,0,0x082a5900,3,0
-0x08001a00,3,0,0x0812ff00,2,0=0x08ffff00,0,0,0x0812ff00,2,0
-0x08001a00,0,0,0x0812ff00,0,0=0x08ffff00,0,0,0x0812ff00,0,0
-0x08ffff00,1,0,0x0812ff00,0,0=0x08aa6600,0,0,0x0812ff00,0,0
-0x08ffff00,3,0,0x0824fd00,2,1=0x08aa6600,3,0,0x0824fd00,2,1
-0x0824fd00,2,0,0x08ffff00,3,0=0x0824fd00,2,0,0x08aa6600,2,0
+;0x08001a00,3,0,0x0812ff00,2,0=0x08ffff00,0,0,0x0812ff00,2,0
+;0x08001a00,0,0,0x0812ff00,0,0=0x08ffff00,0,0,0x0812ff00,0,0
+;0x08ffff00,1,0,0x0812ff00,0,0=0x08aa6600,0,0,0x0812ff00,0,0
+;0x08ffff00,3,0,0x0824fd00,2,1=0x08aa6600,3,0,0x0824fd00,2,1
+;0x0824fd00,2,0,0x08ffff00,3,0=0x0824fd00,2,0,0x08aa6600,2,0
 0x08001a00,3,0,0x08aa6700,1,0=0x08ffff00,0,0,0x08aa6700,1,0
 0x08ffff00,1,0,0x08aa6500,3,0=0x08aa6600,0,0,0x08aa6500,3,0
 0x08001a00,3,0,0x082a5900,3,0=0x08ffff00,0,0,0x082a5900,3,0
@@ -866,15 +866,15 @@
 ;0x08fffa00,3,0,0x0802f900,1,1=0x08aa6600,3,0,0x0802f900,1,1
 0x08aa6500,3,1,0x08ffff00,1,0=0x08aa6500,3,1,0x08aa6600,1,0
 ;re-enabled for NAM 32 by Tarkus, 06072013
-0x08aa6300,1,0,0x08001a00,2,0=0x08aa6300,1,0,0x08ffff00,0,0;Maxis line commented out by Swamper77 090122 in order to let custom diagonal crossover model work
-0x08ffff00,3,0,0x08014e00,1,0=0x08aa6600,3,0,0x08014e00,1,0;Maxis line commented out by Swamper77 090122 in order to let custom 2way wye model work
-0x08ffff00,1,0,0x08014e00,3,0=0x08aa6600,0,0,0x08014e00,3,0;Maxis line commented out by Swamper77 090122 in order to let custom 2way wye model work
-0x08014e00,1,0,0x08ffff00,0,0=0x08014e00,1,0,0x08aa6600,2,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x08aa6300,1,0,0x08001a00,2,0=0x08aa6300,1,0,0x08ffff00,0,0;Maxis line commented out by Swamper77 090122 in order to let custom diagonal crossover model work
+;0x08ffff00,3,0,0x08014e00,1,0=0x08aa6600,3,0,0x08014e00,1,0;Maxis line commented out by Swamper77 090122 in order to let custom 2way wye model work
+;0x08ffff00,1,0,0x08014e00,3,0=0x08aa6600,0,0,0x08014e00,3,0;Maxis line commented out by Swamper77 090122 in order to let custom 2way wye model work
+;0x08014e00,1,0,0x08ffff00,0,0=0x08014e00,1,0,0x08aa6600,2,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
 0x08001a00,3,0,0x0802f900,1,1=0x08ffff00,0,0,0x0802f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
 0x08aa5000,3,1,0x08ffff00,1,0=0x08aa5000,3,1,0x08aa6600,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x08ffff00,0,0,0x0802f900,1,1=0x08aa6600,3,0,0x0802f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x08ffff00,0,0,0x0802f900,3,0=0x08aa6600,1,1,0x0802f900,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x08014e00,3,0,0x08001a00,1,0=0x08014e00,3,0,0x08ffff00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x08ffff00,0,0,0x0802f900,1,1=0x08aa6600,3,0,0x0802f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x08ffff00,0,0,0x0802f900,3,0=0x08aa6600,1,1,0x0802f900,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x08014e00,3,0,0x08001a00,1,0=0x08014e00,3,0,0x08ffff00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
 ;recent fixes from rail (5 cloverleaf)
 ;0x082a5900,2,0,0x08ffff00,3,0=0x082a5900,2,0,0x08aa6600,2,0
 ;0x0812ff00,2,0,0x08ffff00,2,0=0x0812ff00,2,0,0x08aa6600,2,0
@@ -928,8 +928,8 @@
 0x08029700,0,0,0x08029700,1,1=0x08aa6500,0,0,0x08029700,1,1
 ;
 ;allowing short fork
-0x0812ff00,2,0,0x08001c00,2,0=0x0812ff00,2,0,0x08aa6600,2,0
-0x08001c00,2,1,0x0812ff00,2,0=0x08aa6600,2,1,0x0812ff00,2,0
+;0x0812ff00,2,0,0x08001c00,2,0=0x0812ff00,2,0,0x08aa6600,2,0
+;0x08001c00,2,1,0x0812ff00,2,0=0x08aa6600,2,1,0x0812ff00,2,0
 ;
 ;diag+diag blend end cap fix
 0x08aa6500,3,1,0x08000200,3,1=0x08aa6500,3,1,0x08aa6900,3,1
@@ -946,13 +946,23 @@
 ;
 ;dxd light rail model override fix; added by Swamper77 090122
 ;Requires 0x08aa6300,1,0,0x08001a00,2,0=0x08aa6300,1,0,0x08ffff00,0,0 to be commented out.
-;0x08001c00,3,0,0x08aa6300,1,0=0x08001a00,3,0,0x08aa6300,1,0;added by Swamper77 090122 to allow the dxd light rail model override to work
-;0x08001c00,3,0,0x08aa6300,1,1=0x08001a00,3,0,0x08aa6300,1,1;added by Swamper77 090122 to allow the dxd light rail model override to work
+0x08001c00,3,0,0x08aa6300,1,0=0x08001a00,3,0,0x08aa6300,1,0;added by Swamper77 090122 to allow the dxd light rail model override to work
+0x08001c00,3,0,0x08aa6300,1,1=0x08001a00,3,0,0x08aa6300,1,1;added by Swamper77 090122 to allow the dxd light rail model override to work
 ;
 ;2-way wye light rail model override fix; added by Swamper77 090127
 ;Requires a large block to be commented out. Smoncrie provided the code. Adapted from Smoncrie's Rail RUL bits.
-;0x08001c00,3,0,0x08014e00,1,0=0x08001a00,3,0,0x08014e00,1,0;added by Swamper77 090127 to allow the 2-way wye dual rail model override to work
-;0x08014e00,1,0,0x08001c00,3,1=0x08014e00,1,0,0x08001a00,2,0;added by Swamper77 090127 to allow the 2-way wye dual rail model override to work
+0x08001c00,3,0,0x08014e00,1,0=0x08001a00,3,0,0x08014e00,1,0;added by Swamper77 090127 to allow the 2-way wye dual rail model override to work
+0x08014e00,1,0,0x08001c00,3,1=0x08014e00,1,0,0x08001a00,2,0;added by Swamper77 090127 to allow the 2-way wye dual rail model override to work
+;Further fixes by Tarkus 03-Mar-2022
+0x0812ff00,0,0,0x08001c00,0,1=0x0812ff00,0,0,0x08001a00,1,0
+0x0812ff00,0,0,0x08001c00,1,0=0x0812ff00,0,0,0x08001a00,1,0
+0x0812ff00,2,0,0x08001c00,3,1=0x0812ff00,2,0,0x08001a00,2,0
+0x0812ff00,2,0,0x08001c00,2,0=0x0812ff00,2,0,0x08001a00,2,0
+0x0812ff00,0,0,0x08aa6600,0,1=0x0812ff00,0,0,0x08001a00,1,0
+0x0812ff00,0,0,0x08aa6600,1,0=0x0812ff00,0,0,0x08001a00,1,0
+0x0812ff00,2,0,0x08aa6600,3,1=0x0812ff00,2,0,0x08001a00,2,0
+0x0812ff00,2,0,0x08aa6600,2,0=0x0812ff00,2,0,0x08001a00,2,0
+
 ;
 ;----------------- One Way Road
 ;
@@ -1108,12 +1118,12 @@
 0x0dffff00,3,0,0x0d02f900,1,0=0x0daa6600,3,0,0x0d02f900,1,0
 0x0dffff00,3,0,0x0d02f900,2,1=0x0daa6600,3,0,0x0d02f900,2,1
 0x0dffff00,3,0,0x0d12ff00,2,0=0x0daa6600,3,0,0x0d12ff00,2,0
-0x0dffff00,3,0,0x0daa6300,1,0=0x0daa6600,3,0,0x0daa6300,1,0
-0x0dffff00,3,0,0x0daa6300,3,0=0x0daa6600,3,0,0x0daa6300,3,0
-0x0dffff00,1,0,0x0daa6300,1,0=0x0daa6600,3,0,0x0daa6300,1,0
+;0x0dffff00,3,0,0x0daa6300,1,0=0x0daa6600,3,0,0x0daa6300,1,0
+;0x0dffff00,3,0,0x0daa6300,3,0=0x0daa6600,3,0,0x0daa6300,3,0
+;0x0dffff00,1,0,0x0daa6300,1,0=0x0daa6600,3,0,0x0daa6300,1,0
 0x0dffff00,0,0,0x0d2a5900,3,0=0x0daa6600,3,0,0x0d2a5900,3,0
-0x0d001a00,3,0,0x0d12ff00,2,0=0x0dffff00,0,0,0x0d12ff00,2,0
-0x0d001a00,0,0,0x0d12ff00,0,0=0x0dffff00,0,0,0x0d12ff00,0,0
+;0x0d001a00,3,0,0x0d12ff00,2,0=0x0dffff00,0,0,0x0d12ff00,2,0
+;0x0d001a00,0,0,0x0d12ff00,0,0=0x0dffff00,0,0,0x0d12ff00,0,0
 0x0dffff00,1,0,0x0d12ff00,0,0=0x0daa6600,0,0,0x0d12ff00,0,0
 0x0dffff00,3,0,0x0d24fd00,2,1=0x0daa6600,3,0,0x0d24fd00,2,1
 0x0d24fd00,2,0,0x0dffff00,3,0=0x0d24fd00,2,0,0x0daa6600,2,0
@@ -1124,15 +1134,15 @@
 ;0x0dfffa00,3,0,0x0d02f900,1,1=0x0daa6600,3,0,0x0d02f900,1,1
 0x0daa6500,3,1,0x0dffff00,1,0=0x0daa6500,3,1,0x0daa6600,1,0
 ;Re-enabled for NAM 32 by Tarkus, 06072013
-0x0daa6300,1,0,0x0d001a00,2,0=0x0daa6300,1,0,0x0dffff00,0,0;Maxis line commented out by Swamper77 090121 to let custom diagonal crossover model work
-0x0dffff00,3,0,0x0d014e00,1,0=0x0daa6600,3,0,0x0d014e00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0dffff00,1,0,0x0d014e00,3,0=0x0daa6600,0,0,0x0d014e00,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0d014e00,1,0,0x0dffff00,0,0=0x0d014e00,1,0,0x0daa6600,2,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0d001a00,3,0,0x0d02f900,1,1=0x0dffff00,0,0,0x0d02f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0daa5000,3,1,0x0dffff00,1,0=0x0daa5000,3,1,0x0daa6600,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0dffff00,0,0,0x0d02f900,1,1=0x0daa6600,3,0,0x0d02f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0dffff00,0,0,0x0d02f900,3,0=0x0daa6600,1,1,0x0d02f900,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
-0x0d014e00,3,0,0x0d001a00,1,0=0x0d014e00,3,0,0x0dffff00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0daa6300,1,0,0x0d001a00,2,0=0x0daa6300,1,0,0x0dffff00,0,0;Maxis line commented out by Swamper77 090121 to let custom diagonal crossover model work
+;0x0dffff00,3,0,0x0d014e00,1,0=0x0daa6600,3,0,0x0d014e00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0dffff00,1,0,0x0d014e00,3,0=0x0daa6600,0,0,0x0d014e00,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0d014e00,1,0,0x0dffff00,0,0=0x0d014e00,1,0,0x0daa6600,2,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0d001a00,3,0,0x0d02f900,1,1=0x0dffff00,0,0,0x0d02f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0daa5000,3,1,0x0dffff00,1,0=0x0daa5000,3,1,0x0daa6600,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0dffff00,0,0,0x0d02f900,1,1=0x0daa6600,3,0,0x0d02f900,1,1;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0dffff00,0,0,0x0d02f900,3,0=0x0daa6600,1,1,0x0d02f900,3,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
+;0x0d014e00,3,0,0x0d001a00,1,0=0x0d014e00,3,0,0x0dffff00,1,0;Maxis line commented out by Swamper77 090127 in order to let custom 2way wye model work
 ;recent fixes from rail (5 cloverleaf)
 ;0x0d2a5900,2,0,0x0dffff00,3,0=0x0d2a5900,2,0,0x0daa6600,2,0
 ;0x0d12ff00,2,0,0x0dffff00,2,0=0x0d12ff00,2,0,0x0daa6600,2,0
@@ -1186,8 +1196,8 @@
 0x0d029700,0,0,0x0d029700,1,1=0x0daa6500,0,0,0x0d029700,1,1
 ;
 ;allowing short fork
-0x0d12ff00,2,0,0x0d001c00,2,0=0x0d12ff00,2,0,0x0daa6600,2,0
-0x0d001c00,2,1,0x0d12ff00,2,0=0x0daa6600,2,1,0x0d12ff00,2,0
+;0x0d12ff00,2,0,0x0d001c00,2,0=0x0d12ff00,2,0,0x0daa6600,2,0
+;0x0d001c00,2,1,0x0d12ff00,2,0=0x0daa6600,2,1,0x0d12ff00,2,0
 ;
 ;diag+diag blend end cap fix
 0x0daa6500,3,1,0x0d000200,3,1=0x0daa6500,3,1,0x0daa6900,3,1
@@ -1204,13 +1214,24 @@
 ;
 ;dxd dual monorail model override fix; added by Swamper77 090121
 ;Requires 0x0daa6300,1,0,0x0d001a00,2,0=0x0daa6300,1,0,0x0dffff00,0,0 to be commented out.
-;0x0d001c00,3,0,0x0daa6300,1,0=0x0d001a00,3,0,0x0daa6300,1,0;added by Swamper77 090121 to allow the dxd dual monorail model override to work
-;0x0d001c00,3,0,0x0daa6300,1,1=0x0d001a00,3,0,0x0daa6300,1,1;added by Swamper77 090121 to allow the dxd dual monorail model override to work
+0x0d001c00,3,0,0x0daa6300,1,0=0x0d001a00,3,0,0x0daa6300,1,0;added by Swamper77 090121 to allow the dxd dual monorail model override to work
+0x0d001c00,3,0,0x0daa6300,1,1=0x0d001a00,3,0,0x0daa6300,1,1;added by Swamper77 090121 to allow the dxd dual monorail model override to work
 ;
 ;2-way wye monorail model override fix; added by Swamper77 090127
 ;Requires a large block to be commented out. Smoncrie provided the code.
-;0x0d001c00,3,0,0x0d014e00,1,0=0x0d001a00,3,0,0x0d014e00,1,0;added by Swamper77 090127 to allow the 2-way wye monorail model override to work
-;0x0d014e00,1,0,0x0d001c00,3,1=0x0d014e00,1,0,0x0d001a00,2,0;added by Swamper77 090127 to allow the 2-way wye monorail model override to work
+0x0d001c00,3,0,0x0d014e00,1,0=0x0d001a00,3,0,0x0d014e00,1,0;added by Swamper77 090127 to allow the 2-way wye monorail model override to work
+0x0d014e00,1,0,0x0d001c00,3,1=0x0d014e00,1,0,0x0d001a00,2,0;added by Swamper77 090127 to allow the 2-way wye monorail model override to work
+;Further fixes by Tarkus 03-Mar-2022
+0x0d12ff00,0,0,0x0d001c00,0,1=0x0d12ff00,0,0,0x0d001a00,1,0
+0x0d12ff00,0,0,0x0d001c00,1,0=0x0d12ff00,0,0,0x0d001a00,1,0
+0x0d12ff00,2,0,0x0d001c00,3,1=0x0d12ff00,2,0,0x0d001a00,2,0
+0x0d12ff00,2,0,0x0d001c00,2,0=0x0d12ff00,2,0,0x0d001a00,2,0
+0x0d12ff00,0,0,0x0daa6600,0,1=0x0d12ff00,0,0,0x0d001a00,1,0
+0x0d12ff00,0,0,0x0daa6600,1,0=0x0d12ff00,0,0,0x0d001a00,1,0
+0x0d12ff00,2,0,0x0daa6600,3,1=0x0d12ff00,2,0,0x0d001a00,2,0
+0x0d12ff00,2,0,0x0daa6600,2,0=0x0d12ff00,2,0,0x0d001a00,2,0
+
+
 ;
 ;-----------Expanded Options by redlotus
 ;expansion to allow streets intersection at road-avenue int.
@@ -1695,4 +1716,3 @@
 ;One-Way Road-Thru/Road-End OxD T
 0x5F973200,1,0,0x00000a00,1,0=0x5F973200,1,0,0x00000c00,1,0
 0x5F973200,3,1,0x00000a00,2,0=0x5F973200,3,1,0x00000c00,3,1
-
