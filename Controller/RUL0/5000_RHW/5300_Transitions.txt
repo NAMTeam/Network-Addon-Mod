@@ -34,11 +34,11 @@ AddTypes     = 533E, 1533E, 2533E, 3533E, 4533E, 5533E, 6533E, 7533E ;RHW4-MIS T
 AddTypes     = 532B, 1532B, 2532B, 3532B, 4532B, 5532B, 6532B, 7532B ;DDRHW-4-to-Dual-ERHW-4 (L1/L2) Connector
 
 ;Height Transitions (FLEX)
-RotationRing = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FLEXOnSlope L0-L1 (Alternative Setup)
-AddTypes     = 5345, 15345, 25345, 35345, 45345, 55345, 65345, 75345 ;FLEXOnSlope L0-L2 (Alternative Setup)
-AddTypes     = 5332, 15332, 25332, 35332, 45332, 55332, 65332, 75332 ;FlexHT L0-L1 4 Tiles
+RotationRing = 5330, 15330, 25330, 35330, 45330, 55330, 65330, 75330 ;FlexHT L0-L1 4 Tiles
 AddTypes	 = 5341, 15341, 25341, 35341, 45341, 55341, 65341, 75341 ;FLEXHT L0-L1 Diag 6 Tiles
 AddTypes     = 5334, 15334, 25334, 35334, 45334, 55334, 65334, 75334 ;FlexHT L0-L2 7 Tiles
+AddTypes 	 = 5332, 15332, 25332, 35332, 45332, 55332, 65332, 75332 ;FLEXOnSlope L0-L1 (Alternative Setup)
+AddTypes     = 5345, 15345, 25345, 35345, 45345, 55345, 65345, 75345 ;FLEXOnSlope L0-L2 (Alternative Setup)
 AddTypes     = 5346, 15346, 25346, 35346, 45346, 55346, 65346, 75346 ;Diag FLEXOnSlope L0-L1 (Alternative Setup)
 AddTypes     = 5347, 15347, 25347, 35347, 45347, 55347, 65347, 75347 ;Diag FLEXOnSlope L0-L2 (Alternative Setup)
 AddTypes     = 5333, 15333, 25333, 35333, 45333, 55333, 65333, 75333 ;FlexHT L0-L1 MIS 90-Degree Transition A
@@ -3336,7 +3336,7 @@ CopyFrom	=	0x35331
 
 ;
 
-[HighwayIntersectionInfo_0x00005330]
+[HighwayIntersectionInfo_0x00005332]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L1
 Piece = 0.0, -48.0, 0, 0, 0x5700001f
@@ -3374,23 +3374,23 @@ AutoTileBase = 0x55387000
 PlaceQueryID = 0x5700001f
 Costs = 600
 
-[HighwayIntersectionInfo_0x00015330]
-CopyFrom	=	0x5330
+[HighwayIntersectionInfo_0x00015332]
+CopyFrom	=	0x5332
 Rotate	=	1
-[HighwayIntersectionInfo_0x00025330]
-CopyFrom	=	0x5330
+[HighwayIntersectionInfo_0x00025332]
+CopyFrom	=	0x5332
 Rotate	=	2
-[HighwayIntersectionInfo_0x00035330]
-CopyFrom	=	0x5330
+[HighwayIntersectionInfo_0x00035332]
+CopyFrom	=	0x5332
 Rotate	=	3
-[HighwayIntersectionInfo_0x00045330]
-CopyFrom	=	0x5330
-[HighwayIntersectionInfo_0x00055330]
-CopyFrom	=	0x15330
-[HighwayIntersectionInfo_0x00065330]
-CopyFrom	=	0x25330
-[HighwayIntersectionInfo_0x00075330]
-CopyFrom	=	0x35330
+[HighwayIntersectionInfo_0x00045332]
+CopyFrom	=	0x5332
+[HighwayIntersectionInfo_0x00055332]
+CopyFrom	=	0x15332
+[HighwayIntersectionInfo_0x00065332]
+CopyFrom	=	0x25332
+[HighwayIntersectionInfo_0x00075332]
+CopyFrom	=	0x35332
 
 
 [HighwayIntersectionInfo_0x00005345]
@@ -3449,7 +3449,7 @@ CopyFrom	=	0x35345
 
 ;
 
-[HighwayIntersectionInfo_0x00005332]
+[HighwayIntersectionInfo_0x00005330]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L1 Ortho
 Piece = 0.0, 16.0, 0, 0, 0x5caee405
@@ -3480,23 +3480,23 @@ AutoTileBase = 0x55387000
 PlaceQueryID = 0x57700200
 Costs = 600
 
-[HighwayIntersectionInfo_0x00015332]
-CopyFrom	=	0x5332
+[HighwayIntersectionInfo_0x00015330]
+CopyFrom	=	0x5330
 Rotate	=	1
-[HighwayIntersectionInfo_0x00025332]
-CopyFrom	=	0x5332
+[HighwayIntersectionInfo_0x00025330]
+CopyFrom	=	0x5330
 Rotate	=	2
-[HighwayIntersectionInfo_0x00035332]
-CopyFrom	=	0x5332
+[HighwayIntersectionInfo_0x00035330]
+CopyFrom	=	0x5330
 Rotate	=	3
-[HighwayIntersectionInfo_0x00045332]
-CopyFrom	=	0x5332
-[HighwayIntersectionInfo_0x00055332]
-CopyFrom	=	0x15332
-[HighwayIntersectionInfo_0x00065332]
-CopyFrom	=	0x25332
-[HighwayIntersectionInfo_0x00075332]
-CopyFrom	=	0x35332
+[HighwayIntersectionInfo_0x00045330]
+CopyFrom	=	0x5330
+[HighwayIntersectionInfo_0x00055330]
+CopyFrom	=	0x15330
+[HighwayIntersectionInfo_0x00065330]
+CopyFrom	=	0x25330
+[HighwayIntersectionInfo_0x00075330]
+CopyFrom	=	0x35330
 
 
 [HighwayIntersectionInfo_0x00005334]
