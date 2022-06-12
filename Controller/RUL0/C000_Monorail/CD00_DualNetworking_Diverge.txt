@@ -13,6 +13,7 @@ AddTypes     = CD07, 1CD07, 2CD07, 3CD07, 4CD07, 5CD07, 6CD07, 7CD07 ;DN Orthogo
 AddTypes     = CD08, 1CD08, 2CD08, 3CD08, 4CD08, 5CD08, 6CD08, 7CD08 ;DN Orthogonal B2-R2-Orthogonal
 AddTypes     = CD09, 1CD09, 2CD09, 3CD09, 4CD09, 5CD09, 6CD09, 7CD09 ;DN Orthogonal R2-CC-R1-Orthogonal
 AddTypes     = CD0A, 1CD0A, 2CD0A, 3CD0A, 4CD0A, 5CD0A, 6CD0A, 7CD0A ;DN Orthogonal B2 CC-R1-Orthogonal
+AddTypes     = CD0B, 1CD0B, 2CD0B, 3CD0B, 4CD0B, 5CD0B, 6CD0B, 7CD0B ;HRW-Switch-Flex-Base-(FA2s)
 
 ;###separator###
 
@@ -604,4 +605,56 @@ CopyFrom    = 0x4CD0A
 Rotate  	= 2
 [HighwayIntersectionInfo_0x0007CD0A]
 CopyFrom    = 0x4CD0A
+Rotate  	= 1
+
+;<>-HRW-2_FlexHelper-FA2-Short-3_Tile - RUL0
+[HighwayIntersectionInfo_0x0000CD0B]
+Piece = 16.0, -16.0, 0, 0, 0x5DA5f00F
+PreviewEffect = preview_hrw_fa2s_3_2_001
+
+CellLayout = ........
+CellLayout = ..ab....
+CellLayout = ..Aca..<
+CellLayout = ........
+CellLayout = ........
+CellLayout = ..^.....
+
+;senw
+CheckType = A - rail:0x00000000
+CheckType = a - monorail: 0x00000000 rail: 0x00020002 optional
+CheckType = b - monorail: 0x04000004 rail: 0x01000004 optional
+CheckType = c - monorail: 0x00040400 rail: 0x00040100 optional
+
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..+....<
+ConsLayout = ........
+ConsLayout = ........
+ConsLayout = ..^.....
+
+AutoTileBase = 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5DA5f00F
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001CD0B]
+CopyFrom    = 0xCD0B
+Rotate  	= 1
+[HighwayIntersectionInfo_0x0002CD0B]
+CopyFrom    = 0xCD0B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0003CD0B]
+CopyFrom    = 0xCD0B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0004CD0B]
+CopyFrom    = 0xCD0B
+Transpose	= 1
+[HighwayIntersectionInfo_0x0005CD0B]
+CopyFrom    = 0x4CD0B
+Rotate  	= 3
+[HighwayIntersectionInfo_0x0006CD0B]
+CopyFrom    = 0x4CD0B
+Rotate  	= 2
+[HighwayIntersectionInfo_0x0007CD0B]
+CopyFrom    = 0x4CD0B
 Rotate  	= 1
