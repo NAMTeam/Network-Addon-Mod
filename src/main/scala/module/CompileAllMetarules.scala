@@ -14,6 +14,7 @@ object CompileAllMetarules {
     // Uncomment the next line to generate models and paths (requires some .dat files, see comment in that file).
     flexfly.CompileFlexFlyResources.main(Array.empty)
 
+    CompileRealRailwayCode.main(Array.empty)
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
     // CompileInruls.main(Array.empty)
