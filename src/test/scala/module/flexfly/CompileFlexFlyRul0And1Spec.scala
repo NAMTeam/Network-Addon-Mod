@@ -17,7 +17,7 @@ class CompileFlexFlyRul0And1Spec extends WordSpec with Matchers {
           seg <- flexFlySegs.iterator
           idTile = resolve(meta.Tile(seg))
           falsie = convertVirtualTile(seg)
-          line <- rul1Entry(falsie, idTile.id, seg.toString).lines
+          line <- collection.JavaConversions.asScalaIterator(rul1Entry(falsie, idTile.id, seg.toString).lines.iterator)
           if line.nonEmpty
         } yield line
 
