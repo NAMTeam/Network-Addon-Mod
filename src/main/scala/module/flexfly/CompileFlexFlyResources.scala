@@ -66,8 +66,11 @@ object CompileFlexFlyResources {
   }
 
   def main(args: Array[String]): Unit = {
-    val Seq(rhwFile, flexFlyFile) = Seq("/rhwResources.dat", "/flexFlyResources.dat") map {
-      s => DbpfFile.read(new File(getClass.getResource(s).toURI))
+    val Seq(rhwFile, flexFlyFile) = Seq("/rhwResources.dat", "/flexFlyResources.dat") map { s =>
+      val tmpFile = File.createTempFile("flexfly-resources-", ".dat", new File("target"))
+      tmpFile.deleteOnExit()
+      java.nio.file.Files.copy(getClass.getResourceAsStream(s), tmpFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+      DbpfFile.read(tmpFile)
     }
     val target = new File("target/FlexFly.dat")
     val resolve = new FlexFlyResolver
