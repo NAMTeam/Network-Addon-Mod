@@ -10,6 +10,10 @@ object CompileAllMetarules {
   def main(args: Array[String]): Unit = {
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
     flexfly.CompileFlexFlyCode.main(Array.empty)
+
+    // Uncomment the next line to generate models and paths (requires some .dat files, see comment in that file).
+    flexfly.CompileFlexFlyResources.main(Array.empty)
+
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
     // CompileInruls.main(Array.empty)
