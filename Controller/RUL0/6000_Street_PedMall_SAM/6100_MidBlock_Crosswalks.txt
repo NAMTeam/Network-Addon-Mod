@@ -1,0 +1,50 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;FLEX PEDESTRIAN CROSSINGS SECTION
+;FLEX PEDESTRIAN CROSSINGS SECTION
+;FLEX PEDESTRIAN CROSSINGS SECTION
+; 0x61##
+; Pedestrian Crossings Button 
+
+;By:			Lucario Boricua
+;Created:		2022-jul-16
+;Last updated:	2022-jul-16
+;Birth of the Pedestrian Revolution Mod
+
+;-- MID-BLOCK CROSSWALKS --
+
+;Mid-block Crosswalks for Road, AVE and bidirectional NWM
+RotationRing = 6100, 16100, 26100, 36100, 46100, 56100, 66100, 76100, 86100, 96100, A6100, B6100, C6100, D6100, E6100, F6100 ;Size 1 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is TLA-5 default, overrides to RD-4 and RD-6
+;8 to B is TLA-7 default, overrides to AVE-6 and eventually TLA-9 and AVE-8
+;C to F is AVE-4 default, no overrides supported nor planned
+
+AddTypes     = 6101, 16101, 26101, 36101, 46101, 56101, 66101, 76101, 86101, 96101, A6101, B6101, C6101, D6101, E6101, F6101 ;Size 2 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is TLA-5 default, overrides to RD-4 and RD-6
+;8 to B is TLA-7 default, overrides to AVE-6 and eventually TLA-9 and AVE-8
+;C to F is AVE-4 default, no overrides supported nor planned
+
+AddTypes     = 6102, 16102, 26102, 36102, 46102, 56102, 66102, 76102, 86102, 96102, A6102, B6102, C6102, D6102, E6102, F6102 ;Size 3 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is TLA-5 default, overrides to RD-4 and RD-6
+;8 to B is TLA-7 default, overrides to AVE-6 and eventually TLA-9 and AVE-8
+;C to F is AVE-4 default, no overrides supported nor planned
+
+AddTypes     = 6103, 16103, 26103, 36103, 46103, 56103, 66103, 76103, 86103, 96103, A6103, B6103, C6103, D6103, E6103, F6103 ;One-way mid-block crosswalks
+;0 to 3 is Size 1 OWR-2, overrides to OWR-1 and OWR-3
+;4 to 7 is Size 2 OWR-2, overrides to OWR-1 and OWR-3
+;8 to B is Size 1 OWR-4, overrides to OWR-5 and OWR-6
+;C to F is Size 2 OWR-4, overrides to OWR-5 and OWR-6
+
+;-- MID-BLOCK CROSSWALK FOR STREET AND STREET ADDON MOD --
+;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
+
+;-- AT-GRADE RAILWAY AND PEDESTRIAN CROSSINGS --
+;Section reserved for future development (Phase 3 of Mid-block Crosswalks)
+
+;-- PEDESTRIAN OVERPASSES --
+;Section reserved for future development (Phases to be determined)
+
+;-- ENHANCED CROSSWALKS FOR SURFACE ROAD INTERSECTIONS --
+;Section reserved for future development (Phases to be determined)
