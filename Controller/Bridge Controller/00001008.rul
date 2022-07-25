@@ -5,6 +5,8 @@
 # Refer to the Rail bridge specializations for format.
 # File is in use. Do not remove nor change the file TGI ID. 
 #
+
+
 #OVERDECK TRUSS GLR
 
 bridge 8
@@ -1092,6 +1094,7 @@ end
 	end
 end
 
+
 # cable stayed elr bridge
 
 bridge 6
@@ -1115,32 +1118,6 @@ section fa
 	piece <0x380c0000, 0>
 end
 
-section te
-	piece <0x380c0000, 0>
-	piece <0x38070000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380a0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-	piece <0x380b0000, 0>
-end
-
 section tm
 	piece <0x380b0000, 0>
 	piece <0x380b0000, 0>
@@ -1164,6 +1141,137 @@ section tm
 	piece <0x380b0000, 0>
 	piece <0x380b0000, 0>
 end
+
+section te
+	piece <0x380c0000, 0>
+	piece <0x38070000, 0>
+	piece tm
+end
+
+	length 25
+		piece st tm rev(st)
+	end
+
+	length 26
+		piece st fa tm rev(st)
+	end
+
+	length 27
+		piece st fa tm fa rev(st)
+	end
+
+	length 28
+		piece st 2*fa tm fa rev(st)
+	end
+
+	length 29
+		piece st 2*fa tm 2*fa rev(st)
+	end
+
+	length 30
+		piece st a3 tm 2*fa rev(st)
+	end
+
+	length 31
+		piece st a3 tm a3 rev(st)
+	end
+
+	length 32
+		piece st fa a3 tm a3 rev(st)
+	end
+
+	length 33
+		piece st fa a3 tm a3 fa rev(st)
+	end
+
+	length 34
+		piece st fa a3 fa tm a3 fa rev(st)
+	end
+
+	length 35
+		piece st fa a3 fa tm fa a3 fa rev(st)
+	end
+
+	length 36
+		piece st 2*a3 tm fa a3 fa rev(st)
+	end
+
+	length 37
+		piece st 2*a3 tm 2*a3 rev(st)
+	end
+
+	length 38
+		piece st fa 2*a3 tm 2*a3 rev(st)
+	end
+
+	length 39
+		piece st fa 2*a3 tm 2*a3 fa rev(st)
+	end
+
+	length 40
+		piece st fa 2*a3 fa tm 2*a3 fa rev(st)
+	end
+
+	length 41
+		piece st fa 2*a3 fa tm fa 2*a3 fa rev(st)
+	end
+
+	length 42
+		piece st 3*a3 fa tm fa 2*a3 rev(st)
+	end
+
+	length 43
+		piece st 3*a3 tm 3*a3 rev(st)
+	end
+
+	length 44
+		piece st 3*a3 fa tm 3*a3 rev(st)
+	endf
+
+	length 45
+		piece st 3*a3 fa tm fa 3*a3 rev(st)
+	end
+
+	length 46
+		piece st fa 3*a3 fa tm fa 3*a3 rev(st)
+	end
+
+	length 47
+		piece st fa 3*a3 fa tm fa 3*a3 fa rev(st)
+	end
+
+	length 48
+		piece st 4*a3 tm fa 3*a3 fa rev(st)
+	end
+
+	length 49
+		piece st 4*a3 tm 4*a3 rev(st)
+	end
+
+	length 50
+		piece st te rev(te) rev(st)
+	end
+
+	length 51
+		piece st te fa rev(te) rev(st)
+	end
+
+	length 52
+		piece st fa te rev(te) fa rev(st)
+	end
+
+	length 53
+		piece st fa te fa rev(te) fa rev(st)
+	end
+
+	length 54
+		piece st 2*fa te rev(te) 2*fa rev(st)
+	end
+
+	length 55
+		piece st fa te a3 rev(te) fa rev(st)
+	end
+
 	length 56
 		piece st a3 te rev(te) a3 rev(st) 
 	end
@@ -1965,7 +2073,8 @@ end
 	end
 end
 
-# cable stayed GLR
+
+# cable stayed glr bridge
 
 bridge 7
 
@@ -1988,32 +2097,6 @@ section fa
 	piece <0x380c1000, 0>
 end
 
-section te
-	piece <0x380c1000, 0>
-	piece <0x38071000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380a1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-	piece <0x380b1000, 0>
-end
-
 section tm
 	piece <0x380b1000, 0>
 	piece <0x380b1000, 0>
@@ -2037,6 +2120,137 @@ section tm
 	piece <0x380b1000, 0>
 	piece <0x380b1000, 0>
 end
+
+section te
+	piece <0x380c1000, 0>
+	piece <0x38071000, 0>
+	piece tm
+end
+
+	length 25
+		piece st tm rev(st)
+	end
+
+	length 26
+		piece st fa tm rev(st)
+	end
+
+	length 27
+		piece st fa tm fa rev(st)
+	end
+
+	length 28
+		piece st 2*fa tm fa rev(st)
+	end
+
+	length 29
+		piece st 2*fa tm 2*fa rev(st)
+	end
+
+	length 30
+		piece st a3 tm 2*fa rev(st)
+	end
+
+	length 31
+		piece st a3 tm a3 rev(st)
+	end
+
+	length 32
+		piece st fa a3 tm a3 rev(st)
+	end
+
+	length 33
+		piece st fa a3 tm a3 fa rev(st)
+	end
+
+	length 34
+		piece st fa a3 fa tm a3 fa rev(st)
+	end
+
+	length 35
+		piece st fa a3 fa tm fa a3 fa rev(st)
+	end
+
+	length 36
+		piece st 2*a3 tm fa a3 fa rev(st)
+	end
+
+	length 37
+		piece st 2*a3 tm 2*a3 rev(st)
+	end
+
+	length 38
+		piece st fa 2*a3 tm 2*a3 rev(st)
+	end
+
+	length 39
+		piece st fa 2*a3 tm 2*a3 fa rev(st)
+	end
+
+	length 40
+		piece st fa 2*a3 fa tm 2*a3 fa rev(st)
+	end
+
+	length 41
+		piece st fa 2*a3 fa tm fa 2*a3 fa rev(st)
+	end
+
+	length 42
+		piece st 3*a3 fa tm fa 2*a3 rev(st)
+	end
+
+	length 43
+		piece st 3*a3 tm 3*a3 rev(st)
+	end
+
+	length 44
+		piece st 3*a3 fa tm 3*a3 rev(st)
+	endf
+
+	length 45
+		piece st 3*a3 fa tm fa 3*a3 rev(st)
+	end
+
+	length 46
+		piece st fa 3*a3 fa tm fa 3*a3 rev(st)
+	end
+
+	length 47
+		piece st fa 3*a3 fa tm fa 3*a3 fa rev(st)
+	end
+
+	length 48
+		piece st 4*a3 tm fa 3*a3 fa rev(st)
+	end
+
+	length 49
+		piece st 4*a3 tm 4*a3 rev(st)
+	end
+
+	length 50
+		piece st te rev(te) rev(st)
+	end
+
+	length 51
+		piece st te fa rev(te) rev(st)
+	end
+
+	length 52
+		piece st fa te rev(te) fa rev(st)
+	end
+
+	length 53
+		piece st fa te fa rev(te) fa rev(st)
+	end
+
+	length 54
+		piece st 2*fa te rev(te) 2*fa rev(st)
+	end
+
+	length 55
+		piece st fa te a3 rev(te) fa rev(st)
+	end
+
 	length 56
 		piece st a3 te rev(te) a3 rev(st) 
 	end
@@ -2837,4 +3051,3 @@ end
 		piece st fa 27*a3 fa te fs 2*tm fs rev(te) fa 27*a3 rev(st) 
 	end
 end
-
