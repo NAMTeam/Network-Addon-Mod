@@ -694,7 +694,6 @@ Rotate		= 2
 CopyFrom    = 0x6016
 Rotate		= 3
 
-
 ;Mid-block Crosswalks - provisional deployment
 [HighwayIntersectionInfo_0x00006017]
 ;Added by LucarioBoricua 2022-jul-26
@@ -714,7 +713,7 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=...
 ConsLayout=.+<
-ConsLayout=.|.
+ConsLayout=...
 ConsLayout=.^.
 
 AutoTileBase=	0x55387000
@@ -753,8 +752,8 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=...
 ConsLayout=.+<
-ConsLayout=.|.
-ConsLayout=.|.
+ConsLayout=...
+ConsLayout=...
 ConsLayout=.^.
 
 AutoTileBase=	0x55387000
@@ -762,16 +761,15 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
 Costs        = 10
 
-[HighwayIntersectionInfo_0x00016017]
+[HighwayIntersectionInfo_0x00016018]
 CopyFrom    = 0x6018
 Rotate		= 1
-[HighwayIntersectionInfo_0x00026017]
+[HighwayIntersectionInfo_0x00026018]
 CopyFrom    = 0x6018
 Rotate		= 2
-[HighwayIntersectionInfo_0x00036017]
+[HighwayIntersectionInfo_0x00036018]
 CopyFrom    = 0x6018
 Rotate		= 3
-
 
 [HighwayIntersectionInfo_0x00006019]
 ;Added by LucarioBoricua 2022-jul-26
@@ -797,9 +795,9 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=...
 ConsLayout=.+<
-ConsLayout=.|.
-ConsLayout=.|.
-ConsLayout=.|.
+ConsLayout=...
+ConsLayout=...
+ConsLayout=...
 ConsLayout=.^.
 
 AutoTileBase=	0x55387000
@@ -839,7 +837,7 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=....
 ConsLayout=..+<
-ConsLayout=.||.
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase=	0x55387000
@@ -876,7 +874,6 @@ CheckType = a - road: 0x02000200
 ;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040200, 0xffffffff optional
 ;###RHD###CheckType = d - street: 0x04020102 avenue: 0x02000204, 0xffffffff optional
 ;###RHD###CheckType = e - street: 0x01020402 avenue: 0x02000204, 0xffffffff optional
-;
 ;###LHD###CheckType = b - street: 0x04020302 avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020402 avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = d - street: 0x03020402 avenue: 0x02000204, 0xffffffff optional
@@ -884,8 +881,8 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=....
 ConsLayout=..+<
-ConsLayout=.||.
-ConsLayout=.||.
+ConsLayout=....
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase=	0x55387000
@@ -925,7 +922,6 @@ CheckType = a - road: 0x02000200
 ;###RHD###CheckType = e - street: 0x04040104 avenue: 0x02000204, 0xffffffff optional
 ;###RHD###CheckType = f - street: 0x01020102 avenue: 0x02000204, 0xffffffff optional
 ;###RHD###CheckType = g - street: 0x01040404 avenue: 0x02000204, 0xffffffff optional
-;
 ;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02040200, 0xffffffff optional
@@ -935,9 +931,9 @@ CheckType = a - road: 0x02000200
 
 ConsLayout=....
 ConsLayout=..+<
-ConsLayout=.||.
-ConsLayout=.||.
-ConsLayout=.||.
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
 ConsLayout=..^.
 
 AutoTileBase=	0x55387000
