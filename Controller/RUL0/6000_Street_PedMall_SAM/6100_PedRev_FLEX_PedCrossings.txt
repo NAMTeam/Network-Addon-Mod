@@ -1,0 +1,565 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;FLEX PEDESTRIAN CROSSINGS SECTION
+;FLEX PEDESTRIAN CROSSINGS SECTION
+;FLEX PEDESTRIAN CROSSINGS SECTION
+; 0x61##
+; Pedestrian Crossings Button 
+
+;By:			Lucario Boricua
+;Created:		2022-jul-16
+;Last updated:	2022-jul-27
+;Birth of the Pedestrian Revolution Mod
+
+;-- MID-BLOCK CROSSWALKS --
+
+;-- Mid-block Crosswalks for Road, AVE and bidirectional NWM --
+
+RotationRing = 6100, 16100, 26100, 36100, 46100, 56100, 66100, 76100, 86100, 96100, A6100, B6100, C6100, D6100, E6100, F6100 ;Size 1 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
+;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
+;C to F is AVE-4 default, no overrides supported nor planned
+
+AddTypes     = 6101, 16101, 26101, 36101, 46101, 56101, 66101, 76101, 86101, 96101, A6101, B6101, C6101, D6101, E6101, F6101 ;Size 2 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
+;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
+;C to F is AVE-4 default, no overrides supported nor planned
+
+AddTypes     = 6102, 16102, 26102, 36102, 46102, 56102, 66102, 76102, 86102, 96102, A6102, B6102, C6102, D6102, E6102, F6102 ;Size 3 mid-block crosswalks
+;0 to 3 is RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
+;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
+;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
+;C to F is AVE-4 default, no overrides supported nor planned
+
+;[FUTURE WORK] -- Mid-block Crosswalks for One-way and unidirectional NWM --
+
+;AddTypes     = 6103, 16103, 26103, 36103, 46103, 56103, 66103, 76103, 86103, 96103, A6103, B6103, C6103, D6103, E6103, F6103 ;One-way mid-block crosswalks
+;0 to 3 is Size 1 OWR-2, overrides to OWR-1 and OWR-3
+;4 to 7 is Size 2 OWR-2, overrides to OWR-1 and OWR-3
+;8 to B is Size 1 dual OWR-2, overrides to OWR-4, OWR-5 and eventually OWR-6
+;C to F is Size 2 dual OWR-2, overrides to OWR-4, OWR-5 and eventually OWR-6
+
+;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR STREET AND STREET ADDON MOD --
+;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
+
+;[FUTURE WORK] -- AT-GRADE RAILWAY AND PEDESTRIAN CROSSINGS --
+;Section reserved for future development (Phase 3 of Mid-block Crosswalks)
+
+;[FUTURE WORK] -- PEDESTRIAN OVERPASSES --
+;Section reserved for future development (Phases to be determined)
+
+;[FUTURE WORK] -- ENHANCED CROSSWALKS FOR SURFACE ROAD INTERSECTIONS --
+;Section reserved for future development (Phases to be determined)
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;PEDESTRIAN CROSSINGS SECTION
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00006100]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 1 Single Road - Supports Road, AVE, and all bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040304, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+Costs        = 5
+
+[HighwayIntersectionInfo_0x00016100]
+CopyFrom    = 0x6100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026100]
+CopyFrom    = 0x6100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036100]
+CopyFrom    = 0x6100
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00046100]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 1 - Double Road - Supports Road, AVE, and double-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.bb.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040304, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+Costs        = 5
+
+[HighwayIntersectionInfo_0x00056100]
+CopyFrom    = 0x46100
+Rotate		= 1
+[HighwayIntersectionInfo_0x00066100]
+CopyFrom    = 0x46100
+Rotate		= 2
+[HighwayIntersectionInfo_0x00076100]
+CopyFrom    = 0x46100
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00086100]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 1 - Triple Road - Supports Road and triple-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=.....
+CellLayout=..a.<
+CellLayout=.bbb.
+CellLayout=..^..
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040304, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+Costs        = 15
+
+[HighwayIntersectionInfo_0x00096100]
+CopyFrom    = 0x86100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A6100]
+CopyFrom    = 0x86100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B6100]
+CopyFrom    = 0x86100
+Rotate		= 3
+
+;Mid-block Crosswalks - official deployment
+[HighwayIntersectionInfo_0x000C6100]
+;Added by LucarioBoricua 2022-jul-27
+;Last modified by LucarioBoricua 2022-jul-26
+;Mid-block Crosswalk Size 1 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.bc.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01040104 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03040304 avenue: 0x02040200, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501780
+Costs        = 10
+
+[HighwayIntersectionInfo_0x000D6100]
+CopyFrom    = 0xD6100
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E6100]
+CopyFrom    = 0xE6100
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F6100]
+CopyFrom    = 0xF6100
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00006101]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 2 Single Road - Supports Road, AVE and all bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02040204 street: 0x01020402, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02040204 street: 0x04020102, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02040204 street: 0x03020402, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02040204 street: 0x04020302, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+Costs        = 10
+
+[HighwayIntersectionInfo_0x00016101]
+CopyFrom    = 0x6101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026101]
+CopyFrom    = 0x6101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036101]
+CopyFrom    = 0x6101
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00046101]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 2 Double Road - Supports Road, AVE and double-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.bb.
+CellLayout=.cc.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02040204 street: 0x01020402, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02040204 street: 0x04020102, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02040204 street: 0x03020402, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02040204 street: 0x04020302, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+Costs        = 10
+
+[HighwayIntersectionInfo_0x00056101]
+CopyFrom    = 0x46101
+Rotate		= 1
+[HighwayIntersectionInfo_0x00066101]
+CopyFrom    = 0x46101
+Rotate		= 2
+[HighwayIntersectionInfo_0x00076101]
+CopyFrom    = 0x46101
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00086101]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 3 Triple Road - Supports Road and triple-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=.....
+CellLayout=..a.<
+CellLayout=.bbb.
+CellLayout=.ccc.
+CellLayout=..^..
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02040204 street: 0x01020402, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02040204 street: 0x04020102, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02040204 street: 0x03020402, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02040204 street: 0x04020302, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+Costs        = 10
+
+[HighwayIntersectionInfo_0x00096101]
+CopyFrom    = 0x86101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A6101]
+CopyFrom    = 0x86101
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B6101]
+CopyFrom    = 0x86101
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x000C6101]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 2 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.be.
+CellLayout=.cd.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04020102 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = e - street: 0x01020402 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x04020302 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020402 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x03020402 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = e - street: 0x04020302 avenue: 0x02000204, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501880
+Costs        = 20
+
+[HighwayIntersectionInfo_0x000D6101]
+CopyFrom    = 0xC6101
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E6101]
+CopyFrom    = 0xC6101
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F601B]
+CopyFrom    = 0xC6101
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00006102]
+;Added by LucarioBoricua 2022-jul-26
+;Mid-block Crosswalk Size 3 Single Road - Supports Road, AVE and all bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.d.
+CellLayout=.^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040404, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02000200 street: 0x01020102, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040404, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02000200 street: 0x03020302, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+Costs        = 15
+
+[HighwayIntersectionInfo_0x00016102]
+CopyFrom    = 0x6102
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026102]
+CopyFrom    = 0x6102
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036102]
+CopyFrom    = 0x6102
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00046102]
+;Added by LucarioBoricua 2022-jul-26
+;Mid-block Crosswalk Size 3 Double Road - Supports AVE and double-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.bb.
+CellLayout=.cc.
+CellLayout=.dd.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040404, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02000200 street: 0x01020102, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040404, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02000200 street: 0x03020302, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+Costs        = 15
+
+[HighwayIntersectionInfo_0x00056102]
+CopyFrom    = 0x46102
+Rotate		= 1
+[HighwayIntersectionInfo_0x00066102]
+CopyFrom    = 0x46102
+Rotate		= 2
+[HighwayIntersectionInfo_0x00076102]
+CopyFrom    = 0x46102
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x00086102]
+;Added by LucarioBoricua 2022-jul-27
+;Mid-block Crosswalk Size 3 Triple Road - Supports triple-tile bidirectional NWM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=.....
+CellLayout=..a.<
+CellLayout=.bbb.
+CellLayout=.ccc.
+CellLayout=.ddd.
+CellLayout=..^..
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - road: 0x02000200 street: 0x01040404, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x02000200 street: 0x01020102, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200 street: 0x03040404, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x02000200 street: 0x03020302, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x02000200 street: 0x04040104, 0xffffffff optional
+
+ConsLayout=.....
+ConsLayout=..+.<
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=.....
+ConsLayout=..^..
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+Costs        = 15
+
+[HighwayIntersectionInfo_0x00096102]
+CopyFrom    = 0x86102
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A6102]
+CopyFrom    = 0x86102
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B6102]
+CopyFrom    = 0x86102
+Rotate		= 3
+
+;Mid-block Crosswalks - offical deployment
+[HighwayIntersectionInfo_0x000C6102]
+;Added by LucarioBoricua 2022-jul-26
+;Mid-block Crosswalk Size 3 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.bg.
+CellLayout=.cf.
+CellLayout=.de.
+CellLayout=..^.
+
+CheckType = a - road: 0x02000200
+;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = e - street: 0x04040104 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = f - street: 0x01020102 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = g - street: 0x01040404 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = e - street: 0x04040304 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = f - street: 0x03020302 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = g - street: 0x03040404 avenue: 0x02000204, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501980
+Costs        = 30
+
+[HighwayIntersectionInfo_0x000D6102]
+CopyFrom    = 0xC6102
+Rotate		= 1
+[HighwayIntersectionInfo_0x000E6102]
+CopyFrom    = 0xC6102
+Rotate		= 2
+[HighwayIntersectionInfo_0x000F60102]
+CopyFrom    = 0xC6102
+Rotate		= 3
