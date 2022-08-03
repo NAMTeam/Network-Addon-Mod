@@ -7,7 +7,7 @@
 
 ;By:			Lucario Boricua
 ;Created:		2022-jul-16
-;Last updated:	2022-jul-30
+;Last updated:	2022-aug-02
 ;Birth of the Pedestrian Revolution Mod
 
 ;-- MID-BLOCK CROSSWALKS --
@@ -62,10 +62,11 @@ AddTypes     = 6102, 16102, 26102, 36102, 46102, 56102, 66102, 76102, 86102, 961
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00006100]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 1 Single Road - Supports Road, AVE, and all bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500005
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500005
+PreviewEffect = preview_midblock_road_single_size1
 
 CellLayout=...
 CellLayout=.a<
@@ -83,7 +84,7 @@ ConsLayout=.^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+PlaceQueryID = 0x5C500005
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016100]
@@ -99,11 +100,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00046100]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-jul-30
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 1 - Double Road - Supports Road and double-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500006 ;maintaining RD-2 to FTL-110 provisionally
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500006 ;maintaining RD-2 to FTL-110 provisionally
+PreviewEffect = preview_midblock_road_double_size1
 
 CellLayout=....
 CellLayout=..a<
@@ -121,7 +122,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+PlaceQueryID = 0x5C500006
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00056100]
@@ -136,11 +137,11 @@ Rotate		= 3
 
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00086100]
-;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 1 - Triple Road - Supports Road and triple-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500007
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500007
+PreviewEffect = preview_midblock_road_triple_size1
 
 CellLayout=.....
 CellLayout=..a.<
@@ -158,7 +159,7 @@ ConsLayout=..^..
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500000
+PlaceQueryID = 0x5C500007
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00096100]
@@ -174,11 +175,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x000C6100]
 ;Added by LucarioBoricua 2022-jul-27
-;Last modified by LucarioBoricua 2022-jul-26
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 1 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501785
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C501785
+PreviewEffect = preview_midblock_avenue_size1
 
 CellLayout=....
 CellLayout=..a<
@@ -198,7 +199,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501780
+PlaceQueryID = 0x5C501785
 Costs        = 0
 
 [HighwayIntersectionInfo_0x000D6100]
@@ -214,10 +215,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00006101]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 2 Single Road - Supports Road, AVE and all bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500085
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500085
+PreviewEffect = preview_midblock_road_single_size2
 
 CellLayout=...
 CellLayout=.a<
@@ -239,7 +241,7 @@ ConsLayout=.^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+PlaceQueryID = 0x5C500085
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016101]
@@ -255,10 +257,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00046101]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 2 Double Road - Supports Road and double-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500086
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500086
+PreviewEffect = preview_midblock_road_double_size2
 
 CellLayout=....
 CellLayout=..a<
@@ -280,7 +283,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+PlaceQueryID = 0x5C500086
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00056101]
@@ -296,10 +299,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00086101]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 2 Triple Road - Supports Road and triple-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500087
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500087
+PreviewEffect = preview_midblock_road_triple_size2
 
 CellLayout=.....
 CellLayout=..a.<
@@ -321,7 +325,7 @@ ConsLayout=..^..
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500080
+PlaceQueryID = 0x5C500087
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00096101]
@@ -337,10 +341,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x000C6101]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 2 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501885
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C501885
+PreviewEffect = preview_midblock_avenue_size2
 
 CellLayout=....
 CellLayout=..a<
@@ -366,7 +371,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501880
+PlaceQueryID = 0x5C501885
 Costs        = 0
 
 [HighwayIntersectionInfo_0x000D6101]
@@ -382,10 +387,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00006102]
 ;Added by LucarioBoricua 2022-jul-26
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 3 Single Road - Supports Road, AVE and all bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500105
+PreviewEffect = preview_midblock_road_single_size3
 
 CellLayout=...
 CellLayout=.a<
@@ -411,7 +417,7 @@ ConsLayout=.^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+PlaceQueryID = 0x5C500105
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016102]
@@ -427,10 +433,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00046102]
 ;Added by LucarioBoricua 2022-jul-26
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 3 Double Road - Supports double-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500106
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500106
+PreviewEffect = preview_midblock_road_double_size3
 
 CellLayout=....
 CellLayout=..a<
@@ -456,7 +463,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+PlaceQueryID = 0x5C500106
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00056102]
@@ -472,10 +479,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x00086102]
 ;Added by LucarioBoricua 2022-jul-27
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 3 Triple Road - Supports triple-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500107
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500107
+PreviewEffect = preview_midblock_road_triple_size3
 
 CellLayout=.....
 CellLayout=..a.<
@@ -501,7 +509,7 @@ ConsLayout=..^..
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C500100
+PlaceQueryID = 0x5C500107
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00096102]
@@ -517,10 +525,11 @@ Rotate		= 3
 ;Mid-block Crosswalks - offical deployment
 [HighwayIntersectionInfo_0x000C6102]
 ;Added by LucarioBoricua 2022-jul-26
+;Last updated:           2022-aug-02
 ;Mid-block Crosswalk Size 3 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5B204005 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_flex_turn_lane_transition_rd2_tl ;maintaining RD-2 to FTL-110 provisionally
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501985
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C501985
+PreviewEffect = preview_midblock_avenue_size3
 
 CellLayout=....
 CellLayout=..a<
@@ -552,7 +561,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5B204000 ;to be replaced with 0x5C501980
+PlaceQueryID = 0x5C501985
 Costs        = 0
 
 [HighwayIntersectionInfo_0x000D6102]
