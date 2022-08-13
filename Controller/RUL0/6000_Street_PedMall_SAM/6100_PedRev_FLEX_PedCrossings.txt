@@ -124,7 +124,7 @@ AddTypes     = 6112, 16112, 26112, 36112 ;Size 3 Single Road
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006100]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
+;Last updated:           2022-aug-12
 ;Mid-block Crosswalk Size 1 Single Road - Supports Road and all bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500005
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500005
@@ -136,8 +136,8 @@ CellLayout=.b.
 CellLayout=.^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -175,10 +175,10 @@ CellLayout=.c.
 CellLayout=.^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -218,12 +218,12 @@ CellLayout=.d.
 CellLayout=.^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -262,8 +262,8 @@ CellLayout=.bb.
 CellLayout=..^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -301,10 +301,10 @@ CellLayout=.cc.
 CellLayout=..^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -344,12 +344,12 @@ CellLayout=.dd.
 CellLayout=..^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -387,8 +387,8 @@ CellLayout=.bbb.
 CellLayout=..^..
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=..+.<
@@ -426,10 +426,10 @@ CellLayout=.ccc.
 CellLayout=..^..
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=..+.<
@@ -469,12 +469,12 @@ CellLayout=.ddd.
 CellLayout=..^..
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = b - street: 0x01040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04040104 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x04040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=..+.<
