@@ -22,6 +22,9 @@ AddTypes     = 7620, 17620, 27620, 37620, 47620, 57620, 67620, 77620, 87620, 976
 AddTypes     = 7621, 17621, 27621, 37621, 47621, 57621, 67621, 77621, 87621, 97621, A7621, B7621, C7621, D7621, E7621, F7621 ;FA-2 FLEX Prototype
 AddTypes     = 7622, 17622, 27622, 37622, 47622, 57622, 67622, 77622, 87622, 97622, A7622, B7622, C7622, D7622, E7622, F7622 ;FA-3 FLEX Prototype
 AddTypes     = 7623, 17623, 27623, 37623, 47623, 57623, 67623, 77623, 87623, 97623, A7623, B7623, C7623, D7623, E7623, F7623 ;FA-2 FLEX Prototype
+AddTypes     = 7624, 17624, 27624, 37624, 47624, 57624, 67624, 77624, 87624, 97624, A7624, B7624, C7624, D7624, E7624, F7624 ;FA-3 FLEX Prototype
+AddTypes     = 7625, 17625, 27625, 37625, 47625, 57625, 67625, 77625, 87625, 97625, A7625, B7625, C7625, D7625, E7625, F7625 ;FA-2 FLEX Prototype
+AddTypes     = 7626, 17626, 27626, 37626, 47626, 57626, 67626, 77626, 87626, 97626, A7626, B7626, C7626, D7626, E7626, F7626 ;FA-2 FLEX Prototype
 
 
 ;###separator###
@@ -1236,7 +1239,7 @@ CopyFrom    = 0x7761F
 ;EXPERIMENTAL
 [HighwayIntersectionInfo_0x00007620]
 ;Added by Tarkus 02/10/2021
-;FA-2 Straight Section FLEX
+;FA-2 Road Straight Section FLEX
 Piece = 0.0, 0.0, 0, 0, 0x50463005
 PreviewEffect = preview_road_puzzlepiece042
 
@@ -1304,14 +1307,14 @@ CopyFrom = 0x77620
 
 [HighwayIntersectionInfo_0x00007621]
 ;Added by Tarkus 02/10/2021
-;FA-3 Straight Section FLEX
+;FA-3 Road Straight Section FLEX
 Piece = 0.0, 0.0, 0, 0, 0x50463005
 PreviewEffect = preview_road_puzzlepiece042
 
 CellLayout =.........
 CellLayout =..Zabc..<
 CellLayout =...def...
-CellLayout =...^.....
+CellLayout =..^......
 
 CheckType = a - road: 0x04000002, 0xffffffff optional
 CheckType = b - road: 0x00030004, 0xffffffff optional
@@ -1326,7 +1329,7 @@ CheckType = Z - road: 0x02020202
 ConsLayout =.........
 ConsLayout =..-.....<
 ConsLayout =.........
-ConsLayout =...^.....
+ConsLayout =..^......
 
 ;ConsLayout =.........
 ;ConsLayout =...--...<
@@ -1381,7 +1384,7 @@ CopyFrom = 0x77621
 
 [HighwayIntersectionInfo_0x00007622]
 ;Added by Tarkus 02/10/2021
-;FA-2 Straight Section FLEX
+;FA-2 RHW-2 Straight Section FLEX
 Piece = 0.0, 0.0, 0, 0, 0x50463005
 PreviewEffect = preview_road_puzzlepiece042
 
@@ -1449,7 +1452,7 @@ CopyFrom = 0x77622
 
 [HighwayIntersectionInfo_0x00007623]
 ;Added by Tarkus 02/10/2021
-;FA-3 Straight Section FLEX
+;FA-3 RHW-2 Straight Section FLEX
 Piece = 0.0, 0.0, 0, 0, 0x50463005
 PreviewEffect = preview_road_puzzlepiece042
 
@@ -1519,3 +1522,223 @@ CopyFrom = 0x57623
 CopyFrom = 0x67623
 [HighwayIntersectionInfo_0x000F7623]
 CopyFrom = 0x77623
+
+
+
+[HighwayIntersectionInfo_0x00007624]
+;Added by Tarkus 02/10/2021
+;FA-2 Street Straight Section FLEX
+Piece = 0.0, 0.0, 0, 0, 0x50463005
+PreviewEffect = preview_road_puzzlepiece042
+
+CellLayout =.........
+CellLayout =..Zab...<
+CellLayout =...cd....
+CellLayout =..^......
+
+CheckType = a - street: 0x04040003, 0xffffffff optional
+CheckType = b - street: 0x04030004, 0xffffffff optional 
+CheckType = c - street: 0x00040403, 0xffffffff optional
+CheckType = d - street: 0x00030404, 0xffffffff optional
+CheckType = Z - street: 0x02020202
+
+ConsLayout =.........
+ConsLayout =..-.....<
+ConsLayout =.........
+ConsLayout =..^......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463FFF
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017624]
+CopyFrom = 0x7624
+Rotate = 1
+[HighwayIntersectionInfo_0x00027624]
+CopyFrom = 0x7624
+Rotate = 2
+[HighwayIntersectionInfo_0x00037624]
+CopyFrom = 0x7624
+Rotate = 3
+[HighwayIntersectionInfo_0x00047624]
+CopyFrom = 0x7624
+Transpose = 1
+[HighwayIntersectionInfo_0x00057624]
+CopyFrom = 0x37624
+Transpose = 1
+[HighwayIntersectionInfo_0x00067624]
+CopyFrom = 0x27624
+Transpose = 1
+[HighwayIntersectionInfo_0x00077624]
+CopyFrom = 0x17624
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087624]
+CopyFrom = 0x7624
+[HighwayIntersectionInfo_0x00097624]
+CopyFrom = 0x17624
+[HighwayIntersectionInfo_0x000A7624]
+CopyFrom = 0x27624
+[HighwayIntersectionInfo_0x000B7624]
+CopyFrom = 0x37624
+[HighwayIntersectionInfo_0x000C7624]
+CopyFrom = 0x47624
+[HighwayIntersectionInfo_0x000D7624]
+CopyFrom = 0x57624
+[HighwayIntersectionInfo_0x000E7624]
+CopyFrom = 0x67624
+[HighwayIntersectionInfo_0x000F7624]
+CopyFrom = 0x77624
+
+
+[HighwayIntersectionInfo_0x00007625]
+;Added by Tarkus 02/10/2021
+;FA-3 Street Straight Section FLEX
+Piece = 0.0, 0.0, 0, 0, 0x50463005
+PreviewEffect = preview_road_puzzlepiece042
+
+CellLayout =.........
+CellLayout =..Zabc..<
+CellLayout =...def...
+CellLayout =...^.....
+
+CheckType = a - street: 0x04000002, 0xffffffff optional
+CheckType = b - street: 0x00030004, 0xffffffff optional
+CheckType = c - street: 0x00000002, 0xffffffff optional
+CheckType = d - street: 0x00020000, 0xffffffff optional
+CheckType = e - street: 0x00040003, 0xffffffff optional
+CheckType = f - street: 0x00020400, 0xffffffff optional
+CheckType = Z - street: 0x02020202
+
+ConsLayout =.........
+ConsLayout =..-.....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+;ConsLayout =.........
+;ConsLayout =...--...<
+;ConsLayout =...^.....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463FFF
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017625]
+CopyFrom = 0x7625
+Rotate = 1
+[HighwayIntersectionInfo_0x00027625]
+CopyFrom = 0x7625
+Rotate = 2
+[HighwayIntersectionInfo_0x00037625]
+CopyFrom = 0x7625
+Rotate = 3
+[HighwayIntersectionInfo_0x00047625]
+CopyFrom = 0x7625
+Transpose = 1
+[HighwayIntersectionInfo_0x00057625]
+CopyFrom = 0x37625
+Transpose = 1
+[HighwayIntersectionInfo_0x00067625]
+CopyFrom = 0x27625
+Transpose = 1
+[HighwayIntersectionInfo_0x00077625]
+CopyFrom = 0x17625
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087625]
+CopyFrom = 0x7625
+[HighwayIntersectionInfo_0x00097625]
+CopyFrom = 0x17625
+[HighwayIntersectionInfo_0x000A7625]
+CopyFrom = 0x27625
+[HighwayIntersectionInfo_0x000B7625]
+CopyFrom = 0x37625
+[HighwayIntersectionInfo_0x000C7625]
+CopyFrom = 0x47625
+[HighwayIntersectionInfo_0x000D7625]
+CopyFrom = 0x57625
+[HighwayIntersectionInfo_0x000E7625]
+CopyFrom = 0x67625
+[HighwayIntersectionInfo_0x000F7625]
+CopyFrom = 0x77625
+
+
+
+[HighwayIntersectionInfo_0x00007626]
+;Added by Tarkus 02/10/2021
+;FA-3 Street Straight Section FLEX
+Piece = 0.0, 0.0, 0, 0, 0x50463005
+PreviewEffect = preview_road_puzzlepiece042
+
+CellLayout =..........
+CellLayout =..Zabc...<
+CellLayout =....def...
+CellLayout =.....gh...
+CellLayout =..^.......
+
+CheckType = Z - road: 0x02020202
+CheckType = a - road: 0x00020002, 0xffffffff optional
+CheckType = b - road: 0x00020002, 0xffffffff optional
+CheckType = c - road: 0x00000002, 0xffffffff optional
+CheckType = d - road: 0x00020000, 0xffffffff optional
+CheckType = e - road: 0x00020002, 0xffffffff optional
+;CheckType = f - road: 0x02000002, 0xffffffff optional
+CheckType = f - road: 0x04000002, 0xffffffff optional
+CheckType = g - road: 0x00020000, 0xffffffff optional
+;CheckType = h - road: 0x02000202, 0xffffffff optional
+CheckType = h - road: 0x02000402, 0xffffffff optional
+
+ConsLayout =..........
+ConsLayout =..-......<
+ConsLayout =..........
+ConsLayout =..........
+ConsLayout =..^.......
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x50463FFF
+;Autoplace disabled due to TE Lot interaction
+;AutoPlace = 1
+Costs = 35; edited by dedgren 081229
+[HighwayIntersectionInfo_0x00017626]
+CopyFrom = 0x7626
+Rotate = 1
+[HighwayIntersectionInfo_0x00027626]
+CopyFrom = 0x7626
+Rotate = 2
+[HighwayIntersectionInfo_0x00037626]
+CopyFrom = 0x7626
+Rotate = 3
+[HighwayIntersectionInfo_0x00047626]
+CopyFrom = 0x7626
+Transpose = 1
+[HighwayIntersectionInfo_0x00057626]
+CopyFrom = 0x37626
+Transpose = 1
+[HighwayIntersectionInfo_0x00067626]
+CopyFrom = 0x27626
+Transpose = 1
+[HighwayIntersectionInfo_0x00077626]
+CopyFrom = 0x17626
+Transpose = 1
+;clones for rotation
+[HighwayIntersectionInfo_0x00087626]
+CopyFrom = 0x7626
+[HighwayIntersectionInfo_0x00097626]
+CopyFrom = 0x17626
+[HighwayIntersectionInfo_0x000A7626]
+CopyFrom = 0x27626
+[HighwayIntersectionInfo_0x000B7626]
+CopyFrom = 0x37626
+[HighwayIntersectionInfo_0x000C7626]
+CopyFrom = 0x47626
+[HighwayIntersectionInfo_0x000D7626]
+CopyFrom = 0x57626
+[HighwayIntersectionInfo_0x000E7626]
+CopyFrom = 0x67626
+[HighwayIntersectionInfo_0x000F7626]
+CopyFrom = 0x77626
