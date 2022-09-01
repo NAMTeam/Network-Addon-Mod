@@ -338,18 +338,22 @@ PreviewEffect = preview_midblock_road_double_size3
 
 CellLayout=....
 CellLayout=..a<
-CellLayout=.bb.
+CellLayout=.be.
 CellLayout=.cc.
-CellLayout=.dd.
+CellLayout=.fd.
 CellLayout=..^.
 
 CheckType = a - road: 0x02000200
 ;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = f - road: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = f - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -463,18 +467,22 @@ PreviewEffect = preview_midblock_road_triple_size3
 
 CellLayout=.....
 CellLayout=..a.<
-CellLayout=.bbb.
+CellLayout=.bbe.
 CellLayout=.ccc.
-CellLayout=.ddd.
+CellLayout=.fdd.
 CellLayout=..^..
 
 CheckType = a - road: 0x02000200
 ;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = f - road: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x02000200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = f - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=.....
 ConsLayout=..+.<
