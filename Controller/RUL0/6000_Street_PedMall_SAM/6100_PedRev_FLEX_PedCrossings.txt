@@ -218,12 +218,12 @@ CellLayout=.d.
 CellLayout=.^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = b - avenue: 0x02040204 road: 0x01040404, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = d - avenue: 0x02040204 road: 0x04040104, 0xffffffff optional
+;###LHD###CheckType = b - avenue: 0x02040204 road: 0x03040404, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = d - avenue: 0x02040204 road: 0x04040304, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
@@ -344,16 +344,16 @@ CellLayout=.fd.
 CellLayout=..^.
 
 CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = b - road: 0x01020402 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040204, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x04020102 avenue: 0x02040204, 0xffffffff optional
 ;###RHD###CheckType = e - road: 0x02000200, 0xffffffff optional
 ;###RHD###CheckType = f - road: 0x02000200, 0xffffffff optional
 ;###LHD###CheckType = b - road: 0x02000200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
 ;###LHD###CheckType = d - road: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = e - road: 0x03040404 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = f - road: 0x04040304 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03020402 avenue: 0x02040204, 0xffffffff optional
+;###LHD###CheckType = f - road: 0x04020302 avenue: 0x02040204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
