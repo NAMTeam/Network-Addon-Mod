@@ -172,25 +172,25 @@
 ;0x03fffa00,3,0,0x0302f900,1,1=0x03aa6600,3,0,0x0302f900,1,1
 0x03aa6500,3,1,0x03ffff00,1,0=0x03aa6500,3,1,0x03aa6600,1,0
 ;Fix this area in here
-0x03aa6300,1,0,0x03001a00,2,0=0x03aa6300,1,0,0x03ffff00,0,0;line commented out by dedgren 090109 in order to let custom diagonal crossover texture work
+;0x03aa6300,1,0,0x03001a00,2,0=0x03aa6300,1,0,0x03ffff00,0,0;line commented out by dedgren 090109 in order to let custom diagonal crossover texture work
 ;;;lines commented out by dedgren 090130 wye retexture fix see smoncrie's post http://sc4devotion.com/forums/index.php?topic=1145.msg218110#msg218110
-0x03ffff00,3,0,0x03014e00,1,0=0x03aa6600,3,0,0x03014e00,1,0
-0x03ffff00,1,0,0x03014e00,3,0=0x03aa6600,0,0,0x03014e00,3,0
-0x03014e00,1,0,0x03ffff00,0,0=0x03014e00,1,0,0x03aa6600,2,0
-0x03001a00,3,0,0x0302f900,1,1=0x03ffff00,0,0,0x0302f900,1,1
-0x03aa5000,3,1,0x03ffff00,1,0=0x03aa5000,3,1,0x03aa6600,1,0
-0x03ffff00,0,0,0x0302f900,1,1=0x03aa6600,3,0,0x0302f900,1,1
-0x03ffff00,0,0,0x0302f900,3,0=0x03001c00,1,1,0x0302f900,3,0
-0x03ffff00,0,0,0x0302f900,3,0=0x03aa6600,1,1,0x0302f900,3,0
-0x03014e00,3,0,0x03001a00,1,0=0x03014e00,3,0,0x03ffff00,1,0
+;0x03ffff00,3,0,0x03014e00,1,0=0x03aa6600,3,0,0x03014e00,1,0
+;0x03ffff00,1,0,0x03014e00,3,0=0x03aa6600,0,0,0x03014e00,3,0
+;0x03014e00,1,0,0x03ffff00,0,0=0x03014e00,1,0,0x03aa6600,2,0
+;0x03001a00,3,0,0x0302f900,1,1=0x03ffff00,0,0,0x0302f900,1,1
+;0x03aa5000,3,1,0x03ffff00,1,0=0x03aa5000,3,1,0x03aa6600,1,0
+;0x03ffff00,0,0,0x0302f900,1,1=0x03aa6600,3,0,0x0302f900,1,1
+;0x03ffff00,0,0,0x0302f900,3,0=0x03001c00,1,1,0x0302f900,3,0
+;0x03ffff00,0,0,0x0302f900,3,0=0x03aa6600,1,1,0x0302f900,3,0
+;0x03014e00,3,0,0x03001a00,1,0=0x03014e00,3,0,0x03ffff00,1,0
 ;;;end commented out lines
 ;;;lines added by dedgren 090130 wye retexture fix see smoncrie's post http://sc4devotion.com/forums/index.php?topic=1145.msg218110#msg218110
-;0x03001c00,3,0,0x03014e00,1,0=0x03001a00,3,0,0x03014e00,1,0
-;0x03014e00,1,0,0x03001c00,3,1=0x03014e00,1,0,0x03001a00,2,0
+0x03001c00,3,0,0x03014e00,1,0=0x03001a00,3,0,0x03014e00,1,0
+0x03014e00,1,0,0x03001c00,3,1=0x03014e00,1,0,0x03001a00,2,0
 ;;;end added lines
 ;;;lines added by dedgren 090130 "pitchfork" wye retexture fix see smoncrie's post http://sc4devotion.com/forums/index.php?topic=1145.msg218149#msg218149
-;0x03aa6600,3,0,0x03014e00,1,0=0x03001c00,2,1,0x03014e00,1,0
-;0x03014e00,1,0,0x03aa6600,2,0=0x03014e00,1,0,0x03001c00,2,0
+0x03aa6600,3,0,0x03014e00,1,0=0x03001c00,2,1,0x03014e00,1,0
+0x03014e00,1,0,0x03aa6600,2,0=0x03014e00,1,0,0x03001c00,2,0
 ;;;end added lines
 ;attempt to fix short ended pitchfork
 ;0x03ffff00,1,0,0x03000200,1,0=0x03aa6600,0,0,0x03000200,1,0
@@ -327,8 +327,8 @@
 ;
 ;dxd dual rail texture override fix; added by dedgren 090110
 ;Requires 0x03aa6300,1,0,0x03001a00,2,0=0x03aa6300,1,0,0x03ffff00,0,0 to be commented out.
-;0x03001c00,3,0,0x03aa6300,1,0=0x03001a00,3,0,0x03aa6300,1,0;added by dedgren 090110 to allow the dxd dual rail texture override to work
-;0x03001c00,3,0,0x03aa6300,1,1=0x03001a00,3,0,0x03aa6300,1,1;added by dedgren 090110 to allow the dxd dual rail texture override to work
+0x03001c00,3,0,0x03aa6300,1,0=0x03001a00,3,0,0x03aa6300,1,0;added by dedgren 090110 to allow the dxd dual rail texture override to work
+0x03001c00,3,0,0x03aa6300,1,1=0x03001a00,3,0,0x03aa6300,1,1;added by dedgren 090110 to allow the dxd dual rail texture override to work
 ;prevent for K-switch next to crossover
 ;0x03aa6300,3,0,0x03aa6600,0,0=0x03aa6300,3,0,0x03001a00,1,0
 ;0x03aa6300,3,1,0x03aa6600,0,1=0x03aa6300,3,1,0x03001a00,0,1
