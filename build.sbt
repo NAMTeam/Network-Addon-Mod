@@ -4,7 +4,7 @@ organization := "com.github.memo33"
 
 version := "45-SNAPSHOT"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.8"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -41,10 +41,10 @@ libraryDependencies += "com.propensive" %% "rapture-core" % "0.9.0"
 
 libraryDependencies += "com.github.memo33" %% "scala-unsigned" % "0.1.3" from "https://github.com/memo33/scala-unsigned/releases/download/v0.1.3/scala-unsigned_2.11-0.1.3.jar"
 
-libraryDependencies += "com.github.memo33" %% "jsquish" % "2.0.1" from "https://github.com/memo33/jsquish/releases/download/v2.0.1/jsquish-2.0.1.jar"
+libraryDependencies += "com.github.memo33" % "jsquish" % "2.0.1" from "https://github.com/memo33/jsquish/releases/download/v2.0.1/jsquish-2.0.1.jar"
 
 libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://github.com/memo33/scdbpf/releases/download/v0.1.7/pureimage_2.11-0.1.1.jar"
 
-libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.7" from "https://github.com/memo33/scdbpf/releases/download/v0.1.7/scdbpf_2.11-0.1.7.jar"
+libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.8" from "https://github.com/memo33/scdbpf/releases/download/v0.1.8/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.2" from "https://github.com/memo33/metarules/releases/download/v0.1.2/metarules_2.11-0.1.2.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.3" from "https://github.com/memo33/metarules/releases/download/v0.1.3/metarules_2.11.jar"
