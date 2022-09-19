@@ -4,7 +4,7 @@ organization := "com.github.memo33"
 
 version := "45-SNAPSHOT"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.12"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -18,7 +18,7 @@ scalacOptions ++= Seq(
 Compile / mainClass := Some("metarules.module.CompileAllMetarules")
 
 console / initialCommands := """
-import metarules._, meta._
+import metarules._, metarules.meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}
 implicit val resolve = module.Main.resolve
 def transduce(rule: Rule[Tile]): Unit = RuleTransducer(rule) foreach println
@@ -47,4 +47,4 @@ libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://git
 
 libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.8" from "https://github.com/memo33/scdbpf/releases/download/v0.1.8/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.3" from "https://github.com/memo33/metarules/releases/download/v0.1.3/metarules_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.1.4" from "https://github.com/memo33/metarules/releases/download/v0.1.4/metarules_2.11.jar"
