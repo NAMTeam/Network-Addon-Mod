@@ -20,6 +20,8 @@ AddTypes = 51EB, 151EB, 251EB, 351EB, 451EB, 551EB, 651EB, 751EB, 851EB, 951EB, 
 ;AddTypes = 51E7, 151E7, 251E7, 351E7, 451E7, 551E7, 651E7, 751E7, 851E7, 951E7, A51E7, B51E7, C51E7, D51E7, E51E7, F51E7 ;FLEXRamp Type D1-Dual Shift 4-3 Symmetrical
 AddTypes = 51E6, 151E6, 251E6, 351E6, 451E6, 551E6, 651E6, 751E6, 851E6, 951E6, A51E6, B51E6, C51E6, D51E6, E51E6, F51E6 ;FLEXRamp Type G1
 AddTypes = 51E5, 151E5, 251E5, 351E5, 451E5, 551E5, 651E5, 751E5, 851E5, 951E5, A51E5, B51E5, C51E5, D51E5, E51E5, F51E5 ;FLEXRamp Type C1
+AddTypes = 51D0, 151D0, 251D0, 351D0, 451D0, 551D0, 651D0, 751D0, 851D0, 951D0, A51D0, B51D0, C51D0, D51D0, E51D0, F51D0 ;FLEXRamp Type A3
+
 
 
 
@@ -1807,3 +1809,80 @@ CopyFrom    = 0x251E5
 [HighwayIntersectionInfo_0x000F51E5]
 CopyFrom    = 0x351E5
 
+
+
+[HighwayIntersectionInfo_0x000051D0]
+;Added by Tarkus 5/17/2008.
+;FlexRamp Type A3-Orthogonal Off/Exit Ramp
+Piece = 0.0, 0.0, 0, 0, 0x5780000F
+PreviewEffect = preview_flexramp_a1orth_000
+
+CellLayout =.......
+CellLayout =.......
+CellLayout =..Zaa.<
+CellLayout =...ca..
+CellLayout =..bca..
+CellLayout =..bca..
+CellLayout =..ad...
+CellLayout =..a....
+CellLayout =.......
+CellLayout =..^....
+
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02040000, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000204, 0xffffffff optional
+CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
+CheckType = Z - dirtroad: 0x00000000
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..|...<
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =..^....
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5745000F
+Costs       = 500
+[HighwayIntersectionInfo_0x000151D0]
+CopyFrom    = 0x51D0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000251D0]
+CopyFrom    = 0x51D0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000351D0]
+CopyFrom    = 0x51D0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000451D0]
+CopyFrom    = 0x51D0
+Transpose = 1
+[HighwayIntersectionInfo_0x000551D0]
+CopyFrom    = 0x451D0
+Rotate		= 1
+[HighwayIntersectionInfo_0x000651D0]
+CopyFrom    = 0x451D0
+Rotate		= 2
+[HighwayIntersectionInfo_0x000751D0]
+CopyFrom    = 0x451D0
+Rotate		= 3
+[HighwayIntersectionInfo_0x000851D0]
+CopyFrom    = 0x51D0
+[HighwayIntersectionInfo_0x000951D0]
+CopyFrom    = 0x151D0
+[HighwayIntersectionInfo_0x000A51D0]
+CopyFrom    = 0x251D0
+[HighwayIntersectionInfo_0x000B51D0]
+CopyFrom    = 0x351D0
+[HighwayIntersectionInfo_0x000C51D0]
+CopyFrom    = 0x51D0
+[HighwayIntersectionInfo_0x000D51D0]
+CopyFrom    = 0x151D0
+[HighwayIntersectionInfo_0x000E51D0]
+CopyFrom    = 0x251D0
+[HighwayIntersectionInfo_0x000F51D0]
+CopyFrom    = 0x351D0
