@@ -353,6 +353,10 @@ TYPE7=0x04020402,0x02040200,0x04004400,2,0
 ;###LHD###TYPE3=0x04040304,0x02040204,0x5C500180,2,1 ;Road crosswalk approach
 ;###LHD###TYPE4=0x04040403,0x04020402,0x5C500180,3,1 ;Road crosswalk approach
 
+;AVE-6 (Avenue-based) x Street Middle Tile
+TYPE1=0x02000200,0x04020402,0x51211080,0,0
+TYPE2=0x00020002,0x02040204,0x51211080,1,0
+
 ;Multi-tile NWM Crosswalk Size 1 (0x5C500000)
 ;EXPERIMENT - Ortho AVE (double sided median) and street false intersection (FLEX)
 ;;###RHD###TYPE1=0x00020002,0x02000200,0x5C500000,0,0
@@ -400,3 +404,4 @@ TYPE7=0x04020402,0x02040200,0x04004400,2,0
 ;;###RHD###TYPE2=0x00000002,0x00000000,0x5C500180,1,1 ;Road crosswalk approach
 ;;###RHD###TYPE3=0x00000200,0x00000000,0x5C500180,2,1 ;Road crosswalk approach
 ;;###RHD###TYPE4=0x00020000,0x00000000,0x5C500180,3,1 ;Road crosswalk approach
+
