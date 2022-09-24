@@ -15,70 +15,71 @@ class RealRailwayResolver extends IdResolver {
       }
     }
     // ortho
-    add(Rail~NS, 0x03031500)
     add(L1Dtr~NS, 0x5d640000)
     add(L2Dtr~NS, 0x5d740000)
     add(Str~NS, 0x5d300000)
     // diag
-    // add(L1Dtr~)
-    // add(L2Dtr~)
-    /* DTR Crossings (L0, L1, & L2)
-    OxO
-    OxD
-    DxO
-    DxD
-    STR Crossings (L0)
-    OxO
-    OxD
-    DxO
-    DxD
+    add(L1Dtr~SE, 0x5d640100)
+    add(L2Dtr~SE, 0x5d740100)
+    // temp - needs a better home
+    add(L1Road~NS, 0x5c000000)
+    add(L1Road~SE, 0x5c000200)
+    add(L2Road~NS, 0x5c030000)
+    add(L2Road~SE, 0x5c030200)
+    // Height Transition
+    add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
+    add(L1Dtr~CS & L2Dtr~CN, 0x5d6f0600)  // Orth OST L1->L2
+    add(Rail~CS & L2Dtr~CN, 0x5d7f0000)   // Orth OST L0->L2
+    add(Rail~NS & L1Dtr~CN, 0x5d6e0000)   // Orth Ramp HT Lower L0->L1
+    add(Rail~CS & L1Dtr~NS, 0x5d6e0400)   // Orth Ramp HT Upper L0->L1
+    add(Rail~NS & L2Dtr~CN, 0x5d7e0000)   // Orth Ramp HT Lower L0->L2
+    add(Rail~CS & L2Dtr~NS, 0x5d7e0800)   // Orth Ramp HT Upper L0->L2 
+    add(L1Dtr~NS & L2Dtr~CN, 0x5d7e0900)  // Orth Ramp HT Lower L1->L2
+
+    //add(Rail~(0,0,1,3) & L1Dtr(0,0,1,0)) // Diag Ramp HT lower
+    //add(Rail~(0,0,0,3) & L1Dtr(0,0,1,3)) // Diag Ramp HT upper
+
+    //add(Rail~(1,13,0,0) & L1Dtr(0,13,0,0)) // Diag OST lower
+    //add(Rail~(0,0,0,13) & L1Dtr~(0,0,1,13)) // Diag OST upper
+
+    /* DTR Crossings (L1, & L2)
+    This should be a fairly predictable scheme - should be able to automate resolver here.
+    Some L0 crossings are to be added, such as 
     */
     // ----- OxO -----
     // -- Street --
-    add(Street~NS & Rail~WE,  0x05010100)
     add(Street~NS & L1Dtr~WE, 0x5d671000)
     add(Street~NS & L2Dtr~WE, 0x5d771000)
-    add(Street~NS & Str~WE,   0x5d340000)
     // -- Road --
-    add(Road~NS & Rail~WE,  0x03010100)
     add(Road~WE & L1Dtr~NS, 0x5d671100)
     add(Road~WE & L2Dtr~NS, 0x5d771100)
-    add(Road~NS & Str~WE,   0x5d341000)
     // -- Road L1 --
     add(L1Road~NS & Rail~WE,  0x5c001500)
     add(L1Road~NS & L2Dtr~WE, 0x5d771105)
-    add(L1Road~NS & Str~WE,   0x5c001505)
     // -- Road L2 --
     add(L2Road~NS & Rail~WE,  0x5c031500)
     add(L2Road~WE & L1Dtr~NS, 0x5d67110a)
-    add(L2Road~NS & Str~WE,   0x5c031505)
     // -- OWR --
-    add(Onewayroad~NS & Rail~WE,  0x09310100)
     add(Onewayroad~NS & L1Dtr~WE, 0x5d671200)
     add(Onewayroad~NS & L2Dtr~WE, 0x5d771200)
-    add(Onewayroad~NS & Str~WE,   0x5d342000)
     // -- OWR L1 --
     add(L1Onewayroad~NS & Rail~WE,  0x5c011500)
     add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771210)
-    add(L1Onewayroad~NS & Str~WE,   0x5c011505)
     // -- Avenue --
-    add(Avenue~NS & Rail~WE,  0x04001500)
     add(Avenue~NS & L1Dtr~WE, 0x5d671300)
     add(Avenue~NS & L2Dtr~WE, 0x5d771300)
-    add(Avenue~NS & Str~WE,   0x5d343000)
     // -- Avenue L1 --
     add(L1Avenue~NS & Rail~WE,  0x5c021500)
     add(L1Avenue~NS & L2Dtr~WE, 0x5d771300)
-    add(L1Avenue~NS & Str~WE,   0x5c021505)
     // -- Avenue L2 --
     add(L2Avenue~NS & Rail~WE,  0x5c051500)
     add(L2Avenue~NS & L1Dtr~WE, 0x5d671320)
-    add(L2Avenue~NS & Str~WE,   0x5c051505)
     // ----- OxD -----
     // -- Street --
-    add(Street~WN & Rail~NS, 0x5f502600)
+    add(Street~WN & Rail~NS, 0x5f502600) // move to misc resolver
+    add(Street~ES & L1Dtr~NS, 0x5d674000)
+    add(Street~ES & L2Dtr~NS, 0x5d774000)
     // -- Road --
-    add(Road~WN & Rail~NS, 0x03020100)
     add(Road~ES & L1Dtr~NS, 0x5d674100)
     add(Road~ES & L2Dtr~NS, 0x5d774100)
     // -- Road L1 --
@@ -92,6 +93,33 @@ class RealRailwayResolver extends IdResolver {
     // -- Avenue --
     add(Avenue~ES & Rail~NS, 0x04004700)
     add(Avenue~SharedDiagRight & Rail~NS, 0x04004600)
+    // ----- DxO -----
+    // -- Street --
+    // -- Road --
+    // ----- DxD -----
+    // -- Road --
+
+    /*
+    STR IIDs are a mess, still RAM spec.  TBD
+    */
+    // -------- STR --------
+    // ----- OxO -----
+    add(Street~NS & Str~WE,   0x5d340000)
+    add(Road~NS & Str~WE,   0x5d341000)
+    add(L1Road~NS & Str~WE,   0x5c001505)
+    add(L2Road~NS & Str~WE,   0x5c031505)
+    add(Onewayroad~NS & Str~WE,   0x5d342000)
+    add(L1Onewayroad~NS & Str~WE,   0x5c011505)
+    add(Avenue~NS & Str~WE,   0x5d343000)
+    add(L1Avenue~NS & Str~WE,   0x5c021505)
+    add(L2Avenue~NS & Str~WE,   0x5c051505)
+    // ----- OxD -----
+    // -- Street --
+    // -- Road --
+    // -- Road L1 --
+    // -- Road L2 --
+    // -- OWR --
+    // -- Avenue --
     // ----- DxO -----
     // -- Road --
     // ----- DxD -----

@@ -8,7 +8,7 @@ import meta.{RuleGenerator, IdResolver}
   */
 object CompileRealRailwayCode extends AbstractMain {
 
-  lazy val resolve: IdResolver = new RealRailwayResolver
+  lazy val resolve: IdResolver = new RealRailwayResolver orElse new RhwResolver orElse new MiscResolver orElse new NwmResolver
   lazy val generator: RuleGenerator = new RealRailwayRuleGenerator(resolve)
   lazy val file = new File("Controller/RUL2/11_Rail/Sec11r_RRW_MANAGED.txt")
 
