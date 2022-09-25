@@ -13,7 +13,8 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
     */
     val RrwNetworks = List(L2Dtr)
     //val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue)
-    val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue, Onewayroad, L1Onewayroad, L2Onewayroad)
+    val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue, Onewayroad, L1Onewayroad, L2Onewayroad,
+    Rail, L1Dtr, L2Dtr)
     
     for (main <- RrwNetworks; base <- main.base) {
 
@@ -21,15 +22,19 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
       Rules += main~WE | base~CW | % | main~WE  // overrides stub to orth ERRW
 
       for (minor <- CrossNetworks if minor.height != main.height) {
+
         Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
+        Rules += main~WE | minor~NS | % | main~WE & minor~NS  // OxO no-int
+
         if(minor.typ == AvenueLike) {
           Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN // OxO double
           Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO double no-int
         }
-        Rules += main~WE | minor~NS | % | main~WE & minor~NS  // OxO no-int
+
         Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
         Rules += main~WE & minor~SN | base~CW | % | main~WE   // OxO continue stub conversion 
         Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
+        
         for(minor2 <- CrossNetworks if minor2.height != main.height) {
           Rules += main~WE & minor~SN | (base ~> main)~WE & minor2~NS       // OxO | OxO adj
           Rules += main~WE & minor~SN | minor2~NS | % | main~WE & minor2~NS // OxO | OxO adj no-int

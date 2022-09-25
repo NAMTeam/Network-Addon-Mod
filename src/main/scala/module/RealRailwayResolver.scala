@@ -65,89 +65,114 @@ class RealRailwayResolver extends IdResolver {
     // -- Road --
     add(Road~WE & L1Dtr~NS, 0x5d671100)
     add(Road~WE & L2Dtr~NS, 0x5d771100)
-    // -- Road L1 --
     add(L1Road~NS & Rail~WE,  0x5c001500)
     add(L1Road~NS & L2Dtr~WE, 0x5d771105)
-    // -- Road L2 --
     add(L2Road~NS & Rail~WE,  0x5c031500)
     add(L2Road~WE & L1Dtr~NS, 0x5d67110a)
     // -- OWR --
     add(Onewayroad~NS & L1Dtr~WE, 0x5d671200)
     add(Onewayroad~WE & L2Dtr~NS, 0x5d771200)
-    // -- OWR L1 --
     add(L1Onewayroad~NS & Rail~WE,  0x5c011500)
     add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771205)
+    add(L2Onewayroad~NS & Rail~WE, 0x5c041500)
+    add(L2Onewayroad~NS & L1Dtr~WE, 0x5d67120a)
     // -- Avenue --
     add(Avenue~EW & L1Dtr~NS, 0x5d671300)
     add(Avenue~EW & L2Dtr~NS, 0x5d771300)
-    // -- Avenue L1 --
     add(L1Avenue~NS & Rail~WE,  0x5c021500)
     add(L1Avenue~NS & L2Dtr~WE, 0x5d771305)
-    // -- Avenue L2 --
     add(L2Avenue~NS & Rail~WE,  0x5c051500)
     add(L2Avenue~EW & L1Dtr~NS, 0x5d67130a)
     // -- Rail --
     add(Rail~WE & L1Dtr~NS, 0x5d671500)
     add(Rail~WE & L2Dtr~NS, 0x5d771500)
-    // -- Rail L1 --
     add(L2Dtr~WE & L1Dtr~NS, 0x5d771510)
     // -- GLR  --
+    add(Glr1~WE & L1Dtr~NS, 0x5d671700)
+    add(Glr2~WE & L1Dtr~NS, 0x5d671705)
+    add(Glr3~WE & L1Dtr~NS, 0x5d671800)
+    add(Glr4~WE & L1Dtr~NS, 0x5d671805)
     add(Glr1~WE & L2Dtr~NS, 0x5d771700)
     add(Glr2~WE & L2Dtr~NS, 0x5d771705)
     add(Glr3~WE & L2Dtr~NS, 0x5d771800)
     add(Glr4~WE & L2Dtr~NS, 0x5d771805)
     // -- HSRP --
+    add(Hsr~WE & L1Dtr~NS, 0x5d671905)
     add(Hsr~WE & L2Dtr~NS, 0x5d771905)
     // -- RHW-2
+    add(Dirtroad~WE & L1Dtr~NS, 0x5d671a00)
     add(Dirtroad~WE & L2Dtr~NS, 0x5d771a00)
     // -- RHW-3 --
+    add(Rhw3~WE & L1Dtr~NS, 0x5d671b00)
     add(Rhw3~WE & L2Dtr~NS, 0x5d771b00)
     // -- MIS --
+    add(Mis~WE & L1Dtr~NS, 0x5d671c00)
     add(Mis~WE & L2Dtr~NS, 0x5d771c00)
     // -- RHW-4 --
+    add(Rhw4~WE & L1Dtr~NS, 0x5d671d00)
     add(Rhw4~WE & L2Dtr~NS, 0x5d771d00)
     // -- RHW-6S --
+    add(Rhw6s~WE & L1Dtr~NS, 0x5d671e00)
     add(Rhw6s~WE & L2Dtr~NS, 0x5d771e00)
     // TO DO - what to do with extra tile 5d771e05, 5d771e10?
     // -- RHW-8S Median
+    add(Rhw8sm~WE & L1Dtr~NS, 0x5d671f00)
     add(Rhw8sm~WE & L2Dtr~NS, 0x5d771f00)
     // -- RHW-8S Shoulder --
+    add(Rhw8s~WE & L1Dtr~NS, 0x5d672000)
     add(Rhw8s~WE & L2Dtr~NS, 0x5d772000)
     // -- RHW-10S Shoulder --
+    add(Rhw10s~WE & L1Dtr~NS, 0x5d672100)
     add(Rhw10s~WE & L2Dtr~NS, 0x5d772100)
     // -- RHW-6C Median --
+    add(Rhw6cm~WE & L1Dtr~NS, 0x5d672300)
     add(Rhw6cm~WE & L2Dtr~NS, 0x5d772300)
     // -- RHW-6C Shoulder --
+    add(Rhw6c~WE & L1Dtr~NS, 0x5d672400)
     add(Rhw6c~WE & L2Dtr~NS, 0x5d772400)
     // -- RHW-8C Shoulder --
+    add(Rhw8c~WE & L1Dtr~NS, 0x5d672500)
     add(Rhw8c~WE & L2Dtr~NS, 0x5d772500)
     // -- TLA-3 --
+    add(Tla3~WE & L1Dtr~NS, 0x5d672700)
     add(Tla3~WE & L2Dtr~NS, 0x5d772700)
     // -- AVE-2 --
+    add(Ave2~WE & L1Dtr~NS, 0x5d672800)
     add(Ave2~WE & L2Dtr~NS, 0x5d772800)
     // -- ARD-3 --
+    add(Ard3~WE & L1Dtr~NS, 0x5d672900)
     add(Ard3~WE & L2Dtr~NS, 0x5d772900)
     // -- OWR-1 --
+    add(Owr1~WE & L1Dtr~NS, 0x5d672a00)
     add(Owr1~WE & L2Dtr~NS, 0x5d772a00)
     // -- OWR-3 --
+    add(Owr3~WE & L1Dtr~NS, 0x5d672b00)
     add(Owr3~WE & L2Dtr~NS, 0x5d772b00)
-    // -- NRD-4 -- 
+    // -- NRD-4 --
+    add(Nrd4~WE & L1Dtr~NS, 0x5d672c00) 
     add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
     // -- TLA-5 --
+    add(Tla5~WE & L1Dtr~NS, 0x5d672d00)
     add(Tla5~WE & L2Dtr~NS, 0x5d772d00)
     // -- OWR-4 --
+    add(Owr4~WE & L1Dtr~NS, 0x5d672e00)
     add(Owr4~WE & L2Dtr~NS, 0x5d772e00)
     // -- OWR-5 --
+    add(Owr5~WE & L1Dtr~NS, 0x5d672f00)
     add(Owr5~WE & L2Dtr~NS, 0x5d772f00)
     // -- RD-4 --
+    add(Rd4~WE & L1Dtr~NS, 0x5d673000)
     add(Rd4~WE & L2Dtr~NS, 0x5d773000)
     // -- RD-6 --
+    add(Rd6~WE & L1Dtr~NS, 0x5d673100)
     add(Rd6~WE & L2Dtr~NS, 0x5d773100)
     // -- TLA-7 Shoulder -- 3200
     // -- TLA-7 Median --
+    add(Tla7m~WE & L1Dtr~NS, 0x5d673300)
     add(Tla7m~WE & L2Dtr~NS, 0x5d773300)
     // -- TLA-9 Shoulder -- 3400
     // -- AVE-6 Median
+    add(Ave6m~WE & L1Dtr~NS, 0x5d673500)
     add(Ave6m~WE & L2Dtr~NS, 0x5d773500)
     // -- TOS -- 3600
     // -- TOR -- 3700
@@ -156,24 +181,34 @@ class RealRailwayResolver extends IdResolver {
     // -- EL-Rail over Road -- 3900
     // -- El-Rail over Avenue -- 3905
     // -- SAM-2 --
+    add(Sam2~WE & L1Dtr~NS, 0x5d673a00)
     add(Sam2~WE & L2Dtr~NS, 0x5d773a00)
     // -- SAM-3 --
+    add(Sam3~WE & L1Dtr~NS, 0x5d673a05)
     add(Sam3~WE & L2Dtr~NS, 0x5d773a05)
     // -- SAM-4 --
+    add(Sam4~WE & L1Dtr~NS, 0x5d673a0a)
     add(Sam4~WE & L2Dtr~NS, 0x5d773a0a)
     // -- SAM-5 --
+    add(Sam5~WE & L1Dtr~NS, 0x5d673b00)
     add(Sam5~WE & L2Dtr~NS, 0x5d773b00)
     // -- SAM-6 --
+    add(Sam6~WE & L1Dtr~NS, 0x5d673b05)
     add(Sam6~WE & L2Dtr~NS, 0x5d773b05)
     // -- SAM-7 --
+    add(Sam7~WE & L1Dtr~NS, 0x5d673b0a)
     add(Sam7~WE & L2Dtr~NS, 0x5d773b0a)
     // -- SAM-8 --
+    add(Sam8~WE & L1Dtr~NS, 0x5d673c00)
     add(Sam8~WE & L2Dtr~NS, 0x5d773c00)
     // -- SAM-9 --
+    add(Sam9~WE & L1Dtr~NS, 0x5d673c05)
     add(Sam9~WE & L2Dtr~NS, 0x5d773c05)
     // -- SAM-10 --
+    add(Sam10~WE & L1Dtr~NS, 0x5d673c0a)
     add(Sam10~WE & L2Dtr~NS, 0x5d773c0a)
     // -- SAM-11 --
+    add(Sam11~WE & L1Dtr~NS, 0x5d673d00)
     add(Sam11~WE & L2Dtr~NS, 0x5d773d00)
     
 
