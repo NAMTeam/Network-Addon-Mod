@@ -70,33 +70,42 @@ object NetworkConfig {
     add(Road, ES)(-7.3f)(-3.2f)(3.2f)(7.3f)
     add(Onewayroad, NS)(-6.5f)(-2.5f, 2.5f)(-2.5f, 2.5f)(6.5f)
     add(Onewayroad, ES)(-7.3f)(-3.2f, 3.2f)(-3.2f, 3.2f)(7.3f)
+    add(Street, NS)(-7f)(-2f)(2f)(7f)
+    add(Street, ES)(-7.1f)(-2f)(2f)(7.1f)
+    add(Avenue, NS)(-6.39f)(-2.5f, 2.5f)(13.5f, 18.5f)(22.39f)
+    add(Avenue, ES)(-7.3f)(-3.2f, 3.2f)(16-3.2f, 16+3.2f)(16+7.3f) // TODO shared diagonal
 
-    // TODO
     add(Tla3, NS)(-7.5f)(-4.5f, -0.125f)(0.125f, 4.5f)(7.5f)
-    add(Tla3, ES)(-7.99f)(-5.5f)(5.5f)(7.99f) // TODO add turning lane
+    add(Tla3, ES)(-7.99f)(-5.5f, -0.3172f)(0.3172f, 5.5f)(7.99f)
     add(Ave2, NS)(-7.5f)(-4.5f)(4.5f)(7.5f)
     add(Ave2, ES)(-7.99f)(-5.5f)(5.5f)(7.99f)
     add(Ard3, NS)(-7.5f)(-4.5f, 0f)(4.5f)(7.5f)
     add(Ard3, ES, SE)(-7.99f)(-5.25f, 0f)(5.25f)(7.99f)
-    add(Nrd4, NS)(-7.5f)(-5.25f, -1.95f)(1.95f, 5.25f)(7.5f)
-    add(Nrd4, ES)(-10.88f)(-7.3f, -2.95f)(2.95f, 7.3f)(10.88f)
     add(Owr1, NS)(-6.39f)(0f)(0f)(6.39f)
     add(Owr1, ES, SE)(-7.3f)(0f)(0f)(7.3f)
     add(Owr3, NS)(-7.25f)(-4.5f, 0f, 4.5f)(-4.5f, 0f, 4.5f)(7.25f)
     add(Owr3, ES)(-7.99f)(-5.25f, 0f, 5.25f)(-5.25f, 0f, 5.25f)(7.99f)
+    add(Nrd4, NS)(-7.5f)(-5.25f, -1.95f)(1.95f, 5.25f)(7.5f)
+    add(Nrd4, ES)(-10.88f)(-7.3f, -2.95f)(2.95f, 7.3f)(10.88f)
 
     add(Tla5, NS)(-6.39f)(-2.5f, 2.5f, 7.25f)(8.75f, 13.5f, 18.5f)(22.39f)
-    add(Tla5, ES, SE)(-4f)(1.5f, 9f)(23f, 30.5f)(36f) // TODO add turning lane
+    add(Tla5, ES, SE)(-4f)(1.5f, 9f, 16-1.5f)(16+1.5f, 23f, 30.5f)(36f) // TODO these are preliminary (guessed) turning lane coordinates
+    add(Owr4, NS)(-6.39f)(1.5f, 5.5f, 16-5.5f, 16-1.5f)(1.5f, 5.5f, 16-5.5f, 16-1.5f)(16+6.39f)
+    add(Owr4, ES)(-7.3f)(-2f, 5f, 16-5f, 16+2f)(-2f, 5f, 16-5f, 16+2f)(16+7.3f) // TODO shared diagonal
+    add(Owr5, NS)(-6.39f)(-1f, 3.5f, 7.75f, 16-7.75f, 16-3.5f, 16+1f)(-1f, 3.5f, 7.75f, 16-7.75f, 16-3.5f, 16+1f)(16+6.39f)
+    add(Owr5, ES, SE)(-2.5f)(3f, 16-6.5f, 16-0f, 16+6.5f, 32-3f)(3f, 16-6.5f, 16-0f, 16+6.5f, 32-3f)(32+2.5f)
+    add(Rd4, NS)(-7f)(1f, 5.5f)(16-5.5f, 16-1f)(16+7f)
+    add(Rd4, ES)(-7.3f)(-2f, 5f)(16-5f, 16+2f)(16+7.3f) // TODO shared diagonal
     add(Rd6, NS)(-7f)(-3.5f, 1f, 5.5f)(10.5f, 15f, 19.5f)(23f)
     add(Rd6, ES, SE)(-5.5f)(0f, 6f, 12f)(20f, 26f, 32f)(37.5f)
-//    add(Tla7, NS)(-7f)(0.5f, 5.5f, 16-5.5f, 16-1.125f)(17.125f, 21.5f, 32-5.5f, 32-0.5f)(39f)
-
-    add(Tla7m, NS)(-7f-16)(0.5f-16, 5.5f-16, -5.5f, -1.125f)(17.125f-16, 21.5f-16, 16-5.5f, 16-0.5f)(23f)
 
     add(Ave6, NS)(-7f)(0.5f, 5.5f, 16-5.5f)(21.5f, 32-5.5f, 32-0.5f)(39f)
-//    add(Ave6, ES)(
+    add(Ave6, ES, SE)(1.5f)(16-5.5f, 16+1.5f, 16+7.5f)(48-7.5f, 48-1.5f, 48+5.5f)(64-1.5f)
     add(Ave6m, NS)(-7f-16)(0.5f-16, 5.5f-16, -5.5f)(21.5f-16, 16-5.5f, 16-0.5f)(23f)
-    // TODO add diagonals
+    add(Ave6m, ES, SE)(-32+1.5f)(-16-5.5f, -16+1.5f, -16+7.5f)(16-7.5f, 16-1.5f, 16+5.5f)(32-1.5f)
+    // add(Tla7, NS)(-7f)(0.5f, 5.5f, 16-5.5f, 16-1.125f)(17.125f, 21.5f, 32-5.5f, 32-0.5f)(39f)  // corresponds to Ave6
+    add(Tla7m, NS)(-7f-16)(0.5f-16, 5.5f-16, -5.5f, -1.125f)(17.125f-16, 21.5f-16, 16-5.5f, 16-0.5f)(23f)
+    add(Tla7m, ES, SE)(-32+1.5f)(-16-5.5f, -16+1.5f, -16+7.5f, -0.1f)(0.1f, 16-7.5f, 16-1.5f, 16+5.5f)(32-1.5f)
 
     m.toMap
   }
