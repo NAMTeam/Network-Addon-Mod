@@ -12,20 +12,37 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
     Generate OxO rules by iteration over list of supported crossings
     */
     val RrwNetworks = List(L2Dtr)
-    //val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue)
+    /*
     val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue, Onewayroad, L1Onewayroad, L2Onewayroad,
-    Rail, L1Dtr, L2Dtr)
-    
+    Rail, L1Dtr, L2Dtr, Glr1, Glr2, Glr3, Glr4, Hsr, Dirtroad, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw6cm,
+    Rhw6c, Rhw8c, Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4, Tla5, Owr4, Owr5, Rd4, Rd6, Ave6, Tla7m, Ave6m,
+    Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
+    val CrossNetworks = List(Road, L1Road, L2Road, Avenue, L1Avenue, L2Avenue, Onewayroad, L1Onewayroad, L2Onewayroad,
+    Rail, L1Dtr, L2Dtr, Dirtroad, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw6cm,
+    Rhw6c, Rhw8c)
+    */
+    val CrossNetworks = List(Road, Tla3, Rhw8sm, Rhw8s)
+
+
     for (main <- RrwNetworks; base <- main.base) {
 
       Rules += main~WE | (base ~> main)~WE      // ortho
       Rules += main~WE | base~CW | % | main~WE  // overrides stub to orth ERRW
 
       for (minor <- CrossNetworks if minor.height != main.height) {
-
-        Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
-        Rules += main~WE | minor~NS | % | main~WE & minor~NS  // OxO no-int
-
+        /*
+        Cases:
+        1.) Symmetrical 1-tile
+        2.) Asymmetrical 1-tile
+        3.) Avenue-like
+        4.) Dual-tile Asymmetrical e.g. RHW-8S
+        5.) Triple-tile
+        */
+        if (hasRightShoulder(minor)) {
+          Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
+          Rules += main~WE | minor~NS | % | main~WE & minor~NS  // OxO no-int
+        }
+        
         if(minor.typ == AvenueLike) {
           Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN // OxO double
           Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO double no-int
@@ -36,8 +53,10 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
         Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
         
         for(minor2 <- CrossNetworks if minor2.height != main.height) {
+          if (hasRightShoulder(minor2)) {
           Rules += main~WE & minor~SN | (base ~> main)~WE & minor2~NS       // OxO | OxO adj
           Rules += main~WE & minor~SN | minor2~NS | % | main~WE & minor2~NS // OxO | OxO adj no-int
+          }
         }
         // Height transition OxO adjacency
         Rules += Rail~CW & main~CE | (base ~> main)~WE & minor~NS // Orth OST Adj

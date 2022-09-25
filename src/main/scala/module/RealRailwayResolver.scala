@@ -23,6 +23,10 @@ class RealRailwayResolver extends IdResolver {
     // diag
     add(L1Dtr~SE, 0x5d640100)
     add(L2Dtr~SE, 0x5d740100)
+    // OxO crossing
+    add(Rail~NS & Rail~EW, 0x5d548000)
+
+    
     // temp - needs a better home
     add(L1Road~NS, 0x5c000000)
     add(L1Road~SE, 0x5c000200)
@@ -38,6 +42,8 @@ class RealRailwayResolver extends IdResolver {
     add(L2Avenue~NS, 0x5c050000)
     add(L2Avenue~NE, 0x5c050200)
     add(L2Avenue~SharedDiagLeft, 0x5c050300)
+
+
     // Height Transition
     add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
     add(L1Dtr~CS & L2Dtr~CN, 0x5d6f0600)  // Orth OST L1->L2
@@ -119,23 +125,25 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw8sm~WE & L1Dtr~NS, 0x5d671f00)
     add(Rhw8sm~WE & L2Dtr~NS, 0x5d771f00)
     // -- RHW-8S Shoulder --
-    add(Rhw8s~WE & L1Dtr~NS, 0x5d672000)
-    add(Rhw8s~WE & L2Dtr~NS, 0x5d772000)
+    add(Rhw8s~EW & L1Dtr~NS, 0x5d672000)
+    add(Rhw8s~EW & L2Dtr~NS, 0x5d772000)
     // -- RHW-10S Shoulder --
-    add(Rhw10s~WE & L1Dtr~NS, 0x5d672100)
-    add(Rhw10s~WE & L2Dtr~NS, 0x5d772100)
+    add(Rhw10s~EW & L1Dtr~NS, 0x5d672100)
+    add(Rhw10s~EW & L2Dtr~NS, 0x5d772100)
     // -- RHW-6C Median --
     add(Rhw6cm~WE & L1Dtr~NS, 0x5d672300)
     add(Rhw6cm~WE & L2Dtr~NS, 0x5d772300)
     // -- RHW-6C Shoulder --
-    add(Rhw6c~WE & L1Dtr~NS, 0x5d672400)
-    add(Rhw6c~WE & L2Dtr~NS, 0x5d772400)
+    add(Rhw6c~EW & L1Dtr~NS, 0x5d672400)
+    add(Rhw6c~EW & L2Dtr~NS, 0x5d772400)
     // -- RHW-8C Shoulder --
-    add(Rhw8c~WE & L1Dtr~NS, 0x5d672500)
-    add(Rhw8c~WE & L2Dtr~NS, 0x5d772500)
+    add(Rhw8c~EW & L1Dtr~NS, 0x5d672500)
+    add(Rhw8c~EW & L2Dtr~NS, 0x5d772500)
     // -- TLA-3 --
-    add(Tla3~WE & L1Dtr~NS, 0x5d672700)
-    add(Tla3~WE & L2Dtr~NS, 0x5d772700)
+    add(Tile.projectLeft(Tla3~WE & L1Dtr~NS), 0x5d672700)
+    add(Tile.projectRight(Tla3~WE & L1Dtr~NS), 0x5d672700)
+    add(Tile.projectLeft(Tla3~WE & L2Dtr~NS), 0x5d772700)
+    add(Tile.projectRight(Tla3~WE & L2Dtr~NS), 0x5d772700)
     // -- AVE-2 --
     add(Ave2~WE & L1Dtr~NS, 0x5d672800)
     add(Ave2~WE & L2Dtr~NS, 0x5d772800)
@@ -166,7 +174,9 @@ class RealRailwayResolver extends IdResolver {
     // -- RD-6 --
     add(Rd6~WE & L1Dtr~NS, 0x5d673100)
     add(Rd6~WE & L2Dtr~NS, 0x5d773100)
-    // -- TLA-7 Shoulder -- 3200
+    // -- TLA-7 Shoulder / Ave6? -- 3200
+    add(Ave6~WE & L1Dtr~NS, 0x5d673200)
+    add(Ave6~WE & L2Dtr~NS, 0x5d773200)
     // -- TLA-7 Median --
     add(Tla7m~WE & L1Dtr~NS, 0x5d673300)
     add(Tla7m~WE & L2Dtr~NS, 0x5d773300)
