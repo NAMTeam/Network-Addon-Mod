@@ -57,7 +57,13 @@ object PathCreator {
           }
         }
       }
-      for {
+      for { // OxD
+        mainDir <- Seq(NS, SN)
+        minDir <- Seq(ES, if (minor.typ != AvenueLike) SE else SharedDiagRight)
+      } /*do*/ {
+        add(main~mainDir, minor~minDir)
+      }
+      for { // DxO, DxD
         mainDir <- Seq(NE, if (main.typ != AvenueLike) EN else SharedDiagLeft)
         minDir <- Seq(EW, WE, ES, if (minor.typ != AvenueLike) SE else SharedDiagRight)
       } /*do*/ {
