@@ -27,19 +27,40 @@ object PathCreator {
   def generateNwmPaths(implicit resolver: IdResolver): Iterable[BufferedEntry[Sc4Path]] = {
     val ids = scala.collection.mutable.Map.empty[Int, Sc4Path]
     // TODO provisional
+    val mainNetworks = NwmNetworks -- Set(Ave8)
+    val minorNetworks = NwmNetworks ++ Set(Road, Street, Onewayroad, Avenue) -- Set(Ave8)
     for {
-      main <- NwmNetworks if main.typ != AvenueLike && main.base.get == Road && main <= Rd6
-      minor <- NwmNetworks if minor.typ != AvenueLike && minor.base.get == Road && minor <= Rd6
+      main <- mainNetworks
+      minor <- minorNetworks
     } /*do*/ {
       import Flags._, Implicits._
       def add(seg1: Segment, seg2: Segment) = {
-        val idTile = resolver(seg1 & seg2)
-        if (!ids.contains(idTile.id)) {
-          val intersection = new PlusIntersection(seg1, seg2)
-          ids(idTile.id) = intersection.buildSc4Path * (R0F0 / idTile.rf)
+        if (!seg1.network.isTla && !seg2.network.isTla) {
+          val idTile = resolver(seg1 & seg2)
+          if (!ids.contains(idTile.id)) {
+            val intersection = new PlusIntersection(seg1, seg2)
+            ids(idTile.id) = intersection.buildSc4Path * (R0F0 / idTile.rf)
+          }
+        } else {
+          // special handling for center turning lanes of TLAs
+          // TODO Orientations and directions of paths need testing,
+          // and the alternative TLA turn paths need permanent IIDs
+          val idTile1 = resolver(Tile.projectLeft(seg1 & seg2))
+          val idTile2 = resolver(Tile.projectLeft((seg1 & seg2) * R0F1))
+          if (!ids.contains(idTile1.id)) {
+            val intersection = new PlusIntersection(seg1, seg2)
+            ids(idTile1.id) = intersection.buildSc4Path * (R0F0 / idTile1.rf)
+          }
+          if (!ids.contains(idTile2.id)) {
+            val intersection = new PlusIntersection(seg1 * R0F1, seg2 * R0F1)
+            ids(idTile2.id) = (intersection.buildSc4Path * R0F1) * (R0F0 / idTile2.rf)
+          }
         }
       }
-      for (mainDir <- Seq(NS, SN, NE, EN); minDir <- Seq(EW, WE, ES, SE)) {
+      for {
+        mainDir <- Seq(NE, if (main.typ != AvenueLike) EN else SharedDiagLeft)
+        minDir <- Seq(EW, WE, ES, if (minor.typ != AvenueLike) SE else SharedDiagRight)
+      } /*do*/ {
         add(main~mainDir, minor~minDir)
       }
     }

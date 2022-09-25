@@ -15,7 +15,8 @@ scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-target:jvm-1.6")
 
-Compile / mainClass := Some("metarules.module.CompileAllMetarules")
+// Compile / mainClass := Some("metarules.module.CompileAllMetarules")
+Compile / mainClass := Some("metarules.pathing.nwmpaths.Main")  // compile with `sbt run`
 
 console / initialCommands := """
 import metarules._, metarules.meta._
