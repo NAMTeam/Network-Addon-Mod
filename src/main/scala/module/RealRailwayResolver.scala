@@ -15,6 +15,8 @@ class RealRailwayResolver extends IdResolver {
       }
     }
     // ortho
+    add(Rail~NS, 0x5d540000)
+    add(Rail~CS, 0x5d540200)
     add(L1Dtr~NS, 0x5d640000)
     add(L2Dtr~NS, 0x5d740000)
     add(Str~NS, 0x5d300000)
@@ -26,6 +28,16 @@ class RealRailwayResolver extends IdResolver {
     add(L1Road~SE, 0x5c000200)
     add(L2Road~NS, 0x5c030000)
     add(L2Road~SE, 0x5c030200)
+    add(L1Onewayroad~NS, 0x5c010000)
+    add(L1Onewayroad~SE, 0x5c010200)
+    add(L2Onewayroad~NS, 0x5c040000)
+    add(L2Onewayroad~SE, 0x5c040200)
+    add(L1Avenue~NS, 0x5c020000)
+    add(L1Avenue~NE, 0x5c020200)
+    add(L1Avenue~SharedDiagLeft, 0x5c020300)
+    add(L2Avenue~NS, 0x5c050000)
+    add(L2Avenue~NE, 0x5c050200)
+    add(L2Avenue~SharedDiagLeft, 0x5c050300)
     // Height Transition
     add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
     add(L1Dtr~CS & L2Dtr~CN, 0x5d6f0600)  // Orth OST L1->L2
@@ -61,19 +73,110 @@ class RealRailwayResolver extends IdResolver {
     add(L2Road~WE & L1Dtr~NS, 0x5d67110a)
     // -- OWR --
     add(Onewayroad~NS & L1Dtr~WE, 0x5d671200)
-    add(Onewayroad~NS & L2Dtr~WE, 0x5d771200)
+    add(Onewayroad~WE & L2Dtr~NS, 0x5d771200)
     // -- OWR L1 --
     add(L1Onewayroad~NS & Rail~WE,  0x5c011500)
-    add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771210)
+    add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771205)
     // -- Avenue --
-    add(Avenue~NS & L1Dtr~WE, 0x5d671300)
-    add(Avenue~NS & L2Dtr~WE, 0x5d771300)
+    add(Avenue~EW & L1Dtr~NS, 0x5d671300)
+    add(Avenue~EW & L2Dtr~NS, 0x5d771300)
     // -- Avenue L1 --
     add(L1Avenue~NS & Rail~WE,  0x5c021500)
-    add(L1Avenue~NS & L2Dtr~WE, 0x5d771300)
+    add(L1Avenue~NS & L2Dtr~WE, 0x5d771305)
     // -- Avenue L2 --
     add(L2Avenue~NS & Rail~WE,  0x5c051500)
-    add(L2Avenue~NS & L1Dtr~WE, 0x5d671320)
+    add(L2Avenue~EW & L1Dtr~NS, 0x5d67130a)
+    // -- Rail --
+    add(Rail~WE & L1Dtr~NS, 0x5d671500)
+    add(Rail~WE & L2Dtr~NS, 0x5d771500)
+    // -- Rail L1 --
+    add(L2Dtr~WE & L1Dtr~NS, 0x5d771510)
+    // -- GLR  --
+    add(Glr1~WE & L2Dtr~NS, 0x5d771700)
+    add(Glr2~WE & L2Dtr~NS, 0x5d771705)
+    add(Glr3~WE & L2Dtr~NS, 0x5d771800)
+    add(Glr4~WE & L2Dtr~NS, 0x5d771805)
+    // -- HSRP --
+    add(Hsr~WE & L2Dtr~NS, 0x5d771905)
+    // -- RHW-2
+    add(Dirtroad~WE & L2Dtr~NS, 0x5d771a00)
+    // -- RHW-3 --
+    add(Rhw3~WE & L2Dtr~NS, 0x5d771b00)
+    // -- MIS --
+    add(Mis~WE & L2Dtr~NS, 0x5d771c00)
+    // -- RHW-4 --
+    add(Rhw4~WE & L2Dtr~NS, 0x5d771d00)
+    // -- RHW-6S --
+    add(Rhw6s~WE & L2Dtr~NS, 0x5d771e00)
+    // TO DO - what to do with extra tile 5d771e05, 5d771e10?
+    // -- RHW-8S Median
+    add(Rhw8sm~WE & L2Dtr~NS, 0x5d771f00)
+    // -- RHW-8S Shoulder --
+    add(Rhw8s~WE & L2Dtr~NS, 0x5d772000)
+    // -- RHW-10S Shoulder --
+    add(Rhw10s~WE & L2Dtr~NS, 0x5d772100)
+    // -- RHW-6C Median --
+    add(Rhw6cm~WE & L2Dtr~NS, 0x5d772300)
+    // -- RHW-6C Shoulder --
+    add(Rhw6c~WE & L2Dtr~NS, 0x5d772400)
+    // -- RHW-8C Shoulder --
+    add(Rhw8c~WE & L2Dtr~NS, 0x5d772500)
+    // -- TLA-3 --
+    add(Tla3~WE & L2Dtr~NS, 0x5d772700)
+    // -- AVE-2 --
+    add(Ave2~WE & L2Dtr~NS, 0x5d772800)
+    // -- ARD-3 --
+    add(Ard3~WE & L2Dtr~NS, 0x5d772900)
+    // -- OWR-1 --
+    add(Owr1~WE & L2Dtr~NS, 0x5d772a00)
+    // -- OWR-3 --
+    add(Owr3~WE & L2Dtr~NS, 0x5d772b00)
+    // -- NRD-4 -- 
+    add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
+    // -- TLA-5 --
+    add(Tla5~WE & L2Dtr~NS, 0x5d772d00)
+    // -- OWR-4 --
+    add(Owr4~WE & L2Dtr~NS, 0x5d772e00)
+    // -- OWR-5 --
+    add(Owr5~WE & L2Dtr~NS, 0x5d772f00)
+    // -- RD-4 --
+    add(Rd4~WE & L2Dtr~NS, 0x5d773000)
+    // -- RD-6 --
+    add(Rd6~WE & L2Dtr~NS, 0x5d773100)
+    // -- TLA-7 Shoulder -- 3200
+    // -- TLA-7 Median --
+    add(Tla7m~WE & L2Dtr~NS, 0x5d773300)
+    // -- TLA-9 Shoulder -- 3400
+    // -- AVE-6 Median
+    add(Ave6m~WE & L2Dtr~NS, 0x5d773500)
+    // -- TOS -- 3600
+    // -- TOR -- 3700
+    // -- TIR -- 3705
+    // -- TIA -- 3800
+    // -- EL-Rail over Road -- 3900
+    // -- El-Rail over Avenue -- 3905
+    // -- SAM-2 --
+    add(Sam2~WE & L2Dtr~NS, 0x5d773a00)
+    // -- SAM-3 --
+    add(Sam3~WE & L2Dtr~NS, 0x5d773a05)
+    // -- SAM-4 --
+    add(Sam4~WE & L2Dtr~NS, 0x5d773a0a)
+    // -- SAM-5 --
+    add(Sam5~WE & L2Dtr~NS, 0x5d773b00)
+    // -- SAM-6 --
+    add(Sam6~WE & L2Dtr~NS, 0x5d773b05)
+    // -- SAM-7 --
+    add(Sam7~WE & L2Dtr~NS, 0x5d773b0a)
+    // -- SAM-8 --
+    add(Sam8~WE & L2Dtr~NS, 0x5d773c00)
+    // -- SAM-9 --
+    add(Sam9~WE & L2Dtr~NS, 0x5d773c05)
+    // -- SAM-10 --
+    add(Sam10~WE & L2Dtr~NS, 0x5d773c0a)
+    // -- SAM-11 --
+    add(Sam11~WE & L2Dtr~NS, 0x5d773d00)
+    
+
     // ----- OxD -----
     // -- Street --
     add(Street~WN & Rail~NS, 0x5f502600) // move to misc resolver
