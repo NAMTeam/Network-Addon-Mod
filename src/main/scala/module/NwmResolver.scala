@@ -4,6 +4,7 @@ import metarules.meta._
 import Network._
 import RotFlip._
 import Flags._
+import NetworkProperties.isTripleTile
 
 
 class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
@@ -97,7 +98,7 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
           }
           var id = nwmRangeId(maj.network).get + nwmPieceId(min.network).get + pieceOffset
           if (prop.majorSegReversed)
-            id += 0x80  // (if (isSingleTileNwm(maj.network)) 0x80 else 0x40)
+            id += (if (isTripleTile(maj.network)) 0x40 else 0x80)  // TODO revise IID scheme to avoid 0x40 for wealthing support
           if (prop.minorSegReversed)
             id += (/*if (maj.network.height == 0 && min.network.height == 0) 0x09 else*/ 0x05)
           if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
