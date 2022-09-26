@@ -78,15 +78,22 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     if (!isDefinedAt(tile)) {
       throw new MatchError(tile)
     } else if (tile.segs.size == 2) {
-      val List(maj, min) = tile.segs.toList.sortWith(greater)
-      assert(maj.network.isNwm)
+      val List(maj0, min0) = tile.segs.toList.sortWith(greater)
+      assert(maj0.network.isNwm)
+      val (maj, min) = if (min0.network.isNwm && doubleProps.get(maj0.flags, min0.flags).exists(_.orthDiagOffset == 0x6000)) {
+        (min0, maj0)  // switch DxO to OxD if both are NWM networks (i.e. orthogonal NWM is primary network)
+      } else {
+        (maj0, min0)
+      }
       doubleProps.get(maj.flags, min.flags) match {
         case Some(prop) =>
           val pieceOffset = prop.orthDiagOffset match {
             case 0x0000 => 0x1000  // OxO
             case 0x3000 => 0x5000  // OxD
-            case 0x6000 => 0x7000  // DxO
-            case 0x9000 => 0x9000  // DxD
+            case 0x6000 =>
+              assert(!min.network.isNwm) // otherwise this would be covered by OxD
+              0x7000  // DxO
+            case 0x9000 => 0x8000  // DxD
           }
           var id = nwmRangeId(maj.network).get + nwmPieceId(min.network).get + pieceOffset
           if (prop.majorSegReversed)
