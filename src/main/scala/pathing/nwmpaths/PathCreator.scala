@@ -53,7 +53,7 @@ object PathCreator {
           }
           if (!ids.contains(idTile2.id)) {
             val intersection = new PlusIntersection(seg1 * R0F1, seg2 * R0F1)
-            ids(idTile2.id) = (intersection.buildSc4Path * R0F1) * (R0F0 / idTile2.rf)
+            ids(idTile2.id) = intersection.buildSc4Path * (R0F0 / idTile2.rf)
           }
         }
       }
