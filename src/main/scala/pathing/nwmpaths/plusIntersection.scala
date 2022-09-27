@@ -11,7 +11,7 @@ abstract class CommonIntersection extends Intersection {
   protected def stopLine(c: Cardinal): Line
 
   protected def leftTurnPaths(c: Cardinal, tt: TT): SPaths // in order left to right
-  protected def straightPaths(c: Cardinal, tt: TT): SPaths // in any order
+  protected def straightPaths(c: Cardinal, tt: TT, dropRedundantPaths: Boolean): SPaths // in any order
   protected def rightTurnPaths(c: Cardinal, tt: TT): SPaths // in order right to left
   protected def iterateMergePathsFromRight(c: Cardinal, tt: TT): SPaths // in order right to left
   protected def iterateMergePathsFromLeft(c: Cardinal, tt: TT): SPaths // in order left to right
@@ -30,9 +30,32 @@ abstract class CommonIntersection extends Intersection {
     }
     def buildStraightPaths = for {
       fromDir <- Seq(West, North, East, South)
-      path <- straightPaths(fromDir, tt)
+      path <- straightPaths(fromDir, tt, dropRedundantPaths = true)
     } yield StraightConnection(Line(path.points(0), path.points(1)))
     buildStraightPaths ++ buildTurnPaths(false) ++ buildTurnPaths(true)
+  }
+
+  // TODO Current issues with stop points:
+  // - If a stop point happens to end up exactly on a tile boundary, it is discarded.
+  //   (possible workaround: move the stop line a bit)
+  // - It would make sense to match up the class numbers of stop points with
+  //   their corresponding paths. Further research is needed to test whether the
+  //   game cares about this.
+  //   Currently, all the paths are renumbered somewhat arbitrarily for simplicity.
+  // - TLAs have an extraneous UK stop point where the center lane meets the sim
+  //   path behind the intersection
+  def yieldConnectionStops(tt: TT): TraversableOnce[ConnectionStop] = {
+    def buildStopPaths(uk: Boolean) = {
+      for {
+        fromDir <- Seq(West, North, East, South)
+        if tt == TT.Car  // currently only car stop points are handled
+        path <- straightPaths(fromDir, tt, dropRedundantPaths = false)  // all straight paths including center lane for TLA and all lanes for OWR
+      } yield {
+        assert(path.points.size == 2)
+        ConnectionStop(Line(path.points(0), path.points(1)), stopLine(if (!uk) fromDir else (fromDir *: R2F0)), uk)
+      }
+    }
+    buildStopPaths(uk = false) ++ buildStopPaths(uk = true)
   }
 }
 
@@ -54,11 +77,11 @@ class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersectio
   protected def leftTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Car) {
     sortedPaths(c).reverseIterator.find(_.tt == tt).toSeq
   } else Nil
-  protected def straightPaths(c: Cardinal, tt: TT) = {
+  protected def straightPaths(c: Cardinal, tt: TT, dropRedundantPaths: Boolean) = {
     val paths = sortedPaths(c).filter(_.tt == tt)
     if (tt != TT.Car) paths
-    else if (hasTurningLane(c)) paths.dropRight(1) // TLA networks have one thru-lane less
-    else if (isBidirectionalOneway(c)) paths.dropRight(paths.length / 2) // OWR networks have duplicated thru-lanes, we need only half of them
+    else if (dropRedundantPaths && hasTurningLane(c)) paths.dropRight(1) // TLA networks have one thru-lane less
+    else if (dropRedundantPaths && isBidirectionalOneway(c)) paths.dropRight(paths.length / 2) // OWR networks have duplicated thru-lanes, we need only half of them
     else paths
   }
 

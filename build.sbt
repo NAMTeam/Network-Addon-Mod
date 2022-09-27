@@ -45,6 +45,6 @@ libraryDependencies += "com.github.memo33" % "jsquish" % "2.0.1" from "https://g
 
 libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://github.com/memo33/scdbpf/releases/download/v0.1.7/pureimage_2.11-0.1.1.jar"
 
-libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.9" from "https://github.com/memo33/scdbpf/releases/download/v0.1.9/scdbpf_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.10" from "https://github.com/memo33/scdbpf/releases/download/v0.1.10/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.2.0" from "https://github.com/memo33/metarules/releases/download/v0.2.0/metarules_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.2.1" from "https://github.com/memo33/metarules/releases/download/v0.2.1/metarules_2.11.jar"
