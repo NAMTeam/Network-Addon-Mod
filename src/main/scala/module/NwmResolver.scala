@@ -100,7 +100,9 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
           if (prop.majorSegReversed)
             id += (if (isTripleTile(maj.network)) 0x40 else 0x80)  // TODO revise IID scheme to avoid 0x40 for wealthing support
           if (prop.minorSegReversed)
-            id += (/*if (maj.network.height == 0 && min.network.height == 0) 0x09 else*/ 0x05)
+            id += 0x05
+          if (id % 0x10 != 0 && (maj.network.height == 0 || min.network.height == 0))
+            id += 0x4  // map 8th digit 5 to 9, A to E
           if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
              (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded) &&
               tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
