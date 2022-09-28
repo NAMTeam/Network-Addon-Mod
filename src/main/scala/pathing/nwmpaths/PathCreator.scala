@@ -71,6 +71,7 @@ object PathCreator {
       }
     }
     ids.map { case (id, p) =>
+      require(p.validateClassNumbers, "duplicate class numbers detected in " + p.toString)
       BufferedEntry(tgi = Tgi(0,0,id).copy(Tgi.Sc4Path2d), content = p, compressed = true)
     }
   }
