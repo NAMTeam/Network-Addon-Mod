@@ -53,19 +53,22 @@ object PathCreator {
           }
           if (!ids.contains(idTile2.id)) {
             val intersection = new PlusIntersection(seg1 * R0F1, seg2 * R0F1)
-            ids(idTile2.id) = intersection.buildSc4Path * (R0F0 / idTile2.rf)
+            val stop = intersection.buildSc4Path * (R0F0 / idTile2.rf)
+            ids(idTile2.id) = stop.copy(stopPaths = stop.stopPaths.map(p => p.copy(uk = !p.uk)))  // flip uk flag to account for mirroring
           }
         }
       }
+      // In the following, it is important to choose the same directions as in
+      // the IID scheme, since otherwise the uk flags can end up flipped.
       for { // OxD
         mainDir <- Seq(NS, SN)
-        minDir <- Seq(ES, if (minor.typ != AvenueLike) SE else SharedDiagRight)
+        minDir <- Seq(SW, if (minor.typ != AvenueLike) WS else SharedDiagLeft)
       } /*do*/ {
         add(main~mainDir, minor~minDir)
       }
       for { // DxO, DxD
-        mainDir <- Seq(NE, if (main.typ != AvenueLike) EN else SharedDiagLeft)
-        minDir <- Seq(EW, WE, ES, if (minor.typ != AvenueLike) SE else SharedDiagRight)
+        mainDir <- Seq(ES, if (main.typ != AvenueLike) SE else SharedDiagRight)
+        minDir <- Seq(EW, WE, SW, if (minor.typ != AvenueLike) WS else SharedDiagLeft)
       } /*do*/ {
         add(main~mainDir, minor~minDir)
       }
