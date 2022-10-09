@@ -1,13 +1,91 @@
-Network-Addon-Mod
-=================
+# Network-Addon-Mod
 
-Network Addon Mod for SimCity 4 Deluxe/Rush Hour @ http://sc4devotion.com/forums/index.php?board=90.0
+Network Addon Mod (NAM) for SimCity 4 Deluxe/Rush Hour @ https://sc4devotion.com/forums/index.php?board=90.0
 
+This repository contains the RUL files of the NAM.
 
-Instructions for compiling metarules
-------------------------------------
+## Documentation
 
-First, make sure you have installed SBT and a recent version of Java (at least Java 7).
-Then, execute `sbt run`
-in this directory, which generates proper RUL files and outputs them into the directory `target`.
-The generated files can then be copied manually to the `Controller` directory.
+For installation and usage of the NAM, see https://www.sc4nam.com/.
+
+## Developer notes
+
+The remainder of this README file is intended for developers.
+
+### Structure of the repository
+
+    ├─┐ Controller/
+    │ ├── Bridge Controller/
+    │ ├── INI/
+    │ ├── INRULs/
+    │ ├── RUL0/
+    │ ├── RUL1/
+    │ └── RUL2/
+    ├── Lite Controller/
+    ├─┐ src/
+    │ ├─┐ main/
+    │ │ ├── resources/
+    │ │ └── scala/
+    │ └── test/
+    └── target/
+
+The main code is contained in the folders `RUL0`, `RUL1`, `RUL2`.
+The files in there are used as input for the
+the NAM Controller Compiler.
+
+The folders `Bridge Controller`, `INI`, `INRULs`
+contain network related code that is not part of the NAM controller,
+but is contained in other .dat files of the NAM.
+
+The directory `src/main/scala` contains code related to Metarules.
+These are files written in the programming language Scala
+that help automate the process of writing RUL2 code
+as well as generating models and paths.
+The generated files are written to the `target` directory.
+
+### Compiling the NAM controller
+
+The latest version of the NAM comes with the most up-to-date version of the
+[NAM Controller Compiler](https://github.com/memo33/NAMControllerCompiler).
+Use the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
+Usually, this is the only task you need to do after modifying files in the `RUL0`, `RUL1` or `RUL2` folders.
+
+### Compiling INRULs
+
+Get the Java utility [BuildRULs](https://www.dropbox.com/s/ckwhy11xxaz3z1q/BuildRULs_01.zip?dl=0) and run the command
+
+    java -jar /path/to/.../BuildRULs.jar -f Controller/INRULs/ Controller/INRULs/
+
+with the path to the `BuildRULs.jar` file replaced by the one on your system.
+This creates or updates the files
+
+    ┐ Controller/
+    └─┐ INRULs/
+      ├── NetworkAddonMod_IndividualNetworkRULs_LHD.dat
+      ├── NetworkAddonMod_IndividualNetworkRULs_RHD.dat
+      └── NetworkAddonMod_Lite_INRULs.dat
+
+### Compiling Metarules
+
+Compiling the Metarules code is only needed when modifying any of the Scala code.
+For executing the Scala code, make sure you have `sbt` installed.
+It is a build tool that will download all the required dependencies.
+
+Then execute
+
+    sbt run
+
+to compile and run the Scala code.
+This takes the Metarules as input to generate RUL2 code and to create some models and paths.
+Currently, this generates the following files:
+
+    ┐ target/
+    ├── 11_FlexFly_falsies_MANAGED.txt
+    ├── 5B00_FlexFly5x5_MANAGED.txt
+    ├── FlexFly.dat
+    ├── nwmTurnPaths.dat
+    └── Sec7j_FLEXFly_MANAGED.txt
+
+You need to manually move the generated RUL2 files from the `target` directory
+to the correct locations in the `Controller` directory and then commit them into the git repository.
+For more information on Metarules, see https://github.com/memo33/metarules.
