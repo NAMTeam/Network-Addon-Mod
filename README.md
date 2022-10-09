@@ -1,8 +1,6 @@
 Network-Addon-Mod
 =================
 
-[![Build Status](https://travis-ci.org/NAMTeam/Network-Addon-Mod.svg?branch=master)](https://travis-ci.org/NAMTeam/Network-Addon-Mod)
-
 Network Addon Mod for SimCity 4 Deluxe/Rush Hour @ http://sc4devotion.com/forums/index.php?board=90.0
 
 
