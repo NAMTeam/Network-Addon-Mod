@@ -7,11 +7,7 @@ Network Addon Mod for SimCity 4 Deluxe/Rush Hour @ http://sc4devotion.com/forums
 Instructions for compiling metarules
 ------------------------------------
 
-First, make sure you have installed SBT and JDK 1.7 or above. Then, execute the script "compileAllMetarules.sh"
-in this directory, which generates proper RUL files and drops them in specific locations in
-the "Controller" directory. This script needs to be executed every time the metarules are
-updated or you checkout a different branch (which may update the metarules) in order to
-assert that the generated files are always up-to-date.
-
-Moreover, the script builds the INRUL files which can be found in the directory "target/INRULs"
-after running the script.
+First, make sure you have installed SBT and a recent version of Java (at least Java 7).
+Then, execute `sbt run`
+in this directory, which generates proper RUL files and outputs them into the directory `target`.
+The generated files can then be copied manually to the `Controller` directory.
