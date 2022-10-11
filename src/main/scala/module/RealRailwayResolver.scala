@@ -14,6 +14,7 @@ class RealRailwayResolver extends IdResolver {
         map.getOrElseUpdate(tile * rf, idTile)
       }
     }
+    add(Rail~(0,0,0,0), 0x5f33fc00)
     // ortho
     add(Rail~NS, 0x5d540000)
     add(Rail~CS, 0x5d540200)
@@ -160,8 +161,10 @@ class RealRailwayResolver extends IdResolver {
     add(Nrd4~WE & L1Dtr~NS, 0x5d672c00) 
     add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
     // -- TLA-5 --
-    add(Tla5~WE & L1Dtr~NS, 0x5d672d00)
-    add(Tla5~WE & L2Dtr~NS, 0x5d772d00)
+    add(Tile.projectLeft(Tla5~EW & L1Dtr~NS), 0x5d672d00)
+    add(Tile.projectRight(Tla5~EW & L1Dtr~NS), 0x5d672d00)
+    add(Tile.projectLeft(Tla5~EW & L2Dtr~NS), 0x5d772d00)
+    add(Tile.projectRight(Tla5~EW & L2Dtr~NS), 0x5d772d00)
     // -- OWR-4 --
     add(Owr4~WE & L1Dtr~NS, 0x5d672e00)
     add(Owr4~WE & L2Dtr~NS, 0x5d772e00)

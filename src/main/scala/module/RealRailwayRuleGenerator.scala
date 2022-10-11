@@ -6,7 +6,10 @@ import scala.collection.mutable.Buffer
 import NetworkProperties._
 
 
-class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
+class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Adjacencies {
+  
+  def intersectionAllowed(a: Network, b: Network): Boolean = {true}
+
   def start(): Unit = {
     /*
     Generate OxO rules by iteration over list of supported crossings
@@ -21,13 +24,28 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
     Rail, L1Dtr, L2Dtr, Dirtroad, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw6cm,
     Rhw6c, Rhw8c)
     */
-    val CrossNetworks = List(Road, Tla3, Rhw8sm, Rhw8s)
+    val CrossNetworks = List(Road, Rhw8s)
 
 
     for (main <- RrwNetworks; base <- main.base) {
 
       Rules += main~WE | (base ~> main)~WE      // ortho
-      Rules += main~WE | base~CW | % | main~WE  // overrides stub to orth ERRW
+      Rules += main~WE | base~CW | % | main~WE  // overrides end stub to orth ERRW
+      Rules += main~WE | base~CE | % | main~WE  // overrides end stub to orth ERRW
+      Rules += main~WE | base~(0,0,0,0) | % | main~WE // overides stub to orth ERRW
+
+      Rules += Rail~CW & main~CE | (base ~> main)~WE // Orth OST Adj
+      Rules += Rail~CW & main~CE | base~CW | % | main~WE
+      Rules += Rail~CW & main~CE | base~CE | % | main~WE 
+      Rules += Rail~CW & main~CE | base~(0,0,0,0) | % | main~WE 
+      Rules += Rail~CW & main~WE | (base ~> main)~WE // Orth Ramp HT
+      Rules += Rail~CW & main~WE | base~CW | % | main~WE
+      Rules += Rail~CW & main~WE | base~CE | % | main~WE 
+      Rules += Rail~CW & main~WE | base~(0,0,0,0) | % | main~WE
+
+      for (minor <- CrossNetworks) {
+        createAdjacentIntersections(main, base, minor)
+      }
 
       for (minor <- CrossNetworks if minor.height != main.height) {
         /*
@@ -38,31 +56,47 @@ class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
         4.) Dual-tile Asymmetrical e.g. RHW-8S
         5.) Triple-tile
         */
+
         if (hasRightShoulder(minor)) {
           Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
           Rules += main~WE | minor~NS | % | main~WE & minor~NS  // OxO no-int
+          // continue
+          Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
+          Rules += main~WE & minor~SN | base~CW | % | main~WE   // OxO continue stub conversion 
+          Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
+          // HT
+          Rules += Rail~CW & main~CE | (base ~> main)~WE & minor~NS // Orth OST Adj
+          Rules += Rail~CW & main~CE | minor~NS | % | main~WE & minor~NS // Orth OST no-int
+          Rules += Rail~CW & main~WE | (base ~> main)~WE & minor~NS // Orth Ramp HT
+          Rules += Rail~CW & main~WE | minor~NS | % | main~WE & minor~NS // Orth Ramp no-int
         }
-        
+        if (hasLeftShoulder(minor)) {
+          Rules += main~WE | (base ~> main)~WE & minor~SN             // OxO
+          Rules += main~WE | minor~SN | % | main~WE & minor~SN  // OxO no-int
+          // continue
+          Rules += main~WE & minor~NS | (base ~> main)~WE       // OxO continue
+          Rules += main~WE & minor~NS | base~CW | % | main~WE   // OxO continue stub conversion 
+          Rules += main~WE & minor~NS | base~CE | % | main~WE   // OxO continue stub conversion
+          // HT
+          Rules += Rail~CW & main~CE | (base ~> main)~WE & minor~SN // Orth OST Adj
+          Rules += Rail~CW & main~CE | minor~SN | % | main~WE & minor~SN // Orth OST no-int
+          Rules += Rail~CW & main~WE | (base ~> main)~WE & minor~SN // Orth Ramp HT
+          Rules += Rail~CW & main~WE | minor~SN | % | main~WE & minor~SN // Orth Ramp no-int
+        }
         if(minor.typ == AvenueLike) {
           Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN // OxO double
           Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO double no-int
         }
-
-        Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
-        Rules += main~WE & minor~SN | base~CW | % | main~WE   // OxO continue stub conversion 
-        Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
+        //Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
+        //Rules += main~WE & minor~SN | base~CW | % | main~WE   // OxO continue stub conversion 
+        //Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
         
-        for(minor2 <- CrossNetworks if minor2.height != main.height) {
+        for(minor2 <- CrossNetworks if minor2.height != main.height && minor2 != main) {
           if (hasRightShoulder(minor2)) {
           Rules += main~WE & minor~SN | (base ~> main)~WE & minor2~NS       // OxO | OxO adj
           Rules += main~WE & minor~SN | minor2~NS | % | main~WE & minor2~NS // OxO | OxO adj no-int
           }
         }
-        // Height transition OxO adjacency
-        Rules += Rail~CW & main~CE | (base ~> main)~WE & minor~NS // Orth OST Adj
-        Rules += Rail~CW & main~CE | minor~NS | % | main~WE & minor~NS // Orth OST no-int
-        Rules += Rail~CW & main~WE | (base ~> main)~WE & minor~NS // Orth Ramp HT
-        Rules += Rail~CW & main~WE | minor~NS | % | main~WE & minor~NS // Orth Ramp no-int
         
         /*
 
