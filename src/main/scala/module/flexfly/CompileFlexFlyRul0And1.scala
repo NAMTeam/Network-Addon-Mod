@@ -309,12 +309,12 @@ object CompileFlexFlyRul0And1 {
     }
   }
 
-  /** Outputs FlexFly RUL0 and RUL1 code to 'target/FlexFlyRUL0.txt' and
-    * 'target/FlexFlyRUL1.txt'.
+  /** Outputs FlexFly RUL0 and RUL1 code to 'target/5B00_FlexFly5x5_MANAGED.txt' and
+    * 'target/11_FlexFly_falsies_MANAGED.txt'.
     */
   def main(args: Array[String]): Unit = {
-    val rul0File = new File("Controller/RUL0/5000_RHW/5B00_FlexFly5x5_MANAGED.txt")
-    val rul1File = new File("Controller/RUL1/09_Dirtroad/11_FlexFly_falsies_MANAGED.txt")
+    val rul0File = new File("target/5B00_FlexFly5x5_MANAGED.txt")
+    val rul1File = new File("target/11_FlexFly_falsies_MANAGED.txt")
     val resolver = new FlexFlyResolver
     printRul0(rul0File, resolver)
     printRul1(rul1File, resolver)

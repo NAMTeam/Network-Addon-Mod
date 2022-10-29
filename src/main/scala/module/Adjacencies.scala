@@ -12,7 +12,7 @@ object Adjacencies {
   val SNSN = 3
 
   /** Covers the multi-tile "inner" adjacencies */
-  private val multitileNetworks: Map[Network, Seq[(Network, Int)]] = {
+  val multitileNetworks: Map[Network, Seq[(Network, Int)]] = {
     val m = mutable.Map.empty[Network, Seq[(Network, Int)]]
     import RhwRuleGenerator.HeightLevel
     // Rhw multi-tile networks
@@ -77,8 +77,10 @@ object Adjacencies {
 
 }
 
-trait Adjacencies { this: RhwRuleGenerator =>
+trait Adjacencies { this: RuleGenerator =>
   import Adjacencies._
+
+  def intersectionAllowed(a: Network, b: Network): Boolean
 
   /** Covers all cases of parallel adjacent +/X-intersections, i.e. OxO, OxD,
     * DxO, DxD, save for 'inner' diagonal intersections.
