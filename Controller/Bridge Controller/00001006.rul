@@ -6388,933 +6388,6 @@ end
 	end
 end
 
-# avenue cable-stayed
-
-bridge 16
-
-section st
-	piece <0x0afa1000, 2> <0x0af91000, 2>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af71000, 2> <0x0af71000, 0>
-end 
-
-section a1
-	piece <0x0af61000, 2> <0x0af61000, 0>
-end
-
-section a2
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af71000, 2> <0x0af71000, 0>
-end
-
-section a2r
-	piece <0x0af71000, 2> <0x0af71000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-end
-
-section a3
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af71000, 2> <0x0af71000, 0>
-end
-
-section a3r
-	piece <0x0af71000, 2> <0x0af71000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>	
-end
-
-section te
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af81000, 2> <0x0af81000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-	piece <0x0af61000, 2> <0x0af61000, 0>
-end
-
-	length 38
-		piece st 2*te rev(st)
-	end
-
-	length 39
-		piece st a1 2*te rev(st)
-	end
-
-	length 40
-		piece st a1 2*te a1 rev(st)
-	end
-
-	length 41
-		piece st a2 2*te a1 rev(st)
-	end
-
-	length 42
-		piece st a2 2*te a2r rev(st)
-	end
-
-	length 43
-		piece st a2 2*te a3r rev(st)
-	end
-
-	length 44
-		piece st a3 2*te a3r rev(st)
-	end
-
-	length 45
-		piece st a3 a1 2*te a3r rev(st)
-	end
-
-	length 46
-		piece st a3 a1 2*te a1 a3r rev(st)
-	end
-
-	length 47
-		piece st a3 a2 2*te a1 a3r rev(st)
-	end
-
-	length 48
-		piece st a3 a2 2*te a2r a3r rev(st)
-	end
-
-	length 49
-		piece st a3 a2 2*te 2*a3r rev(st)
-	end
-
-	length 50
-		piece st 2*a3 2*te 2*a3r rev(st)
-	end
-
-	length 51
-		piece st 2*a3 2*te a1 2*a3r rev(st)
-	end
-
-	length 52
-		piece st 2*a3 a1 2*te a1 2*a3r rev(st)
-	end
-
-	length 53
-		piece st 2*a3 a2 2*te a1 2*a3r rev(st)
-	end
-
-	length 54
-		piece st 2*a3 a2 2*te a2r 2*a3r rev(st)
-	end
-
-	length 55
-		piece st 2*a3 a2 2*te 3*a3r rev(st)
-	end
-
-	length 56
-		piece st 3*a3 2*te 3*a3r rev(st)
-	end
-
-	length 57
-		piece st 3*a3 2*te a1 3*a3r rev(st)
-	end
-
-	length 58
-		piece st 3*a3 a1 2*te a1 3*a3r rev(st)
-	end
-
-	length 59
-		piece st 3*a3 a2 2*te a1 3*a3r rev(st)
-	end
-
-	length 60
-		piece st 3*a3 a2 2*te a2r 3*a3r rev(st)
-	end
-
-	length 61
-		piece st 3*a3 a2 2*te 4*a3r rev(st)
-	end
-
-	length 62
-		piece st 4*a3 2*te 4*a3r rev(st)
-	end
-
-	length 63
-		piece st 4*a3 2*te a1 4*a3r rev(st)
-	end
-
-	length 64
-		piece st 4*a3 a1 2*te a1 4*a3r rev(st)
-	end
-
-	length 65
-		piece st 4*a3 a2 2*te a1 4*a3r rev(st)
-	end
-
-	length 66
-		piece st 4*a3 a2 2*te a2r 4*a3r rev(st)
-	end
-
-	length 67
-		piece st 4*a3 a2 2*te 5*a3r rev(st)
-	end
-
-	length 68
-		piece st 5*a3 2*te 5*a3r rev(st)
-	end
-
-	length 69
-		piece st 5*a3 2*te a1 5*a3r rev(st)
-	end
-
-	length 70
-		piece st 5*a3 a1 2*te a1 5*a3r rev(st)
-	end
-
-	length 71
-		piece st 5*a3 a2 2*te a1 5*a3r rev(st)
-	end
-
-	length 72
-		piece st 5*a3 a2 2*te a2r 5*a3r rev(st)
-	end
-
-	length 73
-		piece st 5*a3 a2 2*te 6*a3r rev(st)
-	end
-
-	length 74
-		piece st 6*a3 2*te 6*a3r rev(st)
-	end
-
-	length 75
-		piece st 6*a3 2*te a1 6*a3r rev(st)
-	end
-
-	length 76
-		piece st 6*a3 a1 2*te a1 6*a3r rev(st)
-	end
-
-	length 77
-		piece st 6*a3 a2 2*te a1 6*a3r rev(st)
-	end
-
-	length 78
-		piece st 6*a3 a2 2*te a2r 6*a3r rev(st)
-	end
-
-	length 79
-		piece st 6*a3 a2 2*te 7*a3r rev(st)
-	end
-
-	length 80
-		piece st 7*a3 2*te 7*a3r rev(st)
-	end
-
-	length 81
-		piece st 4*a3 a2 3*te a2r 4*a3r rev(st)
-	end
-
-	length 82
-		piece st 4*a3 a2 3*te 5*a3r rev(st)
-	end 
-
-	length 83
-		piece st 5*a3 3*te 5*a3r rev(st)
-	end
-
-	length 84
-		piece st 5*a3 a1 3*te 5*a3r rev(st)
-	end
-
-	length 85
-		piece st 5*a3 a1 3*te a1 5*a3r rev(st)
-	end
-
-	length 86
-		piece st 5*a3 a2 3*te a1 5*a3r rev(st)
-	end
-
-	length 87
-		piece st 5*a3 a2 3*te a2r 5*a3r rev(st)
-	end
-
-	length 88
-		piece st 5*a3 a2 3*te 6*a3r rev(st)
-	end
-
-	length 89
-		piece st 6*a3 3*te 6*a3r rev(st)
-	end
-
-	length 90
-		piece st 6*a3 a1 3*te 6*a3r rev(st)
-	end
-
-	length 91
-		piece st 6*a3 a1 3*te a1 6*a3r rev(st)
-	end
-
-	length 92
-		piece st 6*a3 a2 3*te a1 6*a3r rev(st)
-	end
-
-	length 93
-		piece st 6*a3 a2 3*te a2r 6*a3r rev(st)
-	end
-
-	length 94
-		piece st 6*a3 a2 3*te 7*a3r rev(st)
-	end
-
-	length 95
-		piece st 7*a3 3*te 7*a3r rev(st)
-	end
-
-	length 96
-		piece st 7*a3 a1 3*te 7*a3r rev(st)
-	end
-
-	length 97
-		piece st 7*a3 a1 3*te a1 7*a3r rev(st)
-	end
-
-	length 98
-		piece st 7*a3 a2 3*te a1 7*a3r rev(st)
-	end
-
-	length 99
-		piece st 7*a3 a2 3*te rev(a2) 7*a3r rev(st)
-	end
-
-	length 100
-		piece st 7*a3 a2 3*te 8*a3r rev(st)
-	end
-
-	length 101
-		piece st 8*a3 3*te 8*a3r rev(st)
-	end
-
-	length 102
-		piece st 8*a3 a1 3*te 8*a3r rev(st)
-	end
-
-	length 103
-		piece st 8*a3 a1 3*te a1 8*a3r rev(st)
-	end
-
-	length 104
-		piece st 8*a3 a2 3*te a1 8*a3r rev(st)
-	end
-
-	length 105
-		piece st 8*a3 a2 3*te a2r 8*a3r rev(st)
-	end
-
-	length 106
-		piece st 8*a3 a2 3*te 9*a3r rev(st)
-	end
-
-	length 107
-		piece st 9*a3 3*te 9*a3r rev(st)
-	end
-
-	length 108
-		piece st 6*a3 a2 4*te a2r 6*a3r rev(st)
-	end
-
-	length 109
-		piece st 6*a3 a2 4*te 7*a3r rev(st)
-	end 
-
-	length 110
-		piece st 7*a3 4*te 7*a3r rev(st)
-	end
-
-	length 111
-		piece st 7*a3 a1 4*te 7*a3r rev(st)
-	end
-
-	length 112
-		piece st 7*a3 a1 4*te a1 7*a3r rev(st)
-	end
-
-	length 113
-		piece st 7*a3 a2 4*te a1 7*a3r rev(st)
-	end
-
-	length 114
-		piece st 7*a3 a2 4*te a2r 7*a3r rev(st)
-	end
-
-	length 115
-		piece st 7*a3 a2 4*te 8*a3r rev(st)
-	end
-
-	length 116
-		piece st 8*a3 4*te 8*a3r rev(st)
-	end
-
-	length 117
-		piece st 8*a3 a1 4*te 8*a3r rev(st)
-	end
-
-	length 118
-		piece st 8*a3 a1 4*te a1 8*a3r rev(st)
-	end
-
-	length 119
-		piece st 8*a3 a2 4*te a1 8*a3r rev(st)
-	end
-
-	length 120
-		piece st 8*a3 a2 4*te a2r 8*a3r rev(st)
-	end
-
-	length 121
-		piece st 8*a3 a2 4*te 9*a3r rev(st)
-	end
-
-	length 122
-		piece st 9*a3 4*te 9*a3r rev(st)
-	end
-
-	length 123
-		piece st 9*a3 a1 4*te 9*a3r rev(st)
-	end
-
-	length 124
-		piece st 9*a3 a1 4*te a1 9*a3r rev(st)
-	end
-
-	length 125
-		piece st 9*a3 a2 4*te a1 9*a3r rev(st)
-	end
-
-	length 126
-		piece st 9*a3 a2 4*te a2r 9*a3r rev(st)
-	end
-
-	length 127
-		piece st 9*a3 a2 4*te 10*a3r rev(st)
-	end
-
-	length 128
-		piece st 10*a3 4*te 10*a3r rev(st)
-	end
-
-	length 129
-		piece st 10*a3 a1 4*te 10*a3r rev(st)
-	end
-
-	length 130
-		piece st 10*a3 a1 4*te a1 10*a3r rev(st)
-	end
-
-	length 131
-		piece st 10*a3 a2 4*te a1 10*a3r rev(st)
-	end
-
-	length 132
-		piece st 10*a3 a2 4*te a2r 10*a3r rev(st)
-	end
-
-	length 133
-		piece st 10*a3 a2 4*te 11*a3r rev(st)
-	end
-
-	length 134
-		piece st 11*a3 4*te 11*a3r rev(st)
-	end
-
-	length 135
-		piece st 8*a3 a2 5*te a2r 8*a3r rev(st)
-	end
-
-	length 136
-		piece st 8*a3 a2 5*te 9*a3r rev(st)
-	end 
-
-	length 137
-		piece st 9*a3 5*te 9*a3r rev(st)
-	end
-
-	length 138
-		piece st 9*a3 a1 5*te 9*a3r rev(st)
-	end
-
-	length 139
-		piece st 9*a3 a1 5*te a1 9*a3r rev(st)
-	end
-
-	length 140
-		piece st 9*a3 a2 5*te a1 9*a3r rev(st)
-	end
-
-	length 141
-		piece st 9*a3 a2 5*te a2r 9*a3r rev(st)
-	end
-
-	length 142
-		piece st 9*a3 a2 5*te 10*a3r rev(st)
-	end
-
-	length 143
-		piece st 10*a3 5*te 10*a3r rev(st)
-	end
-
-	length 144
-		piece st 10*a3 a1 5*te 10*a3r rev(st)
-	end
-
-	length 145
-		piece st 10*a3 a1 5*te a1 10*a3r rev(st)
-	end
-
-	length 146
-		piece st 10*a3 a2 5*te a1 10*a3r rev(st)
-	end
-
-	length 147
-		piece st 10*a3 a2 5*te a2r 10*a3r rev(st)
-	end
-
-	length 148
-		piece st 10*a3 a2 5*te 11*a3r rev(st)
-	end
-
-	length 149
-		piece st 11*a3 5*te 11*a3r rev(st)
-	end
-
-	length 150
-		piece st 11*a3 a1 5*te 11*a3r rev(st)
-	end
-
-	length 151
-		piece st 11*a3 a1 5*te a1 11*a3r rev(st)
-	end
-
-	length 152
-		piece st 11*a3 a2 5*te a1 11*a3r rev(st)
-	end
-
-	length 153
-		piece st 11*a3 a2 5*te a2r 11*a3r rev(st)
-	end
-
-	length 154
-		piece st 11*a3 a2 5*te 12*a3r rev(st)
-	end
-
-	length 155
-		piece st 12*a3 5*te 12*a3r rev(st)
-	end
-
-	length 156
-		piece st 12*a3 a1 5*te 12*a3r rev(st)
-	end
-
-	length 157
-		piece st 12*a3 a1 5*te a1 12*a3r rev(st)
-	end
-
-	length 158
-		piece st 12*a3 a2 5*te a1 12*a3r rev(st)
-	end
-
-	length 159
-		piece st 12*a3 a2 5*te a2r 12*a3r rev(st)
-	end
-
-	length 160
-		piece st 12*a3 a2 5*te 13*a3r rev(st)
-	end
-
-	length 161
-		piece st 13*a3 5*te 13*a3r rev(st)
-	end
-
-	length 162
-		piece st 10*a3 a2 6*te a2r 10*a3r rev(st)
-	end
-
-	length 163
-		piece st 10*a3 a2 6*te 11*a3r rev(st)
-	end 
-
-	length 164
-		piece st 11*a3 6*te 11*a3r rev(st)
-	end
-
-	length 165
-		piece st 11*a3 a1 6*te 11*a3r rev(st)
-	end
-
-	length 166
-		piece st 11*a3 a1 6*te a1 11*a3r rev(st)
-	end
-
-	length 167
-		piece st 11*a3 a2 6*te a1 11*a3r rev(st)
-	end
-
-	length 168
-		piece st 11*a3 a2 6*te a2r 11*a3r rev(st)
-	end
-
-	length 169
-		piece st 11*a3 a2 6*te 12*a3r rev(st)
-	end
-
-	length 170
-		piece st 12*a3 6*te 12*a3r rev(st)
-	end
-
-	length 171
-		piece st 12*a3 a1 6*te 12*a3r rev(st)
-	end
-
-	length 172
-		piece st 12*a3 a1 6*te a1 12*a3r rev(st)
-	end
-
-	length 173
-		piece st 12*a3 a2 6*te a1 12*a3r rev(st)
-	end
-
-	length 174
-		piece st 12*a3 a2 6*te a2r 12*a3r rev(st)
-	end
-
-	length 175
-		piece st 12*a3 a2 6*te 13*a3r rev(st)
-	end
-
-	length 176
-		piece st 13*a3 6*te 13*a3r rev(st)
-	end
-
-	length 177
-		piece st 13*a3 a1 6*te 13*a3r rev(st)
-	end
-
-	length 178
-		piece st 13*a3 a1 6*te a1 13*a3r rev(st)
-	end
-
-	length 179
-		piece st 13*a3 a2 6*te a1 13*a3r rev(st)
-	end
-
-	length 180
-		piece st 13*a3 a2 6*te a2r 13*a3r rev(st)
-	end
-
-	length 181
-		piece st 13*a3 a2 6*te 14*a3r rev(st)
-	end
-
-	length 182
-		piece st 14*a3 6*te 14*a3r rev(st)
-	end
-
-	length 183
-		piece st 14*a3 a1 6*te 14*a3r rev(st)
-	end
-
-	length 184
-		piece st 14*a3 a1 6*te a1 14*a3r rev(st)
-	end
-
-	length 185
-		piece st 14*a3 a2 6*te a1 14*a3r rev(st)
-	end
-
-	length 186
-		piece st 14*a3 a2 6*te a2r 14*a3r rev(st)
-	end
-
-	length 187
-		piece st 14*a3 a2 6*te 15*a3r rev(st)
-	end
-
-	length 188
-		piece st 15*a3 6*te 15*a3r rev(st)
-	end
-
-	length 189
-		piece st 12*a3 a2 7*te a2r 12*a3r rev(st)
-	end
-
-	length 190
-		piece st 12*a3 a2 7*te 13*a3r rev(st)
-	end 
-
-	length 191
-		piece st 13*a3 7*te 13*a3r rev(st)
-	end
-
-	length 192
-		piece st 13*a3 a1 7*te 13*a3r rev(st)
-	end
-
-	length 193
-		piece st 13*a3 a1 7*te a1 13*a3r rev(st)
-	end
-
-	length 194
-		piece st 13*a3 a2 7*te a1 13*a3r rev(st)
-	end
-
-	length 195
-		piece st 13*a3 a2 7*te a2r 13*a3r rev(st)
-	end
-
-	length 196
-		piece st 13*a3 a2 7*te 14*a3r rev(st)
-	end
-
-	length 197
-		piece st 14*a3 7*te 14*a3r rev(st)
-	end
-
-	length 198
-		piece st 14*a3 a1 7*te 14*a3r rev(st)
-	end
-
-	length 199
-		piece st 14*a3 a1 7*te a1 14*a3r rev(st)
-	end
-
-	length 200
-		piece st 14*a3 a2 7*te a1 14*a3r rev(st)
-	end
-
-	length 201
-		piece st 14*a3 a2 7*te a2r 14*a3r rev(st)
-	end
-
-	length 202
-		piece st 14*a3 a2 7*te 15*a3r rev(st)
-	end
-
-	length 203
-		piece st 15*a3 7*te 15*a3r rev(st)
-	end
-
-	length 204
-		piece st 15*a3 a1 7*te 15*a3r rev(st)
-	end
-
-	length 205
-		piece st 15*a3 a1 7*te a1 15*a3r rev(st)
-	end
-
-	length 206
-		piece st 15*a3 a2 7*te a1 15*a3r rev(st)
-	end
-
-	length 207
-		piece st 15*a3 a2 7*te a2r 15*a3r rev(st)
-	end
-
-	length 208
-		piece st 15*a3 a2 7*te 16*a3r rev(st)
-	end
-
-	length 209
-		piece st 16*a3 7*te 16*a3r rev(st)
-	end
-
-	length 210
-		piece st 16*a3 a1 7*te 16*a3r rev(st)
-	end
-
-	length 211
-		piece st 16*a3 a1 7*te a1 16*a3r rev(st)
-	end
-
-	length 212
-		piece st 16*a3 a2 7*te a1 16*a3r rev(st)
-	end
-
-	length 213
-		piece st 16*a3 a2 7*te a2r 16*a3r rev(st)
-	end
-
-	length 214
-		piece st 16*a3 a2 7*te 17*a3r rev(st)
-	end
-
-	length 215
-		piece st 17*a3 7*te 17*a3r rev(st)
-	end
-
-	length 216
-		piece st 17*a3 a1 7*te 17*a3r rev(st)
-	end
-
-	length 217
-		piece st 17*a3 a1 7*te a1 17*a3r rev(st)
-	end
-
-	length 218
-		piece st 17*a3 a2 7*te a1 17*a3r rev(st)
-	end
-
-	length 219
-		piece st 17*a3 a2 7*te a2r 17*a3r rev(st)
-	end
-
-	length 220
-		piece st 17*a3 a2 7*te 18*a3r rev(st)
-	end
-
-	length 221
-		piece st 18*a3 7*te 18*a3r rev(st)
-	end
-
-	length 222
-		piece st 18*a3 a1 7*te 18*a3r rev(st)
-	end
-
-	length 223
-		piece st 18*a3 a1 7*te a1 18*a3r rev(st)
-	end
-
-	length 224
-		piece st 18*a3 a2 7*te a1 18*a3r rev(st)
-	end
-
-	length 225
-		piece st 18*a3 a2 7*te a2r 18*a3r rev(st)
-	end
-
-	length 226
-		piece st 18*a3 a2 7*te 19*a3r rev(st)
-	end
-
-	length 227
-		piece st 19*a3 7*te 19*a3r rev(st)
-	end
-
-	length 228
-		piece st 19*a3 a1 7*te 19*a3r rev(st)
-	end
-
-	length 229
-		piece st 19*a3 a1 7*te a1 19*a3r rev(st)
-	end
-
-	length 230
-		piece st 19*a3 a2 7*te a1 19*a3r rev(st)
-	end
-
-	length 231
-		piece st 19*a3 a2 7*te a2r 19*a3r rev(st)
-	end
-
-	length 232
-		piece st 19*a3 a2 7*te 20*a3r rev(st)
-	end
-
-	length 233
-		piece st 20*a3 7*te 20*a3r rev(st)
-	end
-
-	length 234
-		piece st 20*a3 a1 7*te 20*a3r rev(st)
-	end
-
-	length 235
-		piece st 20*a3 a1 7*te a1 20*a3r rev(st)
-	end
-
-	length 236
-		piece st 20*a3 a2 7*te a1 20*a3r rev(st)
-	end
-
-	length 237
-		piece st 20*a3 a2 7*te a2r 20*a3r rev(st)
-	end
-
-	length 238
-		piece st 20*a3 a2 7*te 21*a3r rev(st)
-	end
-
-	length 239
-		piece st 21*a3 7*te 21*a3r rev(st)
-	end
-
-	length 240
-		piece st 21*a3 a1 7*te 21*a3r rev(st)
-	end
-
-	length 241
-		piece st 21*a3 a1 7*te a1 21*a3r rev(st)
-	end
-
-	length 242
-		piece st 21*a3 a2 7*te a1 21*a3r rev(st)
-	end
-
-	length 243
-		piece st 21*a3 a2 7*te a2r 21*a3r rev(st)
-	end
-
-	length 244
-		piece st 21*a3 a2 7*te 22*a3r rev(st)
-	end
-
-	length 245
-		piece st 22*a3 7*te 22*a3r rev(st)
-	end
-
-	length 246
-		piece st 22*a3 a1 7*te 22*a3r rev(st)
-	end
-
-	length 247
-		piece st 22*a3 a1 7*te a1 22*a3r rev(st)
-	end
-
-	length 248
-		piece st 22*a3 a2 7*te a1 22*a3r rev(st)
-	end
-
-	length 249
-		piece st 22*a3 a2 7*te a2r 22*a3r rev(st)
-	end
-
-	length 250
-		piece st 22*a3 a2 7*te 23*a3r rev(st)
-	end
-
-	length 251
-		piece st 23*a3 7*te 23*a3r rev(st)
-	end
-
-	length 252
-		piece st 23*a3 a1 7*te 23*a3r rev(st)
-	end
-
-	length 253
-		piece st 23*a3 a1 7*te a1 23*a3r rev(st)
-	end
-
-	length 254
-		piece st 23*a3 a2 7*te a1 23*a3r rev(st)
-	end
-
-	length 255
-		piece st 23*a3 a2 7*te a2r 23*a3r rev(st)
-	end
-end
 
 # IDS2 under deck steel arch (St. Paul Smith Ave. Bridge) - AVE Variant
 
@@ -10329,5 +9402,934 @@ end
 
 	length 254
 		piece ab sp sp pl sp sp 22*ar sp sp pl sp sp rev(ab)
+	end
+end
+
+
+# avenue cable-stayed
+
+bridge 16
+
+section st
+	piece <0x0afa1000, 2> <0x0af91000, 2>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af71000, 2> <0x0af71000, 0>
+end 
+
+section a1
+	piece <0x0af61000, 2> <0x0af61000, 0>
+end
+
+section a2
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af71000, 2> <0x0af71000, 0>
+end
+
+section a2r
+	piece <0x0af71000, 2> <0x0af71000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+end
+
+section a3
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af71000, 2> <0x0af71000, 0>
+end
+
+section a3r
+	piece <0x0af71000, 2> <0x0af71000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>	
+end
+
+section te
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af81000, 2> <0x0af81000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+	piece <0x0af61000, 2> <0x0af61000, 0>
+end
+
+	length 38
+		piece st 2*te rev(st)
+	end
+
+	length 39
+		piece st a1 2*te rev(st)
+	end
+
+	length 40
+		piece st a1 2*te a1 rev(st)
+	end
+
+	length 41
+		piece st a2 2*te a1 rev(st)
+	end
+
+	length 42
+		piece st a2 2*te a2r rev(st)
+	end
+
+	length 43
+		piece st a2 2*te a3r rev(st)
+	end
+
+	length 44
+		piece st a3 2*te a3r rev(st)
+	end
+
+	length 45
+		piece st a3 a1 2*te a3r rev(st)
+	end
+
+	length 46
+		piece st a3 a1 2*te a1 a3r rev(st)
+	end
+
+	length 47
+		piece st a3 a2 2*te a1 a3r rev(st)
+	end
+
+	length 48
+		piece st a3 a2 2*te a2r a3r rev(st)
+	end
+
+	length 49
+		piece st a3 a2 2*te 2*a3r rev(st)
+	end
+
+	length 50
+		piece st 2*a3 2*te 2*a3r rev(st)
+	end
+
+	length 51
+		piece st 2*a3 2*te a1 2*a3r rev(st)
+	end
+
+	length 52
+		piece st 2*a3 a1 2*te a1 2*a3r rev(st)
+	end
+
+	length 53
+		piece st 2*a3 a2 2*te a1 2*a3r rev(st)
+	end
+
+	length 54
+		piece st 2*a3 a2 2*te a2r 2*a3r rev(st)
+	end
+
+	length 55
+		piece st 2*a3 a2 2*te 3*a3r rev(st)
+	end
+
+	length 56
+		piece st 3*a3 2*te 3*a3r rev(st)
+	end
+
+	length 57
+		piece st 3*a3 2*te a1 3*a3r rev(st)
+	end
+
+	length 58
+		piece st 3*a3 a1 2*te a1 3*a3r rev(st)
+	end
+
+	length 59
+		piece st 3*a3 a2 2*te a1 3*a3r rev(st)
+	end
+
+	length 60
+		piece st 3*a3 a2 2*te a2r 3*a3r rev(st)
+	end
+
+	length 61
+		piece st 3*a3 a2 2*te 4*a3r rev(st)
+	end
+
+	length 62
+		piece st 4*a3 2*te 4*a3r rev(st)
+	end
+
+	length 63
+		piece st 4*a3 2*te a1 4*a3r rev(st)
+	end
+
+	length 64
+		piece st 4*a3 a1 2*te a1 4*a3r rev(st)
+	end
+
+	length 65
+		piece st 4*a3 a2 2*te a1 4*a3r rev(st)
+	end
+
+	length 66
+		piece st 4*a3 a2 2*te a2r 4*a3r rev(st)
+	end
+
+	length 67
+		piece st 4*a3 a2 2*te 5*a3r rev(st)
+	end
+
+	length 68
+		piece st 5*a3 2*te 5*a3r rev(st)
+	end
+
+	length 69
+		piece st 5*a3 2*te a1 5*a3r rev(st)
+	end
+
+	length 70
+		piece st 5*a3 a1 2*te a1 5*a3r rev(st)
+	end
+
+	length 71
+		piece st 5*a3 a2 2*te a1 5*a3r rev(st)
+	end
+
+	length 72
+		piece st 5*a3 a2 2*te a2r 5*a3r rev(st)
+	end
+
+	length 73
+		piece st 5*a3 a2 2*te 6*a3r rev(st)
+	end
+
+	length 74
+		piece st 6*a3 2*te 6*a3r rev(st)
+	end
+
+	length 75
+		piece st 6*a3 2*te a1 6*a3r rev(st)
+	end
+
+	length 76
+		piece st 6*a3 a1 2*te a1 6*a3r rev(st)
+	end
+
+	length 77
+		piece st 6*a3 a2 2*te a1 6*a3r rev(st)
+	end
+
+	length 78
+		piece st 6*a3 a2 2*te a2r 6*a3r rev(st)
+	end
+
+	length 79
+		piece st 6*a3 a2 2*te 7*a3r rev(st)
+	end
+
+	length 80
+		piece st 7*a3 2*te 7*a3r rev(st)
+	end
+
+	length 81
+		piece st 4*a3 a2 3*te a2r 4*a3r rev(st)
+	end
+
+	length 82
+		piece st 4*a3 a2 3*te 5*a3r rev(st)
+	end 
+
+	length 83
+		piece st 5*a3 3*te 5*a3r rev(st)
+	end
+
+	length 84
+		piece st 5*a3 a1 3*te 5*a3r rev(st)
+	end
+
+	length 85
+		piece st 5*a3 a1 3*te a1 5*a3r rev(st)
+	end
+
+	length 86
+		piece st 5*a3 a2 3*te a1 5*a3r rev(st)
+	end
+
+	length 87
+		piece st 5*a3 a2 3*te a2r 5*a3r rev(st)
+	end
+
+	length 88
+		piece st 5*a3 a2 3*te 6*a3r rev(st)
+	end
+
+	length 89
+		piece st 6*a3 3*te 6*a3r rev(st)
+	end
+
+	length 90
+		piece st 6*a3 a1 3*te 6*a3r rev(st)
+	end
+
+	length 91
+		piece st 6*a3 a1 3*te a1 6*a3r rev(st)
+	end
+
+	length 92
+		piece st 6*a3 a2 3*te a1 6*a3r rev(st)
+	end
+
+	length 93
+		piece st 6*a3 a2 3*te a2r 6*a3r rev(st)
+	end
+
+	length 94
+		piece st 6*a3 a2 3*te 7*a3r rev(st)
+	end
+
+	length 95
+		piece st 7*a3 3*te 7*a3r rev(st)
+	end
+
+	length 96
+		piece st 7*a3 a1 3*te 7*a3r rev(st)
+	end
+
+	length 97
+		piece st 7*a3 a1 3*te a1 7*a3r rev(st)
+	end
+
+	length 98
+		piece st 7*a3 a2 3*te a1 7*a3r rev(st)
+	end
+
+	length 99
+		piece st 7*a3 a2 3*te rev(a2) 7*a3r rev(st)
+	end
+
+	length 100
+		piece st 7*a3 a2 3*te 8*a3r rev(st)
+	end
+
+	length 101
+		piece st 8*a3 3*te 8*a3r rev(st)
+	end
+
+	length 102
+		piece st 8*a3 a1 3*te 8*a3r rev(st)
+	end
+
+	length 103
+		piece st 8*a3 a1 3*te a1 8*a3r rev(st)
+	end
+
+	length 104
+		piece st 8*a3 a2 3*te a1 8*a3r rev(st)
+	end
+
+	length 105
+		piece st 8*a3 a2 3*te a2r 8*a3r rev(st)
+	end
+
+	length 106
+		piece st 8*a3 a2 3*te 9*a3r rev(st)
+	end
+
+	length 107
+		piece st 9*a3 3*te 9*a3r rev(st)
+	end
+
+	length 108
+		piece st 6*a3 a2 4*te a2r 6*a3r rev(st)
+	end
+
+	length 109
+		piece st 6*a3 a2 4*te 7*a3r rev(st)
+	end 
+
+	length 110
+		piece st 7*a3 4*te 7*a3r rev(st)
+	end
+
+	length 111
+		piece st 7*a3 a1 4*te 7*a3r rev(st)
+	end
+
+	length 112
+		piece st 7*a3 a1 4*te a1 7*a3r rev(st)
+	end
+
+	length 113
+		piece st 7*a3 a2 4*te a1 7*a3r rev(st)
+	end
+
+	length 114
+		piece st 7*a3 a2 4*te a2r 7*a3r rev(st)
+	end
+
+	length 115
+		piece st 7*a3 a2 4*te 8*a3r rev(st)
+	end
+
+	length 116
+		piece st 8*a3 4*te 8*a3r rev(st)
+	end
+
+	length 117
+		piece st 8*a3 a1 4*te 8*a3r rev(st)
+	end
+
+	length 118
+		piece st 8*a3 a1 4*te a1 8*a3r rev(st)
+	end
+
+	length 119
+		piece st 8*a3 a2 4*te a1 8*a3r rev(st)
+	end
+
+	length 120
+		piece st 8*a3 a2 4*te a2r 8*a3r rev(st)
+	end
+
+	length 121
+		piece st 8*a3 a2 4*te 9*a3r rev(st)
+	end
+
+	length 122
+		piece st 9*a3 4*te 9*a3r rev(st)
+	end
+
+	length 123
+		piece st 9*a3 a1 4*te 9*a3r rev(st)
+	end
+
+	length 124
+		piece st 9*a3 a1 4*te a1 9*a3r rev(st)
+	end
+
+	length 125
+		piece st 9*a3 a2 4*te a1 9*a3r rev(st)
+	end
+
+	length 126
+		piece st 9*a3 a2 4*te a2r 9*a3r rev(st)
+	end
+
+	length 127
+		piece st 9*a3 a2 4*te 10*a3r rev(st)
+	end
+
+	length 128
+		piece st 10*a3 4*te 10*a3r rev(st)
+	end
+
+	length 129
+		piece st 10*a3 a1 4*te 10*a3r rev(st)
+	end
+
+	length 130
+		piece st 10*a3 a1 4*te a1 10*a3r rev(st)
+	end
+
+	length 131
+		piece st 10*a3 a2 4*te a1 10*a3r rev(st)
+	end
+
+	length 132
+		piece st 10*a3 a2 4*te a2r 10*a3r rev(st)
+	end
+
+	length 133
+		piece st 10*a3 a2 4*te 11*a3r rev(st)
+	end
+
+	length 134
+		piece st 11*a3 4*te 11*a3r rev(st)
+	end
+
+	length 135
+		piece st 8*a3 a2 5*te a2r 8*a3r rev(st)
+	end
+
+	length 136
+		piece st 8*a3 a2 5*te 9*a3r rev(st)
+	end 
+
+	length 137
+		piece st 9*a3 5*te 9*a3r rev(st)
+	end
+
+	length 138
+		piece st 9*a3 a1 5*te 9*a3r rev(st)
+	end
+
+	length 139
+		piece st 9*a3 a1 5*te a1 9*a3r rev(st)
+	end
+
+	length 140
+		piece st 9*a3 a2 5*te a1 9*a3r rev(st)
+	end
+
+	length 141
+		piece st 9*a3 a2 5*te a2r 9*a3r rev(st)
+	end
+
+	length 142
+		piece st 9*a3 a2 5*te 10*a3r rev(st)
+	end
+
+	length 143
+		piece st 10*a3 5*te 10*a3r rev(st)
+	end
+
+	length 144
+		piece st 10*a3 a1 5*te 10*a3r rev(st)
+	end
+
+	length 145
+		piece st 10*a3 a1 5*te a1 10*a3r rev(st)
+	end
+
+	length 146
+		piece st 10*a3 a2 5*te a1 10*a3r rev(st)
+	end
+
+	length 147
+		piece st 10*a3 a2 5*te a2r 10*a3r rev(st)
+	end
+
+	length 148
+		piece st 10*a3 a2 5*te 11*a3r rev(st)
+	end
+
+	length 149
+		piece st 11*a3 5*te 11*a3r rev(st)
+	end
+
+	length 150
+		piece st 11*a3 a1 5*te 11*a3r rev(st)
+	end
+
+	length 151
+		piece st 11*a3 a1 5*te a1 11*a3r rev(st)
+	end
+
+	length 152
+		piece st 11*a3 a2 5*te a1 11*a3r rev(st)
+	end
+
+	length 153
+		piece st 11*a3 a2 5*te a2r 11*a3r rev(st)
+	end
+
+	length 154
+		piece st 11*a3 a2 5*te 12*a3r rev(st)
+	end
+
+	length 155
+		piece st 12*a3 5*te 12*a3r rev(st)
+	end
+
+	length 156
+		piece st 12*a3 a1 5*te 12*a3r rev(st)
+	end
+
+	length 157
+		piece st 12*a3 a1 5*te a1 12*a3r rev(st)
+	end
+
+	length 158
+		piece st 12*a3 a2 5*te a1 12*a3r rev(st)
+	end
+
+	length 159
+		piece st 12*a3 a2 5*te a2r 12*a3r rev(st)
+	end
+
+	length 160
+		piece st 12*a3 a2 5*te 13*a3r rev(st)
+	end
+
+	length 161
+		piece st 13*a3 5*te 13*a3r rev(st)
+	end
+
+	length 162
+		piece st 10*a3 a2 6*te a2r 10*a3r rev(st)
+	end
+
+	length 163
+		piece st 10*a3 a2 6*te 11*a3r rev(st)
+	end 
+
+	length 164
+		piece st 11*a3 6*te 11*a3r rev(st)
+	end
+
+	length 165
+		piece st 11*a3 a1 6*te 11*a3r rev(st)
+	end
+
+	length 166
+		piece st 11*a3 a1 6*te a1 11*a3r rev(st)
+	end
+
+	length 167
+		piece st 11*a3 a2 6*te a1 11*a3r rev(st)
+	end
+
+	length 168
+		piece st 11*a3 a2 6*te a2r 11*a3r rev(st)
+	end
+
+	length 169
+		piece st 11*a3 a2 6*te 12*a3r rev(st)
+	end
+
+	length 170
+		piece st 12*a3 6*te 12*a3r rev(st)
+	end
+
+	length 171
+		piece st 12*a3 a1 6*te 12*a3r rev(st)
+	end
+
+	length 172
+		piece st 12*a3 a1 6*te a1 12*a3r rev(st)
+	end
+
+	length 173
+		piece st 12*a3 a2 6*te a1 12*a3r rev(st)
+	end
+
+	length 174
+		piece st 12*a3 a2 6*te a2r 12*a3r rev(st)
+	end
+
+	length 175
+		piece st 12*a3 a2 6*te 13*a3r rev(st)
+	end
+
+	length 176
+		piece st 13*a3 6*te 13*a3r rev(st)
+	end
+
+	length 177
+		piece st 13*a3 a1 6*te 13*a3r rev(st)
+	end
+
+	length 178
+		piece st 13*a3 a1 6*te a1 13*a3r rev(st)
+	end
+
+	length 179
+		piece st 13*a3 a2 6*te a1 13*a3r rev(st)
+	end
+
+	length 180
+		piece st 13*a3 a2 6*te a2r 13*a3r rev(st)
+	end
+
+	length 181
+		piece st 13*a3 a2 6*te 14*a3r rev(st)
+	end
+
+	length 182
+		piece st 14*a3 6*te 14*a3r rev(st)
+	end
+
+	length 183
+		piece st 14*a3 a1 6*te 14*a3r rev(st)
+	end
+
+	length 184
+		piece st 14*a3 a1 6*te a1 14*a3r rev(st)
+	end
+
+	length 185
+		piece st 14*a3 a2 6*te a1 14*a3r rev(st)
+	end
+
+	length 186
+		piece st 14*a3 a2 6*te a2r 14*a3r rev(st)
+	end
+
+	length 187
+		piece st 14*a3 a2 6*te 15*a3r rev(st)
+	end
+
+	length 188
+		piece st 15*a3 6*te 15*a3r rev(st)
+	end
+
+	length 189
+		piece st 12*a3 a2 7*te a2r 12*a3r rev(st)
+	end
+
+	length 190
+		piece st 12*a3 a2 7*te 13*a3r rev(st)
+	end 
+
+	length 191
+		piece st 13*a3 7*te 13*a3r rev(st)
+	end
+
+	length 192
+		piece st 13*a3 a1 7*te 13*a3r rev(st)
+	end
+
+	length 193
+		piece st 13*a3 a1 7*te a1 13*a3r rev(st)
+	end
+
+	length 194
+		piece st 13*a3 a2 7*te a1 13*a3r rev(st)
+	end
+
+	length 195
+		piece st 13*a3 a2 7*te a2r 13*a3r rev(st)
+	end
+
+	length 196
+		piece st 13*a3 a2 7*te 14*a3r rev(st)
+	end
+
+	length 197
+		piece st 14*a3 7*te 14*a3r rev(st)
+	end
+
+	length 198
+		piece st 14*a3 a1 7*te 14*a3r rev(st)
+	end
+
+	length 199
+		piece st 14*a3 a1 7*te a1 14*a3r rev(st)
+	end
+
+	length 200
+		piece st 14*a3 a2 7*te a1 14*a3r rev(st)
+	end
+
+	length 201
+		piece st 14*a3 a2 7*te a2r 14*a3r rev(st)
+	end
+
+	length 202
+		piece st 14*a3 a2 7*te 15*a3r rev(st)
+	end
+
+	length 203
+		piece st 15*a3 7*te 15*a3r rev(st)
+	end
+
+	length 204
+		piece st 15*a3 a1 7*te 15*a3r rev(st)
+	end
+
+	length 205
+		piece st 15*a3 a1 7*te a1 15*a3r rev(st)
+	end
+
+	length 206
+		piece st 15*a3 a2 7*te a1 15*a3r rev(st)
+	end
+
+	length 207
+		piece st 15*a3 a2 7*te a2r 15*a3r rev(st)
+	end
+
+	length 208
+		piece st 15*a3 a2 7*te 16*a3r rev(st)
+	end
+
+	length 209
+		piece st 16*a3 7*te 16*a3r rev(st)
+	end
+
+	length 210
+		piece st 16*a3 a1 7*te 16*a3r rev(st)
+	end
+
+	length 211
+		piece st 16*a3 a1 7*te a1 16*a3r rev(st)
+	end
+
+	length 212
+		piece st 16*a3 a2 7*te a1 16*a3r rev(st)
+	end
+
+	length 213
+		piece st 16*a3 a2 7*te a2r 16*a3r rev(st)
+	end
+
+	length 214
+		piece st 16*a3 a2 7*te 17*a3r rev(st)
+	end
+
+	length 215
+		piece st 17*a3 7*te 17*a3r rev(st)
+	end
+
+	length 216
+		piece st 17*a3 a1 7*te 17*a3r rev(st)
+	end
+
+	length 217
+		piece st 17*a3 a1 7*te a1 17*a3r rev(st)
+	end
+
+	length 218
+		piece st 17*a3 a2 7*te a1 17*a3r rev(st)
+	end
+
+	length 219
+		piece st 17*a3 a2 7*te a2r 17*a3r rev(st)
+	end
+
+	length 220
+		piece st 17*a3 a2 7*te 18*a3r rev(st)
+	end
+
+	length 221
+		piece st 18*a3 7*te 18*a3r rev(st)
+	end
+
+	length 222
+		piece st 18*a3 a1 7*te 18*a3r rev(st)
+	end
+
+	length 223
+		piece st 18*a3 a1 7*te a1 18*a3r rev(st)
+	end
+
+	length 224
+		piece st 18*a3 a2 7*te a1 18*a3r rev(st)
+	end
+
+	length 225
+		piece st 18*a3 a2 7*te a2r 18*a3r rev(st)
+	end
+
+	length 226
+		piece st 18*a3 a2 7*te 19*a3r rev(st)
+	end
+
+	length 227
+		piece st 19*a3 7*te 19*a3r rev(st)
+	end
+
+	length 228
+		piece st 19*a3 a1 7*te 19*a3r rev(st)
+	end
+
+	length 229
+		piece st 19*a3 a1 7*te a1 19*a3r rev(st)
+	end
+
+	length 230
+		piece st 19*a3 a2 7*te a1 19*a3r rev(st)
+	end
+
+	length 231
+		piece st 19*a3 a2 7*te a2r 19*a3r rev(st)
+	end
+
+	length 232
+		piece st 19*a3 a2 7*te 20*a3r rev(st)
+	end
+
+	length 233
+		piece st 20*a3 7*te 20*a3r rev(st)
+	end
+
+	length 234
+		piece st 20*a3 a1 7*te 20*a3r rev(st)
+	end
+
+	length 235
+		piece st 20*a3 a1 7*te a1 20*a3r rev(st)
+	end
+
+	length 236
+		piece st 20*a3 a2 7*te a1 20*a3r rev(st)
+	end
+
+	length 237
+		piece st 20*a3 a2 7*te a2r 20*a3r rev(st)
+	end
+
+	length 238
+		piece st 20*a3 a2 7*te 21*a3r rev(st)
+	end
+
+	length 239
+		piece st 21*a3 7*te 21*a3r rev(st)
+	end
+
+	length 240
+		piece st 21*a3 a1 7*te 21*a3r rev(st)
+	end
+
+	length 241
+		piece st 21*a3 a1 7*te a1 21*a3r rev(st)
+	end
+
+	length 242
+		piece st 21*a3 a2 7*te a1 21*a3r rev(st)
+	end
+
+	length 243
+		piece st 21*a3 a2 7*te a2r 21*a3r rev(st)
+	end
+
+	length 244
+		piece st 21*a3 a2 7*te 22*a3r rev(st)
+	end
+
+	length 245
+		piece st 22*a3 7*te 22*a3r rev(st)
+	end
+
+	length 246
+		piece st 22*a3 a1 7*te 22*a3r rev(st)
+	end
+
+	length 247
+		piece st 22*a3 a1 7*te a1 22*a3r rev(st)
+	end
+
+	length 248
+		piece st 22*a3 a2 7*te a1 22*a3r rev(st)
+	end
+
+	length 249
+		piece st 22*a3 a2 7*te a2r 22*a3r rev(st)
+	end
+
+	length 250
+		piece st 22*a3 a2 7*te 23*a3r rev(st)
+	end
+
+	length 251
+		piece st 23*a3 7*te 23*a3r rev(st)
+	end
+
+	length 252
+		piece st 23*a3 a1 7*te 23*a3r rev(st)
+	end
+
+	length 253
+		piece st 23*a3 a1 7*te a1 23*a3r rev(st)
+	end
+
+	length 254
+		piece st 23*a3 a2 7*te a1 23*a3r rev(st)
+	end
+
+	length 255
+		piece st 23*a3 a2 7*te a2r 23*a3r rev(st)
 	end
 end
