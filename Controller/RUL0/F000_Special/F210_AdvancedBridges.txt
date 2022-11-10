@@ -14,25 +14,22 @@ AddTypes     = F212, 1F212, 2F212, 3F212, 4F212, 5F212, 6F212, 7F212;(3) #344f-#
 Piece = 0.0, -16.0, 0, 0, 0x5c160005
 PreviewEffect = preview_av_1_001
 
-CellLayout = ........
-CellLayout = ........
-CellLayout = ..a.....
-CellLayout = ..A....<
-CellLayout = ..^.....
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
 
 ;senw
-CheckType = A - rail: 0x00000000
-CheckType = a - monorail: 0x01010000 rail: 0x02000200 optional
-;CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x01010000 rail: 0x02000200, 0xffffffff optional
 
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ..+....<
-ConsLayout = ..^.....
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x5c160005
+PlaceQueryID = 0x5f0f700f
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001F210]
@@ -58,25 +55,22 @@ CopyFrom	=	0x3F210
 Piece = 0.0, -16.0, 0, 0, 0x5c160005
 PreviewEffect = preview_av_1_001
 
-CellLayout = ........
-CellLayout = ........
-CellLayout = ..a.....
-CellLayout = ..A....<
-CellLayout = ..^.....
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
 
 ;senw
-CheckType = A - dirtroad: 0x00000000
-CheckType = a - monorail: 0x03030000 rail: 0x02000200 optional
-;CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x03030000 rail: 0x02000200, 0xffffffff optional
 
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ..+....<
-ConsLayout = ..^.....
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x5c260005
+PlaceQueryID = 0x5f0f740f
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001F211]
@@ -102,25 +96,22 @@ CopyFrom	=	0x3F211
 Piece = 0.0, -16.0, 0, 0, 0x5c160005
 PreviewEffect = preview_av_1_001
 
-CellLayout = ........
-CellLayout = ........
-CellLayout = ..a.....
-CellLayout = ..A....<
-CellLayout = ..^.....
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
 
 ;senw
-CheckType = A - dirtroad: 0x00000000
-CheckType = a - monorail: 0x03010000 rail: 0x02000200 optional
-;CheckType = b - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x03010000 rail: 0x02000200, 0xffffffff optional
 
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ........
-ConsLayout = ..+....<
-ConsLayout = ..^.....
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
 
 AutoTileBase = 0x55387000
-PlaceQueryID = 0x5c360005
+PlaceQueryID = 0x5f0f7a0f
 Costs = 600
 
 [HighwayIntersectionInfo_0x0001F212]
