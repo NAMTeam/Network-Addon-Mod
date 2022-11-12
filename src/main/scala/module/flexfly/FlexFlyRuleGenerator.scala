@@ -51,6 +51,7 @@ class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
             val minSeg = minor~dir;            val baseSeg = base~dir
             val t3Seg = main~orient(T3) * rot; val tSeg = main~orient(t) * rot
             Rules += t3Seg & minSeg | baseSeg       | %              | tSeg & minSeg   // T3 > t
+            Rules += t3Seg & minSeg | minSeg        | %              | tSeg & minSeg   // T3 > t (stability)
             Rules += t3Seg          | minSeg        | t3Seg & minSeg | tSeg & minSeg   // T3 < orth
             Rules += t3Seg          | tSeg & minSeg | t3Seg & minSeg | %               // T3 < t
             Rules += tSeg & minSeg  | baseSeg       | %              | minSeg          // t > orth
