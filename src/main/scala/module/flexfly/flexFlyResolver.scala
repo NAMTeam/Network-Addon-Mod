@@ -123,6 +123,44 @@ class FlexFlyResolver extends RhwResolver {
       if (minReversed) id + 1 else id
   }
 
+  val flyFlyCrossings = {
+    val m = collection.mutable.Map.empty[Tile, IdTile]
+    val T5 = (0,+241,0,-231)
+    val pieceIds = Seq(
+      (1, T1, R0F0, T2, R0F1),  // 4-tile gap
+      (2, T2, R0F0, T1, R0F1),  // 4-tile gap
+      (3, T3, R0F0, T4, R0F1),  // 2-tile gap
+      (4, T4, R0F0, T3, R0F1),  // 2-tile gap
+      (5, T5, R0F0, T2, R3F0),  // 0-tile gap
+      (0, T2, R3F1, T5, R0F1))  // 0-tile gap
+    for {
+      (pid, flags0, rf0, flags1, rf1) <- pieceIds
+      main <- Seq(L1Mis, L2Mis, L3Mis, L1Rhw4, L2Rhw4, L3Rhw4)
+      top = main~flags0 * rf0
+      (minor, minOffset) <- Seq(Rhw4 -> 0, Mis -> 2, L1Rhw4 -> 4, L1Mis -> 6, L2Rhw4 -> 8, L2Mis -> 0xA)
+      if minor.height < main.height
+      bottom = minor~flags1 * rf1
+      reversed <- Seq(false, true)
+      minReversed <- Seq(false, true)
+      tile0 = (if (reversed) top.reverse else top) & (if (minReversed) bottom.reverse else bottom)
+      rf <- RotFlip.values
+    } /*do*/ {
+      val tile = tile0 * rf
+      val h0 = top.network.height
+      val sn = setNumber(h0)
+      val cn = curveNumber(reversed, top.network)
+      require(bottom.network.height < 4)
+      val nn = 0x80 + minOffset + (if (minReversed) 1 else 0)
+      val id = 0x5CA << 20 | sn << 16 | cn << 12 | pid << 8 | nn
+      m.getOrElseUpdate(tile, IdTile(id, rf))
+    }
+    m.toMap
+  }
+
+  private[this] def isFlyFly(seg1: Segment, seg2: Segment): Boolean = {
+    (seg1.flags exists flexFlags.contains) && (seg2.flags exists flexFlags.contains)
+  }
+
   override def apply(tile: Tile): IdTile = if (!hasFlexFlyFlag(tile)) {
     super.apply(tile)
   } else tile.segs.toSeq match {
@@ -133,6 +171,8 @@ class FlexFlyResolver extends RhwResolver {
       val cn = curveNumber(reversed, seg.network)
       val id = 0x5CA << 20 | sn << 16 | cn << 12 | pid << 8 | h << 4 | h
       IdTile(id, rf)
+    case Seq(seg1, seg2) if isFlyFly(seg1, seg2) =>
+      flyFlyCrossings(tile)
     case Seq(seg1, seg2) =>
       val CrossingProp(pid, rf, reversed, minReversed) = flexFlyCrossings(tile.segs map (_.flags))
       val (flySeg, minSeg) = if (seg1.flags exists flexFlags.contains) (seg1, seg2) else (seg2, seg1)
