@@ -11,8 +11,8 @@ object CompileAllMetarules {
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
     flexfly.CompileFlexFlyCode.main(Array.empty)
 
-    // Uncomment the next line to generate models and paths (requires some .dat files, see comment in that file).
-    // flexfly.CompileFlexFlyResources.main(Array.empty)
+    // Generate FlexFly models and paths (requires some .dat files, see comment in that file).
+    flexfly.CompileFlexFlyResources.main(Array.empty)
 
     // temporarily disabled due to errors
     // CompileRealRailwayCode.main(Array.empty)
