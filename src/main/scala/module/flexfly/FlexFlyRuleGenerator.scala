@@ -102,6 +102,7 @@ class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator with 
           minor <- RhwNetworks from Mis to L4Rhw4
           if main.height <= 3 && minor.height < main.height
           o2 <- orientations
+          if orient == o2 && orient == orientations(0)  // currently inside×inside curves only
         } /*do*/ {
           // 4-tile gap
           Rules ++= stabilize( main~orient(T1) | minor~o2(T1) * R0F1 | main~orient(T1) & minor~o2(T2) * R0F1 | main~orient(T2) & minor~o2(T1) * R0F1 )

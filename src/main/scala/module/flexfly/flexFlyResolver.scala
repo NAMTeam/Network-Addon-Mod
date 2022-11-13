@@ -140,8 +140,8 @@ class FlexFlyResolver extends RhwResolver {
       (minor, minOffset) <- Seq(Rhw4 -> 0, Mis -> 2, L1Rhw4 -> 4, L1Mis -> 6, L2Rhw4 -> 8, L2Mis -> 0xA)
       if minor.height < main.height
       bottom = minor~flags1 * rf1
-      reversed <- Seq(false, true)
-      minReversed <- Seq(false, true)
+      reversed <- Seq(false /*, true*/)  // currently inside×inside curves only
+      minReversed <- Seq(false /*, true*/)  // currently inside×inside curves only
       tile0 = (if (reversed) top.reverse else top) & (if (minReversed) bottom.reverse else bottom)
       rf <- RotFlip.values
     } /*do*/ {
