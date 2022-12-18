@@ -88,7 +88,7 @@ object NetworkConfig {
     add(Owr3, NS)(-7.25f)(-4.5f, 0f, 4.5f)(-4.5f, 0f, 4.5f)(7.25f)
     add(Owr3, ES)(-7.99f)(-6f, 0f, 6f)(-6f, 0f, 6f)(7.99f)
     add(Nrd4, NS)(-7.5f)(-5.25f, -1.95f)(1.95f, 5.25f)(7.5f)
-    add(Nrd4, ES)(-10.88f)(-7.3f, -2.95f)(2.95f, 7.3f)(10.88f)
+    add(Nrd4, ES)(-7.99f)(-7.3f, -2.95f)(2.95f, 7.3f)(7.99f)
 
     add(Tla5, NS)(-6.39f)(-2.5f, 2.5f, 7.25f)(8.75f, 13.5f, 18.5f)(22.39f)
     add(Tla5, ES, SE)(-4f)(1.5f, 9f, 16-1.5f)(16+1.5f, 23f, 30.5f)(36f) // TODO these are preliminary (guessed) turning lane coordinates
