@@ -9405,6 +9405,2015 @@ end
 	end
 end
 
+# IDS2 under deck steel arch (St. Paul Smith Ave. Bridge), OWR-5 variant
+
+bridge 35
+
+#abutment
+section ab
+	piece <0x401E0000, 0> <0x401E1000, 0>
+end
+
+#main arch
+section ar
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E3000, 2>:270 <0x401E3000, 0>:270
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+	piece <0x401E2000, 2> <0x401E2000, 0>
+end
+
+#span piece
+section sp
+	piece <0x401E4000, 2> <0x401E4000, 0>
+end
+
+#pillar piece
+section pl
+	piece <0x401E5000, 2>:270 <0x401E5000, 0>:270
+end
+
+	length 13
+		piece ab ar rev(ab)
+	end
+
+	length 14
+		piece ab sp ar rev(ab)
+	end
+
+	length 15
+		piece ab sp ar sp rev(ab)
+	end
+
+	length 16
+		piece ab sp sp ar sp rev(ab)
+	end
+
+	length 17
+		piece ab sp sp ar sp sp rev(ab)
+	end
+
+	length 18
+		piece ab sp pl sp ar sp sp rev(ab)
+	end
+
+	length 19
+		piece ab sp pl sp ar sp pl sp rev(ab)
+	end
+
+	length 20
+		piece ab sp pl sp sp ar sp pl sp rev(ab)
+	end
+
+	length 21
+		piece ab sp pl sp sp ar sp sp pl sp rev(ab)
+	end
+
+	length 22
+		piece ab sp sp pl sp sp ar sp sp pl sp rev(ab)
+	end
+
+	length 23
+		piece ab sp sp pl sp sp ar sp sp pl sp sp rev(ab)
+	end
+
+	length 24
+		piece ab ar ar rev(ab)
+	end
+
+	length 25
+		piece ab sp ar ar rev(ab)
+	end
+
+	length 26
+		piece ab sp ar ar sp rev(ab)
+	end
+
+	length 27
+		piece ab sp sp ar ar sp rev(ab)
+	end
+
+	length 28
+		piece ab sp sp ar ar sp sp rev(ab)
+	end
+
+	length 29
+		piece ab sp pl sp ar ar sp sp rev(ab)
+	end
+
+	length 30
+		piece ab sp pl sp ar ar sp pl sp rev(ab)
+	end
+
+	length 31
+		piece ab sp pl sp sp ar ar sp pl sp rev(ab)
+	end
+
+	length 32
+		piece ab sp pl sp sp ar ar sp sp pl sp rev(ab)
+	end
+
+	length 33
+		piece ab sp sp pl sp sp ar ar sp sp pl sp rev(ab)
+	end
+
+	length 34
+		piece ab sp sp pl sp sp ar ar sp sp pl sp sp rev(ab)
+	end
+
+	length 35
+		piece ab 3*ar rev(ab)
+	end
+
+	length 36
+		piece ab sp 3*ar rev(ab)
+	end
+
+	length 37
+		piece ab sp 3*ar sp rev(ab)
+	end
+
+	length 38
+		piece ab sp sp 3*ar sp rev(ab)
+	end
+
+	length 39
+		piece ab sp sp 3*ar sp sp rev(ab)
+	end
+
+	length 40
+		piece ab sp pl sp 3*ar sp sp rev(ab)
+	end
+
+	length 41
+		piece ab sp pl sp 3*ar sp pl sp rev(ab)
+	end
+
+	length 42
+		piece ab sp pl sp sp 3*ar sp pl sp rev(ab)
+	end
+
+	length 43
+		piece ab sp pl sp sp 3*ar sp sp pl sp rev(ab)
+	end
+
+	length 44
+		piece ab sp sp pl sp sp 3*ar sp sp pl sp rev(ab)
+	end
+
+	length 45
+		piece ab sp sp pl sp sp 3*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 46
+		piece ab 4*ar rev(ab)
+	end
+
+	length 47
+		piece ab sp 4*ar rev(ab)
+	end
+
+	length 48
+		piece ab sp 4*ar sp rev(ab)
+	end
+
+	length 49
+		piece ab sp sp 4*ar sp rev(ab)
+	end
+
+	length 50
+		piece ab sp sp 4*ar sp sp rev(ab)
+	end
+
+	length 51
+		piece ab sp pl sp 4*ar sp sp rev(ab)
+	end
+
+	length 52
+		piece ab sp pl sp 4*ar sp pl sp rev(ab)
+	end
+
+	length 53
+		piece ab sp pl sp sp 4*ar sp pl sp rev(ab)
+	end
+
+	length 54
+		piece ab sp pl sp sp 4*ar sp sp pl sp rev(ab)
+	end
+
+	length 55
+		piece ab sp sp pl sp sp 4*ar sp sp pl sp rev(ab)
+	end
+
+	length 56
+		piece ab sp sp pl sp sp 4*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 57
+		piece ab 5*ar rev(ab)
+	end
+
+	length 58
+		piece ab sp 5*ar rev(ab)
+	end
+
+	length 59
+		piece ab sp 5*ar sp rev(ab)
+	end
+
+	length 60
+		piece ab sp sp 5*ar sp rev(ab)
+	end
+
+	length 61
+		piece ab sp sp 5*ar sp sp rev(ab)
+	end
+
+	length 62
+		piece ab sp pl sp 5*ar sp sp rev(ab)
+	end
+
+	length 63
+		piece ab sp pl sp 5*ar sp pl sp rev(ab)
+	end
+
+	length 64
+		piece ab sp pl sp sp 5*ar sp pl sp rev(ab)
+	end
+
+	length 65
+		piece ab sp pl sp sp 5*ar sp sp pl sp rev(ab)
+	end
+
+	length 66
+		piece ab sp sp pl sp sp 5*ar sp sp pl sp rev(ab)
+	end
+
+	length 67
+		piece ab sp sp pl sp sp 5*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 68
+		piece ab 6*ar rev(ab)
+	end
+
+	length 69
+		piece ab sp 6*ar rev(ab)
+	end
+
+	length 70
+		piece ab sp 6*ar sp rev(ab)
+	end
+
+	length 71
+		piece ab sp sp 6*ar sp rev(ab)
+	end
+
+	length 72
+		piece ab sp sp 6*ar sp sp rev(ab)
+	end
+
+	length 73
+		piece ab sp pl sp 6*ar sp sp rev(ab)
+	end
+
+	length 74
+		piece ab sp pl sp 6*ar sp pl sp rev(ab)
+	end
+
+	length 75
+		piece ab sp pl sp sp 6*ar sp pl sp rev(ab)
+	end
+
+	length 76
+		piece ab sp pl sp sp 6*ar sp sp pl sp rev(ab)
+	end
+
+	length 77
+		piece ab sp sp pl sp sp 6*ar sp sp pl sp rev(ab)
+	end
+
+	length 78
+		piece ab sp sp pl sp sp 6*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 79
+		piece ab 7*ar rev(ab)
+	end
+
+	length 80
+		piece ab sp 7*ar rev(ab)
+	end
+
+	length 81
+		piece ab sp 7*ar sp rev(ab)
+	end
+
+	length 82
+		piece ab sp sp 7*ar sp rev(ab)
+	end
+
+	length 83
+		piece ab sp sp 7*ar sp sp rev(ab)
+	end
+
+	length 84
+		piece ab sp pl sp 7*ar sp sp rev(ab)
+	end
+
+	length 85
+		piece ab sp pl sp 7*ar sp pl sp rev(ab)
+	end
+
+	length 86
+		piece ab sp pl sp sp 7*ar sp pl sp rev(ab)
+	end
+
+	length 87
+		piece ab sp pl sp sp 7*ar sp sp pl sp rev(ab)
+	end
+
+	length 88
+		piece ab sp sp pl sp sp 7*ar sp sp pl sp rev(ab)
+	end
+
+	length 89
+		piece ab sp sp pl sp sp 7*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 90
+		piece ab 8*ar rev(ab)
+	end
+
+	length 91
+		piece ab sp 8*ar rev(ab)
+	end
+
+	length 92
+		piece ab sp 8*ar sp rev(ab)
+	end
+
+	length 93
+		piece ab sp sp 8*ar sp rev(ab)
+	end
+
+	length 94
+		piece ab sp sp 8*ar sp sp rev(ab)
+	end
+
+	length 95
+		piece ab sp pl sp 8*ar sp sp rev(ab)
+	end
+
+	length 96
+		piece ab sp pl sp 8*ar sp pl sp rev(ab)
+	end
+
+	length 97
+		piece ab sp pl sp sp 8*ar sp pl sp rev(ab)
+	end
+
+	length 98
+		piece ab sp pl sp sp 8*ar sp sp pl sp rev(ab)
+	end
+
+	length 99
+		piece ab sp sp pl sp sp 8*ar sp sp pl sp rev(ab)
+	end
+
+	length 100
+		piece ab sp sp pl sp sp 8*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 101
+		piece ab 9*ar rev(ab)
+	end
+
+	length 102
+		piece ab sp 9*ar rev(ab)
+	end
+
+	length 103
+		piece ab sp 9*ar sp rev(ab)
+	end
+
+	length 104
+		piece ab sp sp 9*ar sp rev(ab)
+	end
+
+	length 105
+		piece ab sp sp 9*ar sp sp rev(ab)
+	end
+
+	length 106
+		piece ab sp pl sp 9*ar sp sp rev(ab)
+	end
+
+	length 107
+		piece ab sp pl sp 9*ar sp pl sp rev(ab)
+	end
+
+	length 108
+		piece ab sp pl sp sp 9*ar sp pl sp rev(ab)
+	end
+
+	length 109
+		piece ab sp pl sp sp 9*ar sp sp pl sp rev(ab)
+	end
+
+	length 110
+		piece ab sp sp pl sp sp 9*ar sp sp pl sp rev(ab)
+	end
+
+	length 111
+		piece ab sp sp pl sp sp 9*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 112
+		piece ab 10*ar rev(ab)
+	end
+
+	length 113
+		piece ab sp 10*ar rev(ab)
+	end
+
+	length 114
+		piece ab sp 10*ar sp rev(ab)
+	end
+
+	length 115
+		piece ab sp sp 10*ar sp rev(ab)
+	end
+
+	length 116
+		piece ab sp sp 10*ar sp sp rev(ab)
+	end
+
+	length 117
+		piece ab sp pl sp 10*ar sp sp rev(ab)
+	end
+
+	length 118
+		piece ab sp pl sp 10*ar sp pl sp rev(ab)
+	end
+
+	length 119
+		piece ab sp pl sp sp 10*ar sp pl sp rev(ab)
+	end
+
+	length 120
+		piece ab sp pl sp sp 10*ar sp sp pl sp rev(ab)
+	end
+
+	length 121
+		piece ab sp sp pl sp sp 10*ar sp sp pl sp rev(ab)
+	end
+
+	length 122
+		piece ab sp sp pl sp sp 10*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 123
+		piece ab 11*ar rev(ab)
+	end
+
+	length 124
+		piece ab sp 11*ar rev(ab)
+	end
+
+	length 125
+		piece ab sp 11*ar sp rev(ab)
+	end
+
+	length 126
+		piece ab sp sp 11*ar sp rev(ab)
+	end
+
+	length 127
+		piece ab sp sp 11*ar sp sp rev(ab)
+	end
+
+	length 128
+		piece ab sp pl sp 11*ar sp sp rev(ab)
+	end
+
+	length 129
+		piece ab sp pl sp 11*ar sp pl sp rev(ab)
+	end
+
+	length 130
+		piece ab sp pl sp sp 11*ar sp pl sp rev(ab)
+	end
+
+	length 131
+		piece ab sp pl sp sp 11*ar sp sp pl sp rev(ab)
+	end
+
+	length 132
+		piece ab sp sp pl sp sp 11*ar sp sp pl sp rev(ab)
+	end
+
+	length 133
+		piece ab sp sp pl sp sp 11*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 134
+		piece ab 12*ar rev(ab)
+	end
+
+	length 135
+		piece ab sp 12*ar rev(ab)
+	end
+
+	length 136
+		piece ab sp 12*ar sp rev(ab)
+	end
+
+	length 137
+		piece ab sp sp 12*ar sp rev(ab)
+	end
+
+	length 138
+		piece ab sp sp 12*ar sp sp rev(ab)
+	end
+
+	length 139
+		piece ab sp pl sp 12*ar sp sp rev(ab)
+	end
+
+	length 140
+		piece ab sp pl sp 12*ar sp pl sp rev(ab)
+	end
+
+	length 141
+		piece ab sp pl sp sp 12*ar sp pl sp rev(ab)
+	end
+
+	length 142
+		piece ab sp pl sp sp 12*ar sp sp pl sp rev(ab)
+	end
+
+	length 143
+		piece ab sp sp pl sp sp 12*ar sp sp pl sp rev(ab)
+	end
+
+	length 144
+		piece ab sp sp pl sp sp 12*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 145
+		piece ab 13*ar rev(ab)
+	end
+
+	length 146
+		piece ab sp 13*ar rev(ab)
+	end
+
+	length 147
+		piece ab sp 13*ar sp rev(ab)
+	end
+
+	length 148
+		piece ab sp sp 13*ar sp rev(ab)
+	end
+
+	length 149
+		piece ab sp sp 13*ar sp sp rev(ab)
+	end
+
+	length 150
+		piece ab sp pl sp 13*ar sp sp rev(ab)
+	end
+
+	length 151
+		piece ab sp pl sp 13*ar sp pl sp rev(ab)
+	end
+
+	length 152
+		piece ab sp pl sp sp 13*ar sp pl sp rev(ab)
+	end
+
+	length 153
+		piece ab sp pl sp sp 13*ar sp sp pl sp rev(ab)
+	end
+
+	length 154
+		piece ab sp sp pl sp sp 13*ar sp sp pl sp rev(ab)
+	end
+
+	length 155
+		piece ab sp sp pl sp sp 13*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 156
+		piece ab 14*ar rev(ab)
+	end
+
+	length 157
+		piece ab sp 14*ar rev(ab)
+	end
+
+	length 158
+		piece ab sp 14*ar sp rev(ab)
+	end
+
+	length 159
+		piece ab sp sp 14*ar sp rev(ab)
+	end
+
+	length 160
+		piece ab sp sp 14*ar sp sp rev(ab)
+	end
+
+	length 161
+		piece ab sp pl sp 14*ar sp sp rev(ab)
+	end
+
+	length 162
+		piece ab sp pl sp 14*ar sp pl sp rev(ab)
+	end
+
+	length 163
+		piece ab sp pl sp sp 14*ar sp pl sp rev(ab)
+	end
+
+	length 164
+		piece ab sp pl sp sp 14*ar sp sp pl sp rev(ab)
+	end
+
+	length 165
+		piece ab sp sp pl sp sp 14*ar sp sp pl sp rev(ab)
+	end
+
+	length 166
+		piece ab sp sp pl sp sp 14*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 167
+		piece ab 15*ar rev(ab)
+	end
+
+	length 168
+		piece ab sp 15*ar rev(ab)
+	end
+
+	length 169
+		piece ab sp 15*ar sp rev(ab)
+	end
+
+	length 170
+		piece ab sp sp 15*ar sp rev(ab)
+	end
+
+	length 171
+		piece ab sp sp 15*ar sp sp rev(ab)
+	end
+
+	length 172
+		piece ab sp pl sp 15*ar sp sp rev(ab)
+	end
+
+	length 173
+		piece ab sp pl sp 15*ar sp pl sp rev(ab)
+	end
+
+	length 174
+		piece ab sp pl sp sp 15*ar sp pl sp rev(ab)
+	end
+
+	length 175
+		piece ab sp pl sp sp 15*ar sp sp pl sp rev(ab)
+	end
+
+	length 176
+		piece ab sp sp pl sp sp 15*ar sp sp pl sp rev(ab)
+	end
+
+	length 177
+		piece ab sp sp pl sp sp 15*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 178
+		piece ab 16*ar rev(ab)
+	end
+
+	length 179
+		piece ab sp 16*ar rev(ab)
+	end
+
+	length 180
+		piece ab sp 16*ar sp rev(ab)
+	end
+
+	length 181
+		piece ab sp sp 16*ar sp rev(ab)
+	end
+
+	length 182
+		piece ab sp sp 16*ar sp sp rev(ab)
+	end
+
+	length 183
+		piece ab sp pl sp 16*ar sp sp rev(ab)
+	end
+
+	length 184
+		piece ab sp pl sp 16*ar sp pl sp rev(ab)
+	end
+
+	length 185
+		piece ab sp pl sp sp 16*ar sp pl sp rev(ab)
+	end
+
+	length 186
+		piece ab sp pl sp sp 16*ar sp sp pl sp rev(ab)
+	end
+
+	length 187
+		piece ab sp sp pl sp sp 16*ar sp sp pl sp rev(ab)
+	end
+
+	length 188
+		piece ab sp sp pl sp sp 16*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 189
+		piece ab 17*ar rev(ab)
+	end
+
+	length 190
+		piece ab sp 17*ar rev(ab)
+	end
+
+	length 191
+		piece ab sp 17*ar sp rev(ab)
+	end
+
+	length 192
+		piece ab sp sp 17*ar sp rev(ab)
+	end
+
+	length 193
+		piece ab sp sp 17*ar sp sp rev(ab)
+	end
+
+	length 194
+		piece ab sp pl sp 17*ar sp sp rev(ab)
+	end
+
+	length 195
+		piece ab sp pl sp 17*ar sp pl sp rev(ab)
+	end
+
+	length 196
+		piece ab sp pl sp sp 17*ar sp pl sp rev(ab)
+	end
+
+	length 197
+		piece ab sp pl sp sp 17*ar sp sp pl sp rev(ab)
+	end
+
+	length 198
+		piece ab sp sp pl sp sp 17*ar sp sp pl sp rev(ab)
+	end
+
+	length 199
+		piece ab sp sp pl sp sp 17*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 200
+		piece ab 18*ar rev(ab)
+	end
+
+	length 201
+		piece ab sp 18*ar rev(ab)
+	end
+
+	length 202
+
+
+		piece ab sp 18*ar sp rev(ab)
+	end
+
+	length 203
+		piece ab sp sp 18*ar sp rev(ab)
+	end
+
+	length 204
+		piece ab sp sp 18*ar sp sp rev(ab)
+	end
+
+	length 205
+		piece ab sp pl sp 18*ar sp sp rev(ab)
+	end
+
+	length 206
+		piece ab sp pl sp 18*ar sp pl sp rev(ab)
+	end
+
+	length 207
+		piece ab sp pl sp sp 18*ar sp pl sp rev(ab)
+	end
+
+	length 208
+		piece ab sp pl sp sp 18*ar sp sp pl sp rev(ab)
+	end
+
+	length 209
+		piece ab sp sp pl sp sp 18*ar sp sp pl sp rev(ab)
+	end
+
+	length 210
+		piece ab sp sp pl sp sp 18*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 211
+		piece ab 19*ar rev(ab)
+	end
+
+	length 212
+		piece ab sp 19*ar rev(ab)
+	end
+
+	length 213
+		piece ab sp 19*ar sp rev(ab)
+	end
+
+	length 214
+		piece ab sp sp 19*ar sp rev(ab)
+	end
+
+	length 215
+		piece ab sp sp 19*ar sp sp rev(ab)
+	end
+
+	length 216
+		piece ab sp pl sp 19*ar sp sp rev(ab)
+	end
+
+	length 217
+		piece ab sp pl sp 19*ar sp pl sp rev(ab)
+	end
+
+	length 218
+		piece ab sp pl sp sp 19*ar sp pl sp rev(ab)
+	end
+
+	length 219
+		piece ab sp pl sp sp 19*ar sp sp pl sp rev(ab)
+	end
+
+	length 220
+		piece ab sp sp pl sp sp 19*ar sp sp pl sp rev(ab)
+	end
+
+	length 221
+		piece ab sp sp pl sp sp 19*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 222
+		piece ab 20*ar rev(ab)
+	end
+
+	length 223
+		piece ab sp 20*ar rev(ab)
+	end
+
+	length 224
+		piece ab sp 20*ar sp rev(ab)
+	end
+
+	length 225
+		piece ab sp sp 20*ar sp rev(ab)
+	end
+
+	length 226
+		piece ab sp sp 20*ar sp sp rev(ab)
+	end
+
+	length 227
+		piece ab sp pl sp 20*ar sp sp rev(ab)
+	end
+
+	length 228
+		piece ab sp pl sp 20*ar sp pl sp rev(ab)
+	end
+
+	length 229
+		piece ab sp pl sp sp 20*ar sp pl sp rev(ab)
+	end
+
+	length 230
+		piece ab sp pl sp sp 20*ar sp sp pl sp rev(ab)
+	end
+
+	length 231
+		piece ab sp sp pl sp sp 20*ar sp sp pl sp rev(ab)
+	end
+
+	length 232
+		piece ab sp sp pl sp sp 20*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 233
+		piece ab 21*ar rev(ab)
+	end
+
+	length 234
+		piece ab sp 21*ar rev(ab)
+	end
+
+	length 235
+		piece ab sp 21*ar sp rev(ab)
+	end
+
+	length 236
+		piece ab sp sp 21*ar sp rev(ab)
+	end
+
+	length 237
+		piece ab sp sp 21*ar sp sp rev(ab)
+	end
+
+	length 238
+		piece ab sp pl sp 21*ar sp sp rev(ab)
+	end
+
+	length 239
+		piece ab sp pl sp 21*ar sp pl sp rev(ab)
+	end
+
+	length 240
+		piece ab sp pl sp sp 21*ar sp pl sp rev(ab)
+	end
+
+	length 241
+		piece ab sp pl sp sp 21*ar sp sp pl sp rev(ab)
+	end
+
+	length 242
+		piece ab sp sp pl sp sp 21*ar sp sp pl sp rev(ab)
+	end
+
+	length 243
+		piece ab sp sp pl sp sp 21*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 244
+		piece ab 22*ar rev(ab)
+	end
+
+	length 245
+		piece ab sp 22*ar rev(ab)
+	end
+
+	length 246
+		piece ab sp 22*ar sp rev(ab)
+	end
+
+	length 247
+		piece ab sp sp 22*ar sp rev(ab)
+	end
+
+	length 248
+		piece ab sp sp 22*ar sp sp rev(ab)
+	end
+
+	length 249
+		piece ab sp pl sp 22*ar sp sp rev(ab)
+	end
+
+	length 250
+		piece ab sp pl sp 22*ar sp pl sp rev(ab)
+	end
+
+	length 251
+		piece ab sp pl sp sp 22*ar sp pl sp rev(ab)
+	end
+
+	length 252
+		piece ab sp pl sp sp 22*ar sp sp pl sp rev(ab)
+	end
+
+	length 253
+		piece ab sp sp pl sp sp 22*ar sp sp pl sp rev(ab)
+	end
+
+	length 254
+		piece ab sp sp pl sp sp 22*ar sp sp pl sp sp rev(ab)
+	end
+end
+
+# IDS2 under deck steel arch (St. Paul Smith Ave. Bridge), OWR-4 variant
+
+bridge 39
+
+#abutment
+section ab
+	piece <0x40320000, 0> <0x40321000, 0>
+end
+
+#main arch
+section ar
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40323000, 2>:270 <0x40323000, 0>:270
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+	piece <0x40322000, 2> <0x40322000, 0>
+end
+
+#span piece
+section sp
+	piece <0x40324000, 2> <0x40324000, 0>
+end
+
+#pillar piece
+section pl
+	piece <0x40325000, 2>:270 <0x40325000, 0>:270
+end
+
+	length 13
+		piece ab ar rev(ab)
+	end
+
+	length 14
+		piece ab sp ar rev(ab)
+	end
+
+	length 15
+		piece ab sp ar sp rev(ab)
+	end
+
+	length 16
+		piece ab sp sp ar sp rev(ab)
+	end
+
+	length 17
+		piece ab sp sp ar sp sp rev(ab)
+	end
+
+	length 18
+		piece ab sp pl sp ar sp sp rev(ab)
+	end
+
+	length 19
+		piece ab sp pl sp ar sp pl sp rev(ab)
+	end
+
+	length 20
+		piece ab sp pl sp sp ar sp pl sp rev(ab)
+	end
+
+	length 21
+		piece ab sp pl sp sp ar sp sp pl sp rev(ab)
+	end
+
+	length 22
+		piece ab sp sp pl sp sp ar sp sp pl sp rev(ab)
+	end
+
+	length 23
+		piece ab sp sp pl sp sp ar sp sp pl sp sp rev(ab)
+	end
+
+	length 24
+		piece ab ar ar rev(ab)
+	end
+
+	length 25
+		piece ab sp ar ar rev(ab)
+	end
+
+	length 26
+		piece ab sp ar ar sp rev(ab)
+	end
+
+	length 27
+		piece ab sp sp ar ar sp rev(ab)
+	end
+
+	length 28
+		piece ab sp sp ar ar sp sp rev(ab)
+	end
+
+	length 29
+		piece ab sp pl sp ar ar sp sp rev(ab)
+	end
+
+	length 30
+		piece ab sp pl sp ar ar sp pl sp rev(ab)
+	end
+
+	length 31
+		piece ab sp pl sp sp ar ar sp pl sp rev(ab)
+	end
+
+	length 32
+		piece ab sp pl sp sp ar ar sp sp pl sp rev(ab)
+	end
+
+	length 33
+		piece ab sp sp pl sp sp ar ar sp sp pl sp rev(ab)
+	end
+
+	length 34
+		piece ab sp sp pl sp sp ar ar sp sp pl sp sp rev(ab)
+	end
+
+	length 35
+		piece ab 3*ar rev(ab)
+	end
+
+	length 36
+		piece ab sp 3*ar rev(ab)
+	end
+
+	length 37
+		piece ab sp 3*ar sp rev(ab)
+	end
+
+	length 38
+		piece ab sp sp 3*ar sp rev(ab)
+	end
+
+	length 39
+		piece ab sp sp 3*ar sp sp rev(ab)
+	end
+
+	length 40
+		piece ab sp pl sp 3*ar sp sp rev(ab)
+	end
+
+	length 41
+		piece ab sp pl sp 3*ar sp pl sp rev(ab)
+	end
+
+	length 42
+		piece ab sp pl sp sp 3*ar sp pl sp rev(ab)
+	end
+
+	length 43
+		piece ab sp pl sp sp 3*ar sp sp pl sp rev(ab)
+	end
+
+	length 44
+		piece ab sp sp pl sp sp 3*ar sp sp pl sp rev(ab)
+	end
+
+	length 45
+		piece ab sp sp pl sp sp 3*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 46
+		piece ab 4*ar rev(ab)
+	end
+
+	length 47
+		piece ab sp 4*ar rev(ab)
+	end
+
+	length 48
+		piece ab sp 4*ar sp rev(ab)
+	end
+
+	length 49
+		piece ab sp sp 4*ar sp rev(ab)
+	end
+
+	length 50
+		piece ab sp sp 4*ar sp sp rev(ab)
+	end
+
+	length 51
+		piece ab sp pl sp 4*ar sp sp rev(ab)
+	end
+
+	length 52
+		piece ab sp pl sp 4*ar sp pl sp rev(ab)
+	end
+
+	length 53
+		piece ab sp pl sp sp 4*ar sp pl sp rev(ab)
+	end
+
+	length 54
+		piece ab sp pl sp sp 4*ar sp sp pl sp rev(ab)
+	end
+
+	length 55
+		piece ab sp sp pl sp sp 4*ar sp sp pl sp rev(ab)
+	end
+
+	length 56
+		piece ab sp sp pl sp sp 4*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 57
+		piece ab 5*ar rev(ab)
+	end
+
+	length 58
+		piece ab sp 5*ar rev(ab)
+	end
+
+	length 59
+		piece ab sp 5*ar sp rev(ab)
+	end
+
+	length 60
+		piece ab sp sp 5*ar sp rev(ab)
+	end
+
+	length 61
+		piece ab sp sp 5*ar sp sp rev(ab)
+	end
+
+	length 62
+		piece ab sp pl sp 5*ar sp sp rev(ab)
+	end
+
+	length 63
+		piece ab sp pl sp 5*ar sp pl sp rev(ab)
+	end
+
+	length 64
+		piece ab sp pl sp sp 5*ar sp pl sp rev(ab)
+	end
+
+	length 65
+		piece ab sp pl sp sp 5*ar sp sp pl sp rev(ab)
+	end
+
+	length 66
+		piece ab sp sp pl sp sp 5*ar sp sp pl sp rev(ab)
+	end
+
+	length 67
+		piece ab sp sp pl sp sp 5*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 68
+		piece ab 6*ar rev(ab)
+	end
+
+	length 69
+		piece ab sp 6*ar rev(ab)
+	end
+
+	length 70
+		piece ab sp 6*ar sp rev(ab)
+	end
+
+	length 71
+		piece ab sp sp 6*ar sp rev(ab)
+	end
+
+	length 72
+		piece ab sp sp 6*ar sp sp rev(ab)
+	end
+
+	length 73
+		piece ab sp pl sp 6*ar sp sp rev(ab)
+	end
+
+	length 74
+		piece ab sp pl sp 6*ar sp pl sp rev(ab)
+	end
+
+	length 75
+		piece ab sp pl sp sp 6*ar sp pl sp rev(ab)
+	end
+
+	length 76
+		piece ab sp pl sp sp 6*ar sp sp pl sp rev(ab)
+	end
+
+	length 77
+		piece ab sp sp pl sp sp 6*ar sp sp pl sp rev(ab)
+	end
+
+	length 78
+		piece ab sp sp pl sp sp 6*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 79
+		piece ab 7*ar rev(ab)
+	end
+
+	length 80
+		piece ab sp 7*ar rev(ab)
+	end
+
+	length 81
+		piece ab sp 7*ar sp rev(ab)
+	end
+
+	length 82
+		piece ab sp sp 7*ar sp rev(ab)
+	end
+
+	length 83
+		piece ab sp sp 7*ar sp sp rev(ab)
+	end
+
+	length 84
+		piece ab sp pl sp 7*ar sp sp rev(ab)
+	end
+
+	length 85
+		piece ab sp pl sp 7*ar sp pl sp rev(ab)
+	end
+
+	length 86
+		piece ab sp pl sp sp 7*ar sp pl sp rev(ab)
+	end
+
+	length 87
+		piece ab sp pl sp sp 7*ar sp sp pl sp rev(ab)
+	end
+
+	length 88
+		piece ab sp sp pl sp sp 7*ar sp sp pl sp rev(ab)
+	end
+
+	length 89
+		piece ab sp sp pl sp sp 7*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 90
+		piece ab 8*ar rev(ab)
+	end
+
+	length 91
+		piece ab sp 8*ar rev(ab)
+	end
+
+	length 92
+		piece ab sp 8*ar sp rev(ab)
+	end
+
+	length 93
+		piece ab sp sp 8*ar sp rev(ab)
+	end
+
+	length 94
+		piece ab sp sp 8*ar sp sp rev(ab)
+	end
+
+	length 95
+		piece ab sp pl sp 8*ar sp sp rev(ab)
+	end
+
+	length 96
+		piece ab sp pl sp 8*ar sp pl sp rev(ab)
+	end
+
+	length 97
+		piece ab sp pl sp sp 8*ar sp pl sp rev(ab)
+	end
+
+	length 98
+		piece ab sp pl sp sp 8*ar sp sp pl sp rev(ab)
+	end
+
+	length 99
+		piece ab sp sp pl sp sp 8*ar sp sp pl sp rev(ab)
+	end
+
+	length 100
+		piece ab sp sp pl sp sp 8*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 101
+		piece ab 9*ar rev(ab)
+	end
+
+	length 102
+		piece ab sp 9*ar rev(ab)
+	end
+
+	length 103
+		piece ab sp 9*ar sp rev(ab)
+	end
+
+	length 104
+		piece ab sp sp 9*ar sp rev(ab)
+	end
+
+	length 105
+		piece ab sp sp 9*ar sp sp rev(ab)
+	end
+
+	length 106
+		piece ab sp pl sp 9*ar sp sp rev(ab)
+	end
+
+	length 107
+		piece ab sp pl sp 9*ar sp pl sp rev(ab)
+	end
+
+	length 108
+		piece ab sp pl sp sp 9*ar sp pl sp rev(ab)
+	end
+
+	length 109
+		piece ab sp pl sp sp 9*ar sp sp pl sp rev(ab)
+	end
+
+	length 110
+		piece ab sp sp pl sp sp 9*ar sp sp pl sp rev(ab)
+	end
+
+	length 111
+		piece ab sp sp pl sp sp 9*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 112
+		piece ab 10*ar rev(ab)
+	end
+
+	length 113
+		piece ab sp 10*ar rev(ab)
+	end
+
+	length 114
+		piece ab sp 10*ar sp rev(ab)
+	end
+
+	length 115
+		piece ab sp sp 10*ar sp rev(ab)
+	end
+
+	length 116
+		piece ab sp sp 10*ar sp sp rev(ab)
+	end
+
+	length 117
+		piece ab sp pl sp 10*ar sp sp rev(ab)
+	end
+
+	length 118
+		piece ab sp pl sp 10*ar sp pl sp rev(ab)
+	end
+
+	length 119
+		piece ab sp pl sp sp 10*ar sp pl sp rev(ab)
+	end
+
+	length 120
+		piece ab sp pl sp sp 10*ar sp sp pl sp rev(ab)
+	end
+
+	length 121
+		piece ab sp sp pl sp sp 10*ar sp sp pl sp rev(ab)
+	end
+
+	length 122
+		piece ab sp sp pl sp sp 10*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 123
+		piece ab 11*ar rev(ab)
+	end
+
+	length 124
+		piece ab sp 11*ar rev(ab)
+	end
+
+	length 125
+		piece ab sp 11*ar sp rev(ab)
+	end
+
+	length 126
+		piece ab sp sp 11*ar sp rev(ab)
+	end
+
+	length 127
+		piece ab sp sp 11*ar sp sp rev(ab)
+	end
+
+	length 128
+		piece ab sp pl sp 11*ar sp sp rev(ab)
+	end
+
+	length 129
+		piece ab sp pl sp 11*ar sp pl sp rev(ab)
+	end
+
+	length 130
+		piece ab sp pl sp sp 11*ar sp pl sp rev(ab)
+	end
+
+	length 131
+		piece ab sp pl sp sp 11*ar sp sp pl sp rev(ab)
+	end
+
+	length 132
+		piece ab sp sp pl sp sp 11*ar sp sp pl sp rev(ab)
+	end
+
+	length 133
+		piece ab sp sp pl sp sp 11*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 134
+		piece ab 12*ar rev(ab)
+	end
+
+	length 135
+		piece ab sp 12*ar rev(ab)
+	end
+
+	length 136
+		piece ab sp 12*ar sp rev(ab)
+	end
+
+	length 137
+		piece ab sp sp 12*ar sp rev(ab)
+	end
+
+	length 138
+		piece ab sp sp 12*ar sp sp rev(ab)
+	end
+
+	length 139
+		piece ab sp pl sp 12*ar sp sp rev(ab)
+	end
+
+	length 140
+		piece ab sp pl sp 12*ar sp pl sp rev(ab)
+	end
+
+	length 141
+		piece ab sp pl sp sp 12*ar sp pl sp rev(ab)
+	end
+
+	length 142
+		piece ab sp pl sp sp 12*ar sp sp pl sp rev(ab)
+	end
+
+	length 143
+		piece ab sp sp pl sp sp 12*ar sp sp pl sp rev(ab)
+	end
+
+	length 144
+		piece ab sp sp pl sp sp 12*ar sp sp pl sp sp rev(ab)
+	end
+	
+	length 145
+		piece ab 13*ar rev(ab)
+	end
+
+	length 146
+		piece ab sp 13*ar rev(ab)
+	end
+
+	length 147
+		piece ab sp 13*ar sp rev(ab)
+	end
+
+	length 148
+		piece ab sp sp 13*ar sp rev(ab)
+	end
+
+	length 149
+		piece ab sp sp 13*ar sp sp rev(ab)
+	end
+
+	length 150
+		piece ab sp pl sp 13*ar sp sp rev(ab)
+	end
+
+	length 151
+		piece ab sp pl sp 13*ar sp pl sp rev(ab)
+	end
+
+	length 152
+		piece ab sp pl sp sp 13*ar sp pl sp rev(ab)
+	end
+
+	length 153
+		piece ab sp pl sp sp 13*ar sp sp pl sp rev(ab)
+	end
+
+	length 154
+		piece ab sp sp pl sp sp 13*ar sp sp pl sp rev(ab)
+	end
+
+	length 155
+		piece ab sp sp pl sp sp 13*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 156
+		piece ab 14*ar rev(ab)
+	end
+
+	length 157
+		piece ab sp 14*ar rev(ab)
+	end
+
+	length 158
+		piece ab sp 14*ar sp rev(ab)
+	end
+
+	length 159
+		piece ab sp sp 14*ar sp rev(ab)
+	end
+
+	length 160
+		piece ab sp sp 14*ar sp sp rev(ab)
+	end
+
+	length 161
+		piece ab sp pl sp 14*ar sp sp rev(ab)
+	end
+
+	length 162
+		piece ab sp pl sp 14*ar sp pl sp rev(ab)
+	end
+
+	length 163
+		piece ab sp pl sp sp 14*ar sp pl sp rev(ab)
+	end
+
+	length 164
+		piece ab sp pl sp sp 14*ar sp sp pl sp rev(ab)
+	end
+
+	length 165
+		piece ab sp sp pl sp sp 14*ar sp sp pl sp rev(ab)
+	end
+
+	length 166
+		piece ab sp sp pl sp sp 14*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 167
+		piece ab 15*ar rev(ab)
+	end
+
+	length 168
+		piece ab sp 15*ar rev(ab)
+	end
+
+	length 169
+		piece ab sp 15*ar sp rev(ab)
+	end
+
+	length 170
+		piece ab sp sp 15*ar sp rev(ab)
+	end
+
+	length 171
+		piece ab sp sp 15*ar sp sp rev(ab)
+	end
+
+	length 172
+		piece ab sp pl sp 15*ar sp sp rev(ab)
+	end
+
+	length 173
+		piece ab sp pl sp 15*ar sp pl sp rev(ab)
+	end
+
+	length 174
+		piece ab sp pl sp sp 15*ar sp pl sp rev(ab)
+	end
+
+	length 175
+		piece ab sp pl sp sp 15*ar sp sp pl sp rev(ab)
+	end
+
+	length 176
+		piece ab sp sp pl sp sp 15*ar sp sp pl sp rev(ab)
+	end
+
+	length 177
+		piece ab sp sp pl sp sp 15*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 178
+		piece ab 16*ar rev(ab)
+	end
+
+	length 179
+		piece ab sp 16*ar rev(ab)
+	end
+
+	length 180
+		piece ab sp 16*ar sp rev(ab)
+	end
+
+	length 181
+		piece ab sp sp 16*ar sp rev(ab)
+	end
+
+	length 182
+		piece ab sp sp 16*ar sp sp rev(ab)
+	end
+
+	length 183
+		piece ab sp pl sp 16*ar sp sp rev(ab)
+	end
+
+	length 184
+		piece ab sp pl sp 16*ar sp pl sp rev(ab)
+	end
+
+	length 185
+		piece ab sp pl sp sp 16*ar sp pl sp rev(ab)
+	end
+
+	length 186
+		piece ab sp pl sp sp 16*ar sp sp pl sp rev(ab)
+	end
+
+	length 187
+		piece ab sp sp pl sp sp 16*ar sp sp pl sp rev(ab)
+	end
+
+	length 188
+		piece ab sp sp pl sp sp 16*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 189
+		piece ab 17*ar rev(ab)
+	end
+
+	length 190
+		piece ab sp 17*ar rev(ab)
+	end
+
+	length 191
+		piece ab sp 17*ar sp rev(ab)
+	end
+
+	length 192
+		piece ab sp sp 17*ar sp rev(ab)
+	end
+
+	length 193
+		piece ab sp sp 17*ar sp sp rev(ab)
+	end
+
+	length 194
+		piece ab sp pl sp 17*ar sp sp rev(ab)
+	end
+
+	length 195
+		piece ab sp pl sp 17*ar sp pl sp rev(ab)
+	end
+
+	length 196
+		piece ab sp pl sp sp 17*ar sp pl sp rev(ab)
+	end
+
+	length 197
+		piece ab sp pl sp sp 17*ar sp sp pl sp rev(ab)
+	end
+
+	length 198
+		piece ab sp sp pl sp sp 17*ar sp sp pl sp rev(ab)
+	end
+
+	length 199
+		piece ab sp sp pl sp sp 17*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 200
+		piece ab 18*ar rev(ab)
+	end
+
+	length 201
+		piece ab sp 18*ar rev(ab)
+	end
+
+	length 202
+
+
+		piece ab sp 18*ar sp rev(ab)
+	end
+
+	length 203
+		piece ab sp sp 18*ar sp rev(ab)
+	end
+
+	length 204
+		piece ab sp sp 18*ar sp sp rev(ab)
+	end
+
+	length 205
+		piece ab sp pl sp 18*ar sp sp rev(ab)
+	end
+
+	length 206
+		piece ab sp pl sp 18*ar sp pl sp rev(ab)
+	end
+
+	length 207
+		piece ab sp pl sp sp 18*ar sp pl sp rev(ab)
+	end
+
+	length 208
+		piece ab sp pl sp sp 18*ar sp sp pl sp rev(ab)
+	end
+
+	length 209
+		piece ab sp sp pl sp sp 18*ar sp sp pl sp rev(ab)
+	end
+
+	length 210
+		piece ab sp sp pl sp sp 18*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 211
+		piece ab 19*ar rev(ab)
+	end
+
+	length 212
+		piece ab sp 19*ar rev(ab)
+	end
+
+	length 213
+		piece ab sp 19*ar sp rev(ab)
+	end
+
+	length 214
+		piece ab sp sp 19*ar sp rev(ab)
+	end
+
+	length 215
+		piece ab sp sp 19*ar sp sp rev(ab)
+	end
+
+	length 216
+		piece ab sp pl sp 19*ar sp sp rev(ab)
+	end
+
+	length 217
+		piece ab sp pl sp 19*ar sp pl sp rev(ab)
+	end
+
+	length 218
+		piece ab sp pl sp sp 19*ar sp pl sp rev(ab)
+	end
+
+	length 219
+		piece ab sp pl sp sp 19*ar sp sp pl sp rev(ab)
+	end
+
+	length 220
+		piece ab sp sp pl sp sp 19*ar sp sp pl sp rev(ab)
+	end
+
+	length 221
+		piece ab sp sp pl sp sp 19*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 222
+		piece ab 20*ar rev(ab)
+	end
+
+	length 223
+		piece ab sp 20*ar rev(ab)
+	end
+
+	length 224
+		piece ab sp 20*ar sp rev(ab)
+	end
+
+	length 225
+		piece ab sp sp 20*ar sp rev(ab)
+	end
+
+	length 226
+		piece ab sp sp 20*ar sp sp rev(ab)
+	end
+
+	length 227
+		piece ab sp pl sp 20*ar sp sp rev(ab)
+	end
+
+	length 228
+		piece ab sp pl sp 20*ar sp pl sp rev(ab)
+	end
+
+	length 229
+		piece ab sp pl sp sp 20*ar sp pl sp rev(ab)
+	end
+
+	length 230
+		piece ab sp pl sp sp 20*ar sp sp pl sp rev(ab)
+	end
+
+	length 231
+		piece ab sp sp pl sp sp 20*ar sp sp pl sp rev(ab)
+	end
+
+	length 232
+		piece ab sp sp pl sp sp 20*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 233
+		piece ab 21*ar rev(ab)
+	end
+
+	length 234
+		piece ab sp 21*ar rev(ab)
+	end
+
+	length 235
+		piece ab sp 21*ar sp rev(ab)
+	end
+
+	length 236
+		piece ab sp sp 21*ar sp rev(ab)
+	end
+
+	length 237
+		piece ab sp sp 21*ar sp sp rev(ab)
+	end
+
+	length 238
+		piece ab sp pl sp 21*ar sp sp rev(ab)
+	end
+
+	length 239
+		piece ab sp pl sp 21*ar sp pl sp rev(ab)
+	end
+
+	length 240
+		piece ab sp pl sp sp 21*ar sp pl sp rev(ab)
+	end
+
+	length 241
+		piece ab sp pl sp sp 21*ar sp sp pl sp rev(ab)
+	end
+
+	length 242
+		piece ab sp sp pl sp sp 21*ar sp sp pl sp rev(ab)
+	end
+
+	length 243
+		piece ab sp sp pl sp sp 21*ar sp sp pl sp sp rev(ab)
+	end
+
+	length 244
+		piece ab 22*ar rev(ab)
+	end
+
+	length 245
+		piece ab sp 22*ar rev(ab)
+	end
+
+	length 246
+		piece ab sp 22*ar sp rev(ab)
+	end
+
+	length 247
+		piece ab sp sp 22*ar sp rev(ab)
+	end
+
+	length 248
+		piece ab sp sp 22*ar sp sp rev(ab)
+	end
+
+	length 249
+		piece ab sp pl sp 22*ar sp sp rev(ab)
+	end
+
+	length 250
+		piece ab sp pl sp 22*ar sp pl sp rev(ab)
+	end
+
+	length 251
+		piece ab sp pl sp sp 22*ar sp pl sp rev(ab)
+	end
+
+	length 252
+		piece ab sp pl sp sp 22*ar sp sp pl sp rev(ab)
+	end
+
+	length 253
+		piece ab sp sp pl sp sp 22*ar sp sp pl sp rev(ab)
+	end
+
+	length 254
+		piece ab sp sp pl sp sp 22*ar sp sp pl sp sp rev(ab)
+	end
+end
 
 # avenue cable-stayed
 
