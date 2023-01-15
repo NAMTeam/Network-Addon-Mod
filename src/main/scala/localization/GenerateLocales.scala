@@ -23,7 +23,7 @@ object GenerateLocales {
     "de" -> 3)
 
   def parseTgi(s: String): Tgi = {
-    val arr = s.trim().split("-").map(id => Integer.parseInt(id, 16))
+    val arr = s.trim().split("-").map(id => java.lang.Long.parseLong(id, 16).toInt)
     Tgi(arr(0), arr(1), arr(2))
   }
 
