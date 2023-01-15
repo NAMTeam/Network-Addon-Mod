@@ -26,6 +26,8 @@ def transduce(rule: Rule[Tile]): Unit = RuleTransducer(rule) foreach println
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
+libraryDependencies += "org.yaml" % "snakeyaml" % "1.33"
+
 
 // the following are transitive dependencies of metarules
 
