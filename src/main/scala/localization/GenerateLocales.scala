@@ -32,9 +32,14 @@ object GenerateLocales {
     val targetDir = new File("target/locale/")
     targetDir.mkdirs()
     for (lang <- languageOffset.keys) {
-      val inputFile = new File(f"ltext/${lang}/test.yaml")
-      val translations = managed(new FileInputStream(inputFile)) acquireAndGet { stream =>
+      val inputDir = new File(f"ltext/${lang}")
+      val inputFiles = inputDir.listFiles.filter(_.isFile).toList.filter { file =>
+        file.getName.endsWith(".yaml")}
+      val translations = new java.util.HashMap[String, String]
+      for (inputFile <- inputFiles) {
+        translations.putAll(managed(new FileInputStream(inputFile)) acquireAndGet { stream =>
         yaml.load(stream): java.util.HashMap[String, String]
+      })
       }
       import scala.collection.JavaConverters._
       val entries = translations.asScala.toSeq.map { case (key, text) =>
