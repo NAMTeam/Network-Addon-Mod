@@ -1,0 +1,709 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DIAGONAL BRIDGES BUTTON SECTION
+;DIAGONAL BRIDGES BUTTON SECTION
+; 0x000#F11#
+
+RotationRing	= F110, 1F110, 2F110, 3F110, 4F110, 5F110, 6F110, 7F110 ; Road Level Bridge Standard
+AddTypes	= F111, 2F111, 3F111, 4F111, 5F111, 6F111, 7F111, 8F111 ; Road Lars Bridge
+AddTypes	= F112, 2F112, 3F112, 4F112, 5F112, 6F112, 7F112, 8F112 ; Road Undertruss Bridge
+AddTypes	= F113, 1F113, 2F113, 3F113, 4F113, 5F113, 6F113, 7F113 ; OWR Level Standard Bridge
+AddTypes	= F114, 2F114, 3F114, 4F114, 5F114, 6F114, 7F114, 8F114 ; OWR Lars Bridge
+AddTypes	= F115, 2F115, 3F115, 4F115, 5F115, 6F115, 7F115, 8F115 ; OWR Undertruss Bridge
+AddTypes	= F116, 1F116, 2F116, 3F116, 4F116, 5F116, 6F116, 7F116 ; Avenue Level Bridge Standard
+AddTypes	= F117, 1F117, 2F117, 3F117, 4F117, 5F117, 6F117, 7F117 ; Avenue Undertruss Bridge
+AddTypes	= F118, 2F118, 3F118, 4F118, 5F118, 6F118, 7F118, 8F118 ; Rail Level Bridge Standard
+AddTypes	= F119, 2F119, 3F119, 4F119, 5F119, 6F119, 7F119, 8F119 ; Rail Undertruss Bridge
+AddTypes	= F11A, 1F11A, 2F11A, 3F11A, 4F11A, 5F11A, 6F11A, 7F11A ; Groundhighway Bridge Standard
+;AddTypes	= F11B, 1F11B, 2F11B, 3F11B, 4F11B, 5F11B, 6F11B, 7F11B ; RHW Level Bridge Standard
+;AddTypes	= F11C, 1F11C, 2F11C, 3F11C, 4F11C, 5F11C, 6F11C, 7F11C ; RHW Undertruss Bridge
+;AddTypes	= F11D, 1F11D, 2F11D, 3F11D, 4F11D, 5F11D, 6F11D, 7F11D ; Lightrail Bridge Standard
+;AddTypes	= F11E, 1F11E, 2F11E, 3F11E, 4F11E, 5F11E, 6F11E, 7F11E ; Monorail Bridge Standard
+;AddTypes	= F11F, 1F11F, 2F11F, 3F11F, 4F11F, 5F11F, 6F11F, 7F11F ; Elevated Highway Standard
+
+
+
+;###separator###
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;DIAGONAL BRIDGES
+
+
+
+[HighwayIntersectionInfo_0x0000F110]
+;Added by memo 04/30/08.
+;diagonal level road bridge standard starter puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0005
+PreviewEffect = preview_diagonal_bridge_001
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - road: 0x03010000
+CheckType = a - road: 0x00000301 avenue: 0x03010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0005
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F110]
+CopyFrom	= 0xF110
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002F110]
+CopyFrom	= 0xF110
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003F110]
+CopyFrom	= 0x1F110
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F110]
+CopyFrom	= 0xF110
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005F110]
+CopyFrom	= 0x1F110
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F110]
+CopyFrom	= 0xF110
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007F110]
+CopyFrom	= 0x1F110
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F111]
+;Added by memo 03/05/11.
+;diagonal bridge road Lars
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0305
+PreviewEffect = preview_diagonal_bridge_002
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - road: 0x03010000
+CheckType = a - road: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0305
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F111]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0305
+PreviewEffect = preview_diagonal_bridge_002
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - road: 0x03010000
+CheckType = a - road: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0300
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0305
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F111]
+CopyFrom	= 0x1F111
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F111]
+CopyFrom	= 0xF111
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F111]
+CopyFrom	= 0x2F111
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F111]
+CopyFrom	= 0xF111
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F111]
+CopyFrom	= 0x2F111
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F111]
+CopyFrom	= 0xF111
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F111]
+CopyFrom	= 0x2F111
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F112]
+;Added by memo 03/06/11.
+;diagonal bridge road undertruss
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0605
+PreviewEffect = preview_diagonal_bridge_003
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - road: 0x03010000
+CheckType = a - road: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0605
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F112]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0605
+PreviewEffect = preview_diagonal_bridge_003
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - road: 0x03010000
+CheckType = a - road: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0600
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0605
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F112]
+CopyFrom	= 0x1F112
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F112]
+CopyFrom	= 0xF112
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F112]
+CopyFrom	= 0x2F112
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F112]
+CopyFrom	= 0xF112
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F112]
+CopyFrom	= 0x2F112
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F112]
+CopyFrom	= 0xF112
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F112]
+CopyFrom	= 0x2F112
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F113]
+;Added by memo 03/06/11.
+;diagonal level onewayroad bridge standard starter puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0905
+PreviewEffect = preview_diagonal_bridge_004
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - onewayroad: 0x03010000
+CheckType = a - onewayroad: 0x00000301 avenue: 0x03010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0900
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0905
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F113]
+CopyFrom	= 0xF113
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0002F113]
+CopyFrom	= 0xF113
+Rotate		= 1
+[HighwayIntersectionInfo_0x0003F113]
+CopyFrom	= 0x1F113
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F113]
+CopyFrom	= 0xF113
+Rotate		= 2
+[HighwayIntersectionInfo_0x0005F113]
+CopyFrom	= 0x1F113
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F113]
+CopyFrom	= 0xF113
+Rotate		= 3
+[HighwayIntersectionInfo_0x0007F113]
+CopyFrom	= 0x1F113
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F114]
+;Added by memo 03/05/11.
+;diagonal bridge onewayroad Lars
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0c05
+PreviewEffect = preview_diagonal_bridge_005
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - onewayroad: 0x03010000
+CheckType = a - onewayroad: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0c05
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F114]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0c05
+PreviewEffect = preview_diagonal_bridge_005
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - onewayroad: 0x03010000
+CheckType = a - onewayroad: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0c00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0c05
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F114]
+CopyFrom	= 0x1F114
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F114]
+CopyFrom	= 0xF114
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F114]
+CopyFrom	= 0x2F114
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F114]
+CopyFrom	= 0xF114
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F114]
+CopyFrom	= 0x2F114
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F114]
+CopyFrom	= 0xF114
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F114]
+CopyFrom	= 0x2F114
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F115]
+;Added by memo 03/06/11.
+;diagonal bridge onewayroad undertruss
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0f05
+PreviewEffect = preview_diagonal_bridge_006
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - onewayroad: 0x03010000
+CheckType = a - onewayroad: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0f00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0f05
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F115]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f0f05
+PreviewEffect = preview_diagonal_bridge_006
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - onewayroad: 0x03010000
+CheckType = a - onewayroad: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f0f00
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f0f05
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F115]
+CopyFrom	= 0x1F115
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F115]
+CopyFrom	= 0xF115
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F115]
+CopyFrom	= 0x2F115
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F115]
+CopyFrom	= 0xF115
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F115]
+CopyFrom	= 0x2F115
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F115]
+CopyFrom	= 0xF115
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F115]
+CopyFrom	= 0x2F115
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F118]
+;Added by memo 03/06/11.
+;diagonal bridge rail standard
+Piece = 0.0, 0.0, 0, 0, 0x5f0f1205
+PreviewEffect = preview_diagonal_bridge_007
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - rail: 0x03010000
+CheckType = a - rail: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f1200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f1205
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F118]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f1205
+PreviewEffect = preview_diagonal_bridge_007
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - rail: 0x03010000
+CheckType = a - rail: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f1200
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f1205
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F118]
+CopyFrom	= 0x1F118
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F118]
+CopyFrom	= 0xF118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F118]
+CopyFrom	= 0x2F118
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F118]
+CopyFrom	= 0xF118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F118]
+CopyFrom	= 0x2F118
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F118]
+CopyFrom	= 0xF118
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F118]
+CopyFrom	= 0x2F118
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F119]
+;Added by memo 03/06/11.
+;diagonal bridge rail undertruss
+Piece = 0.0, 0.0, 0, 0, 0x5f0f1205
+PreviewEffect = preview_diagonal_bridge_007
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - rail: 0x03010000
+CheckType = a - rail: 0x00000301 avenue: 0x01010103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f1500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f1505
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F119]
+;this one does not appear in game, is just used for correct mirroring to save false intersections
+;I could not solve this problem in a better way.
+Piece = 0.0, 0.0, 0, 0, 0x5f0f1205
+PreviewEffect = preview_diagonal_bridge_007
+
+CellLayout =........
+CellLayout =...Za..<
+CellLayout =........
+CellLayout =...^....
+
+CheckType = Z - rail: 0x03010000
+CheckType = a - rail: 0x00000301 avenue: 0x03030103, 0xffffffff optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =.........
+ConsLayout =...^.....
+
+AutoTileBase=	0x5f0f1500
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f1505
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0002F119]
+CopyFrom	= 0x1F119
+Rotate		= 1
+Transpose	= 1
+[HighwayIntersectionInfo_0x0003F119]
+CopyFrom	= 0xF119
+Rotate		= 1
+[HighwayIntersectionInfo_0x0004F119]
+CopyFrom	= 0x2F119
+Rotate		= 1
+[HighwayIntersectionInfo_0x0005F119]
+CopyFrom	= 0xF119
+Rotate		= 2
+[HighwayIntersectionInfo_0x0006F119]
+CopyFrom	= 0x2F119
+Rotate		= 2
+[HighwayIntersectionInfo_0x0007F119]
+CopyFrom	= 0xF119
+Rotate		= 3
+[HighwayIntersectionInfo_0x0008F119]
+CopyFrom	= 0x2F119
+Rotate		= 3
+
+
+
+[HighwayIntersectionInfo_0x0000F116]
+;Added by memo 03/08/11.
+;diagonal level avenue bridge standard starter puzzle piece
+Piece = -16.0, 0.0, 0, 0, 0x5f0f1805
+PreviewEffect = preview_diagonal_bridge_009
+
+CellLayout =.........
+CellLayout =...Za...<
+CellLayout =..feY....
+CellLayout =..hg.....
+CellLayout =....^....
+
+CheckType = Z - avenue: 0x03010000
+CheckType = Y - avenue: 0x00000301
+CheckType = a - avenue: 0x03000001 dirtroad: 0x02010303, 0xffffffff optional
+;CheckType = b - dirtroad: 0x03010000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00000301, 0xffffffff optional
+;CheckType = d - dirtroad: 0x03000001, 0xff0000ff optional
+CheckType = e - avenue: 0x03010301, 0xffffffff optional
+CheckType = f - avenue: 0x03010000, 0xffff0000 optional
+CheckType = g - avenue: 0x00000301, 0x0000ffff optional
+CheckType = h - avenue: 0x00010300, 0x00ffff00 optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =....+....
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase=	0x5f0f1800
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f1800
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F116]
+CopyFrom	= 0xF116
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F116]
+CopyFrom	= 0xF116
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F116]
+CopyFrom	= 0xF116
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004F116]
+CopyFrom	= 0xF116
+[HighwayIntersectionInfo_0x0005F116]
+CopyFrom	= 0x1F116
+[HighwayIntersectionInfo_0x0006F116]
+CopyFrom	= 0x2F116
+[HighwayIntersectionInfo_0x0007F116]
+CopyFrom	= 0x3F116
+
+
+
+[HighwayIntersectionInfo_0x0000F117]
+;Added by memo 03/08/11.
+;diagonal avenue bridge undertruss starter puzzle piece
+CopyFrom = 0xF116
+PlaceQueryID = 0x5f0f1801
+Transpose = 1
+Rotate = 2
+
+[HighwayIntersectionInfo_0x0001F117]
+CopyFrom	= 0xF117
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F117]
+CopyFrom	= 0xF117
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F117]
+CopyFrom	= 0xF117
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004F117]
+CopyFrom	= 0xF117
+[HighwayIntersectionInfo_0x0005F117]
+CopyFrom	= 0x1F117
+[HighwayIntersectionInfo_0x0006F117]
+CopyFrom	= 0x2F117
+[HighwayIntersectionInfo_0x0007F117]
+CopyFrom	= 0x3F117
+
+
+
+[HighwayIntersectionInfo_0x0000F11A]
+;Added by memo 03/08/11.
+;diagonal level groundhighway bridge standard starter puzzle piece
+Piece = -16.0, 0.0, 0, 0, 0x5f0f2005
+PreviewEffect = preview_diagonal_bridge_010
+
+CellLayout =.........
+CellLayout =...Za...<
+CellLayout =..feY....
+CellLayout =..hg.....
+CellLayout =....^....
+
+CheckType = Z - groundhighway: 0x03010000
+CheckType = Y - groundhighway: 0x00000301
+CheckType = a - groundhighway: 0x03000001 dirtroad: 0x02010303, 0xffffffff optional
+;CheckType = b - dirtroad: 0x03010000, 0xffffffff optional
+;CheckType = c - dirtroad: 0x00000301, 0xffffffff optional
+;CheckType = d - dirtroad: 0x03000001, 0xff0000ff optional
+CheckType = e - groundhighway: 0x03010301, 0xffffffff optional
+CheckType = f - groundhighway: 0x03010000, 0xffff0000 optional
+CheckType = g - groundhighway: 0x00000301, 0x0000ffff optional
+CheckType = h - groundhighway: 0x00010300, 0x00ffff00 optional
+
+ConsLayout =.........
+ConsLayout =...+....<
+ConsLayout =....+....
+ConsLayout =.........
+ConsLayout =....^....
+
+AutoTileBase=	0x5f0f2000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f0f2000
+Costs       = 1000
+
+[HighwayIntersectionInfo_0x0001F11A]
+CopyFrom	= 0xF11A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002F11A]
+CopyFrom	= 0xF11A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003F11A]
+CopyFrom	= 0xF11A
+Rotate		= 3
+[HighwayIntersectionInfo_0x0004F11A]
+CopyFrom	= 0xF11A
+[HighwayIntersectionInfo_0x0005F11A]
+CopyFrom	= 0x1F11A
+[HighwayIntersectionInfo_0x0006F11A]
+CopyFrom	= 0x2F11A
+[HighwayIntersectionInfo_0x0007F11A]
+CopyFrom	= 0x3F11A
+
+
+
+;END OF DIAGONAL BRIDGES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+

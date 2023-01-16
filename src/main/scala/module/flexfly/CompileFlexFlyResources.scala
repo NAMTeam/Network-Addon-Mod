@@ -114,11 +114,24 @@ object CompileFlexFlyResources {
         BufferedEntry(tgi, model, compressed = true)
       }
 
+      val flyFlyModels = for {
+        (tile, id3) <- resolve.flyFlyCrossings.iterator
+        if id3.rf == meta.RotFlip.R0F0
+      } yield {
+        val Seq(bottom, top) = tile.segs.toSeq.sortBy(_.network.height)
+        val id1 = resolve(top)
+        val model1 = rotate(getBaseModel(id1.id), id1.rf)
+        val id2 = resolve(bottom)
+        val model2 = rotate(getBaseModel(id2.id), id2.rf)
+        val model = rotate(append(model1, model2), R0F0 / id3.rf)
+        BufferedEntry(mkTgi(id3.id), model, compressed = true)
+      }
+
       val baseCurveModels = for ((n, orient, t) <- flexFlyTiles) yield {
         val id = resolve(n~orient(t)).id
         BufferedEntry(mkTgi(id), getBaseModel(id), compressed = true)
       }
-      baseCurveModels ++ crossingModels
+      baseCurveModels ++ crossingModels ++ flyFlyModels
     }
 
     val effdirs = for ((id, label) <- CompileFlexFlyRul0And1.previews(resolve)) yield {

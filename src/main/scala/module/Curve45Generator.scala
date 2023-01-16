@@ -35,7 +35,17 @@ import Network._, Flags._, Flag._, RotFlip._, Implicits._
  *       +---------+---------+---------+---------+
  */
 
-trait Curve45Generator { _: RuleGenerator =>
+trait Stability { _: RuleGenerator =>
+  def stabilize(rule: Rule[Tile]): Seq[Rule[Tile]] = {
+    if (rule(0) == rule(2) || rule(1) == rule(3)) {
+      Seq(rule)
+    } else { // TODO handle corner cases
+      Seq(rule, Rule(rule(0), rule(3), rule(2), rule(3)), Rule(rule(2), rule(1), rule(2), rule(3)))
+    }
+  }
+}
+
+trait Curve45Generator extends Stability { _: RuleGenerator =>
 
   private def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
 
@@ -55,14 +65,6 @@ trait Curve45Generator { _: RuleGenerator =>
   private def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
     // TODO mini curves
     (n.isRhw && n > L4Rhw6s || n.isNwm && n >= Tla5) && !hasMiniCurve(n, inside)
-  }
-
-  private def stabilize(rule: Rule[Tile]): Seq[Rule[Tile]] = {
-    if (rule(0) == rule(2) || rule(1) == rule(3)) {
-      Seq(rule)
-    } else { // TODO handle corner cases
-      Seq(rule, Rule(rule(0), rule(3), rule(2), rule(3)), Rule(rule(2), rule(1), rule(2), rule(3)))
-    }
   }
 
   def createCurve45Rules(main: Network): Unit = {
