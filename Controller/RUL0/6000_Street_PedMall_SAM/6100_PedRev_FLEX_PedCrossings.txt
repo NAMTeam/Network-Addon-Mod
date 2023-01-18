@@ -69,7 +69,7 @@ AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Avenue/Dual-Tile NWM
 AddTypes     = 6106, 16106, 26106, 36106 ;Size 1 Triple Avenue/Road
 AddTypes     = 6107, 16107, 26107, 36107 ;Size 2 Triple Avenue/Road
 AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
-
+AddTypes     = 610C, 1610C, 2610C, 3610C ;Sidewalk Pedmall Draggable
 
 ;-- (LONG MENU, ORDERED BY WIDTH FIRST, LENGTH SECOND) Mid-block Crosswalks for Road, AVE and bidirectional NWM --
 
@@ -800,4 +800,40 @@ CopyFrom    = 0x6112
 Rotate		= 2
 [HighwayIntersectionInfo_0x00036112]
 CopyFrom    = 0x6112
+Rotate		= 3
+
+;Draggable Pedmalls - prototype deployment
+[HighwayIntersectionInfo_0x0000610C]
+;Added by LucarioBoricua 2023-jan-18
+;Last updated:           2023-jan-18
+;Sidewalk Draggable Pedmall - Draggable version of Center Pole pedmall puzzle piece
+Piece = 0.0, 0.0, 0, 0, 0x5C531105
+PreviewEffect = preview_ped_malls_sidewalk1
+
+CellLayout=...
+CellLayout=.a.
+CellLayout=.z<
+CellLayout=.^.
+
+CheckType = z - street: 0x00000000
+CheckType = a - street: 0x02000200 onewayroad: 0x00040004, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x0001610C]
+CopyFrom    = 0x610C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610C]
+CopyFrom    = 0x610C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610C]
+CopyFrom    = 0x610C
 Rotate		= 3

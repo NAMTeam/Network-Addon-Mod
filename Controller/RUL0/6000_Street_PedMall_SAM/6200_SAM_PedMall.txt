@@ -1,0 +1,69 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+; 0x620#
+; Draggable PedMall Button
+;
+; 0x621#
+; EXPERIMENTAL Draggable PedMall Button
+
+;By:			Ulisse Wolf
+;Created:		2023-january-17
+;Last updated:	TBA
+;Birth of the Pedestrian Revolution Mod
+
+;-- DRAGGABLE PEDMALL --
+
+RotationRing = 6200, 16200, 26200, 36200 ;ped malls sidewalk
+
+
+
+
+
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;DRAGGABLE PED MAL
+;DRAGGABLE PED MAL - official deployment
+[HighwayIntersectionInfo_0x00006200]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531105
+PreviewEffect = preview_ped_malls_sidewalk1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x00020002 onewayroad: 0x04000400, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016200]
+CopyFrom    = 0x6200
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026200]
+CopyFrom    = 0x6200
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036200]
+CopyFrom    = 0x6200
+Rotate		= 3
+
+
+
+
