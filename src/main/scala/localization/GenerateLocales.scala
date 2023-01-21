@@ -114,13 +114,15 @@ object GenerateLocales {
     }
   }
 
-  def escape(raw: String): String = {
+  def escape(s: String): String = {
     import scala.reflect.runtime.universe.{Literal, Constant}
-    Literal(Constant(raw)).toString.replace(raw"\'", "'")  // add any other necessary character replacements here
+    Literal(Constant(s)).toString.replace(raw"\'", "'")  // add any other necessary character replacements here
   }
 
   def formatText(s: String): String = {
-    var arr = s.split("(?<=(\n))")  // splits multiline strings after newlines
+    var arr = s
+      .replace('\r', '\n')  // \r works like \n in the game, but is not allowed in .po format
+      .split("(?<=(\n))")  // splits multiline strings after newlines
     assert(arr.length > 0)
     if (arr.length != 1) {  // multiline strings start on the following line, oneline strings on the same line
       arr = "" +: arr
