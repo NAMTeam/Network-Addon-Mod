@@ -87,7 +87,7 @@ object GenerateLocales {
         f"-- their TGIs may have changed:%n${translations.keySet.diff(templates.keySet).map(formatTgi)}")
 
       val outdated = translations.keySet.filter(tgi => translations(tgi)._1 != templates(tgi)._1)
-      if (!outdated.isEmpty) {
+      if (outdated.nonEmpty) {
         logger.warning(
           s"English LText templates for the following TGIs have changed, " +
           f"so outdated translations ($lang) need to be updated:%n${outdated.map(formatTgi)}")
@@ -184,25 +184,27 @@ object GenerateLocales {
     for ((category, categorizedEntries) <- entries.groupBy(e => categorize(e.tgi))) {
       val lang = if (offset == 0) "en" else languageOffset.find(_._2 == offset).get._1
       val outputFile = new File(targetDir, if (offset == 0) s"$category.pot" else s"$lang/$category.po")
-      outputFile.getParentFile().mkdirs()
-      for (printer <- managed(new PrintWriter(outputFile, "UTF-8"))) {
-        printer.println(s"msgid ${escape("")}")
-        printer.println(s"msgstr ${escape("")}")
-        printer.println(escape("Project-Id-Version: \n"))
-        printer.println(escape("PO-Revision-Date: \n"))
-        printer.println(escape("Last-Translator: \n"))
-        printer.println(escape("Language-Team: \n"))
-        printer.println(escape(s"Language: $lang\n"))
-        printer.println(escape("MIME-Version: 1.0\n"))
-        printer.println(escape("Content-Type: text/plain; charset=UTF-8\n"))
-        printer.println(escape("Content-Transfer-Encoding: 8bit\n"))
+      if (offset == 0 || categorizedEntries.iterator.exists(e => translate(e.tgi).nonEmpty)) {  // we only generate .po files that contain at least some translations already
+        outputFile.getParentFile().mkdirs()
+        for (printer <- managed(new PrintWriter(outputFile, "UTF-8"))) {
+          printer.println(s"msgid ${escape("")}")
+          printer.println(s"msgstr ${escape("")}")
+          printer.println(escape("Project-Id-Version: \n"))
+          printer.println(escape("PO-Revision-Date: \n"))
+          printer.println(escape("Last-Translator: \n"))
+          printer.println(escape("Language-Team: \n"))
+          printer.println(escape(s"Language: $lang\n"))
+          printer.println(escape("MIME-Version: 1.0\n"))
+          printer.println(escape("Content-Type: text/plain; charset=UTF-8\n"))
+          printer.println(escape("Content-Transfer-Encoding: 8bit\n"))
 
-        for (e <- categorizedEntries) {
-          val text = e.toBufferedEntry.convert[LText].content.text
-          printer.println()
-          printer.println(s"""msgctxt "${formatTgi(e.tgi)}"""")
-          printer.println(s"""msgid ${formatText(text)}""")
-          printer.println(s"""msgstr ${formatText(translate(e.tgi))}""")
+          for (e <- categorizedEntries) {
+            val text = e.toBufferedEntry.convert[LText].content.text
+            printer.println()
+            printer.println(s"""msgctxt "${formatTgi(e.tgi)}"""")
+            printer.println(s"""msgid ${formatText(text)}""")
+            printer.println(s"""msgstr ${formatText(translate(e.tgi))}""")
+          }
         }
       }
     }
