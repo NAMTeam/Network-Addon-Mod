@@ -1,6 +1,6 @@
 package networkaddonmod.localization
 
-import java.io.{File, FileReader}
+import java.io.{File, FileReader, PrintWriter}
 import resource._
 import rapture.core.strategy.throwExceptions
 import scdbpf._
@@ -64,7 +64,7 @@ object GenerateLocales {
     m.toMap
   }
 
-  def main(args: Array[String]): Unit = {
+  def createDatFiles(): Unit = {
     val targetDir = new File("target/locale/")
     targetDir.mkdirs()
 
@@ -103,6 +103,98 @@ object GenerateLocales {
       val percentage = 100 * entries.length.toDouble / defaultEntries.length
       logger.info(f"generating locale $lang (${percentage.floor}%.0f%% complete)")
       DbpfFile.write(entries, new File(targetDir, f"NetworkAddonMod_Locale_$lang.dat"))
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    if (args.isEmpty) {
+      createDatFiles()  // primary use: convert .po to .dat
+    } else {
+      createPoFiles(args)  // secondary use: convert .dat to .po
+    }
+  }
+
+  def escape(raw: String): String = {
+    import scala.reflect.runtime.universe.{Literal, Constant}
+    Literal(Constant(raw)).toString.replace(raw"\'", "'")  // add any other necessary character replacements here
+  }
+
+  def formatText(s: String): String = {
+    var arr = s.split("(?<=(\n))")  // splits multiline strings after newlines
+    assert(arr.length > 0)
+    if (arr.length != 1) {  // multiline strings start on the following line, oneline strings on the same line
+      arr = "" +: arr
+    }
+    arr.map(escape).mkString(System.lineSeparator())
+  }
+
+  /** Broad classification of LTexts into categories (not fully accurate).
+    */
+  def categorize(tgi: Tgi): String = {
+    if (tgi.gid == 0x2A592FD1) {
+      "puzzlepieces-" + ((tgi.iid >>> 24) match {
+        case 0x50 => "road"
+        case 0x51 => "NWM"
+        case 0x52 | 0x5A => "highway"
+        case 0x53 => "rail"
+        case 0x54 => "avenue"
+        case 0x55 => "street"
+        case 0x57 | 0x5E => "RHW"
+        case 0x58 => "lightrail"
+        case 0x59 => "onewayroad"
+        case 0x5B => "turninglanes"
+        case 0x5C => "viaducts"
+        case 0x5D => "monorail"
+        case _ => "other"
+      })
+    } else tgi.gid match {
+      case 0x123006AA | 0x123006BB | 0x2A3858E4 => "buttons"
+      case 0x6A231EAA | 0xCBE084CB | 0xA82CA30F | 0xA92A02EA => "bridges"
+      case _ => "stations"
+    }
+  }
+
+  /* Run
+   * {{{
+   * sbt 'runMain networkaddonmod.localization.GenerateLocales 0 <english-dat-file>'
+   * }}}
+   * to generate .pot template files and
+   * {{{
+   * sbt 'runMain networkaddonmod.localization.GenerateLocales <language-offset> <english-dat-file> <foreign-dat-file>'
+   * }}}
+   * to generate .po files from existing translations
+   * and then manually inspect the results for correctness.
+   * The generated files are located at `target/ltext/`.
+   */
+  def createPoFiles(args: Array[String]): Unit = {
+    val targetDir = new File("target/ltext/")
+    targetDir.mkdirs()
+    val offset = args(0).toInt
+    val englishDat = new File(args(1))
+    val translationDat = args.lift(2).map(new File(_))
+
+    val entries = DbpfFile.read(englishDat).entries.sortBy(_.tgi).filter(_.tgi.matches(Tgi.LText))
+    val translations: Option[Map[Tgi, DbpfEntry]] = translationDat.map(DbpfFile.read(_).tgiMap)
+    def translate(tgi: Tgi): String = {
+      translations.flatMap(_.get(tgi.copy(gid = tgi.gid + offset)))
+        .map(_.toBufferedEntry.convert[LText].content.text)
+        .getOrElse("")  // either a template file or the translation is missing
+    }
+
+    for ((category, categorizedEntries) <- entries.groupBy(e => categorize(e.tgi))) {
+      val outputFile = new File(targetDir,
+        if (offset == 0) s"$category.pot"  // English templates
+        else s"${languageOffset.find(_._2 == offset).get._1}/$category.po")  // translations
+      outputFile.getParentFile().mkdirs()
+      for (printer <- managed(new PrintWriter(outputFile, "UTF-8"))) {
+        for (e <- categorizedEntries) {
+          val text = e.toBufferedEntry.convert[LText].content.text
+          printer.println(s"""msgctxt "${formatTgi(e.tgi)}"""")
+          printer.println(s"""msgid ${formatText(text)}""")
+          printer.println(s"""msgstr ${formatText(translate(e.tgi))}""")
+          printer.println()
+        }
+      }
     }
   }
 }
