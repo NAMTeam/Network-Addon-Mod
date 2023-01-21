@@ -21,7 +21,11 @@ object GenerateLocales {
 
   // add additional languages here
   val languageOffset = Map(
-    "de" -> 4)
+    "fr" -> 3,
+    "de" -> 4,
+    "it" -> 5,
+    "nl" -> 7,
+    "jp" -> 0xF)
 
   def parseTgi(s: String): Tgi = {
     val arr = s.trim().split("-").map(id => java.lang.Long.parseLong(id, 16).toInt)
