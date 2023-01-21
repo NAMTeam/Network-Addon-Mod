@@ -24,9 +24,35 @@ implicit val resolve = module.Main.resolve
 def transduce(rule: Rule[Tile]): Unit = RuleTransducer(rule) foreach println
 """
 
+lazy val generateLocales = taskKey[scala.util.Try[Unit]]("Generates the locale .dat files from .po files")
+generateLocales := {
+  // the following is a workaround to highlight the logged warnings with sbt
+  val logger = streams.value.log
+  val jLogger = java.util.logging.Logger.getLogger("networkaddonmod.localization")
+  jLogger.setUseParentHandlers(false)  // avoids printing to console twice
+  class MyHandler extends java.util.logging.Handler {
+    def close() = {}
+    def flush() = {}
+    def publish(record: java.util.logging.LogRecord): Unit = record.getLevel match {
+      case java.util.logging.Level.SEVERE => logger.error(record.getMessage)
+      case java.util.logging.Level.WARNING => logger.warn(record.getMessage)
+      case java.util.logging.Level.INFO => logger.info(record.getMessage)
+    }
+  }
+  jLogger.addHandler(new MyHandler())
+
+  (Compile / runner).value.run(
+    mainClass = "networkaddonmod.localization.GenerateLocales",
+    classpath = (Compile / fullClasspath).value.files,
+    log = logger,
+    options = Seq.empty[String]
+  )
+}
+
+
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.5" % "test"
 
-libraryDependencies += "org.yaml" % "snakeyaml" % "1.33"
+libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1"
 
 
 // the following are transitive dependencies of metarules
