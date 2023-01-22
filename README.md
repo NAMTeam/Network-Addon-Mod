@@ -15,8 +15,9 @@ For installation and usage of the NAM, see https://www.sc4nam.com/.
 [![gitlocalized ](https://gitlocalize.com/repo/8289/it/badge.svg)](https://gitlocalize.com/repo/8289/it?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/ja/badge.svg)](https://gitlocalize.com/repo/8289/ja?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/nl/badge.svg)](https://gitlocalize.com/repo/8289/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/es/badge.svg)](https://gitlocalize.com/repo/8289/es?utm_source=badge)
 
-To help translate the NAM to different languages, see [Translation Guide](ltext/README.md).
+To help translate the NAM to different languages, see [Translation Guide](ltext/README.md#translating-the-nam).
 
 ## Developer notes
 
@@ -32,6 +33,10 @@ The remainder of this README file is intended for developers.
     │ ├── RUL1/
     │ └── RUL2/
     ├── Lite Controller/
+    ├─┐ ltext/
+    │ ├── de/
+    │ ├── fr/
+    │ ...
     ├─┐ src/
     │ ├─┐ main/
     │ │ ├── resources/
@@ -46,6 +51,8 @@ the NAM Controller Compiler.
 The folders `Bridge Controller`, `INI`, `INRULs`
 contain network related code that is not part of the NAM controller,
 but is contained in other .dat files of the NAM.
+
+The directory `ltext` contains sources for NAM [LText](https://wiki.sc4devotion.com/index.php?title=LTEXT) files.  Translations are contained within its subdirectories.  See
 
 The directory `src/main/scala` contains code related to Metarules.
 These are files written in the programming language Scala
@@ -114,3 +121,5 @@ The generated `.dat` files are found at
     ├── NetworkAddonMod_Locale_en.dat
     ├── NetworkAddonMod_Locale_it.dat
     ...
+
+For information on adding and modifying LTexts, see the [Translation & LText Guide](ltext/README.md#maintaining-ltext-sources).
