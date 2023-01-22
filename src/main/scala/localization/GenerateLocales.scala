@@ -90,14 +90,14 @@ object GenerateLocales {
         s"but need corresponding entries in the .pot template files " +
         f"-- their TGIs may have changed:%n${translations.keySet.diff(templates.keySet).map(formatTgi)}")
 
+      val nontranslated = translations.keySet.filter(tgi => translations(tgi)._2.isEmpty)
+
       val outdated = translations.keySet.filter(tgi => translations(tgi)._1 != templates(tgi)._1)
-      if (outdated.nonEmpty) {
+      if ((outdated &~ nontranslated).nonEmpty) {
         logger.warning(
           s"English LText templates for the following TGIs have changed, " +
           f"so outdated translations ($lang) need to be updated:%n${outdated.map(formatTgi)}")
       }
-
-      val nontranslated = translations.keySet.filter(tgi => translations(tgi)._2.isEmpty)
 
       val entries = translations.toSeq.collect {
         case (tgi, (original, translation)) if !outdated(tgi) && !nontranslated(tgi) =>
