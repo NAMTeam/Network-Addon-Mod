@@ -8,6 +8,16 @@ This repository contains the RUL files of the NAM.
 
 For installation and usage of the NAM, see https://www.sc4nam.com/.
 
+## Translating
+
+[![gitlocalized ](https://gitlocalize.com/repo/8289/de/badge.svg)](https://gitlocalize.com/repo/8289/de?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/fr/badge.svg)](https://gitlocalize.com/repo/8289/fr?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/it/badge.svg)](https://gitlocalize.com/repo/8289/it?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/ja/badge.svg)](https://gitlocalize.com/repo/8289/ja?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/nl/badge.svg)](https://gitlocalize.com/repo/8289/nl?utm_source=badge)
+
+To help translate the NAM to different languages, see [Translation Guide](ltext/README.md).
+
 ## Developer notes
 
 The remainder of this README file is intended for developers.
@@ -68,7 +78,7 @@ This creates or updates the files
 ### Compiling Metarules
 
 Compiling the Metarules code is only needed when modifying any of the Scala code.
-For executing the Scala code, make sure you have `sbt` installed.
+For executing the Scala code, make sure you have [sbt](https://www.scala-sbt.org/) installed.
 It is a build tool that will download all the required dependencies.
 
 Then execute
@@ -89,3 +99,18 @@ Currently, this generates the following files:
 You need to manually move the generated RUL2 files from the `target` directory
 to the correct locations in the `Controller` directory and then commit them into the git repository.
 For more information on Metarules, see https://github.com/memo33/metarules.
+
+### Compiling Locale Files
+
+To convert all the translations contained in the directory [ltext/](ltext/)
+to a format that can be used by the game,
+use the tool [sbt](https://www.scala-sbt.org/) and run
+
+    sbt generateLocales
+
+The generated `.dat` files are found at
+
+    ┐ target/locale/
+    ├── NetworkAddonMod_Locale_en.dat
+    ├── NetworkAddonMod_Locale_it.dat
+    ...
