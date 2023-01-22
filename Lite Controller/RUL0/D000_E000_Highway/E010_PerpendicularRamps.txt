@@ -1,0 +1,445 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;HIGHWAY BUTTON SECTION
+;HIGHWAY BUTTON SECTION
+; 0xD### Ground
+; 0xE### Elevated
+; To help with RotationRing/AddTypes ID usage for (Highway) Ramps & Interchanges, range bracket
+; guidelines have been set up. N=Network Designation
+;Any Highway Buttons made should be for both Ground & Elevated Highway, where possible & practical
+
+;PERPEDICULAR RAMPS BUTTON - SINGLE-SIDED
+; 0x0000N0## - 0x0000N3##
+RotationRing = E010, 1E010, 2E010, 3E010 ;Highwayxroad perpendicular onramp
+AddTypes     = E011, 1E011, 2E011, 3E011 ;Highwayxroad perpendicular offramp
+AddTypes     = E012, 1E012, 2E012, 3E012 ;Highwayxroad straight run-off onramp
+AddTypes     = E013, 1E013, 2E013, 3E013 ;Highwayxroad straight run-off offramp
+AddTypes     = E014, 1E014, 2E014, 3E014 ;Highwayxonewayroad straight run-off onramp 
+AddTypes     = E015, 1E015, 2E015, 3E015 ;Highwayxonewayroad straight run-off offramp
+AddTypes     = E016, 1E016, 2E016, 3E016 ;Highwayxonewayroad perpendicular onramp forward
+AddTypes     = E017, 1E017, 2E017, 3E017 ;Highwayxonewayroad perpendicular offramp forward
+AddTypes     = E019, 1E019, 2E019, 3E019 ;Highwayxonewayroad perpendicular onramp reverse
+AddTypes     = E018, 1E018, 2E018, 3E018 ;Highwayxonewayroad perpendicular offramp reverse
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ELEVATED HIGHWAY SECTION
+;ELEVATED HIGHWAY SECTION
+;ELEVATED HIGHWAY SECTION
+
+;RAMPS RAMPS RAMPS
+;Additional Highway Ramps.
+
+;PERPEDICULAR RAMPS BUTTON- SINGLE-SIDED
+
+[HighwayIntersectionInfo_0x0000E010]
+;highwayxroad Perpendicular *on*ramp
+;Added 06.01.04, Work of the7trumpets
+Piece = -8.0, 24.0, 0, 0, 0x52251200
+PreviewEffect = preview_eihighway_onramp001
+
+CellLayout =......
+CellLayout =abcde<
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =..BE..
+CellLayout =..CF..
+CellLayout =..^...
+
+CheckType = a - check road: 0x00020000, 0x00FF0000
+CheckType = b - road: 0x00020002
+CheckType = c - check road: 0x00020002 optional highway: 0x02040200
+CheckType = d - check road: 0x00020002 optional highway: 0x02000204
+CheckType = e - check road: 0x00000002, 0x000000FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =......
+ConsLayout =+++++<
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =..^...
+
+AutoTileBase = 0x52251000
+;ConvertQueryID = 0xB000E010
+PlaceQueryID = 0xB000E010
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E010]
+CopyFrom    = 0xE010
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E010]
+CopyFrom    = 0xE010
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E010]
+CopyFrom    = 0xE010
+Rotate      = 3
+
+[HighwayIntersectionInfo_0x0000E011]
+;highwayxroad Perpendicular *off*ramp
+;Added 06.01.04, Work of the7trumpets
+Piece       = -8.0, -24.0, 2, 1, 0x52251200
+PreviewEffect = preview_eihighway_onramp001
+
+CellLayout =..AD..
+CellLayout =..BE..
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =abcde<
+CellLayout =......
+CellLayout =..^...
+
+CheckType = a - check road: 0x00020000, 0x00FF0000
+CheckType = b - road: 0x00020002
+CheckType = c - check road: 0x00020002 optional highway: 0x02040200
+CheckType = d - check road: 0x00020002 optional highway: 0x02000204
+CheckType = e - check road: 0x00000002, 0x000000FF
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =+++++<
+ConsLayout =......
+ConsLayout =..^...
+
+AutoTileBase = 0x52252000
+;ConvertQueryID = 0xB000E020
+PlaceQueryID = 0xB000E020
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E011]
+CopyFrom    = 0xE011
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E011]
+CopyFrom    = 0xE011
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E011]
+CopyFrom    = 0xE011
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E014]
+;highwayxOnewayroad Straight run-off *on*ramp
+;Added 06.01.04 by Tropod
+Piece = -8.0, 24.0, 0, 0, 0x52258005
+PreviewEffect = preview_eihw_owrd_onramp001
+
+CellLayout =......
+CellLayout =.a....
+CellLayout =.bAD.<
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =..BE..
+CellLayout =..CF..
+CellLayout =..^...
+
+CheckType = a - check onewayroad: 0x02000000, 0xFF000000
+CheckType = b - onewayroad: 0x00000200
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =......
+ConsLayout =.+....
+ConsLayout =.+++.<
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =..^...
+
+AutoTileBase = 0x52258000
+PlaceQueryID = 0xB000E030
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E014]
+CopyFrom    = 0xE014
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E014]
+CopyFrom    = 0xE014
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E014]
+CopyFrom    = 0xE014
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E015]
+;;highwayxOnewayroad Straight run-off *off*ramp
+;Added 06.01.04 by Tropod
+Piece = -8.0, -24.0, 2, 1, 0x52258005
+PreviewEffect = preview_eihw_owrd_onramp001
+
+CellLayout =..AD..
+CellLayout =..BE..
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =.bCF.<
+CellLayout =.a....
+CellLayout =..^...
+
+CheckType = a - check onewayroad: 0x00000200, 0x0000FF00
+CheckType = b - onewayroad: 0x02000000
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =.+++.<
+ConsLayout =.+....
+ConsLayout =..^...
+
+AutoTileBase = 0x52259000
+PlaceQueryID = 0xB000E040
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E015]
+CopyFrom    = 0xE015
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E015]
+CopyFrom    = 0xE015
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E015]
+CopyFrom    = 0xE015
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E016]
+;highwayxonewayroad Perpendicular *on*ramp Forward
+;Added by Tropod 06.30.04
+Piece = -8.0, 24.0, 0, 0, 0x52279005
+PreviewEffect = preview_eihw_owrd_onramp002
+
+CellLayout =......
+CellLayout =abcde<
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =..BE..
+CellLayout =..CF..
+CellLayout =..^...
+
+CheckType = a - check onewayroad: 0x00020000, 0x00FF0000
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - check onewayroad: 0x00020002 optional highway: 0x02040200
+CheckType = d - check onewayroad: 0x00020002 optional highway: 0x02000204
+CheckType = e - check onewayroad: 0x00000002, 0x000000FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =......
+ConsLayout =+++++<
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =..^...
+
+AutoPathBase	= 0x09202030
+AutoTileBase = 0x52279000
+;ConvertQueryID = 0xB000E590
+PlaceQueryID = 0xB000E590
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E016]
+CopyFrom    = 0xE016
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E016]
+CopyFrom    = 0xE016
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E016]
+CopyFrom    = 0xE016
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E017]
+;highwayxonewayroad Perpendicular *Off*ramp Forward 
+CopyFrom    = 0xE016
+Transpose   = 1
+[HighwayIntersectionInfo_0x0001E017]
+CopyFrom    = 0xE017
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E017]
+CopyFrom    = 0xE017
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E017]
+CopyFrom    = 0xE017
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E018]
+;highwayxonewayroad Perpendicular *off*ramp Reverse
+;Added by Tropod 06.30.04
+Piece = -8.0, -24.0, 2, 1, 0x52279005
+PreviewEffect = preview_eihw_owrd_onramp002
+
+CellLayout =..AD..
+CellLayout =..BE..
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =abcde<
+CellLayout =......
+CellLayout =..^...
+
+CheckType = a - check onewayroad: 0x00020000, 0x00FF0000
+CheckType = b - onewayroad: 0x00020002
+CheckType = c - check onewayroad: 0x00020002 optional highway: 0x02040200
+CheckType = d - check onewayroad: 0x00020002 optional highway: 0x02000204
+CheckType = e - check onewayroad: 0x00000002, 0x000000FF
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =+++++<
+ConsLayout =......
+ConsLayout =..^...
+
+AutoPathBase	= 0x09202000
+AutoTileBase = 0x5227A000
+;ConvertQueryID = 0xB000E5A0
+PlaceQueryID = 0xB000E5A0
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E018]
+CopyFrom    = 0xE018
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E018]
+CopyFrom    = 0xE018
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E018]
+CopyFrom    = 0xE018
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E019]
+;highwayxonewayroad Perpendicular *On*ramp Reverse
+CopyFrom    = 0xE018
+Transpose   = 1
+[HighwayIntersectionInfo_0x0001E019]
+CopyFrom    = 0xE019
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E019]
+CopyFrom    = 0xE019
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E019]
+CopyFrom    = 0xE019
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E012]
+;highwayxroad straight run-off *on*ramp
+;Added 06.01.04 by Tropod
+Piece = -8.0, 24.0, 0, 0, 0x52258005
+PreviewEffect = preview_eihw_owrd_onramp001
+
+CellLayout =......
+CellLayout =.a....
+CellLayout =.bAD.<
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =..BE..
+CellLayout =..CF..
+CellLayout =..^...
+
+CheckType = a - check road: 0x02000000, 0xFF000000
+CheckType = b - road: 0x00000200
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =......
+ConsLayout =.+....
+ConsLayout =.+++.<
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =..^...
+
+AutoTileBase = 0x52277000
+PlaceQueryID = 0xB000E570
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E012]
+CopyFrom    = 0xE012
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E012]
+CopyFrom    = 0xE012
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E012]
+CopyFrom    = 0xE012
+Rotate      = 3
+
+
+[HighwayIntersectionInfo_0x0000E013]
+;;highwayxroad straight run-off *off*ramp
+;Added 06.01.04 by Tropod
+Piece = -8.0, -24.0, 2, 1, 0x52258005
+PreviewEffect = preview_eihw_owrd_onramp001
+
+CellLayout =..AD..
+CellLayout =..BE..
+CellLayout =.+BE..
+CellLayout =.+BE..
+CellLayout =.bCF.<
+CellLayout =.a....
+CellLayout =..^...
+
+CheckType = a - check road: 0x00000200, 0x0000FF00
+CheckType = b - road: 0x02000000
+CheckType = A - check highway: 0x02040000, 0xFFFF00FF
+CheckType = B - highway: 0x02040200
+CheckType = C - check highway: 0x00040200, 0x00FFFFFF
+CheckType = D - optional highway: 0x02000004
+CheckType = E - optional highway: 0x02000204
+CheckType = F - optional highway: 0x00000204
+
+ConsLayout =..++..
+ConsLayout =..++..
+ConsLayout =.+++..
+ConsLayout =.+++..
+ConsLayout =.+++.<
+ConsLayout =.+....
+ConsLayout =..^...
+
+AutoTileBase = 0x52278000
+PlaceQueryID = 0xB000E570
+HandleOffset = -1, 0
+Costs       = 250
+[HighwayIntersectionInfo_0x0001E013]
+CopyFrom    = 0xE013
+Rotate      = 1
+[HighwayIntersectionInfo_0x0002E013]
+CopyFrom    = 0xE013
+Rotate      = 2
+[HighwayIntersectionInfo_0x0003E013]
+CopyFrom    = 0xE013
+Rotate      = 3
+
