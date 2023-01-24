@@ -3017,7 +3017,7 @@ CheckType = Z - subway: 0x04040404 dirtroad: 0x04040404
 ;Added by Lucario Boricua 2022-jan-18
 ;Diagonal L0 RHW-4 Starter Piece, Outer Shoulder, Right
 Piece = 0.0, 0.0, 0, 0, 0x57030205
-PreviewEffect = preview_diag_rhw4_start_outerright
+PreviewEffect = preview_diag_rhw4_start_outerleft
 
 CellLayout =.......
 CellLayout =...a...
@@ -3025,7 +3025,7 @@ CellLayout =...Z..<
 CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x00000301
-CheckType = a - monorail: 0x04020000 dirtroad: 0x03010000, 0xffffffff optional
+CheckType = a - monorail: 0x00000402 dirtroad: 0x00000301, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -3034,13 +3034,13 @@ ConsLayout =...^...
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57030205
+PlaceQueryID = 0x57030905
 Costs       = 8
 [HighwayIntersectionInfo_0x00015030]
 ;Added by Lucario Boricua 2022-jan-18
-;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Right
-Piece = 0.0, 0.0, 0, 1, 0x57030905
-PreviewEffect = preview_diag_rhw4_start_innerright
+;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Left
+Piece = 0.0, 0.0, 0, 0, 0x57030905
+PreviewEffect = preview_diag_rhw4_start_innerleft
 
 CellLayout =.......
 CellLayout =...a...
@@ -3057,13 +3057,13 @@ ConsLayout =...^...
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x57030905
+PlaceQueryID = 0x57030206
 Costs       = 8
 [HighwayIntersectionInfo_0x00025030]
 ;Added by Lucario Boricua 2022-jan-18
-;Diagonal L0 RHW-4 Starter Piece, Outer Shoulder, Left
+;Diagonal L0 RHW-4 Starter Piece, Outer Shoulder, Right
 Piece = 0.0, 0.0, 0, 0, 0x57030206
-PreviewEffect = preview_diag_rhw4_start_outerleft
+PreviewEffect = preview_diag_rhw4_start_outerright
 
 CellLayout =.......
 CellLayout =...a...
@@ -3071,7 +3071,7 @@ CellLayout =...Z..<
 CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x03000001
-CheckType = a - monorail: 0x02000004 dirtroad: 0x01000003, 0xffffffff optional
+CheckType = a - monorail: 0x00040200 dirtroad: 0x00030100, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
@@ -3084,9 +3084,9 @@ PlaceQueryID = 0x57030206
 Costs       = 8
 [HighwayIntersectionInfo_0x00035030]
 ;Added by Lucario Boricua 2022-jan-18
-;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Left
-Piece = 0.0, 0.0, 0, 1, 0x57030906
-PreviewEffect = preview_diag_rhw4_start_innerleft
+;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Right
+Piece = 0.0, 0.0, 0, 0, 0x57030906
+PreviewEffect = preview_diag_rhw4_start_innerright
 
 CellLayout =.......
 CellLayout =...a...
