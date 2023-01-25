@@ -34,6 +34,12 @@ or start from scratch from an English `.pot` template file.
 **both** checkboxes "Wrap at: …" and "Preserve formatting of existing files" are **deselected**.
 This is necessary so that Poedit does not alter the wrapping of lines.
 
+Also, within
+
+    Edit > Preferences > General
+
+you should deselect "Automatically compile MO file when saving".  This will prevent the program from creating unnecessary `.mo` files while you translate.
+
 TBC
 
 ### General notes
