@@ -37,33 +37,58 @@ object GenerateLocales {
 
   val logger = java.util.logging.Logger.getLogger("networkaddonmod.localization")
 
+  def isFuzzyTranslation(t: scaposer.SingularTranslation, previousComments: Seq[String]): Boolean = {
+    // There is a bug in scaposer 1.11.1 (see https://github.com/xitrum-framework/scaposer/issues/25)
+    // that incorrectly treats all leading comments as trailing comments of the
+    // previous translation entry, but that is exactly where the `fuzzy` tag
+    // would be, so we consider `previousComments` rather than the trailing
+    // comments from `t.otherComments`.
+    (t.ctxComments ++ t.singularComments ++ t.strComments ++ previousComments).exists(c => c.trim.startsWith("#,") && c.contains("fuzzy"))
+  }
+
+  /** Iterates over all non-fuzzy `(msgctxt, msgid, msgstr)`.
+    */
+  def retrieveNonFuzzyTranslations(inputFile: File): Seq[(String, String, String)] = {
+    managed(new FileReader(inputFile)) acquireAndGet { reader =>
+      scaposer.Parser.parse(reader) match {
+        case Left(parseFailure) => throw new UnsupportedOperationException(s"$parseFailure in $inputFile")
+        case Right(translations) =>
+          val (buffer, _) = translations.foldLeft((Seq.newBuilder[(String, String, String)], Seq.empty[String])) {
+            case (_, t: scaposer.PluralTranslation) => throw new UnsupportedOperationException(s"plural translations are not supported: ${t.ctx} in $inputFile")
+            case ((buffer, previousComments), t: scaposer.SingularTranslation) =>
+              if (!(t.ctx.isEmpty && t.singular.isEmpty)  // meta-info header is ignored
+                  && !isFuzzyTranslation(t, previousComments)) {  // fuzzy translations must not be used without manual inspection
+                buffer += ((t.ctx, t.singular, t.str))
+              }
+              (buffer, t.otherComments)
+          }
+          buffer.result
+      }
+    }
+  }
+
   /** Constructs a mapping from TGIs to `(original, translation)`.
     */
   def readTranslationFiles(inputDir: File, suffix: String): Map[Tgi, (String, String)] = {
     val m = scala.collection.mutable.Map.empty[Tgi, (String, String)]
     val inputFiles = inputDir.listFiles.filter(f => f.isFile && f.getName.endsWith(suffix))
     for (inputFile <- inputFiles) {
-      val i18n = (managed(new FileReader(inputFile)) acquireAndGet { reader =>
-        scaposer.Parser.parse(reader) match {
-          case Left(e) => throw new UnsupportedOperationException(s"$e in $inputFile")
-          case Right(x) => scaposer.I18n(x)
+      val duplicates = scala.collection.mutable.Set.empty[Tgi]
+      for ((context, original, translation) <- retrieveNonFuzzyTranslations(inputFile)) {
+        if (context.isEmpty) {
+          throw new UnsupportedOperationException(s"missing TGI context for $original in $inputFile")
         }
-      })
-      for (((context, original), translations) <- i18n.ctxSingularToStrs) {
-        if (!(context.isEmpty && original.isEmpty)) { // otherwise it is the meta-info header which is ignored
-          if (context.isEmpty) {
-            throw new UnsupportedOperationException(s"missing TGI context for $original in $inputFile")
-          }
-          val tgi = try (parseTgi(context)) catch { case _: NumberFormatException =>
-            throw new UnsupportedOperationException(s"message context should be a TGI: $context in $inputFile")
-          }
-          if (translations.length != 1) {
-            throw new UnsupportedOperationException(s"plural translations are not supported: $tgi in $inputFile")
-          } else if (m.contains(tgi)) {
-            throw new UnsupportedOperationException(s"duplicate definition for $tgi in $inputFile")
-          }
-          m(tgi) = (original, translations.head)
+        val tgi = try (parseTgi(context)) catch { case _: NumberFormatException =>
+          throw new UnsupportedOperationException(s"message context should be a TGI: $context in $inputFile")
         }
+        if (m.contains(tgi)) {
+          duplicates.add(tgi)
+        } else {
+          m(tgi) = (original, translation)
+        }
+      }
+      if (duplicates.nonEmpty) {
+        throw new UnsupportedOperationException(s"duplicate definitions for TGIs $duplicates in $inputFile")
       }
     }
     m.toMap
