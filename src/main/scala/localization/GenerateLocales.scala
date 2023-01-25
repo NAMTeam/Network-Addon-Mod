@@ -24,6 +24,7 @@ object GenerateLocales {
     "fr" -> 3,
     "de" -> 4,
     "it" -> 5,
+    "es" -> 6,
     "nl" -> 7,
     "ja" -> 0xF)
 
