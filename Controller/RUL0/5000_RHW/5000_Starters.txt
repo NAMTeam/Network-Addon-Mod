@@ -72,7 +72,14 @@ RotationRing     =  5024, 15024, 25024, 35024, 45024, 55024, 65024, 75024, 85024
 ;---Diagonal Starters (Separate TAB Ring)---
 RotationRing = 5030, 15030, 25030, 35030, 45030, 55030, 65030, 75030, 85030, 95030, A5030, B5030, C5030, D5030, E5030, F5030 ;L0 Diagonal RHW-4 Starter Piece
 ;AddTypes     = 5031, 15031, 25031, 35031, 45031, 55031, 65031, 75031, 85031, 95031, A5031, B5031, C5031, D5031, E5031, F5031 ;L0 Diagonal MIS Starter Piece
-
+;AddTypes     = 5032, 15032, 25032, 35032, 45032, 55032, 65032, 75032, 85032, 95032, A5032, B5032, C5032, D5032, E5032, F5032 ;L1 Diagonal RHW-4 Starter Piece
+;AddTypes     = 5033, 15033, 25033, 35033, 45033, 55033, 65033, 75033, 85033, 95033, A5033, B5033, C5033, D5033, E5033, F5033 ;L1 Diagonal MIS Starter Piece
+;AddTypes     = 5034, 15034, 25034, 35034, 45034, 55034, 65034, 75034, 85034, 95034, A5034, B5034, C5034, D5034, E5034, F5034 ;L2 Diagonal RHW-4 Starter Piece
+;AddTypes     = 5035, 15035, 25035, 35035, 45035, 55035, 65035, 75035, 85035, 95035, A5035, B5035, C5035, D5035, E5035, F5035 ;L2 Diagonal MIS Starter Piece
+;AddTypes     = 5036, 15036, 25036, 35036, 45036, 55036, 65036, 75036, 85036, 95036, A5036, B5036, C5036, D5036, E5036, F5036 ;L3 Diagonal RHW-4 Starter Piece
+;AddTypes     = 5037, 15037, 25037, 35037, 45037, 55037, 65037, 75037, 85037, 95037, A5037, B5037, C5037, D5037, E5037, F5037 ;L3 Diagonal MIS Starter Piece
+;AddTypes     = 5038, 15038, 25038, 35038, 45038, 55038, 65038, 75038, 85038, 95038, A5038, B5038, C5038, D5038, E5038, F5038 ;L4 Diagonal RHW-4 Starter Piece
+;AddTypes     = 5039, 15039, 25039, 35039, 45039, 55039, 65039, 75039, 85039, 95039, A5039, B5039, C5039, D5039, E5039, F5039 ;L4 Diagonal MIS Starter Piece
 
 ;###separator###
 
@@ -3029,7 +3036,7 @@ CheckType = a - monorail: 0x00000402 dirtroad: 0x00000301, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
-ConsLayout =.../..<
+ConsLayout =...\..<
 ConsLayout =...^...
 
 AutoTileBase=	0x55387000
@@ -3052,7 +3059,7 @@ CheckType = a - monorail: 0x00000204 dirtroad: 0x00000301, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
-ConsLayout =.../..<
+ConsLayout =...\..<
 ConsLayout =...^...
 
 AutoTileBase=	0x55387000
@@ -3075,7 +3082,7 @@ CheckType = a - monorail: 0x00040200 dirtroad: 0x00030100, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
-ConsLayout =...\..<
+ConsLayout =.../..<
 ConsLayout =...^...
 
 AutoTileBase=	0x55387000
@@ -3098,7 +3105,7 @@ CheckType = a - monorail: 0x00020400 dirtroad: 0x00030100, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =.......
-ConsLayout =...\..<
+ConsLayout =.../..<
 ConsLayout =...^...
 
 AutoTileBase=	0x55387000
@@ -3140,4 +3147,133 @@ CopyFrom    = 0x25030
 Rotate		= 3
 [HighwayIntersectionInfo_0x000F5030]
 CopyFrom    = 0x35030
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00005031]
+;Added by Lucario Boricua 2022-jan-18
+;Diagonal L0 RHW-4 Starter Piece, Outer Shoulder, Right
+Piece = 0.0, 0.0, 0, 0, 0x57030205
+PreviewEffect = preview_diag_rhw4_start_outerleft
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00000301
+CheckType = a - monorail: 0x00000402 dirtroad: 0x00000301, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...\..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57030905
+Costs       = 8
+[HighwayIntersectionInfo_0x00015031]
+;Added by Lucario Boricua 2022-jan-18
+;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Left
+Piece = 0.0, 0.0, 0, 0, 0x57030905
+PreviewEffect = preview_diag_rhw4_start_innerleft
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x00000301
+CheckType = a - monorail: 0x00000204 dirtroad: 0x00000301, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =...\..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57030206
+Costs       = 8
+[HighwayIntersectionInfo_0x00025031]
+;Added by Lucario Boricua 2022-jan-18
+;Diagonal L0 RHW-4 Starter Piece, Outer Shoulder, Right
+Piece = 0.0, 0.0, 0, 0, 0x57030206
+PreviewEffect = preview_diag_rhw4_start_outerright
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x03000001
+CheckType = a - monorail: 0x00040200 dirtroad: 0x00030100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57030206
+Costs       = 8
+[HighwayIntersectionInfo_0x00035031]
+;Added by Lucario Boricua 2022-jan-18
+;Diagonal L0 RHW-4 Starter Piece, Inner Shoulder, Right
+Piece = 0.0, 0.0, 0, 0, 0x57030906
+PreviewEffect = preview_diag_rhw4_start_innerright
+
+CellLayout =.......
+CellLayout =...a...
+CellLayout =...Z..<
+CellLayout =...^...
+
+CheckType = Z - dirtroad: 0x03000001
+CheckType = a - monorail: 0x00020400 dirtroad: 0x00030100, 0xffffffff optional
+
+ConsLayout =.......
+ConsLayout =.......
+ConsLayout =.../..<
+ConsLayout =...^...
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x57030906
+Costs       = 8
+[HighwayIntersectionInfo_0x00045031]
+CopyFrom    = 0x5031
+Rotate		= 1
+[HighwayIntersectionInfo_0x00055031]
+CopyFrom    = 0x15031
+Rotate		= 1
+[HighwayIntersectionInfo_0x00065031]
+CopyFrom    = 0x25031
+Rotate		= 1
+[HighwayIntersectionInfo_0x00075031]
+CopyFrom    = 0x35031
+Rotate		= 1
+[HighwayIntersectionInfo_0x00085031]
+CopyFrom    = 0x5031
+Rotate		= 2
+[HighwayIntersectionInfo_0x00095031]
+CopyFrom    = 0x15031
+Rotate		= 2
+[HighwayIntersectionInfo_0x000A5031]
+CopyFrom    = 0x25031
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B5031]
+CopyFrom    = 0x35031
+Rotate		= 2
+[HighwayIntersectionInfo_0x000C5031]
+CopyFrom    = 0x5031
+Rotate		= 3
+[HighwayIntersectionInfo_0x000D5031]
+CopyFrom    = 0x15031
+Rotate		= 3
+[HighwayIntersectionInfo_0x000E5031]
+CopyFrom    = 0x25031
+Rotate		= 3
+[HighwayIntersectionInfo_0x000F5031]
+CopyFrom    = 0x35031
 Rotate		= 3
