@@ -26,6 +26,8 @@ AddTypes     = 89540, 99540, A9540, B9540, C9540, D9540, E9540, F9540 ;AVE-4 x A
 AddTypes     = 89541, 99541, A9541, B9541, C9541, D9541, E9541, F9541 ;RD-4  x ARD-3 Common Roundabout
 AddTypes     = 89542, 99542, A9542, B9542, C9542, D9542, E9542, F9542 ;RD-6  x ARD-3 Common Roundabout
 
+AddTypes     = 9543, 19543, 29543, 39543, 49543, 59543, 69543, 79543 ; 4x3 Flex Roundabout
+
 ;###separator###
 
 [HighwayIntersectionInfo_0x00009529]
@@ -1618,3 +1620,64 @@ CopyFrom = 0x99520
 CopyFrom = 0xA9520
 [HighwayIntersectionInfo_0x000F9520]
 CopyFrom = 0xB9520
+
+
+[HighwayIntersectionInfo_0x00009543]
+; Added by SA, 2023-01-23
+Piece = 0.0, 16.0, 0, 0, 0x54589520
+PreviewEffect = preview_ave_x_street_with_median
+
+CellLayout=.......
+CellLayout=..Z...<
+CellLayout=..abc..
+CellLayout=..def..
+CellLayout=..def..
+CellLayout=..hij..
+CellLayout=.......
+CellLayout=..^....
+
+CheckType = Z - road: 0x02000002
+CheckType = a - avenue: 0x03010000, 0xffffffff optional
+CheckType = b - avenue: 0x04020002, 0xffffffff optional
+CheckType = c - avenue: 0x01000003, 0xffffffff optional
+CheckType = d - avenue: 0x02040200, 0xffffffff optional
+CheckType = e - avenue: 0x04040404, 0xffffffff optional
+CheckType = f - avenue: 0x02000204, 0xffffffff optional
+;CheckType = g - avenue: 0x04040004, 0xffffffff optional
+CheckType = h - avenue: 0x00030100, 0xffffffff optional
+CheckType = i - avenue: 0x00020402, 0xffffffff optional
+CheckType = j - avenue: 0x00000301, 0xffffffff optional
+
+
+ConsLayout=.......
+ConsLayout=..+...<
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=.......
+ConsLayout=..^....
+
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x54589520
+Costs = 20
+
+[HighwayIntersectionInfo_0x00019543]
+CopyFrom = 0x09543
+Rotate		= 1
+[HighwayIntersectionInfo_0x00029543]
+CopyFrom = 0x09543
+Rotate		= 2
+[HighwayIntersectionInfo_0x00039543]
+CopyFrom = 0x09543
+Rotate		= 3
+[HighwayIntersectionInfo_0x00049543]
+CopyFrom = 0x9543
+[HighwayIntersectionInfo_0x00059543]
+CopyFrom = 0x19543
+[HighwayIntersectionInfo_0x00069543]
+CopyFrom = 0x29543
+[HighwayIntersectionInfo_0x00079543]
+CopyFrom = 0x39543
+
