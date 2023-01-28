@@ -93,6 +93,8 @@ Synchronize `translation.po` with `template.pot` using
 
     msgmerge -U --previous --no-wrap --backup=off <translation.po> <template.pot>
 
+In a Unix shell, you can run the script `./synchronize-translations.sh` to synchronize all the translation files at once.
+
 ##### Gettext Installation
 
 ###### Linux
