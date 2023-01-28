@@ -25,6 +25,7 @@ AddTypes     = 7912, 17912, 27912, 37912, 47912, 57912, 67912, 77912, 87912, 979
 AddTypes     = 7913, 17913, 27913, 37913, 47913, 57913, 67913, 77913, 87913, 97913, A7913, B7913, C7913, D7913, E7913, F7913 ;OWR-2 Flex MRC R5 (10x5-Tile)
 AddTypes     = 791F, 1791F, 2791F, 3791F, 4791F, 5791F, 6791F, 7791F, 8791F, 9791F, A791F, B791F, C791F, D791F, E791F, F791F ;OWR-2 Flex Loop 270 (5x5-Tile)
 AddTypes     = 7920, F7920, 97920, 67920, 17920, E7920, A7920, 57920, 27920, D7920, B7920, 47920, 37920, C7920, 87920, 77920 ;(flexible) wide-radius Avenue 45 degree curve
+AddTypes     = 7921, D7921, 17921, C7921, 27921, F7921, 37921, E7921, 47921, 97921, 57921, 87921, 67921, B7921, 77921, A7921 ;Avenue 5x5 90 Degree Curve
 
 ;7930 and 7931 repurposed from 8910 and 8911 in REW Curves file
 
@@ -2092,7 +2093,7 @@ ConsLayout =^....
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x542B9550
+PlaceQueryID = 0x5f491505
 Costs       = 50
 
 [HighwayIntersectionInfo_0x00097920]
@@ -2115,4 +2116,133 @@ CopyFrom    = 0xA7920
 Transpose   = 1
 [HighwayIntersectionInfo_0x000F7920]
 CopyFrom    = 0xB7920
+Transpose   = 1
+
+
+[HighwayIntersectionInfo_0x00007921]
+; Avenue 5x5 90 Degree Curve A
+Piece = 0.0, 0.0, 0, 0, 0x5f491505
+PreviewEffect = preview_avenue_5x5_90_crv_a
+
+CellLayout =.......
+CellLayout =zabc...
+CellLayout =ydeec..
+CellLayout =.Qfeec<
+CellLayout =...feg.
+CellLayout =....hi.
+CellLayout =.^..xw.
+
+;senw
+CheckType = Q - road: 0x00000000
+CheckType = a - avenue: 0x04030002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x01030003, 0xFFFFFFFF optional
+CheckType = c - avenue: 0x01000003, 0xFFFFFFFF optional
+CheckType = d - avenue: 0x00030402, 0xFFFFFFFF optional
+CheckType = e - avenue: 0x01030103, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x00030100, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x01000103, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x02040100, 0xFFFFFFFF optional
+CheckType = i - avenue: 0x02000104, 0xFFFFFFFF optional
+CheckType = z - avenue: 0x04020000, 0xFFFF0000 optional
+CheckType = y - avenue: 0x00020400, 0x00FFFF00 optional
+CheckType = x - avenue: 0x00040200, 0x00FFFF00 optional
+CheckType = w - avenue: 0x00000204, 0x0000FFFF optional
+
+ConsLayout =.......
+ConsLayout =-\\\...
+ConsLayout =-\\\\..
+ConsLayout =..\\\\<
+ConsLayout =...\\\.
+ConsLayout =....\\.
+ConsLayout =.^..||.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f491505
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00017921]
+CopyFrom    = 0x7921
+Rotate		= 1
+[HighwayIntersectionInfo_0x00027921]
+CopyFrom    = 0x7921
+Rotate		= 2
+[HighwayIntersectionInfo_0x00037921]
+CopyFrom    = 0x7921
+Rotate		= 3
+[HighwayIntersectionInfo_0x00047921]
+CopyFrom    = 0x7921
+Transpose   = 1
+[HighwayIntersectionInfo_0x00057921]
+CopyFrom    = 0x17921
+Transpose   = 1
+[HighwayIntersectionInfo_0x00067921]
+CopyFrom    = 0x27921
+Transpose   = 1
+[HighwayIntersectionInfo_0x00077921]
+CopyFrom    = 0x37921
+Transpose   = 1
+
+[HighwayIntersectionInfo_0x00087921]
+; Avenue 5x5 90 Degree Curve B
+Piece = 0.0, 0.0, 0, 0, 0x5f491505
+PreviewEffect = preview_avenue_5x5_90_crv_b
+
+CellLayout =.Q....<
+CellLayout =zabc...
+CellLayout =ydeec..
+CellLayout =..feec.
+CellLayout =...feg.
+CellLayout =....hi.
+CellLayout =.^..xw.
+
+;senw
+CheckType = Q - road: 0x00000000
+CheckType = a - avenue: 0x04030002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x01030003, 0xFFFFFFFF optional
+CheckType = c - avenue: 0x01000003, 0xFFFFFFFF optional
+CheckType = d - avenue: 0x00030402, 0xFFFFFFFF optional
+CheckType = e - avenue: 0x01030103, 0xFFFFFFFF optional
+CheckType = f - avenue: 0x00030100, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x01000103, 0xFFFFFFFF optional
+CheckType = h - avenue: 0x02040100, 0xFFFFFFFF optional
+CheckType = i - avenue: 0x02000104, 0xFFFFFFFF optional
+CheckType = z - avenue: 0x04020000, 0xFFFF0000 optional
+CheckType = y - avenue: 0x00020400, 0x00FFFF00 optional
+CheckType = x - avenue: 0x00040200, 0x00FFFF00 optional
+CheckType = w - avenue: 0x00000204, 0x0000FFFF optional
+
+ConsLayout =......<
+ConsLayout =-\\\...
+ConsLayout =-\\\\..
+ConsLayout =..\\\\.
+ConsLayout =...\\\.
+ConsLayout =....\\.
+ConsLayout =.^..||.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5f491505
+Costs       = 50
+
+[HighwayIntersectionInfo_0x00097921]
+CopyFrom    = 0x87921
+Rotate		= 1
+[HighwayIntersectionInfo_0x000A7921]
+CopyFrom    = 0x87921
+Rotate		= 2
+[HighwayIntersectionInfo_0x000B7921]
+CopyFrom    = 0x87921
+Rotate		= 3
+[HighwayIntersectionInfo_0x000C7921]
+CopyFrom    = 0x87921
+Transpose   = 1
+[HighwayIntersectionInfo_0x000D7921]
+CopyFrom    = 0x97921
+Transpose   = 1
+[HighwayIntersectionInfo_0x000E7921]
+CopyFrom    = 0xA7921
+Transpose   = 1
+[HighwayIntersectionInfo_0x000F7921]
+CopyFrom    = 0xB7921
 Transpose   = 1
