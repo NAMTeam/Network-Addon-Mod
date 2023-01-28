@@ -8,21 +8,23 @@ The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for i
 so any compatible tool can be used for translating, such as GitLocalize or Poedit.
 
 [![gitlocalized ](https://gitlocalize.com/repo/8289/de/badge.svg)](https://gitlocalize.com/repo/8289/de?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8289/es/badge.svg)](https://gitlocalize.com/repo/8289/es?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/fr/badge.svg)](https://gitlocalize.com/repo/8289/fr?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/it/badge.svg)](https://gitlocalize.com/repo/8289/it?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/ja/badge.svg)](https://gitlocalize.com/repo/8289/ja?utm_source=badge)
 [![gitlocalized ](https://gitlocalize.com/repo/8289/nl/badge.svg)](https://gitlocalize.com/repo/8289/nl?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8289/es/badge.svg)](https://gitlocalize.com/repo/8289/es?utm_source=badge)
 
 ### GitLocalize
 
 [GitLocalize](https://gitlocalize.com/repo/8289) is an online localization tool.  See the guide on [contributing to projects](https://docs.gitlocalize.com/how_to_contribute.html).
 
-TBC
+Pros: machine-assisted translations, no tool installation required.
+
+Drawbacks: translations can only be submitted after a file has been fully translated
 
 ### Poedit
 
-[Poedit](https://poedit.net/) is a cross-platform offline client.
+[Poedit](https://poedit.net/) is a cross-platform offline program.
 
 Open an existing `.po` translation file and add missing translations,
 or start from scratch from an English `.pot` template file.
@@ -39,8 +41,6 @@ Also, within
     Edit > Preferences > General
 
 you should deselect "Automatically compile MO file when saving".  This will prevent the program from creating unnecessary `.mo` files while you translate.
-
-TBC
 
 ### General notes
 
@@ -91,13 +91,13 @@ This is necessary so that Poedit does not alter the wrapping of lines.
 
 Synchronize `translation.po` with `template.pot` using
 
-`msgmerge -U --previous --no-wrap --backup=off <translation.po> <template.pot>`
+    msgmerge -U --previous --no-wrap --backup=off <translation.po> <template.pot>
 
 ##### Gettext Installation
 
 ###### Linux
 
-`apt-get install gettext`
+    apt-get install gettext
 
 ###### Windows
 
