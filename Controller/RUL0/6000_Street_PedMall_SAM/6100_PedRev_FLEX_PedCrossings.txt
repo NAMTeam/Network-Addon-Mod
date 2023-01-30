@@ -2,49 +2,44 @@
 ;FLEX PEDESTRIAN CROSSINGS SECTION
 ;FLEX PEDESTRIAN CROSSINGS SECTION
 ;FLEX PEDESTRIAN CROSSINGS SECTION
-; 0x610#
-; Pedestrian Crossings Button 
 ;
-; 0x611#
-; EXPERIMENTAL Pedestrian Crossings Button
+; 0x610# - Pedestrian Crossings Button 
+; 
 
 ;By:			Lucario Boricua
 ;Created:		2022-jul-16
-;Last updated:	2022-aug-07
+;Last updated:	2023-jan-26
 ;Birth of the Pedestrian Revolution Mod
 
 ;-- MID-BLOCK CROSSWALKS --
 
-;-- (COMPACT MENU, ORDERED BY LENGTH) Mid-block Crosswalks for Road, AVE and bidirectional NWM --
+;-- Mid-block Crosswalks for Road, AVE and bidirectional NWM --
+;-- (LONG MENU, ORDERED BY LENGTH FIRST, WIDTH SECOND) --
+;-- Revised as of NAM 46 by Lucario Boricua, 2023-jan-26
+RotationRing = 6100, 16100, 26100, 36100 ;Size 1 Single Road
+AddTypes     = 6101, 16101, 26101, 36101 ;Size 2 Single Road
+AddTypes     = 6102, 16102, 26102, 36102 ;Size 3 Single Road
+AddTypes     = 6103, 16103, 26103, 36103 ;Size 1 Avenue/Dual-Tile NWM
+AddTypes     = 6104, 16104, 26104, 36104 ;Size 2 Avenue/Dual-Tile NWM
+AddTypes     = 6105, 16105, 26105, 36105 ;Size 3 Avenue/Dual-Tile NWM
+AddTypes     = 6106, 16106, 26106, 36106 ;Size 1 Triple Avenue/Road
+AddTypes     = 6107, 16107, 26107, 36107 ;Size 2 Triple Avenue/Road
+AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
 
-;RotationRing = 6100, 16100, 26100, 36100, 46100, 56100, 66100, 76100, 86100, 96100, A6100, B6100, C6100, D6100, E6100, F6100 ;Size 1 mid-block crosswalks
-;0 to 3 is Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;C to F is AVE-4 default, no overrides supported nor planned
-
-;AddTypes     = 6101, 16101, 26101, 36101, 46101, 56101, 66101, 76101, 86101, 96101, A6101, B6101, C6101, D6101, E6101, F6101 ;Size 2 mid-block crosswalks
-;0 to 3 is Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;C to F is AVE-4 default, no overrides supported nor planned
-
-;AddTypes     = 6102, 16102, 26102, 36102, 46102, 56102, 66102, 76102, 86102, 96102, A6102, B6102, C6102, D6102, E6102, F6102 ;Size 3 mid-block crosswalks
-;0 to 3 is Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;4 to 7 is Dual RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;8 to B is Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;C to F is AVE-4 default, no overrides supported nor planned
-
-;[FUTURE WORK] -- Mid-block Crosswalks for One-way and unidirectional NWM --
-
-;AddTypes     = 6103, 16103, 26103, 36103, 46103, 56103, 66103, 76103, 86103, 96103, A6103, B6103, C6103, D6103, E6103, F6103 ;One-way mid-block crosswalks
-;0 to 3 is Size 1 OWR-2, overrides to OWR-1 and OWR-3
-;4 to 7 is Size 2 OWR-2, overrides to OWR-1 and OWR-3
-;8 to B is Size 1 dual OWR-2, overrides to OWR-4, OWR-5 and eventually OWR-6
-;C to F is Size 2 dual OWR-2, overrides to OWR-4, OWR-5 and eventually OWR-6
+;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR ONEWAYROAD AND UNIDIRECTIONAL NWM --
+;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
+;AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Single One-way (OWR-1,2,3)
+;AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Single One-way (OWR-1,2,3)
+;AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Single One-way (OWR-1,2,3)
+;AddTypes     = 610C, 1610C, 2610C, 3610C ;Size 1 Double OWR (OWR-4,5,6)
+;AddTypes     = 610D, 1610D, 2610D, 3610D ;Size 2 Double OWR (OWR-4,5,6)
+;AddTypes     = 610E, 1610E, 2610E, 3610E ;Size 3 Double OWR (OWR-4,5,6)
 
 ;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR STREET AND STREET ADDON MOD --
 ;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
+;AddTypes     = 610F, 1610F, 2610F, 3610F ;Size 1 Street/SAM
+;AddTypes     = 6110, 16110, 26110, 36110 ;Size 2 Street/SAM
+;AddTypes     = 6111, 16111, 26111, 36111 ;Size 3 Street/SAM
 
 ;[FUTURE WORK] -- AT-GRADE RAILWAY AND PEDESTRIAN CROSSINGS --
 ;Section reserved for future development (Phase 3 of Mid-block Crosswalks)
@@ -55,65 +50,9 @@
 ;[FUTURE WORK] -- ENHANCED CROSSWALKS FOR SURFACE ROAD INTERSECTIONS --
 ;Section reserved for future development (Phases to be determined)
 
-;-- Mid-block Crosswalks for Road, AVE and bidirectional NWM --
-;-- (LONG MENU, ORDERED BY LENGTH FIRST, WIDTH SECOND) --
-RotationRing = 6100, 16100, 26100, 36100 ;Size 1 Single Road
-AddTypes     = 6101, 16101, 26101, 36101 ;Size 2 Single Road
-AddTypes     = 6102, 16102, 26102, 36102 ;Size 3 Single Road
-AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Avenue/Dual-Tile NWM
-AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Avenue/Dual-Tile NWM
-AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Avenue/Dual-Tile NWM
-;AddTypes     = 6103, 16103, 26103, 36103 ;Size 1 Double Road
-;AddTypes     = 6104, 16104, 26104, 36104 ;Size 2 Double Road
-;AddTypes     = 6105, 16105, 26105, 36105 ;Size 3 Double Road
-AddTypes     = 6106, 16106, 26106, 36106 ;Size 1 Triple Avenue/Road
-AddTypes     = 6107, 16107, 26107, 36107 ;Size 2 Triple Avenue/Road
-AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
-AddTypes     = 610C, 1610C, 2610C, 3610C ;Sidewalk Pedmall Draggable
-
-;-- (LONG MENU, ORDERED BY WIDTH FIRST, LENGTH SECOND) Mid-block Crosswalks for Road, AVE and bidirectional NWM --
-
-;-- Size 1 Mid-block Crosswalks for bidirectional networks --
-;RotationRing = 6100, 16100, 26100, 36100 ;Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;AddTypes     = 6101, 16101, 26101, 36101 ;Double RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;AddTypes     = 6102, 16102, 26102, 36102 ;Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;AddTypes     = 6103, 16103, 26103, 36103 ;AVE-4 default, no overrides supported nor planned
-
-;-- Size 2 Mid-block Crosswalks for bidirectional networks --
-;AddTypes     = 6104, 16104, 26104, 36104 ;Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;AddTypes     = 6105, 16105, 26105, 36105 ;Double RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;AddTypes     = 6106, 16106, 26106, 36106 ;Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;AddTypes     = 6107, 16107, 26107, 36107 ;AVE-4 default, no overrides supported nor planned
-
-;-- Size 3 Mid-block Crosswalks for bidirectional networks --
-;AddTypes     = 6108, 16108, 26108, 36108 ;Single RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4
-;AddTypes     = 6109, 16109, 26109, 36109 ;Double RD-2 default, overrides to TLA-5, RD-4 and RD-6
-;AddTypes     = 610A, 1610A, 2610A, 3610A ;Triple RD-2 default, overrides to TLA-7, AVE-6 and eventually TLA-9 and AVE-8 ¿?
-;AddTypes     = 610B, 1610B, 2610B, 3610B ;AVE-4 default, no overrides supported nor planned
-
-
-;-- (LONG MENU, ORDERED BY WIDTH) Mid-block Crosswalks for Road, AVE and bidirectional NWM --
-
-;-- Single Road Mid-block Crosswalks - RD-2 default, overrides to TLA-3, AVE-2, ARD-3 and NRD-4 --
-RotationRing = 6110, 16110, 26110, 36110 ;Size 1 Single Road
-AddTypes     = 6111, 16111, 26111, 36111 ;Size 2 Single Road
-AddTypes     = 6112, 16112, 26112, 36112 ;Size 3 Single Road
-
-;-- Double Road Mid-block Crosswalks - RD-2 default, overrides to TLA-5, RD-4 and RD-6 --
-;AddTypes     = 6103, 16103, 26103, 36103 ;Size 1 Double Road
-;AddTypes     = 6104, 16104, 26104, 36104 ;Size 2 Double Road
-;AddTypes     = 6105, 16105, 26105, 36105 ;Size 3 Double Road
-
-;-- Triple Road Mid-block Crosswalks - RD-2 default, overrides to TLA-7, AVE-6, eventually TLA-9 and AVE-8 ¿? --
-;AddTypes     = 6106, 16106, 26106, 36106 ;Size 1 Triple Road
-;AddTypes     = 6107, 16107, 26107, 36107 ;Size 2 Triple Road
-;AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Road
-
-;-- Avenue Mid-block Crosswalks - no overrides supported nor planned --
-;AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Avenue
-;AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Avenue
-;AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Avenue
-
+;[PROTOTYPE WORK] -- CLASSIC DRAGGABLE PEDMALLS --
+;Section reserved for experimental deployment (Active as of NAM 47)
+AddTypes     = 6112, 16112, 26112, 36112 ;Sidewalk Pedmall Draggable
 
 ;###separator###
 
@@ -125,7 +64,7 @@ AddTypes     = 6112, 16112, 26112, 36112 ;Size 3 Single Road
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006100]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-12
+;Last updated:           2023-jan-26
 ;Mid-block Crosswalk Size 1 Single Road - Supports Road and all bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500005
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500005
@@ -163,7 +102,7 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006101]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
+;Last updated:           2023-jan-26
 ;Mid-block Crosswalk Size 2 Single Road - Supports Road and two-tile bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500085
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500085
@@ -205,7 +144,7 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006102]
 ;Added by LucarioBoricua 2022-jul-26
-;Last updated:           2022-aug-07
+;Last updated:           2023-jan-26
 ;Mid-block Crosswalk Size 3 Single Road - Supports Road and all bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500105
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500105
@@ -251,20 +190,22 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006103]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 1 Double Road - Supports Road and two-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500006 ;maintaining RD-2 to FTL-110 provisionally
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C500006 ;maintaining RD-2 to FTL-110 provisionally
-PreviewEffect = preview_midblock_road_double_size1
+;Last updated:           2023-jan-26
+;Mid-block Crosswalk Size 1 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501785
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501785
+PreviewEffect = preview_midblock_avenue_size1
 
 CellLayout=....
 CellLayout=..a<
-CellLayout=.bb.
+CellLayout=.bc.
 CellLayout=..^.
 
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040204, 0xffffffff optional
+CheckType = a - avenue: 0x02000204 road: 0x02000200
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01040104 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03040304 avenue: 0x02000204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -273,7 +214,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500006
+PlaceQueryID = 0x5C501785
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016103]
@@ -289,23 +230,28 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006104]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 2 Double Road - Supports Road and double-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500086
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C500086
-PreviewEffect = preview_midblock_road_double_size2
+;Last updated:           2023-jan-26
+;Mid-block Crosswalk Size 2 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501885
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501885
+PreviewEffect = preview_midblock_avenue_size2
 
 CellLayout=....
 CellLayout=..a<
-CellLayout=.bb.
-CellLayout=.cc.
+CellLayout=.be.
+CellLayout=.cd.
 CellLayout=..^.
 
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040204, 0xffffffff optional
+CheckType = a - avenue: 0x02000204 road: 0x02000200
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = d - street: 0x04020102 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = e - street: 0x01020402 avenue: 0x02000204, 0xffffffff optional
+
+;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = d - street: 0x04020302 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = e - street: 0x03020402 avenue: 0x02000204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -315,7 +261,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500086
+PlaceQueryID = 0x5C501885
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016104]
@@ -331,30 +277,33 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006105]
 ;Added by LucarioBoricua 2022-jul-26
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 3 Double Road - Supports double-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500106
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C500106
-PreviewEffect = preview_midblock_road_double_size3
+;Last updated:           2023-jan-26
+;Mid-block Crosswalk Size 3 Avenue
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501985
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501985
+PreviewEffect = preview_midblock_avenue_size3
 
 CellLayout=....
 CellLayout=..a<
-CellLayout=.be.
-CellLayout=.cc.
-CellLayout=.fd.
+CellLayout=.bg.
+CellLayout=.cf.
+CellLayout=.de.
 CellLayout=..^.
 
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - road: 0x01020402 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = d - road: 0x04020102 avenue: 0x02040204, 0xffffffff optional
-;###RHD###CheckType = e - road: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = f - road: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - road: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = e - road: 0x03020402 avenue: 0x02040204, 0xffffffff optional
-;###LHD###CheckType = f - road: 0x04020302 avenue: 0x02040204, 0xffffffff optional
+CheckType = a - avenue: 0x02000204 road: 0x02000200
+;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x04040104 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = f - street: 0x01020102 avenue: 0x02000204, 0xffffffff optional
+;###RHD###CheckType = g - road: 0x01040404 avenue: 0x02000204, 0xffffffff optional
+
+;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x04040304 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = f - street: 0x03020302 avenue: 0x02000204, 0xffffffff optional
+;###LHD###CheckType = g - road: 0x03040404 avenue: 0x02000204, 0xffffffff optional
 
 ConsLayout=....
 ConsLayout=..+<
@@ -365,7 +314,7 @@ ConsLayout=..^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500106
+PlaceQueryID = 0x5C501985
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016105]
@@ -380,7 +329,8 @@ Rotate		= 3
 
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006106]
-;Last updated:           2022-aug-07
+;Added by LucarioBoricua 2022-jul-26
+;Last updated:           2023-jan-26
 ;Mid-block Crosswalk Size 1 Triple Road - Supports Road and triple-tile bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500007
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500007
@@ -422,7 +372,7 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006107]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
+;Last updated:           2022-jan-26
 ;Mid-block Crosswalk Size 2 Triple Road - Supports Road and triple-tile bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500087
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500087
@@ -473,7 +423,7 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006108]
 ;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
+;Last updated:           2022-jan-26
 ;Mid-block Crosswalk Size 3 Triple Road - Supports triple-tile bidirectional NWM
 ;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500107
 ;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500107
@@ -486,7 +436,7 @@ CellLayout=.cif.
 CellLayout=.dje.
 CellLayout=..^..
 
-CheckType = a - avenue: 0x02040204 road: 0x02000200
+CheckType = a - road: 0x02000200 avenue: 0x02040204
 ;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040200, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
 ;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040200, 0xffffffff optional
@@ -529,283 +479,18 @@ Rotate		= 2
 CopyFrom    = 0x6108
 Rotate		= 3
 
-;Mid-block Crosswalks - official deployment
-[HighwayIntersectionInfo_0x00006109]
-;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 1 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501785
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501785
-PreviewEffect = preview_midblock_avenue_size1
-
-CellLayout=....
-CellLayout=..a<
-CellLayout=.bc.
-CellLayout=..^.
-
-CheckType = a - avenue: 0x02000204 road: 0x02000200
-;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01040104 avenue: 0x02000204, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03040304 avenue: 0x02000204, 0xffffffff optional
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C501785
-Costs        = 0
-
-[HighwayIntersectionInfo_0x00016109]
-CopyFrom    = 0x6109
-Rotate		= 1
-[HighwayIntersectionInfo_0x00026109]
-CopyFrom    = 0x6109
-Rotate		= 2
-[HighwayIntersectionInfo_0x00036109]
-CopyFrom    = 0x6109
-Rotate		= 3
-
-;Mid-block Crosswalks - official deployment
-[HighwayIntersectionInfo_0x0000610A]
-;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 2 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501885
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501885
-PreviewEffect = preview_midblock_avenue_size2
-
-CellLayout=....
-CellLayout=..a<
-CellLayout=.be.
-CellLayout=.cd.
-CellLayout=..^.
-
-CheckType = a - avenue: 0x02000204 road: 0x02000200
-;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = d - street: 0x04020102 avenue: 0x02000204, 0xffffffff optional
-;###RHD###CheckType = e - street: 0x01020402 avenue: 0x02000204, 0xffffffff optional
-
-;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = d - street: 0x04020302 avenue: 0x02000204, 0xffffffff optional
-;###LHD###CheckType = e - street: 0x03020402 avenue: 0x02000204, 0xffffffff optional
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C501885
-Costs        = 0
-
-[HighwayIntersectionInfo_0x0001610A]
-CopyFrom    = 0x610A
-Rotate		= 1
-[HighwayIntersectionInfo_0x0002610A]
-CopyFrom    = 0x610A
-Rotate		= 2
-[HighwayIntersectionInfo_0x0003610A]
-CopyFrom    = 0x610A
-Rotate		= 3
-
-;Mid-block Crosswalks - official deployment
-[HighwayIntersectionInfo_0x0000610B]
-;Added by LucarioBoricua 2022-jul-26
-;Last updated:           2022-aug-07
-;Mid-block Crosswalk Size 3 Avenue
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C501985
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C501985
-PreviewEffect = preview_midblock_avenue_size3
-
-CellLayout=....
-CellLayout=..a<
-CellLayout=.bg.
-CellLayout=.cf.
-CellLayout=.de.
-CellLayout=..^.
-
-CheckType = a - avenue: 0x02000204 road: 0x02000200
-;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = e - road: 0x04040104 avenue: 0x02000204, 0xffffffff optional
-;###RHD###CheckType = f - street: 0x01020102 avenue: 0x02000204, 0xffffffff optional
-;###RHD###CheckType = g - road: 0x01040404 avenue: 0x02000204, 0xffffffff optional
-
-;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = e - road: 0x04040304 avenue: 0x02000204, 0xffffffff optional
-;###LHD###CheckType = f - street: 0x03020302 avenue: 0x02000204, 0xffffffff optional
-;###LHD###CheckType = g - road: 0x03040404 avenue: 0x02000204, 0xffffffff optional
-
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C501985
-Costs        = 0
-
-[HighwayIntersectionInfo_0x0001610B]
-CopyFrom    = 0x610B
-Rotate		= 1
-[HighwayIntersectionInfo_0x0002610B]
-CopyFrom    = 0x610B
-Rotate		= 2
-[HighwayIntersectionInfo_0x0003610B]
-CopyFrom    = 0x610B
-Rotate		= 3
-
+;###separator###
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
+;  DRAGGABLE PEDMALL PROTOTYPES
 ;
-;PEDESTRIAN CROSSINGS SECTION - EXPERIMENTAL
-
-;Mid-block Crosswalks - experimental deployment
-[HighwayIntersectionInfo_0x00006110]
-;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-06
-;Mid-block Crosswalk Size 1 Single Road - Supports Road and all bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500005
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500005
-PreviewEffect = preview_midblock_road_single_size1
-
-CellLayout=...
-CellLayout=.a<
-CellLayout=.b.
-CellLayout=.^.
-
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x02000200 avenue: 0x00000000, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x02000200 avenue: 0x00000000, 0xffffffff optional
-
-ConsLayout=...
-ConsLayout=.+<
-ConsLayout=...
-ConsLayout=.^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500005
-Costs        = 0
-
-[HighwayIntersectionInfo_0x00016110]
-CopyFrom    = 0x6110
-Rotate		= 1
-[HighwayIntersectionInfo_0x00026110]
-CopyFrom    = 0x6110
-Rotate		= 2
-[HighwayIntersectionInfo_0x00036110]
-CopyFrom    = 0x6110
-Rotate		= 3
-
-
-;Mid-block Crosswalks - experimental deployment
-[HighwayIntersectionInfo_0x00006111]
-;Added by LucarioBoricua 2022-jul-27
-;Last updated:           2022-aug-06
-;Mid-block Crosswalk Size 2 Single Road - Supports Road and two-tile bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500085
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500085
-PreviewEffect = preview_midblock_road_single_size2
-
-CellLayout=...
-CellLayout=.a<
-CellLayout=.b.
-CellLayout=.c.
-CellLayout=.^.
-
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x02000000 avenue: 0x04040004, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x00000200 avenue: 0x00040404, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x02000000 avenue: 0x04040004, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x00000200 avenue: 0x00040404, 0xffffffff optional
-
-ConsLayout=...
-ConsLayout=.+<
-ConsLayout=...
-ConsLayout=...
-ConsLayout=.^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500085
-Costs        = 0
-
-[HighwayIntersectionInfo_0x00016111]
-CopyFrom    = 0x6111
-Rotate		= 1
-[HighwayIntersectionInfo_0x00026111]
-CopyFrom    = 0x6111
-Rotate		= 2
-[HighwayIntersectionInfo_0x00036111]
-CopyFrom    = 0x6111
-Rotate		= 3
-
-;Mid-block Crosswalks - experimental deployment
-[HighwayIntersectionInfo_0x00006112]
-;Added by LucarioBoricua 2022-jul-26
-;Last updated:           2022-aug-06
-;Mid-block Crosswalk Size 3 Single Road - Supports Road and all bidirectional NWM
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C500105
-;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C500105
-PreviewEffect = preview_midblock_road_single_size3
-
-CellLayout=...
-CellLayout=.a<
-CellLayout=.b.
-CellLayout=.c.
-CellLayout=.d.
-CellLayout=.^.
-
-CheckType = a - road: 0x02000200
-;###RHD###CheckType = b - street: 0x02000000 avenue: 0x02000200, 0xffffffff optional
-;###RHD###CheckType = c - street: 0x02040204 avenue: 0x02020202, 0xffffffff optional
-;###RHD###CheckType = d - street: 0x00000200 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = b - street: 0x02000000 avenue: 0x02000200, 0xffffffff optional
-;###LHD###CheckType = c - street: 0x02040204 avenue: 0x02020202, 0xffffffff optional
-;###LHD###CheckType = d - street: 0x00000002 avenue: 0x02000200, 0xffffffff optional
-
-ConsLayout=...
-ConsLayout=.+<
-ConsLayout=...
-ConsLayout=...
-ConsLayout=...
-ConsLayout=.^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C500105
-Costs        = 0
-
-[HighwayIntersectionInfo_0x00016112]
-CopyFrom    = 0x6112
-Rotate		= 1
-[HighwayIntersectionInfo_0x00026112]
-CopyFrom    = 0x6112
-Rotate		= 2
-[HighwayIntersectionInfo_0x00036112]
-CopyFrom    = 0x6112
-Rotate		= 3
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Draggable Pedmalls - prototype deployment
-[HighwayIntersectionInfo_0x0000610C]
+[HighwayIntersectionInfo_0x00006112]
 ;Added by LucarioBoricua 2023-jan-18
-;Last updated:           2023-jan-18
+;Last updated:           2022-jan-26
 ;Sidewalk Draggable Pedmall - Draggable version of Center Pole pedmall puzzle piece
 Piece = 0.0, 0.0, 0, 0, 0x5C531105
 PreviewEffect = preview_ped_malls_sidewalk1
@@ -816,7 +501,7 @@ CellLayout=.z<
 CellLayout=.^.
 
 CheckType = z - street: 0x00000000
-CheckType = a - street: 0x02000200 onewayroad: 0x00040004, 0xffffffff optional
+CheckType = a - street: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=...
@@ -828,12 +513,12 @@ ReplacementIntersection = 0, 0
 PlaceQueryID = 0x5C531105
 Costs        = 0
 
-[HighwayIntersectionInfo_0x0001610C]
-CopyFrom    = 0x610C
+[HighwayIntersectionInfo_0x00016112]
+CopyFrom    = 0x6112
 Rotate		= 1
-[HighwayIntersectionInfo_0x0002610C]
-CopyFrom    = 0x610C
+[HighwayIntersectionInfo_0x00026112]
+CopyFrom    = 0x6112
 Rotate		= 2
-[HighwayIntersectionInfo_0x0003610C]
-CopyFrom    = 0x610C
+[HighwayIntersectionInfo_0x00036112]
+CopyFrom    = 0x6112
 Rotate		= 3
