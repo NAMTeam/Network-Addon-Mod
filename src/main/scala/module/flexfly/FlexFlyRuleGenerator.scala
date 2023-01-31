@@ -7,7 +7,7 @@ import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 object FlexFlyRuleGenerator {
 
   val orientations = Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-  private[flexfly] val deactivated = Rhw12s + L1Rhw12s + L2Rhw12s + Rhw10c + L1Rhw10c + L2Rhw10c
+  private[flexfly] val deactivated = Rhw10c + L1Rhw10c + L2Rhw10c
 
   /** the directions of a network for which the north edge is a shoulder (possibly empty) */
   def directionsWithShoulderNorth(n: Network) = {
