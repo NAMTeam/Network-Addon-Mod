@@ -1,0 +1,316 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+; 0x620#
+; Draggable PedMall Button
+;
+; 0x621#
+; EXPERIMENTAL Draggable PedMall Button
+
+;By:			Ulisse Wolf
+;Created:		2023-january-17
+;Last updated:	TBA
+;Birth of the Pedestrian Revolution Mod
+
+;-- DRAGGABLE PEDMALL --
+
+;RotationRing = 6200, 16200, 26200, 36200 ;Reserved
+RotationRing = 6201, 16201, 26201, 36201 ;ped malls sidewalk
+AddTypes = 6202, 16202, 26202, 36202 ;ped malls sidewalk
+AddTypes = 6203, 16203, 26203, 36203 ;ped malls sidewalk
+AddTypes = 6204, 16204, 26204, 36204 ;ped malls sidewalk
+AddTypes = 6205, 16205, 26205, 36205 ;ped malls sidewalk
+AddTypes = 6206, 16206, 26206, 36206 ;ped malls sidewalk
+AddTypes = 6207, 16207, 26207, 36207 ;ped malls sidewalk
+AddTypes = 6208, 16208, 26208, 36208 ;ped malls sidewalk
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;DRAGGABLE PED MAL
+;DRAGGABLE PED MAL - official deployment
+[HighwayIntersectionInfo_0x00006201]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531105
+PreviewEffect = preview_ped_malls_sidewalk1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016201]
+CopyFrom    = 0x6201
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026201]
+CopyFrom    = 0x6201
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036201]
+CopyFrom    = 0x6201
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006202]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531205
+PreviewEffect = preview_ped_malls_sidewalk2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 onewayroad: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531205
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016202]
+CopyFrom    = 0x6202
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026202]
+CopyFrom    = 0x6202
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036202]
+CopyFrom    = 0x6202
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006203]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531305
+PreviewEffect = preview_ped_malls_sidewalk3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - road: 0x02020202 street: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531305
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016203]
+CopyFrom    = 0x6203
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026203]
+CopyFrom    = 0x6203
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036203]
+CopyFrom    = 0x6203
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006204]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531405
+PreviewEffect = preview_ped_malls_sidewalk4
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 onewayroad: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531405
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016204]
+CopyFrom    = 0x6204
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026204]
+CopyFrom    = 0x6204
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036204]
+CopyFrom    = 0x6204
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006205]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531505
+PreviewEffect = preview_ped_malls_sidewalk5
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 avenue: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531505
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016205]
+CopyFrom    = 0x6205
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026205]
+CopyFrom    = 0x6205
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036205]
+CopyFrom    = 0x6205
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006206]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531605
+PreviewEffect = preview_ped_malls_sidewalk6
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - road: 0x02020202 street: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531605
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016206]
+CopyFrom    = 0x6206
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026206]
+CopyFrom    = 0x6206
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036206]
+CopyFrom    = 0x6206
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006207]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531705
+PreviewEffect = preview_ped_malls_sidewalk7
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 avenue: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531705
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016207]
+CopyFrom    = 0x6207
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026207]
+CopyFrom    = 0x6207
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036207]
+CopyFrom    = 0x6207
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006208]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - ped mall sidewalk
+Piece = 0.0, 16.0, 0, 0, 0x5C531805
+PreviewEffect = preview_ped_malls_sidewalk8
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x00000000
+CheckType = b - street: 0x02020202 avenue: 0x04040404, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531805
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016208]
+CopyFrom    = 0x6208
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026208]
+CopyFrom    = 0x6208
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036208]
+CopyFrom    = 0x6208
+Rotate		= 3
+
+
+
