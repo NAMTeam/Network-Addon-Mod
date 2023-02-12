@@ -62,9 +62,8 @@ The generated files are written to the `target` directory.
 
 ### Compiling the NAM controller
 
-The latest version of the NAM comes with the most up-to-date version of the
-[NAM Controller Compiler](https://github.com/memo33/NAMControllerCompiler).
-Use the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
+Get the latest version of the [NAM Controller Compiler](https://github.com/memo33/NAMControllerCompiler/releases).
+Launch it and set the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
 Usually, this is the only task you need to do after modifying files in the `RUL0`, `RUL1` or `RUL2` folders.
 
 ### Compiling INRULs
