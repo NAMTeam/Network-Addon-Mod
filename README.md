@@ -44,11 +44,11 @@ The remainder of this README file is intended for developers.
     │ └── test/
     └── target/
 
-The main code is contained in the folders `RUL0`, `RUL1`, `RUL2`.
+The main code is contained in the folders `INI`, `RUL0`, `RUL1`, `RUL2`.
 The files in there are used as input for the
 the NAM Controller Compiler.
 
-The folders `Bridge Controller`, `INI`, `INRULs`
+The folders `Bridge Controller`, `INRULs`
 contain network related code that is not part of the NAM controller,
 but is contained in other .dat files of the NAM.
 
@@ -62,10 +62,9 @@ The generated files are written to the `target` directory.
 
 ### Compiling the NAM controller
 
-The latest version of the NAM comes with the most up-to-date version of the
-[NAM Controller Compiler](https://github.com/memo33/NAMControllerCompiler).
-Use the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
-Usually, this is the only task you need to do after modifying files in the `RUL0`, `RUL1` or `RUL2` folders.
+Get the latest version of the [NAM Controller Compiler](https://github.com/memo33/NAMControllerCompiler/releases).
+Launch it and set the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
+Usually, this is the only task you need to do after modifying files in the `INI`, `RUL0`, `RUL1` or `RUL2` folders.
 
 ### Compiling INRULs
 
