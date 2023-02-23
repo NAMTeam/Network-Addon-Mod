@@ -50,10 +50,6 @@ AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
 ;[FUTURE WORK] -- ENHANCED CROSSWALKS FOR SURFACE ROAD INTERSECTIONS --
 ;Section reserved for future development (Phases to be determined)
 
-;[PROTOTYPE WORK] -- CLASSIC DRAGGABLE PEDMALLS --
-;Section reserved for experimental deployment (Active as of NAM 47)
-AddTypes     = 6112, 16112, 26112, 36112 ;Sidewalk Pedmall Draggable
-
 ;###separator###
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -477,48 +473,4 @@ CopyFrom    = 0x6108
 Rotate		= 2
 [HighwayIntersectionInfo_0x00036108]
 CopyFrom    = 0x6108
-Rotate		= 3
-
-;###separator###
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;
-;  DRAGGABLE PEDMALL PROTOTYPES
-;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;Draggable Pedmalls - prototype deployment
-[HighwayIntersectionInfo_0x00006112]
-;Added by LucarioBoricua 2023-jan-18
-;Last updated:           2022-jan-26
-;Sidewalk Draggable Pedmall - Draggable version of Center Pole pedmall puzzle piece
-Piece = 0.0, 0.0, 0, 0, 0x5C531105
-PreviewEffect = preview_ped_malls_sidewalk1
-
-CellLayout=...
-CellLayout=.a.
-CellLayout=.z<
-CellLayout=.^.
-
-CheckType = z - street: 0x00000000
-CheckType = a - street: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
-
-ConsLayout=...
-ConsLayout=...
-ConsLayout=.+<
-ConsLayout=.^.
-
-AutoTileBase=	0x55387000
-ReplacementIntersection = 0, 0
-PlaceQueryID = 0x5C531105
-Costs        = 0
-
-[HighwayIntersectionInfo_0x00016112]
-CopyFrom    = 0x6112
-Rotate		= 1
-[HighwayIntersectionInfo_0x00026112]
-CopyFrom    = 0x6112
-Rotate		= 2
-[HighwayIntersectionInfo_0x00036112]
-CopyFrom    = 0x6112
 Rotate		= 3
