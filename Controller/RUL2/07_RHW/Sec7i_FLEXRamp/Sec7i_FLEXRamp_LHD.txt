@@ -122,6 +122,29 @@
 
 ;---- Start 1.1.a.1 - Orthogonal Type A1 Outside Ramps ----
 
+; Summary - Type A1 Outside
+;
+; IID begin = 0x578w[00]
+; Base version= RHW-2
+; Branch = MIS Orthogonal
+; Notes:
+;    The RHW-12S version of this ramp has an additional tile
+;    located on the bottom of the ramp (tile 04).  This is
+;    to improve barrier spacing on the L1-L2 branches.
+;
+;    Some variants of this ramp must override its L1 RHW-2 
+;    version in addition to the base version due to overrides
+;    of the base in place for the L1 QuickChange plop.
+;
+; Diagram:
+;
+;    ..  ||
+;    ..  00
+;    01  02
+;    03  ||
+;    ||  ..
+;
+
 ;----RHW-2----
 ;---L0---
 ;---L1---
@@ -2763,6 +2786,22 @@
 
 ;---- Start 1.1.a.3 - Orthogonal Type A1 Inside Ramps -----
 
+; Summary - Type A1 Inside
+;
+; IID begin = 0x578w[07]
+; Base version = MIS
+; Branch = MIS Orthogonal
+; Notes:
+;
+; Diagram:
+;
+;    ..  ||
+;    ..  07
+;    08  09
+;    0A  ||
+;    ||  ..
+;
+
 ;----MIS----
 ;---L0 MIS---
 ;07 to Orth (Up)
@@ -4181,6 +4220,28 @@
 
 ;---- Start 1.1.a.4 - Orthogonal Type A1 Outside Wide Ramps -----
 
+; Summary - Type A1 Outside Wide
+;
+; IID begin = 0x578w[0d]
+; Base version = RHW-2
+; Branch = MIS Orthogonal
+; Notes:
+;    This is an extension of the B1 Outside Ramp.
+;
+;    There are two implementations of this ramp, and two sets of
+;    RUL2 code are present here. One is INRUL-dependent,
+;    the other is INRUL-independent.
+;
+; Diagram:
+;
+;  ..  ..  ..  ||
+;  ..  ..  ..  10
+;  ..  ..  11  12
+;  ..  ..  13  14
+;  ..  0d  0e  ||
+;  ..  0f  ..  ..
+;  ..  ||  ..  ..
+
 ;----RHW-2----
 ;---L0 RHW-2---
 ;--Override, INRUL-Independent--
@@ -5416,8 +5477,24 @@
 
 ;---- Start 1.1.b.1 - Orthogonal Type B1 Outside Ramps ----
 
+; Summary - Type B1 Outside
+;
+; IID begin = 0x578w[10]
+; Base version = RHW-2
+; Branch = MIS Diagonal
+; Notes:
+;
+; Diagram:
+;
+;  ..  ..  ||
+;  ..  ..  10
+;  ..  11  12
+;  ..  13  14
+;  //  15  ||
+;  //  ..  ..
+
 ;----RHW-2----
-;---L0 RHW-2----
+;---L0 RHW-2---
 ;---L1 RHW-2---
 ;Orth to 10 (Down)
 0x57801080,1,0,0x57100000,1,0=0x57801099,1,0,0x57100000,1,0
@@ -8513,6 +8590,23 @@
 
 ;---- Start 1.1.b.3 - Orthogonal Type B1 Inside Ramps -----
 
+; Summary - Type B1 Inside
+;
+; IID begin = 0x578w[19]
+; Base version = MIS
+; Branch = MIS Diagonal
+; Notes:
+;
+; Diagram:
+;
+;  ..  ..  ||
+;  ..  ..  19
+;  ..  1a  1b
+;  ..  1c  1d
+;  //  1e  ||
+;  //  ..  ..
+;
+
 ;----MIS----
 ;---L0 MIS---
 ;19 to Orth (Up)
@@ -10120,6 +10214,23 @@
 ;----------------------------------------------------------
 
 ;---- Start 1.1.d.1 - Orthogonal Type D1 Outside Ramps ----
+
+; Summary - Type D1 Outside
+;
+; IID begin = 0x578w[30]
+; Base version = RHW-3
+; Branch = MIS Orthogonal
+; Notes:
+;    RHW-6S and above omit tile 34.
+;
+; Diagram:
+;
+;    ..  ||
+;    ..  30
+;    31  32
+;    33  34
+;    ||  ||
+;
 
 ;TEST CODE
 0x57000080,1,0,0x57020000,3,0=0x57000080,1,0,0x57000080,1,0
@@ -12394,6 +12505,22 @@
 ;---- End 1.1.d.1 - Orthogonal Type D1 Outside Ramps ------
 
 ;---- Start 1.1.d.2 - Orthogonal Type D1 Inside Ramps -----
+
+; Summary - Type D1 Inside
+;
+; IID begin = 0x578w[37]
+; Base version = RHW-4
+; Branch = MIS Orthogonal
+; Notes:
+;
+; Diagram:
+;
+;    ..  ||
+;    ..  37
+;    38  39
+;    3a  3b
+;    ||  ||
+;
 
 ;----RHW-4----
 ;---L0---
