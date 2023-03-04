@@ -11386,3 +11386,1997 @@ end
 	end
 
 end
+
+
+#RHW-10S Steel Arch by IDS2 (02/23)
+
+bridge 32
+
+#Abutment Start (1 tile)
+section ab
+	piece <0x40350000, 0> <0x40350001, 0>
+end
+
+#Abutment End (1 tile)
+section ae
+	piece <0x40355000, 0> <0x40355001, 0>
+end
+
+#Pillar (1 tile)
+section pi
+	piece <0x40354000, 0> <0x40354001, 0>
+end
+
+#Girder (1 tile)
+section gi
+	piece <0x40351000, 0> <0x40351001, 0>
+end
+
+#Pillar/Arch (14 tiles)
+section pa
+	piece <0x40354000, 0> <0x40354001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40352000, 0> <0x40352001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+	piece <0x40353000, 0> <0x40353001, 0>
+end
+
+	length 17
+	piece ab 1*pa pi ae
+	end
+
+	length 18
+	piece ab gi 1*pa pi ae
+	end
+
+	length 19
+	piece ab gi 1*pa pi gi ae
+	end
+
+	length 20
+	piece ab 2*gi 1*pa pi gi ae
+	end
+
+	length 21
+	piece ab 2*gi 1*pa pi 2*gi ae
+	end
+
+	length 22
+	piece ab 3*gi 1*pa pi 2*gi ae
+	end
+
+	length 23
+	piece ab 3*gi 1*pa pi 3*gi ae
+	end
+
+	length 24
+	piece ab 4*gi 1*pa pi 3*gi ae
+	end
+
+	length 25
+	piece ab 4*gi 1*pa pi 4*gi ae
+	end
+
+	length 26
+	piece ab gi pi 3*gi 1*pa pi 4*gi ae
+	end
+
+	length 27
+	piece ab gi pi 3*gi 1*pa pi 3*gi pi gi ae
+	end
+
+	length 28
+	piece ab 2*gi pi 3*gi 1*pa pi 3*gi pi gi ae
+	end
+
+	length 29
+	piece ab 2*gi pi 3*gi 1*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 30
+	piece ab 3*gi pi 3*gi 1*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 31
+	piece ab 2*pa pi ae
+	end
+
+	length 32
+	piece ab gi 2*pa pi ae
+	end
+
+	length 33
+	piece ab gi 2*pa pi gi ae
+	end
+
+	length 34
+	piece ab 2*gi 2*pa pi gi ae
+	end
+
+	length 35
+	piece ab 2*gi 2*pa pi 2*gi ae
+	end
+
+	length 36
+	piece ab 3*gi 2*pa pi 2*gi ae
+	end
+
+	length 37
+	piece ab 3*gi 2*pa pi 3*gi ae
+	end
+
+	length 38
+	piece ab 4*gi 2*pa pi 3*gi ae
+	end
+
+	length 39
+	piece ab 4*gi 2*pa pi 4*gi ae
+	end
+
+	length 40
+	piece ab gi pi 3*gi 2*pa pi 4*gi ae
+	end
+
+	length 41
+	piece ab gi pi 3*gi 2*pa pi 3*gi pi gi ae
+	end
+
+	length 42
+	piece ab 2*gi pi 3*gi 2*pa pi 3*gi pi gi ae
+	end
+
+	length 43
+	piece ab 2*gi pi 3*gi 2*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 44
+	piece ab 3*gi pi 3*gi 2*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 45
+	piece ab 3*pa pi ae
+	end
+
+	length 46
+	piece ab gi 3*pa pi ae
+	end
+
+	length 47
+	piece ab gi 3*pa pi gi ae
+	end
+
+	length 48
+	piece ab 2*gi 3*pa pi gi ae
+	end
+
+	length 49
+	piece ab 2*gi 3*pa pi 2*gi ae
+	end
+
+	length 50
+	piece ab 3*gi 3*pa pi 2*gi ae
+	end
+
+	length 51
+	piece ab 3*gi 3*pa pi 3*gi ae
+	end
+
+	length 52
+	piece ab 4*gi 3*pa pi 3*gi ae
+	end
+
+	length 53
+	piece ab 4*gi 3*pa pi 4*gi ae
+	end
+
+	length 54
+	piece ab gi pi 3*gi 3*pa pi 4*gi ae
+	end
+
+	length 55
+	piece ab gi pi 3*gi 3*pa pi 3*gi pi gi ae
+	end
+
+	length 56
+	piece ab 2*gi pi 3*gi 3*pa pi 3*gi pi gi ae
+	end
+
+	length 57
+	piece ab 2*gi pi 3*gi 3*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 58
+	piece ab 3*gi pi 3*gi 3*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 59
+	piece ab 4*pa pi ae
+	end
+
+	length 60
+	piece ab gi 4*pa pi ae
+	end
+
+	length 61
+	piece ab gi 4*pa pi gi ae
+	end
+
+	length 62
+	piece ab 2*gi 4*pa pi gi ae
+	end
+
+	length 63
+	piece ab 2*gi 4*pa pi 2*gi ae
+	end
+
+	length 64
+	piece ab 3*gi 4*pa pi 2*gi ae
+	end
+
+	length 65
+	piece ab 3*gi 4*pa pi 3*gi ae
+	end
+
+	length 66
+	piece ab 4*gi 4*pa pi 3*gi ae
+	end
+
+	length 67
+	piece ab 4*gi 4*pa pi 4*gi ae
+	end
+
+	length 68
+	piece ab gi pi 3*gi 4*pa pi 4*gi ae
+	end
+
+	length 69
+	piece ab gi pi 3*gi 4*pa pi 3*gi pi gi ae
+	end
+
+	length 70
+	piece ab 2*gi pi 3*gi 4*pa pi 3*gi pi gi ae
+	end
+
+	length 71
+	piece ab 2*gi pi 3*gi 4*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 72
+	piece ab 3*gi pi 3*gi 4*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 73
+	piece ab 5*pa pi ae
+	end
+
+	length 74
+	piece ab gi 5*pa pi ae
+	end
+
+	length 75
+	piece ab gi 5*pa pi gi ae
+	end
+
+	length 76
+	piece ab 2*gi 5*pa pi gi ae
+	end
+
+	length 77
+	piece ab 2*gi 5*pa pi 2*gi ae
+	end
+
+	length 78
+	piece ab 3*gi 5*pa pi 2*gi ae
+	end
+
+	length 79
+	piece ab 3*gi 5*pa pi 3*gi ae
+	end
+
+	length 80
+	piece ab 4*gi 5*pa pi 3*gi ae
+	end
+
+	length 81
+	piece ab 4*gi 5*pa pi 4*gi ae
+	end
+
+	length 82
+	piece ab gi pi 3*gi 5*pa pi 4*gi ae
+	end
+
+	length 83
+	piece ab gi pi 3*gi 5*pa pi 3*gi pi gi ae
+	end
+
+	length 84
+	piece ab 2*gi pi 3*gi 5*pa pi 3*gi pi gi ae
+	end
+
+	length 85
+	piece ab 2*gi pi 3*gi 5*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 86
+	piece ab 3*gi pi 3*gi 5*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 87
+	piece ab 6*pa pi ae
+	end
+
+	length 88
+	piece ab gi 6*pa pi ae
+	end
+
+	length 89
+	piece ab gi 6*pa pi gi ae
+	end
+
+	length 90
+	piece ab 2*gi 6*pa pi gi ae
+	end
+
+	length 91
+	piece ab 2*gi 6*pa pi 2*gi ae
+	end
+
+	length 92
+	piece ab 3*gi 6*pa pi 2*gi ae
+	end
+
+	length 93
+	piece ab 3*gi 6*pa pi 3*gi ae
+	end
+
+	length 94
+	piece ab 4*gi 6*pa pi 3*gi ae
+	end
+
+	length 95
+	piece ab 4*gi 6*pa pi 4*gi ae
+	end
+
+	length 96
+	piece ab gi pi 3*gi 6*pa pi 4*gi ae
+	end
+
+	length 97
+	piece ab gi pi 3*gi 6*pa pi 3*gi pi gi ae
+	end
+
+	length 98
+	piece ab 2*gi pi 3*gi 6*pa pi 3*gi pi gi ae
+	end
+
+	length 99
+	piece ab 2*gi pi 3*gi 6*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 100
+	piece ab 3*gi pi 3*gi 6*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 101
+	piece ab 7*pa pi ae
+	end
+
+	length 102
+	piece ab gi 7*pa pi ae
+	end
+
+	length 103
+	piece ab gi 7*pa pi gi ae
+	end
+
+	length 104
+	piece ab 2*gi 7*pa pi gi ae
+	end
+
+	length 105
+	piece ab 2*gi 7*pa pi 2*gi ae
+	end
+
+	length 106
+	piece ab 3*gi 7*pa pi 2*gi ae
+	end
+
+	length 107
+	piece ab 3*gi 7*pa pi 3*gi ae
+	end
+
+	length 108
+	piece ab 4*gi 7*pa pi 3*gi ae
+	end
+
+	length 109
+	piece ab 4*gi 7*pa pi 4*gi ae
+	end
+
+	length 110
+	piece ab gi pi 3*gi 7*pa pi 4*gi ae
+	end
+
+	length 111
+	piece ab gi pi 3*gi 7*pa pi 3*gi pi gi ae
+	end
+
+	length 112
+	piece ab 2*gi pi 3*gi 7*pa pi 3*gi pi gi ae
+	end
+
+	length 113
+	piece ab 2*gi pi 3*gi 7*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 114
+	piece ab 3*gi pi 3*gi 7*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 115
+	piece ab 8*pa pi ae
+	end
+
+	length 116
+	piece ab gi 8*pa pi ae
+	end
+
+	length 117
+	piece ab gi 8*pa pi gi ae
+	end
+
+	length 118
+	piece ab 2*gi 8*pa pi gi ae
+	end
+
+	length 119
+	piece ab 2*gi 8*pa pi 2*gi ae
+	end
+
+	length 120
+	piece ab 3*gi 8*pa pi 2*gi ae
+	end
+
+	length 121
+	piece ab 3*gi 8*pa pi 3*gi ae
+	end
+
+	length 122
+	piece ab 4*gi 8*pa pi 3*gi ae
+	end
+
+	length 123
+	piece ab 4*gi 8*pa pi 4*gi ae
+	end
+
+	length 124
+	piece ab gi pi 3*gi 8*pa pi 4*gi ae
+	end
+
+	length 125
+	piece ab gi pi 3*gi 8*pa pi 3*gi pi gi ae
+	end
+
+	length 126
+	piece ab 2*gi pi 3*gi 8*pa pi 3*gi pi gi ae
+	end
+
+	length 127
+	piece ab 2*gi pi 3*gi 8*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 128
+	piece ab 3*gi pi 3*gi 8*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 129
+	piece ab 9*pa pi ae
+	end
+
+	length 130
+	piece ab gi 9*pa pi ae
+	end
+
+	length 131
+	piece ab gi 9*pa pi gi ae
+	end
+
+	length 132
+	piece ab 2*gi 9*pa pi gi ae
+	end
+
+	length 133
+	piece ab 2*gi 9*pa pi 2*gi ae
+	end
+
+	length 134
+	piece ab 3*gi 9*pa pi 2*gi ae
+	end
+
+	length 135
+	piece ab 3*gi 9*pa pi 3*gi ae
+	end
+
+	length 136
+	piece ab 4*gi 9*pa pi 3*gi ae
+	end
+
+	length 137
+	piece ab 4*gi 9*pa pi 4*gi ae
+	end
+
+	length 138
+	piece ab gi pi 3*gi 9*pa pi 4*gi ae
+	end
+
+	length 139
+	piece ab gi pi 3*gi 9*pa pi 3*gi pi gi ae
+	end
+
+	length 140
+	piece ab 2*gi pi 3*gi 9*pa pi 3*gi pi gi ae
+	end
+
+	length 141
+	piece ab 2*gi pi 3*gi 9*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 142
+	piece ab 3*gi pi 3*gi 9*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 143
+	piece ab 10*pa pi ae
+	end
+
+	length 144
+	piece ab gi 10*pa pi ae
+	end
+
+	length 145
+	piece ab gi 10*pa pi gi ae
+	end
+
+	length 146
+	piece ab 2*gi 10*pa pi gi ae
+	end
+
+	length 147
+	piece ab 2*gi 10*pa pi 2*gi ae
+	end
+
+	length 148
+	piece ab 3*gi 10*pa pi 2*gi ae
+	end
+
+	length 149
+	piece ab 3*gi 10*pa pi 3*gi ae
+	end
+
+	length 150
+	piece ab 4*gi 10*pa pi 3*gi ae
+	end
+
+	length 151
+	piece ab 4*gi 10*pa pi 4*gi ae
+	end
+
+	length 152
+	piece ab gi pi 3*gi 10*pa pi 4*gi ae
+	end
+
+	length 153
+	piece ab gi pi 3*gi 10*pa pi 3*gi pi gi ae
+	end
+
+	length 154
+	piece ab 2*gi pi 3*gi 10*pa pi 3*gi pi gi ae
+	end
+
+	length 155
+	piece ab 2*gi pi 3*gi 10*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 156
+	piece ab 3*gi pi 3*gi 10*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 157
+	piece ab 11*pa pi ae
+	end
+
+	length 158
+	piece ab gi 11*pa pi ae
+	end
+
+	length 159
+	piece ab gi 11*pa pi gi ae
+	end
+
+	length 160
+	piece ab 2*gi 11*pa pi gi ae
+	end
+
+	length 161
+	piece ab 2*gi 11*pa pi 2*gi ae
+	end
+
+	length 162
+	piece ab 3*gi 11*pa pi 2*gi ae
+	end
+
+	length 163
+	piece ab 3*gi 11*pa pi 3*gi ae
+	end
+
+	length 164
+	piece ab 4*gi 11*pa pi 3*gi ae
+	end
+
+	length 165
+	piece ab 4*gi 11*pa pi 4*gi ae
+	end
+
+	length 166
+	piece ab gi pi 3*gi 11*pa pi 4*gi ae
+	end
+
+	length 167
+	piece ab gi pi 3*gi 11*pa pi 3*gi pi gi ae
+	end
+
+	length 168
+	piece ab 2*gi pi 3*gi 11*pa pi 3*gi pi gi ae
+	end
+
+	length 169
+	piece ab 2*gi pi 3*gi 11*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 170
+	piece ab 3*gi pi 3*gi 11*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 171
+	piece ab 12*pa pi ae
+	end
+
+	length 172
+	piece ab gi 12*pa pi ae
+	end
+
+	length 173
+	piece ab gi 12*pa pi gi ae
+	end
+
+	length 174
+	piece ab 2*gi 12*pa pi gi ae
+	end
+
+	length 175
+	piece ab 2*gi 12*pa pi 2*gi ae
+	end
+
+	length 176
+	piece ab 3*gi 12*pa pi 2*gi ae
+	end
+
+	length 177
+	piece ab 3*gi 12*pa pi 3*gi ae
+	end
+
+	length 178
+	piece ab 4*gi 12*pa pi 3*gi ae
+	end
+
+	length 179
+	piece ab 4*gi 12*pa pi 4*gi ae
+	end
+
+	length 180
+	piece ab gi pi 3*gi 12*pa pi 4*gi ae
+	end
+
+	length 181
+	piece ab gi pi 3*gi 12*pa pi 3*gi pi gi ae
+	end
+
+	length 182
+	piece ab 2*gi pi 3*gi 12*pa pi 3*gi pi gi ae
+	end
+
+	length 183
+	piece ab 2*gi pi 3*gi 12*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 184
+	piece ab 3*gi pi 3*gi 12*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 185
+	piece ab 13*pa pi ae
+	end
+
+	length 186
+	piece ab gi 13*pa pi ae
+	end
+
+	length 187
+	piece ab gi 13*pa pi gi ae
+	end
+
+	length 188
+	piece ab 2*gi 13*pa pi gi ae
+	end
+
+	length 189
+	piece ab 2*gi 13*pa pi 2*gi ae
+	end
+
+	length 190
+	piece ab 3*gi 13*pa pi 2*gi ae
+	end
+
+	length 191
+	piece ab 3*gi 13*pa pi 3*gi ae
+	end
+
+	length 192
+	piece ab 4*gi 13*pa pi 3*gi ae
+	end
+
+	length 193
+	piece ab 4*gi 13*pa pi 4*gi ae
+	end
+
+	length 194
+	piece ab gi pi 3*gi 13*pa pi 4*gi ae
+	end
+
+	length 195
+	piece ab gi pi 3*gi 13*pa pi 3*gi pi gi ae
+	end
+
+	length 196
+	piece ab 2*gi pi 3*gi 13*pa pi 3*gi pi gi ae
+	end
+
+	length 197
+	piece ab 2*gi pi 3*gi 13*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 198
+	piece ab 3*gi pi 3*gi 13*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 199
+	piece ab 14*pa pi ae
+	end
+
+	length 200
+	piece ab gi 14*pa pi ae
+	end
+
+	length 201
+	piece ab gi 14*pa pi gi ae
+	end
+
+	length 202
+	piece ab 2*gi 14*pa pi gi ae
+	end
+
+	length 203
+	piece ab 2*gi 14*pa pi 2*gi ae
+	end
+
+	length 204
+	piece ab 3*gi 14*pa pi 2*gi ae
+	end
+
+	length 205
+	piece ab 3*gi 14*pa pi 3*gi ae
+	end
+
+	length 206
+	piece ab 4*gi 14*pa pi 3*gi ae
+	end
+
+	length 207
+	piece ab 4*gi 14*pa pi 4*gi ae
+	end
+
+	length 208
+	piece ab gi pi 3*gi 14*pa pi 4*gi ae
+	end
+
+	length 209
+	piece ab gi pi 3*gi 14*pa pi 3*gi pi gi ae
+	end
+
+	length 210
+	piece ab 2*gi pi 3*gi 14*pa pi 3*gi pi gi ae
+	end
+
+	length 211
+	piece ab 2*gi pi 3*gi 14*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 212
+	piece ab 3*gi pi 3*gi 14*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 213
+	piece ab 15*pa pi ae
+	end
+
+	length 214
+	piece ab gi 15*pa pi ae
+	end
+
+	length 215
+	piece ab gi 15*pa pi gi ae
+	end
+
+	length 216
+	piece ab 2*gi 15*pa pi gi ae
+	end
+
+	length 217
+	piece ab 2*gi 15*pa pi 2*gi ae
+	end
+
+	length 218
+	piece ab 3*gi 15*pa pi 2*gi ae
+	end
+
+	length 219
+	piece ab 3*gi 15*pa pi 3*gi ae
+	end
+
+	length 220
+	piece ab 4*gi 15*pa pi 3*gi ae
+	end
+
+	length 221
+	piece ab 4*gi 15*pa pi 4*gi ae
+	end
+
+	length 222
+	piece ab gi pi 3*gi 15*pa pi 4*gi ae
+	end
+
+	length 223
+	piece ab gi pi 3*gi 15*pa pi 3*gi pi gi ae
+	end
+
+	length 224
+	piece ab 2*gi pi 3*gi 15*pa pi 3*gi pi gi ae
+	end
+
+	length 225
+	piece ab 2*gi pi 3*gi 15*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 226
+	piece ab 3*gi pi 3*gi 15*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 227
+	piece ab 16*pa pi ae
+	end
+
+	length 228
+	piece ab gi 16*pa pi ae
+	end
+
+	length 229
+	piece ab gi 16*pa pi gi ae
+	end
+
+	length 230
+	piece ab 2*gi 16*pa pi gi ae
+	end
+
+	length 231
+	piece ab 2*gi 16*pa pi 2*gi ae
+	end
+
+	length 232
+	piece ab 3*gi 16*pa pi 2*gi ae
+	end
+
+	length 233
+	piece ab 3*gi 16*pa pi 3*gi ae
+	end
+
+	length 234
+	piece ab 4*gi 16*pa pi 3*gi ae
+	end
+
+	length 235
+	piece ab 4*gi 16*pa pi 4*gi ae
+	end
+
+	length 236
+	piece ab gi pi 3*gi 16*pa pi 4*gi ae
+	end
+
+	length 237
+	piece ab gi pi 3*gi 16*pa pi 3*gi pi gi ae
+	end
+
+	length 238
+	piece ab 2*gi pi 3*gi 16*pa pi 3*gi pi gi ae
+	end
+
+	length 239
+	piece ab 2*gi pi 3*gi 16*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 240
+	piece ab 3*gi pi 3*gi 16*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 241
+	piece ab 17*pa pi ae
+	end
+
+	length 242
+	piece ab gi 17*pa pi ae
+	end
+
+	length 243
+	piece ab gi 17*pa pi gi ae
+	end
+
+	length 244
+	piece ab 2*gi 17*pa pi gi ae
+	end
+
+	length 245
+	piece ab 2*gi 17*pa pi 2*gi ae
+	end
+
+	length 246
+	piece ab 3*gi 17*pa pi 2*gi ae
+	end
+
+	length 247
+	piece ab 3*gi 17*pa pi 3*gi ae
+	end
+
+	length 248
+	piece ab 4*gi 17*pa pi 3*gi ae
+	end
+
+	length 249
+	piece ab 4*gi 17*pa pi 4*gi ae
+	end
+
+	length 250
+	piece ab gi pi 3*gi 17*pa pi 4*gi ae
+	end
+
+	length 251
+	piece ab gi pi 3*gi 17*pa pi 3*gi pi gi ae
+	end
+
+	length 252
+	piece ab 2*gi pi 3*gi 17*pa pi 3*gi pi gi ae
+	end
+
+	length 253
+	piece ab 2*gi pi 3*gi 17*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 254
+	piece ab 3*gi pi 3*gi 17*pa pi 3*gi pi 2*gi ae
+	end
+	
+end
+
+
+#RHW-12S Steel Arch by IDS2 (02/23)
+
+bridge 33
+
+#Abutment Start (1 tile)
+section ab
+	piece <0x40340000, 0> <0x40340001, 0>
+end
+
+#Abutment End (1 tile)
+section ae
+	piece <0x40345000, 0> <0x40345001, 0>
+end
+
+#Pillar (1 tile)
+section pi
+	piece <0x40344000, 0> <0x40344001, 0>
+end
+
+#Girder (1 tile)
+section gi
+	piece <0x40341000, 0> <0x40341001, 0>
+end
+
+#Pillar/Arch (14 tiles)
+section pa
+	piece <0x40344000, 0> <0x40344001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40342000, 0> <0x40342001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+	piece <0x40343000, 0> <0x40343001, 0>
+end
+
+	length 17
+	piece ab 1*pa pi ae
+	end
+
+	length 18
+	piece ab gi 1*pa pi ae
+	end
+
+	length 19
+	piece ab gi 1*pa pi gi ae
+	end
+
+	length 20
+	piece ab 2*gi 1*pa pi gi ae
+	end
+
+	length 21
+	piece ab 2*gi 1*pa pi 2*gi ae
+	end
+
+	length 22
+	piece ab 3*gi 1*pa pi 2*gi ae
+	end
+
+	length 23
+	piece ab 3*gi 1*pa pi 3*gi ae
+	end
+
+	length 24
+	piece ab 4*gi 1*pa pi 3*gi ae
+	end
+
+	length 25
+	piece ab 4*gi 1*pa pi 4*gi ae
+	end
+
+	length 26
+	piece ab gi pi 3*gi 1*pa pi 4*gi ae
+	end
+
+	length 27
+	piece ab gi pi 3*gi 1*pa pi 3*gi pi gi ae
+	end
+
+	length 28
+	piece ab 2*gi pi 3*gi 1*pa pi 3*gi pi gi ae
+	end
+
+	length 29
+	piece ab 2*gi pi 3*gi 1*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 30
+	piece ab 3*gi pi 3*gi 1*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 31
+	piece ab 2*pa pi ae
+	end
+
+	length 32
+	piece ab gi 2*pa pi ae
+	end
+
+	length 33
+	piece ab gi 2*pa pi gi ae
+	end
+
+	length 34
+	piece ab 2*gi 2*pa pi gi ae
+	end
+
+	length 35
+	piece ab 2*gi 2*pa pi 2*gi ae
+	end
+
+	length 36
+	piece ab 3*gi 2*pa pi 2*gi ae
+	end
+
+	length 37
+	piece ab 3*gi 2*pa pi 3*gi ae
+	end
+
+	length 38
+	piece ab 4*gi 2*pa pi 3*gi ae
+	end
+
+	length 39
+	piece ab 4*gi 2*pa pi 4*gi ae
+	end
+
+	length 40
+	piece ab gi pi 3*gi 2*pa pi 4*gi ae
+	end
+
+	length 41
+	piece ab gi pi 3*gi 2*pa pi 3*gi pi gi ae
+	end
+
+	length 42
+	piece ab 2*gi pi 3*gi 2*pa pi 3*gi pi gi ae
+	end
+
+	length 43
+	piece ab 2*gi pi 3*gi 2*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 44
+	piece ab 3*gi pi 3*gi 2*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 45
+	piece ab 3*pa pi ae
+	end
+
+	length 46
+	piece ab gi 3*pa pi ae
+	end
+
+	length 47
+	piece ab gi 3*pa pi gi ae
+	end
+
+	length 48
+	piece ab 2*gi 3*pa pi gi ae
+	end
+
+	length 49
+	piece ab 2*gi 3*pa pi 2*gi ae
+	end
+
+	length 50
+	piece ab 3*gi 3*pa pi 2*gi ae
+	end
+
+	length 51
+	piece ab 3*gi 3*pa pi 3*gi ae
+	end
+
+	length 52
+	piece ab 4*gi 3*pa pi 3*gi ae
+	end
+
+	length 53
+	piece ab 4*gi 3*pa pi 4*gi ae
+	end
+
+	length 54
+	piece ab gi pi 3*gi 3*pa pi 4*gi ae
+	end
+
+	length 55
+	piece ab gi pi 3*gi 3*pa pi 3*gi pi gi ae
+	end
+
+	length 56
+	piece ab 2*gi pi 3*gi 3*pa pi 3*gi pi gi ae
+	end
+
+	length 57
+	piece ab 2*gi pi 3*gi 3*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 58
+	piece ab 3*gi pi 3*gi 3*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 59
+	piece ab 4*pa pi ae
+	end
+
+	length 60
+	piece ab gi 4*pa pi ae
+	end
+
+	length 61
+	piece ab gi 4*pa pi gi ae
+	end
+
+	length 62
+	piece ab 2*gi 4*pa pi gi ae
+	end
+
+	length 63
+	piece ab 2*gi 4*pa pi 2*gi ae
+	end
+
+	length 64
+	piece ab 3*gi 4*pa pi 2*gi ae
+	end
+
+	length 65
+	piece ab 3*gi 4*pa pi 3*gi ae
+	end
+
+	length 66
+	piece ab 4*gi 4*pa pi 3*gi ae
+	end
+
+	length 67
+	piece ab 4*gi 4*pa pi 4*gi ae
+	end
+
+	length 68
+	piece ab gi pi 3*gi 4*pa pi 4*gi ae
+	end
+
+	length 69
+	piece ab gi pi 3*gi 4*pa pi 3*gi pi gi ae
+	end
+
+	length 70
+	piece ab 2*gi pi 3*gi 4*pa pi 3*gi pi gi ae
+	end
+
+	length 71
+	piece ab 2*gi pi 3*gi 4*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 72
+	piece ab 3*gi pi 3*gi 4*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 73
+	piece ab 5*pa pi ae
+	end
+
+	length 74
+	piece ab gi 5*pa pi ae
+	end
+
+	length 75
+	piece ab gi 5*pa pi gi ae
+	end
+
+	length 76
+	piece ab 2*gi 5*pa pi gi ae
+	end
+
+	length 77
+	piece ab 2*gi 5*pa pi 2*gi ae
+	end
+
+	length 78
+	piece ab 3*gi 5*pa pi 2*gi ae
+	end
+
+	length 79
+	piece ab 3*gi 5*pa pi 3*gi ae
+	end
+
+	length 80
+	piece ab 4*gi 5*pa pi 3*gi ae
+	end
+
+	length 81
+	piece ab 4*gi 5*pa pi 4*gi ae
+	end
+
+	length 82
+	piece ab gi pi 3*gi 5*pa pi 4*gi ae
+	end
+
+	length 83
+	piece ab gi pi 3*gi 5*pa pi 3*gi pi gi ae
+	end
+
+	length 84
+	piece ab 2*gi pi 3*gi 5*pa pi 3*gi pi gi ae
+	end
+
+	length 85
+	piece ab 2*gi pi 3*gi 5*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 86
+	piece ab 3*gi pi 3*gi 5*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 87
+	piece ab 6*pa pi ae
+	end
+
+	length 88
+	piece ab gi 6*pa pi ae
+	end
+
+	length 89
+	piece ab gi 6*pa pi gi ae
+	end
+
+	length 90
+	piece ab 2*gi 6*pa pi gi ae
+	end
+
+	length 91
+	piece ab 2*gi 6*pa pi 2*gi ae
+	end
+
+	length 92
+	piece ab 3*gi 6*pa pi 2*gi ae
+	end
+
+	length 93
+	piece ab 3*gi 6*pa pi 3*gi ae
+	end
+
+	length 94
+	piece ab 4*gi 6*pa pi 3*gi ae
+	end
+
+	length 95
+	piece ab 4*gi 6*pa pi 4*gi ae
+	end
+
+	length 96
+	piece ab gi pi 3*gi 6*pa pi 4*gi ae
+	end
+
+	length 97
+	piece ab gi pi 3*gi 6*pa pi 3*gi pi gi ae
+	end
+
+	length 98
+	piece ab 2*gi pi 3*gi 6*pa pi 3*gi pi gi ae
+	end
+
+	length 99
+	piece ab 2*gi pi 3*gi 6*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 100
+	piece ab 3*gi pi 3*gi 6*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 101
+	piece ab 7*pa pi ae
+	end
+
+	length 102
+	piece ab gi 7*pa pi ae
+	end
+
+	length 103
+	piece ab gi 7*pa pi gi ae
+	end
+
+	length 104
+	piece ab 2*gi 7*pa pi gi ae
+	end
+
+	length 105
+	piece ab 2*gi 7*pa pi 2*gi ae
+	end
+
+	length 106
+	piece ab 3*gi 7*pa pi 2*gi ae
+	end
+
+	length 107
+	piece ab 3*gi 7*pa pi 3*gi ae
+	end
+
+	length 108
+	piece ab 4*gi 7*pa pi 3*gi ae
+	end
+
+	length 109
+	piece ab 4*gi 7*pa pi 4*gi ae
+	end
+
+	length 110
+	piece ab gi pi 3*gi 7*pa pi 4*gi ae
+	end
+
+	length 111
+	piece ab gi pi 3*gi 7*pa pi 3*gi pi gi ae
+	end
+
+	length 112
+	piece ab 2*gi pi 3*gi 7*pa pi 3*gi pi gi ae
+	end
+
+	length 113
+	piece ab 2*gi pi 3*gi 7*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 114
+	piece ab 3*gi pi 3*gi 7*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 115
+	piece ab 8*pa pi ae
+	end
+
+	length 116
+	piece ab gi 8*pa pi ae
+	end
+
+	length 117
+	piece ab gi 8*pa pi gi ae
+	end
+
+	length 118
+	piece ab 2*gi 8*pa pi gi ae
+	end
+
+	length 119
+	piece ab 2*gi 8*pa pi 2*gi ae
+	end
+
+	length 120
+	piece ab 3*gi 8*pa pi 2*gi ae
+	end
+
+	length 121
+	piece ab 3*gi 8*pa pi 3*gi ae
+	end
+
+	length 122
+	piece ab 4*gi 8*pa pi 3*gi ae
+	end
+
+	length 123
+	piece ab 4*gi 8*pa pi 4*gi ae
+	end
+
+	length 124
+	piece ab gi pi 3*gi 8*pa pi 4*gi ae
+	end
+
+	length 125
+	piece ab gi pi 3*gi 8*pa pi 3*gi pi gi ae
+	end
+
+	length 126
+	piece ab 2*gi pi 3*gi 8*pa pi 3*gi pi gi ae
+	end
+
+	length 127
+	piece ab 2*gi pi 3*gi 8*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 128
+	piece ab 3*gi pi 3*gi 8*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 129
+	piece ab 9*pa pi ae
+	end
+
+	length 130
+	piece ab gi 9*pa pi ae
+	end
+
+	length 131
+	piece ab gi 9*pa pi gi ae
+	end
+
+	length 132
+	piece ab 2*gi 9*pa pi gi ae
+	end
+
+	length 133
+	piece ab 2*gi 9*pa pi 2*gi ae
+	end
+
+	length 134
+	piece ab 3*gi 9*pa pi 2*gi ae
+	end
+
+	length 135
+	piece ab 3*gi 9*pa pi 3*gi ae
+	end
+
+	length 136
+	piece ab 4*gi 9*pa pi 3*gi ae
+	end
+
+	length 137
+	piece ab 4*gi 9*pa pi 4*gi ae
+	end
+
+	length 138
+	piece ab gi pi 3*gi 9*pa pi 4*gi ae
+	end
+
+	length 139
+	piece ab gi pi 3*gi 9*pa pi 3*gi pi gi ae
+	end
+
+	length 140
+	piece ab 2*gi pi 3*gi 9*pa pi 3*gi pi gi ae
+	end
+
+	length 141
+	piece ab 2*gi pi 3*gi 9*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 142
+	piece ab 3*gi pi 3*gi 9*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 143
+	piece ab 10*pa pi ae
+	end
+
+	length 144
+	piece ab gi 10*pa pi ae
+	end
+
+	length 145
+	piece ab gi 10*pa pi gi ae
+	end
+
+	length 146
+	piece ab 2*gi 10*pa pi gi ae
+	end
+
+	length 147
+	piece ab 2*gi 10*pa pi 2*gi ae
+	end
+
+	length 148
+	piece ab 3*gi 10*pa pi 2*gi ae
+	end
+
+	length 149
+	piece ab 3*gi 10*pa pi 3*gi ae
+	end
+
+	length 150
+	piece ab 4*gi 10*pa pi 3*gi ae
+	end
+
+	length 151
+	piece ab 4*gi 10*pa pi 4*gi ae
+	end
+
+	length 152
+	piece ab gi pi 3*gi 10*pa pi 4*gi ae
+	end
+
+	length 153
+	piece ab gi pi 3*gi 10*pa pi 3*gi pi gi ae
+	end
+
+	length 154
+	piece ab 2*gi pi 3*gi 10*pa pi 3*gi pi gi ae
+	end
+
+	length 155
+	piece ab 2*gi pi 3*gi 10*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 156
+	piece ab 3*gi pi 3*gi 10*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 157
+	piece ab 11*pa pi ae
+	end
+
+	length 158
+	piece ab gi 11*pa pi ae
+	end
+
+	length 159
+	piece ab gi 11*pa pi gi ae
+	end
+
+	length 160
+	piece ab 2*gi 11*pa pi gi ae
+	end
+
+	length 161
+	piece ab 2*gi 11*pa pi 2*gi ae
+	end
+
+	length 162
+	piece ab 3*gi 11*pa pi 2*gi ae
+	end
+
+	length 163
+	piece ab 3*gi 11*pa pi 3*gi ae
+	end
+
+	length 164
+	piece ab 4*gi 11*pa pi 3*gi ae
+	end
+
+	length 165
+	piece ab 4*gi 11*pa pi 4*gi ae
+	end
+
+	length 166
+	piece ab gi pi 3*gi 11*pa pi 4*gi ae
+	end
+
+	length 167
+	piece ab gi pi 3*gi 11*pa pi 3*gi pi gi ae
+	end
+
+	length 168
+	piece ab 2*gi pi 3*gi 11*pa pi 3*gi pi gi ae
+	end
+
+	length 169
+	piece ab 2*gi pi 3*gi 11*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 170
+	piece ab 3*gi pi 3*gi 11*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 171
+	piece ab 12*pa pi ae
+	end
+
+	length 172
+	piece ab gi 12*pa pi ae
+	end
+
+	length 173
+	piece ab gi 12*pa pi gi ae
+	end
+
+	length 174
+	piece ab 2*gi 12*pa pi gi ae
+	end
+
+	length 175
+	piece ab 2*gi 12*pa pi 2*gi ae
+	end
+
+	length 176
+	piece ab 3*gi 12*pa pi 2*gi ae
+	end
+
+	length 177
+	piece ab 3*gi 12*pa pi 3*gi ae
+	end
+
+	length 178
+	piece ab 4*gi 12*pa pi 3*gi ae
+	end
+
+	length 179
+	piece ab 4*gi 12*pa pi 4*gi ae
+	end
+
+	length 180
+	piece ab gi pi 3*gi 12*pa pi 4*gi ae
+	end
+
+	length 181
+	piece ab gi pi 3*gi 12*pa pi 3*gi pi gi ae
+	end
+
+	length 182
+	piece ab 2*gi pi 3*gi 12*pa pi 3*gi pi gi ae
+	end
+
+	length 183
+	piece ab 2*gi pi 3*gi 12*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 184
+	piece ab 3*gi pi 3*gi 12*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 185
+	piece ab 13*pa pi ae
+	end
+
+	length 186
+	piece ab gi 13*pa pi ae
+	end
+
+	length 187
+	piece ab gi 13*pa pi gi ae
+	end
+
+	length 188
+	piece ab 2*gi 13*pa pi gi ae
+	end
+
+	length 189
+	piece ab 2*gi 13*pa pi 2*gi ae
+	end
+
+	length 190
+	piece ab 3*gi 13*pa pi 2*gi ae
+	end
+
+	length 191
+	piece ab 3*gi 13*pa pi 3*gi ae
+	end
+
+	length 192
+	piece ab 4*gi 13*pa pi 3*gi ae
+	end
+
+	length 193
+	piece ab 4*gi 13*pa pi 4*gi ae
+	end
+
+	length 194
+	piece ab gi pi 3*gi 13*pa pi 4*gi ae
+	end
+
+	length 195
+	piece ab gi pi 3*gi 13*pa pi 3*gi pi gi ae
+	end
+
+	length 196
+	piece ab 2*gi pi 3*gi 13*pa pi 3*gi pi gi ae
+	end
+
+	length 197
+	piece ab 2*gi pi 3*gi 13*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 198
+	piece ab 3*gi pi 3*gi 13*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 199
+	piece ab 14*pa pi ae
+	end
+
+	length 200
+	piece ab gi 14*pa pi ae
+	end
+
+	length 201
+	piece ab gi 14*pa pi gi ae
+	end
+
+	length 202
+	piece ab 2*gi 14*pa pi gi ae
+	end
+
+	length 203
+	piece ab 2*gi 14*pa pi 2*gi ae
+	end
+
+	length 204
+	piece ab 3*gi 14*pa pi 2*gi ae
+	end
+
+	length 205
+	piece ab 3*gi 14*pa pi 3*gi ae
+	end
+
+	length 206
+	piece ab 4*gi 14*pa pi 3*gi ae
+	end
+
+	length 207
+	piece ab 4*gi 14*pa pi 4*gi ae
+	end
+
+	length 208
+	piece ab gi pi 3*gi 14*pa pi 4*gi ae
+	end
+
+	length 209
+	piece ab gi pi 3*gi 14*pa pi 3*gi pi gi ae
+	end
+
+	length 210
+	piece ab 2*gi pi 3*gi 14*pa pi 3*gi pi gi ae
+	end
+
+	length 211
+	piece ab 2*gi pi 3*gi 14*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 212
+	piece ab 3*gi pi 3*gi 14*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 213
+	piece ab 15*pa pi ae
+	end
+
+	length 214
+	piece ab gi 15*pa pi ae
+	end
+
+	length 215
+	piece ab gi 15*pa pi gi ae
+	end
+
+	length 216
+	piece ab 2*gi 15*pa pi gi ae
+	end
+
+	length 217
+	piece ab 2*gi 15*pa pi 2*gi ae
+	end
+
+	length 218
+	piece ab 3*gi 15*pa pi 2*gi ae
+	end
+
+	length 219
+	piece ab 3*gi 15*pa pi 3*gi ae
+	end
+
+	length 220
+	piece ab 4*gi 15*pa pi 3*gi ae
+	end
+
+	length 221
+	piece ab 4*gi 15*pa pi 4*gi ae
+	end
+
+	length 222
+	piece ab gi pi 3*gi 15*pa pi 4*gi ae
+	end
+
+	length 223
+	piece ab gi pi 3*gi 15*pa pi 3*gi pi gi ae
+	end
+
+	length 224
+	piece ab 2*gi pi 3*gi 15*pa pi 3*gi pi gi ae
+	end
+
+	length 225
+	piece ab 2*gi pi 3*gi 15*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 226
+	piece ab 3*gi pi 3*gi 15*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 227
+	piece ab 16*pa pi ae
+	end
+
+	length 228
+	piece ab gi 16*pa pi ae
+	end
+
+	length 229
+	piece ab gi 16*pa pi gi ae
+	end
+
+	length 230
+	piece ab 2*gi 16*pa pi gi ae
+	end
+
+	length 231
+	piece ab 2*gi 16*pa pi 2*gi ae
+	end
+
+	length 232
+	piece ab 3*gi 16*pa pi 2*gi ae
+	end
+
+	length 233
+	piece ab 3*gi 16*pa pi 3*gi ae
+	end
+
+	length 234
+	piece ab 4*gi 16*pa pi 3*gi ae
+	end
+
+	length 235
+	piece ab 4*gi 16*pa pi 4*gi ae
+	end
+
+	length 236
+	piece ab gi pi 3*gi 16*pa pi 4*gi ae
+	end
+
+	length 237
+	piece ab gi pi 3*gi 16*pa pi 3*gi pi gi ae
+	end
+
+	length 238
+	piece ab 2*gi pi 3*gi 16*pa pi 3*gi pi gi ae
+	end
+
+	length 239
+	piece ab 2*gi pi 3*gi 16*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 240
+	piece ab 3*gi pi 3*gi 16*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 241
+	piece ab 17*pa pi ae
+	end
+
+	length 242
+	piece ab gi 17*pa pi ae
+	end
+
+	length 243
+	piece ab gi 17*pa pi gi ae
+	end
+
+	length 244
+	piece ab 2*gi 17*pa pi gi ae
+	end
+
+	length 245
+	piece ab 2*gi 17*pa pi 2*gi ae
+	end
+
+	length 246
+	piece ab 3*gi 17*pa pi 2*gi ae
+	end
+
+	length 247
+	piece ab 3*gi 17*pa pi 3*gi ae
+	end
+
+	length 248
+	piece ab 4*gi 17*pa pi 3*gi ae
+	end
+
+	length 249
+	piece ab 4*gi 17*pa pi 4*gi ae
+	end
+
+	length 250
+	piece ab gi pi 3*gi 17*pa pi 4*gi ae
+	end
+
+	length 251
+	piece ab gi pi 3*gi 17*pa pi 3*gi pi gi ae
+	end
+
+	length 252
+	piece ab 2*gi pi 3*gi 17*pa pi 3*gi pi gi ae
+	end
+
+	length 253
+	piece ab 2*gi pi 3*gi 17*pa pi 3*gi pi 2*gi ae
+	end
+
+	length 254
+	piece ab 3*gi pi 3*gi 17*pa pi 3*gi pi 2*gi ae
+	end
+	
+end
