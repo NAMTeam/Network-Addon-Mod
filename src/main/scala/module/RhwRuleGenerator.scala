@@ -61,26 +61,20 @@ class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
   def createMultiTileStarters(): Unit = {
     val g = 0 // ground level
     val heights = 0 to 2
-    for (h <- heights) {
+    for (h <- heights if h != g) {
       // C networks
-      val singles = Iterable(Rhw4, Mis, Rhw6s)
-      val multis = Iterable(Rhw6c, Rhw8c, Rhw10c)
-      for ((s, m) <- singles zip multis) {
-        Rules += h~Rhw6cm~SN | g~s~SN | % | h~m~SN
-        // stability
-        Rules += h~m~WE | g~s~WE | % | h~m~WE
+      val cMultis = Iterable(Rhw6c, Rhw8c, Rhw10c)
+      for (m <- cMultis) {
+        Rules += h~Rhw6cm~SN | g~m~SN | % | h~m~SN
+        Rules += h~m~WE~EW | g~m~WE~EW | % | h~m~WE~EW  // stability against starter-induced auto-L0 issues
+        Rules += h~m~WE~EW | g~m~WC~CW | % | h~m~WC~CW  // stability
       }
       // S networks
       val sMultis = Iterable(Rhw8s, Rhw10s, Rhw12s)
       for (m <- sMultis) {
-        Rules += h~Rhw4~SN | g~m~SN | h~Rhw8sm~SN | h~m~SN
-        Rules += h~Rhw4~SN | h~m~SN | h~Rhw8sm~SN | %
-        if (h != g) Rules += h~Rhw8sm~SN | g~m~SN | % | h~m~SN
-        // stability
-        Rules += h~Rhw8sm~WE | h~Rhw4~WE | % | h~Rhw8sm~WE
-        if (h != g) {
-          Rules += h~Rhw8s~WE | g~m~WE | % | h~m~WE   // TODO this does not look right, needs correction
-        }
+        Rules += h~Rhw8sm~SN | g~m~SN | % | h~m~SN
+        Rules += h~m~WE~EW | g~m~WE~EW | % | h~m~WE~EW  // stability against starter-induced auto-L0 issues
+        Rules += h~m~WE~EW | g~m~WC~CW | % | h~m~WC~CW  // stability
       }
       createRules()
     }
