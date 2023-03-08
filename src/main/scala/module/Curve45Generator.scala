@@ -54,7 +54,7 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
   }
 
   private def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
-    n >= Rhw3 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4
+    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4
   }
 
   private def hasMiniCurve(n: Network, inside: Boolean): Boolean = {

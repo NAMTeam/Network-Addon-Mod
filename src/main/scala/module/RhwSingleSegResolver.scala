@@ -71,6 +71,7 @@ trait SingleSegResolver {
 trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
 
   private[this] val stubSegment = Dirtroad~(0,0,0,0)
+  val isRhwShoulderMedian = Network.ValueSet(Rhw8sm, L1Rhw8sm, L2Rhw8sm)
 
   def resolveSegment(seg: Segment): IdTile = {
     (if (isSingleTileRhw(seg.network)) singleProps else multiProps).get(seg.flags) match {
@@ -81,6 +82,8 @@ trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
           id += 0x300
         } else if (isRhwShoulder(seg.network) && offset == 0x300) {
           id += 0x200
+        } else if (isRhwShoulderMedian(seg.network) && offset >= 0x0600 && offset < 0x0e00) {
+          id += offset + (if ((offset & 0x0100) == 0) 0x0100 else -0x0100)  // depends on whether 6th digit is even or odd
         } else {
           id += offset
         }
