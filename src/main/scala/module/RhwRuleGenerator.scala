@@ -21,6 +21,8 @@ object RhwRuleGenerator {
 class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curve45Generator with Adjacencies {
   import RhwRuleGenerator._
 
+  def isHrw(n: Network): Boolean = Hrw <= n && n <= L2Hrw
+
   private def rhwIntersectionAllowed(rhw: Network, any: Network): Boolean = {
     if (!rhw.isRhw) {
       assert(any.isRhw)
@@ -87,7 +89,7 @@ class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
   def start(): Unit = {
     createMultiTileStarters()
 
-    for (main <- OverrideNetworks; base <- main.base) {
+    for (main <- OverrideNetworks; base <- main.base; if main.isRhw || main.isNwm) {  // TODO filtering
       if (main.isRhw || main.isNwm) {
         Rules += main~WE    | (base ~> main)~WE      // ortho
         Rules += main~WE    | (base ~> main)~WC      // ortho stub
@@ -102,7 +104,7 @@ class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
       createCurve45Rules(main)
 
       // TODO filtering
-      for (minor <- Network.values if minor != Subway && (main.isRhw || minor.isRhw ||
+      for (minor <- Network.values if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
            (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty))
            ) && intersectionAllowed(main, minor)) {
         // entry
