@@ -76,30 +76,30 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~(1,3,1,13), 0x5f940400) // shared-diag curve
 
     // shared diag OWR intersections TODO create these
-    add(Onewayroad~SharedDiagRight & Road~NS, 0x5f940800)
-    add(Onewayroad~SharedDiagRight & Road~SW, 0x5f940900)
-    //add(Onewayroad~SharedDiagRight & Road~SharedDiagLeft, 0x5f940a00)
-    add(Onewayroad~SharedDiagRight & Street~NS, 0x5f940b00)
-    add(Onewayroad~SharedDiagRight & Street~SW, 0x5f940c00)
-    //add(Onewayroad~SharedDiagRight & Street~SharedDiagLeft, 0x5f940d00)
-    add(Onewayroad~SharedDiagRight & Avenue~NS, 0x5f940e00)
-    add(Onewayroad~SharedDiagRight & Avenue~SW, 0x5f940f00)
-    add(Onewayroad~SharedDiagRight & Avenue~SharedDiagLeft, 0x5f941000)
-    add(Onewayroad~SharedDiagRight & Highway~SN, 0x5f232b00) // 0x5f941100
-    add(Onewayroad~SharedDiagLeft & Highway~ES, 0x5f232900) // 0x5f941200
-    add(Onewayroad~SharedDiagLeft & Highway~SharedDiagRight, 0x5f232a00) // 0x5f941300
-    //add(Onewayroad~SharedDiagRight & Groundhighway~NS, 0x5f941400)
-    //add(Onewayroad~SharedDiagRight & Groundhighway~SW, 0x5f941500)
-    //add(Onewayroad~SharedDiagRight & Groundhighway~SharedDiagLeft, 0x5f941600)
-    add(Onewayroad~SharedDiagRight & Rail~NS, 0x5f372300) // 0x5f941700
-    add(Onewayroad~SharedDiagRight & Rail~SW, 0x5f371e00) // 0x5f941800
-    //add(Onewayroad~SharedDiagRight & Rail~SharedDiagLeft, 0x5f3572200) // 0x5f941900
-    add(Onewayroad~SharedDiagLeft & Lightrail~NS, 0x5f832900) // 0x5f941a00
-    add(Onewayroad~SharedDiagLeft & Lightrail~ES, 0x5f832a00) // 0x5f941b00
-    //add(Onewayroad~SharedDiagRight & Lightrail~SharedDiagLeft, 0x5f941c00)
-    add(Onewayroad~SharedDiagLeft & Monorail~NS, 0x5fd32900) // 0x5f941d00
-    add(Onewayroad~SharedDiagLeft & Monorail~ES, 0x5fd32a00) // 0x5f941e00
-    //add(Onewayroad~SharedDiagRight & Monorail~SharedDiagLeft, 0x5f941f00)
+    add(Onewayroad~SharedDiagRight & Road~NS, 0x5f94a800)
+    add(Onewayroad~SharedDiagRight & Road~SW, 0x5f94a900)
+    //add(Onewayroad~SharedDiagRight & Road~SharedDiagLeft, 0x5f94aa00)
+    add(Onewayroad~SharedDiagRight & Street~NS, 0x5f94ab00)
+    add(Onewayroad~SharedDiagRight & Street~SW, 0x5f94ac00)
+    //add(Onewayroad~SharedDiagRight & Street~SharedDiagLeft, 0x5f94ad00)
+    add(Onewayroad~SharedDiagRight & Avenue~NS, 0x5f94ae00)
+    add(Onewayroad~SharedDiagRight & Avenue~SW, 0x5f94af00)
+    add(Onewayroad~SharedDiagRight & Avenue~SharedDiagLeft, 0x5f94b000)
+    add(Onewayroad~SharedDiagRight & Highway~SN, 0x5f232b00) // 0x5f94b100
+    add(Onewayroad~SharedDiagLeft & Highway~ES, 0x5f232900) // 0x5f94b200
+    add(Onewayroad~SharedDiagLeft & Highway~SharedDiagRight, 0x5f232a00) // 0x5f94b300
+    //add(Onewayroad~SharedDiagRight & Groundhighway~NS, 0x5f94b400)
+    //add(Onewayroad~SharedDiagRight & Groundhighway~SW, 0x5f94b500)
+    //add(Onewayroad~SharedDiagRight & Groundhighway~SharedDiagLeft, 0x5f94b600)
+    add(Onewayroad~SharedDiagRight & Rail~NS, 0x5f372300) // 0x5f94b700
+    add(Onewayroad~SharedDiagRight & Rail~SW, 0x5f371e00) // 0x5f94b800
+    //add(Onewayroad~SharedDiagRight & Rail~SharedDiagLeft, 0x5f3572200) // 0x5f94b900
+    add(Onewayroad~SharedDiagLeft & Lightrail~NS, 0x5f832900) // 0x5f94ba00
+    add(Onewayroad~SharedDiagLeft & Lightrail~ES, 0x5f832a00) // 0x5f94bb00 (<-- potentially occupied by a legacy piece)
+    //add(Onewayroad~SharedDiagRight & Lightrail~SharedDiagLeft, 0x5f94bc00)
+    add(Onewayroad~SharedDiagLeft & Monorail~NS, 0x5fd32900) // 0x5f94bd00
+    add(Onewayroad~SharedDiagLeft & Monorail~ES, 0x5fd32a00) // 0x5f94be00
+    //add(Onewayroad~SharedDiagRight & Monorail~SharedDiagLeft, 0x5f94bf00)
 
     add(Avenue~CS, 0x04007300) // orth stub
     add(Avenue~(0,-2,0,+11), 0x04007600) // curve
