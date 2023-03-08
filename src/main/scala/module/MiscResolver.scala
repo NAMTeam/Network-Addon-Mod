@@ -49,6 +49,13 @@ class MiscResolver extends IdResolver {
     add(Ave8 ~NS, 0x51210000); add(Ave8 ~NW, 0x51210200); add(Ave8 ~ES, 0x51210300)
     add(Ave6m~NS, 0x51210080); add(Ave6m~ES, 0x51210280)
 
+    add(L1Road      ~NS, 0x5c000000); add(L1Road      ~ES, 0x5c000200)
+    add(L1Onewayroad~NS, 0x5c010000); add(L1Onewayroad~ES, 0x5c010200)
+    add(L1Avenue    ~NS, 0x5c020000); add(L1Avenue    ~NE, 0x5c020200); add(L1Avenue~SharedDiagLeft, 0x5c020300)
+    add(L2Road      ~NS, 0x5c030000); add(L2Road      ~ES, 0x5c030200)
+    add(L2Onewayroad~NS, 0x5c040000); add(L2Onewayroad~ES, 0x5c040200)
+    add(L2Avenue    ~NS, 0x5c050000); add(L2Avenue    ~NE, 0x5c050200); add(L2Avenue~SharedDiagLeft, 0x5c050300)
+
     add(Road~CS, 0x00000300) // orth stub
     add(Road~(0,0,0,1), 0x00000200) // diag stub
     add(Road~NS & Road~WE, 0x00020700) // OxO

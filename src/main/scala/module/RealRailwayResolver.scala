@@ -27,23 +27,6 @@ class RealRailwayResolver extends IdResolver {
     // OxO crossing
     add(Rail~NS & Rail~EW, 0x5d548000)
 
-    
-    // temp - needs a better home
-    add(L1Road~NS, 0x5c000000)
-    add(L1Road~SE, 0x5c000200)
-    add(L2Road~NS, 0x5c030000)
-    add(L2Road~SE, 0x5c030200)
-    add(L1Onewayroad~NS, 0x5c010000)
-    add(L1Onewayroad~SE, 0x5c010200)
-    add(L2Onewayroad~NS, 0x5c040000)
-    add(L2Onewayroad~SE, 0x5c040200)
-    add(L1Avenue~NS, 0x5c020000)
-    add(L1Avenue~NE, 0x5c020200)
-    add(L1Avenue~SharedDiagLeft, 0x5c020300)
-    add(L2Avenue~NS, 0x5c050000)
-    add(L2Avenue~NE, 0x5c050200)
-    add(L2Avenue~SharedDiagLeft, 0x5c050300)
-
 
     // Height Transition
     add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
