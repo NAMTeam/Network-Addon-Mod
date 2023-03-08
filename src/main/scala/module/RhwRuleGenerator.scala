@@ -140,54 +140,39 @@ class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
         // Inside diagonal crossings (Diagonal crossings consist of two or more tiles, so the following rules ensure
         // that the override carries over between those inner-intersection tiles)
         {
+          // The following automatically places shared diagonals instead of diagonals in the appropriate spots.
+          val (se1, nw1) = if (main.typ  != AvenueLike) (SE, NW) else (SharedDiagRight, SharedDiagRight)
+          val (ws2, en2) = if (minor.typ != AvenueLike) (WS, EN) else (SharedDiagLeft, SharedDiagLeft)
           if (intersectionAllowed(base, minor)) {
-            if (minor.typ != AvenueLike) {
-              Rules += main~WE~EW & minor~ES | (base ~> main)~WE~EW & minor~NW   // OxD
-              Rules += main~WE~EW & minor~SE | (base ~> main)~WE~EW & minor~WN
-            } else {
-              Rules += main~WE~EW & minor~ES | (base ~> main)~WE~EW & minor~SharedDiagRight   // O × SharedDiag
-              Rules += main~WE~EW & minor~SharedDiagRight | (base ~> main)~WE~EW & minor~WN
-            }
-            if (main.typ != AvenueLike) {
-              Rules += main~SE~ES & minor~WE | (base ~> main)~WN~NW & minor~WE   // DxO
-              Rules += main~SE~ES & minor~EW | (base ~> main)~WN~NW & minor~EW
-              if (minor.typ != AvenueLike) {
-                Rules += main~SE~ES & minor~NE | (base ~> main)~WN~NW & minor~WS   // DxD
-                Rules += main~SE~ES & minor~EN | (base ~> main)~WN~NW & minor~SW
-              } else {
-                Rules += main~SE~ES & minor~NE | (base ~> main)~WN~NW & minor~SharedDiagLeft   // D × SharedDiag
-                Rules += main~SE~ES & minor~SharedDiagLeft | (base ~> main)~WN~NW & minor~SW
-              }
-            } else {
-              Rules += main~SharedDiagRight~ES & minor~WE | (base ~> main)~WN~SharedDiagRight & minor~WE   // SharedDiag × O
-              Rules += main~SharedDiagRight~ES & minor~EW | (base ~> main)~WN~SharedDiagRight & minor~EW
-              if (minor.typ != AvenueLike) {
-                Rules += main~SharedDiagRight~ES & minor~NE | (base ~> main)~WN~SharedDiagRight & minor~WS   // SharedDiag × D
-                Rules += main~SharedDiagRight~ES & minor~EN | (base ~> main)~WN~SharedDiagRight & minor~SW
-              } else {
-                // SharedDiag × SharedDiag
-                Rules += main~SharedDiagRight~ES & minor~NE | (base ~> main)~WN~SharedDiagRight & minor~SharedDiagLeft   // SharedDiag × SharedDiag
-                Rules += main~SharedDiagRight~ES & minor~SharedDiagLeft | (base ~> main)~WN~SharedDiagRight & minor~SW
-              }
-            }
+            Rules += main~WE~EW  & minor~NE  | (base ~> main)~WE~EW  & minor~ws2   // OxD
+            Rules += main~WE~EW  & minor~en2 | (base ~> main)~WE~EW  & minor~SW
+            Rules += main~se1~ES & minor~WE  | (base ~> main)~WN~nw1 & minor~WE    // DxO
+            Rules += main~se1~ES & minor~EW  | (base ~> main)~WN~nw1 & minor~EW
+            Rules += main~se1~ES & minor~NE  | (base ~> main)~WN~nw1 & minor~ws2   // DxD
+            Rules += main~se1~ES & minor~en2 | (base ~> main)~WN~nw1 & minor~SW
             createRules()
           }
           // stability
-          if (main.typ != AvenueLike && minor.typ != AvenueLike) for (minBase <- minor.base) {
-            Rules += main~WE~EW & minor~ES | (base ~> main)~WE~EW & (minBase ~> minor)~NW   // OxD and DxO
-            Rules += main~WE~EW & minor~SE | (base ~> main)~WE~EW & (minBase ~> minor)~WN
-            Rules += main~SE~ES & minor~NE | (base ~> main)~WN~NW & (minBase ~> minor)~WS   // DxD
-            Rules += main~SE~ES & minor~EN | (base ~> main)~WN~NW & (minBase ~> minor)~SW
+          if (minor >= main) for (minBase <- minor.base) {  // If minor < main, then the following rules have already been added as part of the overrides of minor.
+            Rules += main~WE~EW  & minor~NE  | (base ~> main)~WE~EW  & (minBase ~> minor)~ws2   // OxD
+            Rules += main~WE~EW  & minor~en2 | (base ~> main)~WE~EW  & (minBase ~> minor)~SW
+            Rules += main~se1~ES & minor~WE  | (base ~> main)~WN~nw1 & (minBase ~> minor)~WE    // DxO
+            Rules += main~se1~ES & minor~EW  | (base ~> main)~WN~nw1 & (minBase ~> minor)~EW
+            Rules += main~se1~ES & minor~NE  | (base ~> main)~WN~nw1 & (minBase ~> minor)~ws2   // DxD
+            Rules += main~se1~ES & minor~en2 | (base ~> main)~WN~nw1 & (minBase ~> minor)~SW
             if (intersectionAllowed(base, minor) && intersectionAllowed(main, minBase)) {
-              Rules += main~WE~EW & (minBase ~> minor)~ES | (base ~> main)~WE~EW & minor~NW   // OxD and DxO
-              Rules += main~WE~EW & (minBase ~> minor)~SE | (base ~> main)~WE~EW & minor~WN
-              Rules += main~SE~ES & (minBase ~> minor)~NE | (base ~> main)~WN~NW & minor~WS   // DxD
-              Rules += main~SE~ES & (minBase ~> minor)~EN | (base ~> main)~WN~NW & minor~SW
+              Rules += main~WE~EW  & (minBase ~> minor)~NE  | (base ~> main)~WE~EW  & minor~ws2   // OxD
+              Rules += main~WE~EW  & (minBase ~> minor)~en2 | (base ~> main)~WE~EW  & minor~SW
+              Rules += main~se1~ES & (minBase ~> minor)~WE  | (base ~> main)~WN~nw1 & minor~WE    // DxO
+              Rules += main~se1~ES & (minBase ~> minor)~EW  | (base ~> main)~WN~nw1 & minor~EW
+              Rules += main~se1~ES & (minBase ~> minor)~NE  | (base ~> main)~WN~nw1 & minor~ws2   // DxD
+              Rules += main~se1~ES & (minBase ~> minor)~en2 | (base ~> main)~WN~nw1 & minor~SW
             }
           }
         }
         // inside multi-tile intersection and adjacent intersections
         createAdjacentIntersections(main, base, minor)
+        createRules()
       }
     }
   }
