@@ -54,17 +54,19 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
   }
 
   private def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
-    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4
+    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 ||
+    inside && (n == Ave6 || n == Ave8)
   }
 
   private def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
-    inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm) || n >= Tla5 && n <= Ave6 || n == Ave8) ||
-    !inside && (n >= Rhw8sm && n <= L2Rhw8sm)
+    inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm)) ||
+    !inside && (n >= Rhw8sm && n <= L2Rhw8sm) ||
+    n == Ave6m || n == Tla7m
   }
 
   private def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
-    // TODO mini curves
-    (n.isRhw && n > L4Rhw6s || n.isNwm && n >= Tla5) && !hasMiniCurve(n, inside)
+    (n.isRhw && n > L4Rhw6s && n <= L2Rhw10c) && !hasMiniCurve(n, inside) ||
+    !inside && (n == Ave6 || n == Ave8)
   }
 
   def createCurve45Rules(main: Network): Unit = {
