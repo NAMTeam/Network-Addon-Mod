@@ -67,7 +67,7 @@ class MiscResolver extends IdResolver {
     add(Road~(0,0,1,13), 0x00000C00) // curve
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
-    add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
+    add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
 
     add(Onewayroad~CS, 0x09000300) // orth stub
     add(Onewayroad~(0,0,0,1), 0x09000200) // diag stub
@@ -80,7 +80,7 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~(0,0,1,13), 0x09000C00) // curve
     add(Onewayroad~(0,2,0,11), 0x09004D00) // curve
     add(Onewayroad~SharedDiagRight, 0x09014E00) // shared diag
-    add(Onewayroad~(1,3,1,13), 0x5f940400) // shared-diag curve
+    add(Onewayroad~(1,3,11,3), 0x09015600) // add(Onewayroad~(1,3,1,13), 0x5f940400) // shared-diag curve
 
     // shared diag OWR intersections TODO create these
     add(Onewayroad~SharedDiagRight & Road~NS, 0x5f94a800)
