@@ -230,6 +230,39 @@ class MiscResolver extends IdResolver {
     add(Avenue~SharedDiagLeft & Monorail~ES, 0x0ddd1200)
     add(Avenue~NE & Monorail~ES, 0x0ddd1300)
 
+    // GLR + intersections
+    for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xb000))) {
+      // O×O
+      add(glr~NS & Road~WE,       0x5f880300 + offset)
+      add(glr~NS & Street~WE,     0x5f880d00 + offset)
+      add(glr~NS & Onewayroad~WE, 0x5f880e00 + offset)
+      add(glr~NS & Avenue~WE,     0x5f880f00 + offset)
+      add(glr~NS & Rail~WE,       0x5f881000 + offset)
+      // O×D
+      add(glr~NS & Road~WN,       0x5f881800 + offset)
+      add(glr~NS & Street~NW,     0x5f882800 + offset)
+      add(glr~NS & Onewayroad~WN, 0x5f881900 + offset)
+      add(glr~NS & Onewayroad~SharedDiagRight, 0x5f881909 + offset)  // TODO add placeholder texture
+      add(glr~NS & Rail~WN,       0x5f881a00 + offset)
+      add(glr~NS & Avenue~ES,     0x5f881b00 + offset)
+      add(glr~NS & Avenue~SharedDiagRight, 0x5f881c00 + offset)
+      // D×O
+      add(glr~NE & Road~NS,       0x5f881d00 + offset)
+      add(glr~NE & Street~NS,     0x5f882900 + offset)
+      add(glr~NE & Onewayroad~NS, 0x5f881e00 + offset)
+      add(glr~NE & Rail~NS,       0x5f881f00 + offset)
+      add(glr~NE & Avenue~SN,     0x5f882000 + offset)
+      add(glr~NE & Avenue~NS,     0x5f882100 + offset)
+      // D×D
+      add(glr~NE & Road~NW,       0x5f882200 + offset)
+      add(glr~NE & Street~NW,     0x5f882a00 + offset)
+      add(glr~NE & Onewayroad~NW, 0x5f882300 + offset)
+      add(glr~WS & Onewayroad~SharedDiagRight, 0x5f882309 + offset)  // TODO add placeholder texture
+      add(glr~NE & Rail~NW,       0x5f882400 + offset)
+      add(glr~NE & Avenue~ES,     0x5f882500 + offset)
+      add(glr~WS & Avenue~SharedDiagRight, 0x5f882600 + offset)
+    }
+
     map
   }
 
