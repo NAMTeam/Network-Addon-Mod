@@ -69,14 +69,18 @@ object Adjacencies {
     if (n.isRhw && !isRhw3(n)) {
       // Supported adjacencies between RHW networks. Add any lacking adjacency support here.
       val one = if (hasLeftShoulder(n)) {
-        RhwNetworks filter { m =>
+        (RhwNetworks.filter { m =>
           !isRhw3(m) && hasRightShoulder(m) && (isSingleTile(n) || isSingleTile(m) || n.height == m.height)
-        } map (m => m -> NSNS)
+        } ++
+        (if (n.height <= 2) Seq(Lightrail) else Seq.empty)  // Lightrail between two RHW networks
+        ).map(m => m -> NSNS)
       } else Seq.empty
       val two = if (hasRightShoulder(n)) {
-        RhwNetworks filter { m =>
+        (RhwNetworks.filter { m =>
           !isRhw3(m) && hasLeftShoulder(m) && (isSingleTile(n) || isSingleTile(m) || n.height == m.height)
-        } map (m => m -> SNSN)
+        } ++
+        (if (n.height <= 2) Seq(Lightrail, Rail, /*Str,*/ Glr2) else Seq.empty)  // rail-type networks parallel to RHW (on the outside)
+        ).map(m => m -> SNSN)
       } else Seq.empty
       val three = if (hasLeftShoulder(n) && n.typ != Symmetrical) {
         RhwNetworks filter { m =>
@@ -84,7 +88,19 @@ object Adjacencies {
         } map (m => m -> NSSN)
       } else Seq.empty
       multAdjs ++ one ++ two ++ three
+    } else if (n.isNwm || n == Road || n == Onewayroad || n == Avenue) {
+      // Supported adjacencies between NWM or road-type networks.
+      val parallelOwrs = if (n == Owr3) Seq(n -> NSSN)
+        else if (n == Owr1) Seq(n -> NSSN, n -> SNNS)  // since Owr1 is asymmetrical, both directions are needed
+        else if (n == Owr4 || n == Owr5) Seq(n -> SNNS)
+        else Seq.empty
+      val railTypes = Seq(Rail, /*Str,*/ Lightrail /*, Glr1, Glr2, Glr3, Glr4*/)
+      var adjacentRail = if (hasRightShoulder(n)) railTypes.map(m => m -> SNNS)
+        else if (hasLeftShoulder(n)) railTypes.map(m => m -> NSSN)
+        else Seq.empty
+      multAdjs ++ parallelOwrs ++ adjacentRail
     } else {
+      // TODO All other adjacencies (e.g. viaducts).
       multAdjs
     }
   })
