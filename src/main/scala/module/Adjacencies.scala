@@ -112,6 +112,19 @@ trait Adjacencies { this: RuleGenerator =>
 
   def intersectionAllowed(a: Network, b: Network): Boolean
 
+  def diagonalCrossingsRequireHalfdragging(base: Network, minor1: Network, minor2: Network): Boolean = {
+    val base1 = minor1.base.getOrElse(minor1)
+    val base2 = minor2.base.getOrElse(minor2)
+    if (base == Road || base == Onewayroad || base == Dirtroad || base == Street) {
+      // Diagonal crossings of these networks have INRUL footprints that are
+      // larger than just the crossing itself, but include the diagonal approach
+      // tiles. Therefore adjacent crossings are only possible using
+      // half-dragging techniques, unless either all three base networks are the
+      // same or both crossing networks differ from the main base network.
+      (base1 != base2) && ((base == base1) || (base == base2))
+    } else false
+  }
+
   /** Covers all cases of parallel adjacent +/X-intersections involving three networks, i.e.
     * - OxO | OxO,
     * - OxD | OxD,
@@ -133,11 +146,13 @@ trait Adjacencies { this: RuleGenerator =>
         seen.add((adj, dirs))  // in particular, in order to avoid adding adjBase multiple times
         if (intersectionAllowed(base, adj) && intersectionAllowed(main, adj)) {
           Rules += main~WE & minor~ns1    | (base ~> main)~WE & adj~ns2      // OxO
-          Rules += main~se~ES & minor~ns1 | (base ~> main)~WN~nw & adj~ns2   // DxO
-          // for avelike networks, this puts shoulder between the adjacent networks, so these rules do not use shared diagonals
-          if ((minor.typ != AvenueLike || nw1 == WN && ws1 == SW) && (adj.typ != AvenueLike || es2 == ES && ne2 == NE)) {
-            Rules += main~WE~EW & minor~nw1 | (base ~> main)~WE~EW & adj~es2   // OxD
-            Rules += main~se~ES & minor~ws1 | (base ~> main)~WN~nw & adj~ne2   // DxD
+          if (!diagonalCrossingsRequireHalfdragging(base, minor, adj)) {
+            Rules += main~se~ES & minor~ns1 | (base ~> main)~WN~nw & adj~ns2   // DxO
+            // for avelike networks, this puts shoulder between the adjacent networks, so these rules do not use shared diagonals
+            if ((minor.typ != AvenueLike || nw1 == WN && ws1 == SW) && (adj.typ != AvenueLike || es2 == ES && ne2 == NE)) {
+              Rules += main~WE~EW & minor~nw1 | (base ~> main)~WE~EW & adj~es2   // OxD
+              Rules += main~se~ES & minor~ws1 | (base ~> main)~WN~nw & adj~ne2   // DxD
+            }
           }
         }
       }
