@@ -9,7 +9,7 @@ object NetworkProperties {
 
   def hasLeftShoulder(n: Network): Boolean = {
     n.typ != AvenueLike &&
-    !(n.typ == Symmetrical && !hasRightShoulder(n)) && // this is treated as right shoulder only, for efficiency
+    !(n.typ == Symmetrical && hasRightShoulder(n)) && // this is treated as right shoulder only, for efficiency
     !(n >= Rhw8s && n <= L2Rhw10c) &&
     !(n >= Tla5 && n <= Ave6m)
   }
