@@ -10,27 +10,27 @@
 
 ;By:			Ulisse Wolf
 ;Created:		2023-january-17
-;Last updated:	TBA
+;Last updated:	2023-march-10, by Lucario Boricua
 ;Birth of the Pedestrian Revolution Mod
 
 ;-- DRAGGABLE PEDMALL --
 
-RotationRing = 6200, 16200, 26200, 36200 ;Plain Paved Area Pedmalls
-AddTypes = 6201, 16201, 26201, 36201 ;Pedmalls Pavement
-AddTypes = 6202, 16202, 26202, 36202 ;Pedmalls Cobblestone
-AddTypes = 6203, 16203, 26203, 36203 ;Pedmalls Orange Wave Brick
-AddTypes = 6204, 16204, 26204, 36204 ;Pedmalls Grass
-AddTypes = 6205, 16205, 26205, 36205 ;Pedmalls Sandstone
-AddTypes = 6206, 16206, 26206, 36206 ;Pedmalls Retrowave (EX texture Undergorund Rail)
-AddTypes = 6207, 16207, 26207, 36207 ;Pedmalls Industrial
-;AddTypes = 6208, 16208, 26208, 36208 ;Pedmalls Customizable User Version
-;AddTypes = 6209, 16209, 26209, 36209 ;Pedmalls Art Deco
-;AddTypes = 620A, 1620A, 2620A, 3620A ;ped malls sidewalk (TBA)
-;AddTypes = 620B, 1620B, 2620B, 3620B ;ped malls sidewalk (TBA)
-;AddTypes = 620C, 1620C, 2620C, 3620C ;ped malls sidewalk (TBA)
-;AddTypes = 620D, 1620D, 2620D, 3620D ;ped malls sidewalk (TBA)
-;AddTypes = 620E, 1620E, 2620E, 3620E ;ped malls sidewalk (TBA)
-;AddTypes = 620F, 1620F, 2620F, 3620F ;ped malls transition 
+RotationRing = 6200, 16200, 26200, 36200 ;PMC-1 Classic Pedmall
+AddTypes = 6201, 16201, 26201, 36201 ;PMC-2 Pavement
+AddTypes = 6202, 16202, 26202, 36202 ;PMC-3 Cobblestone
+AddTypes = 6203, 16203, 26203, 36203 ;PMC-4 Wavy Brick
+AddTypes = 6204, 16204, 26204, 36204 ;PMC-5 Grass
+AddTypes = 6205, 16205, 26205, 36205 ;PMC-6 Sandstone
+AddTypes = 6206, 16206, 26206, 36206 ;PMC-7 Retrowave (EX texture Undergorund Rail)
+AddTypes = 6207, 16207, 26207, 36207 ;PMC-8 Industrial
+;AddTypes = 6208, 16208, 26208, 36208 ;PMC-9 Customizable User Version
+;AddTypes = 6209, 16209, 26209, 36209 ;PMC-10 Art Deco
+;AddTypes = 620A, 1620A, 2620A, 3620A ;PMC-11 ped malls sidewalk (TBA)
+;AddTypes = 620B, 1620B, 2620B, 3620B ;PMC-12 ped malls sidewalk (TBA)
+;AddTypes = 620C, 1620C, 2620C, 3620C ;PMC-13 ped malls sidewalk (TBA)
+;AddTypes = 620D, 1620D, 2620D, 3620D ;PMC-14 malls sidewalk (TBA)
+;AddTypes = 620E, 1620E, 2620E, 3620E ;PMC-15 malls sidewalk (TBA)
+;AddTypes = 620F, 1620F, 2620F, 3620F ;ped malls transition  piece
 
 ;###separator###
 
@@ -42,7 +42,7 @@ AddTypes = 6207, 16207, 26207, 36207 ;Pedmalls Industrial
 [HighwayIntersectionInfo_0x00006200]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Plain Paved Area Pedmalls
+;Draggable PedMall - PMC-1 Classic Pedmall
 Piece = 0.0, 16.0, 0, 0, 0x5C531105
 PreviewEffect = preview_ped_malls_sidewalk1
 
@@ -77,7 +77,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006201]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Pavement
+;Draggable PedMall - PMC-2 Pavement
 Piece = 0.0, 16.0, 0, 0, 0x5C532105
 PreviewEffect = preview_ped_malls_sidewalk2
 
@@ -112,7 +112,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006202]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Cobblestone
+;Draggable PedMall - PMC-3 Cobblestone
 Piece = 0.0, 16.0, 0, 0, 0x5C533105
 PreviewEffect = preview_ped_malls_sidewalk3
 
@@ -147,7 +147,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006203]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Orange Wave Brick
+;Draggable PedMall - PMC-4 Wavy Brick
 Piece = 0.0, 16.0, 0, 0, 0x5C534105
 PreviewEffect = preview_ped_malls_sidewalk4
 
@@ -182,7 +182,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006204]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Grass
+;Draggable PedMall - PMC-5 Grass
 Piece = 0.0, 16.0, 0, 0, 0x5C535105
 PreviewEffect = preview_ped_malls_sidewalk5
 
@@ -217,7 +217,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006205]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Sandstone
+;Draggable PedMall - PMC-6 Sandstone
 Piece = 0.0, 16.0, 0, 0, 0x5C536105
 PreviewEffect = preview_ped_malls_sidewalk6
 
@@ -252,7 +252,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006206]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Retrowave (EX texture Undergorund Rail)
+;Draggable PedMall - PMC-7 Retrowave (EX texture Undergorund Rail)
 Piece = 0.0, 16.0, 0, 0, 0x5C537105
 PreviewEffect = preview_ped_malls_sidewalk7
 
@@ -287,7 +287,7 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00006207]
 ;Added by Ulisse Wolf 2023-january-17
 ;Last updated:           TBA
-;Draggable PedMall - Pedmalls Industrial
+;Draggable PedMall - PMC-8 Industrial
 Piece = 0.0, 16.0, 0, 0, 0x5C538105
 PreviewEffect = preview_ped_malls_sidewalk8
 
