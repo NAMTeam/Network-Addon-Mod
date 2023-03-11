@@ -223,16 +223,16 @@ class RuleTransducerSpec extends WordSpec with Matchers {
 
   "multiply TLA" should {
     "produce expected number" in {
-      val orth = multiplyTla( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
+      val orth: Seq[Rule[SymTile]] = multiplyTla( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
-      orth exists (_.exists(_.segs.exists(_.flags.exists(_ == Flag.RightHeadedBi.Orth)))) should be (false)
-      createRules(orth.head map tileToIdSymTile).toSeq should have size (2)
+      orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(_.flags.exists(_ == Flag.RightHeadedBi.Orth)))) should be (false)
+      createRules(orth.head.map(_.toIdSymTile)).toSeq should have size (2)
 
       multiplyTla( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
       val diag = multiplyTla( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
       diag should have size (2)
       for (r <- diag) {
-        createRules(r map tileToIdSymTile).toSeq should have size (2)
+        createRules(r.map(_.toIdSymTile)).toSeq should have size (2)
       }
     }
   }
@@ -254,12 +254,12 @@ class RuleTransducerSpec extends WordSpec with Matchers {
       val (t1, t2) = ( Tla3~WE & Road~ES, Tla3~WE & Road~WS )
       resolver(makeTileLeft(t1)).id should not be (resolver(makeTileLeft(t2)).id)
       for ((t, i) <- Seq(t1, t2).zipWithIndex) {
-        tileToIdSymTile(makeTileLeft(t)).repr.filter(_.flipped ^ (i!=0)) should be ('empty)
-        tileToIdSymTile(makeTileRight(t)).repr.filter(!_.flipped ^ (i!=0)) should be ('empty)
+        makeTileLeft(t).toIdSymTile.repr.filter(_.flipped ^ (i!=0)) should be ('empty)
+        makeTileRight(t).toIdSymTile.repr.filter(!_.flipped ^ (i!=0)) should be ('empty)
       }
     }
     "find RHS for TLA" in {
-      val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map tileToIdSymTile
+      val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile)
       possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, QuotientGroup.Dih4, R1F1/R2F1) should not be ('empty)
       createRules(rule)
     }

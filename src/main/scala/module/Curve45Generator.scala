@@ -36,7 +36,7 @@ import Network._, Flags._, Flag._, RotFlip._, Implicits._
  */
 
 trait Stability { _: RuleGenerator =>
-  def stabilize(rule: Rule[Tile]): Seq[Rule[Tile]] = {
+  def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
     if (rule(0) == rule(2) || rule(1) == rule(3)) {
       Seq(rule)
     } else { // TODO handle corner cases

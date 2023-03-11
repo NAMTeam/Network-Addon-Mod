@@ -19,9 +19,9 @@ Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute 
 
 console / initialCommands := """
 import metarules._, metarules.meta._
-import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}
+import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}, Group.SymGroup._
 implicit val resolve = module.Main.resolve
-def transduce(rule: Rule[Tile]): Unit = RuleTransducer(rule) foreach println
+def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule) foreach println
 """
 
 lazy val generateLocales = taskKey[scala.util.Try[Unit]]("Generates the locale .dat files from .po files")
@@ -75,4 +75,4 @@ libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://git
 
 libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.10" from "https://github.com/memo33/scdbpf/releases/download/v0.1.10/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.2.1" from "https://github.com/memo33/metarules/releases/download/v0.2.1/metarules_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.3.0" from "https://github.com/memo33/metarules/releases/download/v0.3.0/metarules_2.11.jar"
