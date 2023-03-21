@@ -9,7 +9,7 @@ import metarules.meta.{RuleGenerator, IdResolver, EquivRule}
   */
 object Main extends AbstractMain {
 
-  lazy val resolve: IdResolver = new RealRailwayResolver orElse new RhwResolver orElse new MiscResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new RealRailwayResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
   lazy val generator: RuleGenerator = new RhwRuleGenerator(resolve)
   lazy val file = new File("./Controller/RUL2/07_RHW/RhwMetaGenerated_MANAGED.txt")
 }

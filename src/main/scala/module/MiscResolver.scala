@@ -230,6 +230,21 @@ class MiscResolver extends IdResolver {
     add(Avenue~SharedDiagLeft & Monorail~ES, 0x0ddd1200)
     add(Avenue~NE & Monorail~ES, 0x0ddd1300)
 
+    for (n <- RhwNetworks from Dirtroad to L4Rhw6s) {  // single-tile RHW networks
+      val rangeId = n.rhwRangeId.get & 0x000F0000
+      val offset = rangeId + n.height * 0x10 + (if (n.height == 0) 0 else 5)
+      add(n~(+2,0,-123,0),   0x57905000 + offset)  // R1 curve
+      add(n~(+123,0,0,-111), 0x57905100 + offset)  // R1 curve
+      add(n~(0,+111,-3,0),   0x57905200 + offset)  // R1 curve
+      add(n~(0,+111,-113,0), 0x57905F00 + offset)  // R1 curve 90 degree
+      if (!n.isSymm) {
+        add(n~(-2,0,+123,0),   0x57905080 + offset)  // R1 curve
+        add(n~(-123,0,0,+111), 0x57905180 + offset)  // R1 curve
+        add(n~(0,-111,+3,0),   0x57905280 + offset)  // R1 curve
+        add(n~(0,-111,+113,0), 0x57905F80 + offset)  // R1 curve 90 degree
+      }
+    }
+
     // GLR + intersections
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xb000))) {
       // O×O
