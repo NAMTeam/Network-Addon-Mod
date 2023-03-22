@@ -123,6 +123,34 @@ class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
           }
         }
 
+        // OST adjacent to 45 degree curves
+        if (isSingleTile(main)) {  // curves adjacent to OSTs only seem useful for tight setups with single-tilers
+          if (hasSharpCurveBase(upper, inside=false) && hasSharpCurve(upper, inside=false)) {
+            Rules += onslope | (Dirtroad ~> upper)~(+2,0,-13,0)    // OST > R0 upper
+            Rules += rhw2Slope | upper~(+2,0,-13,0) | onslope | %  // OST < R0 upper
+            Rules += lower~(+11,0,-2,0) | rhw2Slope | % | onslope  // R0 lower > OST
+            Rules += (Dirtroad ~> lower)~(+11,0,-2,0) | onslope    // R0 lower < OST
+          }
+          if (hasSharpCurveBase(upper, inside=true) && hasSharpCurve(upper, inside=true)) {
+            Rules += onslope | (Dirtroad ~> upper)~(+2,0,-11,0)    // OST > R0 upper
+            Rules += rhw2Slope | upper~(+2,0,-11,0) | onslope | %  // OST < R0 upper
+            Rules += lower~(+13,0,-2,0) | rhw2Slope | % | onslope  // R0 lower > OST
+            Rules += (Dirtroad ~> lower)~(+13,0,-2,0) | onslope    // R0 lower < OST
+          }
+          if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=false)) {
+            Rules += onslope | (Dirtroad ~> upper)~(+2,0,-123,0)    // OST > R1 upper
+            Rules += rhw2Slope | upper~(+2,0,-123,0) | onslope | %  // OST < R1 upper
+            Rules += lower~(+121,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
+            Rules += (Dirtroad ~> lower)~(+121,0,-2,0) | onslope    // R1 lower < OST
+          }
+          if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=true)) {
+            Rules += onslope | (Dirtroad ~> upper)~(+2,0,-121,0)    // OST > R1 upper
+            Rules += rhw2Slope | upper~(+2,0,-121,0) | onslope | %  // OST < R1 upper
+            Rules += lower~(+123,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
+            Rules += (Dirtroad ~> lower)~(+123,0,-2,0) | onslope    // R1 lower < OST
+          }
+        }
+
         // OST adjacent to OST
         if (upper.height <= maxHeight - 1) {
           // +L1

@@ -57,34 +57,35 @@ trait Stability { _: RuleGenerator =>
 
 trait Curve45Generator extends Stability { _: RuleGenerator =>
 
-  private def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
+  def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
 
-  private def hasSharpCurveBase(n: Network, inside: Boolean): Boolean = {
+  def hasSharpCurveBase(n: Network, inside: Boolean): Boolean = {
     n.base.exists(b => b == Dirtroad || b == Road || b == Onewayroad)
   }
 
-  private def hasR1CurveBase(n: Network): Boolean = {
+  def hasR1CurveBase(n: Network): Boolean = {
     n.base.exists(b => b == Dirtroad || b == Road || b == Onewayroad)
   }
 
-  private def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
+  def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
     n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 ||
     inside && (n == Ave6 || n == Ave8)
   }
 
-  private def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
+  def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
     inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm)) ||
     !inside && (n >= Rhw8sm && n <= L2Rhw8sm) ||
     n == Ave6m || n == Tla7m
   }
 
-  private def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
+  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
     (n.isRhw && n > L4Rhw6s && n <= L2Rhw10c) && !hasMiniCurve(n, inside) ||
     !inside && (n == Ave6 || n == Ave8)
   }
 
-  private def hasR1Curve(n: Network): Boolean = {
-    (n.isRhw && (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3))  // elevated R1 Rhw3 models are currently missing
+  def hasR1Curve(n: Network, inside: Boolean): Boolean = {
+    inside && (n >= Dirtroad && n <= L4Rhw4 && n != L1Rhw3 && n != L2Rhw3) ||  // Rhw6s is only supported in one direction due to overhang
+    !inside && (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
     // TODO add NWM
   }
 
@@ -148,7 +149,7 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
         }
       }
       if (hasR1CurveBase(main)) {
-        if (hasR1Curve(main)) {
+        if (hasR1Curve(main, inside)) {
           // R1 curve: orth to diag
           Rules += main~orient(WE)            | (base ~> main)~orient(-2,0,+121,0)
           Rules += main~orient(-2,0,+121,0)   | (base ~> main)~orient(-121,+113,0,0)
@@ -162,9 +163,11 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
           Rules += (base ~> main)~orient(0,-121,+113,0) | main~orient(-113,0,0,+111)  // R1 curve: 90 degree
           Rules += (base ~> main)~orient(0,0,+1,-113)   | main~orient(WN)
           // R1 curve: S-type curves
-          Rules += main~orient(0,0,+1,-113)   | (base ~> main)~orient(-1,+113,0,0)
-          Rules += main~orient(-121,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // trans
-          Rules += main~orient(-123,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // cis
+          if (hasR1Curve(main, !inside)) {
+            Rules += main~orient(0,0,+1,-113)   | (base ~> main)~orient(-1,+113,0,0)  // trans diag
+            Rules += main~orient(-121,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // trans orth
+          }
+          Rules += main~orient(-123,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // cis orth
         }
       }
     }
