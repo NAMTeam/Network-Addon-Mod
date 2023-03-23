@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._
+import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup.noSymmetries
 
 /* Flags of sharp curves:
  *       +---------+---------+
@@ -84,8 +84,7 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
   }
 
   def hasR1Curve(n: Network, inside: Boolean): Boolean = {
-    inside && (n >= Dirtroad && n <= L4Rhw4 && n != L1Rhw3 && n != L2Rhw3) ||  // Rhw6s is only supported in one direction due to overhang
-    !inside && (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
+    (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
     // TODO add NWM
   }
 
@@ -168,6 +167,11 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
             Rules += main~orient(-121,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // trans orth
           }
           Rules += main~orient(-123,0,+2,0)   | (base ~> main)~orient(-2,0,+121,0)  // cis orth
+          // Rhw6s R1 outside curve has an extra tile due to overhangs
+          if (!inside && Rhw6s <= main && main <= L4Rhw6s) {
+            val offset = if (main.height == 0) 0 else main.height * 0x10 + 5
+            Rules += Dirtroad~(0,0,0,0) | main~(0,-2,0,+123) | IdTile(0x57945380 + offset, R1F0, noSymmetries) | %
+          }
         }
       }
     }
