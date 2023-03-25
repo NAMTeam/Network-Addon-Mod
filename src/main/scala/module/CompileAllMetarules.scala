@@ -21,6 +21,7 @@ object CompileAllMetarules {
     // CompileRealRailwayCode.main(Array.empty)
 
     CompileRhwCode.main(Array.empty)
+    CompileOnslopeCode.main(Array.empty)
 
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
