@@ -62,15 +62,18 @@ object NetworkProperties {
     }
   }
 
+  private val nonintersectingNetworks = (Groundhighway + Highway + Lightrail + Monorail + Subway) ++
+    (Hsr + L2Hsr) ++ (OverrideNetworks from L1Dtr to L2StrAlt) ++ (OverrideNetworks from Hrw to L2Hrw)
+
   def intersectionAllowed(a: Network, b: Network): Boolean = {
-    if (a.isRhw || b.isRhw) {
+    if (BaseNetworks.contains(a) && BaseNetworks.contains(b)) {
+      true  // intersections between base networks are always allowed so that override networks can override them
+    } else if (a.isRhw || b.isRhw) {
       rhwIntersectionAllowed(a, b)
+    } else if ((nonintersectingNetworks.contains(a) || nonintersectingNetworks.contains(b)) && a.height == b.height) {
+      false
     } else {
-//      assert(a.isNwm || b.isNwm) // not correct, as bases such as Road or OWR are not detected as NWM networks
-      if (a == Groundhighway || b == Groundhighway)
-        a.height != b.height
-      else
-        true // TODO
+      true // TODO
     }
   }
 }
