@@ -81,6 +81,12 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
             Rules += (Dirtroad ~> lower)~(+123,0,-2,0) | onslope    // R1 lower < OST
           }
         }
+        if (main == Mis || main == Rhw4) {  // FlexFly curves
+          Rules += rhw2Slope | upper~(+2,0,-213,0) | onslope | %  // OST < FlexFly upper
+          Rules += rhw2Slope | upper~(+2,0,-211,0) | onslope | %  //
+          Rules += lower~(+211,0,-2,0) | rhw2Slope | % | onslope  // FlexFly lower > OST
+          Rules += lower~(+213,0,-2,0) | rhw2Slope | % | onslope  //
+        }
 
         // OST adjacent to OST
         if (upper.height <= maxHeight - 1) {
@@ -110,7 +116,7 @@ class OnslopeGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
 
 // Compile individually with `sbt "runMain metarules.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new RhwResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
   lazy val generator: RuleGenerator = new OnslopeGenerator(resolve)
   lazy val file = new java.io.File("target/OnslopeMetaGenerated_MANAGED.txt")
 }
