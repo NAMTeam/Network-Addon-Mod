@@ -110,8 +110,6 @@ object Adjacencies {
 trait Adjacencies { this: RuleGenerator =>
   import Adjacencies._
 
-  def intersectionAllowed(a: Network, b: Network): Boolean
-
   def diagonalCrossingsRequireHalfdragging(base: Network, minor1: Network, minor2: Network): Boolean = {
     val base1 = minor1.base.getOrElse(minor1)
     val base2 = minor2.base.getOrElse(minor2)

@@ -41,4 +41,36 @@ object NetworkProperties {
     n
   }
 
+  def isHrw(n: Network): Boolean = Hrw <= n && n <= L2Hrw
+
+  private def rhwIntersectionAllowed(rhw: Network, any: Network): Boolean = {
+    if (!rhw.isRhw) {
+      assert(any.isRhw)
+      rhwIntersectionAllowed(any, rhw)
+    } else {
+      if (any.rhwPieceId.isEmpty) false
+      else if (rhw.height != any.height) true
+      else if (rhw.height != 0) false
+      else if (any > rhw && any.isRhw) rhwIntersectionAllowed(any, rhw)
+      else {
+        rhw == Dirtroad && any == Dirtroad ||
+        rhw == Rhw3 && any == Dirtroad ||
+        rhw == Mis && (any == Dirtroad || any == Rhw3) ||
+        rhw == Rhw4 && any == Dirtroad ||
+        rhw <= Rhw4 && any < Dirtroad
+      }
+    }
+  }
+
+  def intersectionAllowed(a: Network, b: Network): Boolean = {
+    if (a.isRhw || b.isRhw) {
+      rhwIntersectionAllowed(a, b)
+    } else {
+//      assert(a.isNwm || b.isNwm) // not correct, as bases such as Road or OWR are not detected as NWM networks
+      if (a == Groundhighway || b == Groundhighway)
+        a.height != b.height
+      else
+        true // TODO
+    }
+  }
 }

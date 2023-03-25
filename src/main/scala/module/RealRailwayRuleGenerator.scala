@@ -7,8 +7,6 @@ import NetworkProperties._
 
 
 class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Adjacencies {
-  
-  def intersectionAllowed(a: Network, b: Network): Boolean = {true}
 
   def start(): Unit = {
     /*
