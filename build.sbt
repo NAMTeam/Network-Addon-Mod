@@ -21,7 +21,8 @@ console / initialCommands := """
 import metarules._, metarules.meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}, Group.SymGroup._
 implicit val resolve = module.Main.resolve
-def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule) foreach println
+lazy val tileOrientationCache = RegenerateTileOrientationCache.loadCache()
+def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(resolve, tileOrientationCache) foreach println
 """
 
 lazy val generateLocales = taskKey[scala.util.Try[Unit]]("Generates the locale .dat files from .po files")
@@ -45,6 +46,16 @@ generateLocales := {
     mainClass = "networkaddonmod.localization.GenerateLocales",
     classpath = (Compile / fullClasspath).value.files,
     log = logger,
+    options = Seq.empty[String]
+  )
+}
+
+lazy val regenerateTileOrientationCache = taskKey[scala.util.Try[Unit]]("Regenerates the cache used for translating metarules to RUL2")
+regenerateTileOrientationCache := {
+  (Compile / runner).value.run(
+    mainClass = "metarules.module.RegenerateTileOrientationCache",
+    classpath = (Compile / fullClasspath).value.files,
+    log = streams.value.log,
     options = Seq.empty[String]
   )
 }
@@ -75,4 +86,4 @@ libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://git
 
 libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.10" from "https://github.com/memo33/scdbpf/releases/download/v0.1.10/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.3.0" from "https://github.com/memo33/metarules/releases/download/v0.3.0/metarules_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.3.1-SNAPSHOT" from "https://github.com/memo33/metarules/releases/download/v0.3.0/metarules_2.11.jar"

@@ -22,7 +22,9 @@ abstract class AbstractMain {
 
   def main(args: Array[String]): Unit = start()
 
-  def start(file: File = file, generator: RuleGenerator = generator): Unit = {
+  def start(file: File = file, generator: RuleGenerator = generator,
+      tileOrientationCache: collection.mutable.Map[Int, Set[metarules.meta.RotFlip]] = RegenerateTileOrientationCache.loadCache()): Unit = {
+    generator.tileOrientationCache = tileOrientationCache
     generator.start()
     // TODO to be revised, later, in order to make more efficient
     val printer = new PrintWriter(file)

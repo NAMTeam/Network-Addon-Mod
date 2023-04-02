@@ -1,7 +1,7 @@
 package metarules.module
 
 import java.io.File
-import metarules.meta.{RuleGenerator, IdResolver}
+import metarules.meta.{RuleGenerator, IdResolver, RotFlip}
 
 /** This is the main class that invokes the compilation of all metarules. New
   * metarule code generators need to be added to the list of invocations in this
@@ -12,16 +12,11 @@ object CompileAllMetarules {
 
   def main(args: Array[String]): Unit = {
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
-    flexfly.CompileFlexFlyCode.main(Array.empty)
-
     // Generate FlexFly models and paths (requires some .dat files, see comment in that file).
     flexfly.CompileFlexFlyResources.main(Array.empty)
 
-    // temporarily disabled due to errors
-    // CompileRealRailwayCode.main(Array.empty)
-
-    CompileRhwCode.main(Array.empty)
-    CompileOnslopeCode.main(Array.empty)
+    // Compilation of metarule code.
+    RegenerateTileOrientationCache.withCache().acquireFor(compileMetarulesOnce)
 
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
@@ -31,6 +26,14 @@ object CompileAllMetarules {
     metarules.pathing.nwmpaths.Main.main(Array.empty)
   }
 
+  /** Add additional rule generators here.
+    */
+  def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+    flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
+    // CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache) // temporarily disabled due to errors
+    CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
+    CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
+  }
 }
 
 // Compile individually with `sbt "runMain metarules.module.CompileRhwCode"`.
