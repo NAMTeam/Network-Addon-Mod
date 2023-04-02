@@ -35,7 +35,7 @@ object GenerateLocales {
 
   def formatTgi(tgi: Tgi) = f"${tgi.tid}%08X-${tgi.gid}%08X-${tgi.iid}%08X"
 
-  val logger = java.util.logging.Logger.getLogger("networkaddonmod.localization")
+  val logger = java.util.logging.Logger.getLogger("networkaddonmod")
 
   def isFuzzyTranslation(t: scaposer.SingularTranslation, previousComments: Seq[String]): Boolean = {
     // There is a bug in scaposer 1.11.1 (see https://github.com/xitrum-framework/scaposer/issues/25)

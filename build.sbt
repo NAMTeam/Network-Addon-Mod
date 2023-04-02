@@ -15,8 +15,6 @@ scalacOptions ++= Seq(
   "-encoding", "UTF-8",
   "-target:jvm-1.6")
 
-Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
-
 console / initialCommands := """
 import metarules._, metarules.meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}, Group.SymGroup._
@@ -25,11 +23,9 @@ lazy val tileOrientationCache = RegenerateTileOrientationCache.loadCache()
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(resolve, tileOrientationCache) foreach println
 """
 
-lazy val generateLocales = taskKey[scala.util.Try[Unit]]("Generates the locale .dat files from .po files")
-generateLocales := {
+def wrapWithJLogger(logger: sbt.util.Logger): sbt.util.Logger = {
   // the following is a workaround to highlight the logged warnings with sbt
-  val logger = streams.value.log
-  val jLogger = java.util.logging.Logger.getLogger("networkaddonmod.localization")
+  val jLogger = java.util.logging.Logger.getLogger("networkaddonmod")
   jLogger.setUseParentHandlers(false)  // avoids printing to console twice
   class MyHandler extends java.util.logging.Handler {
     def close() = {}
@@ -41,24 +37,26 @@ generateLocales := {
     }
   }
   jLogger.addHandler(new MyHandler())
-
-  (Compile / runner).value.run(
-    mainClass = "networkaddonmod.localization.GenerateLocales",
-    classpath = (Compile / fullClasspath).value.files,
-    log = logger,
-    options = Seq.empty[String]
-  )
+  logger
 }
+
+def runMainWithJLogger(main: String) = Def.task {
+  // wraps a main class with logger
+  (Compile / runner).value.run(
+    mainClass = main,
+    classpath = (Compile / fullClasspath).value.files,
+    log = wrapWithJLogger(streams.value.log),
+    options = Seq.empty[String])
+}
+
+// Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
+run := runMainWithJLogger("metarules.module.CompileAllMetarules").value
+
+lazy val generateLocales = taskKey[scala.util.Try[Unit]]("Generates the locale .dat files from .po files")
+generateLocales := runMainWithJLogger("networkaddonmod.localization.GenerateLocales").value
 
 lazy val regenerateTileOrientationCache = taskKey[scala.util.Try[Unit]]("Regenerates the cache used for translating metarules to RUL2")
-regenerateTileOrientationCache := {
-  (Compile / runner).value.run(
-    mainClass = "metarules.module.RegenerateTileOrientationCache",
-    classpath = (Compile / fullClasspath).value.files,
-    log = streams.value.log,
-    options = Seq.empty[String]
-  )
-}
+regenerateTileOrientationCache := runMainWithJLogger("metarules.module.RegenerateTileOrientationCache").value
 
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.5" % "test"

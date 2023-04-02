@@ -29,7 +29,7 @@ object RegenerateTileOrientationCache {
     var stabilized = false
     var previous: collection.immutable.Map[Int, Set[RotFlip]] = tileOrientationCache.toMap
     while (j < 3 && !stabilized) {
-      println(s"metarules compilation: iteration $j")
+      LOGGER.info(s"> metarules compilation: iteration $j")
       j += 1
       CompileAllMetarules.compileMetarulesOnce(tileOrientationCache)
       val next = tileOrientationCache.toMap
@@ -78,7 +78,7 @@ object RegenerateTileOrientationCache {
     } { cache =>  // closer
       assert(previous != null)
       if (previous != cache.toMap) {
-        println(s"Warning: The file ${cacheFile} is outdated. Rebuild it with `sbt regenerateTileOrientationCache` and commit the changes.")
+        LOGGER.warning(s"The file ${cacheFile} is outdated. Rebuild it with `sbt regenerateTileOrientationCache` and commit the changes.")
       }
     } (List.empty)
   }

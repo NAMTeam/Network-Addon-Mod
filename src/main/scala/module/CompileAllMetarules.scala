@@ -11,6 +11,7 @@ import metarules.meta.{RuleGenerator, IdResolver, RotFlip}
 object CompileAllMetarules {
 
   def main(args: Array[String]): Unit = {
+    LOGGER.info("compiling FlexFly RUL0 and RUL1")
     flexfly.CompileFlexFlyRul0And1.main(Array.empty)
     // Generate FlexFly models and paths (requires some .dat files, see comment in that file).
     flexfly.CompileFlexFlyResources.main(Array.empty)
@@ -23,15 +24,20 @@ object CompileAllMetarules {
     // CompileInruls.main(Array.empty)
 
     // Compile paths for diagonal NWM crossings
+    LOGGER.info("compiling diagonal NWM paths")
     metarules.pathing.nwmpaths.Main.main(Array.empty)
   }
 
   /** Add additional rule generators here.
     */
   def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+    LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
+    // LOGGER.info("compiling RRW metarule code")
     // CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache) // temporarily disabled due to errors
+    LOGGER.info("compiling RHW metarule code")
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling Onslope metarule code")
     CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
   }
 }
