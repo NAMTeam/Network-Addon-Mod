@@ -83,6 +83,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
   def DIST(id: Int, rf: RotFlip, sg: SymGroup) = new DummyIdSymTile(id, rf, sg)
 
   implicit val resolver = new module.RhwResolver orElse new module.NwmResolver orElse new module.MiscResolver
+  implicit val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]
   "RuleTransducer" should {
     val c = DIST(0x3000, R0F0, Cyc1)
     val d = DIST(0x4000, R0F0, Cyc1)
@@ -106,7 +107,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
 
     "generate correct number of rules" in {
       for ((a, b, x) <- s) {
-        val rules = createRules(Rule(a,b,c,d)).toIterable
+        val rules = createRules(Rule(a,b,c,d), tileOrientationCache).toIterable
         withClue(a.symmetries + " " + b.symmetries + "\n" + rules.mkString("\n")) {
           rules should have size (x)
         }
@@ -226,13 +227,13 @@ class RuleTransducerSpec extends WordSpec with Matchers {
       val orth: Seq[Rule[SymTile]] = multiplyTla( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
       orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(_.flags.exists(_ == Flag.RightHeadedBi.Orth)))) should be (false)
-      createRules(orth.head.map(_.toIdSymTile)).toSeq should have size (2)
+      createRules(orth.head.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
 
       multiplyTla( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
       val diag = multiplyTla( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
       diag should have size (2)
       for (r <- diag) {
-        createRules(r.map(_.toIdSymTile)).toSeq should have size (2)
+        createRules(r.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
       }
     }
   }
@@ -261,7 +262,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
     "find RHS for TLA" in {
       val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile)
       possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, QuotientGroup.Dih4, R1F1/R2F1) should not be ('empty)
-      createRules(rule)
+      createRules(rule, tileOrientationCache)
     }
     "resolve diagonal TLA intersections" in {
       val t1 = makeTileLeft(Tla3~ES & Road~WS)
