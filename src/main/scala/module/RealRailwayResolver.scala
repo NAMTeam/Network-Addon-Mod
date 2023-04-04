@@ -53,8 +53,8 @@ class RealRailwayResolver extends IdResolver {
     */
     // ----- OxO -----
     // -- Street --
-    add(Street~NS & L1Dtr~WE, 0x5d671000)
-    add(Street~NS & L2Dtr~WE, 0x5d771000)
+    add(Street~WE & L1Dtr~NS, 0x5d671000)
+    add(Street~WE & L2Dtr~NS, 0x5d771000)
     // -- Road --
     add(Road~WE & L1Dtr~NS, 0x5d671100)
     add(Road~WE & L2Dtr~NS, 0x5d771100)
@@ -63,7 +63,7 @@ class RealRailwayResolver extends IdResolver {
     add(L2Road~NS & Rail~WE,  0x5c031500)
     add(L2Road~WE & L1Dtr~NS, 0x5d67110a)
     // -- OWR --
-    add(Onewayroad~NS & L1Dtr~WE, 0x5d671200)
+    add(Onewayroad~WE & L1Dtr~NS, 0x5d671200)
     add(Onewayroad~WE & L2Dtr~NS, 0x5d771200)
     add(L1Onewayroad~NS & Rail~WE,  0x5c011500)
     add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771205)
