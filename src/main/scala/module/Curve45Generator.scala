@@ -33,7 +33,7 @@ import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup.noSymm
  *       |-2    +11|-11      |         |
  *       |         |         |         |
  *       +---------+---------+---------+
- * Flags of extended curves:
+ * Flags of extended curves (multi-tile networks):
  *       +---------+---------+---------+---------+
  *       |         |         |         |   +3    |
  *       |         |         |       +1|-1       |
@@ -43,6 +43,16 @@ import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup.noSymm
  *       |-2   +111|-111  +11|-11      |         |
  *       |         |         |         |         |
  *       +---------+---------+---------+---------+
+ * Micro 90 curve (MIS-style):
+ *       +---------+---------+
+ *       |         |    +2   |
+ *       |         |         |
+ *       |         |   -113  |
+ *       +---------+---------+
+ *       |         |    +2   |
+ *       |-2   +111|-2       |
+ *       |         |         |
+ *       +---------+---------+
  */
 
 trait Stability { _: RuleGenerator =>
@@ -87,6 +97,8 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
     (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
     // TODO add NWM
   }
+
+  def hasMisStyle90Curve(n: Network, inside: Boolean): Boolean = n >= Mis && n <= L4Mis
 
   def createCurve45Rules(main: Network): Unit = {
     // all curves are written in form of outside curve; orient can be used
@@ -173,6 +185,12 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
             Rules += Dirtroad~(0,0,0,0) | main~(0,-2,0,+123) | IdTile(0x57945380 + offset, R1F0, noSymmetries) | %
           }
         }
+      }
+      if (hasMisStyle90Curve(main, inside)) {
+        // Mis 90 curve
+        Rules ++= stabilize(main~orient(WE) | base~orient(-2,+2,0,0) | main~orient(-2,0,+111,0) | main~orient(-2,+2,0,0))
+        Rules += main~orient(0,-2,+2,0) | base~orient(WE) | % | main~orient(-113,0,+2,0)
+        Rules += main~orient(-113,0,+2,0) | (base ~> main)~orient(WE)
       }
     }
     curveCode(inside = false)
