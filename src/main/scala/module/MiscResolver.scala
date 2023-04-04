@@ -161,6 +161,7 @@ class MiscResolver extends IdResolver {
     add(Street~NS & Rail~WE, 0x05010100)
     add(Street~NS & Rail~NE, 0x05010200)
     add(Street~WN & Rail~NS, 0x5f502600) // TODO other version of this piece?
+    add(Street~ES & Rail~NE, 0x5f502700)
 
     // OWR + intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)
