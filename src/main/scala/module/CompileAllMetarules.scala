@@ -33,8 +33,8 @@ object CompileAllMetarules {
   def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
     LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
-    // LOGGER.info("compiling RRW metarule code")
-    // CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache) // temporarily disabled due to errors
+    LOGGER.info("compiling RRW metarule code")
+    CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RHW metarule code")
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
