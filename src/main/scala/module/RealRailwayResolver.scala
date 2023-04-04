@@ -26,7 +26,10 @@ class RealRailwayResolver extends IdResolver {
     add(L2Dtr~SE, 0x5d740100)
     // OxO crossing
     add(Rail~NS & Rail~EW, 0x5d548000)
-
+    // OxD crossing
+    add(Rail~NS & Rail~NE, 0x5d548100)
+    // DxD crossing
+    add(Rail~SE & Rail~NE, 0x5d548200)
 
     // Height Transition
     add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
@@ -216,22 +219,63 @@ class RealRailwayResolver extends IdResolver {
     // -- Road --
     add(Road~ES & L1Dtr~NS, 0x5d674100)
     add(Road~ES & L2Dtr~NS, 0x5d774100)
-    // -- Road L1 --
     add(L1Road~ES & Rail~WE, 0x5c007500)
     add(L1Road~ES & L2Dtr~NS, 0x5d774110)
-    // -- Road L2 --
     add(L2Road~ES & Rail~WE, 0x5c037500)
     add(L2Road~ES & L1Dtr~NS, 0x5d67410a)
     // -- OWR --
     add(Onewayroad~WN & Rail~NS, 0x09320100)
+    add(Onewayroad~ES & L1Dtr~NS, 0x5d674200)
+    add(Onewayroad~ES & L2Dtr~NS, 0x5d774200)
     // -- Avenue --
     add(Avenue~ES & Rail~NS, 0x04004700)
     add(Avenue~SharedDiagRight & Rail~NS, 0x04004600)
+    add(Avenue~ES & L1Dtr~NS, 0x5d674300)
+    add(Avenue~SharedDiagRight & L1Dtr~NS, 0x5d674305)
+    add(Avenue~ES & L2Dtr~NS, 0x5d774300)
+    add(Avenue~SharedDiagRight & L2Dtr~NS, 0x5d774305)
+    // -- Rail --
+    add(Rail~ES & L1Dtr~NS, 0x5d674500)
+    add(Rail~ES & L2Dtr~NS, 0x5d774500)
+
     // ----- DxO -----
     // -- Street --
+    // add(Street~NS & Rail~ES)
+    add(Street~NS & L1Dtr~ES, 0x5d677000)
+    add(Street~NS & L2Dtr~ES, 0x5d777000)
     // -- Road --
+    add(Road~NS & L1Dtr~ES, 0x5d677100)
+    add(Road~NS & L2Dtr~ES, 0x5d777100)
+    // -- OWR --
+    add(Onewayroad~NS & L1Dtr~ES, 0x5d677200)
+    add(Onewayroad~NS & L2Dtr~ES, 0x5d777200)
+    // -- Avenue --
+    add(Avenue~SN & L1Dtr~ES, 0x5d677300)
+    add(Avenue~SN & L2Dtr~ES, 0x5d777300)
+    add(Avenue~NS & L1Dtr~ES, 0x5d677305)
+    add(Avenue~NS & L2Dtr~ES, 0x5d777305)
+    // -- Rail --
+    add(Rail~NS & L1Dtr~ES, 0x5d677500)
+    add(Rail~NS & L2Dtr~ES, 0x5d777500)
+
     // ----- DxD -----
+    // -- Street --
+    add(Street~WS & L1Dtr~ES, 0x5d67a000)
+    add(Street~WS & L2Dtr~ES, 0x5d77a000)
     // -- Road --
+    add(Road~WS & L1Dtr~ES, 0x5d67a100)
+    add(Road~WS & L2Dtr~ES, 0x5d77a100)
+    // -- OWR --
+    add(Onewayroad~WS & L1Dtr~ES, 0x5d67a200)
+    add(Onewayroad~WS & L2Dtr~ES, 0x5d77a200)
+    // -- Avenue --
+    add(Avenue~SW & L1Dtr~ES, 0x5d67a300)
+    add(Avenue~SW & L2Dtr~ES, 0x5d77a300)
+    add(Avenue~SharedDiagLeft & L1Dtr~ES, 0x5d67a305)
+    add(Avenue~SharedDiagLeft & L2Dtr~ES, 0x5d77a305)
+    // -- Rail --
+    add(Rail~WS & L1Dtr~ES, 0x5d67a500)
+    add(Rail~WS & L2Dtr~ES, 0x5d77a500)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD
