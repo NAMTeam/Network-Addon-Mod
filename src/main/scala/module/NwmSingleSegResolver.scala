@@ -5,6 +5,7 @@ import Network._
 import RotFlip._
 import Flags._
 import Implicits.segmentToTile
+import NetworkProperties.{leftHeadedMappedRepr, rightHeadedMappedRepr}
 
 
 trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>

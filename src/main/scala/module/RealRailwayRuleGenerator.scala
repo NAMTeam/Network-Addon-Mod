@@ -6,7 +6,7 @@ import scala.collection.mutable.Buffer
 import NetworkProperties._
 
 
-class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Adjacencies {
+class RealRailwayRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Adjacencies with MirrorVariants {
 
   def start(): Unit = {
     /*

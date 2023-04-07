@@ -17,7 +17,7 @@ object RhwRuleGenerator {
   }
 }
 
-class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curve45Generator with Adjacencies {
+class RhwRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Curve45Generator with Adjacencies with MirrorVariants {
   import RhwRuleGenerator._
 
   def createMultiTileStarters(): Unit = {

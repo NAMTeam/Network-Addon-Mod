@@ -2,15 +2,16 @@ package metarules.module
 
 import metarules.meta._, Network._, RotFlip._, Flags._
 import Implicits.segmentToTile
+import NetworkProperties._
 
 class MiscResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
     val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int): Unit = {
+    def add(tile: Tile, id: Int, mappedRepr: Group.QuotientGroup => Set[RotFlip] = null): Unit = {
       assert(!map.contains(tile))
       for (rf <- RotFlip.values) {
-        val idTile = IdTile(id, rf)
+        val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
         map.getOrElseUpdate(tile * rf, idTile)
       }
     }
@@ -123,9 +124,12 @@ class MiscResolver extends IdResolver {
 
     // Road + intersections
     add(Road~NS & Rail~WE, 0x03010100)
-    add(Road~NS & Rail~NE, 0x03010200)
-    add(Road~WN & Rail~NS, 0x03020100)
-    add(Road~ES & Rail~NE, 0x03020200)
+    add(projectLeftSeg(Road~NS) & Rail~NE, 0x03010200, leftHeadedMappedRepr)
+    add(projectRightSeg(Road~NS) & Rail~NE, 0x03020500, rightHeadedMappedRepr)
+    add(projectLeftSeg(Road~WN) & Rail~NS, 0x03020100, leftHeadedMappedRepr)
+    add(projectRightSeg(Road~WN) & Rail~NS, 0x03020400, rightHeadedMappedRepr)
+    add(projectLeftSeg(Road~ES) & Rail~NE, 0x03020200, leftHeadedMappedRepr)
+    add(projectRightSeg(Road~NW) & Rail~NE, 0x03020300, leftHeadedMappedRepr) // left headed since tile is unmirrored (TODO test this)
     add(Road~WE & Highway~NS, 0x02014000)
     add(Road~ES & Highway~NS, 0x02014100)
     add(Road~WN & Highway~NS, 0x02014200)
@@ -160,14 +164,17 @@ class MiscResolver extends IdResolver {
     // Street intersections
     add(Street~NS & Rail~WE, 0x05010100)
     add(Street~NS & Rail~NE, 0x05010200)
-    add(Street~WN & Rail~NS, 0x5f502600) // TODO other version of this piece?
-    add(Street~ES & Rail~NE, 0x5f502700)
+    add(projectLeftSeg(Street~WN) & Rail~NS, 0x5f502600, leftHeadedMappedRepr)
+    add(projectRightSeg(Street~WN) & Rail~NS, 0x5f502900, rightHeadedMappedRepr)
+    add(projectLeftSeg(Street~ES) & Rail~NE, 0x5f502700, leftHeadedMappedRepr)
+    add(projectRightSeg(Street~NW) & Rail~NE, 0x5f502800, leftHeadedMappedRepr) // left headed since tile is unmirrored (TODO test this)
 
     // OWR + intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)
     add(Onewayroad~NS & Rail~NE, 0x09310200)
     add(Onewayroad~WN & Rail~NS, 0x09320100)
-    add(Onewayroad~ES & Rail~NE, 0x09320200) // TODO handle flipped version 0x09320300 – possibly analogous to TLA tiles
+    add(projectLeftSeg(Onewayroad~ES) & Rail~NE, 0x09320200, leftHeadedMappedRepr)
+    add(projectRightSeg(Onewayroad~NW) & Rail~NE, 0x09320300, leftHeadedMappedRepr) // left headed since tile is unmirrored (TODO test this)
     add(Onewayroad~WE & Highway~NS, 0x09b14000)
     add(Onewayroad~ES & Highway~NS, 0x09b14100)
     add(Onewayroad~WN & Highway~NS, 0x09b14200)
@@ -198,8 +205,10 @@ class MiscResolver extends IdResolver {
     // Avenue + intersections
     add(Avenue~ES & Rail~NE, 0x04002100)
     add(Avenue~SharedDiagRight & Rail~SW, 0x04004300)
-    add(Avenue~SN & Rail~NE, 0x04001600)
-    add(Avenue~NS & Rail~NE, 0x04001700)
+    add(projectLeftSeg(Avenue~SN) & Rail~NE, 0x04001600, leftHeadedMappedRepr)
+    add(projectRightSeg(Avenue~SN) & Rail~NE, 0x5d571600, rightHeadedMappedRepr)
+    add(projectLeftSeg(Avenue~NS) & Rail~NE, 0x04001700, leftHeadedMappedRepr)
+    add(projectRightSeg(Avenue~NS) & Rail~NE, 0x5d571700, rightHeadedMappedRepr)
     add(Avenue~SN & Rail~WE, 0x04001500)
     add(Avenue~ES & Rail~NS, 0x04004700)
     add(Avenue~SharedDiagRight & Rail~NS, 0x04004600)
