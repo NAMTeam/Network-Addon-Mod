@@ -80,6 +80,6 @@ object RegenerateTileOrientationCache {
       if (previous != cache.toMap) {
         LOGGER.warning(s"The file ${cacheFile} is outdated. Rebuild it with `sbt regenerateTileOrientationCache` and commit the changes.")
       }
-    } (List.empty)
+    } (List(classOf[Throwable]))  // throw all exceptions, do not catch any
   }
 }
