@@ -108,7 +108,7 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
   }
 }
 
-class OnslopeGenerator(val resolver: IdResolver) extends RuleGenerator with Curve45Generator with Onslope {
+class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Curve45Generator with Onslope {
   def start(): Unit = {
     createOnslopeTransition()
   }
@@ -117,6 +117,6 @@ class OnslopeGenerator(val resolver: IdResolver) extends RuleGenerator with Curv
 // Compile individually with `sbt "runMain metarules.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
-  lazy val generator: RuleGenerator = new OnslopeGenerator(resolve)
+  lazy val generator: RuleGenerator = new OnslopeGenerator(RuleTransducer.Context(resolve))
   lazy val file = new java.io.File("target/OnslopeMetaGenerated_MANAGED.txt")
 }

@@ -9,8 +9,8 @@ class MirrorVariantsSpec extends WordSpec with Matchers {
   "MirrorVariants" should {
     val resolve = new RealRailwayResolver orElse new MiscResolver
     "produce expected results for Avenue × Rail crossings" in {
-      val generator = new RuleGenerator with MirrorVariants {
-        val resolver = resolve
+      val generator = new RuleGenerator {
+        var context = RuleTransducer.Context(resolve, preprocess = MirrorVariants.preprocessor)
         def start(): Unit = {
           val main = L1Dtr
           Rules += main~ES | (Rail ~> main)~NW & Avenue~NS              // diag > 16
@@ -38,8 +38,8 @@ class MirrorVariantsSpec extends WordSpec with Matchers {
     "produce expected results for Street × Rail crossings" in {
       // This Street crossing differs from the Avenue crossing above in that
       // both variants are unmirrored-only.
-      val generator = new RuleGenerator with MirrorVariants {
-        val resolver = resolve
+      val generator = new RuleGenerator {
+        var context = RuleTransducer.Context(resolve, preprocess = MirrorVariants.preprocessor)
         def start(): Unit = {
           val main = L1Dtr
           Rules += main~ES | (Rail ~> main)~NW & Street~NE

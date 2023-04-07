@@ -83,7 +83,8 @@ class RuleTransducerSpec extends WordSpec with Matchers {
   def DIST(id: Int, rf: RotFlip, sg: SymGroup) = new DummyIdSymTile(id, rf, sg)
 
   implicit val resolver = new module.RhwResolver orElse new module.NwmResolver orElse new module.MiscResolver
-  implicit val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]
+  val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]
+  implicit val context = RuleTransducer.Context(resolver, tileOrientationCache)
   "RuleTransducer" should {
     val c = DIST(0x3000, R0F0, Cyc1)
     val d = DIST(0x4000, R0F0, Cyc1)
@@ -222,15 +223,15 @@ class RuleTransducerSpec extends WordSpec with Matchers {
     }
   }
 
-  "multiply TLA" should {
-    "produce expected number" in {
-      val orth: Seq[Rule[SymTile]] = multiplyTla( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
+  "preprocessor" should {
+    "produce expected number of rules for Tla3" in {
+      val orth: Seq[Rule[SymTile]] = context.preprocess( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
       orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(_.flags.exists(_ == Flag.RightHeadedBi.Orth)))) should be (false)
       createRules(orth.head.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
 
-      multiplyTla( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
-      val diag = multiplyTla( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
+      context.preprocess( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
+      val diag = context.preprocess( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
       diag should have size (2)
       for (r <- diag) {
         createRules(r.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)

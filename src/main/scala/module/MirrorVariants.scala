@@ -11,11 +11,11 @@ import NetworkProperties.{projectLeftSeg, projectRightSeg}
   * the right projection to the mirrored-only tile (in RHD).
   * See MiscResolver for how to map the left/right projected tiles to IdTiles.
   */
-trait MirrorVariants { this: RuleGenerator =>
+object MirrorVariants {
   // TODO: This probably does not play well with TLA-networks yet which have a
   // similar mechanism, but mostly hardcoded in the metarules package.
 
-  val mirrorVariants: scala.collection.Map[SymTile, (SymTile, SymTile)] = {
+  private lazy val mirrorVariants: scala.collection.Map[SymTile, (SymTile, SymTile)] = {
     val map = scala.collection.mutable.Map.empty[SymTile, (SymTile, SymTile)]
     def add(tile: Tile, tileL: Tile, tileR: Tile): Unit = {
       assert(!map.contains(tile))
@@ -38,18 +38,18 @@ trait MirrorVariants { this: RuleGenerator =>
     map
   }
 
-  override protected def createRules(): Unit = {
-    Rules.distinct foreach { r =>
-      if (!r.exists(tile => mirrorVariants.contains(tile))) {
-        queue ++= RuleTransducer(r)(resolver, tileOrientationCache)
-      } else {
-        val r1 = r.map(tile => mirrorVariants.get(tile).map(_._1).getOrElse(tile))
-        val r2 = r.map(tile => mirrorVariants.get(tile).map(_._2).getOrElse(tile))
-        queue ++= RuleTransducer(r1)(resolver, tileOrientationCache)
-        queue ++= RuleTransducer(r2)(resolver, tileOrientationCache)
+  private val projections = Seq[((SymTile, SymTile)) => SymTile](_._1, _._2)
+
+  private val defaultPreprocessor = RuleTransducer.Context(null).preprocess  // TODO implement TLA handling here instead
+
+  lazy val preprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = r => {
+    if (!r.exists(tile => mirrorVariants.contains(tile))) {
+      Iterator(r)
+    } else {
+      for (proj <- projections.iterator) yield {
+        // yield the two projected rules
+        r.map(tile => mirrorVariants.get(tile).map(proj).getOrElse(tile))
       }
     }
-    Rules.clear()
-  }
+  }.flatMap(defaultPreprocessor)  // TODO implement TLA handling here instead
 }
-

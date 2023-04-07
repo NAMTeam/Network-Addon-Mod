@@ -18,9 +18,9 @@ scalacOptions ++= Seq(
 console / initialCommands := """
 import metarules._, metarules.meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}, Group.SymGroup._
-implicit lazy val resolve = module.Main.resolve
-lazy val tileOrientationCache = module.RegenerateTileOrientationCache.loadCache()
-def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(resolve, tileOrientationCache) foreach println
+lazy val resolve = module.Main.resolve
+lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
+def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
 """
 
 def wrapWithJLogger(logger: sbt.util.Logger): sbt.util.Logger = {
@@ -86,4 +86,4 @@ libraryDependencies += "ps.tricerato" %% "pureimage" % "0.1.1" from "https://git
 
 libraryDependencies += "com.github.memo33" %% "scdbpf" % "0.1.10" from "https://github.com/memo33/scdbpf/releases/download/v0.1.10/scdbpf_2.11.jar"
 
-libraryDependencies += "com.github.memo33" %% "metarules" % "0.3.1" from "https://github.com/memo33/metarules/releases/download/v0.3.1/metarules_2.11.jar"
+libraryDependencies += "com.github.memo33" %% "metarules" % "0.3.2-SNAPSHOT" from "https://github.com/memo33/metarules/releases/download/v0.3.1/metarules_2.11.jar"

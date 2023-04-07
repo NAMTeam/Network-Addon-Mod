@@ -18,7 +18,7 @@ object FlexFlyRuleGenerator {
   }
 }
 
-class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Stability {
+class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Stability {
   import FlexFlyRuleGenerator._
 
   def start(): Unit = {
