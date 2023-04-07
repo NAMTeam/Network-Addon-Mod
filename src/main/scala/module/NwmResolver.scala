@@ -4,7 +4,7 @@ import metarules.meta._
 import Network._
 import RotFlip._
 import Flags._
-import NetworkProperties.{isTripleTile, leftHeadedMappedRepr, rightHeadedMappedRepr}
+import NetworkProperties.{isTripleTile, nonMirroredOnly, mirroredOnly}
 
 
 class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
@@ -103,9 +103,9 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
           if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
              (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded) &&
               tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
-            IdTile(id, prop.rf, leftHeadedMappedRepr)
+            IdTile(id, prop.rf, nonMirroredOnly)
           else if (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded)
-            IdTile(id + 0x20000000, prop.rf, rightHeadedMappedRepr) // TODO find suitable ID
+            IdTile(id + 0x20000000, prop.rf, mirroredOnly) // TODO find suitable ID
           else
             IdTile(id, prop.rf)
         case None => //??? // TODO T intersections etc. still missing
