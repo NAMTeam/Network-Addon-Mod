@@ -45,8 +45,8 @@ object PathCreator {
           // special handling for center turning lanes of TLAs
           // TODO Orientations and directions of paths need testing,
           // and the alternative TLA turn paths need permanent IIDs
-          val idTile1 = resolver(Tile.projectLeft(seg1 & seg2))
-          val idTile2 = resolver(Tile.projectLeft((seg1 & seg2) * R0F1))
+          val idTile1 = resolver(Tile.projectTlaLeft(seg1 & seg2))
+          val idTile2 = resolver(Tile.projectTlaLeft((seg1 & seg2) * R0F1))
           if (!ids.contains(idTile1.id)) {
             val intersection = new PlusIntersection(seg1, seg2)
             ids(idTile1.id) = intersection.buildSc4Path * (R0F0 / idTile1.rf)

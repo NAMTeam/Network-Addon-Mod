@@ -127,10 +127,10 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw8c~EW & L1Dtr~NS, 0x5d672500)
     add(Rhw8c~EW & L2Dtr~NS, 0x5d772500)
     // -- TLA-3 --
-    add(Tile.projectLeft(Tla3~WE & L1Dtr~NS), 0x5d672700)
-    add(Tile.projectRight(Tla3~WE & L1Dtr~NS), 0x5d672700)
-    add(Tile.projectLeft(Tla3~WE & L2Dtr~NS), 0x5d772700)
-    add(Tile.projectRight(Tla3~WE & L2Dtr~NS), 0x5d772700)
+    add((Tla3~WE).projectLeft & L1Dtr~NS, 0x5d672700)
+    add((Tla3~WE).projectRight & L1Dtr~NS, 0x5d672700)
+    add((Tla3~WE).projectLeft & L2Dtr~NS, 0x5d772700)
+    add((Tla3~WE).projectRight & L2Dtr~NS, 0x5d772700)
     // -- AVE-2 --
     add(Ave2~WE & L1Dtr~NS, 0x5d672800)
     add(Ave2~WE & L2Dtr~NS, 0x5d772800)
@@ -147,10 +147,10 @@ class RealRailwayResolver extends IdResolver {
     add(Nrd4~WE & L1Dtr~NS, 0x5d672c00) 
     add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
     // -- TLA-5 --
-    add(Tile.projectLeft(Tla5~EW & L1Dtr~NS), 0x5d672d00)
-    add(Tile.projectRight(Tla5~EW & L1Dtr~NS), 0x5d672d00)
-    add(Tile.projectLeft(Tla5~EW & L2Dtr~NS), 0x5d772d00)
-    add(Tile.projectRight(Tla5~EW & L2Dtr~NS), 0x5d772d00)
+    add((Tla5~EW).projectLeft & L1Dtr~NS, 0x5d672d00)
+    add((Tla5~EW).projectRight & L1Dtr~NS, 0x5d672d00)
+    add((Tla5~EW).projectLeft & L2Dtr~NS, 0x5d772d00)
+    add((Tla5~EW).projectRight & L2Dtr~NS, 0x5d772d00)
     // -- OWR-4 --
     add(Owr4~WE & L1Dtr~NS, 0x5d672e00)
     add(Owr4~WE & L2Dtr~NS, 0x5d772e00)

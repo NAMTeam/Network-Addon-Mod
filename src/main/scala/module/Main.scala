@@ -1,7 +1,7 @@
 package metarules.module
 
 import java.io.{File, PrintWriter}
-import metarules.meta.{RuleGenerator, IdResolver, EquivRule, RotFlip}
+import metarules.meta.{RuleGenerator, IdResolver, EquivRule, RotFlip, RuleTransducer}
 
 /** Usage: Replace (in source code) `resolve` and `generator` by custom
   * implementation, optionally replace `file`, too.
@@ -10,7 +10,7 @@ import metarules.meta.{RuleGenerator, IdResolver, EquivRule, RotFlip}
 object Main extends AbstractMain {
 
   lazy val resolve: IdResolver = new RealRailwayResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
-  lazy val generator: RuleGenerator = new RhwRuleGenerator(resolve)
+  lazy val generator: RuleGenerator = new RhwRuleGenerator(RuleTransducer.Context(resolve))
   lazy val file = new File("./Controller/RUL2/07_RHW/RhwMetaGenerated_MANAGED.txt")
 }
 
@@ -28,7 +28,7 @@ abstract class AbstractMain {
         start(file, generator, cache)
       }
     } else {
-      generator.tileOrientationCache = tileOrientationCache
+      generator.context = generator.context.copy(tileOrientationCache = tileOrientationCache, preprocess = MirrorVariants.preprocessor)
       generator.start()
       // TODO to be revised, later, in order to make more efficient
       for (printer <- resource.managed(new PrintWriter(file))) {

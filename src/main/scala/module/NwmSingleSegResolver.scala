@@ -5,6 +5,7 @@ import Network._
 import RotFlip._
 import Flags._
 import Implicits.segmentToTile
+import NetworkProperties.{nonMirroredOnly, mirroredOnly}
 
 
 trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
@@ -21,8 +22,8 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
     def add(tile: Tile, id: Int): Unit = {
       if (tile.segs.exists(_.network.isTla)) {
         // curves do not have turn paths, so we can map both projections to the same ID
-        add0(Tile.projectLeft(tile), id)
-        add0(Tile.projectRight(tile), id)
+        add0(Tile.projectTlaLeft(tile), id)
+        add0(Tile.projectTlaRight(tile), id)
       } else {
         add0(tile, id)
       }
@@ -68,9 +69,9 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
           id += 0x4  // map 8th digit 5 to 9, A to E
         if (prop.kind == Flag.Kind.LeftHeaded || prop.kind == Flag.Kind.RightHeaded &&
             seg.flags.symmetries.exists(_.flipped))
-          IdTile(id, prop.rf, if (prop.swapped ^ prop.rf.flipped) rightHeadedMappedRepr else leftHeadedMappedRepr)
+          IdTile(id, prop.rf, if (prop.swapped ^ prop.rf.flipped) mirroredOnly else nonMirroredOnly)
         else if (prop.kind == Flag.Kind.RightHeaded)
-          IdTile(id + 0x20000000, prop.rf, if(prop.swapped ^ prop.rf.flipped) leftHeadedMappedRepr else rightHeadedMappedRepr) // TODO find suitable ID
+          IdTile(id + 0x20000000, prop.rf, if(prop.swapped ^ prop.rf.flipped) nonMirroredOnly else mirroredOnly) // TODO find suitable ID
         else
           IdTile(id, prop.rf)
       case None => throw new NotImplementedError(seg.toString) // ??? // TODO
