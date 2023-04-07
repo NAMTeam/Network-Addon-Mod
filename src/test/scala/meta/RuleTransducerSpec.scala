@@ -84,7 +84,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
 
   implicit val resolver = new module.RhwResolver orElse new module.NwmResolver orElse new module.MiscResolver
   val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]
-  implicit val context = RuleTransducer.Context(resolver, tileOrientationCache)
+  implicit val context = RuleTransducer.Context(resolver, tileOrientationCache, module.MirrorVariants.preprocessor)
   "RuleTransducer" should {
     val c = DIST(0x3000, R0F0, Cyc1)
     val d = DIST(0x4000, R0F0, Cyc1)

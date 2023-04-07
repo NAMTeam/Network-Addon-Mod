@@ -10,10 +10,10 @@ import NetworkProperties.{projectLeftSeg, projectRightSeg}
   * The left projection corresponds to the unmirrored-only tile (in RHD),
   * the right projection to the mirrored-only tile (in RHD).
   * See MiscResolver for how to map the left/right projected tiles to IdTiles.
+  *
+  * TLA-networks are handled automatically.
   */
 object MirrorVariants {
-  // TODO: This probably does not play well with TLA-networks yet which have a
-  // similar mechanism, but mostly hardcoded in the metarules package.
 
   private lazy val mirrorVariants: scala.collection.Map[SymTile, (SymTile, SymTile)] = {
     val map = scala.collection.mutable.Map.empty[SymTile, (SymTile, SymTile)]
@@ -38,18 +38,40 @@ object MirrorVariants {
     map
   }
 
-  private val projections = Seq[((SymTile, SymTile)) => SymTile](_._1, _._2)
+  def containsTlaFlags(tile: SymTile): Boolean = tile match {
+    case tile: Tile => tile.segs.exists(_.network.isTla)
+    case _ => false
+  }
+  def shouldProjectTlaLeftOnly(tile: SymTile): Boolean = tile match {
+    case tile: Tile => tile.segs.forall(!_.network.isTla) || !tile.symmetries.quotient.exists(_.flipped)
+    case _ => true
+  }
+  def projectTlaLeft(tile: SymTile): SymTile = tile match {
+    case tile: Tile => Tile.projectLeft(tile)
+    case _ => tile
+  }
+  def projectTlaRight(tile: SymTile): SymTile = tile match {
+    case tile: Tile => Tile.projectRight(tile)
+    case _ => tile
+  }
 
-  private val defaultPreprocessor = RuleTransducer.Context(null).preprocess  // TODO implement TLA handling here instead
-
-  lazy val preprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = r => {
-    if (!r.exists(tile => mirrorVariants.contains(tile))) {
-      Iterator(r)
+  private val tlaPreprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = rule => {
+    if (!rule.exists(containsTlaFlags)) {
+      Iterator(rule)
+    } else if (rule.forall(shouldProjectTlaLeftOnly)) {
+      Iterator(rule.map(projectTlaLeft))
     } else {
-      for (proj <- projections.iterator) yield {
-        // yield the two projected rules
-        r.map(tile => mirrorVariants.get(tile).map(proj).getOrElse(tile))
-      }
+      Iterator(rule.map(projectTlaLeft), rule.map(projectTlaRight))
     }
-  }.flatMap(defaultPreprocessor)  // TODO implement TLA handling here instead
+  }
+
+  val preprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = rule => {
+    if (!rule.exists(tile => mirrorVariants.contains(tile))) {
+      Iterator(rule)
+    } else {
+      Iterator(  // yield the two projected rules
+        rule.map(tile => mirrorVariants.get(tile).map(_._1).getOrElse(tile)),
+        rule.map(tile => mirrorVariants.get(tile).map(_._2).getOrElse(tile)))
+    }
+  }.flatMap(tlaPreprocessor)
 }

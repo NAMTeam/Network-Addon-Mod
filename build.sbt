@@ -19,7 +19,7 @@ console / initialCommands := """
 import metarules._, metarules.meta._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Tile.{CopyTile => %}, Group.SymGroup._
 lazy val resolve = module.Main.resolve
-lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
+implicit lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
 """
 
