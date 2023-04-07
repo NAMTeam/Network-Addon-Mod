@@ -77,8 +77,6 @@ object NetworkProperties {
     }
   }
 
-  def projectLeftSeg(seg: Segment): Segment = seg.copy(flags = seg.flags.makeLeftHeaded)
-  def projectRightSeg(seg: Segment): Segment = seg.copy(flags = seg.flags.makeRightHeaded)
   val nonMirroredOnly: Group.QuotientGroup => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: Group.QuotientGroup => Set[RotFlip] = _.filter(_.flipped)
 }

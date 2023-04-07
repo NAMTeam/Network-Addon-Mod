@@ -2,7 +2,6 @@ package metarules.module
 
 import metarules.meta._
 import Network._, Flags._, Flag._, RotFlip._, Implicits._
-import NetworkProperties.{projectLeftSeg, projectRightSeg}
 
 /** This modifies the rule generating process by duplicating all rules that
   * contain tiles that have mirrored variants with different IIDs, such as Rail
@@ -24,7 +23,7 @@ object MirrorVariants {
       }
     }
     def addProjectFirst(seg1: Segment, seg2: Segment): Unit = {
-      add(seg1 & seg2, projectLeftSeg(seg1) & seg2, projectRightSeg(seg1) & seg2)
+      add(seg1 & seg2, seg1.projectLeft & seg2, seg1.projectRight & seg2)
     }
     // add additional mirror variants here
     addProjectFirst(Road~NS, Rail~NE)
@@ -47,11 +46,11 @@ object MirrorVariants {
     case _ => true
   }
   def projectTlaLeft(tile: SymTile): SymTile = tile match {
-    case tile: Tile => Tile.projectLeft(tile)
+    case tile: Tile => Tile.projectTlaLeft(tile)
     case _ => tile
   }
   def projectTlaRight(tile: SymTile): SymTile = tile match {
-    case tile: Tile => Tile.projectRight(tile)
+    case tile: Tile => Tile.projectTlaRight(tile)
     case _ => tile
   }
 
