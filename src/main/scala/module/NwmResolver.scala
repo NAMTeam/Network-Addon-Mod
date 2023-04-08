@@ -4,7 +4,8 @@ import metarules.meta._
 import Network._
 import RotFlip._
 import Flags._
-import NetworkProperties.{isTripleTile, nonMirroredOnly, mirroredOnly}
+import Group.SymGroup
+import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
 
 
 class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
@@ -63,7 +64,7 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     Ave6          -> 0x1D00,
     Tla7m         -> 0x1D0A,
     Ave8          -> 0x1E00,
-    Ave6m         -> 0x1E0A).lift
+    Ave6m         -> 0x1E0A)
     // currently not defined:
     // Glr3          -> 0x....,
     // Glr4          -> 0x....,
@@ -71,6 +72,34 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
 
   /** is defined for all tiles that do not contain RHW, but NWM */
   def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && t.segs.exists(_.network.isNwm)
+
+  /** Reduction modulo symmetry group. (TODO should be moved upstream)
+    * Finds smallest h such that ∃ g ∈ group : rf * g == h,
+    * in other words, the smallest representative in the left coset of rf.
+    * Careful: reduction is one-sided since multiplication is not commutative.
+    */
+  private[this] def reduceL(rf: RotFlip, group: SymGroup): RotFlip = {
+    group.quotient.find(h => group.contains((R0F0 / rf) * h)).get
+  }
+
+  // orientation relative to RHW scheme
+  private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
+    val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
+    val crossingNetworks = Network.ValueSet() ++ nwmPieceId.keysIterator
+    map.getOrElseUpdate(Ard3 + Rail, R2F0)
+    for (main <- NwmNetworks; minor <- crossingNetworks if !minor.isNwm || minor <= main) {
+      if (main == Ard3) {
+        map.getOrElseUpdate(main + minor, R3F0)
+      } else if (isSingleTile(main) && minor == Rail) {
+        map.getOrElseUpdate(main + minor, R0F0)
+      } else if (!isSingleTile(main) && minor == Ard3) {
+        map.getOrElseUpdate(main + minor, R1F0)
+      } else {
+        map.getOrElseUpdate(main + minor, R1F1)  // default
+      }
+    }
+    map.toMap
+  }
 
   def apply(tile: Tile): IdTile = {
     if (!isDefinedAt(tile)) {
@@ -93,7 +122,12 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
               0x7000  // DxO
             case 0x9000 => 0x8000  // DxD
           }
-          var id = nwmRangeId(maj.network).get + nwmPieceId(min.network).get + pieceOffset
+          val rf = if (prop.orthDiagOffset != 0x0000) prop.rf else {
+            // O×O tiles have different orientation in original NWM scheme
+            val rfOffset = orientationOffsetOxO(maj.network + min.network)
+            reduceL((R0F0 / rfOffset) * prop.rf, tile.symmetries)
+          }
+          var id = nwmRangeId(maj.network).get + nwmPieceId(min.network) + pieceOffset
           if (prop.majorSegReversed)
             id += (if (isTripleTile(maj.network)) 0x40 else 0x80)  // TODO revise IID scheme to avoid 0x40 for wealthing support
           if (prop.minorSegReversed)
@@ -103,11 +137,11 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
           if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
              (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded) &&
               tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
-            IdTile(id, prop.rf, nonMirroredOnly)
+            IdTile(id, rf, nonMirroredOnly)
           else if (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded)
-            IdTile(id + 0x20000000, prop.rf, mirroredOnly) // TODO find suitable ID
+            IdTile(id + 0x20000000, rf, mirroredOnly) // TODO find suitable ID
           else
-            IdTile(id, prop.rf)
+            IdTile(id, rf)
         case None => //??? // TODO T intersections etc. still missing
           throw new UnsupportedOperationException(tile.toString)
       }
