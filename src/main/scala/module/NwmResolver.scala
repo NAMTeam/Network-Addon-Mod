@@ -27,9 +27,13 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     Rd6           -> 0x51140000,
 
     Ave6          -> 0x51200000,
-    Tla7m         -> 0x51200080,
+    Tla7m         -> 0x51200080,  // with overflow 0x51220000
     Ave8          -> 0x51210000,
-    Ave6m         -> 0x51210080).lift
+    Ave6m         -> 0x51210080)  // with overflow 0x51220080
+
+  val nwmRangeIdOverflow = Map(  // for diagonal intersections
+    Tla7m         -> 0x51220000,
+    Ave6m         -> 0x51220080).orElse(nwmRangeId)
 
   val nwmPieceId = Map(
     Street        -> 0x0000,
@@ -122,14 +126,15 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
               0x7000  // DxO
             case 0x9000 => 0x8000  // DxD
           }
-          val rf = if (prop.orthDiagOffset != 0x0000) prop.rf else {
+          val isOxO = prop.orthDiagOffset == 0x0000
+          val rf = if (!isOxO) prop.rf else {
             // O×O tiles have different orientation in original NWM scheme
             val rfOffset = orientationOffsetOxO(maj.network + min.network)
             reduceL((R0F0 / rfOffset) * prop.rf, tile.symmetries)
           }
-          var id = nwmRangeId(maj.network).get + nwmPieceId(min.network) + pieceOffset
+          var id = (if (isOxO) nwmRangeId else nwmRangeIdOverflow)(maj.network) + nwmPieceId(min.network) + pieceOffset
           if (prop.majorSegReversed)
-            id += (if (isTripleTile(maj.network)) 0x40 else 0x80)  // TODO revise IID scheme to avoid 0x40 for wealthing support
+            id += 0x80
           if (prop.minorSegReversed)
             id += 0x05
           if (id % 0x10 != 0 && (maj.network.height == 0 || min.network.height == 0))
@@ -139,7 +144,7 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
               tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
             IdTile(id, rf, nonMirroredOnly)
           else if (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded)
-            IdTile(id + 0x20000000, rf, mirroredOnly) // TODO find suitable ID
+            IdTile(id + 0x20000000, rf, mirroredOnly)
           else
             IdTile(id, rf)
         case None => //??? // TODO T intersections etc. still missing
