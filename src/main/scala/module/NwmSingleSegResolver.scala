@@ -5,7 +5,7 @@ import Network._
 import RotFlip._
 import Flags._
 import Implicits.segmentToTile
-import NetworkProperties.{nonMirroredOnly, mirroredOnly}
+import NetworkProperties.{isSingleTile, isDoubleTile, nonMirroredOnly, mirroredOnly}
 
 
 trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
@@ -56,6 +56,17 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
       add(n~(0,-13,0,+2),   nwmRangeId(n).get + 0x0400)  // mini curve
       add(n~(0,0,-111,+13), nwmRangeId(n).get + 0x0500)  // mini curve
       add(n~(+111,-3,0,0),  nwmRangeId(n).get + 0x0600)  // mini curve
+    }
+    for (n <- NwmNetworks if isSingleTile(n)) {
+      add(n~(0,0,-2,+2),    nwmRangeId(n).get + 0x0800)  // 90 degree curve
+      if (!n.isSymm) {
+        add(n~(0,0,+2,-2),  nwmRangeId(n).get + 0x0e00)  // 90 degree curve
+      }
+    }
+    for ((n, offset) <- Seq(Rd4 -> 0, Tla5 -> 0x0100)) {
+      add(n~(0,0,-2,+2),    nwmRangeId(n).get + 0x0980 + offset)  // 90 degree curve outside
+      add(n~(0,-113,0,+2),  nwmRangeId(n).get + 0x0900 + offset)  // 90 degree curve extended
+      add(n~(0,0,+2,-2),    nwmRangeId(n).get + 0x0a00 + offset)  // 90 degree curve inside
     }
     map
   }

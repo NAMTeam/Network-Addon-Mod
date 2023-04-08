@@ -65,6 +65,7 @@ class MiscResolver extends IdResolver {
     //add(Road~SW & Road~SharedDiagRight, 0x5f040600) // DxD shared-diag TODO create this
     //add(Road~SharedDiagRight & Road~SharedDiagLeft, 0x5f040700) // DxD shared-diag TODO create this
     add(Road~SW & Road~ES, 0x00000700) // DxD
+    add(Road~(0,0,2,2), 0x00000F00) // 90 curve
     add(Road~(0,0,1,13), 0x00000C00) // curve
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
@@ -78,6 +79,7 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~SW & Onewayroad~SharedDiagRight, 0x5f940600) // DxD shared-diag TODO create this
     add(Onewayroad~SharedDiagRight & Onewayroad~SharedDiagLeft, 0x5f940700) // DxD shared-diag TODO create this
     add(Onewayroad~SW & Onewayroad~ES, 0x09000700) // DxD
+    add(Onewayroad~(0,0,2,2), 0x09000F00) // 90 curve
     add(Onewayroad~(0,0,1,13), 0x09000C00) // curve
     add(Onewayroad~(0,2,0,11), 0x09004D00) // curve
     add(Onewayroad~SharedDiagRight, 0x09014E00) // shared diag
@@ -110,6 +112,9 @@ class MiscResolver extends IdResolver {
     //add(Onewayroad~SharedDiagRight & Monorail~SharedDiagLeft, 0x5f94bf00)
 
     add(Avenue~CS, 0x04007300) // orth stub
+    add(Avenue~(-2,0,0,+2), 0x04006400) // 90 curve inside
+    add(Avenue~(+2,0,0,-2), 0x04006500) // 90 curve outside
+    add(Avenue~(+2,0,-113,0), 0x04006300) // 90 curve extended
     add(Avenue~(0,-2,0,+11), 0x04007600) // curve
     add(Avenue~(0,+2,0,-11), 0x04007700) // curve
     add(Avenue~(0,-11,+3,0), 0x04007800) // curve
