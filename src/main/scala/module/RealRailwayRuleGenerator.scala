@@ -66,24 +66,30 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
         if (isSingleTile(minor)) {
           // OxO
           Rules += main~WE | (base ~> main)~WE & minor~NS~SN          // OxO
-          Rules += main~WE | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO jump
+          Rules += main~WE | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO (jump)
           Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
-          Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
           Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
+          Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
           // OxD (to do: consider asymmetrical)
           Rules += main~WE | (base ~> main)~WE & minor~ES       // OxD
-          Rules += main~WE | minor~ES | % | main~WE & minor~ES  // OxD jump
+          Rules += main~WE | minor~ES | % | main~WE & minor~ES  // OxD (jump)
           Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
-          Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
           Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
+          Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
           // DxO
           Rules += main~ES | (base ~> main)~NW & minor~NS       // DxO
-          Rules += main~ES | minor~NS | % | main~NW & minor~NS  // DxO jump
+          Rules += main~ES | minor~NS | % | main~NW & minor~NS  // DxO (jump)
           Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+          Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
+          Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
           // DxD
           Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD
-          Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD jump
+          Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD (jump)
           Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
+          Rules += main~SE & minor~WS | base~WNC | % | main~NW  // DxD continue stub conversion
+          Rules += main~SE & minor~WS | base~NWC | % | main~NW  // DxD continue stub conversion (jump)
+        }
+
         if (minor.typ == AvenueLike) {
           // OxO
           Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
