@@ -84,6 +84,47 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD
           Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD jump
           Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
+        if (minor.typ == AvenueLike) {
+          // OxO
+          Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
+          Rules += main~WE | minor~NS | % | main~WE & minor~NS        // OxO jump
+          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO far side
+          Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO far side jump
+          Rules += main~WE & minor~SN | (base ~> main)~WE             // OxO continue
+          Rules += main~WE & minor~SN | base~CE | % | main~WE         // OxO continue stub conversion
+          Rules += main~WE & minor~SN | base~CW | % | main~WE         // OxO continue stub conversion (jump)
+          // OxD
+          Rules += main~WE | (base ~> main)~WE & minor~ES             // OxD start
+          Rules += main~WE | minor~ES | % | main~WE & minor~ES        // OxD start (jump)
+          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight                   // OxD middle
+          Rules += main~WE & minor~ES | minor~SharedDiagRight | % | main~WE & minor~SharedDiagRight // OxD middle (jump)
+          Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN       // OxD end
+          Rules += main~WE & minor~SharedDiagRight | minor~WN | % | main~WE & minor~WN  // OxD end (jump)
+          Rules += main~WE & minor~WN | (base ~> main)~WE             // OxD continue
+          Rules += main~WE & minor~WN | base~CE | % | main~WE         // OxD continue stub conversion
+          Rules += main~WE & minor~WN | base~CW | % | main~WE         // OxD continue stub conversion (jump)
+          // DxO
+          Rules += main~ES | (base ~> main)~NW & minor~NS                 // DxO start
+          Rules += main~ES | minor~NS | % | main~NW & minor~NS            // DxO start (jump)
+          Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW      // DxO middle 1
+          Rules += main~EN & minor~EW | minor~EW | % | main~SW & minor~EW // DxO middle 1 (jump)
+          Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN      // DxO middle 2
+          Rules += main~ES & minor~NS | minor~SN | % | main~NW & minor~SN // DxO middle 2 (jump)
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE      // DxO end
+          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE // DxO end (jump)
+          Rules += main~ES & minor~SN | (base ~> main)~NW                 // DxO continue
+          Rules += main~ES & minor~SN | base~WNC | % | main~NW            // DxO continue stub conversion
+          Rules += main~ES & minor~SN | base~NWC | % | main~NW            // DxO continue stub conversion (jump)
+          // DxD
+          Rules += main~ES | (base ~> main)~NW & minor~NE                                           // DxD start
+          Rules += main~ES | minor~NE | % | main~NW & minor~NE                                      // DxD start (jump)
+          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
+          Rules += main~EN & minor~ES | minor~SharedDiagRight | % | main~SW & minor~SharedDiagRight // DxD middle (jump)
+          Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW                    // DxD end
+          Rules += main~ES & minor~SharedDiagLeft | minor~SW | % | main~NW & minor~SW               // DxD end (jump)
+          Rules += main~ES & minor~SW | (base ~> main)~NW           // DxD continue
+          Rules += main~ES & minor~SW | base~WNC | % | main~NW      // DxD continue stub conversion
+          Rules += main~ES & minor~SW | base~NWC | % | main~NW      // DxD continue stub conversion (jump)
         }
 
         /*
@@ -113,13 +154,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += Rail~CW & main~WE | (base ~> main)~WE & minor~SN // Orth Ramp HT
           Rules += Rail~CW & main~WE | minor~SN | % | main~WE & minor~SN // Orth Ramp no-int
         }
-        if(minor.typ == AvenueLike) {
-          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN // OxO double
-          Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO double no-int
-        }
-        //Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
-        //Rules += main~WE & minor~SN | base~CW | % | main~WE   // OxO continue stub conversion 
-        //Rules += main~WE & minor~SN | base~CE | % | main~WE   // OxO continue stub conversion
         
         for(minor2 <- CrossNetworks if minor2.height != main.height && minor2 != main) {
           if (hasRightShoulder(minor2)) {
@@ -141,7 +175,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
         Rules += Rail~CW & main~WE | (base ~> main)~WE & minor~SE // Orth Ramp HT
         Rules += Rail~CW & main~WE | minor~SE | % | main~WE & minor~SE // Orth Ramp no-int
 
-       //Rules += main~NE | (base ~> main)~NE & minor~WE // DxO
        */
       }
     }

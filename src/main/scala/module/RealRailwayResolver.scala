@@ -225,11 +225,11 @@ class RealRailwayResolver extends IdResolver {
     // -- OWR --
     add(Onewayroad~ES & L1Dtr~NS, 0x5d674200)
     add(Onewayroad~ES & L2Dtr~NS, 0x5d774200)
-    // -- Avenue --
-    add(Avenue~ES & L1Dtr~NS, 0x5d674300)
-    add(Avenue~SharedDiagRight & L1Dtr~NS, 0x5d674305)
-    add(Avenue~ES & L2Dtr~NS, 0x5d774300)
-    add(Avenue~SharedDiagRight & L2Dtr~NS, 0x5d774305)
+    // -- Avenue -- (these models should be redone to match the ground crossing orientation)
+    add(Avenue~SW & L1Dtr~NS, 0x5d674300)
+    add(Avenue~SharedDiagLeft & L1Dtr~NS, 0x5d674305)
+    add(Avenue~SW & L2Dtr~NS, 0x5d774300)
+    add(Avenue~SharedDiagLeft & L2Dtr~NS, 0x5d774305)
     // -- Rail --
     add(Rail~ES & L1Dtr~NS, 0x5d674500)
     add(Rail~ES & L2Dtr~NS, 0x5d774500)
@@ -267,8 +267,8 @@ class RealRailwayResolver extends IdResolver {
     // -- Avenue --
     add(Avenue~SW & L1Dtr~ES, 0x5d67a300)
     add(Avenue~SW & L2Dtr~ES, 0x5d77a300)
-    add(Avenue~SharedDiagLeft & L1Dtr~ES, 0x5d67a305)
-    add(Avenue~SharedDiagLeft & L2Dtr~ES, 0x5d77a305)
+    add(Avenue~SharedDiagLeft & L1Dtr~NW, 0x5d67a305) // not same orientation as L0
+    add(Avenue~SharedDiagLeft & L2Dtr~NW, 0x5d77a305) // not same orientation as L0
     // -- Rail --
     add(Rail~WS & L1Dtr~ES, 0x5d67a500)
     add(Rail~WS & L2Dtr~ES, 0x5d77a500)
