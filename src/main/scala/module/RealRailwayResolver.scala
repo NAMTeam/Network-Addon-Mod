@@ -24,6 +24,8 @@ class RealRailwayResolver extends IdResolver {
     // diag
     add(L1Dtr~SE, 0x5d640100)
     add(L2Dtr~SE, 0x5d740100)
+    // diag stub
+    add(Rail~CSW, 0x5d540300)
     // OxO crossing
     add(Rail~NS & Rail~EW, 0x5d548000)
     // OxD crossing
