@@ -41,6 +41,7 @@ class MiscResolver extends IdResolver {
     //add(Tla5 ~NS, 0x51100000); add(Tla5 ~ES, 0x51100200); add(Tla5 ~NW, 0x51100300)
     add((Tla5~NS).projectLeft, 0x51100000); add((Tla5~ES).projectLeft, 0x51100200); add((Tla5~NW).projectLeft, 0x51100300)
     add((Tla5~NS).projectRight, 0x51100000); add((Tla5~ES).projectRight, 0x51100200); add((Tla5~NW).projectRight, 0x51100300) // TODO should right-headed TLAs even be resolved?
+    add((Tla5~CS).projectLeft, 0x51100100); add((Tla5~CS).projectRight, 0x51100100)  // overwritten explicitly here to avoid 0x71.. ID for stubs
     add(Owr4 ~NS, 0x51110000); add(Owr4 ~ES, 0x51110200); add(Owr4~SharedDiagRight, 0x51110300)
     add(Owr5 ~NS, 0x51120000); add(Owr5 ~ES, 0x51120200); add(Owr5 ~NW, 0x51120300)
     add(Rd4  ~NS, 0x51130000); add(Rd4  ~ES, 0x51130200); add(Rd4~SharedDiagRight, 0x51130300)
