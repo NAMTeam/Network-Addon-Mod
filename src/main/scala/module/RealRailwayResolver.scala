@@ -82,6 +82,10 @@ class RealRailwayResolver extends IdResolver {
     add(Rail~WE & L1Dtr~NS, 0x5d671500)
     add(Rail~WE & L2Dtr~NS, 0x5d771500)
     add(L2Dtr~WE & L1Dtr~NS, 0x5d771510)
+    // -- STR --
+    add(Str~WE & Rail~NS, 0x5d510000)
+    add(Str~WE & L1Dtr~NS, 0x5d671505)
+    add(Str~WE & L2Dtr~NS, 0x5d771505)
     // -- GLR  --
     add(Glr1~WE & L1Dtr~NS, 0x5d671700)
     add(Glr2~WE & L1Dtr~NS, 0x5d671705)
@@ -235,6 +239,10 @@ class RealRailwayResolver extends IdResolver {
     // -- Rail --
     add(Rail~ES & L1Dtr~NS, 0x5d674500)
     add(Rail~ES & L2Dtr~NS, 0x5d774500)
+    // -- STR --
+    add(Str~NE & Rail~NS, 0x5d510200)
+    add(Str~ES & L1Dtr~NS, 0x5d674505)
+    add(Str~ES & L2Dtr~NS, 0x5d774505)
 
     // ----- DxO -----
     // -- Street --
@@ -255,6 +263,10 @@ class RealRailwayResolver extends IdResolver {
     // -- Rail --
     add(Rail~NS & L1Dtr~ES, 0x5d677500)
     add(Rail~NS & L2Dtr~ES, 0x5d777500)
+    // -- STR --
+    add(Str~NS & Rail~NE, 0x5d510100)
+    add(Str~NS & L1Dtr~ES, 0x5d677505)
+    add(Str~NS & L2Dtr~ES, 0x5d777505)
 
     // ----- DxD -----
     // -- Street --
@@ -274,6 +286,10 @@ class RealRailwayResolver extends IdResolver {
     // -- Rail --
     add(Rail~WS & L1Dtr~ES, 0x5d67a500)
     add(Rail~WS & L2Dtr~ES, 0x5d77a500)
+    // -- STR --
+    add(Str~NE & Rail~ES, 0x5d510300)
+    add(Str~WS & L1Dtr~ES, 0x5d67a505)
+    add(Str~WS & L2Dtr~ES, 0x5d77a505)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD

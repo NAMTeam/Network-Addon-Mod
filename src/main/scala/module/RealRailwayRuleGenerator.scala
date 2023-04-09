@@ -29,7 +29,7 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
     Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
     */
 
-    val CrossNetworks = List(Street, Road, Avenue, Onewayroad, Rail)
+    val CrossNetworks = List(Street, Road, Avenue, Onewayroad, Rail, Str)
 
 
     for (main <- RrwNetworks; base <- main.base) {
