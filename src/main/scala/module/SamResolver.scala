@@ -5,6 +5,7 @@ import Network._
 import RotFlip._
 import Flags._
 import Group.SymGroup
+import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
 
 
