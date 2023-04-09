@@ -34,8 +34,8 @@ trait DoubleSegResolver {
 
     import Flag.Kind._
     def flipKind(k: Flag.Kind.Value, rf: RotFlip): Flag.Kind.Value = if (k == Default || !rf.flipped) k else k match {
-      case LeftHeaded => RightHeaded
-      case RightHeaded => LeftHeaded
+      case LeftSpin => RightSpin
+      case RightSpin => LeftSpin
     }
     def fill(tup1: IntFlags, tup1Rev: IntFlags, tup2: IntFlags, tup2Rev: IntFlags, offset: Int) {
       for {
@@ -43,8 +43,8 @@ trait DoubleSegResolver {
         n2 <- Seq(L1Rhw2, L1Mis)
         (seg2, minRev) <- Seq(n2~tup2, n2~tup2Rev) zip Seq(false, true)
         (seg1, majRev) <- Seq(n1~tup1, n1~tup1Rev) zip Seq(false, true)
-        (flags1, kind1) <- Seq(seg1.flags, seg1.flags.makeLeftHeaded, seg1.flags.makeRightHeaded) zip Seq(Default, LeftHeaded, RightHeaded)
-        (flags2, kind2) <- Seq(seg2.flags, seg2.flags.makeLeftHeaded, seg2.flags.makeRightHeaded) zip Seq(Default, LeftHeaded, RightHeaded)
+        (flags1, kind1) <- Seq(seg1.flags, seg1.flags.spinLeft, seg1.flags.spinRight) zip Seq(Default, LeftSpin, RightSpin)
+        (flags2, kind2) <- Seq(seg2.flags, seg2.flags.spinLeft, seg2.flags.spinRight) zip Seq(Default, LeftSpin, RightSpin)
         rf <- Tile(Set(seg1, seg2)).representations
         prop = new DoubleProperty(offset, majRev, minRev, flipKind(kind1, rf), flipKind(kind2, rf), rf)
         // special cases for shared-tile diagonals

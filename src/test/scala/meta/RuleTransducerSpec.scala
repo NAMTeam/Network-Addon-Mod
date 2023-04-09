@@ -8,7 +8,7 @@ package metarules.meta
 import scala.collection.immutable.StringOps
 import org.scalatest.{WordSpec, Matchers}
 import Implicits._
-import Group._, RotFlip._, SymGroup._, Network._, Flags._
+import group._, RotFlip._, SymGroup._, Network._, Flags._
 import RuleTransducer._
 import metarules.module
 
@@ -213,11 +213,11 @@ class RuleTransducerSpec extends WordSpec with Matchers {
 
   "possibleMapOrientation" should {
     "coincide with isReachable" in {
-      for (aRepr <- QuotientGroup.values; bRepr <- QuotientGroup.values;
+      for (aRepr <- Quotient.values; bRepr <- Quotient.values;
            ag <- RotFlip.values; bg <- RotFlip.values if isReachable(aRepr, ag, bRepr, bg)) {
         possibleMapOrientation(aRepr, ag, bRepr, bg) should not be ('empty)
       }
-      val aRepr = Set(R0F1, R1F1, R2F1, R3F1); val bRepr = QuotientGroup.Cyc2A
+      val aRepr = Set(R0F1, R1F1, R2F1, R3F1); val bRepr = Quotient.Cyc2A
       isReachable(aRepr, R1F0, bRepr, R1F0) should be (false)
       possibleMapOrientation(aRepr, R1F0, bRepr, R1F0) should be ('empty)
     }
@@ -227,7 +227,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
     "produce expected number of rules for Tla3" in {
       val orth: Seq[Rule[SymTile]] = context.preprocess( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
-      orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(_.flags.exists(_ == Flag.RightHeadedBi.Orth)))) should be (false)
+      orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(s => s.flags.manifest == Flag.RightSpinBi && s.flags.exists(_ == 2)))) should be (false)
       createRules(orth.head.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
 
       context.preprocess( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
@@ -239,10 +239,10 @@ class RuleTransducerSpec extends WordSpec with Matchers {
     }
   }
 
-  def makeTileLeft(t: Tile): Tile = Tile(t.segs map (s => if (!s.network.isTla) s else s.copy(flags = s.flags.makeLeftHeaded)))
-  def makeTileRight(t: Tile): Tile = Tile(t.segs map (s => if (!s.network.isTla) s else s.copy(flags = s.flags.makeRightHeaded)))
+  def makeTileLeft(t: Tile): Tile = Tile(t.segs map (s => if (!s.network.isTla) s else s.copy(flags = s.flags.spinLeft)))
+  def makeTileRight(t: Tile): Tile = Tile(t.segs map (s => if (!s.network.isTla) s else s.copy(flags = s.flags.spinRight)))
   "Resolver" should {
-    "resolve left/right-headed TLAs correctly" in {
+    "resolve left/right-spinned TLAs correctly" in {
       val tiles = Seq[Tile]( Tla3~WE & Road~ES, Tla3~WE & Ard3~ES, Tla3~WE & Tla3~ES )
       val tile2 = Seq[Tile]( Tla3~WE, Tla3~WE & Road~NS, Tla3~WE & Ard3~NS, Tla3~WE & Tla3~NS )
       for (t <- tiles) {
@@ -252,7 +252,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
         resolver(makeTileLeft(t)) should be (resolver(makeTileRight(t)))
       }
     }
-    "handle flipped left/right headed TLAs correctly" in {
+    "handle flipped left/right-spinned TLAs correctly" in {
       val (t1, t2) = ( Tla3~WE & Road~ES, Tla3~WE & Road~WS )
       resolver(makeTileLeft(t1)).id should not be (resolver(makeTileLeft(t2)).id)
       for ((t, i) <- Seq(t1, t2).zipWithIndex) {
@@ -262,7 +262,7 @@ class RuleTransducerSpec extends WordSpec with Matchers {
     }
     "find RHS for TLA" in {
       val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile)
-      possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, QuotientGroup.Dih4, R1F1/R2F1) should not be ('empty)
+      possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, Quotient.Dih4, R1F1/R2F1) should not be ('empty)
       createRules(rule, tileOrientationCache)
     }
     "resolve diagonal TLA intersections" in {

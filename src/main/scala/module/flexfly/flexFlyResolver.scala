@@ -54,11 +54,8 @@ import FlexFlyTiles._
 
 class FlexFlyResolver extends RhwResolver {
 
-  private[this] val flexFlags = Set(Flag.In, Flag.Out) flatMap { x => Seq(
-    x.FlexFly01L, x.FlexFly01R, x.FlexFly12L, x.FlexFly12R,
-    x.FlexFly34L, x.FlexFly34R, x.FlexFly45L, x.FlexFly45R)
-  }
-  private def hasFlexFlyFlag(t: Tile) = t.segs.exists(_.flags exists flexFlags.contains)
+  private[this] val flexFlags: Set[Int] = Set(211,213,221,223,231,233,241,243).flatMap(x => Seq(x, -x))
+  private def hasFlexFlyFlag(t: Tile) = t.segs.exists(s => s.flags.manifest == Flag.InOut && s.flags.exists(flexFlags.contains))
   override def isDefinedAt(t: Tile) = hasFlexFlyFlag(t) || super.isDefinedAt(t)
 
   private[this] val flexFlyBaseFlags = {

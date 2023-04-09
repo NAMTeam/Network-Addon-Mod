@@ -4,7 +4,7 @@ import metarules.meta._
 import Network._
 import RotFlip._
 import Flags._
-import Group.SymGroup
+import group.SymGroup
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
 
 
@@ -77,15 +77,6 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
   /** is defined for all tiles that do not contain RHW, but NWM */
   def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && t.segs.exists(_.network.isNwm)
 
-  /** Reduction modulo symmetry group. (TODO should be moved upstream)
-    * Finds smallest h such that ∃ g ∈ group : rf * g == h,
-    * in other words, the smallest representative in the left coset of rf.
-    * Careful: reduction is one-sided since multiplication is not commutative.
-    */
-  private[this] def reduceL(rf: RotFlip, group: SymGroup): RotFlip = {
-    group.quotient.find(h => group.contains((R0F0 / rf) * h)).get
-  }
-
   // orientation relative to RHW scheme
   private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
     val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
@@ -130,7 +121,7 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
           val rf = if (!isOxO) prop.rf else {
             // O×O tiles have different orientation in original NWM scheme
             val rfOffset = orientationOffsetOxO(maj.network + min.network)
-            reduceL((R0F0 / rfOffset) * prop.rf, tile.symmetries)
+            tile.symmetries.reduceLeftCoset((R0F0 / rfOffset) * prop.rf)
           }
           var id = (if (isOxO) nwmRangeId else nwmRangeIdOverflow)(maj.network) + nwmPieceId(min.network) + pieceOffset
           if (prop.majorSegReversed)
@@ -139,11 +130,11 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
             id += 0x05
           if (id % 0x10 != 0 && (maj.network.height == 0 || min.network.height == 0))
             id += 0x4  // map 8th digit 5 to 9, A to E
-          if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
-             (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded) &&
+          if (prop.majKind == Flag.Kind.LeftSpin || prop.minKind == Flag.Kind.LeftSpin ||
+             (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) &&
               tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
             IdTile(id, rf, nonMirroredOnly)
-          else if (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded)
+          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin)
             IdTile(id + 0x20000000, rf, mirroredOnly)
           else
             IdTile(id, rf)

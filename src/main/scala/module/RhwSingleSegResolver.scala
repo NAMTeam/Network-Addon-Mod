@@ -13,13 +13,13 @@ trait SingleSegResolver {
   private def fillMap(m: scala.collection.mutable.Map[Flags, SingleProperty]) = { (tup: IntFlags, offset: Int, swapped: Boolean) =>
     import Flag.Kind._
     def flipKind(k: Flag.Kind.Value, rf: RotFlip): Flag.Kind.Value = if (k == Default || !rf.flipped) k else k match {
-      case LeftHeaded => RightHeaded
-      case RightHeaded => LeftHeaded
+      case LeftSpin => RightSpin
+      case RightSpin => LeftSpin
     }
     for {
       n <- Seq(Dirtroad, Mis) // Dirtroad and Mis only serve for generating symm and asymm flags
       flagsTmp = (n ~ tup).flags
-      (flags, kind) <- Seq(flagsTmp, flagsTmp.makeLeftHeaded, flagsTmp.makeRightHeaded) zip Seq(Default, LeftHeaded, RightHeaded) // handle TLA flags, too
+      (flags, kind) <- Seq(flagsTmp, flagsTmp.spinLeft, flagsTmp.spinRight) zip Seq(Default, LeftSpin, RightSpin) // handle TLA flags, too
       rf <- flags.representations
     } {
       val prop = new SingleProperty(offset, flipKind(kind, rf), rf, swapped)

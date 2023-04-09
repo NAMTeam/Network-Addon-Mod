@@ -8,7 +8,7 @@ class MiscResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
     val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int, mappedRepr: Group.QuotientGroup => Set[RotFlip] = null): Unit = {
+    def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
       assert(!map.contains(tile))
       for (rf <- RotFlip.values) {
         val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)

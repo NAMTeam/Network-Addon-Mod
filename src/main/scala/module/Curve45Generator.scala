@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup.noSymmetries
+import Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup.noSymmetries
 import NetworkProperties.{isSingleTile, isDoubleTile}
 
 /* Flags of sharp curves:
