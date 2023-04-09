@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup._
+import Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup._
 import NetworkProperties._
 
 
@@ -56,8 +56,9 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         }
         createRules() // flush the buffer from time to time
       }
-      // 45 degree curves
+      // curves
       createCurve45Rules(main)
+      createCurve90Rules(main)
 
       // TODO filtering
       for (minor <- Network.values if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||

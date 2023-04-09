@@ -8,7 +8,7 @@ class MiscResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
     val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int, mappedRepr: Group.QuotientGroup => Set[RotFlip] = null): Unit = {
+    def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
       assert(!map.contains(tile))
       for (rf <- RotFlip.values) {
         val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
@@ -41,6 +41,7 @@ class MiscResolver extends IdResolver {
     //add(Tla5 ~NS, 0x51100000); add(Tla5 ~ES, 0x51100200); add(Tla5 ~NW, 0x51100300)
     add((Tla5~NS).projectLeft, 0x51100000); add((Tla5~ES).projectLeft, 0x51100200); add((Tla5~NW).projectLeft, 0x51100300)
     add((Tla5~NS).projectRight, 0x51100000); add((Tla5~ES).projectRight, 0x51100200); add((Tla5~NW).projectRight, 0x51100300) // TODO should right-headed TLAs even be resolved?
+    add((Tla5~CS).projectLeft, 0x51100100); add((Tla5~CS).projectRight, 0x51100100)  // overwritten explicitly here to avoid 0x71.. ID for stubs
     add(Owr4 ~NS, 0x51110000); add(Owr4 ~ES, 0x51110200); add(Owr4~SharedDiagRight, 0x51110300)
     add(Owr5 ~NS, 0x51120000); add(Owr5 ~ES, 0x51120200); add(Owr5 ~NW, 0x51120300)
     add(Rd4  ~NS, 0x51130000); add(Rd4  ~ES, 0x51130200); add(Rd4~SharedDiagRight, 0x51130300)
@@ -65,6 +66,7 @@ class MiscResolver extends IdResolver {
     //add(Road~SW & Road~SharedDiagRight, 0x5f040600) // DxD shared-diag TODO create this
     //add(Road~SharedDiagRight & Road~SharedDiagLeft, 0x5f040700) // DxD shared-diag TODO create this
     add(Road~SW & Road~ES, 0x00000700) // DxD
+    add(Road~(0,0,2,2), 0x00000F00) // 90 curve
     add(Road~(0,0,1,13), 0x00000C00) // curve
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
@@ -78,6 +80,7 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~SW & Onewayroad~SharedDiagRight, 0x5f940600) // DxD shared-diag TODO create this
     add(Onewayroad~SharedDiagRight & Onewayroad~SharedDiagLeft, 0x5f940700) // DxD shared-diag TODO create this
     add(Onewayroad~SW & Onewayroad~ES, 0x09000700) // DxD
+    add(Onewayroad~(0,0,2,2), 0x09000F00) // 90 curve
     add(Onewayroad~(0,0,1,13), 0x09000C00) // curve
     add(Onewayroad~(0,2,0,11), 0x09004D00) // curve
     add(Onewayroad~SharedDiagRight, 0x09014E00) // shared diag
@@ -110,6 +113,9 @@ class MiscResolver extends IdResolver {
     //add(Onewayroad~SharedDiagRight & Monorail~SharedDiagLeft, 0x5f94bf00)
 
     add(Avenue~CS, 0x04007300) // orth stub
+    add(Avenue~(-2,0,0,+2), 0x04006400) // 90 curve inside
+    add(Avenue~(+2,0,0,-2), 0x04006500) // 90 curve outside
+    add(Avenue~(+2,0,-113,0), 0x04006300) // 90 curve extended
     add(Avenue~(0,-2,0,+11), 0x04007600) // curve
     add(Avenue~(0,+2,0,-11), 0x04007700) // curve
     add(Avenue~(0,-11,+3,0), 0x04007800) // curve
@@ -269,7 +275,7 @@ class MiscResolver extends IdResolver {
     }
 
     // GLR + intersections
-    for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xb000))) {
+    for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       // O×O
       add(glr~NS & Road~WE,       0x5f880300 + offset)
       add(glr~NS & Street~WE,     0x5f880d00 + offset)

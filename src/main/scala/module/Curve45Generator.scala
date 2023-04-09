@@ -1,58 +1,69 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._, Group.SymGroup.noSymmetries
+import Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup.noSymmetries
+import NetworkProperties.{isSingleTile, isDoubleTile}
 
 /* Flags of sharp curves:
- *       +---------+---------+
+ *       ,---------,---------,
  *       |         |         |
  *       |         |       +1|
  *       |         |   -3    |
- *       +---------+---------+
+ *       ;---------;---------;
  *       |         |   +3    |
  *       |-2    +11|-11      |
  *       |         |         |
- *       +---------+---------+
+ *       '---------'---------'
  * Flags of R1 curves (single-tile networks):
- *       +---------+---------+---------+
+ *       ,---------,---------,---------,
  *       |         |         |   +3    |
  *       |         |       +1|-1       |
  *       |         |  -113   |         |
- *       +---------+---------+---------+
+ *       ;---------;---------;---------;
  *       |         |  +113   |         |
  *       |-2   +121|-121     |         |
  *       |         |         |         |
- *       +---------+---------+---------+
+ *       '---------'---------'---------'
  * Flags of mini curves (multi-tile networks):
- *       +---------+---------+---------+
+ *       ,---------,---------,---------,
  *       |         |         |   +3    |
  *       |         |       +1|-1       |
  *       |         |  -113   |         |
- *       +---------+---------+---------+
+ *       ;---------;---------;---------;
  *       |         |  +113   |         |
  *       |-2    +11|-11      |         |
  *       |         |         |         |
- *       +---------+---------+---------+
+ *       '---------'---------'---------'
  * Flags of extended curves (multi-tile networks):
- *       +---------+---------+---------+---------+
+ *       ,---------,---------,---------,---------,
  *       |         |         |         |   +3    |
  *       |         |         |       +1|-1       |
  *       |         |         |  -113   |         |
- *       +---------+---------+---------+---------+
+ *       ;---------;---------;---------;---------;
  *       |         |         |  +113   |         |
  *       |-2   +111|-111  +11|-11      |         |
  *       |         |         |         |         |
- *       +---------+---------+---------+---------+
- * Micro 90 curve (MIS-style):
- *       +---------+---------+
- *       |         |    +2   |
+ *       '---------'---------'---------'---------'
+ * Micro 90 curve (MIS-style or Avenue outside curve):
+ *       ,---------,---------,
+ *       |         |   +2    |
  *       |         |         |
- *       |         |   -113  |
- *       +---------+---------+
- *       |         |    +2   |
+ *       |         |  -113   |
+ *       ;---------;---------;
+ *       |         |   +2    |
  *       |-2   +111|-2       |
  *       |         |         |
- *       +---------+---------+
+ *       '---------'---------'
+ * 2×2 90 degree curve:
+ *       ,---------,---------,
+ *       |         |   +2    |
+ *       |     +141|         |
+ *       |  -143   |  -133   |
+ *       ;---------;---------;
+ *       |         |  +133   |
+ *       |-2   +131|-131     |
+ *       |         |         |
+ *       '---------'---------'
  */
 
 trait Stability { _: RuleGenerator =>
@@ -98,7 +109,14 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
     // TODO add NWM
   }
 
-  def hasMisStyle90Curve(n: Network, inside: Boolean): Boolean = n >= Mis && n <= L4Mis
+  def hasMisStyle90Curve(n: Network, inside: Boolean): Boolean = {
+    (n >= Mis && n <= L4Mis) ||
+    !inside && (n == Tla5 || n == Rd4)
+  }
+
+  def has90Curve(n: Network, inside: Boolean): Boolean = {
+    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4))
+  }
 
   def createCurve45Rules(main: Network): Unit = {
     // all curves are written in form of outside curve; orient can be used
@@ -186,15 +204,44 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
           }
         }
       }
-      if (hasMisStyle90Curve(main, inside)) {
-        // Mis 90 curve
-        Rules ++= stabilize(main~orient(WE) | base~orient(-2,+2,0,0) | main~orient(-2,0,+111,0) | main~orient(-2,+2,0,0))
-        Rules += main~orient(0,-2,+2,0) | base~orient(WE) | % | main~orient(-113,0,+2,0)
-        Rules += main~orient(-113,0,+2,0) | (base ~> main)~orient(WE)
-      }
     }
     curveCode(inside = false)
     if (!main.isSymm && !hasSharedDiagCurve(main)) {
+      curveCode(inside = true)
+    }
+    createRules()
+  }
+
+  def createCurve90Rules(main: Network): Unit = {
+    // all curves are written in form of outside curve; orient can be used
+    // to reverse the flags in order to create the corresponding inside
+    // curves
+    def curveCode(inside: Boolean): Unit = {
+      val orient: IntFlags => IntFlags = if (!inside) identity else reverseIntFlags
+      assert(main.base.isDefined)
+      val base = main.base.get
+      if (hasMisStyle90Curve(main, inside)) {
+        if (base.typ != AvenueLike) {
+          // Mis 90 curve
+          Rules ++= stabilize(main~orient(WE) | base~orient(-2,+2,0,0) | main~orient(-2,0,+111,0) | main~orient(-2,+2,0,0))
+          Rules += main~orient(0,-2,+2,0) | base~orient(WE) | % | main~orient(-113,0,+2,0)
+          Rules += main~orient(-113,0,+2,0) | (base ~> main)~orient(WE)
+        } else {
+          // Avenue-style outside curve
+          Rules += main~orient(WE) | (base ~> main)~orient(-2,0,+111,0)
+          Rules += main~orient(-2,0,+111,0) | (base ~> main)~orient(-2,+2,0,0)
+          Rules += main~orient(0,-2,+2,0) | (base ~> main)~orient(-113,0,+2,0)
+          Rules += main~orient(-113,0,+2,0) | (base ~> main)~orient(WE)
+        }
+      }
+      if (has90Curve(main, inside)) {
+        // 90 degree curve
+        Rules += main~orient(WE) | (base ~> main)~orient(-2,+2,0,0)
+        Rules += main~orient(0,-2,+2,0) | (base ~> main)~orient(WE)
+      }
+    }
+    curveCode(inside = false)
+    if (!main.isSymm) {
       curveCode(inside = true)
     }
     createRules()
