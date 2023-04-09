@@ -8,7 +8,7 @@ class MiscResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
     val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int, mappedRepr: Group.QuotientGroup => Set[RotFlip] = null): Unit = {
+    def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
       assert(!map.contains(tile))
       for (rf <- RotFlip.values) {
         val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
@@ -309,7 +309,7 @@ class MiscResolver extends IdResolver {
     }
 
     // GLR + intersections
-    for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xb000))) {
+    for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       // O×O
       add(glr~NS & Road~WE,       0x5f880300 + offset)
       add(glr~NS & Street~WE,     0x5f880d00 + offset)

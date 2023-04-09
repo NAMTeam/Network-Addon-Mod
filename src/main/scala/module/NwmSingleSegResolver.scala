@@ -78,10 +78,10 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
         var id = nwmRangeId(seg.network) + prop.offset  // TODO check offsets in IID scheme
         if (id % 0x10 != 0 && seg.network.height == 0)
           id += 0x4  // map 8th digit 5 to 9, A to E
-        if (prop.kind == Flag.Kind.LeftHeaded || prop.kind == Flag.Kind.RightHeaded &&
+        if (prop.kind == Flag.Kind.LeftSpin || prop.kind == Flag.Kind.RightSpin &&
             seg.flags.symmetries.exists(_.flipped))
           IdTile(id, prop.rf, if (prop.swapped ^ prop.rf.flipped) mirroredOnly else nonMirroredOnly)
-        else if (prop.kind == Flag.Kind.RightHeaded)
+        else if (prop.kind == Flag.Kind.RightSpin)
           IdTile(id + 0x20000000, prop.rf, if(prop.swapped ^ prop.rf.flipped) nonMirroredOnly else mirroredOnly) // TODO find suitable ID
         else
           IdTile(id, prop.rf)

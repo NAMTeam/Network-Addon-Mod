@@ -4,37 +4,37 @@ package module.flexfly
 import meta._, module._, Network._, RotFlip._, Flags._, Implicits._
 
 /* Flags of 5x5 FlexFly:
- *       +---------+---------+---------+
+ *       ,---------,---------,---------,
  *       |  [T0]   |  [T1]   |  [T2]   |
  *       |+2   -213|+213 -223|+223     | over
  *       |         |         |         | hang
- *       +---------+---------+---------+---------+
+ *       '---------'---------;---------;---------,
  *                      over |  [T3]   |  [T4]   |
  *                      hang |+233 -243|+243     | over
  *                           |         |  -241   | hang
- *                           +---------+---------+---------+
+ *                           '---------;---------;---------,
  *                                     |  +241   |         |
  *                                     |  [T3']  |  [T2']  |
  *                                     |  -231   |  -221   |
- *                                     +---------+---------+
+ *                                     '---------;---------;
  *                                          over |  +221   |
  *                                          hang |  [T1']  |
  *                                               |  -211   |
- *                                               +---------+
+ *                                               ;---------;
  *                                               |  +211   |
  *                                               |  [T0']  |
  *                                               |   -2    |
- *                                               +---------+
+ *                                               '---------'
  * Flags of 45 degree FlexFly:
- *       +---------+---------+---------+
+ *       ,---------,---------,---------,
  *       |  [T0]   |  [T1]   |  [T2]   |
  *       |+2   -213|+213 -223|+223     | over
  *       |         |         |         | hang
- *       +---------+---------+---------+---------+
+ *       '---------'---------;---------;---------,
  *                      over |  [T3]   |  [T6]   |
  *                      hang |+233 -243|+243     |
  *                           |         |   -1    |
- *                           +---------+---------+
+ *                           '---------'---------'
  */
 object FlexFlyTiles {
 
@@ -54,11 +54,8 @@ import FlexFlyTiles._
 
 class FlexFlyResolver extends RhwResolver {
 
-  private[this] val flexFlags = Set(Flag.In, Flag.Out) flatMap { x => Seq(
-    x.FlexFly01L, x.FlexFly01R, x.FlexFly12L, x.FlexFly12R,
-    x.FlexFly34L, x.FlexFly34R, x.FlexFly45L, x.FlexFly45R)
-  }
-  private def hasFlexFlyFlag(t: Tile) = t.segs.exists(_.flags exists flexFlags.contains)
+  private[this] val flexFlags: Set[Int] = Set(211,213,221,223,231,233,241,243).flatMap(x => Seq(x, -x))
+  private def hasFlexFlyFlag(t: Tile) = t.segs.exists(s => s.flags.manifest == Flag.InOut && s.flags.exists(flexFlags.contains))
   override def isDefinedAt(t: Tile) = hasFlexFlyFlag(t) || super.isDefinedAt(t)
 
   private[this] val flexFlyBaseFlags = {

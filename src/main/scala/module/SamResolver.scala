@@ -4,7 +4,7 @@ import metarules.meta._
 import Network._
 import RotFlip._
 import Flags._
-import Group.SymGroup
+import group.SymGroup
 import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
 
@@ -15,7 +15,7 @@ class SamResolver extends IdResolver {
   
 	val tileMap: scala.collection.Map[Tile, IdTile] = {
 		val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-		def add(tile: Tile, id: Int, mappedRepr: Group.QuotientGroup => Set[RotFlip] = null): Unit = {
+		def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
 			assert(!map.contains(tile))
 			for (rf <- RotFlip.values) {
 				val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)

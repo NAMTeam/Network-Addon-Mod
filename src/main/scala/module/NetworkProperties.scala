@@ -77,6 +77,6 @@ object NetworkProperties {
     }
   }
 
-  val nonMirroredOnly: Group.QuotientGroup => Set[RotFlip] = _.filter(!_.flipped)
-  val mirroredOnly: Group.QuotientGroup => Set[RotFlip] = _.filter(_.flipped)
+  val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
+  val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)
 }
