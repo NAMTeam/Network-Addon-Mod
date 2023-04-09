@@ -71,6 +71,24 @@ class MiscResolver extends IdResolver {
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
     add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
+	
+    add(Street~CS, 0x05000300) // orth stub
+    add(Street~(0,0,0,1), 0x5F500300) // diag stub
+    add(Street~NS & Street~WE, 0x05020700) // OxO
+    add(Street~NS & Street~NE, 0x5F500700) // OxD
+    add(Street~SW & Street~ES, 0x5F500600) // DxD
+    add(Street~(0,0,2,2), 0x05000F00) // 90 curve
+    add(Street~(0,0,1,13), 0x5F500400) // curve
+    add(Street~(0,2,0,11), 0x5F500500) // curve
+	add(Street~(0,2,2,11), 0x5F500800)
+	add(Street~(0,2,2,13), 0x5F500900)
+	add(Street~(0,2,11,2), 0x5F500A00)
+	add(Street~(0,11,2,13), 0x5F500C00)
+	add(Street~(0,0,2,11), 0x5F500D00)
+	add(Street~(0,2,11,11), 0x5F500E00)
+	add(Street~(0,2,13,13), 0x5F500F00)
+	add(Street~(0,11,0,13), 0x5F501100)
+	add(Street~(0,11,0,11), 0x5F501000)
 
     add(Onewayroad~CS, 0x09000300) // orth stub
     add(Onewayroad~(0,0,0,1), 0x09000200) // diag stub
@@ -174,6 +192,22 @@ class MiscResolver extends IdResolver {
     add((Street~WN).projectRight & Rail~NS, 0x5f502900, mirroredOnly)
     add((Street~ES).projectLeft & Rail~NE, 0x5f502700, nonMirroredOnly)
     add((Street~NW).projectRight & Rail~NE, 0x5f502800, nonMirroredOnly)
+	add(Street~WE & Highway~NS, 0x02015000)
+    add(Street~ES & Highway~NS, 0x5F514100)
+    add(Street~WN & Highway~NS, 0x5F514200)
+    add(Street~WE & Highway~ES, 0x02015300)
+    add(Street~WE & Highway~SharedDiagRight, 0x02015400)
+    add(Street~NE & Highway~ES, 0x5F514500)
+    add(Street~SW & Highway~SharedDiagRight, 0x5F514600)
+	add(Street~ES & Lightrail~NS, 0x5F502B00)
+    add(Street~NS & Lightrail~ES, 0x08dd1600)
+    add(Street~SW & Lightrail~ES, 0x5F502C00)
+    add(Street~EW & Lightrail~NS, 0x08dd1600)
+    add(Street~ES & Monorail~NS, 0x5F502D00)
+    add(Street~NS & Monorail~ES, 0x0ddd1600)
+    add(Street~SW & Monorail~ES, 0x5F502E00)
+    add(Street~EW & Monorail~NS, 0x0ddd0200)
+
 
     // OWR + intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)

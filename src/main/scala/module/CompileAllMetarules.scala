@@ -37,6 +37,8 @@ object CompileAllMetarules {
     CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RHW metarule code")
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling SAM metarule code")
+    CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
     CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
   }
@@ -48,3 +50,11 @@ object CompileRhwCode extends AbstractMain {
   lazy val generator: RuleGenerator = new RhwRuleGenerator(RuleTransducer.Context(resolve))
   lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
 }
+
+// Compile individually with `sbt "runMain metarules.module.CompileSamCode"`.
+object CompileSamCode extends AbstractMain {
+  lazy val resolve: IdResolver = new SamResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
+  lazy val generator: RuleGenerator = new SamRuleGenerator(RuleTransducer.Context(resolve))
+  lazy val file = new File("target/SamMetaGenerated_MANAGED.txt")
+}
+
