@@ -5,7 +5,7 @@ import Network._
 import RotFlip._
 import Flags._
 import group.SymGroup
-import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
+import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
 
 
 class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
@@ -132,11 +132,15 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
             id += 0x4  // map 8th digit 5 to 9, A to E
           if (prop.majKind == Flag.Kind.LeftSpin || prop.minKind == Flag.Kind.LeftSpin ||
              (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) &&
-              tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
-            IdTile(id, rf, nonMirroredOnly)
-          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin)
-            IdTile(id + 0x20000000, rf, mirroredOnly)
-          else
+              tile.symmetries.exists(_.flipped)) // <-- does not have right-spinned ID
+            IdTile(id, rf, nonMirroredOnly)  // e.g. O×O Tla3×Road
+          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) {
+            if (!hasTurnPaths(maj.network, min.network)) {
+              IdTile(id, rf, mirroredOnly)  // e.g. O×D Tla3×Rail
+            } else {
+              IdTile(id + 0x20000000, rf, mirroredOnly)  // e.g. O×D Tla3×Road
+            }
+          } else
             IdTile(id, rf)
         case None => //??? // TODO T intersections etc. still missing
           throw new UnsupportedOperationException(tile.toString)

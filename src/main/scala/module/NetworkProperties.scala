@@ -4,6 +4,9 @@ import metarules.meta._, Network._
 
 object NetworkProperties {
 
+  val RoadViaducts = Network.values from L1Road to L2Avenue
+  val RoadNetworks = RhwNetworks ++ NwmNetworks ++ SamNetworks ++ RoadViaducts + Road + Highway + Street + Avenue + Onewayroad + Groundhighway
+
   val hasRightShoulder: Network => Boolean =
     Set[Network](Rhw6cm, L1Rhw6cm, L2Rhw6cm, Rhw8sm, L1Rhw8sm, L2Rhw8sm, Ave6m, Tla7m).andThen(!_)
 
@@ -75,6 +78,14 @@ object NetworkProperties {
     } else {
       true // TODO
     }
+  }
+
+  /** Returns whether intersections of these networks have paths turning from
+    * one to the other network (assuming intersections of the two networks are allowed).
+    */
+  def hasTurnPaths(a: Network, b: Network): Boolean = {
+    if (a.height != b.height) false
+    else RoadNetworks.contains(a) && RoadNetworks.contains(b)
   }
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
