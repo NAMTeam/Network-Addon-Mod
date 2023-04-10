@@ -214,7 +214,7 @@ class MiscResolver extends IdResolver {
     add(Street~EW & Monorail~NS, 0x0ddd0200)
 
 
-    // OWR + intersections
+    // OWR intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)
     add(Onewayroad~NS & Rail~NE, 0x09310200)
     add(Onewayroad~WN & Rail~NS, 0x09320100)
@@ -314,7 +314,13 @@ class MiscResolver extends IdResolver {
         add(n~(0,-111,+113,0), 0x57905F80 + offset)  // R1 curve 90 degree
       }
     }
-
+	add(Dirtroad~NS & Street~CE, 0x57600000)
+	add(Dirtroad~CE & Street~NS, 0x57601000)
+	add(Dirtroad~NS & Road~CE, 0x57600100)
+	add(Dirtroad~CE & Road~NS, 0x57601100)
+	add(Dirtroad~NS & Onewayroad~CE, 0x57600200)
+	add(Dirtroad~CE & Onewayroad~NS, 0x57601200)
+	
     // GLR + intersections
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       // O×O
