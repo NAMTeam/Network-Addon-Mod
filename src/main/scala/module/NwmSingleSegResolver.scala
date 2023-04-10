@@ -6,7 +6,7 @@ import RotFlip._
 import Flags._
 import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isDoubleTile, nonMirroredOnly, mirroredOnly}
-
+import NwmResolver._
 
 trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
 

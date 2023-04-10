@@ -7,10 +7,9 @@ import Flags._
 import group.SymGroup
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
 
+object NwmResolver {
 
-class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
-
-  val isSingleTileNwm = Set(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)
+  val isSingleTileNwm = NwmNetworks.filter(isSingleTile)
 
   val nwmRangeId = Map(
     Tla3          -> 0x51000000,
@@ -73,6 +72,10 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     // Glr3          -> 0x....,
     // Glr4          -> 0x....,
     // Hsr           -> 0x....,
+}
+import NwmResolver._
+
+class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
 
   /** is defined for all tiles that do not contain RHW, but NWM */
   def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && t.segs.exists(_.network.isNwm)

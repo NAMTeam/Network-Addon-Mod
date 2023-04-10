@@ -4,9 +4,6 @@ import metarules.meta._, syntax._, Network._
 
 object NetworkProperties {
 
-  val RoadViaducts = Network.values from L1Road to L2Avenue
-  val RoadNetworks = RhwNetworks ++ NwmNetworks ++ SamNetworks ++ RoadViaducts + Road + Highway + Street + Avenue + Onewayroad + Groundhighway
-
   val hasRightShoulder: Network => Boolean =
     Set[Network](Rhw6cm, L1Rhw6cm, L2Rhw6cm, Rhw8sm, L1Rhw8sm, L2Rhw8sm, Ave6m, Tla7m).andThen(!_)
 
@@ -51,7 +48,7 @@ object NetworkProperties {
       assert(any.isRhw)
       rhwIntersectionAllowed(any, rhw)
     } else {
-      if (any.rhwPieceId.isEmpty) false
+      if (!RhwResolver.rhwPieceId.contains(any)) false
       else if (rhw.height != any.height) true
       else if (rhw.height != 0) false
       else if (any > rhw && any.isRhw) rhwIntersectionAllowed(any, rhw)

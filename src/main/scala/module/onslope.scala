@@ -16,7 +16,7 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
 
     for (main <- RhwNetworks - Dirtroad - Rhw10c if main.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(main)) 4 else 2
-      val rangeId = (main.rhwRangeId.get & 0xFFFFF) + ((main.rhwRangeId.get >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
+      val rangeId = (RhwResolver.rhwRangeId(main) & 0xFFFFF) + ((RhwResolver.rhwRangeId(main) >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
       for {
         (levelDiff, rhw2Slope) <- Seq((1, rhw2SlopeL1), (2, rhw2SlopeL2))  // L1 vs L2 onslopes
         height <- 0 to (maxHeight-levelDiff)

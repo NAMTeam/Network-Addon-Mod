@@ -81,6 +81,57 @@ trait DoubleSegResolver {
   }
 }
 
+object RhwResolver {
+
+  val rhwRangeId = Map(
+    Dirtroad -> 0x57000000, L1Rhw2   -> 0x57100000, L2Rhw2   -> 0x57200000,
+    Rhw3     -> 0x57010000, L1Rhw3   -> 0x57110000, L2Rhw3   -> 0x57210000,
+    Mis      -> 0x57020000, L1Mis    -> 0x57120000, L2Mis    -> 0x57220000, L3Mis    -> 0x57320000, L4Mis    -> 0x57420000,
+    Rhw4     -> 0x57030000, L1Rhw4   -> 0x57130000, L2Rhw4   -> 0x57230000, L3Rhw4   -> 0x57330000, L4Rhw4   -> 0x57430000,
+    Rhw6s    -> 0x57040000, L1Rhw6s  -> 0x57140000, L2Rhw6s  -> 0x57240000, L3Rhw6s  -> 0x57340000, L4Rhw6s  -> 0x57440000,
+    Rhw8sm   -> 0x57050080, L1Rhw8sm -> 0x57150080, L2Rhw8sm -> 0x57250080,
+    Rhw8s    -> 0x57050000, L1Rhw8s  -> 0x57150000, L2Rhw8s  -> 0x57250000,
+    Rhw10s   -> 0x57060000, L1Rhw10s -> 0x57160000, L2Rhw10s -> 0x57260000,
+    Rhw12s   -> 0x57070000, L1Rhw12s -> 0x57170000, L2Rhw12s -> 0x57270000,
+    Rhw6cm   -> 0x57080080, L1Rhw6cm -> 0x57180080, L2Rhw6cm -> 0x57280080,
+    Rhw6c    -> 0x57080000, L1Rhw6c  -> 0x57180000, L2Rhw6c  -> 0x57280000,
+    Rhw8c    -> 0x57090000, L1Rhw8c  -> 0x57190000, L2Rhw8c  -> 0x57290000,
+    Rhw10c   -> 0x570A0000, L1Rhw10c -> 0x571A0000, L2Rhw10c -> 0x572A0000)
+
+  val rhwPieceId = Map(
+    Street        -> 0x1000,
+    Road          -> 0x1100, L1Road        -> 0x1110, L2Road        -> 0x1120,
+    Onewayroad    -> 0x1200, L1Onewayroad  -> 0x1210, L2Onewayroad  -> 0x1220,
+    Avenue        -> 0x1300, L1Avenue      -> 0x1310, L2Avenue      -> 0x1320,
+    Groundhighway -> 0x1400,                          Highway       -> 0x1420,
+    Rail          -> 0x1500, Str           -> 0x1505,
+    //Ttr         -> 0x1600, //Qtr         -> 0x1605,
+    Glr1          -> 0x1700, Glr3          -> 0x1705, Lightrail     -> 0x1720,
+    Glr2          -> 0x1800, Glr4          -> 0x1805,
+    Hsr           -> 0x1905, L2Hsr         -> 0x1925, Monorail      -> 0x1920,
+
+    Dirtroad -> 0x1A00, L1Rhw2   -> 0x1A10, L2Rhw2   -> 0x1A20,
+    Rhw3     -> 0x1B00, L1Rhw3   -> 0x1B10, L2Rhw3   -> 0x1B20,
+    Mis      -> 0x1C00, L1Mis    -> 0x1C10, L2Mis    -> 0x1C20, L3Mis    -> 0x1C30, L4Mis    -> 0x1C40,
+    Rhw4     -> 0x1D00, L1Rhw4   -> 0x1D10, L2Rhw4   -> 0x1D20, L3Rhw4   -> 0x1D30, L4Rhw4   -> 0x1D40,
+    Rhw6s    -> 0x1E00, L1Rhw6s  -> 0x1E10, L2Rhw6s  -> 0x1E20, L3Rhw6s  -> 0x1E30, L4Rhw6s  -> 0x1E40,
+    Rhw8sm   -> 0x1F00, L1Rhw8sm -> 0x1F10, L2Rhw8sm -> 0x1F20,
+    Rhw8s    -> 0x2000, L1Rhw8s  -> 0x2010, L2Rhw8s  -> 0x2020,
+    Rhw10s   -> 0x2100, L1Rhw10s -> 0x2110, L2Rhw10s -> 0x2120,
+    Rhw12s   -> 0x2200, L1Rhw12s -> 0x2210, L2Rhw12s -> 0x2220,
+    Rhw6cm   -> 0x2300, L1Rhw6cm -> 0x2310, L2Rhw6cm -> 0x2320,
+    Rhw6c    -> 0x2400, L1Rhw6c  -> 0x2410, L2Rhw6c  -> 0x2420,
+    Rhw8c    -> 0x2500, L1Rhw8c  -> 0x2510, L2Rhw8c  -> 0x2520,
+    Rhw10c   -> 0x2600, L1Rhw10c -> 0x2610, L2Rhw10c -> 0x2620,
+
+    Tla3     -> 0x2700, Ave2     -> 0x2800, Ard3     -> 0x2900,
+    Owr1     -> 0x2A00, Owr3     -> 0x2B00, Nrd4     -> 0x2C00,
+    Tla5     -> 0x2D00, Owr4     -> 0x2E00, Owr5     -> 0x2F00,
+    Rd4      -> 0x3000, Rd6      -> 0x3100, Ave6     -> 0x3200,
+    Tla7m    -> 0x3300, Ave8     -> 0x3400, Ave6m    -> 0x3500)
+
+}
+
 class RhwResolver extends IdResolver with RhwSingleSegResolver with DoubleSegResolver {
 
   def isSingleTileRhw(n: Network): Boolean = n.isRhw && n <= L4Rhw6s
@@ -99,7 +150,7 @@ class RhwResolver extends IdResolver with RhwSingleSegResolver with DoubleSegRes
       assert(maj.network.isRhw)
       doubleProps.get(maj.flags, min.flags) match {
         case Some(prop) =>
-          var id = maj.network.rhwRangeId.get + min.network.rhwPieceId.get + prop.orthDiagOffset
+          var id = RhwResolver.rhwRangeId(maj.network) + RhwResolver.rhwPieceId(min.network) + prop.orthDiagOffset
           val strangeFlag = isRhwShoulder(maj.network) && (prop.orthDiagOffset >= 0x6000) // strange anomalie for shoulder networks
           val strangeFlagMin = isRhwShoulder(min.network) && (prop.orthDiagOffset % 0x6000 >= 0x3000) // strange anomalie
           if (prop.majorSegReversed ^ strangeFlag) // TODO strange behaviour for shoulder networks
