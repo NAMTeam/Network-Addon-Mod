@@ -1,6 +1,6 @@
 package metarules.module
 
-import metarules.meta._, Network._
+import metarules.meta._, syntax._, Network._
 
 object NetworkProperties {
 
@@ -87,6 +87,12 @@ object NetworkProperties {
     if (a.height != b.height) false
     else RoadNetworks.contains(a) && RoadNetworks.contains(b)
   }
+
+  private def projectTla(t: Tile, p: Flags => Flags): Tile = t.copy(segs =
+    t.segs.map(s => if (!s.network.isTla) s else s.copy(flags = p(s.flags)))
+    )
+  val projectTlaLeft = (t: Tile) => projectTla(t, _.spinLeft)
+  val projectTlaRight = (t: Tile) => projectTla(t, _.spinRight)
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)

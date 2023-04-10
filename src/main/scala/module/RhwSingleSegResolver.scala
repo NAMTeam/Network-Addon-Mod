@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._
+import syntax._, Network._
 import RotFlip._
 import Flags._
 

@@ -1,7 +1,8 @@
 package metarules.module
 
 import java.io.File
-import metarules.meta.{RuleGenerator, IdResolver, RotFlip, RuleTransducer}
+import metarules.meta.RotFlip
+import syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** This is the main class that invokes the compilation of all metarules. New
   * metarule code generators need to be added to the list of invocations in this

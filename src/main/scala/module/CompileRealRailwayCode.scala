@@ -2,7 +2,7 @@ package metarules
 package module
 
 import java.io.File
-import meta.{RuleGenerator, IdResolver, RuleTransducer}
+import syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** Outputs RRW RUL2 code to 'target/Sec11r_RRW_MANAGED.txt'
   */

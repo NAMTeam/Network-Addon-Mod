@@ -1,6 +1,6 @@
 package metarules.module
 
-import metarules.meta._, Network._, RotFlip._, Flags._
+import metarules.meta._, syntax._, Network._, RotFlip._, Flags._
 import Implicits.segmentToTile
 import NetworkProperties._
 

@@ -1,7 +1,7 @@
 package metarules
 package module.flexfly
 
-import meta._, Flags._, RotFlip._, Network._, Implicits._
+import meta._, module.syntax._, Flags._, RotFlip._, Network._, Implicits._
 import FlexFlyTiles._
 import java.io.{File, PrintWriter}
 

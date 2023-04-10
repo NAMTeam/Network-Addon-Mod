@@ -1,7 +1,8 @@
 package metarules.module
 
 import java.io.{File, PrintWriter}
-import metarules.meta.{RuleGenerator, IdResolver, EquivRule, RotFlip, RuleTransducer}
+import metarules.meta.{RotFlip, EquivRule}
+import syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** Usage: Replace (in source code) `resolve` and `generator` by custom
   * implementation, optionally replace `file`, too.

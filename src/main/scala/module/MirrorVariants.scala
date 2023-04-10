@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._
+import syntax._, Network._, Flags._, RotFlip._, Implicits._
 
 /** This modifies the rule generating process by duplicating all rules that
   * contain tiles that have mirrored variants with different IIDs, such as Rail
@@ -46,11 +46,11 @@ object MirrorVariants {
     case _ => true
   }
   def projectTlaLeft(tile: SymTile): SymTile = tile match {
-    case tile: Tile => Tile.projectTlaLeft(tile)
+    case tile: Tile => NetworkProperties.projectTlaLeft(tile)
     case _ => tile
   }
   def projectTlaRight(tile: SymTile): SymTile = tile match {
-    case tile: Tile => Tile.projectTlaRight(tile)
+    case tile: Tile => NetworkProperties.projectTlaRight(tile)
     case _ => tile
   }
 

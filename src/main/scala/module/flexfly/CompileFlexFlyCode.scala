@@ -2,7 +2,7 @@ package metarules
 package module.flexfly
 
 import java.io.File
-import meta.{RuleGenerator, IdResolver, RuleTransducer}
+import module.syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** Outputs FlexFly RUL2 code to 'target/Sec7j_FLEXFly_MANAGED.txt'
   */
