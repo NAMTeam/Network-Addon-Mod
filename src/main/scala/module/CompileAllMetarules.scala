@@ -51,10 +51,3 @@ object CompileRhwCode extends AbstractMain {
   lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
 }
 
-// Compile individually with `sbt "runMain metarules.module.CompileSamCode"`.
-object CompileSamCode extends AbstractMain {
-  lazy val resolve: IdResolver = new SamResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
-  lazy val generator: RuleGenerator = new SamRuleGenerator(RuleTransducer.Context(resolve))
-  lazy val file = new File("target/SamMetaGenerated_MANAGED.txt")
-}
-

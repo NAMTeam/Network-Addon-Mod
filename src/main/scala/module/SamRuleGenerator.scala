@@ -118,3 +118,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
     createRules()
   }
 }
+
+// Compile individually with `sbt "runMain metarules.module.CompileOnslopeCode"`.
+object CompileSamCode extends AbstractMain {
+  lazy val resolve: IdResolver = new MiscResolver orElse new SamResolver
+  lazy val generator: RuleGenerator = new SamRuleGenerator(RuleTransducer.Context(resolve))
+  lazy val file = new java.io.File("target/SAM_MetaGenerated_MANAGED.txt")
+}
