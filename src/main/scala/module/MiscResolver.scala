@@ -66,17 +66,20 @@ class MiscResolver extends IdResolver {
     //add(Road~SW & Road~SharedDiagRight, 0x5f040600) // DxD shared-diag TODO create this
     //add(Road~SharedDiagRight & Road~SharedDiagLeft, 0x5f040700) // DxD shared-diag TODO create this
     add(Road~SW & Road~ES, 0x00000700) // DxD
+	add(Road~NS & Road~CE, 0x00005700) // OxO T
     add(Road~(0,0,2,2), 0x00000F00) // 90 curve
     add(Road~(0,0,1,13), 0x00000C00) // curve
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
     add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
 	
+	add(Street~(0,0,0,0), 0x00000100)
     add(Street~CS, 0x05000300) // orth stub
     add(Street~(0,0,0,1), 0x5F500300) // diag stub
     add(Street~NS & Street~WE, 0x05020700) // OxO
     add(Street~NS & Street~NE, 0x5F500700) // OxD
     add(Street~SW & Street~ES, 0x5F500600) // DxD
+	add(Street~NS & Street~CE, 0x05005700) // OxO T
     add(Street~(0,0,2,2), 0x05000F00) // 90 curve
     add(Street~(0,0,1,13), 0x5F500400) // curve
     add(Street~(0,2,0,11), 0x5F500500) // curve
@@ -146,7 +149,7 @@ class MiscResolver extends IdResolver {
     add(Avenue~SharedDiagRight & Avenue~SharedDiagLeft, 0x04009400) // DxD
     add(Avenue~ES & Avenue~NE, 0x04003600) // DxD
 
-    // Road + intersections
+    // Road intersections
     add(Road~NS & Rail~WE, 0x03010100)
     add((Road~NS).projectLeft & Rail~NE, 0x03010200, nonMirroredOnly)
     add((Road~NS).projectRight & Rail~NE, 0x03020500, mirroredOnly)
@@ -165,6 +168,8 @@ class MiscResolver extends IdResolver {
     add(Road~ES & Street~WE, 0x00aa0c00)
     add(Road~NS & Street~ES, 0x5f502200)
     add(Road~ES & Street~NE, 0x5f502400)
+	add(Road~WE & Street~CS, 0x00aa0800)
+	add(Road~CE & Street~NS, 0x00aa0400)
     add(Road~WE & Avenue~NS, 0x04008900)
     add(Road~ES & Avenue~SN, 0x04001300)
     add(Road~WN & Avenue~SN, 0x04001900)
@@ -226,6 +231,8 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~ES & Street~WE, 0x09aa0c00)
     add(Onewayroad~NS & Street~ES, 0x5f503400)
     add(Onewayroad~ES & Street~NE, 0x5f503600)
+	add(Onewayroad~WE & Street~CS, 0x09aa0800)
+	add(Onewayroad~CE & Street~NS, 0x09aa0400)
     add(Onewayroad~WE & Avenue~NS, 0x091a8900)
     add(Onewayroad~ES & Avenue~SN, 0x091a1300)
     add(Onewayroad~WN & Avenue~SN, 0x091a1900)
