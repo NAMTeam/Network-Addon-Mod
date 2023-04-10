@@ -86,6 +86,7 @@ class MiscResolver extends IdResolver {
 	add(Street~(0,2,2,11), 0x5F500800)
 	add(Street~(0,2,2,13), 0x5F500900)
 	add(Street~(0,2,11,2), 0x5F500A00)
+	add(Street~(2,2,2,11), 0x5F500B00)
 	add(Street~(0,11,2,13), 0x5F500C00)
 	add(Street~(0,0,2,11), 0x5F500D00)
 	add(Street~(0,2,11,11), 0x5F500E00)
