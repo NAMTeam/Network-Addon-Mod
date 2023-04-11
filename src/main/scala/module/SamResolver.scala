@@ -78,7 +78,6 @@ class SamResolver extends IdResolver {
 		// add(sam~WE & L1Dtr~NS, IID + offset) // SAM-L1 DTR
 		// add(sam~WE & L2Dtr~NS, IID + offset) // SAM-L2 DTR
 		// check why this code is problematic
-		/*
 		// add(sam~NS & Tla3~WE, 0x5e640000 + offset) // TLA-3 +
 		add(sam~NS & (Tla3~WE).projectLeft, 0x5e640000 + offset) // TLA-3 +
 		// add(sam~NS & (Tla3~WE).projectRight, 0x5e640000 + offset) // TLA-3 +
@@ -87,6 +86,7 @@ class SamResolver extends IdResolver {
 		add(sam~NS & Owr1~WE, 0x5e643000 + offset) // OWR-1 +	
 		add(sam~NS & Owr3~WE, 0x5e644000 + offset) // OWR-3 +	
 		add(sam~NS & Nrd4~WE, 0x5e645000 + offset) // NRD-4 +
+		/*
 		add(sam~NS & (Tla5~EW).projectLeft, 0x5e646000 + offset) // TLA-5 +	
 		add(sam~NS & Owr4~EW, 0x5e647000 + offset) // OWR-4 +
 		add(sam~NS & Owr5~EW, 0x5e648000 + offset) // OWR-5 +	
@@ -122,7 +122,6 @@ class SamResolver extends IdResolver {
 		add(sam~NS & Glr2~SE, 0x5e53a080 + offset) // SAM x GLR 2
 		// add(sam~NS & Glr3~SE, 0x5e53a009 + offset) // SAM x GLR 3
 		// add(sam~NS & Glr4~SE, 0x5e53a089 + offset) // SAM x GLR 4
-		/*
 		add(sam~WE & (Tla3~SE).projectLeft, 0x5e670000 + offset) // SAM x TLA-3
 		add(sam~WE & (Tla3~SE).projectRight, 0x7e670000 + offset) // SAM x TLA-3
 		add(sam~WE & Ave2~SE, 0x5e671000 + offset) // SAM x AVE-2
@@ -131,7 +130,6 @@ class SamResolver extends IdResolver {
 		add(sam~WE & Owr1~ES, 0x5e673000 + offset) // SAM x OWR-1
 		add(sam~WE & Owr3~SE, 0x5e674000 + offset) // SAM x OWR-3
 		add(sam~WE & Nrd4~SE, 0x5e675000 + offset) // SAM x NRD-4
-		*/
 
 	//DxO Intersections		
 		add(sam~SE & Road~NS, 0x5e582000 + offset) // SAM x Road
@@ -150,7 +148,6 @@ class SamResolver extends IdResolver {
 		add(sam~NW & Glr2~NS, 0x5e53a080 + offset) // SAM x GLR 2
 		// add(sam~NW & Glr3~NS, 0x5e53a009 + offset) // SAM x GLR 3
 		// add(sam~NW & Glr4~NS, 0x5e53a089 + offset) // SAM x GLR 4
-		/*
 		add(sam~SE & (Tla3~NS).projectLeft, 0x5e680000 + offset) // SAM x Road
 		add(sam~SE & (Tla3~SN).projectRight, 0x7e680000 + offset) // SAM x Road
 		add(sam~SE & Ave2~NS, 0x5e681000 + offset) // SAM x Road
@@ -159,7 +156,6 @@ class SamResolver extends IdResolver {
 		add(sam~SE & Owr1~NS, 0x5e683000 + offset) // SAM x Road
 		add(sam~SE & Owr3~NS, 0x5e684000 + offset) // SAM x Road
 		add(sam~SE & Nrd4~NS, 0x5e685000 + offset) // SAM x Road
-		*/
 
 		
 	//DxD Intersections		
@@ -179,7 +175,6 @@ class SamResolver extends IdResolver {
 		add(sam~NW & Glr2~EN, 0x5e53b080 + offset) // SAM x GLR 2
 		// add(sam~NW & Glr3~EN, 0x5e53b009 + offset) // SAM x GLR 3
 		// add(sam~NW & Glr4~EN, 0x5e53b089 + offset) // SAM x GLR 4
-		/*
 		add(sam~EN & (Tla3~SE).projectLeft, 0x5e6a0000 + offset) // SAM x Road
 		add(sam~EN & (Tla3~SE).projectRight, 0x7e6a0000 + offset) // SAM x Road
 		add(sam~EN & Ave2~SE, 0x5e6a1000 + offset) // SAM x Road
@@ -188,7 +183,6 @@ class SamResolver extends IdResolver {
 		add(sam~EN & Owr1~SE, 0x5e6a3000 + offset) // SAM x Road
 		add(sam~EN & Owr3~SE, 0x5e6a4000 + offset) // SAM x Road
 		add(sam~EN & Nrd4~SE, 0x5e6a5000 + offset) // SAM x Road
-		*/
 
 		}
     map
