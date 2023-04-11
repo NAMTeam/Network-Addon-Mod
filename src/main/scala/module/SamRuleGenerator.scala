@@ -27,27 +27,29 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += main~WE | (base ~> main)~WE      // ortho
       Rules += main~WE | base~CW | % | main~CW  // ortho stub
       Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
-	  Rules += main~SE~ES | (base ~> main)~(3,0,0,0)   // diagonal stub
-	  
-	  Rules += main~WE | (base ~> main)~(2,0,11,0)	// orth to orth-diag bottom
-	  Rules += main~(2,0,11,0) | (base ~> main)~(11,3,0,0) // orth-diag bottom to orth-diag top
-	  Rules += main~(0,0,1,13) | (base ~> main)~NW~WN // orth-diag top to diag
-	  Rules += main~(0,0,1,13) | (base ~> main)~(3,0,0,0) // orth-diag top to diag stub
-	 
-	  Rules += main~SE~ES | (base ~> main)~(1,13,0,0) //diag to orth-diag top
-	  Rules += main~(0,0,11,3) | (base ~> main)~(11,0,2,0) //orth-diag top to orth-diag bottom
-	  Rules += main~(11,0,2,0) | (base ~> main)~WE //orth-diag bottom to orth
-	  Rules += main~(11,0,2,0) | (base ~> main)~WC //orth-diag bottom to orth stub
+      Rules += main~SE~ES | (base ~> main)~(3,0,0,0)   // diagonal stub
+      
+      Rules += main~WE | (base ~> main)~(2,0,11,0)	// orth to orth-diag bottom
+      Rules += main~(2,0,11,0) | (base ~> main)~(11,3,0,0) // orth-diag bottom to orth-diag top
+      Rules += main~(0,0,1,13) | (base ~> main)~NW~WN // orth-diag top to diag
+      Rules += main~(0,0,1,13) | (base ~> main)~(3,0,0,0) // orth-diag top to diag stub
+    
+      Rules += main~SE~ES | (base ~> main)~(1,13,0,0) //diag to orth-diag top
+      Rules += main~(0,0,11,3) | (base ~> main)~(11,0,2,0) //orth-diag top to orth-diag bottom
+      Rules += main~(11,0,2,0) | (base ~> main)~WE //orth-diag bottom to orth
+      Rules += main~(11,0,2,0) | (base ~> main)~WC //orth-diag bottom to orth stub
 	  
       for (minor <- CrossNetworks) {
-        createAdjacentIntersections(main, base, minor)
-		
-		if (minor == Street) {
-		  Rules += main~WE | (base ~> main)~WE & (minor ~> main)~NS~SN          // OxO
+        
+        if (!minor.isNwm) {  // can't do NWM until more SAM x NWM intersection tiles are defined
+          createAdjacentIntersections(main, base, minor)
+        }
+      
+        if (minor == Street) {
+          Rules += main~WE | (base ~> main)~WE & (minor ~> main)~NS~SN          // OxO
           Rules += main~WE & main~NS~SN | (base ~> main)~WE          // OxO continue
           Rules += main~WE & main~NS~SN | (base ~> main)~WC          // OxO continue stub
-
-		}
+        }
 
         if (isSingleTile(minor) && minor !=Street) {
           // OxO
@@ -58,111 +60,87 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += main~WE | (base ~> main)~WE & minor~ES       // OxD
           Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
           Rules += main~WE & minor~WN | (base ~> main)~WC       // OxD stub
-          // DxO
-          Rules += main~ES | (base ~> main)~NW & minor~NS       // DxO
-          Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
-          // DxD
-          Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD
-          Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
-		  if(minor == Street || minor == Road || minor == Onewayroad/*|| minor == Dirtroad || minor == Rhw3 || minor == Mis || minor == Rhw4 || minor == Tla3 || minor == Ave2 || minor == Ard3 || minor == Owr1 || minor == Nrd4 */) { 
-				//OxO T (main thru)
-				Rules += main~WE | (base ~> main)~WE & minor~NC~CN
-				Rules += main~WE | (base ~> main)~WE & minor~CS~SC
-				//continue
-				Rules += main~WE & minor~NC~CN | (base ~> main)~WE
-				Rules += main~WE & minor~CS~SC | (base ~> main)~WE
-				//continue stub
-				Rules += main~WE & minor~NC~CN | (base ~> main)~WC
-				Rules += main~WE & minor~CS~SC | (base ~> main)~WC
-			}
-		  if(minor == Street || minor == Road || minor == Onewayroad/*|| minor == Dirtroad || minor == Rhw3 || minor == Mis || minor == Rhw4 || isNwm(minor)*/) { 
-				//OxO T (main end)
-				Rules += main~WC | (base ~> main)~WC & minor~NS
-				Rules += main~WC | (base ~> main)~WC & minor~NS
-			}
+          if (!minor.isNwm) { // can't do NWM until more SAM x NWM intersection tiles are defined
+            // DxO
+            Rules += main~ES | (base ~> main)~NW & minor~NS       // DxO
+            Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+            // DxD
+            Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD
+            Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
+          }
+        }
+
+        if (minor == Street || minor == Road || minor == Onewayroad/*|| minor == Dirtroad || minor == Rhw3 || minor == Mis || minor == Rhw4 || minor == Tla3 || minor == Ave2 || minor == Ard3 || minor == Owr1 || minor == Nrd4 */) { 
+          //OxO T (main thru)
+          Rules += main~WE | (base ~> main)~WE & minor~NC~CN
+          Rules += main~WE | (base ~> main)~WE & minor~CS~SC
+          //continue
+          Rules += main~WE & minor~NC~CN | (base ~> main)~WE
+          Rules += main~WE & minor~CS~SC | (base ~> main)~WE
+          //continue stub
+          Rules += main~WE & minor~NC~CN | (base ~> main)~WC
+          Rules += main~WE & minor~CS~SC | (base ~> main)~WC
+        }
+
+        if(minor == Street || minor == Road || minor == Onewayroad/*|| minor == Dirtroad || minor == Rhw3 || minor == Mis || minor == Rhw4 || isNwm(minor)*/) { 
+          //OxO T (main end)
+          Rules += main~WC | (base ~> main)~WC & minor~NS
+          Rules += main~WC | (base ~> main)~WC & minor~NS
         }
 
         if (minor.typ == AvenueLike) {
           // OxO
           Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
-          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO far side
+          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN  // OxO far side
           Rules += main~WE & minor~SN | (base ~> main)~WE             // OxO continue
           Rules += main~WE & minor~SN | (base ~> main)~WC             // OxO stub
           // OxD
-          Rules += main~WE | (base ~> main)~WE & minor~ES             // OxD start
-          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight                   // OxD middle
-          Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN       // OxD end
-          Rules += main~WE & minor~WN | (base ~> main)~WE             // OxD continue
-          Rules += main~WE & minor~WN | (base ~> main)~WC             // OxD continue stub
-
+          Rules += main~WE | (base ~> main)~WE & minor~ES                           // OxD start
+          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight   // OxD middle
+          Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN   // OxD end
+          Rules += main~WE & minor~WN | (base ~> main)~WE                           // OxD continue
+          Rules += main~WE & minor~WN | (base ~> main)~WC                           // OxD continue stub
           // DxO
-          Rules += main~ES | (base ~> main)~NW & minor~NS                 // DxO start
-          Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW      // DxO middle 1
-          Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN      // DxO middle 2
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE      // DxO end
-          Rules += main~ES & minor~SN | (base ~> main)~NW                 // DxO continue
-          Rules += main~ES & minor~SN | (base ~> main)~(3,0,0,0)          // DxO continue stub
-
+          Rules += main~ES | (base ~> main)~NW & minor~NS             // DxO start
+          Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW  // DxO middle 1
+          Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN  // DxO middle 2
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE  // DxO end
+          Rules += main~ES & minor~SN | (base ~> main)~NW             // DxO continue
+          Rules += main~ES & minor~SN | (base ~> main)~(3,0,0,0)      // DxO continue stub
           // DxD
-          Rules += main~ES | (base ~> main)~NW & minor~NE                                           // DxD start
-          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
-          Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW                    // DxD end
-          Rules += main~ES & minor~SW | (base ~> main)~NW           // DxD continue
-          Rules += main~ES & minor~SW | (base ~> main)~(3,0,0,0)    // DxD continue stub
+          Rules += main~ES | (base ~> main)~NW & minor~NE                          // DxD start
+          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight  // DxD middle
+          Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW   // DxD end
+          Rules += main~ES & minor~SW | (base ~> main)~NW                          // DxD continue
+          Rules += main~ES & minor~SW | (base ~> main)~(3,0,0,0)                   // DxD continue stub
         }
-
-		// non-standard self-intersections
-		//from ortho
-		Rules += main~WE | (base ~> main)~(2,11,2,0)
-		Rules += main~WE | (base ~> main)~(2,13,2,0)
-		//continuation
-		Rules += main~(2,11,2,0) | (base ~> main)~WE
-		Rules += main~(2,13,2,0) | (base ~> main)~WE
-		Rules += main~(2,11,2,0) | (base ~> main)~WC
-		Rules += main~(2,13,2,0) | (base ~> main)~WC
-		
-		//from ortho
-		Rules += main~WE | (base ~> main)~(2,11,2,2)
-		Rules += main~WE | (base ~> main)~(2,13,2,2)
-		// Rules += main~WE | (base ~> main)~(2,2,2,11)
-		// Rules += main~WE | (base ~> main)~(2,2,2,13)
-		//continuation
-		Rules += main~(2,11,2,2) | (base ~> main)~WE
-		Rules += main~(2,13,2,2) | (base ~> main)~WE
-		// Rules += main~(2,2,2,11) | (base ~> main)~WE
-		// Rules += main~(2,2,2,13) | (base ~> main)~WE
-		Rules += main~(2,11,2,2) | (base ~> main)~WC
-		Rules += main~(2,13,2,2) | (base ~> main)~WC
-		// Rules += main~(2,2,2,11) | (base ~> main)~WC
-		// Rules += main~(2,2,2,13) | (base ~> main)~WC	
-		
-        /*
-        if (hasRightShoulder(minor)) {
-          Rules += main~WE | (base ~> main)~WE & minor~NS       // OxO
-          // orth continue
-          Rules += main~WE & minor~SN | (base ~> main)~WE       // OxO continue
-        }
-        if (hasLeftShoulder(minor)) {
-          Rules += main~WE | (base ~> main)~WE & minor~SN       // OxO
-          // orth continue
-          Rules += main~WE & minor~NS | (base ~> main)~WE       // OxO continue
-          // orth OST/HT
-        }
-        
-        for(minor2 <- CrossNetworks if minor2.height != main.height && minor2 != main) {
-          if (hasRightShoulder(minor2)) {
-          Rules += main~WE & minor~SN | (base ~> main)~WE & minor2~NS       // OxO | OxO adj
-          Rules += main~WE & minor~SN | minor2~NS | % | main~WE & minor2~NS // OxO | OxO adj no-int
-          }
-        }
-        Rules += main~WE | (base ~> main)~WE & minor~SE // OxD
-        Rules += main~WE | minor~SE | % | main~WE & minor~SE // OxD no-int
-        Rules += main~EW & minor~SW | (base ~> main)~WE // OxD continue
-        for(minor2 <- CrossNetworks if minor2.height != main.height) {
-          Rules += main~WE & minor~WN | (base ~> main)~WE & minor2~NS // OxD | OxO adjacencies
-        }
-       */
       }
+
+      // non-standard self-intersections
+      //from ortho
+      Rules += main~WE | (base ~> main)~(2,11,2,0)
+      Rules += main~WE | (base ~> main)~(2,13,2,0)
+      //continuation
+      Rules += main~(2,11,2,0) | (base ~> main)~WE
+      Rules += main~(2,13,2,0) | (base ~> main)~WE
+      Rules += main~(2,11,2,0) | (base ~> main)~WC
+      Rules += main~(2,13,2,0) | (base ~> main)~WC
+      
+      //from ortho
+      Rules += main~WE | (base ~> main)~(2,11,2,2)
+      Rules += main~WE | (base ~> main)~(2,13,2,2)
+      // Rules += main~WE | (base ~> main)~(2,2,2,11)
+      // Rules += main~WE | (base ~> main)~(2,2,2,13)
+      //continuation
+      Rules += main~(2,11,2,2) | (base ~> main)~WE
+      Rules += main~(2,13,2,2) | (base ~> main)~WE
+      // Rules += main~(2,2,2,11) | (base ~> main)~WE
+      // Rules += main~(2,2,2,13) | (base ~> main)~WE
+      Rules += main~(2,11,2,2) | (base ~> main)~WC
+      Rules += main~(2,13,2,2) | (base ~> main)~WC
+      // Rules += main~(2,2,2,11) | (base ~> main)~WC
+      // Rules += main~(2,2,2,13) | (base ~> main)~WC	
+		
     }
     createRules()
   }
