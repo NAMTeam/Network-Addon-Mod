@@ -57,6 +57,29 @@ class MiscResolver extends IdResolver {
     add(L2Road      ~NS, 0x5c030000); add(L2Road      ~ES, 0x5c030200)
     add(L2Onewayroad~NS, 0x5c040000); add(L2Onewayroad~ES, 0x5c040200)
     add(L2Avenue    ~NS, 0x5c050000); add(L2Avenue    ~NE, 0x5c050200); add(L2Avenue~SharedDiagLeft, 0x5c050300)
+	
+	add(Sam1~NS, 0x5e54b100)
+	add(Sam2~NS, 0x5e54b200)
+	add(Sam3~NS, 0x5e54b300)
+	add(Sam4~NS, 0x5e54b400)
+	add(Sam5~NS, 0x5e54b500)
+	add(Sam6~NS, 0x5e54b600)
+	add(Sam7~NS, 0x5e54b700)
+	add(Sam8~NS, 0x5e54b800)
+	add(Sam9~NS, 0x5e54b900)
+	add(Sam10~NS, 0x5e54ba00)
+	add(Sam11~NS, 0x5e54bb00)
+	
+	add(Sam2~SE, 0x5e572200)
+	add(Sam3~SE, 0x5e572300)
+	add(Sam4~SE, 0x5e572400)
+	add(Sam5~SE, 0x5e572500)
+	add(Sam6~SE, 0x5e572600)
+	add(Sam7~SE, 0x5e572700)
+	add(Sam8~SE, 0x5e572800)
+	add(Sam9~SE, 0x5e572900)
+	add(Sam10~SE, 0x5e572a00)
+	add(Sam11~SE, 0x5e572b00)
 
     add(Road~CS, 0x00000300) // orth stub
     add(Road~(0,0,0,1), 0x00000200) // diag stub
@@ -76,6 +99,7 @@ class MiscResolver extends IdResolver {
 	add(Street~(0,0,0,0), 0x00000100)
     add(Street~CS, 0x05000300) // orth stub
     add(Street~(0,0,0,1), 0x5F500300) // diag stub
+	add(Street~(2,2,2,2), 0x05020700) // OxO alt
     add(Street~NS & Street~WE, 0x05020700) // OxO
     add(Street~NS & Street~NE, 0x5F500700) // OxD
     add(Street~SW & Street~ES, 0x5F500600) // DxD
@@ -213,7 +237,6 @@ class MiscResolver extends IdResolver {
     add(Street~NS & Monorail~ES, 0x0ddd1600)
     add(Street~SW & Monorail~ES, 0x5F502E00)
     add(Street~EW & Monorail~NS, 0x0ddd0200)
-
 
     // OWR intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)
@@ -354,7 +377,7 @@ class MiscResolver extends IdResolver {
       add(glr~NE & Avenue~ES,     0x5f882500 + offset)
       add(glr~WS & Avenue~SharedDiagRight, 0x5f882600 + offset)
     }
-
+	
     map
   }
 
