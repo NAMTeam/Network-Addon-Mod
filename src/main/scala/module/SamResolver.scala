@@ -56,18 +56,10 @@ class SamResolver extends IdResolver {
 		
 	    // self-intersections	
       add(sam~NS & sam~WE, 0x5e527000 + offset)     // OxO
-      add(sam~NS & Street~WE, 0x5e527000 + offset)  // OxO
-      
+	  add(sam~(2,2,2,2), 0x5e527000 + offset)		// OxO alt
       add(sam~NS & sam~CE, 0x5e557000 + offset)     // OxO T
-      add(sam~NS & Street~CE, 0x5e557000 + offset)  // OxO T
-      add(Street~NS & sam~CE, 0x5e557000 + offset)  // OxO T
-
       add(sam~NS & sam~NE, 0x5e574000 + offset)     // OxD
-      add(sam~NS & Street~NE, 0x5e574000 + offset)  // OxD
-      add(Street~NS & sam~NE, 0x5e574000 + offset)  // OxD
-
       add(sam~SW & sam~ES, 0x5e579000 + offset)     // DxD
-      add(sam~SW & Street~ES, 0x5e579000 + offset)  // DxD
 
       add(sam~(0,0,2,11),	0x5e57a000 + offset)
       add(sam~(0,2,2,11),	0x5e57b000 + offset)
