@@ -53,6 +53,20 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
         createAdjacentIntersections(main, base, minor)
       }
       */
+      
+      // defines adjacent ortho height transitions for the main network in WE orientation
+      val adjOrthHTs = main.height match {
+        case 1 => List(Rail~CW & L1Dtr~CE, Rail~CW & L1Dtr~WE)
+        case 2 => List(Rail~CW & L2Dtr~CE, L1Dtr~CW & L2Dtr~CE, Rail~CW & L2Dtr~WE, L1Dtr~CW & L2Dtr~WE)
+      }
+      // defines adjacent diag height transitions for the main network in ES orientation
+      val adjDiagHTs = main.height match {
+        case 1 => List(Rail~(0,0,0,13) & L1Dtr~(0,0,1,13), Rail~(0,0,0,3) & L1Dtr~(0,0,1,3))
+        case 2 => List(Rail~(0,0,0,13) & L2Dtr~(0,0,1,13), Rail~(0,0,0,3) & L2Dtr~(0,0,1,3))
+      }
+      // defines valid left side start tiles for orth & diag rules
+      val orthStarts = Tile(main~WE) +: adjOrthHTs
+      val diagStarts = Tile(main~ES) +: adjDiagHTs
 
       for (minor <- CrossNetworks if minor.height != main.height) {
         /*
@@ -65,44 +79,61 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
         if (isSingleTile(minor)) {
           // OxO
-          Rules += main~WE | (base ~> main)~WE & minor~NS~SN          // OxO
-          Rules += main~WE | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO (jump)
+          for (orthStart <- orthStarts) {
+            Rules += orthStart | (base ~> main)~WE & minor~NS~SN          // OxO start
+            Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
+          }
           Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
           Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
           Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
+
           // OxD (to do: consider asymmetrical)
-          Rules += main~WE | (base ~> main)~WE & minor~ES       // OxD
-          Rules += main~WE | minor~ES | % | main~WE & minor~ES  // OxD (jump)
+          for (orthStart <- orthStarts) {
+            Rules += orthStart | (base ~> main)~WE & minor~ES       // OxD start
+            Rules += orthStart | minor~ES | % | main~WE & minor~ES  // OxD start (jump)
+          }
           Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
           Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
           Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
+
           // DxO
-          Rules += main~ES | (base ~> main)~NW & minor~NS       // DxO
-          Rules += main~ES | minor~NS | % | main~NW & minor~NS  // DxO (jump)
+          for (diagStart <- diagStarts) {
+            Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
+            Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
+          }
           Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE // DxO middle
           Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
           Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
           Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
+
           // DxD
-          Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD
-          Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD (jump)
+          for (diagStart <- diagStarts) {
+            Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD start
+            Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD start (jump)
+          }
           Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
           Rules += main~SE & minor~WS | base~WNC | % | main~NW  // DxD continue stub conversion
           Rules += main~SE & minor~WS | base~NWC | % | main~NW  // DxD continue stub conversion (jump)
         }
 
         if (minor.typ == AvenueLike) {
+
           // OxO
-          Rules += main~WE | (base ~> main)~WE & minor~NS             // OxO
-          Rules += main~WE | minor~NS | % | main~WE & minor~NS        // OxO jump
+          for (orthStart <- orthStarts) {
+            Rules += orthStart | (base ~> main)~WE & minor~NS             // OxO start
+            Rules += orthStart | minor~NS | % | main~WE & minor~NS        // OxO start (jump)
+          }
           Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO far side
           Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO far side jump
           Rules += main~WE & minor~SN | (base ~> main)~WE             // OxO continue
           Rules += main~WE & minor~SN | base~CE | % | main~WE         // OxO continue stub conversion
           Rules += main~WE & minor~SN | base~CW | % | main~WE         // OxO continue stub conversion (jump)
+
           // OxD
-          Rules += main~WE | (base ~> main)~WE & minor~ES             // OxD start
-          Rules += main~WE | minor~ES | % | main~WE & minor~ES        // OxD start (jump)
+          for (orthStart <- orthStarts) {
+            Rules += orthStart | (base ~> main)~WE & minor~ES             // OxD start
+            Rules += orthStart | minor~ES | % | main~WE & minor~ES        // OxD start (jump)
+          }
           Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight                   // OxD middle
           Rules += main~WE & minor~ES | minor~SharedDiagRight | % | main~WE & minor~SharedDiagRight // OxD middle (jump)
           Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN       // OxD end
@@ -110,9 +141,12 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~WE & minor~WN | (base ~> main)~WE             // OxD continue
           Rules += main~WE & minor~WN | base~CE | % | main~WE         // OxD continue stub conversion
           Rules += main~WE & minor~WN | base~CW | % | main~WE         // OxD continue stub conversion (jump)
+
           // DxO
-          Rules += main~ES | (base ~> main)~NW & minor~NS                 // DxO start
-          Rules += main~ES | minor~NS | % | main~NW & minor~NS            // DxO start (jump)
+          for (diagStart <- diagStarts) {
+            Rules += diagStart | (base ~> main)~NW & minor~NS                 // DxO start
+            Rules += diagStart | minor~NS | % | main~NW & minor~NS            // DxO start (jump)
+          }
           Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW      // DxO middle 1
           Rules += main~EN & minor~EW | minor~EW | % | main~SW & minor~EW // DxO middle 1 (jump)
           Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN      // DxO middle 2
@@ -122,9 +156,12 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~ES & minor~SN | (base ~> main)~NW                 // DxO continue
           Rules += main~ES & minor~SN | base~WNC | % | main~NW            // DxO continue stub conversion
           Rules += main~ES & minor~SN | base~NWC | % | main~NW            // DxO continue stub conversion (jump)
+
           // DxD
-          Rules += main~ES | (base ~> main)~NW & minor~NE                                           // DxD start
-          Rules += main~ES | minor~NE | % | main~NW & minor~NE                                      // DxD start (jump)
+          for (diagStart <- diagStarts) {
+            Rules += main~ES | (base ~> main)~NW & minor~NE         // DxD start
+            Rules += main~ES | minor~NE | % | main~NW & minor~NE    // DxD start (jump)
+          }
           Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
           Rules += main~EN & minor~ES | minor~SharedDiagRight | % | main~SW & minor~SharedDiagRight // DxD middle (jump)
           Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW                    // DxD end
