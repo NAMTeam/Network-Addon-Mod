@@ -2,7 +2,7 @@ package metarules.module
 
 import org.scalatest.{WordSpec, Matchers}
 import metarules.meta._
-import Implicits._, RotFlip._, Network._, Flags._
+import syntax._, Implicits._, RotFlip._, Network._, Flags._
 
 class NwmResolverSpec extends WordSpec with Matchers {
 

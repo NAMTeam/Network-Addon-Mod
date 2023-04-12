@@ -1,6 +1,6 @@
 package metarules.module
 
-import metarules.meta._, Network._, RotFlip._, Flags._
+import metarules.meta._, syntax._, Network._, RotFlip._, Flags._
 import Implicits.segmentToTile
 import NetworkProperties._
 
@@ -260,7 +260,7 @@ class MiscResolver extends IdResolver {
       add(n~(-111,0,+2,0), 0x57020e80 + offset)  //
     }
     for (n <- RhwNetworks from Dirtroad to L4Rhw6s) {  // single-tile RHW networks
-      val rangeId = n.rhwRangeId.get & 0x000F0000
+      val rangeId = RhwResolver.rhwRangeId(n) & 0x000F0000
       val offset = rangeId + n.height * 0x10 + (if (n.height == 0) 0 else 5)
       add(n~(+2,0,-123,0),   0x57905000 + offset)  // R1 curve
       add(n~(+123,0,0,-111), 0x57905100 + offset)  // R1 curve

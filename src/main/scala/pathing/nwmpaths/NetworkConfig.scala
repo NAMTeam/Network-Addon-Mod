@@ -1,7 +1,7 @@
 package metarules.pathing.nwmpaths
 
 import metarules._
-import meta._, Network._, Flags._
+import meta._, Flags._, module.syntax._, Network._
 import scdbpf.Sc4Path.Cardinal._, scdbpf.DbpfUtil.RotFlip._
 import scdbpf.Sc4Path.{TransportType => TT}
 import pathing._

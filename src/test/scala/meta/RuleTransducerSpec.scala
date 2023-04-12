@@ -7,10 +7,10 @@ package metarules.meta
 
 import scala.collection.immutable.StringOps
 import org.scalatest.{WordSpec, Matchers}
-import Implicits._
+import metarules.module
+import metarules.module.syntax._, Implicits._
 import group._, RotFlip._, SymGroup._, Network._, Flags._
 import RuleTransducer._
-import metarules.module
 
 
 class RuleTransducerSpec extends WordSpec with Matchers {
@@ -228,13 +228,13 @@ class RuleTransducerSpec extends WordSpec with Matchers {
       val orth: Seq[Rule[SymTile]] = context.preprocess( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
       orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(s => s.flags.manifest == Flag.RightSpinBi && s.flags.exists(_ == 2)))) should be (false)
-      createRules(orth.head.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
+      createRules(orth.head.map(_.toIdSymTile(resolver)), tileOrientationCache).toSeq should have size (2)
 
       context.preprocess( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
       val diag = context.preprocess( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
       diag should have size (2)
       for (r <- diag) {
-        createRules(r.map(_.toIdSymTile), tileOrientationCache).toSeq should have size (2)
+        createRules(r.map(_.toIdSymTile(resolver)), tileOrientationCache).toSeq should have size (2)
       }
     }
   }
@@ -256,12 +256,12 @@ class RuleTransducerSpec extends WordSpec with Matchers {
       val (t1, t2) = ( Tla3~WE & Road~ES, Tla3~WE & Road~WS )
       resolver(makeTileLeft(t1)).id should not be (resolver(makeTileLeft(t2)).id)
       for ((t, i) <- Seq(t1, t2).zipWithIndex) {
-        makeTileLeft(t).toIdSymTile.repr.filter(_.flipped ^ (i!=0)) should be ('empty)
-        makeTileRight(t).toIdSymTile.repr.filter(!_.flipped ^ (i!=0)) should be ('empty)
+        makeTileLeft(t).toIdSymTile(resolver).repr.filter(_.flipped ^ (i!=0)) should be ('empty)
+        makeTileRight(t).toIdSymTile(resolver).repr.filter(!_.flipped ^ (i!=0)) should be ('empty)
       }
     }
     "find RHS for TLA" in {
-      val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile)
+      val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile(resolver))
       possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, Quotient.Dih4, R1F1/R2F1) should not be ('empty)
       createRules(rule, tileOrientationCache)
     }

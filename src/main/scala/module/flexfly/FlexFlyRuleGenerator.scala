@@ -1,7 +1,7 @@
 package metarules
 package module.flexfly
 
-import meta._, module._, Network._, RotFlip._, Flags._, Implicits._
+import meta._, module._, syntax._, Network._, RotFlip._, Flags._, Implicits._
 import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 
 object FlexFlyRuleGenerator {

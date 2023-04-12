@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._
+import syntax._, Network._
 import RotFlip._
 import Flags._
 
@@ -76,7 +76,7 @@ trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
   def resolveSegment(seg: Segment): IdTile = {
     (if (isSingleTileRhw(seg.network)) singleProps else multiProps).get(seg.flags) match {
       case Some(prop) =>
-        var id = seg.network.rhwRangeId.get
+        var id = RhwResolver.rhwRangeId(seg.network)
         val offset = prop.offset
         if (isRhwShoulder(seg.network) && offset == 0x200) { // strange anomalie for shoulder networks
           id += 0x300

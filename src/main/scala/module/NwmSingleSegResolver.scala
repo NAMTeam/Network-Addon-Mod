@@ -1,12 +1,12 @@
 package metarules.module
 
 import metarules.meta._
-import Network._
+import syntax._, Network._
 import RotFlip._
 import Flags._
 import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isDoubleTile, nonMirroredOnly, mirroredOnly}
-
+import NwmResolver._
 
 trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
 
@@ -22,8 +22,8 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
     def add(tile: Tile, id: Int): Unit = {
       if (tile.segs.exists(_.network.isTla)) {
         // curves do not have turn paths, so we can map both projections to the same ID
-        add0(Tile.projectTlaLeft(tile), id)
-        add0(Tile.projectTlaRight(tile), id)
+        add0(NetworkProperties.projectTlaLeft(tile), id)
+        add0(NetworkProperties.projectTlaRight(tile), id)
       } else {
         add0(tile, id)
       }

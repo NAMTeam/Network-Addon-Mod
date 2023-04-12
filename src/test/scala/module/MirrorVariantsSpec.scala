@@ -2,12 +2,12 @@ package metarules.module
 
 import org.scalatest.{WordSpec, Matchers}
 import metarules.meta._
-import Implicits._, RotFlip._, Network._, Flags._
+import syntax._, Implicits._, RotFlip._, Network._, Flags._
 
 class MirrorVariantsSpec extends WordSpec with Matchers {
 
   "MirrorVariants" should {
-    val resolve = new RealRailwayResolver orElse new MiscResolver
+    val resolve = new MiscResolver orElse new RealRailwayResolver orElse new NwmResolver
     "produce expected results for Avenue × Rail crossings" in {
       val generator = new RuleGenerator {
         var context = RuleTransducer.Context(resolve, preprocess = MirrorVariants.preprocessor)
@@ -50,6 +50,26 @@ class MirrorVariantsSpec extends WordSpec with Matchers {
       generator.queue shouldBe Seq(
         Rule(0x5D640100,0,0, 0x5F502700,3,0, 0x5D640100,0,0, 0x5D67A000,2,0),
         Rule(0x5D640100,3,0, 0x5F502800,2,0, 0x5D640100,3,0, 0x5D67A000,0,1))
+    }
+
+    "produce expected results for TLA network crossings" in {
+      implicit val context = RuleTransducer.Context(resolve, preprocess = MirrorVariants.preprocessor)
+      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Rail~ES).toSeq shouldBe Seq(
+        Rule(0x51000000,1,0, 0x03010200,1,0, 0x51000000,1,0, 0x51005500,3,0),
+        Rule(0x51000000,3,0, 0x03010200,1,0, 0x51000000,3,0, 0x51005500,3,0),
+        Rule(0x51000000,3,0, 0x03020500,3,1, 0x51000000,3,0, 0x51005500,1,1),
+        Rule(0x51000000,1,0, 0x03020500,3,1, 0x51000000,1,0, 0x51005500,1,1))
+      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Rail~ES).toSeq shouldBe Seq(
+        Rule(0x51100000,3,0, 0x03010200,1,0, 0x51100000,3,0, 0x51105500,3,0),
+        Rule(0x51100000,1,0, 0x03020500,3,1, 0x51100000,1,0, 0x51105500,1,1))
+      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Road~ES).toSeq shouldBe Seq(
+        Rule(0x51100000,3,0, 0x00003900,1,0, 0x51100000,3,0, 0x51105100,3,0),
+        Rule(0x51100000,1,0, 0x00003900,3,1, 0x51100000,1,0, 0x71105100,1,1))  // 0x71... variant
+      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Lightrail~ES).toSeq shouldBe Seq(
+        Rule(0x51000000,1,0, 0x08DD1600,1,1, 0x51000000,1,0, 0x51005600,3,0),
+        Rule(0x51000000,3,0, 0x08DD1600,1,1, 0x51000000,3,0, 0x51005600,3,0),
+        Rule(0x51000000,3,0, 0x08DD1600,3,0, 0x51000000,3,0, 0x51005600,1,1),
+        Rule(0x51000000,1,0, 0x08DD1600,3,0, 0x51000000,1,0, 0x51005600,1,1))
     }
   }
 }
