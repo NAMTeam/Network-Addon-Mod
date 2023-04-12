@@ -100,7 +100,7 @@ object Network extends scalaenum.Enum {
   val Tla3  = new Network(0, Symmetrical,  Some(Road))
   val Ave2  = new Network(0, Symmetrical,  Some(Road))
   val Ard3  = new Network(0, Asymmetrical, Some(Road))
-  val Owr1  = new Network(0, Asymmetrical, Some(Road))
+  val Owr1  = new Network(0, Symmetrical,  Some(Onewayroad))
   val Owr3  = new Network(0, Symmetrical,  Some(Onewayroad))
   val Nrd4  = new Network(0, Symmetrical,  Some(Road))
   val Tla5  = new Network(0, Asymmetrical, Some(Road))
