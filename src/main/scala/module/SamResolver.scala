@@ -3,7 +3,7 @@ package metarules.module
 import scala.collection.immutable.ListMap
 
 import metarules.meta._
-import Network._
+import syntax._, Network._
 import RotFlip._
 import Flags._
 import group.SymGroup

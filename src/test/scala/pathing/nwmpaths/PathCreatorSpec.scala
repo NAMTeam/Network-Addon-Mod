@@ -7,7 +7,7 @@ import pathing._
 import org.scalatest.{Matchers, WordSpec}
 import Bezier._
 import scdbpf._, Sc4Path._, DbpfUtil.RotFlip._
-import meta.Network._, meta.Flags._
+import module.syntax._, Network._, meta.Flags._
 import PathCreator._
 import Trimming.trimToTile
 import NetworkConfig._

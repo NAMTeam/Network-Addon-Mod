@@ -1,16 +1,15 @@
 package metarules.module
 
-import metarules.meta._
+import metarules.meta._, syntax._
 import Network._
 import RotFlip._
 import Flags._
 import group.SymGroup
-import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly}
+import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
 
+object NwmResolver {
 
-class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
-
-  val isSingleTileNwm = Set(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)
+  val isSingleTileNwm = NwmNetworks.filter(isSingleTile)
 
   val nwmRangeId = Map(
     Tla3          -> 0x51000000,
@@ -73,6 +72,10 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     // Glr3          -> 0x....,
     // Glr4          -> 0x....,
     // Hsr           -> 0x....,
+}
+import NwmResolver._
+
+class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
 
   /** is defined for all tiles that do not contain RHW, but NWM */
   def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && !t.segs.exists(seg => SamNetworks.contains(seg.network)) && t.segs.exists(_.network.isNwm)
@@ -132,11 +135,15 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
             id += 0x4  // map 8th digit 5 to 9, A to E
           if (prop.majKind == Flag.Kind.LeftSpin || prop.minKind == Flag.Kind.LeftSpin ||
              (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) &&
-              tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
-            IdTile(id, rf, nonMirroredOnly)
-          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin)
-            IdTile(id + 0x20000000, rf, mirroredOnly)
-          else
+              tile.symmetries.exists(_.flipped)) // <-- does not have right-spinned ID
+            IdTile(id, rf, nonMirroredOnly)  // e.g. O×O Tla3×Road
+          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) {
+            if (!hasTurnPaths(maj.network, min.network)) {
+              IdTile(id, rf, mirroredOnly)  // e.g. O×D Tla3×Rail
+            } else {
+              IdTile(id + 0x20000000, rf, mirroredOnly)  // e.g. O×D Tla3×Road
+            }
+          } else
             IdTile(id, rf)
         case None => //??? // TODO T intersections etc. still missing
           throw new UnsupportedOperationException(tile.toString)

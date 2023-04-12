@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup._
+import syntax._, Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup._
 import scala.collection.mutable.Buffer
 import NetworkProperties._
 
@@ -186,6 +186,6 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 // Compile individually with `sbt "runMain metarules.module.CompileSamCode"`.
 object CompileSamCode extends AbstractMain {
   lazy val resolve: IdResolver = new SamResolver orElse new MiscResolver orElse new NwmResolver
-  lazy val generator: RuleGenerator = new SamRuleGenerator(RuleTransducer.Context(resolve))
+  val generator = new SamRuleGenerator(_)
   lazy val file = new java.io.File("target/SAM_MetaGenerated_MANAGED.txt")
 }

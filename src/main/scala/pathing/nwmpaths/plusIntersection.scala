@@ -1,6 +1,6 @@
 package metarules.pathing.nwmpaths
 
-import metarules._
+import metarules._, module.syntax.Network
 import pathing._, Bezier._
 import scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
 import PathCreator.{SPath, SPaths}
@@ -61,7 +61,7 @@ abstract class CommonIntersection extends Intersection {
   }
 }
 
-import meta.Segment
+import module.syntax.Segment
 
 class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersection {
   private[this] val sortedPaths: Map[Cardinal, SPaths] =
@@ -70,7 +70,7 @@ class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersectio
   private[this] def hasTurningLane(c: Cardinal) = network(c).isTla
   private[this] def isBidirectionalOneway(c: Cardinal) = {
     val n = network(c)
-    n == meta.Network.Onewayroad || n.base.exists(_ == meta.Network.Onewayroad)
+    n == Network.Onewayroad || n.base.exists(_ == Network.Onewayroad)
   }
 
   protected def rightTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Sim || tt == TT.Car) {
