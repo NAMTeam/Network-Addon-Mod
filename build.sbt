@@ -18,7 +18,7 @@ scalacOptions ++= Seq(
 console / initialCommands := """
 import metarules._, metarules.meta._, metarules.module.syntax._
 import Implicits._, Network._, Flag._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._
-lazy val resolve = module.Main.resolve
+lazy val resolve = module.Main.resolveSafely
 implicit lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
 """

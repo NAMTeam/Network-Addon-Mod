@@ -46,6 +46,6 @@ object CompileAllMetarules {
 // Compile individually with `sbt "runMain metarules.module.CompileRhwCode"`.
 object CompileRhwCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new RhwResolver orElse new NwmResolver
-  lazy val generator: RuleGenerator = new RhwRuleGenerator(RuleTransducer.Context(resolve))
+  val generator = new RhwRuleGenerator(_)
   lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
 }

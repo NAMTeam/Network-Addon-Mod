@@ -9,7 +9,7 @@ import module.syntax.{RuleGenerator, IdResolver, RuleTransducer}
 object CompileFlexFlyCode extends module.AbstractMain {
 
   lazy val resolve: IdResolver = new FlexFlyResolver
-  lazy val generator: RuleGenerator = new FlexFlyRuleGenerator(RuleTransducer.Context(resolve))
+  val generator = new FlexFlyRuleGenerator(_)
   lazy val file = new File("target/Sec7j_FLEXFly_MANAGED.txt")
 
 }
