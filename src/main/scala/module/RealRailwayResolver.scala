@@ -14,9 +14,11 @@ class RealRailwayResolver extends IdResolver {
         map.getOrElseUpdate(tile * rf, idTile)
       }
     }
+    // rail tiles defined here with RRW IIDs, are maxis IIDs in MiscResolver
     add(Rail~(0,0,0,0), 0x5f33fc00)
     // ortho
     add(Rail~NS, 0x5d540000)
+    add(Rail~ES, 0x5d540100)
     add(Rail~CS, 0x5d540200)
     add(L1Dtr~NS, 0x5d640000)
     add(L2Dtr~NS, 0x5d740000)
