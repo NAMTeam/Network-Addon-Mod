@@ -119,8 +119,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
           // DxD
           for (diagStart <- diagStarts) {
-            Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD start
-            Rules += main~ES | minor~EN | % | main~NW & minor~EN  // DxD start (jump)
+            Rules += diagStart | (base ~> main)~NW & minor~EN       // DxD start
+            Rules += diagStart | minor~EN | % | main~NW & minor~EN  // DxD start (jump)
           }
           Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW        // DxD across
           Rules += main~EN & minor~ES | minor~NW | % | main~SW & minor~NW   // DxD across (jump)
@@ -172,8 +172,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
           // DxD
           for (diagStart <- diagStarts) {
-            Rules += main~ES | (base ~> main)~NW & minor~NE         // DxD start
-            Rules += main~ES | minor~NE | % | main~NW & minor~NE    // DxD start (jump)
+            Rules += diagStart | (base ~> main)~NW & minor~NE         // DxD start
+            Rules += diagStart | minor~NE | % | main~NW & minor~NE    // DxD start (jump)
           }
           Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
           Rules += main~EN & minor~ES | minor~SharedDiagRight | % | main~SW & minor~SharedDiagRight // DxD middle (jump)
