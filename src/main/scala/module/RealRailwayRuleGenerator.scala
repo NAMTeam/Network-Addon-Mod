@@ -101,7 +101,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
             Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
           }
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE // DxO middle
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO middle
+          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO middle (jump)    
           Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
           Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
           Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
