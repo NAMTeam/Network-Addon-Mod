@@ -92,6 +92,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules += orthStart | (base ~> main)~WE & minor~ES       // OxD start
             Rules += orthStart | minor~ES | % | main~WE & minor~ES  // OxD start (jump)
           }
+          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~NW        // OxD across
+          Rules += main~WE & minor~ES | minor~NW | % | main~WE & minor~NW   // OxD across (jump)
           Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
           Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
           Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
@@ -109,8 +111,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
             Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
           }
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO middle
-          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO middle (jump)    
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO across
+          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO across (jump)    
           Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
           Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
           Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
@@ -118,8 +120,10 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           // DxD
           for (diagStart <- diagStarts) {
             Rules += main~ES | (base ~> main)~NW & minor~EN       // DxD start
-            Rules += main~SE | minor~WS | % | main~NW & minor~EN  // DxD start (jump)
+            Rules += main~ES | minor~EN | % | main~NW & minor~EN  // DxD start (jump)
           }
+          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW        // DxD across
+          Rules += main~EN & minor~ES | minor~NW | % | main~SW & minor~NW   // DxD across (jump)
           Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
           Rules += main~SE & minor~WS | base~WNC | % | main~NW  // DxD continue stub conversion
           Rules += main~SE & minor~WS | base~NWC | % | main~NW  // DxD continue stub conversion (jump)
@@ -132,8 +136,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules += orthStart | (base ~> main)~WE & minor~NS             // OxO start
             Rules += orthStart | minor~NS | % | main~WE & minor~NS        // OxO start (jump)
           }
-          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO far side
-          Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO far side jump
+          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO across
+          Rules += main~WE & minor~NS | minor~SN | % | main~WE & minor~SN // OxO across (jump)
           Rules += main~WE & minor~SN | (base ~> main)~WE             // OxO continue
           Rules += main~WE & minor~SN | base~CE | % | main~WE         // OxO continue stub conversion
           Rules += main~WE & minor~SN | base~CW | % | main~WE         // OxO continue stub conversion (jump)
