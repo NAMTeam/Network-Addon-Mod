@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._, syntax._
-import Network._, Flags._, Flag._, RotFlip._, Implicits._
+import Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup._
 import scala.collection.mutable.Buffer
 import NetworkProperties._
 
@@ -95,6 +95,14 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
           Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
           Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
+
+          if (minor == Street || minor == Road) {
+            val crossbucks = minor match {
+              case Street => IdTile(0x5f502a00, R2F0, noSymmetries)
+              case Road   => IdTile(0x03020600, R2F0, noSymmetries)
+            }
+            Rules += main~NS & minor~ES | crossbucks | % | minor~NW // remove crossbucks tile
+          }
 
           // DxO
           for (diagStart <- diagStarts) {
