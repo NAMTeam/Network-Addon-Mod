@@ -182,6 +182,13 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += main~ES & minor~SW | (base ~> main)~(3,0,0,0)                   // DxD continue stub
         }
 		
+		for(minor2 <- CrossNetworks if minor2 != main) {
+          if (hasRightShoulder(minor2)) {
+			Rules += main~WE & minor~SN | (base ~> main)~WE & minor2~NS       // OxO | OxO adj
+		    Rules += main~WE & minor~WN | (base ~> main)~WE & minor2~NS // OxD | OxO adjacencies
+		    Rules += main~WE & minor~NS | (base ~> main)~WE & minor2~WN // OxD | OxO adjacencies
+          }
+        }		
 
       }
 	  		
