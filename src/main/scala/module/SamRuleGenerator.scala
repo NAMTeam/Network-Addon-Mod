@@ -28,17 +28,21 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += main~WE | base~CW | % | main~CW  // ortho stub
       Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
       Rules += main~SE~ES | (base ~> main)~(3,0,0,0)   // diagonal stub
+      Rules += main~SE~ES | (base ~> main)~(1,0,0,0)   // diagonal stub alt?
       Rules += main~NE~EN | (base ~> main)~(1,0,0,0)   // diagonal stub
-     
+      Rules += main~NE~EN | (base ~> main)~(3,0,0,0)   // diagonal stub alt?
+   
       Rules += main~WE | (base ~> main)~(2,0,11,0)	// orth to orth-diag bottom
       Rules += main~(2,0,11,0) | (base ~> main)~(11,3,0,0) // orth-diag bottom to orth-diag top
       Rules += main~(2,0,11,0) | (base ~> main)~(1,3,0,0) // orth-diag bottom to orth-diag top fix 1
       Rules += main~(2,0,2,0) | (base ~> main)~(11,3,0,0) // orth-diag bottom to orth-diag top fix 2
       Rules += main~(2,0,2,0) | (base ~> main)~(1,3,0,0) // orth-diag bottom to orth-diag top fix 3
+	  Rules += main~(2,0,11,0) | base~(2,13,0,0) | % | main~(11,3,0,0) // orth-diag bottom to orth-diag top fix 4 (or is it this one?)
       Rules += main~(0,0,1,13) | (base ~> main)~NW~WN // orth-diag top to diag
+	  Rules += main~(0,0,1,13) | base~(11,3,0,0) | % | main~(1,3,0,0) // orth-diag top to diag fix
       Rules += main~(0,0,1,13) | (base ~> main)~(3,0,0,0) // orth-diag top to diag stub
       Rules += main~(0,0,1,13) | (base ~> main)~(3,0,0,0) // orth-diag top to diag stub
-   
+	     
       Rules += main~SE~ES | (base ~> main)~(1,13,0,0) //diag to orth-diag top
       Rules += main~(0,0,11,3) | (base ~> main)~(11,0,2,0) //orth-diag top to orth-diag bottom
       Rules += main~(0,0,1,3) | (base ~> main)~(11,0,2,0) //orth-diag top to orth-diag bottom fix 1
@@ -51,13 +55,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 	  // Rules += main~(2,2,2,2) | (base ~> main)~WE //alternate attempt at OxO continue
 	  // Rules += main~(2,2,2,2) | (base ~> main)~WC //alternate attempt at OxO continue stub
 	  
-	  // Rules += main~WE | (base ~> main)~WE & (base ~> main)~NS  	// OxO
-      // Rules += main~WE & main~NS~SN | (base ~> main)~WE          	// OxO continue
-      // Rules += main~WE & main~NS~SN | (base ~> main)~WC          	// OxO continue stub
-	
-		Rules += main~WE    | (base ~> main)~WE & (base ~> main)~NS
-		Rules += main~WE & main~SN    | (base ~> main)~WE
-		  
+	  Rules += main~WE | (base ~> main)~WE & (base ~> main)~NS  	// OxO
+      Rules += main~WE & main~NS | (base ~> main)~WE          		// OxO continue
+      Rules += main~WE & main~NS | (base ~> main)~WC          		// OxO continue stub
+			  
       Rules += main~WE | (base ~> main)~WE & (base ~> main)~NC		// OxO T Thru-Side
       Rules += main~WE | (base ~> main)~WC & (base ~> main)~NS		// OxO T End-Side
       Rules += main~WE & main~NC | (base ~> main)~WE          		// OxO T Thru-Side continue
@@ -100,7 +101,11 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += main~(2,11,2,2) | (base ~> main)~WC
       Rules += main~(2,13,2,2) | (base ~> main)~WC
       // Rules += main~(2,2,2,11) | (base ~> main)~WC
-      // Rules += main~(2,2,2,13) | (base ~> main)~WC	
+      // Rules += main~(2,2,2,13) | (base ~> main)~WC
+
+	  //temp for OxD Ts until proper T-half is added
+	  Rules += main~WE & main~SE | (base ~> main)~NW //initial
+	  Rules += main~NS & main~NE | (base ~> main)~WS
 
 
 	  
@@ -176,8 +181,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += main~ES & minor~SW | (base ~> main)~NW                          // DxD continue
           Rules += main~ES & minor~SW | (base ~> main)~(3,0,0,0)                   // DxD continue stub
         }
-      }
 		
+
+      }
+	  		
     }
     createRules()
   }
