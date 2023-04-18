@@ -62,6 +62,7 @@ class SamResolver extends IdResolver {
       add(sam~SW & sam~ES, 0x5e579000 + offset)     // DxD
 
       add(sam~(0,0,2,11),	0x5e57a000 + offset)
+	  // add(sam~(0,0,2,13),   NoIID + offset)
       add(sam~(0,2,2,11),	0x5e57b000 + offset)
       add(sam~(0,2,11,2),	0x5e575000 + offset)
       add(sam~(0,2,2,13),	0x5e576000 + offset)
@@ -114,7 +115,7 @@ class SamResolver extends IdResolver {
 		
       // OxD intersections		
       add(sam~WE & Road~SE, 0x5e555000 + offset)                  // SAM x Road
-      add(sam~WE & Onewayroad~SE, 0x5e55d000 + offset)            // SAM x Road
+      add(sam~WE & Onewayroad~SE, 0x5e55d000 + offset)            // SAM x Onewayroad
       add(sam~WE & Avenue~ES, 0x5e558000 + offset)                // SAM x Avenue
       add(sam~NS & Avenue~SharedDiagRight, 0x5e558080 + offset)   // SAM x Avenue-Shared Diag Tile
       add(sam~WE & Highway~ES, 0x5e53e000 + offset)               // SAM x Highway
@@ -124,7 +125,7 @@ class SamResolver extends IdResolver {
       add(sam~NS & Monorail~SE, 0x5e51c000 + offset)              // SAM x Monorail
       add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
       // add(sam~NS & L1Dtr~EN, IID + offset) // SAM x L1 DTR
-      // add(sam~NS & L2Dtr~EN, IID + offset) // SAM x L1 DTR
+      // add(sam~NS & L2Dtr~EN, IID + offset) // SAM x L2 DTR
       add(sam~NS & Glr1~SE, 0x5e53a000 + offset)                  // SAM x GLR 1
       add(sam~NS & Glr2~SE, 0x5e53a080 + offset)                  // SAM x GLR 2
       // add(sam~NS & Glr3~SE, 0x5e53a009 + offset) // SAM x GLR 3
