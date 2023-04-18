@@ -117,6 +117,7 @@ class MiscResolver extends IdResolver {
 	add(Street~(0,2,13,13), 0x5F500F00)
 	add(Street~(0,11,0,13), 0x5F501100)
 	add(Street~(0,11,0,11), 0x5F501000)
+	add(Street~(0,0,2,13), 0x5F501D00)
 
     add(Onewayroad~CS, 0x09000300) // orth stub
     add(Onewayroad~(0,0,0,1), 0x09000200) // diag stub
@@ -230,13 +231,13 @@ class MiscResolver extends IdResolver {
     add(Street~NE & Highway~ES, 0x5F514500)
     add(Street~SW & Highway~SharedDiagRight, 0x5F514600)
 	add(Street~ES & Lightrail~NS, 0x5F502B00)
-    add(Street~NS & Lightrail~ES, 0x08dd1600)
+    add(Street~NS & Lightrail~ES, 0x08dd1000)
     add(Street~SW & Lightrail~ES, 0x5F502C00)
-    add(Street~EW & Lightrail~NS, 0x08dd1600)
+    add(Street~EW & Lightrail~NS, 0x08dd0800)
     add(Street~ES & Monorail~NS, 0x5F502D00)
-    add(Street~NS & Monorail~ES, 0x0ddd1600)
+    add(Street~NS & Monorail~ES, 0x0ddd1000)
     add(Street~SW & Monorail~ES, 0x5F502E00)
-    add(Street~EW & Monorail~NS, 0x0ddd0200)
+    add(Street~EW & Monorail~NS, 0x0ddd0800)
 
     // OWR intersections
     add(Onewayroad~NS & Rail~WE, 0x09310100)
