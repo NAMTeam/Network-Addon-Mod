@@ -1,9 +1,8 @@
-package networkaddonmod.localization
+package com.sc4nam.localization
 
 import java.io.{File, FileReader, PrintWriter}
 import resource._
-import rapture.core.strategy.throwExceptions
-import scdbpf._
+import io.github.memo33.scdbpf._, strategy.throwExceptions
 
 /** Run
   *
@@ -62,7 +61,7 @@ object GenerateLocales {
               }
               (buffer, t.otherComments)
           }
-          buffer.result
+          buffer.result()
       }
     }
   }
@@ -201,11 +200,11 @@ object GenerateLocales {
 
   /* Run
    * {{{
-   * sbt 'runMain networkaddonmod.localization.GenerateLocales 0 <english-dat-file>'
+   * sbt 'runMain com.sc4nam.localization.GenerateLocales 0 <english-dat-file>'
    * }}}
    * to generate .pot template files and
    * {{{
-   * sbt 'runMain networkaddonmod.localization.GenerateLocales <language-offset> <english-dat-file> <foreign-dat-file>'
+   * sbt 'runMain com.sc4nam.localization.GenerateLocales <language-offset> <english-dat-file> <foreign-dat-file>'
    * }}}
    * to generate .po files from existing translations
    * and then manually inspect the results for correctness.

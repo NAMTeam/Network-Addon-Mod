@@ -1,7 +1,7 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, module._, syntax._, Network._, RotFlip._, Flags._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, Implicits._
 
 /* Flags of 5x5 FlexFly:
  *       ,---------,---------,---------,
@@ -110,7 +110,7 @@ class FlexFlyResolver extends RhwResolver {
     += Rhw6c  -> 0x51 += L1Rhw6c  -> 0x61 += L2Rhw6c  -> 0x71
     += Rhw8c  -> 0x53 += L1Rhw8c  -> 0x63 += L2Rhw8c  -> 0x73
     += Rhw10c -> 0x55 += L1Rhw10c -> 0x65 += L2Rhw10c -> 0x75
-    ).result
+    ).result()
   private[this] def networkId(network: Network, h: Int, minReversed: Boolean) = network match {
     case Dirtroad => h << 4 | 0
     case L1Rhw2   => h << 4 | 1

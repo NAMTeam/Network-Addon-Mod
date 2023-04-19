@@ -1,12 +1,12 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
 import java.io.File
-import module.syntax.{RuleGenerator, IdResolver, RuleTransducer}
+import syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** Outputs FlexFly RUL2 code to 'target/Sec7j_FLEXFly_MANAGED.txt'
   */
-object CompileFlexFlyCode extends module.AbstractMain {
+object CompileFlexFlyCode extends AbstractMain {
 
   lazy val resolve: IdResolver = new FlexFlyResolver
   val generator = new FlexFlyRuleGenerator(_)

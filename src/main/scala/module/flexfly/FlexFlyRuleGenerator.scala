@@ -1,7 +1,7 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, module._, syntax._, Network._, RotFlip._, Flags._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, Implicits._
 import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 
 object FlexFlyRuleGenerator {
@@ -14,7 +14,7 @@ object FlexFlyRuleGenerator {
     val b = List.newBuilder[IntFlags]
     if (hasRightShoulder(n)) b += EW
     if (hasLeftShoulder(n)) b += WE
-    b.result
+    b.result()
   }
 }
 

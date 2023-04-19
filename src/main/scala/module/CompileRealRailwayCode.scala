@@ -1,5 +1,4 @@
-package metarules
-package module
+package com.sc4nam.module
 
 import java.io.File
 import syntax.{RuleGenerator, IdResolver, RuleTransducer}

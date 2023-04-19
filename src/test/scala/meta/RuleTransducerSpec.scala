@@ -1,10 +1,9 @@
-package metarules.meta
+package io.github.memo33.metarules.meta
 
 import scala.collection.immutable.StringOps
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
-import metarules.module
-import metarules.module.syntax._, Implicits._
+import com.sc4nam.module, module.syntax._, Implicits._
 import group._, RotFlip._, SymGroup._, Network._, Flags._
 import RuleTransducer._
 

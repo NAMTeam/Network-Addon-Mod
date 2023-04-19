@@ -1,8 +1,9 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta.{NetworkType, Symmetrical, Asymmetrical, AvenueLike}
+import io.github.memo33.metarules.meta.{NetworkType, Symmetrical, Asymmetrical, AvenueLike, Syntax}
+import io.github.memo33.scalaenum
 
-object syntax extends metarules.meta.Syntax {
+object syntax extends Syntax {
 
 class Network private (val height: Int, val typ: NetworkType, val base: Option[Network]) extends Network.Val with AbstractNetwork {
   import Network._

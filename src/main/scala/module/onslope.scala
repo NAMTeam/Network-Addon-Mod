@@ -1,9 +1,9 @@
-package metarules.module
+package com.sc4nam.module
 /* The metarule code in this file is mostly self-contained and currently
  * covers orthogonal onslope transitions for RHW networks.
  */
 
-import metarules.meta._
+import io.github.memo33.metarules.meta._
 import syntax._, Network._, Flags._, RotFlip._, Implicits._, group.SymGroup._
 import NetworkProperties._
 import RhwRuleGenerator.HeightLevel
@@ -114,7 +114,7 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
   }
 }
 
-// Compile individually with `sbt "runMain metarules.module.CompileOnslopeCode"`.
+// Compile individually with `sbt "runMain com.sc4nam.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
   val generator = new OnslopeGenerator(_)

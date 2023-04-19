@@ -1,4 +1,4 @@
-package networkaddonmod.localization
+package com.sc4nam.localization
 
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers

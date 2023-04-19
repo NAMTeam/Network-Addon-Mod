@@ -1,6 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._, syntax._, Network._
+import io.github.memo33.metarules.meta._, syntax._, Network._
 
 object NetworkProperties {
 
@@ -23,9 +23,9 @@ object NetworkProperties {
   def isSingleTile(n: Network): Boolean = !isDoubleTile(n) && !isTripleTile(n)
 
   // currently, RHW only
-  val ground: Map[Network, Network] = RhwNetworks.from(L1Rhw2).scanLeft(Dirtroad -> Dirtroad) { case ((prev, base), n) =>
+  val ground: Map[Network, Network] = RhwNetworks.from(L1Rhw2).iterator.scanLeft(Dirtroad -> Dirtroad) { case ((prev, base), n) =>
     if (n.height > prev.height) n -> base else n -> n
-  } (collection.breakOut)
+  }.toMap
 
   // currently, RHW only
   def atHeight(ground: Network, height: Int) = {

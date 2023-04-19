@@ -1,14 +1,11 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
 import scala.collection.immutable.{StringOps}
-
-import metarules._
-import pathing._
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
-import Bezier._
-import scdbpf._, Sc4Path._, DbpfUtil.RotFlip._
-import module.syntax._, Network._, meta.Flags._
+import io.github.memo33.metarules.pathing._, Bezier._
+import io.github.memo33.scdbpf._, Sc4Path._, DbpfUtil.RotFlip._
+import com.sc4nam.module.syntax._, Network._, io.github.memo33.metarules.meta.Flags._
 import PathCreator._
 import Trimming.trimToTile
 import NetworkConfig._

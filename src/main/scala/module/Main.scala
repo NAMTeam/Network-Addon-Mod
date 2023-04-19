@@ -1,7 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.{File, PrintWriter}
-import metarules.meta.{RotFlip, EquivRule, IdTile}
+import io.github.memo33.metarules.meta.{RotFlip, EquivRule, IdTile}
 import syntax.{RuleGenerator, IdResolver, RuleTransducer, Tile}
 
 /** Usage: Replace (in source code) `resolve` and `generator` by custom

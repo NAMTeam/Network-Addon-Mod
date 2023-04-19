@@ -1,8 +1,8 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._, module.syntax.Network
-import pathing._, Bezier._
-import scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
+import io.github.memo33.metarules.pathing._, Bezier._
+import com.sc4nam.module.syntax.{Network, Segment}
+import io.github.memo33.scdbpf, scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
 import PathCreator.{SPath, SPaths}
 
 abstract class CommonIntersection extends Intersection {
@@ -61,11 +61,9 @@ abstract class CommonIntersection extends Intersection {
   }
 }
 
-import module.syntax.Segment
-
 class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersection {
   private[this] val sortedPaths: Map[Cardinal, SPaths] =
-    NetworkConfig.straightPaths(major, minor).groupBy(_.dir) mapValues (_ sortWith PlusIntersection.rightToLeftSorter)
+    NetworkConfig.straightPaths(major, minor).groupBy(_.dir).mapValues(_ sortWith PlusIntersection.rightToLeftSorter).toMap
   private[this] def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
   private[this] def hasTurningLane(c: Cardinal) = network(c).isTla
   private[this] def isBidirectionalOneway(c: Cardinal) = {

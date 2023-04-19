@@ -1,7 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.File
-import metarules.meta.RotFlip
+import io.github.memo33.metarules.meta.RotFlip
 import resource.managed
 
 /** Manages the tile orientation cache. The cache is necessary to maintain
