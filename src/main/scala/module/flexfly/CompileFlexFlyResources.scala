@@ -48,7 +48,7 @@ object CompileFlexFlyResources {
 
   private def flexFlyTiles = for {
     orient <- orientations.iterator
-    n <- (RhwNetworks from Mis to L4Rhw4).iterator
+    n <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T2, T3, T4, T6)
   } yield (n, orient, t)
 
@@ -97,7 +97,7 @@ object CompileFlexFlyResources {
       val seen = collection.mutable.Set.empty[Tgi]
       val crossingModels = for {
         (main, orient, t) <- flexFlyTiles
-        minor <- (RhwNetworks from L1Rhw2 filterNot deactivated).iterator
+        minor <- (RhwNetworks rangeFrom L1Rhw2 filterNot deactivated).iterator
         if main.height != minor.height && !deactivated(minor)
         minDir <- crossingDirs(t, minor)
         id3 = resolve(main~orient(t) & minor~minDir)

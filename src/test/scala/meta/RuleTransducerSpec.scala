@@ -46,13 +46,13 @@ class RuleTransducerSpec extends AnyWordSpec with Matchers {
       val (t1, t2) = ( Tla3~WE & Road~ES, Tla3~WE & Road~WS )
       resolver(makeTileLeft(t1)).id should not be (resolver(makeTileLeft(t2)).id)
       for ((t, i) <- Seq(t1, t2).zipWithIndex) {
-        makeTileLeft(t).toIdSymTile(resolver).repr.filter(_.flipped ^ (i!=0)) should be ('empty)
-        makeTileRight(t).toIdSymTile(resolver).repr.filter(!_.flipped ^ (i!=0)) should be ('empty)
+        makeTileLeft(t).toIdSymTile(resolver).repr.filter(_.flipped ^ (i!=0)) should be (Symbol("empty"))
+        makeTileRight(t).toIdSymTile(resolver).repr.filter(!_.flipped ^ (i!=0)) should be (Symbol("empty"))
       }
     }
     "find RHS for TLA" in {
       val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile(resolver))
-      possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, Quotient.Dih4, R1F1/R2F1) should not be ('empty)
+      possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, Quotient.Dih4, R1F1/R2F1) should not be (Symbol("empty"))
       createRules(rule, tileOrientationCache)
     }
     "resolve diagonal TLA intersections" in {

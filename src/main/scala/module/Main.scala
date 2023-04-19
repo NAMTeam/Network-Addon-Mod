@@ -47,7 +47,7 @@ abstract class AbstractMain {
         printer.println(";This file was generated automatically. DO NOT EDIT!")
         val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {
-          printer.println(rule(0) + "," + rule(1) + "=" + rule(2) + "," + rule(3))
+          printer.println(s"${rule(0)},${rule(1)}=${rule(2)},${rule(3)}")
         }
       }
     }

@@ -1,6 +1,6 @@
 package com.sc4nam.pathing.nwmpaths
 
-import scala.collection.immutable.{StringOps}
+import scala.collection.immutable.StringOps
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
 import io.github.memo33.metarules.pathing._, Bezier._
@@ -19,7 +19,7 @@ class PathCreatorSpec extends AnyWordSpec with Matchers {
 
   def pathToPoints(path: Sc4Path): Seq[(Points,String)] = path.paths map (p => (p.coords map coordToPoint, if (p.transportType == TransportType.Sim) "red" else "blue"))
   def printInColumns(n: Int, text: String) = {
-    val lines = new StringOps(text).lines.toSeq
+    val lines = text.linesIterator.toSeq
     val blockSize = (lines.length + n - 1) / n
     for (tokens <- lines.padTo(blockSize * n, "").grouped(blockSize).toSeq.transpose) {
       println(tokens.map(_.padTo(40,' ')).mkString(""))
@@ -27,7 +27,7 @@ class PathCreatorSpec extends AnyWordSpec with Matchers {
   }
   def display(path: Sc4Path) = {
     printInColumns(5, path.toString)
-    println('\n' + show(pathToPoints(path)) + '\n')
+    println(s"\n${show(pathToPoints(path))}\n")
   }
 
   val sc4p = new PlusIntersection(Ard3~NS, Ard3~WE).buildSc4Path

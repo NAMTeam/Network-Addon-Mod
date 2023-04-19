@@ -64,7 +64,7 @@ object Adjacencies {
     * directions (NSNS, NSSN, SNSN).
     * TODO make sure that nothing is included twice, unnecessarily.
     */
-  def adjacentNetworks(n: Network): TraversableOnce[(Network, Int)] = adjacentNetworksMap.getOrElseUpdate(n, {
+  def adjacentNetworks(n: Network): Seq[(Network, Int)] = adjacentNetworksMap.getOrElseUpdate(n, {
     val multAdjs = multitileNetworks.getOrElse(n, Seq.empty[(Network, Int)])
     if (n.isRhw && !isRhw3(n)) {
       // Supported adjacencies between RHW networks. Add any lacking adjacency support here.

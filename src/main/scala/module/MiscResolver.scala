@@ -252,14 +252,14 @@ class MiscResolver extends IdResolver {
     add(Avenue~NE & Monorail~ES, 0x0ddd1300)
 
     add(Dirtroad~(0,0,2,2), 0x57000800)
-    for (n <- RhwNetworks from Mis to L4Mis) {
+    for (n <- RhwNetworks rangeFrom Mis rangeTo L4Mis) {
       val offset = 0x100000 * n.height
       add(n~(0,0,-2,+2),   0x57020800 + offset)  // Mis 90 curve
       add(n~(0,0,+2,-2),   0x57020e00 + offset)  //
       add(n~(+111,0,-2,0), 0x57020880 + offset)  // Mis 90 curve approach
       add(n~(-111,0,+2,0), 0x57020e80 + offset)  //
     }
-    for (n <- RhwNetworks from Dirtroad to L4Rhw6s) {  // single-tile RHW networks
+    for (n <- RhwNetworks rangeFrom Dirtroad rangeTo L4Rhw6s) {  // single-tile RHW networks
       val rangeId = RhwResolver.rhwRangeId(n) & 0x000F0000
       val offset = rangeId + n.height * 0x10 + (if (n.height == 0) 0 else 5)
       add(n~(+2,0,-123,0),   0x57905000 + offset)  // R1 curve

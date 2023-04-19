@@ -25,7 +25,7 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
     for (orient <- orientations) {
       // orient is responsible for distinguishing between A1 and A2 curve:
       // we only write code for A1 curve, orient reverses all the flags for us
-      for (main <- RhwNetworks from Mis to L4Rhw4) {
+      for (main <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4) {
         // first establish tiles 2 and 4 of base curve which are not anchors
         Rules += main~orient(T1) | Dirtroad~(0,0,0,0) | % | main~orient(T2)
         Rules += main~orient(T3) | Dirtroad~(0,0,0,0) | % | main~orient(T4)
@@ -99,7 +99,7 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
 
         // FlexFly × FlexFly
         for {
-          minor <- RhwNetworks from Mis to L4Rhw4
+          minor <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4
           if main.height <= 3 && minor.height < main.height
           o2 <- orientations
           if orient == o2 && orient == orientations(0)  // currently inside×inside curves only
