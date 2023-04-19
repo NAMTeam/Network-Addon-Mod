@@ -36,9 +36,9 @@ msgstr "CCC"
 
   "escaping special characters" should {
     "work as expected" in {
-      import GenerateLocales.escape
-      escape(raw"a &/or b") shouldBe "\"a &/or b\""
-      escape(raw"""abç/&\déf\n\r\'äb"cd'_""") shouldBe raw""""abç/&\\déf\\n\\r\\'äb\"cd'_""""
+      import GenerateLocales.quote
+      quote(raw"a &/or b") shouldBe "\"a &/or b\""
+      quote(raw"""abç/&\déf\n\r\'äb"cd'_""") shouldBe raw""""abç/&\\déf\\n\\r\\'äb\"cd'_""""
     }
   }
 }
