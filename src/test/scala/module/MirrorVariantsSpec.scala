@@ -1,10 +1,11 @@
 package metarules.module
 
-import org.scalatest.{WordSpec, Matchers}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 import metarules.meta._
 import syntax._, Implicits._, RotFlip._, Network._, Flags._
 
-class MirrorVariantsSpec extends WordSpec with Matchers {
+class MirrorVariantsSpec extends AnyWordSpec with Matchers {
 
   "MirrorVariants" should {
     val resolve = new MiscResolver orElse new RealRailwayResolver orElse new NwmResolver

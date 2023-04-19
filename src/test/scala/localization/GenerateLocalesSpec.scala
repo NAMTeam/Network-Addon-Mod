@@ -1,8 +1,9 @@
 package networkaddonmod.localization
 
-import org.scalatest.{WordSpec, Matchers}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class GenerateLocalesSpec extends WordSpec with Matchers {
+class GenerateLocalesSpec extends AnyWordSpec with Matchers {
 
   val poTestCase = raw"""
 # comment

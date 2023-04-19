@@ -4,9 +4,10 @@ package module.flexfly
 import module.syntax.Tile
 import CompileFlexFlyRul0And1._
 import resource._
-import org.scalatest.{WordSpec, Matchers}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
-class CompileFlexFlyRul0And1Spec extends WordSpec with Matchers {
+class CompileFlexFlyRul0And1Spec extends AnyWordSpec with Matchers {
 
   "FlexFly RUL1 falsies" should {
     "be permanent" in {

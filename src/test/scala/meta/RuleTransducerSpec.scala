@@ -1,13 +1,14 @@
 package metarules.meta
 
 import scala.collection.immutable.StringOps
-import org.scalatest.{WordSpec, Matchers}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 import metarules.module
 import metarules.module.syntax._, Implicits._
 import group._, RotFlip._, SymGroup._, Network._, Flags._
 import RuleTransducer._
 
-class RuleTransducerSpec extends WordSpec with Matchers {
+class RuleTransducerSpec extends AnyWordSpec with Matchers {
 
   val resolver = new module.RhwResolver orElse new module.NwmResolver orElse new module.MiscResolver
   val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]

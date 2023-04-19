@@ -61,7 +61,7 @@ lazy val regenerateTileOrientationCache = inputKey[scala.util.Try[Unit]]("Regene
 regenerateTileOrientationCache := runMainWithJLogger("metarules.module.RegenerateTileOrientationCache").evaluated
 
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.5" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % "test"
 
 libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1"
 

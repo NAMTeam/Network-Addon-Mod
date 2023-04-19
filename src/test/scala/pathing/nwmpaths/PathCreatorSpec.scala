@@ -4,7 +4,8 @@ import scala.collection.immutable.{StringOps}
 
 import metarules._
 import pathing._
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 import Bezier._
 import scdbpf._, Sc4Path._, DbpfUtil.RotFlip._
 import module.syntax._, Network._, meta.Flags._
@@ -12,7 +13,7 @@ import PathCreator._
 import Trimming.trimToTile
 import NetworkConfig._
 
-class PathCreatorSpec extends WordSpec with Matchers {
+class PathCreatorSpec extends AnyWordSpec with Matchers {
 
   // yields input for plotting with SAGE
   def show(pss: Seq[(Seq[Point],String)]): String = pss.map { case (ps, col) => listPlot(ps, col) } .mkString("show(", "+", ",aspect_ratio=1)")
