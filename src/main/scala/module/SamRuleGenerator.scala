@@ -27,10 +27,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += main~WE | (base ~> main)~WE~EW      // ortho
       Rules += main~WE | base~CW | % | main~CW  // ortho stub
       Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
-      Rules += main~SE~ES | (base ~> main)~(3,0,0,0)   // diagonal stub
-      Rules += main~SE~ES | (base ~> main)~(1,0,0,0)   // diagonal stub alt?
-      Rules += main~NE~EN | (base ~> main)~(1,0,0,0)   // diagonal stub
-      Rules += main~NE~EN | (base ~> main)~(3,0,0,0)   // diagonal stub alt?
+      Rules += main~ES | (base ~> main)~CNW       // diagonal stub
    
       Rules += main~WE | (base ~> main)~(2,0,11,0)	// orth to orth-diag bottom
       Rules += main~(2,0,11,0) | (base ~> main)~(11,3,0,0) // orth-diag bottom to orth-diag top

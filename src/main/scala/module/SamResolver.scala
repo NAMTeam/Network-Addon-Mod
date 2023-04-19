@@ -47,7 +47,7 @@ class SamResolver extends IdResolver {
       add(sam~NS, 0x5e54b000 + offset)
       add(sam~SE,	0x5e572000 + offset)
       add(sam~CS, 0x5e500000 + offset)          // orth stub
-      add(sam~(0,0,0,1), 0x5e573000 + offset)   // diag stub
+      add(sam~CES, 0x5e573000 + offset)         // diag stub
       add(sam~(0,0,2,2), 0x5e590000 + offset)
       add(sam~(0,0,1,13), 0x5e571000 + offset)  // curve
       add(sam~(0,2,0,11), 0x5e570000 + offset)  // curve
