@@ -33,4 +33,12 @@ msgstr "CCC"
       translations.map(_.asInstanceOf[scaposer.SingularTranslation].ctxComments.nonEmpty) shouldBe Seq(true, false, false)
     }
   }
+
+  "escaping special characters" should {
+    "work as expected" in {
+      import GenerateLocales.escape
+      escape(raw"a &/or b") shouldBe "\"a &/or b\""
+      escape(raw"""abç/&\déf\n\r\'äb"cd'_""") shouldBe raw""""abç/&\\déf\\n\\r\\'äb\"cd'_""""
+    }
+  }
 }
