@@ -61,6 +61,18 @@ class RealRailwayResolver extends IdResolver {
     This should be a fairly predictable scheme - should be able to automate resolver here.
     Some L0 crossings are to be added, such as 
     */
+    // Special: Extra tiles for crossings of overhanging networks
+    add(L1Dtr~(0,2,0,42), 0x5d67d000) // OxO overhang L1
+    add(L2Dtr~(0,2,0,42), 0x5d77d000) // OxO overhang L2
+
+    add(L1Dtr~(0,2,0,72), 0x5d67d100) // OxD overhang L1
+    add(L2Dtr~(0,2,0,72), 0x5d77d100) // OxD overhang L2
+
+    add(L1Dtr~(0,0,1,43), 0x5d67d200) // DxO overhang L1
+    add(L2Dtr~(0,0,1,43), 0x5d77d200) // DxO overhang L2
+
+    add(L1Dtr~(0,0,1,73), 0x5d67d300) // DxO overhang L1
+    add(L2Dtr~(0,0,1,73), 0x5d77d300) // DxO overhang L2
     // ----- OxO -----
     // -- Street --
     add(Street~WE & L1Dtr~NS, 0x5d671000)
@@ -251,6 +263,12 @@ class RealRailwayResolver extends IdResolver {
     add(Str~NE & Rail~NS, 0x5d510200)
     add(Str~ES & L1Dtr~NS, 0x5d674505)
     add(Str~ES & L2Dtr~NS, 0x5d774505)
+    // ...
+    // -- RHW-6S --
+    add(Rhw6s~ES & L1Dtr~NS, 0x5d675e00)
+    add(Rhw6s~SE & L1Dtr~NS, 0x5d675e80)
+    add(Rhw6s~ES & L2Dtr~NS, 0x5d775e00)
+    add(Rhw6s~SE & L2Dtr~NS, 0x5d775e80)
 
     // ----- DxO -----
     // -- Street --
@@ -275,6 +293,13 @@ class RealRailwayResolver extends IdResolver {
     add(Str~NS & Rail~NE, 0x5d510100)
     add(Str~NS & L1Dtr~ES, 0x5d677505)
     add(Str~NS & L2Dtr~ES, 0x5d777505)
+    // ...
+    // -- RHW-6S --
+    add(Rhw6s~NS & L1Dtr~ES, 0x5d678e00)
+    add(Rhw6s~SN & L1Dtr~ES, 0x5d678e80)
+    add(Rhw6s~NS & L2Dtr~ES, 0x5d778e00)
+    add(Rhw6s~SN & L2Dtr~ES, 0x5d778e80)
+    
 
     // ----- DxD -----
     // -- Street --
@@ -298,6 +323,12 @@ class RealRailwayResolver extends IdResolver {
     add(Str~NE & Rail~ES, 0x5d510300)
     add(Str~WS & L1Dtr~ES, 0x5d67a505)
     add(Str~WS & L2Dtr~ES, 0x5d77a505)
+    // ...
+    // -- RHW-6S --
+    add(Rhw6s~WS & L1Dtr~ES, 0x5d67be00)
+    add(Rhw6s~SW & L1Dtr~ES, 0x5d67be80)
+    add(Rhw6s~WS & L2Dtr~ES, 0x5d77be00)
+    add(Rhw6s~SW & L2Dtr~ES, 0x5d77be80)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD
