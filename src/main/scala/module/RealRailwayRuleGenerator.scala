@@ -29,7 +29,7 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
     Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
     */
 
-    val CrossNetworks = List(Street, Road, Avenue, Onewayroad, Rail, Str)
+    val CrossNetworks = List(Street, Road, Avenue, Onewayroad, Rail, Str, Rhw6s)
 
 
     for (main <- RrwNetworks; base <- main.base) {
@@ -79,13 +79,33 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
         if (isSingleTile(minor)) {
           // OxO
-          for (orthStart <- orthStarts) {
-            Rules += orthStart | (base ~> main)~WE & minor~NS~SN          // OxO start
-            Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
+          if (hasOverhang(minor)) {
+            // if minor overhangs, then on the overhanging side of the rule:
+            //    only the base ortho ERRW is a valid start, and
+            //    the start rule is a double-swap with the overhang helper
+            Rules += main~WE | base~WE & minor~NS | main~(2,0,42,0) | main~WE & minor~NS // OxO start overhang double-swap
+            Rules += main~WE | minor~NS | main~(2,0,42,0) | main~WE & minor~NS           // OxO start overhang double-swap (jump)
+            for (orthStart <- orthStarts) {
+              Rules += orthStart | (base ~> main)~WE & minor~SN         // OxO start
+              Rules += orthStart | minor~SN | % | main~WE & minor~SN    // OxO start (jump)
+            }
+            // the continue rules differ on overhang side
+            Rules += main~WE & minor~NS | (base ~> main)~WE          // OxO continue
+            Rules += main~WE & minor~NS | base~CE | % | main~WE      // OxO continue stub conversion
+            Rules += main~WE & minor~NS | base~CW | % | main~WE      // OxO continue stub conversion (jump)
+            Rules += main~WE & minor~SN | base~WE | % | main~(42,0,2,0)   // OxO continue
+            Rules += main~WE & minor~SN | base~CE | % | main~(42,0,2,0)   // OxO continue stub conversion
+            Rules += main~WE & minor~SN | base~CW | % | main~(42,0,2,0)   // OxO continue stub conversion (jump)
+          } 
+          else {
+            for (orthStart <- orthStarts) {
+              Rules += orthStart | (base ~> main)~WE & minor~NS~SN          // OxO start
+              Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
+              }
+            Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
+            Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
+            Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
           }
-          Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
-          Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
-          Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
 
           // OxD (to do: consider asymmetrical)
           for (orthStart <- orthStarts) {
