@@ -1,10 +1,8 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import pathing._
-import Bezier._
-import meta._, module.syntax._, Network._, module.NetworkProperties
-import scdbpf._, Sc4Path.{TransportType => TT, _}, Cardinal._, DbpfUtil.RotFlip._
+import io.github.memo33.metarules.pathing._, Bezier._
+import io.github.memo33.metarules.meta._, com.sc4nam.module.syntax._, Network._, com.sc4nam.module.NetworkProperties
+import io.github.memo33.scdbpf._, Sc4Path.{TransportType => TT, _}, Cardinal._, DbpfUtil.RotFlip._
 import Trimming._
 import NetworkConfig.straightPaths
 

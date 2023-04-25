@@ -1,10 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._, syntax._
-import Network._
-import RotFlip._
-import Flags._
-
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._
 
 trait DoubleSegResolver {
 
@@ -37,7 +33,7 @@ trait DoubleSegResolver {
       case LeftSpin => RightSpin
       case RightSpin => LeftSpin
     }
-    def fill(tup1: IntFlags, tup1Rev: IntFlags, tup2: IntFlags, tup2Rev: IntFlags, offset: Int) {
+    def fill(tup1: IntFlags, tup1Rev: IntFlags, tup2: IntFlags, tup2Rev: IntFlags, offset: Int): Unit = {
       for {
         n1 <- Seq(Dirtroad, Mis) // these networks only serve for generating symm and asymm flags
         n2 <- Seq(L1Rhw2, L1Mis)

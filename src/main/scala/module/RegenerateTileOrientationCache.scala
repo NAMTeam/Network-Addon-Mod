@@ -1,7 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.File
-import metarules.meta.RotFlip
+import io.github.memo33.metarules.meta.RotFlip
 import resource.managed
 
 /** Manages the tile orientation cache. The cache is necessary to maintain
@@ -59,7 +59,7 @@ object RegenerateTileOrientationCache {
         if (!line.startsWith(";") && line.nonEmpty) {
           val parts = line.split(",", 2)
           val id = java.lang.Long.parseLong(parts(0).substring(2), 16).toInt
-          val orientations = RotFlip.ValueSet(parts(1).split("\\+").map(RotFlip.withName):_*)
+          val orientations = RotFlip.ValueSet(parts(1).split("\\+").map(RotFlip.withName).toIndexedSeq:_*)
           cache(id) = orientations
         }
       }

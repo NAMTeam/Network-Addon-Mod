@@ -1,7 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.File
-import metarules.meta.RotFlip
+import io.github.memo33.metarules.meta.RotFlip
 import syntax.{RuleGenerator, IdResolver, RuleTransducer}
 
 /** This is the main class that invokes the compilation of all metarules. New
@@ -26,7 +26,7 @@ object CompileAllMetarules {
 
     // Compile paths for diagonal NWM crossings
     LOGGER.info("compiling diagonal NWM paths")
-    metarules.pathing.nwmpaths.Main.main(Array.empty)
+    com.sc4nam.pathing.nwmpaths.Main.main(Array.empty)
   }
 
   /** Add additional rule generators here.
@@ -43,7 +43,7 @@ object CompileAllMetarules {
   }
 }
 
-// Compile individually with `sbt "runMain metarules.module.CompileRhwCode"`.
+// Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
 object CompileRhwCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new RhwResolver orElse new NwmResolver
   val generator = new RhwRuleGenerator(_)
