@@ -1,8 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._
+import io.github.memo33.metarules.meta._
 import syntax._, Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGroup._
-import scala.collection.mutable.Buffer
 import NetworkProperties._
 
 

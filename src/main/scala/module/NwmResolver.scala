@@ -1,10 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._, syntax._
-import Network._
-import RotFlip._
-import Flags._
-import group.SymGroup
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, group.SymGroup
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
 
 object NwmResolver {

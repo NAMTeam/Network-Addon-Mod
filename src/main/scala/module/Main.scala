@@ -1,7 +1,7 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.{File, PrintWriter}
-import metarules.meta.{RotFlip, EquivRule, IdTile}
+import io.github.memo33.metarules.meta.{RotFlip, EquivRule, IdTile}
 import syntax.{RuleGenerator, IdResolver, RuleTransducer, Tile}
 
 /** Usage: Replace (in source code) `resolve` and `generator` by custom
@@ -47,7 +47,7 @@ abstract class AbstractMain {
         printer.println(";This file was generated automatically. DO NOT EDIT!")
         val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {
-          printer.println(rule(0) + "," + rule(1) + "=" + rule(2) + "," + rule(3))
+          printer.println(s"${rule(0)},${rule(1)}=${rule(2)},${rule(3)}")
         }
       }
     }

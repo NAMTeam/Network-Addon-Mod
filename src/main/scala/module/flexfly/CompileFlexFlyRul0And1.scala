@@ -1,9 +1,10 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, module.syntax._, Flags._, RotFlip._, Network._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Flags._, RotFlip._, Network._, Implicits._
 import FlexFlyTiles._
 import java.io.{File, PrintWriter}
+import scala.collection.immutable.LazyList
 
 /* This file contains an ad-hoc implementation for generating the RUL0 and RUL1
  * code for FlexFlys. In particular, it is not specific to MetaRules.
@@ -54,7 +55,7 @@ object CompileFlexFlyRul0And1 {
     def different(a: Int, b: Int) = a != b || a == 0 || a == 4
     val r = 4 to 0 by -1
     for {
-      a1 <- r.toStream; a2 <- r if different(a1, a2)
+      a1 <- r.to(LazyList); a2 <- r if different(a1, a2)
       b1 <- r; b2 <- r if different(b1, b2)
       c1 <- r; c2 <- r if different(c1, c2)
       d1 <- r; d2 <- r if different(d1, d2)
@@ -113,7 +114,7 @@ object CompileFlexFlyRul0And1 {
 
   val flexFlySegs: Seq[Segment] = for {
     orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-    network <- (RhwNetworks from Mis to L4Rhw4).iterator
+    network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T3, T6)
   } yield {
     network~orient(t)
@@ -127,16 +128,16 @@ object CompileFlexFlyRul0And1 {
     val autoConnectIter = autoconnectTiles.iterator
     val nonAutoconnectIter = nonAutoconnectTiles.iterator
     def buildTiles(n: Network, orient: IntFlags => IntFlags) = (Seq.newBuilder
-      += n~orient(T0) -> autoConnectIter.next
-      += n~orient(T1) -> autoConnectIter.next * R2F0
-      += n~orient(T3) -> nonAutoconnectIter.next
-      += n~orient(T6) -> autoConnectIter.next * R2F0
-      ).result
+      += n~orient(T0) -> autoConnectIter.next()
+      += n~orient(T1) -> autoConnectIter.next() * R2F0
+      += n~orient(T3) -> nonAutoconnectIter.next()
+      += n~orient(T6) -> autoConnectIter.next() * R2F0
+      ).result()
     (for {
-      orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-      network <- (RhwNetworks from Mis to L4Rhw4).iterator
+      orient <- Iterator[IntFlags => IntFlags](identity _, reverseIntFlags _)
+      network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
       tuple <- buildTiles(network, orient)
-    } yield tuple)(collection.breakOut)
+    } yield tuple).toMap
   }
 
   private[this] def concreteTileToString(tile: Tile): String = {
@@ -146,8 +147,8 @@ object CompileFlexFlyRul0And1 {
   }
 
   def rul0Entry(hid: Int, network: Network, reverse: Boolean, previewIter: Iterator[(Int, String)]) = {
-    val (previewId90, previewName90) = previewIter.next
-    val (previewId45, previewName45) = previewIter.next
+    val (previewId90, previewName90) = previewIter.next()
+    val (previewId45, previewName45) = previewIter.next()
     val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags _ else identity _
     f"""
     |[HighwayIntersectionInfo_0x$hid%08X]
@@ -264,7 +265,7 @@ object CompileFlexFlyRul0And1 {
     |""".stripMargin
   }
 
-  def previews(resolve: IdResolver) = RhwNetworks.from(Mis).to(L4Rhw4).toSeq.flatMap { n =>
+  def previews(resolve: IdResolver) = RhwNetworks.rangeFrom(Mis).rangeTo(L4Rhw4).toSeq.flatMap { n =>
     FlexFlyRuleGenerator.orientations.flatMap { orient =>
       Seq(T0, T1) map { t =>
         val id = resolve(n~orient(t)).id & ~0xF | 0x5
@@ -287,17 +288,17 @@ object CompileFlexFlyRul0And1 {
 
     val hids = Iterator.iterate(hid0)(_ + 2)
     val previewIter = previews(resolver).iterator
-    for (network <- RhwNetworks from Mis to L4Rhw4; reverse <- Seq(false, true)) {
-      printer.println(rul0Entry(hids.next, network, reverse, previewIter))
+    for (network <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4; reverse <- Seq(false, true)) {
+      printer.println(rul0Entry(hids.next(), network, reverse, previewIter))
     }
   }
 
   def rul1Entry(tile: Tile, id: Int, header: String): String = {
-    tile.representations.zipWithIndex.foldLeft(new StringBuilder(f";$header%n")) { case (sb, (rf, i)) =>
+    tile.representations.iterator.zipWithIndex.foldLeft(new StringBuilder(f";$header%n")) { case (sb, (rf, i)) =>
       val rft = tile * rf
       val (mhwFlags, rhwFlags) = extractFlags(rft)
       sb ++= f"Type$i=0x0${rhwFlags.mkString("0").reverse},0x0${mhwFlags.mkString("0").reverse},0x$id%08X,${rf.rot},${rf.flip}%n"
-    } .result
+    } .result()
   }
 
   def printRul1(file: File, resolve: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {

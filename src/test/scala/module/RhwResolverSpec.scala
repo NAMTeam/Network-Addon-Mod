@@ -1,10 +1,11 @@
-package metarules.module
+package com.sc4nam.module
 
-import org.scalatest.{WordSpec, Matchers}
-import metarules.meta._
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import io.github.memo33.metarules.meta._
 import syntax._, Implicits._, RotFlip._, Network._, Flags._
 
-class RhwResolverSpec extends WordSpec with Matchers {
+class RhwResolverSpec extends AnyWordSpec with Matchers {
 
   "RHW networks" should {
     "have correctly initialized IIDs" in {
