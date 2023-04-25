@@ -1,7 +1,7 @@
 package metarules
 package module.flexfly
 
-import meta._, Flags._, RotFlip._, Network._, Implicits._
+import meta._, module.syntax._, Flags._, RotFlip._, Network._, Implicits._
 import FlexFlyTiles._
 import java.io.{File, PrintWriter}
 
@@ -77,22 +77,22 @@ object CompileFlexFlyRul0And1 {
     */
   private[this] lazy val combosAllDirections = {
     import Flag._, Bi._
-    def effectiveFlag(rhwFlag: Flag, mhwFlag: Flag) = (rhwFlag, mhwFlag) match {
-      case (Zero, Four) => Zero
-      case (Zero, _) => mhwFlag
-      case (DiagLeft, DiagLeft) => throw new UnsupportedOperationException
-      case (DiagLeft, _) => DiagLeft
-      case (Orth, Orth) => throw new UnsupportedOperationException
-      case (Orth, Zero) => Orth
-      case (Orth, _) => Four
-      case (DiagRight, DiagRight) => throw new UnsupportedOperationException
-      case (DiagRight, _) => DiagRight
-      case (Four, _) => Four
+    def effectiveFlag(rhwFlag: Int, mhwFlag: Int): Int = (rhwFlag, mhwFlag) match {
+      case (0, 4) => 0
+      case (0, _) => mhwFlag
+      case (1, 1) => throw new UnsupportedOperationException
+      case (1, _) => 1
+      case (2, 2) => throw new UnsupportedOperationException
+      case (2, 0) => 2
+      case (2, _) => 4
+      case (3, 3) => throw new UnsupportedOperationException
+      case (3, _) => 3
+      case (4, _) => 4
     }
     combos filter { tile =>
       val (mhwFlags, rhwFlags) = extractFlags(tile)
-      (rhwFlags zip mhwFlags) forall { case (r, m) => effectiveFlag(r, m) == Flag.Four }
-    } filter (_.symmetries == Group.SymGroup.Cyc1)
+      (rhwFlags zip mhwFlags) forall { case (r, m) => effectiveFlag(r, m) == 4 }
+    } filter (_.symmetries == group.SymGroup.Cyc1)
   }
 
   /** splits above flag combinations into those that have auto-connect problem
@@ -103,7 +103,7 @@ object CompileFlexFlyRul0And1 {
     val mapped = combosAllDirections map { tile =>
       val flags = tile.segs.find(_.network == Dirtroad).get.flags
       import Flag._
-      val rfOpt = RotFlip.values find (rf => flags * rf == Flags(Bi.Orth, Four, Four, Four))
+      val rfOpt = RotFlip.values find (rf => flags * rf == Flags(2,4,4,4,Bi))
       (tile, rfOpt)
     }
     val nonAutoconnectTiles = mapped collect { case (tile, None) => tile }

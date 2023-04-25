@@ -1,7 +1,7 @@
 package metarules.module
 
 import metarules.meta._
-import Network._
+import syntax._, Network._
 import RotFlip._
 import Flags._
 
@@ -13,13 +13,13 @@ trait SingleSegResolver {
   private def fillMap(m: scala.collection.mutable.Map[Flags, SingleProperty]) = { (tup: IntFlags, offset: Int, swapped: Boolean) =>
     import Flag.Kind._
     def flipKind(k: Flag.Kind.Value, rf: RotFlip): Flag.Kind.Value = if (k == Default || !rf.flipped) k else k match {
-      case LeftHeaded => RightHeaded
-      case RightHeaded => LeftHeaded
+      case LeftSpin => RightSpin
+      case RightSpin => LeftSpin
     }
     for {
       n <- Seq(Dirtroad, Mis) // Dirtroad and Mis only serve for generating symm and asymm flags
       flagsTmp = (n ~ tup).flags
-      (flags, kind) <- Seq(flagsTmp, flagsTmp.makeLeftHeaded, flagsTmp.makeRightHeaded) zip Seq(Default, LeftHeaded, RightHeaded) // handle TLA flags, too
+      (flags, kind) <- Seq(flagsTmp, flagsTmp.spinLeft, flagsTmp.spinRight) zip Seq(Default, LeftSpin, RightSpin) // handle TLA flags, too
       rf <- flags.representations
     } {
       val prop = new SingleProperty(offset, flipKind(kind, rf), rf, swapped)
@@ -71,16 +71,19 @@ trait SingleSegResolver {
 trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
 
   private[this] val stubSegment = Dirtroad~(0,0,0,0)
+  val isRhwShoulderMedian = Network.ValueSet(Rhw8sm, L1Rhw8sm, L2Rhw8sm)
 
   def resolveSegment(seg: Segment): IdTile = {
     (if (isSingleTileRhw(seg.network)) singleProps else multiProps).get(seg.flags) match {
       case Some(prop) =>
-        var id = seg.network.rhwRangeId.get
+        var id = RhwResolver.rhwRangeId(seg.network)
         val offset = prop.offset
         if (isRhwShoulder(seg.network) && offset == 0x200) { // strange anomalie for shoulder networks
           id += 0x300
         } else if (isRhwShoulder(seg.network) && offset == 0x300) {
           id += 0x200
+        } else if (isRhwShoulderMedian(seg.network) && offset >= 0x0600 && offset < 0x0e00) {
+          id += offset + (if ((offset & 0x0100) == 0) 0x0100 else -0x0100)  // depends on whether 6th digit is even or odd
         } else {
           id += offset
         }

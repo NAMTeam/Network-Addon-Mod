@@ -1,6 +1,7 @@
 package metarules
 package module.flexfly
 
+import module.syntax.Tile
 import CompileFlexFlyRul0And1._
 import resource._
 import org.scalatest.{WordSpec, Matchers}
@@ -15,7 +16,7 @@ class CompileFlexFlyRul0And1Spec extends WordSpec with Matchers {
         val resolve = new FlexFlyResolver
         val currentFalsies = for {
           seg <- flexFlySegs.iterator
-          idTile = resolve(meta.Tile(seg))
+          idTile = resolve(Tile(seg))
           falsie = convertVirtualTile(seg)
           line <- collection.JavaConversions.asScalaIterator(rul1Entry(falsie, idTile.id, seg.toString).lines.iterator)
           if line.nonEmpty

@@ -4,7 +4,7 @@ package module.flexfly
 import java.io.File
 import scdbpf._, DbpfUtil.RotFlip._, S3d._, Sc4Path._
 import rapture.core.strategy.throwExceptions
-import meta._, Flags._, Implicits._, Network._
+import meta._, module.syntax._, Flags._, Implicits._, Network._
 import FlexFlyTiles._, FlexFlyRuleGenerator._
 import module.NetworkProperties._
 
