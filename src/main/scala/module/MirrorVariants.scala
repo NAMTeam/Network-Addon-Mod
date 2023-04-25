@@ -1,6 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._
+import io.github.memo33.metarules.meta._
 import syntax._, Network._, Flags._, RotFlip._, Implicits._
 
 /** This modifies the rule generating process by duplicating all rules that

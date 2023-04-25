@@ -1,10 +1,11 @@
-package metarules.module
+package com.sc4nam.module
 
-import org.scalatest.{WordSpec, Matchers}
-import metarules.meta._
+import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
+import io.github.memo33.metarules.meta._
 import syntax._, Implicits._, RotFlip._, Network._, Flags._
 
-class MirrorVariantsSpec extends WordSpec with Matchers {
+class MirrorVariantsSpec extends AnyWordSpec with Matchers {
 
   "MirrorVariants" should {
     val resolve = new MiscResolver orElse new RealRailwayResolver orElse new NwmResolver
@@ -22,17 +23,18 @@ class MirrorVariantsSpec extends WordSpec with Matchers {
         }
       }
       generator.start()
-      generator.queue shouldBe Seq(
+      withClue(generator.queue.mkString("\n")) { generator.queue shouldBe Seq(
         Rule(0x5D640100,3,0, 0x04001600,2,0, 0x5D640100,3,0, 0x5D677300,0,1),  // diag > 16
         Rule(0x5D640100,0,0, 0x5D571600,0,1, 0x5D640100,0,0, 0x5D677300,2,0),  //
-        Rule(0x5D677300,3,0, 0x04001700,1,1, 0x5D677300,3,0, 0x5D677305,1,0),  // 16 > 17
+        Rule(0x5D677300,1,1, 0x04001700,3,0, 0x5D677300,1,1, 0x5D677305,3,1),  // 16 > 17
         Rule(0x5D677300,3,0, 0x5D571700,1,1, 0x5D677300,3,0, 0x5D677305,1,0),  //
-        Rule(0x5D677305,0,0, 0x04001700,0,1, 0x5D677305,0,0, 0x5D677305,2,0),  // 17 > 17
+        Rule(0x5D677305,2,1, 0x04001700,2,0, 0x5D677305,2,1, 0x5D677305,0,1),  // 17 > 17
         Rule(0x5D677305,0,0, 0x5D571700,0,1, 0x5D677305,0,0, 0x5D677305,2,0),  //
-        Rule(0x5D677305,3,0, 0x04001600,1,1, 0x5D677305,3,0, 0x5D677300,1,0),  // 17 > 16
+        Rule(0x5D677305,1,1, 0x04001600,3,0, 0x5D677305,1,1, 0x5D677300,3,1),  // 17 > 16
         Rule(0x5D677305,3,0, 0x5D571600,1,1, 0x5D677305,3,0, 0x5D677300,1,0),  //
         Rule(0x5D677300,0,0, 0x03001A00,2,0, 0x5D677300,0,0, 0x5D640100,2,0),  // 16 > diag
-        Rule(0x5D677300,0,0, 0x03001A00,3,1, 0x5D677300,0,0, 0x5D640100,3,1))  //
+        Rule(0x5D677300,2,1, 0x03001A00,1,0, 0x5D677300,2,1, 0x5D640100,1,0))  //
+      }
     }
 
     "produce expected results for Street × Rail crossings" in {

@@ -1,9 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._
-import syntax._, Network._
-import RotFlip._
-import Flags._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._
 import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isDoubleTile, nonMirroredOnly, mirroredOnly}
 import NwmResolver._

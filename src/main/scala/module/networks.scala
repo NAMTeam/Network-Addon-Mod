@@ -1,8 +1,9 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta.{NetworkType, Symmetrical, Asymmetrical, AvenueLike}
+import io.github.memo33.metarules.meta.{NetworkType, Symmetrical, Asymmetrical, AvenueLike, Syntax}
+import io.github.memo33.scalaenum
 
-object syntax extends metarules.meta.Syntax {
+object syntax extends Syntax {
 
 class Network private (val height: Int, val typ: NetworkType, val base: Option[Network]) extends Network.Val with AbstractNetwork {
   import Network._
@@ -140,13 +141,13 @@ object Network extends scalaenum.Enum {
   val L2Avenue      = new Network(2, AvenueLike,  Some(Avenue))
 
   // network collections
-  val BaseNetworks: ValueSet = Network.values from Road to Subway
+  val BaseNetworks: ValueSet = Network.values rangeFrom Road rangeTo Subway
   val OverrideNetworks: ValueSet = Network.values.filter(_.base.isDefined)
-  val GlrNetworks: ValueSet = Network.values from Glr1 to Glr4
-  val RhwNetworks: ValueSet = ValueSet(Dirtroad) ++ (Network.values from L1Rhw2 to L2Rhw10c)
-  val NwmNetworks: ValueSet = Network.values from Tla3 to Ave6m
-  val SamNetworks: ValueSet = Network.values from Sam1 to Sam11
-  val Viaducts: ValueSet = Network.values from L1Road to L2Avenue
+  val GlrNetworks: ValueSet = Network.values rangeFrom Glr1 rangeTo Glr4
+  val RhwNetworks: ValueSet = ValueSet(Dirtroad) ++ (Network.values rangeFrom L1Rhw2 rangeTo L2Rhw10c)
+  val NwmNetworks: ValueSet = Network.values rangeFrom Tla3 rangeTo Ave6m
+  val SamNetworks: ValueSet = Network.values rangeFrom Sam1 rangeTo Sam11
+  val Viaducts: ValueSet = Network.values rangeFrom L1Road rangeTo L2Avenue
   val RoadNetworks: ValueSet = RhwNetworks ++ NwmNetworks ++ SamNetworks ++ Viaducts + Road + Highway + Street + Avenue + Onewayroad + Groundhighway
 
 }
