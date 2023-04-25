@@ -4,17 +4,50 @@ import java.io.{File, PrintWriter}
 import io.github.memo33.metarules.meta.{RotFlip, EquivRule, IdTile}
 import syntax.{RuleGenerator, IdResolver, RuleTransducer, Tile}
 
-/** Usage: Replace (in source code) `resolve` and `generator` by custom
-  * implementation, optionally replace `file`, too.
-  * Then call `sbt run` to execute.
+/** The following is the complete mini-example from the metarules readme file:
+  * https://github.com/memo33/metarules
+  *
+  * It defines a custom IdResolver named `resolve` as well as
+  * a custom rule `generator`. Call
+  * {{{
+  * sbt "runMain com.sc4nam.module.MiniExample"
+  * }}}
+  * to execute. The output is written to the file. Add additional rules to the
+  * generator to try out the metarule syntax and observe how the output changes.
+  *
+  * (Refer to MiscResolver.scala for a more compact way to define an IdResolver:
+  * instead of listing all the rotations of an ID, it requires just one rotation.)
   */
-object Main extends AbstractMain {
+object MiniExample extends AbstractMain {
 
-  lazy val resolve: IdResolver = new RealRailwayResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
-  val generator = new RhwRuleGenerator(_)
-  lazy val file = new File("./Controller/RUL2/07_RHW/RhwMetaGenerated_MANAGED.txt")
+  import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, Implicits._
+
+  val resolve = Map[Tile, IdTile](
+    (Dirtroad~NS, IdTile(0x57000000, R0F0)),
+    (Dirtroad~EW, IdTile(0x57000000, R1F0)),
+    (Mis~NS,      IdTile(0x57020000, R0F0)),
+    (Mis~EW,      IdTile(0x57020000, R1F0)),
+    (Mis~SN,      IdTile(0x57020000, R2F0)),
+    (Mis~WE,      IdTile(0x57020000, R3F0)),
+    (L1Rhw2~NS,   IdTile(0x57100000, R0F0)),
+    (L1Rhw2~EW,   IdTile(0x57100000, R1F0)))
+
+  val generator = (ctx: RuleTransducer.Context) => new RuleGenerator {
+    var context = ctx
+    def start(): Unit = {
+      Rules += Mis~WE    | (Dirtroad ~> Mis)~WE
+      Rules += L1Rhw2~WE | (Dirtroad ~> L1Rhw2)~WE
+      createRules()
+    }
+  }
+
+  lazy val file = new File("target/miniexample.txt")
 }
 
+/** This class takes care of executing a rule generator and writing the
+  * generated RUL2 code to a file.
+  * Subclasses need to implement `resolve`, `generator` and `file`.
+  */
 abstract class AbstractMain {
 
   def resolve: IdResolver
