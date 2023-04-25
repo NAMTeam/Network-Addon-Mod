@@ -8,6 +8,14 @@ import NetworkProperties._
 
 class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Adjacencies {
 
+  def needsOxdHelper(n: Network): Boolean = {
+    Set[Network](Tla3, Ave2).contains(n)
+  }
+
+  def needsDxoHelper(n: Network): Boolean = {
+    Set[Network](Tla3, Ave2).contains(n)
+  }
+
   def start(): Unit = {
     /*
     Generate OxO rules by iteration over list of supported crossings
@@ -78,45 +86,101 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
         */
 
         if (isSingleTile(minor)) {
-          // OxO
+
+          // OxO Rules
+
           if (hasOverhang(minor)) {
             // if minor overhangs, then on the overhanging side of the rule:
             //    only the base ortho ERRW is a valid start, and
             //    the start rule is a double-swap with the overhang helper
             Rules += main~WE | base~WE & minor~NS | main~(2,0,42,0) | main~WE & minor~NS // OxO start overhang double-swap
             Rules += main~WE | minor~NS | main~(2,0,42,0) | main~WE & minor~NS           // OxO start overhang double-swap (jump)
+
             for (orthStart <- orthStarts) {
               Rules += orthStart | (base ~> main)~WE & minor~SN         // OxO start
               Rules += orthStart | minor~SN | % | main~WE & minor~SN    // OxO start (jump)
             }
+
             // the continue rules differ on overhang side
             Rules += main~WE & minor~NS | (base ~> main)~WE          // OxO continue
             Rules += main~WE & minor~NS | base~CE | % | main~WE      // OxO continue stub conversion
             Rules += main~WE & minor~NS | base~CW | % | main~WE      // OxO continue stub conversion (jump)
-            Rules += main~WE & minor~SN | base~WE | % | main~(42,0,2,0)   // OxO continue
-            Rules += main~WE & minor~SN | base~CE | % | main~(42,0,2,0)   // OxO continue stub conversion
-            Rules += main~WE & minor~SN | base~CW | % | main~(42,0,2,0)   // OxO continue stub conversion (jump)
-          } 
-          else {
-            for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~NS~SN          // OxO start
-              Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
-              }
-            Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
-            Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
-            Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
+            Rules += main~WE & minor~SN | base~WE | % | main~(42,0,2,0)   // OxO continue to helper
+            Rules += main~WE & minor~SN | base~CE | % | main~(42,0,2,0)   // OxO continue to helper stub conversion
+            Rules += main~WE & minor~SN | base~CW | % | main~(42,0,2,0)   // OxO continue to helper stub conversion (jump)
+
+          } else {
+              for (orthStart <- orthStarts) {
+                Rules += orthStart | (base ~> main)~WE & minor~NS~SN          // OxO start
+                Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
+                }
+                Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
+                Rules += main~WE & minor~NS~SN | base~CE | % | main~WE      // OxO continue stub conversion
+                Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion (jump)
           }
 
-          // OxD (to do: consider asymmetrical)
-          for (orthStart <- orthStarts) {
-            Rules += orthStart | (base ~> main)~WE & minor~ES       // OxD start
-            Rules += orthStart | minor~ES | % | main~WE & minor~ES  // OxD start (jump)
+          // OxD Rules
+
+          if (needsOxdHelper(minor)) {
+
+            Rules += main~WE | base~WE & minor~ES | main~(2,8,72,0) | main~WE & minor~ES  // OxD start overhang double-swap
+            Rules += main~WE | main~WE & minor~ES | main~(2,8,72,0) | %                   // OxD start overhang double-swap stabilize left
+            Rules += main~(2,8,72,0) | base~WE & minor~ES | % | main~WE & minor~ES        // OxD start overhang double-swap stabilize right
+            Rules += main~WE | minor~ES | main~(2,8,72,0) | main~WE & minor~ES            // OxD start overhang double-swap (jump)
+
+            Rules += main~WE | base~WE & minor~SE | main~(2,8,72,0) | main~WE & minor~SE  // OxD start overhang double-swap
+            Rules += main~WE | main~WE & minor~SE | main~(2,8,72,0) | %                   // OxD start overhang double-swap stabilize left
+            Rules += main~(2,8,72,0) | base~WE & minor~SE | % | main~WE & minor~SE        // OxD start overhang double-swap stabilize right
+            Rules += main~WE | minor~SE | main~(2,8,72,0) | main~WE & minor~SE            // OxD start overhang double-swap (jump)
+
+            Rules += main~WE & minor~WN | base~WE | % | main~(72,0,2,8) // OxD continue to helper
+            Rules += main~WE & minor~WN | base~CE | % | main~(72,0,2,8) // OxD continue to helper stub conversion
+            Rules += main~WE & minor~WN | base~CW | % | main~(72,0,2,8) // OxD continue to helper stub conversion (jump)
+            Rules += main~WE & minor~NW | base~WE | % | main~(72,0,2,8) // OxD continue to helper
+            Rules += main~WE & minor~NW | base~CE | % | main~(72,0,2,8) // OxD continue to helper stub conversion
+            Rules += main~WE & minor~NW | base~CW | % | main~(72,0,2,8) // OxD continue to helper stub conversion (jump)
+
+          } else if (hasOverhang(minor)) {
+
+            Rules += main~WE | base~WE & minor~ES | main~(2,8,72,0) | main~WE & minor~ES  // OxD start overhang double-swap
+            Rules += main~WE | main~WE & minor~ES | main~(2,8,72,0) | %                   // OxD start overhang double-swap stabilize left
+            Rules += main~(2,8,72,0) | base~WE & minor~ES | % | main~WE & minor~ES        // OxD start overhang double-swap stabilize right
+            Rules += main~WE | minor~ES | main~(2,8,72,0) | main~WE & minor~ES            // OxD start overhang double-swap (jump)
+
+            for (orthStart <- orthStarts) {
+              Rules += orthStart | (base ~> main)~WE & minor~SE       // OxD start
+              Rules += orthStart | minor~SE | % | main~WE & minor~SE  // OxD start (jump)
+            }
+
+            Rules += main~WE & minor~WN | base~WE | % | main~(72,0,2,8) // OxD continue to helper
+            Rules += main~WE & minor~WN | base~CE | % | main~(72,0,2,8) // OxD continue to helper stub conversion
+            Rules += main~WE & minor~WN | base~CW | % | main~(72,0,2,8) // OxD continue to helper stub conversion (jump)
+            Rules += main~WE & minor~NW | (base ~> main)~WE       // OxD continue
+            Rules += main~WE & minor~NW | base~CE | % | main~WE   // OxD continue stub conversion
+            Rules += main~WE & minor~NW | base~CW | % | main~WE   // OxD continue stub conversion (jump)
+
+          } else {
+
+              for (orthStart <- orthStarts) {
+                Rules += orthStart | (base ~> main)~WE & minor~ES       // OxD start
+                Rules += orthStart | minor~ES | % | main~WE & minor~ES  // OxD start (jump)
+                Rules += orthStart | (base ~> main)~WE & minor~SE       // OxD start
+                Rules += orthStart | minor~SE | % | main~WE & minor~SE  // OxD start (jump)
+              }
+
+              Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
+              Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
+              Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
+              Rules += main~WE & minor~NW | (base ~> main)~WE       // OxD continue
+              Rules += main~WE & minor~NW | base~CE | % | main~WE   // OxD continue stub conversion
+              Rules += main~WE & minor~NW | base~CW | % | main~WE   // OxD continue stub conversion (jump)
           }
+
+          // OxD across rules needed in all cases
           Rules += main~WE & minor~ES | (base ~> main)~WE & minor~NW        // OxD across
           Rules += main~WE & minor~ES | minor~NW | % | main~WE & minor~NW   // OxD across (jump)
-          Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
-          Rules += main~WE & minor~WN | base~CE | % | main~WE   // OxD continue stub conversion
-          Rules += main~WE & minor~WN | base~CW | % | main~WE   // OxD continue stub conversion (jump)
+          Rules += main~WE & minor~SE | (base ~> main)~WE & minor~WN        // OxD across
+          Rules += main~WE & minor~SE | minor~NW | % | main~WE & minor~WN   // OxD across (jump)
 
           if (minor == Street || minor == Road) {
             val crossbucks = minor match {
@@ -126,18 +190,51 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules += main~NS & minor~ES | crossbucks | % | minor~NW // remove crossbucks tile
           }
 
-          // DxO
-          for (diagStart <- diagStarts) {
-            Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
-            Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
-          }
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO across
-          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO across (jump)    
-          Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
-          Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
-          Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
+          // DxO Rules
+          // needs rules for opposite direction minors?
 
-          // DxD
+          if (needsDxoHelper(minor)) {
+              Rules += main~ES | base~NW & minor~NS | main~(0,0,41,3) | main~NW & minor~NS   // DxO start overhang double-swap
+              Rules += main~ES | main~NW & minor~NS | main~(41,43,0,0) | %                   // DxO start overhang double-swap stabilize left
+              Rules += main~(41,43,0,0) | base~NW & minor~NS | % | main~NW & minor~NS        // DxO start overhang double-swap stabilize right
+              Rules += main~ES | minor~NS | main~(0,0,41,3) | main~NW & minor~NS             // DxO start overhang double-swap (jump)
+  
+              Rules += main~ES & minor~SN | base~NW | % | main~(41,3,0,0)   // DxO continue to helper
+              Rules += main~ES & minor~SN | base~WNC | % | main~(41,3,0,0)  // DxO continue to helper stub conversion
+              Rules += main~ES & minor~SN | base~NWC | % | main~(41,3,0,0)  // DxO continue to helper stub conversion (jump)
+          } else if (hasOverhang(minor)) {
+              // e.g. RHW-6S
+              // will require two extra tiles on the overhang side
+              // can only initiate with main~ES
+              Rules += main~ES | base~NW & minor~NS | main~(41,43,0,0) | main~NW & minor~NS  // DxO start overhang double-swap
+              Rules += main~ES | main~NW & minor~NS | main~(41,43,0,0) | %                   // DxO start overhang double-swap stabilize left
+              Rules += main~(41,43,0,0) | base~NW & minor~NS | % | main~NW & minor~NS        // DxO start overhang double-swap stabilize right
+              Rules += main~ES | minor~NS | main~(41,43,0,0) | main~NW & minor~NS            // DxO start overhang double-swap (jump)
+              Rules += main~(0,41,43,0) | main~WS | % | main~(43,0,0,1)   // extra tile - should be moved so not repeated
+              // non-overhanging side starts are standard, use all starts
+              for (diagStart <- diagStarts) {
+                Rules += diagStart | (base ~> main)~NW & minor~SN       // DxO start
+                Rules += diagStart | minor~SN | % | main~NW & minor~SN  // DxO start (jump)
+              } 
+              // continue rules on non-overhang side
+              Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+              Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
+              Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
+          } else {
+              for (diagStart <- diagStarts) {
+                Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
+                Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
+              }   
+              Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+              Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
+              Rules += main~ES & minor~NS | base~NWC | % | main~NW  // DxO continue stub conversion (jump)
+          }
+          // DxO across rules needed in all cases
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO across
+          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO across (jump) 
+
+          // DxD Rules
+
           for (diagStart <- diagStarts) {
             Rules += diagStart | (base ~> main)~NW & minor~EN       // DxD start
             Rules += diagStart | minor~EN | % | main~NW & minor~EN  // DxD start (jump)

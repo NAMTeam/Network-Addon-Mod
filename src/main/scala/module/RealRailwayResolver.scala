@@ -65,14 +65,20 @@ class RealRailwayResolver extends IdResolver {
     add(L1Dtr~(0,2,0,42), 0x5d67d000) // OxO overhang L1
     add(L2Dtr~(0,2,0,42), 0x5d77d000) // OxO overhang L2
 
-    add(L1Dtr~(0,2,0,72), 0x5d67d100) // OxD overhang L1
-    add(L2Dtr~(0,2,0,72), 0x5d77d100) // OxD overhang L2
+    // OxD overhang is asymmetrical   ||
+    // It looks like this in 0,0 :    \|
+    //
+    add(L1Dtr~(0,2,8,72), 0x5d67d100) // OxD overhang L1
+    add(L2Dtr~(0,2,8,72), 0x5d77d100) // OxD overhang L2
 
-    add(L1Dtr~(0,0,1,43), 0x5d67d200) // DxO overhang L1
-    add(L2Dtr~(0,0,1,43), 0x5d77d200) // DxO overhang L2
+    add(L1Dtr~(0,0,1,43), 0x5d67d200)   // DxO overhang L1 (end)
+    add(L1Dtr~(0,0,41,43), 0x5d67d205)  // DxO overhang L1 (blank girder span)
+    add(L2Dtr~(0,0,1,43), 0x5d77d200)   // DxO overhang L2 (end)
+    add(L2Dtr~(0,0,41,43), 0x5d77d205)  // DxO overhang L2 (blank girder span)
 
     add(L1Dtr~(0,0,1,73), 0x5d67d300) // DxO overhang L1
     add(L2Dtr~(0,0,1,73), 0x5d77d300) // DxO overhang L2
+
     // ----- OxO -----
     // -- Street --
     add(Street~WE & L1Dtr~NS, 0x5d671000)
@@ -265,10 +271,10 @@ class RealRailwayResolver extends IdResolver {
     add(Str~ES & L2Dtr~NS, 0x5d774505)
     // ...
     // -- RHW-6S --
-    add(Rhw6s~ES & L1Dtr~NS, 0x5d675e00)
-    add(Rhw6s~SE & L1Dtr~NS, 0x5d675e80)
-    add(Rhw6s~ES & L2Dtr~NS, 0x5d775e00)
-    add(Rhw6s~SE & L2Dtr~NS, 0x5d775e80)
+    add(Rhw6s~ES & L1Dtr~NS, 0x5d674e00)
+    add(Rhw6s~SE & L1Dtr~NS, 0x5d674e05)
+    add(Rhw6s~ES & L2Dtr~NS, 0x5d774e00)
+    add(Rhw6s~SE & L2Dtr~NS, 0x5d774e05)
 
     // ----- DxO -----
     // -- Street --
