@@ -102,8 +102,12 @@ class MiscResolver extends IdResolver {
 	add(Street~(2,2,2,2), 0x05020700) // OxO alt
     add(Street~NS & Street~WE, 0x05020700) // OxO
     add(Street~NS & Street~NE, 0x5F500700) // OxD
-    add(Street~SW & Street~ES, 0x5F500600) // DxD
+    add(Street~SE & Street~EN, 0x5F500600) // DxD
 	add(Street~NS & Street~CE, 0x05005700) // OxO T
+    add(Street~CS & Street~NE, 0x5F504000) // DxO T1
+    add(Street~CS & Street~ES, 0x5F504100) // DxO T2
+    add(Street~SE & Street~CEN, 0x5F504200) // DxD T1
+    add(Street~EN & Street~CWS, 0x5F504300) // DxD T2
     add(Street~(0,0,2,2), 0x05000F00) // 90 curve
     add(Street~(0,0,1,13), 0x5F500400) // curve
     add(Street~(0,2,0,11), 0x5F500500) // curve
@@ -298,9 +302,12 @@ class MiscResolver extends IdResolver {
     add(Avenue~SN & Street~WE, 0x04008300)
     add(Avenue~SharedDiagRight & Street~NS, 0x5f577800)
     add(Avenue~ES & Street~WE, 0x5f577900)
+	add(Avenue~(0,0,+1,-3) & Street~WE, 0x5f577900)
+	add(Avenue~ES & Street~WC, 0x5f577900)
     add(Avenue~SN & Street~ES, 0x5f503000)
     add(Avenue~SN & Street~WN, 0x5f503100)
     add(Avenue~NE & Street~ES, 0x5f503200)
+	add(Avenue~(0,+1,-3,0) & Street~ES, 0x5f503200)
     add(Avenue~SharedDiagLeft & Street~ES, 0x5f503300)
     add(Avenue~NE & Lightrail~NS, 0x08dd0500)
     add(Avenue~SharedDiagLeft & Lightrail~NS, 0x08dd0600)

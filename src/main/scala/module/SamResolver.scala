@@ -54,16 +54,20 @@ class SamResolver extends IdResolver {
 	    // self-intersections	
       add(sam~NS & sam~WE, 0x5e527000 + offset)     // OxO
 	  add(sam~(2,2,2,2), 0x5e527000 + offset)		// OxO alt
-      add(sam~NS & sam~CE, 0x5e557000 + offset)     // OxO T
       add(sam~NS & sam~NE, 0x5e574000 + offset)     // OxD
-      add(sam~SW & sam~ES, 0x5e579000 + offset)     // DxD
+      add(sam~SE & sam~EN, 0x5e579000 + offset)     // DxD
+      add(sam~NS & sam~CE, 0x5e557000 + offset)     // OxO T
+	  add(sam~CS & sam~NE, 0x5e597000 + offset) 	// DxO T1
+      add(sam~CS & sam~ES, 0x5e598000 + offset) 	// DxO T2
+      add(sam~SE & sam~CEN, 0x5e599000 + offset) 	// DxD T1
+      add(sam~EN & sam~CWS, 0x5e59a000 + offset) 	// DxD T2
 
       add(sam~(0,0,2,11),	0x5e57a000 + offset)
 	  // add(sam~(0,0,2,13),   NoIID + offset)
       add(sam~(0,2,2,11),	0x5e57b000 + offset)
       add(sam~(0,2,11,2),	0x5e575000 + offset)
       add(sam~(0,2,2,13),	0x5e576000 + offset)
-      add(sam~(2,2,2,13),	0x5e57c000 + offset)
+      add(sam~(2,2,2,11),	0x5e57c000 + offset)
       add(sam~(0,11,2,13), 0x5e57d000 + offset)
       add(sam~(0,2,11,11), 0x5e57e000 + offset)
       add(sam~(0,2,13,13), 0x5e57f000 + offset)
@@ -114,6 +118,7 @@ class SamResolver extends IdResolver {
       add(sam~WE & Road~SE, 0x5e555000 + offset)                  // SAM x Road
       add(sam~WE & Onewayroad~SE, 0x5e55d000 + offset)            // SAM x Onewayroad
       add(sam~WE & Avenue~ES, 0x5e558000 + offset)                // SAM x Avenue
+	  add(sam~WE & Avenue~(0,0,+1,-3), 0x5e558000 + offset)       // SAM x Avenue
       add(sam~NS & Avenue~SharedDiagRight, 0x5e558080 + offset)   // SAM x Avenue-Shared Diag Tile
       add(sam~WE & Highway~ES, 0x5e53e000 + offset)               // SAM x Highway
       add(sam~WE & Highway~SharedDiagRight, 0x5e53e080 + offset)  // SAM x Highway-Shared Diag Tile
@@ -167,6 +172,7 @@ class SamResolver extends IdResolver {
       add(sam~EN & Road~SE, 0x5e584000 + offset)                  // SAM x Road
       add(sam~EN & Onewayroad~SE, 0x5e58e000 + offset)            // SAM x Onewayroad
       add(sam~ES & Avenue~NE,	0x5e589000 + offset)                // SAM x Avenue
+	  add(sam~ES & Avenue~(0,+1,-3,0),	0x5e589000 + offset)                // SAM x Avenue
       add(sam~SE & Avenue~SharedDiagLeft, 0x5e58a000 + offset)    // SAM x Avenue-Shared Diag Tile
       add(sam~EN & Highway~SE, 0x5e53f000 + offset)               // SAM x Highway 1	
       add(sam~SW & Highway~SharedDiagRight, 0x5e53f080 + offset)  // SAM x Highway 2	
