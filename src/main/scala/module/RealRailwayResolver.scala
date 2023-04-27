@@ -248,11 +248,11 @@ class RealRailwayResolver extends IdResolver {
     add(Street~ES & L1Dtr~NS, 0x5d674000)
     add(Street~ES & L2Dtr~NS, 0x5d774000)
     // -- Road --
-    add(Road~ES & L1Dtr~NS, 0x5d674100)
-    add(Road~ES & L2Dtr~NS, 0x5d774100)
-    add(L1Road~ES & Rail~WE, 0x5c007500)
+    add(Road~ES & L1Dtr~NS,   0x5d674100)
+    add(Road~ES & L2Dtr~NS,   0x5d774100)
+    add(L1Road~ES & Rail~WE,  0x5c007500)
     add(L1Road~ES & L2Dtr~NS, 0x5d774110)
-    add(L2Road~ES & Rail~WE, 0x5c037500)
+    add(L2Road~ES & Rail~WE,  0x5c037500)
     add(L2Road~ES & L1Dtr~NS, 0x5d67410a)
     // -- OWR --
     add(Onewayroad~ES & L1Dtr~NS, 0x5d674200)
@@ -266,10 +266,36 @@ class RealRailwayResolver extends IdResolver {
     add(Rail~ES & L1Dtr~NS, 0x5d674500)
     add(Rail~ES & L2Dtr~NS, 0x5d774500)
     // -- STR --
-    add(Str~NE & Rail~NS, 0x5d510200)
-    add(Str~ES & L1Dtr~NS, 0x5d674505)
-    add(Str~ES & L2Dtr~NS, 0x5d774505)
-    // ...
+    add(Str~NE & Rail~NS,   0x5d510200)
+    add(Str~ES & L1Dtr~NS,  0x5d674505)
+    add(Str~ES & L2Dtr~NS,  0x5d774505)
+    // -- GLR --
+    add(Glr1~ES & L1Dtr~NS, 0x5d674700)
+    add(Glr2~ES & L1Dtr~NS, 0x5d674705)
+    add(Glr3~ES & L1Dtr~NS, 0x5d674800)
+    add(Glr4~ES & L1Dtr~NS, 0x5d674805)
+    add(Glr1~ES & L2Dtr~NS, 0x5d774700)
+    add(Glr2~ES & L2Dtr~NS, 0x5d774705)
+    add(Glr3~ES & L2Dtr~NS, 0x5d774800)
+    add(Glr4~ES & L2Dtr~NS, 0x5d774805)
+    // -- RHW-2 --
+    add(Dirtroad~ES & L1Dtr~NS, 0x5d674a00)
+    add(Dirtroad~ES & L2Dtr~NS, 0x5d774a00)
+    // -- RHW-3 --
+    add(Rhw3~ES & L1Dtr~NS, 0x5d674b00)
+    add(Rhw3~SE & L1Dtr~NS, 0x5d674b05)
+    add(Rhw3~ES & L2Dtr~NS, 0x5d774b00)
+    add(Rhw3~SE & L2Dtr~NS, 0x5d774b05)
+    // -- MIS --
+    add(Mis~ES & L1Dtr~NS, 0x5d674c00)
+    add(Mis~SE & L1Dtr~NS, 0x5d674c05)
+    add(Mis~ES & L2Dtr~NS, 0x5d774c00)
+    add(Mis~SE & L2Dtr~NS, 0x5d774c05)
+    // -- RHW-4 --
+    add(Rhw4~ES & L1Dtr~NS, 0x5d674d00)
+    add(Rhw4~SE & L1Dtr~NS, 0x5d674d05)
+    add(Rhw4~ES & L2Dtr~NS, 0x5d774d00)
+    add(Rhw4~SE & L2Dtr~NS, 0x5d774d05)
     // -- RHW-6S --
     add(Rhw6s~ES & L1Dtr~NS, 0x5d674e00)
     add(Rhw6s~SE & L1Dtr~NS, 0x5d674e05)
@@ -299,12 +325,38 @@ class RealRailwayResolver extends IdResolver {
     add(Str~NS & Rail~NE, 0x5d510100)
     add(Str~NS & L1Dtr~ES, 0x5d677505)
     add(Str~NS & L2Dtr~ES, 0x5d777505)
-    // ...
+    // -- GLR --
+    add(Glr1~NS & L1Dtr~ES, 0x5d677700)
+    add(Glr2~NS & L1Dtr~ES, 0x5d677705)
+    add(Glr3~NS & L1Dtr~ES, 0x5d677800)
+    add(Glr4~NS & L1Dtr~ES, 0x5d677805)
+    add(Glr1~NS & L2Dtr~ES, 0x5d777700)
+    add(Glr2~NS & L2Dtr~ES, 0x5d777705)
+    add(Glr3~NS & L2Dtr~ES, 0x5d777800)
+    add(Glr4~NS & L2Dtr~ES, 0x5d777805)
+    // -- RHW-2 --
+    add(Dirtroad~NS & L1Dtr~ES,  0x5d677a00)
+    add(Dirtroad~NS & L2Dtr~ES,  0x5d777a00)
+    // -- RHW-3 --
+    add(Rhw3~NS & L1Dtr~ES,  0x5d677b00)
+    add(Rhw3~SN & L1Dtr~ES,  0x5d677b05)
+    add(Rhw3~NS & L2Dtr~ES,  0x5d777b00)
+    add(Rhw3~SN & L2Dtr~ES,  0x5d777b05)
+    // -- MIS --
+    add(Mis~NS & L1Dtr~ES,   0x5d677c00)
+    add(Mis~SN & L1Dtr~ES,   0x5d677c05)
+    add(Mis~NS & L2Dtr~ES,   0x5d777c00)
+    add(Mis~SN & L2Dtr~ES,   0x5d777c05)
+    // -- RHW-4 --
+    add(Rhw4~NS & L1Dtr~ES,  0x5d677d00)
+    add(Rhw4~SN & L1Dtr~ES,  0x5d677d05)
+    add(Rhw4~NS & L2Dtr~ES,  0x5d777d00)
+    add(Rhw4~SN & L2Dtr~ES,  0x5d777d05)
     // -- RHW-6S --
-    add(Rhw6s~NS & L1Dtr~ES, 0x5d678e00)
-    add(Rhw6s~SN & L1Dtr~ES, 0x5d678e80)
-    add(Rhw6s~NS & L2Dtr~ES, 0x5d778e00)
-    add(Rhw6s~SN & L2Dtr~ES, 0x5d778e80)
+    add(Rhw6s~NS & L1Dtr~ES, 0x5d677e00)
+    add(Rhw6s~SN & L1Dtr~ES, 0x5d677e05)
+    add(Rhw6s~NS & L2Dtr~ES, 0x5d777e00)
+    add(Rhw6s~SN & L2Dtr~ES, 0x5d777e05)
     
 
     // ----- DxD -----
@@ -329,12 +381,38 @@ class RealRailwayResolver extends IdResolver {
     add(Str~NE & Rail~ES, 0x5d510300)
     add(Str~WS & L1Dtr~ES, 0x5d67a505)
     add(Str~WS & L2Dtr~ES, 0x5d77a505)
-    // ...
+    // -- GLR --
+    add(Glr1~WS & L1Dtr~ES, 0x5d67a700)
+    add(Glr2~WS & L1Dtr~ES, 0x5d67a705)
+    add(Glr3~WS & L1Dtr~ES, 0x5d67a800)
+    add(Glr4~WS & L1Dtr~ES, 0x5d67a805)
+    add(Glr1~WS & L2Dtr~ES, 0x5d77a700)
+    add(Glr2~WS & L2Dtr~ES, 0x5d77a705)
+    add(Glr3~WS & L2Dtr~ES, 0x5d77a800)
+    add(Glr4~WS & L2Dtr~ES, 0x5d77a805)
+    // -- RHW-2 ---
+    add(Dirtroad~WS & L1Dtr~ES,  0x5d67aa00)
+    add(Dirtroad~WS & L2Dtr~ES,  0x5d77aa00)
+    // -- RHW-3 ---
+    add(Rhw3~WS & L1Dtr~ES,  0x5d67ab00)
+    add(Rhw3~SW & L1Dtr~ES,  0x5d67ab05)
+    add(Rhw3~WS & L2Dtr~ES,  0x5d77ab00)
+    add(Rhw3~SW & L2Dtr~ES,  0x5d77ab05)
+    // -- MIS ---
+    add(Mis~WS & L1Dtr~ES,   0x5d67ac00)
+    add(Mis~SW & L1Dtr~ES,   0x5d67ac05)
+    add(Mis~WS & L2Dtr~ES,   0x5d77ac00)
+    add(Mis~SW & L2Dtr~ES,   0x5d77ac05)
+    // -- RHW-4 ---
+    add(Rhw4~WS & L1Dtr~ES,  0x5d67ad00)
+    add(Rhw4~SW & L1Dtr~ES,  0x5d67ad05)
+    add(Rhw4~WS & L2Dtr~ES,  0x5d77ad00)
+    add(Rhw4~SW & L2Dtr~ES,  0x5d77ad05)
     // -- RHW-6S --
-    add(Rhw6s~WS & L1Dtr~ES, 0x5d67be00)
-    add(Rhw6s~SW & L1Dtr~ES, 0x5d67be80)
-    add(Rhw6s~WS & L2Dtr~ES, 0x5d77be00)
-    add(Rhw6s~SW & L2Dtr~ES, 0x5d77be80)
+    add(Rhw6s~WS & L1Dtr~ES, 0x5d67ae00)
+    add(Rhw6s~SW & L1Dtr~ES, 0x5d67ae05)
+    add(Rhw6s~WS & L2Dtr~ES, 0x5d77ae00)
+    add(Rhw6s~SW & L2Dtr~ES, 0x5d77ae05)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD
