@@ -301,6 +301,60 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SE & L1Dtr~NS, 0x5d674e05)
     add(Rhw6s~ES & L2Dtr~NS, 0x5d774e00)
     add(Rhw6s~SE & L2Dtr~NS, 0x5d774e05)
+    // ...
+    // -- TLA-3 --
+    add((Tla3~ES).projectLeft  & L1Dtr~NS, 0x5d675700)
+    add((Tla3~ES).projectRight & L1Dtr~NS, 0x5d675700)
+    add((Tla3~ES).projectLeft  & L2Dtr~NS, 0x5d775700)
+    add((Tla3~ES).projectRight & L2Dtr~NS, 0x5d775700)
+    // -- AVE-2 --
+    add(Ave2~ES & L1Dtr~NS, 0x5d675800)
+    add(Ave2~ES & L2Dtr~NS, 0x5d775800)
+    // -- ARD-3 --
+    add(Ard3~ES & L1Dtr~NS, 0x5d675900)
+    add(Ard3~SE & L1Dtr~NS, 0x5d675905)
+    add(Ard3~ES & L2Dtr~NS, 0x5d775900)
+    add(Ard3~SE & L2Dtr~NS, 0x5d775905)
+    // -- OWR-1 --
+    add(Owr1~ES & L1Dtr~NS, 0x5d675a00)
+    add(Owr1~ES & L2Dtr~NS, 0x5d775a00)
+    // -- OWR-3 --
+    add(Owr3~ES & L1Dtr~NS, 0x5d675b00)
+    add(Owr3~ES & L2Dtr~NS, 0x5d775b00)
+    // -- NRD-4 --
+    add(Nrd4~ES & L1Dtr~NS, 0x5d675c00) 
+    add(Nrd4~ES & L2Dtr~NS, 0x5d775c00)
+    // ...
+    // -- SAM-2 --
+    add(Sam2~ES & L1Dtr~NS, 0x5d676a00)
+    add(Sam2~ES & L2Dtr~NS, 0x5d776a00)
+    // -- SAM-3 --
+    add(Sam3~ES & L1Dtr~NS, 0x5d676a05)
+    add(Sam3~ES & L2Dtr~NS, 0x5d776a05)
+    // -- SAM-4 --
+    add(Sam4~ES & L1Dtr~NS, 0x5d676a0a)
+    add(Sam4~ES & L2Dtr~NS, 0x5d776a0a)
+    // -- SAM-5 --
+    add(Sam5~ES & L1Dtr~NS, 0x5d676b00)
+    add(Sam5~ES & L2Dtr~NS, 0x5d776b00)
+    // -- SAM-6 --
+    add(Sam6~ES & L1Dtr~NS, 0x5d676b05)
+    add(Sam6~ES & L2Dtr~NS, 0x5d776b05)
+    // -- SAM-7 --
+    add(Sam7~ES & L1Dtr~NS, 0x5d676b0a)
+    add(Sam7~ES & L2Dtr~NS, 0x5d776b0a)
+    // -- SAM-8 --
+    add(Sam8~ES & L1Dtr~NS, 0x5d676c00)
+    add(Sam8~ES & L2Dtr~NS, 0x5d776c00)
+    // -- SAM-9 --
+    add(Sam9~ES & L1Dtr~NS, 0x5d676c05)
+    add(Sam9~ES & L2Dtr~NS, 0x5d776c05)
+    // -- SAM-10 --
+    add(Sam10~ES & L1Dtr~NS, 0x5d676c0a)
+    add(Sam10~ES & L2Dtr~NS, 0x5d776c0a)
+    // -- SAM-11 --
+    add(Sam11~ES & L1Dtr~NS, 0x5d676d00)
+    add(Sam11~ES & L2Dtr~NS, 0x5d776d00)
 
     // ----- DxO -----
     // -- Street --
@@ -357,6 +411,60 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SN & L1Dtr~ES, 0x5d677e05)
     add(Rhw6s~NS & L2Dtr~ES, 0x5d777e00)
     add(Rhw6s~SN & L2Dtr~ES, 0x5d777e05)
+    // ...
+    // -- TLA-3 --
+    add((Tla3~NS).projectLeft  & L1Dtr~ES, 0x5d678700)
+    add((Tla3~NS).projectRight & L1Dtr~ES, 0x5d678700)
+    add((Tla3~NS).projectLeft  & L2Dtr~ES, 0x5d778700)
+    add((Tla3~NS).projectRight & L2Dtr~ES, 0x5d778700)
+    // -- AVE-2 --
+    add(Ave2~NS & L1Dtr~ES, 0x5d678800)
+    add(Ave2~NS & L2Dtr~ES, 0x5d778800)
+    // -- ARD-3 --
+    add(Ard3~NS & L1Dtr~ES, 0x5d678900)
+    add(Ard3~SN & L1Dtr~ES, 0x5d678905)
+    add(Ard3~NS & L2Dtr~ES, 0x5d778900)
+    add(Ard3~SN & L2Dtr~ES, 0x5d778905)
+    // -- OWR-1 --
+    add(Owr1~NS & L1Dtr~ES, 0x5d678a00)
+    add(Owr1~NS & L2Dtr~ES, 0x5d778a00)
+    // -- OWR-3 --
+    add(Owr3~NS & L1Dtr~ES, 0x5d678b00)
+    add(Owr3~NS & L2Dtr~ES, 0x5d778b00)
+    // -- NRD-4 --
+    add(Nrd4~NS & L1Dtr~ES, 0x5d678c00) 
+    add(Nrd4~NS & L2Dtr~ES, 0x5d778c00)
+    // ...
+    // -- SAM-2 --
+    add(Sam2~NS & L1Dtr~ES, 0x5d679a00)
+    add(Sam2~NS & L2Dtr~ES, 0x5d779a00)
+    // -- SAM-3 --
+    add(Sam3~NS & L1Dtr~ES, 0x5d679a05)
+    add(Sam3~NS & L2Dtr~ES, 0x5d779a05)
+    // -- SAM-4 --
+    add(Sam4~NS & L1Dtr~ES, 0x5d679a0a)
+    add(Sam4~NS & L2Dtr~ES, 0x5d779a0a)
+    // -- SAM-5 --
+    add(Sam5~NS & L1Dtr~ES, 0x5d679b00)
+    add(Sam5~NS & L2Dtr~ES, 0x5d779b00)
+    // -- SAM-6 --
+    add(Sam6~NS & L1Dtr~ES, 0x5d679b05)
+    add(Sam6~NS & L2Dtr~ES, 0x5d779b05)
+    // -- SAM-7 --
+    add(Sam7~NS & L1Dtr~ES, 0x5d679b0a)
+    add(Sam7~NS & L2Dtr~ES, 0x5d779b0a)
+    // -- SAM-8 --
+    add(Sam8~NS & L1Dtr~ES, 0x5d679c00)
+    add(Sam8~NS & L2Dtr~ES, 0x5d779c00)
+    // -- SAM-9 --
+    add(Sam9~NS & L1Dtr~ES, 0x5d679c05)
+    add(Sam9~NS & L2Dtr~ES, 0x5d779c05)
+    // -- SAM-10 --
+    add(Sam10~NS & L1Dtr~ES, 0x5d679c0a)
+    add(Sam10~NS & L2Dtr~ES, 0x5d779c0a)
+    // -- SAM-11 --
+    add(Sam11~NS & L1Dtr~ES, 0x5d679d00)
+    add(Sam11~NS & L2Dtr~ES, 0x5d779d00)
     
 
     // ----- DxD -----
@@ -413,6 +521,60 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SW & L1Dtr~ES, 0x5d67ae05)
     add(Rhw6s~WS & L2Dtr~ES, 0x5d77ae00)
     add(Rhw6s~SW & L2Dtr~ES, 0x5d77ae05)
+    // ...
+    // -- TLA-3 --
+    add((Tla3~WS).projectLeft  & L1Dtr~ES, 0x5d67b700)
+    add((Tla3~WS).projectRight & L1Dtr~ES, 0x5d67b700)
+    add((Tla3~WS).projectLeft  & L2Dtr~ES, 0x5d77b700)
+    add((Tla3~WS).projectRight & L2Dtr~ES, 0x5d77b700)
+    // -- AVE-2 --
+    add(Ave2~WS & L1Dtr~ES, 0x5d67b800)
+    add(Ave2~WS & L2Dtr~ES, 0x5d77b800)
+    // -- ARD-3 --
+    add(Ard3~WS & L1Dtr~ES, 0x5d67b900)
+    add(Ard3~SW & L1Dtr~ES, 0x5d67b905)
+    add(Ard3~WS & L2Dtr~ES, 0x5d77b900)
+    add(Ard3~SW & L2Dtr~ES, 0x5d77b905)
+    // -- OWR-1 --
+    add(Owr1~WS & L1Dtr~ES, 0x5d67ba00)
+    add(Owr1~WS & L2Dtr~ES, 0x5d77ba00)
+    // -- OWR-3 --
+    add(Owr3~WS & L1Dtr~ES, 0x5d67bb00)
+    add(Owr3~WS & L2Dtr~ES, 0x5d77bb00)
+    // -- NRD-4 --
+    add(Nrd4~WS & L1Dtr~ES, 0x5d67bc00) 
+    add(Nrd4~WS & L2Dtr~ES, 0x5d77bc00)
+    // ...
+    // -- SAM-2 --
+    add(Sam2~WS & L1Dtr~ES, 0x5d679a00)
+    add(Sam2~WS & L2Dtr~ES, 0x5d779a00)
+    // -- SAM-3 --
+    add(Sam3~WS & L1Dtr~ES, 0x5d679a05)
+    add(Sam3~WS & L2Dtr~ES, 0x5d779a05)
+    // -- SAM-4 --
+    add(Sam4~WS & L1Dtr~ES, 0x5d679a0a)
+    add(Sam4~WS & L2Dtr~ES, 0x5d779a0a)
+    // -- SAM-5 --
+    add(Sam5~WS & L1Dtr~ES, 0x5d679b00)
+    add(Sam5~WS & L2Dtr~ES, 0x5d779b00)
+    // -- SAM-6 --
+    add(Sam6~WS & L1Dtr~ES, 0x5d679b05)
+    add(Sam6~WS & L2Dtr~ES, 0x5d779b05)
+    // -- SAM-7 --
+    add(Sam7~WS & L1Dtr~ES, 0x5d679b0a)
+    add(Sam7~WS & L2Dtr~ES, 0x5d779b0a)
+    // -- SAM-8 --
+    add(Sam8~WS & L1Dtr~ES, 0x5d679c00)
+    add(Sam8~WS & L2Dtr~ES, 0x5d779c00)
+    // -- SAM-9 --
+    add(Sam9~WS & L1Dtr~ES, 0x5d679c05)
+    add(Sam9~WS & L2Dtr~ES, 0x5d779c05)
+    // -- SAM-10 --
+    add(Sam10~WS & L1Dtr~ES, 0x5d679c0a)
+    add(Sam10~WS & L2Dtr~ES, 0x5d779c0a)
+    // -- SAM-11 --
+    add(Sam11~WS & L1Dtr~ES, 0x5d679d00)
+    add(Sam11~WS & L2Dtr~ES, 0x5d779d00)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD
