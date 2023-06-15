@@ -396,6 +396,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 	  Rules += main~(11,191,2,181) | (base ~> main)~(2,0,153,2)
 	  Rules += main~(11,191,2,181) | (base ~> main)~(2,2,183,0)
 	  
+	  //into T-ints
+	  Rules += main~WE | (base ~> main)~(2,2,0,181)
+	  Rules += main~WE | (base ~> main)~(2,181,11,191)
+	  
 	  //main & main intersections
 	  Rules += main~WE | (base ~> main)~WE & (base ~> main)~NS  		// OxO from orth
 	  Rules += main~(0,0,2,2) | (base ~> main)~WE & (base ~> main)~NS  	// OxO from 90-bend
