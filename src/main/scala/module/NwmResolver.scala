@@ -74,7 +74,7 @@ import NwmResolver._
 class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
 
   /** is defined for all tiles that do not contain RHW, but NWM */
-  def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && t.segs.exists(_.network.isNwm)
+  def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && !t.segs.exists(seg => SamNetworks.contains(seg.network)) && t.segs.exists(_.network.isNwm)
 
   // orientation relative to RHW scheme
   private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
