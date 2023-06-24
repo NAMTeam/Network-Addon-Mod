@@ -14,10 +14,6 @@ object NetworkProperties {
     !(n >= Tla5 && n <= Ave6m)
   }
 
-  def hasOverhang(n: Network): Boolean = {
-    Set[Network](Rhw6s, L1Rhw6s, L2Rhw6s).contains(n)
-  } 
-
   def isDoubleTile(n: Network): Boolean = {
     n.typ == AvenueLike || n >= Rhw8sm && n <= L2Rhw12s || n >= Tla5 && n <= Rd6
   }
