@@ -52,7 +52,8 @@ object NetworkProperties {
       assert(any.isRhw)
       rhwIntersectionAllowed(any, rhw)
     } else {
-      if (!RhwResolver.rhwPieceId.contains(any)) false
+      if (rhw.height == 0 && isSingleTile(rhw) && List(L1Dtr, L2Dtr).contains(any)) true
+      else if (!RhwResolver.rhwPieceId.contains(any)) false
       else if (rhw.height != any.height) true
       else if (rhw.height != 0) false
       else if (any > rhw && any.isRhw) rhwIntersectionAllowed(any, rhw)
