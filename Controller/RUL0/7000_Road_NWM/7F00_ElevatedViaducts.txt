@@ -20,6 +20,8 @@ AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, 
 AddTypes = 7F10, 17F10, 27F10, 37F10, 47F10, 57F10, 67F10, 77F10, 87F10, 97F10, A7F10, B7F10, C7F10, D7F10, E7F10, F7F10 ;Road 1-Level FLEX-HT Diag
 AddTypes = 7F11, 17F11, 27F11, 37F11, 47F11, 57F11, 67F11, 77F11, 87F11, 97F11, A7F11, B7F11, C7F11, D7F11, E7F11, F7F11 ;One-Way Road 1-Level FLEX-HT Diag
 AddTypes = 7F12, 17F12, 27F12, 37F12, 47F12, 57F12, 67F12, 77F12, 87F12, 97F12, A7F12, B7F12, C7F12, D7F12, E7F12, F7F12 ;Avenue 1-Level FLEX-HT Diag
+AddTypes = 7F17, 17F17, 27F17, 37F17, 47F17, 57F17, 67F17, 77F17, 87F17, 97F17, A7F17, B7F17, C7F17, D7F17, E7F17, F7F17 ;Avenue 1-Level FLEX-OST
+AddTypes = 7F18, 17F18, 27F18, 37F18, 47F18, 57F18, 67F18, 77F18, 87F18, 97F18, A7F18, B7F18, C7F18, D7F18, E7F18, F7F18 ;Avenue 2-Level FLEX-OST
 
 ;FLEX Road Viaduct Overpasses BUTTON SECTION
 RotationRing = 7F30, 17F30, 27F30, 37F30, 47F30, 57F30, 67F30, 77F30, 87F30, 97F30, A7F30, B7F30, C7F30, D7F30, E7F30, F7F30 ;Road FLEX Ortho Overpass
@@ -1204,6 +1206,151 @@ CopyFrom	=	0x57F12
 CopyFrom	=	0x67F12
 [HighwayIntersectionInfo_0x000F7F12]
 CopyFrom	=	0x77F12
+
+
+[HighwayIntersectionInfo_0x00007F17]
+;Added by memo 2023-07-03
+;Avenue FLEXSlope-L1
+Piece = 48.0, 0.0, 1, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=...DA...
+CellLayout=..bda..<
+CellLayout=..^.....
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00020001, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00020003, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+CheckType = d - avenue: 0x00040404, 0x000000FF optional
+CheckType = D - avenue: 0x04040004, 0x000000FF optional
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08000F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F17]
+CopyFrom = 0x7F17
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F17]
+; Avenue FLEXSlope-L1 (rotated by 180 degrees)
+; Added by memo 2023-07-03
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile adjacent to the On-Slope Transition which overall
+; behaves more intuitively than the 0x00040004 tile.
+Piece = -48.0, 0.0, 3, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..DA.b.<
+CellLayout=..da....
+CellLayout=.....^..
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00030002, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00010002, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+CheckType = d - avenue: 0x00040404, 0x000000FF optional
+CheckType = D - avenue: 0x04040004, 0x000000FF optional
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=........
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08000F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00037F17]
+CopyFrom = 0x27F17
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F17]
+CopyFrom = 0x7F17
+[HighwayIntersectionInfo_0x00057F17]
+CopyFrom = 0x17F17
+[HighwayIntersectionInfo_0x00067F17]
+CopyFrom = 0x27F17
+[HighwayIntersectionInfo_0x00077F17]
+CopyFrom = 0x37F17
+
+
+[HighwayIntersectionInfo_0x00007F18]
+;Added by memo 2023-07-03
+;Avenue FLEXSlope-L2
+Piece = 48.0, 0.0, 1, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=...DA...
+CellLayout=..bda..<
+CellLayout=..^.....
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00010002, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00030002, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+CheckType = d - avenue: 0x00040404, 0x000000FF optional
+CheckType = D - avenue: 0x04040004, 0x000000FF optional
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08010F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F18]
+CopyFrom = 0x7F18
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F18]
+; Avenue FLEXSlope-L2 (rotated by 180 degrees)
+; Added by memo 2023-07-03
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile adjacent to the On-Slope Transition which overall
+; behaves more intuitively than the 0x00040004 tile.
+Piece = -48.0, 0.0, 3, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..DA.b.<
+CellLayout=..da....
+CellLayout=.....^..
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00020003, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00020001, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+CheckType = d - avenue: 0x00040404, 0x000000FF optional
+CheckType = D - avenue: 0x04040004, 0x000000FF optional
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=........
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08010F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00037F18]
+CopyFrom = 0x27F18
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F18]
+CopyFrom = 0x7F18
+[HighwayIntersectionInfo_0x00057F18]
+CopyFrom = 0x17F18
+[HighwayIntersectionInfo_0x00067F18]
+CopyFrom = 0x27F18
+[HighwayIntersectionInfo_0x00077F18]
+CopyFrom = 0x37F18
+
 
 
 ;;Road Puzzle Pieces
