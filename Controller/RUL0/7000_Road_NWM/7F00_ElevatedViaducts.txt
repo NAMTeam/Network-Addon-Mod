@@ -20,6 +20,8 @@ AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, 
 AddTypes = 7F10, 17F10, 27F10, 37F10, 47F10, 57F10, 67F10, 77F10, 87F10, 97F10, A7F10, B7F10, C7F10, D7F10, E7F10, F7F10 ;Road 1-Level FLEX-HT Diag
 AddTypes = 7F11, 17F11, 27F11, 37F11, 47F11, 57F11, 67F11, 77F11, 87F11, 97F11, A7F11, B7F11, C7F11, D7F11, E7F11, F7F11 ;One-Way Road 1-Level FLEX-HT Diag
 AddTypes = 7F12, 17F12, 27F12, 37F12, 47F12, 57F12, 67F12, 77F12, 87F12, 97F12, A7F12, B7F12, C7F12, D7F12, E7F12, F7F12 ;Avenue 1-Level FLEX-HT Diag
+AddTypes = 7F15, 17F15, 27F15, 37F15, 47F15, 57F15, 67F15, 77F15, 87F15, 97F15, A7F15, B7F15, C7F15, D7F15, E7F15, F7F15 ;One-Way Road 1-Level FLEX-OST
+AddTypes = 7F16, 17F16, 27F16, 37F16, 47F16, 57F16, 67F16, 77F16, 87F16, 97F16, A7F16, B7F16, C7F16, D7F16, E7F16, F7F16 ;One-Way Road 2-Level FLEX-OST
 AddTypes = 7F17, 17F17, 27F17, 37F17, 47F17, 57F17, 67F17, 77F17, 87F17, 97F17, A7F17, B7F17, C7F17, D7F17, E7F17, F7F17 ;Avenue 1-Level FLEX-OST
 AddTypes = 7F18, 17F18, 27F18, 37F18, 47F18, 57F18, 67F18, 77F18, 87F18, 97F18, A7F18, B7F18, C7F18, D7F18, E7F18, F7F18 ;Avenue 2-Level FLEX-OST
 
@@ -1206,6 +1208,136 @@ CopyFrom	=	0x57F12
 CopyFrom	=	0x67F12
 [HighwayIntersectionInfo_0x000F7F12]
 CopyFrom	=	0x77F12
+
+
+[HighwayIntersectionInfo_0x00007F15]
+;Added by memo 2023-07-09
+;OWR FLEXSlope-L1
+Piece = 48.0, 0.0, 1, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
+
+CheckType = a - rail: 0x00040000 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = b - onewayroad: 0x00040004, 0x000000FF optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F15]
+CopyFrom = 0x7F15
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F15]
+; OWR FLEXSlope-L1 (rotated by 180 degrees)
+; Added by memo 2023-07-09
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - rail: 0x00000004 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = b - onewayroad: 0x00040004, 0x000000FF optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00037F15]
+CopyFrom = 0x27F15
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F15]
+CopyFrom = 0x7F15
+[HighwayIntersectionInfo_0x00057F15]
+CopyFrom = 0x17F15
+[HighwayIntersectionInfo_0x00067F15]
+CopyFrom = 0x27F15
+[HighwayIntersectionInfo_0x00077F15]
+CopyFrom = 0x37F15
+
+
+[HighwayIntersectionInfo_0x00007F16]
+;Added by memo 2023-07-09
+;OWR FLEXSlope-L2
+Piece = 48.0, 0.0, 1, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
+
+CheckType = a - lightrail: 0x00040000 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = b - onewayroad: 0x00040004, 0x000000FF optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F16]
+CopyFrom = 0x7F16
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F16]
+; OWR FLEXSlope-L2 (rotated by 180 degrees)
+; Added by memo 2023-07-09
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - lightrail: 0x00000004 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = b - onewayroad: 0x00040004, 0x000000FF optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00037F16]
+CopyFrom = 0x27F16
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F16]
+CopyFrom = 0x7F16
+[HighwayIntersectionInfo_0x00057F16]
+CopyFrom = 0x17F16
+[HighwayIntersectionInfo_0x00067F16]
+CopyFrom = 0x27F16
+[HighwayIntersectionInfo_0x00077F16]
+CopyFrom = 0x37F16
 
 
 [HighwayIntersectionInfo_0x00007F17]
