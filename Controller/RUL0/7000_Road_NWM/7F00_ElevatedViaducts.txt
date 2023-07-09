@@ -15,11 +15,13 @@ AddTypes = 7F0A, 17F0A, 27F0A, 37F0A, 47F0A, 57F0A, 67F0A, 77F0A, 87F0A, 97F0A, 
 AddTypes = 7F0B, 17F0B, 27F0B, 37F0B, 47F0B, 57F0B, 67F0B, 77F0B, 87F0B, 97F0B, A7F0B, B7F0B, C7F0B, D7F0B, E7F0B, F7F0B ;One-Way Road 2-Level FLEX-HT
 AddTypes = 7F0C, 17F0C, 27F0C, 37F0C, 47F0C, 57F0C, 67F0C, 77F0C, 87F0C, 97F0C, A7F0C, B7F0C, C7F0C, D7F0C, E7F0C, F7F0C ;Avenue 1-Level FLEX-HT
 AddTypes = 7F0D, 17F0D, 27F0D, 37F0D, 47F0D, 57F0D, 67F0D, 77F0D, 87F0D, 97F0D, A7F0D, B7F0D, C7F0D, D7F0D, E7F0D, F7F0D ;Avenue 2-Level FLEX-HT
-AddTypes = 7F08, 17F08, 27F08, 37F08, 47F08, 57F08, 67F08, 77F08, 87F08, 97F08, A7F08, B7F08, C7F08, D7F08, E7F08, F7F08 ;All-Roadway 1-Level FLEX-OST
-AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, A7F09, B7F09, C7F09, D7F09, E7F09, F7F09 ;All-Roadway 2-Level FLEX-OST
+;AddTypes = 7F08, 17F08, 27F08, 37F08, 47F08, 57F08, 67F08, 77F08, 87F08, 97F08, A7F08, B7F08, C7F08, D7F08, E7F08, F7F08 ;All-Roadway 1-Level FLEX-OST
+;AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, A7F09, B7F09, C7F09, D7F09, E7F09, F7F09 ;All-Roadway 2-Level FLEX-OST
 AddTypes = 7F10, 17F10, 27F10, 37F10, 47F10, 57F10, 67F10, 77F10, 87F10, 97F10, A7F10, B7F10, C7F10, D7F10, E7F10, F7F10 ;Road 1-Level FLEX-HT Diag
 AddTypes = 7F11, 17F11, 27F11, 37F11, 47F11, 57F11, 67F11, 77F11, 87F11, 97F11, A7F11, B7F11, C7F11, D7F11, E7F11, F7F11 ;One-Way Road 1-Level FLEX-HT Diag
 AddTypes = 7F12, 17F12, 27F12, 37F12, 47F12, 57F12, 67F12, 77F12, 87F12, 97F12, A7F12, B7F12, C7F12, D7F12, E7F12, F7F12 ;Avenue 1-Level FLEX-HT Diag
+AddTypes = 7F13, 17F13, 27F13, 37F13, 47F13, 57F13, 67F13, 77F13, 87F13, 97F13, A7F13, B7F13, C7F13, D7F13, E7F13, F7F13 ;Road 1-Level FLEX-OST
+AddTypes = 7F14, 17F14, 27F14, 37F14, 47F14, 57F14, 67F14, 77F14, 87F14, 97F14, A7F14, B7F14, C7F14, D7F14, E7F14, F7F14 ;Road 2-Level FLEX-OST
 AddTypes = 7F15, 17F15, 27F15, 37F15, 47F15, 57F15, 67F15, 77F15, 87F15, 97F15, A7F15, B7F15, C7F15, D7F15, E7F15, F7F15 ;One-Way Road 1-Level FLEX-OST
 AddTypes = 7F16, 17F16, 27F16, 37F16, 47F16, 57F16, 67F16, 77F16, 87F16, 97F16, A7F16, B7F16, C7F16, D7F16, E7F16, F7F16 ;One-Way Road 2-Level FLEX-OST
 AddTypes = 7F17, 17F17, 27F17, 37F17, 47F17, 57F17, 67F17, 77F17, 87F17, 97F17, A7F17, B7F17, C7F17, D7F17, E7F17, F7F17 ;Avenue 1-Level FLEX-OST
@@ -1208,6 +1210,136 @@ CopyFrom	=	0x57F12
 CopyFrom	=	0x67F12
 [HighwayIntersectionInfo_0x000F7F12]
 CopyFrom	=	0x77F12
+
+
+[HighwayIntersectionInfo_0x00007F13]
+;Added by memo 2023-07-09
+;Road FLEXSlope-L1
+Piece = 48.0, 0.0, 1, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00020001, 0x00000000 optional
+CheckType = b - road: 0x00040004, 0x000000FF optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F13]
+CopyFrom = 0x7F13
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F13]
+; Road FLEXSlope-L1 (rotated by 180 degrees)
+; Added by memo 2023-07-09
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00010002, 0x00000000 optional
+CheckType = b - road: 0x00040004, 0x000000FF optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00037F13]
+CopyFrom = 0x27F13
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F13]
+CopyFrom = 0x7F13
+[HighwayIntersectionInfo_0x00057F13]
+CopyFrom = 0x17F13
+[HighwayIntersectionInfo_0x00067F13]
+CopyFrom = 0x27F13
+[HighwayIntersectionInfo_0x00077F13]
+CopyFrom = 0x37F13
+
+
+[HighwayIntersectionInfo_0x00007F14]
+;Added by memo 2023-07-09
+;Road FLEXSlope-L2
+Piece = 48.0, 0.0, 1, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00020003, 0x00000000 optional
+CheckType = b - road: 0x00040004, 0x000000FF optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F14]
+CopyFrom = 0x7F14
+Rotate = 1
+
+[HighwayIntersectionInfo_0x00027F14]
+; Road FLEXSlope-L2 (rotated by 180 degrees)
+; Added by memo 2023-07-09
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00030002, 0x00000000 optional
+CheckType = b - road: 0x00040004, 0x000000FF optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00037F14]
+CopyFrom = 0x27F14
+Rotate = 1
+[HighwayIntersectionInfo_0x00047F14]
+CopyFrom = 0x7F14
+[HighwayIntersectionInfo_0x00057F14]
+CopyFrom = 0x17F14
+[HighwayIntersectionInfo_0x00067F14]
+CopyFrom = 0x27F14
+[HighwayIntersectionInfo_0x00077F14]
+CopyFrom = 0x37F14
 
 
 [HighwayIntersectionInfo_0x00007F15]
