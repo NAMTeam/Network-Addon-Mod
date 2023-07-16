@@ -114,10 +114,10 @@ class SamResolver extends IdResolver {
       add(sam~WE & Lightrail~NS, 0x5e516000 + offset)   // SAM-Lightrail
       add(sam~WE & Monorail~NS, 0x5e51a000 + offset)    // SAM-Monorail
       add(sam~NS & Str~WE, 0x5e511009 + offset)         // SAM-STR
-      add(sam~NS & Glr1~WE, 0x5e538000 + offset)        // SAM-GLR 1
-      add(sam~NS & Glr2~WE, 0x5e538080 + offset)        // SAM-GLR 2
-      // add(sam~NS & Glr3~WE, 0x5e538005 + offset) // SAM-GLR 3
-      // add(sam~NS & Glr4~WE, 0x5e538085 + offset) // SAM-GLR 4
+      add(sam~WE & Glr1~NS, 0x5e538000 + offset)        // SAM-GLR 1
+      add(sam~WE & Glr2~NS, 0x5e538080 + offset)        // SAM-GLR 2
+      // add(sam~WE & Glr3~NS, 0x5e538005 + offset) // SAM-GLR 3
+      // add(sam~WE & Glr4~NS, 0x5e538085 + offset) // SAM-GLR 4
       // add(sam~WE & L1Dtr~NS, IID + offset) // SAM-L1 DTR
       // add(sam~WE & L2Dtr~NS, IID + offset) // SAM-L2 DTR
       // check why this code is problematic
@@ -192,10 +192,10 @@ class SamResolver extends IdResolver {
       add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
       // add(sam~NS & L1Dtr~EN, IID + offset) // SAM x L1 DTR
       // add(sam~NS & L2Dtr~EN, IID + offset) // SAM x L2 DTR
-      add(sam~NS & Glr1~SE, 0x5e53a000 + offset)                  // SAM x GLR 1
-      add(sam~NS & Glr2~SE, 0x5e53a080 + offset)                  // SAM x GLR 2
-      // add(sam~NS & Glr3~SE, 0x5e53a009 + offset) // SAM x GLR 3
-      // add(sam~NS & Glr4~SE, 0x5e53a089 + offset) // SAM x GLR 4
+      add(sam~NS & Glr1~EN, 0x5e539000 + offset)                  // SAM x GLR 1
+      add(sam~NS & Glr2~EN, 0x5e539080 + offset)                  // SAM x GLR 2
+      // add(sam~NS & Glr3~EN, 0x5e539009 + offset) // SAM x GLR 3
+      // add(sam~NS & Glr4~EN, 0x5e539089 + offset) // SAM x GLR 4
       add(sam~WE & (Tla3~SE).projectLeft, 0x5e670000 + offset)    // SAM x TLA-3
       add(sam~WE & (Tla3~SE).projectRight, 0x7e670000 + offset)   // SAM x TLA-3
       add(sam~WE & Ave2~SE, 0x5e671000 + offset) // SAM x AVE-2
