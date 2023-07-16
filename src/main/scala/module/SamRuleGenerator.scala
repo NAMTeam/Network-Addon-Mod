@@ -14,7 +14,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
     val SamNetworks = List(Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
 
     val CrossNetworks = List(Road, Avenue, Onewayroad,
-    Rail, Lightrail, Monorail, Glr1, Glr2/*, Str*/, Dirtroad/*, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw12s, Rhw6cm,
+    Rail, L1Dtr, L2Dtr, Lightrail, Monorail, Glr1, Glr2/*, Str*/, Dirtroad/*, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw12s, Rhw6cm,
     Rhw6c, Rhw8c, L1Rhw2, L1Rhw3, L1Mis, L1Rhw4, L1Rhw6s, L1Rhw8sm, L1Rhw8s, L1Rhw10s, L1Rhw12s, L1Rhw6cm,
     L1Rhw6c, L1Rhw8c, L2Rhw2, L2Rhw3, L2Mis, L2Rhw4, L2Rhw6s, L2Rhw8sm, L2Rhw8s, L2Rhw10s, L2Rhw12s, L2Rhw6cm,
     L2Rhw6c, L2Rhw8c, L3Mis, L3Rhw4, L3Rhw6s, L4Mis, L4Rhw4, L4Rhw6s*/, Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4/*, Tla5, Owr4, 
@@ -994,7 +994,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 // Compile individually with `sbt "runMain metarules.module.CompileSamCode"`.
 object CompileSamCode extends AbstractMain {
-  lazy val resolve: IdResolver = new SamResolver orElse new MiscResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new SamResolver orElse new RealRailwayResolver orElse new MiscResolver orElse new NwmResolver
   val generator = new SamRuleGenerator(_)
   lazy val file = new java.io.File("target/Sec9_SAM_MetaGenerated_MANAGED.txt")
 }
