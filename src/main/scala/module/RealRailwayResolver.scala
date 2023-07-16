@@ -546,35 +546,35 @@ class RealRailwayResolver extends IdResolver {
     add(Nrd4~WS & L2Dtr~ES, 0x5d77bc00)
     // ...
     // -- SAM-2 --
-    add(Sam2~WS & L1Dtr~ES, 0x5d679a00)
-    add(Sam2~WS & L2Dtr~ES, 0x5d779a00)
+    add(Sam2~WS & L1Dtr~ES, 0x5d67ca00)
+    add(Sam2~WS & L2Dtr~ES, 0x5d77ca00)
     // -- SAM-3 --
-    add(Sam3~WS & L1Dtr~ES, 0x5d679a05)
-    add(Sam3~WS & L2Dtr~ES, 0x5d779a05)
+    add(Sam3~WS & L1Dtr~ES, 0x5d67ca05)
+    add(Sam3~WS & L2Dtr~ES, 0x5d77ca05)
     // -- SAM-4 --
-    add(Sam4~WS & L1Dtr~ES, 0x5d679a0a)
-    add(Sam4~WS & L2Dtr~ES, 0x5d779a0a)
+    add(Sam4~WS & L1Dtr~ES, 0x5d67ca0a)
+    add(Sam4~WS & L2Dtr~ES, 0x5d77ca0a)
     // -- SAM-5 --
-    add(Sam5~WS & L1Dtr~ES, 0x5d679b00)
-    add(Sam5~WS & L2Dtr~ES, 0x5d779b00)
+    add(Sam5~WS & L1Dtr~ES, 0x5d67cb00)
+    add(Sam5~WS & L2Dtr~ES, 0x5d77cb00)
     // -- SAM-6 --
-    add(Sam6~WS & L1Dtr~ES, 0x5d679b05)
-    add(Sam6~WS & L2Dtr~ES, 0x5d779b05)
+    add(Sam6~WS & L1Dtr~ES, 0x5d67cb05)
+    add(Sam6~WS & L2Dtr~ES, 0x5d77cb05)
     // -- SAM-7 --
-    add(Sam7~WS & L1Dtr~ES, 0x5d679b0a)
-    add(Sam7~WS & L2Dtr~ES, 0x5d779b0a)
+    add(Sam7~WS & L1Dtr~ES, 0x5d67cb0a)
+    add(Sam7~WS & L2Dtr~ES, 0x5d77cb0a)
     // -- SAM-8 --
-    add(Sam8~WS & L1Dtr~ES, 0x5d679c00)
-    add(Sam8~WS & L2Dtr~ES, 0x5d779c00)
+    add(Sam8~WS & L1Dtr~ES, 0x5d67cc00)
+    add(Sam8~WS & L2Dtr~ES, 0x5d77cc00)
     // -- SAM-9 --
-    add(Sam9~WS & L1Dtr~ES, 0x5d679c05)
-    add(Sam9~WS & L2Dtr~ES, 0x5d779c05)
+    add(Sam9~WS & L1Dtr~ES, 0x5d67cc05)
+    add(Sam9~WS & L2Dtr~ES, 0x5d77cc05)
     // -- SAM-10 --
-    add(Sam10~WS & L1Dtr~ES, 0x5d679c0a)
-    add(Sam10~WS & L2Dtr~ES, 0x5d779c0a)
+    add(Sam10~WS & L1Dtr~ES, 0x5d67cc0a)
+    add(Sam10~WS & L2Dtr~ES, 0x5d77cc0a)
     // -- SAM-11 --
-    add(Sam11~WS & L1Dtr~ES, 0x5d679d00)
-    add(Sam11~WS & L2Dtr~ES, 0x5d779d00)
+    add(Sam11~WS & L1Dtr~ES, 0x5d67cd00)
+    add(Sam11~WS & L2Dtr~ES, 0x5d77cd00)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD
