@@ -53,7 +53,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(0,0,1,3) | Street~(2,13,0,0) | % | sam~(1,3,0,0)                // diag top to diag fix
       // Rules += sam~(0,0,1,3) | sam~(2,13,0,0) | % | sam~(3,0,0,1)                   // diag top to diag fix
       Rules += sam~(0,0,1,13) | (Street ~> sam)~CNW                                 // orth-diag top to diag stub
-      Rules += sam~(0,0,1,13) | (Street ~> sam)~(0,11,3,0)                          // orth-diag top to orth-diag top
+      Rules += sam~(0,0,1,13) | (Street ~> sam)~(1,13,0,0)                          // orth-diag top to orth-diag top
 
       Rules += sam~SE~ES | (Street ~> sam)~(1,13,0,0)                               // diag to orth-diag top
       Rules += sam~(0,0,11,3) | (Street ~> sam)~(11,0,2,0)                          // orth-diag top to orth-diag bottom
@@ -245,14 +245,11 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(0,82,82,0) | (Street ~> sam)~(82,0,0,13)
       Rules += sam~(0,0,13,82) | (Street ~> sam)~(13,183,0,193)  
       Rules += sam~(0,0,13,82) | (Street ~> sam)~(13,183,2,193) // T-int
-      // needs work below
-      Rules += sam~(193,13,183,0) | (Street ~> sam)~(193,0,0,191)
-      Rules += sam~(193,13,183,2) | (Street ~> sam)~(193,0,0,191) // T-int
 
       Rules += sam~(193,13,183,0) | (Street ~> sam)~(183,0,2,0) //
       Rules += sam~(193,13,183,0) | (Street ~> sam)~(183,0,2,2) // T-int
       Rules += sam~(193,13,183,2) | (Street ~> sam)~(183,0,2,0) //
-      Rules += sam~(193,13,183,2) | (Street ~> sam)~(183,0,2,2) // T-int
+      // Rules += sam~(193,13,183,2) | (Street ~> sam)~(183,0,2,2) // T-int not possible with INRUL
 	  
       // continuations
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WE
@@ -260,18 +257,20 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WC
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WC
 
-      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,0)
-      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,11,0)
+      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,0)  // sharp 90 1
+      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,0,2)  // sharp 90 2
+      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,11,0) // orth-diag 1
+      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,13,0) // orth-diag 2
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WE & (Street ~> sam)~NS
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WC & (Street ~> sam)~NS
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WE & (Street ~> sam)~NC
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WE & (Street ~> sam)~SE
       Rules += sam~(183,0,2,0) | (Street ~> sam)~WC & (Street ~> sam)~SE
-      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,2)
-      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,0)
+      // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,2) // not possible with INRUL
+      // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,0) // not possible with INRUL
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,11,0)
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,13,0)
-      Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,11,0)
+      // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,11,0) // not possible with INRUL
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,13,13,0)
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,11)
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,13)
@@ -286,18 +285,20 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,151,0)
       Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,181,2)
 
-      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,0)
-      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,11,0)
+      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,0)  // sharp 90 1
+      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,0,2)  // sharp 90 2
+      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,11,0) // orth-diag 1
+      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,13,0) // orth-diag 2
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~NS
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WC & (Street ~> sam)~NS
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~NC
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~SE
       Rules += sam~(183,0,2,2) | (Street ~> sam)~WC & (Street ~> sam)~SE
-      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,2)
-      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,0)
+      // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,2) // not possible with INRUL
+      // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,0) // not possible with INRUL
       Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,11,0)
       Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,13,0)
-      Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,11,0)
+      // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,11,0) // not possible with INRUL
       Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,13,13,0)
       Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,11)
       Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,13)
@@ -910,7 +911,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~EN & minor~ES | (Street ~> sam)~SW & minor~SharedDiagRight  // DxD middle
           Rules += sam~ES & minor~SharedDiagLeft | (Street ~> sam)~NW & minor~SW   // DxD end
           Rules += sam~ES & minor~SW | (Street ~> sam)~NW                          // DxD continue
-          Rules += sam~ES & minor~SW | (Street ~> sam)~(3,0,0,0)                   // DxD continue stub
+          Rules += sam~ES & minor~SW | (Street ~> sam)~CNW                   // DxD continue stub
 
           // T-intersections
           // OxO
@@ -938,6 +939,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         }
 		
         for (minor2 <- CrossNetworks if minor2 != sam) {
+          // the following block needs work, produces bad rules when minor or minor2 is avenue
           if (hasRightShoulder(minor2)) {
             Rules += sam~WE & minor~SN~NS | (Street ~> sam)~WE & minor2~NS~SN   // OxO | OxO adj
             Rules += sam~WE & minor~WN~NW | (Street ~> sam)~WE & minor2~NS~SN   // OxD | OxO adjacencies
