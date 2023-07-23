@@ -32,29 +32,30 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
     for (main <- RrwNetworks; base <- main.base) {
 
-      Rules += main~WE | (base ~> main)~WE            // ortho continue
-      Rules += main~WE | base~CW | % | main~WE        // ortho continue stub convert
+      // base
+      Rules += main~WE | (base ~> main)~WE        // ortho continue
+      Rules += main~WE | base~CW | % | main~WE    // ortho continue stub convert
 
-      Rules += main~ES | (base ~> main)~NW      // diag continue
-      Rules += main~ES | base~CNW | % | main~NW // diag stub convert
+      Rules += main~ES | (base ~> main)~NW        // diag continue
+      Rules += main~ES | base~CNW | % | main~NW   // diag stub convert
 
-      Rules += Rail~CW & main~CE | (base ~> main)~WE // Orth OST Adj
-      Rules += Rail~CW & main~CE | base~CW | % | main~WE
-      Rules += Rail~CW & main~CE | base~CE | % | main~WE 
-      Rules += Rail~CE & main~CW | base~CE | % | base~WE
+      // height transitions
+      Rules += Rail~CW & main~CE | (base ~> main)~WE      // orth OST continue to viaduct
+      Rules += Rail~CW & main~CE | base~CW | % | main~WE  // orth OST continue to viaduct stub convert
+      Rules += Rail~CW & main~CE | base~CE | % | main~WE  // orth OST continue to viaduct stub convert (jump)
+      Rules += Rail~CE & main~CW | base~CE | % | base~WE  // orth OST continue to ground stub convert (jump)
+    
+      Rules += Rail~CW & main~WE | (base ~> main)~WE      // orth ramp HT continue
+      Rules += Rail~CW & main~WE | base~CW | % | main~WE  // orth ramp HT continue stub convert
 
-      Rules += Rail~CW & main~WE | (base ~> main)~WE // Orth Ramp HT
-      Rules += Rail~CW & main~WE | base~CW | % | main~WE
-
-      Rules += Rail~(0,0,0,13) & main~(0,0,1,13) | (base ~> main)~NW      // diag OST
-
-      Rules += Rail~(0,0,0,3) & main~(0,0,1,3) | (base ~> main)~NW        // diag Ramp HT
+      Rules += Rail~(0,0,0,993) & main~(0,0,1,993) | (base ~> main)~NW  // diag OST continue
+      Rules += Rail~(0,0,0,983) & main~(0,0,1,983) | (base ~> main)~NW  // diag ramp HT continue
       
-      // helper/overhang tiles rules
+      // helper/overhang tiles
       Rules += main~(42,0,2,0) | (base ~> main)~WE                // OxO helper continue
-      Rules += main~(42,0,2,0) | base~CW | % | main~WE            // OxO helper continue stub
+      Rules += main~(42,0,2,0) | base~CW | % | main~WE            // OxO helper continue stub convert
       Rules += main~(72,0,2,8) | (base ~> main)~WE                // OxD helper continue
-      Rules += main~(72,0,2,8) | base~CW | % | main~WE            // OxD helper continue stub
+      Rules += main~(72,0,2,8) | base~CW | % | main~WE            // OxD helper continue stub convert
       Rules += main~(0,41,43,0) | main~WS | % | main~(43,0,0,1)   // DxO helper tile two
       
       // defines adjacent ortho height transitions for the main network in WE orientation
