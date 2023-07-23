@@ -47,11 +47,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
       Rules += Rail~CW & main~WE | base~CW | % | main~WE
 
       Rules += Rail~(0,0,0,13) & main~(0,0,1,13) | (base ~> main)~NW      // diag OST
-      Rules += Rail~(0,0,0,13) & main~(0,0,1,13) | base~CNW | % | main~NW // diag OST stub conversion
-      Rules += Rail~(0,0,0,13) & main~(0,0,1,13) | base~NWC | % | main~NW // diag OST stub conversion (jump)
 
       Rules += Rail~(0,0,0,3) & main~(0,0,1,3) | (base ~> main)~NW        // diag Ramp HT
-      Rules += Rail~(0,0,0,3) & main~(0,0,1,3) | base~CNW | % | main~NW   // diag Ramp HT stub conversion
       
       // helper/overhang tiles rules
       Rules += main~(42,0,2,0) | (base ~> main)~WE                // OxO helper continue
@@ -174,7 +171,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
               } 
               // continue rules on non-overhang side
               Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
-              Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
 
           } else {
               for (diagStart <- diagStarts) {
@@ -182,7 +178,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
                 Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
               }   
               Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
-              Rules += main~ES & minor~NS | base~WNC | % | main~NW  // DxO continue stub conversion
           }
           // DxO across rules needed in all cases
           Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO across
@@ -195,7 +190,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           }
           Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW        // DxD across
           Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
-          Rules += main~SE & minor~WS | base~WNC | % | main~NW  // DxD continue stub conversion
         }
 
         if (minor.typ == AvenueLike) {
@@ -225,7 +219,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN      // DxO middle 2
           Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE      // DxO end
           Rules += main~ES & minor~SN | (base ~> main)~NW                 // DxO continue
-          Rules += main~ES & minor~SN | base~WNC | % | main~NW            // DxO continue stub conversion
 
           // DxD
           for (diagStart <- diagStarts) {
@@ -234,7 +227,6 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
           Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW                    // DxD end
           Rules += main~ES & minor~SW | (base ~> main)~NW           // DxD continue
-          Rules += main~ES & minor~SW | base~WNC | % | main~NW      // DxD continue stub conversion
         }
       }
     }
