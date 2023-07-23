@@ -47,15 +47,15 @@ class RealRailwayResolver extends IdResolver {
     add(L1Dtr~NS & L2Dtr~CN, 0x5d7e0900)  // Orth Ramp HT Lower L1->L2
     add(L1Dtr~CS & L2Dtr~NS, 0x5d7e0800)  // Orth Ramp HT Upper L0->L2
 
-    add(Rail~(1,13,0,0) & L1Dtr~(0,13,0,0), 0x5d6f020e) // Diag OST ground-side L0->L1
-    add(Rail~(0,0,0,13) & L1Dtr~(0,0,1,13), 0x5d6f010e) // Diag OST elevated-side L0->L1
-    add(Rail~(1,13,0,0) & L2Dtr~(0,13,0,0), 0x5d7f020e) // Diag OST ground-side L0->L2
-    add(Rail~(0,0,0,13) & L2Dtr~(0,0,1,13), 0x5d7f010e) // Diag OST elevated-side L0->L2
+    add(Rail~(1,993,0,0) & L1Dtr~(0,993,0,0), 0x5d6f020e) // Diag OST ground-side L0->L1
+    add(Rail~(0,0,0,993) & L1Dtr~(0,0,1,993), 0x5d6f010e) // Diag OST elevated-side L0->L1
+    add(Rail~(1,993,0,0) & L2Dtr~(0,993,0,0), 0x5d7f020e) // Diag OST ground-side L0->L2
+    add(Rail~(0,0,0,993) & L2Dtr~(0,0,1,993), 0x5d7f010e) // Diag OST elevated-side L0->L2
 
-    add(Rail~(0,0,1,3) & L1Dtr~(0,0,1,0), 0x5d6e1000) // Diag Ramp HT lower L0->L1
-    add(Rail~(0,0,0,3) & L1Dtr~(0,0,1,3), 0x5d6e1700) // Diag Ramp HT upper L0->L1
-    add(Rail~(0,0,1,3) & L2Dtr~(0,0,1,0), 0x5d7e1000) // Diag Ramp HT lower L0->L1
-    add(Rail~(0,0,0,3) & L2Dtr~(0,0,1,3), 0x5d7e1c00) // Diag Ramp HT upper L0->L2
+    add(Rail~(0,0,981,3) & L1Dtr~(0,0,981,0), 0x5d6e1000) // Diag Ramp HT lower L0->L1
+    add(Rail~(0,0,0,983) & L1Dtr~(0,0,1,983), 0x5d6e1700) // Diag Ramp HT upper L0->L1
+    add(Rail~(0,0,981,3) & L2Dtr~(0,0,981,0), 0x5d7e1000) // Diag Ramp HT lower L0->L1
+    add(Rail~(0,0,0,983) & L2Dtr~(0,0,1,983), 0x5d7e1c00) // Diag Ramp HT upper L0->L2
 
     /* DTR Crossings (L1, & L2)
     This should be a fairly predictable scheme - should be able to automate resolver here.

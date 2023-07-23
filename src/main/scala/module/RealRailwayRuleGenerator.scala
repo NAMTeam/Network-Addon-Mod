@@ -64,8 +64,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
       }
       // defines adjacent diag height transitions for the main network in ES orientation
       val adjDiagHTs = main match {
-        case L1Dtr => List(Rail~(0,0,0,13) & L1Dtr~(0,0,1,13), Rail~(0,0,0,3) & L1Dtr~(0,0,1,3))
-        case L2Dtr => List(Rail~(0,0,0,13) & L2Dtr~(0,0,1,13), Rail~(0,0,0,3) & L2Dtr~(0,0,1,3))
+        case L1Dtr => List(Rail~(0,0,0,993) & L1Dtr~(0,0,1,993), Rail~(0,0,0,983) & L1Dtr~(0,0,1,983))
+        case L2Dtr => List(Rail~(0,0,0,993) & L2Dtr~(0,0,1,993), Rail~(0,0,0,983) & L2Dtr~(0,0,1,983))
       }
       // defines valid left side start tiles for orth & diag rules
       val orthStarts = Tile(main~WE) +: adjOrthHTs
