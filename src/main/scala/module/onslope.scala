@@ -32,7 +32,7 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
         Rules += (Dirtroad ~> lower)~EW | onslope     // lower < OST
 
         // adjacencies
-        for (minor <- RhwNetworks ++ (BaseNetworks - Subway) ++ NwmNetworks) {  // crossing network
+        for (minor <- RhwNetworks ++ (BaseNetworks - Subway) ++ NwmNetworks ++ GlrNetworks + Str + Hsr + L2Hsr) {  // crossing network
           if (intersectionAllowed(upper, minor)) {
             if (hasRightShoulder(minor)) {
               Rules += onslope | (Dirtroad ~> upper)~EW & minor~NS    // OST > upper crossing minor
