@@ -72,12 +72,16 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
           if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=false)) {
             Rules += onslope | (Dirtroad ~> upper)~(+2,0,-123,0)    // OST > R1 upper
             Rules += rhw2Slope | upper~(+2,0,-123,0) | onslope | %  // OST < R1 upper
+          }
+          if (hasR1CurveBase(lower) && hasR1Curve(lower, inside=false)) {
             Rules += lower~(+121,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
             Rules += (Dirtroad ~> lower)~(+121,0,-2,0) | onslope    // R1 lower < OST
           }
           if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=true)) {
             Rules += onslope | (Dirtroad ~> upper)~(+2,0,-121,0)    // OST > R1 upper
             Rules += rhw2Slope | upper~(+2,0,-121,0) | onslope | %  // OST < R1 upper
+          }
+          if (hasR1CurveBase(lower) && hasR1Curve(lower, inside=true)) {
             Rules += lower~(+123,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
             Rules += (Dirtroad ~> lower)~(+123,0,-2,0) | onslope    // R1 lower < OST
           }
