@@ -30,6 +30,8 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
         Rules += onslope | (Dirtroad ~> upper)~EW     // OST > upper
         Rules += rhw2Slope | upper~EW | onslope | %   // OST < upper
         Rules += (Dirtroad ~> lower)~EW | onslope     // lower < OST
+        Rules += onslope | (Dirtroad ~> upper)~CW     // OST > upper stub
+        Rules += (Dirtroad ~> lower)~EC | onslope     // lower stub < OST
 
         // adjacencies
         for (minor <- RhwNetworks ++ (BaseNetworks - Subway) ++ NwmNetworks ++ GlrNetworks + Str + Hsr + L2Hsr) {  // crossing network
