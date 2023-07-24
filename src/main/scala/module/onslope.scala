@@ -14,12 +14,13 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
     val rhw2SlopeL1 = IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
     val rhw2SlopeL2 = IdTile(0x57700100,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
 
-    for (main <- RhwNetworks - Dirtroad - Rhw10c if main.height == 0) {
+    for (main <- RhwNetworks - Rhw10c if main.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(main)) 4 else 2
+      val minHeight = if (main == Dirtroad) 1 else 0  // avoiding auto-L1Rhw2 and auto-L2Rhw2
       val rangeId = (RhwResolver.rhwRangeId(main) & 0xFFFFF) + ((RhwResolver.rhwRangeId(main) >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
       for {
         (levelDiff, rhw2Slope) <- Seq((1, rhw2SlopeL1), (2, rhw2SlopeL2))  // L1 vs L2 onslopes
-        height <- 0 to (maxHeight-levelDiff)
+        height <- minHeight to (maxHeight-levelDiff)
       } /*do*/ {
         val lower: Network = height~main
         val upper: Network = (height+levelDiff)~main
