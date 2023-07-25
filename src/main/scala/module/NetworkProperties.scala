@@ -58,7 +58,7 @@ object NetworkProperties {
         rhw == Rhw3 && any == Dirtroad ||
         rhw == Mis && (any == Dirtroad || any == Rhw3) ||
         rhw == Rhw4 && any == Dirtroad ||
-        rhw <= Rhw4 && any < Dirtroad
+        rhw <= Rhw4 && (any < Dirtroad || any == Str)
       }
     }
   }
