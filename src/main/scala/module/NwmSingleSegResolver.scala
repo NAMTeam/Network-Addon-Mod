@@ -56,8 +56,12 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
     }
     for (n <- NwmNetworks if isSingleTile(n)) {
       add(n~(0,0,-2,+2),    nwmRangeId(n) + 0x0800)  // 90 degree curve
+      add(n~(0,-2,0,+11),   nwmRangeId(n) + 0x0400)  // 45 degree curve 1
+      add(n~(0,0,-1,+13),   nwmRangeId(n) + 0x0500)  // 45 degree curve 1
       if (!n.isSymm) {
         add(n~(0,0,+2,-2),  nwmRangeId(n) + 0x0e00)  // 90 degree curve
+        add(n~(0,+2,0,-11), nwmRangeId(n) + 0x0b00)  // 45 degree curve 2
+        add(n~(0,0,+1,-13), nwmRangeId(n) + 0x0c00)  // 45 degree curve 2
       }
     }
     for ((n, offset) <- Seq(Rd4 -> 0, Tla5 -> 0x0100)) {
