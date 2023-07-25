@@ -8,7 +8,16 @@ import NetworkProperties._
 object RhwRuleGenerator {
 
   implicit class HeightLevel(val level: Int) extends AnyVal {
-    def ~ (n: Network): Network = {
+    def ~ (n: Network): Network = if (n == Dirtroad) {
+      if (level > 0 && level <= 2) {
+        Network(L1Rhw2.id + level - 1)
+      } else {
+        require(level == 0)
+        Dirtroad
+      }
+    } else if (level == 0 && (n == L1Rhw2 || n == L2Rhw2)) {
+      Dirtroad
+    } else {
       require(n.height == 0)
       val m = Network(n.id + (level - n.height))
       assert(m.height == level)
