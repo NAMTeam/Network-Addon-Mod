@@ -89,8 +89,12 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
   }
 
   def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
-    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 ||
-    inside && (n == Ave6 || n == Ave8)
+    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 ||
+    !inside && (n == Tla5 || n == Rd6 || n == Owr5)
+  }
+
+  def hasExtraShortCurve(n: Network, inside: Boolean): Boolean = {
+    inside && (n == Tla5 || n == Rd6 || n == Owr5 || n == Ave6 || n == Ave8)
   }
 
   def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
@@ -160,6 +164,11 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
           Rules ++= stabilize (
             base~orient(0,-11,+3,0) | main~orient(WS) | main~orient(0,-11,+113,0) | main~orient(-113,0,0,+1)
           )
+          if (main == Ave6m || main == Tla7m) {
+            // extra stability due to INRUL-based extra short curves on the inside of triple-tile NWM curves
+            Rules += main~orient(WE) | base~orient(-11,+3,0,0)   | main~orient(-2,0,+11,0) | main~orient(-11,+113,0,0)
+            Rules += base~orient(WE) | main~orient(-11,+113,0,0) | main~orient(-2,0,+11,0) | %
+          }
         } else if (hasExtendedCurve(main, inside)) {
           // orth to diag
           Rules ++= stabilize (
@@ -175,6 +184,15 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
           Rules ++= stabilize (
             base~orient(0,-11,+3,0) | main~orient(WS) | main~orient(0,-11,+113,0) | main~orient(-113,0,0,+1)
           )
+        } else if (hasExtraShortCurve(main, inside)) {
+          // orth to diag
+          Rules += main~orient(WE) | (base ~> main)~orient(-11,+3,0,0)
+          Rules += main~orient(WE) | base~orient(-2,0,+11,0) | % | main~orient(WE)  // stability
+          Rules += main~orient(0,-11,+3,0) | (base ~> main)~orient(WS)
+          // diag to orth
+          Rules += (base ~> main)~orient(WE) | main~orient(-11,+3,0,0)
+          Rules += (base ~> main)~orient(0,-11,+3,0) | main~orient(WS)
+          // The tile base~orient(-2,0,+11,0) should not be overridden when coming from the diagonal, as INRULs already replace it by base~orient(WE).
         }
       }
       if (hasR1CurveBase(main)) {

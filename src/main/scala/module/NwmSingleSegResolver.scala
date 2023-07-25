@@ -32,7 +32,7 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
     for (n <- Seq(Tla5, Rd6, Owr5)) {
       add(n~(0,-13,0,+2),   nwmRangeId(n) + 0x0400)  // sharp curve outside
       add(n~(0,0,+1,-13),   nwmRangeId(n) + 0x0500)  // sharp curve inside
-      add(n~(0,+13,0,-2),   nwmRangeId(n) + 0x0509)  // sharp curve inside (TODO add orthogonal placeholder texture)
+      // add(n~(0,+13,0,-2),   nwmRangeId(n) + 0x0509)  // sharp curve inside (orthogonal placeholder, not used)
       add(n~(0,0,-1,+13),   nwmRangeId(n) + 0x0600)  // sharp curve outside
     }
     for (n <- Seq(Rd4, Owr4)) {
@@ -43,7 +43,7 @@ trait NwmSingleSegResolver extends SingleSegResolver { this: NwmResolver =>
     }
     for (n <- Seq(Ave6, Ave8)) {
       add(n~(0,0,+1,-13),   nwmRangeId(n) + 0x0400)  // sharp curve inside
-      add(n~(0,+13,0,-2),   nwmRangeId(n) + 0x0409)  // sharp curve inside (TODO add orthogonal placeholder texture)
+      // add(n~(0,+13,0,-2),   nwmRangeId(n) + 0x0409)  // sharp curve inside (orthogonal placeholder, not used)
       add(n~(0,-113,0,+2),  nwmRangeId(n) + 0x0500)  // extended curve outside
       add(n~(0,-13,0,+113), nwmRangeId(n) + 0x0600)  // extended curve outside
       add(n~(0,0,-111,+13), nwmRangeId(n) + 0x0700)  // extended curve outside
