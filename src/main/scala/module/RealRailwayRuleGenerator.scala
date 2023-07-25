@@ -52,11 +52,11 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
       Rules += Rail~(0,0,0,983) & main~(0,0,1,983) | (base ~> main)~NW  // diag ramp HT continue
       
       // helper/overhang tiles
-      Rules += main~(42,0,2,0) | (base ~> main)~WE                // OxO helper continue
-      Rules += main~(42,0,2,0) | base~CW | % | main~WE            // OxO helper continue stub convert
-      Rules += main~(72,0,2,8) | (base ~> main)~WE                // OxD helper continue
-      Rules += main~(72,0,2,8) | base~CW | % | main~WE            // OxD helper continue stub convert
-      Rules += main~(0,41,43,0) | main~WS | % | main~(43,0,0,1)   // DxO helper tile two
+      Rules += main~(42,0,2,0) | (base ~> main)~WE               // OxO helper continue
+      Rules += main~(42,0,2,0) | base~CW | % | main~WE           // OxO helper continue stub convert
+      Rules += main~(72,0,2,8) | (base ~> main)~WE               // OxD helper continue
+      Rules += main~(72,0,2,8) | base~CW | % | main~WE           // OxD helper continue stub convert
+      Rules += main~(0,41,43,0) | main~WS | % | main~(43,0,0,1)  // DxO helper tile two
       
       // defines adjacent ortho height transitions for the main network in WE orientation
       val adjOrthHTs = main match {
@@ -92,16 +92,16 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules ++= stabilize(main~WE | base~WE & minor~NS | main~(2,0,42,0) | main~WE & minor~NS) // OxO start overhang double-swap
 
             for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~SN         // OxO start
+              Rules += orthStart | (base ~> main)~WE & minor~SN       // OxO start
               // TODO: check if the orthStart is OST before creating the following rule
-              Rules += orthStart | minor~SN | % | main~WE & minor~SN    // OxO start (jump)
+              Rules += orthStart | minor~SN | % | main~WE & minor~SN  // OxO start (jump)
             }
 
             // the continue rules differ on overhang side
-            Rules += main~WE & minor~NS | (base ~> main)~WE          // OxO continue
-            Rules += main~WE & minor~NS | base~CW | % | main~WE      // OxO continue stub conversion
-            Rules += main~WE & minor~SN | base~WE | % | main~(42,0,2,0)   // OxO continue to helper
-            Rules += main~WE & minor~SN | base~CW | % | main~(42,0,2,0)   // OxO continue to helper stub conversion
+            Rules += main~WE & minor~NS | (base ~> main)~WE              // OxO continue
+            Rules += main~WE & minor~NS | base~CW | % | main~WE          // OxO continue stub conversion
+            Rules += main~WE & minor~SN | base~WE | % | main~(42,0,2,0)  // OxO continue to helper
+            Rules += main~WE & minor~SN | base~CW | % | main~(42,0,2,0)  // OxO continue to helper stub conversion
 
           } else {
               for (orthStart <- orthStarts) {
@@ -110,8 +110,8 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
                 // this is only necessary for single tile networks flanked by OSTs
                 Rules += orthStart | minor~NS~SN | % | main~WE & minor~NS~SN  // OxO start (jump)
                 }
-                Rules += main~WE & minor~NS~SN | (base ~> main)~WE          // OxO continue
-                Rules += main~WE & minor~NS~SN | base~CW | % | main~WE      // OxO continue stub conversion
+                Rules += main~WE & minor~NS~SN | (base ~> main)~WE      // OxO continue
+                Rules += main~WE & minor~NS~SN | base~CW | % | main~WE  // OxO continue stub conversion
           }
 
           // OxD Rules
@@ -121,19 +121,19 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             Rules ++= stabilize(main~WE | base~WE & minor~ES | main~(2,8,72,0) | main~WE & minor~ES)  // OxD start overhang double-swap
 
             for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~SE       // OxD start
+              Rules += orthStart | (base ~> main)~WE & minor~SE  // OxD start
             }
 
-            Rules += main~WE & minor~WN | base~WE | % | main~(72,0,2,8) // OxD continue to helper
-            Rules += main~WE & minor~WN | base~CW | % | main~(72,0,2,8) // OxD continue to helper stub conversion
-            Rules += main~WE & minor~NW | (base ~> main)~WE       // OxD continue
-            Rules += main~WE & minor~NW | base~CW | % | main~WE   // OxD continue stub conversion
+            Rules += main~WE & minor~WN | base~WE | % | main~(72,0,2,8)  // OxD continue to helper
+            Rules += main~WE & minor~WN | base~CW | % | main~(72,0,2,8)  // OxD continue to helper stub conversion
+            Rules += main~WE & minor~NW | (base ~> main)~WE              // OxD continue
+            Rules += main~WE & minor~NW | base~CW | % | main~WE          // OxD continue stub conversion
 
           } else {
 
             for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~ES       // OxD start
-              Rules += orthStart | (base ~> main)~WE & minor~SE       // OxD start
+              Rules += orthStart | (base ~> main)~WE & minor~ES  // OxD start
+              Rules += orthStart | (base ~> main)~WE & minor~SE  // OxD start
             }
 
             Rules += main~WE & minor~WN | (base ~> main)~WE       // OxD continue
@@ -151,7 +151,7 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
               case Street => IdTile(0x5f502a00, R2F0, noSymmetries)
               case Road   => IdTile(0x03020600, R2F0, noSymmetries)
             }
-            Rules += main~NS & minor~ES | crossbucks | % | minor~NW // remove crossbucks tile
+            Rules += main~NS & minor~ES | crossbucks | % | minor~NW  // remove crossbucks tile
           }
 
           // DxO Rules
@@ -171,63 +171,63 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
                 Rules += diagStart | minor~SN | % | main~NW & minor~SN  // DxO start (jump)
               } 
               // continue rules on non-overhang side
-              Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+              Rules += main~ES & minor~NS | (base ~> main)~NW  // DxO continue
 
           } else {
               for (diagStart <- diagStarts) {
                 Rules += diagStart | (base ~> main)~NW & minor~NS       // DxO start
                 Rules += diagStart | minor~NS | % | main~NW & minor~NS  // DxO start (jump)
               }   
-              Rules += main~ES & minor~NS | (base ~> main)~NW       // DxO continue
+              Rules += main~ES & minor~NS | (base ~> main)~NW  // DxO continue
           }
           // DxO across rules needed in all cases
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE        // DxO across
-          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE   // DxO across (jump) 
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE       // DxO across
+          Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE  // DxO across (jump) 
 
           // DxD Rules
 
           for (diagStart <- diagStarts) {
-            Rules += diagStart | (base ~> main)~NW & minor~EN       // DxD start
+            Rules += diagStart | (base ~> main)~NW & minor~EN  // DxD start
           }
-          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW        // DxD across
-          Rules += main~SE & minor~WS | (base ~> main)~NW       // DxD continue
+          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW  // DxD across
+          Rules += main~SE & minor~WS | (base ~> main)~NW             // DxD continue
         }
 
         if (minor.typ == AvenueLike) {
 
           // OxO
           for (orthStart <- orthStarts) {
-            Rules += orthStart | (base ~> main)~WE & minor~NS             // OxO start
+            Rules += orthStart | (base ~> main)~WE & minor~NS  // OxO start
           }
-          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN      // OxO across
+          Rules += main~WE & minor~NS | (base ~> main)~WE & minor~SN  // OxO across
           Rules += main~WE & minor~SN | (base ~> main)~WE             // OxO continue
           Rules += main~WE & minor~SN | base~CW | % | main~WE         // OxO continue stub conversion
 
           // OxD
           for (orthStart <- orthStarts) {
-            Rules += orthStart | (base ~> main)~WE & minor~ES             // OxD start
+            Rules += orthStart | (base ~> main)~WE & minor~ES  // OxD start
           }
-          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight                   // OxD middle
-          Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN       // OxD end
-          Rules += main~WE & minor~WN | (base ~> main)~WE             // OxD continue
-          Rules += main~WE & minor~WN | base~CW | % | main~WE         // OxD continue stub conversion
+          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~SharedDiagRight  // OxD middle
+          Rules += main~WE & minor~SharedDiagRight | (base ~> main)~WE & minor~WN  // OxD end
+          Rules += main~WE & minor~WN | (base ~> main)~WE                          // OxD continue
+          Rules += main~WE & minor~WN | base~CW | % | main~WE                      // OxD continue stub conversion
 
           // DxO
           for (diagStart <- diagStarts) {
-            Rules += diagStart | (base ~> main)~NW & minor~NS                 // DxO start
+            Rules += diagStart | (base ~> main)~NW & minor~NS  // DxO start
           }
-          Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW      // DxO middle 1
-          Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN      // DxO middle 2
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE      // DxO end
-          Rules += main~ES & minor~SN | (base ~> main)~NW                 // DxO continue
+          Rules += main~EN & minor~EW | (base ~> main)~SW & minor~EW  // DxO middle 1
+          Rules += main~ES & minor~NS | (base ~> main)~NW & minor~SN  // DxO middle 2
+          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE  // DxO end
+          Rules += main~ES & minor~SN | (base ~> main)~NW             // DxO continue
 
           // DxD
           for (diagStart <- diagStarts) {
-            Rules += diagStart | (base ~> main)~NW & minor~NE         // DxD start
+            Rules += diagStart | (base ~> main)~NW & minor~NE  // DxD start
           }
-          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight                   // DxD middle
-          Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW                    // DxD end
-          Rules += main~ES & minor~SW | (base ~> main)~NW           // DxD continue
+          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~SharedDiagRight // DxD middle
+          Rules += main~ES & minor~SharedDiagLeft | (base ~> main)~NW & minor~SW  // DxD end
+          Rules += main~ES & minor~SW | (base ~> main)~NW                         // DxD continue
         }
       }
     }
