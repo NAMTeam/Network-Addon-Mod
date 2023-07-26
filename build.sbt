@@ -11,7 +11,7 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
   // "-opt-warnings:at-inline-failed-summary",
-  "-opt:l:inline", "-opt-inline-from:<sources>",
+  // "-opt:l:inline", "-opt-inline-from:<sources>",
   "-encoding", "UTF-8",
   "-release:8")
 

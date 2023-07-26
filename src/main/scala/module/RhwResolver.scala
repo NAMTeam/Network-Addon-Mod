@@ -153,6 +153,8 @@ class RhwResolver extends IdResolver with RhwSingleSegResolver with DoubleSegRes
             id += (if (isSingleTileRhw(maj.network)) 0x80 else 0x40)
           if (prop.minorSegReversed ^ strangeFlagMin) // TODO consider changing the IDs to 0x05
             id += (if (maj.network.height == 0 && min.network.height == 0) 0x09 else 0x05)
+          if (maj.network.height == 0 && min.network == Str)
+            id += 4  // Str has offset 0x09 instead of 0x05
           IdTile(id, prop.rf)
         case None => //??? // TODO T intersections etc. still missing
           throw new UnsupportedOperationException(tile.toString)
