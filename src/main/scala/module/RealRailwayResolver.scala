@@ -1,6 +1,6 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._, Network._, RotFlip._, Flags._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._
 import Implicits.segmentToTile
 
 class RealRailwayResolver extends IdResolver {
@@ -26,24 +26,10 @@ class RealRailwayResolver extends IdResolver {
     add(L2Dtr~SE, 0x5d740100)
     // OxO crossing
     add(Rail~NS & Rail~EW, 0x5d548000)
-
-    
-    // temp - needs a better home
-    add(L1Road~NS, 0x5c000000)
-    add(L1Road~SE, 0x5c000200)
-    add(L2Road~NS, 0x5c030000)
-    add(L2Road~SE, 0x5c030200)
-    add(L1Onewayroad~NS, 0x5c010000)
-    add(L1Onewayroad~SE, 0x5c010200)
-    add(L2Onewayroad~NS, 0x5c040000)
-    add(L2Onewayroad~SE, 0x5c040200)
-    add(L1Avenue~NS, 0x5c020000)
-    add(L1Avenue~NE, 0x5c020200)
-    add(L1Avenue~SharedDiagLeft, 0x5c020300)
-    add(L2Avenue~NS, 0x5c050000)
-    add(L2Avenue~NE, 0x5c050200)
-    add(L2Avenue~SharedDiagLeft, 0x5c050300)
-
+    // OxD crossing
+    add(Rail~NS & Rail~NE, 0x5d548100)
+    // DxD crossing
+    add(Rail~SE & Rail~NE, 0x5d548200)
 
     // Height Transition
     add(Rail~CS & L1Dtr~CN, 0x5d6f0000)   // Orth OST L0->L1
@@ -67,8 +53,8 @@ class RealRailwayResolver extends IdResolver {
     */
     // ----- OxO -----
     // -- Street --
-    add(Street~NS & L1Dtr~WE, 0x5d671000)
-    add(Street~NS & L2Dtr~WE, 0x5d771000)
+    add(Street~WE & L1Dtr~NS, 0x5d671000)
+    add(Street~WE & L2Dtr~NS, 0x5d771000)
     // -- Road --
     add(Road~WE & L1Dtr~NS, 0x5d671100)
     add(Road~WE & L2Dtr~NS, 0x5d771100)
@@ -77,7 +63,7 @@ class RealRailwayResolver extends IdResolver {
     add(L2Road~NS & Rail~WE,  0x5c031500)
     add(L2Road~WE & L1Dtr~NS, 0x5d67110a)
     // -- OWR --
-    add(Onewayroad~NS & L1Dtr~WE, 0x5d671200)
+    add(Onewayroad~WE & L1Dtr~NS, 0x5d671200)
     add(Onewayroad~WE & L2Dtr~NS, 0x5d771200)
     add(L1Onewayroad~NS & Rail~WE,  0x5c011500)
     add(L1Onewayroad~NS & L2Dtr~WE, 0x5d771205)
@@ -141,10 +127,10 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw8c~EW & L1Dtr~NS, 0x5d672500)
     add(Rhw8c~EW & L2Dtr~NS, 0x5d772500)
     // -- TLA-3 --
-    add(Tile.projectLeft(Tla3~WE & L1Dtr~NS), 0x5d672700)
-    add(Tile.projectRight(Tla3~WE & L1Dtr~NS), 0x5d672700)
-    add(Tile.projectLeft(Tla3~WE & L2Dtr~NS), 0x5d772700)
-    add(Tile.projectRight(Tla3~WE & L2Dtr~NS), 0x5d772700)
+    add((Tla3~WE).projectLeft & L1Dtr~NS, 0x5d672700)
+    add((Tla3~WE).projectRight & L1Dtr~NS, 0x5d672700)
+    add((Tla3~WE).projectLeft & L2Dtr~NS, 0x5d772700)
+    add((Tla3~WE).projectRight & L2Dtr~NS, 0x5d772700)
     // -- AVE-2 --
     add(Ave2~WE & L1Dtr~NS, 0x5d672800)
     add(Ave2~WE & L2Dtr~NS, 0x5d772800)
@@ -161,10 +147,10 @@ class RealRailwayResolver extends IdResolver {
     add(Nrd4~WE & L1Dtr~NS, 0x5d672c00) 
     add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
     // -- TLA-5 --
-    add(Tile.projectLeft(Tla5~EW & L1Dtr~NS), 0x5d672d00)
-    add(Tile.projectRight(Tla5~EW & L1Dtr~NS), 0x5d672d00)
-    add(Tile.projectLeft(Tla5~EW & L2Dtr~NS), 0x5d772d00)
-    add(Tile.projectRight(Tla5~EW & L2Dtr~NS), 0x5d772d00)
+    add((Tla5~EW).projectLeft & L1Dtr~NS, 0x5d672d00)
+    add((Tla5~EW).projectRight & L1Dtr~NS, 0x5d672d00)
+    add((Tla5~EW).projectLeft & L2Dtr~NS, 0x5d772d00)
+    add((Tla5~EW).projectRight & L2Dtr~NS, 0x5d772d00)
     // -- OWR-4 --
     add(Owr4~WE & L1Dtr~NS, 0x5d672e00)
     add(Owr4~WE & L2Dtr~NS, 0x5d772e00)
@@ -227,28 +213,65 @@ class RealRailwayResolver extends IdResolver {
 
     // ----- OxD -----
     // -- Street --
-    add(Street~WN & Rail~NS, 0x5f502600) // move to misc resolver
     add(Street~ES & L1Dtr~NS, 0x5d674000)
     add(Street~ES & L2Dtr~NS, 0x5d774000)
     // -- Road --
     add(Road~ES & L1Dtr~NS, 0x5d674100)
     add(Road~ES & L2Dtr~NS, 0x5d774100)
-    // -- Road L1 --
     add(L1Road~ES & Rail~WE, 0x5c007500)
     add(L1Road~ES & L2Dtr~NS, 0x5d774110)
-    // -- Road L2 --
     add(L2Road~ES & Rail~WE, 0x5c037500)
     add(L2Road~ES & L1Dtr~NS, 0x5d67410a)
     // -- OWR --
-    add(Onewayroad~WN & Rail~NS, 0x09320100)
+    add(Onewayroad~ES & L1Dtr~NS, 0x5d674200)
+    add(Onewayroad~ES & L2Dtr~NS, 0x5d774200)
     // -- Avenue --
-    add(Avenue~ES & Rail~NS, 0x04004700)
-    add(Avenue~SharedDiagRight & Rail~NS, 0x04004600)
+    add(Avenue~ES & L1Dtr~NS, 0x5d674300)
+    add(Avenue~SharedDiagRight & L1Dtr~NS, 0x5d674305)
+    add(Avenue~ES & L2Dtr~NS, 0x5d774300)
+    add(Avenue~SharedDiagRight & L2Dtr~NS, 0x5d774305)
+    // -- Rail --
+    add(Rail~ES & L1Dtr~NS, 0x5d674500)
+    add(Rail~ES & L2Dtr~NS, 0x5d774500)
+
     // ----- DxO -----
     // -- Street --
+    // add(Street~NS & Rail~ES)
+    add(Street~NS & L1Dtr~ES, 0x5d677000)
+    add(Street~NS & L2Dtr~ES, 0x5d777000)
     // -- Road --
+    add(Road~NS & L1Dtr~ES, 0x5d677100)
+    add(Road~NS & L2Dtr~ES, 0x5d777100)
+    // -- OWR --
+    add(Onewayroad~NS & L1Dtr~ES, 0x5d677200)
+    add(Onewayroad~NS & L2Dtr~ES, 0x5d777200)
+    // -- Avenue --
+    add(Avenue~SN & L1Dtr~ES, 0x5d677300)
+    add(Avenue~SN & L2Dtr~ES, 0x5d777300)
+    add(Avenue~NS & L1Dtr~ES, 0x5d677305)
+    add(Avenue~NS & L2Dtr~ES, 0x5d777305)
+    // -- Rail --
+    add(Rail~NS & L1Dtr~ES, 0x5d677500)
+    add(Rail~NS & L2Dtr~ES, 0x5d777500)
+
     // ----- DxD -----
+    // -- Street --
+    add(Street~WS & L1Dtr~ES, 0x5d67a000)
+    add(Street~WS & L2Dtr~ES, 0x5d77a000)
     // -- Road --
+    add(Road~WS & L1Dtr~ES, 0x5d67a100)
+    add(Road~WS & L2Dtr~ES, 0x5d77a100)
+    // -- OWR --
+    add(Onewayroad~WS & L1Dtr~ES, 0x5d67a200)
+    add(Onewayroad~WS & L2Dtr~ES, 0x5d77a200)
+    // -- Avenue --
+    add(Avenue~SW & L1Dtr~ES, 0x5d67a300)
+    add(Avenue~SW & L2Dtr~ES, 0x5d77a300)
+    add(Avenue~SharedDiagLeft & L1Dtr~ES, 0x5d67a305)
+    add(Avenue~SharedDiagLeft & L2Dtr~ES, 0x5d77a305)
+    // -- Rail --
+    add(Rail~WS & L1Dtr~ES, 0x5d67a500)
+    add(Rail~WS & L2Dtr~ES, 0x5d77a500)
 
     /*
     STR IIDs are a mess, still RAM spec.  TBD

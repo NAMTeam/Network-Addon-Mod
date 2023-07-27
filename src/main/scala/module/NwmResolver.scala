@@ -1,15 +1,11 @@
-package metarules.module
+package com.sc4nam.module
 
-import metarules.meta._
-import Network._
-import RotFlip._
-import Flags._
-import NetworkProperties.isTripleTile
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, group.SymGroup
+import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
 
+object NwmResolver {
 
-class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
-
-  val isSingleTileNwm = Set(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)
+  val isSingleTileNwm = NwmNetworks.filter(isSingleTile)
 
   val nwmRangeId = Map(
     Tla3          -> 0x51000000,
@@ -26,9 +22,13 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     Rd6           -> 0x51140000,
 
     Ave6          -> 0x51200000,
-    Tla7m         -> 0x51200080,
+    Tla7m         -> 0x51200080,  // with overflow 0x51220000
     Ave8          -> 0x51210000,
-    Ave6m         -> 0x51210080).lift
+    Ave6m         -> 0x51210080)  // with overflow 0x51220080
+
+  val nwmRangeIdOverflow = Map(  // for diagonal intersections
+    Tla7m         -> 0x51220000,
+    Ave6m         -> 0x51220080).orElse(nwmRangeId)
 
   val nwmPieceId = Map(
     Street        -> 0x0000,
@@ -63,17 +63,37 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     Ave6          -> 0x1D00,
     Tla7m         -> 0x1D0A,
     Ave8          -> 0x1E00,
-    Ave6m         -> 0x1E0A).lift
+    Ave6m         -> 0x1E0A)
     // currently not defined:
     // Glr3          -> 0x....,
     // Glr4          -> 0x....,
     // Hsr           -> 0x....,
+}
+import NwmResolver._
+
+class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
 
   /** is defined for all tiles that do not contain RHW, but NWM */
-  def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && t.segs.exists(_.network.isNwm)
+  def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && !t.segs.exists(seg => SamNetworks.contains(seg.network)) && t.segs.exists(_.network.isNwm)
 
-  val leftHeadedMappedRepr: Group.QuotientGroup => Set[RotFlip] = _.filter(!_.flipped)
-  val rightHeadedMappedRepr: Group.QuotientGroup => Set[RotFlip] = _.filter(_.flipped)
+  // orientation relative to RHW scheme
+  private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
+    val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
+    val crossingNetworks = Network.ValueSet() ++ nwmPieceId.keysIterator
+    map.getOrElseUpdate(Ard3 + Rail, R2F0)
+    for (main <- NwmNetworks; minor <- crossingNetworks if !minor.isNwm || minor <= main) {
+      if (main == Ard3) {
+        map.getOrElseUpdate(main + minor, R3F0)
+      } else if (isSingleTile(main) && minor == Rail) {
+        map.getOrElseUpdate(main + minor, R0F0)
+      } else if (!isSingleTile(main) && minor == Ard3) {
+        map.getOrElseUpdate(main + minor, R1F0)
+      } else {
+        map.getOrElseUpdate(main + minor, R1F1)  // default
+      }
+    }
+    map.toMap
+  }
 
   def apply(tile: Tile): IdTile = {
     if (!isDefinedAt(tile)) {
@@ -96,21 +116,31 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
               0x7000  // DxO
             case 0x9000 => 0x8000  // DxD
           }
-          var id = nwmRangeId(maj.network).get + nwmPieceId(min.network).get + pieceOffset
+          val isOxO = prop.orthDiagOffset == 0x0000
+          val rf = if (!isOxO) prop.rf else {
+            // O×O tiles have different orientation in original NWM scheme
+            val rfOffset = orientationOffsetOxO(maj.network + min.network)
+            tile.symmetries.reduceLeftCoset((R0F0 / rfOffset) * prop.rf)
+          }
+          var id = (if (isOxO) nwmRangeId else nwmRangeIdOverflow)(maj.network) + nwmPieceId(min.network) + pieceOffset
           if (prop.majorSegReversed)
-            id += (if (isTripleTile(maj.network)) 0x40 else 0x80)  // TODO revise IID scheme to avoid 0x40 for wealthing support
+            id += 0x80
           if (prop.minorSegReversed)
             id += 0x05
           if (id % 0x10 != 0 && (maj.network.height == 0 || min.network.height == 0))
             id += 0x4  // map 8th digit 5 to 9, A to E
-          if (prop.majKind == Flag.Kind.LeftHeaded || prop.minKind == Flag.Kind.LeftHeaded ||
-             (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded) &&
-              tile.symmetries.exists(_.flipped)) // <-- does not have right-headed ID
-            IdTile(id, prop.rf, leftHeadedMappedRepr)
-          else if (prop.majKind == Flag.Kind.RightHeaded || prop.minKind == Flag.Kind.RightHeaded)
-            IdTile(id + 0x20000000, prop.rf, rightHeadedMappedRepr) // TODO find suitable ID
-          else
-            IdTile(id, prop.rf)
+          if (prop.majKind == Flag.Kind.LeftSpin || prop.minKind == Flag.Kind.LeftSpin ||
+             (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) &&
+              tile.symmetries.exists(_.flipped)) // <-- does not have right-spinned ID
+            IdTile(id, rf, nonMirroredOnly)  // e.g. O×O Tla3×Road
+          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) {
+            if (!hasTurnPaths(maj.network, min.network)) {
+              IdTile(id, rf, mirroredOnly)  // e.g. O×D Tla3×Rail
+            } else {
+              IdTile(id + 0x20000000, rf, mirroredOnly)  // e.g. O×D Tla3×Road
+            }
+          } else
+            IdTile(id, rf)
         case None => //??? // TODO T intersections etc. still missing
           throw new UnsupportedOperationException(tile.toString)
       }

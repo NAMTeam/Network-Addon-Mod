@@ -1,9 +1,8 @@
-package networkaddonmod.localization
+package com.sc4nam.localization
 
 import java.io.{File, FileReader, PrintWriter}
 import resource._
-import rapture.core.strategy.throwExceptions
-import scdbpf._
+import io.github.memo33.scdbpf._, strategy.throwExceptions
 
 /** Run
   *
@@ -26,7 +25,10 @@ object GenerateLocales {
     "it" -> 5,
     "es" -> 6,
     "nl" -> 7,
-    "ja" -> 0xF)
+    "sv" -> 9,
+    "ja" -> 0xF,
+    "ko" -> 0x14,
+    "pt" -> 0x23)
 
   def parseTgi(s: String): Tgi = {
     val arr = s.trim().split("-").map(id => java.lang.Long.parseLong(id, 16).toInt)
@@ -35,7 +37,7 @@ object GenerateLocales {
 
   def formatTgi(tgi: Tgi) = f"${tgi.tid}%08X-${tgi.gid}%08X-${tgi.iid}%08X"
 
-  val logger = java.util.logging.Logger.getLogger("networkaddonmod.localization")
+  val logger = java.util.logging.Logger.getLogger("networkaddonmod")
 
   def isFuzzyTranslation(t: scaposer.SingularTranslation, previousComments: Seq[String]): Boolean = {
     // There is a bug in scaposer 1.11.1 (see https://github.com/xitrum-framework/scaposer/issues/25)
@@ -62,7 +64,7 @@ object GenerateLocales {
               }
               (buffer, t.otherComments)
           }
-          buffer.result
+          buffer.result()
       }
     }
   }
@@ -144,9 +146,22 @@ object GenerateLocales {
     }
   }
 
-  def escape(s: String): String = {
-    import scala.reflect.runtime.universe.{Literal, Constant}
-    Literal(Constant(s)).toString.replace(raw"\'", "'")  // add any other necessary character replacements here
+  /** Quote a string while escaping all special characters.
+    * (taken from Scala 2.11 implementation in scala.reflect)
+    */
+  def quote(s: String): String = "\"" + escape(s) + "\""
+  private def escape(s: String): String = s.flatMap(escapedChar)
+  private def escapedChar(ch: Char): String = ch match {
+    case '\b' => "\\b"
+    case '\t' => "\\t"
+    case '\n' => "\\n"
+    case '\f' => "\\f"
+    case '\r' => "\\r"
+    case '"'  => "\\\""
+    // case '\'' => "\\\'"
+    case '\\' => "\\\\"
+    case _    => if (ch.isControl) "\\0" + Integer.toOctalString(ch.toInt)
+                 else String.valueOf(ch)
   }
 
   def formatText(s: String): String = {
@@ -157,7 +172,7 @@ object GenerateLocales {
     if (arr.length != 1) {  // multiline strings start on the following line, oneline strings on the same line
       arr = "" +: arr
     }
-    arr.map(escape).mkString(System.lineSeparator())
+    arr.map(quote).mkString(System.lineSeparator())
   }
 
   /** Broad classification of LTexts into categories (not fully accurate).
@@ -188,11 +203,11 @@ object GenerateLocales {
 
   /* Run
    * {{{
-   * sbt 'runMain networkaddonmod.localization.GenerateLocales 0 <english-dat-file>'
+   * sbt 'runMain com.sc4nam.localization.GenerateLocales 0 <english-dat-file>'
    * }}}
    * to generate .pot template files and
    * {{{
-   * sbt 'runMain networkaddonmod.localization.GenerateLocales <language-offset> <english-dat-file> <foreign-dat-file>'
+   * sbt 'runMain com.sc4nam.localization.GenerateLocales <language-offset> <english-dat-file> <foreign-dat-file>'
    * }}}
    * to generate .po files from existing translations
    * and then manually inspect the results for correctness.
@@ -219,16 +234,16 @@ object GenerateLocales {
       if (offset == 0 || categorizedEntries.iterator.exists(e => translate(e.tgi).nonEmpty)) {  // we only generate .po files that contain at least some translations already
         outputFile.getParentFile().mkdirs()
         for (printer <- managed(new PrintWriter(outputFile, "UTF-8"))) {
-          printer.println(s"msgid ${escape("")}")
-          printer.println(s"msgstr ${escape("")}")
-          printer.println(escape("Project-Id-Version: \n"))
-          printer.println(escape("PO-Revision-Date: \n"))
-          printer.println(escape("Last-Translator: \n"))
-          printer.println(escape("Language-Team: \n"))
-          printer.println(escape(s"Language: $lang\n"))
-          printer.println(escape("MIME-Version: 1.0\n"))
-          printer.println(escape("Content-Type: text/plain; charset=UTF-8\n"))
-          printer.println(escape("Content-Transfer-Encoding: 8bit\n"))
+          printer.println(s"msgid ${quote("")}")
+          printer.println(s"msgstr ${quote("")}")
+          printer.println(quote("Project-Id-Version: \n"))
+          printer.println(quote("PO-Revision-Date: \n"))
+          printer.println(quote("Last-Translator: \n"))
+          printer.println(quote("Language-Team: \n"))
+          printer.println(quote(s"Language: $lang\n"))
+          printer.println(quote("MIME-Version: 1.0\n"))
+          printer.println(quote("Content-Type: text/plain; charset=UTF-8\n"))
+          printer.println(quote("Content-Transfer-Encoding: 8bit\n"))
 
           for (e <- categorizedEntries) {
             val text = e.toBufferedEntry.convert[LText].content.text

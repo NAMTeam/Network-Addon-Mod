@@ -7,16 +7,18 @@ This guide covers translation of the mod's [LText](https://wiki.sc4devotion.com/
 The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for internationalization,
 so any compatible tool can be used for translating, such as GitLocalize or Poedit.
 
-[![gitlocalized ](https://gitlocalize.com/repo/8339/de/badge.svg)](https://gitlocalize.com/repo/8339/de?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/es/badge.svg)](https://gitlocalize.com/repo/8339/es?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/fr/badge.svg)](https://gitlocalize.com/repo/8339/fr?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/it/badge.svg)](https://gitlocalize.com/repo/8339/it?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/ja/badge.svg)](https://gitlocalize.com/repo/8339/ja?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/nl/badge.svg)](https://gitlocalize.com/repo/8339/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/de/badge.svg)](https://gitlocalize.com/repo/8674/de?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/es/badge.svg)](https://gitlocalize.com/repo/8674/es?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/fr/badge.svg)](https://gitlocalize.com/repo/8674/fr?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/it/badge.svg)](https://gitlocalize.com/repo/8674/it?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ja/badge.svg)](https://gitlocalize.com/repo/8674/ja?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ko/badge.svg)](https://gitlocalize.com/repo/8674/ko?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/nl/badge.svg)](https://gitlocalize.com/repo/8674/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/sv/badge.svg)](https://gitlocalize.com/repo/8674/sv?utm_source=badge)
 
 ### GitLocalize
 
-[GitLocalize](https://gitlocalize.com/repo/8339) is an online localization tool.  See the guide on [contributing to projects](https://docs.gitlocalize.com/how_to_contribute.html).
+[GitLocalize](https://gitlocalize.com/repo/8674) is an online localization tool.  See the guide on [contributing to projects](https://docs.gitlocalize.com/how_to_contribute.html).
 
 Pros: machine-assisted translations, no tool installation required.
 

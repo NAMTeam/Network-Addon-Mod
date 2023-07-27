@@ -10,12 +10,14 @@ For installation and usage of the NAM, see https://www.sc4nam.com/.
 
 ## Translating
 
-[![gitlocalized ](https://gitlocalize.com/repo/8339/de/badge.svg)](https://gitlocalize.com/repo/8339/de?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/es/badge.svg)](https://gitlocalize.com/repo/8339/es?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/fr/badge.svg)](https://gitlocalize.com/repo/8339/fr?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/it/badge.svg)](https://gitlocalize.com/repo/8339/it?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/ja/badge.svg)](https://gitlocalize.com/repo/8339/ja?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/nl/badge.svg)](https://gitlocalize.com/repo/8339/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/de/badge.svg)](https://gitlocalize.com/repo/8674/de?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/es/badge.svg)](https://gitlocalize.com/repo/8674/es?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/fr/badge.svg)](https://gitlocalize.com/repo/8674/fr?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/it/badge.svg)](https://gitlocalize.com/repo/8674/it?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ja/badge.svg)](https://gitlocalize.com/repo/8674/ja?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ko/badge.svg)](https://gitlocalize.com/repo/8674/ko?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/nl/badge.svg)](https://gitlocalize.com/repo/8674/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/sv/badge.svg)](https://gitlocalize.com/repo/8674/sv?utm_source=badge)
 
 To help translate the NAM to different languages, see the [Translation Guide](ltext/README.md#translating-the-nam).
 
