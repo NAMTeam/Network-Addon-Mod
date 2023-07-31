@@ -105,7 +105,7 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
   }
 
   def hasR1Curve(n: Network, inside: Boolean): Boolean = {
-    (n >= Dirtroad && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
+    (n.isRhw && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
     // TODO add NWM
   }
 

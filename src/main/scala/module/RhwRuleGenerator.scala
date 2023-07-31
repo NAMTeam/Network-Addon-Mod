@@ -8,7 +8,16 @@ import NetworkProperties._
 object RhwRuleGenerator {
 
   implicit class HeightLevel(val level: Int) extends AnyVal {
-    def ~ (n: Network): Network = {
+    def ~ (n: Network): Network = if (n == Dirtroad) {
+      if (level > 0 && level <= 2) {
+        Network(L1Rhw2.id + level - 1)
+      } else {
+        require(level == 0)
+        Dirtroad
+      }
+    } else if (level == 0 && (n == L1Rhw2 || n == L2Rhw2)) {
+      Dirtroad
+    } else {
       require(n.height == 0)
       val m = Network(n.id + (level - n.height))
       assert(m.height == level)
@@ -62,7 +71,8 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
       // TODO filtering
       for (minor <- Network.values if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
-           (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty))
+           (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty)) ||
+           (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr))
            ) && intersectionAllowed(main, minor)) {
         // entry (override from straight tile to first crossing tile)
         if (intersectionAllowed(base, minor)) { // skips e.g. preexisting L0Rhw2 x L0Rhw6c in second tile

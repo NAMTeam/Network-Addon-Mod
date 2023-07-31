@@ -14,12 +14,13 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
     val rhw2SlopeL1 = IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
     val rhw2SlopeL2 = IdTile(0x57700100,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
 
-    for (main <- RhwNetworks - Dirtroad - Rhw10c if main.height == 0) {
+    for (main <- RhwNetworks - Rhw10c if main.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(main)) 4 else 2
+      val minHeight = if (main == Dirtroad) 1 else 0  // avoiding auto-L1Rhw2 and auto-L2Rhw2
       val rangeId = (RhwResolver.rhwRangeId(main) & 0xFFFFF) + ((RhwResolver.rhwRangeId(main) >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
       for {
         (levelDiff, rhw2Slope) <- Seq((1, rhw2SlopeL1), (2, rhw2SlopeL2))  // L1 vs L2 onslopes
-        height <- 0 to (maxHeight-levelDiff)
+        height <- minHeight to (maxHeight-levelDiff)
       } /*do*/ {
         val lower: Network = height~main
         val upper: Network = (height+levelDiff)~main
@@ -29,9 +30,11 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
         Rules += onslope | (Dirtroad ~> upper)~EW     // OST > upper
         Rules += rhw2Slope | upper~EW | onslope | %   // OST < upper
         Rules += (Dirtroad ~> lower)~EW | onslope     // lower < OST
+        Rules += onslope | (Dirtroad ~> upper)~CW     // OST > upper stub
+        Rules += (Dirtroad ~> lower)~EC | onslope     // lower stub < OST
 
         // adjacencies
-        for (minor <- RhwNetworks ++ (BaseNetworks - Subway) ++ NwmNetworks) {  // crossing network
+        for (minor <- (RhwNetworks - Rhw10c - L1Rhw10c - L2Rhw10c) ++ (BaseNetworks - Subway) ++ NwmNetworks ++ GlrNetworks + Str + Hsr + L2Hsr) {  // crossing network
           if (intersectionAllowed(upper, minor)) {
             if (hasRightShoulder(minor)) {
               Rules += onslope | (Dirtroad ~> upper)~EW & minor~NS    // OST > upper crossing minor
@@ -71,12 +74,16 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
           if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=false)) {
             Rules += onslope | (Dirtroad ~> upper)~(+2,0,-123,0)    // OST > R1 upper
             Rules += rhw2Slope | upper~(+2,0,-123,0) | onslope | %  // OST < R1 upper
+          }
+          if (hasR1CurveBase(lower) && hasR1Curve(lower, inside=false)) {
             Rules += lower~(+121,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
             Rules += (Dirtroad ~> lower)~(+121,0,-2,0) | onslope    // R1 lower < OST
           }
           if (hasR1CurveBase(upper) && hasR1Curve(upper, inside=true)) {
             Rules += onslope | (Dirtroad ~> upper)~(+2,0,-121,0)    // OST > R1 upper
             Rules += rhw2Slope | upper~(+2,0,-121,0) | onslope | %  // OST < R1 upper
+          }
+          if (hasR1CurveBase(lower) && hasR1Curve(lower, inside=true)) {
             Rules += lower~(+123,0,-2,0) | rhw2Slope | % | onslope  // R1 lower > OST
             Rules += (Dirtroad ~> lower)~(+123,0,-2,0) | onslope    // R1 lower < OST
           }
@@ -118,5 +125,5 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 object CompileOnslopeCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
   val generator = new OnslopeGenerator(_)
-  lazy val file = new java.io.File("target/OnslopeMetaGenerated_MANAGED.txt")
+  lazy val file = new java.io.File("target/Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
 }

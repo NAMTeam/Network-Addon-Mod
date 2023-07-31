@@ -16,7 +16,7 @@ class MiscResolver extends IdResolver {
       }
     }
     add(Road~NS, 0x00004b00); add(Road~ES, 0x00000a00)
-    add(Rail~NS, 0x03031500); add(Rail~ES, 0x03001a00)
+    add(Rail~NS, 0x03031500); add(Rail~ES, 0x03001a00) // maxis IIDs, RRW IIDs in RealRailwayResolver
     add(Street~NS, 0x05004b00); add(Street~ES, 0x5f500200)
     add(Avenue~NS, 0x04006100); add(Avenue~NE, 0x04000200); add(Avenue~SharedDiagLeft, 0x04003800)
     add(Lightrail~NS, 0x08031500); add(Lightrail~ES, 0x08001a00)
