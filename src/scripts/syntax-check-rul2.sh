@@ -21,7 +21,7 @@ strip_drive_side() {
 # newlines at the end of input files gracefully (unlike cat).
 
 strip_comments_and_whitespace() {
-    sed -e "s/;.*//" -e "s/\s\+//g" -e '/^\s*$/d'
+    sed -e 's/;.*//' -e 's/\s\+//g' -e '/^\s*$/d'
 }
 
 strip_valid_rul2() {
