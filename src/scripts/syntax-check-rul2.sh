@@ -4,6 +4,9 @@
 # If any are found, they are printed to stdout and the script exits with a non-zero return code.
 set -e
 
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+
 INDIR="./Controller"
 OUT="./syntax-check-rul2.log"
 
