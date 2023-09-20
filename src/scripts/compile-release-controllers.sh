@@ -34,7 +34,7 @@ COMPILER_URL="https://github.com/memo33/NAMControllerCompiler/releases/download/
 if [ ! -e "$COMPILER_ARCHIVE" ]
 then
     # download compiler if it does not yet exist
-    wget -O "$COMPILER_ARCHIVE" "$COMPILER_URL"
+    curl -L "$COMPILER_URL" > "$COMPILER_ARCHIVE"
 fi
 unzip -d "$TEMP" "$COMPILER_ARCHIVE"
 
