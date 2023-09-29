@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE iid_tree SYSTEM "RUL2_IID_structure.dtd">
+<iid_tree>
+    <node name="El Rail over Avenue">
+        <regex value="0x5f85\p{XDigit}{4}"/>
+    </node>
+    <node name="Elevated Road Networks">
+        <regex value="0x5c0[0-8]\p{XDigit}{4}"/>
+        <regex value="0x57[0-4][0-9a]1[1-3][12]\p{XDigit}"/>
+    </node>
+    <node name="Ground Light Rail">
+        <regex value="0x5f88\p{XDigit}{4}"/>
+        <regex value="0x57[0-4][0-9a][147a][78]0\p{XDigit}"/>
+        <node name="Urban GLR">
+            <regex value="0x5f88[0-3]\p{XDigit}{3}"/>
+        </node>
+        <node name="Rural GLR">
+            <regex value="0x5f88[4-7]\p{XDigit}{3}"/>
+        </node>
+        <node name="GLR Extension Set 1">
+            <regex value="0x5f88[89ab]\p{XDigit}{3}"/>
+        </node>
+        <node name="GLR Extension Set 2">
+            <regex value="0x5f88[c-f]\p{XDigit}{3}"/>
+        </node>
+    </node>
+    <node name="High Speed Rail">
+        <regex value="0x5d[dc]\p{XDigit}{5}"/>
+        <regex value="0x57[0-4][0-9a][147a]9\p{XDigit}5"/>
+    </node>
+    <node name="Network Widening Mod">
+        <regex value="0x51[0-2]\p{XDigit}{5}"/>
+        <regex value="0x57[0-4][0-9a]([258b][7-9a-f]|[369c][0-5])\p{XDigit}{2}"/>
+        <node name="NWM TLA-3">
+            <regex value="0x5100\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]7\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM AVE-2">
+            <regex value="0x5101\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]8\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM ARD-3">
+            <regex value="0x5102\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]9\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM OWR-1">
+            <regex value="0x5103\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]a\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM OWR-3">
+            <regex value="0x5104\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]b\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM NRD-4">
+            <regex value="0x5105\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]c\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM TLA-5">
+            <regex value="0x5110\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]d\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM OWR-4">
+            <regex value="0x5111\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]e\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM OWR-5">
+            <regex value="0x5112\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]f\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM RD-4">
+            <regex value="0x5113\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]0\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM RD-6">
+            <regex value="0x5114\p{XDigit}{4}"/>
+            <regex value="0x57[0-4][0-9a][258b]1\p{XDigit}{2}"/>
+        </node>
+        <node name="NWM Triple-Tile Networks">
+            <regex value="0x512\p{XDigit}{5}"/>
+            <regex value="0x57[0-4][0-9a][258b][2-5]\p{XDigit}{2}"/>
+        </node>
+    </node>
+    <node name="Real Highway Mod">
+        <regex value="0x57\p{XDigit}{6}"/>
+        <node name="L0 networks">
+            <regex value="0x570\p{XDigit}{5}"/>
+            <regex value="0x57[0-5]\p{XDigit}([147a][a-f]|[258b][0-6])[048c]\p{XDigit}"/>
+            <node name="RHW-2"/>
+            <node name="RHW-3">
+                <regex value="0x5701\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]b[08]\p{XDigit}"/>
+            </node>
+            <node name="MIS">
+                <regex value="0x5702\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]c[08]\p{XDigit}"/>
+            </node>
+            <node name="RHW-4">
+                <regex value="0x5703\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]d[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6S">
+                <regex value="0x5704\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]e[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8S">
+                <regex value="0x570[5-7]\p{XDigit}{4}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}([147a]f|[258b][0-2])[048c]\p{XDigit}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x5705[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]0[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10S">
+                <regex value="0x5706\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]1[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-12S">
+                <regex value="0x5707\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]2[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6C">
+                <regex value="0x570[89a]\p{XDigit}{4}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}[258b][3-6][048c]\p{XDigit}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x5708[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]4[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8C">
+                <regex value="0x5709\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]5[048c]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10C">
+                <regex value="0x570a\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]6[048c]\p{XDigit}"/>
+            </node>
+        </node>
+        <node name="L1 networks">
+            <regex value="0x571\p{XDigit}{5}"/>
+            <regex value="0x57[0-5]\p{XDigit}([147a][a-f]|[258b][0-6])[159d]\p{XDigit}"/>
+            <node name="RHW-2">
+                <regex value="0x5710\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]a[19]\p{XDigit}"/>
+            </node>
+            <node name="RHW-3">
+                <regex value="0x5711\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]b[19]\p{XDigit}"/>
+            </node>
+            <node name="MIS">
+                <regex value="0x5712\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]c[19]\p{XDigit}"/>
+            </node>
+            <node name="RHW-4">
+                <regex value="0x5713\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]d[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6S">
+                <regex value="0x5714\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]e[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8S">
+                <regex value="0x571[5-7]\p{XDigit}{4}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}([147a]f|[258b][0-2])[159d]\p{XDigit}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x5715[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]0[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10S">
+                <regex value="0x5716\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]1[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-12S">
+                <regex value="0x5717\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]2[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6C">
+                <regex value="0x571[89a]\p{XDigit}{4}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}[258b][3-6][159d]\p{XDigit}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x5718[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]4[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8C">
+                <regex value="0x5719\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]5[159d]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10C">
+                <regex value="0x571a\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]6[159d]\p{XDigit}"/>
+            </node>
+        </node>
+        <node name="L2 networks">
+            <regex value="0x572\p{XDigit}{5}"/>
+            <regex value="0x57[0-5]\p{XDigit}([147a][a-f]|[258b][0-6])[26ae]\p{XDigit}"/>
+            <node name="RHW-2">
+                <regex value="0x5720\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]a[2a]\p{XDigit}"/>
+            </node>
+            <node name="RHW-3">
+                <regex value="0x5721\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]b[2a]\p{XDigit}"/>
+            </node>
+            <node name="MIS">
+                <regex value="0x5722\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]c[2a]\p{XDigit}"/>
+            </node>
+            <node name="RHW-4">
+                <regex value="0x5723\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]d[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6S">
+                <regex value="0x5724\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]e[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8S">
+                <regex value="0x572[5-7]\p{XDigit}{4}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}([147a]f|[258b][0-2])[26ae]\p{XDigit}">
+                    <requires nodename="RHW-10S"/>
+                    <requires nodename="RHW-12S"/>
+                </regex>
+                <regex value="0x5725[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]0[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10S">
+                <regex value="0x5726\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]1[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-12S">
+                <regex value="0x5727\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]2[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6C">
+                <regex value="0x572[89a]\p{XDigit}{4}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x57[0-5]\p{XDigit}[258b][3-6][26ae]\p{XDigit}">
+                    <requires nodename="RHW-8C"/>
+                    <requires nodename="RHW-10C"/>
+                </regex>
+                <regex value="0x5728[1-9a-f]\p{XDigit}{1}[0-7]\p{XDigit}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]4[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-8C">
+                <regex value="0x5729\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]5[26ae]\p{XDigit}"/>
+            </node>
+            <node name="RHW-10C">
+                <regex value="0x572a\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[258b]6[26ae]\p{XDigit}"/>
+            </node>
+        </node>
+        <node name="L3 networks">
+            <regex value="0x573\p{XDigit}{5}"/>
+            <regex value="0x57[0-5]\p{XDigit}([147a][a-f]|[258b][0-6])[37bf]\p{XDigit}"/>
+            <node name="MIS">
+                <regex value="0x5732\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]c[3b]\p{XDigit}"/>
+            </node>
+            <node name="RHW-4">
+                <regex value="0x5733\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]d[37bf]\p{XDigit}"/>
+            </node>
+            <node name="RHW-6S">
+                <regex value="0x5734\p{XDigit}{4}"/>
+                <regex value="0x57[0-5]\p{XDigit}[147a]e[37bf]\p{XDigit}"/>
+            </node>
+        </node>
+        <node name="L4 networks">
+            <regex value="0x574\p{XDigit}{5}"/>
+            <node name="MIS">
+                <regex value="0x5742\p{XDigit}{4}"/>
+            </node>
+            <node name="RHW-4">
+                <regex value="0x5743\p{XDigit}{4}"/>
+            </node>
+            <node name="RHW-6S">
+                <regex value="0x5744\p{XDigit}{4}"/>
+            </node>
+        </node>
+        <node name="DDRHW">
+            <regex value="0x575\p{XDigit}{5}"/>
+            <node name="RHW-4">
+                <regex value="0x5753\p{XDigit}{4}"/>
+            </node>
+        </node>
+        <node name="FARHW">
+            <regex value="0x57b\p{XDigit}{5}"/>
+        </node>
+        <node name="3L-Crossings">
+            <regex value="0x57a\p{XDigit}{5}"/>
+        </node>
+    </node>
+    <node name="Street Addon Mod">
+        <regex value="0x5e5\p{XDigit}{5}"/>
+        <node name="Set 1 - Parking Lots">
+            <regex value="0x5e5\p{XDigit}{2}1\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 2 - Herringbone Brick Streets">
+            <regex value="0x5e5\p{XDigit}{2}2\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 3 - PEG Dirt Streets">
+            <regex value="0x5e5\p{XDigit}{2}3\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 4 - PEG Gravel Streets">
+            <regex value="0x5e5\p{XDigit}{2}4\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 5 - Trolca Dirt Streets">
+            <regex value="0x5e5\p{XDigit}{2}5\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 6 - Klinker Streets">
+            <regex value="0x5e5\p{XDigit}{2}6\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 7 - Asphalt Streets">
+            <regex value="0x5e5\p{XDigit}{2}7\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 8 - Cobblestone Streets">
+            <regex value="0x5e5\p{XDigit}{2}8\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 9 - Brick Streets">
+            <regex value="0x5e5\p{XDigit}{2}9\p{XDigit}{2}"/>
+        </node>
+        <node name="Set 10 - Japanese Streets">
+            <regex value="0x5e5\p{XDigit}{2}a\p{XDigit}{2}"/>
+        </node>
+    </node>
+</iid_tree>
