@@ -68,6 +68,12 @@ Get the latest version of the [NAM Controller Compiler](https://github.com/memo3
 Launch it and set the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
 Usually, this is the only task you need to do after modifying files in the `INI`, `RUL0`, `RUL1` or `RUL2` folders.
 
+A script is provided to compile a full set of NAM controllers for release.  Run it from the project root with:
+
+    ./src/scripts/compile-release-controllers.sh "<version>"
+
+The compiled controllers are located at `./target/controllers/`.
+
 ### Compiling INRULs
 
 Get the Java utility [BuildRULs](https://www.dropbox.com/s/ckwhy11xxaz3z1q/BuildRULs_01.zip?dl=0) and run the command
@@ -83,6 +89,13 @@ This creates or updates the files
       ├── NetworkAddonMod_IndividualNetworkRULs_RHD.dat
       ├── NetworkAddonMod_TurningLanes_Avenues_Plugin_INRULs.dat
       └── NetworkAddonMod_Lite_INRULs.dat
+
+A script is provided to compile a full set of INRULs for release.  Run it from the project root with:
+
+    ./src/scripts/compile-release-inruls.sh
+
+The compiled INRUL files are located at `./target/controllers/`.
+
 
 ### Compiling Metarules
 
