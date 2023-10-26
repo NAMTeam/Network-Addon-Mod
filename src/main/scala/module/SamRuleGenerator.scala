@@ -209,10 +209,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       // *       ,---------,---------,---------,---------,
       // *       |         |         |         |    3    |
       // *       |         |       14|        1|1        |
-      // *       |         |   15    |   113   |x5F591F00|
+      // *       |         |   15    |   113   |         |
       // *       ;---------;---------;---------;---------;
       // *       |         |         |   113   |         |
-      // *       |2     111|111    11|11       |         |
+      // * ortho |2     111|111    11|11       |         |
       // *       |         |         |         |         |
       // *       '---------'---------'---------'---------'
       /*
@@ -239,10 +239,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       //  ortho to diagonal (top row)
       Rules += sam~(0,0,14,15) | (Street ~> sam)~(0,0,1,113)    // 0 to 1
         Rules += sam~(0,0,14,15) | sam~(0,0,1,3) | % | sam~(0,0,1,113)
-      Rules += sam~(0,0,1,113) | IdTile(0x5F591F00,3,0,(Road~(1,3,0,0)).symmetries) | % | sam~(1,3,0,0)  // 1 to 2
-        Rules += sam~(0,0,1,113) | (Street ~> sam)~(1,3,0,0)
-      //  diagonal to ortho
-      Rules += sam~(0,1,3,0) | IdTile(0x5F591F00,2,0,(Road~(3,0,0,1)).symmetries) | % | sam~(3,0,0,1)  // diag to 2
+      Rules += sam~(0,0,1,113) | (Street ~> sam)~(1,3,0,0)      // 1 to 2
       //  diagonal to ortho (top row)
       Rules += sam~(0,0,1,3) | (Street ~> sam)~(1,113,0,0)      // 2 to 1
       Rules += sam~(1,113,0,0) | (Street ~> sam)~(14,15,0,0)    // 1 to 0
