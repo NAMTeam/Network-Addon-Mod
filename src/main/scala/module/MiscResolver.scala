@@ -158,7 +158,7 @@ class MiscResolver extends IdResolver {
 	//Tile 22 is override of 1x1 Stub
 	add(Street~(0,2,0,111), 0x5F592400)
 	add(Street~(0,111,0,11), 0x5F592300)
-	add(Street~(14,0,0,14), 0x5F592200)
+	add(Street~(15,0,0,14), 0x5F592200)
 	add(Street~(0,11,113,0), 0x5F592100)
 	add(Street~(113,0,0,1), 0x5F592000)
 	//Larger 90 (4x4)
