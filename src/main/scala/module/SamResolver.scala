@@ -70,7 +70,7 @@ class SamResolver extends IdResolver {
 	  //larger 45 (4x3)
 	  	add(sam~(0,2,0,111), 0x5e5e4000 + offset)
 		add(sam~(0,111,0,11), 0x5e5e3000 + offset)
-		add(sam~(14,0,0,14), 0x5e5e2000 + offset)
+		add(sam~(15,0,0,14), 0x5e5e2000 + offset)
 		add(sam~(0,11,113,0), 0x5e5e1000 + offset)
 		add(sam~(113,0,0,1), 0x5e5e0000 + offset)
 	  //Larger 90 (4x4)

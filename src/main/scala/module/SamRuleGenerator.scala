@@ -5,7 +5,7 @@ import syntax._, Network._, Flags._, Flag._, RotFlip._, Implicits._, group.SymGr
 import NetworkProperties._
 
 
-class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Adjacencies {
+class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Adjacencies with Stability {
 
   def start(): Unit = {
     /*
@@ -196,35 +196,68 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(0,2,2,151) | (Street ~> sam)~(2,2,151,0)
 
       // large 45 curve (4x3)
-      // Orthogonal to Diagonal
-      Rules += sam~WE | (Street ~> sam)~(2,0,111,0)
-      Rules += sam~(2,0,111,0) | (Street ~> sam)~(111,0,11,0)
-      // stability of above
-      Rules += sam~(2,0,2,0) | Street~(111,0,11,0) | sam~(2,0,111,0) | sam~(111,0,11,0)
-      Rules += sam~(2,0,2,0) | sam~(111,0,11,0) | sam~(2,0,111,0) | sam~(111,0,11,0)
+      // *                                        (diag)
+      // *       ,---------,---------,---------,---------,
+      // *       |         |         |         |         |
+      // *       |         |    0    |    1    |    2    |
+      // *       |         |         |         |         |
+      // *       ;---------;---------;---------;---------;
+      // *       |         |         |         |         |
+      // * ortho |    3    |    4    |    5    |         |
+      // *       |         |         |         |         |
+      // *       '---------'---------'---------'---------'
+      // *       ,---------,---------,---------,---------,
+      // *       |         |         |         |    3    |
+      // *       |         |       14|        1|1        |
+      // *       |         |   15    |   113   |         |
+      // *       ;---------;---------;---------;---------;
+      // *       |         |         |   113   |         |
+      // * ortho |2     111|111    11|11       |         |
+      // *       |         |         |         |         |
+      // *       '---------'---------'---------'---------'
+      /*
+      The following code for the large 45 curve is organized like so:
+      First, the overide from the orthogonal side to the diagonal side is described, ordered left to right.
+      Then, the the diagonal to orthogonal direction follows, ordered from right to left.
+      To to and from tiles are annotated in-line.  The necessary stability rules that apply to
+      that from and to tile combo (or its destabilized equivalent) follow indented thereafter.
+      */
+      //  ortho to diagonal (bottom row)
+      Rules += sam~WE | (Street ~> sam)~(2,0,111,0)             // ortho to 3
+      Rules += sam~(2,0,111,0) | (Street ~> sam)~(111,0,11,0)   // 3 to 4
+        Rules += sam~(2,0,111,0) | Street~(2,0,11,0) | % | sam~(111,0,11,0)
+      Rules += sam~(111,0,11,0) | (Street ~> sam)~(11,113,0,0)  // 4 to 5
+        Rules += sam~(111,0,11,0) | sam~(11,3,0,0) | % | sam~(11,113,0,0)
+        Rules += sam~(111,0,11,0) | Street~(11,3,0,0) | % | sam~(11,113,0,0)
+        Rules += sam~(111,0,11,0) | Street~(1,3,0,0) | % | sam~(11,113,0,0)
+      //  ortho to diagonal (bottom to top)
+      Rules += sam~(0,111,0,11) | (Street ~> sam)~(15,0,0,14)   // 4 to 0
+        Rules ++= stabilize(sam~(0,2,0,11) | Street~(0,0,0,0) | sam~(0,111,0,11) | sam~(15,0,0,14))
+        Rules ++= stabilize(sam~(0,2,0,11) | Street~(15,0,0,14) | sam~(0,111,0,11) | sam~(15,0,0,14))
+      Rules += sam~(0,11,113,0) | (Street ~> sam)~(113,0,0,1)   // 5 to 1
+        Rules += sam~(0,11,113,0) | Street~(3,0,0,1) | % | sam~(113,0,0,1)
+      //  ortho to diagonal (top row)
+      Rules += sam~(0,0,14,15) | (Street ~> sam)~(0,0,1,113)    // 0 to 1
+        Rules += sam~(0,0,14,15) | sam~(0,0,1,3) | % | sam~(0,0,1,113)
+      Rules += sam~(0,0,1,113) | (Street ~> sam)~(1,3,0,0)      // 1 to 2
+      //  diagonal to ortho (top row)
+      Rules += sam~(0,0,1,3) | (Street ~> sam)~(1,113,0,0)      // 2 to 1
+      Rules += sam~(1,113,0,0) | (Street ~> sam)~(14,15,0,0)    // 1 to 0
+      //  diagonal to ortho (top to bottom)
+      Rules += sam~(0,1,113,0) | (Street ~> sam)~(113,0,0,11)   // 1 to 5
+        Rules += sam~(0,1,113,0) | Street~(3,0,0,11) | % | sam~(113,0,0,11)
+      Rules += sam~(0,14,15,0) | (Street ~> sam)~(0,11,0,111)   // 0 to 4
+      //  diagonal to ortho (bottom row)
+      Rules += sam~(0,0,11,113) | (Street ~> sam)~(11,0,111,0)  // 5 to 4
+        Rules += sam~(0,0,11,113) | Street~(11,0,2,0) | % | sam~(11,0,111,0)
+        Rules += sam~(0,0,11,113) | Street~(2,0,2,0) | % | sam~(11,0,111,0)
+      Rules += sam~(11,0,111,0) | (Street ~> sam)~(111,0,2,0)   // 4 to 3
+        Rules += sam~(11,0,111,0) | sam~(WE) | % | sam~(111,0,2,0)
+        Rules += sam~(11,0,111,0) | Street~(WE) | % | sam~(111,0,2,0)
+        Rules += sam~(11,0,111,0) | Street~(11,0,2,0) | % | sam~(111,0,2,0)
+      Rules += sam~(111,0,2,0) | (Street ~> sam)~WE             // 3 to ortho
+      // -------------
 
-      Rules += sam~(111,0,11,0) | (Street ~> sam)~(11,113,0,0)
-      // stability of above
-      Rules += sam~(111,0,11,0) | Street~(11,3,0,0) | % | sam~(11,113,0,0)
-      Rules += sam~(111,0,11,0) | sam~(11,3,0,0) | % | sam~(11,113,0,0)
-      Rules += sam~(111,0,11,0) | Street~(2,13,0,0) | % | sam~(11,113,0,0)
-      Rules += sam~(0,111,0,11) | (Street ~> sam)~(14,0,0,14)
-      // stability of above
-      Rules += sam~(0,2,0,11) | Street~(0,0,0,0) | sam~(0,111,0,11) | sam~(14,0,0,14)
-      Rules += sam~(0,111,0,11) | Street~(0,0,0,0) | % | sam~(14,0,0,14)
-      Rules += sam~(0,2,0,11) | Street~(14,0,0,14) | sam~(0,111,0,11) | sam~(14,0,0,14)
-      Rules += sam~(0,2,0,11) | sam~(14,0,0,14) | sam~(0,111,0,11) | sam~(14,0,0,14)
-      Rules += sam~(0,11,113,0) | (Street ~> sam)~(113,0,0,1)
-      Rules += sam~(0,11,113,0) | Street~(13,0,0,1) | % | sam~(113,0,0,1) //stability of line above
-      Rules += sam~(0,11,113,0) | Street~(3,0,0,1) | % | sam~(113,0,0,1) //stability of line above
-      Rules += sam~(0,11,113,0) | sam~(13,0,0,1) | % | sam~(113,0,0,1) //stability of line above
-      Rules += sam~(0,11,113,0) | sam~(3,0,0,1) | % | sam~(113,0,0,1) //stability of line above
-      Rules += sam~(0,0,1,113) | (Street ~> sam)~(1,3,0,0)
-      Rules += sam~(0,0,1,113) | (Street ~> sam)~(1,3,0,0)
-      Rules += sam~(0,0,1,113) | IdTile(0x5F591F00,0,0,noSymmetries) | % | sam~(1,3,0,0)
-      // Diagonal to Orthogonal
-      // (add)
-	  
       // large 90 curve
       Rules += sam~WE | (Street ~> sam)~(2,0,181,0)
       Rules += sam~WE | (Street ~> sam)~(2,0,181,2) //T-int
