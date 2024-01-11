@@ -32,22 +32,22 @@ unzip -d "$TEMP" "$BUILDRULS_ARCHIVE"
 (cd "$TEMP/BuildRULs_01" && java -jar BuildRULs.jar -f "$PROJECT_ROOT/Controller/INRULs/" "$PROJECT_ROOT/Controller/INRULs/")
 
 # RHD 4GB Full
-DESTDIR="target/controllers/@1=0 NAM Controller_RHD_4GB_Full/"
+DESTDIR="target/controllers/=0 NAM Controller_RHD_4GB_Full/"
 mkdir -p "$DESTDIR"
 cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_IndividualNetworkRULs_RHD.dat" "$DESTDIR"
 
 # LHD 4GB Full
-DESTDIR="target/controllers/@2-0 NAM Controller_LHD_4GB_Full/"
+DESTDIR="target/controllers/-0 NAM Controller_LHD_4GB_Full/"
 mkdir -p "$DESTDIR"
 cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_IndividualNetworkRULs_LHD.dat" "$DESTDIR"
 
 # RHD no-RHW
-DESTDIR="target/controllers/@3-0 NAM Controller_RHD_LowRAM_NoRHW/"
+DESTDIR="target/controllers/-0 NAM Controller_RHD_LowRAM_NoRHW/"
 mkdir -p "$DESTDIR"
 cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_IndividualNetworkRULs_RHD.dat" "$DESTDIR"
 
 # LHD no-RHW
-DESTDIR="target/controllers/@4-0 NAM Controller_LHD_LowRAM_NoRHW/"
+DESTDIR="target/controllers/-0 NAM Controller_LHD_LowRAM_NoRHW/"
 mkdir -p "$DESTDIR"
 cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_IndividualNetworkRULs_LHD.dat" "$DESTDIR"
 
