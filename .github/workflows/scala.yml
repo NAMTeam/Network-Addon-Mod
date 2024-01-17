@@ -16,9 +16,7 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -31,3 +29,10 @@ jobs:
       run: sbt test
     - name: Generate locale files
       run: sbt generateLocales
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check RUL2 syntax
+      run: sh src/scripts/syntax-check-rul2.sh

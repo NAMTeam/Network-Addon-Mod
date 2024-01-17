@@ -10,12 +10,14 @@ For installation and usage of the NAM, see https://www.sc4nam.com/.
 
 ## Translating
 
-[![gitlocalized ](https://gitlocalize.com/repo/8339/de/badge.svg)](https://gitlocalize.com/repo/8339/de?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/es/badge.svg)](https://gitlocalize.com/repo/8339/es?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/fr/badge.svg)](https://gitlocalize.com/repo/8339/fr?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/it/badge.svg)](https://gitlocalize.com/repo/8339/it?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/ja/badge.svg)](https://gitlocalize.com/repo/8339/ja?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8339/nl/badge.svg)](https://gitlocalize.com/repo/8339/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/de/badge.svg)](https://gitlocalize.com/repo/8674/de?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/es/badge.svg)](https://gitlocalize.com/repo/8674/es?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/fr/badge.svg)](https://gitlocalize.com/repo/8674/fr?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/it/badge.svg)](https://gitlocalize.com/repo/8674/it?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ja/badge.svg)](https://gitlocalize.com/repo/8674/ja?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/ko/badge.svg)](https://gitlocalize.com/repo/8674/ko?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/nl/badge.svg)](https://gitlocalize.com/repo/8674/nl?utm_source=badge)
+[![gitlocalized ](https://gitlocalize.com/repo/8674/sv/badge.svg)](https://gitlocalize.com/repo/8674/sv?utm_source=badge)
 
 To help translate the NAM to different languages, see the [Translation Guide](ltext/README.md#translating-the-nam).
 
@@ -66,6 +68,12 @@ Get the latest version of the [NAM Controller Compiler](https://github.com/memo3
 Launch it and set the directory `Controller` as input for the Controller Compiler to generate the Controller .dat file.
 Usually, this is the only task you need to do after modifying files in the `INI`, `RUL0`, `RUL1` or `RUL2` folders.
 
+A script is provided to compile a full set of NAM controllers for release.  Run it from the project root with:
+
+    ./src/scripts/compile-release-controllers.sh "<version>"
+
+The compiled controllers are located at `./target/controllers/`.
+
 ### Compiling INRULs
 
 Get the Java utility [BuildRULs](https://www.dropbox.com/s/ckwhy11xxaz3z1q/BuildRULs_01.zip?dl=0) and run the command
@@ -81,6 +89,13 @@ This creates or updates the files
       ├── NetworkAddonMod_IndividualNetworkRULs_RHD.dat
       ├── NetworkAddonMod_TurningLanes_Avenues_Plugin_INRULs.dat
       └── NetworkAddonMod_Lite_INRULs.dat
+
+A script is provided to compile a full set of INRULs for release.  Run it from the project root with:
+
+    ./src/scripts/compile-release-inruls.sh
+
+The compiled INRUL files are located at `./target/controllers/`.
+
 
 ### Compiling Metarules
 

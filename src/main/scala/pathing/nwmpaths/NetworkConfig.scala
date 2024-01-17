@@ -1,10 +1,11 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import meta._, Network._, Flags._
+import io.github.memo33.metarules.meta._, Flags._
+import com.sc4nam.module.syntax._, Network._
+import io.github.memo33.scdbpf
 import scdbpf.Sc4Path.Cardinal._, scdbpf.DbpfUtil.RotFlip._
 import scdbpf.Sc4Path.{TransportType => TT}
-import pathing._
+import io.github.memo33.metarules.pathing._
 import PathCreator.{SPath, SPaths}
 import Bezier.{Point, Dec}
 

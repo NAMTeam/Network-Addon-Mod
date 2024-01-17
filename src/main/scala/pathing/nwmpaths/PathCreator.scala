@@ -1,10 +1,8 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import pathing._
-import Bezier._
-import meta._, Network._
-import scdbpf._, Sc4Path.{TransportType => TT, _}, Cardinal._, DbpfUtil.RotFlip._
+import io.github.memo33.metarules.pathing._, Bezier._
+import io.github.memo33.metarules.meta._, com.sc4nam.module.syntax._, Network._, com.sc4nam.module.NetworkProperties
+import io.github.memo33.scdbpf._, Sc4Path.{TransportType => TT, _}, Cardinal._, DbpfUtil.RotFlip._
 import Trimming._
 import NetworkConfig.straightPaths
 
@@ -45,8 +43,8 @@ object PathCreator {
           // special handling for center turning lanes of TLAs
           // TODO Orientations and directions of paths need testing,
           // and the alternative TLA turn paths need permanent IIDs
-          val idTile1 = resolver(Tile.projectLeft(seg1 & seg2))
-          val idTile2 = resolver(Tile.projectLeft((seg1 & seg2) * R0F1))
+          val idTile1 = resolver(NetworkProperties.projectTlaLeft(seg1 & seg2))
+          val idTile2 = resolver(NetworkProperties.projectTlaLeft((seg1 & seg2) * R0F1))
           if (!ids.contains(idTile1.id)) {
             val intersection = new PlusIntersection(seg1, seg2)
             ids(idTile1.id) = intersection.buildSc4Path * (R0F0 / idTile1.rf)

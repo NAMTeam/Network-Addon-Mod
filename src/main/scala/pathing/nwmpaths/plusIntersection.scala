@@ -1,8 +1,8 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import pathing._, Bezier._
-import scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
+import io.github.memo33.metarules.pathing._, Bezier._
+import com.sc4nam.module.syntax.{Network, Segment}
+import io.github.memo33.scdbpf, scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
 import PathCreator.{SPath, SPaths}
 
 abstract class CommonIntersection extends Intersection {
@@ -19,7 +19,7 @@ abstract class CommonIntersection extends Intersection {
   private val classNumberLeftTurn = 'l' - 'a' + 1
   private val classNumberRightTurn = 'r' - 'a' + 1
 
-  def yieldConnections(tt: TT): TraversableOnce[Connection] = {
+  def yieldConnections(tt: TT): IterableOnce[Connection] = {
     def buildTurnPaths(left: Boolean) = for {
       fromDir <- Seq(West, North, East, South)
       ((fromPath, cn), toPath) <- if (left) leftTurnPaths(fromDir, tt).zipWithIndex zip iterateMergePathsFromLeft(fromDir *: R3F0, tt)
@@ -46,7 +46,7 @@ abstract class CommonIntersection extends Intersection {
   //   (possible workaround: move the stop line a bit)
   // - TLAs have an extraneous UK stop point where the center lane meets the sim
   //   path behind the intersection
-  def yieldConnectionStops(tt: TT): TraversableOnce[ConnectionStop] = {
+  def yieldConnectionStops(tt: TT): IterableOnce[ConnectionStop] = {
     def buildStopPaths(uk: Boolean) = {
       for {
         fromDir <- Seq(West, North, East, South)
@@ -61,16 +61,14 @@ abstract class CommonIntersection extends Intersection {
   }
 }
 
-import meta.Segment
-
 class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersection {
   private[this] val sortedPaths: Map[Cardinal, SPaths] =
-    NetworkConfig.straightPaths(major, minor).groupBy(_.dir) mapValues (_ sortWith PlusIntersection.rightToLeftSorter)
+    NetworkConfig.straightPaths(major, minor).groupBy(_.dir).view.mapValues(_ sortWith PlusIntersection.rightToLeftSorter).toMap
   private[this] def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
   private[this] def hasTurningLane(c: Cardinal) = network(c).isTla
   private[this] def isBidirectionalOneway(c: Cardinal) = {
     val n = network(c)
-    n == meta.Network.Onewayroad || n.base.exists(_ == meta.Network.Onewayroad)
+    n == Network.Onewayroad || n.base.exists(_ == Network.Onewayroad)
   }
 
   protected def rightTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Sim || tt == TT.Car) {
