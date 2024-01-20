@@ -4,25 +4,7 @@ This guide covers translation of the mod's [LText](https://wiki.sc4devotion.com/
 
 ## Translating the NAM
 
-The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for internationalization,
-so any compatible tool can be used for translating, such as GitLocalize or Poedit.
-
-[![gitlocalized ](https://gitlocalize.com/repo/8674/de/badge.svg)](https://gitlocalize.com/repo/8674/de?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/es/badge.svg)](https://gitlocalize.com/repo/8674/es?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/fr/badge.svg)](https://gitlocalize.com/repo/8674/fr?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/it/badge.svg)](https://gitlocalize.com/repo/8674/it?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/ja/badge.svg)](https://gitlocalize.com/repo/8674/ja?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/ko/badge.svg)](https://gitlocalize.com/repo/8674/ko?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/nl/badge.svg)](https://gitlocalize.com/repo/8674/nl?utm_source=badge)
-[![gitlocalized ](https://gitlocalize.com/repo/8674/sv/badge.svg)](https://gitlocalize.com/repo/8674/sv?utm_source=badge)
-
-### GitLocalize
-
-[GitLocalize](https://gitlocalize.com/repo/8674) is an online localization tool.  See the guide on [contributing to projects](https://docs.gitlocalize.com/how_to_contribute.html).
-
-Pros: machine-assisted translations, no tool installation required.
-
-Drawbacks: translations can only be submitted after a file has been fully translated
+The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for internationalization and recommends the use of Poedit for translation tasks.
 
 ### Poedit
 
@@ -70,7 +52,7 @@ and `msgstr` is left blank.
 
 ### Modifying Existing LTexts
 
-Changes to existing LTexts should be made in the English `.pot` files within the `\ltext` directory.  Updating `.pot` LTexts is not possible using either GitLocalize or Poedit and must be done using a standard text editor.  To make a change, edit the `msgid` string.
+Changes to existing LTexts should be made in the English `.pot` files within the `\ltext` directory.  Updating `.pot` LTexts is not possible using Poedit and must be done using a standard text editor.  To make a change, edit the `msgid` string.
 
 ### Synchronizing Translations
 
