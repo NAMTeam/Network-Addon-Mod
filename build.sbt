@@ -2,9 +2,9 @@ name := "nam-controller"
 
 organization := "com.sc4nam"
 
-version := "48-SNAPSHOT"
+version := "49-SNAPSHOT"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.12"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -19,7 +19,7 @@ console / initialCommands := """
 import io.github.memo33.metarules.meta._, com.sc4nam.module, module.syntax._
 import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._
 lazy val resolve = module.Main.resolveSafely
-implicit lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
+implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
 """
 
