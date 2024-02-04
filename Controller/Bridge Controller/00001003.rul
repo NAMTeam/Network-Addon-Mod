@@ -1,0 +1,7857 @@
+# Street bridge specializations
+#
+# added by IDS2 02/24
+#
+# Sections
+#
+# These are chunks of tiles that can be included into bridges. The
+# syntax for specifying pieces:
+#
+#    piece <instance, rotation>                         Simple piece
+#    piece <instance, rotation, htdelta, yoffset>       Sloped piece with the given height change over the tile and model Y offset
+#    piece <instance, rotation>:depth                   Simple piece with support column (: syntax also works for long form)
+#    piece section-name                                 Reference a section
+#
+# You can specify more than one piece/section in a line and you can
+# also reverse a section while referencing it:
+#
+#    piece rev(foobar)
+
+
+# Red Under Deck Truss Arch (street) by IDS2 (10/23)
+
+bridge 38
+
+# abutment start - 4 tiles
+section as
+	piece <0x40450000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40455000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40454000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+	piece <0x40453000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x40451000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x40452000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-2) by IDS2 (10/23)
+
+bridge 39
+
+# abutment start - 4 tiles
+section as
+	piece <0x40460000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40465000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40464000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+	piece <0x40463000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x40461000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x40462000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-6) by IDS2 (10/23)
+
+bridge 40
+
+# abutment start - 4 tiles
+section as
+	piece <0x40470000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40475000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40474000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+	piece <0x40473000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x40471000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x40472000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-7) by IDS2 (10/23)
+
+bridge 41
+
+# abutment start - 4 tiles
+section as
+	piece <0x40480000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40485000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40484000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+	piece <0x40483000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x40481000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x40482000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-8) by IDS2 (10/23)
+
+bridge 42
+
+# abutment start - 4 tiles
+section as
+	piece <0x40490000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40495000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40494000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+	piece <0x40493000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x40491000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x40492000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-9) by IDS2 (10/23)
+
+bridge 43
+
+# abutment start - 4 tiles
+section as
+	piece <0x404A0000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A5000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A4000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+	piece <0x404A3000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x404A1000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x404A2000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-10) by IDS2 (10/23)
+
+bridge 44
+
+# abutment start - 4 tiles
+section as
+	piece <0x404B0000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B5000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B4000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+	piece <0x404B3000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x404B1000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x404B2000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
+
+
+# Red Under Deck Truss Arch (SAM-11) by IDS2 (10/23)
+
+bridge 45
+
+# abutment start - 4 tiles
+section as
+	piece <0x404C0000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+end 
+
+# end pillar - 7 tiles
+section ep
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C5000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+end 
+
+# mid pillar - 7 tiles
+section mp
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C4000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+	piece <0x404C3000, 0>
+end 
+
+# box pillar - 1 tile
+section bp
+	piece <0x404C1000, 0>
+end 
+
+# box span - 1 tile
+section bs
+	piece <0x404C2000, 0>
+end 
+
+	length 22
+	piece as ep rev(ep) rev(as)
+	end
+	
+	length 23
+	piece as bp ep rev(ep) rev(as)
+	end
+	
+	length 24
+	piece as bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 25
+	piece as bs bp ep rev(ep) rev(bp) rev(as)
+	end
+	
+	length 26
+	piece as bs bp ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 27
+	piece as bs bp bs ep rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 28
+	piece as bs bp bs ep rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 29
+	piece as ep mp rev(ep) rev(as)
+	end
+	
+	length 30
+	piece as bp ep mp rev(ep) rev(as)
+	end
+	
+	length 31
+	piece as bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 32
+	piece as bs bp ep mp rev(ep) rev(bp) rev(as)
+	end
+	
+	length 33
+	piece as bs bp ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 34
+	piece as bs bp bs ep mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 35
+	piece as bs bp bs ep mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+	
+	length 36
+	piece as ep 2*mp rev(ep) rev(as)
+	end
+
+	length 37
+	piece as bp ep 2*mp rev(ep) rev(as)
+	end
+
+	length 38
+	piece as bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 39
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 40
+	piece as bs bp ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 41
+	piece as bs bp bs ep 2*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 42
+	piece as bs bp bs ep 2*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 43
+	piece as ep 3*mp rev(ep) rev(as)
+	end
+
+	length 44
+	piece as bp ep 3*mp rev(ep) rev(as)
+	end
+
+	length 45
+	piece as bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 46
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 47
+	piece as bs bp ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 48
+	piece as bs bp bs ep 3*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 49
+	piece as bs bp bs ep 3*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 50
+	piece as ep 4*mp rev(ep) rev(as)
+	end
+
+	length 51
+	piece as bp ep 4*mp rev(ep) rev(as)
+	end
+
+	length 52
+	piece as bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 53
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 54
+	piece as bs bp ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 55
+	piece as bs bp bs ep 4*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 56
+	piece as bs bp bs ep 4*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 57
+	piece as ep 5*mp rev(ep) rev(as)
+	end
+
+	length 58
+	piece as bp ep 5*mp rev(ep) rev(as)
+	end
+
+	length 59
+	piece as bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 60
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 61
+	piece as bs bp ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 62
+	piece as bs bp bs ep 5*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 63
+	piece as bs bp bs ep 5*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 64
+	piece as ep 6*mp rev(ep) rev(as)
+	end
+
+	length 65
+	piece as bp ep 6*mp rev(ep) rev(as)
+	end
+
+	length 66
+	piece as bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 67
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 68
+	piece as bs bp ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 69
+	piece as bs bp bs ep 6*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 70
+	piece as bs bp bs ep 6*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 71
+	piece as ep 7*mp rev(ep) rev(as)
+	end
+
+	length 72
+	piece as bp ep 7*mp rev(ep) rev(as)
+	end
+
+	length 73
+	piece as bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 74
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 75
+	piece as bs bp ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 76
+	piece as bs bp bs ep 7*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 77
+	piece as bs bp bs ep 7*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 78
+	piece as ep 8*mp rev(ep) rev(as)
+	end
+
+	length 79
+	piece as bp ep 8*mp rev(ep) rev(as)
+	end
+
+	length 80
+	piece as bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 81
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 82
+	piece as bs bp ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 83
+	piece as bs bp bs ep 8*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 84
+	piece as bs bp bs ep 8*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 85
+	piece as ep 9*mp rev(ep) rev(as)
+	end
+
+	length 86
+	piece as bp ep 9*mp rev(ep) rev(as)
+	end
+
+	length 87
+	piece as bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 88
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 89
+	piece as bs bp ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 90
+	piece as bs bp bs ep 9*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 91
+	piece as bs bp bs ep 9*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 92
+	piece as ep 10*mp rev(ep) rev(as)
+	end
+
+	length 93
+	piece as bp ep 10*mp rev(ep) rev(as)
+	end
+
+	length 94
+	piece as bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 95
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 96
+	piece as bs bp ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 97
+	piece as bs bp bs ep 10*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 98
+	piece as bs bp bs ep 10*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 99
+	piece as ep 11*mp rev(ep) rev(as)
+	end
+
+	length 100
+	piece as bp ep 11*mp rev(ep) rev(as)
+	end
+
+	length 101
+	piece as bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 102
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 103
+	piece as bs bp ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 104
+	piece as bs bp bs ep 11*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 105
+	piece as bs bp bs ep 11*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 106
+	piece as ep 12*mp rev(ep) rev(as)
+	end
+
+	length 107
+	piece as bp ep 12*mp rev(ep) rev(as)
+	end
+
+	length 108
+	piece as bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 109
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 110
+	piece as bs bp ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 111
+	piece as bs bp bs ep 12*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 112
+	piece as bs bp bs ep 12*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 113
+	piece as ep 13*mp rev(ep) rev(as)
+	end
+
+	length 114
+	piece as bp ep 13*mp rev(ep) rev(as)
+	end
+
+	length 115
+	piece as bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 116
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 117
+	piece as bs bp ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 118
+	piece as bs bp bs ep 13*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 119
+	piece as bs bp bs ep 13*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 120
+	piece as ep 14*mp rev(ep) rev(as)
+	end
+
+	length 121
+	piece as bp ep 14*mp rev(ep) rev(as)
+	end
+
+	length 122
+	piece as bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 123
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 124
+	piece as bs bp ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 125
+	piece as bs bp bs ep 14*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 126
+	piece as bs bp bs ep 14*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 127
+	piece as ep 15*mp rev(ep) rev(as)
+	end
+
+	length 128
+	piece as bp ep 15*mp rev(ep) rev(as)
+	end
+
+	length 129
+	piece as bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 130
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 131
+	piece as bs bp ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 132
+	piece as bs bp bs ep 15*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 133
+	piece as bs bp bs ep 15*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 134
+	piece as ep 16*mp rev(ep) rev(as)
+	end
+
+	length 135
+	piece as bp ep 16*mp rev(ep) rev(as)
+	end
+
+	length 136
+	piece as bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 137
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(as)
+	end
+
+
+
+	length 138
+	piece as bs bp ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 139
+	piece as bs bp bs ep 16*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 140
+	piece as bs bp bs ep 16*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 141
+	piece as ep 17*mp rev(ep) rev(as)
+	end
+
+	length 142
+	piece as bp ep 17*mp rev(ep) rev(as)
+	end
+
+	length 143
+	piece as bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 144
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 145
+	piece as bs bp ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 146
+	piece as bs bp bs ep 17*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 147
+	piece as bs bp bs ep 17*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 148
+	piece as ep 18*mp rev(ep) rev(as)
+	end
+
+	length 149
+	piece as bp ep 18*mp rev(ep) rev(as)
+	end
+
+	length 150
+	piece as bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 151
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 152
+	piece as bs bp ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 153
+	piece as bs bp bs ep 18*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 154
+	piece as bs bp bs ep 18*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 155
+	piece as ep 19*mp rev(ep) rev(as)
+	end
+
+	length 156
+	piece as bp ep 19*mp rev(ep) rev(as)
+	end
+
+	length 157
+	piece as bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 158
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 159
+	piece as bs bp ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 160
+	piece as bs bp bs ep 19*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 161
+	piece as bs bp bs ep 19*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 162
+	piece as ep 20*mp rev(ep) rev(as)
+	end
+
+	length 163
+	piece as bp ep 20*mp rev(ep) rev(as)
+	end
+
+	length 164
+	piece as bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 165
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 166
+	piece as bs bp ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 167
+	piece as bs bp bs ep 20*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 168
+	piece as bs bp bs ep 20*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 169
+	piece as ep 21*mp rev(ep) rev(as)
+	end
+
+	length 170
+	piece as bp ep 21*mp rev(ep) rev(as)
+	end
+
+	length 171
+	piece as bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 172
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 173
+	piece as bs bp ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 174
+	piece as bs bp bs ep 21*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 175
+	piece as bs bp bs ep 21*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 176
+	piece as ep 22*mp rev(ep) rev(as)
+	end
+
+	length 177
+	piece as bp ep 22*mp rev(ep) rev(as)
+	end
+
+	length 178
+	piece as bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 179
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 180
+	piece as bs bp ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 181
+	piece as bs bp bs ep 22*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 182
+	piece as bs bp bs ep 22*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 183
+	piece as ep 23*mp rev(ep) rev(as)
+	end
+
+	length 184
+	piece as bp ep 23*mp rev(ep) rev(as)
+	end
+
+	length 185
+	piece as bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 186
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 187
+	piece as bs bp ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 188
+	piece as bs bp bs ep 23*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 189
+	piece as bs bp bs ep 23*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 190
+	piece as ep 24*mp rev(ep) rev(as)
+	end
+
+	length 191
+	piece as bp ep 24*mp rev(ep) rev(as)
+	end
+
+	length 192
+	piece as bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 193
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 194
+	piece as bs bp ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 195
+	piece as bs bp bs ep 24*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 196
+	piece as bs bp bs ep 24*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 197
+	piece as ep 25*mp rev(ep) rev(as)
+	end
+
+	length 198
+	piece as bp ep 25*mp rev(ep) rev(as)
+	end
+
+	length 199
+	piece as bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 200
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 201
+	piece as bs bp ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 202
+	piece as bs bp bs ep 25*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 203
+	piece as bs bp bs ep 25*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 204
+	piece as ep 26*mp rev(ep) rev(as)
+	end
+
+	length 205
+	piece as bp ep 26*mp rev(ep) rev(as)
+	end
+
+	length 206
+	piece as bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 207
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 208
+	piece as bs bp ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 209
+	piece as bs bp bs ep 26*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 210
+	piece as bs bp bs ep 26*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 211
+	piece as ep 27*mp rev(ep) rev(as)
+	end
+
+	length 212
+	piece as bp ep 27*mp rev(ep) rev(as)
+	end
+
+	length 213
+	piece as bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 214
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 215
+	piece as bs bp ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 216
+	piece as bs bp bs ep 27*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 217
+	piece as bs bp bs ep 27*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 218
+	piece as ep 28*mp rev(ep) rev(as)
+	end
+
+	length 219
+	piece as bp ep 28*mp rev(ep) rev(as)
+	end
+
+	length 220
+	piece as bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 221
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 222
+	piece as bs bp ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 223
+	piece as bs bp bs ep 28*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 224
+	piece as bs bp bs ep 28*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 225
+	piece as ep 29*mp rev(ep) rev(as)
+	end
+
+	length 226
+	piece as bp ep 29*mp rev(ep) rev(as)
+	end
+
+	length 227
+	piece as bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 228
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 229
+	piece as bs bp ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 230
+	piece as bs bp bs ep 29*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 231
+	piece as bs bp bs ep 29*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 232
+	piece as ep 30*mp rev(ep) rev(as)
+	end
+
+	length 233
+	piece as bp ep 30*mp rev(ep) rev(as)
+	end
+
+	length 234
+	piece as bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 235
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 236
+	piece as bs bp ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 237
+	piece as bs bp bs ep 30*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 238
+	piece as bs bp bs ep 30*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 239
+	piece as ep 31*mp rev(ep) rev(as)
+	end
+
+	length 240
+	piece as bp ep 31*mp rev(ep) rev(as)
+	end
+
+	length 241
+	piece as bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 242
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 243
+	piece as bs bp ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 244
+	piece as bs bp bs ep 31*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 245
+	piece as bs bp bs ep 31*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 246
+	piece as ep 32*mp rev(ep) rev(as)
+	end
+
+	length 247
+	piece as bp ep 32*mp rev(ep) rev(as)
+	end
+
+	length 248
+	piece as bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 249
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(as)
+	end
+
+	length 250
+	piece as bs bp ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 251
+	piece as bs bp bs ep 32*mp rev(ep) rev(bp) rev(bs) rev(as)
+	end
+
+	length 252
+	piece as bs bp bs ep 32*mp rev(ep) rev(bs) rev(bp) rev(bs) rev(as)
+	end
+
+	length 253
+	piece as ep 33*mp rev(ep) rev(as)
+	end
+
+	length 254
+	piece as bp ep 33*mp rev(ep) rev(as)
+	end
+end
