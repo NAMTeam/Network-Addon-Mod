@@ -7855,3 +7855,8003 @@ end
 	piece as bp ep 33*mp rev(ep) rev(as)
 	end
 end
+
+
+# Green Over Deck Truss (street) by IDS2 (10/23)
+
+bridge 46
+
+# end arch - 7 tiles
+section ep
+	piece <0x40544000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40543000, 0>	
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+	piece <0x40542000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40540000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40541000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-2) by IDS2 (10/23)
+
+bridge 47
+
+# end arch - 7 tiles
+section ep
+	piece <0x40554000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40553000, 0>	
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+	piece <0x40552000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40550000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40551000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-6) by IDS2 (10/23)
+
+bridge 48
+
+# end arch - 7 tiles
+section ep
+	piece <0x40564000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40563000, 0>	
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+	piece <0x40562000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40560000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40561000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-7) by IDS2 (10/23)
+
+bridge 49
+
+# end arch - 7 tiles
+section ep
+	piece <0x40574000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40573000, 0>	
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+	piece <0x40572000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40570000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40571000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-8) by IDS2 (10/23)
+
+bridge 50
+
+# end arch - 7 tiles
+section ep
+	piece <0x40584000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40583000, 0>	
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+	piece <0x40582000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40580000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40581000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-9) by IDS2 (10/23)
+
+bridge 51
+
+# end arch - 7 tiles
+section ep
+	piece <0x40594000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40593000, 0>	
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+	piece <0x40592000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x40590000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x40591000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-10) by IDS2 (10/23)
+
+bridge 52
+
+# end arch - 7 tiles
+section ep
+	piece <0x405A4000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A3000, 0>	
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+	piece <0x405A2000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x405A0000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x405A1000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
+
+
+# Green Over Deck Truss (SAM-11) by IDS2 (10/23)
+
+bridge 53
+
+# end arch - 7 tiles
+section ep
+	piece <0x405B4000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+end 
+
+# mid arch - 13 tiles
+section mp
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B3000, 0>	
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+	piece <0x405B2000, 0>
+end 
+
+# pillar - 1 tile
+section pi
+	piece <0x405B0000, 0>
+end 
+
+# span - 1 tile
+section sp
+	piece <0x405B1000, 0>
+end 
+
+	length 16
+	piece sp ep rev(ep) rev(sp)
+	end
+	
+	length 17
+	piece 2*sp ep rev(ep) rev(sp)
+	end
+	
+	length 18
+	piece 2*sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 19
+	piece sp pi sp ep rev(ep) 2*rev(sp)
+	end
+	
+	length 20
+	piece sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 21
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 22
+	piece 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 23
+	piece 2*sp pi 2*sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 24
+	piece 2*sp pi 2*sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 25
+	piece 2*sp pi sp pi sp ep rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 26
+	piece 2*sp pi sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 27
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 28
+	piece 2*sp pi 2*sp pi sp ep rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 29
+	piece sp ep mp rev(ep) rev(sp)
+	end
+
+	length 30
+	piece 2*sp ep mp rev(ep) rev(sp)
+	end
+	
+	length 31
+	piece 2*sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 32
+	piece sp pi sp ep mp rev(ep) 2*rev(sp)
+	end
+	
+	length 33
+	piece sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 34
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 35
+	piece 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 36
+	piece 2*sp pi 2*sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 37
+	piece 2*sp pi 2*sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 38
+	piece 2*sp pi sp pi sp ep mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 39
+	piece 2*sp pi sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 40
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 41
+	piece 2*sp pi 2*sp pi sp ep mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 42
+	piece sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 43
+	piece 2*sp ep 2*mp rev(ep) rev(sp)
+	end
+	
+	length 44
+	piece 2*sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 45
+	piece sp pi sp ep 2*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 46
+	piece sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 47
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 48
+	piece 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 49
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 50
+	piece 2*sp pi 2*sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 51
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 52
+	piece 2*sp pi sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 53
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 54
+	piece 2*sp pi 2*sp pi sp ep 2*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 55
+	piece sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 56
+	piece 2*sp ep 3*mp rev(ep) rev(sp)
+	end
+	
+	length 57
+	piece 2*sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 58
+	piece sp pi sp ep 3*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 59
+	piece sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 60
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 61
+	piece 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 62
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 63
+	piece 2*sp pi 2*sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 64
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 65
+	piece 2*sp pi sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 66
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 67
+	piece 2*sp pi 2*sp pi sp ep 3*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 68
+	piece sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 69
+	piece 2*sp ep 4*mp rev(ep) rev(sp)
+	end
+	
+	length 70
+	piece 2*sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 71
+	piece sp pi sp ep 4*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 72
+	piece sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 73
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 74
+	piece 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 75
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 76
+	piece 2*sp pi 2*sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 77
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 78
+	piece 2*sp pi sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 79
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 80
+	piece 2*sp pi 2*sp pi sp ep 4*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 81
+	piece sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 82
+	piece 2*sp ep 5*mp rev(ep) rev(sp)
+	end
+	
+	length 83
+	piece 2*sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 84
+	piece sp pi sp ep 5*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 85
+	piece sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 86
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 87
+	piece 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 88
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 89
+	piece 2*sp pi 2*sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 90
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 91
+	piece 2*sp pi sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 92
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 93
+	piece 2*sp pi 2*sp pi sp ep 5*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 94
+	piece sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 95
+	piece 2*sp ep 6*mp rev(ep) rev(sp)
+	end
+	
+	length 96
+	piece 2*sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 97
+	piece sp pi sp ep 6*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 98
+	piece sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 99
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 100
+	piece 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 101
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 102
+	piece 2*sp pi 2*sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 103
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 104
+	piece 2*sp pi sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 105
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 106
+	piece 2*sp pi 2*sp pi sp ep 6*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 107
+	piece sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 108
+	piece 2*sp ep 7*mp rev(ep) rev(sp)
+	end
+	
+	length 109
+	piece 2*sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 110
+	piece sp pi sp ep 7*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 111
+	piece sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 112
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 113
+	piece 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 114
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 115
+	piece 2*sp pi 2*sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 116
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 117
+	piece 2*sp pi sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 118
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 119
+	piece 2*sp pi 2*sp pi sp ep 7*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 120
+	piece sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 121
+	piece 2*sp ep 8*mp rev(ep) rev(sp)
+	end
+	
+	length 122
+	piece 2*sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 123
+	piece sp pi sp ep 8*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 124
+	piece sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 125
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 126
+	piece 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 127
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 128
+	piece 2*sp pi 2*sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 129
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 130
+	piece 2*sp pi sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 131
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 132
+	piece 2*sp pi 2*sp pi sp ep 8*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 133
+	piece sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 134
+	piece 2*sp ep 9*mp rev(ep) rev(sp)
+	end
+	
+	length 135
+	piece 2*sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 136
+	piece sp pi sp ep 9*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 137
+	piece sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 138
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 139
+	piece 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 140
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 141
+	piece 2*sp pi 2*sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 142
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 143
+	piece 2*sp pi sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 144
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 145
+	piece 2*sp pi 2*sp pi sp ep 9*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 146
+	piece sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 147
+	piece 2*sp ep 10*mp rev(ep) rev(sp)
+	end
+	
+	length 148
+	piece 2*sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 149
+	piece sp pi sp ep 10*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 150
+	piece sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 151
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 152
+	piece 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 153
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 154
+	piece 2*sp pi 2*sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 155
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 156
+	piece 2*sp pi sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 157
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 158
+	piece 2*sp pi 2*sp pi sp ep 10*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 159
+	piece sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 160
+	piece 2*sp ep 11*mp rev(ep) rev(sp)
+	end
+	
+	length 161
+	piece 2*sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 162
+	piece sp pi sp ep 11*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 163
+	piece sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 164
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 165
+	piece 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 166
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 167
+	piece 2*sp pi 2*sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 168
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 169
+	piece 2*sp pi sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 170
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 171
+	piece 2*sp pi 2*sp pi sp ep 11*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 172
+	piece sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 173
+	piece 2*sp ep 12*mp rev(ep) rev(sp)
+	end
+	
+	length 174
+	piece 2*sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 175
+	piece sp pi sp ep 12*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 176
+	piece sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 177
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 178
+	piece 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 179
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 180
+	piece 2*sp pi 2*sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 181
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 182
+	piece 2*sp pi sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 183
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 184
+	piece 2*sp pi 2*sp pi sp ep 12*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 185
+	piece sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 186
+	piece 2*sp ep 13*mp rev(ep) rev(sp)
+	end
+	
+	length 187
+	piece 2*sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 188
+	piece sp pi sp ep 13*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 189
+	piece sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 190
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 191
+	piece 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 192
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 193
+	piece 2*sp pi 2*sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 194
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 195
+	piece 2*sp pi sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 196
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 197
+	piece 2*sp pi 2*sp pi sp ep 13*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 198
+	piece sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 199
+	piece 2*sp ep 14*mp rev(ep) rev(sp)
+	end
+	
+	length 200
+	piece 2*sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 201
+	piece sp pi sp ep 14*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 202
+	piece sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 203
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 204
+	piece 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 205
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 206
+	piece 2*sp pi 2*sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 207
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 208
+	piece 2*sp pi sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 209
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 210
+	piece 2*sp pi 2*sp pi sp ep 14*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 211
+	piece sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 212
+	piece 2*sp ep 15*mp rev(ep) rev(sp)
+	end
+	
+	length 213
+	piece 2*sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 214
+	piece sp pi sp ep 15*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 215
+	piece sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 216
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 217
+	piece 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 218
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 219
+	piece 2*sp pi 2*sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 220
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 221
+	piece 2*sp pi sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 222
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 223
+	piece 2*sp pi 2*sp pi sp ep 15*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 224
+	piece sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 225
+	piece 2*sp ep 16*mp rev(ep) rev(sp)
+	end
+	
+	length 226
+	piece 2*sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 227
+	piece sp pi sp ep 16*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 228
+	piece sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 229
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 230
+	piece 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 231
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 232
+	piece 2*sp pi 2*sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 233
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 234
+	piece 2*sp pi sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 235
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 236
+	piece 2*sp pi 2*sp pi sp ep 16*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 237
+	piece sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 238
+	piece 2*sp ep 17*mp rev(ep) rev(sp)
+	end
+	
+	length 239
+	piece 2*sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 240
+	piece sp pi sp ep 17*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 241
+	piece sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 242
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+	
+	length 243
+	piece 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 244
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 245
+	piece 2*sp pi 2*sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 246
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) 2*rev(sp) rev(pi) 2*rev(sp)
+	end	
+	
+	length 247
+	piece 2*sp pi sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end		
+	
+	length 248
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 249
+	piece 2*sp pi 2*sp pi sp ep 17*mp rev(ep) rev(sp) rev(pi) 2*rev(sp) rev(pi) 2*rev(sp)
+	end
+	
+	length 250
+	piece sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 251
+	piece 2*sp ep 18*mp rev(ep) rev(sp)
+	end
+	
+	length 252
+	piece 2*sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 253
+	piece sp pi sp ep 18*mp rev(ep) 2*rev(sp)
+	end
+	
+	length 254
+	piece sp pi sp ep 18*mp rev(ep) rev(sp) rev(pi) rev(sp)
+	end
+end
