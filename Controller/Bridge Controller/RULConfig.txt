@@ -1,0 +1,67 @@
+#
+# Syntax:
+#
+# Lines starting with # are interpreted as comments.
+#
+# 'File' denotes the name of the target file. The path is interpreted
+# relative to the location of the RULConfig.txt file.
+#
+# 'TGI' and 'Compressed' are self-explanatory.
+#
+# 'Source' specifies the source that is used to build a RUL file.
+# If multiple source files are specified, these will be concatenated
+# preserving their order. Note that the source files must explicitly
+# end with a newline in this case, unless the next file starts with
+# a comment anyway. Paths are interpreted relative to the source
+# directory passed to the BuildRULs utility.
+#
+# -memo
+#
+#############################################################
+
+File: NetworkAddonMod_Bridge_Controller.dat
+
+# Road
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001000
+Compressed: 1
+Source: 00001000.rul
+
+# Rail
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001001
+Compressed: 1
+Source: 00001001.rul
+
+# Street
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001003
+Compressed: 1
+Source: 00001003.rul
+
+# Avenue
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001006
+Compressed: 1
+Source: 00001006.rul
+
+# Light Rail
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001008
+Compressed: 1
+Source: 00001008.rul
+
+# Monorail
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x00001009
+Compressed: 1
+Source: 00001009.rul
+
+# One Way Road
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x0000100A
+Compressed: 1
+Source: 0000100A.rul
+
+# Dirt Road
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x0000100B
+Compressed: 1
+Source: 0000100B.rul
+
+# Ground Highway
+TGI: 0x0A5BCF4B 0xAA5BCF57 0x0000100C
+Compressed: 1
+Source: 0000100C.rul
