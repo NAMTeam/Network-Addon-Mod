@@ -82,7 +82,7 @@ Get the Java utility [BuildRULs](https://www.dropbox.com/s/ckwhy11xxaz3z1q/Build
 
 and/or
 
-    java -jar /path/to/.../BuildRULs.jar -f Controller/Bridge Controller/ Controller/Bridge Controller/
+    java -jar /path/to/.../BuildRULs.jar -f "Controller/Bridge Controller/" "Controller/Bridge Controller/"
 
 with the path to the `BuildRULs.jar` file replaced by the one on your system.
 This creates or updates the files
