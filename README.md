@@ -74,11 +74,15 @@ A script is provided to compile a full set of NAM controllers for release.  Run 
 
 The compiled controllers are located at `./target/controllers/`.
 
-### Compiling INRULs
+### Compiling INRULs & Bridge Controller
 
 Get the Java utility [BuildRULs](https://www.dropbox.com/s/ckwhy11xxaz3z1q/BuildRULs_01.zip?dl=0) and run the command
 
     java -jar /path/to/.../BuildRULs.jar -f Controller/INRULs/ Controller/INRULs/
+
+and/or
+
+    java -jar /path/to/.../BuildRULs.jar -f "Controller/Bridge Controller/" "Controller/Bridge Controller/"
 
 with the path to the `BuildRULs.jar` file replaced by the one on your system.
 This creates or updates the files
@@ -90,12 +94,19 @@ This creates or updates the files
       ├── NetworkAddonMod_TurningLanes_Avenues_Plugin_INRULs.dat
       └── NetworkAddonMod_Lite_INRULs.dat
 
-A script is provided to compile a full set of INRULs for release.  Run it from the project root with:
+or
+
+    ┐ Controller/
+    └─┐ Bridge Controller/
+      └── NetworkAddonMod_Bridge_Controller.dat
+
+Scripts are provided to compile a full set of INRULs and bridge controller for release.  Run them from the project root with:
 
     ./src/scripts/compile-release-inruls.sh
 
-The compiled INRUL files are located at `./target/controllers/`.
+    ./src/scripts/compile-release-bridge-controller.sh
 
+The compiled files are located at `./target/controllers/`.
 
 ### Compiling Metarules
 
