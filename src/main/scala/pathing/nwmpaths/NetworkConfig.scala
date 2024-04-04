@@ -73,7 +73,7 @@ object NetworkConfig {
     add(Onewayroad, NS)(-6.5f)(-2.5f, 2.5f)(-2.5f, 2.5f)(6.5f)
     add(Onewayroad, ES)(-7.3f)(-3.2f, 3.2f)(-3.2f, 3.2f)(7.3f)
     add(Street, NS)(-7f)(-2f)(2f)(7f)
-    add(Street, ES)(-7.3f)(-3.2f)(3.2f)(7.3f)
+    add(Street, ES)(-7.3f)(-2.8f)(2.8f)(7.3f)
     add(Avenue, NS)(-6.39f)(-2.5f, 2.5f)(13.5f, 18.5f)(22.39f)
     add(Avenue, ES)(-7.3f)(-3.2f, 3.2f)(16-3.2f, 16+3.2f)(16+7.3f)
     add(Avenue, SharedDiagRight)(-16-7.3f)(-16-3.2f, -16+3.2f)(0-3.2f, 0+3.2f)(0+7.3f)
