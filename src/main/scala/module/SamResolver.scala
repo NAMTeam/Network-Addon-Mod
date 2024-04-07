@@ -58,8 +58,9 @@ class SamResolver extends IdResolver {
       add(sam~(143,0,0,141), 0x5e5e9000 + offset)
       add(sam~(0,131,133,0), 0x5e5ea000 + offset)
       add(sam~(2,2,0,131), 0x5e5ef000 + offset) // T-Intersection off outer tile
-      add(sam~(133,131,133,131), 0x5e5eb000 + offset) // Diverter
-      add(sam~(0,131,133,0) & Street~(133,0,0,131), 0x5e5ed000 + offset) // Diverter with Street
+      add(sam~(133,131,133,131), 0x5e5eb000 + offset)  // diverter
+      add(sam~(0,131,133,0) & Road~(133,0,0,131), 0x5e5ec000 + offset)    // diverter w/ road
+      add(sam~(0,131,133,0) & Street~(133,0,0,131), 0x5e5ed000 + offset)  // diverter w/ street
       //3x2 S
       add(sam~(2,0,151,0), 0x5e5b0000 + offset)
       add(sam~(151,0,0,161), 0x5e5b1000 + offset)
