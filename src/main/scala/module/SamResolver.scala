@@ -62,10 +62,10 @@ class SamResolver extends IdResolver {
       add(sam~(0,131,133,0) & Road~(133,0,0,131), 0x5e5ec000 + offset)    // diverter w/ road
       add(sam~(0,131,133,0) & Street~(133,0,0,131), 0x5e5ed000 + offset)  // diverter w/ street
       //3x2 S
-      add(sam~(2,0,151,0), 0x5e5b0000 + offset)
-      add(sam~(151,0,0,161), 0x5e5b1000 + offset)
-      add(sam~(171,0,0,181), 0x5e5b2000 + offset)
-      add(sam~(2,2,151,0), 0x5e5b3000 + offset) //T-Intersection off outer tile
+      add(sam~(2,0,153,0), 0x5e5b0000 + offset)
+      add(sam~(153,0,0,161), 0x5e5b1000 + offset)
+      add(sam~(173,0,0,181), 0x5e5b2000 + offset)
+      add(sam~(2,2,153,0), 0x5e5b3000 + offset) //T-Intersection off outer tile
 
       //larger wide-radius curves
       //larger 45 (4x3)

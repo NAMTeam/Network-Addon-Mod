@@ -146,10 +146,10 @@ class MiscResolver extends IdResolver {
 	add(Street~(133,0,0,131) & Street~(0,131,133,0), 0x5F593D00) // Diverter (alt)
 	add(Road~(133,0,0,131) & Street~(0,131,133,0), 0x5F093E00)   // Diverter street & road
 	//3x2 S
-	add(Street~(2,0,151,0), 0x5F594000)
-	add(Street~(151,0,0,161), 0x5F594100)
-	add(Street~(171,0,0,181), 0x5F594200)
-	add(Street~(2,2,151,0), 0x5F594300) //T-Intersection off outer tile	
+	add(Street~(2,0,153,0), 0x5F594000)
+	add(Street~(153,0,0,161), 0x5F594100)
+	add(Street~(173,0,0,181), 0x5F594200)
+	add(Street~(2,2,153,0), 0x5F594300) //T-Intersection off outer tile
 	//Street Roundabout
 	add(Street~(0,0,102,102), 0x5F56BB00) //Base
 	add(Street~(0,2,102,102), 0x5F56BA00) //Base with Orth Street connection
