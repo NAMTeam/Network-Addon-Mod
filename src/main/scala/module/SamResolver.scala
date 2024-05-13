@@ -50,7 +50,7 @@ class SamResolver extends IdResolver {
       add(sam~(0,2,0,11), 0x5e570000 + offset)  // curve
       add(sam~(0,11,0,13), 0x5e577000 + offset)
       add(sam~(0,11,0,11), 0x5e578000 + offset)
-      // add(sam~(0,0,11,13), NoIID + offset) // part of 3x3 circle
+      add(sam~(0,0,11,13), 0x5e56f000 + offset) // part of 3x3 circle
 
       //smaller wide-radius curves
       //2x2 90
