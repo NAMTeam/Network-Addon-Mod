@@ -166,7 +166,7 @@ class MiscResolver extends IdResolver {
 	add(Street~(0,2,0,181), 0x5F592500)
 	add(Street~(0,181,11,191), 0x5F592600)
 	add(Street~(11,0,0,82), 0x5F592700)
-	add(Street~(0,191,193,0), 0x5F592800)
+	add(Street~(0,191,194,0), 0x5F592800)
 	add(Street~(0,82,82,0), 0x5F592900)
 	//T-ints off
 	add(Street~(2,2,0,181), 0x5F592F00)

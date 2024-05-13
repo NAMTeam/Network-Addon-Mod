@@ -78,7 +78,7 @@ class SamResolver extends IdResolver {
       add(sam~(0,2,0,181), 0x5e5b5000 + offset) //start here
       add(sam~(0,181,11,191), 0x5e5b6000 + offset)
       add(sam~(11,0,0,82), 0x5e5b7000 + offset)
-      add(sam~(0,191,193,0), 0x5e5b8000 + offset)
+      add(sam~(0,191,194,0), 0x5e5b8000 + offset)
       add(sam~(0,82,82,0), 0x5e5b9000 + offset)
       //T-ints off
       add(sam~(2,2,0,181), 0x5e5bf000 + offset)

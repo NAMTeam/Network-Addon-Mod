@@ -225,10 +225,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
     // *       ,---------,---------,---------,---------,---------,
     // *       |         |         |         |         |         |
     // *   0   |2       2|2     183|183   193|193      |         |
-    // *       |         |         |    13   |   191   |         |
+    // *       |         |         |    13   |   194   |         |
     // *       ;---------;---------;---------;---------;---------;
     // *       |         |         |    13   |         |         |
-    // *   1   |         |         |       82|82       |193      |
+    // *   1   |         |         |       82|82       |194      |
     // *       |         |         |         |    82   |   191   |
     // *       '---------;---------;---------;---------;---------;
     // *                           |         |    82   |   191   |
@@ -247,107 +247,87 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
     // *            0         1         2         3         4
 
     // basic override
-      // left to right row 0
+      // row 0 (left to right)
       Rules += sam~WE | (Street ~> sam)~(2,0,183,0)
       Rules += sam~(2,0,183,0) | (Street ~> sam)~(183,0,193,13)
-      Rules += sam~(183,0,193,13) | (Street ~> sam)~(193,0,0,191)
-      // left to right row 1
+      Rules += sam~(183,0,193,13) | (Street ~> sam)~(193,0,0,194)
+      // row 0 (right to left)
+      Rules += sam~(0,194,193,0) | (Street ~> sam)~(193,13,183,0)
+      Rules += sam~(193,13,183,0) | (Street ~> sam)~(183,0,2,0)
+      // row 1 (left to right)
       Rules += sam~(0,13,82,0) | (Street ~> sam)~(82,0,0,82)
-      Rules += sam~(82,0,0,82) | (Street ~> sam)~(193,0,0,191)
-      // left to right row 2
+      Rules += sam~(82,0,0,82) | (Street ~> sam)~(194,0,0,191)
+      // row 1 (right to left)
+      Rules += sam~(0,191,194,0) | (Street ~> sam)~(0,82,82,0)
+      Rules += sam~(0,82,82,0) | (Street ~> sam)~(82,0,0,13)
+      // row 2 (left to right)
       Rules += sam~(0,82,11,0) | (Street ~> sam)~(11,191,0,181)
-      // top to bottom col 2
+      // row 2 (right to left)
+      Rules += sam~(0,181,11,191) | (Street ~> sam)~(11,0,0,82)
+      // col 2 (top to bottom)
       Rules += sam~(0,193,13,183) | (Street ~> sam)~(13,82,0,0)
-      // top to bottom col 3
-      Rules += sam~(0,0,191,193) | (Street ~> sam)~(0,0,82,82)
+      // col 2 (bottom to top)
+      Rules += sam~(0,0,13,82) | (Street ~> sam)~(13,183,0,193)
+      // col 3 (top to bottom)
+      Rules += sam~(0,0,194,193) | (Street ~> sam)~(0,0,82,82)
       Rules += sam~(0,0,82,82) | (Street ~> sam)~(82,11,0,0)
-      // top to bottom col 4
-      Rules += sam~(0,0,191,193) | (Street ~> sam)~(191,0,181,11)
+      // col 3 (bottom to top)
+      Rules += sam~(0,0,82,11) | (Street ~> sam)~(82,82,0,0)
+      Rules += sam~(82,82,0,0) | (Street ~> sam)~(194,193,0,0)
+      // col 4 (top to bottom)
+      Rules += sam~(0,0,191,194) | (Street ~> sam)~(191,0,181,11)
       Rules += sam~(191,0,181,11) | (Street ~> sam)~(181,0,2,0)
+      // col 4 (bottom to top)
+      Rules += sam~WE | (Street ~> sam)~(2,0,181,2)
+      Rules += sam~(2,0,181,0) | (Street ~> sam)~(181,11,191,0)
+      Rules += sam~(181,11,191,0) | (Street ~> sam)~(191,194,0,0)
 
     // optional t-int type A
-      // left to right row 0
+      // row 0 (left to right)
       Rules += sam~WE | (Street ~> sam)~(2,2,183,0)
       Rules += sam~(2,2,183,0) | (Street ~> sam)~(183,0,193,13)
-      // top to bottom col 4
+      // row 0 (right to left)
+      Rules += sam~(193,13,183,0) | (Street ~> sam)~(183,0,2,2)
+      // col 4 (top to bottom)
       Rules += sam~(191,0,181,11) | (Street ~> sam)~(181,2,2,0)
+      // col 4 (bottom to top)
+      Rules += sam~WE | (Street ~> sam)~(2,0,181,2)
+      Rules += sam~(2,0,181,2) | (Street ~> sam)~(181,11,191,0)
 
     // optional t-int type B
-      // left to right row 0
+      // row 0 (left to right)
       Rules += sam~(2,0,183,0) | (Street ~> sam)~(183,2,193,13)
-      Rules += sam~(183,2,193,13) | (Street ~> sam)~(193,0,0,191)
-      // top to bottom col 2
+      Rules += sam~(183,2,193,13) | (Street ~> sam)~(193,0,0,194)
+      // row 0 (right to left)
+      Rules += sam~(0,194,193,0) | (Street ~> sam)~(193,13,183,2)
+      Rules += sam~(193,13,183,2) | (Street ~> sam)~(183,0,2,0)
+      // col 2 (top to bottom)
       Rules += sam~(2,193,13,183) | (Street ~> sam)~(13,82,0,0)
-      // top to bottom col 4
-      Rules += sam~(0,0,191,193) | (Street ~> sam)~(191,2,181,11)
+      // col 2 (bottom to top)
+      Rules += sam~(0,0,13,82) | (Street ~> sam)~(13,183,2,193)
+      // col 4 (top to bottom)
+      Rules += sam~(0,0,191,194) | (Street ~> sam)~(191,2,181,11)
       Rules += sam~(191,2,181,11) | (Street ~> sam)~(181,0,2,0)
+      // col 4 (bottom to top)
+      Rules += sam~(2,0,181,0) | (Street ~> sam)~(181,11,191,2)
+      Rules += sam~(181,11,191,2) | (Street ~> sam)~(191,194,0,0)
 
-    /* create adjacency rules for the four exit points
+    /* create continuation rules for the four exit points
        - curve end
        - curve end w/ t-int type A
        - t-int type A
        - t-int type B
     */
     for (t <- Seq((181,0,2,0), (181,2,2,0), (0,181,2,2), (11,191,2,181))) {
-        createCurveAdjacencies(sam~t, sam)
+        Rules += sam~t | (Street ~> sam)~WE
     }
 
     createRules()
+  }
 
-    // old code below, has not all been reproduced by curve adjacencies function
-    /*
-    // continuations
-    // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,2) // not possible with INRUL
-    // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,2,0) // not possible with INRUL
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,11,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,13,0)
-    // Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,11,11,0) // not possible with INRUL
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,13,13,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,11)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,0,13)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,13,0,11)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,102,102,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,102,102)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,111,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,131,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,153,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,181,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,131,2)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,2,153,0)
-    Rules += sam~(183,0,2,0) | (Street ~> sam)~(2,0,181,2)
 
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,0)  // sharp 90 1
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,0,2)  // sharp 90 2
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,11,0) // orth-diag 1
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,13,0) // orth-diag 2
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~NS
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~WC & (Street ~> sam)~NS
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~NC
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~WE & (Street ~> sam)~SE
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~WC & (Street ~> sam)~SE
-    // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,2) // not possible with INRUL
-    // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,2,0) // not possible with INRUL
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,11,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,13,0)
-    // Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,11,11,0) // not possible with INRUL
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,13,13,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,11)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,0,13)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,13,0,11)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,102,102,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,102,102)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,111,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,131,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,153,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,181,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,131,2)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,2,153,0)
-    Rules += sam~(183,0,2,2) | (Street ~> sam)~(2,0,181,2)
-
-    // into T-ints
-    Rules += sam~WE | (Street ~> sam)~(2,2,0,181)
-    Rules += sam~WE | (Street ~> sam)~(2,181,11,191)
-    */
+  private def createSamDiagSCurve(sam: Network): Unit = {
+    // TODO
   }
 
   def start(): Unit = {
