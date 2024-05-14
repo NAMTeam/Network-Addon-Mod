@@ -170,6 +170,17 @@ class SamResolver extends IdResolver {
       add(sam~CE & Avenue~SN, 0x5e554000 + offset) // Avenue Thru - Short
       add(sam~WC & Avenue~SN, 0x5e556000 + offset) // Avenue Thru - Long
       add(sam~WE & Avenue~NC, 0x5e55f000 + offset) // Avenue Ends
+      // add(sam~CS & Tla3~WE, NoIID + offset)             // Tla3 Thru
+      add(sam~NS & (Tla3~CE).projectLeft, 0x5e660000 + offset)        // Tla3 Ends
+      add(sam~NS & (Tla3~CE).projectRight, 0x5e660000 + offset)        // Tla3 Ends
+      // add(sam~CS & Ave2~WE, NoIID + offset)             // Ave2 Thru
+      add(sam~NS & Ave2~CE, 0x5e661000 + offset)        // Ave2 Ends
+      // add(sam~CS & Owr1~WE, NoIID + offset)             // Owr1 Thru
+      add(sam~NS & Owr1~CE, 0x5e663000 + offset)        // Owr1 Ends
+      // add(sam~CS & Ard3~WE, NoIID + offset)             // Ard3 Thru
+      add(sam~NS & Ard3~CE, 0x5e662000 + offset)        // Ard3 Ends
+      // add(sam~CS & Nrd4~WE, NoIID + offset)             // Nrd4 Thru
+      add(sam~NS & Nrd4~CE, 0x5e665000 + offset)        // Nrd4 Ends
 
       //Specialized OxO T-intersections
       //1 SAM and 2 Cross Elbow

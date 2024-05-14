@@ -507,7 +507,24 @@ class MiscResolver extends IdResolver {
       add(glr~NE & Avenue~ES,     0x5f882500 + offset)
       add(glr~WS & Avenue~SharedDiagRight, 0x5f882600 + offset)
     }
-	
+
+    // NWM x Street T-intersections (Street thru, NWM ending)
+      // OxO
+      add(Street~NS & (Tla3~CE).projectLeft, 0x51004000)   // Tla3 Ends
+      add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
+      add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
+      add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
+      add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
+      add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
+      // OxD
+      add(Street~NS & (Tla3~CSE).projectLeft, 0x5100B500)   // Tla3 Ends
+      add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
+      add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
+      add(Street~NS & Owr1~CSE, 0x5101B500)                 // Owr1 Ends
+      add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
+      add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
+
+
     map
   }
 
