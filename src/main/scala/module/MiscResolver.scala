@@ -150,6 +150,10 @@ class MiscResolver extends IdResolver {
 	add(Street~(153,0,0,161), 0x5F594100)
 	add(Street~(173,0,0,181), 0x5F594200)
 	add(Street~(2,2,153,0), 0x5F594300) //T-Intersection off outer tile
+    // diagonal s-curve
+    add(Street~(3,0,0,152), 0x5F595C00 )
+    add(Street~(0,152,154,1), 0x5F595D00)
+    add(Street~(154,0,0,1), 0x5F595E00)
 	//Street Roundabout
 	add(Street~(0,0,102,102), 0x5F56BB00) //Base
 	add(Street~(0,2,102,102), 0x5F56BA00) //Base with Orth Street connection

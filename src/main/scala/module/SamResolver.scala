@@ -66,6 +66,10 @@ class SamResolver extends IdResolver {
       add(sam~(153,0,0,161), 0x5e5b1000 + offset)
       add(sam~(173,0,0,181), 0x5e5b2000 + offset)
       add(sam~(2,2,153,0), 0x5e5b3000 + offset) //T-Intersection off outer tile
+      // diagonal s-curve
+      add(sam~(3,0,0,152), 0x5e5d0000 + offset)
+      add(sam~(0,152,154,1), 0x5e5d1000 + offset)
+      add(sam~(154,0,0,1), 0x5e5d2000 + offset)
 
       //larger wide-radius curves
       //larger 45 (4x3)
