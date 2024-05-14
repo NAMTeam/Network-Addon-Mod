@@ -109,7 +109,7 @@ class MiscResolver extends IdResolver {
     add(Street~CS & Street~NE, 0x5F504000) // DxO T1
     add(Street~CS & Street~WS, 0x5F504100) // DxO T2
     add(Street~SE & Street~CEN, 0x5F504200) // DxD T1
-    add(Street~(1,3,0,0) & Street~(0,1,0,0), 0x5F504300) // DxD T2
+    add(Street~WN & Street~CSW, 0x5F504300) // DxD T2
     add(Street~(0,0,2,2), 0x05000F00) // 90 curve
     add(Street~(0,0,1,13), 0x5F500400) // curve
     add(Street~(0,2,0,11), 0x5F500500) // curve
