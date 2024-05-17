@@ -1,14 +1,14 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import module._
+import io.github.memo33.scdbpf
+import com.sc4nam.module._, syntax.IdResolver
 
 object Main extends App {
 
-  implicit val resolver = new RhwResolver orElse new MiscResolver orElse new NwmResolver
+  implicit val resolver: IdResolver = new RhwResolver orElse new MiscResolver orElse new NwmResolver
   val entries = PathCreator.generateNwmPaths
   val file = new java.io.File("target/nwmTurnPaths.dat")
-  import rapture.core.strategy.throwExceptions
+  import scdbpf.strategy.throwExceptions
   scdbpf.DbpfFile.write(entries, file)
 
 }

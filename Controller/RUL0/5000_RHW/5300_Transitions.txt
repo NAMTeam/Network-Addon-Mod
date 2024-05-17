@@ -3340,36 +3340,20 @@ CopyFrom	=	0x35331
 [HighwayIntersectionInfo_0x00005332]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L1
-Piece = 0.0, -48.0, 0, 0, 0x5700001f
+Piece = 48.0, 0.0, 1, 0, 0x5700001f
 PreviewEffect = preview_ost_orth_alt_flex_001
 
-CellLayout=....
-CellLayout=..c.
-CellLayout=..a.
-CellLayout=..d.
-CellLayout=..b<
-CellLayout=....
-CellLayout=..^.
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
 
-;CheckType = a - dirtroad: 0x00030400, 0x00000000 optional
-CheckType = a - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
-CheckType = b - dirtroad: 0x02000200
-CheckType = c - dirtroad: 0x00000200, 0x0000FF00 optional
-;CheckType = c - dirtroad: 0x02000200, 0x0000FF00 optional
-CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
+CheckType = a - rail: 0x00040000 dirtroad: 0x00020002, 0x00000000 optional
+CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
+CheckType = z - dirtroad: 0x00040004
 
-;CheckType = a - rail: 0x00000400 dirtroad: 0x02000200, 0xFFFFFFFF optional
-;CheckType = b - dirtroad: 0x00000000
-;CheckType = c - dirtroad: 0x02000200 groundhighway: 0x04020402, 0xFFFFFFFF optional
-;CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
-
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=..^.
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5700001f
@@ -3378,12 +3362,36 @@ Costs = 600
 [HighwayIntersectionInfo_0x00015332]
 CopyFrom	=	0x5332
 Rotate	=	1
+
 [HighwayIntersectionInfo_0x00025332]
-CopyFrom	=	0x5332
-Rotate	=	2
+; RHW FLEXSlope-L1 (rotated by 180 degrees)
+; Added by memo 2023-03-12
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700001f
+PreviewEffect = preview_ost_orth_alt_flex_001
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - rail: 0x00000004 dirtroad: 0x00020002, 0x00000000 optional
+CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
+CheckType = z - dirtroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5700001f
+Costs = 600
+
 [HighwayIntersectionInfo_0x00035332]
-CopyFrom	=	0x5332
-Rotate	=	3
+CopyFrom	=	0x25332
+Rotate	=	1
 [HighwayIntersectionInfo_0x00045332]
 CopyFrom	=	0x5332
 [HighwayIntersectionInfo_0x00055332]
@@ -3397,34 +3405,20 @@ CopyFrom	=	0x35332
 [HighwayIntersectionInfo_0x00005345]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L2
-Piece = 0.0, -48.0, 0, 0, 0x5700002f
+Piece = 48.0, 0.0, 1, 0, 0x5700002f
 PreviewEffect = preview_ost_orth_alt_flex_002
 
-CellLayout=....
-CellLayout=..c.
-CellLayout=..a.
-CellLayout=..d.
-CellLayout=..b<
-CellLayout=....
-CellLayout=..^.
+CellLayout=........
+CellLayout=..zba..<
+CellLayout=..^.....
 
-;CheckType = a - rail: 0x00000004 dirtroad: 0x02000200, 0xFFFFFFFF optional
-;CheckType = b - dirtroad: 0x02000200
-;CheckType = c - groundhighway: 0x02020204, 0xFFFFFFFF optional
-;CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
+CheckType = a - monorail: 0x00040000 dirtroad: 0x00020002, 0x00000000 optional
+CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
+CheckType = z - dirtroad: 0x00040004
 
-CheckType = a - lightrail: 0x04000404 dirtroad: 0x02000000, 0x00000000 optional
-CheckType = b - dirtroad: 0x02000200
-CheckType = c - dirtroad: 0x00000200, 0x0000FF00 optional
-CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
-
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
-ConsLayout=..^.
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5700002f
@@ -3433,12 +3427,36 @@ Costs = 600
 [HighwayIntersectionInfo_0x00015345]
 CopyFrom	=	0x5345
 Rotate	=	1
+
 [HighwayIntersectionInfo_0x00025345]
-CopyFrom	=	0x5345
-Rotate	=	2
+; RHW FLEXSlope-L2 (rotated by 180 degrees)
+; Added by memo 2023-03-12
+; Having a dedicated 180-degree rotation has the advantage that we can use an
+; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
+; overall behaves more intuitively than the 0x00040004 tile.
+; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
+Piece = -48.0, 0.0, 3, 0, 0x5700002f
+PreviewEffect = preview_ost_orth_alt_flex_002
+
+CellLayout=........
+CellLayout=..ba.z.<
+CellLayout=.....^..
+
+CheckType = a - monorail: 0x00000004 dirtroad: 0x00020002, 0x00000000 optional
+CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
+CheckType = z - dirtroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=.....+.<
+ConsLayout=.....^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5700002f
+Costs = 600
+
 [HighwayIntersectionInfo_0x00035345]
-CopyFrom	=	0x5345
-Rotate	=	3
+CopyFrom	=	0x25345
+Rotate	=	1
 [HighwayIntersectionInfo_0x00045345]
 CopyFrom	=	0x5345
 [HighwayIntersectionInfo_0x00055345]

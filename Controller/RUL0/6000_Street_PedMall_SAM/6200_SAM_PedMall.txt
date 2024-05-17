@@ -1,0 +1,368 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+;SAM DRAGGABLE PED MALL
+; 0x620#
+; Draggable PedMall Button
+;
+; 0x621#
+; EXPERIMENTAL Draggable PedMall Button
+
+;By:			Ulisse Wolf
+;Created:		2023-january-17
+;Last updated:	2023-march-21, by Lucario Boricua
+;Birth of the Pedestrian Revolution Mod
+
+;-- DRAGGABLE PEDMALL --
+
+RotationRing = 6200, 16200, 26200, 36200 ;PMC-1 Classic Pedmall
+AddTypes = 6201, 16201, 26201, 36201 ;PMC-2 Pavement
+AddTypes = 6202, 16202, 26202, 36202 ;PMC-3 Cobblestone
+AddTypes = 6203, 16203, 26203, 36203 ;PMC-4 Wavy Brick
+AddTypes = 6204, 16204, 26204, 36204 ;PMC-5 Grass
+AddTypes = 6205, 16205, 26205, 36205 ;PMC-6 Sandstone
+AddTypes = 6206, 16206, 26206, 36206 ;PMC-7 Retrowave (EX texture Undergorund Rail)
+AddTypes = 6207, 16207, 26207, 36207 ;PMC-8 Industrial
+;AddTypes = 6208, 16208, 26208, 36208 ;PMC-9 Customizable User Version
+;AddTypes = 6209, 16209, 26209, 36209 ;PMC-10 Art Deco
+;AddTypes = 620A, 1620A, 2620A, 3620A ;PMC-11 ped malls sidewalk (TBA)
+;AddTypes = 620B, 1620B, 2620B, 3620B ;PMC-12 ped malls sidewalk (TBA)
+;AddTypes = 620C, 1620C, 2620C, 3620C ;PMC-13 ped malls sidewalk (TBA)
+;AddTypes = 620D, 1620D, 2620D, 3620D ;PMC-14 malls sidewalk (TBA)
+;AddTypes = 620E, 1620E, 2620E, 3620E ;PMC-15 malls sidewalk (TBA)
+;AddTypes = 620F, 1620F, 2620F, 3620F ;ped malls transition  piece
+
+;###separator###
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;
+;DRAGGABLE PED MAL
+;DRAGGABLE PED MAL - official deployment
+[HighwayIntersectionInfo_0x00006200]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-1 Classic Pedmall
+Piece = 0.0, 16.0, 0, 0, 0x5C531105
+PreviewEffect = preview_ped_malls_sidewalk1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 onewayroad: 0x04040404, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C531105
+Costs        = 20
+
+[HighwayIntersectionInfo_0x00016200]
+CopyFrom    = 0x6200
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026200]
+CopyFrom    = 0x6200
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036200]
+CopyFrom    = 0x6200
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006201]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-2 Pavement
+Piece = 0.0, 16.0, 0, 0, 0x5C532105
+PreviewEffect = preview_ped_malls_sidewalk2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 onewayroad: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C532105
+Costs        = 20
+
+[HighwayIntersectionInfo_0x00016201]
+CopyFrom    = 0x6201
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026201]
+CopyFrom    = 0x6201
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036201]
+CopyFrom    = 0x6201
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006202]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-3 Cobblestone
+Piece = 0.0, 16.0, 0, 0, 0x5C533105
+PreviewEffect = preview_ped_malls_sidewalk3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 dirtroad: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C533105
+Costs        = 20
+
+[HighwayIntersectionInfo_0x00016202]
+CopyFrom    = 0x6202
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026202]
+CopyFrom    = 0x6202
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036202]
+CopyFrom    = 0x6202
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006203]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-4 Wavy Brick
+Piece = 0.0, 16.0, 0, 0, 0x5C534105
+PreviewEffect = preview_ped_malls_sidewalk4
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 onewayroad: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C534105
+Costs        = 20
+
+[HighwayIntersectionInfo_0x00016203]
+CopyFrom    = 0x6203
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026203]
+CopyFrom    = 0x6203
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036203]
+CopyFrom    = 0x6203
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006204]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-5 Grass
+Piece = 0.0, 16.0, 0, 0, 0x5C535105
+PreviewEffect = preview_ped_malls_sidewalk5
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 avenue: 0x01010101, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C535105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016204]
+CopyFrom    = 0x6204
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026204]
+CopyFrom    = 0x6204
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036204]
+CopyFrom    = 0x6204
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006205]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-6 Sandstone
+Piece = 0.0, 16.0, 0, 0, 0x5C536105
+PreviewEffect = preview_ped_malls_sidewalk6
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 dirtroad: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C536105
+Costs        = 20
+
+[HighwayIntersectionInfo_0x00016205]
+CopyFrom    = 0x6205
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026205]
+CopyFrom    = 0x6205
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036205]
+CopyFrom    = 0x6205
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006206]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-7 Retrowave (EX texture Undergorund Rail)
+Piece = 0.0, 16.0, 0, 0, 0x5C537105
+PreviewEffect = preview_ped_malls_sidewalk7
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 avenue: 0x03030303, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C537105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016206]
+CopyFrom    = 0x6206
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026206]
+CopyFrom    = 0x6206
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036206]
+CopyFrom    = 0x6206
+Rotate		= 3
+
+[HighwayIntersectionInfo_0x00006207]
+;Added by Ulisse Wolf 2023-january-17
+;Last updated:           TBA
+;Draggable PedMall - PMC-8 Industrial
+Piece = 0.0, 16.0, 0, 0, 0x5C538105
+PreviewEffect = preview_ped_malls_sidewalk8
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x04040404
+CheckType = b - street: 0x02020202 avenue: 0x04040404, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase= 0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C538105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016207]
+CopyFrom    = 0x6207
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026207]
+CopyFrom    = 0x6207
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036207]
+CopyFrom    = 0x6207
+Rotate		= 3
+
+;;;;;;;;;;;;;;;;;;;;;
+;;;;;;TBA RUL 0;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;[HighwayIntersectionInfo_0x0000620F]
+;Added by Durfsurn 24/06/2020
+; SAM x SAM Flex Ortho Transition
+;PreviewEffect = preview_sam_x_sam_ortho_transition
+
+;CellLayout=...
+;CellLayout=.a<
+;CellLayout=.b.
+;CellLayout=.^.
+
+;CheckType = a - street: 0x04040404
+;CheckType = b - street: 0x00020002 onewayroad: 0x00010004, 0xffffffff optional
+
+;ConsLayout=...
+;ConsLayout=.+<
+;ConsLayout=...
+;ConsLayout=.^.
+
+;AutoTileBase = 0x55387000
+;ReplacementIntersection = 0, 0
+;PlaceQueryID = 0x5E5C3400
+;Costs = 19
+
+;[HighwayIntersectionInfo_0x0001620F]
+;CopyFrom    = 0x620F
+;Rotate		= 1
+;[HighwayIntersectionInfo_0x0002670D]
+;CopyFrom    = 0x620F
+;Rotate		= 2
+;[HighwayIntersectionInfo_0x0003620F]
+;CopyFrom    = 0x620F
+;Rotate		= 3
+;; Rotation Clones - may be replaced by Diag transitions in future
+;[HighwayIntersectionInfo_0x0004670D]
+;CopyFrom    = 0x620F
+;[HighwayIntersectionInfo_0x0005670D]
+;CopyFrom    = 0x1620F
+;[HighwayIntersectionInfo_0x0006670D]
+;CopyFrom    = 0x2620F
+;[HighwayIntersectionInfo_0x0007670D]
+;CopyFrom    = 0x3620F
+
+

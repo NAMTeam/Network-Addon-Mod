@@ -1,10 +1,8 @@
-package metarules.module
+package com.sc4nam.module
 
 import java.io.{File, FileInputStream}
 import resource._
-import rapture.io._
-import rapture.core.strategy.throwExceptions
-import scdbpf._
+import io.github.memo33.scdbpf, scdbpf._, strategy.throwExceptions
 
 /** Automates the process of compiling the INRUL files.
   */
@@ -46,7 +44,7 @@ object CompileInruls {
         "DiagonalIntersections.txt", "Special.txt", "Archaic.txt")
       += mkRul(0x17, "GroundhighwayBasic", "RUL17_GHWY_Basic.rul")
       += mkRul(0x18, "GroundhighwayAdvanced", "RUL18_GHWY_Advanced.rul")
-    ).result
+    ).result()
     DbpfFile.write(mainINRULs, new File(targetDir, "NetworkAddonMod_IndividualNetworkRULs.dat"))
 
     // diagonal streets
@@ -90,22 +88,22 @@ object CompileInruls {
       += mkRul(0x08, "RoadAdvanced", "Head.txt", "DiagonalIntersections.txt", "General.txt",
         "FAR3.txt", "FAR2.txt")
       += mkRul(0x0A, "StreetAdvanced", "Head.txt", "WideRadiusCurves.txt")
-    ).result
+    ).result()
     DbpfFile.write(fanRuls, new File(targetDir, "NetworkAddonMod_FAN_WRC_INRULs.dat"))
 
     // RRW
     val rrwRuls = (Seq.newBuilder[DbpfEntry]
       += mkRul(0x05, "RailBasic", "RUL05_Rail_Basic-RRW.rul")
       += mkRul(0x06, "RailAdvanced", "RUL06_Rail_Advanced-RRW.rul")
-    ).result
+    ).result()
     DbpfFile.write(rrwRuls, new File(targetDir, "RealRailway_Core_INRULs.dat"))
   }
 
   // implementation details below
 
-  private def filesToArray(files: Seq[File]): Array[Byte] = files.flatMap { f =>
-    managed(new ByteInput(new FileInputStream(f))) acquireAndGet (_.slurp[Byte])
-  } (collection.breakOut)
+  private def filesToArray(files: Seq[File]): Array[Byte] = files.toArray.flatMap { f =>
+    managed(new scdbpf.compat.ByteInput(new FileInputStream(f))) acquireAndGet (scdbpf.compat.Input.slurpBytes(_))
+  }
 
   private def buildRul(id: Int, files: Seq[File]): DbpfEntry = {
     val tgi = Tgi(0,0,id).copy(Tgi.Rul)

@@ -1,31 +1,31 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, module._, Network._, RotFlip._, Flags._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, Implicits._
 import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 
 object FlexFlyRuleGenerator {
 
   val orientations = Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-  private[flexfly] val deactivated = Rhw12s + L1Rhw12s + L2Rhw12s + Rhw10c + L1Rhw10c + L2Rhw10c
+  private[flexfly] val deactivated = Rhw10c + L1Rhw10c + L2Rhw10c
 
   /** the directions of a network for which the north edge is a shoulder (possibly empty) */
   def directionsWithShoulderNorth(n: Network) = {
     val b = List.newBuilder[IntFlags]
     if (hasRightShoulder(n)) b += EW
     if (hasLeftShoulder(n)) b += WE
-    b.result
+    b.result()
   }
 }
 
-class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator with Stability {
+class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Stability {
   import FlexFlyRuleGenerator._
 
   def start(): Unit = {
     for (orient <- orientations) {
       // orient is responsible for distinguishing between A1 and A2 curve:
       // we only write code for A1 curve, orient reverses all the flags for us
-      for (main <- RhwNetworks from Mis to L4Rhw4) {
+      for (main <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4) {
         // first establish tiles 2 and 4 of base curve which are not anchors
         Rules += main~orient(T1) | Dirtroad~(0,0,0,0) | % | main~orient(T2)
         Rules += main~orient(T3) | Dirtroad~(0,0,0,0) | % | main~orient(T4)
@@ -99,7 +99,7 @@ class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator with 
 
         // FlexFly × FlexFly
         for {
-          minor <- RhwNetworks from Mis to L4Rhw4
+          minor <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4
           if main.height <= 3 && minor.height < main.height
           o2 <- orientations
           if orient == o2 && orient == orientations(0)  // currently inside×inside curves only

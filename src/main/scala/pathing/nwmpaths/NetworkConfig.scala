@@ -1,10 +1,11 @@
-package metarules.pathing.nwmpaths
+package com.sc4nam.pathing.nwmpaths
 
-import metarules._
-import meta._, Network._, Flags._
+import io.github.memo33.metarules.meta._, Flags._
+import com.sc4nam.module.syntax._, Network._
+import io.github.memo33.scdbpf
 import scdbpf.Sc4Path.Cardinal._, scdbpf.DbpfUtil.RotFlip._
 import scdbpf.Sc4Path.{TransportType => TT}
-import pathing._
+import io.github.memo33.metarules.pathing._
 import PathCreator.{SPath, SPaths}
 import Bezier.{Point, Dec}
 
@@ -72,7 +73,7 @@ object NetworkConfig {
     add(Onewayroad, NS)(-6.5f)(-2.5f, 2.5f)(-2.5f, 2.5f)(6.5f)
     add(Onewayroad, ES)(-7.3f)(-3.2f, 3.2f)(-3.2f, 3.2f)(7.3f)
     add(Street, NS)(-7f)(-2f)(2f)(7f)
-    add(Street, ES)(-7.3f)(-3.2f)(3.2f)(7.3f)
+    add(Street, ES)(-7.3f)(-2.8f)(2.8f)(7.3f)
     add(Avenue, NS)(-6.39f)(-2.5f, 2.5f)(13.5f, 18.5f)(22.39f)
     add(Avenue, ES)(-7.3f)(-3.2f, 3.2f)(16-3.2f, 16+3.2f)(16+7.3f)
     add(Avenue, SharedDiagRight)(-16-7.3f)(-16-3.2f, -16+3.2f)(0-3.2f, 0+3.2f)(0+7.3f)
