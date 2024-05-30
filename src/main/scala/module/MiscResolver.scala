@@ -508,22 +508,41 @@ class MiscResolver extends IdResolver {
       add(glr~WS & Avenue~SharedDiagRight, 0x5f882600 + offset)
     }
 
-    // NWM x Street T-intersections (Street thru, NWM ending)
-      // OxO
-      add(Street~NS & (Tla3~CE).projectLeft, 0x51004000)   // Tla3 Ends
-      add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
-      add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
-      add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
-      add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
-      add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
-      // OxD
-      add(Street~NS & (Tla3~CSE).projectLeft, 0x5100B500)   // Tla3 Ends
-      add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
-      add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
-      add(Street~NS & Owr1~CSE, 0x5101B500)                 // Owr1 Ends
-      add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
-      add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
-
+    // NWM x Street T-intersections
+      // Street thru, NWM ends
+        // OxO
+        add(Street~NS & (Tla3~CE).projectLeft,  0x51004000)  // Tla3 Ends
+        add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
+        add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
+        add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
+        add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
+        add(Street~NS & Owr3~CE, 0x51044000)                 // Owr3 Ends
+        add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
+        // OxD
+        add(Street~NS & (Tla3~CSE).projectLeft,  0x5100B500)  // Tla3 Ends
+        add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
+        add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
+        add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
+        add(Street~NS & Owr1~CSE, 0x5103B500)                 // Owr1 Ends
+        add(Street~NS & Owr3~CSE, 0x5104B500)                 // Owr1 Ends
+        add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
+      // NWM thru, Street ends
+        // OxO short T
+        add(Street~CS & (Tla3~WE).projectLeft,  0x51003000)
+        add(Street~CS & (Tla3~WE).projectRight, 0x51003000)
+        add(Street~CS & Ave2~WE,                0x51013000)
+        add(Street~CS & Ard3~WE,                0x51023000)
+        add(Street~CS & Ard3~EW,                0x51023080)
+        add(Street~CS & Owr1~WE,                0x51033000)
+        add(Street~CS & Owr3~WE,                0x51043000)
+        add(Street~CS & Nrd4~WE,                0x51053000)
+        add(Street~CN & (Tla5~EW).projectLeft,  0x51103000)
+        add(Street~CN & (Tla5~EW).projectRight, 0x71103000)
+        add(Street~CN & Owr4~EW, 0x51113000)
+        add(Street~CN & Owr5~EW, 0x51123000)
+        add(Street~CN & Rd4~EW,  0x51133000)
+        add(Street~CN & Rd6~EW,  0x51143000)
+        add(Street~CN & Ave6~EW, 0x51203000)
 
     map
   }

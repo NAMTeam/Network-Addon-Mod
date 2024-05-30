@@ -443,12 +443,17 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
     val SamNetworks = List(Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
 
-    val CrossNetworks = List(Road, Avenue, Onewayroad,
-    Rail, L1Dtr, L2Dtr, Lightrail, Monorail, Glr1, Glr2/*, Str*/, Dirtroad/*, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw12s, Rhw6cm,
-    Rhw6c, Rhw8c, L1Rhw2, L1Rhw3, L1Mis, L1Rhw4, L1Rhw6s, L1Rhw8sm, L1Rhw8s, L1Rhw10s, L1Rhw12s, L1Rhw6cm,
-    L1Rhw6c, L1Rhw8c, L2Rhw2, L2Rhw3, L2Mis, L2Rhw4, L2Rhw6s, L2Rhw8sm, L2Rhw8s, L2Rhw10s, L2Rhw12s, L2Rhw6cm,
-    L2Rhw6c, L2Rhw8c, L3Mis, L3Rhw4, L3Rhw6s, L4Mis, L4Rhw4, L4Rhw6s*/, Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4/*, Tla5, Owr4, 
-	Owr5, Rd4, Rd6, Ave6, Tla7m, Ave6m*/)
+    val CrossNetworks = List(
+      Road, Avenue, Onewayroad,
+      Rail, L1Dtr, L2Dtr, Lightrail, Monorail, Glr1, Glr2/*, Str*/,
+      Dirtroad/*, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw12s, Rhw6cm, Rhw6c, Rhw8c,
+      L1Rhw2, L1Rhw3, L1Mis, L1Rhw4, L1Rhw6s, L1Rhw8sm, L1Rhw8s, L1Rhw10s, L1Rhw12s, L1Rhw6cm, L1Rhw6c, L1Rhw8c,
+      L2Rhw2, L2Rhw3, L2Mis, L2Rhw4, L2Rhw6s, L2Rhw8sm, L2Rhw8s, L2Rhw10s, L2Rhw12s, L2Rhw6cm, L2Rhw6c, L2Rhw8c,
+      L3Mis, L3Rhw4, L3Rhw6s, L4Mis, L4Rhw4, L4Rhw6s*/,
+      Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4,
+      Tla5, Owr4, Owr5, Rd4, Rd6,
+      Ave6, Tla7m, Ave6m,
+      )
 
     for (sam <- SamNetworks) {
 
@@ -618,7 +623,23 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       }
 
       // avenue-specific Transitions
-        Rules += sam~WE | (Street ~> sam)~WC & Avenue~(0,0,2,4)
+      Rules += sam~WE | (Street ~> sam)~WC & Avenue~(0,0,2,4)
+
+      // special avenue configurations
+        // OxO Avenue ending at SAM
+        Rules += sam~WE | (Street ~> sam)~WE & Avenue~NC              // OxO End T Tile 1
+        Rules += sam~WE & Avenue~NC | (Street ~> sam)~WE & Avenue~CN  // OxO End T Tile 2
+        // ???
+        Rules += sam~WE | (Street ~> sam)~(2,2,0,2) & Avenue~CE
+        Rules += sam~WE | (Street ~> sam)~(2,0,2,2) & Avenue~NC
+        Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~(0,2,4,0)
+        // continuation in case of Avenue ending at 3 SAMs
+        Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~WE & Avenue~CN
+        Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~(2,0,2,2) & Avenue~CN
+        Rules += sam~WE & Avenue~CS | (Street ~> sam)~(2,2,2,0) & Avenue~SC
+        // SAM continuations
+        Rules += sam~WE & Avenue~CN | (Street ~> sam)~WE
+        Rules += sam~(2,0,2,2) & Avenue~CN | (Street ~> sam)~WE
 
       // standard intersections with other networks
       for (minor <- CrossNetworks) {
@@ -633,7 +654,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & minor~WN~NW  // OxD Tile 2
           Rules += sam~WE & minor~WN~NW | (Street ~> sam)~WE                // OxD continue
 
-          if (!minor.isNwm) { // can't do NWM until more SAM x NWM intersection tiles are defined
+          // DxO & DxD
+          if (!minor.isNwm) {
             // OxD T
             // Rules += sam~WE & minor~WN | Street~WN | % | sam~WC & sam~WN   // OxD T
 
@@ -649,85 +671,81 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~SE & minor~EN | (Street ~> sam)~NW & minor~WS  // DxD Tile 2
             Rules += sam~SE & minor~WS | (Street ~> sam)~NW             // DxD continue
           }
-        }
 
-        // SAM end T intersections
-        if (minor == Road || minor == Onewayroad) {
-          // OxO T (sam end)
-          Rules += sam~WE | (Street ~> sam)~WC & minor~NS
+          // SAM end T intersections
+          if (minor == Road || minor == Onewayroad || minor == Avenue || minor.isNwm) {
+            // OxO T (sam end)
+            Rules += sam~WE | (Street ~> sam)~WC & minor~NS~SN
+          }
 
-          // DxO T (sam end)
-          Rules += sam~ES | Street~CNW & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS               // DxO T from Diag
-          Rules += sam~(0,0,11,3) | Street~CNW & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS       // DxO T from Orth-Diag Top
-          Rules += sam~ES | Street~WC & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS                // DxO T from Diag for Old-Style Diag Streets
-          Rules += sam~(0,0,11,3) | Street~WC & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS        // DxO T from Orth-Diag Top for Old-Style Diag Streets
-          Rules += sam~CEN & minor~WE | sam~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE    // DxO Ts into DxO + for Old-Style
-          Rules += sam~CEN & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE // DxO Ts into DxO + for Old-Style
-          Rules += sam~NE & minor~WE | sam~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE     // DxO Ts into DxO + for Old-Style
-          Rules += sam~NE & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE  // DxO Ts into DxO + for Old-Style
+          if (minor == Road || minor == Onewayroad) {
+            // DxO T (sam end)
+            Rules += sam~ES | Street~CNW & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS               // DxO T from Diag
+            Rules += sam~(0,0,11,3) | Street~CNW & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS       // DxO T from Orth-Diag Top
+            Rules += sam~ES | Street~WC & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS                // DxO T from Diag for Old-Style Diag Streets
+            Rules += sam~(0,0,11,3) | Street~WC & minor~NS | sam~(0,0,11,3) | sam~CNW & minor~NS        // DxO T from Orth-Diag Top for Old-Style Diag Streets
+            Rules += sam~CEN & minor~WE | sam~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE    // DxO Ts into DxO + for Old-Style
+            Rules += sam~CEN & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE // DxO Ts into DxO + for Old-Style
+            Rules += sam~NE & minor~WE | sam~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE     // DxO Ts into DxO + for Old-Style
+            Rules += sam~NE & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE  // DxO Ts into DxO + for Old-Style
 
-          // DxD T (sam end)
-          Rules += sam~ES | (Street ~> sam)~CNW & minor~EN  // DxD T (End)
-        }
-
-        if (minor.typ == AvenueLike) {
-          // OxO
-          Rules += sam~WE | (Street ~> sam)~WE & minor~NS             // OxO
-          Rules += sam~WE & minor~NS | (Street ~> sam)~WE & minor~SN  // OxO far side
-          Rules += sam~WE & minor~SN | (Street ~> sam)~WE             // OxO continue
-          // OxD
-          Rules += sam~WE | (Street ~> sam)~WC & minor~ES                           // OxD Short-T
-          Rules += sam~WE | (Street ~> sam)~WE & minor~ES                           // OxD start
-          Rules += sam~WE & minor~ES | (Street ~> sam)~WE & minor~SharedDiagRight   // OxD middle
-          Rules += sam~WE & minor~SharedDiagRight | (Street ~> sam)~WE & minor~NW   // OxD end
-          Rules += sam~WE & minor~NW | (Street ~> sam)~WE                           // OxD continue
-          // DxO
-          Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO start
-          Rules += sam~EN & minor~EW | (Street ~> sam)~SW & minor~EW  // DxO middle 1
-          Rules += sam~ES & minor~NS | (Street ~> sam)~NW & minor~SN  // DxO middle 2
-          Rules += sam~EN & minor~WE | (Street ~> sam)~SW & minor~WE  // DxO end
-          Rules += sam~ES & minor~SN | (Street ~> sam)~NW             // DxO continue
-          // DxD
-          Rules += sam~ES | (Street ~> sam)~NW & minor~NE                          // DxD start
-          Rules += sam~EN & minor~ES | (Street ~> sam)~SW & minor~SharedDiagRight  // DxD middle
-          Rules += sam~ES & minor~SharedDiagLeft | (Street ~> sam)~NW & minor~SW   // DxD end
-          Rules += sam~ES & minor~SW | (Street ~> sam)~NW                          // DxD continue
-
-          // T-intersections
-          // OxO
-          Rules += sam~WE | (Street ~> sam)~WC & minor~NS             // OxO Short T
-          Rules += sam~WE & minor~NS | (Street ~> sam)~WC & minor~SN  // OxO Long T
-
-          if (minor == Avenue) {
-            Rules += sam~WE | (Street ~> sam)~WE & minor~NC             // OxO End T Tile 1
-            Rules += sam~WE & minor~NC | (Street ~> sam)~WE & minor~CN  // OxO End T Tile 2
-
-            Rules += sam~WE | (Street ~> sam)~(2,2,0,2) & Avenue~CE
-            Rules += sam~WE | (Street ~> sam)~(2,0,2,2) & Avenue~NC
-            Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~(0,2,4,0)
-            // continuation in case of Avenue ending at 3 SAMs
-            Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~WE & Avenue~CN
-            Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~(2,0,2,2) & Avenue~CN
-            Rules += sam~WE & Avenue~CS | (Street ~> sam)~(2,2,2,0) & Avenue~SC
-
-            // SAM continuations
-            Rules += sam~WE & minor~CN | (Street ~> sam)~WE
-            Rules += sam~(2,0,2,2) & minor~CN | (Street ~> sam)~WE
+            // DxD T (sam end)
+            Rules += sam~ES | (Street ~> sam)~CNW & minor~EN  // DxD T (End)
           }
         }
 
-        // for (minor2 <- CrossNetworks if minor2 != sam) {
-        //   // the following block needs work, produces bad rules when minor or minor2 is avenue
-        //   if (hasRightShoulder(minor2)) {
-        //     Rules += sam~WE & minor~SN~NS | (Street ~> sam)~WE & minor2~NS~SN   // OxO | OxO adj
-        //     Rules += sam~WE & minor~WN~NW | (Street ~> sam)~WE & minor2~NS~SN   // OxD | OxO adjacencies
-        //     Rules += sam~WE & minor~NS~SN | (Street ~> sam)~WE & minor2~ES~SE   // OxO | OxD adjacencies
-        //     Rules += sam~ES & minor~NS~SN | (Street ~> sam)~NW & minor2~NS~SN   // DxO | DxO continue
-        //     Rules += sam~ES & minor~NS~SN | (Street ~> sam)~NW & minor2~EN~NE   // DxO | DxD continue
-        //     Rules += sam~ES & minor~SW~WS | (Street ~> sam)~NW & minor2~NS~SN   // DxD | DxO continue
-        //     Rules += sam~ES & minor~SW~WS | (Street ~> sam)~NW & minor2~EN~NE   // DxO | DxO continue
-        //   }
-        // }
+        if (isDoubleTile(minor)) {
+          // OxO
+          Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~WE & minor~NS)
+          Rules += sam~WE & minor~NS | (Street ~> sam)~WE & minor~SN
+            // OxO T-intersections
+            Rules += sam~WE | (Street ~> sam)~WC & minor~NS             // OxO Short T
+            // Rules += sam~WE & minor~NS | (Street ~> sam)~WC & minor~SN  // OxO Long T
+
+          if (minor.typ == AvenueLike && minor == Avenue) { // other possibilities like Owr4 not supported yet
+            // OxD
+            Rules += sam~WE | (Street ~> sam)~WC & minor~ES                           // OxD Short-T
+            Rules += sam~WE | (Street ~> sam)~WE & minor~ES                           // OxD start
+            Rules += sam~WE & minor~ES | (Street ~> sam)~WE & minor~SharedDiagRight   // OxD middle
+            Rules += sam~WE & minor~SharedDiagRight | (Street ~> sam)~WE & minor~NW   // OxD end
+            Rules += sam~WE & minor~NW | (Street ~> sam)~WE                           // OxD continue
+
+            // DxO
+            Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO start
+            Rules += sam~EN & minor~EW | (Street ~> sam)~SW & minor~EW  // DxO middle 1
+            Rules += sam~ES & minor~NS | (Street ~> sam)~NW & minor~SN  // DxO middle 2
+            Rules += sam~EN & minor~WE | (Street ~> sam)~SW & minor~WE  // DxO end
+            Rules += sam~ES & minor~SN | (Street ~> sam)~NW             // DxO continue
+
+            // DxD
+            Rules += sam~ES | (Street ~> sam)~NW & minor~NE                          // DxD start
+            Rules += sam~EN & minor~ES | (Street ~> sam)~SW & minor~SharedDiagRight  // DxD middle
+            Rules += sam~ES & minor~SharedDiagLeft | (Street ~> sam)~NW & minor~SW   // DxD end
+            Rules += sam~ES & minor~SW | (Street ~> sam)~NW                          // DxD continue
+
+          } else { // not shared-tile diagonals (none yet)
+            // OxD
+
+            // DxO
+
+            // DxD
+          }
+        }
+
+        if (isTripleTile(minor)) {
+          // OxO
+          if (hasRightShoulder(minor)) { // outer tile rule
+            Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~WE & minor~NS)
+            for (median <- Seq(Ave6m, Tla7m)) {
+              Rules ++= reflections((Street ~> sam)~WE & minor~NS | (Street ~> sam)~WE & median~NS) // outer to inner / inner to outer
+            }
+          }
+          // OxO short T (SAM end)
+          if (hasRightShoulder(minor)) { // no short Ts on median tiles
+            Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~WC & minor~NS)
+          }
+        }
+
 
       }
 

@@ -125,8 +125,6 @@ class SamResolver extends IdResolver {
       // add(sam~WE & Glr4~NS, 0x5e538085 + offset) // SAM-GLR 4
       // add(sam~WE & L1Dtr~NS, IID + offset) // SAM-L1 DTR
       // add(sam~WE & L2Dtr~NS, IID + offset) // SAM-L2 DTR
-      // check why this code is problematic
-      // add(sam~NS & Tla3~WE, 0x5e640000 + offset) // TLA-3 +
       add(sam~NS & (Tla3~WE).projectLeft, 0x5e640000 + offset)  // TLA-3 +
       add(sam~NS & (Tla3~WE).projectRight, 0x5e640000 + offset) // TLA-3 +
       add(sam~NS & Ave2~WE, 0x5e641000 + offset)                // AVE-2 +
@@ -134,17 +132,17 @@ class SamResolver extends IdResolver {
       add(sam~NS & Owr1~WE, 0x5e643000 + offset)                // OWR-1 +
       add(sam~NS & Owr3~WE, 0x5e644000 + offset)                // OWR-3 +
       add(sam~NS & Nrd4~WE, 0x5e645000 + offset)                // NRD-4 +
-      /*
-      add(sam~NS & (Tla5~EW).projectLeft, 0x5e646000 + offset) // TLA-5 +
-      add(sam~NS & Owr4~EW, 0x5e647000 + offset) // OWR-4 +
-      add(sam~NS & Owr5~EW, 0x5e648000 + offset) // OWR-5 +
-      add(sam~NS & Rd4~EW, 0x5e649000 + offset) // RD-4 +
-      add(sam~NS & Rd6~EW, 0x5e64a000 + offset) // RD-6 +
-      add(sam~NS & Ave6~EW, 0x5e64b000 + offset) // AVE-6 + (also TLA-7)
-      add(sam~NS & Tla7m~WE, 0x5e64b080 + offset) // TLA Inner +
+
+      add(sam~NS & (Tla5~EW).projectLeft, 0x5e646000 + offset)  // TLA-5 +
+      add(sam~NS & Owr4~EW, 0x5e647000 + offset)                // OWR-4 +
+      add(sam~NS & Owr5~EW, 0x5e648000 + offset)                // OWR-5 +
+      add(sam~NS & Rd4~EW, 0x5e649000 + offset)                 // RD-4 +
+      add(sam~NS & Rd6~EW, 0x5e64a000 + offset)                 // RD-6 +
+      add(sam~NS & Ave6~EW, 0x5e64b000 + offset)                // AVE-6 + (also TLA-7)
+      add(sam~NS & (Tla7m~WE).projectLeft, 0x5e64b080 + offset) // TLA Inner +
       // add(sam~NS & Ave8~EW, 0x5e64c000 + offset) // AVE-8 + (also TLA-9)
-      add(sam~NS & Ave6m~WE, 0x5e64c080 + offset) // AVE Inner +
-      */
+      add(sam~NS & Ave6m~WE, 0x5e64c080 + offset)               // AVE Inner +
+
       add(sam~WE & Dirtroad~NS, 0x5e600000 + offset) // RHW-2 +
 
       //Specialized OxO +-intersections
@@ -170,17 +168,29 @@ class SamResolver extends IdResolver {
       add(sam~CE & Avenue~SN, 0x5e554000 + offset) // Avenue Thru - Short
       add(sam~WC & Avenue~SN, 0x5e556000 + offset) // Avenue Thru - Long
       add(sam~WE & Avenue~NC, 0x5e55f000 + offset) // Avenue Ends
-      // add(sam~CS & Tla3~WE, NoIID + offset)             // Tla3 Thru
-      add(sam~NS & (Tla3~CE).projectLeft, 0x5e660000 + offset)        // Tla3 Ends
-      add(sam~NS & (Tla3~CE).projectRight, 0x5e660000 + offset)        // Tla3 Ends
-      // add(sam~CS & Ave2~WE, NoIID + offset)             // Ave2 Thru
+      add(sam~CS & (Tla3~WE).projectLeft, 0x5e650000 + offset)  // Tla3 Thru
+      add(sam~CS & (Tla3~WE).projectRight, 0x5e650000 + offset) // Tla3 Thru
+      add(sam~NS & (Tla3~CE).projectLeft, 0x5e660000 + offset)  // Tla3 Ends
+      add(sam~NS & (Tla3~CE).projectRight, 0x5e660000 + offset) // Tla3 Ends
+      add(sam~CS & Ave2~WE, 0x5e651000 + offset)        // Ave2 Thru
       add(sam~NS & Ave2~CE, 0x5e661000 + offset)        // Ave2 Ends
-      // add(sam~CS & Owr1~WE, NoIID + offset)             // Owr1 Thru
-      add(sam~NS & Owr1~CE, 0x5e663000 + offset)        // Owr1 Ends
-      // add(sam~CS & Ard3~WE, NoIID + offset)             // Ard3 Thru
+      add(sam~CS & Ard3~WE, 0x5e652000 + offset)        // Ard3 Thru
+      add(sam~CS & Ard3~EW, 0x5e652080 + offset)        // Ard3 Thru
       add(sam~NS & Ard3~CE, 0x5e662000 + offset)        // Ard3 Ends
-      // add(sam~CS & Nrd4~WE, NoIID + offset)             // Nrd4 Thru
+      add(sam~CS & Owr1~WE, 0x5e653000 + offset)        // Owr1 Thru
+      add(sam~NS & Owr1~CE, 0x5e663000 + offset)        // Owr1 Ends
+      add(sam~CS & Owr3~WE, 0x5e654000 + offset)        // Owr3 Thru
+      add(sam~NS & Owr3~CE, 0x5e664000 + offset)        // Owr3 Ends
+      add(sam~CS & Nrd4~WE, 0x5e655000 + offset)        // Nrd4 Thru
       add(sam~NS & Nrd4~CE, 0x5e665000 + offset)        // Nrd4 Ends
+
+      add(sam~CN & (Tla5~EW).projectLeft,  0x5e656000 + offset) // Tla5 short T
+      add(sam~CN & (Tla5~EW).projectRight, 0x5e656000 + offset) // Tla5 short T
+      add(sam~CN & Owr4~EW, 0x5e657000 + offset)    // Owr4 short T
+      add(sam~CN & Owr5~EW, 0x5e658000 + offset)    // Owr5 short T
+      add(sam~CN & Rd4~EW,  0x5e659000 + offset)    // Rd4 short T
+      add(sam~CN & Rd6~EW,  0x5e65a000 + offset)    // Rd6 short T
+      add(sam~CN & Ave6~EW, 0x5e65b000 + offset)    // Ave6 short T
 
       //Specialized OxO T-intersections
       //1 SAM and 2 Cross Elbow
