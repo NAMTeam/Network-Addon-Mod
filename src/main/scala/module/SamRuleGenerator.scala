@@ -550,6 +550,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~NE | (Street ~> sam)~CSW & (Street ~> sam)~ES              // DxD T from end diag
       Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CNE              // DxD T from thru diag
       Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CEN              // DxD T from thru diag (aux tile)
+      Rules += sam~CEN & sam~ES | (Street ~> sam)~CSW & (Street ~> sam)~NW    // DxD T across 1
+      Rules += sam~CNE & sam~ES | (Street ~> sam)~CWS & (Street ~> sam)~NW    // DxD T across 2
       Rules += sam~CNE & sam~NW | (Street ~> sam)~WS                          // DxD T to diag from end side
       Rules += sam~CSW & sam~ES | (Street ~> sam)~NW                          // DxD T to diag from thru side
       Rules += sam~CWS & sam~ES | (Street ~> sam)~NW                          // DxD T to diag from aux tile
