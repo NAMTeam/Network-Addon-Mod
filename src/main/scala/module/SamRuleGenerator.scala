@@ -445,7 +445,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
     val CrossNetworks = List(
       Road, Avenue, Onewayroad,
-      Rail, L1Dtr, L2Dtr, Lightrail, Monorail, Glr1, Glr2/*, Str*/,
+      Rail, L1Dtr, L2Dtr, Lightrail, Monorail, Glr1, Glr2, Str,
       Dirtroad/*, Rhw3, Mis, Rhw4, Rhw6s, Rhw8sm, Rhw8s, Rhw10s, Rhw12s, Rhw6cm, Rhw6c, Rhw8c,
       L1Rhw2, L1Rhw3, L1Mis, L1Rhw4, L1Rhw6s, L1Rhw8sm, L1Rhw8s, L1Rhw10s, L1Rhw12s, L1Rhw6cm, L1Rhw6c, L1Rhw8c,
       L2Rhw2, L2Rhw3, L2Mis, L2Rhw4, L2Rhw6s, L2Rhw8sm, L2Rhw8s, L2Rhw10s, L2Rhw12s, L2Rhw6cm, L2Rhw6c, L2Rhw8c,

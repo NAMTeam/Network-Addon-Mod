@@ -118,7 +118,7 @@ class SamResolver extends IdResolver {
       add(sam~NS & Rail~WE, 0x5e511000 + offset)        // SAM-Rail
       add(sam~WE & Lightrail~NS, 0x5e516000 + offset)   // SAM-Lightrail
       add(sam~WE & Monorail~NS, 0x5e51a000 + offset)    // SAM-Monorail
-      add(sam~NS & Str~WE, 0x5e511009 + offset)         // SAM-STR
+      // add(sam~NS & Str~WE, 0x5e511009 + offset)         // SAM-STR
       add(sam~WE & Glr1~NS, 0x5e538000 + offset)        // SAM-GLR 1
       add(sam~WE & Glr2~NS, 0x5e538080 + offset)        // SAM-GLR 2
       // add(sam~WE & Glr3~NS, 0x5e538005 + offset) // SAM-GLR 3
@@ -215,7 +215,7 @@ class SamResolver extends IdResolver {
       add(sam~NS & Rail~EN, 0x5e512000 + offset)                  // SAM-Rail
       add(sam~NS & Lightrail~SE, 0x5e518000 + offset)             // SAM x Lightrail
       add(sam~NS & Monorail~SE, 0x5e51c000 + offset)              // SAM x Monorail
-      add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
+      // add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
       // add(sam~NS & L1Dtr~EN, IID + offset) // SAM x L1 DTR
       // add(sam~NS & L2Dtr~EN, IID + offset) // SAM x L2 DTR
       add(sam~NS & Glr1~EN, 0x5e539000 + offset)                  // SAM x GLR 1
@@ -244,7 +244,7 @@ class SamResolver extends IdResolver {
       add(sam~NW & Rail~NS, 0x5e514000 + offset)        // SAM-Rail
       add(sam~SE & Lightrail~NS, 0x5e517000 + offset)   // SAM x Lightrail
       add(sam~SE & Monorail~NS, 0x5e51b000 + offset)    // SAM x Monorail
-      add(sam~NW & Str~NS, 0x5e514009 + offset)         // SAM x STR
+      // add(sam~NW & Str~NS, 0x5e514009 + offset)         // SAM x STR
       // add(sam~NW & L1Dtr~NS, IID + offset) // SAM x L1 DTR
       // add(sam~NW & L2Dtr~NS, IID + offset) // SAM x L2 DTR
       add(sam~NW & Glr1~NS, 0x5e53a000 + offset)        // SAM x GLR 1
@@ -280,7 +280,7 @@ class SamResolver extends IdResolver {
       add(sam~NW & Rail~EN, 0x5e515000 + offset)                  // SAM-Rail
       add(sam~SW & Lightrail~ES, 0x5e519000 + offset)             // SAM x Lightrail
       add(sam~SW & Monorail~ES, 0x5e51d000 + offset)              // SAM x Monorail
-      add(sam~NW & Str~EN, 0x5e515009 + offset)                   // SAM x STR
+      // add(sam~NW & Str~EN, 0x5e515009 + offset)                   // SAM x STR
       // add(sam~NW & L1Dtr~EN, IID + offset) // SAM x L1 DTR
       // add(sam~NW & L2Dtr~EN, IID + offset) // SAM x L2 DTR
       add(sam~NW & Glr1~EN, 0x5e53b000 + offset)                  // SAM x GLR 1
