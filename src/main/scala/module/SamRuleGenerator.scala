@@ -478,8 +478,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(0,1,13,0) | (Street ~> sam)~(13,0,2,0)  // top to bottom
       Rules += sam~(13,0,2,0) | (Street ~> sam)~WE          // to orth
 
-      // orth-diag mini diagonal s-curve
-      Rules ++= reflections((Street ~> sam)~(0,0,11,3) | (Street ~> sam)~(11,0,11,0))
+      // orth-diag mini diagonal s-curve aka 'S' bend
+      Rules ++= reflections((Street ~> sam)~(0,0,11,3)  | (Street ~> sam)~(11,0,11,0))
+      Rules ++= reflections((Street ~> sam)~(0,0,11,13) | (Street ~> sam)~(11,0,11,0))
 
       // orth-diag sharp cutback
       Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(2,11,0,0))
@@ -592,7 +593,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       )
 
       for (t <- orthDiagIntsFromDiag) {
-        Rules ++= reflections((Street ~> sam)~(0,0,11,3) | (Street ~> sam)~t)
+        Rules ++= reflections((Street ~> sam)~(0,0,11,3)  | (Street ~> sam)~t) // from orth-diag top
+        Rules ++= reflections((Street ~> sam)~(0,0,11,13) | (Street ~> sam)~t) // from blend curve
       }
 
       // special intersections with road and onewayroad
