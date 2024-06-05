@@ -655,16 +655,29 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~WE | (Street ~> sam)~WE & minor~ES~SE                // OxD
           Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & minor~WN~NW  // OxD Tile 2
           Rules += sam~WE & minor~WN~NW | (Street ~> sam)~WE                // OxD continue
+          if (minor.base.isDefined) for (minBase <- minor.base) {
+            // stability when minor is an override network
+            Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & (minBase ~> minor)~WN~NW
+            Rules += sam~WE & (minBase ~> minor)~ES~SE | (Street ~> sam)~WE & minor~WN~NW
+            Rules += sam~WE & minor~ES~SE | sam~WE & (minBase ~> minor)~WN~NW
+          }
+
+          // OxD T
+          // Rules += sam~WE & minor~WN | Street~WN | % | sam~WC & sam~WN   // OxD T
 
           // DxO & DxD
           if (!minor.isNwm) {
-            // OxD T
-            // Rules += sam~WE & minor~WN | Street~WN | % | sam~WC & sam~WN   // OxD T
 
             // DxO
             Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO
             Rules += sam~NE & minor~WE | (Street ~> sam)~WS & minor~WE  // DxO Tile 2
             Rules += sam~ES & minor~NS | (Street ~> sam)~NW             // DxO continue
+            if (minor.base.isDefined) for (minBase <- minor.base) {
+              // stability when minor is an override network
+              Rules += sam~NE & minor~WE | (Street ~> sam)~WS & (minBase ~> minor)~WE
+              Rules += sam~NE & (minBase ~> minor)~WE | (Street ~> sam)~WS & minor~WE
+              Rules += sam~NE & minor~WE | sam~WS & (minBase ~> minor)~WE
+            }
 
             // Rules += sam~ES & minor~WE | minor~WN | % | sam~WC & minor~WN       // DxO T
 
@@ -672,6 +685,12 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~ES | (Street ~> sam)~NW & minor~EN             // DxD
             Rules += sam~SE & minor~EN | (Street ~> sam)~NW & minor~WS  // DxD Tile 2
             Rules += sam~SE & minor~WS | (Street ~> sam)~NW             // DxD continue
+            if (minor.base.isDefined) for (minBase <- minor.base) {
+              // stability when minor is an override network
+              Rules += sam~SE & minor~EN | (Street ~> sam)~NW & (minBase ~> minor)~WS
+              Rules += sam~SE & (minBase ~> minor)~EN | (Street ~> sam)~NW & minor~WS
+              Rules += sam~SE & minor~EN | sam~NW & (minBase ~> minor)~WS
+            }
           }
 
           // SAM end T intersections
