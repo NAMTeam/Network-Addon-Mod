@@ -482,6 +482,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules ++= reflections((Street ~> sam)~(0,0,11,3)  | (Street ~> sam)~(11,0,11,0))
       Rules ++= reflections((Street ~> sam)~(0,0,11,13) | (Street ~> sam)~(11,0,11,0))
 
+      // orth-diag kinked bend
+      Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(2,0,0,11))
+      Rules ++= reflections((Street ~> sam)~(0,1,13,0) | (Street ~> sam)~(13,0,0,2))
+
       // orth-diag sharp cutback
       Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(2,11,0,0))
       Rules ++= reflections((Street ~> sam)~(0,0,11,3) | (Street ~> sam)~(11,0,0,2))
