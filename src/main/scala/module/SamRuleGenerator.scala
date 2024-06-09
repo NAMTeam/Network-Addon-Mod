@@ -631,24 +631,20 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         Rules += sam~WE | (Street ~> sam)~WC & minor~CES  // bending transition 2
       }
 
-      // avenue-specific Transitions
-      Rules += sam~WE | (Street ~> sam)~WC & Avenue~(0,0,2,4)
-
       // special avenue configurations
         // OxO Avenue ending at SAM
-        Rules += sam~WE | (Street ~> sam)~WE & Avenue~NC              // OxO End T Tile 1
-        Rules += sam~WE & Avenue~NC | (Street ~> sam)~WE & Avenue~CN  // OxO End T Tile 2
-        // ???
-        Rules += sam~WE | (Street ~> sam)~(2,2,0,2) & Avenue~CE
-        Rules += sam~WE | (Street ~> sam)~(2,0,2,2) & Avenue~NC
-        Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~(0,2,4,0)
-        // continuation in case of Avenue ending at 3 SAMs
-        Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~WE & Avenue~CN
+        Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~WE & Avenue~NC) // OxO End T Tile 1
+        Rules += sam~WE & Avenue~NC | (Street ~> sam)~WE & Avenue~CN               // OxO End T Tile 2
+        // OxO Avenue ending at SAM w/ SAM continuing in direction of Avenue
+        Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(2,2,0,2) & Avenue~CE)
+        Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(2,0,2,2) & Avenue~NC)
+        // overrides between the 2 and 3 SAM connection variants
+        Rules ++= reflections((Street ~> sam)~(2,0,2,2) & Avenue~NC | (Street ~> sam)~WE & Avenue~CN)
         Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~(2,0,2,2) & Avenue~CN
-        Rules += sam~WE & Avenue~CS | (Street ~> sam)~(2,2,2,0) & Avenue~SC
-        // SAM continuations
-        Rules += sam~WE & Avenue~CN | (Street ~> sam)~WE
-        Rules += sam~(2,0,2,2) & Avenue~CN | (Street ~> sam)~WE
+        // Avenue 90 degree transition to SAM
+        Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~(0,2,4,0)
+        // avenue orthogonal transition to SAM
+        Rules += sam~WE | (Street ~> sam)~WC & Avenue~(0,0,2,4)
 
       // standard intersections with other networks
       for (minor <- CrossNetworks) {
