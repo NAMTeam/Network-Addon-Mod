@@ -324,14 +324,14 @@ class SamResolver extends IdResolver {
       add(sam~CE & Onewayroad~CWN, 0x5e596000 + offset)
 
       //Street Roundabouts
-      add(sam~(0,0,102,102), 0x5e5a1000 + offset) //Base
-      add(sam~(0,2,102,102), 0x5e5a5000 + offset) //Base with Orth Street connection
-      // add(sam~(0,13,102,102), 0x5e5a1000 + offset) //Base with Diag Street connection (does not exist yet)
+      add(sam~(0,0,102,102),                 0x5e5a1000 + offset) // base - no connections
+      add(sam~(0,0,102,102) & sam~NC,        0x5e5a5000 + offset) // orth sam connection
+      add(sam~(0,0,102,102) & Road~NC,       0x5e5a0000 + offset) // orth road connection
+      add(sam~(0,0,102,102) & Onewayroad~NC, 0x5e5a9000 + offset) // orth onewayroad connection
 
-      add(Road~(0,2,0,0) & sam~(0,0,102,102), 0x5e5a0000 + offset) //Base with Orth Road connection
-      // add(Road~(0,13,0,0) & sam~(0,0,102,102), 0x5F084900) //Base with Diag Road connection (does not exist yet)
-      add(Onewayroad~(0,2,0,0) & sam~(0,0,102,102), 0x5e5a9000 + offset) //Base with Orth Onewayroad connection
-      // add(Onewayroad~(0,13,0,0) & sam~(0,0,102,102), 0x5F984900) //Base with Diag Onewayroad connection (does not exist yet)
+      // add(sam~(0,0,102,102) & sam~(0,11,0,0),       NoIID + offset) // diag sam connection
+      // add(sam~(0,0,102,102) & Road~(0,11,0,0),      NoIID + offset) // diag road connection
+      // add(sam~(0,0,102,102) & Onewayoad~(0,11,0,0), NoIID + offset) // diag onewayroad connection
 
     }
     map

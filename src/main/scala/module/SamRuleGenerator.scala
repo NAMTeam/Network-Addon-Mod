@@ -349,92 +349,41 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 
   private def createSamRoundabout(sam: Network): Unit = {
-    // Street Roundabouts
-    Rules += sam~WE | (Street ~> sam)~(2,102,102,0) // orth into roundabout x street
 
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,0,102) // Street roundabout to Street roundabout
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,2,0,102) // Street roundabout to roundabout x street 1
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,2,102) // Street roundabout to roundabout x street 2
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,0,102) // roundabout x street to Street roundabout 1
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,0,102) // roundabout x street to Street roundabout 2
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,2,0,102) // roundabout x street to roundabout x street 1a
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,2,102) // roundabout x street to roundabout x street 1b
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,2,0,102) // roundabout x street to roundabout x street 2a
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,2,102) // roundabout x street to roundabout x street 2b
-    Rules += sam~(0,102,102,2) | (Street ~> sam)~(102,102,2,0) // roundabout x street to roundabout x street 3a
-    Rules += sam~(0,102,102,2) | (Street ~> sam)~(102,102,0,2) // roundabout x street to roundabout x street 3b
-    Rules += sam~(2,102,102,0) | (Street ~> sam)~(102,102,2,0) // roundabout x street to roundabout x street 4a
-    Rules += sam~(2,102,102,0) | (Street ~> sam)~(102,102,0,2) // roundabout x street to roundabout x street 4b
+    val connectionSegments: Seq[Segment] = Seq(
+      sam~NC,
+      Road~NC,
+      Onewayroad~NC
+    )
+    // base roundabout tiles (no connections)
+    val samBase = sam~(0,0,102,102)
+    val streetBase = Street~(0,0,102,102)
 
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // Street roundabout to roundabout x road 1
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // Street roundabout to roundabout x road 2
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) // roundabout x road to Street roundabout 1
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) // roundabout x road to Street roundabout 2
+    // SAM entry & exit rules
+    Rules ++= reflections((Street ~> sam)~WE | (Street ~> sam)~(0,0,102,102) & (Street ~> sam)~WC)  // from & to orth
+    // Rules ++= reflections((Street ~> sam)~(0,1,13,0) | (Street ~> sam)~(13,0,102,102)) // from & to diag
 
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // Street roundabout x street to roundabout x road 1a
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // Street roundabout x street to roundabout x road 1b
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // Street roundabout x street to roundabout x road 2a
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // Street roundabout x street to roundabout x road 2b
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,2,0,102) // roundabout x road to roundabout x street 1a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,2,0,102) // roundabout x road to roundabout x street 1b
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,2,102) // roundabout x road to roundabout x street 2a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,2,102) // roundabout x road to roundabout x street 2b
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,2,0) // roundabout x road to roundabout x street 3a
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,0,2) // roundabout x road to roundabout x street 3b
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,2,0) // roundabout x road to roundabout x street 4a
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,0,2) // roundabout x road to roundabout x street 4b
+    // base tile to base tile
+    Rules += samBase | streetBase * R1F0 | % | samBase * R1F0
 
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // roundabout x road to roundabout x road 1a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // roundabout x road to roundabout x road 1b
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // roundabout x road to roundabout x road 2a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // roundabout x road to roundabout x road 2b
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,2,0) // roundabout x road to roundabout x road 3a
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,0,2) // roundabout x road to roundabout x road 3b
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,2,0) // roundabout x road to roundabout x road 4a
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,0,2) // roundabout x road to roundabout x road 4b
-
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // roundabout x road to roundabout x onewayroad 1a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // roundabout x road to roundabout x onewayroad 1b
-    Rules += sam~(0,0,102,102) & Road~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // roundabout x road to roundabout x onewayroad 2a
-    Rules += sam~(0,0,102,102) & Road~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // roundabout x road to roundabout x onewayroad 2b
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,2,0) // roundabout x road to roundabout x onewayroad 3a
-    Rules += sam~(0,102,102,0) & Road~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,0,2) // roundabout x road to roundabout x onewayroad 3b
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,2,0) // roundabout x road to roundabout x onewayroad 4a
-    Rules += sam~(0,102,102,0) & Road~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,0,2) // roundabout x road to roundabout x onewayroad 4b
-
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // Street roundabout to roundabout x onewayroad 1
-    Rules += sam~(0,0,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // Street roundabout to roundabout x onewayroad 2
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) // roundabout x onewayroad to Street roundabout 1
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) // roundabout x onewayroad to Street roundabout 2
-
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // Street roundabout x street to roundabout x onewayroad 1a
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // Street roundabout x street to roundabout x onewayroad 1b
-    Rules += sam~(0,2,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // Street roundabout x street to roundabout x onewayroad 2a
-    Rules += sam~(2,0,102,102) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // Street roundabout x street to roundabout x onewayroad 2b
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,2,0,102) // roundabout x onewayroad to roundabout x street 1a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,2,0,102) // roundabout x onewayroad to roundabout x street 1b
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,2,102) // roundabout x onewayroad to roundabout x street 2a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,2,102) // roundabout x onewayroad to roundabout x street 2b
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // roundabout x onewayroad to roundabout x road 1a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,2,0,0) // roundabout x onewayroad to roundabout x road 1b
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // roundabout x onewayroad to roundabout x road 2a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Road~(0,0,2,0) // roundabout x onewayroad to roundabout x road 2b
-    Rules += sam~(0,102,102,0) & Onewayroad~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,2,0) // roundabout x onewayroad to roundabout x road 3a
-    Rules += sam~(0,102,102,0) & Onewayroad~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,0,2) // roundabout x onewayroad to roundabout x road 3b
-    Rules += sam~(0,102,102,0) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,2,0) // roundabout x onewayroad to roundabout x road 4a
-    Rules += sam~(0,102,102,0) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Road~(0,0,0,2) // roundabout x onewayroad to roundabout x road 4b
-
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // roundabout x onewayroad to roundabout x onewayroad 1a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,2,0,0) // roundabout x onewayroad to roundabout x onewayroad 1b
-    Rules += sam~(0,0,102,102) & Onewayroad~(0,2,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // roundabout x onewayroad to roundabout x onewayroad 2a
-    Rules += sam~(0,0,102,102) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,0,0,102) & Onewayroad~(0,0,2,0) // roundabout x onewayroad to roundabout x onewayroad 2b
-    Rules += sam~(0,102,102,0) & Onewayroad~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,2,0) // roundabout x onewayroad to roundabout x onewayroad 3a
-    Rules += sam~(0,102,102,0) & Onewayroad~(0,0,0,2) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,0,2) // roundabout x onewayroad to roundabout x onewayroad 3b
-    Rules += sam~(0,102,102,0) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,2,0) // roundabout x onewayroad to roundabout x onewayroad 4a
-    Rules += sam~(0,102,102,0) & Onewayroad~(2,0,0,0) | (Street ~> sam)~(102,102,0,0) & Onewayroad~(0,0,0,2) // roundabout x onewayroad to roundabout x onewayroad 4b
-
-    Rules += sam~(102,0,2,102) | (Street ~> sam)~WE
-
+    for (cSeg1 <- connectionSegments) {
+      // substitutions in case connection is SAM and tile must be pure street
+      val cSeg1From = if (cSeg1.network.base.exists(_ == Street)) Segment(Street, cSeg1.flags) else cSeg1
+      // base tile to connection tile
+      Rules += samBase | (streetBase & cSeg1From) * R0F1 | % | (samBase & cSeg1) * R0F1
+      Rules += samBase | (streetBase & cSeg1From) * R1F0 | % | (samBase & cSeg1) * R1F0
+      // connection tile to base tile
+      Rules += (samBase & cSeg1)        | (streetBase * R0F1) | % | samBase * R0F1
+      Rules += (samBase & cSeg1) * R1F1 | (streetBase * R0F1) | % | samBase * R0F1
+      // connection tile to other connection tiles
+      for (cSeg2 <- connectionSegments) {
+        val cSeg2From = if (cSeg2.network.base.exists(_ == Street)) Segment(Street, cSeg2.flags) else cSeg2
+        Rules += (samBase & cSeg1)        | (streetBase & cSeg2From) * R0F1 | % | (samBase & cSeg2) * R0F1
+        Rules += (samBase & cSeg1) * R1F1 | (streetBase & cSeg2From) * R0F1 | % | (samBase & cSeg2) * R0F1
+        Rules += (samBase & cSeg1)        | (streetBase & cSeg2From) * R1F0 | % | (samBase & cSeg2) * R1F0
+        Rules += (samBase & cSeg1) * R1F1 | (streetBase & cSeg2From) * R1F0 | % | (samBase & cSeg2) * R1F0
+      }
+    }
     createRules()
   }
 

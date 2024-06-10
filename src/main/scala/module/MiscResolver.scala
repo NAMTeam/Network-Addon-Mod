@@ -155,9 +155,14 @@ class MiscResolver extends IdResolver {
     add(Street~(0,152,154,1), 0x5F595D00)
     add(Street~(154,0,0,1), 0x5F595E00)
 	//Street Roundabout
-	add(Street~(0,0,102,102), 0x5F56BB00) //Base
-	add(Street~(0,2,102,102), 0x5F56BA00) //Base with Orth Street connection
-	add(Street~(0,13,102,102), 0x5F56B900) //Base with Diag Street connection
+	add(Street~(0,0,102,102),                         0x5F56BB00) //Base
+	add(Street~(0,0,102,102) & Street~NC,             0x5F56BA00) //Base with Orth Street connection
+	add(Street~(0,0,102,102) & Street~(0,11,0,0),     0x5F56B900) //Base with Diag Street connection
+  //Street Roundabout Connections
+	add(Street~(0,0,102,102) & Road~NC,               0x5F084800) //Base with Orth Road connection
+	add(Street~(0,0,102,102) & Road~(0,13,0,0),       0x5F084900) //Base with Diag Road connection
+	add(Street~(0,0,102,102) & Onewayroad~NC,         0x5F984800) //Base with Orth Onewayroad connection
+	add(Street~(0,0,102,102) & Onewayroad~(0,13,0,0), 0x5F984900) //Base with Diag Onewayroad connection
 	//Larger (R2-esque) 45 (4x3)
 	//Tile 1F is override of Diagonal
 	//Tile 22 is override of 1x1 Stub
@@ -316,11 +321,6 @@ class MiscResolver extends IdResolver {
     add(Street~NS & Monorail~ES, 0x0ddd1000)
     add(Street~SW & Monorail~ES, 0x5F502E00)
     add(Street~EW & Monorail~NS, 0x0ddd0800)
-	//Street Roundabout Connections
-	add(Road~(0,2,0,0) & Street~(0,0,102,102), 0x5F084800) //Base with Orth Road connection
-	add(Road~(0,13,0,0) & Street~(0,0,102,102), 0x5F084900) //Base with Diag Road connection
-	add(Onewayroad~(0,2,0,0) & Street~(0,0,102,102), 0x5F984800) //Base with Orth Onewayroad connection
-	add(Onewayroad~(0,13,0,0) & Street~(0,0,102,102), 0x5F984900) //Base with Diag Onewayroad connection
 
 
     // OWR intersections
