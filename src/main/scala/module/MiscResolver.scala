@@ -459,7 +459,6 @@ class MiscResolver extends IdResolver {
     for (rhw <- RhwNetworks if rhw.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(rhw)) 4 else 2
       val minHeight = 0
-      val rangeId = (RhwResolver.rhwRangeId(rhw) & 0xFFFFF) + ((RhwResolver.rhwRangeId(rhw) >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
       for {
         levelDiff <- Seq(1, 2)  // L1 vs L2 onslopes
         height <- minHeight to (maxHeight-levelDiff)
@@ -467,7 +466,7 @@ class MiscResolver extends IdResolver {
         import RhwRuleGenerator.HeightLevel
         val lower: Network = height~rhw
         val upper: Network = (height+levelDiff)~rhw
-        add(upper~NC & lower~CS, 0x57700000 + rangeId + 0x100*(levelDiff-1) + 0x10*height)  // direction North (upper) to South (lower)
+        add(upper~NC & lower~CS, RhwResolver.rhwHtRangeId(rhw) + 0x100*(levelDiff-1) + 0x10*height)  // direction North (upper) to South (lower)
       }
     }
 
