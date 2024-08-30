@@ -126,6 +126,11 @@ object RhwResolver {
     Rd4      -> 0x3000, Rd6      -> 0x3100, Ave6     -> 0x3200,
     Tla7m    -> 0x3300, Ave8     -> 0x3400, Ave6m    -> 0x3500)
 
+  def rhwHtRangeId(n: Network): Int = {  // for OST and HT
+    require(n.height == 0)
+    0x57700000 + (rhwRangeId(n) & 0xFFFFF) + ((rhwRangeId(n) >>> 4) & 0xF000)  // e.g. 0x57788080 for Rhw6cm
+  }
+
 }
 
 class RhwResolver extends IdResolver with RhwSingleSegResolver with DoubleSegResolver {
