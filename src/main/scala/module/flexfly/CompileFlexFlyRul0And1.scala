@@ -1,9 +1,10 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, Flags._, RotFlip._, Network._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Flags._, RotFlip._, Network._, Implicits._
 import FlexFlyTiles._
 import java.io.{File, PrintWriter}
+import scala.collection.immutable.LazyList
 
 /* This file contains an ad-hoc implementation for generating the RUL0 and RUL1
  * code for FlexFlys. In particular, it is not specific to MetaRules.
@@ -54,7 +55,7 @@ object CompileFlexFlyRul0And1 {
     def different(a: Int, b: Int) = a != b || a == 0 || a == 4
     val r = 4 to 0 by -1
     for {
-      a1 <- r.toStream; a2 <- r if different(a1, a2)
+      a1 <- r.to(LazyList); a2 <- r if different(a1, a2)
       b1 <- r; b2 <- r if different(b1, b2)
       c1 <- r; c2 <- r if different(c1, c2)
       d1 <- r; d2 <- r if different(d1, d2)
@@ -77,22 +78,22 @@ object CompileFlexFlyRul0And1 {
     */
   private[this] lazy val combosAllDirections = {
     import Flag._, Bi._
-    def effectiveFlag(rhwFlag: Flag, mhwFlag: Flag) = (rhwFlag, mhwFlag) match {
-      case (Zero, Four) => Zero
-      case (Zero, _) => mhwFlag
-      case (DiagLeft, DiagLeft) => throw new UnsupportedOperationException
-      case (DiagLeft, _) => DiagLeft
-      case (Orth, Orth) => throw new UnsupportedOperationException
-      case (Orth, Zero) => Orth
-      case (Orth, _) => Four
-      case (DiagRight, DiagRight) => throw new UnsupportedOperationException
-      case (DiagRight, _) => DiagRight
-      case (Four, _) => Four
+    def effectiveFlag(rhwFlag: Int, mhwFlag: Int): Int = (rhwFlag, mhwFlag) match {
+      case (0, 4) => 0
+      case (0, _) => mhwFlag
+      case (1, 1) => throw new UnsupportedOperationException
+      case (1, _) => 1
+      case (2, 2) => throw new UnsupportedOperationException
+      case (2, 0) => 2
+      case (2, _) => 4
+      case (3, 3) => throw new UnsupportedOperationException
+      case (3, _) => 3
+      case (4, _) => 4
     }
     combos filter { tile =>
       val (mhwFlags, rhwFlags) = extractFlags(tile)
-      (rhwFlags zip mhwFlags) forall { case (r, m) => effectiveFlag(r, m) == Flag.Four }
-    } filter (_.symmetries == Group.SymGroup.Cyc1)
+      (rhwFlags zip mhwFlags) forall { case (r, m) => effectiveFlag(r, m) == 4 }
+    } filter (_.symmetries == group.SymGroup.Cyc1)
   }
 
   /** splits above flag combinations into those that have auto-connect problem
@@ -103,7 +104,7 @@ object CompileFlexFlyRul0And1 {
     val mapped = combosAllDirections map { tile =>
       val flags = tile.segs.find(_.network == Dirtroad).get.flags
       import Flag._
-      val rfOpt = RotFlip.values find (rf => flags * rf == Flags(Bi.Orth, Four, Four, Four))
+      val rfOpt = RotFlip.values find (rf => flags * rf == Flags(2,4,4,4,Bi))
       (tile, rfOpt)
     }
     val nonAutoconnectTiles = mapped collect { case (tile, None) => tile }
@@ -113,7 +114,7 @@ object CompileFlexFlyRul0And1 {
 
   val flexFlySegs: Seq[Segment] = for {
     orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-    network <- (RhwNetworks from Mis to L4Rhw4).iterator
+    network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T3, T6)
   } yield {
     network~orient(t)
@@ -127,16 +128,16 @@ object CompileFlexFlyRul0And1 {
     val autoConnectIter = autoconnectTiles.iterator
     val nonAutoconnectIter = nonAutoconnectTiles.iterator
     def buildTiles(n: Network, orient: IntFlags => IntFlags) = (Seq.newBuilder
-      += n~orient(T0) -> autoConnectIter.next
-      += n~orient(T1) -> autoConnectIter.next * R2F0
-      += n~orient(T3) -> nonAutoconnectIter.next
-      += n~orient(T6) -> autoConnectIter.next * R2F0
-      ).result
+      += n~orient(T0) -> autoConnectIter.next()
+      += n~orient(T1) -> autoConnectIter.next() * R2F0
+      += n~orient(T3) -> nonAutoconnectIter.next()
+      += n~orient(T6) -> autoConnectIter.next() * R2F0
+      ).result()
     (for {
-      orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-      network <- (RhwNetworks from Mis to L4Rhw4).iterator
+      orient <- Iterator[IntFlags => IntFlags](identity _, reverseIntFlags _)
+      network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
       tuple <- buildTiles(network, orient)
-    } yield tuple)(collection.breakOut)
+    } yield tuple).toMap
   }
 
   private[this] def concreteTileToString(tile: Tile): String = {
@@ -146,125 +147,143 @@ object CompileFlexFlyRul0And1 {
   }
 
   def rul0Entry(hid: Int, network: Network, reverse: Boolean, previewIter: Iterator[(Int, String)]) = {
-    val (previewId90, previewName90) = previewIter.next
-    val (previewId45, previewName45) = previewIter.next
+    val (previewId90, previewName90) = previewIter.next()
+    val (previewId45, previewName45) = previewIter.next()
     val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags _ else identity _
+    def ff90(cursorInside: Boolean): String = {
+      val hidOffset = if (cursorInside) 0 else 0x80000
+      f"""
+      |[HighwayIntersectionInfo_0x${hid+hidOffset}%08X]
+      |;Added by memo 2014/11/16
+      |;FlexFly 90 (cursor ${if (cursorInside) "inside" else "outside"})
+      |Piece = ${if (cursorInside) "-48.0" else "-80.0"}, 0.0, 0, 1, 0x$previewId90%08X
+      |PreviewEffect = $previewName90
+      |
+      |CellLayout=........
+      |CellLayout=.abY....
+      |CellLayout=...cY...
+      |CellLayout=....dY..
+      |CellLayout=.....e..
+      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
+      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |CheckType = Z - dirtroad: 0x02020202
+      |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+      |CheckType = a - ${concreteTileToString(convertVirtualTile(network~orient(T0)))}, 0xFFFFFFFF optional
+      |CheckType = b - ${concreteTileToString(convertVirtualTile(network~orient(T1)))}, 0xFFFFFFFF optional
+      |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T3)))}, 0xFFFFFFFF optional
+      |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
+      |
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
+      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |AutoTileBase = 0x55387000
+      |PlaceQueryID = 0x$previewId90%08X
+      |Costs = 600
+      |
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x10000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x20000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x30000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=3
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x40000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Transpose=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x50000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x60000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x70000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=3
+      |""".stripMargin.trim
+    }
+
+    def ff45(cursorInside: Boolean): String = {
+      val hidOffset = if (cursorInside) 0 else 0x80000
+      f"""
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+1}%08X]
+      |;Added by memo 2014/11/16
+      |;FlexFly 45 (cursor ${if (cursorInside) "inside" else "outside"})
+      |Piece = ${if (cursorInside) "0.0" else "-32.0"}, 0.0, 0, 1, 0x$previewId45%08X
+      |PreviewEffect = $previewName45
+      |
+      |CellLayout=........
+      |CellLayout=...Xc...
+      |CellLayout=....dY..
+      |CellLayout=.....e..
+      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
+      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |CheckType = Z - dirtroad: 0x02020202
+      |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+      |CheckType = X - dirtroad: 0x00020000, 0xFFFFFFFF optional
+      |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T6)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
+      |
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
+      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |AutoTileBase = 0x55387000
+      |PlaceQueryID = 0x$previewId45%08X
+      |Costs = 600
+      |
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x10001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x20001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x30001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=3
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x40001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Transpose=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x50001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x60001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x70001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=3
+      |""".stripMargin.trim
+    }
+
     f"""
-    |[HighwayIntersectionInfo_0x$hid%08X]
-    |;Added by memo 2014/11/16
-    |;FlexFly 90
-    |Piece = -48.0, 0.0, 0, 1, 0x$previewId90%08X
-    |PreviewEffect = $previewName90
+    |${ff90(cursorInside = true)}
     |
-    |CellLayout=........
-    |CellLayout=.abY....
-    |CellLayout=...cY...
-    |CellLayout=....dY..
-    |CellLayout=.....e..
-    |CellLayout=....Zf.<
-    |CellLayout=....^...
-    |
-    |CheckType = Z - dirtroad: 0x02020202
-    |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-    |CheckType = a - ${concreteTileToString(convertVirtualTile(network~orient(T0)))}, 0xFFFFFFFF optional
-    |CheckType = b - ${concreteTileToString(convertVirtualTile(network~orient(T1)))}, 0xFFFFFFFF optional
-    |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T3)))}, 0xFFFFFFFF optional
-    |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
-    |
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=....+..<
-    |ConsLayout=....^...
-    |
-    |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x$previewId90%08X
-    |Costs = 600
-    |
-    |[HighwayIntersectionInfo_0x${hid+0x10000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x20000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x30000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=3
-    |[HighwayIntersectionInfo_0x${hid+0x40000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Transpose=1
-    |[HighwayIntersectionInfo_0x${hid+0x50000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x60000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x70000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=3
+    |${ff90(cursorInside = false)}
     |
     |
-    |[HighwayIntersectionInfo_0x${hid+1}%08X]
-    |;Added by memo 2014/11/16
-    |;FlexFly 45
-    |Piece = 0.0, 0.0, 0, 1, 0x$previewId45%08X
-    |PreviewEffect = $previewName45
+    |${ff45(cursorInside = true)}
     |
-    |CellLayout=........
-    |CellLayout=...Xc...
-    |CellLayout=....dY..
-    |CellLayout=.....e..
-    |CellLayout=....Zf.<
-    |CellLayout=....^...
-    |
-    |CheckType = Z - dirtroad: 0x02020202
-    |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-    |CheckType = X - dirtroad: 0x00020000, 0xFFFFFFFF optional
-    |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T6)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
-    |
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=....+..<
-    |ConsLayout=....^...
-    |
-    |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x$previewId45%08X
-    |Costs = 600
-    |
-    |[HighwayIntersectionInfo_0x${hid+0x10001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x20001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x30001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=3
-    |[HighwayIntersectionInfo_0x${hid+0x40001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Transpose=1
-    |[HighwayIntersectionInfo_0x${hid+0x50001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x60001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x70001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=3
+    |${ff45(cursorInside = false)}
     |""".stripMargin
   }
 
-  def previews(resolve: IdResolver) = RhwNetworks.from(Mis).to(L4Rhw4).toSeq.flatMap { n =>
+  def previews(resolve: IdResolver) = RhwNetworks.rangeFrom(Mis).rangeTo(L4Rhw4).toSeq.flatMap { n =>
     FlexFlyRuleGenerator.orientations.flatMap { orient =>
       Seq(T0, T1) map { t =>
         val id = resolve(n~orient(t)).id & ~0xF | 0x5
@@ -277,7 +296,7 @@ object CompileFlexFlyRul0And1 {
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
     for (hid <- hid0 until hid0 + 40) { 
-      val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
+      val numbers = (0 until 16) map (i => f"${hid+0x10000*i}%X") mkString ", "
       val tag = if (hid == hid0) "RotationRing" else "AddTypes"
       printer.println(f"$tag = $numbers ; flexfly")
     }
@@ -287,17 +306,17 @@ object CompileFlexFlyRul0And1 {
 
     val hids = Iterator.iterate(hid0)(_ + 2)
     val previewIter = previews(resolver).iterator
-    for (network <- RhwNetworks from Mis to L4Rhw4; reverse <- Seq(false, true)) {
-      printer.println(rul0Entry(hids.next, network, reverse, previewIter))
+    for (network <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4; reverse <- Seq(false, true)) {
+      printer.println(rul0Entry(hids.next(), network, reverse, previewIter))
     }
   }
 
   def rul1Entry(tile: Tile, id: Int, header: String): String = {
-    tile.representations.zipWithIndex.foldLeft(new StringBuilder(f";$header%n")) { case (sb, (rf, i)) =>
+    tile.representations.iterator.zipWithIndex.foldLeft(new StringBuilder(f";$header%n")) { case (sb, (rf, i)) =>
       val rft = tile * rf
       val (mhwFlags, rhwFlags) = extractFlags(rft)
       sb ++= f"Type$i=0x0${rhwFlags.mkString("0").reverse},0x0${mhwFlags.mkString("0").reverse},0x$id%08X,${rf.rot},${rf.flip}%n"
-    } .result
+    } .result()
   }
 
   def printRul1(file: File, resolve: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
@@ -309,12 +328,12 @@ object CompileFlexFlyRul0And1 {
     }
   }
 
-  /** Outputs FlexFly RUL0 and RUL1 code to 'target/FlexFlyRUL0.txt' and
-    * 'target/FlexFlyRUL1.txt'.
+  /** Outputs FlexFly RUL0 and RUL1 code to 'target/5B00_FlexFly5x5_MANAGED.txt' and
+    * 'target/11_FlexFly_falsies_MANAGED.txt'.
     */
   def main(args: Array[String]): Unit = {
-    val rul0File = new File("Controller/RUL0/5000_RHW/5B00_FlexFly5x5_MANAGED.txt")
-    val rul1File = new File("Controller/RUL1/09_Dirtroad/11_FlexFly_falsies_MANAGED.txt")
+    val rul0File = new File("target/5B00_FlexFly5x5_MANAGED.txt")
+    val rul1File = new File("target/11_FlexFly_falsies_MANAGED.txt")
     val resolver = new FlexFlyResolver
     printRul0(rul0File, resolver)
     printRul1(rul1File, resolver)

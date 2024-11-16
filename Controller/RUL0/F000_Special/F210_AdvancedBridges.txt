@@ -1,0 +1,133 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ADVANCED BRIDGES BUTTON SECTION
+;ADVANCED BRIDGES BUTTON SECTION
+; 0x0000#F21#
+
+RotationRing = F210, 1F210, 2F210, 3F210, 4F210, 5F210, 6F210, 7F210;(1) #3444-#3446
+AddTypes     = F211, 1F211, 2F211, 3F211, 4F211, 5F211, 6F211, 7F211;(2) #344c-#344E
+AddTypes     = F212, 1F212, 2F212, 3F212, 4F212, 5F212, 6F212, 7F212;(3) #344f-#3451
+
+;###separator###
+
+;Frank Werspuckle Memorial Bridge #3444 Start piece - RUL0
+[HighwayIntersectionInfo_0x0000F210]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
+
+;senw
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x01010000 rail: 0x02000200, 0xffffffff optional
+
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5f0f700f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001F210]
+CopyFrom	=	0xF210
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002F210]
+CopyFrom	=	0xF210
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003F210]
+CopyFrom	=	0xF210
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004F210]
+CopyFrom	=	0xF210
+[HighwayIntersectionInfo_0x0005F210]
+CopyFrom	=	0x1F210
+[HighwayIntersectionInfo_0x0006F210]
+CopyFrom	=	0x2F210
+[HighwayIntersectionInfo_0x0007F210]
+CopyFrom	=	0x3F210
+
+;Steel Overtruss #344c Start piece - RUL0
+[HighwayIntersectionInfo_0x0000F211]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
+
+;senw
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x03030000 rail: 0x02000200, 0xffffffff optional
+
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5f0f740f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001F211]
+CopyFrom	=	0xF211
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002F211]
+CopyFrom	=	0xF211
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003F211]
+CopyFrom	=	0xF211
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004F211]
+CopyFrom	=	0xF211
+[HighwayIntersectionInfo_0x0005F211]
+CopyFrom	=	0x1F211
+[HighwayIntersectionInfo_0x0006F211]
+CopyFrom	=	0x2F211
+[HighwayIntersectionInfo_0x0007F211]
+CopyFrom	=	0x3F211
+
+;Stone Arch #344f Start piece - RUL0
+[HighwayIntersectionInfo_0x0000F212]
+Piece = 0.0, -16.0, 0, 0, 0x5c160005
+PreviewEffect = preview_av_1_001
+
+CellLayout = ..a..
+CellLayout = ..Z.<
+CellLayout = .....
+CellLayout = ..^..
+
+;senw
+CheckType = Z - rail: 0x02000200
+CheckType = a - monorail: 0x03010000 rail: 0x02000200, 0xffffffff optional
+
+ConsLayout = ..X..
+ConsLayout = ..#.<
+ConsLayout = ..#..
+ConsLayout = ..^..
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5f0f7a0f
+Costs = 600
+
+[HighwayIntersectionInfo_0x0001F212]
+CopyFrom	=	0xF212
+Rotate	=	1
+[HighwayIntersectionInfo_0x0002F212]
+CopyFrom	=	0xF212
+Rotate	=	2
+[HighwayIntersectionInfo_0x0003F212]
+CopyFrom	=	0xF212
+Rotate	=	3
+[HighwayIntersectionInfo_0x0004F212]
+CopyFrom	=	0xF212
+[HighwayIntersectionInfo_0x0005F212]
+CopyFrom	=	0x1F212
+[HighwayIntersectionInfo_0x0006F212]
+CopyFrom	=	0x2F212
+[HighwayIntersectionInfo_0x0007F212]
+CopyFrom	=	0x3F212

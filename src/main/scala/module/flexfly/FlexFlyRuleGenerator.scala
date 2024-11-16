@@ -1,31 +1,31 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
-import meta._, module._, Network._, RotFlip._, Flags._, Implicits._
+import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, Implicits._
 import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 
 object FlexFlyRuleGenerator {
 
   val orientations = Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
-  private[flexfly] val deactivated = Rhw12s + L1Rhw12s + L2Rhw12s + Rhw10c + L1Rhw10c + L2Rhw10c
+  private[flexfly] val deactivated = Rhw10c + L1Rhw10c + L2Rhw10c
 
   /** the directions of a network for which the north edge is a shoulder (possibly empty) */
   def directionsWithShoulderNorth(n: Network) = {
     val b = List.newBuilder[IntFlags]
     if (hasRightShoulder(n)) b += EW
     if (hasLeftShoulder(n)) b += WE
-    b.result
+    b.result()
   }
 }
 
-class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
+class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Stability {
   import FlexFlyRuleGenerator._
 
   def start(): Unit = {
     for (orient <- orientations) {
       // orient is responsible for distinguishing between A1 and A2 curve:
       // we only write code for A1 curve, orient reverses all the flags for us
-      for (main <- RhwNetworks from Mis to L4Rhw4) {
+      for (main <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4) {
         // first establish tiles 2 and 4 of base curve which are not anchors
         Rules += main~orient(T1) | Dirtroad~(0,0,0,0) | % | main~orient(T2)
         Rules += main~orient(T3) | Dirtroad~(0,0,0,0) | % | main~orient(T4)
@@ -51,6 +51,7 @@ class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
             val minSeg = minor~dir;            val baseSeg = base~dir
             val t3Seg = main~orient(T3) * rot; val tSeg = main~orient(t) * rot
             Rules += t3Seg & minSeg | baseSeg       | %              | tSeg & minSeg   // T3 > t
+            Rules += t3Seg & minSeg | minSeg        | %              | tSeg & minSeg   // T3 > t (stability)
             Rules += t3Seg          | minSeg        | t3Seg & minSeg | tSeg & minSeg   // T3 < orth
             Rules += t3Seg          | tSeg & minSeg | t3Seg & minSeg | %               // T3 < t
             Rules += tSeg & minSeg  | baseSeg       | %              | minSeg          // t > orth
@@ -93,6 +94,38 @@ class FlexFlyRuleGenerator(val resolver: IdResolver) extends RuleGenerator {
             if (otherDir == NS && hasLeftShoulder(other) || otherDir == SN && hasRightShoulder(other)) { // skip impossible crossings
               Rules += (Dirtroad ~> main)~orient(SE) & minor~minDir | main~orient(T6) * R1F0 & other~otherDir
             }
+          }
+        }
+
+        // FlexFly × FlexFly
+        for {
+          minor <- RhwNetworks rangeFrom Mis rangeTo L4Rhw4
+          if main.height <= 3 && minor.height < main.height
+          o2 <- orientations
+          if orient == o2 && orient == orientations(0)  // currently inside×inside curves only
+        } /*do*/ {
+          // 4-tile gap
+          Rules ++= stabilize( main~orient(T1) | minor~o2(T1) * R0F1 | main~orient(T1) & minor~o2(T2) * R0F1 | main~orient(T2) & minor~o2(T1) * R0F1 )
+          // 2-tile gap
+          Rules ++= stabilize( main~orient(T3) | minor~o2(T3) * R0F1 | main~orient(T3) & minor~o2(T4) * R0F1 | main~orient(T4) & minor~o2(T3) * R0F1 )
+          // 0-tile gap
+          Rules ++= stabilize( main~orient(T3) * R1F0 | minor~o2(T3) * R1F1 | main~orient(T3) * R1F0 & minor~o2(T2) * R1F1 | main~orient(T2) * R1F0 & minor~o2(T3) * R1F1 )
+
+          // crossing of a third network with two adjacent FlexFlys
+          // (These are not strictly needed if starters are used, so we try to cut down the large number of adjacencies to a useful subset)
+          for {
+            third <- RhwNetworks
+            if third.height != main.height && third.height != minor.height && !deactivated(third)
+            if third.height <= 2 && orient == o2 && orient == orientations(0)  // limits adjacencies to inside curves
+            base <- third.base
+            dir <- directionsWithShoulderNorth(third)
+          } /*do*/ {
+            Rules += minor~o2(T3) * R0F1 & third~dir | main~orient(T3) * R0F0 | % | main~orient(T3) * R0F0 & third~dir  // 4-tile gap
+            Rules += minor~o2(T3) * R3F0 & third~dir | main~orient(T3) * R3F1 | % | main~orient(T3) * R3F1 & third~dir  // 2-tile gap
+            Rules += minor~o2(T1) * R3F0 & third~dir | main~orient(T1) * R3F1 | % | main~orient(T1) * R3F1 & third~dir  // 0-tile gap
+            Rules += minor~o2(T3) * R0F1 | main~orient(T3) * R0F0 & third~dir | minor~o2(T3) * R0F1 & third~dir | %  // 4-tile gap
+            Rules += minor~o2(T3) * R3F0 | main~orient(T3) * R3F1 & third~dir | minor~o2(T3) * R3F0 & third~dir | %  // 2-tile gap
+            Rules += minor~o2(T1) * R3F0 | main~orient(T1) * R3F1 & third~dir | minor~o2(T1) * R3F0 & third~dir | %  // 0-tile gap
           }
         }
         createRules()

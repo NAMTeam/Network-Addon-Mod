@@ -1,12 +1,11 @@
-package metarules
-package module.flexfly
+package com.sc4nam.module
+package flexfly
 
 import java.io.File
-import scdbpf._, DbpfUtil.RotFlip._, S3d._, Sc4Path._
-import rapture.core.strategy.throwExceptions
-import meta._, Flags._, Implicits._, Network._
+import io.github.memo33.scdbpf._, DbpfUtil.RotFlip._, S3d._, Sc4Path._, strategy.throwExceptions
+import io.github.memo33.metarules.meta, meta._, syntax._, Flags._, Implicits._, Network._
 import FlexFlyTiles._, FlexFlyRuleGenerator._
-import module.NetworkProperties._
+import NetworkProperties._
 
 /** Compiles all crossing models of FlexFly from the base curve models and the
   * orthogonal RHW models (L0 and L1), same for the paths. It also generates
@@ -49,7 +48,7 @@ object CompileFlexFlyResources {
 
   private def flexFlyTiles = for {
     orient <- orientations.iterator
-    n <- (RhwNetworks from Mis to L4Rhw4).iterator
+    n <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T2, T3, T4, T6)
   } yield (n, orient, t)
 
@@ -98,7 +97,7 @@ object CompileFlexFlyResources {
       val seen = collection.mutable.Set.empty[Tgi]
       val crossingModels = for {
         (main, orient, t) <- flexFlyTiles
-        minor <- (RhwNetworks from L1Rhw2 filterNot deactivated).iterator
+        minor <- (RhwNetworks rangeFrom L1Rhw2 filterNot deactivated).iterator
         if main.height != minor.height && !deactivated(minor)
         minDir <- crossingDirs(t, minor)
         id3 = resolve(main~orient(t) & minor~minDir)
@@ -114,11 +113,24 @@ object CompileFlexFlyResources {
         BufferedEntry(tgi, model, compressed = true)
       }
 
+      val flyFlyModels = for {
+        (tile, id3) <- resolve.flyFlyCrossings.iterator
+        if id3.rf == meta.RotFlip.R0F0
+      } yield {
+        val Seq(bottom, top) = tile.segs.toSeq.sortBy(_.network.height)
+        val id1 = resolve(top)
+        val model1 = rotate(getBaseModel(id1.id), id1.rf)
+        val id2 = resolve(bottom)
+        val model2 = rotate(getBaseModel(id2.id), id2.rf)
+        val model = rotate(append(model1, model2), R0F0 / id3.rf)
+        BufferedEntry(mkTgi(id3.id), model, compressed = true)
+      }
+
       val baseCurveModels = for ((n, orient, t) <- flexFlyTiles) yield {
         val id = resolve(n~orient(t)).id
         BufferedEntry(mkTgi(id), getBaseModel(id), compressed = true)
       }
-      baseCurveModels ++ crossingModels
+      baseCurveModels ++ crossingModels ++ flyFlyModels
     }
 
     val effdirs = for ((id, label) <- CompileFlexFlyRul0And1.previews(resolve)) yield {
@@ -126,7 +138,7 @@ object CompileFlexFlyResources {
       BufferedEntry(Tgi(0,0xEA5118B1,id).copy(Tgi.EffDir), effdir, compressed = true)
     }
     val modelsAndExemplars = buildEntries[S3d] flatMap { model =>
-      import passera.unsigned._
+      import io.github.memo33.passera.unsigned._
       import DbpfProperty._
       val tgi = model.tgi
       val props = Seq(UInt(0x10) -> DbpfProperty(UInt(0x0B)), // type

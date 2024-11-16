@@ -4,8 +4,11 @@
 ;Overrides are also read in reverse, unfortunately.
 ;
 ;1=DirtRoad,Street
-;2=DirtRoad,Road
-;3=DirtRoad,OneWayRoad
+; The overrides Dirtroad <> Road, Dirtroad <> OneWayRoad are enabled
+; so that Road and OneWayRoad can cross the RHW tile adjacent to
+; RHW On-Slope Transitions. That RHW tile has INRUL flags 0,4,0,4. -memo
+2=DirtRoad,Road
+3=DirtRoad,OneWayRoad
 4=DirtRoad,Avenue
 5=DirtRoad,GroundHighway
 6=DirtRoad,Highway

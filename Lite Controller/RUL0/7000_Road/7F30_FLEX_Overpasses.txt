@@ -1,0 +1,469 @@
+;FLEX Road Viaduct Overpasses BUTTON SECTION
+RotationRing = 7F30, 17F30, 27F30, 37F30, 47F30, 57F30, 67F30, 77F30, 87F30, 97F30, A7F30, B7F30, C7F30, D7F30, E7F30, F7F30 ;Road FLEX Ortho Overpass
+AddTypes = 7F31, 17F31, 27F31, 37F31, 47F31, 57F31, 67F31, 77F31, 87F31, 97F31, A7F31, B7F31, C7F31, D7F31, E7F31, F7F31 ;One-Way Road Length FLEX Ortho Overpass
+AddTypes = 7F32, 17F32, 27F32, 37F32, 47F32, 57F32, 67F32, 77F32, 87F32, 97F32, A7F32, B7F32, C7F32, D7F32, E7F32, F7F32 ;Avenue Length FLEX Ortho Overpass
+
+
+[HighwayIntersectionInfo_0x00007F30]
+;Added by Tarkus 8-Feb-2022
+;Road Flex Overpass-Ortho-1-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C060206
+PreviewEffect = preview_flexoverpass_rd_000
+
+CellLayout=............
+CellLayout=.Zabbcbdbbe<
+CellLayout=............
+CellLayout=.^..........
+
+CheckType = a - monorail: 0x04040400 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - road: 0x00000000
+
+ConsLayout=............
+ConsLayout=.-.........<
+ConsLayout=............
+ConsLayout=.^..........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C060206
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F30]
+CopyFrom	=	0x7F30
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F30]
+CopyFrom	=	0x7F30
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F30]
+CopyFrom	=	0x7F30
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x00047F30]
+;Added by Tarkus 8-Feb-2022
+;Road Flex Overpass-Ortho-2-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C060207
+PreviewEffect = preview_flexoverpass_rd_001
+
+CellLayout=.............
+CellLayout=.Zabbcbbdbbe<
+CellLayout=.............
+CellLayout=.^...........
+
+CheckType = a - monorail: 0x04040400 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - road: 0x00000000
+
+ConsLayout=.............
+ConsLayout=.-..........<
+ConsLayout=.............
+ConsLayout=.^...........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C060207
+Costs = 1200
+[HighwayIntersectionInfo_0x00057F30]
+CopyFrom	=	0x47F30
+Rotate	=	1
+[HighwayIntersectionInfo_0x00067F30]
+CopyFrom	=	0x47F30
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F30]
+CopyFrom	=	0x47F30
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x00087F30]
+;Added by Tarkus 8-Feb-2022
+;Road Flex Overpass-Ortho-3-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C060208
+PreviewEffect = preview_flexoverpass_rd_002
+
+CellLayout=..............
+CellLayout=.Zabbcbbbdbbe<
+CellLayout=..............
+CellLayout=.^............
+
+CheckType = a - monorail: 0x04040400 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - road: 0x00000000
+
+ConsLayout=..............
+ConsLayout=.-...........<
+ConsLayout=..............
+ConsLayout=.^............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C060208
+Costs = 1200
+[HighwayIntersectionInfo_0x00097F30]
+CopyFrom	=	0x87F30
+Rotate	=	1
+[HighwayIntersectionInfo_0x000A7F30]
+CopyFrom	=	0x87F30
+Rotate	=	2
+[HighwayIntersectionInfo_0x000B7F30]
+CopyFrom	=	0x87F30
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x000C7F30]
+;Added by Tarkus 8-Feb-2022
+;Road Flex Overpass-Ortho-4-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C060209
+PreviewEffect = preview_flexoverpass_rd_003
+
+CellLayout=...............
+CellLayout=.Zabbcbbbbdbbe<
+CellLayout=...............
+CellLayout=.^.............
+
+CheckType = a - monorail: 0x04040400 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - road: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 road: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - road: 0x00000000
+
+ConsLayout=...............
+ConsLayout=.-............<
+ConsLayout=...............
+ConsLayout=.^.............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C060209
+Costs = 1200
+[HighwayIntersectionInfo_0x000D7F30]
+CopyFrom	=	0xC7F30
+Rotate	=	1
+[HighwayIntersectionInfo_0x000E7F30]
+CopyFrom	=	0xC7F30
+Rotate	=	2
+[HighwayIntersectionInfo_0x000F7F30]
+CopyFrom	=	0xC7F30
+Rotate	=	3
+
+
+
+[HighwayIntersectionInfo_0x00007F31]
+;Added by Tarkus 8-Feb-2022
+;One-Way Road Flex Overpass-Ortho-1-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C070206
+PreviewEffect = preview_flexoverpass_owr000
+
+CellLayout=............
+CellLayout=.Zabbcbdbbe<
+CellLayout=............
+CellLayout=.^..........
+
+CheckType = a - monorail: 0x04040400 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=............
+ConsLayout=.-.........<
+ConsLayout=............
+ConsLayout=.^..........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070206
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F31]
+CopyFrom	=	0x7F31
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F31]
+CopyFrom	=	0x7F31
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F31]
+CopyFrom	=	0x7F31
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x00047F31]
+;Added by Tarkus 8-Feb-2022
+;One-Way Road Flex Overpass-Ortho-2-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C070207
+PreviewEffect = preview_flexoverpass_owr001
+
+CellLayout=.............
+CellLayout=.Zabbcbbdbbe<
+CellLayout=.............
+CellLayout=.^...........
+
+CheckType = a - monorail: 0x04040400 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=.............
+ConsLayout=.-..........<
+ConsLayout=.............
+ConsLayout=.^...........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070207
+Costs = 1200
+[HighwayIntersectionInfo_0x00057F31]
+CopyFrom	=	0x47F31
+Rotate	=	1
+[HighwayIntersectionInfo_0x00067F31]
+CopyFrom	=	0x47F31
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F31]
+CopyFrom	=	0x47F31
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x00087F31]
+;Added by Tarkus 8-Feb-2022
+;One-Way Road Flex Overpass-Ortho-3-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C070208
+PreviewEffect = preview_flexoverpass_owr002
+
+CellLayout=..............
+CellLayout=.Zabbcbbbdbbe<
+CellLayout=..............
+CellLayout=.^............
+
+CheckType = a - monorail: 0x04040400 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=..............
+ConsLayout=.-...........<
+ConsLayout=..............
+ConsLayout=.^............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070208
+Costs = 1200
+[HighwayIntersectionInfo_0x00097F31]
+CopyFrom	=	0x87F31
+Rotate	=	1
+[HighwayIntersectionInfo_0x000A7F31]
+CopyFrom	=	0x87F31
+Rotate	=	2
+[HighwayIntersectionInfo_0x000B7F31]
+CopyFrom	=	0x87F31
+Rotate	=	3
+
+[HighwayIntersectionInfo_0x000C7F31]
+;Added by Tarkus 8-Feb-2022
+;One-Way Road Flex Overpass-Ortho-4-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C070209
+PreviewEffect = preview_flexoverpass_owr003
+
+CellLayout=...............
+CellLayout=.Zabbcbbbbdbbe<
+CellLayout=...............
+CellLayout=.^.............
+
+CheckType = a - monorail: 0x04040400 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = b - onewayroad: 0x00020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 onewayroad: 0x00020002, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=...............
+ConsLayout=.-............<
+ConsLayout=...............
+ConsLayout=.^.............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C070209
+Costs = 1200
+[HighwayIntersectionInfo_0x000D7F31]
+CopyFrom	=	0xC7F31
+Rotate	=	1
+[HighwayIntersectionInfo_0x000E7F31]
+CopyFrom	=	0xC7F31
+Rotate	=	2
+[HighwayIntersectionInfo_0x000F7F31]
+CopyFrom	=	0xC7F31
+Rotate	=	3
+
+
+
+[HighwayIntersectionInfo_0x00007F32]
+;Added by Tarkus 8-Feb-2022
+;Avenue Flex Overpass-Ortho-1-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C080206
+PreviewEffect = preview_flexoverpass_ave000
+
+CellLayout=............
+CellLayout=.Zabbcbdbbe<
+CellLayout=..fgghgiggj.
+CellLayout=............
+CellLayout=.^..........
+
+CheckType = a - monorail: 0x04040400 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x04020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = f - monorail: 0x04040400 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x00020402, 0xFF00FF00 optional
+CheckType = h - monorail: 0x00040000 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = i - monorail: 0x00000004 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = j - monorail: 0x04000404 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=............
+ConsLayout=.-.........<
+ConsLayout=............
+ConsLayout=............
+ConsLayout=.^..........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C080206
+Costs = 2400
+
+[HighwayIntersectionInfo_0x00017F32]
+CopyFrom	=	0x7F32
+Rotate	=	1
+[HighwayIntersectionInfo_0x00027F32]
+CopyFrom	=	0x7F32
+Rotate	=	2
+[HighwayIntersectionInfo_0x00037F32]
+CopyFrom	=	0x7F32
+Rotate	=	3
+[HighwayIntersectionInfo_0x00047F32]
+;Added by Tarkus 8-Feb-2022
+;Avenue Flex Overpass-Ortho-2-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C080207
+PreviewEffect = preview_flexoverpass_ave001
+
+CellLayout=.............
+CellLayout=.Zabbcbbdbbe<
+CellLayout=..fgghggiggj.
+CellLayout=.............
+CellLayout=.^...........
+
+CheckType = a - monorail: 0x04040400 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x04020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = f - monorail: 0x04040400 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x00020402, 0xFF00FF00 optional
+CheckType = h - monorail: 0x00040000 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = i - monorail: 0x00000004 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = j - monorail: 0x04000404 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=.............
+ConsLayout=.-..........<
+ConsLayout=.............
+ConsLayout=.............
+ConsLayout=.^...........
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C080207
+Costs = 2400
+[HighwayIntersectionInfo_0x00057F32]
+CopyFrom	=	0x47F32
+Rotate	=	1
+[HighwayIntersectionInfo_0x00067F32]
+CopyFrom	=	0x47F32
+Rotate	=	2
+[HighwayIntersectionInfo_0x00077F32]
+CopyFrom	=	0x47F32
+Rotate	=	3
+[HighwayIntersectionInfo_0x00087F32]
+;Added by Tarkus 8-Feb-2022
+;Avenue Flex Overpass-Ortho-3-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C080208
+PreviewEffect = preview_flexoverpass_ave002
+
+CellLayout=..............
+CellLayout=.Zabbcbbbdbbe<
+CellLayout=..fgghgggiggj.
+CellLayout=..............
+CellLayout=.^............
+
+CheckType = a - monorail: 0x04040400 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x04020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = f - monorail: 0x04040400 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x00020402, 0xFF00FF00 optional
+CheckType = h - monorail: 0x00040000 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = i - monorail: 0x00000004 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = j - monorail: 0x04000404 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=..............
+ConsLayout=.-...........<
+ConsLayout=..............
+ConsLayout=..............
+ConsLayout=.^............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C080208
+Costs = 2400
+[HighwayIntersectionInfo_0x00097F32]
+CopyFrom	=	0x87F32
+Rotate	=	1
+[HighwayIntersectionInfo_0x000A7F32]
+CopyFrom	=	0x87F32
+Rotate	=	2
+[HighwayIntersectionInfo_0x000B7F32]
+CopyFrom	=	0x87F32
+Rotate	=	3
+[HighwayIntersectionInfo_0x000C7F32]
+;Added by Tarkus 8-Feb-2022
+;Avenue Flex Overpass-Ortho-4-Tile
+Piece = 0.0, 0.0, 0, 0, 0x5C080209
+PreviewEffect = preview_flexoverpass_ave003
+
+CellLayout=...............
+CellLayout=.Zabbcbbbbdbbe<
+CellLayout=..fgghggggiggj.
+CellLayout=...............
+CellLayout=.^.............
+
+CheckType = a - monorail: 0x04040400 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = b - avenue: 0x04020002, 0xFF00FF00 optional
+CheckType = c - monorail: 0x00040000 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = d - monorail: 0x00000004 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = e - monorail: 0x04000404 avenue: 0x04020002, 0xFFFFFFFF optional
+CheckType = f - monorail: 0x04040400 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = g - avenue: 0x00020402, 0xFF00FF00 optional
+CheckType = h - monorail: 0x00040000 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = i - monorail: 0x00000004 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = j - monorail: 0x04000404 avenue: 0x00020402, 0xFFFFFFFF optional
+CheckType = Z - onewayroad: 0x00000000
+
+ConsLayout=...............
+ConsLayout=.-............<
+ConsLayout=...............
+ConsLayout=...............
+ConsLayout=.^.............
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C080209
+Costs = 2400
+[HighwayIntersectionInfo_0x000D7F32]
+CopyFrom	=	0xC7F32
+Rotate	=	1
+[HighwayIntersectionInfo_0x000E7F32]
+CopyFrom	=	0xC7F32
+Rotate	=	2
+[HighwayIntersectionInfo_0x000F7F32]
+CopyFrom	=	0xC7F32
+Rotate	=	3
