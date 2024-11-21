@@ -4,6 +4,9 @@
 # If any are found, they are printed to stdout and the script exits with a non-zero return code.
 set -e
 
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+
 INDIR="./Controller"
 OUT="./syntax-check-rul2.log"
 
@@ -21,7 +24,7 @@ strip_drive_side() {
 # newlines at the end of input files gracefully (unlike cat).
 
 strip_comments_and_whitespace() {
-    sed -e "s/;.*//" -e "s/\s\+//g" -e '/^\s*$/d'
+    sed -e 's/;.*//' -e 's/\s\+//g' -e '/^\s*$/d'
 }
 
 strip_valid_rul2() {

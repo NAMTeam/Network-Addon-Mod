@@ -35,5 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Check PO/POT syntax
+      run: sh src/scripts/syntax-check-po.sh
     - name: Check RUL2 syntax
       run: sh src/scripts/syntax-check-rul2.sh
