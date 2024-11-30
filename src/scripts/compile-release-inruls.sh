@@ -26,6 +26,7 @@ then
     # download compiler if it does not yet exist
     curl -L "$BUILDRULS_URL" > "$BUILDRULS_ARCHIVE"
 fi
+echo "08816a61cb64c80392328f874c3b5bc031580514c156839af9a8359784a72071  $BUILDRULS_ARCHIVE" | sha256sum --check
 unzip -d "$TEMP" "$BUILDRULS_ARCHIVE"
 
 # build all INRULs
