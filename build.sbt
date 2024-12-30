@@ -46,7 +46,7 @@ def runMainWithJLogger(main: String) = Def.inputTask {
     mainClass = if (main == null) args(0) else main,
     classpath = (Compile / fullClasspath).value.files,
     log = wrapWithJLogger(streams.value.log),
-    options = Seq.empty[String])
+    options = args)
 }
 
 // Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
@@ -59,6 +59,9 @@ generateLocales := runMainWithJLogger("com.sc4nam.localization.GenerateLocales")
 
 lazy val regenerateTileOrientationCache = inputKey[scala.util.Try[Unit]]("Regenerates the cache used for translating metarules to RUL2")
 regenerateTileOrientationCache := runMainWithJLogger("com.sc4nam.module.RegenerateTileOrientationCache").evaluated
+
+lazy val conflictingOverridesCheck = inputKey[scala.util.Try[Unit]]("Checks all RUL2 code for conflicting overrides, optionally updates the inline `conflicting-override` tags")
+conflictingOverridesCheck := runMainWithJLogger("com.sc4nam.scripts.ConflictingOverridesChecker").evaluated
 
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % "test"
