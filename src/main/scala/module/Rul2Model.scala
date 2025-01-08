@@ -34,7 +34,7 @@ object Rul2Model {
   }
 
   def drivesideOfFile(path: Path): Driveside = {
-    val name = path.getFileName().toString()
+    val name = path.getFileName().toString().toLowerCase(java.util.Locale.ENGLISH)
     if (name.contains("rhd.")) Rhd
     else if (name.contains("lhd.")) Lhd
     else RhdAndLhd
