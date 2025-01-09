@@ -4,7 +4,7 @@ import java.nio.file.{Files, Paths}
 import io.github.memo33.metarules.meta.{RotFlip, EquivRule, Rule, IdTile}
 import RotFlip._
 import com.sc4nam.module._
-import Rul2Model.{iterateRulFiles, parseRuleWithRestrictedDriveside, Rhd, Lhd, RhdAndLhd, drivesideOfFile}
+import Rul2Model.{iterateRulFiles, parseRuleWithRestrictedDriveside, Driveside, Rhd, Lhd, RhdAndLhd, drivesideOfFile}
 import SanityChecker.{fileEndsWithNewline, linePatternIncludingNewlines}
 
 /** Checks for conflicting/duplicate RUL2 code. There are two modes of operation:
@@ -28,7 +28,11 @@ import SanityChecker.{fileEndsWithNewline, linePatternIncludingNewlines}
   */
 object ConflictingOverridesChecker {
 
-  val tag = "conflicting-override"
+  val tagBoth = "conflicting-override"
+  val tagRhd = "conflicting-override_rhd"  // underscore (instead of hyphen) for use with regex word boundaries
+  val tagLhd = "conflicting-override_lhd"
+  val tagOf = Map[Driveside, String](RhdAndLhd -> tagBoth, Rhd -> tagRhd, Lhd -> tagLhd)
+  val allTags = Seq(tagBoth, tagRhd, tagLhd)
 
   /** Scans the Controller/RUL2 folder for conflicting duplicate RUL2 code.
     *
@@ -79,35 +83,35 @@ object ConflictingOverridesChecker {
       val drivesideFile = drivesideOfFile(path)
 
       // simultaneously builds the RUL2 cache and looks for conflicts
-      def findConflict(line: String): Option[(Rule[IdTile], Rule[IdTile])] = {
+      def findConflict(line: String): Option[(Rule[IdTile], Rule[IdTile], Driveside)] = {
         parseRuleWithRestrictedDriveside(line, drivesideFile) match {
           // only the first matching rule is loaded by the game, so we store only the first one read
           case Some((rule, Rhd)) =>
             val key = new EquivRule(rule)
             lookupRuleRhd.unapply(key) match {
-              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2))
+              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2, RhdAndLhd))
               case None => rulesRhd.addOne(key, rule); None
             }
           case Some((rule, Lhd)) =>
             val key = new EquivRule(rule)
             lookupRuleLhd.unapply(key) match {
-              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2))
+              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2, RhdAndLhd))
               case None => rulesLhd.addOne(key, rule); None
             }
           case Some((rule, RhdAndLhd)) =>
             val key = new EquivRule(rule)
             rulesShared.get(key) match {
-              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2))
+              case Some(rule2) => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2, RhdAndLhd))
               case None =>
                 if (!rulesRhd.contains(key) && !rulesLhd.contains(key)) {
                   rulesShared.addOne(key, rule); None
                 } else {
-                  rulesRhd.get(key)
-                    .flatMap(rule2 => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2)))
-                    .orElse(
-                      rulesLhd.get(key)
-                        .flatMap(rule2 => if (rulesHaveSameOutput(rule, rule2)) None else Some((rule, rule2)))
-                    )
+                  (rulesRhd.get(key).filterNot(rulesHaveSameOutput(rule, _)), rulesLhd.get(key).filterNot(rulesHaveSameOutput(rule, _))) match {
+                    case (None, None) => rulesShared.addOne(key, rule); None  // no conflict
+                    case (Some(rule2), None) => Some((rule, rule2, Rhd))  // conflict only with RHD rules
+                    case (None, Some(rule3)) => Some((rule, rule3, Lhd))  // conflict only with LHD rules
+                    case (Some(rule2), Some(rule3)) => Some((rule, rule2, RhdAndLhd)) // conflict with both
+                  }
                 }
             }
           case None => None
@@ -130,8 +134,8 @@ object ConflictingOverridesChecker {
             val line = scanner.nextLine()
             lineNumber += 1
             findConflict(line) match {
-              case Some((rule, rule2)) =>
-                if (!line.contains(tag)) {
+              case Some((rule, rule2, _)) =>
+                if (!line.contains(tagBoth)) {
                   numConflicts += 1
                   logConflict(rule, rule2)
                 }
@@ -149,18 +153,16 @@ object ConflictingOverridesChecker {
           while (lineScanner.hasNext()) {
             val line = lineScanner.next()
             findConflict(line) match {
-              case Some(_) =>
+              case Some((_, _, driveside)) =>
                 numConflicts += 1
-                if (line.contains(tag)) {
-                  printer.print(line)  // preserving original linebreaks
-                } else {
+                if (!line.contains(tagBoth)) {
                   added += 1
-                  printer.println(s"${line.stripLineEnd}; $tag")
                 }
+                printer.println(replaceTags(line, add = Some(tagOf(driveside)), remove = allTags))
               case None =>
-                if (line.contains(tag)) {  // no conflict, so remove tag
+                if (line.contains(tagBoth)) {  // no conflict, so remove tag
                   removed += 1
-                  printer.println(line.stripLineEnd.replaceFirst(s" ?$tag", "").replaceFirst(";\\s*$", ""))
+                  printer.println(replaceTags(line, add = None, remove = allTags))
                 } else {
                   printer.print(line)  // preserving original linebreaks
                 }
@@ -171,6 +173,14 @@ object ConflictingOverridesChecker {
       }
     }
     (numConflicts, removed, added)
+  }
+
+  def replaceTags(line: String, add: Option[String], remove: Seq[String]): String = {
+    val line0 =
+      remove.foldLeft(line.stripLineEnd) { (line, rem) =>
+        line.replaceFirst(s" ?\\b$rem\\b", "").replaceFirst(";\\s*$", "")
+      }
+    if (add.isDefined) s"$line0; ${add.get}" else line0
   }
 
   /** Check if two rules with equivalent LHS actually lead to the same output on
