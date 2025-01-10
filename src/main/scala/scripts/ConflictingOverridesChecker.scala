@@ -4,7 +4,7 @@ import java.nio.file.{Files, Paths}
 import io.github.memo33.metarules.meta.{RotFlip, EquivRule, Rule, IdTile}
 import RotFlip._
 import com.sc4nam.module._
-import Rul2Model.{iterateRulFiles, parseRuleWithRestrictedDriveside, Driveside, Rhd, Lhd, RhdAndLhd, drivesideOfFile}
+import Rul2Model.{iterateRulFiles, parseRuleWithRestrictedDriveside, Driveside, Rhd, Lhd, RhdAndLhd, drivesideOfFile, rulesHaveSameOutput}
 import SanityChecker.{fileEndsWithNewline, linePatternIncludingNewlines}
 
 /** Checks for conflicting/duplicate RUL2 code. There are two modes of operation:
@@ -182,16 +182,5 @@ object ConflictingOverridesChecker {
       }
     if (add.isDefined) s"$line0; ${add.get}" else line0
   }
-
-  /** Check if two rules with equivalent LHS actually lead to the same output on
-    * the RHS (and thus are not at conflict with each other).
-    */
-  def rulesHaveSameOutput(x: Rule[IdTile], y: Rule[IdTile]): Boolean = (
-    x(0) == y(0)        && x(1) == y(1)        && x(2) == y(2)        && x(3) == y(3)        ||
-    x(0) == y(0) * R2F1 && x(1) == y(1) * R2F1 && x(2) == y(2) * R2F1 && x(3) == y(3) * R2F1 ||
-    x(0) == y(1) * R2F0 && x(1) == y(0) * R2F0 && x(2) == y(3) * R2F0 && x(3) == y(2) * R2F0 ||
-    x(0) == y(1) * R0F1 && x(1) == y(0) * R0F1 && x(2) == y(3) * R0F1 && x(3) == y(2) * R0F1 ||
-    (x(2).id == 0 || x(3).id == 0) && (y(2).id == 0 || y(3).id == 0)
-  )
 
 }
