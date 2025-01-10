@@ -48,17 +48,17 @@ object RedundantAdjacenciesChecker {
                 case Some((rule, Rhd)) => isRedundantAdjacency(rule, rul2.lookupRuleRhd)
                 case Some((rule, Lhd)) => isRedundantAdjacency(rule, rul2.lookupRuleLhd)
                 case Some((rule, RhdAndLhd)) =>
-                  val b = isRedundantAdjacency(rule, rul2.lookupRuleRhd)
-                  require(
-                    b == isRedundantAdjacency(rule, rul2.lookupRuleLhd),
-                    s"Redundancies should be the same for RHD and LHD: $rule"  // hopefully this will always be the case
-                  )
-                  b
+                  val b1 = isRedundantAdjacency(rule, rul2.lookupRuleRhd)
+                  val b2 = isRedundantAdjacency(rule, rul2.lookupRuleLhd)
+                  if (b1 != b2) {
+                    println(s"Rule is redundant for ${if (b1) "RHD" else "LHD"} only: $rule")  // hopefully this rarely happens
+                  }
+                  b1 && b2
                 case None => false  // comments are not redundant
               }
 
             if (redundant) {
-              printer.println(s";${line.stripLineEnd}; redundant-adjacency")  // comments out the line
+              printer.println(s";${line.stripLineEnd}; redundant_adjacency")  // comments out the line
             } else {
               printer.print(line)  // preserving original linebreaks
             }
