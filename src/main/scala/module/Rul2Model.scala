@@ -102,13 +102,11 @@ object Rul2Model {
             case Some((rule, RhdAndLhd)) =>
               val key = new EquivRule(rule)
               if (!rulesShared.contains(key)) {
-                if (!rulesRhd.contains(key) && !rulesLhd.contains(key))
-                  rulesShared.addOne(key, rule)
-                else
-                  require(
-                    rulesRhd.contains(key) == rulesLhd.contains(key),
-                    s"There's an unexpected rule conflict that differs between RHD and LHD: $rule"
-                  )
+                (rulesRhd.get(key).filterNot(rulesHaveSameOutput(rule, _)), rulesLhd.get(key).filterNot(rulesHaveSameOutput(rule, _))) match {
+                  case (None, None) => rulesShared.addOne(key, rule)
+                  case (Some(rule2), Some(rule3)) => // ignore, as both RHD/LHD already define a different rule, so this rule never has an effect
+                  case _ => require(false, s"There's an unexpected rule conflict that differs between RHD and LHD: $rule")
+                }
               }
             case None => // ignore
           }
@@ -123,6 +121,17 @@ object Rul2Model {
     val key = new EquivRule(Rule(t0, t1, t0, t1))
     lookupRule.unapply(key).flatMap(rule => applyRule(rule, t0, t1))
   }
+
+  /** Check if two rules with equivalent LHS actually lead to the same output on
+    * the RHS (and thus are not at conflict with each other).
+    */
+  def rulesHaveSameOutput(x: Rule[IdTile], y: Rule[IdTile]): Boolean = (
+    x(0) == y(0)        && x(1) == y(1)        && x(2) == y(2)        && x(3) == y(3)        ||
+    x(0) == y(0) * R2F1 && x(1) == y(1) * R2F1 && x(2) == y(2) * R2F1 && x(3) == y(3) * R2F1 ||
+    x(0) == y(1) * R2F0 && x(1) == y(0) * R2F0 && x(2) == y(3) * R2F0 && x(3) == y(2) * R2F0 ||
+    x(0) == y(1) * R0F1 && x(1) == y(0) * R0F1 && x(2) == y(3) * R0F1 && x(3) == y(2) * R0F1 ||
+    (x(2).id == 0 || x(3).id == 0) && (y(2).id == 0 || y(3).id == 0)
+  )
 
 }
 
