@@ -103,6 +103,7 @@ object RedundantAdjacenciesChecker {
   def connectingOrthOverridesExist(lookupRule: PartialFunction[EquivRule, Rule[IdTile]], a: IdTile, b: IdTile, c: IdTile, aExpected: IdTile, cExpected: IdTile): Boolean = {
     Rul2Model.evaluateRulesOnce(lookupRule, a, b) match {
       case Some((a1, b1)) if a1 == a && a1.id != b1.id =>
+        assert(b1 != b, s"output of rule must be different from input: $a1,$b1")
         Rul2Model.evaluateRulesOnce(lookupRule, b1, c) match {
           case Some((b2, c2)) if b2 == b1 && b2.id != c2.id && c2 != c =>
             // found two overrides connecting a to c, so check if result of their application is as expected
@@ -121,12 +122,14 @@ object RedundantAdjacenciesChecker {
   def connectingDiagOverridesExist(lookupRule: PartialFunction[EquivRule, Rule[IdTile]], a: IdTile, b: IdTile, c: IdTile, d: IdTile, southBound: Boolean, aExpected: IdTile, dExpected: IdTile): Boolean = {
     Rul2Model.evaluateRulesOnce(lookupRule, a, b) match {
       case Some((a1, b1)) if a1 == a && a1.id != b1.id =>
+        assert(b1 != b, s"output of rule must be different from input: $a1,$b1")
         val rot = if (southBound) R3F0 else R1F0
         Rul2Model.evaluateRulesOnce(lookupRule, b1 * rot, c * rot) match {
           case Some((b2rot, c2rot)) =>
             val b2 = b2rot * (R0F0 / rot)
             val c2 = c2rot * (R0F0 / rot)
-            if (b2 == b1 && c2 != c) {
+            if (b2 == b1 && c2 != a) {
+              assert(c2 != c, s"output of rule must be different from input: $b2rot,$c2rot")
               Rul2Model.evaluateRulesOnce(lookupRule, c2, d) match {
                 case Some((c3, d3)) if c3 == c2 && d3.id != c3.id && d3.id != b2.id && d3 != d =>
                   a1 == aExpected && d3 == dExpected
