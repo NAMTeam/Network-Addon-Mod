@@ -14,7 +14,7 @@ class SamResolver extends IdResolver {
 
   val isSimpleSam = Set(Sam1)
 
-  val samOffset = ListMap(
+  val samOffsets = ListMap(
     Sam1  -> 0x100,
     Sam2  -> 0x200,
     Sam3  -> 0x300,
@@ -38,14 +38,31 @@ class SamResolver extends IdResolver {
         }
       }
 
-    for ((sam, offset) <- samOffset.drop(1)) {
+    // tiles which are defined for all SAM networks, including SAM-1
+    for ((sam, offset) <- samOffsets) {
 
       // base
-      add(sam~NS, 0x5e54b000 + offset)
+      add(sam~NS, 0x5e54b000 + offset)           // orth
+      add(sam~CS, 0x5e500000 + offset)           // orth stub
+      add(sam~(0,0,2,2), 0x5e590000 + offset)    // 90 degree turn
+
+      // self-intersections
+      add(sam~NS & sam~WE, 0x5e527000 + offset)  // OxO
+      add(sam~NS & sam~CE, 0x5e557000 + offset)  // OxO T
+
+      // SAM x SAM transitions
+      add(Street~WC & sam~CE, 0x5e5c0000 + (offset * 0x11))
+      for ((otherSam, otherOffset) <- samOffsets if otherOffset > offset) {
+        add(sam~WC & otherSam~CE, 0x5e5c0000 + (offset * 0x10) + otherOffset)
+      }
+    }
+
+    // tiles which are only defined on SAM-2+
+    for ((sam, offset) <- samOffsets.drop(1)) {
+
+      // base
       add(sam~SE,	0x5e572000 + offset)
-      add(sam~CS, 0x5e500000 + offset)          // orth stub
       add(sam~CES, 0x5e573000 + offset)         // diag stub
-      add(sam~(0,0,2,2), 0x5e590000 + offset)
       add(sam~(0,0,1,13), 0x5e571000 + offset)  // curve
       add(sam~(0,2,0,11), 0x5e570000 + offset)  // curve
       add(sam~(0,11,0,13), 0x5e577000 + offset)
@@ -90,11 +107,9 @@ class SamResolver extends IdResolver {
       add(sam~(2,181,11,191), 0x5e5be000 + offset)
 
 	    // self-intersections
-      add(sam~NS & sam~WE, 0x5e527000 + offset)     // OxO
       add(sam~(2,2,2,2), 0x5e527000 + offset)		// OxO alt
       add(sam~NS & sam~NE, 0x5e574000 + offset)     // OxD
       add(sam~SE & sam~EN, 0x5e579000 + offset)     // DxD
-      add(sam~NS & sam~CE, 0x5e557000 + offset)     // OxO T
       add(sam~NS & sam~CSE, 0x5e575000 + offset) 	// OxD T (also 0,2,11,2)
       add(sam~CS & sam~NE, 0x5e597000 + offset) 	// DxO T1
       add(sam~CS & sam~WS, 0x5e598000 + offset) 	// DxO T2

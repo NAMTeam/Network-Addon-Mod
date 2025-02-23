@@ -388,9 +388,21 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
   }
 
 
+  private def createSamTransitions(sam: Network): Unit = {
+
+    // convert base transition to SAM x Street transition
+    Rules += sam~WE | IdTile(0x5e5c0080, R0F0, (Road~(2,0,2,0)).symmetries) | % | sam~WC & Street~CE
+
+    // convert other SAM x Street transitions to SAM x SAM transitions
+    for (otherSam <- SamNetworks if otherSam != sam) {
+      Rules += sam~WE | (Street ~> sam)~WC & otherSam~CE
+    }
+  }
+
+
   def start(): Unit = {
 
-    val SamNetworks = List(Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
+    val SamNetworks = List(Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
 
     val CrossNetworks = List(
       Road, Avenue, Onewayroad,
@@ -402,19 +414,46 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4,
       Tla5, Owr4, Owr5, Rd4, Rd6,
       Ave6, Tla7m, Ave6m,
-      )
+    )
 
+    // rules which apply to all SAMs, including SAM-1
     for (sam <- SamNetworks) {
 
-      // base ortho, diagonal, & stubs
+      // base ortho & stubs
       Rules += sam~WE | (Street ~> sam)~WE   // ortho
       Rules += sam~WE | (Street ~> sam)~CW   // ortho stub
-      Rules += sam~SE | (Street ~> sam)~WN   // diagonal
-      Rules += sam~SE | (Street ~> sam)~CNW  // diagonal stub
 
       // sharp 90
       Rules += sam~WE | (Street ~> sam)~(2,2,0,0)           // ortho to sharp 90
       Rules += sam~(0,0,2,2) | (Street ~> sam)~WE           // sharp 90 to ortho
+
+      // OxO
+      Rules += sam~WE | (Street ~> sam)~WE & (Street ~> sam)~NS           // OxO from orth
+      Rules += sam~WE & sam~NS | (Street ~> sam)~WE                       // OxO continue
+
+      // OxO T
+      Rules += sam~WE | (Street ~> sam)~WE & (Street ~> sam)~NC           // OxO T Thru-Side from orth
+      Rules += sam~WE & sam~NC | (Street ~> sam)~WE                       // OxO T Thru-Side continue
+      Rules += sam~WE | (Street ~> sam)~WC & (Street ~> sam)~NS           // OxO T End-Side from orth
+      Rules += sam~CE & sam~NS | (Street ~> sam)~WE                       // OxO T End-Side continue
+
+      // SAM x SAM transitions
+      createSamTransitions(sam)
+    }
+
+
+    // rules which apply only to SAM-2+
+    for (sam <- SamNetworks if sam > Sam1) {
+
+      // base ortho & stubs
+      // (defined above for all SAMs)
+
+      // base diagonal & stubs
+      Rules += sam~SE | (Street ~> sam)~WN   // diagonal
+      Rules += sam~SE | (Street ~> sam)~CNW  // diagonal stub
+
+      // sharp 90
+      // (defined above for all SAMs)
 
       // sharp diagonal 90 degree curve
       Rules += sam~ES | (Street ~> sam)~WS
@@ -462,14 +501,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       // standard self-intersections
 
       // OxO
-      Rules += sam~WE | (Street ~> sam)~WE & (Street ~> sam)~NS           // OxO from orth
-      Rules += sam~WE & sam~NS | (Street ~> sam)~WE                       // OxO continue
+      // (defined above for all SAMs)
 
       // OxO T
-      Rules += sam~WE | (Street ~> sam)~WE & (Street ~> sam)~NC           // OxO T Thru-Side from orth
-      Rules += sam~WE & sam~NC | (Street ~> sam)~WE                       // OxO T Thru-Side continue
-      Rules += sam~WE | (Street ~> sam)~WC & (Street ~> sam)~NS           // OxO T End-Side from orth
-      Rules += sam~CE & sam~NS | (Street ~> sam)~WE                       // OxO T End-Side continue
+      // (defined above for all SAMs)
 
       // OxD & DxO
       Rules += sam~WE | (Street ~> sam)~WE & (Street ~> sam)~ES           // OxD from orth
