@@ -11,21 +11,20 @@ import RhwRuleGenerator.HeightLevel
 trait Onslope { this: RuleGenerator with Curve45Generator =>
 
   def createOnslopeTransition(): Unit = {
-    val rhw2SlopeL1 = IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
-    val rhw2SlopeL2 = IdTile(0x57700100,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
+    val rhw2SlopeL1 = L1Rhw2~EC & Dirtroad~CW  // IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
+    val rhw2SlopeL2 = L2Rhw2~EC & Dirtroad~CW  // IdTile(0x57700100,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
 
     for (main <- RhwNetworks - Rhw10c if main.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(main)) 4 else 2
       val minHeight = if (main == Dirtroad) 1 else 0  // avoiding auto-L1Rhw2 and auto-L2Rhw2
-      val rangeId = (RhwResolver.rhwRangeId(main) & 0xFFFFF) + ((RhwResolver.rhwRangeId(main) >>> 4) & 0xF000)  // e.g. 0x88080 for Rhw6cm
       for {
         (levelDiff, rhw2Slope) <- Seq((1, rhw2SlopeL1), (2, rhw2SlopeL2))  // L1 vs L2 onslopes
         height <- minHeight to (maxHeight-levelDiff)
       } /*do*/ {
         val lower: Network = height~main
         val upper: Network = (height+levelDiff)~main
-        // The following tile is the onslope transition connecting lower and upper network using its explicit IID
-        val onslope = IdTile(0x57700000 + rangeId + 0x100*(levelDiff-1) + 0x10*height, R1F0, (main~EC).symmetries)  // direction East (upper) to West (lower)
+        val rhw2slope = (levelDiff~Dirtroad)~EC & Dirtroad~CW  // direction East (upper) to West (lower)
+        val onslope = upper~EC & lower~CW  // direction East (upper) to West (lower)
         Rules += lower~EW | rhw2Slope | % | onslope   // lower > OST
         Rules += onslope | (Dirtroad ~> upper)~EW     // OST > upper
         Rules += rhw2Slope | upper~EW | onslope | %   // OST < upper
@@ -98,13 +97,13 @@ trait Onslope { this: RuleGenerator with Curve45Generator =>
         // OST adjacent to OST
         if (upper.height <= maxHeight - 1) {
           // +L1
-          val onslopeUpL1 = IdTile((onslope.id & 0xFFFFF0FF) + 0x10 * levelDiff, R1F0, onslope.symmetries)
+          val onslopeUpL1 = (height+levelDiff+1)~main~EC & upper~CW
           Rules += onslope | rhw2SlopeL1 | % | onslopeUpL1  // lower > upper
           Rules += rhw2Slope | onslopeUpL1 | onslope | %    // lower < upper
         }
         if (upper.height <= maxHeight - 2) {
           // +L2
-          val onslopeUpL2 = IdTile((onslope.id & 0xFFFFF0FF) + 0x100 + 0x10 * levelDiff, R1F0, onslope.symmetries)
+          val onslopeUpL2 = (height+levelDiff+2)~main~EC & upper~CW
           Rules += onslope | rhw2SlopeL2 | % | onslopeUpL2  // lower > upper
           Rules += rhw2Slope | onslopeUpL2 | onslope | %    // lower < upper
         }

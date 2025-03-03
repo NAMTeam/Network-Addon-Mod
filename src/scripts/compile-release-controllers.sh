@@ -36,6 +36,7 @@ then
     # download compiler if it does not yet exist
     curl -L "$COMPILER_URL" > "$COMPILER_ARCHIVE"
 fi
+echo "66fb918af3791d4e9f2ab04580e26863d7882fec16b4bdd571bdeeb340b6cfe5  $COMPILER_ARCHIVE" | sha256sum --check
 unzip -d "$TEMP" "$COMPILER_ARCHIVE"
 
 

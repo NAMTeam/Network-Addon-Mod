@@ -454,7 +454,22 @@ class MiscResolver extends IdResolver {
 	add(Dirtroad~CE & Road~NS, 0x57601100)
 	add(Dirtroad~NS & Onewayroad~CE, 0x57600200)
 	add(Dirtroad~CE & Onewayroad~NS, 0x57601200)
-	
+
+    // RHW on-slopes (orthogonal)
+    for (rhw <- RhwNetworks if rhw.height == 0) {
+      val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(rhw)) 4 else 2
+      val minHeight = 0
+      for {
+        levelDiff <- Seq(1, 2)  // L1 vs L2 onslopes
+        height <- minHeight to (maxHeight-levelDiff)
+      } /*do*/ {
+        import RhwRuleGenerator.HeightLevel
+        val lower: Network = height~rhw
+        val upper: Network = (height+levelDiff)~rhw
+        add(upper~NC & lower~CS, RhwResolver.rhwHtRangeId(rhw) + 0x100*(levelDiff-1) + 0x10*height)  // direction North (upper) to South (lower)
+      }
+    }
+
     // GLR + intersections
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       // O×O

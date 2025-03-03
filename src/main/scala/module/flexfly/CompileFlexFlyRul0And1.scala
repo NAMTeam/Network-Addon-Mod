@@ -150,118 +150,136 @@ object CompileFlexFlyRul0And1 {
     val (previewId90, previewName90) = previewIter.next()
     val (previewId45, previewName45) = previewIter.next()
     val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags _ else identity _
+    def ff90(cursorInside: Boolean): String = {
+      val hidOffset = if (cursorInside) 0 else 0x80000
+      f"""
+      |[HighwayIntersectionInfo_0x${hid+hidOffset}%08X]
+      |;Added by memo 2014/11/16
+      |;FlexFly 90 (cursor ${if (cursorInside) "inside" else "outside"})
+      |Piece = ${if (cursorInside) "-48.0" else "-80.0"}, 0.0, 0, 1, 0x$previewId90%08X
+      |PreviewEffect = $previewName90
+      |
+      |CellLayout=........
+      |CellLayout=.abY....
+      |CellLayout=...cY...
+      |CellLayout=....dY..
+      |CellLayout=.....e..
+      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
+      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |CheckType = Z - dirtroad: 0x02020202
+      |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+      |CheckType = a - ${concreteTileToString(convertVirtualTile(network~orient(T0)))}, 0xFFFFFFFF optional
+      |CheckType = b - ${concreteTileToString(convertVirtualTile(network~orient(T1)))}, 0xFFFFFFFF optional
+      |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T3)))}, 0xFFFFFFFF optional
+      |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
+      |
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
+      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |AutoTileBase = 0x55387000
+      |PlaceQueryID = 0x$previewId90%08X
+      |Costs = 600
+      |
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x10000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x20000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x30000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Rotate=3
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x40000}%08X]
+      |CopyFrom=0x${hid+hidOffset}%08X
+      |Transpose=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x50000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x60000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x70000}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40000}%08X
+      |Rotate=3
+      |""".stripMargin.trim
+    }
+
+    def ff45(cursorInside: Boolean): String = {
+      val hidOffset = if (cursorInside) 0 else 0x80000
+      f"""
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+1}%08X]
+      |;Added by memo 2014/11/16
+      |;FlexFly 45 (cursor ${if (cursorInside) "inside" else "outside"})
+      |Piece = ${if (cursorInside) "0.0" else "-32.0"}, 0.0, 0, 1, 0x$previewId45%08X
+      |PreviewEffect = $previewName45
+      |
+      |CellLayout=........
+      |CellLayout=...Xc...
+      |CellLayout=....dY..
+      |CellLayout=.....e..
+      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
+      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |CheckType = Z - dirtroad: 0x02020202
+      |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
+      |CheckType = X - dirtroad: 0x00020000, 0xFFFFFFFF optional
+      |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T6)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
+      |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
+      |
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=........
+      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
+      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |
+      |AutoTileBase = 0x55387000
+      |PlaceQueryID = 0x$previewId45%08X
+      |Costs = 600
+      |
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x10001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x20001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x30001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Rotate=3
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x40001}%08X]
+      |CopyFrom=0x${hid+hidOffset+1}%08X
+      |Transpose=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x50001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=1
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x60001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=2
+      |[HighwayIntersectionInfo_0x${hid+hidOffset+0x70001}%08X]
+      |CopyFrom=0x${hid+hidOffset+0x40001}%08X
+      |Rotate=3
+      |""".stripMargin.trim
+    }
+
     f"""
-    |[HighwayIntersectionInfo_0x$hid%08X]
-    |;Added by memo 2014/11/16
-    |;FlexFly 90
-    |Piece = -48.0, 0.0, 0, 1, 0x$previewId90%08X
-    |PreviewEffect = $previewName90
+    |${ff90(cursorInside = true)}
     |
-    |CellLayout=........
-    |CellLayout=.abY....
-    |CellLayout=...cY...
-    |CellLayout=....dY..
-    |CellLayout=.....e..
-    |CellLayout=....Zf.<
-    |CellLayout=....^...
-    |
-    |CheckType = Z - dirtroad: 0x02020202
-    |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-    |CheckType = a - ${concreteTileToString(convertVirtualTile(network~orient(T0)))}, 0xFFFFFFFF optional
-    |CheckType = b - ${concreteTileToString(convertVirtualTile(network~orient(T1)))}, 0xFFFFFFFF optional
-    |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T3)))}, 0xFFFFFFFF optional
-    |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
-    |
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=....+..<
-    |ConsLayout=....^...
-    |
-    |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x$previewId90%08X
-    |Costs = 600
-    |
-    |[HighwayIntersectionInfo_0x${hid+0x10000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x20000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x30000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Rotate=3
-    |[HighwayIntersectionInfo_0x${hid+0x40000}%08X]
-    |CopyFrom=0x$hid%08X
-    |Transpose=1
-    |[HighwayIntersectionInfo_0x${hid+0x50000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x60000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x70000}%08X]
-    |CopyFrom=0x${hid+0x40000}%08X
-    |Rotate=3
+    |${ff90(cursorInside = false)}
     |
     |
-    |[HighwayIntersectionInfo_0x${hid+1}%08X]
-    |;Added by memo 2014/11/16
-    |;FlexFly 45
-    |Piece = 0.0, 0.0, 0, 1, 0x$previewId45%08X
-    |PreviewEffect = $previewName45
+    |${ff45(cursorInside = true)}
     |
-    |CellLayout=........
-    |CellLayout=...Xc...
-    |CellLayout=....dY..
-    |CellLayout=.....e..
-    |CellLayout=....Zf.<
-    |CellLayout=....^...
-    |
-    |CheckType = Z - dirtroad: 0x02020202
-    |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
-    |CheckType = X - dirtroad: 0x00020000, 0xFFFFFFFF optional
-    |CheckType = c - ${concreteTileToString(convertVirtualTile(network~orient(T6)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = d - ${concreteTileToString(convertVirtualTile(network~orient(T3)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = e - ${concreteTileToString(convertVirtualTile(network~orient(T1)) * R3F1)}, 0xFFFFFFFF optional
-    |CheckType = f - ${concreteTileToString(convertVirtualTile(network~orient(T0)) * R3F1)}, 0xFFFFFFFF optional
-    |
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=........
-    |ConsLayout=....+..<
-    |ConsLayout=....^...
-    |
-    |AutoTileBase = 0x55387000
-    |PlaceQueryID = 0x$previewId45%08X
-    |Costs = 600
-    |
-    |[HighwayIntersectionInfo_0x${hid+0x10001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x20001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x30001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Rotate=3
-    |[HighwayIntersectionInfo_0x${hid+0x40001}%08X]
-    |CopyFrom=0x${hid+1}%08X
-    |Transpose=1
-    |[HighwayIntersectionInfo_0x${hid+0x50001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=1
-    |[HighwayIntersectionInfo_0x${hid+0x60001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=2
-    |[HighwayIntersectionInfo_0x${hid+0x70001}%08X]
-    |CopyFrom=0x${hid+0x40001}%08X
-    |Rotate=3
+    |${ff45(cursorInside = false)}
     |""".stripMargin
   }
 
@@ -278,7 +296,7 @@ object CompileFlexFlyRul0And1 {
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
     for (hid <- hid0 until hid0 + 40) { 
-      val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
+      val numbers = (0 until 16) map (i => f"${hid+0x10000*i}%X") mkString ", "
       val tag = if (hid == hid0) "RotationRing" else "AddTypes"
       printer.println(f"$tag = $numbers ; flexfly")
     }

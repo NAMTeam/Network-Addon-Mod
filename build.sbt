@@ -2,9 +2,9 @@ name := "nam-controller"
 
 organization := "com.sc4nam"
 
-version := "48-SNAPSHOT"
+version := "49-SNAPSHOT"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.12"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -19,7 +19,7 @@ console / initialCommands := """
 import io.github.memo33.metarules.meta._, com.sc4nam.module, module.syntax._
 import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._
 lazy val resolve = module.Main.resolveSafely
-implicit lazy val context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
+implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
 """
 
@@ -46,7 +46,7 @@ def runMainWithJLogger(main: String) = Def.inputTask {
     mainClass = if (main == null) args(0) else main,
     classpath = (Compile / fullClasspath).value.files,
     log = wrapWithJLogger(streams.value.log),
-    options = Seq.empty[String])
+    options = args)
 }
 
 // Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
@@ -59,6 +59,9 @@ generateLocales := runMainWithJLogger("com.sc4nam.localization.GenerateLocales")
 
 lazy val regenerateTileOrientationCache = inputKey[scala.util.Try[Unit]]("Regenerates the cache used for translating metarules to RUL2")
 regenerateTileOrientationCache := runMainWithJLogger("com.sc4nam.module.RegenerateTileOrientationCache").evaluated
+
+lazy val conflictingOverridesCheck = inputKey[scala.util.Try[Unit]]("Checks all RUL2 code for conflicting overrides, optionally updates the inline `conflicting-override` tags")
+conflictingOverridesCheck := runMainWithJLogger("com.sc4nam.scripts.ConflictingOverridesChecker").evaluated
 
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % "test"
