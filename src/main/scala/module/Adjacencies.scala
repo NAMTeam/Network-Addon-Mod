@@ -128,6 +128,10 @@ trait Adjacencies { this: RuleGenerator =>
     * - OxD | OxD,
     * - DxO | DxO,
     * - DxD | DxD.
+    *
+    * Update for DLL-based adjacencies: This function now only covers *inner*
+    * adjacencies of multitile networks, i.e. both crossing networks belong to
+    * the same multitile network.
     */
   def createAdjacentIntersections(main: Network, base: Network, minor: Network): Unit = {  // minor is the first (left) crossing network
     assert(intersectionAllowed(main, minor))
@@ -136,7 +140,7 @@ trait Adjacencies { this: RuleGenerator =>
 
     val seen = collection.mutable.Set.empty[(Network, Int)]
 
-    for ((adjacent, dirs) <- adjacentNetworks(minor)) {
+    for ((adjacent, dirs) <- multitileNetworks.getOrElse(minor, Seq.empty)) {
       val (ns1, nw1, ws1) = if (dirs == NSNS || dirs == NSSN) (NS, NW, WS) else (SN, WN, SW)
       val (ns2, es2, ne2) = if (dirs == NSNS || dirs == SNNS) (NS, ES, NE) else (SN, SE, EN)
 

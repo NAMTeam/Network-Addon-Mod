@@ -81,8 +81,9 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
           Rules += main~orient(T6) * R3F0 & minor~WE~EW | main~orient(NW)               & (base ~> minor)~WE~EW   // stability
           Rules += main~orient(T6) * R3F0 | main~orient(NW) & minor~WE~EW | main~orient(T6) * R3F0 & minor~WE~EW | %   // T6 < OxD
 
-          // Now we consider cases involving two adjacent crossing networks
-          for ((other, directions) <- adjacentNetworks(minor)
+          // Now we consider cases involving two adjacent crossing networks.
+          // Due to DLL-based adjacencies, we only need to consider the *inner* adjacencies of multitile networks, if any.
+          for ((other, directions) <- Adjacencies.multitileNetworks.getOrElse(minor, Seq.empty)
                if other.isRhw && other != Dirtroad && other.height == minor.height && !deactivated(other)) {
             val (minDir, otherDir) = directions match {
               case NSNS => (NS, NS)
@@ -113,20 +114,21 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
 
           // crossing of a third network with two adjacent FlexFlys
           // (These are not strictly needed if starters are used, so we try to cut down the large number of adjacencies to a useful subset)
-          for {
-            third <- RhwNetworks
-            if third.height != main.height && third.height != minor.height && !deactivated(third)
-            if third.height <= 2 && orient == o2 && orient == orientations(0)  // limits adjacencies to inside curves
-            base <- third.base
-            dir <- directionsWithShoulderNorth(third)
-          } /*do*/ {
-            Rules += minor~o2(T3) * R0F1 & third~dir | main~orient(T3) * R0F0 | % | main~orient(T3) * R0F0 & third~dir  // 4-tile gap
-            Rules += minor~o2(T3) * R3F0 & third~dir | main~orient(T3) * R3F1 | % | main~orient(T3) * R3F1 & third~dir  // 2-tile gap
-            Rules += minor~o2(T1) * R3F0 & third~dir | main~orient(T1) * R3F1 | % | main~orient(T1) * R3F1 & third~dir  // 0-tile gap
-            Rules += minor~o2(T3) * R0F1 | main~orient(T3) * R0F0 & third~dir | minor~o2(T3) * R0F1 & third~dir | %  // 4-tile gap
-            Rules += minor~o2(T3) * R3F0 | main~orient(T3) * R3F1 & third~dir | minor~o2(T3) * R3F0 & third~dir | %  // 2-tile gap
-            Rules += minor~o2(T1) * R3F0 | main~orient(T1) * R3F1 & third~dir | minor~o2(T1) * R3F0 & third~dir | %  // 0-tile gap
-          }
+          // (disabled, as these are redundant with DLL-based adjacencies)
+          // for {
+          //   third <- RhwNetworks
+          //   if third.height != main.height && third.height != minor.height && !deactivated(third)
+          //   if third.height <= 2 && orient == o2 && orient == orientations(0)  // limits adjacencies to inside curves
+          //   base <- third.base
+          //   dir <- directionsWithShoulderNorth(third)
+          // } /*do*/ {
+          //   Rules += minor~o2(T3) * R0F1 & third~dir | main~orient(T3) * R0F0 | % | main~orient(T3) * R0F0 & third~dir  // 4-tile gap
+          //   Rules += minor~o2(T3) * R3F0 & third~dir | main~orient(T3) * R3F1 | % | main~orient(T3) * R3F1 & third~dir  // 2-tile gap
+          //   Rules += minor~o2(T1) * R3F0 & third~dir | main~orient(T1) * R3F1 | % | main~orient(T1) * R3F1 & third~dir  // 0-tile gap
+          //   Rules += minor~o2(T3) * R0F1 | main~orient(T3) * R0F0 & third~dir | minor~o2(T3) * R0F1 & third~dir | %  // 4-tile gap
+          //   Rules += minor~o2(T3) * R3F0 | main~orient(T3) * R3F1 & third~dir | minor~o2(T3) * R3F0 & third~dir | %  // 2-tile gap
+          //   Rules += minor~o2(T1) * R3F0 | main~orient(T1) * R3F1 & third~dir | minor~o2(T1) * R3F0 & third~dir | %  // 0-tile gap
+          // }
         }
         createRules()
       }
