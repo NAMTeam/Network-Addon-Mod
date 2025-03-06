@@ -143,7 +143,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             }
           }
         }
-        // inside multi-tile intersection and adjacent intersections
+        // inside multi-tile intersection
         createAdjacentIntersections(main, base, minor)
         createRules()
       }
