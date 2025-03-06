@@ -581,25 +581,74 @@ class RealRailwayResolver extends IdResolver {
     */
     // -------- STR --------
     // ----- OxO -----
-    add(Street~NS & Str~WE,   0x5d340000)
+    // -- Street / SAM --
+    add(Street~NS & Str~WE, 0x5d340000)
+    add(Sam2~NS   & Str~WE, 0x5d3ec000)
+    add(Sam3~NS   & Str~WE, 0x5d3e0000)
+    add(Sam4~NS   & Str~WE, 0x5d3e4000)
+    add(Sam5~NS   & Str~WE, 0x5d3f0000)
+    add(Sam6~NS   & Str~WE, 0x5d3f4000)
+    add(Sam7~NS   & Str~WE, 0x5d3e8000)
+    add(Sam8~NS   & Str~WE, 0x5d3f8000)
+    add(Sam9~NS   & Str~WE, 0x5d3fc000)
+    add(Sam10~NS  & Str~WE, 0x5d3d0000)
+    add(Sam11~NS  & Str~WE, 0x5e511b09) // TODO: currently the only SAM set with a SAM IID for this crossing
+    // -- Road --
     add(Road~NS & Str~WE,   0x5d341000)
     add(L1Road~NS & Str~WE,   0x5c001505)
     add(L2Road~NS & Str~WE,   0x5c031505)
+    // -- OWR --
     add(Onewayroad~NS & Str~WE,   0x5d342000)
     add(L1Onewayroad~NS & Str~WE,   0x5c011505)
+    // -- Avenue --
     add(Avenue~NS & Str~WE,   0x5d343000)
     add(L1Avenue~NS & Str~WE,   0x5c021505)
     add(L2Avenue~NS & Str~WE,   0x5c051505)
     // ----- OxD -----
-    // -- Street --
+    // -- Street / SAM --
+    add(Street~WN & Str~NS, 0x5d360000)
+    add(Sam2~WN   & Str~NS, 0x5d3ee000)
+    add(Sam3~WN   & Str~NS, 0x5d3e2000)
+    add(Sam4~WN   & Str~NS, 0x5d3e6000)
+    add(Sam5~WN   & Str~NS, 0x5d3f2000)
+    add(Sam6~WN   & Str~NS, 0x5d3f6000)
+    add(Sam7~WN   & Str~NS, 0x5d3ea000)
+    add(Sam8~WN   & Str~NS, 0x5d3fa000)
+    add(Sam9~WN   & Str~NS, 0x5d3fe000)
+    add(Sam10~WN  & Str~NS, 0x5d3d2000)
+    add(Sam11~WN  & Str~NS, 0x5e511b09) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     // -- Road L1 --
     // -- Road L2 --
     // -- OWR --
     // -- Avenue --
     // ----- DxO -----
+    // -- Street / SAM --
+    add(Street~NS & Str~NE, 0x5d380000)
+    add(Sam2~NS   & Str~NE, 0x5d3ed000)
+    add(Sam3~NS   & Str~NE, 0x5d3e1000)
+    add(Sam4~NS   & Str~NE, 0x5d3e5000)
+    add(Sam5~NS   & Str~NE, 0x5d3f1000)
+    add(Sam6~NS   & Str~NE, 0x5d3f5000)
+    add(Sam7~NS   & Str~NE, 0x5d3e9000)
+    add(Sam8~NS   & Str~NE, 0x5d3f9000)
+    add(Sam9~NS   & Str~NE, 0x5d3fd000)
+    add(Sam10~NS  & Str~NE, 0x5d3d1000)
+    add(Sam11~NS  & Str~NE, 0x5e512b09) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     // ----- DxD -----
+    // -- Street / SAM --
+    add(Street~ES & Str~NE, 0x5d3a0000)
+    add(Sam2~ES   & Str~NE, 0x5d3ef000)
+    add(Sam3~ES   & Str~NE, 0x5d3e3000)
+    add(Sam4~ES   & Str~NE, 0x5d3e7000)
+    add(Sam5~ES   & Str~NE, 0x5d3f3000)
+    add(Sam6~ES   & Str~NE, 0x5d3f7000)
+    add(Sam7~ES   & Str~NE, 0x5d3eb000)
+    add(Sam8~ES   & Str~NE, 0x5d3fb000)
+    add(Sam9~ES   & Str~NE, 0x5d3ff000)
+    add(Sam10~ES  & Str~NE, 0x5d3d3000)
+    add(Sam11~ES  & Str~NE, 0x5e515b09) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     
     map
