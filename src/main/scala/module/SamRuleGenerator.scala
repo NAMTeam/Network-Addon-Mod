@@ -665,6 +665,12 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
               Rules += sam~NE & (minBase ~> minor)~WE | (Street ~> sam)~WS & minor~WE
               Rules += sam~NE & minor~WE | sam~WS & (minBase ~> minor)~WE
             }
+            if (minor == Rail || minor == Str) {
+              // overide crossbucks helper tiles of the street DxO rail crossings to regular SAM
+              val crossbucks = IdTile(0x5f502a00, R3F1, noSymmetries)
+              Rules += sam~ES | crossbucks | % | sam~NW                     // from diag
+              Rules += sam~NE & minor~NS | crossbucks * R3F0 | % | sam~WS   // to diag
+          }
 
             // Rules += sam~ES & minor~WE | minor~WN | % | sam~WC & minor~WN       // DxO T
 
