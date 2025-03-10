@@ -714,7 +714,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~WE & minor~NS | (Street ~> sam)~WE & minor~SN
             // OxO T-intersections
             Rules += sam~WE | (Street ~> sam)~WC & minor~NS             // OxO Short T
-            // Rules += sam~WE & minor~NS | (Street ~> sam)~WC & minor~SN  // OxO Long T
+            if (minor == Avenue) {
+              Rules += sam~WE & minor~NS | (Street ~> sam)~WC & minor~SN  // OxO Long T
+            }
 
           if (minor.typ == AvenueLike && minor == Avenue) { // other possibilities like Owr4 not supported yet
             // OxD
@@ -802,9 +804,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
   }
 }
 
-// Compile individually with `sbt "runMain metarules.module.CompileSamCode"`.
+// Compile individually with `sbt "runMain com.sc4nam.module.CompileSamCode"`.
 object CompileSamCode extends AbstractMain {
   lazy val resolve: IdResolver = new SamResolver orElse new RealRailwayResolver orElse new MiscResolver orElse new NwmResolver
   val generator = new SamRuleGenerator(_)
-  lazy val file = new java.io.File("target/Sec9_SAM_MetaGenerated_MANAGED.txt")
+  lazy val file = new java.io.File("Controller/RUL2/09_SAM/Sec9_SAM_MetaGenerated.txt")
 }
