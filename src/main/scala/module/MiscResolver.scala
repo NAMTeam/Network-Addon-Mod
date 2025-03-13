@@ -96,6 +96,7 @@ class MiscResolver extends IdResolver {
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
     add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
+    add(Road~(2,2,2,11), 0x00020900)
 	
 	add(Street~(0,0,0,0), 0x00000100)
     add(Street~CS, 0x05000300) // orth stub
@@ -298,6 +299,21 @@ class MiscResolver extends IdResolver {
     add(Road~NE & Onewayroad~NS, 0x09703900)
     add(Road~NS & Onewayroad~EW, 0x09720700)
     add(Road~NS & Onewayroad~NE, 0x09803900)
+    add(Road~(2,2,2,0) & Onewayroad~(0,0,0,2), 0x09720400)
+    add(Road~(0,2,2,2) & Onewayroad~(3,0,0,0), 0x5f973300)
+    add(Road~(2,0,2,2) & Street~(0,1,0,0)    , 0x5f072a00)
+    add(Road~(2,2,0,2) & Dirtroad~(0,0,2,0)  , 0x5760b400)
+    // Road corner intersections
+    add(Road~(0,0,2,2) & Onewayroad~(0,1,0,0), 0x5f972500)
+    add(Road~(0,0,2,2) & Onewayroad~(0,3,0,0), 0x5f973100)
+    add(Road~(0,2,2,0) & Onewayroad~CS,        0x09705500)
+    add(Road~(0,2,2,0) & Onewayroad~(2,0,0,2), 0x09720500)
+    add(Road~(0,0,2,2) & Street~(0,1,0,0),     0x5f072800)
+    add(Road~(0,0,2,2) & Street~(0,3,0,0),     0x5f072900)
+    add(Road~(0,0,2,2) & Street~(2,1,0,0),     0x5f072600)
+    add(Road~(0,0,2,2) & Street~(2,3,0,0),     0x5f072700)
+    add(Road~(0,2,2,0) & Dirtroad~CS,          0x5760c700)
+    add(Road~(2,2,0,0) & Dirtroad~(0,0,2,2),   0x5760b500)
 
     // Street intersections
     add(Street~NS & Rail~WE, 0x05010100)
