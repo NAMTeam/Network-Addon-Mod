@@ -42,6 +42,8 @@ object CompileAllMetarules {
     CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
     CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling Roundabout metarule code")
+    CompileRoundaboutCode.start(tileOrientationCache = tileOrientationCache)
   }
 }
 
