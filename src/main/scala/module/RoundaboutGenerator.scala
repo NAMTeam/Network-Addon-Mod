@@ -178,5 +178,5 @@ class RoundaboutGenerator(var context: RuleTransducer.Context) extends RuleGener
 object CompileRoundaboutCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new RhwResolver orElse new NwmResolver
   val generator = new RoundaboutGenerator(_)
-  lazy val file = new java.io.File("Controller/RUL2/04_Roundabouts/Sec4_Roundabouts_MetaGenerated.txt")
+  lazy val file = new java.io.File("target/Sec4_Roundabouts_MetaGenerated.txt")
 }
