@@ -96,6 +96,7 @@ class MiscResolver extends IdResolver {
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
     add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
+    add(Road~(2,2,2,11), 0x00020900)
 	
 	add(Street~(0,0,0,0), 0x00000100)
     add(Street~CS, 0x05000300) // orth stub
@@ -298,6 +299,68 @@ class MiscResolver extends IdResolver {
     add(Road~NE & Onewayroad~NS, 0x09703900)
     add(Road~NS & Onewayroad~EW, 0x09720700)
     add(Road~NS & Onewayroad~NE, 0x09803900)
+    add(Road~(2,2,2,0) & Onewayroad~(0,0,0,2), 0x09720400)
+    add(Road~(0,2,2,2) & Onewayroad~(3,0,0,0), 0x5f973300)
+    add(Road~(2,0,2,2) & Street~(0,1,0,0)    , 0x5f072a00)
+    add(Road~(2,2,0,2) & Dirtroad~(0,0,2,0)  , 0x5760b400)
+    // Road corner intersections
+    add(Road~(0,0,2,2) & Onewayroad~(0,1,0,0), 0x5f972500)
+    add(Road~(0,0,2,2) & Onewayroad~(0,3,0,0), 0x5f973100)
+    add(Road~(0,2,2,0) & Onewayroad~CS,        0x09705500)
+    add(Road~(0,2,2,0) & Onewayroad~(2,0,0,2), 0x09720500)
+    add(Road~(0,0,2,2) & Street~(0,1,0,0),     0x5f072800)
+    add(Road~(0,0,2,2) & Street~(0,3,0,0),     0x5f072900)
+    add(Road~(0,0,2,2) & Street~(2,1,0,0),     0x5f072600)
+    add(Road~(0,0,2,2) & Street~(2,3,0,0),     0x5f072700)
+    add(Road~(0,2,2,0) & Dirtroad~CS,          0x5760c700)
+    add(Road~(2,2,0,0) & Dirtroad~(0,0,2,2),   0x5760b500)
+
+    // Road roundabouts
+    add(RdRndbt~(0,2,0,-2),                       0x5F06BC80) // surrogate tile "straight roundabout"
+    add(RdRndbt~(0,0,-2,2),                       0x5F06BC00) // INRUL
+    add(RdRndbt~(0,0,-2,2) & Road~(102,102,0,0),  0x5F06BD00) // INRUL
+    add(RdRndbt~(0,0,-2,2) & Road~NC,             0x5F06BA00) // INRUL
+    add(RdRndbt~(0,0,-2,2) & Road~(0,1,0,0),      0x5F06BE00) // INRUL
+    add(RdRndbt~(0,0,-2,2) & Road~(0,3,0,0),      0x5F06B800) // INRUL
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Road~NC,         0x5F06C100)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Road~CEN,        0x5F06CB00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Road~CWN,        0x5F06CA00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Street~NC,       0x5F06C200)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Street~CEN,      0x5F06CD00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Street~CWN,      0x5F06CC00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Onewayroad~NC,   0x5F06C500)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Onewayroad~CEN,  0x5F96C000)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Onewayroad~CWN,  0x5F96C600)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Owr1~NC,         0x5F96C400)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Owr1~CEN,        0x5F96C500)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Dirtroad~NC,     0x5760DD00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Mis~NC,          0x5760DE00)
+    add(RdRndbt~(0,0,-2,2) & Road~WC & Mis~CN,          0x5760DE80)
+    add(RdRndbt~(0,0,-2,2) & Street~NC,                 0x5F06B100)
+    add(RdRndbt~(0,0,-2,2) & Street~CEN,                0x5F06B300)
+    add(RdRndbt~(0,0,-2,2) & Street~CWN,                0x5F06B500)
+    add(RdRndbt~(0,0,-2,2) & Street~WC & Street~NC,     0x5F06C300)
+    add(RdRndbt~(0,0,-2,2) & Street~WC & Street~CEN,    0x5F06C800)
+    add(RdRndbt~(0,0,-2,2) & Street~WC & Street~CWN,    0x5F06C700)
+    add(RdRndbt~(0,0,-2,2) & Onewayroad~NC,             0x5F96BA00)
+    add(RdRndbt~(0,0,-2,2) & Onewayroad~(2,2,0,0),      0x5F06C400)
+    add(RdRndbt~(0,0,-2,2) & Onewayroad~(0,1,0,0),      0x5F96BE00)
+    add(RdRndbt~(0,0,-2,2) & Onewayroad~(0,3,0,0),      0x5F96B800)
+    add(RdRndbt~(0,0,-2,2) & Onewayroad~WC & Street~NC, 0x5F06C600)
+    add(RdRndbt~(0,0,-2,2) & Owr1~NC,        0x5F96C100)
+    add(RdRndbt~(0,0,-2,2) & Owr1~(0,1,0,0), 0x5F96C200)
+    add(RdRndbt~(0,0,-2,2) & Owr1~(0,3,0,0), 0x5F96C300)
+    add(RdRndbt~(0,0,-2,2) & Owr1~(2,2,0,0), 0x5F96C700)
+    add(RdRndbt~(0,0,-2,2) & Dirtroad~NC,          0x5760D800)
+    add(RdRndbt~(0,0,-2,2) & Dirtroad~(2,2,0,0),   0x5760D880)
+    add(RdRndbt~(0,0,-2,2) & Dirtroad~WC & Mis~NC, 0x5760DC00)
+    add(RdRndbt~(0,0,-2,2) & Dirtroad~WC & Mis~CN, 0x5760DC80)
+    add(RdRndbt~(0,0,-2,2) & Mis~NC,          0x5760D900)
+    add(RdRndbt~(0,0,-2,2) & Mis~CN,          0x5760D980)
+    add(RdRndbt~(0,0,-2,2) & Mis~WC & Mis~NC, 0x5760DA00)
+    add(RdRndbt~(0,0,-2,2) & Mis~WC & Mis~CN, 0x5760DA80)
+    add(RdRndbt~(0,0,-2,2) & Mis~CW & Mis~NC, 0x5760DB80)
+
 
     // Street intersections
     add(Street~NS & Rail~WE, 0x05010100)
