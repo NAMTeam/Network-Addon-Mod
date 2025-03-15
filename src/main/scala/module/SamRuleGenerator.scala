@@ -136,6 +136,11 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(131,133,131,133) | (Street ~> sam)~(131,0,2,0)
     Rules += sam~(2,0,133,0) | (Street ~> sam)~(133,0,0,131) & Road~(0,131,133,0) // half SAM, half road
       Rules += sam~(0,0,131,133) & Road~(131,133,0,0) | (Street ~> sam)~(131,0,2,0)
+      // compensate for instability of street x road diverter
+      Rules += sam~(0,0,131,133) & Road~(131,133,0,0) | Street~WE & Street~CS | % | sam~(131,0,2,0)
+      Rules += sam~(0,0,131,133) & Road~(131,133,0,0) | sam~WE  | % | sam~(131,0,2,0)
+      Rules += sam~(2,0,131,0) | sam~(2,2,0,0) & Road~(0,0,2,2) | % | sam~(131,133,0,0) & Road~(0,0,131,133)
+      Rules += sam~(0,2,0,131) | Street~WC | % | sam~(143,0,0,141)
 
     // create continuation rules for the three exit points (curve end, curve end w/ t-int, t-int)
     for (t <- Seq((131,0,2,0), (131,2,2,0), (0,131,2,2))) {
