@@ -10,11 +10,11 @@ import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredO
 
 class SamResolver extends IdResolver {
 
-	val isSam = Set(Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
+  val isSam = Set(Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
 
-	val isSimpleSam = Set(Sam1)
+  val isSimpleSam = Set(Sam1)
 
-  val samOffset = ListMap(
+  val samOffsets = ListMap(
     Sam1  -> 0x100,
     Sam2  -> 0x200,
     Sam3  -> 0x300,
@@ -27,73 +27,94 @@ class SamResolver extends IdResolver {
     Sam10 -> 0xa00,
     Sam11 -> 0xb00
     )
-  
-	val tileMap: scala.collection.Map[Tile, IdTile] = {
-		val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-		def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
-			assert(!map.contains(tile))
-			for (rf <- RotFlip.values) {
-				val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
-				map.getOrElseUpdate(tile * rf, idTile)
-			}
-		}
 
-    for ((sam, offset) <- samOffset.drop(1)) {
+  val tileMap: scala.collection.Map[Tile, IdTile] = {
+    val map = scala.collection.mutable.Map.empty[Tile, IdTile]
+    def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
+      assert(!map.contains(tile))
+      for (rf <- RotFlip.values) {
+        val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
+        map.getOrElseUpdate(tile * rf, idTile)
+        }
+      }
+
+    // tiles which are defined for all SAM networks, including SAM-1
+    for ((sam, offset) <- samOffsets) {
 
       // base
-      add(sam~NS, 0x5e54b000 + offset)
+      add(sam~NS, 0x5e54b000 + offset)           // orth
+      add(sam~CS, 0x5e500000 + offset)           // orth stub
+      add(sam~(0,0,2,2), 0x5e590000 + offset)    // 90 degree turn
+
+      // self-intersections
+      add(sam~NS & sam~WE, 0x5e527000 + offset)  // OxO
+      add(sam~NS & sam~CE, 0x5e557000 + offset)  // OxO T
+
+      // SAM x SAM transitions
+      add(Street~WC & sam~CE, 0x5e5c0000 + (offset * 0x11))
+      for ((otherSam, otherOffset) <- samOffsets if otherOffset > offset) {
+        add(sam~WC & otherSam~CE, 0x5e5c0000 + (offset * 0x10) + otherOffset)
+      }
+    }
+
+    // tiles which are only defined on SAM-2+
+    for ((sam, offset) <- samOffsets.drop(1)) {
+
+      // base
       add(sam~SE,	0x5e572000 + offset)
-      add(sam~CS, 0x5e500000 + offset)          // orth stub
       add(sam~CES, 0x5e573000 + offset)         // diag stub
-      add(sam~(0,0,2,2), 0x5e590000 + offset)
       add(sam~(0,0,1,13), 0x5e571000 + offset)  // curve
       add(sam~(0,2,0,11), 0x5e570000 + offset)  // curve
       add(sam~(0,11,0,13), 0x5e577000 + offset)
       add(sam~(0,11,0,11), 0x5e578000 + offset)
-	  // add(sam~(0,0,11,13), NoIID + offset) // part of 3x3 circle
-	  
-	  //smaller wide-radius curves
-	  //2x2 90
-		add(sam~(0,2,0,131), 0x5e5e8000 + offset)
-		add(sam~(143,0,0,141), 0x5e5e9000 + offset)
-		add(sam~(0,131,133,0), 0x5e5ea000 + offset)
-		add(sam~(2,2,0,131), 0x5e5ef000 + offset) // T-Intersection off outer tile
-		add(sam~(133,131,133,131), 0x5e5eb000 + offset) // Diverter
-		add(sam~(0,131,133,0) & Street~(133,0,0,131), 0x5e5ed000 + offset) // Diverter with Street
-	  //3x2 S
-	    add(sam~(2,0,151,0), 0x5e5b0000 + offset)
-		add(sam~(151,0,0,161), 0x5e5b1000 + offset)
-		add(sam~(171,0,0,181), 0x5e5b2000 + offset)
-		add(sam~(2,2,151,0), 0x5e5b3000 + offset) //T-Intersection off outer tile
-		
-	  //larger wide-radius curves
-	  //larger 45 (4x3)
-	  	add(sam~(0,2,0,111), 0x5e5e4000 + offset)
-		add(sam~(0,111,0,11), 0x5e5e3000 + offset)
-		add(sam~(15,0,0,14), 0x5e5e2000 + offset)
-		add(sam~(0,11,113,0), 0x5e5e1000 + offset)
-		add(sam~(113,0,0,1), 0x5e5e0000 + offset)
-	  //Larger 90 (4x4)
-	    add(sam~(0,2,0,181), 0x5e5b5000 + offset) //start here
-	    add(sam~(0,181,11,191), 0x5e5b6000 + offset)
-	    add(sam~(11,0,0,82), 0x5e5b7000 + offset)
-	    add(sam~(0,191,193,0), 0x5e5b8000 + offset)
-	    add(sam~(0,82,82,0), 0x5e5b9000 + offset)
-	  //T-ints off
-	    add(sam~(2,2,0,181), 0x5e5bf000 + offset)
-	    add(sam~(2,181,11,191), 0x5e5be000 + offset)	  
-		
-	    // self-intersections	
-      add(sam~NS & sam~WE, 0x5e527000 + offset)     // OxO
-	  add(sam~(2,2,2,2), 0x5e527000 + offset)		// OxO alt
+      add(sam~(0,0,11,13), 0x5e56f000 + offset) // part of 3x3 circle
+      add(sam~(0,0,2,13),  0x5e56e000 + offset) // orth to diag kinked bend
+
+      //smaller wide-radius curves
+      //2x2 90
+      add(sam~(0,2,0,131), 0x5e5e8000 + offset)
+      add(sam~(143,0,0,141), 0x5e5e9000 + offset)
+      add(sam~(0,131,133,0), 0x5e5ea000 + offset)
+      add(sam~(2,2,0,131), 0x5e5ef000 + offset) // T-Intersection off outer tile
+      add(sam~(133,131,133,131), 0x5e5eb000 + offset)  // diverter
+      add(sam~(0,131,133,0) & Road~(133,0,0,131), 0x5e5ec000 + offset)    // diverter w/ road
+      add(sam~(0,131,133,0) & Street~(133,0,0,131), 0x5e5ed000 + offset)  // diverter w/ street
+      //3x2 S
+      add(sam~(2,0,153,0), 0x5e5b0000 + offset)
+      add(sam~(153,0,0,161), 0x5e5b1000 + offset)
+      add(sam~(173,0,0,181), 0x5e5b2000 + offset)
+      add(sam~(2,2,153,0), 0x5e5b3000 + offset) //T-Intersection off outer tile
+      // diagonal s-curve
+      add(sam~(3,0,0,152), 0x5e5d0000 + offset)
+      add(sam~(0,152,154,1), 0x5e5d1000 + offset)
+      add(sam~(154,0,0,1), 0x5e5d2000 + offset)
+
+      //larger wide-radius curves
+      //larger 45 (4x3)
+      add(sam~(0,2,0,111), 0x5e5e4000 + offset)
+      add(sam~(0,111,0,11), 0x5e5e3000 + offset)
+      add(sam~(15,0,0,14), 0x5e5e2000 + offset)
+      add(sam~(0,11,113,0), 0x5e5e1000 + offset)
+      add(sam~(113,0,0,1), 0x5e5e0000 + offset)
+      //Larger 90 (4x4)
+      add(sam~(0,2,0,181), 0x5e5b5000 + offset) //start here
+      add(sam~(0,181,11,191), 0x5e5b6000 + offset)
+      add(sam~(11,0,0,82), 0x5e5b7000 + offset)
+      add(sam~(0,191,194,0), 0x5e5b8000 + offset)
+      add(sam~(0,82,82,0), 0x5e5b9000 + offset)
+      //T-ints off
+      add(sam~(2,2,0,181), 0x5e5bf000 + offset)
+      add(sam~(2,181,11,191), 0x5e5be000 + offset)
+
+	    // self-intersections
+      add(sam~(2,2,2,2), 0x5e527000 + offset)		// OxO alt
       add(sam~NS & sam~NE, 0x5e574000 + offset)     // OxD
       add(sam~SE & sam~EN, 0x5e579000 + offset)     // DxD
-      add(sam~NS & sam~CE, 0x5e557000 + offset)     // OxO T
-	  add(sam~NS & sam~CSE, 0x5e575000 + offset) 	// OxD T (also 0,2,11,2)
-	  add(sam~CS & sam~NE, 0x5e597000 + offset) 	// DxO T1
+      add(sam~NS & sam~CSE, 0x5e575000 + offset) 	// OxD T (also 0,2,11,2)
+      add(sam~CS & sam~NE, 0x5e597000 + offset) 	// DxO T1
       add(sam~CS & sam~WS, 0x5e598000 + offset) 	// DxO T2
       add(sam~SE & sam~CEN, 0x5e599000 + offset) 	// DxD T1
-	  add(sam~(1,3,0,0) & sam~(0,1,0,0), 0x5e59a000 + offset) 	// DxD T2
+      add(sam~WN & sam~CSW, 0x5e59a000 + offset) 	// DxD T2
 
       add(sam~(0,0,2,11),	0x5e57a000 + offset)
 	  // add(sam~(0,0,2,13),   NoIID + offset)
@@ -104,8 +125,8 @@ class SamResolver extends IdResolver {
       add(sam~(0,11,2,13), 0x5e57d000 + offset)
       add(sam~(0,2,11,11), 0x5e57e000 + offset)
       add(sam~(0,2,13,13), 0x5e57f000 + offset)
-		
-	    // OxO intersections		
+
+      // OxO intersections
       add(sam~NS & Road~WE, 0x5e520000 + offset)        // Road
       add(sam~NS & Onewayroad~WE, 0x5e529000 + offset)  // Onewayoad
       add(sam~WE & Avenue~SN, 0x5e524000 + offset)      // Avenue
@@ -113,83 +134,104 @@ class SamResolver extends IdResolver {
       add(sam~NS & Rail~WE, 0x5e511000 + offset)        // SAM-Rail
       add(sam~WE & Lightrail~NS, 0x5e516000 + offset)   // SAM-Lightrail
       add(sam~WE & Monorail~NS, 0x5e51a000 + offset)    // SAM-Monorail
-      add(sam~NS & Str~WE, 0x5e511009 + offset)         // SAM-STR
+      // add(sam~NS & Str~WE, 0x5e511009 + offset)         // SAM-STR
       add(sam~WE & Glr1~NS, 0x5e538000 + offset)        // SAM-GLR 1
       add(sam~WE & Glr2~NS, 0x5e538080 + offset)        // SAM-GLR 2
       // add(sam~WE & Glr3~NS, 0x5e538005 + offset) // SAM-GLR 3
       // add(sam~WE & Glr4~NS, 0x5e538085 + offset) // SAM-GLR 4
       // add(sam~WE & L1Dtr~NS, IID + offset) // SAM-L1 DTR
       // add(sam~WE & L2Dtr~NS, IID + offset) // SAM-L2 DTR
-      // check why this code is problematic
-      // add(sam~NS & Tla3~WE, 0x5e640000 + offset) // TLA-3 +
       add(sam~NS & (Tla3~WE).projectLeft, 0x5e640000 + offset)  // TLA-3 +
       add(sam~NS & (Tla3~WE).projectRight, 0x5e640000 + offset) // TLA-3 +
       add(sam~NS & Ave2~WE, 0x5e641000 + offset)                // AVE-2 +
-      add(sam~NS & Ard3~WE, 0x5e642000 + offset)                // ARD-3 +	
-      add(sam~NS & Owr1~WE, 0x5e643000 + offset)                // OWR-1 +	
-      add(sam~NS & Owr3~WE, 0x5e644000 + offset)                // OWR-3 +	
+      add(sam~NS & Ard3~WE, 0x5e642000 + offset)                // ARD-3 +
+      add(sam~NS & Owr1~WE, 0x5e643000 + offset)                // OWR-1 +
+      add(sam~NS & Owr3~WE, 0x5e644000 + offset)                // OWR-3 +
       add(sam~NS & Nrd4~WE, 0x5e645000 + offset)                // NRD-4 +
-      /*
-      add(sam~NS & (Tla5~EW).projectLeft, 0x5e646000 + offset) // TLA-5 +	
-      add(sam~NS & Owr4~EW, 0x5e647000 + offset) // OWR-4 +
-      add(sam~NS & Owr5~EW, 0x5e648000 + offset) // OWR-5 +	
-      add(sam~NS & Rd4~EW, 0x5e649000 + offset) // RD-4 +	
-      add(sam~NS & Rd6~EW, 0x5e64a000 + offset) // RD-6 +
-      add(sam~NS & Ave6~EW, 0x5e64b000 + offset) // AVE-6 + (also TLA-7)
-      add(sam~NS & Tla7m~WE, 0x5e64b080 + offset) // TLA Inner +
+
+      add(sam~NS & (Tla5~EW).projectLeft, 0x5e646000 + offset)  // TLA-5 +
+      add(sam~NS & Owr4~EW, 0x5e647000 + offset)                // OWR-4 +
+      add(sam~NS & Owr5~EW, 0x5e648000 + offset)                // OWR-5 +
+      add(sam~NS & Rd4~EW, 0x5e649000 + offset)                 // RD-4 +
+      add(sam~NS & Rd6~EW, 0x5e64a000 + offset)                 // RD-6 +
+      add(sam~NS & Ave6~EW, 0x5e64b000 + offset)                // AVE-6 + (also TLA-7)
+      add(sam~NS & (Tla7m~WE).projectLeft, 0x5e64b080 + offset) // TLA Inner +
       // add(sam~NS & Ave8~EW, 0x5e64c000 + offset) // AVE-8 + (also TLA-9)
-      add(sam~NS & Ave6m~WE, 0x5e64c080 + offset) // AVE Inner +
-	  */
-	  add(sam~WE & Dirtroad~NS, 0x5e600000 + offset) // RHW-2 +
-      
-	  //Specialized OxO +-intersections
-	  //1 SAM and 3 Cross
-	  add(sam~(0,0,0,2) & Road~(2,2,2,0), 0x5e521000 + offset)
-	  add(sam~(0,0,0,2) & Onewayroad~(2,2,2,0), 0x5e52a000 + offset)
-	  //2 SAM and 2 Cross Elbow
-	  add(sam~(0,0,2,2) & Road~(2,2,0,0), 0x5e523000 + offset)
-	  add(sam~(0,0,2,2) & Onewayroad~(2,2,0,0), 0x5e52c000 + offset)
-	  //3 SAM and 1 Cross
-	  add(sam~(2,2,0,2) & Road~(0,0,2,0), 0x5e522000 + offset)
-	  add(sam~(2,2,0,2) & Onewayroad~(0,0,2,0), 0x5e52b000 + offset)
-	  add(sam~(2,0,2,2) & Avenue~NC, 0x5e52f000 + offset)
-	  //2 SAM Elbow and Diag Cross
-	  add(sam~(2,2,0,0) & Road~(0,0,1,3), 0x5e52e000 + offset)
-	  add(sam~(2,2,0,0) & Onewayroad~(0,0,1,3), 0x5e52d000 + offset)
-	
+      add(sam~NS & Ave6m~WE, 0x5e64c080 + offset)               // AVE Inner +
+
+      add(sam~WE & Dirtroad~NS, 0x5e600000 + offset) // RHW-2 +
+
+      //Specialized OxO +-intersections
+      //1 SAM and 3 Cross
+      add(sam~(0,0,0,2) & Road~(2,2,2,0), 0x5e521000 + offset)
+      add(sam~(0,0,0,2) & Onewayroad~(2,2,2,0), 0x5e52a000 + offset)
+      //2 SAM and 2 Cross Elbow
+      add(sam~(0,0,2,2) & Road~(2,2,0,0), 0x5e523000 + offset)
+      add(sam~(0,0,2,2) & Onewayroad~(2,2,0,0), 0x5e52c000 + offset)
+      //3 SAM and 1 Cross
+      add(sam~(2,2,0,2) & Road~(0,0,2,0), 0x5e522000 + offset)
+      add(sam~(2,2,0,2) & Onewayroad~(0,0,2,0), 0x5e52b000 + offset)
+      add(sam~(2,0,2,2) & Avenue~NC, 0x5e52f000 + offset)
+      //2 SAM Elbow and Diag Cross
+      add(sam~(2,2,0,0) & Road~(0,0,1,3), 0x5e52e000 + offset)
+      add(sam~(2,2,0,0) & Onewayroad~(0,0,1,3), 0x5e52d000 + offset)
+
       // OxO T-intersections
       add(sam~CS & Road~WE, 0x5e550000 + offset)        // Road Thru
       add(sam~NS & Road~CE, 0x5e551000 + offset)        // Road Ends
       add(sam~CS & Onewayroad~WE, 0x5e559000 + offset)  // Onewayroad Thru
       add(sam~NS & Onewayroad~CE, 0x5e55a000 + offset)  // Onewayroad Ends
-	  add(sam~CE & Avenue~SN, 0x5e554000 + offset) // Avenue Thru - Short 
-	  add(sam~WC & Avenue~SN, 0x5e556000 + offset) // Avenue Thru - Long
-	  add(sam~WE & Avenue~NC, 0x5e55f000 + offset) // Avenue Ends
-	  
-	  //Specialized OxO T-intersections
-	  //1 SAM and 2 Cross Elbow
-	  add(sam~(0,0,0,2) & Road~(2,2,0,0), 0x5e552000 + offset)
-	  add(sam~(0,0,0,2) & Onewayroad~(2,2,0,0), 0x5e55b000 + offset)
-	  add(sam~(0,0,2,0) & Avenue~(4,0,0,2), 0x5e560000 + offset)
-	  
-	  //2 SAM and 1 Cross Elbow
-	  add(sam~(2,2,0,0) & Road~(0,0,2,0), 0x5e553000 + offset)
-	  add(sam~(2,2,0,0) & Onewayroad~(0,0,2,0), 0x5e55c000 + offset)
-		
-      // OxD intersections		
+      add(sam~CE & Avenue~SN, 0x5e554000 + offset) // Avenue Thru - Short
+      add(sam~WC & Avenue~SN, 0x5e556000 + offset) // Avenue Thru - Long
+      add(sam~WE & Avenue~NC, 0x5e55f000 + offset) // Avenue Ends
+      add(sam~CS & (Tla3~WE).projectLeft, 0x5e650000 + offset)  // Tla3 Thru
+      add(sam~CS & (Tla3~WE).projectRight, 0x5e650000 + offset) // Tla3 Thru
+      add(sam~NS & (Tla3~CE).projectLeft, 0x5e660000 + offset)  // Tla3 Ends
+      add(sam~NS & (Tla3~CE).projectRight, 0x5e660000 + offset) // Tla3 Ends
+      add(sam~CS & Ave2~WE, 0x5e651000 + offset)        // Ave2 Thru
+      add(sam~NS & Ave2~CE, 0x5e661000 + offset)        // Ave2 Ends
+      add(sam~CS & Ard3~WE, 0x5e652000 + offset)        // Ard3 Thru
+      add(sam~CS & Ard3~EW, 0x5e652080 + offset)        // Ard3 Thru
+      add(sam~NS & Ard3~CE, 0x5e662000 + offset)        // Ard3 Ends
+      add(sam~CS & Owr1~WE, 0x5e653000 + offset)        // Owr1 Thru
+      add(sam~NS & Owr1~CE, 0x5e663000 + offset)        // Owr1 Ends
+      add(sam~CS & Owr3~WE, 0x5e654000 + offset)        // Owr3 Thru
+      add(sam~NS & Owr3~CE, 0x5e664000 + offset)        // Owr3 Ends
+      add(sam~CS & Nrd4~WE, 0x5e655000 + offset)        // Nrd4 Thru
+      add(sam~NS & Nrd4~CE, 0x5e665000 + offset)        // Nrd4 Ends
+
+      add(sam~CN & (Tla5~EW).projectLeft,  0x5e656000 + offset) // Tla5 short T
+      add(sam~CN & (Tla5~EW).projectRight, 0x5e656000 + offset) // Tla5 short T
+      add(sam~CN & Owr4~EW, 0x5e657000 + offset)    // Owr4 short T
+      add(sam~CN & Owr5~EW, 0x5e658000 + offset)    // Owr5 short T
+      add(sam~CN & Rd4~EW,  0x5e659000 + offset)    // Rd4 short T
+      add(sam~CN & Rd6~EW,  0x5e65a000 + offset)    // Rd6 short T
+      add(sam~CN & Ave6~EW, 0x5e65b000 + offset)    // Ave6 short T
+
+      //Specialized OxO T-intersections
+      //1 SAM and 2 Cross Elbow
+      add(sam~(0,0,0,2) & Road~(2,2,0,0), 0x5e552000 + offset)
+      add(sam~(0,0,0,2) & Onewayroad~(2,2,0,0), 0x5e55b000 + offset)
+      add(sam~(0,0,2,0) & Avenue~(4,0,0,2), 0x5e560000 + offset)
+
+      //2 SAM and 1 Cross Elbow
+      add(sam~(2,2,0,0) & Road~(0,0,2,0), 0x5e553000 + offset)
+      add(sam~(2,2,0,0) & Onewayroad~(0,0,2,0), 0x5e55c000 + offset)
+
+      // OxD intersections
       add(sam~WE & Road~SE, 0x5e555000 + offset)                  // SAM x Road
       add(sam~WE & Onewayroad~SE, 0x5e55d000 + offset)            // SAM x Onewayroad
       add(sam~WC & Avenue~ES, 0x5e558000 + offset)                // SAM x Avenue Street-End Short
       add(sam~WE & Avenue~ES, 0x5e558080 + offset)                // SAM x Avenue +/Long-T
-	  add(sam~WC & Avenue~(0,0,+1,-3), 0x5e558000 + offset)       // SAM x Avenue Street-End Short
-	  add(sam~WE & Avenue~(0,0,+1,-3), 0x5e558080 + offset)       // SAM x Avenue
+      add(sam~WC & Avenue~(0,0,+1,-3), 0x5e558000 + offset)       // SAM x Avenue Street-End Short
+      add(sam~WE & Avenue~(0,0,+1,-3), 0x5e558080 + offset)       // SAM x Avenue
       add(sam~NS & Avenue~SharedDiagRight, 0x5e558089 + offset)   // SAM x Avenue-Shared Diag Tile
       add(sam~WE & Highway~ES, 0x5e53e000 + offset)               // SAM x Highway
       add(sam~WE & Highway~SharedDiagRight, 0x5e53e080 + offset)  // SAM x Highway-Shared Diag Tile
       add(sam~NS & Rail~EN, 0x5e512000 + offset)                  // SAM-Rail
       add(sam~NS & Lightrail~SE, 0x5e518000 + offset)             // SAM x Lightrail
       add(sam~NS & Monorail~SE, 0x5e51c000 + offset)              // SAM x Monorail
-      add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
+      // add(sam~NS & Str~EN, 0x5e512009 + offset)                   // SAM x STR
       // add(sam~NS & L1Dtr~EN, IID + offset) // SAM x L1 DTR
       // add(sam~NS & L2Dtr~EN, IID + offset) // SAM x L2 DTR
       add(sam~NS & Glr1~EN, 0x5e539000 + offset)                  // SAM x GLR 1
@@ -204,12 +246,11 @@ class SamResolver extends IdResolver {
       add(sam~WE & Owr1~ES, 0x5e673000 + offset) // SAM x OWR-1
       add(sam~WE & Owr3~SE, 0x5e674000 + offset) // SAM x OWR-3
       add(sam~WE & Nrd4~SE, 0x5e675000 + offset) // SAM x NRD-4
-	  add(sam~WE & Road~CWN, 0x5e55e000 + offset) // SAM-Thru x Road-End T
-	  add(sam~WE & Onewayroad~CWN, 0x5e561000 + offset) // SAM-Thru x Onewayroad-End T
-	  add(sam~WE & Dirtroad~SE, 0x5e610000 + offset) // SAM x RHW-2
-	  
+      add(sam~WE & Road~CWN, 0x5e55e000 + offset) // SAM-Thru x Road-End T
+      add(sam~WE & Onewayroad~CWN, 0x5e561000 + offset) // SAM-Thru x Onewayroad-End T
+      add(sam~WE & Dirtroad~SE, 0x5e610000 + offset) // SAM x RHW-2
 
-      //DxO Intersections		
+      //DxO Intersections
       add(sam~SE & Road~NS, 0x5e582000 + offset)        // SAM x Road
       add(sam~SE & Onewayroad~NS, 0x5e58c000 + offset)  // SAM x Onewayroad
       add(sam~SE & Avenue~SN,	0x5e587000 + offset)      // SAM x Avenue 1
@@ -219,7 +260,7 @@ class SamResolver extends IdResolver {
       add(sam~NW & Rail~NS, 0x5e514000 + offset)        // SAM-Rail
       add(sam~SE & Lightrail~NS, 0x5e517000 + offset)   // SAM x Lightrail
       add(sam~SE & Monorail~NS, 0x5e51b000 + offset)    // SAM x Monorail
-      add(sam~NW & Str~NS, 0x5e514009 + offset)         // SAM x STR
+      // add(sam~NW & Str~NS, 0x5e514009 + offset)         // SAM x STR
       // add(sam~NW & L1Dtr~NS, IID + offset) // SAM x L1 DTR
       // add(sam~NW & L2Dtr~NS, IID + offset) // SAM x L2 DTR
       add(sam~NW & Glr1~NS, 0x5e53a000 + offset)        // SAM x GLR 1
@@ -234,28 +275,28 @@ class SamResolver extends IdResolver {
       add(sam~SE & Owr1~NS, 0x5e683000 + offset)  // SAM x Owr1
       add(sam~SE & Owr3~NS, 0x5e684000 + offset)  // SAM x Owr3
       add(sam~SE & Nrd4~NS, 0x5e685000 + offset)  // SAM x Nrd4
-	  
+
       add(sam~WS & Dirtroad~NS, 0x5e620000 + offset)  // SAM x Rhw2
-	  
-	  add(Road~NS & sam~CSE, 0x5e581000 + offset) // SAM-End Road T-int
-	  add(Onewayroad~NS & sam~CSE, 0x5e58b000 + offset) // SAM-End OWR T-int
 
-	  add(Road~CS & sam~NE, 0x5e583000 + offset) // SAM-Thru Road T-int
-	  add(Onewayroad~CS & sam~NE, 0x5e58d000 + offset) // SAM-Thru OWR T-int
+      add(Road~NS & sam~CSE, 0x5e581000 + offset) // SAM-End Road T-int
+      add(Onewayroad~NS & sam~CSE, 0x5e58b000 + offset) // SAM-End OWR T-int
 
-		
-      //DxD Intersections		
+      add(Road~CS & sam~NE, 0x5e583000 + offset) // SAM-Thru Road T-int
+      add(Onewayroad~CS & sam~NE, 0x5e58d000 + offset) // SAM-Thru OWR T-int
+
+
+      //DxD Intersections
       add(sam~EN & Road~SE, 0x5e584000 + offset)                  // SAM x Road
       add(sam~EN & Onewayroad~SE, 0x5e58e000 + offset)            // SAM x Onewayroad
       add(sam~ES & Avenue~NE,	0x5e589000 + offset)                // SAM x Avenue
-	  add(sam~ES & Avenue~(0,+1,-3,0),	0x5e589000 + offset)                // SAM x Avenue
+      add(sam~ES & Avenue~(0,+1,-3,0),	0x5e589000 + offset)                // SAM x Avenue
       add(sam~SE & Avenue~SharedDiagLeft, 0x5e58a000 + offset)    // SAM x Avenue-Shared Diag Tile
-      add(sam~EN & Highway~SE, 0x5e53f000 + offset)               // SAM x Highway 1	
-      add(sam~SW & Highway~SharedDiagRight, 0x5e53f080 + offset)  // SAM x Highway 2	
+      add(sam~EN & Highway~SE, 0x5e53f000 + offset)               // SAM x Highway 1
+      add(sam~SW & Highway~SharedDiagRight, 0x5e53f080 + offset)  // SAM x Highway 2
       add(sam~NW & Rail~EN, 0x5e515000 + offset)                  // SAM-Rail
       add(sam~SW & Lightrail~ES, 0x5e519000 + offset)             // SAM x Lightrail
       add(sam~SW & Monorail~ES, 0x5e51d000 + offset)              // SAM x Monorail
-      add(sam~NW & Str~EN, 0x5e515009 + offset)                   // SAM x STR
+      // add(sam~NW & Str~EN, 0x5e515009 + offset)                   // SAM x STR
       // add(sam~NW & L1Dtr~EN, IID + offset) // SAM x L1 DTR
       // add(sam~NW & L2Dtr~EN, IID + offset) // SAM x L2 DTR
       add(sam~NW & Glr1~EN, 0x5e53b000 + offset)                  // SAM x GLR 1
@@ -270,45 +311,44 @@ class SamResolver extends IdResolver {
       add(sam~EN & Owr1~SE, 0x5e6a3000 + offset)                  // SAM x Owr1
       add(sam~EN & Owr3~SE, 0x5e6a4000 + offset)                  // SAM x Owr3
       add(sam~EN & Nrd4~SE, 0x5e6a5000 + offset)                  // SAM x Nrd4
-	  
-	  add(sam~WS & Dirtroad~SE, 0x5e630000 + offset)                  // SAM x Rhw2
 
-	  add(Road~ES & sam~CEN, 0x5e584000 + offset)				// temporary IID
-	  add(Onewayroad~ES & sam~CEN, 0x5e58e000 + offset)			// temporary IID
-	  
-	  add(sam~NE & Road~CES, 0x5e585000 + offset)				// SAM x Road (SAM Thru)
-	  add(sam~NE & Onewayroad~CES, 0x5e58f000 + offset)			// SAM x Onewayroad (SAM Thru)
-	  
-	  //Transitions
-	  //Ortho
-	  add(sam~CS & Road~NC, 0x5e54a000 + offset)
-	  add(sam~CS & Onewayroad~NC, 0x5e549000 + offset)
-	  add(sam~(0,0,0,2) & Avenue~(0,2,4,0), 0x5e54c000 + offset)
+      add(sam~WS & Dirtroad~SE, 0x5e630000 + offset)                  // SAM x Rhw2
 
-	  //Diag
-	  add(sam~CSE & Road~CES, 0x5e580000 + offset)
-	  // add(sam~CSE & Onewayroad~CES, NoIID + offset)
+      add(Road~ES & sam~CEN, 0x5e584000 + offset)				// temporary IID
+      add(Onewayroad~ES & sam~CEN, 0x5e58e000 + offset)			// temporary IID
 
-	  //Bending
-	  add(sam~NC & Road~CE, 0x5e591000 + offset)
-	  add(sam~NC & Onewayroad~CE, 0x5e592000 + offset)
-	  add(sam~WC & Road~CWN, 0x5e593000 + offset)
-	  add(sam~CE & Road~CWN, 0x5e594000 + offset)
-	  add(sam~WC & Onewayroad~CWN, 0x5e595000 + offset)
-	  add(sam~CE & Onewayroad~CWN, 0x5e596000 + offset)
+      add(sam~NE & Road~CES, 0x5e585000 + offset)				// SAM x Road (SAM Thru)
+      add(sam~NE & Onewayroad~CES, 0x5e58f000 + offset)			// SAM x Onewayroad (SAM Thru)
 
-	  //Street Roundabouts
-	  add(sam~(0,0,102,102), 0x5e5a1000 + offset) //Base
-	  add(sam~(0,2,102,102), 0x5e5a5000 + offset) //Base with Orth Street connection
-	  // add(sam~(0,13,102,102), 0x5e5a1000 + offset) //Base with Diag Street connection (does not exist yet)
+      //Transitions
+      //Ortho
+      add(sam~CS & Road~NC, 0x5e54a000 + offset)
+      add(sam~CS & Onewayroad~NC, 0x5e549000 + offset)
+      add(sam~(0,0,0,2) & Avenue~(0,2,4,0), 0x5e54c000 + offset)
 
-	  add(Road~(0,2,0,0) & sam~(0,0,102,102), 0x5e5a0000 + offset) //Base with Orth Road connection
-	  // add(Road~(0,13,0,0) & sam~(0,0,102,102), 0x5F084900) //Base with Diag Road connection (does not exist yet)
-	  add(Onewayroad~(0,2,0,0) & sam~(0,0,102,102), 0x5e5a9000 + offset) //Base with Orth Onewayroad connection
-	  // add(Onewayroad~(0,13,0,0) & sam~(0,0,102,102), 0x5F984900) //Base with Diag Onewayroad connection (does not exist yet)
+      //Diag
+      add(sam~CSE & Road~CES, 0x5e580000 + offset)
+      // add(sam~CSE & Onewayroad~CES, NoIID + offset)
 
+      //Bending
+      add(sam~NC & Road~CE, 0x5e591000 + offset)
+      add(sam~NC & Onewayroad~CE, 0x5e592000 + offset)
+      add(sam~WC & Road~CWN, 0x5e593000 + offset)
+      add(sam~CE & Road~CWN, 0x5e594000 + offset)
+      add(sam~WC & Onewayroad~CWN, 0x5e595000 + offset)
+      add(sam~CE & Onewayroad~CWN, 0x5e596000 + offset)
 
-		}
+      //Street Roundabouts
+      add(sam~(0,0,102,102),                 0x5e5a1000 + offset) // base - no connections
+      add(sam~(0,0,102,102) & sam~NC,        0x5e5a5000 + offset) // orth sam connection
+      add(sam~(0,0,102,102) & Road~NC,       0x5e5a0000 + offset) // orth road connection
+      add(sam~(0,0,102,102) & Onewayroad~NC, 0x5e5a9000 + offset) // orth onewayroad connection
+
+      // add(sam~(0,0,102,102) & sam~(0,11,0,0),       NoIID + offset) // diag sam connection
+      // add(sam~(0,0,102,102) & Road~(0,11,0,0),      NoIID + offset) // diag road connection
+      // add(sam~(0,0,102,102) & Onewayoad~(0,11,0,0), NoIID + offset) // diag onewayroad connection
+
+    }
     map
   }
 
