@@ -32,6 +32,7 @@ class RoundaboutGenerator(var context: RuleTransducer.Context) extends RuleGener
 
     def makeRulesToDiagBlend(t: Tile): Unit = {
       // adds rule to override diag network into a orth-diag blend tile
+      // only works for tiles with diag connections on the north edge
       for (seg <- t.segs) {
         if (seg == Street~CEN) {
           Rules += t * R1F0 | Street~WN | % | Street~(11,3,0,0)
@@ -51,8 +52,8 @@ class RoundaboutGenerator(var context: RuleTransducer.Context) extends RuleGener
         if (seg == Onewayroad~CWN) {
           Rules += t * R1F0 | Onewayroad~WS | % | Onewayroad~(13,0,0,1)
         }
-      createRules()
       }
+      createRules()
     }
 
     // roundabout tiles that are defined in the road INRUL
@@ -162,9 +163,10 @@ class RoundaboutGenerator(var context: RuleTransducer.Context) extends RuleGener
     Rules += Mis~WE~EW | RdRndbt~(0,0,-2,2) & Dirtroad~(2,2,0,0) | % | RdRndbt~(0,0,-2,2) & Dirtroad~NC & Mis~WC~CW
 
     // special three network stub-stub overide (RdRndbt + Onewayroad + Street)
+    // note: this rule makes it possible for 0x09004b00,1,0 to appear next to 0x09004b00,3,0
     Rules ++= stabilize(Onewayroad~WC | RdRndbt~(0,0,-2,2) & Street~NC | Onewayroad~WE | RdRndbt~(0,0,-2,2) & Street~NC & Onewayroad~WC)
 
-
+    createRules()
   }
 
   def start(): Unit = {
