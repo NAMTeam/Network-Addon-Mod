@@ -318,7 +318,7 @@ class MiscResolver extends IdResolver {
     // Road roundabouts
     add(RdRndbt~(0,2,0,-2),                       0x5F06BC80) // surrogate tile "straight roundabout"
     add(RdRndbt~(0,0,-2,2),                       0x5F06BC00) // INRUL
-    add(RdRndbt~(0,0,-2,2) & Road~(102,102,0,0),  0x5F06BD00) // INRUL
+    add(RdRndbt~(0,0,-2,2) & RdRndbt~(2,-2,0,0),  0x5F06BD00) // INRUL
     add(RdRndbt~(0,0,-2,2) & Road~NC,             0x5F06BA00) // INRUL
     add(RdRndbt~(0,0,-2,2) & Road~(0,1,0,0),      0x5F06BE00) // INRUL
     add(RdRndbt~(0,0,-2,2) & Road~(0,3,0,0),      0x5F06B800) // INRUL

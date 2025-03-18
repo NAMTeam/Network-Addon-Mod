@@ -64,7 +64,7 @@ class RoundaboutGenerator(var context: RuleTransducer.Context) extends RuleGener
       RdRndbt~(0,0,-2,2) & Road~(0,3,0,0),            // road diag right
       RdRndbt~(0,0,-2,2) & Road~WC & Road~(0,3,0,0),  // road orth + road diag right
       RdRndbt~(0,0,-2,2) & Road~WC & Road~(0,1,0,0),  // road orth + road diag left
-      RdRndbt~(0,0,-2,2) & Road~(102,102,0,0),        // overlapping roundabouts
+      RdRndbt~(0,0,-2,2) & RdRndbt~(2,-2,0,0),        // overlapping roundabouts
     )
     // inrul tile override of surrogate tile
     for (t <- inrulTiles){
