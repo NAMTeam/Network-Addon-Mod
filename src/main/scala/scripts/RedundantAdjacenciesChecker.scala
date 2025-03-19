@@ -1,23 +1,29 @@
 package com.sc4nam.scripts
 
-import java.nio.file.{Files, Paths, Path}
 import com.sc4nam.module._
 import io.github.memo33.metarules.meta.{RotFlip, Rule, EquivRule, IdTile}
 import RotFlip._
 import syntax.IdTile
-import SanityChecker.{fileEndsWithNewline, linePatternIncludingNewlines}
-import Rul2Model.{iterateRulFiles, parseRuleWithRestrictedDriveside, Rhd, Lhd, RhdAndLhd, drivesideOfFile, applyRule}
+import Rul2Model.{Driveside, Rhd, Lhd, RhdAndLhd}
 
 /** Run with `SBT_OPTS="-Xmx2G" sbt "runMain com.sc4nam.scripts.RedundantAdjacenciesChecker"`.
   * Note that this increases the heap size for more memory.
   * Takes about 4 minutes.
   */
-object RedundantAdjacenciesChecker {
+object RedundantAdjacenciesChecker extends Rul2Checker {
+
+  type Failure = Unit
+
+  val allTags = Seq("redundant_adjacency")
+
+  val tagOf: Driveside => String = _ => allTags.head
+
+  private var rul2: Rul2Model = null
 
   /** Scans the Controller/RUL2/ folder for adjancy RUL2 code that is
     * redundant with the DLL RUL2 engine.
     *
-    * The respective lines are commented out and tagged as "; redundant-adjacency".
+    * The respective lines are tagged as "; redundant-adjacency".
     *
     * Make sure all your changes to files are committed to git beforehand,
     * as this modifies files in place.
@@ -26,46 +32,27 @@ object RedundantAdjacenciesChecker {
     * redundant code.
     */
   def main(args: Array[String]): Unit = {
-    val rul2 = Rul2Model.load(Paths.get("Controller/RUL2"))
-    checkRedundantAdjacencies(rul2)
+    rul2 = Rul2Model.load(rul2Directory)
+    LOGGER.info("Searching for redundant adjacencies in RUL2 code")
+    runChecks(updateMode = true)
   }
 
-  def checkRedundantAdjacencies(rul2: Rul2Model): Unit = {
-    LOGGER.info("Searching for redundant adjacencies in RUL2 code")
-    iterateRulFiles(Paths.get("Controller/RUL2")).foreach { path =>
-        val drivesideFile = drivesideOfFile(path)
-        val tmpPath = path.resolveSibling(path.getFileName().toString() + ".tmp")
-        val endsWithNewline = fileEndsWithNewline(path)  // attempt to preserve missing newlines at end of files to avoid noise
-        scala.util.Using.resources(
-          new java.util.Scanner(path.toFile(), "UTF-8").useDelimiter(linePatternIncludingNewlines),
-          new java.io.PrintWriter(tmpPath.toFile(), "UTF-8")
-        ) { (lineScanner, printer) =>
-          while (lineScanner.hasNext()) {
-            val line = lineScanner.next()
+  def failureToString(rule: Rule[IdTile], line: String, failure: Failure): String =
+    s"redundant adjacency: $line"
 
-            val redundant =
-              parseRuleWithRestrictedDriveside(line, drivesideFile) match {
-                case Some((rule, Rhd)) => isRedundantAdjacency(rule, rul2.lookupRuleRhd)
-                case Some((rule, Lhd)) => isRedundantAdjacency(rule, rul2.lookupRuleLhd)
-                case Some((rule, RhdAndLhd)) =>
-                  val b1 = isRedundantAdjacency(rule, rul2.lookupRuleRhd)
-                  val b2 = isRedundantAdjacency(rule, rul2.lookupRuleLhd)
-                  if (b1 != b2) {
-                    println(s"Rule is redundant for ${if (b1) "RHD" else "LHD"} only: $rule")  // hopefully this rarely happens
-                  }
-                  b1 && b2
-                case None => false  // comments are not redundant
-              }
-
-            if (redundant) {
-              printer.println(s";${line.stripLineEnd}; redundant_adjacency")  // comments out the line
-            } else {
-              printer.print(line)  // preserving original linebreaks
-            }
-          }
+  def processRule(rule: Rule[IdTile], driveside: Driveside, line: String): Option[(Failure, Driveside)] = {
+    val redundant = driveside match {
+      case Rhd => isRedundantAdjacency(rule, rul2.lookupRuleRhd)
+      case Lhd => isRedundantAdjacency(rule, rul2.lookupRuleLhd)
+      case RhdAndLhd =>
+        val b1 = isRedundantAdjacency(rule, rul2.lookupRuleRhd)
+        val b2 = isRedundantAdjacency(rule, rul2.lookupRuleLhd)
+        if (b1 != b2) {
+          println(s"Rule is redundant for ${if (b1) "RHD" else "LHD"} only: $rule")  // hopefully this rarely happens
         }
-        Files.move(tmpPath, path, java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+        b1 && b2
     }
+    if (redundant) Some(((), driveside)) else None
   }
 
   val orthogonalSurrogateTiles = Seq(

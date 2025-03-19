@@ -16,6 +16,8 @@ abstract class Rul2Checker {
 
   type Failure
 
+  val rul2Directory = Paths.get("Controller/RUL2")
+
   val allTags: Seq[String]
 
   val tagOf: Driveside => String
@@ -29,9 +31,8 @@ abstract class Rul2Checker {
     var removed = 0
     var added = 0
 
-    val directory = Paths.get("Controller/RUL2")
-    LOGGER.info(s"""Loading all RUL2 code for RHD and LHD from "$directory" and running checks""")
-    iterateRulFiles(directory).foreach { path =>
+    LOGGER.info(s"""Loading all RUL2 code for RHD and LHD from "$rul2Directory" and running checks""")
+    iterateRulFiles(rul2Directory).foreach { path =>
       val drivesideFile = drivesideOfFile(path)
 
       def findFailure(line: String): Option[(Rule[IdTile], Driveside, Failure)] = {
