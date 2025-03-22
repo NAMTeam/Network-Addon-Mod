@@ -616,7 +616,7 @@ class RealRailwayResolver extends IdResolver {
     add(Sam8~WN   & Str~NS, 0x5d3fa000)
     add(Sam9~WN   & Str~NS, 0x5d3fe000)
     add(Sam10~WN  & Str~NS, 0x5d3d2000)
-    add(Sam11~WN  & Str~NS, 0x5e511b09) // TODO: currently the only SAM set with a SAM IID for this crossing
+    add(Sam11~WN  & Str~NS, 0x5e514b09) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     // -- Road L1 --
     // -- Road L2 --

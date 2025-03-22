@@ -33,6 +33,8 @@ trait SingleSegResolver {
     fill(CS, 0x0100, false) // orth stub
     fill(ES, 0x0200, false) // diag 1
     fill(SE, 0x0900, false) // diag 2
+    fill(SWC, 0x0300, false) // diag stub 1
+    fill(CWS, 0x0a00, false) // diag stub 2
     fill((0,-2,0,+11), 0x0400, false) // 45 curve 1
     fill((0,0,-1,+13), 0x0500, true) // 45 curve 1
     fill((0,+2,0,-11), 0x0b00, false) // 45 curve 2
@@ -48,6 +50,8 @@ trait SingleSegResolver {
     fill(ES, 0x0200, false) // diag 1
     fill(SE, 0x0300, false) // diag 2
     fill(SharedDiagRight, 0x0300, false) // shared diag
+    // fill(SWC, 0x0400, false) // diag stub 1 (doesn't cover multi-tile NWM networks)
+    // fill(CWS, 0x0500, false) // diag stub 2 (doesn't cover multi-tile NWM networks)
     fill((0,+2,0,-11), 0x0600, false) // curve assembly..
     fill((0,+111,0,-11), 0x0600, false)
     fill((0,-2,0,+11), 0x0700, false)

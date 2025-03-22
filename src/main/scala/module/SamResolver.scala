@@ -212,7 +212,7 @@ class SamResolver extends IdResolver {
       //1 SAM and 2 Cross Elbow
       add(sam~(0,0,0,2) & Road~(2,2,0,0), 0x5e552000 + offset)
       add(sam~(0,0,0,2) & Onewayroad~(2,2,0,0), 0x5e55b000 + offset)
-      add(sam~(0,0,2,0) & Avenue~(4,0,0,2), 0x5e560000 + offset)
+      add(sam~(0,0,2,0) & Avenue~SC, 0x5e560000 + offset)
 
       //2 SAM and 1 Cross Elbow
       add(sam~(2,2,0,0) & Road~(0,0,2,0), 0x5e553000 + offset)
@@ -223,8 +223,6 @@ class SamResolver extends IdResolver {
       add(sam~WE & Onewayroad~SE, 0x5e55d000 + offset)            // SAM x Onewayroad
       add(sam~WC & Avenue~ES, 0x5e558000 + offset)                // SAM x Avenue Street-End Short
       add(sam~WE & Avenue~ES, 0x5e558080 + offset)                // SAM x Avenue +/Long-T
-      add(sam~WC & Avenue~(0,0,+1,-3), 0x5e558000 + offset)       // SAM x Avenue Street-End Short
-      add(sam~WE & Avenue~(0,0,+1,-3), 0x5e558080 + offset)       // SAM x Avenue
       add(sam~NS & Avenue~SharedDiagRight, 0x5e558089 + offset)   // SAM x Avenue-Shared Diag Tile
       add(sam~WE & Highway~ES, 0x5e53e000 + offset)               // SAM x Highway
       add(sam~WE & Highway~SharedDiagRight, 0x5e53e080 + offset)  // SAM x Highway-Shared Diag Tile
@@ -289,7 +287,6 @@ class SamResolver extends IdResolver {
       add(sam~EN & Road~SE, 0x5e584000 + offset)                  // SAM x Road
       add(sam~EN & Onewayroad~SE, 0x5e58e000 + offset)            // SAM x Onewayroad
       add(sam~ES & Avenue~NE,	0x5e589000 + offset)                // SAM x Avenue
-      add(sam~ES & Avenue~(0,+1,-3,0),	0x5e589000 + offset)                // SAM x Avenue
       add(sam~SE & Avenue~SharedDiagLeft, 0x5e58a000 + offset)    // SAM x Avenue-Shared Diag Tile
       add(sam~EN & Highway~SE, 0x5e53f000 + offset)               // SAM x Highway 1
       add(sam~SW & Highway~SharedDiagRight, 0x5e53f080 + offset)  // SAM x Highway 2
@@ -324,7 +321,7 @@ class SamResolver extends IdResolver {
       //Ortho
       add(sam~CS & Road~NC, 0x5e54a000 + offset)
       add(sam~CS & Onewayroad~NC, 0x5e549000 + offset)
-      add(sam~(0,0,0,2) & Avenue~(0,2,4,0), 0x5e54c000 + offset)
+      add(sam~(0,0,0,2) & Avenue~NC, 0x5e54c000 + offset)
 
       //Diag
       add(sam~CSE & Road~CES, 0x5e580000 + offset)

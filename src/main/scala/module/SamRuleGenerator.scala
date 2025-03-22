@@ -631,9 +631,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         Rules ++= reflections((Street ~> sam)~(2,0,2,2) & Avenue~NC | (Street ~> sam)~WE & Avenue~CN)
         Rules += sam~(2,0,2,2) & Avenue~NC | (Street ~> sam)~(2,0,2,2) & Avenue~CN
         // Avenue 90 degree transition to SAM
-        Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~(0,2,4,0)
+        Rules += sam~WE | (Street ~> sam)~(2,0,0,0) & Avenue~NC
         // avenue orthogonal transition to SAM
-        Rules += sam~WE | (Street ~> sam)~WC & Avenue~(0,0,2,4)
+        Rules += sam~WE | (Street ~> sam)~WC & Avenue~EC
 
       // standard intersections with other networks
       for (minor <- CrossNetworks) {
@@ -643,15 +643,15 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~WE | (Street ~> sam)~WE & minor~NS~SN          // OxO from orth
           Rules += sam~WE & minor~NS~SN | (Street ~> sam)~WE          // OxO continue
 
-          // OxD (to do: consider asymmetrical)
+          // OxD
           Rules += sam~WE | (Street ~> sam)~WE & minor~ES~SE                // OxD
-          Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & minor~WN~NW  // OxD Tile 2
-          Rules += sam~WE & minor~WN~NW | (Street ~> sam)~WE                // OxD continue
-          if (minor.base.isDefined) for (minBase <- minor.base) {
+          Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & minor~NW~WN  // OxD Tile 2
+          Rules += sam~WE & minor~NW~WN | (Street ~> sam)~WE                // OxD continue
+          for (minBase <- minor.base) {
             // stability when minor is an override network
-            Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & (minBase ~> minor)~WN~NW
-            Rules += sam~WE & (minBase ~> minor)~ES~SE | (Street ~> sam)~WE & minor~WN~NW
-            Rules += sam~WE & minor~ES~SE | sam~WE & (minBase ~> minor)~WN~NW
+            Rules += sam~WE & minor~ES~SE | (Street ~> sam)~WE & (minBase ~> minor)~NW~WN
+            Rules += sam~WE & (minBase ~> minor)~ES~SE | (Street ~> sam)~WE & minor~NW~WN
+            Rules += sam~WE & minor~ES~SE | sam~WE & (minBase ~> minor)~NW~WN
           }
 
           // OxD T
@@ -675,19 +675,19 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
               val crossbucks = IdTile(0x5f502a00, R3F1, noSymmetries)
               Rules += sam~ES | crossbucks | % | sam~NW                     // from diag
               Rules += sam~NE & minor~NS | crossbucks * R3F0 | % | sam~WS   // to diag
-          }
+            }
 
             // Rules += sam~ES & minor~WE | minor~WN | % | sam~WC & minor~WN       // DxO T
 
             // DxD
-            Rules += sam~ES | (Street ~> sam)~NW & minor~EN             // DxD
-            Rules += sam~SE & minor~EN | (Street ~> sam)~NW & minor~WS  // DxD Tile 2
-            Rules += sam~SE & minor~WS | (Street ~> sam)~NW             // DxD continue
-            if (minor.base.isDefined) for (minBase <- minor.base) {
+            Rules += sam~ES | (Street ~> sam)~NW & minor~NE~EN                // DxD
+            Rules += sam~SE & minor~NE~EN | (Street ~> sam)~NW & minor~WS~SW  // DxD Tile 2
+            Rules += sam~SE & minor~WS~SW | (Street ~> sam)~NW                // DxD continue
+            for (minBase <- minor.base) {
               // stability when minor is an override network
-              Rules += sam~SE & minor~EN | (Street ~> sam)~NW & (minBase ~> minor)~WS
-              Rules += sam~SE & (minBase ~> minor)~EN | (Street ~> sam)~NW & minor~WS
-              Rules += sam~SE & minor~EN | sam~NW & (minBase ~> minor)~WS
+              Rules += sam~SE & minor~NE~EN | (Street ~> sam)~NW & (minBase ~> minor)~WS~SW
+              Rules += sam~SE & (minBase ~> minor)~NE~EN | (Street ~> sam)~NW & minor~WS~SW
+              Rules += sam~SE & minor~NE~EN | sam~NW & (minBase ~> minor)~WS~SW
             }
           }
 
@@ -728,8 +728,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~WE | (Street ~> sam)~WC & minor~ES                           // OxD Short-T
             Rules += sam~WE | (Street ~> sam)~WE & minor~ES                           // OxD start
             Rules += sam~WE & minor~ES | (Street ~> sam)~WE & minor~SharedDiagRight   // OxD middle
-            Rules += sam~WE & minor~SharedDiagRight | (Street ~> sam)~WE & minor~NW   // OxD end
-            Rules += sam~WE & minor~NW | (Street ~> sam)~WE                           // OxD continue
+            Rules += sam~WE & minor~SharedDiagRight | (Street ~> sam)~WE & minor~WN   // OxD end
+            Rules += sam~WE & minor~WN | (Street ~> sam)~WE                           // OxD continue
 
             // DxO
             Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO start
