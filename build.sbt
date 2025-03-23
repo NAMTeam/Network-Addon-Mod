@@ -70,4 +70,4 @@ libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1"
 
 libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0"
 
-libraryDependencies += "io.github.memo33" %% "metarules" % "0.6.0"
+libraryDependencies += "io.github.memo33" %% "metarules" % "0.6.1"

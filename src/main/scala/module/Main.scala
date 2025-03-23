@@ -25,7 +25,7 @@ abstract class AbstractMain {
   lazy val resolveSafely: IdResolver = new PartialFunction[Tile, IdTile] {
     def isDefinedAt(tile: Tile) = resolve.isDefinedAt(tile)
     def apply(tile: Tile) = try resolve.apply(tile) catch {
-      case e @ (_: java.util.NoSuchElementException | _: MatchError) =>
+      case scala.util.control.NonFatal(e) =>
         throw new IllegalArgumentException(s"ID resolution failed for tile $tile", e)
     }
   }
@@ -39,7 +39,11 @@ abstract class AbstractMain {
         start(file, cache)
       }
     } else {
-      val context = RuleTransducer.Context(resolveSafely, tileOrientationCache, MirrorVariants.preprocessor)
+      val context = RuleTransducer.Context(
+        resolve,  // resolveSafely is not needed here as RuleGenerator and RuleTransducer wrap exceptions in ResolutionFailed exceptions anyway
+        tileOrientationCache,
+        MirrorVariants.preprocessor,
+      )
       val gen = generator(context)
       gen.start()
       // TODO to be revised, later, in order to make more efficient
@@ -47,7 +51,7 @@ abstract class AbstractMain {
         printer.println(";This file was generated automatically. DO NOT EDIT!")
         val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {
-          printer.println(s"${rule(0)},${rule(1)}=${rule(2)},${rule(3)}")
+          printer.println(rule.toRul2String)
         }
       }
     }
