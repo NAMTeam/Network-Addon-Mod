@@ -47,7 +47,7 @@ def runMainWithJLogger(main: String) = Def.inputTask {
     mainClass = if (main == null) args(0) else main,
     classpath = (Compile / fullClasspath).value.files,
     log = wrapWithJLogger(streams.value.log),
-    options = args)
+    options = if (main == null) args.drop(1) else args)
 }
 
 // Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
