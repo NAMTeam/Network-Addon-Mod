@@ -8,7 +8,7 @@
 
 ;By:			Lucario Boricua
 ;Created:		2022-jul-16
-;Last updated:	2023-mar-15, by Lucario Boricua
+;Last updated:	2025-mar-22, by Lucario Boricua
 ;Birth of the Pedestrian Revolution Mod
 
 ;-- MID-BLOCK CROSSWALKS --
@@ -28,9 +28,9 @@ AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
 
 ;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR ONEWAYROAD AND UNIDIRECTIONAL NWM --
 ;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
-;AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Single One-way (OWR-1,2,3)
-;AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Single One-way (OWR-1,2,3)
-;AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Single One-way (OWR-1,2,3)
+AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Single One-way (OWR-1,2,3)
+AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Single One-way (OWR-1,2,3)
+AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Single One-way (OWR-1,2,3)
 ;AddTypes     = 610C, 1610C, 2610C, 3610C ;Size 1 Double OWR (OWR-4,5,6)
 ;AddTypes     = 610D, 1610D, 2610D, 3610D ;Size 2 Double OWR (OWR-4,5,6)
 ;AddTypes     = 610E, 1610E, 2610E, 3610E ;Size 3 Double OWR (OWR-4,5,6)
@@ -473,4 +473,131 @@ CopyFrom    = 0x6108
 Rotate		= 2
 [HighwayIntersectionInfo_0x00036108]
 CopyFrom    = 0x6108
+Rotate		= 3
+
+;Mid-block Crosswalks - official deployment
+[HighwayIntersectionInfo_0x00006109]
+;Added by LucarioBoricua 2025-mar-22
+;Last updated:           2025-mar-23
+;Mid-block Crosswalk Size 1 One-way Road
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503285
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503285
+PreviewEffect = preview_midblock_owr_single_size1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - avenue: 0x02040200 road: 0x02000200
+;###RHD###CheckType = b - street: 0x01040104 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03040304 avenue: 0x02000204, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 5C503005
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016109]
+CopyFrom    = 0x6109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026109]
+CopyFrom    = 0x6109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036109]
+CopyFrom    = 0x6109
+Rotate		= 3
+
+;Mid-block Crosswalks - official deployment
+[HighwayIntersectionInfo_0x0000610A]
+;Added by LucarioBoricua 2025-mar-22
+;Last updated:           2025-mar-23
+;Mid-block Crosswalk Size 2 One-way Road
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503305
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503305
+PreviewEffect = preview_midblock_owr_single_size2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - avenue: 0x02000204 road: 0x02000200
+;###RHD###CheckType = b - street: 0x01020402 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x04020102 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = b - street: 0x03020402 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x04020302 avenue: 0x02040200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C503085
+Costs        = 0
+
+[HighwayIntersectionInfo_0x0001610A]
+CopyFrom    = 0x610A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610A]
+CopyFrom    = 0x610A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610A]
+CopyFrom    = 0x610A
+Rotate		= 3
+
+;Mid-block Crosswalks - official deployment
+[HighwayIntersectionInfo_0x0000610B]
+;Added by LucarioBoricua 2025-mar-22
+;Last updated:           2025-mar-23
+;Mid-block Crosswalk Size 3 One-way Road
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503505
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503505
+PreviewEffect = preview_midblock_owr_single_size3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.d.
+CellLayout=.^.
+
+CheckType = a - avenue: 0x02000204 road: 0x02000200
+;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040200, 0xffffffff optional
+
+;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C503185
+Costs        = 0
+
+[HighwayIntersectionInfo_0x0001610B]
+CopyFrom    = 0x610B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610B]
+CopyFrom    = 0x610B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610B]
+CopyFrom    = 0x610B
 Rotate		= 3
