@@ -8,7 +8,7 @@
 
 ;By:			Lucario Boricua
 ;Created:		2022-jul-16
-;Last updated:	2025-mar-22, by Lucario Boricua
+;Last updated:	2025-mar-26, by Lucario Boricua
 ;Birth of the Pedestrian Revolution Mod
 
 ;-- MID-BLOCK CROSSWALKS --
@@ -478,10 +478,10 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x00006109]
 ;Added by LucarioBoricua 2025-mar-22
-;Last updated:           2025-mar-23
+;Last updated:           2025-mar-26
 ;Mid-block Crosswalk Size 1 One-way Road
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503285
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503285
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503005
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503005
 PreviewEffect = preview_midblock_owr_single_size1
 
 CellLayout=...
@@ -500,7 +500,7 @@ ConsLayout=.^.
 
 AutoTileBase=	0x55387000
 ReplacementIntersection = 0, 0
-PlaceQueryID = 5C503005
+PlaceQueryID = 0x5C503005
 Costs        = 0
 
 [HighwayIntersectionInfo_0x00016109]
@@ -516,10 +516,10 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x0000610A]
 ;Added by LucarioBoricua 2025-mar-22
-;Last updated:           2025-mar-23
+;Last updated:           2025-mar-26
 ;Mid-block Crosswalk Size 2 One-way Road
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503305
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503305
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503085
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503085
 PreviewEffect = preview_midblock_owr_single_size2
 
 CellLayout=...
@@ -558,31 +558,26 @@ Rotate		= 3
 ;Mid-block Crosswalks - official deployment
 [HighwayIntersectionInfo_0x0000610B]
 ;Added by LucarioBoricua 2025-mar-22
-;Last updated:           2025-mar-23
+;Last updated:           2025-mar-26
 ;Mid-block Crosswalk Size 3 One-way Road
-;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503505
-;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503505
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C503185
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C503185
 PreviewEffect = preview_midblock_owr_single_size3
 
 CellLayout=...
 CellLayout=.a<
 CellLayout=.b.
 CellLayout=.c.
-CellLayout=.d.
 CellLayout=.^.
 
 CheckType = a - avenue: 0x02000204 road: 0x02000200
 ;###RHD###CheckType = b - road: 0x01040404 avenue: 0x02040200, 0xffffffff optional
 ;###RHD###CheckType = c - street: 0x01020102 avenue: 0x02040200, 0xffffffff optional
-;###RHD###CheckType = d - road: 0x04040104 avenue: 0x02040200, 0xffffffff optional
-
 ;###LHD###CheckType = b - road: 0x03040404 avenue: 0x02040200, 0xffffffff optional
 ;###LHD###CheckType = c - street: 0x03020302 avenue: 0x02040200, 0xffffffff optional
-;###LHD###CheckType = d - road: 0x04040304 avenue: 0x02040200, 0xffffffff optional
 
 ConsLayout=...
 ConsLayout=.+<
-ConsLayout=...
 ConsLayout=...
 ConsLayout=...
 ConsLayout=.^.
