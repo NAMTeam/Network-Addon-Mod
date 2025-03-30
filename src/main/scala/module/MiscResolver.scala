@@ -57,29 +57,29 @@ class MiscResolver extends IdResolver {
     add(L2Road      ~NS, 0x5c030000); add(L2Road      ~ES, 0x5c030200)
     add(L2Onewayroad~NS, 0x5c040000); add(L2Onewayroad~ES, 0x5c040200)
     add(L2Avenue    ~NS, 0x5c050000); add(L2Avenue    ~NE, 0x5c050200); add(L2Avenue~SharedDiagLeft, 0x5c050300)
-	
-	add(Sam1~NS, 0x5e54b100)
-	add(Sam2~NS, 0x5e54b200)
-	add(Sam3~NS, 0x5e54b300)
-	add(Sam4~NS, 0x5e54b400)
-	add(Sam5~NS, 0x5e54b500)
-	add(Sam6~NS, 0x5e54b600)
-	add(Sam7~NS, 0x5e54b700)
-	add(Sam8~NS, 0x5e54b800)
-	add(Sam9~NS, 0x5e54b900)
-	add(Sam10~NS, 0x5e54ba00)
-	add(Sam11~NS, 0x5e54bb00)
-	
-	add(Sam2~SE, 0x5e572200)
-	add(Sam3~SE, 0x5e572300)
-	add(Sam4~SE, 0x5e572400)
-	add(Sam5~SE, 0x5e572500)
-	add(Sam6~SE, 0x5e572600)
-	add(Sam7~SE, 0x5e572700)
-	add(Sam8~SE, 0x5e572800)
-	add(Sam9~SE, 0x5e572900)
-	add(Sam10~SE, 0x5e572a00)
-	add(Sam11~SE, 0x5e572b00)
+
+    add(Sam1~NS, 0x5e54b100)
+    add(Sam2~NS, 0x5e54b200)
+    add(Sam3~NS, 0x5e54b300)
+    add(Sam4~NS, 0x5e54b400)
+    add(Sam5~NS, 0x5e54b500)
+    add(Sam6~NS, 0x5e54b600)
+    add(Sam7~NS, 0x5e54b700)
+    add(Sam8~NS, 0x5e54b800)
+    add(Sam9~NS, 0x5e54b900)
+    add(Sam10~NS, 0x5e54ba00)
+    add(Sam11~NS, 0x5e54bb00)
+
+    add(Sam2~SE, 0x5e572200)
+    add(Sam3~SE, 0x5e572300)
+    add(Sam4~SE, 0x5e572400)
+    add(Sam5~SE, 0x5e572500)
+    add(Sam6~SE, 0x5e572600)
+    add(Sam7~SE, 0x5e572700)
+    add(Sam8~SE, 0x5e572800)
+    add(Sam9~SE, 0x5e572900)
+    add(Sam10~SE, 0x5e572a00)
+    add(Sam11~SE, 0x5e572b00)
 
     add(Road~CS, 0x00000300) // orth stub
     add(Road~(0,0,0,1), 0x00000200) // diag stub
@@ -89,24 +89,24 @@ class MiscResolver extends IdResolver {
     //add(Road~SW & Road~SharedDiagRight, 0x5f040600) // DxD shared-diag TODO create this
     //add(Road~SharedDiagRight & Road~SharedDiagLeft, 0x5f040700) // DxD shared-diag TODO create this
     add(Road~SW & Road~ES, 0x00000700) // DxD
-	add(Road~NS & Road~CE, 0x00005700) // OxO T
-	add(Road~NS & Road~CSE, 0x00006300) // OxD T
+    add(Road~NS & Road~CE, 0x00005700) // OxO T
+    add(Road~NS & Road~CSE, 0x00006300) // OxD T
     add(Road~(0,0,2,2), 0x00000F00) // 90 curve
     add(Road~(0,0,1,13), 0x00000C00) // curve
     add(Road~(0,2,0,11), 0x00004D00) // curve
     //add(Road~SharedDiagRight, 0x00014E00) // shared diag TODO check IID
     add(Road~(1,3,11,3), 0x00015600) // add(Road~(1,3,1,13), 0x5f040400) // shared-diag curve
     add(Road~(2,2,2,11), 0x00020900)
-	
-	add(Street~(0,0,0,0), 0x00000100)
+
+    add(Street~(0,0,0,0), 0x00000100)
     add(Street~CS, 0x05000300) // orth stub
     add(Street~(0,0,0,1), 0x5F500300) // diag stub
-	add(Street~(2,2,2,2), 0x05020700) // OxO alt
+    add(Street~(2,2,2,2), 0x05020700) // OxO alt
     add(Street~NS & Street~WE, 0x05020700) // OxO
     add(Street~NS & Street~NE, 0x5F500700) // OxD
     add(Street~SE & Street~EN, 0x5F500600) // DxD
-	add(Street~NS & Street~CE, 0x05005700) // OxO T
-	add(Street~NS & Street~CSE, 0x5F500A00) // OxD T (also has (0,2,11,2) alt implementation)
+    add(Street~NS & Street~CE, 0x05005700) // OxO T
+    add(Street~NS & Street~CSE, 0x5F500A00) // OxD T (also has (0,2,11,2) alt implementation)
     add(Street~CS & Street~NE, 0x5F504000) // DxO T1
     add(Street~CS & Street~WS, 0x5F504100) // DxO T2
     add(Street~SE & Street~CEN, 0x5F504200) // DxD T1
@@ -114,75 +114,74 @@ class MiscResolver extends IdResolver {
     add(Street~(0,0,2,2), 0x05000F00) // 90 curve
     add(Street~(0,0,1,13), 0x5F500400) // curve
     add(Street~(0,2,0,11), 0x5F500500) // curve
-	add(Street~(0,2,2,11), 0x5F500800)
-	add(Street~(0,2,2,13), 0x5F500900)
-	add(Street~(0,2,11,2), 0x5F500A00) // alt OxD T
-	add(Street~(2,2,2,11), 0x5F500B00)
-	add(Street~(0,11,2,13), 0x5F500C00)
-	add(Street~(0,0,2,11), 0x5F500D00)
-	add(Street~(0,2,11,11), 0x5F500E00)
-	add(Street~(0,2,13,13), 0x5F500F00)
-	add(Street~(0,11,0,13), 0x5F501100)
-	add(Street~(0,11,0,11), 0x5F501000)
-	add(Street~(0,0,2,13), 0x5F501D00)
-	add(Street~(0,0,11,13), 0x5F501400)
-	add(Street~(1,3,2,2), 0x5F501500)
-	add(Street~(1,3,2,11), 0x5F501600)
-	add(Street~(2,2,11,11), 0x5F501700)
-	add(Street~(2,11,2,11), 0x5F501800)
-	add(Street~(2,11,2,13), 0x5F501900)
-	add(Street~(2,11,11,11), 0x5F501A00)
-	add(Street~(11,0,13,2), 0x5F501B00)
-	// add(Street~(0,1,0,3), 0x5F501100)
-	add(Street~(1,1,1,1), 0x5F501E00)
-	add(Street~(3,0,3,3), 0x5F501300)
-	add(Street~(11,0,11,2), 0x5F501200)
-	//smaller wide-radius curves
-	//2x2 90
-	add(Street~(0,2,0,131), 0x5F593800)
-	add(Street~(143,0,0,141), 0x5F593900)
-	add(Street~(0,131,133,0), 0x5F593A00)
-	add(Street~(2,2,0,131), 0x5F593F00) // T-Intersection off outer tile
-	add(Street~(133,131,133,131), 0x5F593D00) // Diverter
-	add(Street~(133,0,0,131) & Street~(0,131,133,0), 0x5F593D00) // Diverter (alt)
-	add(Road~(133,0,0,131) & Street~(0,131,133,0), 0x5F093E00)   // Diverter street & road
-	//3x2 S
-	add(Street~(2,0,153,0), 0x5F594000)
-	add(Street~(153,0,0,161), 0x5F594100)
-	add(Street~(173,0,0,181), 0x5F594200)
-	add(Street~(2,2,153,0), 0x5F594300) //T-Intersection off outer tile
+    add(Street~(0,2,2,11), 0x5F500800)
+    add(Street~(0,2,2,13), 0x5F500900)
+    add(Street~(0,2,11,2), 0x5F500A00) // alt OxD T
+    add(Street~(2,2,2,11), 0x5F500B00)
+    add(Street~(0,11,2,13), 0x5F500C00)
+    add(Street~(0,0,2,11), 0x5F500D00)
+    add(Street~(0,2,11,11), 0x5F500E00)
+    add(Street~(0,2,13,13), 0x5F500F00)
+    add(Street~(0,11,0,13), 0x5F501100)
+    add(Street~(0,11,0,11), 0x5F501000)
+    add(Street~(0,0,2,13), 0x5F501D00)
+    add(Street~(0,0,11,13), 0x5F501400)
+    add(Street~(1,3,2,2), 0x5F501500)
+    add(Street~(1,3,2,11), 0x5F501600)
+    add(Street~(2,2,11,11), 0x5F501700)
+    add(Street~(2,11,2,11), 0x5F501800)
+    add(Street~(2,11,2,13), 0x5F501900)
+    add(Street~(2,11,11,11), 0x5F501A00)
+    add(Street~(11,0,13,2), 0x5F501B00)
+    // add(Street~(0,1,0,3), 0x5F501100)
+    add(Street~(1,1,1,1), 0x5F501E00)
+    add(Street~(3,0,3,3), 0x5F501300)
+    add(Street~(11,0,11,2), 0x5F501200)
+    //smaller wide-radius curves
+    //2x2 90
+    add(Street~(0,2,0,131), 0x5F593800)
+    add(Street~(143,0,0,141), 0x5F593900)
+    add(Street~(0,131,133,0), 0x5F593A00)
+    add(Street~(2,2,0,131), 0x5F593F00) // T-Intersection off outer tile
+    add(Street~(133,131,133,131), 0x5F593D00) // Diverter
+    add(Street~(133,0,0,131) & Street~(0,131,133,0), 0x5F593D00) // Diverter (alt)
+    add(Road~(133,0,0,131) & Street~(0,131,133,0), 0x5F093E00)   // Diverter street & road
+    //3x2 S
+    add(Street~(2,0,153,0), 0x5F594000)
+    add(Street~(153,0,0,161), 0x5F594100)
+    add(Street~(173,0,0,181), 0x5F594200)
+    add(Street~(2,2,153,0), 0x5F594300) //T-Intersection off outer tile
     // diagonal s-curve
     add(Street~(3,0,0,152), 0x5F595C00 )
     add(Street~(0,152,154,1), 0x5F595D00)
     add(Street~(154,0,0,1), 0x5F595E00)
-	//Street Roundabout
-	add(Street~(0,0,102,102),                         0x5F56BB00) //Base
-	add(Street~(0,0,102,102) & Street~NC,             0x5F56BA00) //Base with Orth Street connection
-	add(Street~(0,0,102,102) & Street~(0,11,0,0),     0x5F56B900) //Base with Diag Street connection
-  //Street Roundabout Connections
-	add(Street~(0,0,102,102) & Road~NC,               0x5F084800) //Base with Orth Road connection
-	add(Street~(0,0,102,102) & Road~(0,13,0,0),       0x5F084900) //Base with Diag Road connection
-	add(Street~(0,0,102,102) & Onewayroad~NC,         0x5F984800) //Base with Orth Onewayroad connection
-	add(Street~(0,0,102,102) & Onewayroad~(0,13,0,0), 0x5F984900) //Base with Diag Onewayroad connection
-	//Larger (R2-esque) 45 (4x3)
-	//Tile 1F is override of Diagonal
-	//Tile 22 is override of 1x1 Stub
-	add(Street~(0,2,0,111), 0x5F592400)
-	add(Street~(0,111,0,11), 0x5F592300)
-	add(Street~(15,0,0,14), 0x5F592200)
-	add(Street~(0,11,113,0), 0x5F592100)
-	add(Street~(113,0,0,1), 0x5F592000)
-	//Larger 90 (4x4)
-	add(Street~(0,2,0,181), 0x5F592500)
-	add(Street~(0,181,11,191), 0x5F592600)
-	add(Street~(11,0,0,82), 0x5F592700)
-	add(Street~(0,191,194,0), 0x5F592800)
-	add(Street~(0,82,82,0), 0x5F592900)
-	//T-ints off
-	add(Street~(2,2,0,181), 0x5F592F00)
-	add(Street~(2,181,11,191), 0x5F592E00)
-	
-	
+    //Street Roundabout
+    add(Street~(0,0,102,102),                         0x5F56BB00) //Base
+    add(Street~(0,0,102,102) & Street~NC,             0x5F56BA00) //Base with Orth Street connection
+    add(Street~(0,0,102,102) & Street~(0,11,0,0),     0x5F56B900) //Base with Diag Street connection
+    //Street Roundabout Connections
+    add(Street~(0,0,102,102) & Road~NC,               0x5F084800) //Base with Orth Road connection
+    add(Street~(0,0,102,102) & Road~(0,13,0,0),       0x5F084900) //Base with Diag Road connection
+    add(Street~(0,0,102,102) & Onewayroad~NC,         0x5F984800) //Base with Orth Onewayroad connection
+    add(Street~(0,0,102,102) & Onewayroad~(0,13,0,0), 0x5F984900) //Base with Diag Onewayroad connection
+    //Larger (R2-esque) 45 (4x3)
+    //Tile 1F is override of Diagonal
+    //Tile 22 is override of 1x1 Stub
+    add(Street~(0,2,0,111), 0x5F592400)
+    add(Street~(0,111,0,11), 0x5F592300)
+    add(Street~(15,0,0,14), 0x5F592200)
+    add(Street~(0,11,113,0), 0x5F592100)
+    add(Street~(113,0,0,1), 0x5F592000)
+    //Larger 90 (4x4)
+    add(Street~(0,2,0,181), 0x5F592500)
+    add(Street~(0,181,11,191), 0x5F592600)
+    add(Street~(11,0,0,82), 0x5F592700)
+    add(Street~(0,191,194,0), 0x5F592800)
+    add(Street~(0,82,82,0), 0x5F592900)
+    //T-ints off
+    add(Street~(2,2,0,181), 0x5F592F00)
+    add(Street~(2,181,11,191), 0x5F592E00)
+
     add(Onewayroad~CS, 0x09000300) // orth stub
     add(Onewayroad~(0,0,0,1), 0x09000200) // diag stub
     add(Onewayroad~NS & Onewayroad~WE, 0x09020700) // OxO
@@ -191,8 +190,8 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~SW & Onewayroad~SharedDiagRight, 0x5f940600) // DxD shared-diag TODO create this
     add(Onewayroad~SharedDiagRight & Onewayroad~SharedDiagLeft, 0x5f940700) // DxD shared-diag TODO create this
     add(Onewayroad~SW & Onewayroad~ES, 0x09000700) // DxD
-	add(Onewayroad~NS & Onewayroad~CE, 0x90005700) // OxO T
-	add(Onewayroad~NS & Onewayroad~CSE, 0x09006300) // OxD T
+    add(Onewayroad~NS & Onewayroad~CE, 0x90005700) // OxO T
+    add(Onewayroad~NS & Onewayroad~CSE, 0x09006300) // OxD T
     add(Onewayroad~(0,0,2,2), 0x09000F00) // 90 curve
     add(Onewayroad~(0,0,1,13), 0x09000C00) // curve
     add(Onewayroad~(0,2,0,11), 0x09004D00) // curve
@@ -260,26 +259,26 @@ class MiscResolver extends IdResolver {
     add(Road~ES & Street~WE, 0x00aa0c00)
     add(Road~NS & Street~CSE, 0x5f502100)
     add(Road~NS & Street~ES, 0x5f502200)
-	add(Road~CS & Street~NE, 0x5f502300)
+    add(Road~CS & Street~NE, 0x5f502300)
     add(Road~ES & Street~NE, 0x5f502400)
     add(Road~ES & Street~CEN, 0x5f504400)
-	add(Road~WE & Street~CS, 0x00aa0800)
-	add(Road~CE & Street~NS, 0x00aa0400)
-	add(Road~NC & Street~CS, 0x00aa0100)
-	add(Road~CE & Street~NC, 0x00aa0200)
-	add(Road~CWN & Street~WE, 0x00aa0d00)
-	add(Road~(0,0,2,0) & Street~(2,2,0,0), 0x00aa0300)
-	add(Road~(0,0,2,0) & Street~(2,2,0,2), 0x00aa0500)
-	add(Road~(2,2,0,0) & Street~(0,0,0,2), 0x00aa0700)
-	add(Road~(2,2,0,0) & Street~(0,0,2,2), 0x00aa0900)
-	add(Road~(2,2,2,0) & Street~(0,0,0,2), 0x00aa0b00)
-	// add(Road~(0,1,0,0) & Street~WE, 0x00aa0d00) //alt implementation of 0x00aa0d00
-	// add(Road~(0,11,0,0) & Street~WE, 0x00aa0d00) //alt implementation of 0x00aa0d00
-	add(Road~CWN & Street~CE, 0x00aa0e00)
-	add(Road~CWN & Street~WC, 0x00aa1100)
-	add(Road~CES & Street~CSE, 0x5F502000)
-	add(Road~CES & Street~NE, 0x5F502500)
-	add(Road~(0,0,1,3) & Street~(2,2,0,0), 0x5F072300)
+    add(Road~WE & Street~CS, 0x00aa0800)
+    add(Road~CE & Street~NS, 0x00aa0400)
+    add(Road~NC & Street~CS, 0x00aa0100)
+    add(Road~CE & Street~NC, 0x00aa0200)
+    add(Road~CWN & Street~WE, 0x00aa0d00)
+    add(Road~(0,0,2,0) & Street~(2,2,0,0), 0x00aa0300)
+    add(Road~(0,0,2,0) & Street~(2,2,0,2), 0x00aa0500)
+    add(Road~(2,2,0,0) & Street~(0,0,0,2), 0x00aa0700)
+    add(Road~(2,2,0,0) & Street~(0,0,2,2), 0x00aa0900)
+    add(Road~(2,2,2,0) & Street~(0,0,0,2), 0x00aa0b00)
+    // add(Road~(0,1,0,0) & Street~WE, 0x00aa0d00) //alt implementation of 0x00aa0d00
+    // add(Road~(0,11,0,0) & Street~WE, 0x00aa0d00) //alt implementation of 0x00aa0d00
+    add(Road~CWN & Street~CE, 0x00aa0e00)
+    add(Road~CWN & Street~WC, 0x00aa1100)
+    add(Road~CES & Street~CSE, 0x5F502000)
+    add(Road~CES & Street~NE, 0x5F502500)
+    add(Road~(0,0,1,3) & Street~(2,2,0,0), 0x5F072300)
     add(Road~WE & Avenue~NS, 0x04008900)
     add(Road~ES & Avenue~SN, 0x04001300)
     add(Road~WN & Avenue~SN, 0x04001900)
@@ -369,14 +368,14 @@ class MiscResolver extends IdResolver {
     add((Street~WN).projectRight & Rail~NS, 0x5f502900, mirroredOnly)
     add((Street~ES).projectLeft & Rail~NE, 0x5f502700, nonMirroredOnly)
     add((Street~NW).projectRight & Rail~NE, 0x5f502800, nonMirroredOnly)
-	add(Street~WE & Highway~NS, 0x02015000)
+    add(Street~WE & Highway~NS, 0x02015000)
     add(Street~ES & Highway~NS, 0x5F514100)
     add(Street~WN & Highway~NS, 0x5F514200)
     add(Street~WE & Highway~ES, 0x02015300)
     add(Street~WE & Highway~SharedDiagRight, 0x02015400)
     add(Street~NE & Highway~ES, 0x5F514500)
     add(Street~SW & Highway~SharedDiagRight, 0x5F514600)
-	add(Street~ES & Lightrail~NS, 0x5F502B00)
+    add(Street~ES & Lightrail~NS, 0x5F502B00)
     add(Street~NS & Lightrail~ES, 0x08dd1000)
     add(Street~SW & Lightrail~ES, 0x5F502C00)
     add(Street~EW & Lightrail~NS, 0x08dd0800)
@@ -404,22 +403,22 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~NS & Street~ES, 0x5f503400)
     add(Onewayroad~NS & Street~CSE, 0x5f503500)
     add(Onewayroad~ES & Street~NE, 0x5f503600)
-	add(Onewayroad~CS & Street~NE, 0x5f503700)
+    add(Onewayroad~CS & Street~NE, 0x5f503700)
     add(Onewayroad~ES & Street~CEN, 0x5f504600)
-	add(Onewayroad~WE & Street~CS, 0x09aa0800)
-	add(Onewayroad~CE & Street~NS, 0x09aa0400)
-	add(Onewayroad~NC & Street~CS, 0x09aa0100)
-	add(Onewayroad~CE & Street~NC, 0x09aa0200)
-	add(Onewayroad~CWN & Street~WE, 0x09aa0d00)
-	add(Onewayroad~(0,0,2,0) & Street~(2,2,0,0), 0x09aa0300)
-	add(Onewayroad~(0,0,2,0) & Street~(2,2,0,2), 0x09aa0500)
-	add(Onewayroad~(2,2,0,0) & Street~(0,0,0,2), 0x09aa0700)
-	add(Onewayroad~(2,2,0,0) & Street~(0,0,2,2), 0x09aa0900)
-	add(Onewayroad~(2,2,2,0) & Street~(0,0,0,2), 0x09aa0b00)
-	add(Onewayroad~CWN & Street~CE, 0x09aa0e00)
-	add(Onewayroad~CWN & Street~WC, 0x09aa1100)
-	add(Onewayroad~CES & Street~NE, 0x5F503800)
-	add(Onewayroad~ES & Street~(2,2,0,0), 0x5F974300)
+    add(Onewayroad~WE & Street~CS, 0x09aa0800)
+    add(Onewayroad~CE & Street~NS, 0x09aa0400)
+    add(Onewayroad~NC & Street~CS, 0x09aa0100)
+    add(Onewayroad~CE & Street~NC, 0x09aa0200)
+    add(Onewayroad~CWN & Street~WE, 0x09aa0d00)
+    add(Onewayroad~(0,0,2,0) & Street~(2,2,0,0), 0x09aa0300)
+    add(Onewayroad~(0,0,2,0) & Street~(2,2,0,2), 0x09aa0500)
+    add(Onewayroad~(2,2,0,0) & Street~(0,0,0,2), 0x09aa0700)
+    add(Onewayroad~(2,2,0,0) & Street~(0,0,2,2), 0x09aa0900)
+    add(Onewayroad~(2,2,2,0) & Street~(0,0,0,2), 0x09aa0b00)
+    add(Onewayroad~CWN & Street~CE, 0x09aa0e00)
+    add(Onewayroad~CWN & Street~WC, 0x09aa1100)
+    add(Onewayroad~CES & Street~NE, 0x5F503800)
+    add(Onewayroad~ES & Street~(2,2,0,0), 0x5F974300)
     add(Onewayroad~WE & Avenue~NS, 0x091a8900)
     add(Onewayroad~ES & Avenue~SN, 0x091a1300)
     add(Onewayroad~WN & Avenue~SN, 0x091a1900)
@@ -459,18 +458,18 @@ class MiscResolver extends IdResolver {
     add(Avenue~ES & Highway~SN, 0x04011000)
     add(Avenue~SN & Street~WE, 0x04008300)
     add(Avenue~SharedDiagRight & Street~NS, 0x5f577800)
-	add(Avenue~ES & Street~WC, 0x04004500)
+    add(Avenue~ES & Street~WC, 0x04004500)
     add(Avenue~ES & Street~WE, 0x5f577900)
     add(Avenue~SN & Street~ES, 0x5f503000)
     add(Avenue~SN & Street~WN, 0x5f503100)
     add(Avenue~NE & Street~ES, 0x5f503200)
     add(Avenue~SharedDiagLeft & Street~ES, 0x5f503300)
-	add(Avenue~SN & Street~CE, 0x04004400)
-	add(Avenue~SN & Street~WC, 0x04008600)
-	add(Avenue~NC & Street~WE, 0x04005600)
-	add(Avenue~NC & Street~(2,0,2,2), 0x04009600)
-	add(Avenue~NC & Street~(0,0,0,2), 0x04009700)
-	add(Avenue~SC & Street~(0,0,2,0), 0x04008400)
+    add(Avenue~SN & Street~CE, 0x04004400)
+    add(Avenue~SN & Street~WC, 0x04008600)
+    add(Avenue~NC & Street~WE, 0x04005600)
+    add(Avenue~NC & Street~(2,0,2,2), 0x04009600)
+    add(Avenue~NC & Street~(0,0,0,2), 0x04009700)
+    add(Avenue~SC & Street~(0,0,2,0), 0x04008400)
     add(Avenue~NE & Lightrail~NS, 0x08dd0500)
     add(Avenue~SharedDiagLeft & Lightrail~NS, 0x08dd0600)
     add(Avenue~EW & Lightrail~NS, 0x08dd0700)
@@ -508,17 +507,17 @@ class MiscResolver extends IdResolver {
         add(n~(0,-111,+113,0), 0x57905F80 + offset)  // R1 curve 90 degree
       }
     }
-	add(Dirtroad~NS & Street~WE, 0x57001000)
-	add(Dirtroad~NS & Street~WS, 0x57004000)
-	add(Dirtroad~SE & Street~WE, 0x57007000)
-	add(Dirtroad~SE & Street~WS, 0x5700a000)
+    add(Dirtroad~NS & Street~WE, 0x57001000)
+    add(Dirtroad~NS & Street~WS, 0x57004000)
+    add(Dirtroad~SE & Street~WE, 0x57007000)
+    add(Dirtroad~SE & Street~WS, 0x5700a000)
 
-	add(Dirtroad~NS & Street~CE, 0x57600000)
-	add(Dirtroad~CE & Street~NS, 0x57601000)
-	add(Dirtroad~NS & Road~CE, 0x57600100)
-	add(Dirtroad~CE & Road~NS, 0x57601100)
-	add(Dirtroad~NS & Onewayroad~CE, 0x57600200)
-	add(Dirtroad~CE & Onewayroad~NS, 0x57601200)
+    add(Dirtroad~NS & Street~CE, 0x57600000)
+    add(Dirtroad~CE & Street~NS, 0x57601000)
+    add(Dirtroad~NS & Road~CE, 0x57600100)
+    add(Dirtroad~CE & Road~NS, 0x57601100)
+    add(Dirtroad~NS & Onewayroad~CE, 0x57600200)
+    add(Dirtroad~CE & Onewayroad~NS, 0x57601200)
 
     // RHW on-slopes (orthogonal)
     for (rhw <- RhwNetworks if rhw.height == 0) {
@@ -569,40 +568,40 @@ class MiscResolver extends IdResolver {
     }
 
     // NWM x Street T-intersections
-      // Street thru, NWM ends
-        // OxO
-        add(Street~NS & (Tla3~CE).projectLeft,  0x51004000)  // Tla3 Ends
-        add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
-        add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
-        add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
-        add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
-        add(Street~NS & Owr3~CE, 0x51044000)                 // Owr3 Ends
-        add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
-        // OxD
-        add(Street~NS & (Tla3~CSE).projectLeft,  0x5100B500)  // Tla3 Ends
-        add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
-        add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
-        add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
-        add(Street~NS & Owr1~CSE, 0x5103B500)                 // Owr1 Ends
-        add(Street~NS & Owr3~CSE, 0x5104B500)                 // Owr1 Ends
-        add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
-      // NWM thru, Street ends
-        // OxO short T
-        add(Street~CS & (Tla3~WE).projectLeft,  0x51003000)
-        add(Street~CS & (Tla3~WE).projectRight, 0x51003000)
-        add(Street~CS & Ave2~WE,                0x51013000)
-        add(Street~CS & Ard3~WE,                0x51023000)
-        add(Street~CS & Ard3~EW,                0x51023080)
-        add(Street~CS & Owr1~WE,                0x51033000)
-        add(Street~CS & Owr3~WE,                0x51043000)
-        add(Street~CS & Nrd4~WE,                0x51053000)
-        add(Street~CN & (Tla5~EW).projectLeft,  0x51103000)
-        add(Street~CN & (Tla5~EW).projectRight, 0x71103000)
-        add(Street~CN & Owr4~EW, 0x51113000)
-        add(Street~CN & Owr5~EW, 0x51123000)
-        add(Street~CN & Rd4~EW,  0x51133000)
-        add(Street~CN & Rd6~EW,  0x51143000)
-        add(Street~CN & Ave6~EW, 0x51203000)
+    // Street thru, NWM ends
+    // OxO
+    add(Street~NS & (Tla3~CE).projectLeft,  0x51004000)  // Tla3 Ends
+    add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
+    add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
+    add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
+    add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
+    add(Street~NS & Owr3~CE, 0x51044000)                 // Owr3 Ends
+    add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
+    // OxD
+    add(Street~NS & (Tla3~CSE).projectLeft,  0x5100B500)  // Tla3 Ends
+    add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
+    add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
+    add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
+    add(Street~NS & Owr1~CSE, 0x5103B500)                 // Owr1 Ends
+    add(Street~NS & Owr3~CSE, 0x5104B500)                 // Owr1 Ends
+    add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
+    // NWM thru, Street ends
+    // OxO short T
+    add(Street~CS & (Tla3~WE).projectLeft,  0x51003000)
+    add(Street~CS & (Tla3~WE).projectRight, 0x51003000)
+    add(Street~CS & Ave2~WE,                0x51013000)
+    add(Street~CS & Ard3~WE,                0x51023000)
+    add(Street~CS & Ard3~EW,                0x51023080)
+    add(Street~CS & Owr1~WE,                0x51033000)
+    add(Street~CS & Owr3~WE,                0x51043000)
+    add(Street~CS & Nrd4~WE,                0x51053000)
+    add(Street~CN & (Tla5~EW).projectLeft,  0x51103000)
+    add(Street~CN & (Tla5~EW).projectRight, 0x71103000)
+    add(Street~CN & Owr4~EW, 0x51113000)
+    add(Street~CN & Owr5~EW, 0x51123000)
+    add(Street~CN & Rd4~EW,  0x51133000)
+    add(Street~CN & Rd6~EW,  0x51143000)
+    add(Street~CN & Ave6~EW, 0x51203000)
 
     map
   }
