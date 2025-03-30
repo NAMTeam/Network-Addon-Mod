@@ -113,7 +113,7 @@ object CompileFlexFlyRul0And1 {
   }
 
   val flexFlySegs: Seq[Segment] = for {
-    orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
+    orient <- Seq[IntFlags => IntFlags](identity, reverseIntFlags)
     network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T3, T6)
   } yield {
@@ -134,7 +134,7 @@ object CompileFlexFlyRul0And1 {
       += n~orient(T6) -> autoConnectIter.next() * R2F0
       ).result()
     (for {
-      orient <- Iterator[IntFlags => IntFlags](identity _, reverseIntFlags _)
+      orient <- Iterator[IntFlags => IntFlags](identity, reverseIntFlags)
       network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
       tuple <- buildTiles(network, orient)
     } yield tuple).toMap
@@ -149,7 +149,7 @@ object CompileFlexFlyRul0And1 {
   def rul0Entry(hid: Int, network: Network, reverse: Boolean, previewIter: Iterator[(Int, String)]) = {
     val (previewId90, previewName90) = previewIter.next()
     val (previewId45, previewName45) = previewIter.next()
-    val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags _ else identity _
+    val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags else identity
     def ff90(cursorInside: Boolean): String = {
       val hidOffset = if (cursorInside) 0 else 0x80000
       f"""

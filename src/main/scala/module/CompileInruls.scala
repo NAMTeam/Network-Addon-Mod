@@ -19,7 +19,7 @@ object CompileInruls {
     }
     // helper function for single RUL files
     def write(target: String, id: Int, dir: String, fileNames: String*): Unit = {
-      val rul = Seq(mkRul(id, dir, fileNames: _*))
+      val rul = Seq(mkRul(id, dir, fileNames*))
       DbpfFile.write(rul, new File(targetDir, target))
     }
 
