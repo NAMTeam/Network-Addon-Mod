@@ -1,7 +1,6 @@
 package com.sc4nam.module
 
 import java.io.{File, FileInputStream}
-import resource._
 import io.github.memo33.scdbpf, scdbpf._, strategy.throwExceptions
 
 /** Automates the process of compiling the INRUL files.
@@ -102,7 +101,7 @@ object CompileInruls {
   // implementation details below
 
   private def filesToArray(files: Seq[File]): Array[Byte] = files.toArray.flatMap { f =>
-    managed(new scdbpf.compat.ByteInput(new FileInputStream(f))) acquireAndGet (scdbpf.compat.Input.slurpBytes(_))
+    java.nio.file.Files.readAllBytes(f.toPath)
   }
 
   private def buildRul(id: Int, files: Seq[File]): DbpfEntry = {

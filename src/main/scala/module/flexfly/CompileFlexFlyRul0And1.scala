@@ -292,7 +292,7 @@ object CompileFlexFlyRul0And1 {
     }
   }
 
-  def printRul0(file: File, resolver: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+  def printRul0(file: File, resolver: IdResolver) = scala.util.Using.resource(new PrintWriter(file)) { printer =>
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
     for (hid <- hid0 until hid0 + 40) { 
@@ -319,7 +319,7 @@ object CompileFlexFlyRul0And1 {
     } .result()
   }
 
-  def printRul1(file: File, resolve: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+  def printRul1(file: File, resolve: IdResolver) = scala.util.Using.resource(new PrintWriter(file)) { printer =>
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     for (seg <- flexFlySegs) {
       val idTile = resolve(seg)
