@@ -66,7 +66,7 @@ import NetworkProperties.{isSingleTile, isDoubleTile}
  *       '---------'---------'
  */
 
-trait Stability { _: RuleGenerator =>
+trait Stability { this: RuleGenerator =>
   def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
     if (rule(0) == rule(2) || rule(1) == rule(3)) {
       Seq(rule)
@@ -76,7 +76,7 @@ trait Stability { _: RuleGenerator =>
   }
 }
 
-trait Curve45Generator extends Stability { _: RuleGenerator =>
+trait Curve45Generator extends Stability { this: RuleGenerator =>
 
   def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
 

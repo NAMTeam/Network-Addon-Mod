@@ -54,11 +54,11 @@ import FlexFlyTiles._
 
 class FlexFlyResolver extends RhwResolver {
 
-  private[this] val flexFlags: Set[Int] = Set(211,213,221,223,231,233,241,243).flatMap(x => Seq(x, -x))
+  private val flexFlags: Set[Int] = Set(211,213,221,223,231,233,241,243).flatMap(x => Seq(x, -x))
   private def hasFlexFlyFlag(t: Tile) = t.segs.exists(s => s.flags.manifest == Flag.InOut && s.flags.exists(flexFlags.contains))
   override def isDefinedAt(t: Tile) = hasFlexFlyFlag(t) || super.isDefinedAt(t)
 
-  private[this] val flexFlyBaseFlags = {
+  private val flexFlyBaseFlags = {
     val m = collection.mutable.Map.empty[Flags, (Int, RotFlip, Boolean)]
     val pieceIds = Seq(T0 -> 0, T1 -> 1, T2 -> 2, T3 -> 3, T4 -> 4, T6 -> 6)
     for ((flags, pid) <- pieceIds; seg = Mis~flags; rf <- RotFlip.values) {
@@ -71,7 +71,7 @@ class FlexFlyResolver extends RhwResolver {
 
   private case class CrossingProp(pid: Int, rf: RotFlip, reversed: Boolean, minReversed: Boolean)
 
-  private[this] val flexFlyCrossings = {
+  private val flexFlyCrossings = {
     val m = collection.mutable.Map.empty[Set[Flags], CrossingProp]
     val T5 = (0,+241,0,-231); val T7 = (+3,0,0,-241)
     val pieceIds = Seq(T0 -> 0, T1 -> 1, T2 -> 2, T3 -> 3, T4 -> 4, T5 -> 5, T6 -> 6, T7 -> 7)
@@ -90,14 +90,14 @@ class FlexFlyResolver extends RhwResolver {
     m.toMap
   }
 
-  private[this] val setNumber = Array(6, 2, 0xB, 1, 5)
-  private[this] def curveNumber(reversed: Boolean, network: Network) =
+  private val setNumber = Array(6, 2, 0xB, 1, 5)
+  private def curveNumber(reversed: Boolean, network: Network) =
     if (network >= Rhw4 && network <= L4Rhw4) {
       if (reversed) 5 else 4
     } else { // Mis
       if (reversed) 0xD else 0xC
     }
-  private[this] val networkIdMap = (Map.newBuilder
+  private val networkIdMap = (Map.newBuilder
     += Mis    -> 0x00 += L1Mis    -> 0x10 += L2Mis    -> 0x20 += L3Mis   -> 0x30 += L4Mis   -> 0x40
     += Rhw4   -> 0x02 += L1Rhw4   -> 0x12 += L2Rhw4   -> 0x22 += L3Rhw4  -> 0x32 += L4Rhw4  -> 0x42
     += Rhw6s  -> 0x04 += L1Rhw6s  -> 0x14 += L2Rhw6s  -> 0x24 += L3Rhw6s -> 0x34 += L4Rhw6s -> 0x44
@@ -111,7 +111,7 @@ class FlexFlyResolver extends RhwResolver {
     += Rhw8c  -> 0x53 += L1Rhw8c  -> 0x63 += L2Rhw8c  -> 0x73
     += Rhw10c -> 0x55 += L1Rhw10c -> 0x65 += L2Rhw10c -> 0x75
     ).result()
-  private[this] def networkId(network: Network, h: Int, minReversed: Boolean) = network match {
+  private def networkId(network: Network, h: Int, minReversed: Boolean) = network match {
     case Dirtroad => h << 4 | 0
     case L1Rhw2   => h << 4 | 1
     case L2Rhw2   => h << 4 | 2
@@ -154,7 +154,7 @@ class FlexFlyResolver extends RhwResolver {
     m.toMap
   }
 
-  private[this] def isFlyFly(seg1: Segment, seg2: Segment): Boolean = {
+  private def isFlyFly(seg1: Segment, seg2: Segment): Boolean = {
     (seg1.flags exists flexFlags.contains) && (seg2.flags exists flexFlags.contains)
   }
 

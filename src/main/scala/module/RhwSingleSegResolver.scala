@@ -70,7 +70,7 @@ trait SingleSegResolver {
 
 trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
 
-  private[this] val stubSegment = Dirtroad~(0,0,0,0)
+  private val stubSegment = Dirtroad~(0,0,0,0)
   val isRhwShoulderMedian = Network.ValueSet(Rhw8sm, L1Rhw8sm, L2Rhw8sm)
 
   def resolveSegment(seg: Segment): IdTile = {

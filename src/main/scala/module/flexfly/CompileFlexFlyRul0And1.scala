@@ -48,7 +48,7 @@ import scala.collection.immutable.LazyList
 object CompileFlexFlyRul0And1 {
 
   /** a stream of flag combinations we can choose our FlexFly falsies from */
-  private[this] lazy val combos = {
+  private lazy val combos = {
     val cache = collection.mutable.HashSet.empty[Tile]
     def isUnique(tile: Tile) = RotFlip.values.forall(rf => !cache.contains(tile * rf))
     def notZero(a: Int, b: Int, c: Int, d: Int) = a != 0 && a != 4 || b != 0 && b != 4 || c != 0 && c != 4 || d != 0 && d != 4
@@ -69,14 +69,14 @@ object CompileFlexFlyRul0And1 {
   }
 
   /** in order MHW/Road, Dirtroad/RHW */
-  private[this] def extractFlags(tile: Tile) = tile.segs.toSeq match {
+  private def extractFlags(tile: Tile) = tile.segs.toSeq match {
     case Seq(Segment(Groundhighway, rdFlags), Segment(Dirtroad, rhwFlags)) => (rdFlags, rhwFlags)
   }
 
   /** restricts above flag combinations to ones that allow dragging-through in all directions
     * and which have no symmetries
     */
-  private[this] lazy val combosAllDirections = {
+  private lazy val combosAllDirections = {
     import Flag._, Bi._
     def effectiveFlag(rhwFlag: Int, mhwFlag: Int): Int = (rhwFlag, mhwFlag) match {
       case (0, 4) => 0
@@ -100,7 +100,7 @@ object CompileFlexFlyRul0And1 {
     * and those that have not; the auto-connect tiles will be oriented such that
     * 2 flag is west (so auto-connect is east)
     */
-  private[this] lazy val (nonAutoconnectTiles, autoconnectTiles) = {
+  private lazy val (nonAutoconnectTiles, autoconnectTiles) = {
     val mapped = combosAllDirections map { tile =>
       val flags = tile.segs.find(_.network == Dirtroad).get.flags
       import Flag._
@@ -140,7 +140,7 @@ object CompileFlexFlyRul0And1 {
     } yield tuple).toMap
   }
 
-  private[this] def concreteTileToString(tile: Tile): String = {
+  private def concreteTileToString(tile: Tile): String = {
     tile.segs.toSeq.map { case Segment(network, flags) =>
       network.toString.toLowerCase + ": 0x0" + flags.mkString("0").reverse
     } .mkString(" ")
