@@ -122,7 +122,7 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new RhwResolver orElse new NwmResolver
   val generator = new OnslopeGenerator(_)
   lazy val file = new java.io.File("target/Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
 }
