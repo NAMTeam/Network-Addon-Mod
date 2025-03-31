@@ -22,6 +22,23 @@ object NetworkProperties {
   }
   def isSingleTile(n: Network): Boolean = !isDoubleTile(n) && !isTripleTile(n)
 
+  def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
+    inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm)) ||
+    !inside && (n >= Rhw8sm && n <= L2Rhw8sm) ||
+    n == Ave6m || n == Tla7m
+  }
+
+  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
+    (n.isRhw && n > L4Rhw6s && n <= L2Rhw10c) && !hasMiniCurve(n, inside) ||
+    !inside && (n == Ave6 || n == Ave8)
+  }
+
+  val isRhwShoulder = Network.ValueSet(
+    Rhw8s, L1Rhw8s, L2Rhw8s, Rhw10s, L1Rhw10s, L2Rhw10s, Rhw12s, L1Rhw12s, L2Rhw12s,
+    Rhw6c, L1Rhw6c, L2Rhw6c, Rhw8c, L1Rhw8c, L2Rhw8c, Rhw10c, L1Rhw10c, L2Rhw10c)
+
+  val isRhwShoulderMedian = Network.ValueSet(Rhw8sm, L1Rhw8sm, L2Rhw8sm)
+
   // currently, RHW only
   val ground: Map[Network, Network] = RhwNetworks.rangeFrom(L1Rhw2).iterator.scanLeft(Dirtroad -> Dirtroad) { case ((prev, base), n) =>
     if (n.height > prev.height) n -> base else n -> n

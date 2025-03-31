@@ -93,16 +93,9 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
     inside && (n == Ave6 || n == Ave8)
   }
 
-  def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
-    inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm)) ||
-    !inside && (n >= Rhw8sm && n <= L2Rhw8sm) ||
-    n == Ave6m || n == Tla7m
-  }
+  def hasMiniCurve(n: Network, inside: Boolean): Boolean = NetworkProperties.hasMiniCurve(n, inside = inside)
 
-  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
-    (n.isRhw && n > L4Rhw6s && n <= L2Rhw10c) && !hasMiniCurve(n, inside) ||
-    !inside && (n == Ave6 || n == Ave8)
-  }
+  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = NetworkProperties.hasExtendedCurve(n, inside = inside)
 
   def hasR1Curve(n: Network, inside: Boolean): Boolean = {
     (n.isRhw && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
