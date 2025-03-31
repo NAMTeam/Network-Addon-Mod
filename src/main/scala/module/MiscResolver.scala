@@ -7,14 +7,9 @@ import NetworkProperties._
 class MiscResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
-    val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int, mappedRepr: group.Quotient => Set[RotFlip] = null): Unit = {
-      assert(!map.contains(tile))
-      for (rf <- RotFlip.values) {
-        val idTile = if (mappedRepr == null) IdTile(id, rf) else IdTile(id, rf, mappedRepr)
-        map.getOrElseUpdate(tile * rf, idTile)
-      }
-    }
+    val builder = new ResolverBuilder
+    import builder.add
+
     add(Road~NS, 0x00004b00); add(Road~ES, 0x00000a00)
     add(Rail~NS, 0x03031500); add(Rail~ES, 0x03001a00) // maxis IIDs, RRW IIDs in RealRailwayResolver
     add(Street~NS, 0x05004b00); add(Street~ES, 0x5f500200)
@@ -30,18 +25,14 @@ class MiscResolver extends IdResolver {
     add(Glr4 ~NS, 0x5f88c000); add(Glr4 ~NW, 0x5f88c600)
     add(Hsr  ~NS, 0x5dc31500); add(Hsr  ~NW, 0x5dc01a00)
     add(L2Hsr~NS, 0x5dd31500); add(L2Hsr~NW, 0x5dd01a00)
-    //add(Tla3 ~NS, 0x51000000); add(Tla3 ~ES, 0x51000200)
-    add((Tla3~NS).projectLeft, 0x51000000); add((Tla3~ES).projectLeft, 0x51000200)
-    add((Tla3~NS).projectRight, 0x51000000); add((Tla3~ES).projectRight, 0x51000200) // TODO should right-headed TLAs even be resolved?
+    add(Tla3 ~NS, 0x51000000); add(Tla3 ~ES, 0x51000200)
     add(Ave2 ~NS, 0x51010000); add(Ave2 ~ES, 0x51010200)
     add(Ard3 ~SN, 0x51020000); add(Ard3 ~SE, 0x51020200); add(Ard3 ~ES, 0x51020900)
     add(Owr1 ~NS, 0x51030000); add(Owr1 ~ES, 0x51030200)
     add(Owr3 ~NS, 0x51040000); add(Owr3 ~ES, 0x51040200)
     add(Nrd4 ~NS, 0x51050000); add(Nrd4 ~ES, 0x51050200)
-    //add(Tla5 ~NS, 0x51100000); add(Tla5 ~ES, 0x51100200); add(Tla5 ~NW, 0x51100300)
-    add((Tla5~NS).projectLeft, 0x51100000); add((Tla5~ES).projectLeft, 0x51100200); add((Tla5~NW).projectLeft, 0x51100300)
-    add((Tla5~NS).projectRight, 0x51100000); add((Tla5~ES).projectRight, 0x51100200); add((Tla5~NW).projectRight, 0x51100300) // TODO should right-headed TLAs even be resolved?
-    add((Tla5~CS).projectLeft, 0x51100100); add((Tla5~CS).projectRight, 0x51100100)  // overwritten explicitly here to avoid 0x71.. ID for stubs
+    add(Tla5 ~NS, 0x51100000); add(Tla5 ~ES, 0x51100200); add(Tla5 ~NW, 0x51100300)
+    add(Tla5 ~CS, 0x51100100)  // overwritten explicitly here to avoid 0x71.. ID for stubs
     add(Owr4 ~NS, 0x51110000); add(Owr4 ~ES, 0x51110200); add(Owr4~SharedDiagRight, 0x51110300)
     add(Owr5 ~NS, 0x51120000); add(Owr5 ~ES, 0x51120200); add(Owr5 ~NW, 0x51120300)
     add(Rd4  ~NS, 0x51130000); add(Rd4  ~ES, 0x51130200); add(Rd4~SharedDiagRight, 0x51130300)
@@ -242,12 +233,12 @@ class MiscResolver extends IdResolver {
 
     // Road intersections
     add(Road~NS & Rail~WE, 0x03010100)
-    add((Road~NS).projectLeft & Rail~NE, 0x03010200, nonMirroredOnly)
-    add((Road~NS).projectRight & Rail~NE, 0x03020500, mirroredOnly)
-    add((Road~WN).projectLeft & Rail~NS, 0x03020100, nonMirroredOnly)
-    add((Road~WN).projectRight & Rail~NS, 0x03020400, mirroredOnly)
-    add((Road~ES).projectLeft & Rail~NE, 0x03020200, nonMirroredOnly)
-    add((Road~NW).projectRight & Rail~NE, 0x03020300, nonMirroredOnly)
+    builder.addOne((Road~NS).projectLeft  & Rail~NE, IdTile(0x03010200, R0F0, nonMirroredOnly))
+    builder.addOne((Road~NS).projectRight & Rail~NE, IdTile(0x03020500, R0F0, mirroredOnly))
+    builder.addOne((Road~WN).projectLeft  & Rail~NS, IdTile(0x03020100, R0F0, nonMirroredOnly))
+    builder.addOne((Road~WN).projectRight & Rail~NS, IdTile(0x03020400, R0F0, mirroredOnly))
+    builder.addOne((Road~ES).projectLeft  & Rail~NE, IdTile(0x03020200, R0F0, nonMirroredOnly))
+    builder.addOne((Road~NW).projectRight & Rail~NE, IdTile(0x03020300, R0F0, nonMirroredOnly))
     add(Road~WE & Highway~NS, 0x02014000)
     add(Road~ES & Highway~NS, 0x02014100)
     add(Road~WN & Highway~NS, 0x02014200)
@@ -364,10 +355,10 @@ class MiscResolver extends IdResolver {
     // Street intersections
     add(Street~NS & Rail~WE, 0x05010100)
     add(Street~NS & Rail~NE, 0x05010200)
-    add((Street~WN).projectLeft & Rail~NS, 0x5f502600, nonMirroredOnly)
-    add((Street~WN).projectRight & Rail~NS, 0x5f502900, mirroredOnly)
-    add((Street~ES).projectLeft & Rail~NE, 0x5f502700, nonMirroredOnly)
-    add((Street~NW).projectRight & Rail~NE, 0x5f502800, nonMirroredOnly)
+    builder.addOne((Street~WN).projectLeft  & Rail~NS, IdTile(0x5f502600, R0F0, nonMirroredOnly))
+    builder.addOne((Street~WN).projectRight & Rail~NS, IdTile(0x5f502900, R0F0, mirroredOnly))
+    builder.addOne((Street~ES).projectLeft  & Rail~NE, IdTile(0x5f502700, R0F0, nonMirroredOnly))
+    builder.addOne((Street~NW).projectRight & Rail~NE, IdTile(0x5f502800, R0F0, nonMirroredOnly))
     add(Street~WE & Highway~NS, 0x02015000)
     add(Street~ES & Highway~NS, 0x5F514100)
     add(Street~WN & Highway~NS, 0x5F514200)
@@ -389,8 +380,8 @@ class MiscResolver extends IdResolver {
     add(Onewayroad~NS & Rail~WE, 0x09310100)
     add(Onewayroad~NS & Rail~NE, 0x09310200)
     add(Onewayroad~WN & Rail~NS, 0x09320100)
-    add((Onewayroad~ES).projectLeft & Rail~NE, 0x09320200, nonMirroredOnly)
-    add((Onewayroad~NW).projectRight & Rail~NE, 0x09320300, nonMirroredOnly)
+    builder.addOne((Onewayroad~ES).projectLeft  & Rail~NE, IdTile(0x09320200, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~NW).projectRight & Rail~NE, IdTile(0x09320300, R0F0, nonMirroredOnly))
     add(Onewayroad~WE & Highway~NS, 0x09b14000)
     add(Onewayroad~ES & Highway~NS, 0x09b14100)
     add(Onewayroad~WN & Highway~NS, 0x09b14200)
@@ -438,10 +429,10 @@ class MiscResolver extends IdResolver {
     // Avenue + intersections
     add(Avenue~ES & Rail~NE, 0x04002100)
     add(Avenue~SharedDiagRight & Rail~SW, 0x04004300)
-    add((Avenue~SN).projectLeft & Rail~NE, 0x04001600, nonMirroredOnly)
-    add((Avenue~SN).projectRight & Rail~NE, 0x5d571600, mirroredOnly)
-    add((Avenue~NS).projectLeft & Rail~NE, 0x04001700, nonMirroredOnly)
-    add((Avenue~NS).projectRight & Rail~NE, 0x5d571700, mirroredOnly)
+    builder.addOne((Avenue~SN).projectLeft  & Rail~NE, IdTile(0x04001600, R0F0, nonMirroredOnly))
+    builder.addOne((Avenue~SN).projectRight & Rail~NE, IdTile(0x5d571600, R0F0, mirroredOnly))
+    builder.addOne((Avenue~NS).projectLeft  & Rail~NE, IdTile(0x04001700, R0F0, nonMirroredOnly))
+    builder.addOne((Avenue~NS).projectRight & Rail~NE, IdTile(0x5d571700, R0F0, mirroredOnly))
     add(Avenue~SN & Rail~WE, 0x04001500)
     add(Avenue~ES & Rail~NS, 0x04004700)
     add(Avenue~SharedDiagRight & Rail~NS, 0x04004600)
@@ -570,16 +561,14 @@ class MiscResolver extends IdResolver {
     // NWM x Street T-intersections
     // Street thru, NWM ends
     // OxO
-    add(Street~NS & (Tla3~CE).projectLeft,  0x51004000)  // Tla3 Ends
-    add(Street~NS & (Tla3~CE).projectRight, 0x51004000)  // Tla3 Ends
+    add(Street~NS & Tla3~CE, 0x51004000)                 // Tla3 Ends
     add(Street~NS & Ave2~CE, 0x51014000)                 // Ave2 Ends
     add(Street~NS & Ard3~CE, 0x51024000)                 // Ard3 Ends
     add(Street~NS & Owr1~CE, 0x51034000)                 // Owr1 Ends
     add(Street~NS & Owr3~CE, 0x51044000)                 // Owr3 Ends
     add(Street~NS & Nrd4~CE, 0x51054000)                 // Nrd4 Ends
     // OxD
-    add(Street~NS & (Tla3~CSE).projectLeft,  0x5100B500)  // Tla3 Ends
-    add(Street~NS & (Tla3~CSE).projectRight, 0x5100B500)  // Tla3 Ends
+    add(Street~NS & Tla3~CSE, 0x5100B500)                 // Tla3 Ends
     add(Street~NS & Ave2~CSE, 0x5101B500)                 // Ave2 Ends
     add(Street~NS & Ard3~CSE, 0x5102B500)                 // Ard3 Ends
     add(Street~NS & Owr1~CSE, 0x5103B500)                 // Owr1 Ends
@@ -587,8 +576,7 @@ class MiscResolver extends IdResolver {
     add(Street~NS & Nrd4~CSE, 0x5105B500)                 // Nrd4 Ends
     // NWM thru, Street ends
     // OxO short T
-    add(Street~CS & (Tla3~WE).projectLeft,  0x51003000)
-    add(Street~CS & (Tla3~WE).projectRight, 0x51003000)
+    add(Street~CS & Tla3~WE,                0x51003000)
     add(Street~CS & Ave2~WE,                0x51013000)
     add(Street~CS & Ard3~WE,                0x51023000)
     add(Street~CS & Ard3~EW,                0x51023080)
@@ -603,7 +591,7 @@ class MiscResolver extends IdResolver {
     add(Street~CN & Rd6~EW,  0x51143000)
     add(Street~CN & Ave6~EW, 0x51203000)
 
-    map
+    builder.result()
   }
 
   def isDefinedAt(t: Tile): Boolean = tileMap.isDefinedAt(t)

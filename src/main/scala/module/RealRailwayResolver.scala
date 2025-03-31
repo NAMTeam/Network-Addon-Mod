@@ -6,14 +6,9 @@ import Implicits.segmentToTile
 class RealRailwayResolver extends IdResolver {
 
   val tileMap: scala.collection.Map[Tile, IdTile] = {
-    val map = scala.collection.mutable.Map.empty[Tile, IdTile]
-    def add(tile: Tile, id: Int): Unit = {
-      assert(!map.contains(tile))
-      for (rf <- RotFlip.values) {
-        val idTile = IdTile(id, rf)
-        map.getOrElseUpdate(tile * rf, idTile)
-      }
-    }
+    val builder = new ResolverBuilder
+    import builder.add
+
     // rail tiles defined here with RRW IIDs, are maxis IIDs in MiscResolver
     add(Rail~(0,0,0,0), 0x5f33fc00)
     // ortho
@@ -159,10 +154,8 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw8c~EW & L1Dtr~NS, 0x5d672500)
     add(Rhw8c~EW & L2Dtr~NS, 0x5d772500)
     // -- TLA-3 --
-    add((Tla3~WE).projectLeft & L1Dtr~NS, 0x5d672700)
-    add((Tla3~WE).projectRight & L1Dtr~NS, 0x5d672700)
-    add((Tla3~WE).projectLeft & L2Dtr~NS, 0x5d772700)
-    add((Tla3~WE).projectRight & L2Dtr~NS, 0x5d772700)
+    add(Tla3~WE & L1Dtr~NS, 0x5d672700)
+    add(Tla3~WE & L2Dtr~NS, 0x5d772700)
     // -- AVE-2 --
     add(Ave2~WE & L1Dtr~NS, 0x5d672800)
     add(Ave2~WE & L2Dtr~NS, 0x5d772800)
@@ -179,10 +172,8 @@ class RealRailwayResolver extends IdResolver {
     add(Nrd4~WE & L1Dtr~NS, 0x5d672c00) 
     add(Nrd4~WE & L2Dtr~NS, 0x5d772c00)
     // -- TLA-5 --
-    add((Tla5~EW).projectLeft & L1Dtr~NS, 0x5d672d00)
-    add((Tla5~EW).projectRight & L1Dtr~NS, 0x5d672d00)
-    add((Tla5~EW).projectLeft & L2Dtr~NS, 0x5d772d00)
-    add((Tla5~EW).projectRight & L2Dtr~NS, 0x5d772d00)
+    add(Tla5~EW & L1Dtr~NS, 0x5d672d00)
+    add(Tla5~EW & L2Dtr~NS, 0x5d772d00)
     // -- OWR-4 --
     add(Owr4~WE & L1Dtr~NS, 0x5d672e00)
     add(Owr4~WE & L2Dtr~NS, 0x5d772e00)
@@ -303,10 +294,8 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SE & L2Dtr~NS, 0x5d774e05)
     // ...
     // -- TLA-3 --
-    add((Tla3~ES).projectLeft  & L1Dtr~NS, 0x5d675700)
-    add((Tla3~ES).projectRight & L1Dtr~NS, 0x5d675700)
-    add((Tla3~ES).projectLeft  & L2Dtr~NS, 0x5d775700)
-    add((Tla3~ES).projectRight & L2Dtr~NS, 0x5d775700)
+    add(Tla3~ES & L1Dtr~NS, 0x5d675700)
+    add(Tla3~ES & L2Dtr~NS, 0x5d775700)
     // -- AVE-2 --
     add(Ave2~ES & L1Dtr~NS, 0x5d675800)
     add(Ave2~ES & L2Dtr~NS, 0x5d775800)
@@ -413,10 +402,8 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SN & L2Dtr~ES, 0x5d777e05)
     // ...
     // -- TLA-3 --
-    add((Tla3~NS).projectLeft  & L1Dtr~ES, 0x5d678700)
-    add((Tla3~NS).projectRight & L1Dtr~ES, 0x5d678700)
-    add((Tla3~NS).projectLeft  & L2Dtr~ES, 0x5d778700)
-    add((Tla3~NS).projectRight & L2Dtr~ES, 0x5d778700)
+    add(Tla3~NS & L1Dtr~ES, 0x5d678700)
+    add(Tla3~NS & L2Dtr~ES, 0x5d778700)
     // -- AVE-2 --
     add(Ave2~NS & L1Dtr~ES, 0x5d678800)
     add(Ave2~NS & L2Dtr~ES, 0x5d778800)
@@ -523,10 +510,8 @@ class RealRailwayResolver extends IdResolver {
     add(Rhw6s~SW & L2Dtr~ES, 0x5d77ae05)
     // ...
     // -- TLA-3 --
-    add((Tla3~WS).projectLeft  & L1Dtr~ES, 0x5d67b700)
-    add((Tla3~WS).projectRight & L1Dtr~ES, 0x5d67b700)
-    add((Tla3~WS).projectLeft  & L2Dtr~ES, 0x5d77b700)
-    add((Tla3~WS).projectRight & L2Dtr~ES, 0x5d77b700)
+    add(Tla3~WS & L1Dtr~ES, 0x5d67b700)
+    add(Tla3~WS & L2Dtr~ES, 0x5d77b700)
     // -- AVE-2 --
     add(Ave2~WS & L1Dtr~ES, 0x5d67b800)
     add(Ave2~WS & L2Dtr~ES, 0x5d77b800)
@@ -651,7 +636,7 @@ class RealRailwayResolver extends IdResolver {
     add(Sam11~ES  & Str~NE, 0x5e515b09) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     
-    map
+    builder.result()
   }
 
   def isDefinedAt(t: Tile): Boolean = tileMap.isDefinedAt(t)
