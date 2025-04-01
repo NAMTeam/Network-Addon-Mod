@@ -89,10 +89,16 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
             // if minor overhangs, then on the overhanging side of the rule:
             //    only the base ortho ERRW is a valid start, and
             //    the start rule is a double-swap with the overhang helper
-            Rules ++= stabilize(main~WE | base~WE & minor~NS | main~(2,0,42,0) | main~WE & minor~NS) // OxO start overhang double-swap
+            if (intersectionAllowed(base, minor)) {
+              Rules ++= stabilize(main~WE | base~WE & minor~NS | main~(2,0,42,0) | main~WE & minor~NS) // OxO start overhang double-swap
+            } else {
+              Rules += main~WE | main~WE & minor~NS | main~(2,0,42,0) | %  // OxO start overhang
+            }
 
             for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~SN       // OxO start
+              if (intersectionAllowed(base, minor)) {
+                Rules += orthStart | (base ~> main)~WE & minor~SN       // OxO start
+              }
               // TODO: check if the orthStart is OST before creating the following rule
               Rules += orthStart | minor~SN | % | main~WE & minor~SN  // OxO start (jump)
             }
@@ -118,10 +124,16 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
 
           if (overhangsRight(minor)) {
 
-            Rules ++= stabilize(main~WE | base~WE & minor~ES | main~(2,8,72,0) | main~WE & minor~ES)  // OxD start overhang double-swap
+            if (intersectionAllowed(base, minor)) {
+              Rules ++= stabilize(main~WE | base~WE & minor~ES | main~(2,8,72,0) | main~WE & minor~ES)  // OxD start overhang double-swap
+            } else {
+              Rules += main~WE | main~WE & minor~ES | main~(2,8,72,0) | %  // OxD start overhang
+            }
 
             for (orthStart <- orthStarts) {
-              Rules += orthStart | (base ~> main)~WE & minor~SE  // OxD start
+              if (intersectionAllowed(base, minor)) {
+                Rules += orthStart | (base ~> main)~WE & minor~SE  // OxD start
+              }
             }
 
             Rules += main~WE & minor~WN | base~WE | % | main~(72,0,2,8)  // OxD continue to helper
@@ -143,8 +155,10 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
           }
 
           // OxD across rules needed in all cases
-          Rules += main~WE & minor~ES | (base ~> main)~WE & minor~NW  // OxD across
-          Rules += main~WE & minor~SE | (base ~> main)~WE & minor~WN  // OxD across
+          if (intersectionAllowed(base, minor)) {
+            Rules += main~WE & minor~ES | (base ~> main)~WE & minor~NW  // OxD across
+            Rules += main~WE & minor~SE | (base ~> main)~WE & minor~WN  // OxD across
+          }
 
           if (minor == Street || minor == Road) {
             val crossbucks = minor match {
@@ -163,11 +177,17 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
               // e.g. RHW-6S
               // will require two extra tiles on the overhang side
               // can only initiate with main~ES
-              Rules ++= stabilize(main~ES | base~NW & minor~NS | main~(41,43,0,0) | main~NW & minor~NS)  // DxO start overhang double-swap
+              if (intersectionAllowed(base, minor)) {
+                Rules ++= stabilize(main~ES | base~NW & minor~NS | main~(41,43,0,0) | main~NW & minor~NS)  // DxO start overhang double-swap
+              } else {
+                Rules += main~ES | main~NW & minor~NS | main~(41,43,0,0) | %  // DxO start overhang
+              }
               Rules ++= stabilize(main~ES | minor~NS | main~(41,43,0,0) | main~NW & minor~NS)            // DxO start overhang double-swap (jump)
               // non-overhanging side starts are standard, use all starts
               for (diagStart <- diagStarts) {
-                Rules += diagStart | (base ~> main)~NW & minor~SN       // DxO start
+                if (intersectionAllowed(base, minor)) {
+                  Rules += diagStart | (base ~> main)~NW & minor~SN       // DxO start
+                }
                 Rules += diagStart | minor~SN | % | main~NW & minor~SN  // DxO start (jump)
               } 
               // continue rules on non-overhang side
@@ -181,15 +201,21 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
               Rules += main~ES & minor~NS | (base ~> main)~NW  // DxO continue
           }
           // DxO across rules needed in all cases
-          Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE       // DxO across
+          if (intersectionAllowed(base, minor)) {
+            Rules += main~EN & minor~WE | (base ~> main)~SW & minor~WE       // DxO across
+          }
           Rules += main~EN & minor~WE | minor~WE | % | main~SW & minor~WE  // DxO across (jump) 
 
           // DxD Rules
 
           for (diagStart <- diagStarts) {
-            Rules += diagStart | (base ~> main)~NW & minor~EN  // DxD start
+            if (intersectionAllowed(base, minor)) {
+              Rules += diagStart | (base ~> main)~NW & minor~EN  // DxD start
+            }
           }
-          Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW  // DxD across
+          if (intersectionAllowed(base, minor)) {
+            Rules += main~EN & minor~ES | (base ~> main)~SW & minor~NW  // DxD across
+          }
           Rules += main~SE & minor~WS | (base ~> main)~NW             // DxD continue
         }
 
