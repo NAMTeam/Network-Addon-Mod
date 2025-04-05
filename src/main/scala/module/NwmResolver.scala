@@ -42,7 +42,7 @@ object NwmResolver {
     Monorail      -> 0x0700,
     Glr1          -> 0x0800,
     Glr2          -> 0x0900,
-
+    L2Hsr         -> 0x0A00,  // previously 0x1700, moved here to avoid DxO/DxD collision
     Str           -> 0x0F00,
 
     Tla3          -> 0x1000,
@@ -51,8 +51,6 @@ object NwmResolver {
     Owr1          -> 0x1300,
     Owr3          -> 0x1400,
     Nrd4          -> 0x1500,
-
-    L2Hsr         -> 0x1700,
 
     Tla5          -> 0x1800,
     Owr4          -> 0x1900,

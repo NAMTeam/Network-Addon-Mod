@@ -41,5 +41,16 @@ class NwmResolverSpec extends AnyWordSpec with Matchers {
         (tile, resolved, resolved.mappedRepr(tile.representations)) shouldBe (tile, idTile, idTile.mappedRepr(tile.representations))
       }
     }
+    "be a 1-to-1 correspondence (bijective)" in {
+      val reverseTileMap = resolve.tileMap.map { case (a, b) => (b, a) }
+      for ((tile, idTile) <- resolve.tileMap) {
+        val tile2 = reverseTileMap(idTile)
+        if (!tile.segs.exists(_.network.isTla)) {
+          tile2.shouldBe(tile)
+        } else {
+          unprojectTla(tile2).shouldBe(unprojectTla(tile))
+        }
+      }
+    }
   }
 }

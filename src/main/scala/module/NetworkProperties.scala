@@ -108,6 +108,17 @@ object NetworkProperties {
     )
   val projectTlaLeft = (t: Tile) => projectTla(t, _.spinLeft)
   val projectTlaRight = (t: Tile) => projectTla(t, _.spinRight)
+  def unprojectTla(t: Tile): Tile = projectTla(t, (flags: Flags) => {
+    val newMf = flags.manifest match {
+      case Flag.LeftSpinBi => Flag.Bi
+      case Flag.RightSpinBi => Flag.Bi
+      case Flag.LeftSpinInOut => Flag.InOut
+      case Flag.RightSpinInOut => Flag.InOut
+      case Flag.Bi => Flag.Bi
+      case Flag.InOut => Flag.InOut
+    }
+    Flags(flags, newMf)
+  })
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)
