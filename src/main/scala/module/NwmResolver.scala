@@ -77,7 +77,7 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
   def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && !t.segs.exists(seg => SamNetworks.contains(seg.network)) && t.segs.exists(_.network.isNwm)
 
   // orientation relative to RHW scheme
-  private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
+  private lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
     val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
     val crossingNetworks = Network.ValueSet() ++ nwmPieceId.keysIterator
     map.getOrElseUpdate(Ard3 + Rail, R2F0)

@@ -277,8 +277,8 @@ object RhwT21 {
 
   private class Lot(width: Int, height: Int) {
     require(width > 0 && height > 0)
-    private val xMax = UInt(width * UInt(0x100000) - 1)
-    private val yMax = UInt(height * UInt(0x100000) - 1)
+    private val xMax = UInt(width) * UInt(0x100000) - UInt(1)
+    private val yMax = UInt(height) * UInt(0x100000) - UInt(1)
 
     def rotateLotObject(p: Multi[UInt], rf: RotFlip): Multi[UInt] = {
       if (p.values.length < 12) {

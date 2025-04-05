@@ -62,11 +62,11 @@ abstract class CommonIntersection extends Intersection {
 }
 
 class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersection {
-  private[this] val sortedPaths: Map[Cardinal, SPaths] =
+  private val sortedPaths: Map[Cardinal, SPaths] =
     NetworkConfig.straightPaths(major, minor).groupBy(_.dir).view.mapValues(_ sortWith PlusIntersection.rightToLeftSorter).toMap
-  private[this] def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
-  private[this] def hasTurningLane(c: Cardinal) = network(c).isTla
-  private[this] def isBidirectionalOneway(c: Cardinal) = {
+  private def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
+  private def hasTurningLane(c: Cardinal) = network(c).isTla
+  private def isBidirectionalOneway(c: Cardinal) = {
     val n = network(c)
     n == Network.Onewayroad || n.base.exists(_ == Network.Onewayroad)
   }

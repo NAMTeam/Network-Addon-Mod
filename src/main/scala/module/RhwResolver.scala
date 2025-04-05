@@ -8,8 +8,8 @@ trait DoubleSegResolver {
       val orthDiagOffset: Int,
       val majorSegReversed: Boolean,
       val minorSegReversed: Boolean,
-      val majKind: Flag.Kind.Value,
-      val minKind: Flag.Kind.Value,
+      val majKind: Flag.Kind,
+      val minKind: Flag.Kind,
       val rf: RotFlip) extends Ordered[DoubleProperty] {
 
     def compare(that: DoubleProperty): Int = {
@@ -29,7 +29,8 @@ trait DoubleSegResolver {
     val tmp = scala.collection.mutable.Map.empty[(Flags, Flags), DoubleProperty]
 
     import Flag.Kind._
-    def flipKind(k: Flag.Kind.Value, rf: RotFlip): Flag.Kind.Value = if (k == Default || !rf.flipped) k else k match {
+    def flipKind(k: Flag.Kind, rf: RotFlip): Flag.Kind = if (!rf.flipped) k else k match {
+      case Default => Default
       case LeftSpin => RightSpin
       case RightSpin => LeftSpin
     }

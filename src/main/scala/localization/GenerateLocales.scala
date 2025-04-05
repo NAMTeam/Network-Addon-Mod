@@ -1,7 +1,6 @@
 package com.sc4nam.localization
 
 import java.io.{File, FileReader, PrintWriter}
-import resource._
 import io.github.memo33.scdbpf._, strategy.throwExceptions
 
 /** Run
@@ -51,7 +50,7 @@ object GenerateLocales {
   /** Iterates over all non-fuzzy `(msgctxt, msgid, msgstr)`.
     */
   def retrieveNonFuzzyTranslations(inputFile: File): Seq[(String, String, String)] = {
-    managed(new FileReader(inputFile)) acquireAndGet { reader =>
+    scala.util.Using.resource(new FileReader(inputFile)) { reader =>
       scaposer.Parser.parse(reader) match {
         case Left(parseFailure) => throw new UnsupportedOperationException(s"$parseFailure in $inputFile")
         case Right(translations) =>
@@ -233,7 +232,7 @@ object GenerateLocales {
       val outputFile = new File(targetDir, if (offset == 0) s"$category.pot" else s"$lang/$category.po")
       if (offset == 0 || categorizedEntries.iterator.exists(e => translate(e.tgi).nonEmpty)) {  // we only generate .po files that contain at least some translations already
         outputFile.getParentFile().mkdirs()
-        for (printer <- managed(new PrintWriter(outputFile, "UTF-8"))) {
+        scala.util.Using.resource(new PrintWriter(outputFile, "UTF-8")) { printer =>
           printer.println(s"msgid ${quote("")}")
           printer.println(s"msgstr ${quote("")}")
           printer.println(quote("Project-Id-Version: \n"))

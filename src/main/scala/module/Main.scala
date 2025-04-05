@@ -35,7 +35,7 @@ abstract class AbstractMain {
   /** Creates a generator with a new context, runs its start method and outputs the resulting RUL2 code to file. */
   def start(file: File = file, tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]] = null): Unit = {
     if (tileOrientationCache == null) {
-      for (cache <- RegenerateTileOrientationCache.withCache()) {
+      RegenerateTileOrientationCache.withCache { cache =>
         start(file, cache)
       }
     } else {
@@ -47,7 +47,7 @@ abstract class AbstractMain {
       val gen = generator(context)
       gen.start()
       // TODO to be revised, later, in order to make more efficient
-      for (printer <- resource.managed(new PrintWriter(file))) {
+      scala.util.Using.resource(new PrintWriter(file)) { printer =>
         printer.println(";This file was generated automatically. DO NOT EDIT!")
         val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {

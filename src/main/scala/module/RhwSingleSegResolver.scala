@@ -4,11 +4,12 @@ import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags.
 
 trait SingleSegResolver {
 
-  protected class SingleProperty(val offset: Int, val kind: Flag.Kind.Value, val rf: RotFlip, val swapped: Boolean)
+  protected class SingleProperty(val offset: Int, val kind: Flag.Kind, val rf: RotFlip, val swapped: Boolean)
 
   private def fillMap(m: scala.collection.mutable.Map[Flags, SingleProperty]) = { (tup: IntFlags, offset: Int, swapped: Boolean) =>
     import Flag.Kind._
-    def flipKind(k: Flag.Kind.Value, rf: RotFlip): Flag.Kind.Value = if (k == Default || !rf.flipped) k else k match {
+    def flipKind(k: Flag.Kind, rf: RotFlip): Flag.Kind = if (!rf.flipped) k else k match {
+      case Default => Default
       case LeftSpin => RightSpin
       case RightSpin => LeftSpin
     }
@@ -70,7 +71,7 @@ trait SingleSegResolver {
 
 trait RhwSingleSegResolver extends SingleSegResolver { this: RhwResolver =>
 
-  private[this] val stubSegment = Dirtroad~(0,0,0,0)
+  private val stubSegment = Dirtroad~(0,0,0,0)
   val isRhwShoulderMedian = Network.ValueSet(Rhw8sm, L1Rhw8sm, L2Rhw8sm)
 
   def resolveSegment(seg: Segment): IdTile = {

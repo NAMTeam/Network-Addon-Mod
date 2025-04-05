@@ -18,7 +18,7 @@ object CompileAllMetarules {
     flexfly.CompileFlexFlyResources.main(Array.empty)
 
     // Compilation of metarule code.
-    RegenerateTileOrientationCache.withCache().acquireFor(compileMetarulesOnce)
+    RegenerateTileOrientationCache.withCache(compileMetarulesOnce)
 
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
