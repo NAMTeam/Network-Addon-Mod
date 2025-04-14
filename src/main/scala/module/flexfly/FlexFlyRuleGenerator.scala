@@ -72,10 +72,6 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
           // First we consider cases in which only one of the two tiles has crossing
           for (minDir <- minDirs) {
             Rules += (Dirtroad ~> main)~orient(EW)                       | main~orient(T0) & minor~minDir * R3F0
-            if (intersectionAllowed(Dirtroad, minor)) {  // TODO remove these redundant adjacencies
-              Rules += (Dirtroad ~> main)~orient(EW) & minor~minDir * R1F0 | main~orient(T0)
-              Rules += main~orient(T6) * R3F0                              | (Dirtroad ~> main)~orient(NW) & minor~minDir * R3F0
-            }
             if (!isTripleTile(minor)) { // otherwise physically impossible
               Rules += main~orient(T6) * R3F0      & minor~minDir * R1F0 | (Dirtroad ~> main)~orient(NW)
             }
@@ -96,7 +92,7 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
               case SNNS => (SN, NS)
               case SNSN => (SN, SN)
             }
-            if (intersectionAllowed(Dirtroad, minor)) {  // TODO remove these redundant adjacencies, but keep multi-tile network (inner) adjacencies
+            if (intersectionAllowed(Dirtroad, minor)) {
               Rules += (Dirtroad ~> main)~orient(EW) & minor~minDir | main~orient(T0) & other~otherDir
               if (otherDir == NS && hasLeftShoulder(other) || otherDir == SN && hasRightShoulder(other)) { // skip impossible crossings
                 Rules += (Dirtroad ~> main)~orient(SE) & minor~minDir | main~orient(T6) * R1F0 & other~otherDir
