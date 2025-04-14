@@ -8,7 +8,7 @@ import syntax._, Network._, Flags._, RotFlip._, Implicits._, group.SymGroup._
 import NetworkProperties._
 import RhwRuleGenerator.HeightLevel
 
-trait Onslope { this: RuleGenerator with Curve45Generator =>
+trait Onslope { this: RuleGenerator & Curve45Generator =>
 
   def createOnslopeTransition(): Unit = {
     val rhw2SlopeL1 = L1Rhw2~EC & Dirtroad~CW  // IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
@@ -44,7 +44,7 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new RhwResolver orElse new NwmResolver
   val generator = new OnslopeGenerator(_)
   lazy val file = new java.io.File("target/Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
 }

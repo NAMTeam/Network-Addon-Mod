@@ -2,9 +2,9 @@ name := "nam-controller"
 
 organization := "com.sc4nam"
 
-version := "49-SNAPSHOT"
+version := "50-SNAPSHOT"
 
-scalaVersion := "2.13.12"
+scalaVersion := "3.6.4"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -64,10 +64,10 @@ lazy val conflictingOverridesCheck = inputKey[scala.util.Try[Unit]]("Checks all 
 conflictingOverridesCheck := runMainWithJLogger("com.sc4nam.scripts.ConflictingOverridesChecker").evaluated
 
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.17" % Test
 
-libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1"
+libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1" cross CrossVersion.for3Use2_13
 
-libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0"
+libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0" cross CrossVersion.for3Use2_13
 
-libraryDependencies += "io.github.memo33" %% "metarules" % "0.6.0"
+libraryDependencies += "io.github.memo33" %% "metarules" % "0.7.0"

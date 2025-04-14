@@ -56,9 +56,9 @@ object Adjacencies {
   }
 
   /** used as a cache */
-  private[this] val adjacentNetworksMap = mutable.Map.empty[Network, Seq[(Network, Int)]]
+  private val adjacentNetworksMap = mutable.Map.empty[Network, Seq[(Network, Int)]]
 
-  private[this] def isRhw3(n: Network) = n == Rhw3 || n == L1Rhw3 || n == L2Rhw3
+  private def isRhw3(n: Network) = n == Rhw3 || n == L1Rhw3 || n == L2Rhw3
 
   /** Lists the networks that are supported adjacent to `n` including their
     * directions (NSNS, NSSN, SNSN).

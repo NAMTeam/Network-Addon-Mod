@@ -66,7 +66,7 @@ import NetworkProperties.{isSingleTile, isDoubleTile}
  *       '---------'---------'
  */
 
-trait Stability { _: RuleGenerator =>
+trait Stability { this: RuleGenerator =>
   def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
     if (rule(0) == rule(2) || rule(1) == rule(3)) {
       Seq(rule)
@@ -76,7 +76,7 @@ trait Stability { _: RuleGenerator =>
   }
 }
 
-trait Curve45Generator extends Stability { _: RuleGenerator =>
+trait Curve45Generator extends Stability { this: RuleGenerator =>
 
   def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
 
@@ -93,16 +93,9 @@ trait Curve45Generator extends Stability { _: RuleGenerator =>
     inside && (n == Ave6 || n == Ave8)
   }
 
-  def hasMiniCurve(n: Network, inside: Boolean): Boolean = {
-    inside && (n >= Rhw8s && n <= L2Rhw10c && (n < Rhw6cm || n > L2Rhw6cm)) ||
-    !inside && (n >= Rhw8sm && n <= L2Rhw8sm) ||
-    n == Ave6m || n == Tla7m
-  }
+  def hasMiniCurve(n: Network, inside: Boolean): Boolean = NetworkProperties.hasMiniCurve(n, inside = inside)
 
-  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = {
-    (n.isRhw && n > L4Rhw6s && n <= L2Rhw10c) && !hasMiniCurve(n, inside) ||
-    !inside && (n == Ave6 || n == Ave8)
-  }
+  def hasExtendedCurve(n: Network, inside: Boolean): Boolean = NetworkProperties.hasExtendedCurve(n, inside = inside)
 
   def hasR1Curve(n: Network, inside: Boolean): Boolean = {
     (n.isRhw && n <= L4Rhw6s && n != L1Rhw3 && n != L2Rhw3)  // Elevated R1 Rhw3 models are currently missing
