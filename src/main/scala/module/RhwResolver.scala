@@ -1,82 +1,9 @@
 package com.sc4nam.module
 
 import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._
-
-trait DoubleSegResolver {
-
-  protected case class DoubleProperty(
-      val orthDiagOffset: Int,
-      val majorSegReversed: Boolean,
-      val minorSegReversed: Boolean,
-      val majKind: Flag.Kind,
-      val minKind: Flag.Kind,
-      val rf: RotFlip) extends Ordered[DoubleProperty] {
-
-    def compare(that: DoubleProperty): Int = {
-      if (this.orthDiagOffset != that.orthDiagOffset) this.orthDiagOffset - that.orthDiagOffset
-      else if (this.majorSegReversed != that.majorSegReversed) if (this.majorSegReversed) 1 else -1
-      else if (this.minorSegReversed != that.minorSegReversed) if (this.minorSegReversed) 1 else -1
-      else if (this.rf.flip != that.rf.flip) this.rf.flip - that.rf.flip
-      else if (this.rf.rot != that.rf.rot) this.rf.rot - that.rf.rot
-      else 0
-    }
-  }
-
-  /** contains mapping of flags of major and minor network (orth and diag only)
-    * to DoubleProperty(iid offset, major rev, minor rev, rotflip).
-    */
-  protected val doubleProps: Map[(Flags, Flags), DoubleProperty] = {
-    val tmp = scala.collection.mutable.Map.empty[(Flags, Flags), DoubleProperty]
-
-    import Flag.Kind._
-    def flipKind(k: Flag.Kind, rf: RotFlip): Flag.Kind = if (!rf.flipped) k else k match {
-      case Default => Default
-      case LeftSpin => RightSpin
-      case RightSpin => LeftSpin
-    }
-    def fill(tup1: IntFlags, tup1Rev: IntFlags, tup2: IntFlags, tup2Rev: IntFlags, offset: Int): Unit = {
-      for {
-        n1 <- Seq(Dirtroad, Mis) // these networks only serve for generating symm and asymm flags
-        n2 <- Seq(L1Rhw2, L1Mis)
-        (seg2, minRev) <- Seq(n2~tup2, n2~tup2Rev) zip Seq(false, true)
-        (seg1, majRev) <- Seq(n1~tup1, n1~tup1Rev) zip Seq(false, true)
-        (flags1, kind1) <- Seq(seg1.flags, seg1.flags.spinLeft, seg1.flags.spinRight) zip Seq(Default, LeftSpin, RightSpin)
-        (flags2, kind2) <- Seq(seg2.flags, seg2.flags.spinLeft, seg2.flags.spinRight) zip Seq(Default, LeftSpin, RightSpin)
-        rf <- Tile(Set(seg1, seg2)).representations
-        prop = new DoubleProperty(offset, majRev, minRev, flipKind(kind1, rf), flipKind(kind2, rf), rf)
-        // special cases for shared-tile diagonals
-        f1 <- if (offset >= 0x6000 && majRev) Seq(flags1, (n1~SharedDiagRight).flags) else Seq(flags1)
-        f2 <- if (offset % 0x6000 != 0 && minRev) Seq(flags2, (n2~SharedDiagLeft).flags) else Seq(flags2)
-      } /*do*/ {
-        tmp.getOrElseUpdate((f1 * rf, f2 * rf), prop)
-      }
-    }
-
-    fill(NS, SN, EW, WE, 0x0000)
-    fill(NS, SN, SW, WS, 0x3000)
-    fill(ES, SE, EW, WE, 0x6000)
-    fill(ES, SE, SW, WS, 0x9000)
-    tmp.toMap
-  }
-
-  /** A segment is greater, if it has higher priority, thus dominates the other
-    * and determines the main ID range, like 0x5713#### for instance. The other
-    * segment determines the piece ID.
-    */
-  protected def greater(a: Segment, b: Segment): Boolean = {
-    if (a.network.isRhw != b.network.isRhw) {
-      a.network.isRhw
-    } else if (a.network.isNwm != b.network.isNwm) {
-      a.network.isNwm
-    } else if (a.network.height != b.network.height) {
-      a.network.height > b.network.height
-    } else if (a.network != b.network) {
-      a.network > b.network // both RHW or both NWM with same height
-    } else {
-      doubleProps(a.flags, b.flags) <= doubleProps(b.flags, a.flags) // doubleProps should always contain the flags, or something is wrong
-    }
-  }
-}
+import Implicits.segmentToTile
+import com.sc4nam.module.{NetworkProperties => NP}
+import NwmResolver.nwmRangeId
 
 object RhwResolver {
 
@@ -132,43 +59,126 @@ object RhwResolver {
     0x57700000 + (rhwRangeId(n) & 0xFFFFF) + ((rhwRangeId(n) >>> 4) & 0xF000)  // e.g. 0x57788080 for Rhw6cm
   }
 
+  /** A network is greater, if it has higher priority, thus dominates the other
+    * and determines the main ID range, like 0x5713#### for instance. The other
+    * network determines the piece ID.
+    */
+  def greater(a: Network, b: Network): Boolean = {
+    if (a.isRhw != b.isRhw) {
+      a.isRhw
+    } else if (a.isNwm != b.isNwm) {
+      a.isNwm
+    } else if (a.height != b.height) {
+      a.height > b.height
+    } else if (a != b) {
+      a > b // both RHW or both NWM with same height
+    } else {
+      assert(a == b)
+      false
+    }
+  }
+
 }
 
-class RhwResolver extends IdResolver with RhwSingleSegResolver with DoubleSegResolver {
+class RhwResolver extends IdResolver {
+  def isDefinedAt(t: Tile): Boolean = tileMap.isDefinedAt(t)
+  def apply(tile: Tile): IdTile = tileMap(tile)
 
-  def isSingleTileRhw(n: Network): Boolean = n.isRhw && n <= L4Rhw6s
-  val isRhwShoulder = Network.ValueSet(
-    Rhw8s, L1Rhw8s, L2Rhw8s, Rhw10s, L1Rhw10s, L2Rhw10s, Rhw12s, L1Rhw12s, L2Rhw12s,
-    Rhw6c, L1Rhw6c, L2Rhw6c, Rhw8c, L1Rhw8c, L2Rhw8c, Rhw10c, L1Rhw10c, L2Rhw10c)
+  val tileMap = {
+    val builder = new ResolverBuilder
+    import builder.add
 
-  /** is defined for all tiles that contain an RHW network */
-  def isDefinedAt(t: Tile): Boolean = t.segs.exists(_.network.isRhw)
+    add(0x57000f00, Dirtroad~(0,0,0,0))
+    for (n <- RhwNetworks) {
+      val id = RhwResolver.rhwRangeId(n)
+      add(id + 0x0000, n~NS)  // orth
+      add(id + 0x0100, n~CS)  // orth stub
 
-  def apply(tile: Tile): IdTile = {
-    if (!isDefinedAt(tile)) {
-      throw new MatchError(tile)
-    } else if (tile.segs.size == 2) {
-      val List(maj, min) = tile.segs.toList.sortWith(greater)
-      assert(maj.network.isRhw)
-      doubleProps.get(maj.flags, min.flags) match {
-        case Some(prop) =>
-          var id = RhwResolver.rhwRangeId(maj.network) + RhwResolver.rhwPieceId(min.network) + prop.orthDiagOffset
-          val strangeFlag = isRhwShoulder(maj.network) && (prop.orthDiagOffset >= 0x6000) // strange anomalie for shoulder networks
-          val strangeFlagMin = isRhwShoulder(min.network) && (prop.orthDiagOffset % 0x6000 >= 0x3000) // strange anomalie
-          if (prop.majorSegReversed ^ strangeFlag) // TODO strange behaviour for shoulder networks
-            id += (if (isSingleTileRhw(maj.network)) 0x80 else 0x40)
-          if (prop.minorSegReversed ^ strangeFlagMin) // TODO consider changing the IDs to 0x05
-            id += (if (maj.network.height == 0 && min.network.height == 0) 0x09 else 0x05)
-          if (maj.network.height == 0 && min.network == Str)
-            id += 4  // Str has offset 0x09 instead of 0x05
-          IdTile(id, prop.rf)
-        case None => //??? // TODO T intersections etc. still missing
-          throw new UnsupportedOperationException(tile.toString)
+      if (NP.isSingleTile(n)) {
+        add(id + 0x0200, n~ES)  // diag 1
+        add(id + 0x0300, n~SWC)  // diag stub 1
+        add(id + 0x0400, n~(0,-2,0,+11))  // 45 curve 1
+        add(id + 0x0500, n~(0,0,-1,+13))  // 45 curve 1
+        if (!n.isSymm) {
+          add(id + 0x0900, n~SE)  // diag 2
+          add(id + 0x0a00, n~CWS)  // diag stub 2
+          add(id + 0x0b00, n~(0,+2,0,-11))  // 45 curve 2
+          add(id + 0x0c00, n~(0,0,+1,-13))  // 45 curve 2
+        }
+      } else {  // multi-tile RHW networks
+        add(id + (if (!NP.isRhwShoulder(n)) 0x0200 else 0x0300), n~ES) // diag 1
+        add(id + (if (!NP.isRhwShoulder(n)) 0x0400 else 0x0500), n~SWC) // diag stub 1
+        if (!n.isSymm) {
+          add(id + (if (!NP.isRhwShoulder(n)) 0x0300 else 0x0200), n~SE) // diag 2
+          // add(id + 0x0300, n~SharedDiagRight) // (avelike)
+          add(id + (if (!NP.isRhwShoulder(n)) 0x0500 else 0x0400), n~CWS) // diag stub 2
+        }
+        // multi-tile RHW curve assembly
+        val rev = NP.isRhwShoulderMedian(n)
+        val orientM: IntFlags => IntFlags = if (rev) reverseIntFlags else identity
+        if (NP.hasMiniCurve(n, inside = !rev))
+          add(id + 0x0600, n~orientM(0,+2,0,-11))
+        if (NP.hasMiniCurve(n, inside = rev))
+          add(id + 0x0700, n~orientM(0,-2,0,+11))
+        if (NP.hasExtendedCurve(n, inside = !rev)) {
+          add(id + 0x0600, n~orientM(0,+111,0,-11))
+          add(id + 0x0a00, n~orientM(0,+2,0,-111))
+        }
+        if (NP.hasExtendedCurve(n, inside = rev) && !n.isSymm) {
+          add(id + 0x0700, n~orientM(0,-111,0,+11))
+          add(id + 0x0b00, n~orientM(0,-2,0,+111))
+        }
+        if (NP.hasMiniCurve(n, inside = rev) || NP.hasExtendedCurve(n, inside = rev)) {
+          add(id + 0x0800, n~orientM(0,0,+111,-13))
+          add(id + 0x0c00, n~orientM(0,0,-111,+3))
+        }
+        if (NP.hasMiniCurve(n, inside = !rev) || NP.hasExtendedCurve(n, inside = !rev) && !n.isSymm) {
+          add(id + 0x0900, n~orientM(0,0,-111,+13))
+          add(id + 0x0d00, n~orientM(0,0,+111,-3))
+        }
+        // add(id + 0x0800, n~(+1,-3,+1,-13)) // (avelike)
+        // add(id + 0x0900, n~(0,0,-1,+13)) // (avelike)
       }
-    } else if (tile.segs.size == 1) {
-      resolveSegment(tile.segs.head)
-    } else {
-      ??? // three-level overpasses currently left out
     }
+
+    // crossings
+    for {
+      n <- RhwNetworks.iterator
+      n2 <- RhwResolver.rhwPieceId.keysIterator
+      if !RhwResolver.greater(n2, n)
+      if NP.intersectionAllowed(n, n2)
+    } {
+      val pid = RhwResolver.rhwPieceId(n2) + (if (n.height == 0 && n2 == Str) 4 else 0)  // Str has offset 0x09 instead of 0x05
+      val id = RhwResolver.rhwRangeId(n) + pid
+      val dir1 = if (NP.isSingleTile(n)) 0x80 else 0x40
+      val dir2 = if (n.height == 0 && n2.height == 0) 0x09 else 0x05
+      val (msk1a, msk1b) = if (NP.isRhwShoulder(n)) (0x00, 0xf0) else (0xf0, 0x00)  // reversal of direction
+      val (msk2a, msk2b) = if (NP.isRhwShoulder(n2)) (0x00, 0x0f) else (0x0f, 0x00)  // reversal of direction
+      val n2HasSharedDiag = n2.typ == AvenueLike || n2 == Onewayroad  // e.g. for Owr4
+      val ws = if (n2HasSharedDiag) SharedDiagLeft else WS
+      val se = if (n.typ == AvenueLike) SharedDiagRight else SE
+
+      // O×O
+      add(n~NS & n2~EW, id + 0x0000)
+      // O×D
+      add(n~NS & n2~SW, id + 0x3000 + (dir2 & msk2b))
+      add(n~NS & n2~ws, id + 0x3000 + (dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
+      add(n~SN & n2~SW, id + 0x3000 + (dir2 & msk2b | dir1), when = !n.isSymm)
+      add(n~SN & n2~ws, id + 0x3000 + (dir2 & msk2a | dir1), when = !n.isSymm && (n2.typ == Asymmetrical))
+      // D×O
+      if (n != n2) {
+        add(n~ES & n2~EW, id + 0x6000 + (dir1 & msk1b))
+        add(n~ES & n2~WE, id + 0x6000 + (dir1 & msk1b | dir2), when = !n2.isSymm)
+        add(n~se & n2~EW, id + 0x6000 + (dir1 & msk1a), when = !n.isSymm)
+        add(n~se & n2~WE, id + 0x6000 + (dir1 & msk1a | dir2), when = (n.typ == Asymmetrical) && !n2.isSymm)
+      }
+      // D×D
+      add(n~ES & n2~SW, id + 0x9000 + (dir1 & msk1b | dir2 & msk2b))
+      add(n~ES & n2~ws, id + 0x9000 + (dir1 & msk1b | dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
+      add(n~se & n2~SW, id + 0x9000 + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
+      add(n~se & n2~ws, id + 0x9000 + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
+    }
+
+    builder.result()
   }
 }

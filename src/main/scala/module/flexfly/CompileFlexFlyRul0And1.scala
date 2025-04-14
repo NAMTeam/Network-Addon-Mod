@@ -334,7 +334,7 @@ object CompileFlexFlyRul0And1 {
   def main(args: Array[String]): Unit = {
     val rul0File = new File("target/5B00_FlexFly5x5_MANAGED.txt")
     val rul1File = new File("target/11_FlexFly_falsies_MANAGED.txt")
-    val resolver = new FlexFlyResolver
+    val resolver = new FlexFlyResolver orElse new RhwResolver
     printRul0(rul0File, resolver)
     printRul1(rul1File, resolver)
   }

@@ -36,21 +36,29 @@ trait Onslope { this: RuleGenerator & Curve45Generator =>
         for (minor <- (RhwNetworks - Rhw10c - L1Rhw10c - L2Rhw10c) ++ (BaseNetworks - Subway) ++ NwmNetworks ++ GlrNetworks + Str + Hsr + L2Hsr) {  // crossing network
           if (intersectionAllowed(upper, minor)) {
             if (hasRightShoulder(minor)) {
-              Rules += onslope | (Dirtroad ~> upper)~EW & minor~NS    // OST > upper crossing minor
+              if (intersectionAllowed(Dirtroad, minor)) {
+                Rules += onslope | (Dirtroad ~> upper)~EW & minor~NS    // OST > upper crossing minor
+              }
               Rules += rhw2Slope | upper~EW & minor~NS | onslope | %  // OST < upper crossing minor
             }
             if (hasLeftShoulder(minor)) {
-              Rules += onslope | (Dirtroad ~> upper)~EW & minor~SN    // OST > upper crossing minor
+              if (intersectionAllowed(Dirtroad, minor)) {
+                Rules += onslope | (Dirtroad ~> upper)~EW & minor~SN    // OST > upper crossing minor
+              }
               Rules += rhw2Slope | upper~EW & minor~SN | onslope | %  // OST < upper crossing minor
             }
           }
           if (intersectionAllowed(lower, minor)) {
             if (hasRightShoulder(minor)) {
-              Rules += (Dirtroad ~> lower)~EW & minor~SN | onslope    // lower crossing minor < OST
+              if (intersectionAllowed(Dirtroad, minor)) {
+                Rules += (Dirtroad ~> lower)~EW & minor~SN | onslope    // lower crossing minor < OST
+              }
               Rules += lower~EW & minor~SN | rhw2Slope | % | onslope  // lower crossing minor > OST
             }
             if (hasLeftShoulder(minor)) {
-              Rules += (Dirtroad ~> lower)~EW & minor~NS | onslope    // lower crossing minor < OST
+              if (intersectionAllowed(Dirtroad, minor)) {
+                Rules += (Dirtroad ~> lower)~EW & minor~NS | onslope    // lower crossing minor < OST
+              }
               Rules += lower~EW & minor~NS | rhw2Slope | % | onslope  // lower crossing minor > OST
             }
           }
@@ -122,7 +130,7 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new RhwResolver orElse new NwmResolver
   val generator = new OnslopeGenerator(_)
   lazy val file = new java.io.File("target/Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
 }
