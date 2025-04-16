@@ -132,8 +132,8 @@ object RedundantAdjacenciesChecker extends Rul2Checker {
   }
 
   def isRedundantAdjacency(rule: Rule[IdTile], lookupRule: PartialFunction[EquivRule, Rule[IdTile]]): Boolean = {
-    val a = rule(0)
-    def checkOrth() = {
+    def checkOrth(rule: Rule[IdTile]) = {
+      val a = rule(0)
       val c = rule(1)
       orthogonalSurrogateTiles.exists { b =>
         if (b.id == a.id || b.id == c.id) {  // this would depend on the same rule
@@ -144,7 +144,8 @@ object RedundantAdjacenciesChecker extends Rul2Checker {
         }
       }
     }
-    def checkDiag() = {
+    def checkDiag(rule: Rule[IdTile]) = {
+      val a = rule(0)
       val d = rule(1)
       diagonalSurrogateTiles.exists { case (b, c, southBound) =>
         if (c.id == a.id || b.id == d.id) {  // this would depend on the same rule
@@ -155,7 +156,10 @@ object RedundantAdjacenciesChecker extends Rul2Checker {
         }
       }
     }
-    checkOrth() || checkDiag()
+    checkOrth(rule) || checkDiag(rule) || {
+      val ruleFlipped = rule.map(_ * R2F1)  // checking the flipped rule is important to ensure that two equivalent rules are both either redundant or not
+      checkOrth(ruleFlipped) || checkDiag(ruleFlipped)
+    }
   }
 
 }
