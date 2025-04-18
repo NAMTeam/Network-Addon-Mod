@@ -29,5 +29,13 @@ class RhwResolverSpec extends AnyWordSpec with Matchers {
         }
       }
     }
+    "use only expected 8th digits" in {
+      val expected8thDigits = Set(0x0, 0x5, 0x9, 0xa)
+      for ((tile, idTile) <- resolve.tileMap) {
+        withClue((tile, idTile)) {
+          expected8thDigits should contain (idTile.id % 0x10)
+        }
+      }
+    }
   }
 }

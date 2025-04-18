@@ -154,29 +154,31 @@ class RhwResolver extends IdResolver {
       val dir2 = if (n.height == 0 && n2.height == 0) 0x09 else 0x05
       val (msk1a, msk1b) = if (NP.isRhwShoulder(n)) (0x00, 0xf0) else (0xf0, 0x00)  // reversal of direction
       val (msk2a, msk2b) = if (NP.isRhwShoulder(n2)) (0x00, 0x0f) else (0x0f, 0x00)  // reversal of direction
+      val off8Diag = if (n2.height != 0 && Network.Viaducts.contains(n2)) 5 else 0  // use 5/A instead of 0/5 as 8th digit (presumably to avoid wealth texture conflict)
       val n2HasSharedDiag = n2.typ == AvenueLike || n2 == Onewayroad  // e.g. for Owr4
       val ws = if (n2HasSharedDiag) SharedDiagLeft else WS
       val se = if (n.typ == AvenueLike) SharedDiagRight else SE
+      val orientA: IntFlags => IntFlags = if (n2 == Ard3) reverseIntFlags else identity
 
       // O×O
-      add(n~NS & n2~EW, id + 0x0000)
+      add(n~NS & n2~orientA(EW), id + 0x0000)
       // O×D
-      add(n~NS & n2~SW, id + 0x3000 + (dir2 & msk2b))
-      add(n~NS & n2~ws, id + 0x3000 + (dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
-      add(n~SN & n2~SW, id + 0x3000 + (dir2 & msk2b | dir1), when = !n.isSymm)
-      add(n~SN & n2~ws, id + 0x3000 + (dir2 & msk2a | dir1), when = !n.isSymm && (n2.typ == Asymmetrical))
+      add(n~NS & n2~SW, id + 0x3000 + off8Diag + (dir2 & msk2b))
+      add(n~NS & n2~ws, id + 0x3000 + off8Diag + (dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
+      add(n~SN & n2~SW, id + 0x3000 + off8Diag + (dir2 & msk2b | dir1), when = !n.isSymm)
+      add(n~SN & n2~ws, id + 0x3000 + off8Diag + (dir2 & msk2a | dir1), when = !n.isSymm && (n2.typ == Asymmetrical))
       // D×O
       if (n != n2) {
-        add(n~ES & n2~EW, id + 0x6000 + (dir1 & msk1b))
-        add(n~ES & n2~WE, id + 0x6000 + (dir1 & msk1b | dir2), when = !n2.isSymm)
-        add(n~se & n2~EW, id + 0x6000 + (dir1 & msk1a), when = !n.isSymm)
-        add(n~se & n2~WE, id + 0x6000 + (dir1 & msk1a | dir2), when = (n.typ == Asymmetrical) && !n2.isSymm)
+        add(n~ES & n2~EW, id + 0x6000 + off8Diag + (dir1 & msk1b))
+        add(n~ES & n2~WE, id + 0x6000 + off8Diag + (dir1 & msk1b | dir2), when = !n2.isSymm)
+        add(n~se & n2~EW, id + 0x6000 + off8Diag + (dir1 & msk1a), when = !n.isSymm)
+        add(n~se & n2~WE, id + 0x6000 + off8Diag + (dir1 & msk1a | dir2), when = (n.typ == Asymmetrical) && !n2.isSymm)
       }
       // D×D
-      add(n~ES & n2~SW, id + 0x9000 + (dir1 & msk1b | dir2 & msk2b))
-      add(n~ES & n2~ws, id + 0x9000 + (dir1 & msk1b | dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
-      add(n~se & n2~SW, id + 0x9000 + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
-      add(n~se & n2~ws, id + 0x9000 + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
+      add(n~ES & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1b | dir2 & msk2b))
+      add(n~ES & n2~ws, id + 0x9000 + off8Diag + (dir1 & msk1b | dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
+      add(n~se & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
+      add(n~se & n2~ws, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
     }
 
     builder.result()

@@ -75,21 +75,16 @@ object SegmentOrientationChecker extends Rul2Checker {
     val dd = reverseResolver.lift(rule(3))
 
     val failureOpt =
-      if (bb.isDefined && dd.isDefined) {
+      Option.when(bb.isDefined && dd.isDefined) {
         checkConversionTiles(bb.get, dd.get)
-      } else {
-        None
-      } orElse {
-        if (aa.isDefined && cc.isDefined) {
+      }.flatten.orElse {
+        Option.when(aa.isDefined && cc.isDefined) {
           checkConversionTiles(aa.get.map(_ * R2F0).asInstanceOf[::[Tile]], cc.get.map(_ * R2F0).asInstanceOf[::[Tile]])
-        } else {
-          None
-        } orElse {
-          if (cc.isDefined && dd.isDefined) {
-            checkOutputTiles(cc.get, dd.get)
-          } else {
-            None
-          }
+        }.flatten.orElse {
+          None // TODO
+          // Option.when(cc.isDefined && dd.isDefined) {
+          //   checkOutputTiles(cc.get, dd.get)
+          // }.flatten
         }
       }
 
