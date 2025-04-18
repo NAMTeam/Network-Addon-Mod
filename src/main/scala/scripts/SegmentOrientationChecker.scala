@@ -101,10 +101,18 @@ object SegmentOrientationChecker extends Rul2Checker {
   def checkConversionTiles(bb: ::[Tile], dd: ::[Tile]): Option[Failure] = {
     if (bb.exists(t1 => dd.exists(t2 => isBaseOrientationDifferent(t1, t2)))) {
       Some("base orientation wrong")
+    } else if (bb.exists(t1 => dd.exists(t2 => hasSegmentReversal(t1, t2)))) {
+      Some("unexpected segment reversal")
     } else {
       None
     }
   }
+
+  private def baseSegment(seg: Segment): Segment =
+    seg.network.base match {
+      case Some(n) => Segment(n, Flags(seg.flags, if (n.isSymm) Flag.Bi else Flag.InOut))
+      case None => throw IllegalArgumentException(s"base segment can only be constructed for override networks: $seg")
+    }
 
   /** Checks whether tile t2 is a single-segment tile overriding tile t1, but
     * messing up the rotation in an unexpected way.
@@ -114,10 +122,29 @@ object SegmentOrientationChecker extends Rul2Checker {
       val s1 = t1.segs.head
       val s2 = t2.segs.head
       if (s2.network.base.contains(s1.network)) {  // this is an override from base to override-network
-        val seg1expected = Segment(s1.network, Flags(s2.flags, if (s1.network.isSymm) Flag.Bi else Flag.InOut))
+        val seg1expected = baseSegment(s2)
         (RotFlip.values -- t1.symmetries).exists(rf => seg1expected * rf == s1)  // segment s1 uses a wrong rotation, as it is not one of the symmetries of the tile
       } else false
     } else false
+  }
+
+  def hasSegmentReversal(t1: Tile, t2: Tile): Boolean = {
+    t2.segs.exists { s2 =>
+      // plain reversal of a crossing segment
+      val s2Reversed: Segment = s2.copy(flags = s2.flags.reverseFlags)
+      if (s2Reversed != s2) {
+        t1.segs.exists(_ == s2Reversed)
+      } else false
+    } || t2.segs.exists { s2 =>
+      // reversal of the main overriding segment
+      if (s2.network.base.isDefined) {
+        val s2Base = baseSegment(s2)
+        val s2BaseReversed = s2Base.copy(flags = s2Base.flags.reverseFlags)
+        if (s2BaseReversed != s2Base) {
+          t1.segs.exists(_ == s2BaseReversed)
+        } else false
+      } else false
+    }
   }
 
   /** Finds bad segment orientations by looking at tiles 3 and 4 of a rule.

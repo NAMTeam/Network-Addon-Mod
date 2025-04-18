@@ -14,6 +14,10 @@ class SegmentOrientationCheckerSpec extends AnyWordSpec with Matchers {
       SegmentOrientationChecker.isBaseOrientationDifferent(Avenue~EW, L1Avenue~WE).shouldBe(true)
       SegmentOrientationChecker.isBaseOrientationDifferent(Avenue~NS, L1Avenue~WE).shouldBe(true)
     }
+    "detect wrong segment reversal" in {
+      SegmentOrientationChecker.hasSegmentReversal(Dirtroad~WE & Ard3~NS, Mis~WE & Ard3~SN).shouldBe(true)
+      SegmentOrientationChecker.hasSegmentReversal(Avenue~WE & Road~NS, L1Avenue~EW & Road~NS).shouldBe(true)
+    }
   }
 
 }
