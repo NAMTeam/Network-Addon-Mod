@@ -81,10 +81,9 @@ object SegmentOrientationChecker extends Rul2Checker {
         Option.when(aa.isDefined && cc.isDefined) {
           checkConversionTiles(aa.get.map(_ * R2F0).asInstanceOf[::[Tile]], cc.get.map(_ * R2F0).asInstanceOf[::[Tile]])
         }.flatten.orElse {
-          None // TODO
-          // Option.when(cc.isDefined && dd.isDefined) {
-          //   checkOutputTiles(cc.get, dd.get)
-          // }.flatten
+          Option.when(cc.isDefined && dd.isDefined) {
+            checkOutputTiles(cc.get, dd.get, rule)
+          }.flatten
         }
       }
 
@@ -144,26 +143,67 @@ object SegmentOrientationChecker extends Rul2Checker {
 
   /** Finds bad segment orientations by looking at tiles 3 and 4 of a rule.
     */
-  def checkOutputTiles(cc: ::[Tile], dd: ::[Tile]): Option[Failure] = {
-    // if (cc.nonEmpty && dd.nonEmpty && !cc.exists(t1 => dd.exists(t2 => areSegmentsConnecting(t1, t2)))) {
-    //   Some(s"output flags do not connect properly: ${cc.head} | ${dd.head}")
-    // } else {
-    //   None
-    // }
-    None
+  def checkOutputTiles(cc: ::[Tile], dd: ::[Tile], rule: Rule[IdTile]): Option[Failure] = {
+    if (cc.forall(t1 => dd.forall(t2 => areSegmentsBadlyConnected(t1, t2, rule)))
+      && !badConnectionsFalsePositives.contains(rule)
+    ) {
+      Some(s"badly connected output segments")
+    } else {
+      None
+    }
   }
 
-  // def areSegmentsConnecting(tile1: Tile, tile2: Tile): Boolean = {
-  //   val segs1 = tile1.segs.filter(_.flags(2) != 0)
-  //   val segs2 = tile2.segs.filter(_.flags(0) != 0)
-  //   if (segs1.size != segs2.size) {
-  //     false
-  //   } else {
-  //     // masking out other edges
-  //     (segs1.toSeq.map(s => ((s.network, s.flags.manifest.reverse(s.flags(2))), s.flags.manifest)).sortBy(_._1)
-  //     == segs2.toSeq.map(s => ((s.network, s.flags(0)), s.flags.manifest)).sortBy(_._1))
-  //   }
-  // }
+  /** A simplified flag that distinguishes between curve directions and orthogonal directions. */
+  def basicFlag(flag: Int): Int = (flag.abs % 10) match {
+    case 1 => 1
+    case 3 => 3
+    case _ => 2
+  }
 
+  private val dxdDirtroadTiles = Set(IdTile(0x5700aa00, R0F0), IdTile(0x5700aa00, R2F0))
+  private val badConnectionsFalsePositives = Set[Rule[IdTile]](
+    // triple crossings between Road×Avenue (O×O) and orth OWR
+    Rule(0x04008800,0,0,0x09000300,3,0,0x04008900,2,0,0x09004b00,3,0),
+    Rule(0x04008800,0,0,0x09004b00,3,0,0x04008900,2,0,0x09004b00,3,0),
+  )
+
+  def areSegmentsBadlyConnected(tile1: Tile, tile2: Tile, rule: Rule[IdTile]): Boolean = {
+    val connectingSegs1 = tile1.segs.filter(_.flags(2) != 0)
+    val connectingSegs2 = tile2.segs.filter(_.flags(0) != 0)
+    val commonNetworks = connectingSegs1.map(_.network).intersect(connectingSegs2.map(_.network))
+    if (commonNetworks.isEmpty) {
+      connectingSegs1.nonEmpty && connectingSegs2.nonEmpty
+    } else {
+
+      def wellConnected(connectingSegs1: Set[Segment], connectingSegs2: Set[Segment], east: Int, west: Int): Boolean =
+        connectingSegs2.forall { s2 =>
+          if (!commonNetworks.contains(s2.network)) {
+            val is3LevelCrossingFalsePositive =  // specifically detect O×D adjacent to D×D to avoid a false positive
+              (s2.network.base.contains(Dirtroad)
+                && connectingSegs2.size == 2
+                && connectingSegs1.size == 1
+                && s2.flags(1) == 0
+                && s2.flags(3) == 0
+                && basicFlag(s2.flags(west)) == 2
+                && dxdDirtroadTiles.contains(rule(1))
+              )
+            if (is3LevelCrossingFalsePositive) {
+              true
+            } else {
+              s2.network.base.isEmpty  // if no matching segment exists, it should be a base network (e.g. for some intermediate overrides)
+            }
+          } else {
+            connectingSegs1.exists { s1 =>
+              (s1.network == s2.network
+                && (if (s2.network.isSymm) true else s1.flags(east).sign != s2.flags(west).sign)  // network direction must match
+                // && basicFlag(s1.flags(east)) == basicFlag(s2.flags(west))  // curve direction must match (TODO produces some false positives)
+              )
+            }
+          }
+        }
+
+      !wellConnected(connectingSegs1, connectingSegs2, 2, 0) || !wellConnected(connectingSegs2, connectingSegs1, 0, 2)
+    }
+  }
 
 }

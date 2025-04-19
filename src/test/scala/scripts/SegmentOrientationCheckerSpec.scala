@@ -18,6 +18,19 @@ class SegmentOrientationCheckerSpec extends AnyWordSpec with Matchers {
       SegmentOrientationChecker.hasSegmentReversal(Dirtroad~WE & Ard3~NS, Mis~WE & Ard3~SN).shouldBe(true)
       SegmentOrientationChecker.hasSegmentReversal(Avenue~WE & Road~NS, L1Avenue~EW & Road~NS).shouldBe(true)
     }
+    "detect badly connected segments" in {
+      SegmentOrientationChecker.areSegmentsBadlyConnected(Ave2~(11,0,2,0), Road~WS & Ard3~SE, null).shouldBe(true)
+    }
+    "avoid false positives" in {
+      Seq(
+        (Rhw4~WE & Mis~ES, Mis~NW & Dirtroad~EN, Rule(0x57127d05,0,0,0x5700aa00,2,0,0x57127d05,0,0,0x5712aa80,2,0)),
+        (Rhw4~EW & Mis~EN, Mis~SW & Dirtroad~ES, Rule(0x57127d05,2,1,0x5700aa00,0,0,0x57127d05,2,1,0x5712aa80,0,1)),
+        (Rhw4~WE & Mis~SE, Mis~WN & Dirtroad~EN, Rule(0x57127d85,0,0,0x5700aa00,2,0,0x57127d85,0,0,0x5712aa00,2,0)),
+        (Rhw4~EW & Mis~NE, Mis~WS & Dirtroad~ES, Rule(0x57127d85,2,1,0x5700aa00,0,0,0x57127d85,2,1,0x5712aa00,0,1)),
+      ).foreach { case (t1, t2, rule) =>
+        SegmentOrientationChecker.areSegmentsBadlyConnected(t1, t2, rule).shouldBe(false)
+      }
+    }
   }
 
 }
