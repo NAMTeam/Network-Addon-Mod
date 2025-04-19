@@ -72,12 +72,13 @@ object NwmResolver {
     val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
     val crossingNetworks = Network.ValueSet() ++ nwmPieceId.keysIterator
     map.getOrElseUpdate(Ard3 + Rail, R2F0)
+    map.getOrElseUpdate(Ard3 + Str, R2F0)
     for (main <- NwmNetworks; minor <- crossingNetworks if !minor.isNwm || minor <= main) {
       if (main == Ard3) {
         map.getOrElseUpdate(main + minor, R3F0)
-      } else if (isSingleTile(main) && minor == Rail) {
+      } else if (isSingleTile(main) && (minor == Rail || minor == Str)) {
         map.getOrElseUpdate(main + minor, R0F0)
-      } else if (!isSingleTile(main) && minor == Ard3) {
+      } else if (minor == Ard3) {
         map.getOrElseUpdate(main + minor, R1F0)
       } else {
         map.getOrElseUpdate(main + minor, R1F1)  // default
@@ -100,7 +101,7 @@ class NwmResolver extends IdResolver {
       val id = nwmRangeId(n)
       val orientA: IntFlags => IntFlags = if (n == Ard3) reverseIntFlags else identity
       add(id + 0x0000, n~orientA(NS))  // orth
-      add(id + 0x0100, n~CS)  // orth stub
+      add(id + 0x0100, n~orientA(CS))  // orth stub
 
       if (NP.isSingleTile(n)) {
         add(id + 0x0200, n~orientA(ES))  // diag 1

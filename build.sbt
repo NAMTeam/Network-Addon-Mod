@@ -21,7 +21,7 @@ import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.S
 lazy val resolve = module.Main.resolveSafely
 lazy val preimage = module.ReverseResolver.create()
 implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
-def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
+def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context).map(_.toRul2String).foreach(println)
 """
 
 def wrapWithJLogger(logger: sbt.util.Logger): sbt.util.Logger = {
@@ -47,7 +47,7 @@ def runMainWithJLogger(main: String) = Def.inputTask {
     mainClass = if (main == null) args(0) else main,
     classpath = (Compile / fullClasspath).value.files,
     log = wrapWithJLogger(streams.value.log),
-    options = args)
+    options = if (main == null) args.drop(1) else args)
 }
 
 // Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
