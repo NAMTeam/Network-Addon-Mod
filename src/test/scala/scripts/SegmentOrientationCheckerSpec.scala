@@ -22,11 +22,12 @@ class SegmentOrientationCheckerSpec extends AnyWordSpec with Matchers {
       SegmentOrientationChecker.areSegmentsBadlyConnected(Ave2~(11,0,2,0), Road~WS & Ard3~SE, null).shouldBe(true)
     }
     "avoid false positives" in {
-      Seq(
+      Seq[(Tile, Tile, Rule[IdTile])](
         (Rhw4~WE & Mis~ES, Mis~NW & Dirtroad~EN, Rule(0x57127d05,0,0,0x5700aa00,2,0,0x57127d05,0,0,0x5712aa80,2,0)),
         (Rhw4~EW & Mis~EN, Mis~SW & Dirtroad~ES, Rule(0x57127d05,2,1,0x5700aa00,0,0,0x57127d05,2,1,0x5712aa80,0,1)),
         (Rhw4~WE & Mis~SE, Mis~WN & Dirtroad~EN, Rule(0x57127d85,0,0,0x5700aa00,2,0,0x57127d85,0,0,0x5712aa00,2,0)),
         (Rhw4~EW & Mis~NE, Mis~WS & Dirtroad~ES, Rule(0x57127d85,2,1,0x5700aa00,0,0,0x57127d85,2,1,0x5712aa00,0,1)),
+        (Road~CW & Avenue~SN & Onewayroad~EC, Onewayroad~EW, Rule(0x04008800,0,0,0x09000300,3,0,0x04008900,2,0,0x09004b00,3,0)),
       ).foreach { case (t1, t2, rule) =>
         SegmentOrientationChecker.areSegmentsBadlyConnected(t1, t2, rule).shouldBe(false)
       }

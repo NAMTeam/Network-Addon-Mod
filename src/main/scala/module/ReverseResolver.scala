@@ -73,12 +73,15 @@ object ReverseResolver {
       true
     } else if (isDiagonalTAmbuigity(tile1, tile2)) {
       true
-    } else if (idTile.id == 0x5D7E0800) {  // L1Dtr->L2Dtr upper HT uses same ID as L0Dtr->L2Dtr
-      true
     } else {
-      false
+      ignorableConflicts.contains(idTile.id)
     }
   }
+
+  private val ignorableConflicts = Set[Int](
+    0x5D7E0800,  // L1Dtr->L2Dtr upper HT uses same ID as L0Dtr->L2Dtr
+    0x04008900,  // also functions as three-network crossing
+  )
 
   def create(): ReverseResolver = {
     val maps = Seq(

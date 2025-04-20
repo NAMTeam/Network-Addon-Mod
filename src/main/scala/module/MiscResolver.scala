@@ -271,6 +271,7 @@ class MiscResolver extends IdResolver {
     add(0x5F502500, Road~CES & Street~NE)
     add(0x5F072300, Road~(0,0,1,3) & Street~(2,2,0,0))
     add(0x04008900, Road~WE & Avenue~NS)
+    add(0x04008900, Road~CE & Avenue~NS & Onewayroad~WC)
     add(0x04001300, Road~ES & Avenue~SN)
     add(0x04001900, Road~WN & Avenue~SN)
     add(0x04005700, Road~NS & Avenue~ES)
