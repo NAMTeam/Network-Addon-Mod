@@ -526,8 +526,15 @@ class MiscResolver extends IdResolver {
       }
     }
 
-    // GLR + intersections
+    // GLR crossings
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
+      add(0x5f880200 + offset, glr~(0,0,2,2))
+      add(0x5f880500 + offset, glr~(0,13,0,2))
+      add(0x5f880400 + offset, glr~(0,0,1,13))
+      add(0x5f881100 + offset, glr~(2,2,2,2))
+      add(0x5f881100 + offset, glr~NS & glr~WE)
+      add(0x5f881200 + offset, glr~(0,2,2,2))
+      add(0x5f881200 + offset, glr~NS & glr~CE)
       // O×O
       add(0x5f880300 + offset, glr~NS & Road~WE)
       add(0x5f880d00 + offset, glr~NS & Street~WE)
