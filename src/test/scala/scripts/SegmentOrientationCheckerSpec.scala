@@ -13,6 +13,7 @@ class SegmentOrientationCheckerSpec extends AnyWordSpec with Matchers {
       SegmentOrientationChecker.isBaseOrientationDifferent(Avenue~WE, L1Avenue~WE).shouldBe(false)
       SegmentOrientationChecker.isBaseOrientationDifferent(Avenue~EW, L1Avenue~WE).shouldBe(true)
       SegmentOrientationChecker.isBaseOrientationDifferent(Avenue~NS, L1Avenue~WE).shouldBe(true)
+      SegmentOrientationChecker.isBaseOrientationDifferent(Glr1~(0,2,2,2), Glr1~(2,2,0,2)).shouldBe(true)
     }
     "detect wrong segment reversal" in {
       SegmentOrientationChecker.hasSegmentReversal(Dirtroad~WE & Ard3~NS, Mis~WE & Ard3~SN).shouldBe(true)
@@ -31,6 +32,10 @@ class SegmentOrientationCheckerSpec extends AnyWordSpec with Matchers {
       ).foreach { case (t1, t2, rule) =>
         SegmentOrientationChecker.areSegmentsBadlyConnected(t1, t2, rule).shouldBe(false)
       }
+    }
+    "detect unexpected rotations of same ID (and handle symmetries correctly)" in {
+      SegmentOrientationChecker.isUnexpectedRerotation(Rail~SW, Rail~SW, IdTile(0x03001a00,0,1), IdTile(0x03001a00,1,0)).shouldBe(false)
+      SegmentOrientationChecker.isUnexpectedRerotation(L2Dtr~WE & Rail~NE, L2Dtr~WE & Rail~NW, IdTile(0x5d774500,3,0), IdTile(0x5d774500,3,1)).shouldBe(true)
     }
   }
 

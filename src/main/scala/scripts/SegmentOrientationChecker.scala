@@ -76,10 +76,15 @@ object SegmentOrientationChecker extends Rul2Checker {
 
     val failureOpt =
       Option.when(bb.isDefined && dd.isDefined) {
-        checkConversionTiles(bb.get, dd.get)
+        checkConversionTiles(bb.get, dd.get, rule(1), rule(3))
       }.flatten.orElse {
         Option.when(aa.isDefined && cc.isDefined) {
-          checkConversionTiles(aa.get.map(_ * R2F0).asInstanceOf[::[Tile]], cc.get.map(_ * R2F0).asInstanceOf[::[Tile]])
+          checkConversionTiles(
+            aa.get.map(_ * R2F0).asInstanceOf[::[Tile]],
+            cc.get.map(_ * R2F0).asInstanceOf[::[Tile]],
+            rule(0) * R2F0,
+            rule(2) * R2F0,
+          )
         }.flatten.orElse {
           Option.when(cc.isDefined && dd.isDefined) {
             checkOutputTiles(cc.get, dd.get, rule)
@@ -92,8 +97,8 @@ object SegmentOrientationChecker extends Rul2Checker {
 
   /** Finds bad segment orientations by looking at tiles 1 and 3 or 2 and 4 of a rule.
     */
-  def checkConversionTiles(bb: ::[Tile], dd: ::[Tile]): Option[Failure] = {
-    if (bb.exists(t1 => dd.exists(t2 => isBaseOrientationDifferent(t1, t2)))) {
+  def checkConversionTiles(bb: ::[Tile], dd: ::[Tile], idTileIn: IdTile, idTileOut: IdTile): Option[Failure] = {
+    if (bb.exists(t1 => dd.exists(t2 => isBaseOrientationDifferent(t1, t2) || isUnexpectedRerotation(t1, t2, idTileIn, idTileOut)))) {
       Some("base orientation wrong")
     } else if (bb.exists(t1 => dd.exists(t2 => hasSegmentReversal(t1, t2)))) {
       Some("unexpected segment reversal")
@@ -118,7 +123,18 @@ object SegmentOrientationChecker extends Rul2Checker {
       if (s2.network.base.contains(s1.network)) {  // this is an override from base to override-network
         val seg1expected = baseSegment(s2)
         (RotFlip.values -- t1.symmetries).exists(rf => seg1expected * rf == s1)  // segment s1 uses a wrong rotation, as it is not one of the symmetries of the tile
+      } else if (s2.network == s1.network) {
+        (RotFlip.values -- t1.symmetries).exists(rf => s2 * rf == s1)  // segment s2 uses a wrong rotation, as it is not one of the symmetries of the tile
       } else false
+    } else false
+  }
+
+  /** If ID stays the same, the tiles must be equal up to symmetries.
+    */
+  def isUnexpectedRerotation(t1: Tile, t2: Tile, idTile1: IdTile, idTile2: IdTile): Boolean = {
+    if (idTile1.id == idTile2.id && idTile1.rf != idTile2.rf) {
+      val rf = (R0F0 / idTile1.rf) * idTile2.rf
+      !t1.symmetries.contains(rf)
     } else false
   }
 
