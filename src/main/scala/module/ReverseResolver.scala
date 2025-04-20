@@ -13,9 +13,14 @@ class ReverseResolver private[module] (val reverseTileMap: collection.Map[Int, :
     case x: IdTile => x.id
     case id: Int => id
   }
+
   def isDefinedAt(idTile: IdTile | Int): Boolean = reverseTileMap.contains(toId(idTile))
+
   def apply(idTile: IdTile | Int): ::[Tile] = {
-    val fiber = reverseTileMap.apply(toId(idTile))
+    val id = toId(idTile)
+    val fiber =
+      try reverseTileMap.apply(id)
+      catch { case e: java.util.NoSuchElementException => throw new java.util.NoSuchElementException(f"0x$id%08X (ID not defined in any metarule ID resolver)") }
     idTile match {
       case x: IdTile => fiber.map(_ * x.rf).asInstanceOf[::[Tile]]
       case id: Int => fiber
