@@ -81,23 +81,17 @@ class RealRailwayResolver extends IdResolver {
     // -- Road --
     add(0x5d671100, Road~WE & L1Dtr~NS)
     add(0x5d771100, Road~WE & L2Dtr~NS)
-    add(0x5c001500, L1Road~NS & Rail~WE)
     add(0x5d771105, L1Road~NS & L2Dtr~WE)
-    add(0x5c031500, L2Road~NS & Rail~WE)
     add(0x5d67110a, L2Road~WE & L1Dtr~NS)
     // -- OWR --
     add(0x5d671200, Onewayroad~WE & L1Dtr~NS)
     add(0x5d771200, Onewayroad~WE & L2Dtr~NS)
-    add(0x5c011500, L1Onewayroad~NS & Rail~WE)
     add(0x5d771205, L1Onewayroad~NS & L2Dtr~WE)
-    add(0x5c041500, L2Onewayroad~NS & Rail~WE)
     add(0x5d67120a, L2Onewayroad~NS & L1Dtr~WE)
     // -- Avenue --
     add(0x5d671300, Avenue~EW & L1Dtr~NS)
     add(0x5d771300, Avenue~EW & L2Dtr~NS)
-    add(0x5c021500, L1Avenue~NS & Rail~WE)
     add(0x5d771305, L1Avenue~NS & L2Dtr~WE)
-    add(0x5c051500, L2Avenue~NS & Rail~WE)
     add(0x5d67130a, L2Avenue~EW & L1Dtr~NS)
     // -- Rail --
     add(0x5d671500, Rail~WE & L1Dtr~NS)
@@ -241,9 +235,7 @@ class RealRailwayResolver extends IdResolver {
     // -- Road --
     add(0x5d674100, Road~ES & L1Dtr~NS)
     add(0x5d774100, Road~ES & L2Dtr~NS)
-    add(0x5c007500, L1Road~ES & Rail~WE)
     add(0x5d774110, L1Road~ES & L2Dtr~NS)
-    add(0x5c037500, L2Road~ES & Rail~WE)
     add(0x5d67410a, L2Road~ES & L1Dtr~NS)
     // -- OWR --
     add(0x5d674200, Onewayroad~ES & L1Dtr~NS)
@@ -580,15 +572,10 @@ class RealRailwayResolver extends IdResolver {
     add(0x5e511b09, Sam11~NS  & Str~WE) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
     add(0x5d341000, Road~NS & Str~WE)
-    add(0x5c001505, L1Road~NS & Str~WE)
-    add(0x5c031505, L2Road~NS & Str~WE)
     // -- OWR --
     add(0x5d342000, Onewayroad~NS & Str~WE)
-    add(0x5c011505, L1Onewayroad~NS & Str~WE)
     // -- Avenue --
     add(0x5d343000, Avenue~NS & Str~WE)
-    add(0x5c021505, L1Avenue~NS & Str~WE)
-    add(0x5c051505, L2Avenue~NS & Str~WE)
     // ----- OxD -----
     // -- Street / SAM --
     add(0x5d360000, Street~WN & Str~NS)

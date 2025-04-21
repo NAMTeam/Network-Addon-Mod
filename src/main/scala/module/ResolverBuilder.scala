@@ -78,9 +78,10 @@ class ResolverBuilder extends scala.collection.mutable.Builder[(Tile, IdTile | (
   }
 
   // for convenience
-  def add(id: Int, tile: Tile): this.type = {
-    addOne((tile, IdTile(id, R0F0)))
-  }
+  def add(id: Int, tile: Tile): this.type = add(tile, id)
+
+  // for convenience
+  def add(id: Int, tile: Tile, when: Boolean): this.type = add(tile, id, when)
 
 }
 object ResolverBuilder {

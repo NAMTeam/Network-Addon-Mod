@@ -66,12 +66,14 @@ object RhwResolver {
   def greater(a: Network, b: Network): Boolean = {
     if (a.isRhw != b.isRhw) {
       a.isRhw
+    } else if (Viaducts.contains(a) != Viaducts.contains(b)) {
+      Viaducts.contains(a)
     } else if (a.isNwm != b.isNwm) {
       a.isNwm
     } else if (a.height != b.height) {
       a.height > b.height
     } else if (a != b) {
-      a > b // both RHW or both NWM with same height
+      a > b // both RHW or both Viaducts or both NWM with same height
     } else {
       assert(a == b)
       false
@@ -180,6 +182,71 @@ class RhwResolver extends IdResolver {
       add(n~se & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
       add(n~se & n2~ws, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
     }
+
+    // T intersections with viaducts
+    // Rhw2
+    add(0x57600110, L1Rhw2~NS & L1Road~EC)
+    add(0x57600120, L2Rhw2~NS & L2Road~EC)
+    add(0x57600210, L1Rhw2~NS & L1Onewayroad~EC)
+    add(0x57600220, L2Rhw2~NS & L2Onewayroad~EC)
+    add(0x57600310, L1Rhw2~NS & L1Avenue~EC)
+    add(0x57600320, L2Rhw2~NS & L2Avenue~EC)
+    add(0x57601110, L1Rhw2~CE & L1Road~NS)
+    add(0x57601120, L2Rhw2~CE & L2Road~NS)
+    add(0x57601210, L1Rhw2~CE & L1Onewayroad~NS)
+    add(0x57601220, L2Rhw2~CE & L2Onewayroad~NS)
+    add(0x57601310, L1Rhw2~CE & L1Avenue~SN)
+    add(0x57601315, L1Rhw2~CE & L1Avenue~NS)
+    add(0x57601320, L2Rhw2~CE & L2Avenue~SN)
+    add(0x57601325, L2Rhw2~CE & L2Avenue~NS)
+    // Rhw3 (incomplete)
+    add(0x57610310, L1Rhw3~NS & L1Avenue~EC)
+    add(0x57610320, L2Rhw3~NS & L2Avenue~EC)
+    add(0x57610390, L1Rhw3~SN & L1Avenue~EC)
+    add(0x576103a0, L2Rhw3~SN & L2Avenue~EC)
+    add(0x57611310, L1Rhw3~NC & L1Avenue~EW)
+    add(0x57611315, L1Rhw3~CE & L1Avenue~NS)
+    add(0x57611320, L2Rhw3~NC & L2Avenue~EW)
+    add(0x57611325, L2Rhw3~CE & L2Avenue~NS)
+    // Mis
+    add(0x57620110, L1Mis~NS & L1Road~EC)
+    add(0x57620120, L2Mis~NS & L2Road~EC)
+    add(0x57620190, L1Mis~SN & L1Road~EC)
+    add(0x576201a0, L2Mis~SN & L2Road~EC)
+    add(0x57620210, L1Mis~NS & L1Onewayroad~EC)
+    add(0x57620220, L2Mis~NS & L2Onewayroad~EC)
+    add(0x57620290, L1Mis~SN & L1Onewayroad~EC)
+    add(0x576202a0, L2Mis~SN & L2Onewayroad~EC)
+    // (Avenue ending at Mis is not possible due to lane math)
+    add(0x57621110, L1Mis~EC & L1Road~NS)
+    add(0x57621120, L2Mis~EC & L2Road~NS)
+    add(0x57621210, L1Mis~EC & L1Onewayroad~NS)
+    add(0x57621220, L2Mis~EC & L2Onewayroad~NS)
+    add(0x57621310, L1Mis~EC & L1Avenue~SN)
+    add(0x57621315, L1Mis~EC & L1Avenue~NS)
+    add(0x57621320, L2Mis~EC & L2Avenue~SN)
+    add(0x57621325, L2Mis~EC & L2Avenue~NS)
+    // Rhw4
+    add(0x57630110, L1Rhw4~NS & L1Road~EC)
+    add(0x57630120, L2Rhw4~NS & L2Road~EC)
+    add(0x57630190, L1Rhw4~SN & L1Road~EC)
+    add(0x576301a0, L2Rhw4~SN & L2Road~EC)
+    add(0x57630210, L1Rhw4~NS & L1Onewayroad~EC)
+    add(0x57630220, L2Rhw4~NS & L2Onewayroad~EC)
+    add(0x57630290, L1Rhw4~SN & L1Onewayroad~EC)
+    add(0x576302a0, L2Rhw4~SN & L2Onewayroad~EC)
+    add(0x57630310, L1Rhw4~NS & L1Avenue~EC)
+    add(0x57630320, L2Rhw4~NS & L2Avenue~EC)
+    add(0x57630390, L1Rhw4~SN & L1Avenue~EC)
+    add(0x576303a0, L2Rhw4~SN & L2Avenue~EC)
+    add(0x57631110, L1Rhw4~EC & L1Road~NS)
+    add(0x57631120, L2Rhw4~EC & L2Road~NS)
+    add(0x57631210, L1Rhw4~EC & L1Onewayroad~NS)
+    add(0x57631220, L2Rhw4~EC & L2Onewayroad~NS)
+    add(0x57631310, L1Rhw4~EC & L1Avenue~SN)
+    add(0x57631315, L1Rhw4~EC & L1Avenue~NS)
+    add(0x57631320, L2Rhw4~EC & L2Avenue~SN)
+    add(0x57631325, L2Rhw4~EC & L2Avenue~NS)
 
     builder.result()
   }

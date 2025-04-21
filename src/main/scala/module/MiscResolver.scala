@@ -17,6 +17,8 @@ class MiscResolver extends IdResolver {
     add(0x08031500, Lightrail~NS); add(0x08001a00, Lightrail~ES)
     add(0x0d031500, Monorail~NS); add(0x0d001a00, Monorail~ES)
     add(0x09004b00, Onewayroad~NS); add(0x09000a00, Onewayroad~ES)
+    add(0x02001500, Highway~EW); add(0x02002200, Highway~ES); add(0x02002100, Highway~SharedDiagRight)
+    add(0x0a001500, Groundhighway~EW); add(0x0a002200, Groundhighway~ES); add(0x0a002100, Groundhighway~SharedDiagRight)
 
     add(0x5d300000, Str  ~NS); add(0x5d302000, Str  ~ES)
     add(0x5f880000, Glr1 ~NS); add(0x5f880600, Glr1 ~NW)
