@@ -178,11 +178,11 @@ class RealRailwayRuleGenerator(var context: RuleTransducer.Context) extends Rule
               // will require two extra tiles on the overhang side
               // can only initiate with main~ES
               if (intersectionAllowed(base, minor)) {
-                Rules ++= stabilize(main~ES | base~NW & minor~NS | main~(41,43,0,0) | main~NW & minor~NS)  // DxO start overhang double-swap
+                Rules ++= stabilize(main~ES | base~NW & minor~NS | main~(0,0,41,43) | main~NW & minor~NS)  // DxO start overhang double-swap
               } else {
-                Rules += main~ES | main~NW & minor~NS | main~(41,43,0,0) | %  // DxO start overhang
+                Rules += main~ES | main~NW & minor~NS | main~(0,0,41,43) | %  // DxO start overhang
               }
-              Rules ++= stabilize(main~ES | minor~NS | main~(41,43,0,0) | main~NW & minor~NS)            // DxO start overhang double-swap (jump)
+              Rules ++= stabilize(main~ES | minor~NS | main~(0,0,41,43) | main~NW & minor~NS)            // DxO start overhang double-swap (jump)
               // non-overhanging side starts are standard, use all starts
               for (diagStart <- diagStarts) {
                 if (intersectionAllowed(base, minor)) {
