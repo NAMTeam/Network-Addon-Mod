@@ -178,13 +178,18 @@ object SegmentOrientationChecker extends Rul2Checker {
 
   private val dxdDirtroadTiles = Set(IdTile(0x5700aa00, R0F0), IdTile(0x5700aa00, R2F0))
   private val badConnectionsFalsePositives = Set.empty[Rule[IdTile]]  // currently none
+  private val standardBasicRoadFlags = Set(1,2,3,11,13)
 
   def areSegmentsBadlyConnected(tile1: Tile, tile2: Tile, rule: Rule[IdTile]): Boolean = {
     val connectingSegs1 = tile1.segs.filter(_.flags(2) != 0)
     val connectingSegs2 = tile2.segs.filter(_.flags(0) != 0)
     val commonNetworks = connectingSegs1.map(_.network).intersect(connectingSegs2.map(_.network))
     if (commonNetworks.isEmpty) {
-      connectingSegs1.nonEmpty && connectingSegs2.nonEmpty
+      connectingSegs1.nonEmpty && connectingSegs2.nonEmpty || (
+        (connectingSegs1.nonEmpty || connectingSegs2.nonEmpty)
+        && connectingSegs1.forall(s => standardBasicRoadFlags.contains(s.flags(2).abs))
+        && connectingSegs2.forall(s => standardBasicRoadFlags.contains(s.flags(0).abs))
+      )
     } else {
 
       def wellConnected(connectingSegs1: Set[Segment], connectingSegs2: Set[Segment], east: Int, west: Int): Boolean =
