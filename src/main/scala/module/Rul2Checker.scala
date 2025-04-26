@@ -104,10 +104,22 @@ object Rul2Checker {
   class Result(val numFailures: Int, val removed: Int, val added: Int)
 
   def replaceTags(line: String, add: Option[String], remove: Seq[String]): String = {
-    val line0 =
-      remove.foldLeft(line.stripLineEnd) { (line, rem) =>
-        line.replaceFirst(s" ?\\b$rem\\b", "").replaceFirst(";\\s*$", "")
+    var line0: String = line.stripLineEnd
+    var start = -1
+    for (rem <- remove) {
+      val p = java.util.regex.Pattern.compile(s"; ?\\b$rem\\b;?")
+      val m = p.matcher(line0)
+      if (m.find()) {
+        start = m.start
+        line0 = m.replaceFirst(";")
       }
-    if (add.isDefined) s"$line0; ${add.get}" else line0
+    }
+    if (start != -1) {
+      line0 = line0.replaceFirst(";\\s*$", "")
+    }
+
+    if (!add.isDefined) line0
+    else if (start == -1 || start >= line0.length) s"$line0; ${add.get}"
+    else s"${line0.substring(0, start)}; ${add.get}${line0.substring(start)}"
   }
 }
