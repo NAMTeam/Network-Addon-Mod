@@ -34,6 +34,8 @@ jobs:
       run: sbt generateLocales
     - name: Check for new conflicting RUL2 overrides
       run: SBT_OPTS="-Xmx2G" sbt conflictingOverridesCheck
+    - name: Check for new segment orientation issues in RUL2 overrides
+      run: sbt "runMain com.sc4nam.scripts.SegmentOrientationChecker"
 
   lint:
     runs-on: ubuntu-latest

@@ -117,6 +117,9 @@ object Network extends scalaenum.Enum {
   // SAM networks
   val Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11 = new Network(0, Symmetrical, Some(Street))
 
+  // Roundabout networks
+  val RdRndbt = new Network(0, Asymmetrical, Some(Road))
+  
   // RRW networks
   val L1Dtr    = new Network(1, Symmetrical, Some(Rail))
   val L2Dtr    = new Network(2, Symmetrical, Some(Rail))

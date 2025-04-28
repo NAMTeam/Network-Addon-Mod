@@ -72,6 +72,15 @@ class MirrorVariantsSpec extends AnyWordSpec with Matchers {
         Rule(0x51000000,3,0, 0x08DD1600,1,1, 0x51000000,3,0, 0x51005600,3,0),
         Rule(0x51000000,3,0, 0x08DD1600,3,0, 0x51000000,3,0, 0x51005600,1,1),
         Rule(0x51000000,1,0, 0x08DD1600,3,0, 0x51000000,1,0, 0x51005600,1,1))
+      RuleTransducer(Tla5~EW | (Avenue~>Tla5)~EW & Avenue~NS).toSet shouldBe Set(
+        Rule(0x51100000,3,0, 0x04009000,0,0, 0x51100000,3,0, 0x71101300,2,1),
+        Rule(0x51100000,1,0, 0x04009000,1,0, 0x51100000,1,0, 0x51101300,0,0))
+      RuleTransducer(Tla5~EW & Avenue~NS | (Avenue~>Tla5)~EW & Avenue~SN).toSet shouldBe Set(
+        Rule(0x71101300,2,1, 0x04009000,3,0, 0x71101300,2,1, 0x51101300,2,0),
+        Rule(0x51101300,0,0, 0x04009000,2,0, 0x51101300,0,0, 0x71101300,0,1))
+      RuleTransducer(Tla5~EW & Avenue~SN | (Avenue~>Tla5)~EW).toSet shouldBe Set(
+        Rule(0x51101300,2,0, 0x04006100,3,0, 0x51101300,2,0, 0x51100000,3,0),
+        Rule(0x71101300,0,1, 0x04006100,1,0, 0x71101300,0,1, 0x51100000,1,0))
     }
   }
 }

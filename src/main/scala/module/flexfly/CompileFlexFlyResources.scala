@@ -72,7 +72,8 @@ object CompileFlexFlyResources {
       DbpfFile.read(tmpFile)
     }
     val target = new File("target/FlexFly.dat")
-    val resolve = new FlexFlyResolver
+    val resolveFF = new FlexFlyResolver
+    val resolve = resolveFF orElse new RhwResolver
 
     def buildEntries[A <: DbpfType](implicit ev: Rotatable[A], conv: DbpfUtil.Converter[DbpfType, A]): Iterator[BufferedEntry[A]] = {
       import ev._
@@ -114,7 +115,7 @@ object CompileFlexFlyResources {
       }
 
       val flyFlyModels = for {
-        (tile, id3) <- resolve.flyFlyCrossings.iterator
+        (tile, id3) <- resolveFF.flyFlyCrossings.iterator
         if id3.rf == meta.RotFlip.R0F0
       } yield {
         val Seq(bottom, top) = tile.segs.toSeq.sortBy(_.network.height)

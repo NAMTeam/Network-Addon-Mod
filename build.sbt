@@ -2,9 +2,9 @@ name := "nam-controller"
 
 organization := "com.sc4nam"
 
-version := "49-SNAPSHOT"
+version := "50-SNAPSHOT"
 
-scalaVersion := "2.13.12"
+scalaVersion := "3.6.4"
 
 scalacOptions ++= Seq(
   "-unchecked",
@@ -19,8 +19,9 @@ console / initialCommands := """
 import io.github.memo33.metarules.meta._, com.sc4nam.module, module.syntax._
 import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._
 lazy val resolve = module.Main.resolveSafely
+lazy val preimage = module.ReverseResolver.create()
 implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
-def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context) foreach println
+def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context).map(_.toRul2String).foreach(println)
 """
 
 def wrapWithJLogger(logger: sbt.util.Logger): sbt.util.Logger = {
@@ -46,7 +47,7 @@ def runMainWithJLogger(main: String) = Def.inputTask {
     mainClass = if (main == null) args(0) else main,
     classpath = (Compile / fullClasspath).value.files,
     log = wrapWithJLogger(streams.value.log),
-    options = args)
+    options = if (main == null) args.drop(1) else args)
 }
 
 // Compile / mainClass := Some("metarules.module.CompileAllMetarules")  // execute with `sbt run`
@@ -64,10 +65,10 @@ lazy val conflictingOverridesCheck = inputKey[scala.util.Try[Unit]]("Checks all 
 conflictingOverridesCheck := runMainWithJLogger("com.sc4nam.scripts.ConflictingOverridesChecker").evaluated
 
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.17" % Test
 
-libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1"
+libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1" cross CrossVersion.for3Use2_13
 
-libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0"
+libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0" cross CrossVersion.for3Use2_13
 
-libraryDependencies += "io.github.memo33" %% "metarules" % "0.6.0"
+libraryDependencies += "io.github.memo33" %% "metarules" % "0.7.0"

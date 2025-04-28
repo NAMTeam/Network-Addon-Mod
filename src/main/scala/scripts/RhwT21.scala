@@ -32,7 +32,7 @@ object RhwT21 {
   lazy val flexFlyFile = DbpfFile.read(new java.io.File(rhwDir, "RealHighway_FLEXFly.dat"))
 
   def main(args: Array[String]): Unit = {
-    val resolver = new MiscResolver orElse new FlexFlyResolver
+    val resolver = new MiscResolver orElse new FlexFlyResolver orElse new RhwResolver
     val entries = Seq.newBuilder[DbpfEntry]
     val flexFlyEntries = Seq.newBuilder[DbpfEntry]
     val patches = collection.mutable.Map.empty[String, collection.mutable.Builder[DbpfEntry, Seq[DbpfEntry]]]
@@ -277,8 +277,8 @@ object RhwT21 {
 
   private class Lot(width: Int, height: Int) {
     require(width > 0 && height > 0)
-    private val xMax = UInt(width * UInt(0x100000) - 1)
-    private val yMax = UInt(height * UInt(0x100000) - 1)
+    private val xMax = UInt(width) * UInt(0x100000) - UInt(1)
+    private val yMax = UInt(height) * UInt(0x100000) - UInt(1)
 
     def rotateLotObject(p: Multi[UInt], rf: RotFlip): Multi[UInt] = {
       if (p.values.length < 12) {

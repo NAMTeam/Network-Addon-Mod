@@ -8,7 +8,7 @@ import syntax.{RuleGenerator, IdResolver, RuleTransducer}
   */
 object CompileFlexFlyCode extends AbstractMain {
 
-  lazy val resolve: IdResolver = new FlexFlyResolver
+  lazy val resolve: IdResolver = new FlexFlyResolver orElse new RhwResolver
   val generator = new FlexFlyRuleGenerator(_)
   lazy val file = new File("target/Sec7j_FLEXFly_MANAGED.txt")
 

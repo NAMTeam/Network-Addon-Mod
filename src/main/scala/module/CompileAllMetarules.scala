@@ -18,7 +18,7 @@ object CompileAllMetarules {
     flexfly.CompileFlexFlyResources.main(Array.empty)
 
     // Compilation of metarule code.
-    RegenerateTileOrientationCache.withCache().acquireFor(compileMetarulesOnce)
+    RegenerateTileOrientationCache.withCache(compileMetarulesOnce)
 
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
@@ -42,12 +42,14 @@ object CompileAllMetarules {
     CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
     CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling Roundabout metarule code")
+    CompileRoundaboutCode.start(tileOrientationCache = tileOrientationCache)
   }
 }
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
 object CompileRhwCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
   val generator = new RhwRuleGenerator(_)
   lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
 }
