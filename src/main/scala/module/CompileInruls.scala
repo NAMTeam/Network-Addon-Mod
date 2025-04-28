@@ -1,7 +1,6 @@
 package com.sc4nam.module
 
 import java.io.{File, FileInputStream}
-import resource._
 import io.github.memo33.scdbpf, scdbpf._, strategy.throwExceptions
 
 /** Automates the process of compiling the INRUL files.
@@ -20,7 +19,7 @@ object CompileInruls {
     }
     // helper function for single RUL files
     def write(target: String, id: Int, dir: String, fileNames: String*): Unit = {
-      val rul = Seq(mkRul(id, dir, fileNames: _*))
+      val rul = Seq(mkRul(id, dir, fileNames*))
       DbpfFile.write(rul, new File(targetDir, target))
     }
 
@@ -102,7 +101,7 @@ object CompileInruls {
   // implementation details below
 
   private def filesToArray(files: Seq[File]): Array[Byte] = files.toArray.flatMap { f =>
-    managed(new scdbpf.compat.ByteInput(new FileInputStream(f))) acquireAndGet (scdbpf.compat.Input.slurpBytes(_))
+    java.nio.file.Files.readAllBytes(f.toPath)
   }
 
   private def buildRul(id: Int, files: Seq[File]): DbpfEntry = {

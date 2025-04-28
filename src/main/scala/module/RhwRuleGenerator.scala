@@ -24,6 +24,16 @@ object RhwRuleGenerator {
       m
     }
   }
+
+  def crossingNetworksOf(main: Network): Iterator[Network] = {
+    for {
+      minor <- Network.values.iterator
+      if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
+         (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty)) ||
+         (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr))
+         ) && intersectionAllowed(main, minor)
+    } yield minor
+  }
 }
 
 class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Curve45Generator with Adjacencies {
@@ -70,10 +80,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       createCurve90Rules(main)
 
       // TODO filtering
-      for (minor <- Network.values if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
-           (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty)) ||
-           (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr))
-           ) && intersectionAllowed(main, minor)) {
+      for (minor <- crossingNetworksOf(main)) {
         // entry (override from straight tile to first crossing tile)
         if (intersectionAllowed(base, minor)) { // skips e.g. preexisting L0Rhw2 x L0Rhw6c in second tile
           def entryCode(orient: Segment => Segment) = {
@@ -143,7 +150,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             }
           }
         }
-        // inside multi-tile intersection and adjacent intersections
+        // inside multi-tile intersection
         createAdjacentIntersections(main, base, minor)
         createRules()
       }

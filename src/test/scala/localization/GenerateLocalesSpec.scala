@@ -26,7 +26,7 @@ msgstr "CCC"
   "workaround for detecting fuzzy translations" should {
     "work as expected" in {
       // This test ensures that scaposer's parsing of comments has not changed so our workaround keeps working
-      val Right(translations) = scaposer.Parser.parse(poTestCase)
+      val translations = scaposer.Parser.parse(poTestCase).toOption.get
       // fuzzy flag is read as part of first entry, not second
       translations.map(_.asInstanceOf[scaposer.SingularTranslation].otherComments.exists(_.contains("fuzzy"))) shouldBe Seq(true, false, false)
       // in particular, ctxComments of second entry are empty

@@ -6,7 +6,7 @@ import FlexFlyTiles._, Adjacencies._, NetworkProperties._
 
 object FlexFlyRuleGenerator {
 
-  val orientations = Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
+  val orientations = Seq[IntFlags => IntFlags](identity, reverseIntFlags)
   private[flexfly] val deactivated = Rhw10c + L1Rhw10c + L2Rhw10c
 
   /** the directions of a network for which the north edge is a shoulder (possibly empty) */
@@ -33,6 +33,10 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
         // connect tile 0 to orthogonal network and tile 6 to diagonal
         Rules += (Dirtroad ~> main)~orient(EW) | main~orient(T0)
         Rules += main~orient(T6) * R3F0 | (Dirtroad ~> main)~orient(NW)
+        if (intersectionAllowed(main, Dirtroad)) {
+          // intermediate override stability of crossings at tile 6
+          Rules += main~orient(T6) * R3F0 | (Dirtroad ~> main)~orient(NW) & Dirtroad~EW
+        }
         createRules()
 
         for (minor <- RhwNetworks if minor.height != main.height && !deactivated(minor); base <- minor.base) {
@@ -68,8 +72,6 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
           // First we consider cases in which only one of the two tiles has crossing
           for (minDir <- minDirs) {
             Rules += (Dirtroad ~> main)~orient(EW)                       | main~orient(T0) & minor~minDir * R3F0
-            Rules += (Dirtroad ~> main)~orient(EW) & minor~minDir * R1F0 | main~orient(T0)
-            Rules += main~orient(T6) * R3F0                              | (Dirtroad ~> main)~orient(NW) & minor~minDir * R3F0
             if (!isTripleTile(minor)) { // otherwise physically impossible
               Rules += main~orient(T6) * R3F0      & minor~minDir * R1F0 | (Dirtroad ~> main)~orient(NW)
             }
@@ -77,12 +79,12 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
 
           // additional crossing of minor and tile 6 in different direction
           Rules += main~orient(T6) * R3F0 & minor~WE~EW | (Dirtroad ~> main)~orient(NW) & (base ~> minor)~WE~EW   // T6 > OxD
-          Rules += main~orient(T6) * R3F0 & minor~WE~EW | (Dirtroad ~> main)~orient(NW) & minor~WE~EW             // stability
           Rules += main~orient(T6) * R3F0 & minor~WE~EW | main~orient(NW)               & (base ~> minor)~WE~EW   // stability
           Rules += main~orient(T6) * R3F0 | main~orient(NW) & minor~WE~EW | main~orient(T6) * R3F0 & minor~WE~EW | %   // T6 < OxD
 
-          // Now we consider cases involving two adjacent crossing networks
-          for ((other, directions) <- adjacentNetworks(minor)
+          // Now we consider cases involving two adjacent crossing networks.
+          // Due to DLL-based adjacencies, we only need to consider the *inner* adjacencies of multitile networks, if any.
+          for ((other, directions) <- Adjacencies.multitileNetworks.getOrElse(minor, Seq.empty)
                if other.isRhw && other != Dirtroad && other.height == minor.height && !deactivated(other)) {
             val (minDir, otherDir) = directions match {
               case NSNS => (NS, NS)
@@ -90,9 +92,11 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
               case SNNS => (SN, NS)
               case SNSN => (SN, SN)
             }
-            Rules += (Dirtroad ~> main)~orient(EW) & minor~minDir | main~orient(T0) & other~otherDir
-            if (otherDir == NS && hasLeftShoulder(other) || otherDir == SN && hasRightShoulder(other)) { // skip impossible crossings
-              Rules += (Dirtroad ~> main)~orient(SE) & minor~minDir | main~orient(T6) * R1F0 & other~otherDir
+            if (intersectionAllowed(Dirtroad, minor)) {
+              Rules += (Dirtroad ~> main)~orient(EW) & minor~minDir | main~orient(T0) & other~otherDir
+              if (otherDir == NS && hasLeftShoulder(other) || otherDir == SN && hasRightShoulder(other)) { // skip impossible crossings
+                Rules += (Dirtroad ~> main)~orient(SE) & minor~minDir | main~orient(T6) * R1F0 & other~otherDir
+              }
             }
           }
         }
@@ -113,20 +117,21 @@ class FlexFlyRuleGenerator(var context: RuleTransducer.Context) extends RuleGene
 
           // crossing of a third network with two adjacent FlexFlys
           // (These are not strictly needed if starters are used, so we try to cut down the large number of adjacencies to a useful subset)
-          for {
-            third <- RhwNetworks
-            if third.height != main.height && third.height != minor.height && !deactivated(third)
-            if third.height <= 2 && orient == o2 && orient == orientations(0)  // limits adjacencies to inside curves
-            base <- third.base
-            dir <- directionsWithShoulderNorth(third)
-          } /*do*/ {
-            Rules += minor~o2(T3) * R0F1 & third~dir | main~orient(T3) * R0F0 | % | main~orient(T3) * R0F0 & third~dir  // 4-tile gap
-            Rules += minor~o2(T3) * R3F0 & third~dir | main~orient(T3) * R3F1 | % | main~orient(T3) * R3F1 & third~dir  // 2-tile gap
-            Rules += minor~o2(T1) * R3F0 & third~dir | main~orient(T1) * R3F1 | % | main~orient(T1) * R3F1 & third~dir  // 0-tile gap
-            Rules += minor~o2(T3) * R0F1 | main~orient(T3) * R0F0 & third~dir | minor~o2(T3) * R0F1 & third~dir | %  // 4-tile gap
-            Rules += minor~o2(T3) * R3F0 | main~orient(T3) * R3F1 & third~dir | minor~o2(T3) * R3F0 & third~dir | %  // 2-tile gap
-            Rules += minor~o2(T1) * R3F0 | main~orient(T1) * R3F1 & third~dir | minor~o2(T1) * R3F0 & third~dir | %  // 0-tile gap
-          }
+          // (disabled, as these are redundant with DLL-based adjacencies)
+          // for {
+          //   third <- RhwNetworks
+          //   if third.height != main.height && third.height != minor.height && !deactivated(third)
+          //   if third.height <= 2 && orient == o2 && orient == orientations(0)  // limits adjacencies to inside curves
+          //   base <- third.base
+          //   dir <- directionsWithShoulderNorth(third)
+          // } /*do*/ {
+          //   Rules += minor~o2(T3) * R0F1 & third~dir | main~orient(T3) * R0F0 | % | main~orient(T3) * R0F0 & third~dir  // 4-tile gap
+          //   Rules += minor~o2(T3) * R3F0 & third~dir | main~orient(T3) * R3F1 | % | main~orient(T3) * R3F1 & third~dir  // 2-tile gap
+          //   Rules += minor~o2(T1) * R3F0 & third~dir | main~orient(T1) * R3F1 | % | main~orient(T1) * R3F1 & third~dir  // 0-tile gap
+          //   Rules += minor~o2(T3) * R0F1 | main~orient(T3) * R0F0 & third~dir | minor~o2(T3) * R0F1 & third~dir | %  // 4-tile gap
+          //   Rules += minor~o2(T3) * R3F0 | main~orient(T3) * R3F1 & third~dir | minor~o2(T3) * R3F0 & third~dir | %  // 2-tile gap
+          //   Rules += minor~o2(T1) * R3F0 | main~orient(T1) * R3F1 & third~dir | minor~o2(T1) * R3F0 & third~dir | %  // 0-tile gap
+          // }
         }
         createRules()
       }
