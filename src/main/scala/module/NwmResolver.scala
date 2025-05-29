@@ -199,7 +199,7 @@ class NwmResolver extends IdResolver {
       val ws = if (n2HasSharedDiag) SharedDiagLeft else WS
       val se = if (n.typ == AvenueLike) SharedDiagRight else SE
       def off8(id: Int): Int =  // map 8th digit 5 to 9, A to E
-        if (id % 0x10 != 0 && (n.height == 0 || n2.height == 0)) id + 0x4
+        if (id % 0x10 != 0 && (n.height == 0 && n2.height == 0)) id + 0x4
         else id
 
       // O×O
