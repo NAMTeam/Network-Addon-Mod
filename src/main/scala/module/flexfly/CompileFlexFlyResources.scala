@@ -139,17 +139,37 @@ object CompileFlexFlyResources {
       BufferedEntry(Tgi(0,0xEA5118B1,id).copy(Tgi.EffDir), effdir, compressed = true)
     }
     val modelsAndExemplars = buildEntries[S3d] flatMap { model =>
-      import io.github.memo33.passera.unsigned._
-      import DbpfProperty._
-      val tgi = model.tgi
-      val props = Seq(UInt(0x10) -> DbpfProperty(UInt(0x0B)), // type
-        UInt(0x20) -> DbpfProperty("FlexFly"), // name
-        UInt(0x27812820) -> DbpfProperty(Seq(tgi.tid.toUInt, tgi.gid.toUInt, tgi.iid.toUInt))) // RKT0
-      val exemplar = Exemplar(props = props, isCohort = false)
-      Seq(model, BufferedEntry(tgi.copy(Tgi.ExemplarDirtroad), exemplar, compressed = true))
+      Seq(model, createNetworkExemplar(id = model.tgi.iid, name = "FlexFly", network = Dirtroad))
     }
     val paths = buildEntries[Sc4Path]
     DbpfFile.write(modelsAndExemplars ++ paths ++ effdirs, target)
+  }
+
+  private val networkGid = Map[Network, Int](
+    Road -> Tgi.ExemplarRoad.gid.get,
+    Street -> Tgi.ExemplarStreet.gid.get,
+    Onewayroad -> Tgi.ExemplarOnewayroad.gid.get,
+    Avenue -> Tgi.ExemplarAvenue.gid.get,
+    Highway -> Tgi.ExemplarHighway.gid.get,
+    Groundhighway -> Tgi.ExemplarGroundhighway.gid.get,
+    Dirtroad -> Tgi.ExemplarDirtroad.gid.get,
+    Rail -> Tgi.ExemplarRail.gid.get,
+    Lightrail -> Tgi.ExemplarLightrail.gid.get,
+    Monorail -> Tgi.ExemplarMonorail.gid.get,
+    Subway -> Tgi.ExemplarSubway.gid.get,
+  )
+
+  def createNetworkExemplar(id: Int, name: String, network: Network): BufferedEntry[Exemplar] = {
+    import io.github.memo33.passera.unsigned._
+    import DbpfProperty._
+    val modelTgi = Tgi.S3dMaxis.copy(iid = Some(id)).toTgi
+    val exemplarTgi = Tgi.Exemplar.copy(gid = Some(networkGid(network.base.getOrElse(network))), iid = Some(id)).toTgi
+    val props = Seq(
+      UInt(0x10) -> DbpfProperty(UInt(0x0B)), // type
+      UInt(0x20) -> DbpfProperty(name), // name
+      UInt(0x27812820) -> DbpfProperty(Seq(modelTgi.tid.toUInt, modelTgi.gid.toUInt, modelTgi.iid.toUInt)), // RKT0
+    )
+    BufferedEntry(exemplarTgi, Exemplar(props = props, isCohort = false), compressed = true)
   }
 
 }
