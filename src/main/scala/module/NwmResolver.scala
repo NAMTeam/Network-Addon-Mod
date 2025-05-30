@@ -160,7 +160,7 @@ class NwmResolver extends IdResolver {
         add(nwmRangeId(n) + 0x0e00, n~(0,0,+2,-2))  // 90 degree curve
       }
     }
-    for ((n, offset) <- Seq(Rd4 -> 0, Tla5 -> 0x0100)) {
+    for ((n, offset) <- Seq(Rd4 -> 0, Tla5 -> 0x0100, Owr4 -> 0, Owr4m -> 0)) {
       add(nwmRangeId(n) + 0x0900 + offset, n~(0,-113,0,+2))  // 90 degree curve extended
       add(nwmRangeId(n) + 0x0980 + offset, n~(0,0,-2,+2))  // 90 degree curve outside
       add(nwmRangeId(n) + 0x0a00 + offset, n~(0,0,+2,-2))  // 90 degree curve inside

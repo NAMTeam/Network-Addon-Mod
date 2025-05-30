@@ -86,7 +86,6 @@ trait Adjacencies { this: RuleGenerator =>
     */
   def createAdjacentIntersections(main: Network, base: Network, minor: Network): Unit = {  // minor is the first (left) crossing network
     assert(intersectionAllowed(main, minor))
-    val (se, nw) = if (main.typ != AvenueLike) (SE, NW) else (SharedDiagRight, SharedDiagRight) // that way, code below works whether main is avelike or not
     // TODO case of avelike main needs to be tested, e.g. RD4
 
     val seen = collection.mutable.Set.empty[(Network, Int)]
@@ -99,12 +98,12 @@ trait Adjacencies { this: RuleGenerator =>
         seen.add((adj, dirs))  // in particular, in order to avoid adding adjBase multiple times
         if (intersectionAllowed(base, adj) && intersectionAllowed(main, adj)) {
           Rules += main~WE & minor~ns1    | (base ~> main)~WE & adj~ns2      // OxO
-          if (!diagonalCrossingsRequireHalfdragging(base, minor, adj)) {
-            Rules += main~se~ES & minor~ns1 | (base ~> main)~WN~nw & adj~ns2   // DxO
+          if (!diagonalCrossingsRequireHalfdragging(base, minor, adj)) withSharedDiagonals { Rules =>
+            Rules += main~SE~ES & minor~ns1 | (base ~> main)~WN~NW & adj~ns2   // DxO
             // for avelike networks, this puts shoulder between the adjacent networks, so these rules do not use shared diagonals
             if ((minor.typ != AvenueLike || nw1 == WN && ws1 == SW) && (adj.typ != AvenueLike || es2 == ES && ne2 == NE)) {
               Rules += main~WE~EW & minor~nw1 | (base ~> main)~WE~EW & adj~es2   // OxD
-              Rules += main~se~ES & minor~ws1 | (base ~> main)~WN~nw & adj~ne2   // DxD
+              Rules += main~SE~ES & minor~ws1 | (base ~> main)~WN~NW & adj~ne2   // DxD
             }
           }
         }
@@ -115,5 +114,22 @@ trait Adjacencies { this: RuleGenerator =>
       }
     }
     createRules()
+  }
+
+  protected class RemappingRulesBuilder(remap: SymTile => SymTile) extends collection.mutable.Growable[Rule[SymTile]] {
+    def clear(): Unit = throw new AssertionError
+    def addOne(rule: Rule[SymTile]): this.type = { Rules.addOne(rule.map(remap)); this }
+    def += (rules: (Rule[SymTile], Rule[SymTile])): this.type = {
+      this += rules._1
+      this += rules._2
+    }
+  }
+
+  /** Automatically adds shared diagonals where appropriate. See `NetworkProperties.transformSharedDiagonals` for details. */
+  protected def withSharedDiagonals(action: RemappingRulesBuilder => Unit): Unit = {
+    action(new RemappingRulesBuilder(remap = {
+      case tile: Tile => transformSharedDiagonals(tile)
+      case tile: SymTile => tile
+    }))
   }
 }

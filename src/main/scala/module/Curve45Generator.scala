@@ -2,7 +2,7 @@ package com.sc4nam.module
 
 import io.github.memo33.metarules.meta._
 import syntax._, Network._, Flags._, RotFlip._, Implicits._, group.SymGroup.noSymmetries
-import NetworkProperties.{isSingleTile, isDoubleTile}
+import NetworkProperties.{isSingleTile, isDoubleTile, owr4AltNetwork}
 
 /* Flags of sharp curves:
  *       ,---------,---------,
@@ -104,11 +104,11 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
 
   def hasMisStyle90Curve(n: Network, inside: Boolean): Boolean = {
     (n >= Mis && n <= L4Mis) ||
-    !inside && (n == Tla5 || n == Rd4)
+    !inside && (n == Tla5 || n == Rd4 || n.isOwr4Like)
   }
 
   def has90Curve(n: Network, inside: Boolean): Boolean = {
-    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4))
+    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4 || n.isOwr4Like))
   }
 
   def createCurve45Rules(main: Network): Unit = {
@@ -120,16 +120,23 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
       assert(main.base.isDefined)
       val base = main.base.get
       if (hasSharedDiagCurve(main)) {
+        val sharedCurveTileBase: Tile = base~(+11,-3,+1,-3)
+        val mainAlt = if (!main.isOwr4Like) main else owr4AltNetwork(main)
+        val sharedCurveTile: Tile = if (!main.isOwr4Like) main~(+11,-3,+1,-3) else main~(+11,-3,0,0) & mainAlt~(0,0,+1,-3)
         // orth to diag
-        Rules += main~WE~EW                         | (base ~> main)~(-2,0,+11,0)~(+2,0,-11,0)
-        Rules += main~(-2,0,+11,0)~(+2,0,-11,0)     | (base ~> main)~(-11,+3,0,0)~(+11,-3,+1,-3)
-        Rules += main~(0,-11,+3,0)                  | (base ~> main)~(-3,+11,-3,+1)
-        Rules += main~(+11,-3,+1,-3)~(-3,+11,-3,+1) | (base ~> main)~WN~SW
+        Rules += main~WE~EW             | (base ~> main)~(-2,0,+11,0)~(+2,0,-11,0)
+        Rules += main~(-2,0,+11,0)      | (base ~> main)~(-11,+3,0,0)
+        Rules += main~(+2,0,-11,0)      | sharedCurveTileBase        | % | sharedCurveTile
+        Rules += mainAlt~(0,-11,+3,0)   | sharedCurveTileBase * R1F0 | % | sharedCurveTile * R1F0
+        Rules += sharedCurveTile        | (base ~> mainAlt)~WN
+        Rules += sharedCurveTile * R1F0 | (base ~> main)~SW
         // diag to orth
-        Rules += (base ~> main)~WE~EW                         | main~(-2,0,+11,0)~(+2,0,-11,0)
-        Rules += (base ~> main)~(-2,0,+11,0)~(+2,0,-11,0)     | main~(-11,+3,0,0)~(+11,-3,+1,-3)
-        Rules += (base ~> main)~(0,-11,+3,0)                  | main~(-3,+11,-3,+1)
-        Rules += (base ~> main)~(+11,-3,+1,-3)~(-3,+11,-3,+1) | main~WN~SW
+        Rules += (base ~> main)~WE~EW           | main~(-2,0,+11,0)~(+2,0,-11,0)
+        Rules += (base ~> main)~(-2,0,+11,0)    | main~(-11,+3,0,0)
+        Rules += (base ~> main)~(+2,0,-11,0)    | sharedCurveTile
+        Rules += (base ~> mainAlt)~(0,-11,+3,0) | sharedCurveTile * R1F0
+        Rules += sharedCurveTileBase            | mainAlt~WN | sharedCurveTile        | %
+        Rules += sharedCurveTileBase * R1F0     | main~SW    | sharedCurveTile * R1F0 | %
       }
       if (hasSharpCurveBase(main, inside)) {
         if (hasSharpCurve(main, inside)) {
