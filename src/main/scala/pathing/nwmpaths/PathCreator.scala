@@ -33,8 +33,9 @@ object PathCreator {
     } /*do*/ {
       import Flags._, Implicits._
       def add(seg1: Segment, seg2: Segment) = {
+        val tile0 = NetworkProperties.transformSharedDiagonals(seg1 & seg2)
         if (!seg1.network.isTla && !seg2.network.isTla) {
-          val idTile = resolver(seg1 & seg2)
+          val idTile = resolver(tile0)
           if (!ids.contains(idTile.id)) {
             val intersection = new PlusIntersection(seg1, seg2)
             ids(idTile.id) = intersection.buildSc4Path * (R0F0 / idTile.rf)
@@ -43,8 +44,8 @@ object PathCreator {
           // special handling for center turning lanes of TLAs
           // TODO Orientations and directions of paths need testing,
           // and the alternative TLA turn paths need permanent IIDs
-          val idTile1 = resolver(NetworkProperties.projectTlaLeft(seg1 & seg2))
-          val idTile2 = resolver(NetworkProperties.projectTlaLeft((seg1 & seg2) * R0F1))
+          val idTile1 = resolver(NetworkProperties.projectTlaLeft(tile0))
+          val idTile2 = resolver(NetworkProperties.projectTlaLeft(tile0 * R0F1))
           if (!ids.contains(idTile1.id)) {
             val intersection = new PlusIntersection(seg1, seg2)
             ids(idTile1.id) = intersection.buildSc4Path * (R0F0 / idTile1.rf)
@@ -60,13 +61,13 @@ object PathCreator {
       // the IID scheme, since otherwise the uk flags can end up flipped.
       for { // OxD
         mainDir <- Seq(NS, SN)
-        minDir <- Seq(SW, if (minor.typ != AvenueLike) WS else SharedDiagLeft)
+        minDir <- Seq(SW, WS)
       } /*do*/ {
         add(main~mainDir, minor~minDir)
       }
       for { // DxO, DxD
-        mainDir <- Seq(ES, if (main.typ != AvenueLike) SE else SharedDiagRight)
-        minDir <- Seq(EW, WE, SW, if (minor.typ != AvenueLike) WS else SharedDiagLeft)
+        mainDir <- Seq(ES, SE)
+        minDir <- Seq(EW, WE, SW, WS)
       } /*do*/ {
         add(main~mainDir, minor~minDir)
       }

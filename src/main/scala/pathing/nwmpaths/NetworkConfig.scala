@@ -58,8 +58,8 @@ object NetworkConfig {
       val func = dir match {
         case NS => orth
         case ES => diagES
+        case SE if n.typ == AvenueLike => diagES
         case SE => diagSE
-        case SharedDiagRight => diagES
       }
       val spaths = create(func, simNS, carNS, carSN, simSN)
       for (rf <- Seq(R0F0, R1F0, R2F0, R3F0)) {
@@ -76,7 +76,7 @@ object NetworkConfig {
     add(Street, ES)(-7.3f)(-2.8f)(2.8f)(7.3f)
     add(Avenue, NS)(-6.39f)(-2.5f, 2.5f)(13.5f, 18.5f)(22.39f)
     add(Avenue, ES)(-7.3f)(-3.2f, 3.2f)(16-3.2f, 16+3.2f)(16+7.3f)
-    add(Avenue, SharedDiagRight)(-16-7.3f)(-16-3.2f, -16+3.2f)(0-3.2f, 0+3.2f)(0+7.3f)
+    add(Avenue, SE)(-16-7.3f)(-16-3.2f, -16+3.2f)(0-3.2f, 0+3.2f)(0+7.3f)  // shared diag
 
     add(Tla3, NS)(-7.5f)(-4.5f, -0.125f)(0.125f, 4.5f)(7.5f)
     add(Tla3, ES)(-7.99f)(-6f, -0.3172f)(0.3172f, 6f)(7.99f)
@@ -93,14 +93,17 @@ object NetworkConfig {
 
     add(Tla5, NS)(-6.39f)(-2.5f, 2.5f, 7.25f)(8.75f, 13.5f, 18.5f)(22.39f)
     add(Tla5, ES, SE)(-4f)(1.5f, 9f, 16-1.5f)(16+1.5f, 23f, 30.5f)(36f) // TODO these are preliminary (guessed) turning lane coordinates
-    add(Owr4, NS)(-6.39f)(1.5f, 5.5f, 16-5.5f, 16-1.5f)(1.5f, 5.5f, 16-5.5f, 16-1.5f)(16+6.39f)
-    add(Owr4, ES)(-7.3f)(-2f, 5f, 16-5f, 16+2f)(-2f, 5f, 16-5f, 16+2f)(16+7.3f)
-    add(Owr4, SharedDiagRight)(-16-7.3f)(-16-2f, -16+5f, 0-5f, 0+2f)(-16-2f, -16+5f, 0-5f, 0+2f)(0+7.3f)
+    add(Owr4 , NS)(-6.39f)(1.5f, 5.5f, 16-5.5f, 16-1.5f)()(16+6.39f)
+    add(Owr4m, NS)(-6.39f)()(1.5f, 5.5f, 16-5.5f, 16-1.5f)(16+6.39f)
+    add(Owr4 , ES)(-7.3f)(-2f, 5f, 16-5f, 16+2f)()(16+7.3f)
+    add(Owr4m, ES)(-7.3f)()(-2f, 5f, 16-5f, 16+2f)(16+7.3f)
+    add(Owr4 , SE)(-16-7.3f)()(-16-2f, -16+5f, 0-5f, 0+2f)(0+7.3f)  // shared diag
+    add(Owr4m, SE)(-16-7.3f)(-16-2f, -16+5f, 0-5f, 0+2f)()(0+7.3f)  // shared diag
     add(Owr5, NS)(-6.39f)(-1f, 3.5f, 7.75f, 16-7.75f, 16-3.5f, 16+1f)(-1f, 3.5f, 7.75f, 16-7.75f, 16-3.5f, 16+1f)(16+6.39f)
     add(Owr5, ES, SE)(-2.5f)(3f, 16-6.5f, 16-0f, 16+6.5f, 32-3f)(3f, 16-6.5f, 16-0f, 16+6.5f, 32-3f)(32+2.5f)
     add(Rd4, NS)(-7f)(1f, 5.5f)(16-5.5f, 16-1f)(16+7f)
     add(Rd4, ES)(-7.3f)(-2f, 5f)(16-5f, 16+2f)(16+7.3f)
-    add(Rd4, SharedDiagRight)(-16-7.3f)(-16-2f, -16+5f)(0-5f, 0+2f)(0+7.3f)
+    add(Rd4, SE)(-16-7.3f)(-16-2f, -16+5f)(0-5f, 0+2f)(0+7.3f)  // shared diag
     add(Rd6, NS)(-7f)(-3.5f, 1f, 5.5f)(10.5f, 15f, 19.5f)(23f)
     add(Rd6, ES, SE)(-5.5f)(0f, 6f, 12f)(20f, 26f, 32f)(37.5f)
 
