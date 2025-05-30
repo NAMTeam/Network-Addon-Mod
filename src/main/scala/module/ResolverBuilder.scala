@@ -5,7 +5,7 @@ import io.github.memo33.metarules.meta._, syntax._, RotFlip._
 
 /** A builder of a Tile-to-IdTile mapping for use as a resolver.
   */
-class ResolverBuilder extends scala.collection.mutable.Builder[(Tile, IdTile | (IdTile, IdTile)), collection.Map[Tile, IdTile]] {
+class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.mutable.Builder[(Tile, IdTile | (IdTile, IdTile)), collection.Map[Tile, IdTile]] {
   var tileMap = (new java.util.concurrent.ConcurrentHashMap[Tile, IdTile]()).asScala
   def clear(): Unit = (new java.util.concurrent.ConcurrentHashMap[Tile, IdTile]()).asScala
   def result(): collection.Map[Tile, IdTile] = tileMap
@@ -26,10 +26,10 @@ class ResolverBuilder extends scala.collection.mutable.Builder[(Tile, IdTile | (
       elem._2 match {
         case i: IdTile =>
           val rfInv = R0F0 / i.rf
-          (elem._1 * rfInv, i * rfInv)
+          (remap(elem._1) * rfInv, i * rfInv)
         case (i1, i2) =>
           val rfInv = R0F0 / i1.rf  // i2.rf should usually be the same
-          (elem._1 * rfInv, (i1 * rfInv, i2 * rfInv))
+          (remap(elem._1) * rfInv, (i1 * rfInv, i2 * rfInv))
       }
 
     // by default, we project any TLA flags if necessary and define the same ID for both

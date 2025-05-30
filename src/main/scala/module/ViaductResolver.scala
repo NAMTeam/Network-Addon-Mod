@@ -29,7 +29,7 @@ object ViaductResolver {
 
       0x1a00 -> Tla3,    0x1b00 -> Ave2,   0x1c00 -> Ard3,
       0x1d00 -> Owr1,    0x1e00 -> Owr3,   0x1f00 -> Nrd4,
-      0x2000 -> Tla5,    0x2100 -> Owr4,   0x2200 -> Owr5,
+      0x2000 -> Tla5,    0x2100 -> Owr4,   0x2180 -> Owr4m,   0x2200 -> Owr5,
       0x2300 -> Rd4,     0x2400 -> Rd6,    0x2500 -> Ave6,
       0x2580 -> Tla7m,   0x2600 -> Ave8,   0x2680 -> Ave6m,
       // 0x2700 Tram-on-Street, 0x2800 Tram-in-Road, 0x2805 Tram-on-Road, 0x2a00 Tram-in-Avenue

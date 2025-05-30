@@ -52,7 +52,10 @@ object RhwResolver {
     Owr1     -> 0x2A00, Owr3     -> 0x2B00, Nrd4     -> 0x2C00,
     Tla5     -> 0x2D00, Owr4     -> 0x2E00, Owr5     -> 0x2F00,
     Rd4      -> 0x3000, Rd6      -> 0x3100, Ave6     -> 0x3200,
-    Tla7m    -> 0x3300, Ave8     -> 0x3400, Ave6m    -> 0x3500)
+    Tla7m    -> 0x3300, Ave8     -> 0x3400, Ave6m    -> 0x3500,
+    // skipped some tram-dual networks
+    Owr4m    -> 0x3B00,
+  )
 
   def rhwHtRangeId(n: Network): Int = {  // for OST and HT
     require(n.height == 0)
@@ -87,7 +90,10 @@ class RhwResolver extends IdResolver {
   def apply(tile: Tile): IdTile = tileMap(tile)
 
   val tileMap = {
-    val builder = new ResolverBuilder
+    val builder = new ResolverBuilder(
+      // To simplify adding shared diagonals, we automatically add them for avenue-like networks going in the wrong direction.
+      remap = (tile: Tile) => NP.transformSharedDiagonals(tile),
+    )
     import builder.add
 
     add(0x57000f00, Dirtroad~(0,0,0,0))
@@ -157,30 +163,29 @@ class RhwResolver extends IdResolver {
       val (msk1a, msk1b) = if (NP.isRhwShoulder(n)) (0x00, 0xf0) else (0xf0, 0x00)  // reversal of direction
       val (msk2a, msk2b) = if (NP.isRhwShoulder(n2)) (0x00, 0x0f) else (0x0f, 0x00)  // reversal of direction
       val off8Diag = if (n2.height != 0 && Network.Viaducts.contains(n2)) 5 else 0  // use 5/A instead of 0/5 as 8th digit (presumably to avoid wealth texture conflict)
-      val n2HasSharedDiag = n2.typ == AvenueLike || n2 == Onewayroad  // e.g. for Owr4
-      val ws = if (n2HasSharedDiag) SharedDiagLeft else WS
-      val se = if (n.typ == AvenueLike) SharedDiagRight else SE
+      def asymmOrShared(network: Network) = !network.isSymm && network != Owr4m  // Owr4m shared diagonals use Owr4 IDs instead
+      def asymmOrOwr4(network: Network) = network.typ == Asymmetrical || network.isOwr4Like && network != Owr4m  // Owr4 has fewer symmetries than Avenue
       val orientA: IntFlags => IntFlags = if (n2 == Ard3) reverseIntFlags else identity
 
       // O×O
       add(n~NS & n2~orientA(EW), id + 0x0000)
       // O×D
       add(n~NS & n2~SW, id + 0x3000 + off8Diag + (dir2 & msk2b))
-      add(n~NS & n2~ws, id + 0x3000 + off8Diag + (dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
+      add(n~NS & n2~WS, id + 0x3000 + off8Diag + (dir2 & msk2a), when = asymmOrShared(n2))
       add(n~SN & n2~SW, id + 0x3000 + off8Diag + (dir2 & msk2b | dir1), when = !n.isSymm)
-      add(n~SN & n2~ws, id + 0x3000 + off8Diag + (dir2 & msk2a | dir1), when = !n.isSymm && (n2.typ == Asymmetrical))
+      add(n~SN & n2~WS, id + 0x3000 + off8Diag + (dir2 & msk2a | dir1), when = !n.isSymm && asymmOrOwr4(n2))
       // D×O
       if (n != n2) {
         add(n~ES & n2~EW, id + 0x6000 + off8Diag + (dir1 & msk1b))
         add(n~ES & n2~WE, id + 0x6000 + off8Diag + (dir1 & msk1b | dir2), when = !n2.isSymm)
-        add(n~se & n2~EW, id + 0x6000 + off8Diag + (dir1 & msk1a), when = !n.isSymm)
-        add(n~se & n2~WE, id + 0x6000 + off8Diag + (dir1 & msk1a | dir2), when = (n.typ == Asymmetrical) && !n2.isSymm)
+        add(n~SE & n2~EW, id + 0x6000 + off8Diag + (dir1 & msk1a), when = !n.isSymm)
+        add(n~SE & n2~WE, id + 0x6000 + off8Diag + (dir1 & msk1a | dir2), when = (n.typ == Asymmetrical) && !n2.isSymm)
       }
       // D×D
       add(n~ES & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1b | dir2 & msk2b))
-      add(n~ES & n2~ws, id + 0x9000 + off8Diag + (dir1 & msk1b | dir2 & msk2a), when = !n2.isSymm || n2HasSharedDiag)
-      add(n~se & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
-      add(n~se & n2~ws, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
+      add(n~ES & n2~WS, id + 0x9000 + off8Diag + (dir1 & msk1b | dir2 & msk2a), when = asymmOrShared(n2))
+      add(n~SE & n2~SW, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2b), when = !n.isSymm)
+      add(n~SE & n2~WS, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && asymmOrShared(n2))
     }
 
     // T intersections with viaducts

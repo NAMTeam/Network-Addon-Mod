@@ -1,6 +1,6 @@
 package com.sc4nam.module
 
-import io.github.memo33.metarules.meta._, syntax._, Network._
+import io.github.memo33.metarules.meta._, syntax._, Network._, Flags._
 
 object NetworkProperties {
 
@@ -11,7 +11,7 @@ object NetworkProperties {
     n.typ != AvenueLike &&
     !(n.typ == Symmetrical && hasRightShoulder(n)) && // this is treated as right shoulder only, for efficiency
     !(n >= Rhw8s && n <= L2Rhw10c) &&
-    !(n >= Tla5 && n <= Ave6m)
+    !(n >= Tla5 && n <= Ave6m)  // notably, Owr4m does not have a left shoulder in terms of its flags, as the flags match that of the underlying Avenue base network (to simplify rule generators)
   }
 
   def isDoubleTile(n: Network): Boolean = {
@@ -123,4 +123,50 @@ object NetworkProperties {
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)
+
+  // /** Build combined flags for shared-tile diagonals. */
+  // def shared(flags1: (Int, Int, Int, Int), flags2: (Int, Int, Int, Int)): (Int, Int, Int, Int) = {
+  //   require(
+  //     (flags1._1 == 0 || flags2._1 == 0) &&
+  //     (flags1._2 == 0 || flags2._2 == 0) &&
+  //     (flags1._3 == 0 || flags2._3 == 0) &&
+  //     (flags1._4 == 0 || flags2._4 == 0), s"Shared-tile flags must be disjoint where not 0: $flags1 $flags2")
+  //   (flags1._1 | flags2._1, flags1._2 | flags2._2, flags1._3 | flags2._3, flags1._4 | flags2._4)
+  // }
+
+  /** For diagonal tiles of networks with shared-tile diagonals,
+    * convert diagonal segments of the network that run in the wrong
+    * direction to appropriate shared-tile diagonals.
+    * Example:
+    * `Avenue~SE` is converted to `Avenue~SharedDiagRight`, while `Avenue~ES` is left as is.
+    */
+  def transformSharedDiagonals(tile: Tile): Tile = {
+    if (!tile.segs.exists(_.network.typ == AvenueLike)) tile
+    else tile.copy(segs = tile.segs.flatMap { seg =>
+      if (seg.network.typ != AvenueLike) Seq(seg)
+      else {
+        if (!seg.network.isOwr4Like) {
+          if (seg == seg.network~SE) Seq(seg.network~SharedDiagRight)
+          else if (seg == seg.network~WS) Seq(seg.network~SharedDiagLeft)
+          else if (seg == seg.network~NW) Seq(seg.network~SharedDiagRight)
+          else if (seg == seg.network~EN) Seq(seg.network~SharedDiagLeft)
+          else Seq(seg)
+        } else {
+          if      (seg == seg.network~SE) Seq(seg, owr4AltNetwork(seg.network)~NW)
+          else if (seg == seg.network~WS) Seq(seg, owr4AltNetwork(seg.network)~EN)
+          else if (seg == seg.network~NW) Seq(seg, owr4AltNetwork(seg.network)~SE)
+          else if (seg == seg.network~EN) Seq(seg, owr4AltNetwork(seg.network)~WS)
+          else Seq(seg)
+        }
+      }
+    })
+  }
+
+  /** Switch Owr4 and Owr4m. */
+  def owr4AltNetwork(network: Network): Network = {
+    if (network == Owr4) Owr4m
+    else if (network == Owr4m) Owr4
+    else throw new IllegalArgumentException(s"network is not OWR-like: $network")
+  }
+
 }

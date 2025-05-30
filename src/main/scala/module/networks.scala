@@ -11,6 +11,7 @@ class Network private (val height: Int, val typ: NetworkType, val base: Option[N
   def isNwm: Boolean = NwmNetworks.contains(this)
   def isTla: Boolean = this == Tla3 || this == Tla5 || this == Tla7m
   def isSymm: Boolean = typ == Symmetrical
+  def isOwr4Like: Boolean = this == Owr4 || this == Owr4m
 }
 
 /** List of all the base and override networks.
@@ -105,7 +106,8 @@ object Network extends scalaenum.Enum {
   val Owr3  = new Network(0, Symmetrical,  Some(Onewayroad))
   val Nrd4  = new Network(0, Symmetrical,  Some(Road))
   val Tla5  = new Network(0, Asymmetrical, Some(Road))
-  val Owr4  = new Network(0, AvenueLike,   Some(Onewayroad))
+  val Owr4m = new Network(0, AvenueLike,   Some(Avenue))
+  val Owr4  = new Network(0, AvenueLike,   Some(Avenue))
   val Owr5  = new Network(0, Asymmetrical, Some(Onewayroad))
   val Rd4   = new Network(0, AvenueLike,   Some(Avenue))
   val Rd6   = new Network(0, Asymmetrical, Some(Road))

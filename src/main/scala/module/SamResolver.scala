@@ -144,6 +144,7 @@ class SamResolver extends IdResolver {
 
       add(0x5e646000 + offset, sam~NS & Tla5~EW)  // TLA-5 +
       add(0x5e647000 + offset, sam~NS & Owr4~EW)  // OWR-4 +
+      add(0x5e647080 + offset, sam~NS & Owr4m~EW)  // OWR-4 Inner
       add(0x5e648000 + offset, sam~NS & Owr5~EW)  // OWR-5 +
       add(0x5e649000 + offset, sam~NS & Rd4~EW)   // RD-4 +
       add(0x5e64a000 + offset, sam~NS & Rd6~EW)   // RD-6 +
@@ -193,6 +194,7 @@ class SamResolver extends IdResolver {
 
       add(0x5e656000 + offset, sam~CN & Tla5~EW)  // Tla5 short T
       add(0x5e657000 + offset, sam~CN & Owr4~EW)  // Owr4 short T
+      add(0x5e657080 + offset, sam~CN & Owr4m~EW)  // Owr4m short T
       add(0x5e658000 + offset, sam~CN & Owr5~EW)  // Owr5 short T
       add(0x5e659000 + offset, sam~CN & Rd4~EW)   // Rd4 short T
       add(0x5e65a000 + offset, sam~CN & Rd6~EW)   // Rd6 short T

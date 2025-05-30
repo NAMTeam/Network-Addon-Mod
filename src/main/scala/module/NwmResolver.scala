@@ -20,6 +20,7 @@ object NwmResolver {
     Owr5          -> 0x51120000,
     Rd4           -> 0x51130000,
     Rd6           -> 0x51140000,
+    Owr4m         -> 0x51150000,
 
     Ave6          -> 0x51200000,
     Tla7m         -> 0x51200080,  // with overflow 0x51220000
@@ -52,6 +53,7 @@ object NwmResolver {
     Owr3          -> 0x1400,
     Nrd4          -> 0x1500,
 
+    Owr4m         -> 0x1700,
     Tla5          -> 0x1800,
     Owr4          -> 0x1900,
     Owr5          -> 0x1A00,
@@ -94,7 +96,10 @@ class NwmResolver extends IdResolver {
   def apply(tile: Tile): IdTile = tileMap(tile)
 
   val tileMap = {
-    val builder = new ResolverBuilder
+    val builder = new ResolverBuilder(
+      // To simplify adding shared diagonals, we automatically add them for avenue-like networks going in the wrong direction.
+      remap = (tile: Tile) => NP.transformSharedDiagonals(tile),
+    )
     import builder.add
 
     for (n <- NwmNetworks) {
@@ -128,11 +133,13 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0x0509, n~(0,+13,0,-2))  // sharp curve inside (TODO add orthogonal placeholder texture)
       add(nwmRangeId(n) + 0x0600, n~(0,0,-1,+13))  // sharp curve outside
     }
-    for (n <- Seq(Rd4, Owr4)) {
+    for (n <- Seq(Rd4, Owr4, Owr4m)) {
       add(nwmRangeId(n) + 0x0500, n~(0,-2,0,+11))  // shared diagonal curve outside
       add(nwmRangeId(n) + 0x0600, n~(0,+2,0,-11))  // shared diagonal curve inside
       add(nwmRangeId(n) + 0x0700, n~(0,0,-1,+13))  // shared diagonal curve outside
-      add(nwmRangeId(n) + 0x0800, n~(+1,-3,+1,-13))  // shared diagonal curve
+      if (!n.isOwr4Like) {  // corresponding Owr4 tile is defined in MiscResolver to circumvent `remap`
+        add(nwmRangeId(n) + 0x0800, n~(+1,-3,+1,-13))  // shared diagonal curve
+      }
     }
     for (n <- Seq(Ave6, Ave8)) {
       add(nwmRangeId(n) + 0x0400, n~(0,0,+1,-13))  // sharp curve inside
@@ -195,9 +202,8 @@ class NwmResolver extends IdResolver {
       val pid = NwmResolver.nwmPieceId(n2)
       val (rev00, rev01, rev10, rev11) = (0x00, 0x05, 0x80, 0x85)  // for reversed directions of networks
       val rfOxO = R0F0 / NwmResolver.orientationOffsetOxO(n + n2)
-      val n2HasSharedDiag = n2.typ == AvenueLike || n2 == Onewayroad  // e.g. for Owr4
-      val ws = if (n2HasSharedDiag) SharedDiagLeft else WS
-      val se = if (n.typ == AvenueLike) SharedDiagRight else SE
+      def asymmOrShared(network: Network) = !network.isSymm && network != Owr4m  // Owr4m shared diagonals use Owr4 IDs instead
+      def asymmOrOwr4(network: Network) = network.typ == Asymmetrical || network.isOwr4Like && network != Owr4m  // Owr4 has fewer symmetries than Avenue
       def off8(id: Int): Int =  // map 8th digit 5 to 9, A to E
         if (id % 0x10 != 0 && (n.height == 0 && n2.height == 0)) id + 0x4
         else id
@@ -210,23 +216,23 @@ class NwmResolver extends IdResolver {
       val id = NwmResolver.nwmRangeIdOverflow(n) + pid
       if (!RhwResolver.greater(n2, n) || n2.isNwm) {
         builder ++= withProjections(n~NS & n2~SW, IdTile(off8(id + 0x5000 + rev00), R0F0))
-        builder ++= withProjections(n~NS & n2~ws, IdTile(off8(id + 0x5000 + rev01), R0F0), when = !n2.isSymm || n2HasSharedDiag)
+        builder ++= withProjections(n~NS & n2~WS, IdTile(off8(id + 0x5000 + rev01), R0F0), when = asymmOrShared(n2))
         builder ++= withProjections(n~SN & n2~SW, IdTile(off8(id + 0x5000 + rev10), R0F0), when = !n.isSymm)
-        builder ++= withProjections(n~SN & n2~ws, IdTile(off8(id + 0x5000 + rev11), R0F0), when = !n.isSymm && (n2.typ == Asymmetrical))
+        builder ++= withProjections(n~SN & n2~WS, IdTile(off8(id + 0x5000 + rev11), R0F0), when = !n.isSymm && asymmOrOwr4(n2))
       }
       // D×O
       if (!RhwResolver.greater(n2, n) && !n2.isNwm) {
         builder ++= withProjections(n~ES & n2~EW, IdTile(off8(id + 0x7000 + rev00), R0F0))
         builder ++= withProjections(n~ES & n2~WE, IdTile(off8(id + 0x7000 + rev01), R0F0), when = !n2.isSymm)
-        builder ++= withProjections(n~se & n2~EW, IdTile(off8(id + 0x7000 + rev10), R0F0), when = !n.isSymm)
-        builder ++= withProjections(n~se & n2~WE, IdTile(off8(id + 0x7000 + rev11), R0F0), when = (n.typ == Asymmetrical) && !n2.isSymm)
+        builder ++= withProjections(n~SE & n2~EW, IdTile(off8(id + 0x7000 + rev10), R0F0), when = asymmOrShared(n))
+        builder ++= withProjections(n~SE & n2~WE, IdTile(off8(id + 0x7000 + rev11), R0F0), when = asymmOrOwr4(n) && !n2.isSymm)
       }  // else covered by O×D
       // D×D
       if (!RhwResolver.greater(n2, n)) {
         builder ++= withProjections(n~ES & n2~SW, IdTile(off8(id + 0x8000 + rev00), R0F0))
-        builder ++= withProjections(n~ES & n2~ws, IdTile(off8(id + 0x8000 + rev01), R0F0), when = !n2.isSymm || n2HasSharedDiag)
-        builder ++= withProjections(n~se & n2~SW, IdTile(off8(id + 0x8000 + rev10), R0F0), when = !n.isSymm && (n != n2))
-        builder ++= withProjections(n~se & n2~ws, IdTile(off8(id + 0x8000 + rev11), R0F0), when = !n.isSymm && (!n2.isSymm || n2HasSharedDiag))
+        builder ++= withProjections(n~ES & n2~WS, IdTile(off8(id + 0x8000 + rev01), R0F0), when = asymmOrShared(n2))
+        builder ++= withProjections(n~SE & n2~SW, IdTile(off8(id + 0x8000 + rev10), R0F0), when = asymmOrShared(n) && (n != n2))
+        builder ++= withProjections(n~SE & n2~WS, IdTile(off8(id + 0x8000 + rev11), R0F0), when = asymmOrShared(n) && asymmOrShared(n2))
       }
     }
 

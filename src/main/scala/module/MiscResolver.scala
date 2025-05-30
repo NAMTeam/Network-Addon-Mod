@@ -35,7 +35,10 @@ class MiscResolver extends IdResolver {
     add(0x51050000, Nrd4 ~NS); add(0x51050200, Nrd4 ~ES)
     add(0x51100000, Tla5 ~NS); add(0x51100200, Tla5 ~ES); add(0x51100300, Tla5 ~NW)
     add(0x51100100, Tla5 ~CS)  // overwritten explicitly here to avoid 0x71.. ID for stubs
-    add(0x51110000, Owr4 ~NS); add(0x51110200, Owr4 ~ES); add(0x51110300, Owr4~SharedDiagRight)
+    add(0x51110000, Owr4 ~NS); add(0x51110200, Owr4 ~ES); add(0x51110300, Owr4~SE & Owr4m~NW)
+    add(0x51150000, Owr4m~NS); add(0x51150200, Owr4m~ES)  // To simplify rule generators, the direction of Owr4m matches that of the underlying Avenue base network (thus, it runs opposite to the actual paths).
+    add(0x51110800, Owr4 ~(0,0,+1,-13) & Owr4m~(+1,-3,0,0))  // shared-diag curve
+    add(0x51150800, Owr4m~(0,0,+1,-13) & Owr4 ~(+1,-3,0,0))  // shared-diag curve reversed
     add(0x51120000, Owr5 ~NS); add(0x51120200, Owr5 ~ES); add(0x51120300, Owr5 ~NW)
     add(0x51130000, Rd4  ~NS); add(0x51130200, Rd4  ~ES); add(0x51130300, Rd4~SharedDiagRight)
     add(0x51140000, Rd6  ~NS); add(0x51140200, Rd6  ~ES); add(0x51140300, Rd6  ~NW)
@@ -596,6 +599,7 @@ class MiscResolver extends IdResolver {
     add(0x51103000, Street~CN & (Tla5~EW).projectLeft)
     add(0x71103000, Street~CN & (Tla5~EW).projectRight)
     add(0x51113000, Street~CN & Owr4~EW)
+    add(0x51153000, Street~CN & Owr4m~EW)
     add(0x51123000, Street~CN & Owr5~EW)
     add(0x51133000, Street~CN & Rd4~EW)
     add(0x51143000, Street~CN & Rd6~EW)

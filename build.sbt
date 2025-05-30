@@ -17,7 +17,7 @@ scalacOptions ++= Seq(
 
 console / initialCommands := """
 import io.github.memo33.metarules.meta._, com.sc4nam.module, module.syntax._
-import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._
+import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._, module.NetworkProperties._
 lazy val resolve = module.Main.resolveSafely
 lazy val preimage = module.ReverseResolver.create()
 implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)

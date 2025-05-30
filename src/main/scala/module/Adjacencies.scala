@@ -44,7 +44,8 @@ object Adjacencies {
     m(Rd6) = Seq(Rd6 -> NSSN)
     m(Owr5) = Seq(Owr5 -> NSSN)
     m(Rd4) = Seq(Rd4 -> NSSN)
-    m(Owr4) = Seq(Owr4 -> NSSN)
+    m(Owr4) = Seq(Owr4m -> NSSN)
+    m(Owr4m) = Seq(Owr4 -> NSSN)
     // Base multi-tile networks
     m(Avenue) = Seq(Avenue -> NSSN)
     m(Highway) = Seq(Highway -> NSSN)
@@ -54,56 +55,6 @@ object Adjacencies {
     m(L2Avenue) = Seq(L2Avenue -> NSSN)
     m.toMap
   }
-
-  /** used as a cache */
-  private val adjacentNetworksMap = mutable.Map.empty[Network, Seq[(Network, Int)]]
-
-  private def isRhw3(n: Network) = n == Rhw3 || n == L1Rhw3 || n == L2Rhw3
-
-  /** Lists the networks that are supported adjacent to `n` including their
-    * directions (NSNS, NSSN, SNSN).
-    * TODO make sure that nothing is included twice, unnecessarily.
-    */
-  def adjacentNetworks(n: Network): Seq[(Network, Int)] = adjacentNetworksMap.getOrElseUpdate(n, {
-    val multAdjs = multitileNetworks.getOrElse(n, Seq.empty[(Network, Int)])
-    if (n.isRhw && !isRhw3(n)) {
-      // Supported adjacencies between RHW networks. Add any lacking adjacency support here.
-      val one = if (hasLeftShoulder(n)) {
-        (RhwNetworks.filter { m =>
-          !isRhw3(m) && hasRightShoulder(m) && (isSingleTile(n) || isSingleTile(m) || n.height == m.height)
-        } ++
-        (if (n.height <= 2) Seq(Lightrail) else Seq.empty)  // Lightrail between two RHW networks
-        ).map(m => m -> NSNS)
-      } else Seq.empty
-      val two = if (hasRightShoulder(n)) {
-        (RhwNetworks.filter { m =>
-          !isRhw3(m) && hasLeftShoulder(m) && (isSingleTile(n) || isSingleTile(m) || n.height == m.height)
-        } ++
-        (if (n.height <= 2) Seq(Lightrail, Rail, /*Str,*/ Glr2) else Seq.empty)  // rail-type networks parallel to RHW (on the outside)
-        ).map(m => m -> SNSN)
-      } else Seq.empty
-      val three = if (hasLeftShoulder(n) && n.typ != Symmetrical) {
-        RhwNetworks filter { m =>
-          !isRhw3(m) && hasLeftShoulder(m) && m.typ != Symmetrical && (isSingleTile(n) || isSingleTile(m) || n == m)
-        } map (m => m -> NSSN)
-      } else Seq.empty
-      multAdjs ++ one ++ two ++ three
-    } else if (n.isNwm || n == Road || n == Onewayroad || n == Avenue) {
-      // Supported adjacencies between NWM or road-type networks.
-      val parallelOwrs = if (n == Owr3) Seq(n -> NSSN)
-        else if (n == Owr1) Seq(n -> NSSN, n -> SNNS)  // since Owr1 is asymmetrical, both directions are needed
-        else if (n == Owr4 || n == Owr5) Seq(n -> SNNS)
-        else Seq.empty
-      val railTypes = Seq(Rail, /*Str,*/ Lightrail /*, Glr1, Glr2, Glr3, Glr4*/)
-      var adjacentRail = if (hasRightShoulder(n)) railTypes.map(m => m -> SNNS)
-        else if (hasLeftShoulder(n)) railTypes.map(m => m -> NSSN)
-        else Seq.empty
-      multAdjs ++ parallelOwrs ++ adjacentRail
-    } else {
-      // TODO All other adjacencies (e.g. viaducts).
-      multAdjs
-    }
-  })
 
 }
 
