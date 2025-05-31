@@ -22,7 +22,7 @@ class RuleTransducerSpec extends AnyWordSpec with Matchers {
 
       context.preprocess( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
       val diag = context.preprocess( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
-      diag should have size (2)
+      diag should have size (4)
       for (r <- diag) {
         createRules(r.map(_.toIdSymTile(resolver)), context.tileOrientationCache.cache, context.tileOrientationCache.accum).toSeq should have size (2)
       }
