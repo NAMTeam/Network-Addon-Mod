@@ -68,7 +68,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       if (main.isRhw || main.isNwm) {
         Rules += main~WE    | (base ~> main)~WE      // ortho
         Rules += main~WE    | (base ~> main)~WC      // ortho stub
-        withSharedDiagonals { Rules =>
+        withSharedDiagonals {
           Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
         }
         createRules() // flush the buffer from time to time
@@ -81,7 +81,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       for (minor <- crossingNetworksOf(main)) {
         // entry (override from straight tile to first crossing tile)
         if (intersectionAllowed(base, minor)) { // skips e.g. preexisting L0Rhw2 x L0Rhw6c in second tile
-          def entryCode(orient: Segment => Segment) = withSharedDiagonals { Rules =>
+          def entryCode(orient: Segment => Segment) = withSharedDiagonals {
             Rules += main~WE    | (base ~> main)~WE & orient(minor~NS)      // OxO
             Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~ES)   // OxD
             Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NS)   // DxO
@@ -94,7 +94,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         }
         // exit (override from last crossing tile to straight tile)
         {
-          def exitCode(orient: Segment => Segment) = withSharedDiagonals { Rules =>
+          def exitCode(orient: Segment => Segment) = withSharedDiagonals {
             Rules += main~WE & orient(minor~SN)    | (base ~> main)~WE      // OxO
             Rules += main~WE~EW & orient(minor~WN) | (base ~> main)~WE~EW   // OxD
             Rules += main~SE~ES & orient(minor~SN) | (base ~> main)~WN~NW   // DxO
@@ -107,7 +107,7 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
         }
         // Inside diagonal crossings (Diagonal crossings consist of two or more tiles, so the following rules ensure
         // that the override carries over between those inner-intersection tiles)
-        withSharedDiagonals { Rules =>
+        withSharedDiagonals {
           if (intersectionAllowed(base, minor)) {
             Rules += main~WE~EW & minor~NE | (base ~> main)~WE~EW & minor~WS   // OxD
             Rules += main~WE~EW & minor~EN | (base ~> main)~WE~EW & minor~SW

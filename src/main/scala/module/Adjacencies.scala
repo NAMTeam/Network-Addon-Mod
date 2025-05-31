@@ -58,7 +58,7 @@ object Adjacencies {
 
 }
 
-trait Adjacencies { this: RuleGenerator =>
+trait Adjacencies extends SharedDiagonals { this: RuleGenerator =>
   import Adjacencies._
 
   def diagonalCrossingsRequireHalfdragging(base: Network, minor1: Network, minor2: Network): Boolean = {
@@ -98,7 +98,7 @@ trait Adjacencies { this: RuleGenerator =>
         seen.add((adj, dirs))  // in particular, in order to avoid adding adjBase multiple times
         if (intersectionAllowed(base, adj) && intersectionAllowed(main, adj)) {
           Rules += main~WE & minor~ns1    | (base ~> main)~WE & adj~ns2      // OxO
-          if (!diagonalCrossingsRequireHalfdragging(base, minor, adj)) withSharedDiagonals { Rules =>
+          if (!diagonalCrossingsRequireHalfdragging(base, minor, adj)) withSharedDiagonals {
             Rules += main~SE~ES & minor~ns1 | (base ~> main)~WN~NW & adj~ns2   // DxO
             // for avelike networks, this puts shoulder between the adjacent networks, so these rules do not use shared diagonals
             if ((minor.typ != AvenueLike || nw1 == WN && ws1 == SW) && (adj.typ != AvenueLike || es2 == ES && ne2 == NE)) {
@@ -115,21 +115,35 @@ trait Adjacencies { this: RuleGenerator =>
     }
     createRules()
   }
+}
 
-  protected class RemappingRulesBuilder(remap: SymTile => SymTile) extends collection.mutable.Growable[Rule[SymTile]] {
-    def clear(): Unit = throw new AssertionError
-    def addOne(rule: Rule[SymTile]): this.type = { Rules.addOne(rule.map(remap)); this }
-    def += (rules: (Rule[SymTile], Rule[SymTile])): this.type = {
-      this += rules._1
-      this += rules._2
+trait SharedDiagonals { this: RuleGenerator =>
+  private def withLocalRemap[U](remap: Rule[SymTile] => Rule[SymTile])(action: => U): U = {
+    val originalContext = context
+    try {
+      context = originalContext.copy(
+        preprocess = rule => originalContext.preprocess(remap(rule)),
+      )
+      action
+    } finally {
+      context = originalContext
     }
   }
 
-  /** Automatically adds shared diagonals where appropriate. See `NetworkProperties.transformSharedDiagonals` for details. */
-  protected def withSharedDiagonals(action: RemappingRulesBuilder => Unit): Unit = {
-    action(new RemappingRulesBuilder(remap = {
+  /** For networks with shared-tile diagonals,
+    * convert diagonal segments of the network that run in the wrong
+    * direction to appropriate shared-tile diagonals.
+    *
+    * Examples:
+    * `Avenue~SE` is converted to `Avenue~SharedDiagRight`, while `Avenue~ES` is left as is.
+    * `Owr4~SE` is converted to `Owr4~SE & Owr4m~NW`.
+    *
+    * See `NetworkProperties.transformSharedDiagonals` for the implementation.
+    */
+  protected def withSharedDiagonals(action: => Unit): Unit = {
+    withLocalRemap(_.map {
       case tile: Tile => transformSharedDiagonals(tile)
       case tile: SymTile => tile
-    }))
+    })(action)
   }
 }

@@ -1,6 +1,6 @@
 package com.sc4nam.module
 
-import io.github.memo33.metarules.meta._, syntax._, Network._, Flags._
+import io.github.memo33.metarules.meta._, syntax._, Network._, Flags._, RotFlip._
 
 object NetworkProperties {
 
@@ -134,33 +134,34 @@ object NetworkProperties {
   //   (flags1._1 | flags2._1, flags1._2 | flags2._2, flags1._3 | flags2._3, flags1._4 | flags2._4)
   // }
 
-  /** For diagonal tiles of networks with shared-tile diagonals,
+  /** For networks with shared-tile diagonals,
     * convert diagonal segments of the network that run in the wrong
     * direction to appropriate shared-tile diagonals.
-    * Example:
+    *
+    * Examples:
     * `Avenue~SE` is converted to `Avenue~SharedDiagRight`, while `Avenue~ES` is left as is.
+    * `Owr4~SE` is converted to `Owr4~SE & Owr4m~NW`.
     */
   def transformSharedDiagonals(tile: Tile): Tile = {
     if (!tile.segs.exists(_.network.typ == AvenueLike)) tile
     else tile.copy(segs = tile.segs.flatMap { seg =>
       if (seg.network.typ != AvenueLike) Seq(seg)
-      else {
-        if (!seg.network.isOwr4Like) {
-          if (seg == seg.network~SE) Seq(seg.network~SharedDiagRight)
-          else if (seg == seg.network~WS) Seq(seg.network~SharedDiagLeft)
-          else if (seg == seg.network~NW) Seq(seg.network~SharedDiagRight)
-          else if (seg == seg.network~EN) Seq(seg.network~SharedDiagLeft)
-          else Seq(seg)
-        } else {
-          if      (seg == seg.network~SE) Seq(seg, owr4AltNetwork(seg.network)~NW)
-          else if (seg == seg.network~WS) Seq(seg, owr4AltNetwork(seg.network)~EN)
-          else if (seg == seg.network~NW) Seq(seg, owr4AltNetwork(seg.network)~SE)
-          else if (seg == seg.network~EN) Seq(seg, owr4AltNetwork(seg.network)~WS)
-          else Seq(seg)
-        }
-      }
+      else sharedDiagonalsRemap.getOrElse(seg, Seq(seg))
     })
   }
+  private val sharedDiagonalsRemap: Map[Segment, Seq[Segment]] = {
+    for {
+      network <- Network.values.filter(_.typ == AvenueLike).iterator
+      rf <- Seq(R0F0, R1F0, R2F0, R3F0)
+      segSE = network~SE * rf
+    } yield {
+      if (!network.isOwr4Like) {
+        segSE -> Seq(network~SharedDiagRight * rf)
+      } else {
+        segSE -> Seq(segSE, owr4AltNetwork(network)~NW * rf)
+      }
+    }
+  }.toMap
 
   /** Switch Owr4 and Owr4m. */
   def owr4AltNetwork(network: Network): Network = {
