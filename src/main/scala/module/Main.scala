@@ -25,15 +25,15 @@ abstract class AbstractMain {
   lazy val resolveSafely: IdResolver = new PartialFunction[Tile, IdTile] {
     def isDefinedAt(tile: Tile) = resolve.isDefinedAt(tile)
     def apply(tile: Tile) = try resolve.apply(tile) catch {
-      case scala.util.control.NonFatal(e) =>
-        throw new IllegalArgumentException(s"ID resolution failed for tile $tile", e)
+      case e: RuleTransducer.ResolutionFailed => throw e
+      case scala.util.control.NonFatal(e) => throw new RuleTransducer.ResolutionFailed(tile, rule = None, reason = e, frame = None)
     }
   }
 
   def main(args: Array[String]): Unit = start()
 
   /** Creates a generator with a new context, runs its start method and outputs the resulting RUL2 code to file. */
-  def start(file: File = file, tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]] = null): Unit = {
+  def start(file: File = file, tileOrientationCache: RuleTransducer.TileOrientationCache = null): Unit = {
     if (tileOrientationCache == null) {
       RegenerateTileOrientationCache.withCache { cache =>
         start(file, cache)

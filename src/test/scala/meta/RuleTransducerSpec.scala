@@ -10,21 +10,20 @@ import RuleTransducer._
 class RuleTransducerSpec extends AnyWordSpec with Matchers {
 
   val resolver = new module.RhwResolver orElse new module.NwmResolver orElse new module.MiscResolver
-  val tileOrientationCache = collection.mutable.Map.empty[Int, Set[RotFlip]]
-  val context = RuleTransducer.Context(resolver, tileOrientationCache, module.MirrorVariants.preprocessor)
+  val context = RuleTransducer.Context(resolver, preprocess = module.MirrorVariants.preprocessor)
 
   "preprocessor" should {
     "produce expected number of rules for Tla3" in {
       val orth: Seq[Rule[SymTile]] = context.preprocess( Tla3~WE | (Road ~> Tla3)~WE ).toSeq
       orth should have size (1)
       orth.asInstanceOf[Seq[Rule[Tile]]].exists(_.exists(_.segs.exists(s => s.flags.manifest == Flag.RightSpinBi && s.flags.exists(_ == 2)))) should be (false)
-      createRules(orth.head.map(_.toIdSymTile(resolver)), tileOrientationCache).toSeq should have size (2)
+      createRules(orth.head.map(_.toIdSymTile(resolver)), context.tileOrientationCache.cache, context.tileOrientationCache.accum).toSeq should have size (2)
 
       context.preprocess( Tla3~WE & Road~NS | (Road ~> Tla3)~WE ).toSeq should have size (1)
       val diag = context.preprocess( Tla3~WE & Road~WS | (Road ~> Tla3)~WE ).toSeq
       diag should have size (2)
       for (r <- diag) {
-        createRules(r.map(_.toIdSymTile(resolver)), tileOrientationCache).toSeq should have size (2)
+        createRules(r.map(_.toIdSymTile(resolver)), context.tileOrientationCache.cache, context.tileOrientationCache.accum).toSeq should have size (2)
       }
     }
   }
@@ -53,7 +52,7 @@ class RuleTransducerSpec extends AnyWordSpec with Matchers {
     "find RHS for TLA" in {
       val rule = (Tla3~WE | (Road ~> Tla3)~(2,0,11,0)) map makeTileLeft map (_.toIdSymTile(resolver))
       possibleMapOrientation(Set(R0F0, R1F0), R3F0/R2F1, Quotient.Dih4, R1F1/R2F1) should not be (Symbol("empty"))
-      createRules(rule, tileOrientationCache)
+      createRules(rule, context.tileOrientationCache.cache, context.tileOrientationCache.accum)
     }
     "resolve diagonal TLA intersections" in {
       val t1 = makeTileLeft(Tla3~ES & Road~WS)
