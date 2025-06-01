@@ -20,7 +20,7 @@ import io.github.memo33.metarules.meta._, com.sc4nam.module, module.syntax._
 import Implicits._, Network._, Flags._, RotFlip._, Rule.{CopyTile => %}, group.SymGroup._, module.NetworkProperties._
 lazy val resolve = module.Main.resolveSafely
 lazy val preimage = module.ReverseResolver.create()
-implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
+implicit lazy val context: RuleTransducer.Context = RuleTransducer.Context(module.Main.resolve, module.RegenerateTileOrientationCache.loadCache(), module.MirrorVariants.preprocessor)
 def transduce(rule: Rule[SymTile]): Unit = RuleTransducer(rule)(context).map(_.toRul2String).foreach(println)
 """
 
@@ -71,4 +71,4 @@ libraryDependencies += "tv.cntt" %% "scaposer" % "1.11.1" cross CrossVersion.for
 
 libraryDependencies += "io.github.memo33" %% "scdbpf" % "0.2.0" cross CrossVersion.for3Use2_13
 
-libraryDependencies += "io.github.memo33" %% "metarules" % "0.7.0"
+libraryDependencies += "io.github.memo33" %% "metarules" % "0.7.1"
