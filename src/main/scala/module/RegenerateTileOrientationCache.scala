@@ -2,6 +2,7 @@ package com.sc4nam.module
 
 import java.io.File
 import io.github.memo33.metarules.meta.RotFlip
+import syntax.RuleTransducer.TileOrientationCache
 
 /** Manages the tile orientation cache. The cache is necessary to maintain
   * information about non-standard orientations:
@@ -23,19 +24,24 @@ object RegenerateTileOrientationCache {
 
   /** Repeatedly compiles the metarule code until the cache does not get changed anymore.
     */
-  def compileMetarulesUntilStable(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+  def compileMetarulesUntilStable(cache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+    val tileOrientationCache = TileOrientationCache(cache = cache, accum = collection.mutable.Map.empty[Int, Set[RotFlip]])
     var j = 0
     var stabilized = false
-    var previous: collection.immutable.Map[Int, Set[RotFlip]] = tileOrientationCache.toMap
-    while (j < 3 && !stabilized) {
-      LOGGER.info(s"> metarules compilation: iteration $j")
+    val maxIter = 5
+    while (j < 5 && !stabilized) {
       j += 1
+      LOGGER.info(s"> metarules compilation: iteration $j")
       CompileAllMetarules.compileMetarulesOnce(tileOrientationCache)
-      val next = tileOrientationCache.toMap
-      if (next == previous) {
+      if (tileOrientationCache.accum.nonEmpty) {
+        tileOrientationCache.cache ++= tileOrientationCache.accum
+        tileOrientationCache.accum.clear()
+        if (j == maxIter) {
+          LOGGER.warning(s"Tile orientation cache could not be regenerated in $maxIter iterations. Increase the number of iterations or check if there is a bug.")
+        }
+      } else {
         stabilized = true
       }
-      previous = next
     }
   }
 
@@ -50,7 +56,7 @@ object RegenerateTileOrientationCache {
     }
   }
 
-  def loadCache(): collection.mutable.Map[Int, Set[RotFlip]] = {
+  def loadCache(): TileOrientationCache = {
     scala.util.Using.resource(new java.util.Scanner(cacheFile, "UTF-8")) { scanner =>
       val cache = collection.mutable.Map.empty[Int, Set[RotFlip]]
       while(scanner.hasNextLine()) {
@@ -62,21 +68,18 @@ object RegenerateTileOrientationCache {
           cache(id) = orientations
         }
       }
-      cache
+      TileOrientationCache(cache = cache, accum = collection.mutable.Map.empty[Int, Set[RotFlip]])
     }
   }
 
   /** Loads the cache and gives a warning at the end if it was changed.
     */
-  def withCache[U](body: collection.mutable.Map[Int, Set[RotFlip]] => U): U = {
-    var previous: collection.immutable.Map[Int, Set[RotFlip]] = null
-    val cache = loadCache()
+  def withCache[U](body: TileOrientationCache => U): U = {
+    val tileOrientationCache = loadCache()
     try {
-      previous = cache.toMap
-      body(cache)
+      body(tileOrientationCache)
     } finally {
-      assert(previous != null)
-      if (previous != cache.toMap) {
+      if (tileOrientationCache.accum.nonEmpty) {
         LOGGER.warning(s"The file ${cacheFile} is outdated. Rebuild it with `sbt regenerateTileOrientationCache` and commit the changes.")
       }
     }

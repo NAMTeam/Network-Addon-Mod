@@ -31,7 +31,7 @@ object CompileAllMetarules {
 
   /** Add additional rule generators here.
     */
-  def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+  def compileMetarulesOnce(tileOrientationCache: RuleTransducer.TileOrientationCache): Unit = {
     LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RRW metarule code")
