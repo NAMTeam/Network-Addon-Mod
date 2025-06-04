@@ -30,6 +30,8 @@ abstract class AbstractMain {
     }
   }
 
+  private lazy val shouldIgnoreMirroredOrientations: Set[Int] = MirrorVariants.ignoreMirroredOrientations(resolve)
+
   def main(args: Array[String]): Unit = start()
 
   /** Creates a generator with a new context, runs its start method and outputs the resulting RUL2 code to file. */
@@ -53,6 +55,14 @@ abstract class AbstractMain {
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {
           printer.println(rule.toRul2String)
         }
+      }
+      // finally remove accumulated orientations that we want to ignore (like accidentally mirrored TLAs)
+      tileOrientationCache.accum.mapValuesInPlace { (id, repr) =>
+        if (shouldIgnoreMirroredOrientations(id)) repr.filterNot(_.flipped)
+        else repr
+      }
+      tileOrientationCache.accum.filterInPlace { (id, repr) =>  // remove from accum if equal to cache (so that regenerateTileOrientationCache stabilizes eventually)
+        !tileOrientationCache.cache.get(id).contains(repr)
       }
     }
   }
