@@ -54,23 +54,27 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
   def start(): Unit = {
     createMultiTileStarters()
 
-    for (main <- OverrideNetworks; base <- main.base; if main.isRhw || main.isNwm) {  // TODO filtering
-      if (main.isRhw || main.isNwm) {
-        Rules += main~WE    | (base ~> main)~WE      // ortho
-        Rules += main~WE    | (base ~> main)~WC      // ortho stub
-        withSharedDiagonals {
-          Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
-        }
-        createRules() // flush the buffer from time to time
+    for (main <- RhwNetworks; base <- main.base) {
+      Rules += main~WE    | (base ~> main)~WE      // ortho
+      Rules += main~WE    | (base ~> main)~WC      // ortho stub
+      withSharedDiagonals {
+        Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
       }
       // curves
       createCurve45Rules(main)
       createCurve90Rules(main)
 
-      // TODO filtering
+      // crossings (O×O, O×D, D×O, D×D)
       for (minor <- CrossingGenerator.crossingNetworksOf(main)) {
         createCrossingRules(main, minor)
       }
     }
   }
+}
+
+// Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
+object CompileRhwCode extends AbstractMain {
+  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
+  val generator = new RhwRuleGenerator(_)
+  lazy val file = new java.io.File("target/RhwMetaGenerated_MANAGED.txt")
 }
