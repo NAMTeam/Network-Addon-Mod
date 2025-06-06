@@ -531,6 +531,12 @@ class MiscResolver extends IdResolver {
       }
     }
 
+    // Lightrail crossings
+    add(0x08dd0300, Rail~ES & Lightrail~NS)
+    add(0x08dd0400, Rail~EW & Lightrail~NS)
+    add(0x08dd1400, Rail~NS & Lightrail~ES)
+    add(0x08dd1500, Rail~SW & Lightrail~ES)
+
     // GLR crossings
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       add(0x5f880200 + offset, glr~(0,0,2,2))
@@ -538,6 +544,7 @@ class MiscResolver extends IdResolver {
       add(0x5f880400 + offset, glr~(0,0,1,13))
       add(0x5f881100 + offset, glr~(2,2,2,2))
       add(0x5f881100 + offset, glr~NS & glr~WE)
+      add(0x5f881180 + offset, glr~NS & Lightrail~WE)
       add(0x5f881200 + offset, glr~(0,2,2,2))
       add(0x5f881200 + offset, glr~NS & glr~CE)
       // O×O
