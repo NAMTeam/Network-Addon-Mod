@@ -37,5 +37,15 @@ class RhwResolverSpec extends AnyWordSpec with Matchers {
         }
       }
     }
+    "handle OWR-4 shared-tile diagonals correctly" in {
+      val crossingDirs = Seq(0x3000 -> Seq(EW, WE, NS, SN), 0x9000 -> Seq(NE, EN, SW, WS))
+      for ((offset, dirs) <- crossingDirs; dir <- dirs) {
+        (resolve(Owr4~SE & Owr4m~NW & L1Rhw4~dir).id & 0xffffff00).shouldBe(RhwResolver.rhwRangeId(L1Rhw4) + RhwResolver.rhwPieceId(Owr4) + offset)
+        (resolve(Owr4~ES            & L1Rhw4~dir).id & 0xffffff00).shouldBe(RhwResolver.rhwRangeId(L1Rhw4) + RhwResolver.rhwPieceId(Owr4) + offset)
+        (resolve(Owr4m~WN           & L1Rhw4~dir).id & 0xffffff00).shouldBe(RhwResolver.rhwRangeId(L1Rhw4) + RhwResolver.rhwPieceId(Owr4m) + offset)
+        intercept[Exception](resolve(Owr4~SE & L1Rhw4~dir))  // not defined
+        intercept[Exception](resolve(Owr4m~NW & L1Rhw4~dir))  // not defined
+      }
+    }
   }
 }

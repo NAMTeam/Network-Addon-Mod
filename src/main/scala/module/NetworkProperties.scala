@@ -1,6 +1,6 @@
 package com.sc4nam.module
 
-import io.github.memo33.metarules.meta._, syntax._, Network._
+import io.github.memo33.metarules.meta._, syntax._, Network._, Flags._, RotFlip._
 
 object NetworkProperties {
 
@@ -11,7 +11,7 @@ object NetworkProperties {
     n.typ != AvenueLike &&
     !(n.typ == Symmetrical && hasRightShoulder(n)) && // this is treated as right shoulder only, for efficiency
     !(n >= Rhw8s && n <= L2Rhw10c) &&
-    !(n >= Tla5 && n <= Ave6m)
+    !(n >= Tla5 && n <= Ave6m)  // notably, Owr4m does not have a left shoulder in terms of its flags, as the flags match that of the underlying Avenue base network (to simplify rule generators)
   }
 
   def isDoubleTile(n: Network): Boolean = {
@@ -123,4 +123,51 @@ object NetworkProperties {
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)
+
+  // /** Build combined flags for shared-tile diagonals. */
+  // def shared(flags1: (Int, Int, Int, Int), flags2: (Int, Int, Int, Int)): (Int, Int, Int, Int) = {
+  //   require(
+  //     (flags1._1 == 0 || flags2._1 == 0) &&
+  //     (flags1._2 == 0 || flags2._2 == 0) &&
+  //     (flags1._3 == 0 || flags2._3 == 0) &&
+  //     (flags1._4 == 0 || flags2._4 == 0), s"Shared-tile flags must be disjoint where not 0: $flags1 $flags2")
+  //   (flags1._1 | flags2._1, flags1._2 | flags2._2, flags1._3 | flags2._3, flags1._4 | flags2._4)
+  // }
+
+  /** For networks with shared-tile diagonals,
+    * convert diagonal segments of the network that run in the wrong
+    * direction to appropriate shared-tile diagonals.
+    *
+    * Examples:
+    * `Avenue~SE` is converted to `Avenue~SharedDiagRight`, while `Avenue~ES` is left as is.
+    * `Owr4~SE` is converted to `Owr4~SE & Owr4m~NW`.
+    */
+  def transformSharedDiagonals(tile: Tile): Tile = {
+    if (!tile.segs.exists(_.network.typ == AvenueLike)) tile
+    else tile.copy(segs = tile.segs.flatMap { seg =>
+      if (seg.network.typ != AvenueLike) Seq(seg)
+      else sharedDiagonalsRemap.getOrElse(seg, Seq(seg))
+    })
+  }
+  private val sharedDiagonalsRemap: Map[Segment, Seq[Segment]] = {
+    for {
+      network <- Network.values.filter(_.typ == AvenueLike).iterator
+      rf <- Seq(R0F0, R1F0, R2F0, R3F0)
+      segSE = network~SE * rf
+    } yield {
+      if (!network.isOwr4Like) {
+        segSE -> Seq(network~SharedDiagRight * rf)
+      } else {
+        segSE -> Seq(segSE, owr4AltNetwork(network)~NW * rf)
+      }
+    }
+  }.toMap
+
+  /** Switch Owr4 and Owr4m. */
+  def owr4AltNetwork(network: Network): Network = {
+    if (network == Owr4) Owr4m
+    else if (network == Owr4m) Owr4
+    else throw new IllegalArgumentException(s"network is not OWR-like: $network")
+  }
+
 }

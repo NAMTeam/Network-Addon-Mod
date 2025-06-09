@@ -8,7 +8,7 @@ import Rul2Model.{Driveside, Rhd, Lhd, RhdAndLhd, rulesHaveSameOutput}
 /** Checks for conflicting/duplicate RUL2 code. There are two modes of operation:
   *
   * {{{
-  * SBT_OPTS="-Xmx2G" sbt -no-color conflictingOverridesCheck
+  * SBT_OPTS="-Xmx2G" sbt conflictingOverridesCheck
   * }}}
   * to check all RUL2 code for new conflicting overrides (that are not tagged yet).
   * The new conflicts are printed to stdout. Exit code will be non-zero if new

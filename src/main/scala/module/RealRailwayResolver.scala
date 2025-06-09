@@ -171,6 +171,8 @@ class RealRailwayResolver extends IdResolver {
     // -- OWR-4 --
     add(0x5d672e00, Owr4~EW & L1Dtr~NS)
     add(0x5d772e00, Owr4~EW & L2Dtr~NS)
+    add(0x5d672e05, Owr4m~EW & L1Dtr~NS)
+    add(0x5d772e05, Owr4m~EW & L2Dtr~NS)
     // -- OWR-5 --
     add(0x5d672f00, Owr5~EW & L1Dtr~NS)
     add(0x5d772f00, Owr5~EW & L2Dtr~NS)

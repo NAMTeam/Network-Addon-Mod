@@ -151,6 +151,7 @@ class SamResolver extends IdResolver {
       add(0x5e64b080 + offset, sam~NS & Tla7m~WE) // TLA Inner +
       // add(0x5e64c000 + offset, sam~NS & Ave8~EW) // AVE-8 + (also TLA-9)
       add(0x5e64c080 + offset, sam~NS & Ave6m~WE)               // AVE Inner +
+      add(0x5e64d000 + offset, sam~NS & Owr4m~EW)  // OWR-4 Inner
 
       add(0x5e600000 + offset, sam~WE & Dirtroad~NS) // RHW-2 +
 
@@ -197,6 +198,7 @@ class SamResolver extends IdResolver {
       add(0x5e659000 + offset, sam~CN & Rd4~EW)   // Rd4 short T
       add(0x5e65a000 + offset, sam~CN & Rd6~EW)   // Rd6 short T
       add(0x5e65b000 + offset, sam~CN & Ave6~EW)  // Ave6 short T
+      add(0x5e65d000 + offset, sam~CN & Owr4m~EW)  // Owr4m short T
 
       //Specialized OxO T-intersections
       //1 SAM and 2 Cross Elbow

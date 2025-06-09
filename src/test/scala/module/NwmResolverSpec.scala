@@ -52,5 +52,21 @@ class NwmResolverSpec extends AnyWordSpec with Matchers {
         }
       }
     }
+    "handle OWR-4 shared-tile diagonals correctly" in {
+      for (dir <- Seq(EW, WE, NS, SN, NE, SW, SharedDiagLeft)) {
+        (resolve(Owr4~SE & Owr4m~NW & Avenue~dir).id & 0xffff0000).shouldBe(NwmResolver.nwmRangeId(Owr4))
+        (resolve(Owr4~ES            & Avenue~dir).id & 0xffff0000).shouldBe(NwmResolver.nwmRangeId(Owr4))
+        (resolve(Owr4m~WN           & Avenue~dir).id & 0xffff0000).shouldBe(NwmResolver.nwmRangeId(Owr4m))
+        intercept[Exception](resolve(Owr4~SE & Avenue~dir))  // not defined
+        intercept[Exception](resolve(Owr4m~NW & Avenue~dir))  // not defined
+      }
+      for (dir <- Seq(EW, WE, NS, SN, NE, EN, SW, WS)) {
+        Set(Ard3, Owr4 ).map(NwmResolver.nwmRangeId) should contain (resolve(Owr4~SE & Owr4m~NW & Ard3~dir).id & 0xffff0000)
+        Set(Ard3, Owr4 ).map(NwmResolver.nwmRangeId) should contain (resolve(Owr4~ES            & Ard3~dir).id & 0xffff0000)
+        Set(Ard3, Owr4m).map(NwmResolver.nwmRangeId) should contain (resolve(Owr4m~WN           & Ard3~dir).id & 0xffff0000)
+        intercept[Exception](resolve(Owr4~SE & Ard3~dir))  // not defined
+        intercept[Exception](resolve(Owr4m~NW & Ard3~dir))  // not defined
+      }
+    }
   }
 }

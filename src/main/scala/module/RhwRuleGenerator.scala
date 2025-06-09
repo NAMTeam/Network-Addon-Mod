@@ -24,19 +24,9 @@ object RhwRuleGenerator {
       m
     }
   }
-
-  def crossingNetworksOf(main: Network): Iterator[Network] = {
-    for {
-      minor <- Network.values.iterator
-      if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
-         (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty)) ||
-         (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr))
-         ) && intersectionAllowed(main, minor)
-    } yield minor
-  }
 }
 
-class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Curve45Generator with Adjacencies {
+class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Curve45Generator with CrossingGenerator {
   import RhwRuleGenerator._
 
   def createMultiTileStarters(): Unit = {
@@ -64,96 +54,27 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
   def start(): Unit = {
     createMultiTileStarters()
 
-    for (main <- OverrideNetworks; base <- main.base; if main.isRhw || main.isNwm) {  // TODO filtering
-      if (main.isRhw || main.isNwm) {
-        Rules += main~WE    | (base ~> main)~WE      // ortho
-        Rules += main~WE    | (base ~> main)~WC      // ortho stub
-        if (main.typ != AvenueLike) {
-          Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
-        } else {
-          Rules += main~SharedDiagRight~ES | (base ~> main)~WN~SharedDiagRight // shared diagonal
-        }
-        createRules() // flush the buffer from time to time
+    for (main <- RhwNetworks; base <- main.base) {
+      Rules += main~WE    | (base ~> main)~WE      // ortho
+      Rules += main~WE    | (base ~> main)~WC      // ortho stub
+      withSharedDiagonals {
+        Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
       }
       // curves
       createCurve45Rules(main)
       createCurve90Rules(main)
 
-      // TODO filtering
-      for (minor <- crossingNetworksOf(main)) {
-        // entry (override from straight tile to first crossing tile)
-        if (intersectionAllowed(base, minor)) { // skips e.g. preexisting L0Rhw2 x L0Rhw6c in second tile
-          def entryCode(orient: Segment => Segment) = {
-            Rules += main~WE    | (base ~> main)~WE & orient(minor~NS)      // OxO
-            Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~ES)   // OxD
-            if (main.typ != AvenueLike) {
-              Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NS)   // DxO
-              Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NE)   // DxD
-            } else {
-              Rules += main~SharedDiagRight~ES | (base ~> main)~WN~SharedDiagRight & orient(minor~NS)   // DxO
-              Rules += main~SharedDiagRight~ES | (base ~> main)~WN~SharedDiagRight & orient(minor~NE)   // DxD
-            }
-            // Shared diagonals on minor are not relevant here since the shared diagonal is an inner tile (i.e. without an edge).
-          }
-          if (hasRightShoulder(minor)) entryCode(identity)
-          if (hasLeftShoulder(minor)) entryCode(_.reverse)
-          createRules() // duplicate rules will be removed
-        }
-        // exit (override from last crossing tile to straight tile)
-        {
-          def exitCode(orient: Segment => Segment) = {
-            Rules += main~WE & orient(minor~SN)    | (base ~> main)~WE      // OxO
-            Rules += main~WE~EW & orient(minor~WN) | (base ~> main)~WE~EW   // OxD
-            if (main.typ != AvenueLike) {
-              Rules += main~SE~ES & orient(minor~SN) | (base ~> main)~WN~NW   // DxO
-              Rules += main~SE~ES & orient(minor~SW) | (base ~> main)~WN~NW   // DxD
-            } else {
-              Rules += main~SharedDiagRight~ES & orient(minor~SN) | (base ~> main)~WN~SharedDiagRight   // DxO
-              Rules += main~SharedDiagRight~ES & orient(minor~SW) | (base ~> main)~WN~SharedDiagRight   // DxD
-            }
-            // Shared diagonals on minor are not relevant here since the shared diagonal is an inner tile (i.e. without an edge).
-          }
-          if (hasRightShoulder(minor)) exitCode(identity)
-          if (hasLeftShoulder(minor)) exitCode(_.reverse)
-          createRules()
-        }
-        // Inside diagonal crossings (Diagonal crossings consist of two or more tiles, so the following rules ensure
-        // that the override carries over between those inner-intersection tiles)
-        {
-          // The following automatically places shared diagonals instead of diagonals in the appropriate spots.
-          val (se1, nw1) = if (main.typ  != AvenueLike) (SE, NW) else (SharedDiagRight, SharedDiagRight)
-          val (ws2, en2) = if (minor.typ != AvenueLike) (WS, EN) else (SharedDiagLeft, SharedDiagLeft)
-          if (intersectionAllowed(base, minor)) {
-            Rules += main~WE~EW  & minor~NE  | (base ~> main)~WE~EW  & minor~ws2   // OxD
-            Rules += main~WE~EW  & minor~en2 | (base ~> main)~WE~EW  & minor~SW
-            Rules += main~se1~ES & minor~WE  | (base ~> main)~WN~nw1 & minor~WE    // DxO
-            Rules += main~se1~ES & minor~EW  | (base ~> main)~WN~nw1 & minor~EW
-            Rules += main~se1~ES & minor~NE  | (base ~> main)~WN~nw1 & minor~ws2   // DxD
-            Rules += main~se1~ES & minor~en2 | (base ~> main)~WN~nw1 & minor~SW
-            createRules()
-          }
-          // stability
-          if (minor >= main) for (minBase <- minor.base) {  // If minor < main, then the following rules have already been added as part of the overrides of minor.
-            Rules += main~WE~EW  & minor~NE  | (base ~> main)~WE~EW  & (minBase ~> minor)~ws2   // OxD
-            Rules += main~WE~EW  & minor~en2 | (base ~> main)~WE~EW  & (minBase ~> minor)~SW
-            Rules += main~se1~ES & minor~WE  | (base ~> main)~WN~nw1 & (minBase ~> minor)~WE    // DxO
-            Rules += main~se1~ES & minor~EW  | (base ~> main)~WN~nw1 & (minBase ~> minor)~EW
-            Rules += main~se1~ES & minor~NE  | (base ~> main)~WN~nw1 & (minBase ~> minor)~ws2   // DxD
-            Rules += main~se1~ES & minor~en2 | (base ~> main)~WN~nw1 & (minBase ~> minor)~SW
-            if (intersectionAllowed(base, minor) && intersectionAllowed(main, minBase)) {
-              Rules += main~WE~EW  & (minBase ~> minor)~NE  | (base ~> main)~WE~EW  & minor~ws2   // OxD
-              Rules += main~WE~EW  & (minBase ~> minor)~en2 | (base ~> main)~WE~EW  & minor~SW
-              Rules += main~se1~ES & (minBase ~> minor)~WE  | (base ~> main)~WN~nw1 & minor~WE    // DxO
-              Rules += main~se1~ES & (minBase ~> minor)~EW  | (base ~> main)~WN~nw1 & minor~EW
-              Rules += main~se1~ES & (minBase ~> minor)~NE  | (base ~> main)~WN~nw1 & minor~ws2   // DxD
-              Rules += main~se1~ES & (minBase ~> minor)~en2 | (base ~> main)~WN~nw1 & minor~SW
-            }
-          }
-        }
-        // inside multi-tile intersection
-        createAdjacentIntersections(main, base, minor)
-        createRules()
+      // crossings (O×O, O×D, D×O, D×D)
+      for (minor <- CrossingGenerator.crossingNetworksOf(main)) {
+        createCrossingRules(main, minor)
       }
     }
   }
+}
+
+// Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
+object CompileRhwCode extends AbstractMain {
+  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
+  val generator = new RhwRuleGenerator(_)
+  lazy val file = new java.io.File("target/RhwMetaGenerated_MANAGED.txt")
 }
