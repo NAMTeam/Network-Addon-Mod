@@ -31,13 +31,15 @@ object CompileAllMetarules {
 
   /** Add additional rule generators here.
     */
-  def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+  def compileMetarulesOnce(tileOrientationCache: RuleTransducer.TileOrientationCache): Unit = {
     LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RRW metarule code")
     CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RHW metarule code")
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling NWM metarule code")
+    CompileNwmCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling SAM metarule code")
     CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
@@ -46,11 +48,3 @@ object CompileAllMetarules {
     CompileRoundaboutCode.start(tileOrientationCache = tileOrientationCache)
   }
 }
-
-// Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
-object CompileRhwCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
-  val generator = new RhwRuleGenerator(_)
-  lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
-}
-

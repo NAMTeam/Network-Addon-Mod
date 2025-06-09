@@ -54,23 +54,43 @@ object MirrorVariants {
     case _ => tile
   }
 
-  private val tlaPreprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = rule => {
-    if (!rule.exists(containsTlaFlags)) {
-      Iterator(rule)
-    } else if (rule.forall(shouldProjectTlaLeftOnly)) {
-      Iterator(rule.map(projectTlaLeft))
-    } else {
-      Iterator(rule.map(projectTlaLeft), rule.map(projectTlaRight))
-    }
+  val preprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = rule => {
+    val hasMirrorVariant = rule.exists(tile => mirrorVariants.contains(tile))
+    for {
+      rule <- if (hasMirrorVariant) Iterator(  // yield the two projected rules
+                rule.map(tile => mirrorVariants.get(tile).map(_._1).getOrElse(tile)),
+                rule.map(tile => mirrorVariants.get(tile).map(_._2).getOrElse(tile)),
+              )
+              else Iterator(rule)
+      hasTlaFlags = rule.exists(containsTlaFlags)
+      rule <- if (!hasTlaFlags) Iterator(rule)
+              else if (rule.forall(shouldProjectTlaLeftOnly)) Iterator(rule.map(projectTlaLeft))
+              else Iterator(rule.map(projectTlaLeft), rule.map(projectTlaRight))
+      // We duplicate the rule by its R2F1 variant if there are TLAs or mirror
+      // variants involved, as the left/right distinction can make them resolve
+      // to different IDs (and the generators do not necessarily account for
+      // this). For example, this is needed for Tla5/Avenue D×D.
+      rule <- if (hasMirrorVariant || hasTlaFlags) Iterator(rule, rule.map(_ * R2F1)).distinct
+              else Iterator(rule)
+    } yield rule
   }
 
-  val preprocessor: Rule[SymTile] => Iterator[Rule[SymTile]] = rule => {
-    if (!rule.exists(tile => mirrorVariants.contains(tile))) {
-      Iterator(rule)
-    } else {
-      Iterator(  // yield the two projected rules
-        rule.map(tile => mirrorVariants.get(tile).map(_._1).getOrElse(tile)),
-        rule.map(tile => mirrorVariants.get(tile).map(_._2).getOrElse(tile)))
+  /* For plain orthogonal and diagonal tiles of TLA networks, we ignore any
+   * remapping defined in `tileOrientationCache` that leads to mirroring, as
+   * that would amplify the mirroring problems due to the presence of turning
+   * lanes. Not a perfect solution, as occasional mirroring problems will remain.
+   */
+  def ignoreMirroredOrientations(resolve: IdResolver): Set[Int] = {
+    val ids = Set.newBuilder[Int]
+    for {
+      n <- Seq(Tla3, Tla5, Tla7m, Road, Onewayroad)  // TODO consider adding all the networks
+      dir <- Seq(NS, ES, SE)  // these are arbitrary orth/diag directions to allow us find the IDs
+      tile <- Seq(NetworkProperties.projectTlaLeft(n~dir), NetworkProperties.projectTlaRight(n~dir))
+      idTile <- resolve.lift(tile)
+    } {
+      ids += idTile.id
     }
-  }.flatMap(tlaPreprocessor)
+    ids.result()
+  }
+
 }
