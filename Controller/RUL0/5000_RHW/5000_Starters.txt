@@ -16,7 +16,7 @@ AddTypes     =  5005, 15005, 25005, 35005, 45005, 55005, 65005, 75005 ;RHW-8S St
 AddTypes     =  5006, 15006, 25006, 35006, 45006, 55006, 65006, 75006 ;RHW-8C Starter
 AddTypes     = 85006, 95006, A5006, B5006, C5006, D5006, E5006, F5006 ;RHW-7C Starter
 AddTypes     =  5007, 15007, 25007, 35007, 45007, 55007, 65007, 75007 ;RHW-10S Starter
-;AddTypes    =  5008, 15008, 25008, 35008, 45008, 55008, 65008, 75008 ;RHW-10C Starter
+AddTypes    =  5008, 15008, 25008, 35008, 45008, 55008, 65008, 75008 ;RHW-10C Starter
 AddTypes    =  5009, 15009, 25009, 35009, 45009, 55009, 65009, 75009 ;RHW-12S Starter
 ;---L1 Starters---
 AddTypes     =  500A, 1500A, 2500A, 3500A, 4500A, 5500A, 6500A, 7500A ;L1 RHW-2 Starter
@@ -29,7 +29,7 @@ AddTypes     =  5010, 15010, 25010, 35010, 45010, 55010, 65010, 75010 ;L1 RHW-8S
 AddTypes     =  5011, 15011, 25011, 35011, 45011, 55011, 65011, 75011 ;L1 RHW-8C Starter
 AddTypes     = 85011, 95011, A5011, B5011, C5011, D5011, E5011, F5011 ;L1 RHW-7C Starter
 AddTypes     =  5012, 15012, 25012, 35012, 45012, 55012, 65012, 75012 ;L1 RHW-10S Starter
-;AddTypes     =  5026, 15026, 25026, 35026, 45026, 55026, 65026, 75026 ;L1 RHW-10C Starter
+AddTypes     =  5026, 15026, 25026, 35026, 45026, 55026, 65026, 75026 ;L1 RHW-10C Starter
 AddTypes     =  5027, 15027, 25027, 35027, 45027, 55027, 65027, 75027 ;L1 RHW-12S Starter
 
 ;---L2 Starters---
@@ -43,7 +43,7 @@ AddTypes     =  5019, 15019, 25019, 35019, 45019, 55019, 65019, 75019 ;L2 RHW-8S
 AddTypes     =  501A, 1501A, 2501A, 3501A, 4501A, 5501A, 6501A, 7501A ;L2 RHW-8C Starter
 AddTypes     = 8501A, 9501A, A501A, B501A, C501A, D501A, E501A, F501A ;L2 RHW-7C Starter
 AddTypes     =  501B, 1501B, 2501B, 3501B, 4501B, 5501B, 6501B, 7501B ;L2 RHW-10S Starter
-;AddTypes     =  5028, 15028, 25028, 35028, 45028, 55028, 65028, 75028 ;L2 RHW-10C Starter
+AddTypes     =  5028, 15028, 25028, 35028, 45028, 55028, 65028, 75028 ;L2 RHW-10C Starter
 AddTypes     =  5029, 15029, 25029, 35029, 45029, 55029, 65029, 75029 ;L2 RHW-12S Starter
 
 ;---L3 Starters---
@@ -668,9 +668,9 @@ CellLayout =..cba...
 CellLayout =...d.<..
 CellLayout =...^....
 
-CheckType = a - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
-CheckType = b - dirtroad: 0x02000200 Road: 0x00030300, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional 
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x04040200, 0xffffffff optional
+CheckType = b - dirtroad: 0x02000200 road: 0x00030300, 0xffffffff optional
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x02000404, 0xffffffff optional 
 CheckType = d - dirtroad: 0x02000200
 
 ConsLayout = ........
@@ -1127,7 +1127,7 @@ CopyFrom    = 0x3500F
 
 [HighwayIntersectionInfo_0x00005010]
 ;Added by Tarkus 05/24/2008.
-;L1 RHW-8 Starter Piece
+;L1 RHW-8S Starter Piece
 Piece = 0.0, 0.0, 0, 0, 0x57F15005
 PreviewEffect = preview_starter_l1rhw8s_000
 
@@ -2548,17 +2548,17 @@ CopyFrom    = 0x35025
 [HighwayIntersectionInfo_0x00005026]
 ;Added by Tarkus 2023/01/16
 ;L1 RHW-10C Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x57F0A005
-PreviewEffect = preview_starter_l0rhw10c000
+Piece = 0.0, 0.0, 0, 0, 0x57F1A005
+PreviewEffect = preview_starter_l1rhw10c000
 
 CellLayout =........
 CellLayout =..cba...
 CellLayout =...d.<..
 CellLayout =...^....
 
-CheckType = a - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x04040200, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 highway: 0x00040001, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional 
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x02000404, 0xffffffff optional 
 CheckType = d - dirtroad: 0x02000200
 
 ConsLayout = ........
@@ -2662,17 +2662,17 @@ Rotate		= 3
 [HighwayIntersectionInfo_0x00005028]
 ;Added by Tarkus 2023/01/16
 ;L2 RHW-10C Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x57F0A005
-PreviewEffect = preview_starter_l0rhw10c000
+Piece = 0.0, 0.0, 0, 0, 0x57F2A005
+PreviewEffect = preview_starter_l2rhw10c000
 
 CellLayout =........
 CellLayout =..cba...
 CellLayout =...d.<..
 CellLayout =...^....
 
-CheckType = a - dirtroad: 0x02000200 Street: 0x03000003, 0xffffffff optional
+CheckType = a - dirtroad: 0x02000200 onewayroad: 0x04040200, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000200 highway: 0x00040004, 0xffffffff optional
-CheckType = c - dirtroad: 0x02000200 Street: 0x00030300, 0xffffffff optional 
+CheckType = c - dirtroad: 0x02000200 onewayroad: 0x02000404, 0xffffffff optional 
 CheckType = d - dirtroad: 0x02000200
 
 ConsLayout = ........
