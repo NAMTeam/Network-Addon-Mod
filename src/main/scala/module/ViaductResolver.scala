@@ -128,18 +128,22 @@ class ViaductResolver extends IdResolver {
     for (n <- Viaducts) {
       val id = ViaductResolver.viaductRangeId(n)
       if (n.height == 1) {
-        add(id + 0x3110, n~SN & L1Road~CE)
+        add(id + 0x3110, n~SN & L1Road~CE, when = n.isSymm)
+        add(id + 0x3110, n~NS & L1Road~WC, when = !n.isSymm)
         add(id + 0x3115, n~SN & L1Road~WC, when = !n.isSymm)
-        add(id + 0x3210, n~SN & L1Onewayroad~CE)
+        add(id + 0x3210, n~SN & L1Onewayroad~CE, when = n.isSymm)
+        add(id + 0x3210, n~NS & L1Onewayroad~WC, when = !n.isSymm)
         add(id + 0x3215, n~SN & L1Onewayroad~WC, when = !n.isSymm)
         add(id + 0x3310, n~WE & L1Avenue~NC, when = n.isSymm)
         add(id + 0x3315, n~WE & L1Avenue~NC, when = !n.isSymm)
       }
       if (n.height == 2) {
-        add(id + 0x3120, n~SN & L2Road~CE)
-        add(id + 0x3125, n~SN & L2Road~WC, when = !n.isSymm)
-        add(id + 0x3220, n~SN & L2Onewayroad~CE)
-        add(id + 0x3225, n~SN & L2Onewayroad~WC, when = !n.isSymm)
+        add(id + 0x3120, n~SN & L1Road~CE, when = n.isSymm)
+        add(id + 0x3120, n~NS & L1Road~WC, when = !n.isSymm)
+        add(id + 0x3125, n~SN & L1Road~WC, when = !n.isSymm)
+        add(id + 0x3220, n~SN & L1Onewayroad~CE, when = n.isSymm)
+        add(id + 0x3220, n~NS & L1Onewayroad~WC, when = !n.isSymm)
+        add(id + 0x3225, n~SN & L1Onewayroad~WC, when = !n.isSymm)
         add(id + 0x3320, n~WE & L2Avenue~NC, when = n.isSymm)
         add(id + 0x3325, n~WE & L2Avenue~NC, when = !n.isSymm)
       }
