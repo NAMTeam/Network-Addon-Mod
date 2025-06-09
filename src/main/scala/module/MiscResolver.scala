@@ -235,6 +235,8 @@ class MiscResolver extends IdResolver {
     add(0x04006900, Avenue~ES & Avenue~SharedDiagLeft) // DxD
     add(0x04009400, Avenue~SharedDiagRight & Avenue~SharedDiagLeft) // DxD
     add(0x04003600, Avenue~ES & Avenue~NE) // DxD
+    add(0x5f432c00, Avenue~NS & Avenue~WC) // OxO Short T
+    add(0x04007100, Avenue~WE & Avenue~NC) // OxO Long T
 
     // Road intersections
     add(0x03010100, Road~NS & Rail~WE)
@@ -275,8 +277,11 @@ class MiscResolver extends IdResolver {
     add(0x5F502000, Road~CES & Street~CSE)
     add(0x5F502500, Road~CES & Street~NE)
     add(0x5F072300, Road~(0,0,1,3) & Street~(2,2,0,0))
+    add(0x04005500, Road~WE & Avenue~NC)
     add(0x04008900, Road~WE & Avenue~NS)
     add(0x04008900, Road~CE & Avenue~NS & Onewayroad~WC)
+    add(0x04008200, Road~WC & Avenue~NS)
+    add(0x04008800, Road~WC & Avenue~SN)
     add(0x04001300, Road~ES & Avenue~SN)
     add(0x04001900, Road~WN & Avenue~SN)
     add(0x04005700, Road~NS & Avenue~ES)
@@ -295,6 +300,8 @@ class MiscResolver extends IdResolver {
     add(0x09703900, Road~NE & Onewayroad~NS)
     add(0x09720700, Road~NS & Onewayroad~EW)
     add(0x09803900, Road~NS & Onewayroad~NE)
+    add(0x09705400, Road~(2,0,2,0) & Onewayroad~(0,0,0,2))
+    add(0x09705700, Road~(0,0,0,2) & Onewayroad~(2,0,2,0))
     add(0x09720400, Road~(2,2,2,0) & Onewayroad~(0,0,0,2))
     add(0x5f973300, Road~(0,2,2,2) & Onewayroad~(3,0,0,0))
     add(0x5f072a00, Road~(2,0,2,2) & Street~(0,1,0,0)    )
@@ -416,7 +423,10 @@ class MiscResolver extends IdResolver {
     add(0x09aa1100, Onewayroad~CWN & Street~WC)
     add(0x5F503800, Onewayroad~CES & Street~NE)
     add(0x5F974300, Onewayroad~ES & Street~(2,2,0,0))
+    add(0x091a5500, Onewayroad~WE & Avenue~NC)
     add(0x091a8900, Onewayroad~WE & Avenue~NS)
+    add(0x04008700, Onewayroad~WC & Avenue~NS)
+    add(0x091a8800, Onewayroad~WC & Avenue~SN)
     add(0x091a1300, Onewayroad~ES & Avenue~SN)
     add(0x091a1900, Onewayroad~WN & Avenue~SN)
     add(0x091a5700, Onewayroad~NS & Avenue~ES)
@@ -515,7 +525,10 @@ class MiscResolver extends IdResolver {
     add(0x57601100, Dirtroad~CE & Road~NS)
     add(0x57600200, Dirtroad~NS & Onewayroad~CE)
     add(0x57601200, Dirtroad~CE & Onewayroad~NS)
-
+    add(0x57600300, Dirtroad~NS & Avenue~EC)
+    add(0x57601300, Dirtroad~CE & Avenue~SN)
+    add(0x57601309, Dirtroad~CE & Avenue~NS)
+    add(0x57600400, Dirtroad~NS & Dirtroad~CE)
     // RHW on-slopes (orthogonal)
     for (rhw <- RhwNetworks if rhw.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(rhw)) 4 else 2
