@@ -72,10 +72,10 @@ object NetworkProperties {
       else if (rhw.height != 0) false
       else if (any > rhw && any.isRhw) rhwIntersectionAllowed(any, rhw)
       else {
-        rhw == Dirtroad && (any == Dirtroad || GlrNetworks.contains(any)) ||
-        rhw == Rhw3 && any == Dirtroad ||
-        rhw == Mis && (any == Dirtroad || any == Rhw3) ||
-        rhw == Rhw4 && any == Dirtroad ||
+        rhw == Dirtroad && (any == Dirtroad || GlrNetworks.contains(any) || NwmNetworks.contains(any)) ||
+        rhw == Rhw3 && (any == Dirtroad || GlrNetworks.contains(any) || NwmNetworks.contains(any)) ||
+        rhw == Mis && (any == Dirtroad || any == Rhw3 || GlrNetworks.contains(any) || NwmNetworks.contains(any)) ||
+        rhw == Rhw4 && (any == Dirtroad || GlrNetworks.contains(any) || NwmNetworks.contains(any)) ||
         rhw <= Rhw4 && (any < Dirtroad || any == Str)
       }
     }
