@@ -235,115 +235,114 @@ class NwmResolver extends IdResolver {
         builder ++= withProjections(n~SE & n2~WS, IdTile(off8(id + 0x8000 + rev11), R0F0), when = asymmOrShared(n) && asymmOrShared(n2))
       }
 
-      //T-intersections
-      //OxO NWM-Thru
-      for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {
-        add(nwmRangeId(n) + 0x3000, n~WE & Street~CS)  // Street
-        add(nwmRangeId(n) + 0x3100, n~WE & Road~CS)  // Road
-        add(nwmRangeId(n) + 0x3200, n~WE & Onewayroad~CS)  // Onewayroad
-        add(nwmRangeId(n) + 0x4300, n~WE & Avenue~NC, when = n != Owr1)  // Avenue
-        add(nwmRangeId(n) + 0x3800, n~NS & Tla3~CE)  // TLA-3
-        add(nwmRangeId(n) + 0x3900, n~NS & Ave2~CE)  // AVE-2
-        add(nwmRangeId(n) + 0x3A00, n~NS & Ard3~EC, when = n != Owr1 && n != Tla3)  // ARD-3a
-        // add(nwmRangeId(n) + 0x3A80, n~NS & Ard3~EC, when = n != Owr1 && (n == Ard3))  // ARD-3b
-        add(nwmRangeId(n) + 0x3B00, n~NS & Owr1~CE)  // OWR-1
-        add(nwmRangeId(n) + 0x3C00, n~NS & Owr3~CE, when = n != Ave2 || n != Owr1)  // OWR-3 
-        add(nwmRangeId(n) + 0x3D00, n~NS & Nrd4~CE, when = n != Owr1)  // NRD-4
-        add(nwmRangeId(n) + 0x4800, n~NS & Tla5~EC, when = n != Owr1)  // TLA-5
-        add(nwmRangeId(n) + 0x4A00, n~NS & Rd4~EC, when = n != Owr1)  // RD-4
-      }
+    }
 
-      for (n <- Seq(Ard3, Owr3, Nrd4)) {
-        add(nwmRangeId(n) + 0x4B00, n~NS & Rd6~EC)  // RD-4
-        add(nwmRangeId(n) + 0x4C00, n~NS & Ave6~EC)  // AVE-6
-        add(nwmRangeId(n) + 0x4C09, n~NS & Tla7m~EC)  // TLA-M
-        add(nwmRangeId(n) + 0x4D09, n~NS & Ave6m~EC)  // AVE-M
-      }
+    //T-intersections
+    //OxO NWM-Thru
+    for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {
+      add(nwmRangeId(n) + 0x3000, n~WE & Street~CS)  // Street
+      add(nwmRangeId(n) + 0x3100, n~WE & Road~CS)  // Road
+      add(nwmRangeId(n) + 0x3200, n~WE & Onewayroad~CS)  // Onewayroad
+      add(nwmRangeId(n) + 0x4300, n~WE & Avenue~NC, when = n != Owr1)  // Avenue
+      add(nwmRangeId(n) + 0x3800, n~NS & Tla3~CE)  // TLA-3
+      add(nwmRangeId(n) + 0x3900, n~NS & Ave2~CE)  // AVE-2
+      add(nwmRangeId(n) + 0x3A00, n~NS & Ard3~EC, when = n != Owr1 && n != Tla3)  // ARD-3a
+      // add(nwmRangeId(n) + 0x3A80, n~NS & Ard3~EC, when = n != Owr1 && (n == Ard3))  // ARD-3b
+      add(nwmRangeId(n) + 0x3B00, n~NS & Owr1~CE)  // OWR-1
+      add(nwmRangeId(n) + 0x3C00, n~NS & Owr3~CE, when = n != Ave2 || n != Owr1)  // OWR-3
+      add(nwmRangeId(n) + 0x3D00, n~NS & Nrd4~CE, when = n != Owr1)  // NRD-4
+      add(nwmRangeId(n) + 0x4800, n~NS & Tla5~EC, when = n != Owr1)  // TLA-5
+      add(nwmRangeId(n) + 0x4A00, n~NS & Rd4~EC, when = n != Owr1)  // RD-4
+    }
 
-      for (n <- Seq(Nrd4)) {
-        add(nwmRangeId(n) + 0x4900, n~NS & Owr4~EC)  // OWR-4
-        add(nwmRangeId(n) + 0x4909, n~NS & Owr4m~EC)  // OWR-4m
-        add(nwmRangeId(n) + 0x4D00, n~NS & Ave8~EC)  // AVE-8
-      }
+    for (n <- Seq(Ard3, Owr3, Nrd4)) {
+      add(nwmRangeId(n) + 0x4B00, n~NS & Rd6~EC)  // RD-4
+      add(nwmRangeId(n) + 0x4C00, n~NS & Ave6~EC)  // AVE-6
+      add(nwmRangeId(n) + 0x4C09, n~NS & Tla7m~EC)  // TLA-M
+      add(nwmRangeId(n) + 0x4D09, n~NS & Ave6m~EC)  // AVE-M
+    }
 
-      for (n <- Seq(Tla3)) {
-        builder.addOne((Tla3~NS).projectLeft  & Ard3~CE, IdTile(0x51003A80, R0F0, nonMirroredOnly))
-        builder.addOne((Tla3~NS).projectRight  & Ard3~EC, IdTile(0x51003A00, R0F0, nonMirroredOnly))	  
-      }
-		
-      for (n <- Seq(Ard3)) {
-        add(nwmRangeId(n) + 0x3080, n~EW & Street~CS)  // Street
-        add(nwmRangeId(n) + 0x3180, n~EW & Road~CS)  // Road
-        add(nwmRangeId(n) + 0x3280, n~EW & Onewayroad~CS)  // Onewayroad
-        add(nwmRangeId(n) + 0x4380, n~EW & Avenue~NC)  // Avenue
-        add(nwmRangeId(n) + 0x3880, n~SN & Tla3~CE)  // TLA-3b
-        add(nwmRangeId(n) + 0x3980, n~SN & Ave2~CE)  // AVE-2b
-        add(nwmRangeId(n) + 0x3A80, n~SN & Ard3~CE)  // ARD-3b
-        add(nwmRangeId(n) + 0x3B80, n~SN & Owr1~CE)  // OWR-1b
-        add(nwmRangeId(n) + 0x3C80, n~SN & Owr3~CE)  // OWR-3b 
-        add(nwmRangeId(n) + 0x3D80, n~SN & Nrd4~CE)  // NRD-4b
-        add(nwmRangeId(n) + 0x4880, n~SN & Tla5~EC)  // TLA-5b
-        add(nwmRangeId(n) + 0x4A80, n~SN & Rd4~EC)  // RD-4b
-        add(nwmRangeId(n) + 0x4B80, n~SN & Rd6~EC)  // RD-6b
-        add(nwmRangeId(n) + 0x4C80, n~SN & Ave6~EC)  // AVE-6b
-        add(nwmRangeId(n) + 0x4C89, n~SN & Tla7m~EC)  // TLA-Mb
-        add(nwmRangeId(n) + 0x4D89, n~SN & Ave6m~EC)  // AVE-Mb
-      }
-		
-      for (n <- Seq(Tla5, Owr4, Owr4m, Owr5, Rd4, Rd6, Ave6, Ave8)) {
-        add(nwmRangeId(n) + 0x3000, n~EW & Street~NC)  // Street Short
-        add(nwmRangeId(n) + 0x3080, n~WE & Street~NC)  // Street Long
-        add(nwmRangeId(n) + 0x3100, n~EW & Road~NC)  // Road Short
-        add(nwmRangeId(n) + 0x3180, n~WE & Road~NC)  // Road Long
-        add(nwmRangeId(n) + 0x3200, n~EW & Onewayroad~NC)  // Onewayroad Short
-        add(nwmRangeId(n) + 0x3280, n~WE & Onewayroad~NC)  // Onewayroad Long
-        add(nwmRangeId(n) + 0x4300, n~EW & Avenue~NC)  // Avenue Short
-        add(nwmRangeId(n) + 0x4400, n~WE & Avenue~NC)  // Avenue Long
-        add(nwmRangeId(n) + 0x3800, n~EW & Tla3~NC)  // TLA-3 Short
-        add(nwmRangeId(n) + 0x3880, n~WE & Tla3~NC)  // TLA-3 Long
-        add(nwmRangeId(n) + 0x3900, n~EW & Ave2~NC)  // AVE-2 Short
-        add(nwmRangeId(n) + 0x3980, n~WE & Ave2~NC)  // AVE-2 Long
-        add(nwmRangeId(n) + 0x3A00, n~EW & Ard3~NC)  // ARD-3 Short
-        add(nwmRangeId(n) + 0x3A80, n~WE & Ard3~NC)  // ARD-3 Long
-        add(nwmRangeId(n) + 0x3B00, n~EW & Owr1~NC)  // OWR-1 Short
-        add(nwmRangeId(n) + 0x3B80, n~WE & Owr1~NC)  // OWR-1 Long
-        add(nwmRangeId(n) + 0x3C00, n~EW & Owr3~NC)  // OWR-3 Short - restrict to Owr4/m, Owr5, Rd6, Ave6, Ave8
-        add(nwmRangeId(n) + 0x3C80, n~WE & Owr3~NC)  // OWR-3 Long
-        add(nwmRangeId(n) + 0x3D00, n~EW & Nrd4~NC)  // NRD-4 Short
-        add(nwmRangeId(n) + 0x3D80, n~WE & Nrd4~NC)  // NRD-4 Long
-        add(nwmRangeId(n) + 0x3E00, n~WE & Tla5~NC)  // TLA-5 Long
-        add(nwmRangeId(n) + 0x3F00, n~WE & Owr4~NC)  // OWR-4 Long
-        add(nwmRangeId(n) + 0x3F09, n~WE & Owr4m~NC)  // OWR-4m Long
-        add(nwmRangeId(n) + 0x4000, n~WE & Owr5~NC)  // OWR-5 Long
-        add(nwmRangeId(n) + 0x4100, n~WE & Rd4~NC)  // RD-4 Long
-        add(nwmRangeId(n) + 0x4200, n~WE & Rd6~NC)  // RD-6 Long
-        add(nwmRangeId(n) + 0x4800, n~WE & Ave6~NC)  // AVE-6 Long
-        add(nwmRangeId(n) + 0x4880, n~WE & Tla7m~NC)  // TLA-M Long
-        add(nwmRangeId(n) + 0x4900, n~WE & Ave8~NC)  // AVE-8 Long
-        add(nwmRangeId(n) + 0x4980, n~WE & Ave6m~NC)  // AVE-M Long
-      }
-		
-      //OxO NWM-End
-      for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {	
-        add(nwmRangeId(n) + 0x4000, n~CE & Street~NS)  // Street	
-        add(nwmRangeId(n) + 0x4100, n~CE & Road~NS)  // Road
-        add(nwmRangeId(n) + 0x4200, n~CE & Onewayroad~NS)  // Onewayroad
-        add(nwmRangeId(n) + 0x3300, n~CE & Avenue~SN, when = n != Owr3)  // Avenue Short - disable for OWR-3
-        add(nwmRangeId(n) + 0x3400, n~WC & Avenue~SN)  // Avenue Long
-      }
-      //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
-      for (n <- Seq(Tla5, Owr4, Owr4m, Rd4, Rd6, Ave6, Ave8, Tla7m, Ave6m)) {		
-        add(nwmRangeId(n) + 0x3400, n~NC & Avenue~WE, when = n != Owr5)  // Avenue Long
-      }
-      //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
-      for (n <- Seq(Tla5, Rd4)) {	
-        add(nwmRangeId(n) + 0x4500, n~CE & Road~NS)  // Road - dummy for OWR-5/RD-6/AVE-6/AVE-8
-        add(nwmRangeId(n) + 0x4600, n~CE & Onewayroad~NS)  // Onewayroad - dummy for OWR-5/RD-6/AVE-6/AVE-8
-        add(nwmRangeId(n) + 0x4700, n~CE & Street~NS)  // Street	
-        // add(nwmRangeId(n) + 0x3300, n~NC & Avenue~EW)  // Avenue Short - disable for all but TLA-5 and RD-4
-      }
+    for (n <- Seq(Nrd4)) {
+      add(nwmRangeId(n) + 0x4900, n~NS & Owr4~EC)  // OWR-4
+      add(nwmRangeId(n) + 0x4909, n~NS & Owr4m~EC)  // OWR-4m
+      add(nwmRangeId(n) + 0x4D00, n~NS & Ave8~EC)  // AVE-8
+    }
 
+    for (n <- Seq(Tla3)) {
+      builder.addOne((Tla3~NS).projectLeft  & Ard3~CE, IdTile(0x51003A80, R0F0, nonMirroredOnly))
+      builder.addOne((Tla3~NS).projectRight  & Ard3~EC, IdTile(0x51003A00, R0F0, nonMirroredOnly))
+    }
 
+    for (n <- Seq(Ard3)) {
+      add(nwmRangeId(n) + 0x3080, n~EW & Street~CS)  // Street
+      add(nwmRangeId(n) + 0x3180, n~EW & Road~CS)  // Road
+      add(nwmRangeId(n) + 0x3280, n~EW & Onewayroad~CS)  // Onewayroad
+      add(nwmRangeId(n) + 0x4380, n~EW & Avenue~NC)  // Avenue
+      add(nwmRangeId(n) + 0x3880, n~SN & Tla3~CE)  // TLA-3b
+      add(nwmRangeId(n) + 0x3980, n~SN & Ave2~CE)  // AVE-2b
+      add(nwmRangeId(n) + 0x3A80, n~SN & Ard3~CE)  // ARD-3b
+      add(nwmRangeId(n) + 0x3B80, n~SN & Owr1~CE)  // OWR-1b
+      add(nwmRangeId(n) + 0x3C80, n~SN & Owr3~CE)  // OWR-3b
+      add(nwmRangeId(n) + 0x3D80, n~SN & Nrd4~CE)  // NRD-4b
+      add(nwmRangeId(n) + 0x4880, n~SN & Tla5~EC)  // TLA-5b
+      add(nwmRangeId(n) + 0x4A80, n~SN & Rd4~EC)  // RD-4b
+      add(nwmRangeId(n) + 0x4B80, n~SN & Rd6~EC)  // RD-6b
+      add(nwmRangeId(n) + 0x4C80, n~SN & Ave6~EC)  // AVE-6b
+      add(nwmRangeId(n) + 0x4C89, n~SN & Tla7m~EC)  // TLA-Mb
+      add(nwmRangeId(n) + 0x4D89, n~SN & Ave6m~EC)  // AVE-Mb
+    }
+
+    for (n <- Seq(Tla5, Owr4, Owr4m, Owr5, Rd4, Rd6, Ave6, Ave8)) {
+      add(nwmRangeId(n) + 0x3000, n~EW & Street~NC)  // Street Short
+      add(nwmRangeId(n) + 0x3080, n~WE & Street~NC)  // Street Long
+      add(nwmRangeId(n) + 0x3100, n~EW & Road~NC)  // Road Short
+      add(nwmRangeId(n) + 0x3180, n~WE & Road~NC)  // Road Long
+      add(nwmRangeId(n) + 0x3200, n~EW & Onewayroad~NC)  // Onewayroad Short
+      add(nwmRangeId(n) + 0x3280, n~WE & Onewayroad~NC)  // Onewayroad Long
+      add(nwmRangeId(n) + 0x4300, n~EW & Avenue~NC)  // Avenue Short
+      add(nwmRangeId(n) + 0x4400, n~WE & Avenue~NC)  // Avenue Long
+      add(nwmRangeId(n) + 0x3800, n~EW & Tla3~NC)  // TLA-3 Short
+      add(nwmRangeId(n) + 0x3880, n~WE & Tla3~NC)  // TLA-3 Long
+      add(nwmRangeId(n) + 0x3900, n~EW & Ave2~NC)  // AVE-2 Short
+      add(nwmRangeId(n) + 0x3980, n~WE & Ave2~NC)  // AVE-2 Long
+      add(nwmRangeId(n) + 0x3A00, n~EW & Ard3~NC)  // ARD-3 Short
+      add(nwmRangeId(n) + 0x3A80, n~WE & Ard3~NC)  // ARD-3 Long
+      add(nwmRangeId(n) + 0x3B00, n~EW & Owr1~NC)  // OWR-1 Short
+      add(nwmRangeId(n) + 0x3B80, n~WE & Owr1~NC)  // OWR-1 Long
+      add(nwmRangeId(n) + 0x3C00, n~EW & Owr3~NC)  // OWR-3 Short - restrict to Owr4/m, Owr5, Rd6, Ave6, Ave8
+      add(nwmRangeId(n) + 0x3C80, n~WE & Owr3~NC)  // OWR-3 Long
+      add(nwmRangeId(n) + 0x3D00, n~EW & Nrd4~NC)  // NRD-4 Short
+      add(nwmRangeId(n) + 0x3D80, n~WE & Nrd4~NC)  // NRD-4 Long
+      add(nwmRangeId(n) + 0x3E00, n~WE & Tla5~NC)  // TLA-5 Long
+      add(nwmRangeId(n) + 0x3F00, n~WE & Owr4~NC)  // OWR-4 Long
+      add(nwmRangeId(n) + 0x3F09, n~WE & Owr4m~NC)  // OWR-4m Long
+      add(nwmRangeId(n) + 0x4000, n~WE & Owr5~NC)  // OWR-5 Long
+      add(nwmRangeId(n) + 0x4100, n~WE & Rd4~NC)  // RD-4 Long
+      add(nwmRangeId(n) + 0x4200, n~WE & Rd6~NC)  // RD-6 Long
+      add(nwmRangeId(n) + 0x4800, n~WE & Ave6~NC)  // AVE-6 Long
+      add(nwmRangeId(n) + 0x4880, n~WE & Tla7m~NC)  // TLA-M Long
+      add(nwmRangeId(n) + 0x4900, n~WE & Ave8~NC)  // AVE-8 Long
+      add(nwmRangeId(n) + 0x4980, n~WE & Ave6m~NC)  // AVE-M Long
+    }
+
+    //OxO NWM-End
+    for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {
+      add(nwmRangeId(n) + 0x4000, n~CE & Street~NS)  // Street
+      add(nwmRangeId(n) + 0x4100, n~CE & Road~NS)  // Road
+      add(nwmRangeId(n) + 0x4200, n~CE & Onewayroad~NS)  // Onewayroad
+      add(nwmRangeId(n) + 0x3300, n~CE & Avenue~SN, when = n != Owr3)  // Avenue Short - disable for OWR-3
+      add(nwmRangeId(n) + 0x3400, n~WC & Avenue~SN)  // Avenue Long
+    }
+    //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
+    for (n <- Seq(Tla5, Owr4, Owr4m, Rd4, Rd6, Ave6, Ave8, Tla7m, Ave6m)) {
+      add(nwmRangeId(n) + 0x3400, n~NC & Avenue~WE, when = n != Owr5)  // Avenue Long
+    }
+    //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
+    for (n <- Seq(Tla5, Rd4)) {
+      add(nwmRangeId(n) + 0x4500, n~CE & Road~NS)  // Road - dummy for OWR-5/RD-6/AVE-6/AVE-8
+      add(nwmRangeId(n) + 0x4600, n~CE & Onewayroad~NS)  // Onewayroad - dummy for OWR-5/RD-6/AVE-6/AVE-8
+      add(nwmRangeId(n) + 0x4700, n~CE & Street~NS)  // Street
+      // add(nwmRangeId(n) + 0x3300, n~NC & Avenue~EW)  // Avenue Short - disable for all but TLA-5 and RD-4
     }
 
     builder.result()
