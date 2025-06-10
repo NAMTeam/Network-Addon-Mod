@@ -30,7 +30,7 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
           Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~ES)   // OxD
           Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NS)   // DxO
           Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NE)   // DxD
-          if (main.isNwm) {
+          if (main.isNwm && !minor.isRhw) withResolvableRulesOnly {  // T intersections are not defined for all network combinations
             Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~CS)   // OxO T 1
             Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~NC)   // OxO T 2
           }
