@@ -118,12 +118,10 @@ trait Adjacencies extends SharedDiagonals { this: RuleGenerator =>
 }
 
 trait SharedDiagonals { this: RuleGenerator =>
-  private def withLocalRemap[U](remap: Rule[SymTile] => Rule[SymTile])(action: => U): U = {
+  private def withLocalContext[U](modifyContext: RuleTransducer.Context => RuleTransducer.Context)(action: => U): U = {
     val originalContext = context
     try {
-      context = originalContext.copy(
-        preprocess = rule => originalContext.preprocess(remap(rule)),
-      )
+      context = modifyContext(originalContext)
       action
     } finally {
       context = originalContext
@@ -141,9 +139,27 @@ trait SharedDiagonals { this: RuleGenerator =>
     * See `NetworkProperties.transformSharedDiagonals` for the implementation.
     */
   protected def withSharedDiagonals(action: => Unit): Unit = {
-    withLocalRemap(_.map {
-      case tile: Tile => transformSharedDiagonals(tile)
-      case tile: SymTile => tile
-    })(action)
+    withLocalContext { context =>
+      context.copy(preprocess = rule => context.preprocess(rule.map {
+        case tile: Tile => transformSharedDiagonals(tile)
+        case tile: SymTile => tile
+      }))
+    }(action)
+  }
+
+  /** Ignore all rules containing tiles that are not resolvable to IDs.
+    *
+    * Use this with care, as it is easy to omit lots of rules unintentionally.
+    */
+  protected def withResolvableRulesOnly(action: => Unit): Unit = {
+    withLocalContext { context =>
+      context.copy(preprocess = rule => {
+        val resolve = context.resolve.asInstanceOf[PartialFunction[Tile, IdTile]]  // TODO resolver function should always be partial
+        context.preprocess(rule).filter(_.forall {
+          case tile: Tile => resolve.isDefinedAt(tile)
+          case tile: SymTile => true
+        })
+      })
+    }(action)
   }
 }
