@@ -432,7 +432,7 @@ class MiscResolver extends IdResolver {
     add(0x092d1700, Onewayroad~SW & Monorail~ES)
     add(0x092d0200, Onewayroad~EW & Monorail~NS)
 
-    // Avenue + intersections
+    // Avenue intersections
     add(0x04002100, Avenue~ES & Rail~NE)
     add(0x04004300, Avenue~SharedDiagRight & Rail~SW)
     builder.addOne((Avenue~SN).projectLeft  & Rail~NE, IdTile(0x04001600, R0F0, nonMirroredOnly))
@@ -463,6 +463,7 @@ class MiscResolver extends IdResolver {
     add(0x5f503300, Avenue~SharedDiagLeft & Street~ES)
     add(0x04004400, Avenue~SN & Street~CE)
     add(0x04008600, Avenue~SN & Street~WC)
+    add(0x5f502f00, Avenue~SN & Street~CSE)
     add(0x04005600, Avenue~NC & Street~WE)
     add(0x04009600, Avenue~NC & Street~(2,0,2,2))
     add(0x04009700, Avenue~NC & Street~(0,0,0,2))

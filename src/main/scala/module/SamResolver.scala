@@ -243,8 +243,9 @@ class SamResolver extends IdResolver {
       //DxO Intersections
       add(0x5e582000 + offset, sam~SE & Road~NS)        // SAM x Road
       add(0x5e58c000 + offset, sam~SE & Onewayroad~NS)  // SAM x Onewayroad
-      add(0x5e587000 + offset, sam~SE & Avenue~SN)      // SAM x Avenue 1
-      add(0x5e588000 + offset, sam~NW & Avenue~SN)      // SAM x Avenue 2
+      add(0x5e586000 + offset, sam~CSE & Avenue~SN)     // SAM x Avenue DxO short T
+      add(0x5e587000 + offset, sam~SE & Avenue~SN)      // SAM x Avenue DxO + (1)
+      add(0x5e588000 + offset, sam~NW & Avenue~SN)      // SAM x Avenue DxO + (2)
       add(0x5e53d000 + offset, sam~SE & Highway~NS)     // SAM x Highway 1
       add(0x5e53d080 + offset, sam~WN & Highway~NS)     // SAM x Highway 2
       add(0x5e514000 + offset, sam~NW & Rail~NS)        // SAM-Rail

@@ -732,6 +732,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~WE & minor~WN | (Street ~> sam)~WE                           // OxD continue
 
             // DxO
+            // DxO short T
+            Rules += sam~(0,0,11,3) | (Street ~> sam~CNW) & minor~NS    // DxO short T
+            // DxO +
             Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO start
             Rules += sam~EN & minor~EW | (Street ~> sam)~SW & minor~EW  // DxO middle 1
             Rules += sam~ES & minor~NS | (Street ~> sam)~NW & minor~SN  // DxO middle 2
