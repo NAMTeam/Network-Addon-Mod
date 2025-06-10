@@ -11,7 +11,8 @@ object CrossingGenerator {
       minor <- Network.values.iterator
       if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
          (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty)) ||
-         (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr))
+         (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr)) //||
+         //(main.isViaduct || minor.isViaduct)
          ) && intersectionAllowed(main, minor)
     } yield minor
   }
@@ -29,6 +30,10 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
           Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~ES)   // OxD
           Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NS)   // DxO
           Rules += main~SE~ES | (base ~> main)~WN~NW & orient(minor~NE)   // DxD
+          if (main.isNwm) {
+            Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~CS)   // OxO T 1
+            Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~NC)   // OxO T 2
+          }
           // Shared diagonals on minor are not relevant here since the shared diagonal is an inner tile (i.e. without an edge).
         }
         if (hasRightShoulder(minor)) entryCode(identity)

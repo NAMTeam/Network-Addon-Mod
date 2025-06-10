@@ -54,6 +54,14 @@ class MiscResolver extends IdResolver {
     add(0x5c040000, L2Onewayroad~NS); add(0x5c040200, L2Onewayroad~ES)
     add(0x5c050000, L2Avenue    ~NS); add(0x5c050200, L2Avenue    ~NE); add(0x5c050300, L2Avenue~SharedDiagLeft)
 
+    add(0x5c000100, L1Road      ~CS); add(0x5c000300, L1Road      ~(0,0,0,1))
+    add(0x5c010100, L1Onewayroad~CS); add(0x5c010300, L1Onewayroad~(0,0,0,1))
+    add(0x5c020100, L1Avenue    ~CS); //add(0x5c020200, L1Avenue    ~NE); add(0x5c020300, L1Avenue~SharedDiagLeft)
+    add(0x5c030100, L2Road      ~CS); add(0x5c030300, L2Road      ~(0,0,0,1))
+    add(0x5c040100, L2Onewayroad~CS); add(0x5c040300, L2Onewayroad~(0,0,0,1))
+    add(0x5c050100, L2Avenue    ~CS); //add(0x5c050200, L2Avenue    ~NE); add(0x5c050300, L2Avenue~SharedDiagLeft)
+
+
     add(0x5e54b100, Sam1~NS)
     add(0x5e54b200, Sam2~NS)
     add(0x5e54b300, Sam3~NS)
@@ -584,39 +592,8 @@ class MiscResolver extends IdResolver {
       add(0x5f882600 + offset, glr~WS & Avenue~SharedDiagRight)
     }
 
-    // NWM x Street T-intersections
-    // Street thru, NWM ends
-    // OxO
-    add(0x51004000, Street~NS & Tla3~CE) // Tla3 Ends
-    add(0x51014000, Street~NS & Ave2~CE) // Ave2 Ends
-    add(0x51024000, Street~NS & Ard3~CE) // Ard3 Ends
-    add(0x51034000, Street~NS & Owr1~CE) // Owr1 Ends
-    add(0x51044000, Street~NS & Owr3~CE) // Owr3 Ends
-    add(0x51054000, Street~NS & Nrd4~CE) // Nrd4 Ends
-    // OxD
-    add(0x5100B500, Street~NS & Tla3~CSE) // Tla3 Ends
-    add(0x5101B500, Street~NS & Ave2~CSE) // Ave2 Ends
-    add(0x5102B500, Street~NS & Ard3~CSE) // Ard3 Ends
-    add(0x5103B500, Street~NS & Owr1~CSE) // Owr1 Ends
-    add(0x5104B500, Street~NS & Owr3~CSE) // Owr1 Ends
-    add(0x5105B500, Street~NS & Nrd4~CSE) // Nrd4 Ends
-    // NWM thru, Street ends
-    // OxO short T
-    add(0x51003000, Street~CS & Tla3~WE)
-    add(0x51013000, Street~CS & Ave2~WE)
-    add(0x51023000, Street~CS & Ard3~WE)
-    add(0x51023080, Street~CS & Ard3~EW)
-    add(0x51033000, Street~CS & Owr1~WE)
-    add(0x51043000, Street~CS & Owr3~WE)
-    add(0x51053000, Street~CS & Nrd4~WE)
-    add(0x51103000, Street~CN & (Tla5~EW).projectLeft)
-    add(0x71103000, Street~CN & (Tla5~EW).projectRight)
-    add(0x51113000, Street~CN & Owr4~EW)
-    add(0x51153000, Street~CN & Owr4m~EW)
-    add(0x51123000, Street~CN & Owr5~EW)
-    add(0x51133000, Street~CN & Rd4~EW)
-    add(0x51143000, Street~CN & Rd6~EW)
-    add(0x51203000, Street~CN & Ave6~EW)
+    // NWM x Street T-intersections - now covered in NwmResolver
+
 
     builder.result()
   }
