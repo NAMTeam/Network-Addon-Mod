@@ -9,9 +9,13 @@ class Network private (val height: Int, val typ: NetworkType, val base: Option[N
   import Network._
   def isRhw: Boolean = RhwNetworks.contains(this)
   def isNwm: Boolean = NwmNetworks.contains(this)
+  def isViaduct: Boolean = Viaducts.contains(this)
   def isTla: Boolean = this == Tla3 || this == Tla5 || this == Tla7m
   def isSymm: Boolean = typ == Symmetrical
   def isOwr4Like: Boolean = this == Owr4 || this == Owr4m
+  def isNwmSingle: Boolean = NwmNetworksSingleTile.contains(this)
+  def isNwmDual: Boolean = NwmNetworksDualTile.contains(this)
+  def isNwmTriple: Boolean = NwmNetworksTripleTile.contains(this)
 }
 
 /** List of all the base and override networks.
@@ -151,10 +155,12 @@ object Network extends scalaenum.Enum {
   val GlrNetworks: ValueSet = Network.values rangeFrom Glr1 rangeTo Glr4
   val RhwNetworks: ValueSet = ValueSet(Dirtroad) ++ (Network.values rangeFrom L1Rhw2 rangeTo L2Rhw10c)
   val NwmNetworks: ValueSet = Network.values rangeFrom Tla3 rangeTo Ave6m
+  val NwmNetworksSingleTile: ValueSet = Network.values rangeFrom Tla3 rangeTo Nrd4
+  val NwmNetworksDualTile: ValueSet = Network.values rangeFrom Tla5 rangeTo Rd6
+  val NwmNetworksTripleTile: ValueSet = Network.values rangeFrom Ave6 rangeTo Ave6m
   val SamNetworks: ValueSet = Network.values rangeFrom Sam1 rangeTo Sam11
   val Viaducts: ValueSet = Network.values rangeFrom L1Road rangeTo L2Avenue
   val RoadNetworks: ValueSet = RhwNetworks ++ NwmNetworks ++ SamNetworks ++ Viaducts + Road + Highway + Street + Avenue + Onewayroad + Groundhighway
-
 }
 
 }  // end of syntax
