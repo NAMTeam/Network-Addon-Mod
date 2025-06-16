@@ -201,8 +201,8 @@ class RhwResolver extends IdResolver {
     add(0x57609000, Dirtroad~NS & Rd4~CE) // dummy intersection to enable Rhw3 support
     add(0x57609100, Dirtroad~NS & Rd6~CE) // dummy intersection to enable Rhw3 support
     add(0x57609200, Dirtroad~NS & Ave6~CE)  // dummy intersection to enable Rhw3 support
-    add(0x57609280, Dirtroad~NS & Tla7m~CE) // dummy intersection to enable Rhw3 support
-    add(0x57609380, Dirtroad~NS & Ave6m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609209, Dirtroad~NS & Tla7m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609309, Dirtroad~NS & Ave6m~CE) // dummy intersection to enable Rhw3 support
     add(0x57601700, Dirtroad~CE & Tla3~NS)
     add(0x57601800, Dirtroad~CE & Ave2~NS)
     add(0x57601900, Dirtroad~CE & Ard3~NS)
@@ -239,8 +239,8 @@ class RhwResolver extends IdResolver {
     add(0x57619000, Rhw3~NS & Rd4~CE)
     add(0x57619100, Rhw3~NS & Rd6~CE)
     add(0x57619200, Rhw3~NS & Ave6~CE)
-    add(0x57619280, Rhw3~NS & Tla7m~CE)
-    add(0x57619380, Rhw3~NS & Ave6m~CE)
+    add(0x57619209, Rhw3~NS & Tla7m~CE)
+    add(0x57619309, Rhw3~NS & Ave6m~CE)
     add(0x57611700, Rhw3~EC & Tla3~NS)
     add(0x57611800, Rhw3~EC & Ave2~NS)
     add(0x57611900, Rhw3~EC & Ard3~NS)
@@ -275,8 +275,8 @@ class RhwResolver extends IdResolver {
     add(0x57619080, Rhw3~SN & Rd4~CE)
     add(0x57619180, Rhw3~SN & Rd6~CE)
     add(0x57619280, Rhw3~SN & Ave6~CE)
-    add(0x57619280, Rhw3~SN & Tla7m~CE)
-    add(0x57619380, Rhw3~SN & Ave6m~CE)
+    add(0x57619289, Rhw3~SN & Tla7m~CE)
+    add(0x57619389, Rhw3~SN & Ave6m~CE)
 
     // Mis
 	// OxO
@@ -290,8 +290,8 @@ class RhwResolver extends IdResolver {
     // add(0x57629000, Mis~NS & Rd4~CE)
     // add(0x57629100, Mis~NS & Rd6~CE)
     // add(0x57629200, Mis~NS & Ave6~CE)
-    // add(0x57629280, Mis~NS & Tla7m~CE)
-    // add(0x57629380, Mis~NS & Ave6m~CE)
+    // add(0x57629209, Mis~NS & Tla7m~CE)
+    // add(0x57629309, Mis~NS & Ave6m~CE)
     add(0x57621700, Mis~EC & Tla3~NS)
     add(0x57621800, Mis~EC & Ave2~NS)
     add(0x57621900, Mis~EC & Ard3~NS)
@@ -326,8 +326,8 @@ class RhwResolver extends IdResolver {
     // add(0x57629080, Mis~SN & Rd4~CE)
     // add(0x57629180, Mis~SN & Rd6~CE)
     // add(0x57629280, Mis~SN & Ave6~CE)
-    // add(0x57629280, Mis~SN & Tla7m~CE)
-    // add(0x57629380, Mis~SN & Ave6m~CE)
+    // add(0x57629289, Mis~SN & Tla7m~CE)
+    // add(0x57629389, Mis~SN & Ave6m~CE)
 
     // Rhw4
 	// OxO
@@ -341,8 +341,9 @@ class RhwResolver extends IdResolver {
     add(0x57639000, Rhw4~NS & Rd4~CE)
     add(0x57639100, Rhw4~NS & Rd6~CE) // enabled for double RHW-4 setups
     add(0x57639200, Rhw4~NS & Ave6~CE) // enabled for double RHW-4 setups
-    add(0x57639280, Rhw4~NS & Tla7m~CE) // enabled for double RHW-4 setups
-    add(0x57639380, Rhw4~NS & Ave6m~CE) // enabled for double RHW-4 setups
+    add(0x57639300, Rhw4~NS & Ave8~CE) // enabled for double RHW-4 setups
+    add(0x57639209, Rhw4~NS & Tla7m~CE) // enabled for double RHW-4 setups
+    add(0x57639309, Rhw4~NS & Ave6m~CE) // enabled for double RHW-4 setups
     add(0x57631700, Rhw4~EC & Tla3~NS)
     add(0x57631800, Rhw4~EC & Ave2~NS)
     add(0x57631900, Rhw4~EC & Ard3~NS)
@@ -377,8 +378,9 @@ class RhwResolver extends IdResolver {
     add(0x57639080, Rhw4~SN & Rd4~CE)
     // add(0x57639180, Rhw4~SN & Rd6~CE)
     // add(0x57639280, Rhw4~SN & Ave6~CE)
-    // add(0x57639280, Rhw4~SN & Tla7m~CE)
-    // add(0x57639380, Rhw4~SN & Ave6m~CE)
+    // add(0x57639380, Rhw4~SN & Ave8~CE)
+    // add(0x57639289, Rhw4~SN & Tla7m~CE)
+    // add(0x57639389, Rhw4~SN & Ave6m~CE)
  
    // T intersections with viaducts
     // Rhw2
