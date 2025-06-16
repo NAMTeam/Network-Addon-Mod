@@ -188,7 +188,199 @@ class RhwResolver extends IdResolver {
       add(n~SE & n2~WS, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && asymmOrShared(n2))
     }
 
-    // T intersections with viaducts
+    // T intersections at ground level
+    // Rhw2
+	// OxO
+    add(0x57600700, Dirtroad~NS & Tla3~EC)
+    add(0x57600800, Dirtroad~NS & Ave2~EC)
+    add(0x57600900, Dirtroad~NS & Ard3~EC)
+    add(0x57600A00, Dirtroad~NS & Owr1~EC)
+    add(0x57600B00, Dirtroad~NS & Owr3~EC) // dummy intersection to enable Rhw3 support
+    add(0x57600C00, Dirtroad~NS & Nrd4~EC)
+    add(0x57600D00, Dirtroad~NS & Tla5~EC)
+    add(0x57609000, Dirtroad~NS & Rd4~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609100, Dirtroad~NS & Rd6~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609200, Dirtroad~NS & Ave6~CE)  // dummy intersection to enable Rhw3 support
+    add(0x57609280, Dirtroad~NS & Tla7m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609380, Dirtroad~NS & Ave6m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57601700, Dirtroad~CE & Tla3~NS)
+    add(0x57601800, Dirtroad~CE & Ave2~NS)
+    add(0x57601900, Dirtroad~CE & Ard3~NS)
+    add(0x57601909, Dirtroad~CE & Ard3~SN)
+    add(0x57601A00, Dirtroad~CE & Owr1~NS)
+    add(0x57601B00, Dirtroad~CE & Owr3~NS) // dummy intersection to enable Rhw3 support
+    add(0x57601C00, Dirtroad~CE & Nrd4~NS)
+    add(0x57601D00, Dirtroad~CE & Tla5~SN) // Short-T
+    add(0x57601D09, Dirtroad~CE & Tla5~NS) // Long-T
+    add(0x57601D00, Dirtroad~CE & Owr4~SN) // Short-T
+    add(0x57601D09, Dirtroad~CE & Owr4~NS) // Long-T
+    add(0x57608400, Dirtroad~CE & Owr4m~SN) // Short-T
+    add(0x57608409, Dirtroad~CE & Owr4m~NS) // Long-T
+    add(0x57601F00, Dirtroad~CE & Owr5~SN) // Short-T
+    add(0x57601F09, Dirtroad~CE & Owr5~NS) // Long-T
+    add(0x57608000, Dirtroad~CE & Rd4~SN) // Short-T
+    add(0x57608009, Dirtroad~CE & Rd4~NS) // Long-T
+    add(0x57608100, Dirtroad~CE & Rd6~SN) // Short-T
+    add(0x57608109, Dirtroad~CE & Rd6~NS) // Long-T
+    add(0x57608200, Dirtroad~CE & Ave6~SN) // Short-T
+    add(0x57608209, Dirtroad~CE & Ave6~NS) // Long-T
+    add(0x57608300, Dirtroad~CE & Ave8~SN) // Short-T
+    add(0x57608309, Dirtroad~CE & Ave8~NS) // Long-T
+
+    // Rhw3
+	// OxO
+    add(0x57610700, Rhw3~NS & Tla3~EC)
+    add(0x57610800, Rhw3~NS & Ave2~EC)
+    add(0x57610900, Rhw3~NS & Ard3~EC)
+    add(0x57610A00, Rhw3~NS & Owr1~EC)
+    add(0x57610B00, Rhw3~NS & Owr3~EC)
+    add(0x57610C00, Rhw3~NS & Nrd4~EC)
+    add(0x57610D00, Rhw3~NS & Tla5~EC)
+    add(0x57619000, Rhw3~NS & Rd4~CE)
+    add(0x57619100, Rhw3~NS & Rd6~CE)
+    add(0x57619200, Rhw3~NS & Ave6~CE)
+    add(0x57619280, Rhw3~NS & Tla7m~CE)
+    add(0x57619380, Rhw3~NS & Ave6m~CE)
+    add(0x57611700, Rhw3~EC & Tla3~NS)
+    add(0x57611800, Rhw3~EC & Ave2~NS)
+    add(0x57611900, Rhw3~EC & Ard3~NS)
+    add(0x57611909, Rhw3~EC & Ard3~SN)
+    add(0x57611A00, Rhw3~EC & Owr1~NS)
+    add(0x57611B00, Rhw3~EC & Owr3~NS) // dummy intersection to enable Rhw3 support
+    add(0x57611C00, Rhw3~EC & Nrd4~NS)
+    add(0x57611D00, Rhw3~EC & Tla5~SN) // Short-T
+    add(0x57611D09, Rhw3~EC & Tla5~NS) // Long-T
+    add(0x57611D00, Rhw3~EC & Owr4~SN) // Short-T
+    add(0x57611D09, Rhw3~EC & Owr4~NS) // Long-T
+    add(0x57618400, Rhw3~EC & Owr4m~SN) // Short-T
+    add(0x57618409, Rhw3~EC & Owr4m~NS) // Long-T
+    add(0x57611F00, Rhw3~EC & Owr5~SN) // Short-T
+    add(0x57611F09, Rhw3~EC & Owr5~NS) // Long-T
+    add(0x57618000, Rhw3~EC & Rd4~SN) // Short-T
+    add(0x57618009, Rhw3~EC & Rd4~NS) // Long-T
+    add(0x57618100, Rhw3~EC & Rd6~SN) // Short-T
+    add(0x57618109, Rhw3~EC & Rd6~NS) // Long-T
+    add(0x57618200, Rhw3~EC & Ave6~SN) // Short-T
+    add(0x57618209, Rhw3~EC & Ave6~NS) // Long-T
+    add(0x57618300, Rhw3~EC & Ave8~SN) // Short-T
+    add(0x57618309, Rhw3~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57610780, Rhw3~SN & Tla3~EC)
+    add(0x57610880, Rhw3~SN & Ave2~EC)
+    add(0x57610980, Rhw3~SN & Ard3~EC)
+    add(0x57610A80, Rhw3~SN & Owr1~EC)
+    add(0x57610B80, Rhw3~SN & Owr3~EC)
+    add(0x57610C80, Rhw3~SN & Nrd4~EC)
+    add(0x57610D80, Rhw3~SN & Tla5~EC)
+    add(0x57619080, Rhw3~SN & Rd4~CE)
+    add(0x57619180, Rhw3~SN & Rd6~CE)
+    add(0x57619280, Rhw3~SN & Ave6~CE)
+    add(0x57619280, Rhw3~SN & Tla7m~CE)
+    add(0x57619380, Rhw3~SN & Ave6m~CE)
+
+    // Mis
+	// OxO
+    add(0x57620700, Mis~NS & Tla3~EC)
+    add(0x57620800, Mis~NS & Ave2~EC)
+    // add(0x57620900, Mis~NS & Ard3~EC)
+    add(0x57620A00, Mis~NS & Owr1~EC)
+    // add(0x57620B00, Mis~NS & Owr3~EC)
+    // add(0x57620C00, Mis~NS & Nrd4~EC)
+    // add(0x57620D00, Mis~NS & Tla5~EC)
+    // add(0x57629000, Mis~NS & Rd4~CE)
+    // add(0x57629100, Mis~NS & Rd6~CE)
+    // add(0x57629200, Mis~NS & Ave6~CE)
+    // add(0x57629280, Mis~NS & Tla7m~CE)
+    // add(0x57629380, Mis~NS & Ave6m~CE)
+    add(0x57621700, Mis~EC & Tla3~NS)
+    add(0x57621800, Mis~EC & Ave2~NS)
+    add(0x57621900, Mis~EC & Ard3~NS)
+    add(0x57621909, Mis~EC & Ard3~SN)
+    add(0x57621A00, Mis~EC & Owr1~NS)
+    add(0x57621B00, Mis~EC & Owr3~NS) // dummy intersection to enable Mis support
+    add(0x57621C00, Mis~EC & Nrd4~NS)
+    add(0x57621D00, Mis~EC & Tla5~SN) // Short-T
+    add(0x57621D09, Mis~EC & Tla5~NS) // Long-T
+    add(0x57621D00, Mis~EC & Owr4~SN) // Short-T
+    add(0x57621D09, Mis~EC & Owr4~NS) // Long-T
+    add(0x57628400, Mis~EC & Owr4m~SN) // Short-T
+    add(0x57628409, Mis~EC & Owr4m~NS) // Long-T
+    add(0x57621F00, Mis~EC & Owr5~SN) // Short-T
+    add(0x57621F09, Mis~EC & Owr5~NS) // Long-T
+    add(0x57628000, Mis~EC & Rd4~SN) // Short-T
+    add(0x57628009, Mis~EC & Rd4~NS) // Long-T
+    add(0x57628100, Mis~EC & Rd6~SN) // Short-T
+    add(0x57628109, Mis~EC & Rd6~NS) // Long-T
+    add(0x57628200, Mis~EC & Ave6~SN) // Short-T
+    add(0x57628209, Mis~EC & Ave6~NS) // Long-T
+    add(0x57628300, Mis~EC & Ave8~SN) // Short-T
+    add(0x57628309, Mis~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57620780, Mis~SN & Tla3~EC)
+    add(0x57620880, Mis~SN & Ave2~EC)
+    // add(0x57620980, Mis~SN & Ard3~EC)
+    add(0x57620A80, Mis~SN & Owr1~EC)
+    // add(0x57620B80, Mis~SN & Owr3~EC)
+    // add(0x57620C80, Mis~SN & Nrd4~EC)
+    // add(0x57620D80, Mis~SN & Tla5~EC)
+    // add(0x57629080, Mis~SN & Rd4~CE)
+    // add(0x57629180, Mis~SN & Rd6~CE)
+    // add(0x57629280, Mis~SN & Ave6~CE)
+    // add(0x57629280, Mis~SN & Tla7m~CE)
+    // add(0x57629380, Mis~SN & Ave6m~CE)
+
+    // Rhw4
+	// OxO
+    add(0x57630700, Rhw4~NS & Tla3~EC)
+    add(0x57630800, Rhw4~NS & Ave2~EC)
+    add(0x57630900, Rhw4~NS & Ard3~EC)
+    add(0x57630A00, Rhw4~NS & Owr1~EC)
+    add(0x57630B00, Rhw4~NS & Owr3~EC) // enabled for double RHW-4 setups
+    add(0x57630C00, Rhw4~NS & Nrd4~EC) // enabled for double RHW-4 setups
+    add(0x57630D00, Rhw4~NS & Tla5~EC) // enabled for double RHW-4 setups
+    add(0x57639000, Rhw4~NS & Rd4~CE)
+    add(0x57639100, Rhw4~NS & Rd6~CE) // enabled for double RHW-4 setups
+    add(0x57639200, Rhw4~NS & Ave6~CE) // enabled for double RHW-4 setups
+    add(0x57639280, Rhw4~NS & Tla7m~CE) // enabled for double RHW-4 setups
+    add(0x57639380, Rhw4~NS & Ave6m~CE) // enabled for double RHW-4 setups
+    add(0x57631700, Rhw4~EC & Tla3~NS)
+    add(0x57631800, Rhw4~EC & Ave2~NS)
+    add(0x57631900, Rhw4~EC & Ard3~NS)
+    add(0x57631909, Rhw4~EC & Ard3~SN)
+    // add(0x57631A00, Rhw4~EC & Owr1~NS)
+    add(0x57631B00, Rhw4~EC & Owr3~NS) // dummy intersection to enable Rhw4 support
+    add(0x57631C00, Rhw4~EC & Nrd4~NS)
+    add(0x57631D00, Rhw4~EC & Tla5~SN) // Short-T
+    add(0x57631D09, Rhw4~EC & Tla5~NS) // Long-T
+    add(0x57631D00, Rhw4~EC & Owr4~SN) // Short-T
+    add(0x57631D09, Rhw4~EC & Owr4~NS) // Long-T
+    add(0x57638400, Rhw4~EC & Owr4m~SN) // Short-T
+    add(0x57638409, Rhw4~EC & Owr4m~NS) // Long-T
+    add(0x57631F00, Rhw4~EC & Owr5~SN) // Short-T
+    add(0x57631F09, Rhw4~EC & Owr5~NS) // Long-T
+    add(0x57638000, Rhw4~EC & Rd4~SN) // Short-T
+    add(0x57638009, Rhw4~EC & Rd4~NS) // Long-T
+    add(0x57638100, Rhw4~EC & Rd6~SN) // Short-T
+    add(0x57638109, Rhw4~EC & Rd6~NS) // Long-T
+    add(0x57638200, Rhw4~EC & Ave6~SN) // Short-T
+    add(0x57638209, Rhw4~EC & Ave6~NS) // Long-T
+    add(0x57638300, Rhw4~EC & Ave8~SN) // Short-T
+    add(0x57638309, Rhw4~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57630780, Rhw4~SN & Tla3~EC)
+    add(0x57630880, Rhw4~SN & Ave2~EC)
+    add(0x57630980, Rhw4~SN & Ard3~EC)
+    add(0x57630A80, Rhw4~SN & Owr1~EC)
+    // add(0x57630B80, Rhw4~SN & Owr3~EC)
+    add(0x57630C80, Rhw4~SN & Nrd4~EC)
+    add(0x57630D80, Rhw4~SN & Tla5~EC)
+    add(0x57639080, Rhw4~SN & Rd4~CE)
+    // add(0x57639180, Rhw4~SN & Rd6~CE)
+    // add(0x57639280, Rhw4~SN & Ave6~CE)
+    // add(0x57639280, Rhw4~SN & Tla7m~CE)
+    // add(0x57639380, Rhw4~SN & Ave6m~CE)
+ 
+   // T intersections with viaducts
     // Rhw2
     add(0x57600110, L1Rhw2~NS & L1Road~EC)
     add(0x57600120, L2Rhw2~NS & L2Road~EC)
