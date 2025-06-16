@@ -13,6 +13,9 @@ class NwmRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       withSharedDiagonals {
         Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
       }
+      if (main != Owr4 && main != Owr4m && main != Rd4) {
+        Rules += main~SE~ES | (base ~> main)~CNW~WNC   // diagonal stub
+      }
       // curves
       createCurve45Rules(main)
       createCurve90Rules(main)
@@ -23,7 +26,6 @@ class NwmRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       }
     }
   }
-
 }
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileNwmCode"`.
