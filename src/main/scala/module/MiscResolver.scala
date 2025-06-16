@@ -95,6 +95,10 @@ class MiscResolver extends IdResolver {
     add(0x00000700, Road~SW & Road~ES) // DxD
     add(0x00005700, Road~NS & Road~CE) // OxO T
     add(0x00006300, Road~NS & Road~CSE) // OxD T
+    add(0x00003A00, Road~CS & Road~NE) // DxO T1
+    add(0x00003C00, Road~CS & Road~WS) // DxO T2
+    add(0x00002E00, Road~SE & Road~CEN) // DxD T1
+    add(0x00002F00, Road~WN & Road~CSW) // DxD T2
     add(0x00000F00, Road~(0,0,2,2)) // 90 curve
     add(0x00000C00, Road~(0,0,1,13)) // curve
     add(0x00004D00, Road~(0,2,0,11)) // curve
@@ -196,11 +200,28 @@ class MiscResolver extends IdResolver {
     add(0x09000700, Onewayroad~SW & Onewayroad~ES) // DxD
     add(0x90005700, Onewayroad~NS & Onewayroad~CE) // OxO T
     add(0x09006300, Onewayroad~NS & Onewayroad~CSE) // OxD T
+    // add(0x09003A00, Onewayroad~CS & Onewayroad~NE) // DxO T1
+    // add(0x09003C00, Onewayroad~CS & Onewayroad~WS) // DxO T2
+    builder.addOne((Onewayroad~NE).projectLeft  & Onewayroad~CS, IdTile(0x09003A00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~NE).projectRight  & Onewayroad~CS, IdTile(0x49003A00, R0F0, mirroredOnly))
+    builder.addOne((Onewayroad~WS).projectLeft  & Onewayroad~CS, IdTile(0x09003C00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WS).projectRight  & Onewayroad~CS, IdTile(0x49003C00, R0F0, mirroredOnly))
+    // add(0x09002E00, Onewayroad~SE & Onewayroad~CEN) // DxD T1
+    // add(0x09002F00, Onewayroad~WN & Onewayroad~CSW) // DxD T2
+    builder.addOne((Onewayroad~SE).projectLeft  & Onewayroad~CEN, IdTile(0x09002E00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~SE).projectRight  & Onewayroad~CEN, IdTile(0x49002E00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WN).projectLeft  & Onewayroad~CSW, IdTile(0x09002E00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WN).projectRight  & Onewayroad~CSW, IdTile(0x49002E00, R0F0, nonMirroredOnly))
     add(0x09000F00, Onewayroad~(0,0,2,2)) // 90 curve
     add(0x09000C00, Onewayroad~(0,0,1,13)) // curve
     add(0x09004D00, Onewayroad~(0,2,0,11)) // curve
     add(0x09014E00, Onewayroad~SharedDiagRight) // shared diag
     add(0x09015600, Onewayroad~(1,3,11,3)) // add(0x5f940400, Onewayroad~(1,3,1,13)) // shared-diag curve
+
+    // builder.addOne((Street~WN).projectLeft  & Rail~NS, IdTile(0x5f502600, R0F0, nonMirroredOnly))
+    // builder.addOne((Street~WN).projectRight & Rail~NS, IdTile(0x5f502900, R0F0, mirroredOnly))
+
+
 
     // shared diag OWR intersections TODO create these
     add(0x5f94a800, Onewayroad~SharedDiagRight & Road~NS)
@@ -229,6 +250,7 @@ class MiscResolver extends IdResolver {
     //add(0x5f94bf00, Onewayroad~SharedDiagRight & Monorail~SharedDiagLeft)
 
     add(0x04007300, Avenue~CS) // orth stub
+    add(0x04004200, Avenue~(1,0,0,3)) // diag stub inside
     add(0x04006400, Avenue~(-2,0,0,+2)) // 90 curve inside
     add(0x04006500, Avenue~(+2,0,0,-2)) // 90 curve outside
     add(0x04006300, Avenue~(+2,0,-113,0)) // 90 curve extended
@@ -245,6 +267,11 @@ class MiscResolver extends IdResolver {
     add(0x04003600, Avenue~ES & Avenue~NE) // DxD
     add(0x5f432c00, Avenue~NS & Avenue~WC) // OxO Short T
     add(0x04007100, Avenue~WE & Avenue~NC) // OxO Long T
+    add(0x04005300, Avenue~NS & Avenue~CNE) // OxD Long T 1
+    add(0x04005400, Avenue~NS & Avenue~(0,3,1,0)) // OxD Long T 2
+    add(0x04005200, Avenue~NS & Avenue~CES) // OxD Long T 3
+    add(0x04008500, Avenue~NC & Avenue~NE) // DxO T
+
 
     // Road intersections
     add(0x03010100, Road~NS & Rail~WE)
@@ -292,8 +319,11 @@ class MiscResolver extends IdResolver {
     add(0x04008800, Road~WC & Avenue~SN)
     add(0x04001300, Road~ES & Avenue~SN)
     add(0x04001900, Road~WN & Avenue~SN)
+    add(0x04001400, Road~CSE & Avenue~SN)
+    add(0x04002000, Road~CWN & Avenue~SN)
     add(0x04005700, Road~NS & Avenue~ES)
     add(0x04006000, Road~NS & Avenue~SharedDiagRight)
+    add(0x04006600, Road~CS & Avenue~ES)
     add(0x04020200, Road~ES & Avenue~NE)
     add(0x04023800, Road~ES & Avenue~SharedDiagLeft)
     add(0x08dd0100, Road~ES & Lightrail~NS)
@@ -325,6 +355,25 @@ class MiscResolver extends IdResolver {
     add(0x5f072700, Road~(0,0,2,2) & Street~(2,3,0,0))
     add(0x5760c700, Road~(0,2,2,0) & Dirtroad~CS)
     add(0x5760b500, Road~(2,2,0,0) & Dirtroad~(0,0,2,2))
+    // Diagonal T-Ints
+    add(0x5F972600, Road~WE & Onewayroad~CNE) // Onewayroad OxD T
+    add(0x09703A00, Road~NE & Onewayroad~CS) // Onewayroad DxO T1
+    add(0x09703C00, Road~WS & Onewayroad~CS) // Onewayroad DxO T2
+    add(0x09802E00, Road~SE & Onewayroad~CEN) // Onewayroad DxD T1
+    add(0x09802F00, Road~WN & Onewayroad~CSW) // Onewayroad DxD T2
+    add(0x5F471300, Road~NS & Avenue~(0,0,0,1)) // Avenue OxD T1
+    add(0x5F471F00, Road~NS & Avenue~(1,0,0,3)) // Avenue OxD T2 
+    add(0x5F472300, Road~NS & Avenue~(0,0,0,3)) // Avenue OxD T3
+    add(0x5F077B00, Road~EN & Avenue~CW) // Avenue DxO T1a
+    add(0x5F077900, Road~SW & Avenue~CW) // Avenue DxO T1a
+    add(0x5F077A00, Road~EN & Avenue~WC) // Avenue DxO T2a
+    add(0x5F077C00, Road~SW & Avenue~WC) // Avenue DxO T2a
+    add(0x00051100, Road~SE & Avenue~(0,0,3,0)) // Avenue DxD T1a
+    add(0x04023900, Road~SE & Avenue~(3,1,0,0)) // Avenue DxD T1b
+    add(0x04003700, Road~SE & Avenue~(0,0,3,1)) // Avenue DxD T2
+    add(0x5F473200, Road~CNE & Avenue~EW) // Orth Ave x Diag Road Short T
+    add(0x5F077800, Road~CS & Avenue~WN) // Diag Ave x Orth Road Short T
+    add(0x5F077400, Road~CSW & Avenue~ES) // Diag Ave x Diag Road Short T
 
     // Road roundabouts
     add(0x5F06BC80, RdRndbt~(0,2,0,-2))                       // surrogate tile "straight roundabout"
@@ -437,8 +486,17 @@ class MiscResolver extends IdResolver {
     add(0x091a8800, Onewayroad~WC & Avenue~SN)
     add(0x091a1300, Onewayroad~ES & Avenue~SN)
     add(0x091a1900, Onewayroad~WN & Avenue~SN)
+    // add(0x091a1400, Onewayroad~CSE & Avenue~SN)
+    // add(0x091a2000, Onewayroad~CWN & Avenue~SN)
+    builder.addOne((Onewayroad~CSE).projectLeft  & Avenue~SN, IdTile(0x091a1400, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~CSE).projectRight & Avenue~SN, IdTile(0x491a1400, R0F0, mirroredOnly))
+    builder.addOne((Onewayroad~CWN).projectLeft  & Avenue~SN, IdTile(0x091a2000, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~CWN).projectRight & Avenue~SN, IdTile(0x091a2000, R0F0, mirroredOnly))
     add(0x091a5700, Onewayroad~NS & Avenue~ES)
     add(0x091a6000, Onewayroad~NS & Avenue~SharedDiagRight)
+    // add(0x091a6600, Onewayroad~CS & Avenue~ES)
+    builder.addOne((Onewayroad~NS).projectLeft  & Avenue~ES, IdTile(0x091a6000, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~NS).projectRight & Avenue~ES, IdTile(0x491a6000, R0F0, mirroredOnly))
     add(0x091a0200, Onewayroad~ES & Avenue~NE)
     add(0x091a3800, Onewayroad~ES & Avenue~SharedDiagLeft)
     add(0x091d0100, Onewayroad~ES & Lightrail~NS)
@@ -449,8 +507,45 @@ class MiscResolver extends IdResolver {
     add(0x092d1600, Onewayroad~NS & Monorail~ES)
     add(0x092d1700, Onewayroad~SW & Monorail~ES)
     add(0x092d0200, Onewayroad~EW & Monorail~NS)
+    // Diagonal T-Ints
+    // add(0x5F973200, Onewayroad~WE & Road~CNE) // Road OxD T
+    builder.addOne((Onewayroad~WE).projectLeft  & Road~CNE, IdTile(0x5F973200, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WE).projectRight & Road~CNE, IdTile(0x7F973200, R0F0, mirroredOnly))
+    // add(0x09803A00, Onewayroad~NE & Road~CS) // Road DxO T1
+    // add(0x09803C00, Onewayroad~WS & Road~CS) // Road DxO T2
+    builder.addOne((Onewayroad~NE).projectLeft  & Road~CS, IdTile(0x09803A00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~NE).projectRight & Road~CS, IdTile(0x49803A00, R0F0, mirroredOnly))
+    builder.addOne((Onewayroad~WS).projectLeft  & Road~CS, IdTile(0x09803C00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WS).projectRight & Road~CS, IdTile(0x49803C00, R0F0, mirroredOnly))
+    add(0x09702E00, Onewayroad~SE & Road~CEN) // Road DxD T1
+    add(0x09702F00, Onewayroad~WN & Road~CSW) // Road DxD T2
+    // add(0x5F971D00, Onewayroad~NS & Avenue~(0,0,0,1)) // Avenue OxD T1
+    // add(0x5F971F00, Onewayroad~NS & Avenue~(1,0,0,3)) // Avenue OxD T2 
+    // add(0x5F971E00, Onewayroad~NS & Avenue~(0,0,0,3)) // Avenue OxD T3
+    builder.addOne((Onewayroad~NS).projectLeft  & Avenue~(0,0,0,1), IdTile(0x5F971D00, R0F0, nonMirroredOnly)) // Avenue OxD T1
+    builder.addOne((Onewayroad~NS).projectRight & Avenue~(0,0,0,1), IdTile(0x7F971D00, R0F0, mirroredOnly)) // Avenue OxD T1
+    builder.addOne((Onewayroad~NS).projectLeft  & Avenue~(1,0,0,3), IdTile(0x5F971F00, R0F0, nonMirroredOnly)) // Avenue OxD T2 
+    builder.addOne((Onewayroad~NS).projectRight & Avenue~(1,0,0,3), IdTile(0x7F971F00, R0F0, mirroredOnly)) // Avenue OxD T2 
+    builder.addOne((Onewayroad~NS).projectLeft  & Avenue~(0,0,0,3), IdTile(0x5F971E00, R0F0, nonMirroredOnly)) // Avenue OxD T3
+    builder.addOne((Onewayroad~NS).projectRight & Avenue~(0,0,0,3), IdTile(0x7F971E00, R0F0, mirroredOnly)) // Avenue OxD T3
+    // add(0x5F977B00, Onewayroad~EN & Avenue~CW) // Avenue DxO T1a
+    // add(0x5F977900, Onewayroad~SW & Avenue~CW) // Avenue DxO T1b
+    // add(0x5F977A00, Onewayroad~EN & Avenue~WC) // Avenue DxO T2a
+    // add(0x5F977C00, Onewayroad~SW & Avenue~WC) // Avenue DxO T2b
+    builder.addOne((Onewayroad~EN).projectLeft  & Avenue~CW, IdTile(0x5F977B00, R0F0, nonMirroredOnly)) // Avenue DxO T1a
+    builder.addOne((Onewayroad~EN).projectRight & Avenue~CW, IdTile(0x7F977B00, R0F0, mirroredOnly)) // Avenue DxO T1a
+    builder.addOne((Onewayroad~SW).projectLeft  & Avenue~CW, IdTile(0x5F977900, R0F0, nonMirroredOnly))// Avenue DxO T1b
+    builder.addOne((Onewayroad~SW).projectRight & Avenue~CW, IdTile(0x7F977900, R0F0, mirroredOnly))// Avenue DxO T1b
+    builder.addOne((Onewayroad~EN).projectLeft  & Avenue~WC, IdTile(0x5F977A00, R0F0, nonMirroredOnly))// Avenue DxO T2a
+    builder.addOne((Onewayroad~EN).projectRight & Avenue~WC, IdTile(0x7F977A00, R0F0, mirroredOnly))// Avenue DxO T2a
+    builder.addOne((Onewayroad~SW).projectLeft  & Avenue~WC, IdTile(0x5F977C00, R0F0, nonMirroredOnly))// Avenue DxO T2b
+    builder.addOne((Onewayroad~SW).projectRight & Avenue~WC, IdTile(0x7F977C00, R0F0, mirroredOnly))// Avenue DxO T2b
+    add(0x09051100, Onewayroad~SE & Avenue~(0,0,3,0)) // Avenue DxD T1a
+    add(0x091a3900, Onewayroad~SE & Avenue~(3,1,0,0)) // Avenue DxD T1b
+    add(0x091a3700, Onewayroad~SE & Avenue~(0,0,3,1)) // Avenue DxD T2
 
-    // Avenue + intersections
+
+    // Avenue intersections
     add(0x04002100, Avenue~ES & Rail~NE)
     add(0x04004300, Avenue~SharedDiagRight & Rail~SW)
     builder.addOne((Avenue~SN).projectLeft  & Rail~NE, IdTile(0x04001600, R0F0, nonMirroredOnly))
@@ -537,6 +632,97 @@ class MiscResolver extends IdResolver {
     add(0x57601300, Dirtroad~CE & Avenue~SN)
     add(0x57601309, Dirtroad~CE & Avenue~NS)
     add(0x57600400, Dirtroad~NS & Dirtroad~CE)
+
+    add(0x57602000, Dirtroad~NS & Street~CSE)
+    add(0x57602100, Dirtroad~NS & Road~CSE)
+    add(0x57602200, Dirtroad~NS & Onewayroad~CSE)
+    // add(0x57602300, Dirtroad~NS & Avenue~CSE) // RHW-Thru x Avenue-End T design and IIDs not finalized
+    add(0x57602400, Dirtroad~NS & Dirtroad~CSE)
+
+    add(0x57603000, Dirtroad~NC & Street~WS)
+    add(0x57603009, Dirtroad~NC & Street~NE)
+    add(0x57603100, Dirtroad~NC & Road~WS)
+    add(0x57603109, Dirtroad~NC & Road~NE)
+    add(0x57603200, Dirtroad~NC & Onewayroad~WS)
+    add(0x57603209, Dirtroad~NC & Onewayroad~NE)
+    add(0x57603300, Dirtroad~NC & Avenue~ES)
+    add(0x57603309, Dirtroad~CS & Avenue~SE)
+
+    add(0x57604000, Dirtroad~SE & Street~WC)
+    add(0x57604009, Dirtroad~SE & Street~CE)
+    add(0x57604100, Dirtroad~SE & Road~WC)
+    add(0x57604109, Dirtroad~SE & Road~CE)
+    add(0x57604200, Dirtroad~SE & Onewayroad~WC)
+    add(0x57604209, Dirtroad~SE & Onewayroad~CE)
+    // add(0x57604300, Dirtroad~SE & Avenue~CW) // RHW-Thru x Avenue-End T design and IIDs not finalized
+    add(0x57604400, Dirtroad~SE & Dirtroad~WC)
+    add(0x57604409, Dirtroad~SE & Dirtroad~CE)
+
+    add(0x57605000, Dirtroad~CSE & Street~NS)
+    add(0x57605100, Dirtroad~CSE & Road~NS)
+    add(0x57605200, Dirtroad~CSE & Onewayroad~NS)
+    add(0x57605300, Dirtroad~CSE & Avenue~NS) // Long T
+    add(0x57605309, Dirtroad~CWN & Avenue~NS) // Long T
+    add(0x57605400, Dirtroad~CWN & Avenue~SN) // Short T
+    add(0x57605409, Dirtroad~CES & Avenue~WE) // Short T
+
+    add(0x57606000, Dirtroad~WS & Street~CSE)
+    add(0x57606009, Dirtroad~SE & Street~CWS)
+    add(0x57606100, Dirtroad~WS & Road~CSE)
+    add(0x57606109, Dirtroad~SE & Road~CWS)
+    add(0x57606200, Dirtroad~WS & Onewayroad~CSE)
+    add(0x57606209, Dirtroad~SE & Onewayroad~CWS)
+    // add(0x57606300, Dirtroad~WS & Onewayroad~CSE) // RHW-Thru x Avenue-End T design and IIDs not finalized
+    add(0x57606400, Dirtroad~WS & Dirtroad~CSE)
+    add(0x57606409, Dirtroad~SE & Dirtroad~CWS)
+
+    add(0x57607000, Dirtroad~CSE & Street~WS)
+    add(0x57607009, Dirtroad~CWS & Street~SE)
+    add(0x57607100, Dirtroad~CSE & Road~WS)
+    add(0x57607109, Dirtroad~CWS & Road~SE)
+    add(0x57607200, Dirtroad~CSE & Onewayroad~WS)
+    add(0x57607209, Dirtroad~CWS & Onewayroad~SE)
+    add(0x57607300, Dirtroad~CSE & Avenue~SharedDiagLeft) // Long T
+    add(0x57607309, Dirtroad~CSE & Avenue~NE)  // Long T
+    add(0x57607400, Dirtroad~CSW & Avenue~ES) // Short T
+    add(0x57607409, Dirtroad~CE & Avenue~SharedDiagLeft) // Short T
+
+	// Rhw3
+    add(0x57610000, Rhw3~NS & Street~CE)
+    add(0x57611000, Rhw3~EC & Street~NS)
+    add(0x57610100, Rhw3~NS & Road~CE)
+    add(0x57611100, Rhw3~EC & Road~NS)
+    add(0x57610200, Rhw3~NS & Onewayroad~CE)
+    add(0x57611200, Rhw3~EC & Onewayroad~NS)
+    add(0x57610300, Rhw3~NS & Avenue~EC)
+    add(0x57611300, Rhw3~EC & Avenue~SN)
+    add(0x57611309, Rhw3~EC & Avenue~NS)
+    add(0x57610400, Rhw3~NS & Dirtroad~CE)
+
+	// Mis
+    add(0x57620000, Mis~NS & Street~CE)
+    add(0x57621000, Mis~EC & Street~NS)
+    add(0x57620100, Mis~NS & Road~CE)
+    add(0x57621100, Mis~EC & Road~NS)
+    add(0x57620200, Mis~NS & Onewayroad~CE)
+    add(0x57621200, Mis~EC & Onewayroad~NS)
+    add(0x57620300, Mis~NS & Avenue~EC)
+    add(0x57621300, Mis~EC & Avenue~SN)
+    add(0x57621309, Mis~EC & Avenue~NS)
+    add(0x57620400, Mis~NS & Dirtroad~CE)
+
+	// Rhw4
+    add(0x57630000, Rhw4~NS & Street~CE)
+    add(0x57631000, Rhw4~EC & Street~NS)
+    add(0x57630100, Rhw4~NS & Road~CE)
+    add(0x57631100, Rhw4~EC & Road~NS)
+    add(0x57630200, Rhw4~NS & Onewayroad~CE)
+    add(0x57631200, Rhw4~EC & Onewayroad~NS)
+    add(0x57630300, Rhw4~NS & Avenue~EC)
+    add(0x57631300, Rhw4~EC & Avenue~SN)
+    add(0x57631309, Rhw4~EC & Avenue~NS)
+    add(0x57630400, Rhw4~NS & Dirtroad~CE)
+
     // RHW on-slopes (orthogonal)
     for (rhw <- RhwNetworks if rhw.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(rhw)) 4 else 2
