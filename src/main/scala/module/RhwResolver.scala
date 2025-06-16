@@ -212,8 +212,8 @@ class RhwResolver extends IdResolver {
     add(0x57601C00, Dirtroad~CE & Nrd4~NS)
     add(0x57601D00, Dirtroad~CE & Tla5~SN) // Short-T
     add(0x57601D09, Dirtroad~CE & Tla5~NS) // Long-T
-    add(0x57601D00, Dirtroad~CE & Owr4~SN) // Short-T
-    add(0x57601D09, Dirtroad~CE & Owr4~NS) // Long-T
+    add(0x57601E00, Dirtroad~CE & Owr4~SN) // Short-T
+    add(0x57601E09, Dirtroad~CE & Owr4~NS) // Long-T
     add(0x57608400, Dirtroad~CE & Owr4m~SN) // Short-T
     add(0x57608409, Dirtroad~CE & Owr4m~NS) // Long-T
     add(0x57601F00, Dirtroad~CE & Owr5~SN) // Short-T
@@ -250,8 +250,8 @@ class RhwResolver extends IdResolver {
     add(0x57611C00, Rhw3~EC & Nrd4~NS)
     add(0x57611D00, Rhw3~EC & Tla5~SN) // Short-T
     add(0x57611D09, Rhw3~EC & Tla5~NS) // Long-T
-    add(0x57611D00, Rhw3~EC & Owr4~SN) // Short-T
-    add(0x57611D09, Rhw3~EC & Owr4~NS) // Long-T
+    add(0x57611E00, Rhw3~EC & Owr4~SN) // Short-T
+    add(0x57611E09, Rhw3~EC & Owr4~NS) // Long-T
     add(0x57618400, Rhw3~EC & Owr4m~SN) // Short-T
     add(0x57618409, Rhw3~EC & Owr4m~NS) // Long-T
     add(0x57611F00, Rhw3~EC & Owr5~SN) // Short-T
@@ -301,8 +301,8 @@ class RhwResolver extends IdResolver {
     add(0x57621C00, Mis~EC & Nrd4~NS)
     add(0x57621D00, Mis~EC & Tla5~SN) // Short-T
     add(0x57621D09, Mis~EC & Tla5~NS) // Long-T
-    add(0x57621D00, Mis~EC & Owr4~SN) // Short-T
-    add(0x57621D09, Mis~EC & Owr4~NS) // Long-T
+    add(0x57621E00, Mis~EC & Owr4~SN) // Short-T
+    add(0x57621E09, Mis~EC & Owr4~NS) // Long-T
     add(0x57628400, Mis~EC & Owr4m~SN) // Short-T
     add(0x57628409, Mis~EC & Owr4m~NS) // Long-T
     add(0x57621F00, Mis~EC & Owr5~SN) // Short-T
@@ -352,8 +352,8 @@ class RhwResolver extends IdResolver {
     add(0x57631C00, Rhw4~EC & Nrd4~NS)
     add(0x57631D00, Rhw4~EC & Tla5~SN) // Short-T
     add(0x57631D09, Rhw4~EC & Tla5~NS) // Long-T
-    add(0x57631D00, Rhw4~EC & Owr4~SN) // Short-T
-    add(0x57631D09, Rhw4~EC & Owr4~NS) // Long-T
+    add(0x57631E00, Rhw4~EC & Owr4~SN) // Short-T
+    add(0x57631E09, Rhw4~EC & Owr4~NS) // Long-T
     add(0x57638400, Rhw4~EC & Owr4m~SN) // Short-T
     add(0x57638409, Rhw4~EC & Owr4m~NS) // Long-T
     add(0x57631F00, Rhw4~EC & Owr5~SN) // Short-T
