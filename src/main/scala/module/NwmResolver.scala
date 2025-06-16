@@ -119,8 +119,21 @@ class NwmResolver extends IdResolver {
           add(id + 0x0b00, n~(0,+2,0,-11))  // 45 curve 2
           add(id + 0x0c00, n~(0,0,+1,-13))  // 45 curve 2
         }
-      } else {
+      }
+      if (n == Rd4) {
+        add(id + 0x0D00, n~(1,0,0,3)) // diag stub inside
+      } 
+      // if (n == Owr4 || n == Owr4m) {
+        // add(id + 0x0D00, Owr4~(1,0,0,0) && Owr4m~(0,0,0,3)) // diag stub inside
+      // } 
+      if (n == Tla5 || n == Owr5 || n == Rd6 || n == Ave6 || n == Ave8) {
         // multi-tile networks (partially defined in MiscResolver)
+        add(id + 0x0D00, n~orientA(SWC))  // diag stub 1
+        add(id + 0x0C00, n~orientA(CWS))  // diag stub 2
+      }
+      if (n == Tla7m || n == Ave6m) {
+        // multi-tile networks (partially defined in MiscResolver)
+        add(id + 0x0C00, n~orientA(SWC))  // diag stub 1
       }
     }
 
@@ -238,42 +251,223 @@ class NwmResolver extends IdResolver {
     }
 
     //T-intersections
-    //OxO NWM-Thru
-    for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {
+    //NWM-Thru
+    //Single-Tile Networks except Tla3
+    for (n <- Seq(Ave2, Ard3, Owr1, Owr3, Nrd4)) {
+      //OxO
       add(nwmRangeId(n) + 0x3000, n~WE & Street~CS)  // Street
       add(nwmRangeId(n) + 0x3100, n~WE & Road~CS)  // Road
       add(nwmRangeId(n) + 0x3200, n~WE & Onewayroad~CS)  // Onewayroad
       add(nwmRangeId(n) + 0x4300, n~WE & Avenue~NC, when = n != Owr1)  // Avenue
       add(nwmRangeId(n) + 0x3800, n~NS & Tla3~CE)  // TLA-3
       add(nwmRangeId(n) + 0x3900, n~NS & Ave2~CE)  // AVE-2
-      add(nwmRangeId(n) + 0x3A00, n~NS & Ard3~EC, when = n != Owr1 && n != Tla3)  // ARD-3a
-      // add(nwmRangeId(n) + 0x3A80, n~NS & Ard3~EC, when = n != Owr1 && (n == Ard3))  // ARD-3b
+      add(nwmRangeId(n) + 0x3A00, n~NS & Ard3~EC, when = n != Owr1)  // ARD-3a
       add(nwmRangeId(n) + 0x3B00, n~NS & Owr1~CE)  // OWR-1
       add(nwmRangeId(n) + 0x3C00, n~NS & Owr3~CE, when = n != Ave2 || n != Owr1)  // OWR-3
       add(nwmRangeId(n) + 0x3D00, n~NS & Nrd4~CE, when = n != Owr1)  // NRD-4
       add(nwmRangeId(n) + 0x4800, n~NS & Tla5~EC, when = n != Owr1)  // TLA-5
       add(nwmRangeId(n) + 0x4A00, n~NS & Rd4~EC, when = n != Owr1)  // RD-4
+      add(nwmRangeId(n) + 0x4B00, n~NS & Rd6~EC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // RD-4
+      add(nwmRangeId(n) + 0x4C00, n~NS & Ave6~EC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // AVE-6
+      add(nwmRangeId(n) + 0x4C09, n~NS & Tla7m~EC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // TLA-M
+      add(nwmRangeId(n) + 0x4D09, n~NS & Ave6m~EC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // AVE-M
+      add(nwmRangeId(n) + 0x4900, n~NS & Owr4~EC, when = n == Nrd4)  // OWR-4
+      add(nwmRangeId(n) + 0x4909, n~NS & Owr4m~EC, when = n == Nrd4)  // OWR-4m
+      add(nwmRangeId(n) + 0x4D00, n~NS & Ave8~EC, when = n == Nrd4)  // AVE-8
+      //OxD
+      add(nwmRangeId(n) + 0xA000, n~NS & Street~CSE)  // Street
+      add(nwmRangeId(n) + 0xA100, n~NS & Road~CSE)  // Road
+      add(nwmRangeId(n) + 0xA200, n~NS & Onewayroad~CSE)  // Onewayroad
+      add(nwmRangeId(n) + 0xA300, n~NS & Avenue~(0,0,0,1), when = n != Owr1)  // Avenue
+      add(nwmRangeId(n) + 0xA400, n~NS & Avenue~(1,0,0,3), when = n != Owr1)  // Avenue
+      add(nwmRangeId(n) + 0xA309, n~NS & Avenue~(0,0,0,3), when = n != Owr1)  // Avenue
+      add(nwmRangeId(n) + 0xAA00, n~NS & Tla3~CSE)  // Tla3
+      add(nwmRangeId(n) + 0xAB00, n~NS & Ave2~CSE)  // Ave2
+      add(nwmRangeId(n) + 0xAC00, n~NS & Ard3~ESC, when = n != Owr1)  // Ard3
+      add(nwmRangeId(n) + 0xAC80, n~NS & Ard3~CSE, when = n != Owr1)  // Ard3
+      add(nwmRangeId(n) + 0xAD00, n~NS & Owr1~CSE)  // Owr1
+      add(nwmRangeId(n) + 0xAE00, n~NS & Owr3~CSE, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // Owr3
+      add(nwmRangeId(n) + 0xAF00, n~NS & Nrd4~CSE, when = n != Owr1)  // Nrd4
+      //DxO
+      add(nwmRangeId(n) + 0xB000, n~SE & Street~WC)  // Street 1
+      add(nwmRangeId(n) + 0xB009, n~WN & Street~WC)  // Street 2
+      add(nwmRangeId(n) + 0xB100, n~SE & Road~WC)  // Road 1
+      add(nwmRangeId(n) + 0xB109, n~WN & Road~WC)  // Road 2
+      add(nwmRangeId(n) + 0xB200, n~SE & Onewayroad~WC)  // Onewayroad 1
+      add(nwmRangeId(n) + 0xB209, n~WN & Onewayroad~WC)  // Onewayroad 2
+      add(nwmRangeId(n) + 0xB309, n~EN & Avenue~CW)  // Avenue 1a
+      add(nwmRangeId(n) + 0xB300, n~SW & Avenue~CW)  // Avenue 1b
+      add(nwmRangeId(n) + 0xB400, n~EN & Avenue~WC)  // Avenue 2a
+      add(nwmRangeId(n) + 0xB409, n~SW & Avenue~WC)  // Avenue 2b
+      add(nwmRangeId(n) + 0xBA00, n~SE & Tla3~WC)  // Tla3 1 - might need projection
+      add(nwmRangeId(n) + 0xBA09, n~WN & Tla3~WC)  // Tla3 2 - might need projection
+      add(nwmRangeId(n) + 0xBB00, n~SE & Ave2~WC)  // Ave2 1
+      add(nwmRangeId(n) + 0xBB09, n~WN & Ave2~WC)  // Ave2 2
+      add(nwmRangeId(n) + 0xBC00, n~SE & Ard3~WC, when = n != Owr1)  // Ard3 1a
+      add(nwmRangeId(n) + 0xBC09, n~WN & Ard3~WC, when = n != Owr1)  // Ard3 1b
+      add(nwmRangeId(n) + 0xBC80, n~SE & Ard3~CW, when = n != Owr1)  // Ard3 2a
+      add(nwmRangeId(n) + 0xBC89, n~WN & Ard3~CW, when = n != Owr1)  // Ard3 2b
+      add(nwmRangeId(n) + 0xBD00, n~SE & Owr1~WC)  // Owr1 1
+      add(nwmRangeId(n) + 0xBD09, n~WN & Owr1~WC)  // Owr1 2
+      add(nwmRangeId(n) + 0xBE00, n~SE & Owr3~WC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // Owr3 1
+      add(nwmRangeId(n) + 0xBE09, n~WN & Owr3~WC, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // Owr3 2
+      add(nwmRangeId(n) + 0xBF00, n~SE & Nrd4~WC)  // Nrd4 1
+      add(nwmRangeId(n) + 0xBF09, n~WN & Nrd4~WC)  // Nrd4 2
+      //DxD
+      add(nwmRangeId(n) + 0xC000, n~SE & Street~CSW)  // Street 1      
+      add(nwmRangeId(n) + 0xC009, n~WN & Street~CEN)  // Street 2      
+      add(nwmRangeId(n) + 0xC100, n~SE & Road~CSW)  // Road 1      
+      add(nwmRangeId(n) + 0xC109, n~WN & Road~CEN)  // Road 2      
+      add(nwmRangeId(n) + 0xC200, n~SE & Onewayroad~CSW)  // Onewayroad 1      
+      add(nwmRangeId(n) + 0xC209, n~WN & Onewayroad~CEN)  // Onewayroad 2
+      add(nwmRangeId(n) + 0xC300, n~SE & Avenue~CSW)  // Avenue 1a     
+      add(nwmRangeId(n) + 0xC309, n~SE & Avenue~(3,1,0,0))  // Avenue 2a
+      add(nwmRangeId(n) + 0xC400, n~SE & Avenue~CNE)  // Avenue 1b     
+      add(nwmRangeId(n) + 0xC409, n~SE & Avenue~(0,0,3,1))  // Avenue 2b
+      add(nwmRangeId(n) + 0xCA00, n~SE & Tla3~CSW)  // Tla3 1 - might need projection      
+      add(nwmRangeId(n) + 0xCA09, n~WN & Tla3~CEN)  // Tla3 2 - might need projection     
+      add(nwmRangeId(n) + 0xCB00, n~SE & Ave2~CSW)  // Ave2 1      
+      add(nwmRangeId(n) + 0xCB09, n~WN & Ave2~CEN)  // Ave2 2      
+      add(nwmRangeId(n) + 0xCC00, n~SE & Ard3~WSC, when = n != Owr1)  // Ard3 1a      
+      add(nwmRangeId(n) + 0xCC09, n~WN & Ard3~CEN, when = n != Owr1)  // Ard3 1b      
+      add(nwmRangeId(n) + 0xCC80, n~SE & Ard3~CSW, when = n != Owr1)  // Ard3 2a      
+      add(nwmRangeId(n) + 0xCC89, n~WN & Ard3~NEC, when = n != Owr1)  // Ard3 2b      
+      add(nwmRangeId(n) + 0xCD00, n~SE & Owr1~CSW)  // Owr1 1      
+      add(nwmRangeId(n) + 0xCD09, n~WN & Owr1~CEN)  // Owr1 2      
+      add(nwmRangeId(n) + 0xCE00, n~SE & Owr3~CSW, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // Owr3 1      
+      add(nwmRangeId(n) + 0xCE09, n~WN & Owr3~CEN, when = (n == Ard3 || n == Owr3 || n == Nrd4))  // Owr3 2      
+      add(nwmRangeId(n) + 0xCF00, n~SE & Nrd4~CSW)  // Nrd4 1      
+      add(nwmRangeId(n) + 0xCF09, n~WN & Nrd4~CEN)  // Nrd4 2      
     }
 
-    for (n <- Seq(Ard3, Owr3, Nrd4)) {
-      add(nwmRangeId(n) + 0x4B00, n~NS & Rd6~EC)  // RD-4
-      add(nwmRangeId(n) + 0x4C00, n~NS & Ave6~EC)  // AVE-6
-      add(nwmRangeId(n) + 0x4C09, n~NS & Tla7m~EC)  // TLA-M
-      add(nwmRangeId(n) + 0x4D09, n~NS & Ave6m~EC)  // AVE-M
-    }
-
-    for (n <- Seq(Nrd4)) {
-      add(nwmRangeId(n) + 0x4900, n~NS & Owr4~EC)  // OWR-4
-      add(nwmRangeId(n) + 0x4909, n~NS & Owr4m~EC)  // OWR-4m
-      add(nwmRangeId(n) + 0x4D00, n~NS & Ave8~EC)  // AVE-8
-    }
-
+    // Tla3 Situations
     for (n <- Seq(Tla3)) {
-      builder.addOne((Tla3~NS).projectLeft  & Ard3~CE, IdTile(0x51003A80, R0F0, nonMirroredOnly))
-      builder.addOne((Tla3~NS).projectRight  & Ard3~EC, IdTile(0x51003A00, R0F0, nonMirroredOnly))
-    }
+      //OxO
+      add(nwmRangeId(n) + 0x3000, n~WE & Street~CS)  // Street
+      add(nwmRangeId(n) + 0x3100, n~WE & Road~CS)  // Road
+      add(nwmRangeId(n) + 0x3200, n~WE & Onewayroad~CS)  // Onewayroad
+      add(nwmRangeId(n) + 0x4300, n~WE & Avenue~NC, when = n != Owr1)  // Avenue
+      add(nwmRangeId(n) + 0x3800, n~NS & Tla3~CE)  // TLA-3
+      add(nwmRangeId(n) + 0x3900, n~NS & Ave2~CE)  // AVE-2
+      builder.addOne((Tla3~NS).projectLeft  & Ard3~CE, IdTile(0x51003A80, R0F0, nonMirroredOnly)) //Ard-3a with Tla3
+      builder.addOne((Tla3~NS).projectRight  & Ard3~EC, IdTile(0x51003A00, R0F0, nonMirroredOnly)) //Ard-3b with Tla3
+      add(nwmRangeId(n) + 0x3B00, n~NS & Owr1~CE)  // OWR-1
+      add(nwmRangeId(n) + 0x3D00, n~NS & Nrd4~CE, when = n != Owr1)  // NRD-4
+      add(nwmRangeId(n) + 0x4800, n~NS & Tla5~EC, when = n != Owr1)  // TLA-5
+      add(nwmRangeId(n) + 0x4A00, n~NS & Rd4~EC, when = n != Owr1)  // RD-4
+      //OxD
+      builder.addOne((Tla3~NS).projectLeft  & Street~CSE, IdTile(0x5100A000, R0F0, nonMirroredOnly)) // Street
+      builder.addOne((Tla3~NS).projectRight  & Street~CSE, IdTile(0x7100A000, R0F0, mirroredOnly)) // Street
+      builder.addOne((Tla3~NS).projectLeft  & Road~CSE, IdTile(0x5100A100, R0F0, nonMirroredOnly)) // Road
+      builder.addOne((Tla3~NS).projectRight  & Road~CSE, IdTile(0x7100A100, R0F0, mirroredOnly)) // Road
+      builder.addOne((Tla3~NS).projectLeft  & Onewayroad~CSE, IdTile(0x5100A200, R0F0, nonMirroredOnly)) // Onewayroad
+      builder.addOne((Tla3~NS).projectRight  & Onewayroad~CSE, IdTile(0x7100A200, R0F0, mirroredOnly)) // Onewayroad
+      builder.addOne((Tla3~NS).projectLeft  & Avenue~(0,0,0,1), IdTile(0x5100A300, R0F0, nonMirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectRight  & Avenue~(0,0,0,1), IdTile(0x7100A300, R0F0, mirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectLeft  & Avenue~(1,0,0,3), IdTile(0x5100A400, R0F0, nonMirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectRight  & Avenue~(1,0,0,3), IdTile(0x7100A400, R0F0, mirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectLeft  & Avenue~(0,0,0,3), IdTile(0x5100A309, R0F0, nonMirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectRight  & Avenue~(0,0,0,3), IdTile(0x7100A309, R0F0, mirroredOnly)) // Avenue
+      builder.addOne((Tla3~NS).projectLeft  & (Tla3~CSE).projectLeft, IdTile(0x5100AA00, R0F0, nonMirroredOnly)) // Tla3
+      builder.addOne((Tla3~NS).projectRight  & (Tla3~CSE).projectRight, IdTile(0x7100AA00, R0F0, mirroredOnly)) // Tla3
+      builder.addOne((Tla3~NS).projectLeft  & Ave2~CSE, IdTile(0x5100AB00, R0F0, nonMirroredOnly)) // Ave2
+      builder.addOne((Tla3~NS).projectRight  & Ave2~CSE, IdTile(0x7100AB00, R0F0, mirroredOnly)) // Ave2
+      builder.addOne((Tla3~NS).projectLeft  & Ard3~CSE, IdTile(0x5100AC00, R0F0, nonMirroredOnly)) // Ard3
+      builder.addOne((Tla3~NS).projectRight  & Ard3~CSE, IdTile(0x7100AC00, R0F0, mirroredOnly)) // Ard3
+      builder.addOne((Tla3~NS).projectLeft  & Ard3~ESC, IdTile(0x5100AC80, R0F0, nonMirroredOnly)) // Ard3
+      builder.addOne((Tla3~NS).projectRight  & Ard3~ESC, IdTile(0x7100AC80, R0F0, mirroredOnly)) // Ard3
+      builder.addOne((Tla3~NS).projectLeft  & Owr1~CSE, IdTile(0x5100AD00, R0F0, nonMirroredOnly)) // Owr1
+      builder.addOne((Tla3~NS).projectRight  & Owr1~CSE, IdTile(0x7100AD00, R0F0, mirroredOnly)) // Owr1
+      builder.addOne((Tla3~NS).projectLeft  & Nrd4~CSE, IdTile(0x5100AF00, R0F0, nonMirroredOnly)) // Nrd4
+      builder.addOne((Tla3~NS).projectRight  & Nrd4~CSE, IdTile(0x7100AF00, R0F0, mirroredOnly)) // Nrd4
+      //DxO
+      builder.addOne((Tla3~SE).projectLeft  & Street~WC, IdTile(0x5100B000, R0F0, nonMirroredOnly)) // Street 1
+      builder.addOne((Tla3~SE).projectRight  & Street~WC, IdTile(0x7100B000, R0F0, mirroredOnly)) // Street 1
+      builder.addOne((Tla3~WN).projectLeft  & Street~WC, IdTile(0x5100B009, R0F0, nonMirroredOnly)) // Street 2
+      builder.addOne((Tla3~WN).projectRight  & Street~WC, IdTile(0x7100B009, R0F0, mirroredOnly)) // Street 2
+      builder.addOne((Tla3~SE).projectLeft  & Road~WC, IdTile(0x5100B100, R0F0, nonMirroredOnly)) // Road 1
+      builder.addOne((Tla3~SE).projectRight  & Road~WC, IdTile(0x7100B100, R0F0, mirroredOnly)) // Road 1
+      builder.addOne((Tla3~WN).projectLeft  & Road~WC, IdTile(0x5100B109, R0F0, nonMirroredOnly)) // Road 2
+      builder.addOne((Tla3~WN).projectRight  & Road~WC, IdTile(0x7100B109, R0F0, mirroredOnly)) // Road 2
+      builder.addOne((Tla3~SE).projectLeft  & Onewayroad~WC, IdTile(0x5100B200, R0F0, nonMirroredOnly)) // Onewayroad 1
+      builder.addOne((Tla3~SE).projectRight  & Onewayroad~WC, IdTile(0x7100B200, R0F0, mirroredOnly)) // Onewayroad 1
+      builder.addOne((Tla3~WN).projectLeft  & Onewayroad~WC, IdTile(0x5100B209, R0F0, nonMirroredOnly)) // Onewayroad 2
+      builder.addOne((Tla3~WN).projectRight  & Onewayroad~WC, IdTile(0x7100B209, R0F0, mirroredOnly)) // Onewayroad 2
+      builder.addOne((Tla3~EN).projectLeft  & Avenue~CW, IdTile(0x5100B309, R0F0, nonMirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~EN).projectRight  & Avenue~CW, IdTile(0x7100B309, R0F0, mirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~SW).projectLeft  & Avenue~CW, IdTile(0x5100B300, R0F0, nonMirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~SW).projectRight  & Avenue~CW, IdTile(0x7100B300, R0F0, mirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~EN).projectLeft  & Avenue~WC, IdTile(0x5100B400, R0F0, nonMirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~EN).projectRight  & Avenue~WC, IdTile(0x5100B400, R0F0, mirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~SW).projectLeft  & Avenue~WC, IdTile(0x7100B409, R0F0, nonMirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~SW).projectRight  & Avenue~WC, IdTile(0x7100B409, R0F0, mirroredOnly)) // Avenue 2
+      builder.addOne((Tla3~SE).projectLeft  & (Tla3~WC).projectLeft, IdTile(0x5100BA00, R0F0, nonMirroredOnly)) // Tla3 1
+      builder.addOne((Tla3~SE).projectRight  & (Tla3~WC).projectRight, IdTile(0x7100BA00, R0F0, mirroredOnly)) // Tla3 1
+      builder.addOne((Tla3~WN).projectLeft  & (Tla3~WC).projectLeft, IdTile(0x5100BA09, R0F0, nonMirroredOnly)) // Tla3 2
+      builder.addOne((Tla3~WN).projectRight  & (Tla3~WC).projectRight, IdTile(0x7100BA09, R0F0, mirroredOnly)) // Tla3 2
+      builder.addOne((Tla3~SE).projectLeft  & Ave2~WC, IdTile(0x5100BB00, R0F0, nonMirroredOnly)) // Ave2 1
+      builder.addOne((Tla3~SE).projectRight  & Ave2~WC, IdTile(0x7100BB00, R0F0, mirroredOnly)) // Ave2 1
+      builder.addOne((Tla3~WN).projectLeft  & Ave2~WC, IdTile(0x5100BB09, R0F0, nonMirroredOnly)) // Ave2 2
+      builder.addOne((Tla3~WN).projectRight  & Ave2~WC, IdTile(0x7100BB09, R0F0, mirroredOnly)) // Ave2 2
+      builder.addOne((Tla3~SE).projectLeft  & Ard3~WC, IdTile(0x5100BC00, R0F0, nonMirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~SE).projectRight  & Ard3~WC, IdTile(0x7100BC00, R0F0, mirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~WN).projectLeft  & Ard3~WC, IdTile(0x5100BC09, R0F0, nonMirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~WN).projectRight  & Ard3~WC, IdTile(0x7100BC09, R0F0, mirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~SE).projectLeft  & Ard3~CW, IdTile(0x5100BC80, R0F0, nonMirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~SE).projectRight  & Ard3~CW, IdTile(0x7100BC80, R0F0, mirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~WN).projectLeft  & Ard3~CW, IdTile(0x5100BC89, R0F0, nonMirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~WN).projectRight  & Ard3~CW, IdTile(0x7100BC89, R0F0, mirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~SE).projectLeft  & Owr1~WC, IdTile(0x5100BD00, R0F0, nonMirroredOnly)) // Owr1 1a
+      builder.addOne((Tla3~SE).projectRight  & Owr1~WC, IdTile(0x7100BD00, R0F0, mirroredOnly)) // Owr1 1a
+      builder.addOne((Tla3~WN).projectLeft  & Owr1~WC, IdTile(0x5100BD09, R0F0, nonMirroredOnly)) // Owr1 2a
+      builder.addOne((Tla3~WN).projectRight  & Owr1~WC, IdTile(0x7100BD09, R0F0, mirroredOnly)) // Owr1 2a
+      builder.addOne((Tla3~SE).projectLeft  & Nrd4~WC, IdTile(0x5100BF00, R0F0, nonMirroredOnly)) // Nrd4 1a
+      builder.addOne((Tla3~SE).projectRight  & Nrd4~WC, IdTile(0x7100BF00, R0F0, mirroredOnly)) // Nrd4 1a
+      builder.addOne((Tla3~WN).projectLeft  & Nrd4~WC, IdTile(0x5100BF09, R0F0, nonMirroredOnly)) // Nrd4 2a
+      builder.addOne((Tla3~WN).projectRight  & Nrd4~WC, IdTile(0x7100BF09, R0F0, mirroredOnly)) // Nrd4 2a
+      //DxD
+      builder.addOne((Tla3~SE).projectLeft  & Street~CSW, IdTile(0x5100C000, R0F0, nonMirroredOnly)) // Street 1
+      builder.addOne((Tla3~SE).projectRight  & Street~CSW, IdTile(0x7100C000, R0F0, mirroredOnly)) // Street 1
+      builder.addOne((Tla3~WN).projectLeft  & Street~CEN, IdTile(0x5100C009, R0F0, nonMirroredOnly)) // Street 2
+      builder.addOne((Tla3~WN).projectRight  & Street~CEN, IdTile(0x7100C009, R0F0, mirroredOnly)) // Street 2
+      builder.addOne((Tla3~SE).projectLeft  & Road~CSW, IdTile(0x5100C100, R0F0, nonMirroredOnly)) // Road 1
+      builder.addOne((Tla3~SE).projectRight  & Road~CSW, IdTile(0x7100C100, R0F0, mirroredOnly)) // Road 1
+      builder.addOne((Tla3~WN).projectLeft  & Road~CEN, IdTile(0x5100C109, R0F0, nonMirroredOnly)) // Road 2
+      builder.addOne((Tla3~WN).projectRight  & Road~CEN, IdTile(0x7100C109, R0F0, mirroredOnly)) // Road 2
+      builder.addOne((Tla3~SE).projectLeft  & Onewayroad~CSW, IdTile(0x5100C200, R0F0, nonMirroredOnly)) // Onewayroad 1
+      builder.addOne((Tla3~SE).projectRight  & Onewayroad~CSW, IdTile(0x7100C200, R0F0, mirroredOnly)) // Onewayroad 1
+      builder.addOne((Tla3~WN).projectLeft  & Onewayroad~CEN, IdTile(0x5100C209, R0F0, nonMirroredOnly)) // Onewayroad 2
+      builder.addOne((Tla3~WN).projectRight  & Onewayroad~CEN, IdTile(0x7100C209, R0F0, mirroredOnly)) // Onewayroad 2
+      // add Avenue 
+      builder.addOne((Tla3~SE).projectLeft  & (Tla3~CSW).projectLeft, IdTile(0x5100CA00, R0F0, nonMirroredOnly)) // Tla3 1
+      builder.addOne((Tla3~SE).projectRight  & (Tla3~CSW).projectRight, IdTile(0x7100CA00, R0F0, mirroredOnly)) // Tla3 1
+      builder.addOne((Tla3~WN).projectLeft  & (Tla3~CEN).projectLeft, IdTile(0x5100CA09, R0F0, nonMirroredOnly)) // Tla3 2
+      builder.addOne((Tla3~WN).projectRight  & (Tla3~CEN).projectRight, IdTile(0x7100CA09, R0F0, mirroredOnly)) // Tla3 2
+      builder.addOne((Tla3~SE).projectLeft  & Ave2~CSW, IdTile(0x5100CB00, R0F0, nonMirroredOnly)) // Ave2 1
+      builder.addOne((Tla3~SE).projectRight  & Ave2~CSW, IdTile(0x7100CB00, R0F0, mirroredOnly)) // Ave2 1
+      builder.addOne((Tla3~WN).projectLeft  & Ave2~CEN, IdTile(0x5100CB09, R0F0, nonMirroredOnly)) // Ave2 2
+      builder.addOne((Tla3~WN).projectRight  & Ave2~CEN, IdTile(0x7100CB09, R0F0, mirroredOnly)) // Ave2 2
+      builder.addOne((Tla3~SE).projectLeft  & Ard3~CSW, IdTile(0x5100CC00, R0F0, nonMirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~SE).projectRight  & Ard3~CSW, IdTile(0x7100CC00, R0F0, mirroredOnly)) // Ard3 1a
+      builder.addOne((Tla3~WN).projectLeft  & Ard3~CEN, IdTile(0x5100CC09, R0F0, nonMirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~WN).projectRight  & Ard3~CEN, IdTile(0x7100CC09, R0F0, mirroredOnly)) // Ard3 2a
+      builder.addOne((Tla3~SE).projectLeft  & Ard3~WSC, IdTile(0x5100CC80, R0F0, nonMirroredOnly)) // Ard3 1b
+      builder.addOne((Tla3~SE).projectRight  & Ard3~WSC, IdTile(0x7100CC80, R0F0, mirroredOnly)) // Ard3 1b
+      builder.addOne((Tla3~WN).projectLeft  & Ard3~NEC, IdTile(0x5100CC89, R0F0, nonMirroredOnly)) // Ard3 2b
+      builder.addOne((Tla3~WN).projectRight  & Ard3~NEC, IdTile(0x7100CC89, R0F0, mirroredOnly)) // Ard3 2b
+      builder.addOne((Tla3~SE).projectLeft  & Owr1~CSW, IdTile(0x5100CD00, R0F0, nonMirroredOnly)) // Owr1 1
+      builder.addOne((Tla3~SE).projectRight  & Owr1~CSW, IdTile(0x7100CD00, R0F0, mirroredOnly)) // Owr1 1
+      builder.addOne((Tla3~WN).projectLeft  & Owr1~CEN, IdTile(0x5100CD09, R0F0, nonMirroredOnly)) // Owr1 2
+      builder.addOne((Tla3~WN).projectRight  & Owr1~CEN, IdTile(0x7100CD09, R0F0, mirroredOnly)) // Owr1 2
+      builder.addOne((Tla3~SE).projectLeft  & Nrd4~CSW, IdTile(0x5100CF00, R0F0, nonMirroredOnly)) // Nrd4 1
+      builder.addOne((Tla3~SE).projectRight  & Nrd4~CSW, IdTile(0x7100CF00, R0F0, mirroredOnly)) // Nrd4 1
+      builder.addOne((Tla3~WN).projectLeft  & Nrd4~CEN, IdTile(0x5100CF09, R0F0, nonMirroredOnly)) // Nrd4 2
+      builder.addOne((Tla3~WN).projectRight  & Nrd4~CEN, IdTile(0x7100CF09, R0F0, mirroredOnly)) // Nrd4 2
+   }
 
+    // Ard3-Specific Situations
     for (n <- Seq(Ard3)) {
+      //OxO
       add(nwmRangeId(n) + 0x3080, n~EW & Street~CS)  // Street
       add(nwmRangeId(n) + 0x3180, n~EW & Road~CS)  // Road
       add(nwmRangeId(n) + 0x3280, n~EW & Onewayroad~CS)  // Onewayroad
@@ -292,6 +486,7 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0x4D89, n~SN & Ave6m~EC)  // AVE-Mb
     }
 
+    //Multi-Tile Networks
     for (n <- Seq(Tla5, Owr4, Owr4m, Owr5, Rd4, Rd6, Ave6, Ave8)) {
       add(nwmRangeId(n) + 0x3000, n~EW & Street~NC)  // Street Short
       add(nwmRangeId(n) + 0x3080, n~WE & Street~NC)  // Street Long
@@ -315,7 +510,7 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0x3D80, n~WE & Nrd4~NC)  // NRD-4 Long
       add(nwmRangeId(n) + 0x3E00, n~WE & Tla5~NC)  // TLA-5 Long
       add(nwmRangeId(n) + 0x3F00, n~WE & Owr4~NC)  // OWR-4 Long
-      add(nwmRangeId(n) + 0x3F09, n~WE & Owr4m~NC)  // OWR-4m Long
+      add(nwmRangeId(n) + 0x3700, n~WE & Owr4m~NC)  // OWR-4m Long
       add(nwmRangeId(n) + 0x4000, n~WE & Owr5~NC)  // OWR-5 Long
       add(nwmRangeId(n) + 0x4100, n~WE & Rd4~NC)  // RD-4 Long
       add(nwmRangeId(n) + 0x4200, n~WE & Rd6~NC)  // RD-6 Long
@@ -325,24 +520,49 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0x4980, n~WE & Ave6m~NC)  // AVE-M Long
     }
 
-    //OxO NWM-End
+    //NWM-End
+    //Single-Tile Networks
     for (n <- Seq(Tla3, Ave2, Ard3, Owr1, Owr3, Nrd4)) {
+      //OxO
       add(nwmRangeId(n) + 0x4000, n~CE & Street~NS)  // Street
       add(nwmRangeId(n) + 0x4100, n~CE & Road~NS)  // Road
-      add(nwmRangeId(n) + 0x4200, n~CE & Onewayroad~NS)  // Onewayroad
-      add(nwmRangeId(n) + 0x3300, n~CE & Avenue~SN, when = n != Owr3)  // Avenue Short - disable for OWR-3
+      add(nwmRangeId(n) + 0x4200, n~CE & Onewayroad~NS)  // Onewayroad - dummy for OWR-3
+      add(nwmRangeId(n) + 0x3300, n~CE & Avenue~SN, when = n != Owr3)  // Avenue Short - disabled for OWR-3
       add(nwmRangeId(n) + 0x3400, n~WC & Avenue~SN)  // Avenue Long
+      //OxD
+      add(nwmRangeId(n) + 0xA500, n~NC & Street~WS)  // Street 1
+      add(nwmRangeId(n) + 0xA509, n~SC & Street~WS)  // Street 2
+      add(nwmRangeId(n) + 0xA600, n~NC & Road~WS)  // Road 1
+      add(nwmRangeId(n) + 0xA609, n~SC & Road~WS)  // Road 2
+      add(nwmRangeId(n) + 0xA700, n~NC & Onewayroad~WS)  // Onewayroad 1 - dummy for OWR-3
+      add(nwmRangeId(n) + 0xA709, n~SC & Onewayroad~WS)  // Onewayroad 2 - dummy for OWR-3
+      add(nwmRangeId(n) + 0xA800, n~CW & Avenue~ES, when = n != Owr3)  // Avenue Short 1 - disabled for OWR-3
+      add(nwmRangeId(n) + 0xA809, n~CW & Avenue~SharedDiagRight, when = n != Owr3)  // Avenue Short 2 - disabled for OWR-3
+      add(nwmRangeId(n) + 0xA900, n~SC & Avenue~SW)  // Avenue Long 1
+      // add(nwmRangeId(n) + 0xA909, n~CS & Avenue~SharedDiagLeft)  // Avenue Long 1
+      //DxO
+      add(nwmRangeId(n) + 0xB500, n~CSE & Street~NS)  // Street
+      add(nwmRangeId(n) + 0xB600, n~CSE & Road~NS)  // Road
+      add(nwmRangeId(n) + 0xB700, n~CSE & Onewayroad~NS) //, when = n != Ard3 && n != Owr3 && n != Nrd4)  // Onewayroad - dummy for OWR-3
+      // builder.addOne(Ard3~CSE  & Onewayroad~NS, IdTile(0x5102B700, R0F0, nonMirroredOnly)) // Onewayroad - dummy for OWR-3
+      // builder.addOne(Ard3~CSE  & Onewayroad~SN, IdTile(0x7102B700, R0F0, mirroredOnly)) // Onewayroad - dummy for OWR-3
+      // builder.addOne(Owr3~CSE  & Onewayroad~NS, IdTile(0x5104B700, R0F0, nonMirroredOnly)) // Onewayroad - dummy for OWR-3
+      // builder.addOne(Owr3~CSE  & Onewayroad~SN, IdTile(0x7104B700, R0F0, mirroredOnly)) // Onewayroad - dummy for OWR-3
+      // builder.addOne(Nrd4~CSE  & Onewayroad~NS, IdTile(0x5105B700, R0F0, nonMirroredOnly)) // Onewayroad - dummy for OWR-3
+      // builder.addOne(Nrd4~CSE  & Onewayroad~SN, IdTile(0x7105B700, R0F0, mirroredOnly)) // Onewayroad - dummy for OWR-3
+      add(nwmRangeId(n) + 0xB800, n~CSE & Avenue~SN, when = n != Owr3)  // Avenue Short - disabled for OWR-3
+      add(nwmRangeId(n) + 0xB900, n~SEC & Avenue~EW)  // Avenue Long 1
+      add(nwmRangeId(n) + 0xB909, n~WNC & Avenue~EW)  // Avenue Long 2
     }
+
+    //Multi-Tile Networks
     //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
     for (n <- Seq(Tla5, Owr4, Owr4m, Rd4, Rd6, Ave6, Ave8, Tla7m, Ave6m)) {
       add(nwmRangeId(n) + 0x3400, n~NC & Avenue~WE, when = n != Owr5)  // Avenue Long
-    }
-    //OWR-5 does not have any valid T-ints with Maxis networks - just itself, RD-6, and the Triple-Tile networks
-    for (n <- Seq(Tla5, Rd4)) {
       add(nwmRangeId(n) + 0x4500, n~CE & Road~NS)  // Road - dummy for OWR-5/RD-6/AVE-6/AVE-8
       add(nwmRangeId(n) + 0x4600, n~CE & Onewayroad~NS)  // Onewayroad - dummy for OWR-5/RD-6/AVE-6/AVE-8
-      add(nwmRangeId(n) + 0x4700, n~CE & Street~NS)  // Street
-      // add(nwmRangeId(n) + 0x3300, n~NC & Avenue~EW)  // Avenue Short - disable for all but TLA-5 and RD-4
+      add(nwmRangeId(n) + 0x4700, n~CE & Street~NS, when = (n == Tla5 || n == Rd4))  // Street
+      // add(nwmRangeId(n) + 0x3300, n~NC & Avenue~EW, when = (n == Tla5 || n == Rd4))  // Avenue Short - not currently supported for multi-tile networks, could add for Tla5 and Rd4
     }
 
     builder.result()
