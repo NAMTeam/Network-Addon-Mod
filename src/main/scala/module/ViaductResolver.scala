@@ -130,7 +130,7 @@ class ViaductResolver extends IdResolver {
             add(n~NE & n2~ES,              id + 0x9000 + rev00)
             add(n~NE & n2~se, id + 0x9000 + rev01, when = n2.typ == AvenueLike)
             add(n~NE & n2~se, id + 0x9000 + rev01, when = n2.typ != AvenueLike && !n2.isSymm)
-            add(n~SharedDiagLeft & n2~se,  id + 0x9000 + rev10, when = !n.isSymm)
+            add(n~SharedDiagLeft & n2~se,  id + 0x9000 + rev10, when = !n.isSymm && (n2 != Owr4 && n2 != Owr4m))
             add(n~SharedDiagLeft & n2~WN,  id + 0x9000 + rev11, when = !n.isSymm && !n2.isSymm)
           } 
           if (!n2.isSymm && NP.isTripleTile(n2)) {

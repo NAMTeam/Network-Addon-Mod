@@ -210,8 +210,8 @@ class MiscResolver extends IdResolver {
     // add(0x09002F00, Onewayroad~WN & Onewayroad~CSW) // DxD T2
     builder.addOne((Onewayroad~SE).projectLeft  & Onewayroad~CEN, IdTile(0x09002E00, R0F0, nonMirroredOnly))
     builder.addOne((Onewayroad~SE).projectRight  & Onewayroad~CEN, IdTile(0x49002E00, R0F0, nonMirroredOnly))
-    builder.addOne((Onewayroad~WN).projectLeft  & Onewayroad~CSW, IdTile(0x09002E00, R0F0, nonMirroredOnly))
-    builder.addOne((Onewayroad~WN).projectRight  & Onewayroad~CSW, IdTile(0x49002E00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WN).projectLeft  & Onewayroad~CSW, IdTile(0x09002F00, R0F0, nonMirroredOnly))
+    builder.addOne((Onewayroad~WN).projectRight  & Onewayroad~CSW, IdTile(0x49002F00, R0F0, nonMirroredOnly))
     add(0x09000F00, Onewayroad~(0,0,2,2)) // 90 curve
     add(0x09000C00, Onewayroad~(0,0,1,13)) // curve
     add(0x09004D00, Onewayroad~(0,2,0,11)) // curve
