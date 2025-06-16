@@ -29,12 +29,11 @@ object ViaductResolver {
 
       0x1a00 -> Tla3,    0x1b00 -> Ave2,   0x1c00 -> Ard3,
       0x1d00 -> Owr1,    0x1e00 -> Owr3,   0x1f00 -> Nrd4,
-      0x2000 -> Tla5,    0x2100 -> Owr4,   0x2180 -> Owr4m,   0x2200 -> Owr5,
+      0x2000 -> Tla5,    0x2100 -> Owr4,   0x2b00 -> Owr4m,   0x2200 -> Owr5,
       0x2300 -> Rd4,     0x2400 -> Rd6,    0x2500 -> Ave6,
       0x2580 -> Tla7m,   0x2600 -> Ave8,   0x2680 -> Ave6m,
       // 0x2700 Tram-on-Street, 0x2800 Tram-in-Road, 0x2805 Tram-on-Road, 0x2a00 Tram-in-Avenue
     ).map(_.swap))
-
 }
 
 class ViaductResolver extends IdResolver {
@@ -42,7 +41,10 @@ class ViaductResolver extends IdResolver {
   def apply(tile: Tile): IdTile = tileMap(tile)
 
   val tileMap = {
-    val builder = new ResolverBuilder
+    val builder = new ResolverBuilder(
+      // To simplify adding shared diagonals, we automatically add them for avenue-like networks going in the wrong direction.
+      remap = (tile: Tile) => NP.transformSharedDiagonals(tile),
+    )
     import builder.add
 
     // curves
@@ -85,40 +87,65 @@ class ViaductResolver extends IdResolver {
       add(n~NS & n2~orientA(EW), id + 0x0000)
 
       // O×D
-      if (!n2.isNwm && !Viaducts.contains(n2)) {
+      if (!Viaducts.contains(n2)) {
         val ne = if (n2.typ == AvenueLike) SharedDiagLeft else NE
+        val en = if (n2.typ == AvenueLike) SharedDiagLeft else EN
+        val ws = if (n2.typ == AvenueLike) SharedDiagLeft else WS
         if (n.typ == AvenueLike) {
-          add(n~NS & n2~SW, id + 0x3000 + rev00)
-          add(n~NS & n2~NE, id + 0x3000 + rev01, when = !n2.isSymm)
-          add(n~NS & n2~ne, id + 0x3000 + rev10, when = !n.isSymm)  // TODO Monorail swaps 0x80 and 0x00 -> model issue only
-          // add(n~??? & n2~???, id + 0x3000 + rev11, when = !n.isSymm && (n2.typ == Asymmetrical))
+          if (!NP.isTripleTile(n2) || !n2.isSymm) {
+            add(n~NS & n2~SW, id + 0x3000 + rev00)
+            add(n~NS & n2~NE, id + 0x3000 + rev01, when = !n2.isSymm)
+            add(n~NS & n2~en, id + 0x3000 + rev10, when = !n.isSymm)  // TODO Monorail swaps 0x80 and 0x00 -> model issue only
+            add(n~NS & n2~WS, id + 0x3000 + rev11, when = !n.isSymm && (n2.typ == Asymmetrical))
+          }
+          if (NP.isTripleTile(n2) && n2.isSymm) {
+            add(n~NS & n2~SW, id + 0x2F8E)
+            add(n~NS & n2~en, id + 0x300E)  // TODO Monorail swaps 0x80 and 0x00 -> model issue only
+          }
         } else {
           add(n~NS & n2~SW, id + 0x3000 + rev00)
-          add(n~NS & n2~ne, id + 0x3000 + rev01, when = !n2.isSymm)
+          add(n~NS & n2~ws, id + 0x3000 + rev01, when = !n2.isSymm && (n2 != Owr4 && n2 != Owr4m))
         }
       }
       // D×O
-      if (!n2.isNwm && !Viaducts.contains(n2)) {
+      if (!Viaducts.contains(n2)) {
         if (n.typ == AvenueLike) {
           add(n~NE             & n2~NS, id + 0x6000 + rev00)
           add(n~NE             & n2~SN, id + 0x6000 + rev01, when = !n2.isSymm)
-          add(n~SharedDiagLeft & n2~NS, id + 0x6000 + rev10, when = !n.isSymm)
-          // add(n~??? & n2~???, id + 0x6000 + rev11, when = (n.typ == Asymmetrical) && !n2.isSymm)
+          add(n~SharedDiagLeft & n2~NS, id + 0x6000 + rev01, when = !n.isSymm && NP.isTripleTile(n2) && n2.isSymm)
+          add(n~SharedDiagLeft & n2~NS, id + 0x6000 + rev10, when = !n.isSymm && !NP.isTripleTile(n2))
+          add(n~SharedDiagLeft & n2~NS, id + 0x600E, when = !n.isSymm && (NP.isTripleTile(n2) && !n2.isSymm))
+          add(n~SharedDiagLeft & n2~SN, id + 0x6000 + rev11, when = (n.typ == Asymmetrical) && !n2.isSymm && !NP.isTripleTile(n2))
         } else {
-          add(n~ES & n2~WE, id + 0x6000 + rev00)
-          add(n~ES & n2~EW, id + 0x6000 + rev10, when = !n2.isSymm)
+          add(n~ES & n2~EW, id + 0x6000 + rev00)
+          add(n~ES & n2~WE, id + 0x6000 + rev01, when = !n2.isSymm)
         }
       }
       // D×D
-      if (!n2.isNwm && !Viaducts.contains(n2)) {
+      if (!Viaducts.contains(n2)) {
         val se = if (n2.typ == AvenueLike) SharedDiagRight else SE
+        val es = if (n2.typ == AvenueLike) SharedDiagRight else ES
         if (n.typ == AvenueLike) {
-          add(n~NE & n2~ES,              id + 0x9000 + rev00)
-          add(n~NE & n2~SharedDiagRight, id + 0x9000 + rev01, when = n2.typ == AvenueLike)
-          add(n~SharedDiagLeft & n2~se,  id + 0x9000 + rev10, when = !n.isSymm)
-          add(n~SharedDiagLeft & n2~WN,  id + 0x9000 + rev11, when = !n.isSymm && !n2.isSymm)
+          if (!NP.isTripleTile(n2)) {
+            add(n~NE & n2~ES,              id + 0x9000 + rev00)
+            add(n~NE & n2~se, id + 0x9000 + rev01, when = n2.typ == AvenueLike)
+            add(n~NE & n2~se, id + 0x9000 + rev01, when = n2.typ != AvenueLike && !n2.isSymm)
+            add(n~SharedDiagLeft & n2~se,  id + 0x9000 + rev10, when = !n.isSymm)
+            add(n~SharedDiagLeft & n2~WN,  id + 0x9000 + rev11, when = !n.isSymm && !n2.isSymm)
+          } 
+          if (!n2.isSymm && NP.isTripleTile(n2)) {
+            add(n~NE & n2~ES,              id + 0x9000 + rev00)
+            add(n~NE & n2~se, id + 0x9000 + rev01, when = n2.typ != AvenueLike && !n2.isSymm)
+            add(n~SharedDiagLeft & n2~se,  id + 0x9000 + rev10, when = !n.isSymm)
+            add(n~SharedDiagLeft & n2~WN,  id + 0x9000 + rev11, when = !n.isSymm && !n2.isSymm)
+          } 
+          if (n2.isSymm && NP.isTripleTile(n2)) {
+            add(n~NE & n2~ES,              id + 0x8F8E, when = n2.isSymm && NP.isTripleTile(n2))
+            add(n~SharedDiagLeft & n2~se,  id + 0x900E, when = !n.isSymm && n2.isSymm && NP.isTripleTile(n2))
+          }
         } else {
           add(n~ES & n2~SW,             id + 0x9000 + rev00)
+          add(n~ES & n2~WS,             id + 0x9000 + rev01, when = !n2.isSymm && n2.typ != AvenueLike)
           add(n~ES & n2~SharedDiagLeft, id + 0x9000 + rev10, when = n2.typ == AvenueLike)
         }
       }
@@ -159,6 +186,24 @@ class ViaductResolver extends IdResolver {
     add(0x5c080000, L1Avenue~NC & Avenue~CS)
     add(0x5c080010, L2Avenue~NC & L1Avenue~CS)
     add(0x5c080100, L2Avenue~NC & Avenue~CS)
+
+
+    add(0x5C005105, L1Road~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C015105, L1Onewayroad~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C02510E, L1Avenue~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C02518E, L1Avenue~NS & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C035105, L2Road~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C045105, L2Onewayroad~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C05510E, L2Avenue~NS & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C05518E, L2Avenue~NS & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C00B105, L1Road~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C01B105, L1Onewayroad~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C02B105, L1Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C02B180, L1Avenue~SharedDiagLeft & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C03B105, L2Road~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C04B105, L2Onewayroad~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
+    add(0x5C05B105, L2Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C05B180, L2Avenue~SharedDiagLeft & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
 
     builder.result()
   }
