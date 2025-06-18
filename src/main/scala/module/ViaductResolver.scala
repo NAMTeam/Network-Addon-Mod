@@ -198,11 +198,11 @@ class ViaductResolver extends IdResolver {
     add(0x5C05518E, L2Avenue~NS & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
     add(0x5C00B105, L1Road~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
     add(0x5C01B105, L1Onewayroad~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
-    add(0x5C02B109, L1Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C02B105, L1Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
     add(0x5C02B180, L1Avenue~SharedDiagLeft & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
     add(0x5C03B105, L2Road~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
     add(0x5C04B105, L2Onewayroad~ES & Owr4m~WS & Owr4~EN)  // Owr4/Owr4m
-    add(0x5C05B109, L2Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
+    add(0x5C05B105, L2Avenue~NE & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
     add(0x5C05B180, L2Avenue~SharedDiagLeft & Owr4m~SE & Owr4~NW)  // Owr4/Owr4m
 
     builder.result()
