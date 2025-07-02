@@ -34,6 +34,11 @@ object MirrorVariants {
     addProjectFirst(Onewayroad~ES, Rail~NE)
     addProjectFirst(Avenue~SN, Rail~NE)
     addProjectFirst(Avenue~NS, Rail~NE)
+    for (n <- Seq(Onewayroad, Owr3)) {
+      addProjectFirst(n~NS, Avenue~(0,0,0,1))
+      addProjectFirst(n~NS, Avenue~(1,0,0,3))
+      addProjectFirst(n~NS, Avenue~(0,0,0,3))
+    }
     map
   }
 
