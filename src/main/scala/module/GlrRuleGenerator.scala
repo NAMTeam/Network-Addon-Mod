@@ -8,9 +8,9 @@ class GlrRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
   def start(): Unit = {
     for (main <- GlrNetworks; base <- main.base) {
-      Rules += main~WE    | (base ~> main)~WE      // ortho
+      // Rules += main~WE    | (base ~> main)~WE      // ortho
       // Rules += main~WE    | (base ~> main)~WC      // ortho stub
-      Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
+      // Rules += main~SE~ES | (base ~> main)~WN~NW   // diagonal
       // curves
       // createCurve45Rules(main)
       // createCurve90Rules(main)
