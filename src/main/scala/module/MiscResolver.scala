@@ -21,10 +21,14 @@ class MiscResolver extends IdResolver {
     add(0x0a001500, Groundhighway~EW); add(0x0a002200, Groundhighway~ES); add(0x0a002100, Groundhighway~SharedDiagRight)
 
     add(0x5d300000, Str  ~NS); add(0x5d302000, Str  ~ES)
-    add(0x5f880000, Glr1 ~NS); add(0x5f880600, Glr1 ~NW)
-    add(0x5f884000, Glr2 ~NS); add(0x5f884600, Glr2 ~NW)
-    add(0x5f888000, Glr3 ~NS); add(0x5f888600, Glr3 ~NW)
-    add(0x5f88c000, Glr4 ~NS); add(0x5f88c600, Glr4 ~NW)
+    builder.addOne(Glr1~NS, IdTile(0x5f880000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))  // temporary bandaid: extra rotations for better compatibility with old handwritten GLR code
+    builder.addOne(Glr2~NS, IdTile(0x5f884000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))
+    builder.addOne(Glr3~NS, IdTile(0x5f888000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))
+    builder.addOne(Glr4~NS, IdTile(0x5f88c000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))
+    add(0x5f880600, Glr1 ~NW)
+    add(0x5f884600, Glr2 ~NW)
+    add(0x5f888600, Glr3 ~NW)
+    add(0x5f88c600, Glr4 ~NW)
     add(0x5dc31500, Hsr  ~NS); add(0x5dc01a00, Hsr  ~NW)
     add(0x5dd31500, L2Hsr~NS); add(0x5dd01a00, L2Hsr~NW)
     add(0x51000000, Tla3 ~NS); add(0x51000200, Tla3 ~ES)
