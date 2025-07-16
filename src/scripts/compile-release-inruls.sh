@@ -55,4 +55,7 @@ cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_IndividualNetworkRULs_LHD
 # Avenue turning lanes
 cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_TurningLanes_Avenues_Plugin_INRULs.dat" "target/controllers/"
 
+# advisor messages
+cp -p "$PROJECT_ROOT/Controller/INRULs/NetworkAddonMod_Advice.dat" "target/controllers/"
+
 rm -rf "$TEMP"
