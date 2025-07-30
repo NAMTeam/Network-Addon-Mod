@@ -433,6 +433,19 @@ class NwmResolver extends IdResolver {
       //OxD
       add(nwmRangeId(n) + 0xA000, n~NS & Street~CSE)  // Street
       add(nwmRangeId(n) + 0xA100, n~NS & Road~CSE)  // Road
+      add(nwmRangeId(n) + 0xB000, n~ES & Street~WC)  // Street 1
+      add(nwmRangeId(n) + 0xB009, n~WN & Street~WC)  // Street 2
+      add(nwmRangeId(n) + 0xB100, n~ES & Road~WC)  // Road 1
+      add(nwmRangeId(n) + 0xB109, n~WN & Road~WC)  // Road 2
+      add(nwmRangeId(n) + 0xC000, n~SE & Street~CSW)  // Street 1      
+      add(nwmRangeId(n) + 0xC009, n~NW & Street~CEN)  // Street 2      
+      add(nwmRangeId(n) + 0xC100, n~SE & Road~CSW)  // Road 1      
+      add(nwmRangeId(n) + 0xC109, n~NW & Road~CEN)  // Road 2      
+      add(nwmRangeId(n) + 0xAD00, n~NS & Owr1~CSE)  // Owr1
+      add(nwmRangeId(n) + 0xBD00, n~ES & Owr1~WC)  // Owr1 1
+      add(nwmRangeId(n) + 0xBD09, n~WN & Owr1~WC)  // Owr1 2
+      add(nwmRangeId(n) + 0xCD00, n~ES & Owr1~CSW)  // Owr1 1      
+      add(nwmRangeId(n) + 0xCD09, n~WN & Owr1~CEN)  // Owr1 2  
     }
 
     //projected networks
@@ -476,7 +489,6 @@ class NwmResolver extends IdResolver {
     builder.addOne((Owr3~NS).projectRight  & Ard3~CSE, IdTile(0x7104AC00, R0F0, mirroredOnly)) // Ard3
     builder.addOne((Owr3~NS).projectLeft  & Ard3~ESC, IdTile(0x5104AC80, R0F0, nonMirroredOnly)) // Ard3
     builder.addOne((Owr3~NS).projectRight  & Ard3~ESC, IdTile(0x7104AC80, R0F0, mirroredOnly)) // Ard3
-    builder.addOne(Owr3~NS  & Owr1~CSE, IdTile(0x5104AC80, R0F0)) // Owr1
     builder.addOne((Owr3~NS).projectLeft  & (Owr3~CSE).projectLeft, IdTile(0x5104AE00, R0F0, nonMirroredOnly)) // Tla3
     builder.addOne((Owr3~NS).projectRight  & (Owr3~CSE).projectRight, IdTile(0x7104AE00, R0F0, mirroredOnly)) // Tla3
     builder.addOne((Owr3~NS).projectLeft  & Nrd4~CSE, IdTile(0x5104AF00, R0F0, nonMirroredOnly)) // Nrd4
@@ -525,10 +537,6 @@ class NwmResolver extends IdResolver {
     builder.addOne((Tla3~SE).projectRight  & Nrd4~WC, IdTile(0x7100BF00, R0F0, mirroredOnly)) // Nrd4 1a
     builder.addOne((Tla3~WN).projectLeft  & Nrd4~WC, IdTile(0x5100BF09, R0F0, nonMirroredOnly)) // Nrd4 2a
     builder.addOne((Tla3~WN).projectRight  & Nrd4~WC, IdTile(0x7100BF09, R0F0, mirroredOnly)) // Nrd4 2a
-    builder.addOne(Owr3~SE  & Street~WC, IdTile(0x5100B000, R0F0)) // Street 1
-    builder.addOne(Owr3~WN  & Street~WC, IdTile(0x5100B009, R0F0)) // Street 2
-    builder.addOne(Owr3~SE  & Road~WC, IdTile(0x5100B100, R0F0)) // Road 1
-    builder.addOne(Owr3~WN  & Road~WC, IdTile(0x5100B109, R0F0)) // Road 2
     builder.addOne((Owr3~SE).projectLeft  & Onewayroad~WC, IdTile(0x5104B200, R0F0, nonMirroredOnly)) // Onewayroad 1
     builder.addOne((Owr3~SE).projectRight  & Onewayroad~WC, IdTile(0x7104B200, R0F0, mirroredOnly)) // Onewayroad 1
     builder.addOne((Owr3~WN).projectLeft  & Onewayroad~WC, IdTile(0x5104B209, R0F0, nonMirroredOnly)) // Onewayroad 2
@@ -557,8 +565,6 @@ class NwmResolver extends IdResolver {
     builder.addOne((Owr3~SE).projectRight  & Ard3~CW, IdTile(0x7104BC80, R0F0, mirroredOnly)) // Ard3 1a
     builder.addOne((Owr3~WN).projectLeft  & Ard3~CW, IdTile(0x5104BC89, R0F0, nonMirroredOnly)) // Ard3 2a
     builder.addOne((Owr3~WN).projectRight  & Ard3~CW, IdTile(0x7104BC89, R0F0, mirroredOnly)) // Ard3 2a
-    builder.addOne(Owr3~SE  & Owr1~WC, IdTile(0x5104BD00, R0F0)) // Owr1 1
-    builder.addOne(Owr3~WN  & Owr1~WC, IdTile(0x5104BD09, R0F0)) // Owr1 2
     builder.addOne((Owr3~WN).projectLeft  & (Owr3~WC).projectLeft, IdTile(0x5104BE09, R0F0, nonMirroredOnly)) // Owr3 2a
     builder.addOne((Owr3~WN).projectRight  & (Owr3~WC).projectRight, IdTile(0x7104BE09, R0F0, mirroredOnly)) // Owr3 2a
     builder.addOne((Owr3~SE).projectLeft  & Nrd4~WC, IdTile(0x5104BF00, R0F0, nonMirroredOnly)) // Nrd4 1a
@@ -653,10 +659,6 @@ class NwmResolver extends IdResolver {
     builder.addOne((Owr3~SE).projectRight  & Ard3~WSC, IdTile(0x7104CC80, R0F0, mirroredOnly)) // Ard3 1b
     builder.addOne((Owr3~WN).projectLeft  & Ard3~NEC, IdTile(0x5104CC89, R0F0, nonMirroredOnly)) // Ard3 2b
     builder.addOne((Owr3~WN).projectRight  & Ard3~NEC, IdTile(0x7104CC89, R0F0, mirroredOnly)) // Ard3 2b
-    builder.addOne((Owr3~SE).projectLeft  & Owr1~CSW, IdTile(0x5104CD00, R0F0, nonMirroredOnly)) // Owr1 1
-    builder.addOne((Owr3~SE).projectRight  & Owr1~CSW, IdTile(0x7104CD00, R0F0, mirroredOnly)) // Owr1 1
-    builder.addOne((Owr3~WN).projectLeft  & Owr1~CEN, IdTile(0x5104CD09, R0F0, nonMirroredOnly)) // Owr1 2
-    builder.addOne((Owr3~WN).projectRight  & Owr1~CEN, IdTile(0x7104CD09, R0F0, mirroredOnly)) // Owr1 2
     builder.addOne((Owr3~SE).projectLeft  & (Owr3~CSW).projectLeft, IdTile(0x5104CE00, R0F0, nonMirroredOnly)) // Owr3 1
     builder.addOne((Owr3~SE).projectRight  & (Owr3~CSW).projectRight, IdTile(0x7104CE00, R0F0, mirroredOnly)) // Owr3 1
     builder.addOne((Owr3~WN).projectLeft  & (Owr3~CEN).projectLeft, IdTile(0x5104CE09, R0F0, nonMirroredOnly)) // Owr3 2
