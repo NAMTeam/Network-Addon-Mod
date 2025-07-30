@@ -428,13 +428,18 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0xCF89, n~NW & Nrd4~CEN, when = n != Owr1)  // Nrd4 2      
     }
 
+    //OWR-3-specific situations
+    for (n <- Seq(Owr3)) {
+      //OxD
+      add(nwmRangeId(n) + 0xA000, n~NS & Street~CSE)  // Street
+      add(nwmRangeId(n) + 0xA100, n~NS & Road~CSE)  // Road
+    }
+
     //projected networks
     builder.addOne((Tla3~NS).projectLeft  & Street~CSE, IdTile(0x5100A000, R0F0, nonMirroredOnly)) // Street
     builder.addOne((Tla3~NS).projectRight  & Street~CSE, IdTile(0x7100A000, R0F0, mirroredOnly)) // Street
-    builder.addOne(Owr3~NS  & Street~CSE, IdTile(0x5104A000, R0F0)) // Street
     builder.addOne((Tla3~NS).projectLeft  & Road~CSE, IdTile(0x5100A100, R0F0, nonMirroredOnly)) // Road
     builder.addOne((Tla3~NS).projectRight  & Road~CSE, IdTile(0x7100A100, R0F0, mirroredOnly)) // Road
-    builder.addOne(Owr3~NS  & Road~CSE, IdTile(0x5104A100, R0F0)) // Street
     builder.addOne((Tla3~NS).projectLeft  & Onewayroad~CSE, IdTile(0x5100A200, R0F0, nonMirroredOnly)) // Onewayroad
     builder.addOne((Tla3~NS).projectRight  & Onewayroad~CSE, IdTile(0x7100A200, R0F0, mirroredOnly)) // Onewayroad
     builder.addOne((Owr3~NS).projectLeft  & Onewayroad~CSE, IdTile(0x5104A200, R0F0, nonMirroredOnly)) // Onewayroad
