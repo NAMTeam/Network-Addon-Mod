@@ -621,14 +621,6 @@ class NwmResolver extends IdResolver {
     builder.addOne((Tla3~SE).projectRight  & Nrd4~CSW, IdTile(0x7100CF00, R0F0, mirroredOnly)) // Nrd4 1
     builder.addOne((Tla3~WN).projectLeft  & Nrd4~CEN, IdTile(0x5100CF09, R0F0, nonMirroredOnly)) // Nrd4 2
     builder.addOne((Tla3~WN).projectRight  & Nrd4~CEN, IdTile(0x7100CF09, R0F0, mirroredOnly)) // Nrd4 2
-    builder.addOne((Owr3~SE).projectLeft  & Street~CSW, IdTile(0x5104C000, R0F0, nonMirroredOnly)) // Street 1
-    builder.addOne((Owr3~SE).projectRight  & Street~CSW, IdTile(0x7104C000, R0F0, mirroredOnly)) // Street 1
-    builder.addOne((Owr3~WN).projectLeft  & Street~CEN, IdTile(0x5104C009, R0F0, nonMirroredOnly)) // Street 2
-    builder.addOne((Owr3~WN).projectRight  & Street~CEN, IdTile(0x7104C009, R0F0, mirroredOnly)) // Street 2
-    builder.addOne((Owr3~SE).projectLeft  & Road~CSW, IdTile(0x5104C100, R0F0, nonMirroredOnly)) // Road 1
-    builder.addOne((Owr3~SE).projectRight  & Road~CSW, IdTile(0x7104C100, R0F0, mirroredOnly)) // Road 1
-    builder.addOne((Owr3~WN).projectLeft  & Road~CEN, IdTile(0x5104C109, R0F0, nonMirroredOnly)) // Road 2
-    builder.addOne((Owr3~WN).projectRight  & Road~CEN, IdTile(0x7104C109, R0F0, mirroredOnly)) // Road 2
     builder.addOne((Owr3~SE).projectLeft  & Onewayroad~CSW, IdTile(0x5104C200, R0F0, nonMirroredOnly)) // Onewayroad 1
     builder.addOne((Owr3~SE).projectRight  & Onewayroad~CSW, IdTile(0x7104C200, R0F0, mirroredOnly)) // Onewayroad 1
     builder.addOne((Owr3~WN).projectLeft  & Onewayroad~CEN, IdTile(0x5104C209, R0F0, nonMirroredOnly)) // Onewayroad 2
