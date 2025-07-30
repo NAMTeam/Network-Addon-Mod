@@ -38,15 +38,18 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
             Rules += main~WE~EW | (base ~> main)~WE~EW & orient(minor~NWC)   // OxD T 2
             Rules += main~NE~EN | (base ~> main)~WS~SW & orient(minor~NC) // DxO T 1
             Rules += main~NE~EN | (base ~> main)~WS~SW & orient(minor~SC) // DxO T 2 
-            Rules += main~SE~ES & minor~WC~CW | (base ~> main)~WN~NW & orient(minor~WC) // DxO T 1-2
-            Rules += main~SE~ES & minor~CE~EC | (base ~> main)~WN~NW & orient(minor~CE) // DxO T 2-1
-            Rules += main~SE~ES & minor~CE~EC | base~WN~NW & minor~WE~EW | main~SE~ES & minor~CE~EC | main~WN~NW & minor~CE~EC // DxO T 2-1 Alt
+            Rules += main~ES~SE & minor~WC~CW | (base ~> main)~NW~WN & orient(minor~WC) // DxO T 1-2
+            Rules += main~ES~SE & minor~CE~EC | (base ~> main)~NW~WN & orient(minor~CE) // DxO T 2-1
+            Rules += main~ES~SE & minor~WE~EW | main~NW~WN | main~ES~SE & minor~WC~CW | main~NW~WN & orient(minor~WC) // DxO T 1-2 Stability
+            Rules += main~ES~SE & minor~WE~EW | base~NW~WN | main~ES~SE & minor~WC~CW | main~NW~WN & orient(minor~WC) // DxO T 1-2 Stability
+            Rules += main~ES~SE & minor~CE~EC | base~NW~WN & minor~WE~EW | main~ES~SE & minor~CE~EC | main~NW~WN & minor~CE~EC // DxO T 2-1 Alt
             Rules += main~NE~EN | (base ~> main)~WS~SW & orient(minor~ESC) // DxD T 1
             Rules += main~NE~EN | (base ~> main)~WS~SW & orient(minor~SEC) // DxD T 2 
             Rules += main~SE~ES & minor~NEC~CEN | (base ~> main)~WN~NW & orient(minor~WSC) // DxD T 1-2
             Rules += main~NE~EN & minor~ESC~CSE | (base ~> main)~WS~NS & orient(minor~CWN) // DxD T 2-1
             Rules += main~SE~ES & minor~NE~EN | base~WN~NW & minor~WSC~CSW | main~SE~ES & minor~NEC~CEN | main~WN~NW & minor~WSC~CSW // DxD T 2-1 Alt
             Rules += main~SE~ES & minor~NEC~CEN | base~WN~NW | main~SE~ES & minor~NEC~CEN | main~WN~NW & minor~WSC~CSW // DxD T 1-2 Alt
+            Rules += main~SE~ES & minor~NEC~CEN | main~WN~NW | main~SE~ES & minor~NEC~CEN | main~WN~NW & minor~WSC~CSW // DxD T 1-2 Alt
 
             if (minor != Avenue) {
               Rules += main~WE~EW | (base ~> main)~WC~CW & orient(minor~SE)   // OxD T End 1
@@ -54,13 +57,15 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
               Rules += main~WE~EW & minor~ES~SE | base~WC~CW & minor~WN~NW | main~WC~CW & minor~ES~SE | main~WC~CW & minor~WN~NW   // OxD T End 2 Alt
               Rules += main~WE~EW & minor~ES~SE | minor~WN~NW | main~WC~CW & minor~ES~SE | main~WC~CW & minor~WN~NW   // OxD T End 3 Alt
               Rules += main~WC~CW & minor~ES~SE | minor~WN~NW | main~WC~CW & minor~ES~SE | main~WC~CW & minor~WN~NW   // OxD T End 4 Alt
+              // Rules += main~EW~WE & minor~ES~SE | minor~WN~NW | main~CW~WC & minor~ES~SE | main~CW~WC & minor~WN~NW   // OxD T End 5 Alt
+              // Rules += main~CW~WC & minor~ES~SE | minor~WN~NW | main~CW~WC & minor~ES~SE | main~CW~WC & minor~WN~NW   // OxD T End 6 Alt
               Rules += main~(0,0,11,3) | base~WNC~CNW & minor~NS~SN | main~(0,0,11,3) | main~WNC~CNW & minor~NS~SN   // DxO T End 1
               Rules += main~SW~WS | base~WNC~CNW & minor~NS~SN | main~(0,0,11,3) | main~WNC~CNW & minor~NS~SN   // DxO T End 1 Alt
               Rules += main~SE~ES | (base ~> main)~WNC~CNW & orient(minor~EN)   // DxD T End 1
-              Rules += main~CEN~NEC & minor~SE~ES | (base ~> main)~WSC~CSW & orient(minor~WN)   // DxD T End 2
-              Rules += main~EN~NE & minor~SE~ES | base~WSC~CSW & minor~WN~NW | main~CEN~NEC & minor~SE~ES | main~WSC~CSW & minor~WN~NW   // DxD T End 2 Alt
-              Rules += main~EN~NE & minor~SE~ES | minor~WN~NW | main~CEN~NEC & minor~SE~ES | main~WSC~CSW & minor~WN~NW   // DxD T End 2 Alt 2
-              Rules += main~CEN~NEC & minor~SE~ES | minor~WN~NW | main~CEN~NEC & minor~SE~ES | main~WSC~CSW & minor~WN~NW   // DxD T End 2 Alt 3
+              Rules += main~CEN~NEC & minor~SE~ES | (base ~> main)~CSW~WSC & orient(minor~WN)   // DxD T End 2
+              Rules += main~EN~NE & minor~SE~ES | base~CSW~WSC & minor~WN~NW | main~CEN~NEC & minor~SE~ES | main~CSW~WSC & minor~WN~NW   // DxD T End 2 Alt
+              Rules += main~EN~NE & minor~SE~ES | main~SW~WS | main~CEN~NEC & minor~SE~ES | main~CSW~WSC & minor~SW~WS   // DxD T End 2 Alt 2
+              Rules += main~CEN~NEC & minor~SE~ES | base~SW~WS | main~CEN~NEC & minor~SE~ES | main~CSW~WSC & minor~SW~WS   // DxD T End 2 Alt 3
             }
             if (minor == Avenue) { 
               Rules += main~WE~EW | (base ~> main)~WE~EW & minor~(0,0,3,0)   // OxD T 1
@@ -82,6 +87,33 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
               Rules += main~NE~EN & minor~EC | base~WS~SW | main~NE~EN & minor~EC | main~WS~SW & minor~EC   // DxO T-Thru 4-3 Stability 1
               Rules += main~NE~EN & minor~EC | main~WS~SW | main~NE~EN & minor~EC | main~WS~SW & minor~EC   // DxO T-Thru 4-3 Stability 2
               Rules += main~NE~EN | base~WS~SW & minor~EC | main~NE~EN & minor~EC | main~WS~SW & minor~EC   // DxO T-Thru 4-3 Stability 3
+              Rules += main~NE~EN | base~WS~SW & minor~EC | main~NE~EN & minor~EC | main~WS~SW & minor~EC   // DxO T-Thru 4-3 Stability 4
+              if (main != Owr3 && main != Tla3) { 
+                //Tla3 and Owr3 handled in manual supplement for time being
+                Rules += main~SE~ES | (base ~> main)~WN~NW & minor~CNE   // DxD T-Thru 1a1
+                // Rules += main~NE~EN | (base ~> main)~WS~SW & minor~ESC   // DxD T-Thru 1a2
+                Rules += main~NE~EN & minor~CES | (base ~> main)~WS~SW & minor~(1,0,0,3)   // DxD T-Thru 1a1-1b1
+                // Rules += main~SE~ES & minor~NEC | (base ~> main)~WN~NW & minor~(3,1,0,0)   // DxD T-Thru 1a2-1b2
+                Rules += main~NE~EN & minor~ES | base~WS~SW & minor~(1,0,0,3) | main~NE~EN & minor~CES | main~WS~SW & minor~(1,0,0,3)   // DxD T-Thru 1a-1b Stability
+                // Rules += main~SE~ES & minor~(0,0,3,1) | (base ~> main)~WN~NW & minor~SWC   // DxD T-Thru 1b-1a
+                Rules += main~SE~ES & minor~(0,0,3,1) | base~WN~NW & minor~SW | % | main~WN~NW & minor~SWC  // DxD T-Thru 1b-1a Stability 1
+                Rules += main~NE~EN & minor~(0,3,1,0) | base~WS~SW & minor~WN | % | main~WS~SW & minor~CWN  // DxD T-Thru 1b-1a Stability 2
+                Rules += Tla3~SE~ES & minor~(0,0,3,1) | Road~WN~NW & minor~SW | % | Tla3~WN & minor~SWC  // DxD T-Thru 1b-1a Stability 1
+                Rules += Tla3~NE~EN & minor~(0,3,1,0) | Road~WS~SW & minor~WN | % | Tla3~SW & minor~CWN  // DxD T-Thru 1b-1a Stability 2
+                Rules += main~SE~ES | (base ~> main)~WN~NW & minor~NEC   // DxD T-Thru 2a
+                // Rules += main~NE~EN | (base ~> main)~WS~SW & minor~CES   // DxD T-Thru 2a Alt
+                Rules += main~SE~ES & minor~(3,1,0,0) | (base ~> main)~WN~NW & minor~CSW   // DxD T-Thru 2b-2a
+                Rules += main~NE~EN & minor~(1,0,0,3) | (base ~> main)~WS~SW & minor~WNC   // DxD T-Thru 2b-2a Alt
+                Rules += main~SE~ES & minor~(3,1,0,0) | base~WN~NW | % | main~WN~NW & minor~CSW   // DxD T-Thru 2b-2a
+                Rules += main~NE~EN & minor~(1,0,0,3) | base~WS~SW | % | main~WS~SW & minor~WNC   // DxD T-Thru 2b-2a Alt
+                Rules += main~SE~ES & minor~(3,1,0,0) | main~WN~NW | % | main~WN~NW & minor~CSW   // DxD T-Thru 2b-2a
+                Rules += main~NE~EN & minor~(1,0,0,3) | main~WS~SW | % | main~WS~SW & minor~WNC   // DxD T-Thru 2b-2a Alt
+
+                Rules += main~SE~ES & minor~CNE | (base ~> main)~WN~NW & minor~(0,0,3,1)   // DxD T-Thru 2a-2b
+                Rules += main~SE~ES & minor~NE | base~WN~NW & minor~(0,0,3,1) | main~SE~ES & minor~CNE | main~WN~NW & minor~(0,0,3,1)   // DxD T-Thru 2a-2b Stability
+                Rules += main~NE~EN & minor~ESC | (base ~> main)~WS~SW & minor~(0,3,1,0)   // DxD T-Thru 2a-2b Alt
+                // Rules += main~NE~EN & minor~ES | base~WS~SW & minor~(0,3,1,0) | main~NE~EN & minor~ESC | main~WS~SW & minor~(0,3,1,0)   // DxD T-Thru 2a-2b Alt Stability
+              }
               Rules += main~WE~EW | (base ~> main)~WC~CW & orient(minor~ES)   // OxD T End-Short 1
               Rules += main~WC~CW & minor~ES | (base ~> main)~WC~CW & minor~SharedDiagRight   // OxD T End-Short 2
               Rules += main~WE~EW & minor~ES | (base ~> main)~WC~CW & minor~SharedDiagRight   // OxD T End-Short 2 Alt
@@ -102,6 +134,17 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
             Rules += main~EW & minor~CS | (base ~> main)~EW & minor~SC   // OxO T Tile 2-1
             Rules += main~EW & minor~NS | (base ~> main)~CW & minor~SN // OxO T End 1/Long T
             Rules += main~WE & minor~NS | (base ~> main)~WC & minor~SN // OxO T End 2/Long T
+          }
+
+          if (main.isNwm && minor.isNwmTriple) withResolvableRulesOnly {  // T intersections are not defined for all network combinations
+            Rules += main~WE | (base ~> main)~WE & orient(minor~CS)   // OxO T 1
+            Rules += main~WE | (base ~> main)~WE & orient(minor~NC)   // OxO T 2
+            // Rules += main~WE & minor~NC | (base ~> main)~WE & minor~CN   // OxO T Tile 1-2
+            // Rules += main~EW & minor~CS | (base ~> main)~EW & minor~SC   // OxO T Tile 2-1
+            Rules += main~EW & Tla7m~NS | (base ~> main)~CW & minor~SN // OxO T End 1/Long T
+            Rules += main~WE & Tla7m~NS | (base ~> main)~WC & minor~SN // OxO T End 2/Long T
+            Rules += main~EW & Ave6m~NS | (base ~> main)~CW & minor~SN // OxO T End 1/Long T
+            Rules += main~WE & Ave6m~NS | (base ~> main)~WC & minor~SN // OxO T End 2/Long T
           }
           // Shared diagonals on minor are not relevant here since the shared diagonal is an inner tile (i.e. without an edge).
         }
@@ -127,7 +170,9 @@ trait CrossingGenerator extends Adjacencies { this: RuleGenerator =>
             Rules += main~NE~EN & minor~CS~SC | (base ~> main)~WS~SW 		// DxO T 1
             Rules += main~NE~EN & minor~NC~CN | (base ~> main)~WS~SW 		// DxO T 2
             Rules += main~SE~ES & minor~WSC~CSW | (base ~> main)~WN~NW 		// DxD T 1
-            Rules += main~SE~ES & minor~SWC~CWS | (base ~> main)~WN~NW 		// DxD T 2
+            Rules += main~SE~ES & minor~CWS~SWC | (base ~> main)~WN~NW 		// DxD T 2
+            Rules += main~ES~SE & minor~WSC~CSW | (base ~> main)~NW~WN 		// DxD T 1b
+            Rules += main~ES~SE & minor~CWS~SWC | (base ~> main)~NW~WN 		// DxD T 2b
           }
           // if (main.isNwm && minor.isNwmDual) withResolvableRulesOnly {  // T intersections are not defined for all network combinations
             // Rules += main~WE | (base ~> main)~WE & orient(minor~CS)   // OxO T 1
