@@ -11,9 +11,9 @@ import RhwRuleGenerator.HeightLevel
 trait Onslope { this: RuleGenerator & Curve45Generator =>
 
   def createOnslopeTransition(): Unit = {
+    // RHW OSTs
     val rhw2SlopeL1 = L1Rhw2~EC & Dirtroad~CW  // IdTile(0x57700000,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
     val rhw2SlopeL2 = L2Rhw2~EC & Dirtroad~CW  // IdTile(0x57700100,1,0, (Dirtroad~EC).symmetries)  // direction East (upper) to West (lower)
-
     for (main <- RhwNetworks - Rhw10c if main.height == 0) {
       val maxHeight = if ((Mis + Rhw4 + Rhw6s).contains(main)) 4 else 2
       val minHeight = if (main == Dirtroad) 1 else 0  // avoiding auto-L1Rhw2 and auto-L2Rhw2
@@ -32,6 +32,32 @@ trait Onslope { this: RuleGenerator & Curve45Generator =>
       }
     }
 
+    // Viaduct OSTs
+    val viaductCombos = Seq(
+      (Road, L1Road),
+      (Road, L2Road),
+      (L1Road, L2Road),  // NOTE will suffer from auto-L1 issues
+      (Onewayroad, L1Onewayroad),
+      (Onewayroad, L2Onewayroad),
+      (L1Onewayroad, L2Onewayroad),  // NOTE will suffer from auto-L1 issues
+      (Avenue, L1Avenue),
+      (Avenue, L2Avenue),
+      (L1Avenue, L2Avenue),  // NOTE will suffer from auto-L1 issues
+    )
+    for ((lower, upper) <- viaductCombos) {
+      val onslope = upper~EC & lower~CW  // direction East (upper) to West (lower)
+      Rules += onslope | (upper.base.get ~> upper)~EW    // OST > upper
+      if (lower.height > 0) {
+        assert(lower.height == 1)
+        val baseOnslope = lower~EC & lower.base.get~CW
+        Rules += baseOnslope | upper~EW | onslope | %    // OST < upper
+        Rules += lower~EW | baseOnslope | % | onslope    // lower > OST
+        Rules += (lower.base.get ~> lower)~EW | onslope  // lower < OST
+        // additionally attempt to raise auto-L1 to L2
+        Rules += onslope | (lower ~> upper)~EW    // OST > upper (from lower at L1)
+      }
+    }
+
     createRules()
   }
 }
@@ -44,7 +70,7 @@ class OnslopeGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
 // Compile individually with `sbt "runMain com.sc4nam.module.CompileOnslopeCode"`.
 object CompileOnslopeCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new RhwResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new MiscResolver orElse new flexfly.FlexFlyResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
   val generator = new OnslopeGenerator(_)
   lazy val file = new java.io.File("target/Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
 }
