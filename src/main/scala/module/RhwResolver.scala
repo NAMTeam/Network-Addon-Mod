@@ -191,6 +191,11 @@ class RhwResolver extends IdResolver {
     // T intersections at ground level
     // Rhw2
 	// OxO
+    add(0x57600000, Dirtroad~NS & Street~EC)
+    add(0x57600100, Dirtroad~NS & Road~EC)
+    add(0x57600200, Dirtroad~NS & Onewayroad~EC)
+    add(0x57600300, Dirtroad~NS & Avenue~EC)
+    add(0x57600400, Dirtroad~NS & Dirtroad~EC)
     add(0x57600700, Dirtroad~NS & Tla3~EC)
     add(0x57600800, Dirtroad~NS & Ave2~EC)
     add(0x57600900, Dirtroad~NS & Ard3~EC)
@@ -203,6 +208,11 @@ class RhwResolver extends IdResolver {
     add(0x57609200, Dirtroad~NS & Ave6~CE)  // dummy intersection to enable Rhw3 support
     add(0x57609209, Dirtroad~NS & Tla7m~CE) // dummy intersection to enable Rhw3 support
     add(0x57609309, Dirtroad~NS & Ave6m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57601000, Dirtroad~CE & Street~NS)
+    add(0x57601100, Dirtroad~CE & Road~NS)
+    add(0x57601200, Dirtroad~CE & Onewayroad~NS)
+    add(0x57601300, Dirtroad~CE & Avenue~SN)
+    add(0x57601309, Dirtroad~CE & Avenue~NS)
     add(0x57601700, Dirtroad~CE & Tla3~NS)
     add(0x57601800, Dirtroad~CE & Ave2~NS)
     add(0x57601900, Dirtroad~CE & Ard3~NS)
@@ -226,9 +236,32 @@ class RhwResolver extends IdResolver {
     add(0x57608209, Dirtroad~CE & Ave6~NS) // Long-T
     add(0x57608300, Dirtroad~CE & Ave8~SN) // Short-T
     add(0x57608309, Dirtroad~CE & Ave8~NS) // Long-T
+	// OxD
+    add(0x57603400, Dirtroad~NC & Avenue~ES)
+    add(0x57603300, Dirtroad~CS & Avenue~ES)
+    add(0x57603309, Dirtroad~CS & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57605300, Dirtroad~ESC & Avenue~NS)
+    add(0x57605309, Dirtroad~NWC & Avenue~NS)
+    add(0x57605409, Dirtroad~CES & Avenue~WE)
+    add(0x57605400, Dirtroad~CWN & Avenue~SN)
+	// DxD
+    add(0x57607100, Dirtroad~CSW & Road~ES)
+    add(0x57607109, Dirtroad~SWC & Road~ES)
+    add(0x57607200, Dirtroad~CSW & Onewayroad~ES)
+    add(0x57607209, Dirtroad~SWC & Onewayroad~ES)
+    add(0x57607300, Dirtroad~CES & Avenue~SharedDiagLeft)
+    add(0x57607309, Dirtroad~ESC & Avenue~NE)
+    add(0x57607400, Dirtroad~WSC & Avenue~ES)
+    // add(0x57607409, Dirtroad~WNC & Avenue~SharedDiagRight)
 
     // Rhw3
 	// OxO
+    add(0x57610000, Rhw3~NS & Street~EC)
+    add(0x57610100, Rhw3~NS & Road~EC)
+    add(0x57610200, Rhw3~NS & Onewayroad~EC)
+    add(0x57610300, Rhw3~NS & Avenue~EC)
+    add(0x57610400, Rhw3~NS & Dirtroad~EC)
     add(0x57610700, Rhw3~NS & Tla3~EC)
     add(0x57610800, Rhw3~NS & Ave2~EC)
     add(0x57610900, Rhw3~NS & Ard3~EC)
@@ -241,6 +274,8 @@ class RhwResolver extends IdResolver {
     add(0x57619200, Rhw3~NS & Ave6~CE)
     add(0x57619209, Rhw3~NS & Tla7m~CE)
     add(0x57619309, Rhw3~NS & Ave6m~CE)
+    add(0x57611300, Rhw3~EC & Avenue~SN)
+    add(0x57611309, Rhw3~EC & Avenue~NS)
     add(0x57611700, Rhw3~EC & Tla3~NS)
     add(0x57611800, Rhw3~EC & Ave2~NS)
     add(0x57611900, Rhw3~EC & Ard3~NS)
@@ -265,6 +300,11 @@ class RhwResolver extends IdResolver {
     add(0x57618300, Rhw3~EC & Ave8~SN) // Short-T
     add(0x57618309, Rhw3~EC & Ave8~NS) // Long-T
     //Reverse for Thru-Ts
+    add(0x57610080, Rhw3~SN & Street~EC)
+    add(0x57610180, Rhw3~SN & Road~EC)
+    add(0x57610280, Rhw3~SN & Onewayroad~EC)
+    add(0x57610380, Rhw3~SN & Avenue~EC)
+    add(0x57610480, Rhw3~SN & Dirtroad~EC)
     add(0x57610780, Rhw3~SN & Tla3~EC)
     add(0x57610880, Rhw3~SN & Ave2~EC)
     add(0x57610980, Rhw3~SN & Ard3~EC)
@@ -277,9 +317,45 @@ class RhwResolver extends IdResolver {
     add(0x57619280, Rhw3~SN & Ave6~CE)
     add(0x57619289, Rhw3~SN & Tla7m~CE)
     add(0x57619389, Rhw3~SN & Ave6m~CE)
+	// OxD
+    // add(0x57613400, Rhw3~NC & Avenue~ES)
+    // add(0x57613480, Rhw3~CN & Avenue~ES)
+    // add(0x57613300, Rhw3~CS & Avenue~ES)
+    // add(0x57613380, Rhw3~SC & Avenue~ES)
+    // add(0x57613309, Rhw3~CS & Avenue~SharedDiagRight)
+    // add(0x57613389, Rhw3~SC & Avenue~SharedDiagRight)
+	// DxO
+    // add(0x57615300, Rhw3~ESC & Avenue~NS)
+    // add(0x57615309, Rhw3~NWC & Avenue~NS)
+    // add(0x57615380, Rhw3~CSE & Avenue~NS)
+    // add(0x57615389, Rhw3~CWN & Avenue~NS)
+    // add(0x57615409, Rhw3~CES & Avenue~WE)
+    // add(0x57615489, Rhw3~SEC & Avenue~WE)
+    // add(0x57615400, Rhw3~CWN & Avenue~SN)
+    // add(0x57615480, Rhw3~NWC & Avenue~SN)
+	// DxD
+    // add(0x57617100, Rhw3~CSW & Road~ES)
+    // add(0x57617109, Rhw3~SWC & Road~ES)
+    // add(0x57617180, Rhw3~WSC & Road~ES)
+    // add(0x57617189, Rhw3~CWS & Road~ES)
+    // add(0x57617200, Rhw3~CSW & Onewayroad~ES)
+    // add(0x57617209, Rhw3~SWC & Onewayroad~ES)
+    // add(0x57617280, Rhw3~WSC & Onewayroad~ES)
+    // add(0x57617289, Rhw3~CWS & Onewayroad~ES)
+    // add(0x57617300, Rhw3~CES & Avenue~SharedDiagLeft)
+    // add(0x57617380, Rhw3~SEC & Avenue~SharedDiagLeft)
+    // add(0x57617309, Rhw3~ESC & Avenue~NE)
+    // add(0x57617389, Rhw3~CSE & Avenue~NE)
+    // add(0x57617400, Rhw3~WSC & Avenue~ES)
+    // add(0x57617480, Rhw3~CSW & Avenue~ES)
 
     // Mis
 	// OxO
+    add(0x57620000, Mis~NS & Street~EC)
+    add(0x57620100, Mis~NS & Road~EC)
+    add(0x57620200, Mis~NS & Onewayroad~EC)
+    // add(0x57620300, Mis~NS & Avenue~EC)
+    add(0x57620400, Mis~NS & Dirtroad~EC)
     add(0x57620700, Mis~NS & Tla3~EC)
     add(0x57620800, Mis~NS & Ave2~EC)
     // add(0x57620900, Mis~NS & Ard3~EC)
@@ -292,6 +368,10 @@ class RhwResolver extends IdResolver {
     // add(0x57629200, Mis~NS & Ave6~CE)
     // add(0x57629209, Mis~NS & Tla7m~CE)
     // add(0x57629309, Mis~NS & Ave6m~CE)
+    add(0x57621300, Mis~EC & Avenue~SN)
+    add(0x57621309, Mis~EC & Avenue~NS)
+    add(0x57621500, Mis~EC & Rhw3~NS)
+    add(0x57621509, Mis~EC & Rhw3~SN)
     add(0x57621700, Mis~EC & Tla3~NS)
     add(0x57621800, Mis~EC & Ave2~NS)
     add(0x57621900, Mis~EC & Ard3~NS)
@@ -316,6 +396,11 @@ class RhwResolver extends IdResolver {
     add(0x57628300, Mis~EC & Ave8~SN) // Short-T
     add(0x57628309, Mis~EC & Ave8~NS) // Long-T
     //Reverse for Thru-Ts
+    add(0x57620080, Mis~SN & Street~EC)
+    add(0x57620180, Mis~SN & Road~EC)
+    add(0x57620280, Mis~SN & Onewayroad~EC)
+    // add(0x57620380, Mis~SN & Avenue~EC)
+    add(0x57620480, Mis~SN & Dirtroad~EC)
     add(0x57620780, Mis~SN & Tla3~EC)
     add(0x57620880, Mis~SN & Ave2~EC)
     // add(0x57620980, Mis~SN & Ard3~EC)
@@ -328,9 +413,48 @@ class RhwResolver extends IdResolver {
     // add(0x57629280, Mis~SN & Ave6~CE)
     // add(0x57629289, Mis~SN & Tla7m~CE)
     // add(0x57629389, Mis~SN & Ave6m~CE)
+	// OxD
+    add(0x57623400, Mis~NC & Avenue~ES)
+    add(0x57623480, Mis~CN & Avenue~ES)
+    add(0x57623300, Mis~CS & Avenue~ES)
+    add(0x57623380, Mis~SC & Avenue~ES)
+    add(0x57623309, Mis~CS & Avenue~SharedDiagRight)
+    add(0x57623389, Mis~SC & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57625300, Mis~ESC & Avenue~NS)
+    add(0x57625309, Mis~NWC & Avenue~NS)
+    add(0x57625380, Mis~CSE & Avenue~NS)
+    add(0x57625389, Mis~CWN & Avenue~NS)
+    add(0x57625409, Mis~CES & Avenue~WE)
+    add(0x57625489, Mis~SEC & Avenue~WE)
+    add(0x57625400, Mis~CWN & Avenue~SN)
+    add(0x57625480, Mis~NWC & Avenue~SN)
+	// DxD
+    add(0x57627100, Mis~CSW & Road~ES)
+    add(0x57627109, Mis~SWC & Road~ES)
+    add(0x57627180, Mis~WSC & Road~ES)
+    add(0x57627189, Mis~CWS & Road~ES)
+    add(0x57627200, Mis~CSW & Onewayroad~ES)
+    add(0x57627209, Mis~SWC & Onewayroad~ES)
+    add(0x57627280, Mis~WSC & Onewayroad~ES)
+    add(0x57627289, Mis~CWS & Onewayroad~ES)
+    add(0x57627300, Mis~CES & Avenue~SharedDiagLeft)
+    add(0x57627380, Mis~SEC & Avenue~SharedDiagLeft)
+    add(0x57627309, Mis~ESC & Avenue~NE)
+    add(0x57627389, Mis~CSE & Avenue~NE)
+    add(0x57627400, Mis~WSC & Avenue~ES)
+    add(0x57627480, Mis~CSW & Avenue~ES)
+
+    // add(0x57627480, Mis~WSC & Avenue~ES)
+    // add(0x57627409, Mis~CWN & Avenue~SharedDiagRight)
 
     // Rhw4
 	// OxO
+    add(0x57630000, Rhw4~NS & Street~EC)
+    add(0x57630100, Rhw4~NS & Road~EC)
+    add(0x57630200, Rhw4~NS & Onewayroad~EC)
+    add(0x57630300, Rhw4~NS & Avenue~EC)
+    add(0x57630400, Rhw4~NS & Dirtroad~EC)
     add(0x57630700, Rhw4~NS & Tla3~EC)
     add(0x57630800, Rhw4~NS & Ave2~EC)
     add(0x57630900, Rhw4~NS & Ard3~EC)
@@ -344,6 +468,8 @@ class RhwResolver extends IdResolver {
     add(0x57639300, Rhw4~NS & Ave8~CE) // enabled for double RHW-4 setups
     add(0x57639209, Rhw4~NS & Tla7m~CE) // enabled for double RHW-4 setups
     add(0x57639309, Rhw4~NS & Ave6m~CE) // enabled for double RHW-4 setups
+    add(0x57631300, Rhw4~EC & Avenue~SN)
+    add(0x57631309, Rhw4~EC & Avenue~NS)
     add(0x57631700, Rhw4~EC & Tla3~NS)
     add(0x57631800, Rhw4~EC & Ave2~NS)
     add(0x57631900, Rhw4~EC & Ard3~NS)
@@ -368,6 +494,11 @@ class RhwResolver extends IdResolver {
     add(0x57638300, Rhw4~EC & Ave8~SN) // Short-T
     add(0x57638309, Rhw4~EC & Ave8~NS) // Long-T
     //Reverse for Thru-Ts
+    add(0x57630080, Rhw4~SN & Street~EC)
+    add(0x57630180, Rhw4~SN & Road~EC)
+    add(0x57630280, Rhw4~SN & Onewayroad~EC)
+    add(0x57630380, Rhw4~SN & Avenue~EC)
+    add(0x57630480, Rhw4~SN & Dirtroad~EC)
     add(0x57630780, Rhw4~SN & Tla3~EC)
     add(0x57630880, Rhw4~SN & Ave2~EC)
     add(0x57630980, Rhw4~SN & Ard3~EC)
@@ -381,7 +512,38 @@ class RhwResolver extends IdResolver {
     // add(0x57639380, Rhw4~SN & Ave8~CE)
     // add(0x57639289, Rhw4~SN & Tla7m~CE)
     // add(0x57639389, Rhw4~SN & Ave6m~CE)
- 
+	// OxD
+    add(0x57633400, Rhw4~NC & Avenue~ES)
+    add(0x57633480, Rhw4~CN & Avenue~ES)
+    add(0x57633300, Rhw4~CS & Avenue~ES)
+    add(0x57633380, Rhw4~SC & Avenue~ES)
+    add(0x57633309, Rhw4~CS & Avenue~SharedDiagRight)
+    add(0x57633389, Rhw4~SC & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57635300, Rhw4~ESC & Avenue~NS)
+    add(0x57635309, Rhw4~NWC & Avenue~NS)
+    add(0x57635380, Rhw4~CSE & Avenue~NS)
+    add(0x57635389, Rhw4~CWN & Avenue~NS)
+    add(0x57635409, Rhw4~CES & Avenue~WE)
+    add(0x57635489, Rhw4~SEC & Avenue~WE)
+    add(0x57635400, Rhw4~CWN & Avenue~SN)
+    add(0x57635480, Rhw4~NWC & Avenue~SN)
+	// DxD
+    add(0x57637100, Rhw4~CSW & Road~ES)
+    add(0x57637109, Rhw4~SWC & Road~ES)
+    add(0x57637180, Rhw4~WSC & Road~ES)
+    add(0x57637189, Rhw4~CWS & Road~ES)
+    add(0x57637200, Rhw4~CSW & Onewayroad~ES)
+    add(0x57637209, Rhw4~SWC & Onewayroad~ES)
+    add(0x57637280, Rhw4~WSC & Onewayroad~ES)
+    add(0x57637289, Rhw4~CWS & Onewayroad~ES)
+    add(0x57637300, Rhw4~CES & Avenue~SharedDiagLeft)
+    add(0x57637380, Rhw4~SEC & Avenue~SharedDiagLeft)
+    add(0x57637309, Rhw4~ESC & Avenue~NE)
+    add(0x57637389, Rhw4~CSE & Avenue~NE)
+    add(0x57637400, Rhw4~WSC & Avenue~ES)
+    add(0x57637480, Rhw4~CSW & Avenue~ES)
+
    // T intersections with viaducts
     // Rhw2
     add(0x57600110, L1Rhw2~NS & L1Road~EC)
