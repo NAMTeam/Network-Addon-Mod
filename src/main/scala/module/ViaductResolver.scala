@@ -151,31 +151,43 @@ class ViaductResolver extends IdResolver {
       }
     }
 
-    // T intersections
-    for (n <- Viaducts) {
-      val id = ViaductResolver.viaductRangeId(n)
-      if (n.height == 1) {
-        add(id + 0x3110, n~SN & L1Road~CE, when = n.isSymm)
-        add(id + 0x3110, n~SN & L1Road~CE, when = !n.isSymm)
-        add(id + 0x3115, n~SN & L1Road~WC, when = !n.isSymm)
-        add(id + 0x3210, n~SN & L1Onewayroad~CE, when = n.isSymm)
-        add(id + 0x3210, n~SN & L1Onewayroad~CE, when = !n.isSymm)
-        add(id + 0x3215, n~SN & L1Onewayroad~WC, when = !n.isSymm)
-        add(id + 0x3310, n~WE & L1Avenue~NC, when = n.isSymm)
-        add(id + 0x3315, n~WE & L1Avenue~NC, when = !n.isSymm)
-      }
-      if (n.height == 2) {
-        add(id + 0x3120, n~SN & L2Road~CE, when = n.isSymm)
-        add(id + 0x3120, n~SN & L2Road~CE, when = !n.isSymm)
-        add(id + 0x3125, n~SN & L2Road~WC, when = !n.isSymm)
-        add(id + 0x3220, n~SN & L2Onewayroad~CE, when = n.isSymm)
-        add(id + 0x3220, n~SN & L2Onewayroad~CE, when = !n.isSymm)
-        add(id + 0x3225, n~SN & L2Onewayroad~WC, when = !n.isSymm)
-        add(id + 0x3320, n~WE & L2Avenue~NC, when = n.isSymm)
-        add(id + 0x3325, n~WE & L2Avenue~NC, when = !n.isSymm)
-      }
-    }
-
+    // At-Grade intersections
+    // add(0x5C001110, L1Road~NS & L1Road~WE)
+    add(0x5C003110, L1Road~NS & L1Road~CE)
+    add(0x5C003210, L1Road~NS & L1Onewayroad~CE)
+    add(0x5C003310, L1Road~WE & L1Avenue~NC)
+    // add(0x5C011110, L1Onewayroad~NS & L1Road~WE)
+    // add(0x5C011210, L1Onewayroad~NS & L1Onewayroad~WE)
+    add(0x5C013110, L1Onewayroad~NS & L1Road~CE)
+    add(0x5C013210, L1Onewayroad~NS & L1Onewayroad~CE)
+    add(0x5C013310, L1Onewayroad~WE & L1Avenue~NC)
+    // add(0x5C021110, L1Avenue~NS & L1Road~WE)
+    // add(0x5C021210, L1Avenue~NS & L1Onewayroad~WE)
+    // add(0x5C021310, L1Avenue~NS & L1Avenue~EW)
+    add(0x5C023110, L1Avenue~SN & L1Road~CE)
+    add(0x5C023115, L1Avenue~SN & L1Road~WC)
+    add(0x5C023210, L1Avenue~SN & L1Onewayroad~CE)
+    add(0x5C023215, L1Avenue~SN & L1Onewayroad~WC)
+    // add(0x5C023310, L1Avenue~WE & L1Avenue~NC)
+    add(0x5C023315, L1Avenue~WE & L1Avenue~NC)
+    // add(0x5C031120, L2Road~NS & L2Road~WE)
+    add(0x5C033120, L2Road~NS & L2Road~CE)
+    add(0x5C033220, L2Road~NS & L2Onewayroad~CE)
+    add(0x5C033320, L2Road~WE & L2Avenue~NC)
+    // add(0x5C041120, L2Onewayroad~NS & L2Road~WE)
+    // add(0x5C041220, L2Onewayroad~NS & L2Onewayroad~WE)
+    add(0x5C043120, L2Onewayroad~NS & L2Road~CE)
+    add(0x5C043220, L2Onewayroad~NS & L2Onewayroad~CE)
+    add(0x5C043320, L2Onewayroad~WE & L2Avenue~NC)
+    // add(0x5C051120, L2Avenue~NS & L2Road~WE)
+    // add(0x5C051220, L2Avenue~NS & L2Onewayroad~WE)
+    // add(0x5C051320, L2Avenue~NS & L2Avenue~EW)
+    add(0x5C053120, L2Avenue~SN & L2Road~CE)
+    add(0x5C053125, L2Avenue~SN & L2Road~WC)
+    add(0x5C053220, L2Avenue~SN & L2Onewayroad~CE)
+    add(0x5C053225, L2Avenue~SN & L2Onewayroad~WC)
+    // add(0x5C053310, L2Avenue~WE & L2Avenue~NC)
+    add(0x5C053315, L2Avenue~WE & L2Avenue~NC)
     // Onslope transitions
     add(0x5c060000, L1Road~NC & Road~CS)
     add(0x5c060010, L2Road~NC & L1Road~CS)
