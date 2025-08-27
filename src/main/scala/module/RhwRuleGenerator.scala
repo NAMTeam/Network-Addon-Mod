@@ -76,5 +76,6 @@ class RhwRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 object CompileRhwCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
   val generator = new RhwRuleGenerator(_)
-  lazy val file = new java.io.File("target/RhwMetaGenerated_MANAGED.txt")
+  // lazy val file = new java.io.File("target/RhwMetaGenerated_MANAGED.txt")
+  lazy val file = new java.io.File("Controller/RUL2/07_RHW/Sec7c_RHWxRHW/RhwMetaGenerated_MANAGED.txt")
 }

@@ -32,5 +32,6 @@ class NwmRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 object CompileNwmCode extends AbstractMain {
   lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
   val generator = new NwmRuleGenerator(_)
-  lazy val file = new java.io.File("target/NwmMetaGenerated_MANAGED.txt")
+//  lazy val file = new java.io.File("target/NwmMetaGenerated_MANAGED.txt")
+  lazy val file = new java.io.File("Controller/RUL2/08_NWM/NwmMetaGenerated_MANAGED.txt")
 }
