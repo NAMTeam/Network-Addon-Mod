@@ -10,9 +10,10 @@ object CrossingGenerator {
     for {
       minor <- Network.values.iterator
       if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
-         (main.isNwm && (minor.isRhw || minor.isNwm || minor.isViaduct || minor.base.isEmpty)) ||
+         (main.isNwm && (minor.isRhw || minor.isNwm || minor.isViaduct || minor.base.isEmpty || GlrNetworks.contains(minor))) ||
          (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr)) ||
-         (main.isViaduct && (minor.isNwm || minor.isRhw || minor.base.isEmpty) && minor != Groundhighway)
+         (main.isViaduct && (minor.isNwm || minor.isRhw || minor.base.isEmpty) && minor != Groundhighway) ||
+         GlrNetworks.contains(main) && (minor.isRhw || minor.isNwm /*|| minor == main*/)
          ) && intersectionAllowed(main, minor)
     } yield minor
   }

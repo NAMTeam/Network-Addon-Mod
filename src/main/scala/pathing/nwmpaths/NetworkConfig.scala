@@ -115,6 +115,17 @@ object NetworkConfig {
     add(Tla7m, NS)(-7f-16)(0.5f-16, 5.5f-16, -5.5f, -1.125f)(17.125f-16, 21.5f-16, 16-5.5f, 16-0.5f)(23f)
     add(Tla7m, ES, SE)(-32+1.5f)(-16-5.5f, -16+1.5f, -16+7.5f, -0.1f)(0.1f, 16-7.5f, 16-1.5f, 16+5.5f)(32-1.5f)
 
+    add(Dirtroad, NS)(-6.4f)(-2.5f)(2.5f)(6.5f)
+    add(Dirtroad, ES)(-7.1f)(-3.2f)(3.2f)(7.1f)
+    add(Rhw3, NS)(-7.5f)(-4.5f, 0f)(4.5f)(7.5f)  // pedestrian paths are made up, needed for defining the boundary of the intersection
+    add(Rhw3, ES, SE)(-7.99f)(-5.5f, 0f)(5.5f)(7.99f)
+    add(Mis, NS)(-6.39f)(0f)()(6.39f)
+    add(Mis, ES, SE)(-7.3f)(0f)()(7.3f)
+    add(Rhw4, NS)(-6.5f)(-2.5f, 2.5f)()(6.5f)
+    add(Rhw4, ES, SE)(-7.3f)(-3.2f, 3.2f)()(7.3f)
+    // add(Rhw6s, NS)(-7.99f)(-7f, -2.5f, 2.5f)()(6.5f)
+    // add(Rhw6s, ES, SE)(-7.99f)(-7.875f, -3.2f, 3.2f)()(7.1f)
+
     m.toMap
   }
 

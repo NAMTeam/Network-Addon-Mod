@@ -40,6 +40,8 @@ object CompileAllMetarules {
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling NWM metarule code")
     CompileNwmCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling GLR metarule code")
+    CompileGlrCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling SAM metarule code")
     CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")

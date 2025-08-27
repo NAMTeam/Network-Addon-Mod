@@ -71,13 +71,14 @@ class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersectio
     val n = network(c)
     n == Network.Onewayroad || n.base.exists(_ == Network.Onewayroad)
   }
+  private def hasPedestrianPaths(n: Network): Boolean = !n.isRhw || n == Network.Dirtroad
 
   override val MaxRadius =
     if (NP.isTripleTile(major.network) || NP.isTripleTile(minor.network)) 6.0
     else if (NP.isDoubleTile(major.network) && NP.isDoubleTile(minor.network)) 14.0
     else 8.5  // single/single or mixed double/single
 
-  protected def rightTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Sim || tt == TT.Car) {
+  protected def rightTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Sim && hasPedestrianPaths(network(c)) || tt == TT.Car) {
     sortedPaths(c).find(_.tt == tt).toSeq
   } else Nil
   protected def leftTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Car) {
@@ -85,7 +86,8 @@ class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersectio
   } else Nil
   protected def straightPaths(c: Cardinal, tt: TT, dropRedundantPaths: Boolean) = {
     val paths = sortedPaths(c).filter(_.tt == tt)
-    if (tt != TT.Car) paths
+    if (tt == TT.Sim && !hasPedestrianPaths(network(c))) Nil
+    else if (tt != TT.Car) paths
     else if (dropRedundantPaths && hasTurningLane(c)) paths.dropRight(1) // TLA networks have one thru-lane less
     else if (dropRedundantPaths && isBidirectionalOneway(c)) paths.dropRight(paths.length / 2) // OWR networks have duplicated thru-lanes, we need only half of them
     else paths

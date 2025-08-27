@@ -43,6 +43,8 @@ object NwmResolver {
     Monorail      -> 0x0700,
     Glr1          -> 0x0800,
     Glr2          -> 0x0900,
+    Glr3          -> 0x0805,  // model-based
+    Glr4          -> 0x0905,  // model-based
     L2Hsr         -> 0x0A00,  // previously 0x1700, moved here to avoid DxO/DxD collision
     Str           -> 0x0F00,
 
