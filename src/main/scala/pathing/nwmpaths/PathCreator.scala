@@ -25,17 +25,26 @@ object PathCreator {
   def generateNwmPaths(implicit resolver: IdResolver): Iterable[BufferedEntry[Sc4Path]] = {
     val ids = scala.collection.mutable.Map.empty[Int, (Sc4Path, Boolean)]
     // TODO provisional
-    val mainNetworks = NwmNetworks -- Set(Ave8)
+    val mainNetworks = NwmNetworks -- Set(Ave8) ++ Set(Dirtroad, Rhw3, Mis, Rhw4)
     val minorNetworks = NwmNetworks ++ Set(Road, Street, Onewayroad, Avenue) -- Set(Ave8)
     for {
       main <- mainNetworks
       minor <- minorNetworks
+      if {
+        if (NetworkProperties.intersectionAllowed(main, minor)) {
+          true
+        } else {
+          println(s"intersections between $main and $minor are not allowed yet(?)")
+          false
+        }
+      }
     } /*do*/ {
       import Flags._, Implicits._
       def add(seg1: Segment, seg2: Segment, modelBased: Boolean) = {
         val tile0 = NetworkProperties.transformSharedDiagonals(seg1 & seg2)
         if (!seg1.network.isTla && !seg2.network.isTla) {
           val idTile = resolver(tile0)
+          // require(!idTile.rf.flipped, s"unexpected mirrored tile ${tile0}")
           if (!ids.contains(idTile.id)) {
             val intersection = new PlusIntersection(seg1, seg2)
             ids(idTile.id) = (intersection.buildSc4Path * (R0F0 / idTile.rf), modelBased)
@@ -57,7 +66,7 @@ object PathCreator {
           }
         }
       }
-      def hasDiagonalOverhangs(n: Network): Boolean = n.isNwm && NetworkProperties.isSingleTile(n) && n != Owr1
+      def hasDiagonalOverhangs(n: Network): Boolean = n.isNwm && NetworkProperties.isSingleTile(n) && n != Owr1 || n.isRhw
       // In the following, it is important to choose the same directions as in
       // the IID scheme, since otherwise the uk flags can end up flipped.
       for { // OxD
