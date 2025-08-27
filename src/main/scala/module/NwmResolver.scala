@@ -668,7 +668,7 @@ class NwmResolver extends IdResolver {
       add(nwmRangeId(n) + 0x3180, n~WE & Road~NC)  // Road Long
       add(nwmRangeId(n) + 0x3200, n~EW & Onewayroad~NC)  // Onewayroad Short
       add(nwmRangeId(n) + 0x3280, n~WE & Onewayroad~NC)  // Onewayroad Long
-      add(nwmRangeId(n) + 0x4300, n~EW & Avenue~NC)  // Avenue Short
+      // add(nwmRangeId(n) + 0x4300, n~EW & Avenue~NC)  // Avenue Short
       add(nwmRangeId(n) + 0x4400, n~WE & Avenue~NC)  // Avenue Long
       add(nwmRangeId(n) + 0x3800, n~EW & Tla3~NC)  // TLA-3 Short
       add(nwmRangeId(n) + 0x3880, n~WE & Tla3~NC)  // TLA-3 Long
