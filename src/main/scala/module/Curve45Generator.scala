@@ -89,7 +89,7 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
   }
 
   def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
-    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 ||
+    n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 || n == L1Road || n == L2Road || n == L1Onewayroad || n == L2Onewayroad ||
     inside && (n == Ave6 || n == Ave8)
   }
 
@@ -104,11 +104,11 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
 
   def hasMisStyle90Curve(n: Network, inside: Boolean): Boolean = {
     (n >= Mis && n <= L4Mis) ||
-    !inside && (n == Tla5 || n == Rd4 || n.isOwr4Like)
+    !inside && (n == Tla5 || n == Rd4 || n.isOwr4Like || n == L1Avenue || n == L2Avenue)
   }
 
   def has90Curve(n: Network, inside: Boolean): Boolean = {
-    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4 || n.isOwr4Like))
+    (n.isNwm || n.isViaduct) && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4 || n.isOwr4Like))
   }
 
   def createCurve45Rules(main: Network): Unit = {
