@@ -248,7 +248,7 @@
 ;00 to 01 (Orth Stub)
 ;00 to 04 (Orth-Diag Bottom)
 ;0x51983000,0,1,0x00004d00,3,0=0x51983000,0,1,0x51100000,1,0
-;0x51983000,2,0,0x00004d00,1,1=0x51983000,2,0,0x51100000,3,0; conflicting-override
+;0x51983000,2,0,0x00004d00,1,1=0x51983000,2,0,0x51100000,3,0
 ;00 to 0A/0B (Sharp 90-Bend)
 ;OUTER
 ;0x51100000,1,0,0x00000f00,1,0=0x51100A00,1,0,0x51100A80,1,0
@@ -350,7 +350,7 @@
 ;00 to 01 (Orth Stub)
 ;00 to 04 (Orth-Diag Bottom)
 ;0x516f2000,0,1,0x09004d00,3,0=0x516f2000,0,1,0x51120000,1,0; missing_paths
-;0x516f2000,2,0,0x09004d00,1,1=0x516f2000,2,0,0x51120000,3,0; conflicting-override; missing_paths
+;0x516f2000,2,0,0x09004d00,1,1=0x516f2000,2,0,0x51120000,3,0; missing_paths
 ;----Base Network----
 ;00 to 00 (Orth)
 ;0x516f2000,0,1,0x09004b00,1,0=0x516f2000,0,1,0x51120000,1,0; missing_paths
@@ -360,8 +360,8 @@
 ;00 to 01 (Orth Stub)
 ;00 to 05/06 (Orth-Diag Bottom)
 ;0x516f2000,0,1,0x09004d00,1,1=0x516f2000,0,1,0x51120500,1,1; missing_paths
-;0x516f2000,0,1,0x09004d00,3,0=0x516f2000,0,1,0x51120600,3,0; conflicting-override; missing_paths
-;0x516f2000,2,0,0x09004d00,1,1=0x516f2000,2,0,0x51120600,1,1; conflicting-override; missing_paths
+;0x516f2000,0,1,0x09004d00,3,0=0x516f2000,0,1,0x51120600,3,0; missing_paths
+;0x516f2000,2,0,0x09004d00,1,1=0x516f2000,2,0,0x51120600,1,1; missing_paths
 ;0x516f2000,2,0,0x09004d00,3,0=0x516f2000,2,0,0x51120500,3,0; missing_paths
 ;----Other Base Crossings----
 ;----Special----
@@ -466,7 +466,7 @@
 ;00 to 01 (Orth Stub)
 ;00 to 04 (Orth-Diag Bottom)
 ;0x519c3000,0,1,0x00004d00,3,0=0x519c3000,0,1,0x51140000,1,0
-;0x519c3000,2,0,0x00004d00,1,1=0x519c3000,2,0,0x51140000,3,0; conflicting-override
+;0x519c3000,2,0,0x00004d00,1,1=0x519c3000,2,0,0x51140000,3,0
 ;----Other Base Crossings----
 ;----Other Network Transitions----
 ;---Orthogonal Transition Hooks---
@@ -505,7 +505,7 @@
 ;00 to 01 (Orth Stub)
 ;00 to 05/06 (Orth-Diag Bottom)
 ;0x519d3000,2,0,0x00004d00,1,1=0x519d3000,2,0,0x51200000,3,0; missing_paths
-;0x519d3000,0,1,0x00004d00,3,0=0x519d3000,0,1,0x51200000,1,0; conflicting-override; missing_paths
+;0x519d3000,0,1,0x00004d00,3,0=0x519d3000,0,1,0x51200000,1,0; missing_paths
 ;0x51200000,1,0,0x00004d00,1,1=0x51200500,1,0,0x51200600,1,0
 ;0x51200000,3,0,0x00004d00,3,0=0x51200500,3,1,0x51200600,3,1
 ;----Other Base Crossings----
@@ -566,7 +566,7 @@
 ;00 to 01 (Orth Stub)
 ;00 to 05/06 (Orth-Diag Bottom)
 ;0x519e3000,2,0,0x09004d00,1,1=0x519e3000,2,0,0x51210000,3,0; missing_paths
-;0x519e3000,0,1,0x09004d00,3,0=0x519e3000,0,1,0x51210000,1,0; conflicting-override; missing_paths
+;0x519e3000,0,1,0x09004d00,3,0=0x519e3000,0,1,0x51210000,1,0; missing_paths
 ;----Other Base Crossings----
 ;----Other Network Transitions----
 ;---Orthogonal Transition Hooks---
