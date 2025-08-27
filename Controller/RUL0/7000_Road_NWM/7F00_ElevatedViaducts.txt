@@ -35,20 +35,20 @@ AddTypes = 7F32, 17F32, 27F32, 37F32, 47F32, 57F32, 67F32, 77F32, 87F32, 97F32, 
 [HighwayIntersectionInfo_0x00007F00]
 ;Added by Tarkus 6/19/2013
 ;L1 Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C000005
+Piece = 0.0, 16.0, 0, 0, 0x5C000005
 PreviewEffect = preview_starter_l1erd2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 lightrail: 0x00000101, 0xffffffff optional
 
 ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
+ConsLayout =......<
+ConsLayout =...|...
 ConsLayout =...^...
 
 AutoTileBase =	0x55387000
@@ -95,20 +95,20 @@ CopyFrom    = 0x37F00
 [HighwayIntersectionInfo_0x00007F01]
 ;Added by Tarkus 6/19/2013
 ;L2 Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C030005
+Piece = 0.0, 16.0, 0, 0, 0x5C030005
 PreviewEffect = preview_starter_l2erd2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 lightrail: 0x00000303, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...|...<
+ConsLayout =.......<
+ConsLayout =...|....
 ConsLayout =...^....
 
 AutoTileBase =	0x55387000
@@ -155,20 +155,20 @@ CopyFrom    = 0x37F01
 [HighwayIntersectionInfo_0x00007F02]
 ;Added by Tarkus 6/19/2013
 ;L1 One-Way Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C010005
+Piece = 0.0, 16.0, 0, 0, 0x5C010005
 PreviewEffect = preview_starter_l1eow2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 lightrail: 0x00000403, 0xffffffff optional
 
 ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
+ConsLayout =......<
+ConsLayout =...|...
 ConsLayout =...^...
 
 AutoTileBase =	0x55387000
@@ -215,20 +215,20 @@ CopyFrom    = 0x37F02
 [HighwayIntersectionInfo_0x00007F03]
 ;Added by Tarkus 6/19/2013
 ;L2 One-Way Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C040005
+Piece = 0.0, 16.0, 0, 0, 0x5C040005
 PreviewEffect = preview_starter_l2eow2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 lightrail: 0x00000401, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...|...<
+ConsLayout =.......<
+ConsLayout =...|....
 ConsLayout =...^....
 
 AutoTileBase =	0x55387000
@@ -275,13 +275,13 @@ CopyFrom    = 0x37F03
 [HighwayIntersectionInfo_0x00007F04]
 ;Added by Tarkus 6/19/2013
 ;L1 Avenue Viaduct Starter Piece
-Piece = 0.0, -16.0, 0, 0, 0x5C020005
+Piece = -16.0, -16.0, 0, 0, 0x5C020005
 PreviewEffect = preview_starter_l1eav4__000
 
 CellLayout =.......
 CellLayout =....a..
 CellLayout =...Zb.<
-CellLayout =...^...
+CellLayout =....^..
 
 CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00030400, 0xFFFFFFFF optional
@@ -291,7 +291,7 @@ CheckType = b - avenue: 0x00020402 lightrail: 0x03000004, 0xFFFFFFFF optional
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =...|..<
-ConsLayout =...^...
+ConsLayout =....^..
 
 AutoTileBase =	0x55387000
 ReplacementIntersection = 0, 0
@@ -337,13 +337,13 @@ CopyFrom    = 0x37F04
 [HighwayIntersectionInfo_0x00007F05]
 ;Added by Tarkus 9/13/2013
 ;L2 Avenue Viaduct Starter Piece
-Piece = 0.0, -16.0, 0, 0, 0x5C050005
+Piece = -16.0, -16.0, 0, 0, 0x5C050005
 PreviewEffect = preview_starter_l2eav4__000
 
 CellLayout =.......
 CellLayout =....a..
 CellLayout =...Zb.<
-CellLayout =...^...
+CellLayout =....^..
 
 CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00010400, 0xFFFFFFFF optional
@@ -353,7 +353,7 @@ CheckType = b - avenue: 0x00020402 lightrail: 0x01000004, 0xFFFFFFFF optional
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =...|..<
-ConsLayout =...^...
+ConsLayout =....^..
 
 AutoTileBase =	0x55387000
 ReplacementIntersection = 0, 0
@@ -399,12 +399,12 @@ CopyFrom    = 0x37F05
 [HighwayIntersectionInfo_0x00007F06]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060205
+Piece = 0.0, 0.0, 0, 0, 0x5C060205
 PreviewEffect = preview_flexhtrans_l1rd_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -416,8 +416,8 @@ CheckType = c - road: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -467,12 +467,12 @@ CopyFrom	=	0x37F06
 [HighwayIntersectionInfo_0x00007F07]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060215
+Piece = 0.0, 0.0, 0, 0, 0x5C060215
 PreviewEffect = preview_flexhtrans_l2rd_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -487,8 +487,8 @@ CheckType = c - road: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -539,14 +539,14 @@ CopyFrom	=	0x37F07
 [HighwayIntersectionInfo_0x00007F08]
 ;Added by Tarkus 07.26.2013
 ;Road FLEX-OST 1-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
+Piece = 0.0, 0.0, 0, 0, 0x5caee006
 PreviewEffect = preview_rhw2_l0l1onslope001
 
 CellLayout=....
 ;CellLayout=..c.
-CellLayout=..a.
+CellLayout=..a<
 ;CellLayout=..d.
-CellLayout=..b<
+CellLayout=..b.
 CellLayout=..^.
 
 CheckType = a - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
@@ -556,8 +556,8 @@ CheckType = b - road: 0x00000000
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
+ConsLayout=...<
+ConsLayout=..+.
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -603,14 +603,14 @@ CopyFrom	=	0x37F08
 [HighwayIntersectionInfo_0x00007F09]
 Added by Tarkus 08.16.2013
 ;Road FLEX-OST 2-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
+Piece = 0.0, 0.0, 0, 0, 0x5caee006
 PreviewEffect = preview_rhw2_l0l1onslope001
 
 CellLayout=....
 ;CellLayout=..c.
-CellLayout=..a.
+CellLayout=..a<
 ;CellLayout=..d.
-CellLayout=..b<
+CellLayout=..b.
 CellLayout=..^.
 
 CheckType = a - lightrail: 0x04000404 dirtroad: 0x02000000, 0x00000000 optional
@@ -620,8 +620,8 @@ CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
+ConsLayout=...<
+ConsLayout=..+.
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -667,12 +667,12 @@ CopyFrom	=	0x37F09
 [HighwayIntersectionInfo_0x00007F0A]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060205
+Piece = 0.0, 0.0, 0, 0, 0x5C060205
 PreviewEffect = preview_flexhtrans_l1ow_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -684,8 +684,8 @@ CheckType = c - onewayroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 onewayroad: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -733,12 +733,12 @@ CopyFrom	=	0x37F0A
 [HighwayIntersectionInfo_0x00007F0B]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060215
+Piece = 0.0, 0.0, 0, 0, 0x5C060215
 PreviewEffect = preview_flexhtrans_l2ow_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -753,8 +753,8 @@ CheckType = c - onewayroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 onewayroad: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -806,12 +806,12 @@ CopyFrom	=	0x37F0B
 [HighwayIntersectionInfo_0x00007F0C]
 ;Added by Tarkus 09.23.2012
 ;Avenue FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C080205
+Piece = 0.0, 0.0, 0, 0, 0x5C080205
 PreviewEffect = preview_flexhtrans_l1av_000
 
 CellLayout=.....
-CellLayout=..b.<
-CellLayout=..ae.
+CellLayout=..b..
+CellLayout=..ae<
 CellLayout=..cf.
 CellLayout=..cf.
 CellLayout=..dg.
@@ -826,8 +826,8 @@ CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
 CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
 
 ConsLayout=.....
-ConsLayout=..+.<
-ConsLayout=.....
+ConsLayout=..+..
+ConsLayout=....<
 ConsLayout=.....
 ConsLayout=.....
 ConsLayout=.....
@@ -875,12 +875,12 @@ CopyFrom	=	0x37F0C
 [HighwayIntersectionInfo_0x00007F0D]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C080215
+Piece = 0.0, 0.0, 0, 0, 0x5C080215
 PreviewEffect = preview_flexhtrans_l2av_000
 
 CellLayout=.....
-CellLayout=..b.<
-CellLayout=..ae.
+CellLayout=..b..
+CellLayout=..ae<
 CellLayout=..cf.
 CellLayout=..cf.
 CellLayout=..dg.
@@ -898,8 +898,8 @@ CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
 CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
 
 ConsLayout=.....
-ConsLayout=..+.<
-ConsLayout=.....
+ConsLayout=..+..
+ConsLayout=....<
 ConsLayout=.....
 ConsLayout=.....
 ConsLayout=.....
@@ -949,7 +949,7 @@ CopyFrom	=	0x37F0D
 [HighwayIntersectionInfo_0x00007F10]
 ;Added by Tarkus 09.23.2012
 ;Road FlexHT-L0-to-L1 Diag
-Piece = 0.0, 16.0, 0, 0, 0x5C060805
+Piece = 16.0, 16.0, 0, 0, 0x5C060805
 PreviewEffect = preview_flexhtrans_l1rd_001
 
 CellLayout=...........
@@ -958,7 +958,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - road: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - road: 0x00000000
@@ -972,7 +972,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C060200
@@ -1020,7 +1020,7 @@ CopyFrom	=	0x77F10
 [HighwayIntersectionInfo_0x00007F11]
 ;Added by Tarkus 09.23.2012
 ;One-Way Road FlexHT-L0-to-L1 Diag
-Piece = 0.0, 16.0, 0, 0, 0x5C070805
+Piece = 16.0, 16.0, 0, 0, 0x5C070805
 PreviewEffect = preview_flexhtrans_l1owr001
 
 CellLayout=...........
@@ -1029,7 +1029,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - onewayroad: 0x00000000
@@ -1043,7 +1043,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C070200
@@ -1073,7 +1073,7 @@ Rotate	=	2
 CopyFrom	=	0x47F11
 Rotate	=	1
 [HighwayIntersectionInfo_0x00087F11]
-Piece = 0.0, 16.0, 0, 0, 0x5C070806
+Piece = 16.0, 16.0, 0, 0, 0x5C070806
 PreviewEffect = preview_flexhtrans_l1owr002
 
 CellLayout=...........
@@ -1082,7 +1082,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - onewayroad: 0x00000000
@@ -1096,7 +1096,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C070200
@@ -1112,7 +1112,7 @@ Rotate	=	2
 CopyFrom	=	0x87F11
 Rotate	=	3
 [HighwayIntersectionInfo_0x000C7F11]
-Piece = 0.0, 16.0, 0, 0, 0x5C070805
+Piece = 16.0, 16.0, 0, 0, 0x5C070805
 CopyFrom	=	0x87F11
 Transpose	=	1
 PreviewEffect = preview_flexhtrans_l1owr001
