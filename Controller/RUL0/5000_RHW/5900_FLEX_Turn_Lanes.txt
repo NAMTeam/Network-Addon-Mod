@@ -754,17 +754,18 @@ PreviewEffect = preview_starter_rhwsitap007
 CellLayout =.......
 CellLayout =...Z..<
 CellLayout =...bb..
-CellLayout =...aa..
+CellLayout =...af..
 CellLayout =...dd..
 CellLayout =.......
 CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x02000200
-CheckType = a - road: 0x02020202, 0xffffffff optional
+CheckType = a - road: 0x02020202 dirtroad: 0x04030000, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
 CheckType = c - road: 0x00020000, 0xffffffff optional
 CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
 CheckType = e - road: 0x00000002, 0xffffffff optional
+CheckType = f - road: 0x02020202 dirtroad: 0x00000403, 0xffffffff optional
 
 ConsLayout =.......
 ConsLayout =...|..<
@@ -805,9 +806,9 @@ CellLayout =.......
 CellLayout =...^...
 
 CheckType = Z - dirtroad: 0x02000200
-CheckType = a - road: 0x02020200, 0xffffffff optional
+CheckType = a - road: 0x02020200 dirtroad: 0x04030000, 0xffffffff optional
 CheckType = b - dirtroad: 0x02000000, 0xffffffff optional
-CheckType = c - road: 0x02020202, 0xffffffff optional
+CheckType = c - road: 0x02020202 dirtroad: 0x00000403, 0xffffffff optional
 CheckType = d - dirtroad: 0x00000200, 0xffffffff optional
 CheckType = e - dirtroad: 0x00000002, 0xffffffff optional
 

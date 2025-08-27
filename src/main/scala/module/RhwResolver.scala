@@ -188,7 +188,363 @@ class RhwResolver extends IdResolver {
       add(n~SE & n2~WS, id + 0x9000 + off8Diag + (dir1 & msk1a | dir2 & msk2a), when = !n.isSymm && asymmOrShared(n2))
     }
 
-    // T intersections with viaducts
+    // T intersections at ground level
+    // Rhw2
+	// OxO
+    add(0x57600000, Dirtroad~NS & Street~EC)
+    add(0x57600100, Dirtroad~NS & Road~EC)
+    add(0x57600200, Dirtroad~NS & Onewayroad~EC)
+    add(0x57600300, Dirtroad~NS & Avenue~EC)
+    add(0x57600400, Dirtroad~NS & Dirtroad~EC)
+    add(0x57600700, Dirtroad~NS & Tla3~EC)
+    add(0x57600800, Dirtroad~NS & Ave2~EC)
+    add(0x57600900, Dirtroad~NS & Ard3~EC)
+    add(0x57600A00, Dirtroad~NS & Owr1~EC)
+    add(0x57600B00, Dirtroad~NS & Owr3~EC) // dummy intersection to enable Rhw3 support
+    add(0x57600C00, Dirtroad~NS & Nrd4~EC)
+    add(0x57600D00, Dirtroad~NS & Tla5~EC)
+    add(0x57609000, Dirtroad~NS & Rd4~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609100, Dirtroad~NS & Rd6~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609200, Dirtroad~NS & Ave6~CE)  // dummy intersection to enable Rhw3 support
+    add(0x57609209, Dirtroad~NS & Tla7m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57609309, Dirtroad~NS & Ave6m~CE) // dummy intersection to enable Rhw3 support
+    add(0x57601000, Dirtroad~CE & Street~NS)
+    add(0x57601100, Dirtroad~CE & Road~NS)
+    add(0x57601200, Dirtroad~CE & Onewayroad~NS)
+    add(0x57601300, Dirtroad~CE & Avenue~SN)
+    add(0x57601309, Dirtroad~CE & Avenue~NS)
+    add(0x57601700, Dirtroad~CE & Tla3~NS)
+    add(0x57601800, Dirtroad~CE & Ave2~NS)
+    add(0x57601900, Dirtroad~CE & Ard3~NS)
+    add(0x57601909, Dirtroad~CE & Ard3~SN)
+    add(0x57601A00, Dirtroad~CE & Owr1~NS)
+    add(0x57601B00, Dirtroad~CE & Owr3~NS) // dummy intersection to enable Rhw3 support
+    add(0x57601C00, Dirtroad~CE & Nrd4~NS)
+    add(0x57601D00, Dirtroad~CE & Tla5~SN) // Short-T
+    add(0x57601D09, Dirtroad~CE & Tla5~NS) // Long-T
+    add(0x57601E00, Dirtroad~CE & Owr4~SN) // Short-T
+    add(0x57601E09, Dirtroad~CE & Owr4~NS) // Long-T
+    add(0x57608400, Dirtroad~CE & Owr4m~SN) // Short-T
+    add(0x57608409, Dirtroad~CE & Owr4m~NS) // Long-T
+    add(0x57601F00, Dirtroad~CE & Owr5~SN) // Short-T
+    add(0x57601F09, Dirtroad~CE & Owr5~NS) // Long-T
+    add(0x57608000, Dirtroad~CE & Rd4~SN) // Short-T
+    add(0x57608009, Dirtroad~CE & Rd4~NS) // Long-T
+    add(0x57608100, Dirtroad~CE & Rd6~SN) // Short-T
+    add(0x57608109, Dirtroad~CE & Rd6~NS) // Long-T
+    add(0x57608200, Dirtroad~CE & Ave6~SN) // Short-T
+    add(0x57608209, Dirtroad~CE & Ave6~NS) // Long-T
+    add(0x57608300, Dirtroad~CE & Ave8~SN) // Short-T
+    add(0x57608309, Dirtroad~CE & Ave8~NS) // Long-T
+	// OxD
+    add(0x57603400, Dirtroad~NC & Avenue~ES)
+    add(0x57603300, Dirtroad~CS & Avenue~ES)
+    add(0x57603309, Dirtroad~CS & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57605300, Dirtroad~ESC & Avenue~NS)
+    add(0x57605309, Dirtroad~NWC & Avenue~NS)
+    add(0x57605409, Dirtroad~CES & Avenue~WE)
+    add(0x57605400, Dirtroad~CWN & Avenue~SN)
+	// DxD
+    add(0x57607100, Dirtroad~CSW & Road~ES)
+    add(0x57607109, Dirtroad~SWC & Road~ES)
+    add(0x57607200, Dirtroad~CSW & Onewayroad~ES)
+    add(0x57607209, Dirtroad~SWC & Onewayroad~ES)
+    add(0x57607300, Dirtroad~CES & Avenue~SharedDiagLeft)
+    add(0x57607309, Dirtroad~ESC & Avenue~NE)
+    add(0x57607400, Dirtroad~WSC & Avenue~ES)
+    // add(0x57607409, Dirtroad~WNC & Avenue~SharedDiagRight)
+
+    // Rhw3
+	// OxO
+    add(0x57610000, Rhw3~NS & Street~EC)
+    add(0x57610100, Rhw3~NS & Road~EC)
+    add(0x57610200, Rhw3~NS & Onewayroad~EC)
+    add(0x57610300, Rhw3~NS & Avenue~EC)
+    add(0x57610400, Rhw3~NS & Dirtroad~EC)
+    add(0x57610700, Rhw3~NS & Tla3~EC)
+    add(0x57610800, Rhw3~NS & Ave2~EC)
+    add(0x57610900, Rhw3~NS & Ard3~EC)
+    add(0x57610A00, Rhw3~NS & Owr1~EC)
+    add(0x57610B00, Rhw3~NS & Owr3~EC)
+    add(0x57610C00, Rhw3~NS & Nrd4~EC)
+    add(0x57610D00, Rhw3~NS & Tla5~EC)
+    add(0x57619000, Rhw3~NS & Rd4~CE)
+    add(0x57619100, Rhw3~NS & Rd6~CE)
+    add(0x57619200, Rhw3~NS & Ave6~CE)
+    add(0x57619209, Rhw3~NS & Tla7m~CE)
+    add(0x57619309, Rhw3~NS & Ave6m~CE)
+    add(0x57611300, Rhw3~EC & Avenue~SN)
+    add(0x57611309, Rhw3~EC & Avenue~NS)
+    add(0x57611700, Rhw3~EC & Tla3~NS)
+    add(0x57611800, Rhw3~EC & Ave2~NS)
+    add(0x57611900, Rhw3~EC & Ard3~NS)
+    add(0x57611909, Rhw3~EC & Ard3~SN)
+    add(0x57611A00, Rhw3~EC & Owr1~NS)
+    add(0x57611B00, Rhw3~EC & Owr3~NS) // dummy intersection to enable Rhw3 support
+    add(0x57611C00, Rhw3~EC & Nrd4~NS)
+    add(0x57611D00, Rhw3~EC & Tla5~SN) // Short-T
+    add(0x57611D09, Rhw3~EC & Tla5~NS) // Long-T
+    add(0x57611E00, Rhw3~EC & Owr4~SN) // Short-T
+    add(0x57611E09, Rhw3~EC & Owr4~NS) // Long-T
+    add(0x57618400, Rhw3~EC & Owr4m~SN) // Short-T
+    add(0x57618409, Rhw3~EC & Owr4m~NS) // Long-T
+    add(0x57611F00, Rhw3~EC & Owr5~SN) // Short-T
+    add(0x57611F09, Rhw3~EC & Owr5~NS) // Long-T
+    add(0x57618000, Rhw3~EC & Rd4~SN) // Short-T
+    add(0x57618009, Rhw3~EC & Rd4~NS) // Long-T
+    add(0x57618100, Rhw3~EC & Rd6~SN) // Short-T
+    add(0x57618109, Rhw3~EC & Rd6~NS) // Long-T
+    add(0x57618200, Rhw3~EC & Ave6~SN) // Short-T
+    add(0x57618209, Rhw3~EC & Ave6~NS) // Long-T
+    add(0x57618300, Rhw3~EC & Ave8~SN) // Short-T
+    add(0x57618309, Rhw3~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57610080, Rhw3~SN & Street~EC)
+    add(0x57610180, Rhw3~SN & Road~EC)
+    add(0x57610280, Rhw3~SN & Onewayroad~EC)
+    add(0x57610380, Rhw3~SN & Avenue~EC)
+    add(0x57610480, Rhw3~SN & Dirtroad~EC)
+    add(0x57610780, Rhw3~SN & Tla3~EC)
+    add(0x57610880, Rhw3~SN & Ave2~EC)
+    add(0x57610980, Rhw3~SN & Ard3~EC)
+    add(0x57610A80, Rhw3~SN & Owr1~EC)
+    add(0x57610B80, Rhw3~SN & Owr3~EC)
+    add(0x57610C80, Rhw3~SN & Nrd4~EC)
+    add(0x57610D80, Rhw3~SN & Tla5~EC)
+    add(0x57619080, Rhw3~SN & Rd4~CE)
+    add(0x57619180, Rhw3~SN & Rd6~CE)
+    add(0x57619280, Rhw3~SN & Ave6~CE)
+    add(0x57619289, Rhw3~SN & Tla7m~CE)
+    add(0x57619389, Rhw3~SN & Ave6m~CE)
+	// OxD
+    // add(0x57613400, Rhw3~NC & Avenue~ES)
+    // add(0x57613480, Rhw3~CN & Avenue~ES)
+    // add(0x57613300, Rhw3~CS & Avenue~ES)
+    // add(0x57613380, Rhw3~SC & Avenue~ES)
+    // add(0x57613309, Rhw3~CS & Avenue~SharedDiagRight)
+    // add(0x57613389, Rhw3~SC & Avenue~SharedDiagRight)
+	// DxO
+    // add(0x57615300, Rhw3~ESC & Avenue~NS)
+    // add(0x57615309, Rhw3~NWC & Avenue~NS)
+    // add(0x57615380, Rhw3~CSE & Avenue~NS)
+    // add(0x57615389, Rhw3~CWN & Avenue~NS)
+    // add(0x57615409, Rhw3~CES & Avenue~WE)
+    // add(0x57615489, Rhw3~SEC & Avenue~WE)
+    // add(0x57615400, Rhw3~CWN & Avenue~SN)
+    // add(0x57615480, Rhw3~NWC & Avenue~SN)
+	// DxD
+    // add(0x57617100, Rhw3~CSW & Road~ES)
+    // add(0x57617109, Rhw3~SWC & Road~ES)
+    // add(0x57617180, Rhw3~WSC & Road~ES)
+    // add(0x57617189, Rhw3~CWS & Road~ES)
+    // add(0x57617200, Rhw3~CSW & Onewayroad~ES)
+    // add(0x57617209, Rhw3~SWC & Onewayroad~ES)
+    // add(0x57617280, Rhw3~WSC & Onewayroad~ES)
+    // add(0x57617289, Rhw3~CWS & Onewayroad~ES)
+    // add(0x57617300, Rhw3~CES & Avenue~SharedDiagLeft)
+    // add(0x57617380, Rhw3~SEC & Avenue~SharedDiagLeft)
+    // add(0x57617309, Rhw3~ESC & Avenue~NE)
+    // add(0x57617389, Rhw3~CSE & Avenue~NE)
+    // add(0x57617400, Rhw3~WSC & Avenue~ES)
+    // add(0x57617480, Rhw3~CSW & Avenue~ES)
+
+    // Mis
+	// OxO
+    add(0x57620000, Mis~NS & Street~EC)
+    add(0x57620100, Mis~NS & Road~EC)
+    add(0x57620200, Mis~NS & Onewayroad~EC)
+    // add(0x57620300, Mis~NS & Avenue~EC)
+    add(0x57620400, Mis~NS & Dirtroad~EC)
+    add(0x57620700, Mis~NS & Tla3~EC)
+    add(0x57620800, Mis~NS & Ave2~EC)
+    // add(0x57620900, Mis~NS & Ard3~EC)
+    add(0x57620A00, Mis~NS & Owr1~EC)
+    // add(0x57620B00, Mis~NS & Owr3~EC)
+    // add(0x57620C00, Mis~NS & Nrd4~EC)
+    // add(0x57620D00, Mis~NS & Tla5~EC)
+    // add(0x57629000, Mis~NS & Rd4~CE)
+    // add(0x57629100, Mis~NS & Rd6~CE)
+    // add(0x57629200, Mis~NS & Ave6~CE)
+    // add(0x57629209, Mis~NS & Tla7m~CE)
+    // add(0x57629309, Mis~NS & Ave6m~CE)
+    add(0x57621300, Mis~EC & Avenue~SN)
+    add(0x57621309, Mis~EC & Avenue~NS)
+    add(0x57621500, Mis~EC & Rhw3~NS)
+    add(0x57621509, Mis~EC & Rhw3~SN)
+    add(0x57621700, Mis~EC & Tla3~NS)
+    add(0x57621800, Mis~EC & Ave2~NS)
+    add(0x57621900, Mis~EC & Ard3~NS)
+    add(0x57621909, Mis~EC & Ard3~SN)
+    add(0x57621A00, Mis~EC & Owr1~NS)
+    add(0x57621B00, Mis~EC & Owr3~NS) // dummy intersection to enable Mis support
+    add(0x57621C00, Mis~EC & Nrd4~NS)
+    add(0x57621D00, Mis~EC & Tla5~SN) // Short-T
+    add(0x57621D09, Mis~EC & Tla5~NS) // Long-T
+    add(0x57621E00, Mis~EC & Owr4~SN) // Short-T
+    add(0x57621E09, Mis~EC & Owr4~NS) // Long-T
+    add(0x57628400, Mis~EC & Owr4m~SN) // Short-T
+    add(0x57628409, Mis~EC & Owr4m~NS) // Long-T
+    add(0x57621F00, Mis~EC & Owr5~SN) // Short-T
+    add(0x57621F09, Mis~EC & Owr5~NS) // Long-T
+    add(0x57628000, Mis~EC & Rd4~SN) // Short-T
+    add(0x57628009, Mis~EC & Rd4~NS) // Long-T
+    add(0x57628100, Mis~EC & Rd6~SN) // Short-T
+    add(0x57628109, Mis~EC & Rd6~NS) // Long-T
+    add(0x57628200, Mis~EC & Ave6~SN) // Short-T
+    add(0x57628209, Mis~EC & Ave6~NS) // Long-T
+    add(0x57628300, Mis~EC & Ave8~SN) // Short-T
+    add(0x57628309, Mis~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57620080, Mis~SN & Street~EC)
+    add(0x57620180, Mis~SN & Road~EC)
+    add(0x57620280, Mis~SN & Onewayroad~EC)
+    // add(0x57620380, Mis~SN & Avenue~EC)
+    add(0x57620480, Mis~SN & Dirtroad~EC)
+    add(0x57620780, Mis~SN & Tla3~EC)
+    add(0x57620880, Mis~SN & Ave2~EC)
+    // add(0x57620980, Mis~SN & Ard3~EC)
+    add(0x57620A80, Mis~SN & Owr1~EC)
+    // add(0x57620B80, Mis~SN & Owr3~EC)
+    // add(0x57620C80, Mis~SN & Nrd4~EC)
+    // add(0x57620D80, Mis~SN & Tla5~EC)
+    // add(0x57629080, Mis~SN & Rd4~CE)
+    // add(0x57629180, Mis~SN & Rd6~CE)
+    // add(0x57629280, Mis~SN & Ave6~CE)
+    // add(0x57629289, Mis~SN & Tla7m~CE)
+    // add(0x57629389, Mis~SN & Ave6m~CE)
+	// OxD
+    add(0x57623400, Mis~NC & Avenue~ES)
+    add(0x57623480, Mis~CN & Avenue~ES)
+    add(0x57623300, Mis~CS & Avenue~ES)
+    add(0x57623380, Mis~SC & Avenue~ES)
+    add(0x57623309, Mis~CS & Avenue~SharedDiagRight)
+    add(0x57623389, Mis~SC & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57625300, Mis~ESC & Avenue~NS)
+    add(0x57625309, Mis~NWC & Avenue~NS)
+    add(0x57625380, Mis~CSE & Avenue~NS)
+    add(0x57625389, Mis~CWN & Avenue~NS)
+    add(0x57625409, Mis~CES & Avenue~WE)
+    add(0x57625489, Mis~SEC & Avenue~WE)
+    add(0x57625400, Mis~CWN & Avenue~SN)
+    add(0x57625480, Mis~NWC & Avenue~SN)
+	// DxD
+    add(0x57627100, Mis~CSW & Road~ES)
+    add(0x57627109, Mis~SWC & Road~ES)
+    add(0x57627180, Mis~WSC & Road~ES)
+    add(0x57627189, Mis~CWS & Road~ES)
+    add(0x57627200, Mis~CSW & Onewayroad~ES)
+    add(0x57627209, Mis~SWC & Onewayroad~ES)
+    add(0x57627280, Mis~WSC & Onewayroad~ES)
+    add(0x57627289, Mis~CWS & Onewayroad~ES)
+    add(0x57627300, Mis~CES & Avenue~SharedDiagLeft)
+    add(0x57627380, Mis~SEC & Avenue~SharedDiagLeft)
+    add(0x57627309, Mis~ESC & Avenue~NE)
+    add(0x57627389, Mis~CSE & Avenue~NE)
+    add(0x57627400, Mis~WSC & Avenue~ES)
+    add(0x57627480, Mis~CSW & Avenue~ES)
+
+    // add(0x57627480, Mis~WSC & Avenue~ES)
+    // add(0x57627409, Mis~CWN & Avenue~SharedDiagRight)
+
+    // Rhw4
+	// OxO
+    add(0x57630000, Rhw4~NS & Street~EC)
+    add(0x57630100, Rhw4~NS & Road~EC)
+    add(0x57630200, Rhw4~NS & Onewayroad~EC)
+    add(0x57630300, Rhw4~NS & Avenue~EC)
+    add(0x57630400, Rhw4~NS & Dirtroad~EC)
+    add(0x57630700, Rhw4~NS & Tla3~EC)
+    add(0x57630800, Rhw4~NS & Ave2~EC)
+    add(0x57630900, Rhw4~NS & Ard3~EC)
+    add(0x57630A00, Rhw4~NS & Owr1~EC)
+    add(0x57630B00, Rhw4~NS & Owr3~EC) // enabled for double RHW-4 setups
+    add(0x57630C00, Rhw4~NS & Nrd4~EC) // enabled for double RHW-4 setups
+    add(0x57630D00, Rhw4~NS & Tla5~EC) // enabled for double RHW-4 setups
+    add(0x57639000, Rhw4~NS & Rd4~CE)
+    add(0x57639100, Rhw4~NS & Rd6~CE) // enabled for double RHW-4 setups
+    add(0x57639200, Rhw4~NS & Ave6~CE) // enabled for double RHW-4 setups
+    add(0x57639300, Rhw4~NS & Ave8~CE) // enabled for double RHW-4 setups
+    add(0x57639209, Rhw4~NS & Tla7m~CE) // enabled for double RHW-4 setups
+    add(0x57639309, Rhw4~NS & Ave6m~CE) // enabled for double RHW-4 setups
+    add(0x57631300, Rhw4~EC & Avenue~SN)
+    add(0x57631309, Rhw4~EC & Avenue~NS)
+    add(0x57631700, Rhw4~EC & Tla3~NS)
+    add(0x57631800, Rhw4~EC & Ave2~NS)
+    add(0x57631900, Rhw4~EC & Ard3~NS)
+    add(0x57631909, Rhw4~EC & Ard3~SN)
+    // add(0x57631A00, Rhw4~EC & Owr1~NS)
+    add(0x57631B00, Rhw4~EC & Owr3~NS) // dummy intersection to enable Rhw4 support
+    add(0x57631C00, Rhw4~EC & Nrd4~NS)
+    add(0x57631D00, Rhw4~EC & Tla5~SN) // Short-T
+    add(0x57631D09, Rhw4~EC & Tla5~NS) // Long-T
+    add(0x57631E00, Rhw4~EC & Owr4~SN) // Short-T
+    add(0x57631E09, Rhw4~EC & Owr4~NS) // Long-T
+    add(0x57638400, Rhw4~EC & Owr4m~SN) // Short-T
+    add(0x57638409, Rhw4~EC & Owr4m~NS) // Long-T
+    add(0x57631F00, Rhw4~EC & Owr5~SN) // Short-T
+    add(0x57631F09, Rhw4~EC & Owr5~NS) // Long-T
+    add(0x57638000, Rhw4~EC & Rd4~SN) // Short-T
+    add(0x57638009, Rhw4~EC & Rd4~NS) // Long-T
+    add(0x57638100, Rhw4~EC & Rd6~SN) // Short-T
+    add(0x57638109, Rhw4~EC & Rd6~NS) // Long-T
+    add(0x57638200, Rhw4~EC & Ave6~SN) // Short-T
+    add(0x57638209, Rhw4~EC & Ave6~NS) // Long-T
+    add(0x57638300, Rhw4~EC & Ave8~SN) // Short-T
+    add(0x57638309, Rhw4~EC & Ave8~NS) // Long-T
+    //Reverse for Thru-Ts
+    add(0x57630080, Rhw4~SN & Street~EC)
+    add(0x57630180, Rhw4~SN & Road~EC)
+    add(0x57630280, Rhw4~SN & Onewayroad~EC)
+    add(0x57630380, Rhw4~SN & Avenue~EC)
+    add(0x57630480, Rhw4~SN & Dirtroad~EC)
+    add(0x57630780, Rhw4~SN & Tla3~EC)
+    add(0x57630880, Rhw4~SN & Ave2~EC)
+    add(0x57630980, Rhw4~SN & Ard3~EC)
+    add(0x57630A80, Rhw4~SN & Owr1~EC)
+    // add(0x57630B80, Rhw4~SN & Owr3~EC)
+    add(0x57630C80, Rhw4~SN & Nrd4~EC)
+    add(0x57630D80, Rhw4~SN & Tla5~EC)
+    add(0x57639080, Rhw4~SN & Rd4~CE)
+    // add(0x57639180, Rhw4~SN & Rd6~CE)
+    // add(0x57639280, Rhw4~SN & Ave6~CE)
+    // add(0x57639380, Rhw4~SN & Ave8~CE)
+    // add(0x57639289, Rhw4~SN & Tla7m~CE)
+    // add(0x57639389, Rhw4~SN & Ave6m~CE)
+	// OxD
+    add(0x57633400, Rhw4~NC & Avenue~ES)
+    add(0x57633480, Rhw4~CN & Avenue~ES)
+    add(0x57633300, Rhw4~CS & Avenue~ES)
+    add(0x57633380, Rhw4~SC & Avenue~ES)
+    add(0x57633309, Rhw4~CS & Avenue~SharedDiagRight)
+    add(0x57633389, Rhw4~SC & Avenue~SharedDiagRight)
+	// DxO
+    add(0x57635300, Rhw4~ESC & Avenue~NS)
+    add(0x57635309, Rhw4~NWC & Avenue~NS)
+    add(0x57635380, Rhw4~CSE & Avenue~NS)
+    add(0x57635389, Rhw4~CWN & Avenue~NS)
+    add(0x57635409, Rhw4~CES & Avenue~WE)
+    add(0x57635489, Rhw4~SEC & Avenue~WE)
+    add(0x57635400, Rhw4~CWN & Avenue~SN)
+    add(0x57635480, Rhw4~NWC & Avenue~SN)
+	// DxD
+    add(0x57637100, Rhw4~CSW & Road~ES)
+    add(0x57637109, Rhw4~SWC & Road~ES)
+    add(0x57637180, Rhw4~WSC & Road~ES)
+    add(0x57637189, Rhw4~CWS & Road~ES)
+    add(0x57637200, Rhw4~CSW & Onewayroad~ES)
+    add(0x57637209, Rhw4~SWC & Onewayroad~ES)
+    add(0x57637280, Rhw4~WSC & Onewayroad~ES)
+    add(0x57637289, Rhw4~CWS & Onewayroad~ES)
+    add(0x57637300, Rhw4~CES & Avenue~SharedDiagLeft)
+    add(0x57637380, Rhw4~SEC & Avenue~SharedDiagLeft)
+    add(0x57637309, Rhw4~ESC & Avenue~NE)
+    add(0x57637389, Rhw4~CSE & Avenue~NE)
+    add(0x57637400, Rhw4~WSC & Avenue~ES)
+    add(0x57637480, Rhw4~CSW & Avenue~ES)
+
+   // T intersections with viaducts
     // Rhw2
     add(0x57600110, L1Rhw2~NS & L1Road~EC)
     add(0x57600120, L2Rhw2~NS & L2Road~EC)
