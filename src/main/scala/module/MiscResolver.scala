@@ -664,8 +664,8 @@ class MiscResolver extends IdResolver {
     add(0x57603109, Dirtroad~NC & Road~NE)
     add(0x57603200, Dirtroad~NC & Onewayroad~WS)
     add(0x57603209, Dirtroad~NC & Onewayroad~NE)
-    add(0x57603300, Dirtroad~NC & Avenue~ES)
-    add(0x57603309, Dirtroad~CS & Avenue~SE)
+    // add(0x57603300, Dirtroad~NC & Avenue~ES) // defined in RhwResolver now
+    // add(0x57603309, Dirtroad~CS & Avenue~SE) // defined in RhwResolver now
 
     add(0x57604000, Dirtroad~SE & Street~WC)
     add(0x57604009, Dirtroad~SE & Street~CE)
@@ -695,16 +695,16 @@ class MiscResolver extends IdResolver {
     add(0x57606400, Dirtroad~WS & Dirtroad~CSE)
     add(0x57606409, Dirtroad~SE & Dirtroad~CWS)
 
-    add(0x57607000, Dirtroad~CSE & Street~WS)
-    add(0x57607009, Dirtroad~CWS & Street~SE)
-    add(0x57607100, Dirtroad~CSE & Road~WS)
-    add(0x57607109, Dirtroad~CWS & Road~SE)
-    add(0x57607200, Dirtroad~CSE & Onewayroad~WS)
-    add(0x57607209, Dirtroad~CWS & Onewayroad~SE)
-    add(0x57607300, Dirtroad~CSE & Avenue~SharedDiagLeft) // Long T
-    add(0x57607309, Dirtroad~CSE & Avenue~NE)  // Long T
-    add(0x57607400, Dirtroad~CSW & Avenue~ES) // Short T
-    add(0x57607409, Dirtroad~CE & Avenue~SharedDiagLeft) // Short T
+    // add(0x57607000, Dirtroad~CSE & Street~WS)  // defined in RhwResolver now
+    // add(0x57607009, Dirtroad~CWS & Street~SE)  // defined in RhwResolver now
+    // add(0x57607100, Dirtroad~CSE & Road~WS)  // defined in RhwResolver now
+    // add(0x57607109, Dirtroad~CWS & Road~SE)  // defined in RhwResolver now
+    // add(0x57607200, Dirtroad~CSE & Onewayroad~WS)  // defined in RhwResolver now
+    // add(0x57607209, Dirtroad~CWS & Onewayroad~SE)  // defined in RhwResolver now
+    // add(0x57607300, Dirtroad~CSE & Avenue~SharedDiagLeft) // Long T  // defined in RhwResolver now
+    // add(0x57607309, Dirtroad~CSE & Avenue~NE)  // Long T  // defined in RhwResolver now
+    // add(0x57607400, Dirtroad~CSW & Avenue~ES) // Short T  // defined in RhwResolver now
+    // add(0x57607409, Dirtroad~CE & Avenue~SharedDiagLeft) // Short T  // defined in RhwResolver now
 
 	// Rhw3
     add(0x57610000, Rhw3~NS & Street~CE)
