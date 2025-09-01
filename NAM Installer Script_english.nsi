@@ -378,6 +378,8 @@ SectionGroup /e "!Network Features and Additions" sec4
 			Section "Network Widening Mod" nwm
 				SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Road, One-Way Road, and Avenue"
 				File "@52 Network Features\Road, One-Way Road, and Avenue#\Network Widening Mod and Turn Lanes\NetworkWideningMod_*.dat"
+				File "@52 Network Features\Road, One-Way Road, and Avenue#\Network Widening Mod and Turn Lanes\NetworkAddonMod_Roundabouts_Turbo_Plugin.dat"
+				File "@52 Network Features\Road, One-Way Road, and Avenue#\Network Widening Mod and Turn Lanes\NetworkAddonMod_TurningLanes_OneWayRoadSignalization_Plugin.dat"
 			SectionEnd
 
 			Section "RealExpressway (REW) Ramp System" rew
