@@ -7,7 +7,7 @@ BrandingText "Network Addon Mod Setup"
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Network Addon Mod"
-!define PRODUCT_VERSION "Version 50 (Build 05)"
+!define PRODUCT_VERSION "Version 50 (Build 06)"
 !define PRODUCT_PUBLISHER "NAM Team"
 !define PRODUCT_WEB_SITE "http://www.sc4nam.com"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -255,7 +255,6 @@ SectionGroupEnd
 
 SectionGroup /e "Traffic Simulator Capacity (select one)" sec11
 Section /o "NAM Simulator Classic" capa1
-;  Call DeleteOldSimulatorFiles
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\9 Traffic Simulator"
   SetOverwrite ifnewer
   File "@59 Traffic Simulator#\@1-Classic (Original Maxis Capacity - Lowest Capacity)\NetworkAddonMod_Traffic_Plugin_Z_Classic.dat"
@@ -265,7 +264,6 @@ SectionEnd
 
 Section "NAM Simulator Low" capa2
 SectionIn 1 2 3 4 5 6
-;  Call DeleteOldSimulatorFiles
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\9 Traffic Simulator"
   SetOverwrite ifnewer
   File "@59 Traffic Simulator#\@2=Low (Recommended)\NetworkAddonMod_Traffic_Plugin_Z_Low.dat"
@@ -274,7 +272,6 @@ SectionIn 1 2 3 4 5 6
 SectionEnd
 
 Section /o "NAM Simulator Medium" capa3
-;  Call DeleteOldSimulatorFiles
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\9 Traffic Simulator"
   SetOverwrite ifnewer
   File "@59 Traffic Simulator#\@3-Medium\NetworkAddonMod_Traffic_Plugin_Z_Medium.dat"
@@ -283,7 +280,6 @@ Section /o "NAM Simulator Medium" capa3
 SectionEnd
 
 Section /o "NAM Simulator High" capa4
-;  Call DeleteOldSimulatorFiles
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\9 Traffic Simulator"
   SetOverwrite ifnewer
   File "@59 Traffic Simulator#\@4-High\NetworkAddonMod_Traffic_Plugin_Z_High.dat"
@@ -293,7 +289,6 @@ SectionEnd
 
 Section /o "NAM Simulator Ultra" capa5
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\9 Traffic Simulator"
-  SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
   File "@59 Traffic Simulator#\@5-Ultra (Highest Capacity)\NetworkAddonMod_Traffic_Plugin_Z_Ultra.dat"
   File "@59 Traffic Simulator#\@5-Ultra (Highest Capacity)\NetworkAddonMod_Volume_Data_View_Z_Ultra.dat"
@@ -368,7 +363,7 @@ SectionGroup /e "!Network Features and Additions" sec4
 		SectionEnd
 		Section "Legacy Elevated Viaduct Puzzle Pieces" roavia2
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Road, One-Way Road, and Avenue"
-			File "@52 Network Features\Road, One-Way Road, and Avenue#\Elevated Viaducts\NetworkAddonMod_Legacy_RoadViaductPuzzlePieceButtons.dat"
+			File "@52 Network Features\Road, One-Way Road, and Avenue#\Elevated Viaducts\Legacy Puzzle Piece Menu Access\NetworkAddonMod_Legacy_RoadViaductPuzzlePieceButtons.dat"
 		SectionEnd
 		Section "Alternate Elevated Viaducts" roavia3
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Road, One-Way Road, and Avenue"
@@ -416,6 +411,8 @@ SectionGroup /e "!Network Features and Additions" sec4
 		SectionGroupEnd
 		SectionGroup "Street Addon Mod Features" sammain
 			Section "Street Addon Mod" sam
+				SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Street"
+				File "@52 Network Features\Street#\Street Addon Mod\*.dat"
 			SectionEnd
 			Section "Street Addon Mod Bridges" sambridgemain
 				SetOutPath "$INSTDIR\Plugins\Network Addon Mod\7 Bridges\3-Street\SAM"
@@ -525,7 +522,7 @@ SectionGroup /e "!Network Features and Additions" sec4
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\z_Rail (RealRailway)\g_RealRailway_Stations\Brenda_Xne Modern L2 Viaduct Rail Station"
 			File "@52 Network Features\^z_Rail (RealRailway)\g_RealRailway_Stations\Brenda_Xne Modern L2 Viaduct Rail Station\*.dat"
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\z_Rail (RealRailway)\g_RealRailway_Stations\Xyloxadoria Modern Diagonal L2 Viaduct Rail Station"
-			File "@52 Network Features\^z_Rail (RealRailway)\g_RealRailway_Stations\Xyloxadoria Modern Diagonal L2 Viaduct Rail Station\*.dat"
+			File "@52 Network Features\^z_Rail (RealRailway)\g_RealRailway_Stations\Xyloxadoria Modern Diagonal L2 Station\*.dat"
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\z_Rail (RealRailway)\h_RealRailway_ABE_Bridges"
 			File "@52 Network Features\^z_Rail (RealRailway)\h_RealRailway_ABE_Bridges\*.dat"
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\z_Rail (RealRailway)\z_RealRailway_Textures"
@@ -713,9 +710,9 @@ SectionGroup /e "!Network Features and Additions" sec4
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Monorail\High Speed Rail Project"
 			File "@52 Network Features\Monorail#\High Speed Rail Project\*.dat"	
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\2 Network Features\Monorail\High Speed Rail Project\High Speed Rail Stations"
-			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Arched L0 GHSR Station\*.dat"
-			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Arched L2 HSR Station\*.dat"	
-			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Diagonal L2 HSR Station\*.dat"
+			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Arched L0 High Speed Rail (GHSR) Station.SC4Lot.dat"
+			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Arched L2 High Speed Rail (HSR) Station.SC4Lot.dat"	
+			File "@52 Network Features\Monorail#\High Speed Rail Project\High Speed Rail Stations\Xyloxadoria Modern Diagonal L2 HSR Station.SC4Lot.dat"
 			SetOutPath "$INSTDIR\Plugins\Network Addon Mod\7 Bridges\9-Monorail\HSR v1"
 			File "@57 Bridges\9-Monorail\HSR v1\*.dat"
 		SectionEnd
