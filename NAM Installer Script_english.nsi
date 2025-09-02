@@ -142,7 +142,7 @@ SectionIn 1 2 3 4 5 6 ; in which installation types (defined above) this section
 	StrCpy $switch_overwrite 0
 	!insertmacro MoveFile "$INSTDIR\Plugins\NAM.dll" "$INSTDIR\Old NAM Backup\NAM.dll"
 	!insertmacro MoveFolder "$INSTDIR\Plugins\Network Addon Mod" "$INSTDIR\Old NAM Backup\Network Addon Mod" "*.*"
-	!insertmacro MoveFolder "$INSTDIR\Plugins\777 Network Addon Mod" "$INSTDIR\Old NAM Backup\777 Network Addon Mod" "*.*" ;sc4pac version
+	!insertmacro MoveFolder "$INSTDIR\Plugins\770-network-addon-mod" "$INSTDIR\Old NAM Backup\770-network-addon-mod" "*.*" ;sc4pac version
 	
   ;Beginning of actual installation process
   SetOutPath "$INSTDIR\Plugins"
