@@ -147,7 +147,6 @@ SectionIn 1 2 3 4 5 6 ; in which installation types (defined above) this section
   ;Beginning of actual installation process
   SetOutPath "$INSTDIR\Plugins"
   File "NAM.dll"
-  File "NAM.ini"
   SetOutPath "$INSTDIR\Plugins\Network Addon Mod\1 Core"
   SetOverwrite ifnewer
   File "@4^1 Core\NetworkAddonMod_a_Controller_Marker.dat"
