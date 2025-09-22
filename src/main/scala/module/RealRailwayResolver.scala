@@ -592,10 +592,15 @@ class RealRailwayResolver extends IdResolver {
     add(0x5d3d2000, Sam10~WN  & Str~NS)
     add(0x5e514b09, Sam11~WN  & Str~NS) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
+    add(0x5d361000, Road~WN & Str~NS)
     // -- Road L1 --
     // -- Road L2 --
     // -- OWR --
+    add(0x5d362000, Onewayroad~WN & Str~NS)
     // -- Avenue --
+    add(0x5d363000, Avenue~WN & Str~NS)
+    add(0x5d364000, Avenue~SharedDiagRight & Str~NS)
+
     // ----- DxO -----
     // -- Street / SAM --
     add(0x5d380000, Street~NS & Str~NE)
@@ -610,6 +615,12 @@ class RealRailwayResolver extends IdResolver {
     add(0x5d3d1000, Sam10~NS  & Str~NE)
     add(0x5e512b09, Sam11~NS  & Str~NE) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
+    add(0x5d381000, Road~NS & Str~NE)
+    // -- One-Way Road --
+    add(0x5d382000, Onewayroad~NS & Str~NE)
+    // -- Avenue --
+    add(0x5d383000, Avenue~SN & Str~NE)
+    add(0x5d384000, Avenue~NS & Str~NE)
     // ----- DxD -----
     // -- Street / SAM --
     add(0x5d3a0000, Street~ES & Str~NE)
@@ -624,6 +635,12 @@ class RealRailwayResolver extends IdResolver {
     add(0x5d3d3000, Sam10~ES  & Str~NE)
     add(0x5e515b09, Sam11~ES  & Str~NE) // TODO: currently the only SAM set with a SAM IID for this crossing
     // -- Road --
+    add(0x5d3a1000, Road~ES & Str~NE)
+    // -- One-Way Road --
+    add(0x5d3a2000, Onewayroad~ES & Str~NE)
+    // -- Avenue --
+    add(0x5d3a3000, Avenue~ES & Str~NE)
+    add(0x5d3a4000, Avenue~SharedDiagRight & Str~NE)
 
     builder.result()
   }
