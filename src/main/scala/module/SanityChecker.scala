@@ -69,7 +69,10 @@ object SanityChecker {
 
   // Choose here the metarule-generated code that the handwritten RUL2 code
   // should be compared to.
-  val metaruleFiles = Set("Sec7h0_OnslopeMetaGenerated_MANAGED.txt")
+  val metaruleFiles = Set(
+    "Sec7h0_OnslopeMetaGenerated_MANAGED.txt",
+    // "Sec10e_GlrMetaGenerated_MANAGED.txt",
+  )
 
   def isMetaruleFile(path: Path): Boolean = {
     metaruleFiles.contains(path.getFileName().toString())

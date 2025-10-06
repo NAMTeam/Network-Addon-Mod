@@ -150,13 +150,13 @@ object CompileFlexFlyRul0And1 {
     val (previewId90, previewName90) = previewIter.next()
     val (previewId45, previewName45) = previewIter.next()
     val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags else identity
-    def ff90(cursorInside: Boolean): String = {
-      val hidOffset = if (cursorInside) 0 else 0x80000
+    def ff90(): String = {
+      val hidOffset = 0
       f"""
       |[HighwayIntersectionInfo_0x${hid+hidOffset}%08X]
       |;Added by memo 2014/11/16
-      |;FlexFly 90 (cursor ${if (cursorInside) "inside" else "outside"})
-      |Piece = ${if (cursorInside) "-48.0" else "-80.0"}, 0.0, 0, 1, 0x$previewId90%08X
+      |;FlexFly 90
+      |Piece = -64.0, 0.0, 0, 1, 0x$previewId90%08X
       |PreviewEffect = $previewName90
       |
       |CellLayout=........
@@ -164,8 +164,8 @@ object CompileFlexFlyRul0And1 {
       |CellLayout=...cY...
       |CellLayout=....dY..
       |CellLayout=.....e..
-      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
-      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |CellLayout=....Zf.<
+      |CellLayout=.....^..
       |
       |CheckType = Z - dirtroad: 0x02020202
       |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -181,8 +181,8 @@ object CompileFlexFlyRul0And1 {
       |ConsLayout=........
       |ConsLayout=........
       |ConsLayout=........
-      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
-      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |ConsLayout=....+..<
+      |ConsLayout=.....^..
       |
       |AutoTileBase = 0x55387000
       |PlaceQueryID = 0x$previewId90%08X
@@ -212,21 +212,21 @@ object CompileFlexFlyRul0And1 {
       |""".stripMargin.trim
     }
 
-    def ff45(cursorInside: Boolean): String = {
-      val hidOffset = if (cursorInside) 0 else 0x80000
+    def ff45(): String = {
+      val hidOffset = 0
       f"""
       |[HighwayIntersectionInfo_0x${hid+hidOffset+1}%08X]
       |;Added by memo 2014/11/16
-      |;FlexFly 45 (cursor ${if (cursorInside) "inside" else "outside"})
-      |Piece = ${if (cursorInside) "0.0" else "-32.0"}, 0.0, 0, 1, 0x$previewId45%08X
+      |;FlexFly 45
+      |Piece = -16.0, 0.0, 0, 1, 0x$previewId45%08X
       |PreviewEffect = $previewName45
       |
       |CellLayout=........
       |CellLayout=...Xc...
       |CellLayout=....dY..
       |CellLayout=.....e..
-      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
-      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |CellLayout=....Zf.<
+      |CellLayout=.....^..
       |
       |CheckType = Z - dirtroad: 0x02020202
       |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -240,8 +240,8 @@ object CompileFlexFlyRul0And1 {
       |ConsLayout=........
       |ConsLayout=........
       |ConsLayout=........
-      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
-      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |ConsLayout=....+..<
+      |ConsLayout=.....^..
       |
       |AutoTileBase = 0x55387000
       |PlaceQueryID = 0x$previewId45%08X
@@ -272,14 +272,9 @@ object CompileFlexFlyRul0And1 {
     }
 
     f"""
-    |${ff90(cursorInside = true)}
+    |${ff90()}
     |
-    |${ff90(cursorInside = false)}
-    |
-    |
-    |${ff45(cursorInside = true)}
-    |
-    |${ff45(cursorInside = false)}
+    |${ff45()}
     |""".stripMargin
   }
 
@@ -295,8 +290,8 @@ object CompileFlexFlyRul0And1 {
   def printRul0(file: File, resolver: IdResolver) = scala.util.Using.resource(new PrintWriter(file)) { printer =>
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
-    for (hid <- hid0 until hid0 + 40) { 
-      val numbers = (0 until 16) map (i => f"${hid+0x10000*i}%X") mkString ", "
+    for (hid <- hid0 until hid0 + 40) {
+      val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
       val tag = if (hid == hid0) "RotationRing" else "AddTypes"
       printer.println(f"$tag = $numbers ; flexfly")
     }

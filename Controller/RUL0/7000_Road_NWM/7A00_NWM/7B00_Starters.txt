@@ -40,20 +40,20 @@ AddTypes     = 7B13, 17B13, 27B13, 37B13, 47B13, 57B13, 67B13, 77B13, 87B13, 97B
 ;Added by Tarkus 1/3/2007.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-3 Orthogonal Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5130F005
+Piece = 0.0, 0.0, 0, 0, 0x5130F005
 PreviewEffect = preview_draggable_tla3__001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 Rail: 0x00010100, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5130F000
@@ -85,20 +85,20 @@ CopyFrom    = 0x37B00
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-3 Diagonal Starter Piece
-Piece = 0.0, -16.0, 2, 0, 0x5130F105
+Piece = 0.0, 0.0, 2, 0, 0x5130F105
 PreviewEffect = preview_draggable_tla3__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x00000301
 CheckType = a - road: 0x03010000 Rail: 0x02020000, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5130F100
@@ -128,20 +128,20 @@ CopyFrom    = 0xB7B00
 ;Added by Tarkus 1/30/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;AVE-2 Orthogonal Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5131F005
+Piece = 0.0, 0.0, 0, 0, 0x5131F005
 PreviewEffect = preview_draggable_ave2__001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 Rail: 0x00010300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5131F000
@@ -172,20 +172,20 @@ CopyFrom    = 0x37B01
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;Ave-2 Diagonal Starter Piece
-Piece = 0.0, -16.0, 2, 0, 0x5131F105
+Piece = 0.0, 0.0, 2, 0, 0x5131F105
 PreviewEffect = preview_draggable_ave2__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x00000301
 CheckType = a - road: 0x03010000 onewayroad: 0x02020000, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5131F100
@@ -216,20 +216,20 @@ CopyFrom    = 0xB7B01
 ;Added by Tarkus 1/30/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ARD-3 Orthogonal Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5132F005
+Piece = 0.0, 0.0, 0, 0, 0x5132F005
 PreviewEffect = preview_draggable_ard3__001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 Rail: 0x00030300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5132F000
@@ -261,20 +261,20 @@ CopyFrom    = 0x37B02
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ARD-3 Diagonal Starter Piece 1
-Piece = 0.0, -16.0, 2, 0, 0x5132F105
+Piece = 0.0, 0.0, 2, 0, 0x5132F105
 PreviewEffect = preview_draggable_ard3__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x00000301
 CheckType = a - road: 0x03010000 Rail: 0x00030300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5132F100
@@ -297,20 +297,20 @@ Rotate = 3
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ARD-3 Diagonal Starter Piece 2
-Piece = 0.0, -16.0, 2, 0, 0x5132F205
+Piece = 0.0, 0.0, 2, 0, 0x5132F205
 PreviewEffect = preview_draggable_ard3__003
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x00000301
 CheckType = a - road: 0x03010000 Rail: 0x00030001, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5132F200
@@ -333,20 +333,20 @@ Rotate = 3
 ;Added by Tarkus 5/4/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-1 Orthogonal Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5133F005
+Piece = 0.0, 0.0, 0, 0, 0x5133F005
 PreviewEffect = preview_draggable_owr1__001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 Rail: 0x00030300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5133F000
@@ -378,20 +378,20 @@ CopyFrom    = 0x37B03
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-1 Diagonal Starter Piece
-Piece = 0.0, -16.0, 3, 1, 0x5133F105
+Piece = 0.0, 0.0, 3, 1, 0x5133F105
 PreviewEffect = preview_draggable_owr1__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x00000301
 CheckType = a - onewayroad: 0x03010000 Rail: 0x02020000, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5133F100
@@ -423,20 +423,20 @@ CopyFrom    = 0xB7B03
 ;Added by Tarkus 5/4/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-3 Orthogonal Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5134F005
+Piece = 0.0, 0.0, 0, 0, 0x5134F005
 PreviewEffect = preview_draggable_owr3__001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 Rail: 0x00010100, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5134F000
@@ -468,20 +468,20 @@ CopyFrom    = 0x37B04
 ;Added by Tarkus 11/8/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-3 Diagonal Starter Piece
-Piece = 0.0, -16.0, 3, 1, 0x5134F105
+Piece = 0.0, 0.0, 3, 1, 0x5134F105
 PreviewEffect = preview_draggable_owr3__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x00000301
 CheckType = a - onewayroad: 0x03010000 Rail: 0x00030300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5134F100
@@ -512,20 +512,20 @@ CopyFrom    = 0xB7B04
 ;Added by Tarkus 11/6/2009.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;NRD-4 Starter Piece
-Piece = 0.0, 16.0, 0, 0, 0x5135F005
+Piece = 0.0, 0.0, 0, 0, 0x5135F005
 PreviewEffect = preview_draggable_nrd_4_001
 
 CellLayout =.......
-CellLayout =...Z<..
-CellLayout =...a...
+CellLayout =...Z...
+CellLayout =...a..<
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 street: 0x00030300, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =...+....
+ConsLayout =.......<
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5135F000
@@ -556,20 +556,20 @@ CopyFrom    = 0x37B05
 ;Added by Tarkus 2024/03/16.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;NRD-4 Diagonal Starter Piece
-Piece = 0.0, -16.0, 2, 0, 0x5135F105
+Piece = 0.0, 0.0, 2, 0, 0x5135F105
 PreviewEffect = preview_draggable_nrd4__002
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z<..
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x00000301
 CheckType = a - road: 0x03010000 onewayroad: 0x02020400, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =...+...<
-ConsLayout =........
+ConsLayout =.......<
+ConsLayout =...+....
 ConsLayout =...^....
 
 AutoTileBase = 0x55387000		; former 0x5135F100
@@ -600,21 +600,20 @@ CopyFrom    = 0xB7B05
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-5 Orthogonal Start Piece
-Piece = 16.0, 0.0, 0, 0, 0x5140f005
+Piece = 0.0, 0.0, 0, 0, 0x5140f005
 PreviewEffect = preview_draggable_tla5__001
 
 CellLayout =.......
 CellLayout =..Za<..
 CellLayout =...b...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 onewayroad: 0x00000303, 0xffffffff optional
 CheckType = b - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -663,21 +662,20 @@ CopyFrom    = 0x37B0C
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-4 Orthogonal Start Piece
-Piece = 16.0, 0.0, 0, 0, 0x5141f005
+Piece = 0.0, 0.0, 0, 0, 0x5141f005
 PreviewEffect = preview_draggable_owr4__001
 
 CellLayout =.......
 CellLayout =..Zb<..
 CellLayout =...a...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x00020002
 CheckType = a - avenue: 0x00020402 road: 0x01010000, 0xffffffff optional
 CheckType = b - avenue: 0x04020002 road: 0x00000101, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -726,21 +724,20 @@ CopyFrom    = 0x37B0D
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;OWR-5 Orthogonal Start Piece
-Piece = 16.0, 0.0, 0, 0, 0x5142f005
+Piece = 0.0, 0.0, 0, 0, 0x5142f005
 PreviewEffect = preview_draggable_owr5__001
 
 CellLayout =.......
 CellLayout =..Zb<..
 CellLayout =...a...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x00020002
 CheckType = a - onewayroad: 0x00020002 road: 0x03030000, 0xffffffff optional
 CheckType = b - onewayroad: 0x00020002 road: 0x00000303, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -789,21 +786,20 @@ CopyFrom    = 0x37B0E
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-4 Orthogonal Start Piece
-Piece = 16.0, 0.0, 0, 0, 0x5143f000
+Piece = 0.0, 0.0, 0, 0, 0x5143f000
 PreviewEffect = preview_draggable_road4_001
 
 CellLayout =.......
 CellLayout =..Zb<..
 CellLayout =...a...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - road: 0x00020002 avenue: 0x04040004
 CheckType = a - avenue: 0x00020402 onewayroad: 0x01010000, 0xffffffff optional
 CheckType = b - avenue: 0x04020002 onewayroad: 0x00000101, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -852,21 +848,20 @@ CopyFrom    = 0x37B0F
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-6 Orthogonal Start Piece
-Piece = 16.0, 0.0, 0, 0, 0x5144f000
+Piece = 0.0, 0.0, 0, 0, 0x5144f000
 PreviewEffect = preview_draggable_road6_001
 
 CellLayout =.......
 CellLayout =..Zb<..
 CellLayout =...a...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 onewayroad: 0x01030300, 0xffffffff optional
 CheckType = b - road: 0x00020002 onewayroad: 0x03000103, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -915,21 +910,20 @@ CopyFrom    = 0x37B10
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-5 Orthogonal Start Piece
-Piece = -16.0, 0.0, 2, 0, 0x5144f105
+Piece = 0.0, 0.0, 2, 0, 0x5144f105
 PreviewEffect = preview_draggable_road5_001
 
 CellLayout =.......
 CellLayout =..Zb<..
 CellLayout =...a...
-CellLayout =..^....
+CellLayout =...^...
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 onewayroad: 0x03030000, 0xffffffff optional
 CheckType = b - avenue: 0x04020002 onewayroad: 0x03000101, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...+...<
+ConsLayout =..+....<
 ConsLayout =........
 ConsLayout =...^....
 
@@ -978,14 +972,14 @@ CopyFrom    = 0x37B11
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-7 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5150f005
+Piece = 0.0, -16.0, 0, 0, 0x5150f005
 PreviewEffect = preview_draggable_tla7__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x01040000, 0xffffffff optional
@@ -993,10 +987,9 @@ CheckType = b - road: 0x00020002 onewayroad: 0x03040000, 0xffffffff optional
 CheckType = c - road: 0x00020002 onewayroad: 0x00000304, 0xffffffff optional
 
 ConsLayout =......
-ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5150f000
 ReplacementIntersection = 0, 0
@@ -1043,14 +1036,14 @@ CopyFrom    = 0x37B12
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;AVE-6 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5151f005
+Piece = 0.0, -16.0, 0, 0, 0x5151f005
 PreviewEffect = preview_draggable_ave6__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x04030000, 0xffffffff optional
@@ -1061,7 +1054,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5151f000
 ReplacementIntersection = 0, 0
@@ -1108,14 +1101,14 @@ CopyFrom    = 0x37B13
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-9 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5152f005
+Piece = 0.0, -16.0, 0, 0, 0x5152f005
 PreviewEffect = preview_draggable_tla9__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
@@ -1126,7 +1119,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5152f000
 ReplacementIntersection = 0, 0
@@ -1173,14 +1166,14 @@ CopyFrom    = 0x37B16
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;AVE-8 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5153f005
+Piece = 0.0, -16.0, 0, 0, 0x5153f005
 PreviewEffect = preview_draggable_ave8__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x01030000, 0xffffffff optional
@@ -1191,7 +1184,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5153f000
 ReplacementIntersection = 0, 0
@@ -1238,14 +1231,14 @@ CopyFrom    = 0x37B17
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;TLA-8 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5152f105
+Piece = 0.0, -16.0, 0, 0, 0x5152f105
 PreviewEffect = preview_draggable_tla8__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x01010000, 0xffffffff optional
@@ -1256,7 +1249,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5152f100
 ReplacementIntersection = 0, 0
@@ -1303,14 +1296,14 @@ CopyFrom    = 0x37B18
 ;Added by Tarkus 3/1/2008.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;AVE-7 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5153f105
+Piece = 0.0, -16.0, 0, 0, 0x5153f105
 PreviewEffect = preview_draggable_ave7__001
 
 CellLayout =......
 CellLayout =...c..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 Rail: 0x01030000, 0xffffffff optional
@@ -1321,7 +1314,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5153f100
 ReplacementIntersection = 0, 0
@@ -1368,14 +1361,14 @@ CopyFrom    = 0x37B19
 ;Added by Tarkus 10/13/2010.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-8 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5152f005
+Piece = 0.0, -16.0, 0, 0, 0x5152f005
 PreviewEffect = preview_draggable_ROAD8_001
 
 CellLayout =......
 CellLayout =...b..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
@@ -1385,7 +1378,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5152f000
 ReplacementIntersection = 0, 0
@@ -1432,14 +1425,14 @@ CopyFrom    = 0x37B14
 ;Added by Tarkus 10/13/2010.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-10 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5152f105
+Piece = 0.0, -16.0, 0, 0, 0x5152f105
 PreviewEffect = preview_draggable_ROAD10001
 
 CellLayout =......
 CellLayout =...b..
 CellLayout =..Za<.
 CellLayout =...b..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
@@ -1449,7 +1442,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5152f100
 ReplacementIntersection = 0, 0
@@ -1496,14 +1489,14 @@ CopyFrom    = 0x37B15
 ;Added by Tarkus 10/13/2010.
 ;modified by memo 01/17/2013 for use with Vanishing Construction Lot
 ;ROAD-9 Orthogonal Start Piece
-Piece = 16.0, -16.0, 0, 0, 0x5152f205
+Piece = 0.0, -16.0, 0, 0, 0x5152f205
 PreviewEffect = preview_draggable_ROAD9_001
 
 CellLayout =......
 CellLayout =...b..
 CellLayout =..Za<.
 CellLayout =...c..
-CellLayout =..^...
+CellLayout =...^..
 
 CheckType = Z - road: 0x00020002
 CheckType = a - road: 0x00020002 street: 0x00000303, 0xffffffff optional
@@ -1514,7 +1507,7 @@ ConsLayout =......
 ConsLayout =......
 ConsLayout =..+.<.
 ConsLayout =......
-ConsLayout =..^...
+ConsLayout =...^..
 
 AutoTileBase = 0x55387000		; former 0x5152f200
 ReplacementIntersection = 0, 0
