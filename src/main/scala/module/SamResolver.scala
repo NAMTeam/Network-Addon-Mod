@@ -236,9 +236,11 @@ class SamResolver extends IdResolver {
       add(0x5e673000 + offset, sam~WE & Owr1~ES) // SAM x OWR-1
       add(0x5e674000 + offset, sam~WE & Owr3~SE) // SAM x OWR-3
       add(0x5e675000 + offset, sam~WE & Nrd4~SE) // SAM x NRD-4
+      add(0x5e610000 + offset, sam~WE & Dirtroad~SE) // SAM x RHW-2
+
+      // OxD T-intersections
       add(0x5e55e000 + offset, sam~WE & Road~CWN) // SAM-Thru x Road-End T
       add(0x5e561000 + offset, sam~WE & Onewayroad~CWN) // SAM-Thru x Onewayroad-End T
-      add(0x5e610000 + offset, sam~WE & Dirtroad~SE) // SAM x RHW-2
 
       //DxO Intersections
       add(0x5e582000 + offset, sam~SE & Road~NS)        // SAM x Road
@@ -269,6 +271,7 @@ class SamResolver extends IdResolver {
 
       add(0x5e620000 + offset, sam~WS & Dirtroad~NS)  // SAM x Rhw2
 
+      // DxO T-intersections
       add(0x5e581000 + offset, Road~NS & sam~CSE) // SAM-End Road T-int
       add(0x5e58b000 + offset, Onewayroad~NS & sam~CSE) // SAM-End OWR T-int
 
@@ -304,11 +307,16 @@ class SamResolver extends IdResolver {
 
       add(0x5e630000 + offset, sam~WS & Dirtroad~SE)              // SAM x Rhw2
 
-      add(0x5e584000 + offset, Road~ES & sam~CEN) // temporary IID
-      add(0x5e58e000 + offset, Onewayroad~ES & sam~CEN) // temporary IID
+      // DxD T-intersections
+      add(0x5e584000 + offset, Road~ES & sam~CEN) // SAM-End Road 1
+      add(0x5e584080 + offset, Road~NW & sam~CSW) // SAM-End Road 2
+      add(0x5e59e000 + offset, Onewayroad~ES & sam~CEN) // SAM-End OWR 1
+      add(0x5e59e080 + offset, Onewayroad~NW & sam~CSW) // SAM-End OWR 2
 
-      add(0x5e585000 + offset, sam~NE & Road~CES) // SAM x Road (SAM Thru)
-      add(0x5e58f000 + offset, sam~NE & Onewayroad~CES) // SAM x Onewayroad (SAM Thru)
+      add(0x5e585000 + offset, sam~SE & Road~CEN) // SAM-Thru Road 1
+      add(0x5e585080 + offset, sam~WN & Road~CSW) // SAM-Thru Road 2
+      add(0x5e58f000 + offset, sam~SE & Onewayroad~CEN) // SAM-Thru OWR 1
+      add(0x5e58f080 + offset, sam~WN & Onewayroad~CSW) // SAM-Thru OWR 2
 
       //Transitions
       //Ortho

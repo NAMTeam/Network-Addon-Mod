@@ -709,7 +709,12 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~NE & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE  // DxO Ts into DxO + for Old-Style
 
             // DxD T (sam end)
-            Rules += sam~ES | (Street ~> sam)~CNW & minor~EN  // DxD T (End)
+            Rules += sam~ES | (Street ~> sam)~CNW & minor~EN                    // DxD T End 1
+            Rules += sam~NEC & minor~ES | (Street ~> sam)~WSC & minor~NW        // DxD T End 2
+
+            Rules += sam~NE & minor~ES | sam~WSC & minor~NW | sam~NEC & minor~ES | %        // DxD T End 2 Alt (Truncate stub)
+            Rules += sam~NE & minor~ES | minor~NW | sam~NEC & minor~ES | sam~WSC & minor~NW   // DxD T End 2 Alt (Truncate and propagate)
+            Rules += sam~NEC & minor~ES | minor~NW | % | sam~WSC & minor~NW   // DxD T End 2 Alt (Propagate SAM end)
           }
         }
 
@@ -797,11 +802,15 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~NE & minor~CS | (Street ~> sam)~SW
 
           // DxD T (sam thru)
-          Rules += sam~ES | (Street ~> sam)~WN & minor~CNE  // DxD T (Thru)
+          Rules += sam~ES | (Street ~> sam)~NW & minor~CNE  // DxD Thru T 1
+          Rules += sam~ES | (Street ~> sam)~NW & minor~CEN  // DxD Thru T 2
           // continue
-          Rules += sam~ES & minor~CSW | (Street ~> sam)~WN  // Diagonal Continuation off DxD T-Thru
-          Rules += sam~NE & minor~CES | (Street ~> sam)~WS  // Temp Diagonal Continuation off other side of DxD T-Thru
-          // Rules += sam~NE & minor~CES | (Street ~> sam)~WS & minor~CNW  //Eventual DxD T-Thru Tile 2
+          Rules += sam~ES & minor~CEN | (Street ~> sam)~NW & minor~CSW // DxD Thru T 1-2
+          Rules += sam~NE & minor~CSE | (Street ~> sam)~WS & minor~CWN // DxD Thru T 2-1
+
+          Rules += sam~ES & minor~EN | sam~NW & minor~CSW | sam~ES & minor~CEN | % // DxD T 2-1 Alt (Truncate Stub)
+          Rules += sam~ES & minor~CEN | Street~NW | % | sam~NW & minor~CSW // DxD Thru T 1-2 Alt (Propagate Minor)
+          Rules += sam~ES & minor~CEN | sam~NW | % | sam~NW & minor~CSW // DxD Thru T 1-2 Alt (Propagate Minor)
         }
       }
 
