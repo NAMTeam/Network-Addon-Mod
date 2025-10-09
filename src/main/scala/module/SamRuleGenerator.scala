@@ -712,7 +712,7 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~ES | (Street ~> sam)~CNW & minor~EN                    // DxD T End 1
             Rules += sam~NEC & minor~ES | (Street ~> sam)~WSC & minor~NW        // DxD T End 2
 
-            Rules += sam~NE & minor~ES | sam~WSC & minor~NW | sam~NEC & minor~ES | %        // DxD T End 2 Alt (Truncate stub)
+            Rules += sam~NE & minor~ES | sam~WSC & minor~NW | sam~NEC & minor~ES | %          // DxD T End 2 Alt (Truncate stub)
             Rules += sam~NE & minor~ES | minor~NW | sam~NEC & minor~ES | sam~WSC & minor~NW   // DxD T End 2 Alt (Truncate and propagate)
             Rules += sam~NEC & minor~ES | minor~NW | % | sam~WSC & minor~NW   // DxD T End 2 Alt (Propagate SAM end)
           }
