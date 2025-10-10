@@ -207,6 +207,7 @@ object SegmentOrientationChecker extends Rul2Checker {
             if (is3LevelCrossingFalsePositive) {
               true
             } else {
+              // TODO: add exception for far tiles of DxD T intersections where the terminating s2 is an override network
               s2.network.base.isEmpty  // if no matching segment exists, it should be a base network (e.g. for some intermediate overrides)
             }
           } else {
