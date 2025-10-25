@@ -804,6 +804,9 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           // DxD T (sam thru)
           Rules += sam~ES | (Street ~> sam)~NW & minor~CNE      // DxD Thru T 1
           // Rules += sam~ES | (Street ~> sam)~NW & minor~CEN   // Eventual DxD Thru T 2 (pending base T-thru tile)
+          Rules += sam~ES | (Street ~> sam)~NW & minor~CWS      // Temp DxD Thru T 2 (works with DxD Thru T 1-2 Alt)
+
+          // Rules += sam~ES & minor~CEN | (Street ~> sam)~NW & minor~CSW   // Eventual DxD Thru T 1-2 (pending base T-thru tile)
           Rules += sam~ES & minor~CEN | Street~NW | % | sam~NW & minor~CSW  // DxD Thru T 1-2 Alt
           Rules += sam~ES & minor~CEN | sam~NW | % | sam~NW & minor~CSW     // DxD Thru T 1-2 Alt
           Rules += sam~NE & minor~CSE | (Street ~> sam)~WS & minor~CWN      // DxD Thru T 2-1
