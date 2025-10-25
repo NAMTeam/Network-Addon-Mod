@@ -817,8 +817,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~ES & minor~EN | sam~NW & minor~CSW | sam~ES & minor~CEN | %          // DxD T 2-1 Alt
 
           // continue
-          Rules += sam~NW & minor~CNE | (Street ~> sam)~ES      // DxD Thru T 1
-          Rules += sam~NW & minor~CEN | (Street ~> sam)~ES      // DxD Thru T 2
+          Rules += sam~ES & minor~CSW | (Street ~> sam)~NW      // DxD Thru T 1
+          Rules += sam~ES & minor~CWS | (Street ~> sam)~NW      // DxD Thru T 2
         }
       }
 
