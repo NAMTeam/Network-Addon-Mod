@@ -308,8 +308,8 @@ class SamResolver extends IdResolver {
       add(0x5e630000 + offset, sam~WS & Dirtroad~SE)              // SAM x Rhw2
 
       // DxD T-intersections
-      add(0x5e59d000 + offset, Road~ES & sam~CEN) // SAM-End Road 1
-      add(0x5e59d080 + offset, Road~NW & sam~CSW) // SAM-End Road 2
+      add(0x5e59c000 + offset, Road~ES & sam~CEN) // SAM-End Road 1
+      add(0x5e59c080 + offset, Road~NW & sam~CSW) // SAM-End Road 2
       add(0x5e59e000 + offset, Onewayroad~ES & sam~CEN) // SAM-End OWR 1
       add(0x5e59e080 + offset, Onewayroad~NW & sam~CSW) // SAM-End OWR 2
 
