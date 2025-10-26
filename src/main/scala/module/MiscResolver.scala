@@ -107,10 +107,10 @@ class MiscResolver extends IdResolver {
     add(0x5F500600, Street~SE & Street~EN) // DxD
     add(0x05005700, Street~NS & Street~CE) // OxO T
     add(0x5F500A00, Street~NS & Street~CSE) // OxD T (also has (0,2,11,2) alt implementation)
-    add(0x5F504000, Street~CS & Street~NE) // DxO T1
-    add(0x5F504100, Street~CS & Street~WS) // DxO T2
-    add(0x5F504200, Street~SE & Street~CEN) // DxD T1
-    add(0x5F504300, Street~WN & Street~CSW) // DxD T2
+    add(0x5F504000, Street~(0,202,0,2) & Street~NE) // DxO T1
+    add(0x5F504100, Street~(0,0,0,202) & Street~WS) // DxO T2
+    add(0x5F504200, Street~SE & Street~(0,1,203,0)) // DxD T1
+    add(0x5F504300, Street~WN & Street~(203,0,0,0)) // DxD T2
     add(0x05000F00, Street~(0,0,2,2)) // 90 curve
     add(0x5F500400, Street~(0,0,1,13)) // curve
     add(0x5F500500, Street~(0,2,0,11)) // curve

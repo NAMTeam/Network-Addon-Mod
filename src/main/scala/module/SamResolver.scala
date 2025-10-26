@@ -105,10 +105,10 @@ class SamResolver extends IdResolver {
       add(0x5e574000 + offset, sam~NS & sam~NE)     // OxD
       add(0x5e579000 + offset, sam~SE & sam~EN)     // DxD
       add(0x5e575000 + offset, sam~NS & sam~CSE)    // OxD T (also 0,2,11,2)
-      add(0x5e597000 + offset, sam~CS & sam~NE)     // DxO T1
-      add(0x5e598000 + offset, sam~CS & sam~WS)     // DxO T2
-      add(0x5e599000 + offset, sam~SE & sam~CEN)    // DxD T1
-      add(0x5e59a000 + offset, sam~WN & sam~CSW)    // DxD T2
+      add(0x5e597000 + offset, sam~(0,202,0,2) & sam~NE)    // DxO T1
+      add(0x5e598000 + offset, sam~(0,0,0,202) & sam~WS)    // DxO T2
+      add(0x5e599000 + offset, sam~SE & sam~(0,1,203,0))    // DxD T1
+      add(0x5e59a000 + offset, sam~WN & sam~(203,0,0,0))    // DxD T2
 
       add(0x5e57a000 + offset, sam~(0,0,2,11))
       // add(NoIID + offset, sam~(0,0,2,13))

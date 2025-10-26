@@ -527,14 +527,14 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~(0,2,11,2) | (Street ~> sam)~(11,3,0,0)  // OxD T to orth-diag top
 
       // DxO T (diag thru, orth Terminating)
-      Rules += sam~WE | (Street ~> sam)~WC & (Street ~> sam)~ES           // DxO T from orth
-      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CS           // DxO T from diag
-      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CN           // DxO T from diag to aux tile
-      Rules += sam~ES & sam~CW | (Street ~> sam)~WN & (Street ~> sam)~CW  // DxO T across
-      Rules += sam~ES & sam~CE | (Street ~> sam)~WN & (Street ~> sam)~CE  // DxO T across
-      Rules += sam~ES & sam~NC | (Street ~> sam)~WN                       // DxO T to diag
-      Rules += sam~ES & sam~SC | (Street ~> sam)~WN                       // DxO T to diag from aux tile
-      Rules += sam~SW & sam~EC | (Street ~> sam)~WE                       // DxO T to orth
+      Rules += sam~WE | (Street ~> sam)~(2,0,202,0) & (Street ~> sam)~ES                    // DxO T from orth
+      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~(0,202,0,2)                    // DxO T from diag
+      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~(0,202,0,0)                    // DxO T from diag to aux tile
+      Rules += sam~ES & sam~(2,0,202,0) | (Street ~> sam)~WN & (Street ~> sam)~(202,0,0,0)  // DxO T across
+      Rules += sam~ES & sam~(0,0,202,0) | (Street ~> sam)~WN & (Street ~> sam)~(202,0,2,0)  // DxO T across
+      Rules += sam~ES & sam~(0,2,0,202) | (Street ~> sam)~WN                                // DxO T to diag
+      Rules += sam~ES & sam~(0,0,0,202) | (Street ~> sam)~WN                                // DxO T to diag from aux tile
+      Rules += sam~SW & sam~(202,0,2,0) | (Street ~> sam)~WE                                // DxO T to orth
 
       // DxD
       Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~EN               // DxD from diag
@@ -542,14 +542,14 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
       Rules += sam~ES & sam~WS | (Street ~> sam)~WN                           // DxD to diag
 
       // DxD T
-      Rules += sam~NE | (Street ~> sam)~CSW & (Street ~> sam)~ES              // DxD T from end diag
-      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CNE              // DxD T from thru diag
-      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~CEN              // DxD T from thru diag (aux tile)
-      Rules += sam~CEN & sam~ES | (Street ~> sam)~CSW & (Street ~> sam)~NW    // DxD T across 1
-      Rules += sam~CNE & sam~ES | (Street ~> sam)~CWS & (Street ~> sam)~NW    // DxD T across 2
-      Rules += sam~CNE & sam~NW | (Street ~> sam)~WS                          // DxD T to diag from end side
-      Rules += sam~CSW & sam~ES | (Street ~> sam)~NW                          // DxD T to diag from thru side
-      Rules += sam~CWS & sam~ES | (Street ~> sam)~NW                          // DxD T to diag from aux tile
+      Rules += sam~NE | (Street ~> sam)~(3,0,0,201) & (Street ~> sam)~ES                      // DxD T from end diag
+      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~(0,201,3,0)                      // DxD T from thru diag
+      Rules += sam~ES | (Street ~> sam)~NW & (Street ~> sam)~(0,201,0,0)                      // DxD T from thru diag (aux tile)
+      Rules += sam~(0,1,203,0) & sam~ES | (Street ~> sam)~(203,0,0,0) & (Street ~> sam)~NW    // DxD T across 1
+      Rules += sam~(0,0,203,0) & sam~ES | (Street ~> sam)~(203,0,0,1) & (Street ~> sam)~NW    // DxD T across 2
+      Rules += sam~(0,201,3,0) & sam~NW | (Street ~> sam)~WS                                  // DxD T to diag from end side
+      Rules += sam~(3,0,0,201) & sam~ES | (Street ~> sam)~NW                                  // DxD T to diag from thru side
+      Rules += sam~(0,0,0,201) & sam~ES | (Street ~> sam)~NW                                  // DxD T to diag from aux tile
 
       // intersections involving the orth-diag curve
 
@@ -817,8 +817,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~ES & minor~EN | sam~NW & minor~CSW | sam~ES & minor~CEN | %          // DxD T 2-1 Alt
 
           // continue
-          Rules += sam~ES & minor~CSW | (Street ~> sam)~NW      // DxD Thru T 1
-          Rules += sam~ES & minor~CWS | (Street ~> sam)~NW      // DxD Thru T 2
+          Rules += sam~ES & minor~(3,0,0,201) | (Street ~> sam)~NW      // DxD Thru T 1
+          Rules += sam~ES & minor~(0,0,0,201) | (Street ~> sam)~NW      // DxD Thru T 2
         }
       }
 
