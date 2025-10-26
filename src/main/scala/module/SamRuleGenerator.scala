@@ -709,12 +709,12 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
             Rules += sam~NE & minor~WE | Street~CWS & minor~WE | sam~NE & minor~WE | sam~SW & minor~WE  // DxO Ts into DxO + for Old-Style
 
             // DxD T (sam end)
-            Rules += sam~ES | (Street ~> sam)~CNW & minor~EN                    // DxD T End 1
-            Rules += sam~NEC & minor~ES | (Street ~> sam)~WSC & minor~NW        // DxD T End 2
+            Rules += sam~ES | (Street ~> sam)~(1,203,0,0) & minor~EN                      // DxD T End 1
+            Rules += sam~(0,1,203,0) & minor~ES | (Street ~> sam)~(203,0,0,0) & minor~NW  // DxD T End 2
 
-            Rules += sam~NE & minor~ES | sam~WSC & minor~NW | sam~NEC & minor~ES | %          // DxD T End 2 Alt (Truncate stub)
-            Rules += sam~NE & minor~ES | minor~NW | sam~NEC & minor~ES | sam~WSC & minor~NW   // DxD T End 2 Alt (Truncate and propagate)
-            Rules += sam~NEC & minor~ES | minor~NW | % | sam~WSC & minor~NW   // DxD T End 2 Alt (Propagate SAM end)
+            Rules += sam~NE & minor~ES | sam~(203,0,0,0) & minor~NW | sam~(0,1,203,0) & minor~ES | %          // DxD T End 2 Alt (Truncate stub)
+            Rules += sam~NE & minor~ES | minor~NW | sam~(0,1,203,0) & minor~ES | sam~(203,0,0,0) & minor~NW   // DxD T End 2 Alt (Truncate and propagate)
+            Rules += sam~(0,1,203,0) & minor~ES | minor~NW | % | sam~(203,0,0,0) & minor~NW                   // DxD T End 2 Alt (Propagate SAM end)
           }
         }
 
@@ -802,19 +802,21 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
           Rules += sam~NE & minor~CS | (Street ~> sam)~SW
 
           // DxD T (sam thru)
-          Rules += sam~ES | (Street ~> sam)~NW & minor~CNE      // DxD Thru T 1
-          // Rules += sam~ES | (Street ~> sam)~NW & minor~CEN   // Eventual DxD Thru T 2 (pending base T-thru tile)
-          Rules += sam~ES | (Street ~> sam)~NW & minor~CWS      // Temp DxD Thru T 2 (works with DxD Thru T 1-2 Alt)
+          // Rules += sam~ES | (Street ~> sam)~NW & minor~(0,201,3,0)               // DxD Thru T 1 pending base long T tile
+          // Rules += sam~ES | (Street ~> sam)~NW & minor~(0,201,0,0)               // DxD Thru T 2 pending base long T tile
+          Rules += sam~ES | Street~NW & minor~CNE | % | sam~NW & minor~(0,201,3,0)  // DxD Thru T 1
+          Rules += sam~ES | Street~NW & minor~CWS | % | sam~NW & minor~(203,0,0,1)  // Temp DxD Thru T 2 (works with DxD Thru T 1-2 Alt)
 
-          // Rules += sam~ES & minor~CEN | (Street ~> sam)~NW & minor~CSW   // Eventual DxD Thru T 1-2 (pending base T-thru tile)
-          Rules += sam~ES & minor~CEN | Street~NW | % | sam~NW & minor~CSW  // DxD Thru T 1-2 Alt
-          Rules += sam~ES & minor~CEN | sam~NW | % | sam~NW & minor~CSW     // DxD Thru T 1-2 Alt
-          Rules += sam~NE & minor~CSE | (Street ~> sam)~WS & minor~CWN      // DxD Thru T 2-1
+          // Rules += sam~ES & minor~(0,1,203,0) | (Street ~> sam)~NW & minor~(203,0,0,0)             // DxD Thru T 1-2 pending base long T tile
+          // Rules += sam~NE & minor~(0,0,201,0) | (Street ~> sam)~WS & minor~(201,3,0,0)             // DxD Thru T 2-1 pending base long T tile
+          Rules += sam~ES & minor~(0,1,203,0) | Street~NW | % | sam~NW & minor~(203,0,0,0)            // DxD Thru T 1-2 Alt
+          Rules += sam~ES & minor~(0,1,203,0) | sam~NW | % | sam~NW & minor~(203,0,0,0)               // DxD Thru T 1-2 Alt
+          Rules += sam~NE & minor~(0,0,201,0) | Street~WS & minor~CWN | % | sam~WS & minor~(201,3,0,0)   // DxD Thru T 2-1
 
           // truncate minor stub on tile 1
-          Rules += sam~ES & minor~EN | Street~NW | sam~ES & minor~CEN | sam~NW & minor~CSW  // DxD T 2-1 Alt
-          Rules += sam~ES & minor~EN | sam~NW | sam~ES & minor~CEN | sam~NW & minor~CSW     // DxD T 2-1 Alt
-          Rules += sam~ES & minor~EN | sam~NW & minor~CSW | sam~ES & minor~CEN | %          // DxD T 2-1 Alt
+          Rules += sam~ES & minor~EN | Street~NW | sam~ES & minor~(0,1,203,0) | sam~NW & minor~(203,0,0,0)  // DxD T 2-1 Alt
+          Rules += sam~ES & minor~EN | sam~NW | sam~ES & minor~(0,1,203,0) | sam~NW & minor~(203,0,0,0)     // DxD T 2-1 Alt
+          Rules += sam~ES & minor~EN | sam~NW & minor~(203,0,0,0) | sam~ES & minor~(0,1,203,0) | %          // DxD T 2-1 Alt
 
           // continue
           Rules += sam~ES & minor~(3,0,0,201) | (Street ~> sam)~NW      // DxD Thru T 1
