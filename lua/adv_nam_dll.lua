@@ -3,12 +3,32 @@
 -- This file defines advisor messages related to the NAM DLL.
 
 -- Note that this Lua file is not intended for distribution with the DLL itself, but for distribution with the NAM DBPF files to ensure compatibility between NAM and DLL.
-nam_dll_version_expected = "1.2.0"  -- needs to be updated whenever a new DLL version is released
+nam_dll_version_expected = "1.2.3"  -- needs to be updated whenever a new DLL version is released
 
--- (When this script is first executed, the `nam_dll_version` is still `nil`, but it gets defined before the trigger conditions are evaluated.)
+local _cached_result = nil
 function is_nam_dll_correct()
+    -- (When this script is first executed, the `nam_dll_version` is still `nil`, but it gets defined before the trigger conditions are evaluated.)
     local version = rawget(globals(), "nam_dll_version")
-    return version ~= nil and version == nam_dll_version_expected
+    if (version == nil) then
+        return false
+    elseif (_cached_result ~= nil) then
+        return _cached_result
+    else
+        if (version == nam_dll_version_expected) then
+            _cached_result = true
+        else
+            -- check semantic versions to allow a patch level higher than expected by this Lua script
+            local semver_pattern = "^(%d+%.%d+)%.(%d+)"
+            local i, _, v12, v3 = string.find(version, semver_pattern)
+            local j, _, e12, e3 = string.find(nam_dll_version_expected, semver_pattern)
+            if (i == nil or j == nil) then
+                _cached_result = false
+            else
+                _cached_result = (v12 == e12 and tonumber(v3) >= tonumber(e3))
+            end
+        end
+        return _cached_result
+    end
 end
 
 ------------ Advice record ----
