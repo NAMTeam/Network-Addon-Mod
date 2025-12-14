@@ -3,7 +3,7 @@
 -- This file defines advisor messages related to the NAM DLL.
 
 -- Note that this Lua file is not intended for distribution with the DLL itself, but for distribution with the NAM DBPF files to ensure compatibility between NAM and DLL.
-nam_dll_version_expected = "1.2.3"  -- needs to be updated whenever a new DLL version is released
+nam_dll_version_expected = "1.3.0"  -- needs to be updated whenever a new DLL version is released
 
 local _cached_result = nil
 function is_nam_dll_correct()
