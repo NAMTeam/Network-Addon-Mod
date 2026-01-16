@@ -41,5 +41,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         persist-credentials: false
+    - name: Check RUL0 syntax
+      run: python src/scripts/syntax-check-rul0.py
     - name: Check RUL2 syntax
       run: sh src/scripts/syntax-check-rul2.sh
