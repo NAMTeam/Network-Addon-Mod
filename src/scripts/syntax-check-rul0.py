@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# This script checks all the RUL0 files for errors such as sinkhole bugs..
+# This script checks all the RUL0 files for errors such as sinkhole bugs.
 # If any are found, they are printed to stdout and the script exits with a non-zero return code.
 #
 # Minimum requirement: Python 3.12+
@@ -9,6 +9,7 @@
 import sys
 import os
 import itertools
+import re
 
 SRC_DIRS = [
         "Controller/RUL0",
@@ -39,14 +40,39 @@ def parse_layout(lines):
     return cells
 
 
-def check_cons_layout(cell_lines, cons_lines):
+def parse_checktypes(lines):
+    definitions = [line[(line.index("=")+1):].strip() for line in drop_comments(l for _, l in lines)]
+    static_cells = {row[0]: "optional" not in row and "check" not in row
+                    for row in definitions if row}
+    return static_cells
+
+
+def _stringify_layout(lines):
+    return "".join(f"  {line_no}: {line}" for line_no, line in lines)
+
+
+def check_cons_layout(cell_lines, checktype_lines, cons_lines):
     cell_layout = parse_layout(cell_lines)
     cons_layout = parse_layout(cons_lines)
-    bad_cells = [xy for xy in cons_layout.keys() if xy not in cell_layout]
+    static_cells = parse_checktypes(checktype_lines)
+    undefined_cells = set(c for c in cell_layout.values() if c != '+' and c not in static_cells)
+    if undefined_cells:
+        raise Exception(f"Missing CheckType definition for cell {', '.join(undefined_cells)}:\n{_stringify_layout(cell_lines)}")
+    bad_cells = [xy for xy in cons_layout.keys() if xy not in cell_layout]  # constraint != '.' but cell == '.'
+    if not bad_cells:
+        bad_cells = [xy for xy, c in cell_layout.items()
+                     if static_cells.get(c) and
+                     (xy not in cons_layout or cons_layout[xy] == '.')]  # cell != '.' but constraint == '.'
     if bad_cells:
-        cell_layout_str = "".join(f"  {line_no}: {line}" for line_no, line in cell_lines)
-        cons_layout_str = "".join(f"  {line_no}: {line}" for line_no, line in cons_lines)
-        raise Exception(f"Potential sinkhole bug in ConsLayout at cells {' '.join(map(str, bad_cells))}:\n{cell_layout_str}  ---\n{cons_layout_str}")
+        raise Exception(f"Potential sinkhole bug in ConsLayout at cells {' '.join(map(str, bad_cells))}:\n{_stringify_layout(cell_lines)}  ---\n{_stringify_layout(cons_lines)}")
+
+
+_relevant_line_starts = (
+        re.compile(r"^CellLayout", re.IGNORECASE),
+        re.compile(r"^CheckType", re.IGNORECASE),
+        re.compile(r"^ConsLayout", re.IGNORECASE),
+        re.compile(r"^\[HighwayIntersectionInfo"),
+        )
 
 
 def scan_rul0_file(lines):
@@ -55,18 +81,25 @@ def scan_rul0_file(lines):
             line = line.lstrip()
             if line.startswith(";###RHD###"):  # TODO for simplicity, we ignore LHD for now
                 line = line[10:]
-            if line.startswith("CellLayout") or line.startswith("ConsLayout"):
-                yield line_no, line
+            for re_idx, pattern in enumerate(_relevant_line_starts):
+                if pattern.match(line):
+                    yield line_no, line, re_idx
+                    break
 
-    grouped = list((b, list(it)) for b, it in itertools.groupby(relevant_lines(), key=lambda tup: tup[1].startswith("ConsLayout")))
-    if grouped and grouped[0][0]:
-        yield "Found no matching CellLayout for first ConsLayout in file"
-    elif grouped and not grouped[-1][0]:
-        yield "Found no matching ConsLayout for last CellLayout in file"
-    else:
-        for ((_, cell_lines), (_, cons_lines)) in itertools.batched(grouped, 2):
+    grouped = [list(it) for heading, it in
+               itertools.groupby(relevant_lines(), key=lambda tup: tup[2] == 3)
+               if not heading]
+    for grouped_lines in grouped:
+        cell_lines      = [(line_no, line) for line_no, line, re_idx in grouped_lines if re_idx == 0]
+        checktype_lines = [(line_no, line) for line_no, line, re_idx in grouped_lines if re_idx == 1]
+        cons_lines      = [(line_no, line) for line_no, line, re_idx in grouped_lines if re_idx == 2]
+        if not cell_lines and not cons_lines:  # checktype_lines might be non-empty in `CopyFrom` case
+            continue
+        elif not cell_lines or not checktype_lines or not cons_lines:
+            yield f"Found no matching CellLayout, ConsLayout or CheckType definitions starting at line {grouped_lines[0][0]}"
+        else:
             try:
-                check_cons_layout(cell_lines, cons_lines)
+                check_cons_layout(cell_lines, checktype_lines, cons_lines)
             except Exception as err:
                 yield str(err)
 
