@@ -2,6 +2,9 @@
 #
 # This script checks all the RUL0 files for errors such as sinkhole bugs..
 # If any are found, they are printed to stdout and the script exits with a non-zero return code.
+#
+# Minimum requirement: Python 3.12+
+# Further info: https://www.wiki.sc4devotion.com/index.php?title=RUL0
 
 import sys
 import os
@@ -21,9 +24,13 @@ def drop_comments(lines):
 
 # create mapping of (x,y)-cell to char
 def parse_layout(lines):
-    layout = [line[(line.index("=")+1):].strip() for line in drop_comments(lines)]
-    origin_x = ([l.index("^") for l in layout if "^" in l] or [0])[0]
-    origin_y = ([i for i, l in enumerate(layout) if "<" in l] or [0])[0]
+    layout = [line[(line.index("=")+1):].strip() for line in drop_comments(l for _, l in lines)]
+    markers_x = [line.index("^") for line in layout if "^" in line]
+    markers_y = [i for i, line in enumerate(layout) if "<" in line]
+    if len(markers_x) != 1 or len(markers_y) != 1:
+        raise Exception(f"Missing or incorrect origin markers '^'/'<' in layout starting at line {lines[0][0]}")
+    origin_x = markers_x[0]
+    origin_y = markers_y[0]
     cells = {(j-origin_x, i-origin_y): char
              for i, row in enumerate(layout)
              for j, char in enumerate(row)
@@ -33,13 +40,13 @@ def parse_layout(lines):
 
 
 def check_cons_layout(cell_lines, cons_lines):
-    cell_layout = parse_layout(l for _, l in cell_lines)
-    cons_layout = parse_layout(l for _, l in cons_lines)
+    cell_layout = parse_layout(cell_lines)
+    cons_layout = parse_layout(cons_lines)
     bad_cells = [xy for xy in cons_layout.keys() if xy not in cell_layout]
     if bad_cells:
         cell_layout_str = "".join(f"  {line_no}: {line}" for line_no, line in cell_lines)
         cons_layout_str = "".join(f"  {line_no}: {line}" for line_no, line in cons_lines)
-        raise Exception(f"Potential sinkhole bug in ConsLayout at cells {" ".join(map(str, bad_cells))}:\n{cell_layout_str}  ---\n{cons_layout_str}")
+        raise Exception(f"Potential sinkhole bug in ConsLayout at cells {' '.join(map(str, bad_cells))}:\n{cell_layout_str}  ---\n{cons_layout_str}")
 
 
 def scan_rul0_file(lines):
