@@ -20,7 +20,7 @@ class MiscResolver extends IdResolver {
     add(0x02001500, Highway~EW); add(0x02002200, Highway~ES); add(0x02002100, Highway~SharedDiagRight)
     add(0x0a001500, Groundhighway~EW); add(0x0a002200, Groundhighway~ES); add(0x0a002100, Groundhighway~SharedDiagRight)
 
-    add(0x5d300000, Str  ~NS); add(0x5d302000, Str  ~ES)
+    add(0x5d300000, Str  ~NS); add(0x5d500100, Str  ~ES)
     builder.addOne(Glr1~NS, IdTile(0x5f880000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))  // temporary bandaid: extra rotations for better compatibility with old handwritten GLR code
     builder.addOne(Glr2~NS, IdTile(0x5f884000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))
     builder.addOne(Glr3~NS, IdTile(0x5f888000, R0F0, mappedRepr = _.flatMap(rf => Set(rf, rf * R2F0))))
