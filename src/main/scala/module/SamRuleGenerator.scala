@@ -738,7 +738,8 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
             // DxO
             // DxO short T
-            Rules += sam~(0,0,11,3) | (Street ~> sam~CNW) & minor~NS    // DxO short T
+            Rules += sam~(0,0,11,3) | (Street ~> sam)~CNW & minor~NS    // DxO short T
+            Rules += sam~ES | sam~CNW & minor~NS | sam~(0,0,11,3) | %   // DxO short T stability
             // DxO +
             Rules += sam~ES | (Street ~> sam)~NW & minor~NS             // DxO start
             Rules += sam~EN & minor~EW | (Street ~> sam)~SW & minor~EW  // DxO middle 1
@@ -798,8 +799,10 @@ class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerato
 
           // DxO T (sam thru)
           Rules += sam~SE | (Street ~> sam)~WN & minor~CE
+          Rules += sam~SE | (Street ~> sam)~WN & minor~CS
           // continue
           Rules += sam~NE & minor~CS | (Street ~> sam)~SW
+          Rules += sam~NE & minor~CW | (Street ~> sam)~SW
 
           // DxD T (sam thru)
           // Rules += sam~ES | (Street ~> sam)~NW & minor~(0,201,3,0)               // DxD Thru T 1 pending base long T tile
