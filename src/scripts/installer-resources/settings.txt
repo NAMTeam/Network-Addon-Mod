@@ -1,0 +1,113 @@
+
+# this is the configuration file for the installer.
+# DO NOT change the name of this file, the installer needs this to be 'settings.txt'
+
+# ------------------------------------------------ #
+# general settings
+# ------------------------------------------------ #
+
+# - 'version' and 'appname' are not essential, but are defined here as a example to show how you can
+#    reference other defined symbols in strings and description files (such as licence.txt)
+#    you may also define your own symbols to be used this way for convenience
+# - 'apptitle' will show on application frame (if 'decorate' is TRUE) and windows taskbar
+# -  default installation folder is MY_DOCUMENTS/Simcity 4/Plugins/${defaultfolder}
+# - 'width' and 'height' do NOT include sidebar (if sidebar is longer than 'height', sidebar height is used)
+# -  set 'decorate' to TRUE/FALSE to show/hide default application frame
+# - 'splash_ms' is the time the splash message is showing, in milliseconds. If there is no "splash.jpg" file,
+#    this property is ignored. The filename "splash.jpg" is hardcoded so it can be loaded while this file is being compiled.
+
+version        = __NAMVERSION__
+appname        = Network Addon Mod ${version}
+apptitle       = ${appname} Installer
+defaultfolder  = Network Addon Mod
+width          = 640
+height         = 640
+decorate       = TRUE
+splash_ms      = 1500
+
+# show/hide the file selection screen
+showFiles      = TRUE
+
+# - if 'on_finish.open' is a valid file, closing the installer after successfully installing will open this file
+# - if 'on_finish.run' is a valid file, closing the installer after successfully installing will run this file
+# paths given here should be relative to the installation directory
+
+on_finish.open = start.html
+# on_finish.run  = program.exe
+
+# ------------------------------------------------ #
+# GUI/language settings
+# ------------------------------------------------ #
+
+frame.close      = Close
+frame.minimize   = Minimize
+
+welcome.title    = welcome
+welcome.i_agree  = I Agree with these conditions
+welcome.next     = Click tabs to continue
+
+files.title      = files
+files.treeborder = Select files to install
+files.infoborder = Additional information
+files.divider.pos   = 400
+files.divider.fixed = FALSE
+
+location.title   = location
+location.border  = Please select location to install files
+location.button  = Browse
+
+install.title    = install
+install.button   = Start installation
+
+setup.title      = setup
+
+cleanitol.title  = cleanup
+cleanitol.start  = Start scan
+cleanitol.stop   = Cancel scan
+cleanitol.done   = Scan finished!
+cleanitol.delete = delete
+cleanitol.delete.popup = files(s) successfully deleted
+cleanitol.backup = backup
+cleanitol.backup.popup = files(s) successfully moved to
+cleanitol.found  = outdated file(s) found
+cleanitol.msg    = Please delete or backup these files to avoid conflicts with newly installed files
+cleanitol.error  = An error occurred trying to move or delete the following file(s), please remove these manually
+
+depends.title    = depends
+depends.start    = ${cleanitol.start}
+depends.stop     = ${cleanitol.stop}
+depends.done     = ${cleanitol.done}
+depends.tooltip  = Double-click to open download site
+depends.label    = Scan for dependencies (GREEN = dependency found)
+
+# ------------------------------------------------ #
+# color settings
+# ------------------------------------------------ #
+# format: Red,Green,Blue
+
+black             = 0,0,0
+white             = 255,255,255
+
+default.light     = 225,166,26
+default.dark      = 233,99,32
+tabs.title        = ${default.dark}
+tabs.line.default = ${default.dark}
+tabs.line.select  = ${white}
+textfield.text    = 46,94,141
+textfield.back    = 218,231,243
+buttons.text      = ${black}
+
+# ------------------------------------------------ #
+# auxiliary files
+# ------------------------------------------------ #
+
+license       = license
+license.exts  = txt,htm,html
+sidebar       = sidebar
+sidebar.exts  = png,jpg,gif,bmp
+cleanitol     = cleanup.txt
+depends       = depends.txt
+
+
+
+
