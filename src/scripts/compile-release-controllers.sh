@@ -13,9 +13,8 @@
 #   ./src/scripts/compile-release-controllers.sh
 #
 # The compiled controllers are located at `./target/controllers/`.
-# The selections for Full/Low-RAM variants are taken from these files:
+# The controller-compiler selections are taken from this file:
 #   src/scripts/RUL2_IID_structure_full.xml
-#   src/scripts/RUL2_IID_structure_noRHW.xml
 set -e
 
 if [ ! -e "Controller" ]
@@ -42,13 +41,12 @@ unzip -d "$TEMP" "$COMPILER_ARCHIVE"
 
 VERSION="$1"
 DRIVESIDE='XHD'
-VARIANT=''
 DATESTRING="$(date --utc)"
 ltext() {
     if [ ! -z "$VERSION" ]
     then
         # If an argument was passed to the script, the version is non-empty.
-        printf "NAM Version $VERSION $DRIVESIDE $VARIANT compiled on $DATESTRING"
+        printf "NAM Version $VERSION $DRIVESIDE compiled on $DATESTRING"
     else
         # Otherwise pass the empty string to the compiler.
         printf ""
@@ -57,27 +55,13 @@ ltext() {
 
 
 # RHD 4GB Full
-VARIANT='(4GB Full)'
 DRIVESIDE='RHD'
 cp "src/scripts/RUL2_IID_structure_full.xml" "$TEMP/resources/xml/RUL2_IID_structure.xml"
-(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@0=0 NAM Controller_RHD_4GB_Full' 1 "$(ltext)")
+(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@0=0 NAM Controller_RHD' 1 "$(ltext)")
 
 # LHD 4GB Full
-VARIANT='(4GB Full)'
 DRIVESIDE='LHD'
 cp "src/scripts/RUL2_IID_structure_full.xml" "$TEMP/resources/xml/RUL2_IID_structure.xml"
-(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@1-0 NAM Controller_LHD_4GB_Full' 0 "$(ltext)")
-
-# RHD no-RHW
-VARIANT='(Low-RAM no-RHW)'
-DRIVESIDE='RHD'
-cp "src/scripts/RUL2_IID_structure_noRHW.xml" "$TEMP/resources/xml/RUL2_IID_structure.xml"
-(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@2-0 NAM Controller_RHD_LowRAM_NoRHW' 1 "$(ltext)")
-
-# LHD no-RHW
-VARIANT='(Low-RAM no-RHW)'
-DRIVESIDE='LHD'
-cp "src/scripts/RUL2_IID_structure_noRHW.xml" "$TEMP/resources/xml/RUL2_IID_structure.xml"
-(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@3-0 NAM Controller_LHD_LowRAM_NoRHW' 0 "$(ltext)")
+(cd "$TEMP" && java -jar NAMControllerCompiler.jar "$PROJECT_ROOT/Controller" '../@1-0 NAM Controller_LHD' 0 "$(ltext)")
 
 rm -rf "$TEMP"
