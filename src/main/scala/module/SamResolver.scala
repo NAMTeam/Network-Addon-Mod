@@ -105,10 +105,10 @@ class SamResolver extends IdResolver {
       add(0x5e574000 + offset, sam~NS & sam~NE)     // OxD
       add(0x5e579000 + offset, sam~SE & sam~EN)     // DxD
       add(0x5e575000 + offset, sam~NS & sam~CSE)    // OxD T (also 0,2,11,2)
-      add(0x5e597000 + offset, sam~CS & sam~NE)     // DxO T1
-      add(0x5e598000 + offset, sam~CS & sam~WS)     // DxO T2
-      add(0x5e599000 + offset, sam~SE & sam~CEN)    // DxD T1
-      add(0x5e59a000 + offset, sam~WN & sam~CSW)    // DxD T2
+      add(0x5e597000 + offset, sam~(0,202,0,2) & sam~NE)    // DxO T1
+      add(0x5e598000 + offset, sam~(0,0,0,202) & sam~WS)    // DxO T2
+      add(0x5e599000 + offset, sam~SE & sam~(0,1,203,0))    // DxD T1
+      add(0x5e59a000 + offset, sam~WN & sam~(203,0,0,0))    // DxD T2
 
       add(0x5e57a000 + offset, sam~(0,0,2,11))
       // add(NoIID + offset, sam~(0,0,2,13))
@@ -236,15 +236,18 @@ class SamResolver extends IdResolver {
       add(0x5e673000 + offset, sam~WE & Owr1~ES) // SAM x OWR-1
       add(0x5e674000 + offset, sam~WE & Owr3~SE) // SAM x OWR-3
       add(0x5e675000 + offset, sam~WE & Nrd4~SE) // SAM x NRD-4
+      add(0x5e610000 + offset, sam~WE & Dirtroad~SE) // SAM x RHW-2
+
+      // OxD T-intersections
       add(0x5e55e000 + offset, sam~WE & Road~CWN) // SAM-Thru x Road-End T
       add(0x5e561000 + offset, sam~WE & Onewayroad~CWN) // SAM-Thru x Onewayroad-End T
-      add(0x5e610000 + offset, sam~WE & Dirtroad~SE) // SAM x RHW-2
 
       //DxO Intersections
       add(0x5e582000 + offset, sam~SE & Road~NS)        // SAM x Road
       add(0x5e58c000 + offset, sam~SE & Onewayroad~NS)  // SAM x Onewayroad
-      add(0x5e587000 + offset, sam~SE & Avenue~SN)      // SAM x Avenue 1
-      add(0x5e588000 + offset, sam~NW & Avenue~SN)      // SAM x Avenue 2
+      add(0x5e586000 + offset, sam~CSE & Avenue~SN)     // SAM x Avenue DxO short T
+      add(0x5e587000 + offset, sam~SE & Avenue~SN)      // SAM x Avenue DxO + (1)
+      add(0x5e588000 + offset, sam~NW & Avenue~SN)      // SAM x Avenue DxO + (2)
       add(0x5e53d000 + offset, sam~SE & Highway~NS)     // SAM x Highway 1
       add(0x5e53d080 + offset, sam~WN & Highway~NS)     // SAM x Highway 2
       add(0x5e514000 + offset, sam~NW & Rail~NS)        // SAM-Rail
@@ -268,6 +271,7 @@ class SamResolver extends IdResolver {
 
       add(0x5e620000 + offset, sam~WS & Dirtroad~NS)  // SAM x Rhw2
 
+      // DxO T-intersections
       add(0x5e581000 + offset, Road~NS & sam~CSE) // SAM-End Road T-int
       add(0x5e58b000 + offset, Onewayroad~NS & sam~CSE) // SAM-End OWR T-int
 
@@ -303,11 +307,16 @@ class SamResolver extends IdResolver {
 
       add(0x5e630000 + offset, sam~WS & Dirtroad~SE)              // SAM x Rhw2
 
-      add(0x5e584000 + offset, Road~ES & sam~CEN) // temporary IID
-      add(0x5e58e000 + offset, Onewayroad~ES & sam~CEN) // temporary IID
+      // DxD T-intersections
+      add(0x5e59c000 + offset, Road~ES & sam~(0,1,203,0))       // SAM-End Road 1
+      add(0x5e59c080 + offset, Road~NW & sam~(203,0,0,0))       // SAM-End Road 2
+      add(0x5e59e000 + offset, Onewayroad~ES & sam~(0,1,203,0)) // SAM-End OWR 1
+      add(0x5e59e080 + offset, Onewayroad~NW & sam~(203,0,0,0)) // SAM-End OWR 2
 
-      add(0x5e585000 + offset, sam~NE & Road~CES) // SAM x Road (SAM Thru)
-      add(0x5e58f000 + offset, sam~NE & Onewayroad~CES) // SAM x Onewayroad (SAM Thru)
+      add(0x5e585000 + offset, sam~EN & Road~(0,0,201,3))       // SAM-Thru Road 1
+      add(0x5e585080 + offset, sam~SW & Road~(201,0,0,0))       // SAM-Thru Road 2
+      add(0x5e58f000 + offset, sam~EN & Onewayroad~(0,0,201,3)) // SAM-Thru OWR 1
+      add(0x5e58f080 + offset, sam~SW & Onewayroad~(201,0,0,0)) // SAM-Thru OWR 2
 
       //Transitions
       //Ortho
