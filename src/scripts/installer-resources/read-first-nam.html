@@ -1,0 +1,698 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Network Addon Mod (NAM) Version 49 (rev1) by the NAM Team</title>
+		<link rel="stylesheet" type="text/css" href="namdoc.css">
+</head>
+
+	<body>
+		<div class="main">
+			<div class="logobanner"><img src="images/readmebanner.png" alt="readmebanner"></div>
+			
+			<div class="bannerfull"><h4>&nbsp;Network Addon Mod (NAM) Version 49 (rev1) by the NAM Team</h4></div>
+			
+			<div class="regtext">
+				<p><span class="dec">Before</span> you run off in excitement to install the new NAM version, please make sure to <span class="dec">read</span> this document <span class="dec">first</span>, 
+				to ensure the best Network Addon Mod experience.</p>
+				
+			<div class="bannerfull"><a name="quickstart"></a><h4>&nbsp;Compatibility and Installation</h4></div>
+			<div class="regtext">
+			
+				<p>Before attempting to run the NAM installer, ensure that you have extracted the contents of the .zip download into a folder.</p>
+				<p><strong>Attempting to run the installer (or the 4GB Patch) while the files are still in the .zip will cause the installation to fail.</strong></p>
+			
+				<p>The minimum requirements for running the Network Addon Mod are as follows:</p>
+				<ul>
+					<li>A compatible retail copy of SimCity 4 Deluxe Edition OR SimCity 4 with the Rush Hour Expansion Pack
+					<ul>
+						<li><strong>Windows/Linux (via WINE/Proton)</strong>: Any digital retail edition, or any disc copy updated to at least Version 1.1.638 (<a href="#origin">the EA App/Origin Retail Edition is compatible since June 2023</a>).</li>
+						<li><strong>macOS</strong>: Any recent digital edition of the Aspyr port for macOS (installation on the App Store version is more difficult, and the NAM Team is limited in our capacity to provide installation help to App Store users).</li>
+						<li><strong>The now-rare non-Deluxe/non-Rush Hour copies of SimCity 4 are not supported.</strong>  Attempting to run the NAM on a non-Deluxe/non-Rush Hour copy of SimCity 4 will cause the game to immediately crash to desktop (CTD).</li>
+					</ul>
+					</li>
+					<li>Java Runtime Environment (JRE), in order to run the installer--a version for 64-bit Windows is included in the download (OpenJDK11U-jre_x64_windows_hotspot_11.0.8_10.msi).
+						<ul>
+							<li>If you are not on 64-bit Windows and need Java, <a href="https://adoptium.net/temurin/releases">Adoptium's open-source edition is recommended</a>, though JRE and JDK can also be acquired in proprietary/commercial (but free to download) form from Oracle at <a href="https://www.java.com/">https://www.java.com</a>.</li>
+							<li>The Java Development Kit, or JDK, will also work, but contains extra files not needed unless you are a Java developer.</li>
+						</ul>
+					</li>
+					<li>A system with the following specs, for each basic type of NAM installation</li>
+						<ul>
+							<li><strong>NAM with a LowRAM/NoRHW Controller option</strong>: Any system built within the last 15 years, with 750MB available disk space.  (Users running this option cannot install the RealHighway (RHW) features.)</li>
+							<li><strong>NAM with a Full 4GB Controller option</strong>: Any system with a 64-bit operating system, at least 4GB RAM, and 1.2GB available disk space.  If on Windows, <em>the 4GB Patch must be applied to the game's executable</em>.</li>
+							<li>NOTE: Installing the Full 4GB Controller option without meeting the specifications and without the 4GB Patch <strong><span class="dec">will cause the game to crash-to-desktop (CTD) upon attempting to load a city</span></strong>.  If you experience this crash,
+							it either means your system does not support the Full 4GB Controller option, or there was some form of failure in the 4GB Patch process.</li>
+						</ul>
+					<li><strong>Additional Requirement on Mac</strong> (optional for Windows/Linux): <a href="https://www.sc4devotion.com/forums/index.php?action=tportal;sa=download;dl=item137">JDatPacker by memo</a>.
+					<ul>
+						<li>JDatPacker is a tool for consolidating folders of SimCity 4 plugins.  This can speed up the game's performance, and on macOS, this helps alleviate issues with the Aspyr port's known
+						"number of files limit", wherein exceeding a certain number of files/folders within the game's Plugins directory can cause the game to crash.</li>
+					</ul>
+					<li><strong>Additional Requirement on Windows/Linux (if running Full 4GB Controller/RealHighway options)</strong> (not required on Mac): 4GB Patch by NTCore (included in download, and also
+					available at <a href="https://ntcore.com/?page_id=371">NTCore</a>.  Please note that the batch file that was previously included to assist with the 4GB Patch has been discontinued as of NAM 49)</a>.
+					<ul>
+						<li>See Step 5 or <a href="#4gbpatch">here</a> for more details.</li>
+					</ul>
+					</li>
+				</ul>
+				
+				<p>To install the Network Addon Mod:</p>	
+				<ol>	
+					<li>Install the Java Runtime Environment (JRE) (if already installed, skip to Step 2).</li>
+					<li>Remove any existing NAM installations, if present (simply deleting the "a_Network Addon Mod Lite" and/or "Network Addon Mod" folder from the Documents\SimCity 4\Plugins directory is the easiest way).</li>
+					<li>Run NetworkAddonMod_Setup_Version49_rev1.jar, which is the installer.  <strong>Note: This is now the recommended installation procedure for all operating systems.</strong></li>
+					<li>Follow the installer's instructions, clicking on each tab on the top bar in order.  
+					<ol type="a">
+						<li>Agree to the mod's terms on the initial "welcome" tab to proceed with the installation.</li>
+						<li>Select the options you would like to install under the "files" tab.</li> 
+						<li>Select the install location under the "location" tab.  Unless you have set up an alternate location for your Plugins folder, or happen to be on the Mac App Store version of the game, this should be correct without needing to change it.</li>
+						<li>Finally, move to the "install" tab.  Click the "Start installation" button to begin the installation process.  When the installation is complete, the progress screen will display a message, "All selected components installed!".</li>
+						<li>Close the installer, using the "X" button or, on macOS, the red circular button, in the upper right corner of the window.  You're all done installing the mod.</li>
+					</ol>
+					</li>
+					<li><strong>Additional step for Windows/Linux users running the default settings (not required on macOS)</strong>: ensure your copy of the game has had the 4GB Patch applied to it (<strong><span class="dec">failure to do so may result in the game crashing</span></strong>).
+					<ul>
+						<li>Open the enclosed "4gb_patch.exe" file in the NAM download (or download it from <a href="https://ntcore.com/4gb-patch/">NTCore</a>.  A window will appear showing the file system.  Navigate over to
+						your game's installation location, and select "SimCity 4.exe".  This will depend on if you're on a disc or digital copy, and if the latter, where you purchased your digital copy.  The default locations for
+						common digital versions and the disc version are as follows:
+						<ul>
+							<li><strong>Steam</strong>: C:\Program Files (x86)\Steam\steamapps\common\SimCity 4 Deluxe\Apps</li>
+							<li><strong>GOG</strong>: C:\GOG Games\SimCity 4 Deluxe Edition\Apps</li>
+							<li><strong>EA App</strong>: C:\Program Files\EA Games\SimCity 4 Deluxe Edition\Apps</li>
+							<li><strong>Original Disc Copy</strong>: C:\Program Files (x86)\Maxis\SimCity 4 Deluxe\Apps</li>
+						</ul>
+						</li>				
+						<li>Upon completion, a message will pop up indicating whether or not the patch successfully applied.</li>
+						<li>Note that attempting to run the 4GB Patch file while still inside the download .zip may cause it to fail.</li>
+						<li>It is also possible to launch the 4GB Patch from a command line.  Simply drop the 4gb_patch.exe file into the same folder as your game's executable, and from the command line, type <em>4gb_patch.exe SimCity 4.exe</em>.</li>
+						<li>The batch file that was previously included in past recent NAM releases to assist with the 4GB Patch process is no longer included as of NAM 49, after the late 2024 incident where a hacker modified the NAM 48 download
+						on ModDB to insert malware.</li>
+						<li>See <a href="https://youtu.be/mnuamQac9d0?si=ba1AAeRbTFuXLAIX&t=205">this segment of Haljackey's NAM installation video</a> for a demonstration of the process (while this video was filed with NAM 46, the process of installing the 4GB Patch has not changed).</li>
+					</ul>
+					<li><strong>Additional step for Mac users (optional on Windows/Linux)</strong>: run JDatPacker to consolidate the mod's files.
+					<ul>
+						<li>On the Steam version (or if optionally using JDatPacker on Windows), run JDatPacker on the Documents\SimCity 4\Plugins directory (this will also consolidate your other plugins as well).  Make sure you remove
+						the original directories that were consolidated, and, if upgrading or reinstalling your NAM package at any point, ensure you delete any the "Network Addon Mod_###.dat" files from your Plugins before running the new installation.  It is recommended that you
+						use a new subfolder (i.e. "Plugins\Compressed Files") instead of installing to the root of the Plugins directory, as this can help prevent mod conflicts.</li>
+						<li>If on the App Store version, run JDatPacker over the resultant Plugins directory, then move the "Network Addon Mod_###.dat" files (wherein "###" is a three-digit number) into the container.</li>
+						<li>As the Aspyr port of SimCity 4 for macOS is a 64-bit app, it has much higher memory bandwidth by default than the Windows version (even <em>with</em> the 4GB Patch applied), so the 4GB Patch is not necessary (nor will it run on macOS, since it is a Windows executable file).</li>
+					</ul>
+					</li>
+					<li>Load the game and enjoy the NAM!</li>
+					<ul>
+						<li>If you're on Windows (or Linux) and the game crashes on your first attempt to load a city, this means you have the Full 4GB Controller installed, but either have experienced a failure in the 4GB Patch process, or have an incompatible system (not enough RAM and/or a 32-bit operating system).  Either
+						attempt to reinstall the 4GB Patch, or choose a less intensive installation option (the Low RAM/No RHW option, or download NAM Lite instead).  If you have repeated issues with this, we recommend installing
+						NAM Lite and forgoing installing the full version of the NAM until the future release of NAM Version 50, which will remove the 4GB Patch requirement, even when using the RHW (note that there is no release date or timeline for release of NAM 50).</li>
+						<li>Note that if you've never run the NAM before, and you've picked a fuller installation option, the initial load of the game, and of the first city tile you open may be longer--often quite noticeably.  This will shorten with
+						subsequent loads of other cities, or, if you exit and re-enter the game, subsequent re-entries will be quicker.  Installing the new Version 2.0 of Null 45's <a href="https://community.simtropolis.com/files/file/36244-startup-performance-optimization-dll-for-simcity-4/">Startup Performance Optimization DLL for SimCity 4</a>
+						has been shown to make a dramatic difference in reducing load times.</li>
+						<li>If you do not see any icons in game, this most likely means your installation ended up in the wrong location.
+						Either reinstall, making sure the files go into your Documents\SimCity 4\Plugins folder (true of Windows and the Steam Mac version), or, if you're on the Mac App Store version, make sure you copy the files into the .app container.</li>
+						<li>If you have duplicate icons, this is an indication that you have multiple versions (or at least, portions of multiple versions) of the NAM installed simultaneously.  We recommend removing all NAM files (both new and old) from
+						the Plugins folder, and once again attempting an install of NAM 49.</li>
+
+					</ul>
+				</ol>
+				
+				<p>More details on installation and compatibility can be found starting <a href="#requirements">here</a>.
+
+				<p>For further details on the NAM and its features, visit our new website at <a href="https://www.sc4nam.com">https://www.sc4nam.com</a>.</p>
+				
+					
+				
+			</div>	
+			<div class="bannerfull"><h4>New Features for NAM 49</h4></div>
+			<div class="regtext">
+						<ul>
+							<li><strong>Bridge Additions and Improvements</strong>:
+								<ul>
+									<li>Red Truss Arch, Yellow Steel Girder, Green Truss, and Blue Supsension Bridges by IDS2 have been added for Road, Street, One-Way Road, AVE-2, ARD-3, NRD-4, OWR-3, RHW-2, RHW-3, RHW-4, and SAM Sets 2 and 6-11 (68 bridges total).</li>
+									<li>Viaduct Bridges by Kitsune added at L3-L4 for MIS, RHW-4, and RHW-6S, and L0-L2 for Dual RHW-4 and RHW-6S (12 bridges total).</li>
+									<li>Plain Bridges by eggman121 have been added for Hybrid Railway (HRW) at L0-L2 (3 bridges total).</li>
+									<li>Ponte di Piacenza RRW Bridge by Ulisse Wolf added.</li>
+									<li>Yes, that's 84 bridges.</li>
+									<li>Every bridge has had its ceiling height updated (L0/Ground Level=-0.000001, L1=-7.5, L2=-15, L3=-22.5, L4=-30) to allow for a lower ferry clearance and for the elevated bridges to 
+									behave as . . . elevated bridges. As result the ferry clearance is now 270.1m / +20.1m. At this time its unknown how to get the in the game message to reflect this value, 
+									therefore it will incorrectly state the bridge is not suitable for ferries even though it is.</li>
+									<li>For models where property bridge obstruction = false, they have had the property removed after it was discovered the game is incorrectly treating it as bridge obstruction.</li>
+									<li>Night textures fixed for RRW/Rail bridges, including the Iron Girder, Steel Arch, and Green Garabit Viaduct.</li>
+									<li>A pathing issue with the RHW-10S Cable-Stayed Bridge has been fixed.</li>
+									<li>Bridge Controller file has been renamed from "NetworkAddonMod_Bridges_Plugin_Controller.dat" to "NetworkAddonMod_Bridge_Controller.dat".</li>
+								</ul>
+							</li>
+							<li><strong>Mass Transit Authority (MTA) Station Update</strong>:
+								<ul>
+									<li>Improvements across the board to Station Transit-Enabling (TE) properties.</li>
+									<li>Added SW77 El-Rail-over-Road station.</li>
+									<li>Added the Mattb325 Victorian Diagonal L1 Viaduct E-RRW and separate HRW versions.</li>
+									<li>Changes to the TE modding on the L2 Diagonal Rail stations, so they are now fully functional with E-RRW, you can just drag through the network on the lot. (They are also still functional with the puzzle pieces).</li>
+									<li>DN/MN prop options added.</li>
+									<li>LHD path remapping has been updated for GLR LOTting paths.</li>
+								</ul>
+							</li>
+							<li><strong>Street Network and SAM Improvements</strong>:
+								<ul>
+									<li>Street and SAM network paths have undergone a comprehensive set of improvements.</li>
+									<li>A texture issue has been fixed with the SAM-7 x Avenue OxO intersections.</li>
+									<li>SAM texture file architecture has been redesigned to ease future additions and maintenance.</li>
+									<li>Shadow remapping and LHD pathing has been improved on Elevated Rail and Monorail crossings over SAM.</li>
+									<li>SAM x RRW crosslinks have been improved.</li>
+								</ul>
+							</li>
+							<li><strong>RealHighway Improvements</strong>:
+								<ul>
+									<li>3-Level Crossings adjacent to 45° FLEXFly setups are now functional.</li>
+									<li>The diagonal overhanging models for the RHW-3, RHW-4, and MIS have been redesigned to minimize terrain clipping issues (wherein the terrain would poke through the highway).</li>
+									<li>Major improvements have been made to the Type 21 exemplars on elevated RHW networks, especially those involving placement of support pillars.</li>
+									<li>Diagonal interactions between the RHW-2 and single-tile Maxis networks have been improved, particularly transitions and OxD T-intersections with Street, Road, and One-Way Road.</li>
+									<li>Stability improvements have been made to the L1 and L2 RHW-3 Type A1 ramps.</li>
+									<li>Numerous tooltip texts have been updated to properly indicate current network support.</li>
+								</ul>
+							</li>
+							<li><strong>Roundabout Improvements</strong>:
+								<ul>
+									<li>Thanks to Lucario Boricua, the NAM's roundabouts have received a comprehensive set of pathing fixes, designed to improve capacity and Pedestrian functionality.</li>
+								</ul>
+							</li>
+							<li><strong>Other Various Improvements</strong>:
+								<ul>
+									<li>The NWM's NRD-4 network now has a Diagonal Starter.</li>
+									<li>Various previously-unsupported T-intersections involving Avenues and One-Way Roads have been added.</li>
+									<li>Missing texture for Double Orthogonal Street x Diagonal Avenue intersection has been added.</li>
+									<li>NWM DxD intersections now have improved models with smoother corners and terrain handling.  There is also now a non-default option to alter the Road and One-Way Road DxD intersections
+									to use similar overhanging models (the "Wide Corner Road and One-Way Road DxD Intersections" option, found under "2 Additional Network Features > Road, One-Way Road, and Avenue").</li>
+									<li>Raiser/Digger icons have been revised.</li>
+									<li>A new icon has been added at the bottom of the Highways Menu (right near the NAM Controller Marker) to show which capacity level of the NAM Traffic Simulator one has installed.</li>
+									<li>Issues with the Draggable Fractional Angle Road streetlight placement has been addressed.</li>
+									<li>Replaced `EU_Common_Sign_Props.dat` with a version from rivit, which rescales the props to be a bit smaller.</li>
+									<li>Semi-Auto Turn Lane textures have been updated to fix wealth-related issues reported by Dead_End.</li>
+									<li>Duplicate Rural FTL textures in the US folder have been removed.</li>
+									<li>The Maxis Highway Override (MHO) Diagonal Bridge Enabler (DBE) support files have been added.</li>
+									<li><strong>rev1 update</strong>: Fixes version mismatch issue in the revised One-Way Road Roundabout paths that could cause CTDs with diagonal Road or One-Way Road connections into the roundabout.</li>
+								</ul>
+							</li>
+						</ul>
+			</div>
+			
+			<div class="bannerfull"><a name="requirements"></a><h4>&nbsp;Further Detail on Version Compatibility</h4></div>
+			<div class="regtext">
+						
+				<p>The requirements depend on which feature set you choose to install.</p> 
+					<ul>
+						<li><strong>NAM with a LowRAM/NoRHW Controller option</strong>: Any system built within the last 15 years, with 750MB available disk space.  (Users running this option cannot install the RealHighway (RHW) features.)</li>
+						<li><strong>NAM with a Full 4GB Controller option</strong>: Any system with a 64-bit operating system, at least 4GB RAM, and 1.2GB available disk space.  If on Windows, <em>the 4GB Patch must be applied to the game's executable</em>.</li>
+					</ul>
+				
+				<p><strong>Note, however, that Windows users attempting to run the "Full/4GB" Controller options without the 4GB Patch, on a 32-bit version of Windows, and/or have less than 4GB RAM, that the game will crash to desktop (CTD) upon attempting to load a city.</strong>
+				Following the proper installation procedure and ensuring the contents of the download have been extracted from the .zip file will avoid this issue.</p>
+				
+				<p>Additionally, the addition of any plugins to the game will have at least some effect on initial load times, when first booting the game or a city.  
+				The difference may be noticeable if you are going from an unmodded game to one with a large Plugins folder (a full NAM installation will exceed 1GB), especially on lower-end systems.  Having at least 8GB RAM, running the game on a solid state drive (SSD), and/or 
+				having a CPU with a high clock speed (SimCity 4 was released in 2003, before multi-core CPUs were commonplace outside of servers) all help the game's performance.</p>
+				
+				<p><strong>The Network Addon Mod is compatible with the following versions of the game:</strong></p> 
+				<ul>
+					<li>A) Retail Windows digital copies of SimCity 4 Deluxe OR SimCity 4 with the Rush Hour Expansion Pack (Version 1.1.641), 
+					from most digital retailers (i.e., GOG.com, Steam, and, since June 2023, the EA App/EA Play digital edition)..</li>	
+					<li>B) Retail Windows disc copies of SimCity 4 Deluxe OR SimCity 4 with the Rush Hour Expansion Pack, updated to at least Version 1.1.638 (note that disc copies generally do not run on Windows 10 or later--see below for more details).</li>
+					<li>C) Digital Windows copies of SimCity 4 Deluxe obtained by redeeming an existing CD key (not purchasing) through Origin Customer Support (Version 1.1.641).</li>
+					<li>D) Retail Mac digital copies of SimCity 4 Deluxe, purchased through Steam or the App Store. (Note: technical support availability from the NAM Team is limited for Steam version users, and <em>very limited</em> for macOS Store version users.)</li>
+					<li>E) Retail Mac disc copies of SimCity 4 Deluxe, running on macOS/OS X Version 10.6 (Snow Leopard) or earlier Note: technical support availability from the NAM Team <em>very limited</em> for Mac disc version users, and the ability to run Full 4GB/RHW-inclusive installation options is an unknown.). </li>
+				</ul>
+
+				<p><strong>The Network Addon Mod is <span class="underline">NOT</span> compatible with the following versions of the game:</strong></p> 
+				<ul>
+					<li>F) Retail disc copies of SimCity 4 Deluxe OR SimCity 4 with the Rush Hour Expansion Pack that have not been patched (Version 1.1.610 or 1.1.613).</li>
+					<li>G) Retail disc copies of non-Deluxe SimCity 4 (sometimes marketed later as "SimCity 4 Classic"), without the Rush Hour Expansion Pack (Version 1.0.272 or earlier)</li>
+					<li>H) Pirated or cracked copies of SimCity 4 Deluxe OR SimCity 4 with the Rush Hour Expansion Pack.</li>
+				</ul>
+	
+				<p><strong>What should I do if the NAM does not support my copy of the game?</strong></p>
+	
+				<p>The new NAM installer (introduced with the NAM 37 Release Candidate) no longer runs a version check.  However, it is strongly recommended that users check the version they are running, as unpatched copies
+				can be unstable.  <strong>Version 1.1.610 and Version 1.1.613 are NOT supported.</strong></p>
+				<p>In Case F, the solution is simply to install the EP1 Update 1 patch, which can be downloaded from <a href="https://community.simtropolis.com/sc4-maxis-files/">Simtropolis</a>.
+				To determine the correct SKU version for your copy of SimCity 4, find the installation directory, and look in the subfolder named <em>sku_data</em>.  Alternatively, one can
+				simply try all the SKU versions of the patch, until one works.</p> 
+					
+				<p>For Cases D and E, again note that the NAM Team has little experience with the Mac version of the game, mostly restricted to the Steam version, and may be very limited in any ability to provide platform-specific technical support, including with the installation process (which is more complex on the App Store version).  See the section about macOS <a href="#mac">here</a>.</p>
+	
+				<p>For Cases G and H, it is recommended that you purchase a legal, digital copy of SimCity 4 Deluxe.</p>
+		
+				<p><strong>What if my disc copy has simply stopped working with Windows Vista, 7, 8, 8.1, or 10?</strong></p>
+	
+				<p>In 2015, Microsoft decided that secdrv.sys, the driver file used by the SafeDisc and other disc copy protection systems present in many PC games from the early 2000s, was a security threat.  
+				As a result, the driver was not included as part of Windows 10, and Microsoft issued Windows Update KB3086255, which disables secdrv.sys on Windows Vista, 7, 8, and 8.1.  In the case of the older 
+				versions of Windows, secdrv.sys can be re-enabled when needed through the use of the command prompt or a batch file.</p>  
+	
+				<p>Aside from the advanced step of manually signing a device driver for Windows 10, the only viable courses of action are to either purchase a retail digital copy of the game, from a retailer who offers a fully-prepatched Version 1.1.641 copy of the game, or to
+				get EA/Origin Customer Support to redeem your CD Key for a free digital copy of the game.</p>
+				
+				<p>Note that pirated/cracked executables (i.e. a "No CD" .exe) are not eligible for tech support.  The NAM Team does not support piracy, but understands
+				the frustration with the game's original DRM system being blocked by Microsoft, forcing one to buy a new digital copy in order to continue playing.  However, the reason why cracked executables are not eligible 
+				is for more practical reasons, namely the potential for version mismatches (i.e. a Version 1.1.638 crack with Version 1.1.610/613 .DAT files, or vice-versa), which can greatly complicate the 
+				team's efforts to provide useful technical support to users.  The recently-resolved <a href="#origin">Origin issues</a> played a role in our keeping the version check in place, until the recent installer change in 2020.</p>
+				
+				<p>Please note that if you are attempting to use an older, 32-bit version of Windows (i.e. Windows XP) in order to still run your disc game, this will substantially
+				hamper the performance of the game with the full NAM installed, and it is highly recommended that you run the game on a 64-bit operating system if you intend to take advantage of the full feature set.  
+				If you must run on a 32-bit OS, you will need to either install the new NAM Lite package, or, for a mid-sized installation, select one of the "LowRAM/NoRHW" NAM Controller options.  
+				(The RealHighway (RHW) system is by far the largest part of the NAM.)</p>
+			</div>
+			
+			<div class="bannerfull"><a name="variousnotes"></a><h4>&nbsp;Various Important Notes</h4></div>
+			<div class="regtext">
+				<p><strong>Note that the NTCore 4GB Patch is <span class="dec">REQUIRED</span></strong> if you are running the Full NAM Controller ("4GB Full" options in the installer), which is required to use
+				the RealHighway (RHW) system.  The patch can be found
+				inside the download, or downloaded directly from NTCore <a href="https://ntcore.com/?page_id=371">here</a>, where further instructions
+				on use of the patch can be found.  The batch file to assist with the 4GB Patch has been discontinued as of NAM 49.  Also due to this installer change, the NAM Controller Compiler is no longer run as part of the installation process.
+				Users will have an option to install one of two pre-built NAM Controller options, the Full "4GB" option, which has a substantial size and requires the 4GB Patch and a 64-bit operating system,
+				or a "Low RAM/No RHW" version that does not require the 4GB Patch, and does not include the code for the RealHighway (RHW) system, the most expansive fetaure in the mod.  The "Low RAM/No RHW" version
+				should be used by those with 32-bit operating systems (i.e. Windows XP), less than 4GB RAM, and/or by those not using the RHW.  <!--Users wishing for further customization of NAM Controller size can
+				still <a href="#compilermac">run the Controller Compiler manually</a>, as it is available in the download.--></p>
+				<p>Users wishing to simply use the NAM's Traffic Simulator improvements should install the NAM Lite package, which offers easy setup of various minimal options.</p>
+				<p>The NAM uses a Java-based installer, designed by <strong>daeley</strong>, which is cross-platform (meaning
+				no more separate Mac versions, and Linux support without WINE).  As such, the Java Runtime Environment (JRE) is 
+				<span class="dec"><strong>REQUIRED</strong></span> to run the NAM installer.  It was previous recommended for users wishing to utilize the NAM
+				Traffic Simulator Configuration Tool (TSCT), which has since been discontinued.  A Windows 64-bit copy of OpenJDK 11 is included in the download (<em>OpenJDK11U-jre_x64_windows_hotspot_11.0.8_10.msi</em>).  Other open source distributions of Java can be downloaded from <a href="https://adoptopenjdk.net/">here</a>.</p>
+				<p>Users who fundamentally object to installing Java (or are unable to for other reasons) can perform a manual install, with patience.  Details can be found <a href="#manualinstall">here</a></p>
+				<p>With the new installer, the old NAM installation is <strong>no longer removed automatically</strong>, so users should manually remove any "a_Network Addon Mod Lite", "Network Addon Mod" and/or "z___NAM" folders from their Plugins directory.
+				If you use the "Cleanup" option under the "Setup" tab, it is highly recommended that you select
+				the "Backup" option upon completion, and "Delete" will in fact delete all those files, making them unrecoverable.
+				<strong>It is recommended that you back those folders up in a location that is not in your Plugins folder</strong>.  Presently, all files are now installed to
+				the "Network Addon Mod" directory, or in the case of a NAM Lite install, the "a_Network Addon Mod Lite" directory.</p>
+				<p>The RealRailway (RRW) standard for Rail is now the <strong>default and only option</strong>, unless using NAM Lite.  One may choose to disable the RRW's more restrictive default slope settings by unselecting the 
+				"RRW Tunnel and Slope Parameters" box in the installer, or selecting the more moderate option.  The original Maxis Rail specification is available in NAM Lite, and may be available to larger installs via a future Legacy Plugin, downloaded separately, at a later date.  
+				Also note that a number of cosmetic-oriented NAM plugins, such as the El-Rail Alternate Implementation, the Bullet Train Mod, and some advanced texture options (largely deprecated) have been removed from the installer since NAM 37.
+				The Alternate El-Rail and BTM will be made available separately at a later date.  Please note that, much like Maxis Rail, these Plugins are effectively in "Legacy" status, and may not be actively
+				maintained or supported by the NAM Team going forward, though you may choose to retrieve them from a past NAM installation's "z___NAM" folder.  Both the original Maxis Highways (MHW) and the "Maxis Highway Override/Project Symphony" (MHO) remain available.</p>
+				<p>The Station Locator, Updater, and Reconstruction Project (SLURP) is also no longer handled by the new installer.  There is ongoing internal discussion about reimplementing SLURP.  Users wishing to retain SLURPed stations should retrieve them from the "z___NAM\Mass Transit Lots\Station Overrides" folder in their existing NAM installation, where 
+				they will be found in the "Mass Transit Lots" subfolder.  <strong>Note that users running the 64-bit version of SimCity 4 on macOS may wish to refrain from retrieving SLURP stations</strong>, as there
+				have been some encoding issues with stations that cause that version of the game to CTD.</p>
+				<p>The new installer also no longer performs a version check.  <strong>Please note, however, that for Windows users, Version 1.1.638 and above are still
+				required</strong>, as Versions 1.1.610 and 1.1.613 have notable instabilities that may have a significant negative impact on the use of this mod.  Copies purchased from the Origin Store, the EA App, or accessed via EA Play
+				may still not meet this requirement, and support will not be offered to users with "unofficial" copies of the game.</p>
+			</div>
+			
+			<div class="bannerfull"><a name="origin"></a><h5>Notice to Users Who Purchased a Digital Copy from the EA.com/the EA App/Origin, or Play Via EA Play/Xbox Game Pass</h5></div>
+			<div class="regtext">
+				<p>In June 2023, EA patched all copies of SimCity 4 Deluxe available through their own direct digital storefronts (EA.com and the EA App) and services (EA Play) to Version 1.1.641, bringing them up to the same standard as the digital retail copies from Steam.
+				As such, the EA App and EA Play versions of SimCity 4 Deluxe <strong>are now compatible with the Network Addon Mod.</strong></p>
+								
+				<p>NAM developer Tarkus has more details on this change at his blog, 
+				<a href="https://simtarkus.wordpress.com/category/origin/">SimTarkus</a>.</p>
+			</div>				
+
+			
+			<div class="bannerfull"><a name="mac"></a><h4>Note to Mac Users</h4></div>
+			<div class="regtext">
+				<p>Aspyr issued an update to their port of SimCity 4 Deluxe for macOS, updating it from a 32-bit app to a 64-bit one on both Steam and the App Store, allowing it to be compatible with macOS Catalina (10.15) and later.  This
+				change has introduced a number of quirks, however.</p>
+				<p>Most notably, it has changed the key combination for cycling through TAB Loops under the NAM's various buttons.  Instead of using TAB to move forward, and Shift-TAB to move in reverse,
+				Mac users must now use Ctrl-TAB to move forward, and Ctrl-Shift-TAB to move in reverse.  While TAB and Shift-TAB will allow one to move through the TAB Loop, these keys/combinations will cause some pieces under the buttons to be 
+				skipped.</p> 
+				<p>Furthermore, the changes have also broken simmaster07's SC4MacInjector, which allowed DLL plugins--including SC4Fix.dll (which addressed the puzzle piece/TE Lot CTDs)--to run on macOS.  As such, these fixes no longer
+				work on Mac, and users should exercise caution when placing stations in the vicinity of static puzzle pieces.</p>
+				<p>Additionally, the installation procedure for the NAM varies depending on if one is using the Steam version or
+				the App Store version.</p> 
+				<p>With the Steam version, the NAM will install into the correct location by default: <strong>/Users/{username}/Documents/SimCity 4/Plugins/</strong>.  For the App Store version, install the mod into a temporary location (the one suggested for the Steam version should suffice), then move the "Plugins" folder inside the .app file's container (~/Library/Containers/com.aspyr.simcity4.appstore/Data/Documents/SimCity 4).  Any additional mods, buildings, or other plugins you wish to install can go inside this Plugins folder as well.</p>
+				<p>The NAM Team is not familiar enough with the App Store version at present to give reliable installation instructions, and we would instead refer users to the <a href="https://community.simtropolis.com/forums/forum/20-sc4-mac-users/">SC4 Mac Users board at Simtropolis</a> for assistance.</strong></p>
+				<p>The Mac port also has a "number of files" limit, wherein if a certain number of files/folders exist within the Plugins directory, the game will crash.  In order to prevent this, you will need to run the JDatPacker utility mentioned in the installation instructions to consolidate the files (see Step 5).</p>
+			</div>
+			
+			<div class="bannerfull"><a name="upgrading"></a><h4>Upgrading from a Previous Version</h4></div>
+			<div class="regtext">
+				  <p>If you are upgrading from a previous version of the NAM, <strong>MANUALLY MOVE YOUR OLD NAM INSTALLATION OUT FROM YOUR PLUGINS FOLDER, INTO A SAFE LOCATION (note that this has changed from previous
+				  NAM releases).</strong>.  The current version of the NAM installer cannot detect your previous installation options 
+				  by reading the existing folder structure.  It is recommended that you check your existing installation, to determine which features you presently have installed.</p>
+				  <p>Generally speaking, the NAM Team makes every effort to ensure that new versions at least retain some form of "legacy support", such that cities built with any previous NAM version will
+				  continue to function well with the latest version.</p>
+				  <p>If you have consolidated your NAM files using a tool such as SC4DatPacker or JDatPacker, please read <a href="#datpack">here</a>.</p>
+			</div>
+			
+			<div class="bannerfull"><a name="datpack"></a><h4>Regarding "DatPacking" and File Consolidation Post-Installation</h4></div>
+			<div class="regtext">
+				<p>Programs to consolidate folders worth of SimCity 4 .DAT files, such as SC4DatPacker (Windows) and JDatPacker (cross-platform), are popular options known to improve game performance, given SimCity 4's preference
+				to read a smaller number of larger files, instead of a larger number of small files--a fact determined by the BSC Team's "Miramba Experiment" of 2006.  The use of "DatPacking" programs on one's NAM installation, 
+				however, is a controversial topic.  The NAM Team's general advice is for <em>Windows</em> users to <span class="dec"><strong>avoid</strong></span> DatPacking (unless one is <em>extremely careful</em>, 
+				while for <em>Mac</em> users, the use of JDatPacker is essentially <span class="inc"><strong>required</strong></span>.</p>
+				
+				<p>In general, if one plans to DatPack one's NAM installation, they should also <strong>save the pre-DatPacked NAM folder in a safe place, outside the Plugins folder beforehand</strong>.  The reason for this is to avoid potential conflicts and issues, 
+				such as the "dual icon bug" and Controller file conflicts between new and old installations, as well as to make it such that one knows which options they have installed
+				when upgrading to a new version, or re-installing the same version with different options. </p>
+				
+				<p>In the case of the Aspyr port for the Mac platform (both App Store and Steam versions), it possesses a strange quirk in which exceeding a certain number of files or folders (regardless of size) in the Plugins folder can cause game
+				slowdowns or even crashing-to-desktop (CTD).  To this end, using JDatPacker after installing the NAM on a Mac is a necessity, in order to ensure proper game performance.  Again, however, one should save
+				their pre-DatPacked NAM installation in a safe place, outside the Plugins folder, to make for easy upgrades.</p>
+				
+				<p>The February 2025 release of Version 2.0 of Null 45's <a href="https://community.simtropolis.com/files/file/36244-startup-performance-optimization-dll-for-simcity-4/">Startup Performance Optimization DLL for SimCity 4</a> provides a new
+				option to dramatically speed up load times on Windows (and Linux) installations of the game, to the point at which the benefits of DatPacking become largely superfluous.</p>
+			</div>
+					
+			
+			<div class="bannerfull"><a name="driveside"></a><h4>A Note About Drive Side (RHD vs. LHD)</h4></div>
+			<div class="regtext">
+				<p>While the NAM Installer, as noted above, has a series of checkboxes in Custom Installation relating to drive side, it is worth re-iterating that these boxes <strong>only change the compatibility
+				files installed with the NAM, and <span class="underline">do NOT change drive side</span></strong>.  If you have an installation with Right-Hand Driving (RHD, vehicles driving on the right side of roads--this concept
+				is <strong>NOT</strong> the same as the side one sits on when driving a vehicle) and wish to switch to Left-Hand Driving (LHD, vehicles driving on the left side of roads), this generally needs
+				to be done either by adjusting the game's locale files, and then either editing the game's Windows registry entries, or by modifying the game's shortcut.</p>
+				<p>The new NAM Installer cannot determine default drive side of your installation, so make note of which side vehicles drive on in your game prior to installation.
+				If you have changed your drive side by modifying the game's shortcut, instead of editing the Windows registry, then this would be the <strong>one and only case when changing the box checked here
+				would be needed</strong>.
+			</div>
+			
+			<div class="bannerfull"><a name="4gbpatch"></a><h4>A Note About the "4GB Patch"</h4></div>
+			<div class="regtext">
+			
+				<p>Due to changes in computer systems, and continued expansions of the NAM's main Controller file, in 2013, it was determined that many newer systems, particularly those with more than 4GB of RAM,
+				and running 64-bit versions of Windows, need additional accommodation.  To that end, the NAM includes a "4GB Patch", also known as a "Large Address Aware (LAA) Patch", which allows the game to access the 
+				full 4GB of RAM that a 32-bit application can read, instead of the default 2GB.  The NAM's patch was designed by NTCore, and built into the NAM with permission, and users with
+				systems that need the patch will receive a prompt during NAM installation to install it.  The original patch can be found <a href="http://www.ntcore.com/4gb_patch.php">here</a>.</p>
+				<p>The only thing this patch does is to switch the Large Address Aware switch, an accessible switch present in all Windows executables, from "off" to "on" for the game's executable.  Patches like this
+				are common in game modding communities, including those associated with The Elder Scrolls series (i.e. Skyrim), and Fallout, and can be used to enhance any 32-bit application's performance on systems with 64-bit operating
+				systems and a suitable amount of RAM.</p>
+				
+				<p>Note that the 4GB Patch is <strong>NOT required for users on macOS</strong>, as that version of the game is 64-bit and can access more RAM than the Windows version (even with the 4GB Patch!) by default.
+				
+				<p>The default directory for where SimCity 4.exe may be located depends on how and where you purchased your copy of the game.</p>
+				<ul>
+					<li><strong>GOG.com</strong>: C:\GOG Games\SimCity 4 Deluxe Edition\Apps</li>
+					<li><strong>Steam</strong>: C:\Program Files (x86)\Steam\steamapps\common\SimCity 4 Deluxe\Apps</li>
+					<li><strong>EA App</strong>: C:\Program Files\EA Games\SimCity 4 Deluxe Edition\Apps</li>
+					<li><strong>Original Disc Copy</strong>: C:\Program Files (x86)\Maxis\SimCity 4 Deluxe\Apps</li>
+				</ul>
+			</div>
+			
+			<!--<div class="bannerfull"><a name="compilermac"></a><h4>Running the Controller Compiler</h4></div>
+			<div class="regtext">
+				<p>If you are an advanced user, and would like to trim down your installation of the NAM, it is still possible to run the NAM Controller Compiler (a cross-platform application) 
+				after installing the NAM. Extract/open the <em>"Controller Compiler"</em> folder, and double-click the file <em>"NAMControllerCompiler.jar"</em>. 
+				Select the 'input' folder <em>"Network Addon Mod/Controller/"</em> from the current "Controller Compiler" directory, and the 'output' folder <em>"~/Documents/SimCity 4/Plugins/Network Addon Mod/"</em> 
+				inside your plugins. For the rest, follow the instructions of the compiler.</p>
+			</div>-->
+						
+			<div class="bannerfull"><a name="uninstall"></a><h4>Uninstalling the NAM</h4></div>
+			<div class="regtext">
+				<p>To uninstall the files, simply bulldoze every NAM item from this download in your cities and remove the files from the Plugins folder afterwards, which will be contained in 
+				<em>Plugins\Network Addon Mod</em> by default.</p>    
+			</div>
+			
+			<div class="bannerfull"><a name="changing"></a><h4>Changing Options After Initial Installation</h4></div>
+			<div class="regtext">
+				<p>The NAM is a very expansive mod, with a substantial number of features, which may initially prove overwhelming to those not well-versed in its workings.  The NAM Team anticipates
+				that users, particularly those new to the NAM, may want to change the feature set they have installed, as they learn more about the mod's contents and capabilities.</p>
+				<p>To that end, we encourage users to keep the installer for the current version handy after initial installation.  If you plan to change your particular set of options, you will need to 
+				remove your current installation.  Moving it out of Plugins to a safe location is recommended, in case you want to keep your existing settings as a backup.</p>
+			</div>
+			
+			<div class="bannerfull"><a name="manualinstall"></a><h4>Manual Installation - Advanced</h4></div>
+			<div class="regtext">
+				<p>Users who are unable or unwilling to install Java can perform a manual installation of the NAM, something
+				which the new file architecture introduced in 2020 makes far more possible than the previous "Monolithic" releases.</p>
+				<p>This method requires a file decompression tool capable of opening .jar files, such as <a href="https://www.7-zip.org">7-zip</a> (Windows)
+				or <a href="https://www.keka.io/en/">Keka</a> (macOS).  To begin, open NetworkAddonMod_Setup_Version49_rev1.jar using your file decompression tool.</p>
+				<p>The NAM's contents are located in the "installation" subfolder.  The current installer uses a series of character flags at the start of directory names, in order 
+				to instruct the installer how to order the options, whether they're mandatory or optional, etc.</p>
+				<p>Numbers preceded by the at sign ("@"), i.e. "@1", "@2", etc., are merely being ordered with this flag.</p>
+				<p>Any directory with the caret ("^") in front of the name (or behind a "@" ordering flag) is mandatory.</p>
+				<p>Any directory with the exclamation mark ("!") in front of the name (or behind a "@" ordering flag) is not installed by default.</p>
+				<p>Any options where the equal sign ("=") and the dash ("-") are present are mutually exclusive--only one should be installed
+				(the "=" option is the default).</p>
+				<p>The "@1^Core" directory is required.  All other folders have options within them.  At least one of the folders starting with "0 NAM Controller" must be installed.  With "4 Automata Controller#",
+				and "9 Traffic Simulator#", simply select one of the options inside and discard the 
+				rest, as these are straight up mutually exclusive one another.  Within "8 Texture and Drive Side Support", keep "z_Common Files", then select either "-EU" (for EU textures) or "=US" (for US textures), and within "-EU" or "=US", get rid of the "_RightSide" or "_LeftSide" (whichever does not coincide with the side the vehicles in your game drive), and decide if you want any (or none) of the other subfolder options (i.e. Cul-De-Sacs).</p>
+				<p>The Automata Controller basically affects the display of the visual traffic in-game--Standard is going to be the lightest, while Radical is going to be the heaviest, Persistent makes the automata visuals last longer, and the 24-Hour modifiers handle whether the display is constant, or follows the data for the 24-Hour clock in-game.</p>
+				<p>The Texture and Drive Side Support includes four options, depending on whether you want to use US/North American textures or Euro/International Textures, and the drive side of your game (RHD or LHD, which should match your selection for the NAM Controller).</p>
+				<p>With the Traffic Simulator, these are ordered by the "@1" and the like in order of lowest capacity option to highest. Medium is the default.</p>
+				<p>With 5 DataView Options#, there's two subfolders. Both are just straight up options, with nothing mutually exclusive. You can probably just leave this one as is, unless you really don't like the Data View changes.</p>
+				<p>With 6 Miscellaneous, the two mutually exclusive options to watch out for are Extended Station Queries (there's four options in there--very subtle differences between them), and Maxis Transit Lots\Airport Capacity Adjustment#, which has three options (Default, Medium, and Large). And the Hole Diggers and Raisers are very much recommended--they have lots of use outside regular NAM usage, too.</p>
+				<p>With 3 Additional Transit Stations, this depends on if you want more transit stations beyond the game's default, and what the NAM adds by default for certain additional override networks. There should be no harm in either adding this one in whole, or leaving it out altogether, and if there's certain added stations you like/don't like, you can go in and customize this later.</p>
+				<p>2 Additional Network Features is by far the biggest area of the installer. This contains all the actual network feature addons in the mod. Most networks/network groups will have a "Base Features" folder, which really ought to be mandatory, as it contains a lot of the NAM's basic additions to each network, along with any Wide Radius/Multi Radius Curves and Fractional Angles, as well as Roundabout options for the various road-type networks.</p>
+				<p>The main "mutually exclusive" option to look out for here is with the Maxis Highways (there's two options--@1=Default Style, which keeps the Maxis Highways' default look and adds the NAM's additions for it, or @2-Maxis Highway Override (RHW-Style), which completely reskins the Maxis Highways, removes access to the default interchanges, and replaces them with RHW-style modular interchange functionality and a few new ploppable interchanges. Using the RealHighway (RHW) option is pretty much mandatory if you're going this route).</p>
+				<p>The other ones to watch out for are in Water Transport, where the Canal Addon Mod (CAN-AM) has two mutually-exclusive styles (@1=Callagrafx Style and @2-SimGoober Style), and there's also quite a few "non-default" options in Roads, One-Way Roads, and Avenues.</p>
+				<p>Those three non-default options are !Legacy Auto Avenue Turn Lanes (these are the old auto-turn lanes that appear on Avenue x Avenue intersections--largely considered "deprecated" now, as they can interfere with some newer functionality), !Legacy Semi-Auto Road Turn Lanes (the "semi-auto" replacement for the old auto-turn lanes on Road x Road intersections, which now appear by clicking over Road x Road + and T-intersections with the One-Way Road tool, also somewhat "deprecated" now), and !One-Way Road Arrow Plugins. These Arrow Plugins are mostly just a matter of taste, and, despite the folder naming, actually supposed to be mutually exclusive. "Elimination" gets rid of the arrows entirely, "Reduction" hides some of them (and actually impacts the base functionality of the OWR network to some degree), while "Single Arrows" replaces the default double arrows with just a single arrow (which looks nicer on the NWM networks).</p>
+				<p>The rest of 2 Additional Network Features is pretty self-explanatory, though micromanagement of these options is not recommended, since it is possible to produce a broken installation this way. RealRailway is the only/default option for Rail now, it's best to go all or nothing on RealHighways (RHW) and the Road, One-Way Road, and Avenue folder's "Additional Widths and Turn Lanes" option (which contains the Network Widening Mod and FLEX Turn Lanes). And if something says "Legacy" but it's not prefixed with "!", it's probably safest to install it, as it pertains to being able to keep certain older, deprecated content working, if you've built it with previous versions.</p>
+			</div>
+			
+			<div class="bannerfull"><a name="lowspec"></a><h4>Information for Users on Lower-End Systems (32-Bit Windows/&lt;4GB RAM)</h4></div>
+			<div class="regtext">
+				<p>Users attempting to run the NAM as installed by default with the full NAM Controller, on systems with 32-bit Windows and/or less than 4GB RAM, will not
+				be able to make use of the required 4GB Patch, and will encounter Crash-to-Desktop (CTD) errors with that default Controller.  The only solution
+				to this is to either install NAM Lite, or select one of the "Low RAM/No RHW" options in the installer. <!--or use the NAM Controller Compiler to manually compile a smaller Controller file.  Instructions on using the Controller Compiler may be found <a href="#compilermac">here</a>.-->
+				Note that the "Low RAM/No RHW" options do not include ANY code for the RealHighway (RHW) plugin, so attempting to build RHW systems will result in everything reverting to the base RHW-2 network.
+				The single biggest contributor to the Controller's size is the RealHighway (RHW) plugin, so not having it installed helps keep things under control on lower-end systems.  Note that the NAM Controller is one of the most critical files in the entire mod; without
+				a NAM Controller, <strong>none of the NAM's menu buttons will function, instead resulting in a "red arrow" when clicked.</strong></p>
+				<p>Users wishing to run just the NAM's Traffic Simulator improvements should instead download and install NAM Lite.</p>
+			</div>
+
+			<div class="bannerfull"><a name="oldversions"></a><h4>Distribution and Old Versions</h4></div>
+			<div class="regtext">
+				<p>The NAM Team only provides support and allows distribution of the most recent NAM version.  With the exception of older non-English language versions (which
+				are supported by their respective sites, not the NAM Team), no technical support will be provided to users of prior versions of the NAM, nor will any past versions of the NAM
+				be made available for download, by request or otherwise. The team does not keep an official archive of past releases, and does not have the resources
+				to answer questions regarding them.  Each release includes improvements across the board to features new and old, is designed to be as compatible with cities 
+				built with previous versions as is humanly possible, and is also intended to improve the end user experience.  Old releases are inherently inferior, and not "simpler"
+				or "easier" to use.</p>
+				
+				<p>Users wanting a smaller feature set, due to technical limitations, or unfamiliarity with the NAM's vast options, should instead seek to
+				install NAM Lite, or fewer options in the current NAM, potentially coupled with the "Low RAM/No RHW" option, .</p>
+				
+				<p>Users wishing to hold onto old versions should back them up in their personal archives.  Note again that no technical support will be provided for this,
+				nor may any user or site redistribute any old versions.</p>
+			</div>
+
+			
+			<div class="bannerfull"><h4>&nbsp;Network Addon Mod - Credits</h4></div>
+			
+			<div class="regtext">
+				<p>The following named members of Simtropolis, the SC4Evermore Discord, and the former SC4 Devotion and SimCityPlaza have, for whatever particular reason, been specifically included here for their special contributions during the NAM's history. Very special thanks goes towards them in the making, supplying, &amp;/or supporting of this mod &amp;/or its contents possible in one way shape or another:</p>
+				<p><strong>The NAM Team and Associates (Active Members as of NAM 49)</strong></p>
+				<ul>
+					<li>Abigail</li>
+					<li>b22rian</li>
+					<li>CaptCity</li>
+					<li>DebussyMan</li>
+					<li>dragonsteincole</li>
+					<li>Durfsurn</li>
+					<li>eggman121</li>
+					<li>Eric Blair</li>
+					<li>EstGuy/Cheese</li>
+					<li>Flann</li>
+					<li>Girafe</li>
+					<li>Haljackey</li>
+					<li>hugues aroux</li>
+					<li>IDS2</li>
+					<li>Indiana Joe</li>
+					<li>KaenOkami/Amaterasu</li>
+					<li>Kel9509</li>
+					<li>Kitsune</li>
+					<li>Lucario Boricua</li>
+					<li>matias93</li>
+					<li>McDuell</li>
+					<li>memo</li>
+					<li>metarvo</li>
+					<li>mgb204</li>
+					<li>MushyMushy</li>
+					<li>Naomi57</li>
+					<li>noahclem</li>
+					<li>nos. 17</li>
+					<li>null45</li>
+					<li>pierreh</li>
+					<li>Ramona Brie</li>
+					<li>ReLynx/RemRinka</li>
+					<li>rivit</li>
+					<li>Ryan B.</li>
+					<li>saus tartar</li>
+					<li>Shadow Assassin</li>
+					<li>Simizen</li>
+					<li>smf_16</li>
+					<li>Tarkus</li>
+					<li>Tyberius06</li>
+					<li>Ulisse Wolf</li>
+				</ul>
+				<p><strong>NAM Founders</strong></p>
+				<ul>
+					<li>Redlotus</li>
+					<li>the7trumpets</li>
+					<li>Tropod</li>
+				</ul>
+				<p><strong>NAM Logo</strong></p>
+				<ul>
+					<li>MadSim (original design)</li>
+					<li>Ramona Brie (updated design)</li>
+				</ul>
+				<p><strong>Tool Programmers</strong></p>
+				<ul>
+					<li>cjmarshall</li>
+					<li>CorinaMarie</li>
+					<li>DarkMatter</li>
+					<li>daeley</li>
+					<li>fafalone</li>
+					<li>Flann</li>
+					<li>GoaSkin</li>
+					<li>Ilive</li>
+					<li>jondor</li>
+					<li>memo</li>
+					<li>null45</li>
+					<li>rivit</li>
+					<li>simrolle</li>
+					<li>Stefan79</li>
+					<li>Tropod</li>
+					<li>wouanagaine</li>
+				</ul>
+				<p><strong>NAM Installer</strong></p>
+				<ul>
+					<li>Andreas Roth</li>
+					<li>daeley</li>
+					<li>frimi2</li>
+					<li>Tarkus</li>
+					<li>wouanagaine</li>
+					<li>z</li>
+				</ul>
+				<p><strong>NAM Controller Compiler</strong></p>
+				<ul>
+					<li>memo</li>
+				</ul>
+				<p><strong>NAM Partner Program Members</strong></p>
+				<ul>
+					<li>FoxieHikari</li>
+					<li>robmtl (Rob's Red Hot Spot)</li>
+					<li>saus tartar</li>
+				</ul>
+				<p><strong>Contributors &amp; Testers</strong></p>
+				<ul>
+					<li>3ddz</li>
+					<li>Alidonkey</li>
+					<li>Andreas Roth</li>
+					<li>andreharv</li>
+					<li>Andy80586</li>
+					<li>AngryMozart</li>
+					<li>Anthracite</li>
+					<li>APSMS</li>
+					<li>ardecila</li>
+					<li>ArkenbergeJoe</li>
+					<li>BigSlark</li>
+					<li>Bipin</li>
+					<li>bladeberkman</li>
+					<li>blahdy</li>
+					<li>Blue Lightning</li>
+					<li>brenda_xne</li>
+					<li>buddybud</li>
+					<li>CasperVg</li>
+					<li>choco</li>
+					<li>Chrisim</li>
+					<li>Chrno</li>
+					<li>Ciuu96</li>
+					<li>Colyn</li>
+					<li>compdude787</li>
+					<li>CorinaMarie</li>
+					<li>CryinG.FreeM4n</li>
+					<li>daeley</li>
+					<li>deathtopumpkins</li>
+					<li>DebussyMan</li>
+					<li>DuskTrooper</li>
+					<li>dedgren</li>
+					<li>Dexter</li>
+					<li>Diggis</li>
+					<li>DJPTiger</li>
+					<li>Dragonshardz</li>
+					<li>Droric</li>
+					<li>ebina</li>
+					<li>elgoalio_29</li>
+					<li>Filasimo</li>
+					<li>frimi2</li>
+					<li>fukuda</li>
+					<li>Ganaram Inukshuk</li>
+					<li>Generalcamo</li>
+					<li>gizmo28</li>
+					<li>Glenni</li>
+					<li>GoaSkin</li>
+					<li>Ill Tonkso</li>
+					<li>isii94</li>
+					<li>J-dub</li>
+					<li>jdenm8</li>
+					<li>jeronij</li>
+					<li>Jiwoahn</li>
+					<li>jmvl</li>
+					<li>joelyboy911</li>
+					<li>Jonathan</li>
+					<li>jondor</li>
+					<li>jplumbley</li>
+					<li>Junspud</li>
+					<li>Karybdis</li>
+					<li>kes5219</li>
+					<li>Khiyana</li>
+					<li>manchou</li>
+					<li>MandelSoft</li>
+					<li>Mero90</li>
+					<li>michi_cc</li>
+					<li>MIncroabl</li>
+					<li>moonlinght</li>
+					<li>morifari</li>
+					<li>mott</li>
+					<li>mtg</li>
+					<li>Murakumon</li>
+					<li>Nardo69</li>
+					<li>nooneatall</li>
+					<li>north country dude</li>
+					<li>paulvmontfort</li>
+					<li>plunderer</li>
+					<li>praiodan</li>
+					<li>Olasz</li>
+					<li>qurlix</li>
+					<li>rickmastfan67</li>
+					<li>riiga</li>
+					<li>Ripptide</li>
+					<li>RogerRon91</li>
+					<li>royal</li>
+					<li>Sabretooth78</li>
+					<li>samerton</li>
+					<li>Schleicher68</li>
+					<li>SDA</li>
+					<li>Seaman</li>
+					<li>SimCitySquare</li>
+					<li>Simmer2</li>
+					<li>sithlrd98</li>
+					<li>smoncrie</li>
+					<li>Spocky</li>
+					<li>squidi</li>
+					<li>Stefan79</li>
+					<li>superhands</li>
+					<li>swamp_ig</li>
+					<li>Swamper77</li>
+					<li>Swordmaster</li>
+					<li>Teirusu</li>
+					<li>The_Great_Chozo</li>
+					<li>TheCouncill0r/dicko6</li>
+					<li>TheMurderousCricket</li>
+					<li>Thorvin</li>
+					<li>threestooges</li>
+					<li>titanicbuff</li>
+					<li>toja</li>
+					<li>Tropod</li>
+					<li>vester</li>
+					<li>vil</li>
+					<li>vortext</li>
+					<li>woodb3kmaster</li>
+					<li>wouanagaine</li>	
+					<li>xannepan</li>	
+					<li>xxdita</li>
+					<li>Xyloxadoria</li>
+					<li>z</li>
+				</ul>
+				
+			<h5 class="leftheading">Special Thanks</h5>
+				
+			    <p>Webmaster &amp; administration staff at Simtropolis, SC4Evermore, ModDB, and the former SC4 Devotion and SimCityPlaza.</p>
+				<p>All (other) members of original Simtropolis Modd Squad, especially the Modd Squad founders.</p>
+				<p>And possibly others who may not have been mentioned. If your name has been forgotten or you're not on the list, then drop us a line, 
+				as it has been difficult to keep track of anyone/everyone that may of helped somewhere along the lines.</p>
+				<p>And to the community itself, we would also like to thank you for your support, making mods such as this possible too.  We're
+				still at it after almost <strong>20 years</strong> thanks to you!</p>
+				<p>And last but not least, a thanks for the Maxis individuals too, for the [paid] work that they did and released 21 years ago. Here's to 21 more. ;-)</p>
+						
+			<div class="footer"><p>&nbsp;©2024 NAM Team</p></div>
+		</div>
+	</body>
+</html>
