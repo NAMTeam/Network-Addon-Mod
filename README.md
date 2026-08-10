@@ -172,3 +172,9 @@ The generated `.dat` files are found at
     ...
 
 For information on adding and modifying LTexts, see the [Translation & LText Guide](ltext/README.md#maintaining-ltext-sources).
+
+### Assembling a Build
+
+To assemble the .jar installer, use the script [src/scripts/build-installer-jar.sh](src/scripts/build-installer-jar.sh).
+
+The accompanying read-first document for the final release is maintaned at [src/scripts/installer-resources/read-first-nam.html](src/scripts/installer-resources/read-first-nam.html).
