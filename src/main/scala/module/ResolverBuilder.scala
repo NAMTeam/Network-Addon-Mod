@@ -7,7 +7,7 @@ import io.github.memo33.metarules.meta._, syntax._, RotFlip._
   */
 class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.mutable.Builder[(Tile, IdTile | (IdTile, IdTile)), collection.Map[Tile, IdTile]] {
   var tileMap = (new java.util.concurrent.ConcurrentHashMap[Tile, IdTile]()).asScala
-  def clear(): Unit = (new java.util.concurrent.ConcurrentHashMap[Tile, IdTile]()).asScala
+  def clear(): Unit = tileMap = (new java.util.concurrent.ConcurrentHashMap[Tile, IdTile]()).asScala
   def result(): collection.Map[Tile, IdTile] = tileMap
 
   /** Add a new mapping from a `Tile` to an `IdTile`.
