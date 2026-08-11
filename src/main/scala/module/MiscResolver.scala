@@ -538,22 +538,63 @@ class MiscResolver extends IdResolver {
       }
     }
 
-    // Lightrail crossings
+    // Lightrail pieces and crossings
+    add(0x08000500, Lightrail~(0,0,0,2))
+    add(0x08000200, Lightrail~(0,0,0,1))
+    add(0x08031600, Lightrail~(0,2,0,13))
+    add(0x08002200, Lightrail~(0,0,1,13))
+    add(0x5f882e00, Lightrail~(0,0,2,2))
+    add(0x082e2d00, Lightrail~(2,2,2,2))
+    add(0x082e2d00, Lightrail~NS & Lightrail~WE)
+    add(0x5f882f00, Lightrail~(0,2,2,2))
+    add(0x5f882f00, Lightrail~NS & Lightrail~CE)
+    add(0x08014e00, Lightrail~(0,1,62,3))
+    add(0x08031a00, Lightrail~(0,2,0,62))
+    add(0x0812ff00, Lightrail~(1,72,3,2))
+    add(0x08031b00, Lightrail~(0,2,0,72))
+    add(0x08032500, Lightrail~(0,2,1,33))
+    add(0x08031700, Lightrail~(0,2,0,33))  // using 33/31 in metarules (instead of 32/52) to facilitate mirroring
+    add(0x0802f900, Lightrail~(0,21,3,2))
+    add(0x08001c00, Lightrail~(0,0,1,23))
+    add(0x08029700, Lightrail~(0,21,13,2))
+    add(0x08018b00, Lightrail~(0,11,0,11))
+    add(0x08019500, Lightrail~(0,11,0,13))
+    add(0x08aa6500, Lightrail~(0,21,23,2))
+    add(0x08aa5000, Lightrail~(0,21,3,13))
+
     add(0x08dd0300, Rail~ES & Lightrail~NS)
     add(0x08dd0400, Rail~EW & Lightrail~NS)
     add(0x08dd1400, Rail~NS & Lightrail~ES)
     add(0x08dd1500, Rail~SW & Lightrail~ES)
+    add(0x08aa2000, Lightrail~NS & Lightrail~NE)
+    add(0x08aa6300, Lightrail~NE & Lightrail~ES)
+    // add(0x08aa6300, Lightrail~(0,21,62,23))  // the turns have actually been removed by NAM, so it's the same as the line above
 
-    // GLR crossings
+    // GLR pieces and crossings
     for ((glr, offset) <- Seq(Glr1, Glr2, Glr3, Glr4).zip(Seq(0, 0x4000, 0x8000, 0xc000))) {
       add(0x5f880200 + offset, glr~(0,0,2,2))
       add(0x5f880500 + offset, glr~(0,13,0,2))
       add(0x5f880400 + offset, glr~(0,0,1,13))
+      add(0x5f880700 + offset, glr~(3,0,1,62))
+      add(0x5f880800 + offset, glr~(0,62,0,2))
+      add(0x5f880900 + offset, glr~(3,2,1,72))
+      add(0x5f880a00 + offset, glr~(0,72,0,2))
+      add(0x5f880b00 + offset, glr~(0,2,1,33))
+      add(0x5f880c00 + offset, glr~(0,33,0,2))
       add(0x5f881100 + offset, glr~(2,2,2,2))
       add(0x5f881100 + offset, glr~NS & glr~WE)
       add(0x5f881180 + offset, glr~NS & Lightrail~WE)
       add(0x5f881200 + offset, glr~(0,2,2,2))
       add(0x5f881200 + offset, glr~NS & glr~CE)
+      add(0x5f881300 + offset, glr~(3,2,0,21))
+      add(0x5f881400 + offset, glr~(0,21,3,0))
+      add(0x5f881500 + offset, glr~(0,21,13,2))
+      add(0x5f881600 + offset, glr~(11,0,11,0))
+      add(0x5f881700 + offset, glr~(0,11,0,13))
+      add(0x5f882b00 + offset, glr~(0,21,62,23))
+      add(0x5f882c00 + offset, glr~(0,21,23,2))
+      add(0x5f882d00 + offset, glr~(0,21,3,13))
+
       // O×O
       add(0x5f880300 + offset, glr~NS & Road~WE)
       add(0x5f880d00 + offset, glr~NS & Street~WE)
@@ -575,6 +616,7 @@ class MiscResolver extends IdResolver {
       add(0x5f881f00 + offset, glr~NE & Rail~NS)
       add(0x5f882000 + offset, glr~NE & Avenue~SN)
       add(0x5f882100 + offset, glr~NE & Avenue~NS)
+      add(0x5f882700 + offset, glr~NS & glr~NE)
       // D×D
       add(0x5f882200 + offset, glr~NE & Road~NW)
       add(0x5f882a00 + offset, glr~NE & Street~NW)
