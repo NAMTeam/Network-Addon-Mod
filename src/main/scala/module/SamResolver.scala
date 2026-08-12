@@ -10,7 +10,7 @@ import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredO
 
 class SamResolver extends IdResolver {
 
-  val isSam = Set(Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11)
+  val isSam: Set[Network] = SamNetworks
 
   val isSimpleSam = Set(Sam1)
 

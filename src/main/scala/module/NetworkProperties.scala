@@ -91,6 +91,9 @@ object NetworkProperties {
       rhwIntersectionAllowed(a, b)
     } else if ((nonintersectingNetworks.contains(a) || nonintersectingNetworks.contains(b)) && a.height == b.height) {
       false
+    } else if (a == Lightrail && (b == L1Dtr || b == L2Dtr)
+           || (b == Lightrail && (a == L1Dtr || a == L2Dtr))) {
+      false  // currently L1Dtr/L2Dtr can only cross Glr, but not Lightrail
     } else {
       true // TODO
     }
