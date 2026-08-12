@@ -206,7 +206,6 @@ CellLayout = .+b+..
 CellLayout = .+b+.<
 CellLayout = .bbb..
 CellLayout = .b.b..
-;CellLayout = .b.b..  ; commented out by memo 2013/03/18
 CellLayout = .c.d..
 CellLayout = .^....
 
@@ -219,7 +218,7 @@ ConsLayout = ......
 ConsLayout = .|||..
 ConsLayout = .|||..
 ConsLayout = .|||.<
-ConsLayout = .|.|..
+ConsLayout = .|||..
 ConsLayout = .|.|..
 ConsLayout = .|.|..
 ConsLayout = ......
@@ -539,7 +538,7 @@ ConsLayout = ..|||...
 ConsLayout = ..|||...
 ConsLayout = ..|||...
 ConsLayout = ..|||...
-ConsLayout = ..|.|...
+ConsLayout = ..|||...
 ConsLayout = ........
 ConsLayout = ...^....
 
@@ -879,7 +878,7 @@ ConsLayout =..|||...
 ConsLayout =.|||||..
 ConsLayout =.|||||..
 ConsLayout =.|||||..
-ConsLayout =.||.||..
+ConsLayout =.|||||..
 ConsLayout =........
 ConsLayout =..^.....
 
@@ -2407,10 +2406,10 @@ CheckType = b - dirtroad: 0x02000200
 
 ConsLayout =.....
 ConsLayout =.....
-ConsLayout =..|.<
-ConsLayout =..|..
-ConsLayout =..|..
-ConsLayout =..|..
+ConsLayout =..||<
+ConsLayout =..||.
+ConsLayout =..||.
+ConsLayout =..||.
 ConsLayout =.....
 ConsLayout =..^..
 
@@ -3340,15 +3339,14 @@ CopyFrom	=	0x35331
 [HighwayIntersectionInfo_0x00005332]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L1
-Piece = 48.0, 0.0, 1, 0, 0x5700001f
+Piece = 32.0, 0.0, 1, 0, 0x5700001f
 PreviewEffect = preview_ost_orth_alt_flex_001
 
 CellLayout=........
-CellLayout=..zba..<
+CellLayout=..za...<
 CellLayout=..^.....
 
 CheckType = a - rail: 0x00040000 dirtroad: 0x00020002, 0x00000000 optional
-CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
 CheckType = z - dirtroad: 0x00040004
 
 ConsLayout=........
@@ -3362,36 +3360,12 @@ Costs = 600
 [HighwayIntersectionInfo_0x00015332]
 CopyFrom	=	0x5332
 Rotate	=	1
-
 [HighwayIntersectionInfo_0x00025332]
-; RHW FLEXSlope-L1 (rotated by 180 degrees)
-; Added by memo 2023-03-12
-; Having a dedicated 180-degree rotation has the advantage that we can use an
-; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
-; overall behaves more intuitively than the 0x00040004 tile.
-; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
-Piece = -48.0, 0.0, 3, 0, 0x5700001f
-PreviewEffect = preview_ost_orth_alt_flex_001
-
-CellLayout=........
-CellLayout=..ba.z.<
-CellLayout=.....^..
-
-CheckType = a - rail: 0x00000004 dirtroad: 0x00020002, 0x00000000 optional
-CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
-CheckType = z - dirtroad: 0x00040004
-
-ConsLayout=........
-ConsLayout=.....+.<
-ConsLayout=.....^..
-
-AutoTileBase = 0x55387000
-PlaceQueryID = 0x5700001f
-Costs = 600
-
+CopyFrom	=	0x5332
+Rotate	=	2
 [HighwayIntersectionInfo_0x00035332]
-CopyFrom	=	0x25332
-Rotate	=	1
+CopyFrom	=	0x5332
+Rotate	=	3
 [HighwayIntersectionInfo_0x00045332]
 CopyFrom	=	0x5332
 [HighwayIntersectionInfo_0x00055332]
@@ -3405,15 +3379,14 @@ CopyFrom	=	0x35332
 [HighwayIntersectionInfo_0x00005345]
 ;Added by Tarkus 09.21.2012
 ;RHW FLEXSlope-L2
-Piece = 48.0, 0.0, 1, 0, 0x5700002f
+Piece = 32.0, 0.0, 1, 0, 0x5700002f
 PreviewEffect = preview_ost_orth_alt_flex_002
 
 CellLayout=........
-CellLayout=..zba..<
+CellLayout=..za...<
 CellLayout=..^.....
 
 CheckType = a - monorail: 0x00040000 dirtroad: 0x00020002, 0x00000000 optional
-CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
 CheckType = z - dirtroad: 0x00040004
 
 ConsLayout=........
@@ -3429,34 +3402,11 @@ CopyFrom	=	0x5345
 Rotate	=	1
 
 [HighwayIntersectionInfo_0x00025345]
-; RHW FLEXSlope-L2 (rotated by 180 degrees)
-; Added by memo 2023-03-12
-; Having a dedicated 180-degree rotation has the advantage that we can use an
-; ordinary orthogonal tile on one side adjacent to the On-Slope Transition which
-; overall behaves more intuitively than the 0x00040004 tile.
-; Moreover, the use of 00-flags on the sides makes it easier to bulldoze parallel OSTs.
-Piece = -48.0, 0.0, 3, 0, 0x5700002f
-PreviewEffect = preview_ost_orth_alt_flex_002
-
-CellLayout=........
-CellLayout=..ba.z.<
-CellLayout=.....^..
-
-CheckType = a - monorail: 0x00000004 dirtroad: 0x00020002, 0x00000000 optional
-CheckType = b - dirtroad: 0x00040004, 0x000000FF optional
-CheckType = z - dirtroad: 0x00040004
-
-ConsLayout=........
-ConsLayout=.....+.<
-ConsLayout=.....^..
-
-AutoTileBase = 0x55387000
-PlaceQueryID = 0x5700002f
-Costs = 600
-
+CopyFrom	=	0x5345
+Rotate	=	2
 [HighwayIntersectionInfo_0x00035345]
-CopyFrom	=	0x25345
-Rotate	=	1
+CopyFrom	=	0x5345
+Rotate	=	3
 [HighwayIntersectionInfo_0x00045345]
 CopyFrom	=	0x5345
 [HighwayIntersectionInfo_0x00055345]
@@ -3598,7 +3548,7 @@ CheckType = b - dirtroad: 0x00020002 street: 0x04040101, 0xffffffff optional
 
 ConsLayout =........
 ConsLayout =........
-ConsLayout =...---.<
+ConsLayout =..+---.<
 ConsLayout =....--..
 ConsLayout =.....--.
 ConsLayout =.....--.
@@ -3640,7 +3590,7 @@ CheckType = b - dirtroad: 0x00020002 street: 0x03040401, 0xffffffff optional
 
 ConsLayout =........
 ConsLayout =........
-ConsLayout =...---.<
+ConsLayout =..+---.<
 ConsLayout =....--..
 ConsLayout =.....--.
 ConsLayout =.....--.
@@ -5350,23 +5300,18 @@ CopyFrom	=	0x75343
 [HighwayIntersectionInfo_0x00005346]
 ;Added by eggman121 27 Jan 2017
 ;RHW FLEX-diagonal-OST 1-LEVEL
-Piece = 16.0, -16.0, 0, 0, 0x5750001f
+Piece = 16.0, 0.0, 0, 0, 0x5750001f
 PreviewEffect = preview_ost_diag_alt_flex_001
 
 CellLayout=....
-CellLayout=..af
-CellLayout=.ec.
-CellLayout=.b.<
+CellLayout=..a.
+CellLayout=.bc<
 CellLayout=.^..
 
 CheckType = a - rail: 0x04040400 dirtroad: 0x04010000, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x03010000
 CheckType = c - rail: 0x00000004 dirtroad: 0x00000401, 0xFFFFFFFF optional
-;CheckType = d - dirtroad: 0x04000404, 0x0000FF00 optional
-CheckType = e - dirtroad: 0x04040400, 0xFF000000 optional
-CheckType = f - dirtroad: 0x02000202, 0xFF00FFFF optional
 
-ConsLayout=....
 ConsLayout=....
 ConsLayout=....
 ConsLayout=.+.<
@@ -5378,24 +5323,25 @@ Costs = 600
 
 [HighwayIntersectionInfo_0x00015346]
 CopyFrom	=	0x5346
-Rotate	=	1
+Rotate = 1
+Transpose = 1
 [HighwayIntersectionInfo_0x00025346]
 CopyFrom	=	0x5346
-Rotate	=	2
+Rotate	=	1
 [HighwayIntersectionInfo_0x00035346]
+CopyFrom	=	0x15346
+Rotate	=	1
+[HighwayIntersectionInfo_0x00045346]
+CopyFrom	=	0x5346
+Rotate	=	2
+[HighwayIntersectionInfo_0x00055346]
+CopyFrom	=	0x15346
+Rotate	=	2
+[HighwayIntersectionInfo_0x00065346]
 CopyFrom	=	0x5346
 Rotate	=	3
-[HighwayIntersectionInfo_0x00045346]
-CopyFrom	=	0x25346
-Transpose = 1
-[HighwayIntersectionInfo_0x00055346]
-CopyFrom	=	0x45346
-Rotate	=	1
-[HighwayIntersectionInfo_0x00065346]
-CopyFrom	=	0x45346
-Rotate	=	2
 [HighwayIntersectionInfo_0x00075346]
-CopyFrom	=	0x45346
+CopyFrom	=	0x15346
 Rotate	=	3
 [HighwayIntersectionInfo_0x00085346]
 CopyFrom	=	0x5346
@@ -5418,24 +5364,18 @@ CopyFrom	=	0x75346
 [HighwayIntersectionInfo_0x00005347]
 ;Added by eggman121 27 Jan 2017
 ;RHW FLEX-diagonal-OST 2-LEVEL
-Piece = 16.0, -16.0, 0, 0, 0x5750002f
+Piece = 16.0, 0.0, 0, 0, 0x5750002f
 PreviewEffect = preview_ost_diag_alt_flex_002
 
 CellLayout=....
-CellLayout=..af
-CellLayout=.ec.
-CellLayout=.b.<
+CellLayout=..a.
+CellLayout=.bc<
 CellLayout=.^..
 
 CheckType = a - rail: 0x00040004 dirtroad: 0x04010000, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = b - dirtroad: 0x03010000
 CheckType = c - rail: 0x00040000 dirtroad: 0x00000401, 0xFFFFFFFF optional
-;CheckType = d - dirtroad: 0x04000404, 0x0000FF00 optional
-CheckType = e - dirtroad: 0x04040400, 0xFF000000 optional
-CheckType = f - dirtroad: 0x02000202, 0xFF00FFFF optional
 
-
-ConsLayout=....
 ConsLayout=....
 ConsLayout=....
 ConsLayout=.+.<
@@ -5447,24 +5387,25 @@ Costs = 600
 
 [HighwayIntersectionInfo_0x00015347]
 CopyFrom	=	0x5347
-Rotate	=	1
+Rotate = 1
+Transpose = 1
 [HighwayIntersectionInfo_0x00025347]
 CopyFrom	=	0x5347
-Rotate	=	2
+Rotate	=	1
 [HighwayIntersectionInfo_0x00035347]
+CopyFrom	=	0x15347
+Rotate	=	1
+[HighwayIntersectionInfo_0x00045347]
+CopyFrom	=	0x5347
+Rotate	=	2
+[HighwayIntersectionInfo_0x00055347]
+CopyFrom	=	0x15347
+Rotate	=	2
+[HighwayIntersectionInfo_0x00065347]
 CopyFrom	=	0x5347
 Rotate	=	3
-[HighwayIntersectionInfo_0x00045347]
-CopyFrom	=	0x25347
-Transpose = 1
-[HighwayIntersectionInfo_0x00055347]
-CopyFrom	=	0x45347
-Rotate	=	1
-[HighwayIntersectionInfo_0x00065347]
-CopyFrom	=	0x45347
-Rotate	=	2
 [HighwayIntersectionInfo_0x00075347]
-CopyFrom	=	0x45347
+CopyFrom	=	0x15347
 Rotate	=	3
 [HighwayIntersectionInfo_0x00085347]
 CopyFrom	=	0x5347

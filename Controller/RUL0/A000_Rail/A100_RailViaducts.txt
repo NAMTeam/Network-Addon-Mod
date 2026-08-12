@@ -86,8 +86,8 @@ CellLayout=..a.
 CellLayout=..b<
 CellLayout=..^.
 
-CheckType = a - rail: 0x04000404 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = a - rail: 0x04000204 monorail: 0x02000000, 0xFFFFFFFF optional
+CheckType = b - rail: 0x02000200
 
 ConsLayout=....
 ConsLayout=....
@@ -145,8 +145,8 @@ CellLayout=..a.
 CellLayout=..b<
 CellLayout=..^.
 
-CheckType = a - rail: 0x00000404 dirtroad: 0x02000200, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
+CheckType = a - rail: 0x02000404 monorail: 0x00000200, 0xFFFFFFFF optional
+CheckType = b - rail: 0x02000200
 
 ConsLayout=....
 ConsLayout=....
@@ -196,24 +196,22 @@ CopyFrom	=	0x3A131
 [HighwayIntersectionInfo_0x0000A132]
 ;Added by Swordmaster 27 Jan 2016
 ;Rail FLEX-diagonal-OST 1-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5d7f010f
+Piece = 16.0, -16.0, 0, 0, 0x5d7f010f
 PreviewEffect = preview_rail_errwd_01a
 
 CellLayout=....
 CellLayout=..a.
-CellLayout=..c<
-CellLayout=..b
-CellLayout=..^.
+CellLayout=.bc<
+CellLayout=.^..
 
-CheckType = a - rail: 0x04040400 dirtroad: 0x03010000, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
-CheckType = c - rail: 0x00000004 dirtroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = a - rail: 0x04010400 monorail: 0x03040000, 0xFFFFFFFF optional
+CheckType = b - rail: 0x00000000
+CheckType = c - rail: 0x00000304 monorail: 0x03010000, 0xFFFFFFFF optional
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=..^.
+ConsLayout=.+.<
+ConsLayout=.^..
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5d6f0100
@@ -221,25 +219,28 @@ Costs = 600
 
 [HighwayIntersectionInfo_0x0001A132]
 CopyFrom	=	0xA132
-Rotate	=	1
+Rotate   	=	1
+Transpose	=	1
 [HighwayIntersectionInfo_0x0002A132]
 CopyFrom	=	0xA132
-Rotate	=	2
+Rotate   	=	1
 [HighwayIntersectionInfo_0x0003A132]
 CopyFrom	=	0xA132
-Rotate	=	3
+Transpose	=	1
 [HighwayIntersectionInfo_0x0004A132]
-CopyFrom	=	0x2A132
-Transpose = 1
+CopyFrom	=	0xA132
+Rotate   	=	2
 [HighwayIntersectionInfo_0x0005A132]
-CopyFrom	=	0x4A132
-Rotate	=	1
+CopyFrom	=	0xA132
+Rotate   	=	3
+Transpose	=	1
 [HighwayIntersectionInfo_0x0006A132]
-CopyFrom	=	0x4A132
-Rotate	=	2
+CopyFrom	=	0xA132
+Rotate   	=	3
 [HighwayIntersectionInfo_0x0007A132]
-CopyFrom	=	0x4A132
-Rotate	=	3
+CopyFrom	=	0xA132
+Rotate   	=	2
+Transpose	=	1
 [HighwayIntersectionInfo_0x0008A132]
 CopyFrom	=	0xA132
 [HighwayIntersectionInfo_0x0009A132]
@@ -261,24 +262,22 @@ CopyFrom	=	0x7A132
 [HighwayIntersectionInfo_0x0000A133]
 ;Added by Swordmaster 27 Jan 2016
 ;Rail FLEX-diagonal-OST 2-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5d7f010f
+Piece = 16.0, -16.0, 0, 0, 0x5d7f010f
 PreviewEffect = preview_rail_errwd_01a
 
 CellLayout=....
 CellLayout=..a.
-CellLayout=..c<
-CellLayout=..b
-CellLayout=..^.
+CellLayout=.bc<
+CellLayout=.^..
 
-CheckType = a - rail: 0x00040004 dirtroad: 0x03010000, 0xFFFFFFFF optional
-CheckType = b - dirtroad: 0x00000000
-CheckType = c - rail: 0x00040000 dirtroad: 0x03010000, 0xFFFFFFFF optional
+CheckType = a - rail: 0x03040004 monorail: 0x00010000, 0xFFFFFFFF optional
+CheckType = b - rail: 0x00000000
+CheckType = c - rail: 0x00040301 monorail: 0x03010000, 0xFFFFFFFF optional
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
-ConsLayout=..^.
+ConsLayout=.+.<
+ConsLayout=.^..
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5d7f0100
@@ -286,25 +285,28 @@ Costs = 600
 
 [HighwayIntersectionInfo_0x0001A133]
 CopyFrom	=	0xA133
-Rotate	=	1
+Rotate   	=	1
+Transpose	=	1
 [HighwayIntersectionInfo_0x0002A133]
 CopyFrom	=	0xA133
-Rotate	=	2
+Rotate   	=	1
 [HighwayIntersectionInfo_0x0003A133]
 CopyFrom	=	0xA133
-Rotate	=	3
+Transpose	=	1
 [HighwayIntersectionInfo_0x0004A133]
-CopyFrom	=	0x2A133
-Transpose = 1
+CopyFrom	=	0xA133
+Rotate   	=	2
 [HighwayIntersectionInfo_0x0005A133]
-CopyFrom	=	0x4A133
-Rotate	=	1
+CopyFrom	=	0xA133
+Rotate   	=	3
+Transpose	=	1
 [HighwayIntersectionInfo_0x0006A133]
-CopyFrom	=	0x4A133
-Rotate	=	2
+CopyFrom	=	0xA133
+Rotate   	=	3
 [HighwayIntersectionInfo_0x0007A133]
-CopyFrom	=	0x4A133
-Rotate	=	3
+CopyFrom	=	0xA133
+Rotate   	=	2
+Transpose	=	1
 [HighwayIntersectionInfo_0x0008A133]
 CopyFrom	=	0xA133
 [HighwayIntersectionInfo_0x0009A133]
