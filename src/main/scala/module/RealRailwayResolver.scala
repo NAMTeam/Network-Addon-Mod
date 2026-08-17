@@ -577,7 +577,7 @@ class RealRailwayResolver extends IdResolver {
     // -- OWR --
     add(0x5d342000, Onewayroad~NS & Str~WE)
     // -- Avenue --
-    add(0x5d343000, Avenue~NS & Str~WE)
+    add(0x5d343000, Avenue~SN & Str~WE)
     // ----- OxD -----
     // -- Street / SAM --
     add(0x5d360000, Street~WN & Str~NS)
