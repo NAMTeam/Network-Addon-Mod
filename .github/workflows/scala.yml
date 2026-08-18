@@ -7,9 +7,7 @@ name: Scala CI
 
 on:
   push:
-    branches: [ "master", "staging" ]
   pull_request:
-    branches: [ "master", "staging" ]
 
 permissions:
   contents: read
@@ -34,6 +32,8 @@ jobs:
       run: sbt generateLocales
     - name: Check for new conflicting RUL2 overrides
       run: SBT_OPTS="-Xmx2G" sbt conflictingOverridesCheck
+    - name: Check for new segment orientation issues in RUL2 overrides
+      run: sbt "runMain com.sc4nam.scripts.SegmentOrientationChecker"
 
   lint:
     runs-on: ubuntu-latest
@@ -41,5 +41,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         persist-credentials: false
+    - name: Check RUL0 syntax
+      run: python src/scripts/syntax-check-rul0.py
     - name: Check RUL2 syntax
       run: sh src/scripts/syntax-check-rul2.sh

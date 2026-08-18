@@ -10,7 +10,7 @@ import syntax.{RuleGenerator, IdResolver, RuleTransducer, Tile}
   */
 object Main extends AbstractMain {
 
-  lazy val resolve: IdResolver = new RealRailwayResolver orElse new SamResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver
+  lazy val resolve: IdResolver = new RealRailwayResolver orElse new SamResolver orElse new MiscResolver orElse new RhwResolver orElse new NwmResolver orElse new ViaductResolver
   val generator = new RhwRuleGenerator(_)
   lazy val file = new File("./Controller/RUL2/07_RHW/RhwMetaGenerated_MANAGED.txt")
 }
@@ -25,30 +25,44 @@ abstract class AbstractMain {
   lazy val resolveSafely: IdResolver = new PartialFunction[Tile, IdTile] {
     def isDefinedAt(tile: Tile) = resolve.isDefinedAt(tile)
     def apply(tile: Tile) = try resolve.apply(tile) catch {
-      case e @ (_: java.util.NoSuchElementException | _: MatchError) =>
-        throw new IllegalArgumentException(s"ID resolution failed for tile $tile", e)
+      case e: RuleTransducer.ResolutionFailed => throw e
+      case scala.util.control.NonFatal(e) => throw new RuleTransducer.ResolutionFailed(tile, rule = None, reason = e, frame = None)
     }
   }
+
+  private lazy val shouldIgnoreMirroredOrientations: Set[Int] = MirrorVariants.ignoreMirroredOrientations(resolve)
 
   def main(args: Array[String]): Unit = start()
 
   /** Creates a generator with a new context, runs its start method and outputs the resulting RUL2 code to file. */
-  def start(file: File = file, tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]] = null): Unit = {
+  def start(file: File = file, tileOrientationCache: RuleTransducer.TileOrientationCache = null): Unit = {
     if (tileOrientationCache == null) {
-      for (cache <- RegenerateTileOrientationCache.withCache()) {
+      RegenerateTileOrientationCache.withCache { cache =>
         start(file, cache)
       }
     } else {
-      val context = RuleTransducer.Context(resolveSafely, tileOrientationCache, MirrorVariants.preprocessor)
+      val context = RuleTransducer.Context(
+        resolve,  // resolveSafely is not needed here as RuleGenerator and RuleTransducer wrap exceptions in ResolutionFailed exceptions anyway
+        tileOrientationCache,
+        MirrorVariants.preprocessor,
+      )
       val gen = generator(context)
       gen.start()
       // TODO to be revised, later, in order to make more efficient
-      for (printer <- resource.managed(new PrintWriter(file))) {
+      scala.util.Using.resource(new PrintWriter(file)) { printer =>
         printer.println(";This file was generated automatically. DO NOT EDIT!")
         val seen = collection.mutable.Set.empty[EquivRule] // remember seen rules to avoid duplicates
         for (rule <- gen.queue if seen.add(new EquivRule(rule))) {
-          printer.println(s"${rule(0)},${rule(1)}=${rule(2)},${rule(3)}")
+          printer.println(rule.toRul2String)
         }
+      }
+      // finally remove accumulated orientations that we want to ignore (like accidentally mirrored TLAs)
+      tileOrientationCache.accum.mapValuesInPlace { (id, repr) =>
+        if (shouldIgnoreMirroredOrientations(id)) repr.filterNot(_.flipped)
+        else repr
+      }
+      tileOrientationCache.accum.filterInPlace { (id, repr) =>  // remove from accum if equal to cache (so that regenerateTileOrientationCache stabilizes eventually)
+        !tileOrientationCache.cache.get(id).contains(repr)
       }
     }
   }

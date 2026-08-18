@@ -48,7 +48,7 @@ import scala.collection.immutable.LazyList
 object CompileFlexFlyRul0And1 {
 
   /** a stream of flag combinations we can choose our FlexFly falsies from */
-  private[this] lazy val combos = {
+  private lazy val combos = {
     val cache = collection.mutable.HashSet.empty[Tile]
     def isUnique(tile: Tile) = RotFlip.values.forall(rf => !cache.contains(tile * rf))
     def notZero(a: Int, b: Int, c: Int, d: Int) = a != 0 && a != 4 || b != 0 && b != 4 || c != 0 && c != 4 || d != 0 && d != 4
@@ -69,14 +69,14 @@ object CompileFlexFlyRul0And1 {
   }
 
   /** in order MHW/Road, Dirtroad/RHW */
-  private[this] def extractFlags(tile: Tile) = tile.segs.toSeq match {
+  private def extractFlags(tile: Tile) = tile.segs.toSeq match {
     case Seq(Segment(Groundhighway, rdFlags), Segment(Dirtroad, rhwFlags)) => (rdFlags, rhwFlags)
   }
 
   /** restricts above flag combinations to ones that allow dragging-through in all directions
     * and which have no symmetries
     */
-  private[this] lazy val combosAllDirections = {
+  private lazy val combosAllDirections = {
     import Flag._, Bi._
     def effectiveFlag(rhwFlag: Int, mhwFlag: Int): Int = (rhwFlag, mhwFlag) match {
       case (0, 4) => 0
@@ -100,7 +100,7 @@ object CompileFlexFlyRul0And1 {
     * and those that have not; the auto-connect tiles will be oriented such that
     * 2 flag is west (so auto-connect is east)
     */
-  private[this] lazy val (nonAutoconnectTiles, autoconnectTiles) = {
+  private lazy val (nonAutoconnectTiles, autoconnectTiles) = {
     val mapped = combosAllDirections map { tile =>
       val flags = tile.segs.find(_.network == Dirtroad).get.flags
       import Flag._
@@ -113,7 +113,7 @@ object CompileFlexFlyRul0And1 {
   }
 
   val flexFlySegs: Seq[Segment] = for {
-    orient <- Seq[IntFlags => IntFlags](identity _, reverseIntFlags _)
+    orient <- Seq[IntFlags => IntFlags](identity, reverseIntFlags)
     network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
     t <- Seq(T0, T1, T3, T6)
   } yield {
@@ -134,13 +134,13 @@ object CompileFlexFlyRul0And1 {
       += n~orient(T6) -> autoConnectIter.next() * R2F0
       ).result()
     (for {
-      orient <- Iterator[IntFlags => IntFlags](identity _, reverseIntFlags _)
+      orient <- Iterator[IntFlags => IntFlags](identity, reverseIntFlags)
       network <- (RhwNetworks rangeFrom Mis rangeTo L4Rhw4).iterator
       tuple <- buildTiles(network, orient)
     } yield tuple).toMap
   }
 
-  private[this] def concreteTileToString(tile: Tile): String = {
+  private def concreteTileToString(tile: Tile): String = {
     tile.segs.toSeq.map { case Segment(network, flags) =>
       network.toString.toLowerCase + ": 0x0" + flags.mkString("0").reverse
     } .mkString(" ")
@@ -149,14 +149,14 @@ object CompileFlexFlyRul0And1 {
   def rul0Entry(hid: Int, network: Network, reverse: Boolean, previewIter: Iterator[(Int, String)]) = {
     val (previewId90, previewName90) = previewIter.next()
     val (previewId45, previewName45) = previewIter.next()
-    val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags _ else identity _
-    def ff90(cursorInside: Boolean): String = {
-      val hidOffset = if (cursorInside) 0 else 0x80000
+    val orient: IntFlags => IntFlags = if (reverse) reverseIntFlags else identity
+    def ff90(): String = {
+      val hidOffset = 0
       f"""
       |[HighwayIntersectionInfo_0x${hid+hidOffset}%08X]
       |;Added by memo 2014/11/16
-      |;FlexFly 90 (cursor ${if (cursorInside) "inside" else "outside"})
-      |Piece = ${if (cursorInside) "-48.0" else "-80.0"}, 0.0, 0, 1, 0x$previewId90%08X
+      |;FlexFly 90
+      |Piece = -64.0, 0.0, 0, 1, 0x$previewId90%08X
       |PreviewEffect = $previewName90
       |
       |CellLayout=........
@@ -164,8 +164,8 @@ object CompileFlexFlyRul0And1 {
       |CellLayout=...cY...
       |CellLayout=....dY..
       |CellLayout=.....e..
-      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
-      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |CellLayout=....Zf.<
+      |CellLayout=.....^..
       |
       |CheckType = Z - dirtroad: 0x02020202
       |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -181,8 +181,8 @@ object CompileFlexFlyRul0And1 {
       |ConsLayout=........
       |ConsLayout=........
       |ConsLayout=........
-      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
-      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |ConsLayout=....+..<
+      |ConsLayout=.....^..
       |
       |AutoTileBase = 0x55387000
       |PlaceQueryID = 0x$previewId90%08X
@@ -212,21 +212,21 @@ object CompileFlexFlyRul0And1 {
       |""".stripMargin.trim
     }
 
-    def ff45(cursorInside: Boolean): String = {
-      val hidOffset = if (cursorInside) 0 else 0x80000
+    def ff45(): String = {
+      val hidOffset = 0
       f"""
       |[HighwayIntersectionInfo_0x${hid+hidOffset+1}%08X]
       |;Added by memo 2014/11/16
-      |;FlexFly 45 (cursor ${if (cursorInside) "inside" else "outside"})
-      |Piece = ${if (cursorInside) "0.0" else "-32.0"}, 0.0, 0, 1, 0x$previewId45%08X
+      |;FlexFly 45
+      |Piece = -16.0, 0.0, 0, 1, 0x$previewId45%08X
       |PreviewEffect = $previewName45
       |
       |CellLayout=........
       |CellLayout=...Xc...
       |CellLayout=....dY..
       |CellLayout=.....e..
-      |CellLayout=....${if (cursorInside) "Zf." else ".fZ"}<
-      |CellLayout=....${if (cursorInside) "^.." else "..^"}.
+      |CellLayout=....Zf.<
+      |CellLayout=.....^..
       |
       |CheckType = Z - dirtroad: 0x02020202
       |CheckType = Y - dirtroad: 0x00000000, 0xFFFFFFFF optional
@@ -240,8 +240,8 @@ object CompileFlexFlyRul0And1 {
       |ConsLayout=........
       |ConsLayout=........
       |ConsLayout=........
-      |ConsLayout=....${if (cursorInside) "+.." else "..+"}<
-      |ConsLayout=....${if (cursorInside) "^.." else "..^"}.
+      |ConsLayout=....+..<
+      |ConsLayout=.....^..
       |
       |AutoTileBase = 0x55387000
       |PlaceQueryID = 0x$previewId45%08X
@@ -272,14 +272,9 @@ object CompileFlexFlyRul0And1 {
     }
 
     f"""
-    |${ff90(cursorInside = true)}
+    |${ff90()}
     |
-    |${ff90(cursorInside = false)}
-    |
-    |
-    |${ff45(cursorInside = true)}
-    |
-    |${ff45(cursorInside = false)}
+    |${ff45()}
     |""".stripMargin
   }
 
@@ -292,11 +287,11 @@ object CompileFlexFlyRul0And1 {
     }
   }
 
-  def printRul0(file: File, resolver: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+  def printRul0(file: File, resolver: IdResolver) = scala.util.Using.resource(new PrintWriter(file)) { printer =>
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     val hid0 = 0x5B00
-    for (hid <- hid0 until hid0 + 40) { 
-      val numbers = (0 until 16) map (i => f"${hid+0x10000*i}%X") mkString ", "
+    for (hid <- hid0 until hid0 + 40) {
+      val numbers = (0 until 8) map (i => f"${hid+0x10000*i}%X") mkString ", "
       val tag = if (hid == hid0) "RotationRing" else "AddTypes"
       printer.println(f"$tag = $numbers ; flexfly")
     }
@@ -319,7 +314,7 @@ object CompileFlexFlyRul0And1 {
     } .result()
   }
 
-  def printRul1(file: File, resolve: IdResolver) = for (printer <- resource.managed(new PrintWriter(file))) {
+  def printRul1(file: File, resolve: IdResolver) = scala.util.Using.resource(new PrintWriter(file)) { printer =>
     printer.println(";This file was generated automatically. DO NOT EDIT!")
     for (seg <- flexFlySegs) {
       val idTile = resolve(seg)
@@ -334,7 +329,7 @@ object CompileFlexFlyRul0And1 {
   def main(args: Array[String]): Unit = {
     val rul0File = new File("target/5B00_FlexFly5x5_MANAGED.txt")
     val rul1File = new File("target/11_FlexFly_falsies_MANAGED.txt")
-    val resolver = new FlexFlyResolver
+    val resolver = new FlexFlyResolver orElse new RhwResolver
     printRul0(rul0File, resolver)
     printRul1(rul1File, resolver)
   }

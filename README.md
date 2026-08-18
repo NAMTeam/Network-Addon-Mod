@@ -124,6 +124,38 @@ You need to manually move the generated RUL2 files from the `target` directory
 to the correct locations in the `Controller` directory and then commit them into the git repository.
 For more information on Metarules, see https://github.com/memo33/metarules.
 
+#### Metarules Cheat Sheet
+
+Some functions for interacting with IDs and RUL2 code effectively are listed here.
+Type `sbt console` to enter the interactive REPL. Then:
+```scala
+resolve(Ard3~EW & Avenue~NS)                              // convert a metarule Tile to an ID
+// val result = IdTile(0x51021300,2,1)
+
+transduce(Ard3~EW | (Road ~> Ard3)~EW & Avenue~NS)        // convert a metarule to RUL2
+// 0x51020000,3,0,0x04008900,0,0=0x51020000,3,0,0x51021300,2,1
+// 0x51020000,1,0,0x04008900,0,0=0x51020000,1,0,0x51021300,0,0
+
+transduce(Sam2~(0,0,11,3) | Street~(11,2,2,0) | % | Sam2~(11,2,2,0))  // alternative syntax
+// 0x5E571200,3,0,0x5F500900,1,0=0x5E571200,3,0,0x5E576200,1,0
+
+preimage(0x57294745)                                      // convert an ID to a metarule Tile
+// val result = List(L2Rhw8c~(0,+2,0,-2) & Glr3~(3,0,0,1))
+
+preimage(IdTile(0x57294745,2,1))                          // convert an ID with rotation to a metarule Tile
+// val result = List(L2Rhw8c~(0,+2,0,-2) & Glr3~(1,3,0,0))
+
+preimage(resolve(Street~(2,2,2,2)))                       // result can be ambiguous if multiple definitions exist
+// val result = List(Street~(2,2,2,2), Street~(0,2,0,2) & Street~(2,0,2,0))
+
+(Road~(2,0,2,0)).symmetries                               // find the symmetries of a tile
+// val result = Dih2A((0,0), (2,0), (0,1), (2,1))
+(Ard3~ES & Ard3~NE).symmetries
+// val result = Cyc2D((0,0), (2,1))
+```
+
+See [metarules](https://github.com/memo33/metarules) for more details.
+
 ### Compiling Locale Files
 
 To convert all the translations contained in the directory [ltext/](ltext/)
@@ -140,3 +172,9 @@ The generated `.dat` files are found at
     ...
 
 For information on adding and modifying LTexts, see the [Translation & LText Guide](ltext/README.md#maintaining-ltext-sources).
+
+### Assembling a Build
+
+To assemble the .jar installer, use the script [src/scripts/build-installer-jar.sh](src/scripts/build-installer-jar.sh).
+
+The accompanying read-first document for the final release is maintaned at [src/scripts/installer-resources/read-first-nam.html](src/scripts/installer-resources/read-first-nam.html).

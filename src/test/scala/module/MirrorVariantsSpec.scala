@@ -56,22 +56,31 @@ class MirrorVariantsSpec extends AnyWordSpec with Matchers {
 
     "produce expected results for TLA network crossings" in {
       implicit val context = RuleTransducer.Context(resolve, preprocess = MirrorVariants.preprocessor)
-      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Rail~ES).toSeq shouldBe Seq(
+      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Rail~ES).toSeq should contain theSameElementsAs Seq(
         Rule(0x51000000,1,0, 0x03010200,1,0, 0x51000000,1,0, 0x51005500,3,0),
         Rule(0x51000000,3,0, 0x03010200,1,0, 0x51000000,3,0, 0x51005500,3,0),
         Rule(0x51000000,3,0, 0x03020500,3,1, 0x51000000,3,0, 0x51005500,1,1),
         Rule(0x51000000,1,0, 0x03020500,3,1, 0x51000000,1,0, 0x51005500,1,1))
-      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Rail~ES).toSeq shouldBe Seq(
+      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Rail~ES).toSeq should contain theSameElementsAs Seq(
         Rule(0x51100000,3,0, 0x03010200,1,0, 0x51100000,3,0, 0x51105500,3,0),
         Rule(0x51100000,1,0, 0x03020500,3,1, 0x51100000,1,0, 0x51105500,1,1))
-      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Road~ES).toSeq shouldBe Seq(
+      RuleTransducer(Tla5~WE | (Road~>Tla5)~WE & Road~ES).toSeq should contain theSameElementsAs Seq(
         Rule(0x51100000,3,0, 0x00003900,1,0, 0x51100000,3,0, 0x51105100,3,0),
         Rule(0x51100000,1,0, 0x00003900,3,1, 0x51100000,1,0, 0x71105100,1,1))  // 0x71... variant
-      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Lightrail~ES).toSeq shouldBe Seq(
+      RuleTransducer(Tla3~WE | (Road~>Tla3)~WE & Lightrail~ES).toSeq should contain theSameElementsAs Seq(
         Rule(0x51000000,1,0, 0x08DD1600,1,1, 0x51000000,1,0, 0x51005600,3,0),
         Rule(0x51000000,3,0, 0x08DD1600,1,1, 0x51000000,3,0, 0x51005600,3,0),
         Rule(0x51000000,3,0, 0x08DD1600,3,0, 0x51000000,3,0, 0x51005600,1,1),
         Rule(0x51000000,1,0, 0x08DD1600,3,0, 0x51000000,1,0, 0x51005600,1,1))
+      RuleTransducer(Tla5~EW | (Avenue~>Tla5)~EW & Avenue~NS).toSeq should contain theSameElementsAs Seq(
+        Rule(0x51100000,3,0, 0x04009000,0,0, 0x51100000,3,0, 0x71101300,2,1),
+        Rule(0x51100000,1,0, 0x04009000,1,0, 0x51100000,1,0, 0x51101300,0,0))
+      RuleTransducer(Tla5~EW & Avenue~NS | (Avenue~>Tla5)~EW & Avenue~SN).toSeq should contain theSameElementsAs Seq(
+        Rule(0x71101300,2,1, 0x04009000,3,0, 0x71101300,2,1, 0x51101300,2,0),
+        Rule(0x51101300,0,0, 0x04009000,2,0, 0x51101300,0,0, 0x71101300,0,1))
+      RuleTransducer(Tla5~EW & Avenue~SN | (Avenue~>Tla5)~EW).toSeq should contain theSameElementsAs Seq(
+        Rule(0x51101300,2,0, 0x04006100,3,0, 0x51101300,2,0, 0x51100000,3,0),
+        Rule(0x71101300,0,1, 0x04006100,1,0, 0x71101300,0,1, 0x51100000,1,0))
     }
   }
 }

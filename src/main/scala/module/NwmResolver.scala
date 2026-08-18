@@ -1,11 +1,11 @@
 package com.sc4nam.module
 
 import io.github.memo33.metarules.meta._, syntax._, Network._, RotFlip._, Flags._, group.SymGroup
+import Implicits.segmentToTile
 import NetworkProperties.{isSingleTile, isTripleTile, nonMirroredOnly, mirroredOnly, hasTurnPaths}
+import com.sc4nam.module.{NetworkProperties => NP}
 
 object NwmResolver {
-
-  val isSingleTileNwm = NwmNetworks.filter(isSingleTile)
 
   val nwmRangeId = Map(
     Tla3          -> 0x51000000,
@@ -20,6 +20,7 @@ object NwmResolver {
     Owr5          -> 0x51120000,
     Rd4           -> 0x51130000,
     Rd6           -> 0x51140000,
+    Owr4m         -> 0x51150000,
 
     Ave6          -> 0x51200000,
     Tla7m         -> 0x51200080,  // with overflow 0x51220000
@@ -42,7 +43,9 @@ object NwmResolver {
     Monorail      -> 0x0700,
     Glr1          -> 0x0800,
     Glr2          -> 0x0900,
-
+    Glr3          -> 0x0805,  // model-based
+    Glr4          -> 0x0905,  // model-based
+    L2Hsr         -> 0x0A00,  // previously 0x1700, moved here to avoid DxO/DxD collision
     Str           -> 0x0F00,
 
     Tla3          -> 0x1000,
@@ -52,8 +55,7 @@ object NwmResolver {
     Owr3          -> 0x1400,
     Nrd4          -> 0x1500,
 
-    L2Hsr         -> 0x1700,
-
+    Owr4m         -> 0x1700,
     Tla5          -> 0x1800,
     Owr4          -> 0x1900,
     Owr5          -> 0x1A00,
@@ -68,25 +70,19 @@ object NwmResolver {
     // Glr3          -> 0x....,
     // Glr4          -> 0x....,
     // Hsr           -> 0x....,
-}
-import NwmResolver._
-
-class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegResolver {
-
-  /** is defined for all tiles that do not contain RHW, but NWM */
-  def isDefinedAt(t: Tile): Boolean = !t.segs.exists(_.network.isRhw) && !t.segs.exists(seg => SamNetworks.contains(seg.network)) && t.segs.exists(_.network.isNwm)
 
   // orientation relative to RHW scheme
-  private[this] lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
+  lazy val orientationOffsetOxO: Map[Network.ValueSet, RotFlip] = {
     val map = collection.mutable.Map.empty[Network.ValueSet, RotFlip]
     val crossingNetworks = Network.ValueSet() ++ nwmPieceId.keysIterator
     map.getOrElseUpdate(Ard3 + Rail, R2F0)
+    map.getOrElseUpdate(Ard3 + Str, R2F0)
     for (main <- NwmNetworks; minor <- crossingNetworks if !minor.isNwm || minor <= main) {
       if (main == Ard3) {
         map.getOrElseUpdate(main + minor, R3F0)
-      } else if (isSingleTile(main) && minor == Rail) {
+      } else if (isSingleTile(main) && (minor == Rail || minor == Str)) {
         map.getOrElseUpdate(main + minor, R0F0)
-      } else if (!isSingleTile(main) && minor == Ard3) {
+      } else if (minor == Ard3) {
         map.getOrElseUpdate(main + minor, R1F0)
       } else {
         map.getOrElseUpdate(main + minor, R1F1)  // default
@@ -94,60 +90,154 @@ class NwmResolver extends IdResolver with NwmSingleSegResolver with DoubleSegRes
     }
     map.toMap
   }
+}
+import NwmResolver._
 
-  def apply(tile: Tile): IdTile = {
-    if (!isDefinedAt(tile)) {
-      throw new MatchError(tile)
-    } else if (tile.segs.size == 2) {
-      val List(maj0, min0) = tile.segs.toList.sortWith(greater)
-      assert(maj0.network.isNwm)
-      val (maj, min) = if (min0.network.isNwm && doubleProps.get(maj0.flags, min0.flags).exists(_.orthDiagOffset == 0x6000)) {
-        (min0, maj0)  // switch DxO to OxD if both are NWM networks (i.e. orthogonal NWM is primary network)
+class NwmResolver extends IdResolver {
+  def isDefinedAt(t: Tile): Boolean = tileMap.isDefinedAt(t)
+  def apply(tile: Tile): IdTile = tileMap(tile)
+
+  val tileMap = {
+    val builder = new ResolverBuilder(
+      // To simplify adding shared diagonals, we automatically add them for avenue-like networks going in the wrong direction.
+      remap = (tile: Tile) => NP.transformSharedDiagonals(tile),
+    )
+    import builder.add
+
+    for (n <- NwmNetworks) {
+      val id = nwmRangeId(n)
+      val orientA: IntFlags => IntFlags = if (n == Ard3) reverseIntFlags else identity
+      add(id + 0x0000, n~orientA(NS))  // orth
+      add(id + 0x0100, n~orientA(CS))  // orth stub
+
+      if (NP.isSingleTile(n)) {
+        add(id + 0x0200, n~orientA(ES))  // diag 1
+        add(id + 0x0300, n~orientA(SWC))  // diag stub 1
+        add(id + 0x0400, n~(0,-2,0,+11))  // 45 curve 1
+        add(id + 0x0500, n~(0,0,-1,+13))  // 45 curve 1
+        if (!n.isSymm) {
+          add(id + 0x0900, n~orientA(SE))  // diag 2
+          add(id + 0x0a00, n~orientA(CWS))  // diag stub 2
+          add(id + 0x0b00, n~(0,+2,0,-11))  // 45 curve 2
+          add(id + 0x0c00, n~(0,0,+1,-13))  // 45 curve 2
+        }
       } else {
-        (maj0, min0)
+        // multi-tile networks (partially defined in MiscResolver)
       }
-      doubleProps.get(maj.flags, min.flags) match {
-        case Some(prop) =>
-          val pieceOffset = prop.orthDiagOffset match {
-            case 0x0000 => 0x1000  // OxO
-            case 0x3000 => 0x5000  // OxD
-            case 0x6000 =>
-              assert(!min.network.isNwm) // otherwise this would be covered by OxD
-              0x7000  // DxO
-            case 0x9000 => 0x8000  // DxD
-          }
-          val isOxO = prop.orthDiagOffset == 0x0000
-          val rf = if (!isOxO) prop.rf else {
-            // O×O tiles have different orientation in original NWM scheme
-            val rfOffset = orientationOffsetOxO(maj.network + min.network)
-            tile.symmetries.reduceLeftCoset((R0F0 / rfOffset) * prop.rf)
-          }
-          var id = (if (isOxO) nwmRangeId else nwmRangeIdOverflow)(maj.network) + nwmPieceId(min.network) + pieceOffset
-          if (prop.majorSegReversed)
-            id += 0x80
-          if (prop.minorSegReversed)
-            id += 0x05
-          if (id % 0x10 != 0 && (maj.network.height == 0 || min.network.height == 0))
-            id += 0x4  // map 8th digit 5 to 9, A to E
-          if (prop.majKind == Flag.Kind.LeftSpin || prop.minKind == Flag.Kind.LeftSpin ||
-             (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) &&
-              tile.symmetries.exists(_.flipped)) // <-- does not have right-spinned ID
-            IdTile(id, rf, nonMirroredOnly)  // e.g. O×O Tla3×Road
-          else if (prop.majKind == Flag.Kind.RightSpin || prop.minKind == Flag.Kind.RightSpin) {
-            if (!hasTurnPaths(maj.network, min.network)) {
-              IdTile(id, rf, mirroredOnly)  // e.g. O×D Tla3×Rail
-            } else {
-              IdTile(id + 0x20000000, rf, mirroredOnly)  // e.g. O×D Tla3×Road
-            }
-          } else
-            IdTile(id, rf)
-        case None => //??? // TODO T intersections etc. still missing
-          throw new UnsupportedOperationException(tile.toString)
-      }
-    } else if (tile.segs.size == 1) {
-      resolveNwmSegment(tile.segs.head)
-    } else {
-      throw new NotImplementedError(tile.toString) // ??? // TODO
     }
+
+    // Multi-tile NWM curve assembly
+    // (listed explicitly to simplify maintaining compatibility with old IID scheme)
+    // (TODO consider migrating sharp curves to RHW-spec mini curves or extended curves)
+    for (n <- Seq(Tla5, Rd6, Owr5)) {
+      add(nwmRangeId(n) + 0x0400, n~(0,-13,0,+2))  // sharp curve outside
+      add(nwmRangeId(n) + 0x0500, n~(0,0,+1,-13))  // sharp curve inside
+      add(nwmRangeId(n) + 0x0509, n~(0,+13,0,-2))  // sharp curve inside (TODO add orthogonal placeholder texture)
+      add(nwmRangeId(n) + 0x0600, n~(0,0,-1,+13))  // sharp curve outside
+    }
+    for (n <- Seq(Rd4, Owr4, Owr4m)) {
+      add(nwmRangeId(n) + 0x0500, n~(0,-2,0,+11))  // shared diagonal curve outside
+      add(nwmRangeId(n) + 0x0600, n~(0,+2,0,-11))  // shared diagonal curve inside
+      add(nwmRangeId(n) + 0x0700, n~(0,0,-1,+13))  // shared diagonal curve outside
+      if (!n.isOwr4Like) {  // corresponding Owr4 tile is defined in MiscResolver to circumvent `remap`
+        add(nwmRangeId(n) + 0x0800, n~(+1,-3,+1,-13))  // shared diagonal curve
+      }
+    }
+    for (n <- Seq(Ave6, Ave8)) {
+      add(nwmRangeId(n) + 0x0400, n~(0,0,+1,-13))  // sharp curve inside
+      add(nwmRangeId(n) + 0x0409, n~(0,+13,0,-2))  // sharp curve inside (TODO add orthogonal placeholder texture)
+      add(nwmRangeId(n) + 0x0500, n~(0,-113,0,+2))  // extended curve outside
+      add(nwmRangeId(n) + 0x0600, n~(0,-13,0,+113))  // extended curve outside
+      add(nwmRangeId(n) + 0x0700, n~(0,0,-111,+13))  // extended curve outside
+      add(nwmRangeId(n) + 0x0800, n~(+111,-3,0,0))  // extended curve outside
+    }
+    for (n <- Seq(Ave6m, Tla7m)) {
+      add(nwmRangeId(n) + 0x0400, n~(0,-13,0,+2))  // mini curve
+      add(nwmRangeId(n) + 0x0500, n~(0,0,-111,+13))  // mini curve
+      add(nwmRangeId(n) + 0x0600, n~(+111,-3,0,0))  // mini curve
+    }
+    for (n <- NwmNetworks if NP.isSingleTile(n)) {
+      add(nwmRangeId(n) + 0x0800, n~(0,0,-2,+2))  // 90 degree curve
+      if (!n.isSymm) {
+        add(nwmRangeId(n) + 0x0e00, n~(0,0,+2,-2))  // 90 degree curve
+      }
+    }
+    for ((n, offset) <- Seq(Rd4 -> 0, Tla5 -> 0x0100, Owr4 -> 0, Owr4m -> 0)) {
+      add(nwmRangeId(n) + 0x0900 + offset, n~(0,-113,0,+2))  // 90 degree curve extended
+      add(nwmRangeId(n) + 0x0980 + offset, n~(0,0,-2,+2))  // 90 degree curve outside
+      add(nwmRangeId(n) + 0x0a00 + offset, n~(0,0,+2,-2))  // 90 degree curve inside
+    }
+
+    // crossings
+    for {
+      n <- NwmNetworks.iterator
+      n2 <- NwmResolver.nwmPieceId.keysIterator
+    } {
+
+      // adds offsets and mirroring variants for some TLA crossings
+      def withProjections(tile: Tile, idTile: IdTile, when: Boolean = true): Seq[(Tile, IdTile | (IdTile, IdTile))] = {
+        if (!when) Nil
+        else if (!tile.segs.exists(_.network.isTla)) {
+          Seq((tile, idTile))
+        } else {
+          val tile0 = tile * (R0F0 / idTile.rf)
+          val seq = Seq.newBuilder[(Tile, IdTile | (IdTile, IdTile))]
+          if (!tile0.symmetries.exists(_.flipped)) {
+            val lhdOffset =
+              if (NP.hasTurnPaths(n, n2)) 0x20000000  // 0x7... range instead of 0x5... range, e.g. O×D Tla3×Road
+              else 0  // e.g. Tla3×Rail
+            // define two different IDs (mirror variants) for each tile
+            val idTile1 = idTile.copy(rf = R0F0, mappedRepr = NP.nonMirroredOnly)
+            val idTile2 = idTile.copy(rf = R0F0, mappedRepr = NP.mirroredOnly, id = idTile.id + lhdOffset)
+            seq += ((NP.projectTlaLeft(tile0), (idTile1, idTile2)))
+            seq += ((NP.projectTlaRight(tile0), (idTile2, idTile1)))
+          } else {
+            // tile does not have mirror variant IDs, e.g. O×O Tla3×Road
+            val idTile1 = idTile.copy(rf = R0F0, mappedRepr = NP.nonMirroredOnly)
+            seq += ((NP.projectTlaLeft(tile0), idTile1))
+            seq += ((NP.projectTlaRight(tile0), idTile1))
+          }
+          seq.result()
+        }
+      }
+
+      val pid = NwmResolver.nwmPieceId(n2)
+      val (rev00, rev01, rev10, rev11) = (0x00, 0x05, 0x80, 0x85)  // for reversed directions of networks
+      val rfOxO = R0F0 / NwmResolver.orientationOffsetOxO(n + n2)
+      def asymmOrShared(network: Network) = !network.isSymm && network != Owr4m  // Owr4m shared diagonals use Owr4 IDs instead
+      def asymmOrOwr4(network: Network) = network.typ == Asymmetrical || network.isOwr4Like && network != Owr4m  // Owr4 has fewer symmetries than Avenue
+      def off8(id: Int): Int =  // map 8th digit 5 to 9, A to E
+        if (id % 0x10 != 0 && (n.height == 0 && n2.height == 0)) id + 0x4
+        else id
+
+      // O×O
+      if (!RhwResolver.greater(n2, n)) {
+        builder ++= withProjections(n~NS & n2~EW, IdTile(off8(NwmResolver.nwmRangeId(n) + pid + 0x1000), rfOxO))
+      }
+      // O×D
+      val id = NwmResolver.nwmRangeIdOverflow(n) + pid
+      if (!RhwResolver.greater(n2, n) || n2.isNwm) {
+        builder ++= withProjections(n~NS & n2~SW, IdTile(off8(id + 0x5000 + rev00), R0F0))
+        builder ++= withProjections(n~NS & n2~WS, IdTile(off8(id + 0x5000 + rev01), R0F0), when = asymmOrShared(n2))
+        builder ++= withProjections(n~SN & n2~SW, IdTile(off8(id + 0x5000 + rev10), R0F0), when = !n.isSymm)
+        builder ++= withProjections(n~SN & n2~WS, IdTile(off8(id + 0x5000 + rev11), R0F0), when = !n.isSymm && asymmOrOwr4(n2))
+      }
+      // D×O
+      if (!RhwResolver.greater(n2, n) && !n2.isNwm) {
+        builder ++= withProjections(n~ES & n2~EW, IdTile(off8(id + 0x7000 + rev00), R0F0))
+        builder ++= withProjections(n~ES & n2~WE, IdTile(off8(id + 0x7000 + rev01), R0F0), when = !n2.isSymm)
+        builder ++= withProjections(n~SE & n2~EW, IdTile(off8(id + 0x7000 + rev10), R0F0), when = asymmOrShared(n))
+        builder ++= withProjections(n~SE & n2~WE, IdTile(off8(id + 0x7000 + rev11), R0F0), when = asymmOrOwr4(n) && !n2.isSymm)
+      }  // else covered by O×D
+      // D×D
+      if (!RhwResolver.greater(n2, n)) {
+        builder ++= withProjections(n~ES & n2~SW, IdTile(off8(id + 0x8000 + rev00), R0F0))
+        builder ++= withProjections(n~ES & n2~WS, IdTile(off8(id + 0x8000 + rev01), R0F0), when = asymmOrShared(n2))
+        builder ++= withProjections(n~SE & n2~SW, IdTile(off8(id + 0x8000 + rev10), R0F0), when = asymmOrShared(n) && (n != n2))
+        builder ++= withProjections(n~SE & n2~WS, IdTile(off8(id + 0x8000 + rev11), R0F0), when = asymmOrShared(n) && asymmOrShared(n2))
+      }
+    }
+
+    builder.result()
   }
 }

@@ -15,11 +15,17 @@ AddTypes = 7F0A, 17F0A, 27F0A, 37F0A, 47F0A, 57F0A, 67F0A, 77F0A, 87F0A, 97F0A, 
 AddTypes = 7F0B, 17F0B, 27F0B, 37F0B, 47F0B, 57F0B, 67F0B, 77F0B, 87F0B, 97F0B, A7F0B, B7F0B, C7F0B, D7F0B, E7F0B, F7F0B ;One-Way Road 2-Level FLEX-HT
 AddTypes = 7F0C, 17F0C, 27F0C, 37F0C, 47F0C, 57F0C, 67F0C, 77F0C, 87F0C, 97F0C, A7F0C, B7F0C, C7F0C, D7F0C, E7F0C, F7F0C ;Avenue 1-Level FLEX-HT
 AddTypes = 7F0D, 17F0D, 27F0D, 37F0D, 47F0D, 57F0D, 67F0D, 77F0D, 87F0D, 97F0D, A7F0D, B7F0D, C7F0D, D7F0D, E7F0D, F7F0D ;Avenue 2-Level FLEX-HT
-AddTypes = 7F08, 17F08, 27F08, 37F08, 47F08, 57F08, 67F08, 77F08, 87F08, 97F08, A7F08, B7F08, C7F08, D7F08, E7F08, F7F08 ;All-Roadway 1-Level FLEX-OST
-AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, A7F09, B7F09, C7F09, D7F09, E7F09, F7F09 ;All-Roadway 2-Level FLEX-OST
+;AddTypes = 7F08, 17F08, 27F08, 37F08, 47F08, 57F08, 67F08, 77F08, 87F08, 97F08, A7F08, B7F08, C7F08, D7F08, E7F08, F7F08 ;All-Roadway 1-Level FLEX-OST
+;AddTypes = 7F09, 17F09, 27F09, 37F09, 47F09, 57F09, 67F09, 77F09, 87F09, 97F09, A7F09, B7F09, C7F09, D7F09, E7F09, F7F09 ;All-Roadway 2-Level FLEX-OST
 AddTypes = 7F10, 17F10, 27F10, 37F10, 47F10, 57F10, 67F10, 77F10, 87F10, 97F10, A7F10, B7F10, C7F10, D7F10, E7F10, F7F10 ;Road 1-Level FLEX-HT Diag
 AddTypes = 7F11, 17F11, 27F11, 37F11, 47F11, 57F11, 67F11, 77F11, 87F11, 97F11, A7F11, B7F11, C7F11, D7F11, E7F11, F7F11 ;One-Way Road 1-Level FLEX-HT Diag
 AddTypes = 7F12, 17F12, 27F12, 37F12, 47F12, 57F12, 67F12, 77F12, 87F12, 97F12, A7F12, B7F12, C7F12, D7F12, E7F12, F7F12 ;Avenue 1-Level FLEX-HT Diag
+AddTypes = 7F13, 17F13, 27F13, 37F13, 47F13, 57F13, 67F13, 77F13, 87F13, 97F13, A7F13, B7F13, C7F13, D7F13, E7F13, F7F13 ;Road 1-Level FLEX-OST
+AddTypes = 7F14, 17F14, 27F14, 37F14, 47F14, 57F14, 67F14, 77F14, 87F14, 97F14, A7F14, B7F14, C7F14, D7F14, E7F14, F7F14 ;Road 2-Level FLEX-OST
+AddTypes = 7F15, 17F15, 27F15, 37F15, 47F15, 57F15, 67F15, 77F15, 87F15, 97F15, A7F15, B7F15, C7F15, D7F15, E7F15, F7F15 ;One-Way Road 1-Level FLEX-OST
+AddTypes = 7F16, 17F16, 27F16, 37F16, 47F16, 57F16, 67F16, 77F16, 87F16, 97F16, A7F16, B7F16, C7F16, D7F16, E7F16, F7F16 ;One-Way Road 2-Level FLEX-OST
+AddTypes = 7F17, 17F17, 27F17, 37F17, 47F17, 57F17, 67F17, 77F17, 87F17, 97F17, A7F17, B7F17, C7F17, D7F17, E7F17, F7F17 ;Avenue 1-Level FLEX-OST
+AddTypes = 7F18, 17F18, 27F18, 37F18, 47F18, 57F18, 67F18, 77F18, 87F18, 97F18, A7F18, B7F18, C7F18, D7F18, E7F18, F7F18 ;Avenue 2-Level FLEX-OST
 
 ;FLEX Road Viaduct Overpasses BUTTON SECTION
 RotationRing = 7F30, 17F30, 27F30, 37F30, 47F30, 57F30, 67F30, 77F30, 87F30, 97F30, A7F30, B7F30, C7F30, D7F30, E7F30, F7F30 ;Road FLEX Ortho Overpass
@@ -35,20 +41,20 @@ AddTypes = 7F32, 17F32, 27F32, 37F32, 47F32, 57F32, 67F32, 77F32, 87F32, 97F32, 
 [HighwayIntersectionInfo_0x00007F00]
 ;Added by Tarkus 6/19/2013
 ;L1 Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C000005
+Piece = 0.0, 16.0, 0, 0, 0x5C000005
 PreviewEffect = preview_starter_l1erd2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 lightrail: 0x00000101, 0xffffffff optional
 
 ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
+ConsLayout =......<
+ConsLayout =...|...
 ConsLayout =...^...
 
 AutoTileBase =	0x55387000
@@ -95,20 +101,20 @@ CopyFrom    = 0x37F00
 [HighwayIntersectionInfo_0x00007F01]
 ;Added by Tarkus 6/19/2013
 ;L2 Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C030005
+Piece = 0.0, 16.0, 0, 0, 0x5C030005
 PreviewEffect = preview_starter_l2erd2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - road: 0x02000200
 CheckType = a - road: 0x02000200 lightrail: 0x00000303, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...|...<
+ConsLayout =.......<
+ConsLayout =...|....
 ConsLayout =...^....
 
 AutoTileBase =	0x55387000
@@ -155,20 +161,20 @@ CopyFrom    = 0x37F01
 [HighwayIntersectionInfo_0x00007F02]
 ;Added by Tarkus 6/19/2013
 ;L1 One-Way Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C010005
+Piece = 0.0, 16.0, 0, 0, 0x5C010005
 PreviewEffect = preview_starter_l1eow2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 lightrail: 0x00000403, 0xffffffff optional
 
 ConsLayout =.......
-ConsLayout =.......
-ConsLayout =...|..<
+ConsLayout =......<
+ConsLayout =...|...
 ConsLayout =...^...
 
 AutoTileBase =	0x55387000
@@ -215,20 +221,20 @@ CopyFrom    = 0x37F02
 [HighwayIntersectionInfo_0x00007F03]
 ;Added by Tarkus 6/19/2013
 ;L2 One-Way Road Viaduct Starter Piece
-Piece = 0.0, 0.0, 0, 0, 0x5C040005
+Piece = 0.0, 16.0, 0, 0, 0x5C040005
 PreviewEffect = preview_starter_l2eow2__000
 
 CellLayout =.......
-CellLayout =...a...
-CellLayout =...Z..<
+CellLayout =...a..<
+CellLayout =...Z...
 CellLayout =...^...
 
 CheckType = Z - onewayroad: 0x02000200
 CheckType = a - onewayroad: 0x02000200 lightrail: 0x00000401, 0xffffffff optional
 
 ConsLayout =........
-ConsLayout =........
-ConsLayout =...|...<
+ConsLayout =.......<
+ConsLayout =...|....
 ConsLayout =...^....
 
 AutoTileBase =	0x55387000
@@ -275,13 +281,13 @@ CopyFrom    = 0x37F03
 [HighwayIntersectionInfo_0x00007F04]
 ;Added by Tarkus 6/19/2013
 ;L1 Avenue Viaduct Starter Piece
-Piece = 0.0, -16.0, 0, 0, 0x5C020005
+Piece = -16.0, -16.0, 0, 0, 0x5C020005
 PreviewEffect = preview_starter_l1eav4__000
 
 CellLayout =.......
 CellLayout =....a..
 CellLayout =...Zb.<
-CellLayout =...^...
+CellLayout =....^..
 
 CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00030400, 0xFFFFFFFF optional
@@ -291,7 +297,7 @@ CheckType = b - avenue: 0x00020402 lightrail: 0x03000004, 0xFFFFFFFF optional
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =...|..<
-ConsLayout =...^...
+ConsLayout =....^..
 
 AutoTileBase =	0x55387000
 ReplacementIntersection = 0, 0
@@ -337,13 +343,13 @@ CopyFrom    = 0x37F04
 [HighwayIntersectionInfo_0x00007F05]
 ;Added by Tarkus 9/13/2013
 ;L2 Avenue Viaduct Starter Piece
-Piece = 0.0, -16.0, 0, 0, 0x5C050005
+Piece = -16.0, -16.0, 0, 0, 0x5C050005
 PreviewEffect = preview_starter_l2eav4__000
 
 CellLayout =.......
 CellLayout =....a..
 CellLayout =...Zb.<
-CellLayout =...^...
+CellLayout =....^..
 
 CheckType = Z - avenue: 0x00020402
 CheckType = a - avenue: 0x04020002 lightrail: 0x00010400, 0xFFFFFFFF optional
@@ -353,7 +359,7 @@ CheckType = b - avenue: 0x00020402 lightrail: 0x01000004, 0xFFFFFFFF optional
 ConsLayout =.......
 ConsLayout =.......
 ConsLayout =...|..<
-ConsLayout =...^...
+ConsLayout =....^..
 
 AutoTileBase =	0x55387000
 ReplacementIntersection = 0, 0
@@ -399,12 +405,12 @@ CopyFrom    = 0x37F05
 [HighwayIntersectionInfo_0x00007F06]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060205
+Piece = 0.0, 0.0, 0, 0, 0x5C060205
 PreviewEffect = preview_flexhtrans_l1rd_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -416,8 +422,8 @@ CheckType = c - road: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -467,12 +473,12 @@ CopyFrom	=	0x37F06
 [HighwayIntersectionInfo_0x00007F07]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060215
+Piece = 0.0, 0.0, 0, 0, 0x5C060215
 PreviewEffect = preview_flexhtrans_l2rd_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -487,8 +493,8 @@ CheckType = c - road: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 road: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -539,14 +545,14 @@ CopyFrom	=	0x37F07
 [HighwayIntersectionInfo_0x00007F08]
 ;Added by Tarkus 07.26.2013
 ;Road FLEX-OST 1-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
+Piece = 0.0, 0.0, 0, 0, 0x5caee006
 PreviewEffect = preview_rhw2_l0l1onslope001
 
 CellLayout=....
 ;CellLayout=..c.
-CellLayout=..a.
+CellLayout=..a<
 ;CellLayout=..d.
-CellLayout=..b<
+CellLayout=..b.
 CellLayout=..^.
 
 CheckType = a - lightrail: 0x00000404 dirtroad: 0x02000000, 0x00000000 optional
@@ -556,8 +562,8 @@ CheckType = b - road: 0x00000000
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
+ConsLayout=...<
+ConsLayout=..+.
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -601,16 +607,16 @@ CopyFrom	=	0x37F08
 
 
 [HighwayIntersectionInfo_0x00007F09]
-Added by Tarkus 08.16.2013
+;Added by Tarkus 08.16.2013
 ;Road FLEX-OST 2-LEVEL
-Piece = 0.0, -16.0, 0, 0, 0x5caee006
+Piece = 0.0, 0.0, 0, 0, 0x5caee006
 PreviewEffect = preview_rhw2_l0l1onslope001
 
 CellLayout=....
 ;CellLayout=..c.
-CellLayout=..a.
+CellLayout=..a<
 ;CellLayout=..d.
-CellLayout=..b<
+CellLayout=..b.
 CellLayout=..^.
 
 CheckType = a - lightrail: 0x04000404 dirtroad: 0x02000000, 0x00000000 optional
@@ -620,8 +626,8 @@ CheckType = d - dirtroad: 0x04000400, 0xFF000000 optional
 
 ConsLayout=....
 ConsLayout=....
-ConsLayout=....
-ConsLayout=..+<
+ConsLayout=...<
+ConsLayout=..+.
 ConsLayout=..^.
 
 AutoTileBase = 0x55387000
@@ -667,12 +673,12 @@ CopyFrom	=	0x37F09
 [HighwayIntersectionInfo_0x00007F0A]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060205
+Piece = 0.0, 0.0, 0, 0, 0x5C060205
 PreviewEffect = preview_flexhtrans_l1ow_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -684,8 +690,8 @@ CheckType = c - onewayroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 onewayroad: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -733,12 +739,12 @@ CopyFrom	=	0x37F0A
 [HighwayIntersectionInfo_0x00007F0B]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C060215
+Piece = 0.0, 0.0, 0, 0, 0x5C060215
 PreviewEffect = preview_flexhtrans_l2ow_000
 
 CellLayout=....
-CellLayout=..b<
-CellLayout=..a.
+CellLayout=..b.
+CellLayout=..a<
 CellLayout=..c.
 CellLayout=..c.
 CellLayout=..d.
@@ -753,8 +759,8 @@ CheckType = c - onewayroad: 0x02000200, 0xFF00FF00 optional
 CheckType = d - monorail: 0x00040404 onewayroad: 0x02000200, 0xFFFFFFFF optional
 
 ConsLayout=....
-ConsLayout=..+<
-ConsLayout=....
+ConsLayout=..+.
+ConsLayout=...<
 ConsLayout=....
 ConsLayout=....
 ConsLayout=....
@@ -806,12 +812,12 @@ CopyFrom	=	0x37F0B
 [HighwayIntersectionInfo_0x00007F0C]
 ;Added by Tarkus 09.23.2012
 ;Avenue FlexHT-L0-to-L1 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C080205
+Piece = 0.0, 0.0, 0, 0, 0x5C080205
 PreviewEffect = preview_flexhtrans_l1av_000
 
 CellLayout=.....
-CellLayout=..b.<
-CellLayout=..ae.
+CellLayout=..b..
+CellLayout=..ae<
 CellLayout=..cf.
 CellLayout=..cf.
 CellLayout=..dg.
@@ -826,8 +832,8 @@ CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
 CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
 
 ConsLayout=.....
-ConsLayout=..+.<
-ConsLayout=.....
+ConsLayout=..+..
+ConsLayout=....<
 ConsLayout=.....
 ConsLayout=.....
 ConsLayout=.....
@@ -875,12 +881,12 @@ CopyFrom	=	0x37F0C
 [HighwayIntersectionInfo_0x00007F0D]
 ;Added by Tarkus 09.23.2012
 ;RHW FlexHT-L0-to-L2 Ortho
-Piece = 0.0, 16.0, 0, 0, 0x5C080215
+Piece = 0.0, 0.0, 0, 0, 0x5C080215
 PreviewEffect = preview_flexhtrans_l2av_000
 
 CellLayout=.....
-CellLayout=..b.<
-CellLayout=..ae.
+CellLayout=..b..
+CellLayout=..ae<
 CellLayout=..cf.
 CellLayout=..cf.
 CellLayout=..dg.
@@ -898,8 +904,8 @@ CheckType = f - avenue: 0x02000204, 0xFF00FF00 optional
 CheckType = g - monorail: 0x00040404 avenue: 0x02000204, 0xFFFFFFFF optional
 
 ConsLayout=.....
-ConsLayout=..+.<
-ConsLayout=.....
+ConsLayout=..+..
+ConsLayout=....<
 ConsLayout=.....
 ConsLayout=.....
 ConsLayout=.....
@@ -949,7 +955,7 @@ CopyFrom	=	0x37F0D
 [HighwayIntersectionInfo_0x00007F10]
 ;Added by Tarkus 09.23.2012
 ;Road FlexHT-L0-to-L1 Diag
-Piece = 0.0, 16.0, 0, 0, 0x5C060805
+Piece = 16.0, 16.0, 0, 0, 0x5C060805
 PreviewEffect = preview_flexhtrans_l1rd_001
 
 CellLayout=...........
@@ -958,7 +964,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - road: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - road: 0x00000000
@@ -972,7 +978,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C060200
@@ -1020,7 +1026,7 @@ CopyFrom	=	0x77F10
 [HighwayIntersectionInfo_0x00007F11]
 ;Added by Tarkus 09.23.2012
 ;One-Way Road FlexHT-L0-to-L1 Diag
-Piece = 0.0, 16.0, 0, 0, 0x5C070805
+Piece = 16.0, 16.0, 0, 0, 0x5C070805
 PreviewEffect = preview_flexhtrans_l1owr001
 
 CellLayout=...........
@@ -1029,7 +1035,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - onewayroad: 0x00000000
@@ -1043,7 +1049,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C070200
@@ -1073,7 +1079,7 @@ Rotate	=	2
 CopyFrom	=	0x47F11
 Rotate	=	1
 [HighwayIntersectionInfo_0x00087F11]
-Piece = 0.0, 16.0, 0, 0, 0x5C070806
+Piece = 16.0, 16.0, 0, 0, 0x5C070806
 PreviewEffect = preview_flexhtrans_l1owr002
 
 CellLayout=...........
@@ -1082,7 +1088,7 @@ CellLayout=.....cd....
 CellLayout=....cd.....
 CellLayout=...ed......
 CellLayout=...........
-CellLayout=.......^...
+CellLayout=......^....
 
 CheckType = a - onewayroad: 0x03010000, 0xFFFFFFFF optional
 CheckType = b - onewayroad: 0x00000000
@@ -1096,7 +1102,7 @@ ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
 ConsLayout=...........
-ConsLayout=.......^...
+ConsLayout=......^....
 
 AutoTileBase = 0x55387000
 PlaceQueryID = 0x5C070200
@@ -1112,7 +1118,7 @@ Rotate	=	2
 CopyFrom	=	0x87F11
 Rotate	=	3
 [HighwayIntersectionInfo_0x000C7F11]
-Piece = 0.0, 16.0, 0, 0, 0x5C070805
+Piece = 16.0, 16.0, 0, 0, 0x5C070805
 CopyFrom	=	0x87F11
 Transpose	=	1
 PreviewEffect = preview_flexhtrans_l1owr001
@@ -1204,6 +1210,253 @@ CopyFrom	=	0x57F12
 CopyFrom	=	0x67F12
 [HighwayIntersectionInfo_0x000F7F12]
 CopyFrom	=	0x77F12
+
+
+[HighwayIntersectionInfo_0x00007F13]
+;Added by memo 2023-07-09
+;Road FLEXSlope-L1
+Piece = 32.0, 0.0, 1, 0, 0x5c06000f
+PreviewEffect = preview_ost_orth_flex_l1_road
+
+CellLayout=........
+CellLayout=..za...<
+CellLayout=..^.....
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00020001, 0x00000000 optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F13]
+CopyFrom = 0x7F13
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F13]
+CopyFrom = 0x7F13
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F13]
+CopyFrom = 0x7F13
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F13]
+CopyFrom = 0x7F13
+[HighwayIntersectionInfo_0x00057F13]
+CopyFrom = 0x17F13
+[HighwayIntersectionInfo_0x00067F13]
+CopyFrom = 0x27F13
+[HighwayIntersectionInfo_0x00077F13]
+CopyFrom = 0x37F13
+
+
+[HighwayIntersectionInfo_0x00007F14]
+;Added by memo 2023-07-09
+;Road FLEXSlope-L2
+Piece = 32.0, 0.0, 1, 0, 0x5c06010f
+PreviewEffect = preview_ost_orth_flex_l2_road
+
+CellLayout=........
+CellLayout=..za...<
+CellLayout=..^.....
+
+CheckType = a - road: 0x00040004 dirtroad: 0x00020003, 0x00000000 optional
+CheckType = z - road: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C06010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F14]
+CopyFrom = 0x7F14
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F14]
+CopyFrom = 0x7F14
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F14]
+CopyFrom = 0x7F14
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F14]
+CopyFrom = 0x7F14
+[HighwayIntersectionInfo_0x00057F14]
+CopyFrom = 0x17F14
+[HighwayIntersectionInfo_0x00067F14]
+CopyFrom = 0x27F14
+[HighwayIntersectionInfo_0x00077F14]
+CopyFrom = 0x37F14
+
+
+[HighwayIntersectionInfo_0x00007F15]
+;Added by memo 2023-07-09
+;OWR FLEXSlope-L1
+Piece = 32.0, 0.0, 1, 0, 0x5c07000f
+PreviewEffect = preview_ost_orth_flex_l1_onewayroad
+
+CellLayout=........
+CellLayout=..za...<
+CellLayout=..^.....
+
+CheckType = a - rail: 0x00040000 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07000F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F15]
+CopyFrom = 0x7F15
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F15]
+CopyFrom = 0x7F15
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F15]
+CopyFrom = 0x7F15
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F15]
+CopyFrom = 0x7F15
+[HighwayIntersectionInfo_0x00057F15]
+CopyFrom = 0x17F15
+[HighwayIntersectionInfo_0x00067F15]
+CopyFrom = 0x27F15
+[HighwayIntersectionInfo_0x00077F15]
+CopyFrom = 0x37F15
+
+
+[HighwayIntersectionInfo_0x00007F16]
+;Added by memo 2023-07-09
+;OWR FLEXSlope-L2
+Piece = 32.0, 0.0, 1, 0, 0x5c07010f
+PreviewEffect = preview_ost_orth_flex_l2_onewayroad
+
+CellLayout=........
+CellLayout=..za...<
+CellLayout=..^.....
+
+CheckType = a - lightrail: 0x00040000 onewayroad: 0x00020002, 0x00000000 optional
+CheckType = z - onewayroad: 0x00040004
+
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C07010F
+Costs = 600
+
+[HighwayIntersectionInfo_0x00017F16]
+CopyFrom = 0x7F16
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F16]
+CopyFrom = 0x7F16
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F16]
+CopyFrom = 0x7F16
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F16]
+CopyFrom = 0x7F16
+[HighwayIntersectionInfo_0x00057F16]
+CopyFrom = 0x17F16
+[HighwayIntersectionInfo_0x00067F16]
+CopyFrom = 0x27F16
+[HighwayIntersectionInfo_0x00077F16]
+CopyFrom = 0x37F16
+
+
+[HighwayIntersectionInfo_0x00007F17]
+;Added by memo 2023-07-03
+;Avenue FLEXSlope-L1
+Piece = 32.0, 0.0, 1, 0, 0x5c08000f
+PreviewEffect = preview_ost_orth_flex_l1_avenue
+
+CellLayout=........
+CellLayout=...A....
+CellLayout=..ba...<
+CellLayout=..^.....
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00020001, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00020003, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08000F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F17]
+CopyFrom = 0x7F17
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F17]
+CopyFrom = 0x7F17
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F17]
+CopyFrom = 0x7F17
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F17]
+CopyFrom = 0x7F17
+[HighwayIntersectionInfo_0x00057F17]
+CopyFrom = 0x17F17
+[HighwayIntersectionInfo_0x00067F17]
+CopyFrom = 0x27F17
+[HighwayIntersectionInfo_0x00077F17]
+CopyFrom = 0x37F17
+
+
+[HighwayIntersectionInfo_0x00007F18]
+;Added by memo 2023-07-03
+;Avenue FLEXSlope-L2
+Piece = 32.0, 0.0, 1, 0, 0x5c08010f
+PreviewEffect = preview_ost_orth_flex_l2_avenue
+
+CellLayout=........
+CellLayout=...A....
+CellLayout=..ba...<
+CellLayout=..^.....
+
+CheckType = A - avenue: 0x04040004 dirtroad: 0x00010002, 0x00000000 optional
+CheckType = a - avenue: 0x00040404 dirtroad: 0x00030002, 0x00000000 optional
+CheckType = b - avenue: 0x04040404
+
+ConsLayout=........
+ConsLayout=........
+ConsLayout=..+....<
+ConsLayout=..^.....
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5C08010F
+Costs = 1200
+
+[HighwayIntersectionInfo_0x00017F18]
+CopyFrom = 0x7F18
+Rotate = 1
+[HighwayIntersectionInfo_0x00027F18]
+CopyFrom = 0x7F18
+Rotate = 2
+[HighwayIntersectionInfo_0x00037F18]
+CopyFrom = 0x7F18
+Rotate = 3
+[HighwayIntersectionInfo_0x00047F18]
+CopyFrom = 0x7F18
+[HighwayIntersectionInfo_0x00057F18]
+CopyFrom = 0x17F18
+[HighwayIntersectionInfo_0x00067F18]
+CopyFrom = 0x27F18
+[HighwayIntersectionInfo_0x00077F18]
+CopyFrom = 0x37F18
+
 
 
 ;;Road Puzzle Pieces

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Network Addon Mod (NAM) Version __NAMVERSION__ by the NAM Team</title>
+		<style>
+			p {font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; line-height: 137%}
+			h4 {font-family: Arial, Helvetica, sans-serif}
+			.title {font-size: 15px; text-align: justify; font-weight: bold}
+			body {background-color: #414141; padding: 0% 20% 0% 20%}
+			.important {font-weight: bold; color: #FF0000}
+			.tablemain {width:70%; padding: 10px; background-color: #EEEEEE}
+			.main {width:80%; padding: 5px; text-align: center; background-color: #EEEEEE; margin: auto}
+			.banner {height: 24px; background-color: #E96320; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; text-align: justify; color: #FFFFFF}
+			.bannerfull {padding-left: 8px; align-items: center; display: flex; height: 24px; background-color: #E96320; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; text-align: justify; color: #FFFFFF;}
+			.banner_alt {height: 24px; background-color: #222222}
+			.regtext {margin: 0px 5px 0px 5px}
+			.leftalign {text-align: left}
+			.rightalign {text-align: right}
+			.centeralign {text-align: center}
+			li {font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: justify; line-height: 137%}
+			li.leftalign {font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: left; line-height: 137%}
+			.tablerow-alt {background-color: #C9EBF0}
+			.tablerow-alt-leftalign {background-color: #C9EBF0; text-align: left}
+			.toprow {font-family: Arial, Helvetica, sans-serif; text-align: justify;  font-weight: bold; background-color: #C9EBF0}
+			tbody {font-family: Arial, Helvetica, sans-serif; text-align: justify; font-size: 13px}
+			.speed {text-align: center}
+			.inc {color: #009900}
+			.dec {color: #FF0000}
+			.footer {text-align: center; background-color: #AAAAAA}
+			.logobanner {text-align: center}
+			.faq {font-weight: bold}
+			.navigation {font-family: Arial, Helvetica, sans-serif; background-color: #EEEEEE; font-size: 13px; text-align: center; padding: 0px}
+			.underline{text-decoration: underline}
+			.paddedlist{line-height: 113%}
+			.leftcolumn{width: 49%; display: inline-block; margin: auto; vertical-align: text-top}
+			.rightcolumn{width: 49%; display: inline-block; margin: auto; vertical-align: text-top}
+			.importantbox{display:inline-block; margin: auto; background-color: #CCCCCC}
+			.urgentbox{display:inline-block; margin: auto; background-color: #888800}
+			.leftheading{font-family: Arial, Helvetica, sans-serif; text-align:left}
+			.screenshots{text-align: center; display: inline-block}
+			.screenleft{text-align: left; display: inline-block; width: 100%}
+			.screencenter{text-align: center; display: inline-block; width: 100%}
+			.standimg{width: 250px; height: 188px}
+			.midimg{width: 40%}
+			.table-bordered {border-style:solid; border-width: 1px}
+			.table-yes {background-color: #008800; color:#FFFFFF; text-align: center}
+			.table-partial {background-color: #DDDD00; text-align: center}
+			.table-limited {background-color: #DD4400; color:#FFFFFF; text-align: center}
+			.table-no {background-color: #DD0000; color:#FFFFFF; text-align: center}
+			.table-black {background-color: #000000; color:#FFFFFF; text-align: center}
+			.tenwidth{text-align: center; width: 10%}
+			.screenleft-reg{text-align: left; display: inline-block}
+			.table-bordered-regtext {border-style:solid; border-width: 1px; text-align: left}
+			figcaption {font-family: Arial, Helvetica, sans-serif; font-size: 13px; text-align: center}
+			ul.checklist {list-style-type: none; margin-left: 0;}
+			ul.checklist li:before {content: '\2714'; display: inline-block; width: 23px; margin-left: -23px; font-family: inherit; font-weight: normal;}
+			ul.checklist li.checklist-no:before {content: '\274C'; color: red;}
+			ul.checklist li.checklist-yes:before {content: '\2705';}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="logobanner">
+				<svg viewBox="0 0 1022.8011 128" version="1.1" id="svg14" height="64" xmlns="http://www.w3.org/2000/svg">
+					<title>readmebanner</title>
+					<defs id="defs7">
+						<style id="style1">.cls-1{fill:url(#linear-gradient);}.cls-2{fill:#181818;}.cls-3{fill:#fff;}</style>
+						<linearGradient id="linear-gradient" x1="54.57" y1="54.580002" x2="345.42001" y2="345.42001" gradientUnits="userSpaceOnUse">
+							<stop offset="0" stop-color="#f4c91a" id="stop1" />
+							<stop offset="0.08" stop-color="#f2b71b" id="stop2" />
+							<stop offset="0.23" stop-color="#ef991d" id="stop3" />
+							<stop offset="0.4" stop-color="#ec811e" id="stop4" />
+							<stop offset="0.57" stop-color="#ea701f" id="stop5" />
+							<stop offset="0.76" stop-color="#e96620" id="stop6" />
+							<stop offset="1" stop-color="#e96320" id="stop7" />
+						</linearGradient>
+					</defs>
+					<g id="Layer_2" data-name="Layer 2" transform="matrix(0.31996613,0,0,0.31996613,-0.00566296,0.0135255)">
+						<g id="Layer_1-2" data-name="Layer 1">
+							<path class="cls-1" d="M 200,400 A 101.72,101.72 0 0 1 106.73,339.09 L 84,361.79 a 9.25,9.25 0 0 1 -13.09,0 l -32.7,-32.73 a 9.26,9.26 0 0 1 0,-13.1 l 22.69,-22.7 a 101.9,101.9 0 0 1 0,-186.56 L 38.21,84 a 9.26,9.26 0 0 1 0,-13.1 L 70.94,38.21 a 9.25,9.25 0 0 1 13.09,0 l 22.7,22.7 a 101.83,101.83 0 0 1 186.53,0 L 316,38.21 a 9.25,9.25 0 0 1 13.09,0 l 32.74,32.73 a 9.28,9.28 0 0 1 0,13.1 l -22.71,22.66 a 101.85,101.85 0 0 1 0,186.56 l 22.7,22.7 a 9.28,9.28 0 0 1 0,13.1 l -32.74,32.73 a 9.25,9.25 0 0 1 -13.09,0 l -22.7,-22.7 A 101.72,101.72 0 0 1 200,400 Z" id="path7" style="fill:url(#linear-gradient)" />
+							<path class="cls-2" d="m 363.66,134.53 a 92,92 0 0 0 -41.47,-24 l 33.05,-33.05 -32.73,-32.72 -33.1,33.09 a 92.56,92.56 0 0 0 -178.83,0 L 77.49,44.76 44.75,77.49 77.81,110.54 a 92.58,92.58 0 0 0 0,178.87 l -33.1,33.1 32.74,32.73 33.09,-33.09 a 92.56,92.56 0 0 0 178.83,0 l 33.1,33.09 32.73,-32.73 -33.1,-33.1 a 92.55,92.55 0 0 0 41.52,-154.88 z m -32.73,98.2 a 46.35,46.35 0 0 1 -65.47,0 L 232.73,200 265.46,167.27 a 46.290746,46.290746 0 1 1 65.47,65.46 z m -98.2,98.2 a 46.290746,46.290746 0 1 1 -65.47,-65.46 l 32.74,-32.74 32.73,32.74 a 46.33,46.33 0 0 1 0,65.46 z M 69.06,232.73 a 46.290746,46.290746 0 0 1 65.47,-65.46 l 32.73,32.73 -32.73,32.73 a 46.35,46.35 0 0 1 -65.47,0 z m 98.2,-163.66 a 46.290746,46.290746 0 1 1 65.47,65.46 L 200,167.27 167.26,134.53 a 46.33,46.33 0 0 1 0,-65.46 z" id="path8" />
+							<path class="cls-3" d="m 154,167.6 a 4.31,4.31 0 0 1 4.26,4.25 v 56.3 A 4.31,4.31 0 0 1 154,232.4 h -4.35 a 6.92,6.92 0 0 1 -5.28,-2.59 l -28.7,-36.29 v 34.63 a 4.31,4.31 0 0 1 -4.26,4.25 h -5.37 a 4.3,4.3 0 0 1 -4.26,-4.25 v -56.3 a 4.3,4.3 0 0 1 4.26,-4.25 h 4.35 a 6.94,6.94 0 0 1 5.28,2.59 l 28.7,36.48 v -34.82 a 4.3,4.3 0 0 1 4.26,-4.25 z" id="path9" />
+							<path class="cls-2" d="m 154,167.6 a 4.31,4.31 0 0 1 4.26,4.25 v 56.3 A 4.31,4.31 0 0 1 154,232.4 h -4.35 a 6.92,6.92 0 0 1 -5.28,-2.59 l -28.7,-36.29 v 34.63 a 4.31,4.31 0 0 1 -4.26,4.25 h -5.37 a 4.3,4.3 0 0 1 -4.26,-4.25 v -56.3 a 4.3,4.3 0 0 1 4.26,-4.25 h 4.35 a 6.94,6.94 0 0 1 5.28,2.59 l 28.7,36.48 v -34.82 a 4.3,4.3 0 0 1 4.26,-4.25 H 154 m 0,-9.26 h -5.37 a 13.53,13.53 0 0 0 -13.52,13.51 v 8.08 L 123,164.5 a 16.21,16.21 0 0 0 -12.58,-6.16 h -4.35 a 13.53,13.53 0 0 0 -13.52,13.51 v 56.3 a 13.53,13.53 0 0 0 13.52,13.51 h 5.37 A 13.53,13.53 0 0 0 125,228.15 v -8 l 12.14,15.36 a 16.2,16.2 0 0 0 12.58,6.15 H 154 a 13.53,13.53 0 0 0 13.52,-13.51 v -56.3 A 13.53,13.53 0 0 0 154,158.34 Z" id="path10" />
+							<path class="cls-3" d="m 186.71,218.79 -4.17,10.56 a 4.8,4.8 0 0 1 -4.44,3.05 h -5.65 a 4,4 0 0 1 -4,-4 4.21,4.21 0 0 1 0.28,-1.57 l 23.33,-56.2 a 5,5 0 0 1 4.54,-3.05 h 6.75 a 5,5 0 0 1 4.54,3.05 l 23.33,56.2 a 4.21,4.21 0 0 1 0.28,1.57 4,4 0 0 1 -4,4 H 221 a 4.8,4.8 0 0 1 -4.45,-3.05 l -4.16,-10.56 z m 5.56,-13.88 h 14.53 l -7.22,-18.33 z" id="path11" />
+							<path class="cls-2" d="m 203.37,167.6 a 5,5 0 0 1 4.54,3.05 l 23.33,56.2 a 4.21,4.21 0 0 1 0.28,1.57 4,4 0 0 1 -4,4 H 221 a 4.8,4.8 0 0 1 -4.45,-3.05 l -4.16,-10.56 h -25.68 l -4.17,10.56 a 4.8,4.8 0 0 1 -4.44,3.05 h -5.65 a 4,4 0 0 1 -4,-4 4.21,4.21 0 0 1 0.28,-1.57 l 23.33,-56.2 a 5,5 0 0 1 4.54,-3.05 h 6.75 m -11.1,37.31 h 14.55 l -7.22,-18.33 -7.31,18.33 m 11.1,-46.57 h -6.75 a 14.31,14.31 0 0 0 -13,8.51 l -0.06,0.13 -0.05,0.12 -23.31,56.2 v 0.06 0 a 13.73,13.73 0 0 0 -0.94,5 13.26,13.26 0 0 0 13.24,13.24 h 5.65 a 14,14 0 0 0 13,-8.87 v 0 l 1.85,-4.7 h 13.05 l 1.85,4.7 v 0 a 14,14 0 0 0 13,8.87 h 6.57 a 13.26,13.26 0 0 0 13.24,-13.24 13.73,13.73 0 0 0 -0.94,-5 v -0.06 0 l -23.33,-56.2 -0.05,-0.12 -0.06,-0.13 a 14.31,14.31 0 0 0 -13,-8.51 z" id="path12" />
+							<path class="cls-3" d="m 293.92,167.6 h -4.35 a 7,7 0 0 0 -5.28,2.59 l -14.35,18.14 v 0.1 l -14.35,-18.24 a 6.92,6.92 0 0 0 -5.28,-2.59 H 246 a 4.31,4.31 0 0 0 -4.26,4.25 v 56.3 a 4.31,4.31 0 0 0 4.26,4.25 h 5.37 a 4.3,4.3 0 0 0 4.26,-4.25 v -34.63 l 14.35,18 14.35,-18.24 v 34.82 a 4.31,4.31 0 0 0 4.26,4.25 h 5.37 a 4.3,4.3 0 0 0 4.26,-4.25 v -56.3 a 4.3,4.3 0 0 0 -4.3,-4.2 z" id="path13" />
+							<path class="cls-2" d="m 293.92,167.6 a 4.3,4.3 0 0 1 4.26,4.25 v 56.3 a 4.3,4.3 0 0 1 -4.26,4.25 h -5.37 a 4.31,4.31 0 0 1 -4.26,-4.25 v -34.82 l -14.35,18.24 -14.35,-18 v 34.63 a 4.3,4.3 0 0 1 -4.26,4.25 H 246 a 4.31,4.31 0 0 1 -4.26,-4.25 v -56.3 a 4.31,4.31 0 0 1 4.26,-4.3 h 4.35 a 6.92,6.92 0 0 1 5.28,2.59 l 14.35,18.24 v -0.1 l 14.35,-18.14 a 7,7 0 0 1 5.28,-2.59 h 4.35 m 0,-9.26 h -4.35 A 16.23,16.23 0 0 0 277,164.49 l -7.07,8.94 -7,-8.93 a 16.23,16.23 0 0 0 -12.59,-6.16 H 246 a 13.52,13.52 0 0 0 -13.51,13.51 v 56.3 A 13.52,13.52 0 0 0 246,241.66 h 5.37 a 13.53,13.53 0 0 0 13.52,-13.51 v -8.1 l 5.11,6.45 5,-6.43 v 8.08 a 13.53,13.53 0 0 0 13.52,13.51 h 5.37 a 13.53,13.53 0 0 0 13.52,-13.51 v -56.3 a 13.53,13.53 0 0 0 -13.52,-13.51 z" id="path14" />
+						</g>
+					</g>
+					<text
+						xml:space="preserve"
+						style="font-size:40.9557px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;writing-mode:lr-tb;direction:ltr;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.17436"
+						x="201.33171"
+						y="79.358391"
+						id="text14"><tspan
+							id="tspan14"
+							x="201.33171"
+							y="79.358391"
+							style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40.9557px;font-family:'Noto Sans',Arial,Helvetica,sans-serif;fill:#000000;fill-opacity:1;stroke-width:2.17436">Network Addon Mod - DOCUMENTATION</tspan></text>
+				</svg>
+			</div>
+
+			<div class="bannerfull"><h4>Network Addon Mod (NAM) Version __NAMVERSION__ by the NAM Team</h4></div>
+
+			<div class="regtext">
+				<p><span class="dec">Before</span> you run off in excitement to install the new NAM version, please make sure to <span class="dec">read</span> this document <span class="dec">first</span>,
+				to ensure the best Network Addon Mod experience.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="quickstart">Compatibility and Installation</h4></div>
+			<div class="regtext">
+
+				<p>Before attempting to run the NAM installer, ensure that you have extracted the contents of the .zip download into a folder.</p>
+				<p><strong>Attempting to run the installer (or the 4GB Patch) while the files are still in the .zip will cause the installation to fail.</strong></p>
+
+				<p>The minimum requirements for running the Network Addon Mod are as follows:</p>
+				<ul>
+					<li>A compatible retail copy of SimCity 4 Deluxe Digital Edition
+					<ul class="checklist">
+						<li class="checklist-yes"><strong>Windows/Linux (via WINE/Proton)</strong>: Any digital retail edition, i.e. Version 1.1.641, is compatible (<a href="#origin">the EA App/Origin Retail Edition is compatible since June 2023</a>).</li>
+						<li class="checklist-no"><strong>macOS versions of SimCity 4 are incompatible</strong>: Starting with NAM 50, support for any editions of the Aspyr port for macOS is discontinued (<a href="#mac">Note to Mac Users</a>), as they are incompatible with the DLL features. The last macOS-compatible NAM version was <a href="https://github.com/NAMTeam/Network-Addon-Mod/releases/tag/49_rev1">NAM 49</a>.</li>
+						<li class="checklist-no"><strong>The now-rare disc copies of SimCity 4 are incompatible.</strong> Starting with NAM 50, support for the Windows disc copies of SimCity (Version 1.1.640 or older) is discontinued, as they are incompatible with the DLL features.</li>
+					</ul>
+					</li>
+					<li>Java Runtime Environment (JRE), in order to run the installer – a version for 64-bit Windows is included in the download (OpenJDK25U-jre_x64_windows_hotspot_25.0.4_7.msi).
+						<ul class="checklist">
+							<li>If you are not on 64-bit Windows and need Java, <a href="https://adoptium.net/temurin/releases">Adoptium's open-source edition is recommended</a>, though JRE and JDK can also be acquired in proprietary/commercial (but free to download) form from Oracle at <a href="https://www.java.com/">https://www.java.com</a>.</li>
+							<li>The Java Development Kit, or JDK, will also work, but contains extra files not needed unless you are a Java developer.</li>
+						</ul>
+					</li>
+					<li>A system with the following specs
+						<ul class="checklist">
+							<li>Any system with a 64-bit operating system, at least 4GB RAM, and 1.0 GB available disk space. Windows 10 or later is recommended.</li>
+							<li>The <a href= "https://aka.ms/vs/17/release/vc_redist.x86.exe">Microsoft Visual C++ 2022+ x86 Redistributable</a> must be installed. Current versions of Windows 10 and 11 have this pre-installed already.</li>
+						</ul>
+					</li>
+					<li><strong>Additional prerequisite on Windows/Linux</strong> (optional, but recommmended): 4GB Patch by NTCore (included in download, and also
+						available at <a href="https://ntcore.com/?page_id=371">NTCore</a>).
+						<ul class="checklist">
+							<li>See Step 6 or <a href="#4gbpatch">A Note About the 4GB Patch</a> for more details.</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>To install the Network Addon Mod:</p>
+				<ol>
+					<li>Install the Java Runtime Environment (JRE) (if already installed, skip to Step 2).</li>
+					<li>Remove any existing NAM installations, if present (simply deleting the "a_Network Addon Mod Lite" and/or "Network Addon Mod" folder from the Documents\SimCity 4\Plugins directory is the easiest way).</li>
+					<li>Run NetworkAddonMod_Setup_Version__NAMVERSION__.jar, which is the installer.  <strong>Note: This is now the recommended installation procedure for all operating systems.</strong></li>
+					<li>Follow the installer's instructions, clicking on each tab on the top bar in order.
+					<ol type="a">
+						<li>Agree to the mod's terms on the initial "welcome" tab to proceed with the installation.</li>
+						<li>Select the options you would like to install under the "files" tab.</li>
+						<li>Select the install location under the "location" tab.  Unless you have set up an alternate location for your Plugins folder, this should be correct without needing to change it.</li>
+						<li>Finally, move to the "install" tab.  Click the "Start installation" button to begin the installation process.</li>
+						<li>Close the installer, using the "X" button in the upper right corner of the window.</li>
+					</ol>
+					</li>
+					<li><strong>Additional step: Installing the DLL:</strong>
+						<ul>
+							<li>Manually copy the "NAM.dll" file into the top-level directory of your Plugins folder.</li>
+							<li>Do not place it inside the "Network Addon Mod" sub-folder. Instead, place it directly into the "Documents\SimCity 4\Plugins" folder.</li>
+							<li>Make sure older NAM.dll files have been removed from <strong>both</strong> Plugins folders (the one under Documents and the one in the game's installation location). The choice of Plugins folder does not matter, as long as the DLL is only placed in one of them.</li>
+						</ul>
+					</li>
+					<li><strong>Additional step: 4GB Patch (recommended, but optional):</strong> Ensure your copy of the game has had the 4GB Patch applied to it.
+						<ul>
+							<li>To determine whether the 4GB Patch has already been applied, check the "NAM.log" file that is created by the DLL at every launch of the game (<em>“The 4GB patch is installed”</em> or <em>“…not installed”</em>).
+							<li>Open the enclosed "4gb_patch.exe" file in the NAM download (or download it from <a href="https://ntcore.com/4gb-patch/">NTCore</a>).  A window will appear showing the file system.  Navigate over to
+							your game's installation location, and select "SimCity 4.exe".  This will depend on where you purchased your copy of the game.  The default locations for
+							common digital versions and the disc version are as follows:
+							<ul>
+								<li><strong>Steam</strong>: C:\Program Files (x86)\Steam\steamapps\common\SimCity 4 Deluxe\Apps</li>
+								<li><strong>GOG</strong>: C:\GOG Games\SimCity 4 Deluxe Edition\Apps</li>
+								<li><strong>EA App</strong>: C:\Program Files\EA Games\SimCity 4 Deluxe Edition\Apps</li>
+								<li><strong>Original Disc Copy</strong>: C:\Program Files (x86)\Maxis\SimCity 4 Deluxe\Apps</li>
+							</ul>
+							</li>
+							<li>Upon completion, a message will pop up indicating whether or not the patch successfully applied.</li>
+							<li>Note that attempting to run the 4GB Patch file while still inside the download .zip may cause it to fail.</li>
+							<li>It is also possible to launch the 4GB Patch from a command line.  Simply drop the 4gb_patch.exe file into the same folder as your game's executable, and from the command line, type <em>4gb_patch.exe SimCity 4.exe</em>.</li>
+							<li>See <a href="https://youtu.be/mnuamQac9d0?si=ba1AAeRbTFuXLAIX&t=205">this segment of Haljackey's NAM installation video</a> for a demonstration of the process (while this video was filed with NAM 46, the process of installing the 4GB Patch has not changed).</li>
+						</ul>
+					</li>
+					<li>Load the game and enjoy the NAM!
+						<ul>
+							<li>Note that if you've never run the NAM before, and you've picked a fuller installation option, the initial load of the game, and of the first city tile you open may be longer--often quite noticeably.  This will shorten with
+							subsequent loads of other cities, or, if you exit and re-enter the game, subsequent re-entries will be quicker.  Installing the latest version of Null 45's <a href="https://community.simtropolis.com/files/file/36244-startup-performance-optimization-dll-for-simcity-4/">Startup Performance Optimization DLL for SimCity 4</a>
+							has been shown to make a dramatic difference in reducing load times.</li>
+							<li>If you do not see any icons in game, this most likely means your installation ended up in the wrong location.
+							Reinstall, making sure the files go into your Documents\SimCity 4\Plugins folder.</li>
+							<li>If you have duplicate icons, this is an indication that you have multiple versions (or at least, portions of multiple versions) of the NAM installed simultaneously.  We recommend removing all NAM files (both new and old) from
+							the Plugins folder, and once again attempting an install of NAM __NAMVERSION__.</li>
+							<li>If an advisor message pops up, claiming that the NAM.dll is missing, then either you forgot to copy the DLL into the top-level directory of the Plugins folder, or your game edition is incompatible with the DLL, or you may need to install the <em>Microsoft Visual C++ 2022+ x86 Redistributable</em> (see specs above).</li>
+						</ul>
+					</li>
+				</ol>
+
+				<p>Alternatively, an easy way to install the NAM is <a href="#sc4pac">using the sc4pac Mod Manager</a>.</p>
+
+				<p><strong>Documentation:</strong> For further details on the NAM and its features, visit our new website at <a href="https://www.sc4nam.com">https://www.sc4nam.com</a>.</p>
+			</div>
+
+
+			<div class="bannerfull"><h4>New Features for NAM __NAMVERSION__</h4></div>
+			<div class="regtext">
+				<p>This release is the first to rely on the NAM DLL. As such, this release is <em>incompatible</em> with the macOS editions of the game, and only compatible with the <em>digital</em> Windows edition.</p>
+				<p><strong>DLL Features:</strong></p>
+				<ul>
+					<li>
+						Added a custom RUL2 engine: This is a substantial new feature of the DLL which
+						<ul>
+							<li>makes override networks much more stable</li>
+							<li>allows for tighter footprints (e.g. crossings of override networks that previously had to be placed one tile apart may now be placed directly adjacent to each other)</li>
+							<li>reduces the size of the NAM codebase by almost 90% and by more than 10 million lines, making it easier to maintain and reducing the chance of bugs. A lot of work has gone into this by the entire team, and it is why, starting with NAM 50, the NAM cannot be used without the DLL anymore.</li>
+							<li>improves performance: The initial city load time is reduced by a huge amount, as a result of the controller size reduction.</li>
+							<li>The <strong>4GB patch</strong> is not strictly required anymore as a consequence, as well.</li>
+							<li>As the full NAM Controller is now less than 60 MB, the Low-RAM/No-RHW option has been removed.</li>
+						</ul>
+					</li>
+					<li>Streets can now be dragged diagonally.</li>
+					<li>Auto-connect of the Street and RHW networks has been disabled.</li>
+					<li>Added a fix for the Eternal Commuter Loop bug: Neighbor-to-neighbor routes that connect the city to the <em>North</em> and the city to the <em>West</em> are blocked by the path finder, so loops cannot form anymore. All other connections, such as South-to-North or East-to-West, are still allowed.</li>
+					<li>Keyboard shortcuts have been added for all missing networks: Monorail (CTRL+Y), One-Way Road (Shift+E), Ground Highway (Alt+E) and RHW (Control+E).</li>
+					<li>Tunnels can now be built using the Street network.</li>
+					<li>
+						Added slope-tolerance improvements for various network elements:
+						<ul>
+							<li>45 degree curves of single-tile networks are slope-conforming now.</li>
+							<li>All starter pieces and many FLEX pieces are slope-tolerant now.</li>
+							<li>The FLEX On-slope pieces have been improved:
+								<ul>
+									<li>Their footprint has been minimized.</li>
+									<li>The sinkhole bug associated with them is fixed.</li>
+									<li>Networks can be dragged through the On-slope transition piece.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>The invisible cursor tile has been removed from all FLEX pieces. The handle does not interfere with any lots or networks anymore.</li>
+					<li>The ferry clearance height of bridges has been reduced from 30 to 20 meters.</li>
+					<li>Added an option to disable each individual DLL patch for debugging purposes, by installing the optional <a href="https://github.com/NAMTeam/nam-dll/blob/main/src/NAM.ini">NAM.ini</a> file.</li>
+					<li>Added an option to allow RCI zones to acess RHW networks (disabled by default).</li>
+				</ul>
+				<p><strong>Street Network and SAM Improvements:</strong></p>
+				<ul>
+					<li>The Diagonal Street Helper Pieces have been removed, as diagonal streets are now draggable.</li>
+					<li>Load order issue between MHO and diagonal streets has been fixed.</li>
+					<li>added new intersections of diagonal street with road corners</li>
+					<li>The SAM code has received a complete overhaul, with the native diagonal Streets in mind. Some SAM textures have been added or improved.</li>
+					<li>minor fixes for RRW × SAM crosslinks</li>
+					<li>SAM × Road diverter instability has been fixed.</li>
+					<li>added SAM × Avenue O×O Long T intersections as well as several SAM × Road/OWR diagonal intersections</li>
+					<li>Several missing or buggy SAM paths have been fixed.</li>
+				</ul>
+				<p><strong>Real Highway Improvements:</strong></p>
+				<ul>
+					<li>Diagonal RHW-2 network transitions have been fixed.</li>
+					<li>The D1 FLEX-ramp has been improved to make it work even when placed parallel to each other.</li>
+					<li>A pathing issue with DDRHW-4 to Dual RHW-4 FLEX Transition has been fixed.</li>
+					<li>some improvements for HRW × RHW crosslinks</li>
+					<li>A pathing issue with L1 MIS-2 × L1 Avenue has been fixed.</li>
+					<li>The Blue Suspension Bridge end pieces for RHW-4S and RHW-3 have been fixed.</li>
+					<li>LHD issues with the QuickChange Diamonds RHW × Avenue in the Beta release have been resolved.</li>
+				</ul>
+				<p><strong>Real Railway Improvements:</strong></p>
+				<ul>
+					<li>RRW-style textures for some pre-RRW/legacy configurations have been added.</li>
+					<li>A few missing legacy paths for RRW WRC pieces have been restored.</li>
+					<li>The diagonal bridges (DBE) have been made compatible with RRW.</li>
+					<li>Some issues with diagonal STR RULs have been resolved.</li>
+					<li>The slope mods of RRW and MHO have been removed. Install the NAM Tunnel
+						And Slope Mod instead. (In the past, these slope mods were included to
+						configure the tunnel portals of these NAM networks. This has now been
+						implemented universally using Exemplar Patching (for RRW, MHO and Street
+						tunnels), which works with <em>all</em> slope mods as long as the Resource
+						Loading Hooks DLL is present.)</li>
+					<li>The orthogonal crossing STR × Avenue has been fixed.</li>
+				</ul>
+				<p><strong>Other Various Improvements:</strong></p>
+				<ul>
+					<li>All sinkhole bugs have been fixed.</li>
+					<li>Road Roundabout code has been revised for better stability.</li>
+					<li>UI fixes for transit stations</li>
+					<li>The FLUPs tab loop has been split into multiple shorter tab loops in preparation for submenus.</li>
+					<li>A load order issue between MHO and DBE files has been resolved.</li>
+					<li>EU textures for OWR × AVE-6/TLA-7 have been fixed.</li>
+					<li>a few texturing improvements for Street × Road/OWR and for Avenue curbs</li>
+					<li>various fixes to base content, including Avenue × Avenue O×D intersections, and directionality on diagonal OWR intersections</li>
+					<li>The GLR-4 models have been updated to make them independent from the GLR-3 style.</li>
+					<li>small fixes for paths and models of GLR Tram-in-Road</li>
+					<li>Auto-place functionality of legacy FAR puzzle pieces has been disabled to avoid conflicts with TE lots.</li>
+					<li>A mirroring issue with the stop sign has been fixed.</li>
+					<li>An issue with the light cone prop of pedmalls has been fixed.</li>
+					<li>The T21s for Classic Pedmalls have been updated.</li>
+				</ul>
+			</div>
+
+
+			<div class="bannerfull"><h4 id="variousnotes">Various Important Notes</h4></div>
+			<div class="regtext">
+				<p><strong>The NAM.dll is <span class="dec">REQUIRED</span></strong> since NAM Version 50. If your system or game does not support the use of DLLs, consider using NAM Lite, which does not depend on the DLL, or switch to an older legacy release.</p>
+				<p>Users wishing to simply use the NAM's Traffic Simulator improvements should install the NAM Lite package, which offers easy setup of various minimal options. The previously included Traffic Simulator Configuration Tool (TSCT) has been discontinued.</p>
+				<p>The NAM uses a Java-based installer, designed by <strong>daeley</strong>, which is cross-platform (meaning Linux support without WINE).  As such, the Java Runtime Environment (JRE) Version 8 or newer is
+				<span class="dec"><strong>REQUIRED</strong></span> to run the NAM installer.
+				A Windows 64-bit copy of OpenJDK 25 is included in the download (<em>OpenJDK25U-jre_x64_windows_hotspot_25.0.4_7.msi</em>).  Other open source distributions of Java can be downloaded from <a href="https://adoptopenjdk.net/">Adoptium</a>.</p>
+				<p>Users who fundamentally object to installing Java (or are unable to for other reasons) can perform a manual install, with patience.  Details can be found in the <a href="#manualinstall">Manual Installation</a> section.</p>
+				<p>With the new installer, the old NAM installation is <strong>no longer removed automatically</strong>, so users should manually remove any "a_Network Addon Mod Lite", "Network Addon Mod" and/or "z___NAM" folders as well as "NAM.dll" and/or "NAM.ini" files from their Plugins directory.
+				<strong>It is recommended that you back those files and folders up in a location that is not in your Plugins folder</strong>.  Presently, all files are now installed to
+				the "Network Addon Mod" directory, or in the case of a NAM Lite install, the "a_Network Addon Mod Lite" directory.</p>
+				<p>The RealRailway (RRW) standard for Rail is now the <strong>default and only option</strong>, unless using NAM Lite.
+				Also note that a number of cosmetic-oriented NAM plugins, such as the El-Rail Alternate Implementation, the Bullet Train Mod, and some advanced texture options (largely deprecated) have been removed from the installer since NAM 37.
+				The Alternate El-Rail and BTM will be made available separately at a later date.  Please note that, much like Maxis Rail, these Plugins are effectively in "Legacy" status, and may not be actively
+				maintained or supported by the NAM Team going forward, though you may choose to retrieve them from a past NAM installation's "z___NAM" folder.  Both the original Maxis Highways (MHW) and the "Maxis Highway Override/Project Symphony" (MHO) remain available.</p>
+				<p>The <em>Station Locator, Updater, and Reconstruction Project (SLURP)</em> is also no longer handled by the new installer.  There is ongoing internal discussion about reimplementing SLURP.  Users wishing to retain SLURPed stations should retrieve them from the "z___NAM\Mass Transit Lots\Station Overrides" folder in their existing NAM installation, where
+				they will be found in the "Mass Transit Lots" subfolder.  <strong>Note that users running the 64-bit version of SimCity 4 on macOS may wish to refrain from retrieving SLURP stations</strong>, as there
+				have been some encoding issues with stations that cause that version of the game to CTD.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="sc4pac">Note About sc4pac</h4></div>
+			<div class="regtext">
+				<p>You can use the <a href="https://community.simtropolis.com/files/file/36700-sc4pac-mod-manager/">sc4pac Mod Manager</a> to install the NAM. Simply, install the package <a href="https://memo33.github.io/sc4pac/channel/?pkg=nam:network-addon-mod">nam:network-addon-mod</a> (and the optional content listed there) with sc4pac, instead of running the NAM installer.
+				This makes it easy to install, update and uninstall the NAM.
+				The mod manager guides you through all the important installation options and even remembers your choices.
+				Some non-default legacy options are not included, however.</p>
+				<p>Before installing the NAM through sc4pac for the first time, make sure to fully <a href="#uninstall">uninstall the NAM</a> first by removing all NAM files from previous manual installations.</p>
+			</div>
+
+			<div class="bannerfull"><h5 id="origin">Notice to Users Who Purchased a Digital Copy from the EA.com/the EA App/Origin, or Play Via EA Play/Xbox Game Pass</h5></div>
+			<div class="regtext">
+				<p>In June 2023, EA patched all copies of SimCity 4 Deluxe available through their own direct digital storefronts (EA.com and the EA App) and services (EA Play) to Version 1.1.641, bringing them up to the same standard as the digital retail copies from Steam.
+				As such, the EA App and EA Play versions of SimCity 4 Deluxe <strong>are now compatible with the Network Addon Mod.</strong></p>
+
+				<p>NAM developer Tarkus has more details on this change at his blog,
+				<a href="https://simtarkus.wordpress.com/category/origin/">SimTarkus</a>.</p>
+			</div>
+
+
+			<div class="bannerfull"><h4 id="mac">Note to Mac Users</h4></div>
+			<div class="regtext">
+				<p>
+					The Aspyr macOS versions of the game are unable to load DLL plugin files.
+					As the NAM DLL brings important and major benefits for gameplay and maintainability of the NAM, support for the macOS versions of the game has been discontinued, as of NAM 50.
+				</p>
+				<p>For further details, see <a href="https://community.simtropolis.com/forums/topic/762980-the-future-of-sc4-modding-the-matter-of-digital-vs-disc-and-windows-vs-macos-in-the-dll-era/">
+					The Future of SC4 Modding: The Matter of Digital vs. Disc, and Windows vs. macOS in the DLL Era</a>.</p>
+				<p>The following options are available to Mac-users:</p>
+				<ul>
+					<li>Install <a href="https://github.com/NAMTeam/Network-Addon-Mod/releases/tag/49_rev1">NAM 49</a>, the last macOS-compatible legacy release.</li>
+					<li>Install NAM Lite.</li>
+					<li>Technically-versed users may look into installing the digital Windows edition of the game instead, see <a href="https://community.simtropolis.com/forums/topic/764026-it-is-easy-to-play-simcity-4-deluxe-windows-version-on-a-mac-with-dll-support-draft/">How to install SimCity 4 Deluxe (Windows version) on a Mac with DLL support</a>.</li>
+				</ul>
+			</div>
+
+			<div class="bannerfull"><h4 id="upgrading">Upgrading from a Previous Version</h4></div>
+			<div class="regtext">
+				<p>If you are upgrading from a previous version of the NAM, <strong>MANUALLY MOVE YOUR OLD NAM INSTALLATION OUT FROM YOUR PLUGINS FOLDER, INTO A SAFE LOCATION (note that this has changed from previous
+				NAM releases).</strong>  The current version of the NAM installer cannot detect your previous installation options
+				by reading the existing folder structure.  It is recommended that you check your existing installation, to determine which features you presently have installed.</p>
+				<p>Generally speaking, the NAM Team makes every effort to ensure that new versions at least retain some form of "legacy support", such that cities built with any previous NAM version will
+				continue to function well with the latest version.</p>
+				<p>If you have consolidated your NAM files using a tool such as SC4DatPacker or JDatPacker, please read <a href="#datpack">here</a>.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="datpack">Regarding "DatPacking" and File Consolidation Post-Installation</h4></div>
+			<div class="regtext">
+				<p>Programs to consolidate folders worth of SimCity 4 .DAT files, such as SC4DatPacker (Windows) and JDatPacker (cross-platform), are popular options known to improve game performance, given SimCity 4's preference
+				to read a smaller number of larger files, instead of a larger number of small files--a fact determined by the BSC Team's "Miramba Experiment" of 2006.  The use of "DatPacking" programs on one's NAM installation,
+				however, is a controversial topic.  The NAM Team's general advice is for <em>Windows</em> users to <span class="dec"><strong>avoid</strong></span> DatPacking (unless one is <em>extremely careful</em>,
+				while for <em>Mac</em> users, the use of JDatPacker is essentially <span class="inc"><strong>required</strong></span>.</p>
+
+				<p>In general, if one plans to DatPack one's NAM installation, they should also <strong>save the pre-DatPacked NAM folder in a safe place, outside the Plugins folder beforehand</strong>.  The reason for this is to avoid potential conflicts and issues,
+				such as the "dual icon bug" and Controller file conflicts between new and old installations, as well as to make it such that one knows which options they have installed
+				when upgrading to a new version, or re-installing the same version with different options. </p>
+
+				<p>Null 45's <a href="https://community.simtropolis.com/files/file/36244-startup-performance-optimization-dll-for-simcity-4/">Startup Performance Optimization DLL for SimCity 4</a> provides a new
+				option to dramatically speed up load times on Windows (and Linux) installations of the game, to the point at which the benefits of DatPacking become largely superfluous.</p>
+			</div>
+
+
+			<div class="bannerfull"><h4 id="driveside">A Note About Drive Side (RHD vs. LHD)</h4></div>
+			<div class="regtext">
+				<p>While the NAM Installer, as noted above, has a series of checkboxes in Custom Installation relating to drive side, it is worth re-iterating that these boxes <strong>only change the compatibility
+				files installed with the NAM, and <span class="underline">do NOT change drive side</span></strong>.  If you have an installation with Right-Hand Driving (RHD, vehicles driving on the right side of roads--this concept
+				is <strong>NOT</strong> the same as the side one sits on when driving a vehicle) and wish to switch to Left-Hand Driving (LHD, vehicles driving on the left side of roads), this generally needs
+				to be done either by adjusting the game's locale files, and then either editing the game's Windows registry entries, or by modifying the game's shortcut.</p>
+				<p>The new NAM Installer cannot determine default drive side of your installation, so make note of which side vehicles drive on in your game prior to installation.
+				If you have changed your drive side by modifying the game's shortcut, instead of editing the Windows registry, then this would be the <strong>one and only case when changing the box checked here
+				would be needed</strong>.
+			</div>
+
+			<div class="bannerfull"><h4 id="4gbpatch">A Note About the "4GB Patch"</h4></div>
+			<div class="regtext">
+
+				<p>Due to changes in computer systems, and continued expansions of the NAM's main Controller file, in 2013, it was determined that many newer systems, particularly those with more than 4GB of RAM,
+				and running 64-bit versions of Windows, need additional accommodation.  To that end, the NAM includes a "4GB Patch", also known as a "Large Address Aware (LAA) Patch", which allows the game to access the
+				full 4GB of RAM that a 32-bit application can read, instead of the default 2GB.  The NAM's patch was designed by NTCore, and built into the NAM with permission.  The original patch can be found at <a href="http://www.ntcore.com/4gb_patch.php">ntcore.com</a>.</p>
+				<p>The only thing this patch does is to switch the Large Address Aware switch, an accessible switch present in all Windows executables, from "off" to "on" for the game's executable.  Patches like this
+				are common in game modding communities, including those associated with The Elder Scrolls series (i.e. Skyrim), and Fallout, and can be used to enhance any 32-bit application's performance on systems with 64-bit operating
+				systems and a suitable amount of RAM.</p>
+
+				<p>Note that the 4GB Patch is <strong>NOT required for users on macOS</strong>, as that version of the game is 64-bit and can access more RAM than the Windows version (even with the 4GB Patch!) by default.
+
+				<p>The default directory for where SimCity 4.exe may be located depends on how and where you purchased your copy of the game.</p>
+				<ul>
+					<li><strong>GOG.com</strong>: C:\GOG Games\SimCity 4 Deluxe Edition\Apps</li>
+					<li><strong>Steam</strong>: C:\Program Files (x86)\Steam\steamapps\common\SimCity 4 Deluxe\Apps</li>
+					<li><strong>EA App</strong>: C:\Program Files\EA Games\SimCity 4 Deluxe Edition\Apps</li>
+					<li><strong>Original Disc Copy</strong>: C:\Program Files (x86)\Maxis\SimCity 4 Deluxe\Apps</li>
+				</ul>
+			</div>
+
+			<div class="bannerfull"><h4 id="uninstall">Uninstalling the NAM</h4></div>
+			<div class="regtext">
+				<p>To uninstall the files, simply bulldoze every NAM item from this download in your cities and remove the files from the Plugins folder afterwards, which will be contained in
+				<em>Plugins\Network Addon Mod</em> and <em>Plugins\NAM.dll</em> by default.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="changing">Changing Options After Initial Installation</h4></div>
+			<div class="regtext">
+				<p>The NAM is a very expansive mod, with a substantial number of features, which may initially prove overwhelming to those not well-versed in its workings.  The NAM Team anticipates
+				that users, particularly those new to the NAM, may want to change the feature set they have installed, as they learn more about the mod's contents and capabilities.</p>
+				<p>To that end, we encourage users to keep the installer for the current version handy after initial installation.  If you plan to change your particular set of options, you will need to
+				remove your current installation.  Moving it out of Plugins to a safe location is recommended, in case you want to keep your existing settings as a backup.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="manualinstall">Manual Installation - Advanced</h4></div>
+			<div class="regtext">
+				<p>Users who are unable or unwilling to install Java can perform a manual installation of the NAM, something
+				which the new file architecture introduced in 2020 makes far more possible than the previous "Monolithic" releases.</p>
+				<p>This method requires a file decompression tool capable of opening .jar files, such as <a href="https://www.7-zip.org">7-zip</a> (Windows)
+				or <a href="https://www.keka.io/en/">Keka</a> (macOS).  To begin, open NetworkAddonMod_Setup_Version__NAMVERSION__.jar using your file decompression tool.</p>
+				<p>The NAM's contents are located in the "installation" subfolder.  The current installer uses a series of character flags at the start of directory names, in order
+				to instruct the installer how to order the options, whether they're mandatory or optional, etc.</p>
+				<p>Numbers preceded by the at sign ("@"), i.e. "@1", "@2", etc., are merely being ordered with this flag.</p>
+				<p>Any directory with the caret ("^") in front of the name (or behind a "@" ordering flag) is mandatory.</p>
+				<p>Any directory with the exclamation mark ("!") in front of the name (or behind a "@" ordering flag) is not installed by default.</p>
+				<p>Any options where the equal sign ("=") and the dash ("-") are present are mutually exclusive--only one should be installed
+				(the "=" option is the default).</p>
+				<p>The "@1^Core" directory is required.  All other folders have options within them.  At least one of the folders starting with "0 NAM Controller" must be installed.  With "4 Automata Controller#",
+				and "9 Traffic Simulator#", simply select one of the options inside and discard the
+				rest, as these are straight up mutually exclusive one another.  Within "8 Texture and Drive Side Support", keep "z_Common Files", then select either "-EU" (for EU textures) or "=US" (for US textures), and within "-EU" or "=US", get rid of the "_RightSide" or "_LeftSide" (whichever does not coincide with the side the vehicles in your game drive), and decide if you want any (or none) of the other subfolder options (i.e. Cul-De-Sacs).</p>
+				<p>The Automata Controller basically affects the display of the visual traffic in-game--Standard is going to be the lightest, while Radical is going to be the heaviest, Persistent makes the automata visuals last longer, and the 24-Hour modifiers handle whether the display is constant, or follows the data for the 24-Hour clock in-game.</p>
+				<p>The Texture and Drive Side Support includes four options, depending on whether you want to use US/North American textures or Euro/International Textures, and the drive side of your game (RHD or LHD, which should match your selection for the NAM Controller).</p>
+				<p>With the Traffic Simulator, these are ordered by the "@1" and the like in order of lowest capacity option to highest. Medium is the default.</p>
+				<p>With 5 DataView Options#, there's two subfolders. Both are just straight up options, with nothing mutually exclusive. You can probably just leave this one as is, unless you really don't like the Data View changes.</p>
+				<p>With 6 Miscellaneous, the two mutually exclusive options to watch out for are Extended Station Queries (there's four options in there--very subtle differences between them), and Maxis Transit Lots\Airport Capacity Adjustment#, which has three options (Default, Medium, and Large). And the Hole Diggers and Raisers are very much recommended--they have lots of use outside regular NAM usage, too.</p>
+				<p>With 3 Additional Transit Stations, this depends on if you want more transit stations beyond the game's default, and what the NAM adds by default for certain additional override networks. There should be no harm in either adding this one in whole, or leaving it out altogether, and if there's certain added stations you like/don't like, you can go in and customize this later.</p>
+				<p>2 Additional Network Features is by far the biggest area of the installer. This contains all the actual network feature addons in the mod. Most networks/network groups will have a "Base Features" folder, which really ought to be mandatory, as it contains a lot of the NAM's basic additions to each network, along with any Wide Radius/Multi Radius Curves and Fractional Angles, as well as Roundabout options for the various road-type networks.</p>
+				<p>The main "mutually exclusive" option to look out for here is with the Maxis Highways (there's two options--@1=Default Style, which keeps the Maxis Highways' default look and adds the NAM's additions for it, or @2-Maxis Highway Override (RHW-Style), which completely reskins the Maxis Highways, removes access to the default interchanges, and replaces them with RHW-style modular interchange functionality and a few new ploppable interchanges. Using the RealHighway (RHW) option is pretty much mandatory if you're going this route).</p>
+				<p>The other ones to watch out for are in Water Transport, where the Canal Addon Mod (CAN-AM) has two mutually-exclusive styles (@1=Callagrafx Style and @2-SimGoober Style), and there's also quite a few "non-default" options in Roads, One-Way Roads, and Avenues.</p>
+				<p>Those three non-default options are !Legacy Auto Avenue Turn Lanes (these are the old auto-turn lanes that appear on Avenue x Avenue intersections--largely considered "deprecated" now, as they can interfere with some newer functionality), !Legacy Semi-Auto Road Turn Lanes (the "semi-auto" replacement for the old auto-turn lanes on Road x Road intersections, which now appear by clicking over Road x Road + and T-intersections with the One-Way Road tool, also somewhat "deprecated" now), and !One-Way Road Arrow Plugins. These Arrow Plugins are mostly just a matter of taste, and, despite the folder naming, actually supposed to be mutually exclusive. "Elimination" gets rid of the arrows entirely, "Reduction" hides some of them (and actually impacts the base functionality of the OWR network to some degree), while "Single Arrows" replaces the default double arrows with just a single arrow (which looks nicer on the NWM networks).</p>
+				<p>The rest of 2 Additional Network Features is pretty self-explanatory, though micromanagement of these options is not recommended, since it is possible to produce a broken installation this way. RealRailway is the only/default option for Rail now, it's best to go all or nothing on RealHighways (RHW) and the Road, One-Way Road, and Avenue folder's "Additional Widths and Turn Lanes" option (which contains the Network Widening Mod and FLEX Turn Lanes). And if something says "Legacy" but it's not prefixed with "!", it's probably safest to install it, as it pertains to being able to keep certain older, deprecated content working, if you've built it with previous versions.</p>
+			</div>
+
+			<div class="bannerfull"><h4 id="oldversions">Distribution and Old Versions</h4></div>
+			<div class="regtext">
+				<p>The NAM Team only provides support and allows distribution of the most recent NAM version.  With the exception of older non-English language versions (which
+				are supported by their respective sites, not the NAM Team) and the macOS legacy version, no technical support will be provided to users of prior versions of the NAM, nor will any past versions of the NAM
+				be made available for download, by request or otherwise. The team does not keep an official archive of past releases, and does not have the resources
+				to answer questions regarding them.  Each release includes improvements across the board to features new and old, is designed to be as compatible with cities
+				built with previous versions as is humanly possible, and is also intended to improve the end user experience.  Old releases are inherently inferior, and not "simpler"
+				or "easier" to use.</p>
+
+				<p>Users wanting a smaller feature set, due to technical limitations, or unfamiliarity with the NAM's vast options, should instead seek to
+				install NAM Lite, or fewer options in the current NAM.</p>
+
+				<p>Users wishing to hold onto old versions should back them up in their personal archives.  Note again that no technical support will be provided for this,
+				nor may any user or site redistribute any old versions.</p>
+			</div>
+
+
+			<div class="bannerfull"><h4>Network Addon Mod - Credits</h4></div>
+
+			<div class="regtext">
+				<p>The following named members of Simtropolis, the SC4Evermore Discord, and the former SC4 Devotion and SimCityPlaza have, for whatever particular reason, been specifically included here for their special contributions during the NAM's history. Very special thanks goes towards them in the making, supplying, &amp;/or supporting of this mod &amp;/or its contents possible in one way shape or another:</p>
+				<p><strong>The NAM Team and Associates (Active Members as of NAM __NAMVERSION__)</strong></p>
+				<ul>
+					<li>Abigail</li>
+					<li>b22rian</li>
+					<li>CaptCity</li>
+					<li>CasperVg</li>
+					<li>Clarence</li>
+					<li>DebussyMan</li>
+					<li>dragonsteincole</li>
+					<li>Durfsurn</li>
+					<li>eggman121</li>
+					<li>Eric Blair</li>
+					<li>EstGuy/Cheese</li>
+					<li>Flann</li>
+					<li>Girafe</li>
+					<li>Haljackey</li>
+					<li>hugues aroux</li>
+					<li>IDS2</li>
+					<li>Indiana Joe</li>
+					<li>KaenOkami/Amaterasu</li>
+					<li>Kel9509</li>
+					<li>Kitsune</li>
+					<li>Lucario Boricua</li>
+					<li>matias93</li>
+					<li>McDuell</li>
+					<li>memo</li>
+					<li>metarvo</li>
+					<li>mgb204</li>
+					<li>MushyMushy</li>
+					<li>Naomi57</li>
+					<li>noahclem</li>
+					<li>nos.17</li>
+					<li>null45</li>
+					<li>Ramona Brie</li>
+					<li>ReLynx/RemRinka</li>
+					<li>rivit</li>
+					<li>Ryan B.</li>
+					<li>saus tartar</li>
+					<li>Shadow Assassin</li>
+					<li>Simizen</li>
+					<li>smf_16</li>
+					<li>Tarkus</li>
+					<li>Tyberius06</li>
+					<li>Ulisse Wolf</li>
+				</ul>
+				<p><strong>NAM Founders</strong></p>
+				<ul>
+					<li>Redlotus</li>
+					<li>the7trumpets</li>
+					<li>Tropod</li>
+				</ul>
+				<p><strong>NAM Logo</strong></p>
+				<ul>
+					<li>MadSim (original design)</li>
+					<li>Ramona Brie (updated design)</li>
+				</ul>
+				<p><strong>Tool Programmers</strong></p>
+				<ul>
+					<li>cjmarshall</li>
+					<li>CorinaMarie</li>
+					<li>DarkMatter</li>
+					<li>daeley</li>
+					<li>fafalone</li>
+					<li>Flann</li>
+					<li>GoaSkin</li>
+					<li>Ilive</li>
+					<li>jondor</li>
+					<li>memo</li>
+					<li>null45</li>
+					<li>rivit</li>
+					<li>simrolle</li>
+					<li>Stefan79</li>
+					<li>Tropod</li>
+					<li>wouanagaine</li>
+				</ul>
+				<p><strong>NAM Installer</strong></p>
+				<ul>
+					<li>Andreas Roth</li>
+					<li>daeley</li>
+					<li>frimi2</li>
+					<li>Tarkus</li>
+					<li>wouanagaine</li>
+					<li>z</li>
+				</ul>
+				<p><strong>NAM Controller Compiler</strong></p>
+				<ul>
+					<li>memo</li>
+				</ul>
+				<p><strong>NAM Partner Program Members</strong></p>
+				<ul>
+					<li>FoxieHikari</li>
+					<li>robmtl (Rob's Red Hot Spot)</li>
+					<li>saus tartar</li>
+				</ul>
+				<p><strong>Contributors &amp; Testers</strong></p>
+				<ul>
+					<li>3ddz</li>
+					<li>Alidonkey</li>
+					<li>Andreas Roth</li>
+					<li>andreharv</li>
+					<li>Andy80586</li>
+					<li>AngryMozart</li>
+					<li>Anthracite</li>
+					<li>APSMS</li>
+					<li>ardecila</li>
+					<li>ArkenbergeJoe</li>
+					<li>BigSlark</li>
+					<li>Bipin</li>
+					<li>bladeberkman</li>
+					<li>blahdy</li>
+					<li>Blue Lightning</li>
+					<li>brenda_xne</li>
+					<li>buddybud</li>
+					<li>choco</li>
+					<li>Chrisim</li>
+					<li>Chrno</li>
+					<li>Ciuu96</li>
+					<li>Colyn</li>
+					<li>compdude787</li>
+					<li>CorinaMarie</li>
+					<li>CryinG.FreeM4n</li>
+					<li>daeley</li>
+					<li>deathtopumpkins</li>
+					<li>DebussyMan</li>
+					<li>DuskTrooper</li>
+					<li>dedgren</li>
+					<li>Dexter</li>
+					<li>Diggis</li>
+					<li>DJPTiger</li>
+					<li>Dragonshardz</li>
+					<li>Droric</li>
+					<li>ebina</li>
+					<li>elgoalio_29</li>
+					<li>Filasimo</li>
+					<li>frimi2</li>
+					<li>fukuda</li>
+					<li>Ganaram Inukshuk</li>
+					<li>Generalcamo</li>
+					<li>gizmo28</li>
+					<li>Glenni</li>
+					<li>GoaSkin</li>
+					<li>Ill Tonkso</li>
+					<li>isii94</li>
+					<li>J-dub</li>
+					<li>jdenm8</li>
+					<li>jeronij</li>
+					<li>Jiwoahn</li>
+					<li>jmvl</li>
+					<li>joelyboy911</li>
+					<li>Jonathan</li>
+					<li>jondor</li>
+					<li>jplumbley</li>
+					<li>Junspud</li>
+					<li>Karybdis</li>
+					<li>kes5219</li>
+					<li>Khiyana</li>
+					<li>manchou</li>
+					<li>MandelSoft</li>
+					<li>Mero90</li>
+					<li>michi_cc</li>
+					<li>MIncroabl</li>
+					<li>moonlinght</li>
+					<li>morifari</li>
+					<li>mott</li>
+					<li>mtg</li>
+					<li>Murakumon</li>
+					<li>Nardo69</li>
+					<li>nooneatall</li>
+					<li>north country dude</li>
+					<li>Olasz</li>
+					<li>paulvmontfort</li>
+					<li>pierreh</li>
+					<li>plunderer</li>
+					<li>praiodan</li>
+					<li>qurlix</li>
+					<li>rickmastfan67</li>
+					<li>riiga</li>
+					<li>Ripptide</li>
+					<li>RogerRon91</li>
+					<li>royal</li>
+					<li>Sabretooth78</li>
+					<li>samerton</li>
+					<li>Schleicher68</li>
+					<li>SDA</li>
+					<li>Seaman</li>
+					<li>SimCitySquare</li>
+					<li>Simmer2</li>
+					<li>sithlrd98</li>
+					<li>smoncrie</li>
+					<li>Spocky</li>
+					<li>squidi</li>
+					<li>Stefan79</li>
+					<li>superhands</li>
+					<li>swamp_ig</li>
+					<li>Swamper77</li>
+					<li>Swordmaster</li>
+					<li>Teirusu</li>
+					<li>The_Great_Chozo</li>
+					<li>TheCouncill0r/dicko6</li>
+					<li>TheMurderousCricket</li>
+					<li>Thorvin</li>
+					<li>threestooges</li>
+					<li>titanicbuff</li>
+					<li>toja</li>
+					<li>Tropod</li>
+					<li>vester</li>
+					<li>vil</li>
+					<li>vortext</li>
+					<li>woodb3kmaster</li>
+					<li>wouanagaine</li>
+					<li>xannepan</li>
+					<li>xxdita</li>
+					<li>Xyloxadoria</li>
+					<li>z</li>
+				</ul>
+
+				<h5 class="leftheading">Special Thanks</h5>
+
+				<p>Webmaster &amp; administration staff at Simtropolis, SC4Evermore, ModDB, and the former SC4 Devotion and SimCityPlaza.</p>
+				<p>All (other) members of original Simtropolis Modd Squad, especially the Modd Squad founders.</p>
+				<p>And possibly others who may not have been mentioned. If your name has been forgotten or you're not on the list, then drop us a line,
+				as it has been difficult to keep track of anyone/everyone that may of helped somewhere along the lines.</p>
+				<p>And to the community itself, we would also like to thank you for your support, making mods such as this possible too.  We're
+				still at it after almost <strong>20 years</strong> thanks to you!</p>
+				<p>And last but not least, a thanks for the Maxis individuals too, for the [paid] work that they did and released 23 years ago. Here's to 23 more. ;-)</p>
+
+				<div class="footer"><p>&nbsp;©2026 NAM Team</p></div>
+			</div>
+		</div>
+	</body>
+</html>

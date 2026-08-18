@@ -2,6 +2,7 @@ package com.sc4nam.pathing.nwmpaths
 
 import io.github.memo33.metarules.pathing._, Bezier._
 import com.sc4nam.module.syntax.{Network, Segment}
+import com.sc4nam.module.{NetworkProperties => NP}
 import io.github.memo33.scdbpf, scdbpf.Sc4Path.Cardinal, Cardinal._, scdbpf.DbpfUtil.RotFlip._, scdbpf.Sc4Path.{TransportType => TT}
 import PathCreator.{SPath, SPaths}
 
@@ -62,14 +63,19 @@ abstract class CommonIntersection extends Intersection {
 }
 
 class PlusIntersection(major: Segment, minor: Segment) extends CommonIntersection {
-  private[this] val sortedPaths: Map[Cardinal, SPaths] =
+  private val sortedPaths: Map[Cardinal, SPaths] =
     NetworkConfig.straightPaths(major, minor).groupBy(_.dir).view.mapValues(_ sortWith PlusIntersection.rightToLeftSorter).toMap
-  private[this] def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
-  private[this] def hasTurningLane(c: Cardinal) = network(c).isTla
-  private[this] def isBidirectionalOneway(c: Cardinal) = {
+  private def network(c: Cardinal) = if (c == North || c == South) major.network else minor.network
+  private def hasTurningLane(c: Cardinal) = network(c).isTla
+  private def isBidirectionalOneway(c: Cardinal) = {
     val n = network(c)
     n == Network.Onewayroad || n.base.exists(_ == Network.Onewayroad)
   }
+
+  override val MaxRadius =
+    if (NP.isTripleTile(major.network) || NP.isTripleTile(minor.network)) 6.0
+    else if (NP.isDoubleTile(major.network) && NP.isDoubleTile(minor.network)) 14.0
+    else 8.5  // single/single or mixed double/single
 
   protected def rightTurnPaths(c: Cardinal, tt: TT) = if (tt == TT.Sim || tt == TT.Car) {
     sortedPaths(c).find(_.tt == tt).toSeq

@@ -18,7 +18,7 @@ object CompileAllMetarules {
     flexfly.CompileFlexFlyResources.main(Array.empty)
 
     // Compilation of metarule code.
-    RegenerateTileOrientationCache.withCache().acquireFor(compileMetarulesOnce)
+    RegenerateTileOrientationCache.withCache(compileMetarulesOnce)
 
     // For the time being, INRUL compilation is disabled as the INRULs have been
     // merged into single files again.
@@ -31,24 +31,22 @@ object CompileAllMetarules {
 
   /** Add additional rule generators here.
     */
-  def compileMetarulesOnce(tileOrientationCache: collection.mutable.Map[Int, Set[RotFlip]]): Unit = {
+  def compileMetarulesOnce(tileOrientationCache: RuleTransducer.TileOrientationCache): Unit = {
     LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RRW metarule code")
     CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RHW metarule code")
     CompileRhwCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling NWM metarule code")
+    CompileNwmCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling GLR metarule code")
+    CompileGlrCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling SAM metarule code")
     CompileSamCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling Onslope metarule code")
     CompileOnslopeCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling Roundabout metarule code")
+    CompileRoundaboutCode.start(tileOrientationCache = tileOrientationCache)
   }
 }
-
-// Compile individually with `sbt "runMain com.sc4nam.module.CompileRhwCode"`.
-object CompileRhwCode extends AbstractMain {
-  lazy val resolve: IdResolver = new MiscResolver orElse new RealRailwayResolver orElse new RhwResolver orElse new NwmResolver
-  val generator = new RhwRuleGenerator(_)
-  lazy val file = new File("target/RhwMetaGenerated_MANAGED.txt")
-}
-
