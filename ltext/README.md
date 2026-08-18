@@ -4,8 +4,7 @@ This guide covers translation of the mod's [LText](https://wiki.sc4devotion.com/
 
 ## Translating the NAM
 
-The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for internationalization,
-so any compatible tool can be used for translating, such as Poedit.
+The NAM uses the [gettext](https://en.wikipedia.org/wiki/Gettext) standard for internationalization and recommends the use of Poedit for translation tasks.
 
 ### Poedit
 
