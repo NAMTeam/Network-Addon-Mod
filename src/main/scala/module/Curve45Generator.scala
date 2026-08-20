@@ -67,13 +67,7 @@ import NetworkProperties.{isSingleTile, isDoubleTile, owr4AltNetwork}
  */
 
 trait Stability { this: RuleGenerator =>
-  def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
-    if (rule(0) == rule(2) || rule(1) == rule(3)) {
-      Seq(rule)
-    } else { // TODO handle corner cases
-      Seq(rule, Rule(rule(0), rule(3), rule(2), rule(3)), Rule(rule(2), rule(1), rule(2), rule(3)))
-    }
-  }
+  export NetworkProperties.stabilize
 }
 
 trait Curve45Generator extends Stability { this: RuleGenerator =>

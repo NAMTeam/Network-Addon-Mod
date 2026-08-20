@@ -170,4 +170,25 @@ object NetworkProperties {
     else throw new IllegalArgumentException(s"network is not OWR-like: $network")
   }
 
+  /** For rules where all four tiles differ, this adds two stability rules (which are equivalent to the reflections). */
+  def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
+    if (rule(0) == rule(2) || rule(1) == rule(3)) {
+      Seq(rule)
+    } else { // TODO handle corner cases
+      Seq(
+        rule,
+        Rule(rule(0), rule(3), rule(2), rule(3)),
+        Rule(rule(2), rule(1), rule(2), rule(3)),
+      )
+    }
+  }
+
+  /** Replaces a rule by two others that represent in/out directions in order to carry an override in both directions. */
+  def reflections(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
+    Seq(
+      Rule(rule(2)       , rule(1)       , rule(2)       , rule(3)       ),
+      Rule(rule(3) * R2F0, rule(0) * R2F0, rule(3) * R2F0, rule(2) * R2F0),
+    )
+  }
+
 }
