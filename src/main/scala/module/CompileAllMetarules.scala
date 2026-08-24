@@ -34,6 +34,8 @@ object CompileAllMetarules {
   def compileMetarulesOnce(tileOrientationCache: RuleTransducer.TileOrientationCache): Unit = {
     LOGGER.info("compiling FlexFly metarule code")
     flexfly.CompileFlexFlyCode.start(tileOrientationCache = tileOrientationCache)
+    LOGGER.info("compiling HRW metarule code")
+    CompileHybridRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RRW metarule code")
     CompileRealRailwayCode.start(tileOrientationCache = tileOrientationCache)
     LOGGER.info("compiling RHW metarule code")

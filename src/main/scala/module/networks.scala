@@ -136,6 +136,15 @@ object Network extends scalaenum.Enum {
   val Hrw   = new Network(0, Symmetrical, None)
   val L1Hrw = new Network(1, Symmetrical, None)
   val L2Hrw = new Network(2, Symmetrical, None)
+  //val Hrws   = new Network(0, Symmetrical, None)
+  //val L1Hrws = new Network(1, Symmetrical, None)
+  //val L2Hrws = new Network(2, Symmetrical, None)
+  //val Hrwa   = new Network(0, AvenueLike, None)
+  //val L1Hrwa = new Network(1, AvenueLike, None)
+  //val L2Hrwa = new Network(2, AvenueLike, None)
+  //val Hrwsa   = new Network(0, AvenueLike, None)
+  //val L1Hrwsa = new Network(1, AvenueLike, None)
+  //val L2Hrwsa = new Network(2, AvenueLike, None)
 
   // viaducts
   val L1Road        = new Network(1, Symmetrical, Some(Road))
