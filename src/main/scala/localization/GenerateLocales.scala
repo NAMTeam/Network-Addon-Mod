@@ -27,7 +27,7 @@ object GenerateLocales {
     "sv" -> 9,
     "ja" -> 0xF,
     "zh_CN" -> 0x11,
-    "zh_TW" -> 0x12,
+    // "zh_TW" -> 0x12,
     "ko" -> 0x14,
     "pt" -> 0x23)
 
