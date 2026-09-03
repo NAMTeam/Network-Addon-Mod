@@ -22,7 +22,7 @@ object ViaductResolver {
       0x1200 -> Onewayroad,    0x1210 -> L1Onewayroad,    0x1220 -> L2Onewayroad,
       0x1300 -> Avenue,        0x1310 -> L1Avenue,        0x1320 -> L2Avenue,
       0x1400 -> Groundhighway,                            0x1420 -> Highway,
-      0x1500 -> Rail,          0x1505 -> Str,
+      0x1500 -> Rail,          0x1505 -> Str,             0x1910 -> Hrw,
       0x1700 -> Glr1,          0x1705 -> Glr3,            0x1720 -> Lightrail, // 0x1730 L4 Lightrail
       0x1800 -> Glr2,          0x1805 -> Glr4,
       0x1905 -> Hsr,           0x1925 -> L2Hsr,           0x1920 -> Monorail, // 0x1930 L4 Monorail
