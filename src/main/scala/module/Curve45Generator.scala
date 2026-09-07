@@ -67,13 +67,7 @@ import NetworkProperties.{isSingleTile, isDoubleTile, owr4AltNetwork}
  */
 
 trait Stability { this: RuleGenerator =>
-  def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
-    if (rule(0) == rule(2) || rule(1) == rule(3)) {
-      Seq(rule)
-    } else { // TODO handle corner cases
-      Seq(rule, Rule(rule(0), rule(3), rule(2), rule(3)), Rule(rule(2), rule(1), rule(2), rule(3)))
-    }
-  }
+  export NetworkProperties.stabilize
 }
 
 trait Curve45Generator extends Stability { this: RuleGenerator =>
@@ -81,7 +75,7 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
   def hasSharedDiagCurve(n: Network): Boolean = n.typ == AvenueLike
 
   def hasSharpCurveBase(n: Network, inside: Boolean): Boolean = {
-    n.base.exists(b => b == Dirtroad || b == Road || b == Onewayroad)
+    n.base.exists(b => b == Dirtroad || b == Road || b == Onewayroad || b == Lightrail)
   }
 
   def hasR1CurveBase(n: Network): Boolean = {
@@ -90,7 +84,8 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
 
   def hasSharpCurve(n: Network, inside: Boolean): Boolean = {
     n >= L1Rhw2 && n <= L4Rhw6s || n >= Tla3 && n <= Nrd4 || n == Tla5 || n == Rd6 || n == Owr5 ||
-    inside && (n == Ave6 || n == Ave8)
+    inside && (n == Ave6 || n == Ave8) ||
+    GlrNetworks.contains(n)
   }
 
   def hasMiniCurve(n: Network, inside: Boolean): Boolean = NetworkProperties.hasMiniCurve(n, inside = inside)
@@ -108,7 +103,8 @@ trait Curve45Generator extends Stability { this: RuleGenerator =>
   }
 
   def has90Curve(n: Network, inside: Boolean): Boolean = {
-    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4 || n.isOwr4Like))
+    n.isNwm && (isSingleTile(n) || inside && (n == Tla5 || n == Rd4 || n.isOwr4Like)) ||
+    GlrNetworks.contains(n)
   }
 
   def createCurve45Rules(main: Network): Unit = {

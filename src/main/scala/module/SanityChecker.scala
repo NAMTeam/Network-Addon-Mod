@@ -71,7 +71,7 @@ object SanityChecker {
   // should be compared to.
   val metaruleFiles = Set(
     "Sec7h0_OnslopeMetaGenerated_MANAGED.txt",
-    // "Sec10e_GlrMetaGenerated_MANAGED.txt",
+    "Sec10e_GlrMetaGenerated_MANAGED.txt",
   )
 
   def isMetaruleFile(path: Path): Boolean = {
