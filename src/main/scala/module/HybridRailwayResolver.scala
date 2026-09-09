@@ -43,6 +43,7 @@ class HybridRailwayResolver extends IdResolver {
     //add(0x5daeae80, Hrw6dxdL2~SE)
 
 	// ----- OxO -----
+    add(0x5da40e00, Rail~CS & Monorail~CN)
     // -- Street --
     add(0x5dac1000, Street~WE & L1Hrw~NS)
     add(0x5dae1000, Street~WE & L2Hrw~NS)
@@ -631,21 +632,7 @@ class HybridRailwayResolver extends IdResolver {
     add(0x5daecc0a, Sam10~WS & L2Hrw~ES)
     // -- SAM-11 --
     add(0x5daccd00, Sam11~WS & L1Hrw~ES)
-    add(0x5daecd00, Sam11~WS & L2Hrw~ES)
-
-    //Xtend Tiles
-    //add(0x5da90000, Xt0~EW)
-    //add(0x5da90100, Xt1~EW)
-    //add(0x5da90200, Xt2~EW)
-    //add(0x5da90300, Xt3~EW)
-    //add(0x5da90400, Xt4~EW)
-    //add(0x5da90500, Xt5~EW)
-    //add(0x5da90600, Xt6~EW)
-    //add(0x5da90700, Xt7~EW)
-    //add(0x5da90800, Xt8~EW)
-
-    
-    
+    add(0x5daecd00, Sam11~WS & L2Hrw~ES) 
 
     builder.result()
   }

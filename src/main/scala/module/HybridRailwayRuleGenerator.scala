@@ -45,15 +45,25 @@ class HybridRailwayRuleGenerator(var context: RuleTransducer.Context) extends Ru
       for ( over <- Override){
       // L1 Hrw
       Rules += L1Hrw~WE | (Hrw ~> L1Hrw)~WE        // orth continue
-      Rules += L1Hrw~WE | Hrw~CW | % | L1Hrw~WE    // orth stub convert
+      Rules += L1Hrw~WE | Hrw~CW | % | L1Hrw~WE
+      Rules += L1Hrw~WE | Hrw~WC | % | L1Hrw~WE     // orth stub convert
       Rules += L1Hrw~ES | (Hrw ~> L1Hrw)~NW        // diag continue
       Rules += L1Hrw~ES | Hrw~CNW | % | L1Hrw~NW   // diag stub convert
       // L2 Hrw
       Rules += L2Hrw~WE | (Hrw ~> L2Hrw)~WE        // orth continue
-      Rules += L2Hrw~WE | Hrw~CW | % | L2Hrw~WE    // orth stub convert
+      Rules += L2Hrw~WE | Hrw~CW | % | L2Hrw~WE  
+      Rules += L2Hrw~WE | Hrw~WC | % | L2Hrw~WE    // orth stub convert
       Rules += L2Hrw~ES | (Hrw ~> L2Hrw)~NW        // diag continue
       Rules += L2Hrw~ES | Hrw~CNW | % | L2Hrw~NW   // diag stub convert
       //for ( over <- Overhang ) {
+      Rules += L1Hrw~WE | Rail~CW & Monorail~CE | % | L1Hrw~WE 
+      Rules += L2Hrw~WE | Rail~CW & Monorail~CE | % | L2Hrw~WE
+      Rules += L1Hrw~WE | Rail~WC & Monorail~EC | % | L1Hrw~WE        
+      Rules += L2Hrw~WE | Rail~WC & Monorail~EC | % | L2Hrw~WE
+      Rules += L1Hrw~WE | Rail~WC & Monorail~CE | % | L1Hrw~WE 
+      Rules += L2Hrw~WE | Rail~WC & Monorail~CE | % | L2Hrw~WE
+      Rules += L1Hrw~WE | Rail~EC & Monorail~WC | % | L1Hrw~WE        
+      Rules += L2Hrw~WE | Rail~EC & Monorail~WC | % | L2Hrw~WE
       //Rules ++= stabilize(Rhw6s~WE & L1Hrw~NS | Hrw~EW | % | over)
       //Rules ++= stabilize(Rhw6s~WE & L1Hrw~NS | L1Hrw~EW | % | over)
       //}
