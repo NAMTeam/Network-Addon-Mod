@@ -28,7 +28,7 @@ object RhwResolver {
     Onewayroad    -> 0x1200, L1Onewayroad  -> 0x1210, L2Onewayroad  -> 0x1220,
     Avenue        -> 0x1300, L1Avenue      -> 0x1310, L2Avenue      -> 0x1320,
     Groundhighway -> 0x1400,                          Highway       -> 0x1420,
-    Rail          -> 0x1500, Str           -> 0x1505, Hrw           -> 0x1910,
+    Rail          -> 0x1500, Str           -> 0x1505, Hrw           -> 0x1900,
     //Ttr         -> 0x1600, //Qtr         -> 0x1605,
     Glr1          -> 0x1700, Glr3          -> 0x1705, Lightrail     -> 0x1720,
     Glr2          -> 0x1800, Glr4          -> 0x1805,
