@@ -63,6 +63,22 @@ def check_cons_layout(cell_lines, checktype_lines, cons_lines):
         bad_cells = [xy for xy, c in cell_layout.items()
                      if static_cells.get(c) and
                      (xy not in cons_layout or cons_layout[xy] == '.')]  # cell != '.' but constraint == '.'
+    if not bad_cells:
+        num_static = sum(static_cells.values())  # True: 1, False: 0
+        if num_static > 1:  # in particular ignores handles of FLEX pieces
+            # Detects cases where constraint == '+' and the constraint is adjacent to something like '|' or '-'
+            bad_cells = [(x, y) for (x, y), c in cons_layout.items()
+                         if c == '+' and
+                         (static_c := cell_layout.get((x, y))) != '+' and
+                         static_cells.get(static_c) and
+                         any(adj_c == ('|' if horiz else '-')
+                             for (adj_c, horiz) in [
+                                 (cons_layout[adj_xy], horiz)
+                                 for (adj_xy, horiz) in [((x+1, y), True), ((x-1, y), True), ((x, y+1), False), ((x, y-1), False)]
+                                 if adj_xy in cons_layout
+                                 and static_cells.get(cell_layout.get(adj_xy))
+                             ])
+                         ]
     if bad_cells:
         raise Exception(f"Potential sinkhole bug in ConsLayout at cells {' '.join(map(str, bad_cells))}:\n{_stringify_layout(cell_lines)}  ---\n{_stringify_layout(cons_lines)}")
 
