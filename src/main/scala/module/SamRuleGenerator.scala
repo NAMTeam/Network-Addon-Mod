@@ -7,14 +7,6 @@ import NetworkProperties._
 
 class SamRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator with Adjacencies with Stability {
 
-  private def reflections(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
-    Seq(
-      Rule(rule(2), rule(1), rule(2), rule(3)),
-      Rule(rule(3) * R2F0, rule(0) * R2F0, rule(3) * R2F0, rule(2) * R2F0)
-    )
-  }
-
-
   private def createSamLarge45Curve(sam: Network): Unit = {
     // large 45 curve (4x3)
     // *                                        (diag)

@@ -12,8 +12,12 @@ object CrossingGenerator {
       if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
          (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty || GlrNetworks.contains(minor))) ||
          (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr)) ||
-         GlrNetworks.contains(main) && (minor.isRhw || minor.isNwm /*|| minor == main*/)
-         ) && intersectionAllowed(main, minor)
+         GlrNetworks.contains(main) && (
+           (Road + Street + Onewayroad + Avenue + Rail + L1Dtr + L2Dtr).contains(minor) ||
+           minor.isRhw || minor.isNwm /*|| minor == main*/ ||
+           (SamNetworks.contains(minor) && minor != Sam1 && main != Glr3 && main != Glr4)  // Sam × Glr3/Glr4 may be activated later
+         )
+       ) && intersectionAllowed(main, minor)
     } yield minor
   }
 }

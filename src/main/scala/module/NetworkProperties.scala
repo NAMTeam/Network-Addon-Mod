@@ -91,6 +91,9 @@ object NetworkProperties {
       rhwIntersectionAllowed(a, b)
     } else if ((nonintersectingNetworks.contains(a) || nonintersectingNetworks.contains(b)) && a.height == b.height) {
       false
+    } else if (a == Lightrail && (b == L1Dtr || b == L2Dtr)
+           || (b == Lightrail && (a == L1Dtr || a == L2Dtr))) {
+      false  // currently L1Dtr/L2Dtr can only cross Glr, but not Lightrail
     } else {
       true // TODO
     }
@@ -168,6 +171,27 @@ object NetworkProperties {
     if (network == Owr4) Owr4m
     else if (network == Owr4m) Owr4
     else throw new IllegalArgumentException(s"network is not OWR-like: $network")
+  }
+
+  /** For rules where all four tiles differ, this adds two stability rules (which are equivalent to the reflections). */
+  def stabilize(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
+    if (rule(0) == rule(2) || rule(1) == rule(3)) {
+      Seq(rule)
+    } else { // TODO handle corner cases
+      Seq(
+        rule,
+        Rule(rule(0), rule(3), rule(2), rule(3)),
+        Rule(rule(2), rule(1), rule(2), rule(3)),
+      )
+    }
+  }
+
+  /** Replaces a rule by two others that represent in/out directions in order to carry an override in both directions. */
+  def reflections(rule: Rule[SymTile]): Seq[Rule[SymTile]] = {
+    Seq(
+      Rule(rule(2)       , rule(1)       , rule(2)       , rule(3)       ),
+      Rule(rule(3) * R2F0, rule(0) * R2F0, rule(3) * R2F0, rule(2) * R2F0),
+    )
   }
 
 }
