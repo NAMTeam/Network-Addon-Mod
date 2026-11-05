@@ -74,20 +74,15 @@ object OwrMidblockCrosswalks {
 object RhwMidblockCrosswalks {
   val rhw2Base = 0x5C5F0000
   val rhw4Base = 0x5C5B8000
-  // as Street, with a 3 instead of the outer 4 of Size 2
-  val roadFlags: Map[Int, IntFlags] = MidblockCrosswalks.nsFlags.toMap + (0x080 -> (2,3,2,1))
+  // as Street, except Size 2: the outer edge is a 3 instead of a 4 and the east side a 1. Without the 1, the
+  // flipped (LHD) tile has the flags of the tile turned by 180 degrees and the two cannot be told apart.
+  val roadFlags: Map[Int, IntFlags] = MidblockCrosswalks.nsFlags.toMap + (0x080 -> (2,3,1,1))
   // RHW-4 tile offset -> (RHW-2 tile it comes from, traffic running north)
   val rhw4Tiles: List[(Int, Int, Boolean)] = List(
     (0x000, 0x000, true), (0x100, 0x080, true), (0x180, 0x080, false),
     (0x200, 0x100, true), (0x300, 0x180, true), (0x380, 0x180, false))
   def rhw4Tile(src: Int, up: Boolean): Tile = (if (up) Rhw4~SN else Rhw4~NS) & Road~roadFlags(src)
-  // the LHD tiles are the RHD ones flipped. Size 2 is not mirror-symmetric, so its mirrored flags need rules of their own
-  private def mirror(f: IntFlags): IntFlags = {
-    val m = (x: Int) => if (x == 1) 3 else if (x == 3) 1 else x
-    (m(f._3), m(f._2), m(f._1), m(f._4))
-  }
-  val weFlags: List[IntFlags] = (roadFlags.values.toList ++ roadFlags.values.map(mirror))
-    .flatMap(f => List((f._4, f._1, f._2, f._3), (f._2, f._3, f._4, f._1))).distinct
+  val weFlags: List[IntFlags] = roadFlags.values.toList.flatMap(f => List((f._4, f._1, f._2, f._3), (f._2, f._3, f._4, f._1))).distinct
 }
 
 class MidblockCrosswalkResolver extends IdResolver {
