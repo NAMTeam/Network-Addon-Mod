@@ -26,20 +26,23 @@ AddTypes     = 6106, 16106, 26106, 36106 ;Size 1 Triple Avenue/Road
 AddTypes     = 6107, 16107, 26107, 36107 ;Size 2 Triple Avenue/Road
 AddTypes     = 6108, 16108, 26108, 36108 ;Size 3 Triple Avenue/Road
 
-;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR ONEWAYROAD AND UNIDIRECTIONAL NWM --
-;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
-;AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Single One-way (OWR-1,2,3)
-;AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Single One-way (OWR-1,2,3)
-;AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Single One-way (OWR-1,2,3)
-;AddTypes     = 610C, 1610C, 2610C, 3610C ;Size 1 Double OWR (OWR-4,5,6)
-;AddTypes     = 610D, 1610D, 2610D, 3610D ;Size 2 Double OWR (OWR-4,5,6)
-;AddTypes     = 610E, 1610E, 2610E, 3610E ;Size 3 Double OWR (OWR-4,5,6)
+;-- Mid-block Crosswalks for OWR and unidirectional NWM --
+AddTypes     = 6109, 16109, 26109, 36109 ;Size 1 Single OWR (OWR-1/2/3)
+AddTypes     = 610A, 1610A, 2610A, 3610A ;Size 2 Single OWR (OWR-1/2/3)
+AddTypes     = 610B, 1610B, 2610B, 3610B ;Size 3 Single OWR (OWR-1/2/3)
+AddTypes     = 610C, 1610C, 2610C, 3610C ;Size 1 Double OWR (OWR-4/5)
+AddTypes     = 610D, 1610D, 2610D, 3610D ;Size 2 Double OWR (OWR-4/5)
+AddTypes     = 610E, 1610E, 2610E, 3610E ;Size 3 Double OWR (OWR-4/5)
 
-;[FUTURE WORK] -- MID-BLOCK CROSSWALK FOR STREET AND STREET ADDON MOD --
-;Section reserved for future development (Phase 2 of Mid-block Crosswalks)
-;AddTypes     = 610F, 1610F, 2610F, 3610F ;Size 1 Street/SAM
-;AddTypes     = 6110, 16110, 26110, 36110 ;Size 2 Street/SAM
-;AddTypes     = 6111, 16111, 26111, 36111 ;Size 3 Street/SAM
+;-- Mid-block Crosswalks for Street and Street Addon Mod --
+AddTypes     = 610F, 1610F, 2610F, 3610F ;Size 1 Street/SAM
+AddTypes     = 6110, 16110, 26110, 36110 ;Size 2 Street/SAM
+AddTypes     = 6111, 16111, 26111, 36111 ;Size 3 Street/SAM
+
+;-- Mid-block Crosswalks for RHW-2 and RHW-4 --
+AddTypes     = 6180, 16180, 26180, 36180 ;Size 1 RHW-2/RHW-4
+AddTypes     = 6181, 16181, 26181, 36181 ;Size 2 RHW-2/RHW-4
+AddTypes     = 6182, 16182, 26182, 36182 ;Size 3 RHW-2/RHW-4
 
 ;[FUTURE WORK] -- AT-GRADE RAILWAY AND PEDESTRIAN CROSSINGS --
 ;Section reserved for future development (Phase 3 of Mid-block Crosswalks)
@@ -473,4 +476,504 @@ CopyFrom    = 0x6108
 Rotate		= 2
 [HighwayIntersectionInfo_0x00036108]
 CopyFrom    = 0x6108
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006109]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 1 Single OWR - Supports OWR, OWR-1 and OWR-3
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5FD005
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5FD005
+PreviewEffect = preview_midblock_owr_single_size1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01040103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03010304 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD005
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x00016109]
+CopyFrom    = 0x6109
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026109]
+CopyFrom    = 0x6109
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036109]
+CopyFrom    = 0x6109
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610A]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 2 Single OWR - Supports OWR, OWR-1 and OWR-3
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5FD105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5FD105
+PreviewEffect = preview_midblock_owr_single_size2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01020303 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03010102 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x03020103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x01010302 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD105
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001610A]
+CopyFrom    = 0x610A
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610A]
+CopyFrom    = 0x610A
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610A]
+CopyFrom    = 0x610A
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610B]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 3 Single OWR - Supports OWR, OWR-1 and OWR-3
+;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5C5FD205
+;###LHD###Piece = 0.0, 0.0, 0, 1, 0x5C5FD205
+PreviewEffect = preview_midblock_owr_single_size3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01020103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03010302 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x04040103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x04010304 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD205
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001610B]
+CopyFrom    = 0x610B
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610B]
+CopyFrom    = 0x610B
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610B]
+CopyFrom    = 0x610B
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610C]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 1 Double OWR - Two OWRs, supports OWR-4 and OWR-5
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5FD405
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C5FD405
+PreviewEffect = preview_midblock_owrdouble_size1
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.be.
+CellLayout=..^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01040103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03030301 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x01030101 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03010304 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD405
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001610C]
+CopyFrom    = 0x610C
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610C]
+CopyFrom    = 0x610C
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610C]
+CopyFrom    = 0x610C
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610D]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 2 Double OWR - Two OWRs, supports OWR-4 and OWR-5
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5FD505
+;###LHD###Piece = -16.0, 16.0, 0, 1, 0x5C5FD505
+PreviewEffect = preview_midblock_owrdouble_size2
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.be.
+CellLayout=.cf.
+CellLayout=..^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01020303 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03000101 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x03020103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x01000301 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x01030300 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03010102 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = f - road: 0x03030100 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = f - road: 0x01010302 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD505
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001610D]
+CopyFrom    = 0x610D
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610D]
+CopyFrom    = 0x610D
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610D]
+CopyFrom    = 0x610D
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610E]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 3 Double OWR - Two OWRs, supports OWR-4 and OWR-5
+;###RHD###Piece = 0.0, 0.0, 0, 0, 0x5C5FD605
+;###LHD###Piece = -16.0, 0.0, 0, 1, 0x5C5FD605
+PreviewEffect = preview_midblock_owrdouble_size3
+
+CellLayout=....
+CellLayout=..a<
+CellLayout=.be.
+CellLayout=.cf.
+CellLayout=..^.
+
+CheckType = a - onewayroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01020103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03000301 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x04040103 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x04000301 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = e - road: 0x01030100 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = e - road: 0x03010302 onewayroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = f - road: 0x04030100 onewayroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = f - road: 0x04010304 onewayroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=....
+ConsLayout=..+<
+ConsLayout=....
+ConsLayout=....
+ConsLayout=..^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5FD605
+Costs        = 0
+OneWayDir 	= 2
+
+[HighwayIntersectionInfo_0x0001610E]
+CopyFrom    = 0x610E
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610E]
+CopyFrom    = 0x610E
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610E]
+CopyFrom    = 0x610E
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x0000610F]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 1 Street - Supports Street and SAM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F1005
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F1005
+PreviewEffect = preview_midblock_street_single_size1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - street: 0x02000200
+;###RHD###CheckType = b - road: 0x01040104 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03040304 street: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F1005
+Costs        = 0
+
+[HighwayIntersectionInfo_0x0001610F]
+CopyFrom    = 0x610F
+Rotate		= 1
+[HighwayIntersectionInfo_0x0002610F]
+CopyFrom    = 0x610F
+Rotate		= 2
+[HighwayIntersectionInfo_0x0003610F]
+CopyFrom    = 0x610F
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006110]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 2 Street - Supports Street and SAM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F1085
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F1085
+PreviewEffect = preview_midblock_street_single_size2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - street: 0x02000200
+;###RHD###CheckType = b - road: 0x01020402 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03020402 street: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x04020102 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x04020302 street: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F1085
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016110]
+CopyFrom    = 0x6110
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026110]
+CopyFrom    = 0x6110
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036110]
+CopyFrom    = 0x6110
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006111]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 3 Street - Supports Street and SAM
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F1105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F1105
+PreviewEffect = preview_midblock_street_single_size3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.d.
+CellLayout=.^.
+
+CheckType = a - street: 0x02000200
+;###RHD###CheckType = b - road: 0x01040404 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03040404 street: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x01020102 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x03020302 street: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x04040104 street: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x04040304 street: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F1105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016111]
+CopyFrom    = 0x6111
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026111]
+CopyFrom    = 0x6111
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036111]
+CopyFrom    = 0x6111
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006180]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 1 RHW-2 - Supports RHW-2 and RHW-4
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F0005
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F0005
+PreviewEffect = preview_midblock_rhw2_single_size1
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.^.
+
+CheckType = a - dirtroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01040104 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03040304 dirtroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F0005
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016180]
+CopyFrom    = 0x6180
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026180]
+CopyFrom    = 0x6180
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036180]
+CopyFrom    = 0x6180
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006181]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 2 RHW-2 - Supports RHW-2 and RHW-4
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F0085
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F0085
+PreviewEffect = preview_midblock_rhw2_single_size2
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.^.
+
+CheckType = a - dirtroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01020302 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03020102 dirtroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x03020102 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x01020302 dirtroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F0085
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016181]
+CopyFrom    = 0x6181
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026181]
+CopyFrom    = 0x6181
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036181]
+CopyFrom    = 0x6181
+Rotate		= 3
+
+;Mid-block Crosswalks - phase 2
+[HighwayIntersectionInfo_0x00006182]
+;Added by caspervg 2026-nov-05
+;Mid-block Crosswalk Size 3 RHW-2 - Supports RHW-2 and RHW-4
+;###RHD###Piece = 0.0, 16.0, 0, 0, 0x5C5F0105
+;###LHD###Piece = 0.0, 16.0, 0, 1, 0x5C5F0105
+PreviewEffect = preview_midblock_rhw2_single_size3
+
+CellLayout=...
+CellLayout=.a<
+CellLayout=.b.
+CellLayout=.c.
+CellLayout=.d.
+CellLayout=.^.
+
+CheckType = a - dirtroad: 0x02000200
+;###RHD###CheckType = b - road: 0x01040404 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = b - road: 0x03040404 dirtroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = c - road: 0x01020102 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = c - road: 0x03020302 dirtroad: 0x02000200, 0xffffffff optional
+;###RHD###CheckType = d - road: 0x04040104 dirtroad: 0x02000200, 0xffffffff optional
+;###LHD###CheckType = d - road: 0x04040304 dirtroad: 0x02000200, 0xffffffff optional
+
+ConsLayout=...
+ConsLayout=.+<
+ConsLayout=...
+ConsLayout=...
+ConsLayout=...
+ConsLayout=.^.
+
+AutoTileBase=	0x55387000
+ReplacementIntersection = 0, 0
+PlaceQueryID = 0x5C5F0105
+Costs        = 0
+
+[HighwayIntersectionInfo_0x00016182]
+CopyFrom    = 0x6182
+Rotate		= 1
+[HighwayIntersectionInfo_0x00026182]
+CopyFrom    = 0x6182
+Rotate		= 2
+[HighwayIntersectionInfo_0x00036182]
+CopyFrom    = 0x6182
 Rotate		= 3
