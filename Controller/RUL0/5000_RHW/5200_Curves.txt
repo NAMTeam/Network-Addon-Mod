@@ -6,7 +6,10 @@ AddTypes     	= 5222, 45222, 15222, 55222, 25222, 65222, 35222, 75222 ;FLEX-MRC 
 AddTypes     	= 5223, 45223, 15223, 55223, 25223, 65223, 35223, 75223 ;FLEX-MRC R4 45
 AddTypes     	= 5224, 45224, 15224, 55224, 25224, 65224, 35224, 75224 ;FLEX-MRC R5 45
 AddTypes     	= 521F, 1521F, 2521F, 3521F, 4521F, 5521F, 6521F, 7521F ;RHW-4S S Curve [7x2]
-AddTypes		= 5230, 15230, 25230, 35230, 45230, 55230, 65230, 75230 ;RHW-4S Basketweave-[7x2]
+;5230 RHW-4S Basketweave: out of the Tab loop (its RUL0 section and INRULs stay). Replaced by:
+AddTypes		= 5236, 45236, 15236, 55236, 25236, 65236, 35236, 75236 ;FLEX Basketweave: L0 RHW-4 L1 RHW-4/MIS/RHW-6S [7x2]
+AddTypes		= 5237, 45237, 15237, 55237, 25237, 65237, 35237, 75237 ;FLEX Basketweave: L0 MIS L1 RHW-4/MIS/RHW-6S [7x2]
+AddTypes		= 5235, 45235, 15235, 55235, 25235, 65235, 35235, 75235 ;FLEX Basketweave: L0 RHW-6S L1 RHW-4/MIS/RHW-6S [7x2]
 AddTypes 		= 5200, 45200, 15200, 55200, 25200, 65200, 35200, 75200 ;RHW-4 Double Curve
 AddTypes     	= 5201, 45201, 15201, 55201, 25201, 65201, 35201, 75201 ;RHW-4 Outer Curve
 AddTypes     	= 5202, 45202, 15202, 55202, 25202, 65202, 35202, 75202 ;RHW-4 Inner Curve
@@ -2380,6 +2383,7 @@ Rotate		= 2
 CopyFrom    = 0x4521F
 Rotate		= 1
 
+;RHW-4S Basketweave 0x5230: kept for the cities and players that use it. The FLEX Basketweaves 0x5235 to 0x5237 after its rotations replace it in the Tab loop.
 [HighwayIntersectionInfo_0x00005230]
 ;RHW-S Curve FLEX Basketweave
 Piece = -0.0, -96.0, 0, 1, 0x5793A02F
@@ -2443,6 +2447,192 @@ Rotate		= 2
 [HighwayIntersectionInfo_0x00075230]
 CopyFrom    = 0x45230
 Rotate		= 1
+
+;FLEX Basketweaves
+[HighwayIntersectionInfo_0x00005236]
+;FLEX Basketweave: L0 RHW-4 L1 RHW-4/MIS/RHW-6S
+Piece = -0.0, -96.0, 0, 1, 0x5793A0CF
+PreviewEffect = preview_rhw4_flex_orth_bw_7_001
+
+CellLayout = .......
+CellLayout = .......
+CellLayout = .ab....
+CellLayout = .bc....
+CellLayout = .de....
+CellLayout = .cc....
+CellLayout = .df....
+CellLayout = .ca....
+CellLayout = .gaZ..<
+CellLayout = ...^...
+
+CheckType = Z - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x04000200, 0xffffffff optional
+CheckType = c - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = d - dirtroad: 0x04040400, 0xffffffff optional
+CheckType = e - dirtroad: 0x04000404, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000404, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000400, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ...+..<
+ConsLayout = ...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5793A0CF
+Costs = 100
+[HighwayIntersectionInfo_0x00015236]
+CopyFrom    = 0x5236
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025236]
+CopyFrom    = 0x5236
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035236]
+CopyFrom    = 0x5236
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045236]
+CopyFrom    = 0x5236
+Transpose	= 1
+PreviewEffect = preview_rhw4_flex_orth_bw_7_001_m
+[HighwayIntersectionInfo_0x00055236]
+CopyFrom    = 0x45236
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065236]
+CopyFrom    = 0x45236
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075236]
+CopyFrom    = 0x45236
+Rotate		= 1
+[HighwayIntersectionInfo_0x00005237]
+;FLEX Basketweave: L0 MIS L1 RHW-4/MIS/RHW-6S
+Piece = -0.0, -96.0, 0, 1, 0x5792A0CF
+PreviewEffect = preview_mis_flex_orth_bw_7_001
+
+CellLayout = .......
+CellLayout = .......
+CellLayout = .aa....
+CellLayout = .bb....
+CellLayout = .cd....
+CellLayout = .ee....
+CellLayout = .fg....
+CellLayout = .ba....
+CellLayout = .eeZ..<
+CellLayout = ...^...
+
+CheckType = Z - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x04000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = c - dirtroad: 0x04040400, 0xffffffff optional
+CheckType = d - dirtroad: 0x04000404, 0xffffffff optional
+CheckType = e - dirtroad: 0x02000400, 0xffffffff optional
+CheckType = f - dirtroad: 0x04040200, 0xffffffff optional
+CheckType = g - dirtroad: 0x02000204, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ...+..<
+ConsLayout = ...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5792A0CF
+Costs = 100
+[HighwayIntersectionInfo_0x00015237]
+CopyFrom    = 0x5237
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025237]
+CopyFrom    = 0x5237
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035237]
+CopyFrom    = 0x5237
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045237]
+CopyFrom    = 0x5237
+Transpose	= 1
+PreviewEffect = preview_mis_flex_orth_bw_7_001_m
+[HighwayIntersectionInfo_0x00055237]
+CopyFrom    = 0x45237
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065237]
+CopyFrom    = 0x45237
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075237]
+CopyFrom    = 0x45237
+Rotate		= 1
+[HighwayIntersectionInfo_0x00005235]
+;FLEX Basketweave: L0 RHW-6S L1 RHW-4/MIS/RHW-6S
+Piece = -0.0, -96.0, 0, 1, 0x5794A0CF
+PreviewEffect = preview_rhw6s_flex_orth_bw_7_001
+
+CellLayout = .......
+CellLayout = .......
+CellLayout = .ab....
+CellLayout = .bc....
+CellLayout = .de....
+CellLayout = .fc....
+CellLayout = .ge....
+CellLayout = .cf....
+CellLayout = .faZ..<
+CellLayout = ...^...
+
+CheckType = Z - dirtroad: 0x00000000
+CheckType = a - dirtroad: 0x02000200, 0xffffffff optional
+CheckType = b - dirtroad: 0x04000200, 0xffffffff optional
+CheckType = c - dirtroad: 0x04000400, 0xffffffff optional
+CheckType = d - dirtroad: 0x04040400, 0xffffffff optional
+CheckType = e - dirtroad: 0x04000404, 0xffffffff optional
+CheckType = f - dirtroad: 0x02000400, 0xffffffff optional
+CheckType = g - dirtroad: 0x04040200, 0xffffffff optional
+
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = .......
+ConsLayout = ...+..<
+ConsLayout = ...^...
+
+AutoTileBase = 0x55387000
+PlaceQueryID = 0x5794A0CF
+Costs = 100
+[HighwayIntersectionInfo_0x00015235]
+CopyFrom    = 0x5235
+Rotate  	= 1
+[HighwayIntersectionInfo_0x00025235]
+CopyFrom    = 0x5235
+Rotate  	= 2
+[HighwayIntersectionInfo_0x00035235]
+CopyFrom    = 0x5235
+Rotate  	= 3
+[HighwayIntersectionInfo_0x00045235]
+CopyFrom    = 0x5235
+Transpose	= 1
+PreviewEffect = preview_rhw6s_flex_orth_bw_7_001_m
+[HighwayIntersectionInfo_0x00055235]
+CopyFrom    = 0x45235
+Rotate		= 3
+[HighwayIntersectionInfo_0x00065235]
+CopyFrom    = 0x45235
+Rotate		= 2
+[HighwayIntersectionInfo_0x00075235]
+CopyFrom    = 0x45235
+Rotate		= 1
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;-(Multi-Radius-FLEX_Curves)-;
