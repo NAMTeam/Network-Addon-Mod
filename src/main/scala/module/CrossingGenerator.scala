@@ -9,7 +9,7 @@ object CrossingGenerator {
   def crossingNetworksOf(main: Network): Iterator[Network] = {
     for {
       minor <- Network.values.iterator
-      if minor != Subway && !isHrw(minor) && (main.isRhw || minor.isRhw ||
+      if minor != Subway && !isHrw(minor) && !CrosswalkNetworks.contains(minor) && (main.isRhw || minor.isRhw ||
          (main.isNwm && (minor.isRhw || minor.isNwm || minor.base.isEmpty || GlrNetworks.contains(minor))) ||
          (main.isNwm && isSingleTile(main) && main.height == 0 && (minor == L1Dtr || minor == L2Dtr)) ||
          GlrNetworks.contains(main) && (

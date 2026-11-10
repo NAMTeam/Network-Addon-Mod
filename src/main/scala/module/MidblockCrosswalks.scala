@@ -3,110 +3,73 @@ package com.sc4nam.module
 import io.github.memo33.metarules.meta._
 import syntax._, Network._, Flags._, RotFlip._, Implicits._
 
-/** Mid-block crosswalks for Street/SAM, OWR and RHW-2 (RUL0 0x6109-0x6111 and 0x6180-0x6182).
-  *
-  * Each crosswalk tile is the real network crossed by a FLEX dummy Road with special flags, like the Road
-  * crosswalks (0x6100-0x6102) use a dummy Street. The dummy Road gives the along-road edges a Road connection,
-  * so the HAWK heads switch with the Road signal phase. Flags are (w, n, e, s) for a network running
-  * north-south (rotation 0). The rules here convert the crosswalk tiles next to SAM, NWM OWR-1/OWR-3, OWR-5
-  * and RHW-4.
+/** Mid-block crosswalks for Street/SAM, OWR and RHW-2 (RUL0 0x6109-0x6111 and 0x6180-0x6182), converting
+  * next to SAM, OWR-1/OWR-3, OWR-5 and RHW-4. Tiles are for a road running north-south, pieces list their
+  * tiles from north to south.
   */
 object MidblockCrosswalks {
-  /** Street/SAM tiles: Size 1 at +0x000, Size 2 at +0x080 (the south tile turned by 180 degrees), Size 3
-    * center at +0x100 and approach at +0x180 (the south one turned). */
-  val streetBase = 0x5C5F1000
-  val sams: List[(Network, Int)] = List(Sam1, Sam2, Sam3, Sam4, Sam5, Sam6, Sam7, Sam8, Sam9, Sam10, Sam11).zipWithIndex.map {
-    case (sam, i) => (sam, streetBase + (i + 1) * 0x1000)
+  /** The models are not mirror-symmetric (signs stand right of the traffic); only rotations keep this marker. */
+  val rhd: Segment = CrosswalkRhd~(2,2,2,2)
+
+  // Street, SAM and RHW-2 (two-way)
+  val size1:  Tile = Crosswalk1~WE  & rhd
+  val size2:  Tile = Crosswalk2~EW  & rhd  // outer edge north
+  val size3m: Tile = Crosswalk3m~WE & rhd
+  val size3:  Tile = Crosswalk3~EW  & rhd  // outer edge north
+  val twoWayTiles: Seq[(Int, Tile)] = Seq(0x000 -> size1, 0x080 -> size2, 0x100 -> size3m, 0x180 -> size3)
+  val twoWayPieces: Seq[Seq[Tile]] = Seq(
+    Seq(size1),
+    Seq(size2, size2 * R2F0),
+    Seq(size3, size3m, size3 * R2F0))
+
+  // One-Way Road, traffic running north; the approach tiles are turned by 180 degrees in the piece
+  val owrSize1:   Tile = Crosswalk1~WE  & CrosswalkDir~SN & rhd
+  val owrSize2:   Tile = Crosswalk2~EW  & CrosswalkDir~SN & rhd  // departing, outer edge north
+  val owrSize2In: Tile = Crosswalk2~EW  & CrosswalkDir~NS & rhd  // approach
+  val owrSize3m:  Tile = Crosswalk3m~WE & CrosswalkDir~SN & rhd
+  val owrSize3In: Tile = Crosswalk3~EW  & CrosswalkDir~NS & rhd  // approach (Size 3 has no departing tile)
+  val owrTiles: Seq[(Int, Tile)] =
+    Seq(0x000 -> owrSize1, 0x100 -> owrSize2, 0x180 -> owrSize2In, 0x200 -> owrSize3m, 0x380 -> owrSize3In)
+  val owrPieces: Seq[Seq[Tile]] = Seq(
+    Seq(owrSize1),
+    Seq(owrSize2, owrSize2In * R2F0),
+    Seq(owrSize3m, owrSize3In * R2F0))
+
+  /** The same pieces with traffic running south. */
+  def reversed(pieces: Seq[Seq[Tile]]): Seq[Seq[Tile]] = pieces.map(_.reverse.map(_ * R2F0))
+
+  val streetBase = 0x5C5F1000  // SAM-n at streetBase + n * 0x1000
+  val streetNets: Seq[(Network, Int)] = (Street :: SamNetworks.toList).zipWithIndex.map {
+    case (net, i) => net -> (streetBase + i * 0x1000)
   }
-  val nsFlags: List[(Int, IntFlags)] = List(
-    0x000 -> (4,1,4,1),
-    0x080 -> (2,4,2,1),
-    0x100 -> (2,1,2,1),
-    0x180 -> (4,4,4,1),
-  )
-  // the same tiles for a Street running west-east, plus their 180-degree turns
-  val weFlags: List[IntFlags] = List(
-    (1,4,1,4),
-    (1,2,4,2), (4,2,1,2),
-    (1,2,1,2),
-    (1,4,4,4), (4,4,1,4),
-  )
-}
+  // the Double OWR pieces place the same tiles in both columns
+  val owrNets: Map[Network, Int] = Map(Onewayroad -> 0x5C5FD000, Owr1 -> 0x5C5FE000, Owr3 -> 0x5C5FF000)
+  val owr5A = 0x5C5B0000  // Owr5~NS
+  val owr5B = 0x5C5B1000  // Owr5~SN
 
-/** OWR tiles. They are directional (traffic runs north in rotation 0), so the dummy carries a 3 on one
-  * side to make all four rotations distinct: Size 1 at +0x000, Size 2 departing at +0x100 and approach at +0x180,
-  * Size 3 center at +0x200 and approach at +0x380 (Size 3 has no departing tile). On Size 2 the outer edge is a 3,
-  * not a 4, so that it counts as a Road connection. The Maxis OWR tiles are at 0x5C5FD000, next to NWM OWR-1
-  * and OWR-3 they convert to the tiles at 0x5C5FE000 and 0x5C5FF000.
-  */
-object OwrMidblockCrosswalks {
-  val nets: List[(Network, Int)] = List(Onewayroad -> 0x5C5FD000, Owr1 -> 0x5C5FE000, Owr3 -> 0x5C5FF000)
-  val nsFlags: List[(Int, IntFlags)] = List(
-    0x000 -> (4,1,3,1),
-    0x100 -> (2,3,3,1),
-    0x180 -> (3,3,2,1),
-    0x200 -> (2,1,3,1),
-    0x380 -> (3,4,4,1),
-  )
-  // right-hand column of the Double OWR pieces: the 3 on the west side, facing the left column
-  val nsFlagsR: List[(Int, IntFlags)] = List(
-    0x000 -> (3,1,1,1),
-    0x100 -> (3,3,0,1),
-    0x180 -> (0,3,3,1),
-    0x200 -> (3,1,0,1),
-    0x380 -> (0,4,3,1),
-  )
-  private def rot1(f: IntFlags): IntFlags = (f._4, f._1, f._2, f._3)
-  private def rot3(f: IntFlags): IntFlags = (f._2, f._3, f._4, f._1)
-  // for a road running west-east: both quarter turns, as none of the tiles is symmetric
-  val weFlags: List[IntFlags] = nsFlags.flatMap { case (_, f) => List(rot1(f), rot3(f)) }
-  val weFlagsAll: List[IntFlags] = (nsFlags ++ nsFlagsR).flatMap { case (_, f) => List(rot1(f), rot3(f)) }
-
-  /** NWM OWR-5: two OWR tiles, the east one turned by 180 degrees. Half A = Owr5~NS, half B = Owr5~SN. */
-  val owr5A = 0x5C5B0000
-  val owr5B = 0x5C5B1000
-}
-
-/** RHW-2 tiles (same layout as Street) and their RHW-4 conversion. RHW-4 is dragged once per direction, so
-  * next to it the RHW-2 tiles convert to directional tiles laid out like the OWR ones (plus a Size 3
-  * departing tile at +0x300, as the RHW-2 piece is two-way). Rhw4~NS has traffic running south.
-  */
-object RhwMidblockCrosswalks {
+  // RHW-2 uses the Street tiles; next to RHW-4 they become directional (Rhw4~SN runs north)
   val rhw2Base = 0x5C5F0000
   val rhw4Base = 0x5C5B8000
-  // as Street, except Size 2: the outer edge is a 3 instead of a 4 and the east side a 1. Without the 1, the
-  // flipped (LHD) tile has the flags of the tile turned by 180 degrees and the two cannot be told apart.
-  val roadFlags: Map[Int, IntFlags] = MidblockCrosswalks.nsFlags.toMap + (0x080 -> (2,3,1,1))
-  // RHW-4 tile offset -> (RHW-2 tile it comes from, traffic running north)
-  val rhw4Tiles: List[(Int, Int, Boolean)] = List(
-    (0x000, 0x000, true), (0x100, 0x080, true), (0x180, 0x080, false),
-    (0x200, 0x100, true), (0x300, 0x180, true), (0x380, 0x180, false))
-  def rhw4Tile(src: Int, up: Boolean): Tile = (if (up) Rhw4~SN else Rhw4~NS) & Road~roadFlags(src)
-  val weFlags: List[IntFlags] = roadFlags.values.toList.flatMap(f => List((f._4, f._1, f._2, f._3), (f._2, f._3, f._4, f._1))).distinct
+  val rhw4Tiles: Seq[(Int, Tile)] = Seq(
+    0x000 -> (size1  & Rhw4~SN),
+    0x100 -> (size2  & Rhw4~SN),  // departing
+    0x180 -> (size2  & Rhw4~NS),  // approach
+    0x200 -> (size3m & Rhw4~SN),
+    0x300 -> (size3  & Rhw4~SN),  // departing
+    0x380 -> (size3  & Rhw4~NS))  // approach
 }
 
 class MidblockCrosswalkResolver extends IdResolver {
   import MidblockCrosswalks._
   val tileMap: scala.collection.Map[Tile, IdTile] = {
     val builder = new ResolverBuilder
-    for ((net, base) <- (Street, streetBase) :: sams; (off, f) <- nsFlags) {
-      builder.add(base + off, net~NS & Road~f)
-    }
-    for ((net, base) <- OwrMidblockCrosswalks.nets; (off, f) <- OwrMidblockCrosswalks.nsFlags) {
-      builder.add(base + off, net~NS & Road~f)
-    }
-    for ((off, f) <- OwrMidblockCrosswalks.nsFlagsR) {
-      builder.add(OwrMidblockCrosswalks.nets.head._2 + off, Onewayroad~NS & Road~f)
-    }
-    for ((off, f) <- OwrMidblockCrosswalks.nsFlags ++ OwrMidblockCrosswalks.nsFlagsR) {
-      builder.add(OwrMidblockCrosswalks.owr5A + off, Owr5~NS & Road~f)
-      builder.add(OwrMidblockCrosswalks.owr5B + off, Owr5~SN & Road~f)
-    }
-    for ((off, f) <- RhwMidblockCrosswalks.roadFlags) {
-      builder.add(RhwMidblockCrosswalks.rhw2Base + off, Dirtroad~NS & Road~f)
-    }
-    for ((off, src, up) <- RhwMidblockCrosswalks.rhw4Tiles) {
-      builder.add(RhwMidblockCrosswalks.rhw4Base + off, RhwMidblockCrosswalks.rhw4Tile(src, up))
+    for ((net, base) <- streetNets; (off, t) <- twoWayTiles) builder.add(base + off, t & net~NS)
+    for ((off, t) <- twoWayTiles) builder.add(rhw2Base + off, t & Dirtroad~NS)
+    for ((off, t) <- rhw4Tiles) builder.add(rhw4Base + off, t)
+    for ((net, base) <- owrNets; (off, t) <- owrTiles) builder.add(base + off, t & net~NS)
+    for ((off, t) <- owrTiles) {
+      builder.add(owr5A + off, t & Owr5~NS)
+      builder.add(owr5B + off, t & Owr5~SN)
     }
     builder.result()
   }
@@ -116,47 +79,28 @@ class MidblockCrosswalkResolver extends IdResolver {
 
 class MidblockCrosswalkRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator {
   import MidblockCrosswalks._
+
+  /** Converts the pieces on `from` next to `to`, entering from the west. */
+  private def convert(from: Network, to: Network, dir: IntFlags, pieces: Seq[Seq[Tile]]): Unit = {
+    val we = pieces.map(_.map(_ * R3F0))  // north-south to west-east
+    for (p <- we) {
+      Rules += to~dir | p.head & (from ~> to)~dir
+      for ((a, b) <- p.zip(p.tail)) Rules += a & to~dir | b & (from ~> to)~dir
+      Rules += p.last & to~dir | (from ~> to)~dir
+      for (q <- we) Rules += p.last & to~dir | q.head & (from ~> to)~dir
+    }
+    createRules()
+  }
+
   def start(): Unit = {
-    for ((sam, _) <- sams) {
-      for (x <- weFlags) {
-        Rules += sam~WE | (Street ~> sam)~WE & Road~x          // SAM into crosswalk
-        Rules += sam~WE & Road~x | (Street ~> sam)~WE          // crosswalk out to Street
-        for (y <- weFlags) {
-          Rules += sam~WE & Road~x | (Street ~> sam)~WE & Road~y   // multi-tile sizes, adjacent pieces
-        }
-      }
-      createRules()
+    for (sam <- SamNetworks) convert(Street, sam, WE, twoWayPieces)
+    for (nwm <- Seq(Owr1, Owr3); pieces <- Seq(owrPieces, reversed(owrPieces))) {
+      convert(Onewayroad, nwm, WE, pieces)
     }
-    for (nwm <- List(Owr1, Owr3)) {
-      for (x <- OwrMidblockCrosswalks.weFlags) {
-        Rules += nwm~WE | (Onewayroad ~> nwm)~WE & Road~x
-        Rules += nwm~WE & Road~x | (Onewayroad ~> nwm)~WE
-        for (y <- OwrMidblockCrosswalks.weFlags) {
-          Rules += nwm~WE & Road~x | (Onewayroad ~> nwm)~WE & Road~y
-        }
-      }
-      createRules()
+    for (half <- Seq(WE, EW); pieces <- Seq(owrPieces, reversed(owrPieces))) {  // OWR-5 halves A and B
+      convert(Onewayroad, Owr5, half, pieces)
     }
-    for (dir <- List(WE, EW)) {   // OWR-5 is asymmetric: both halves
-      for (x <- OwrMidblockCrosswalks.weFlagsAll) {
-        Rules += Owr5~dir | (Onewayroad ~> Owr5)~dir & Road~x
-        Rules += Owr5~dir & Road~x | (Onewayroad ~> Owr5)~dir
-        for (y <- OwrMidblockCrosswalks.weFlagsAll) {
-          Rules += Owr5~dir & Road~x | (Onewayroad ~> Owr5)~dir & Road~y
-        }
-      }
-    }
-    createRules()
-    for (dir <- List(WE, EW)) {   // RHW-4 is directional: both directions
-      for (x <- RhwMidblockCrosswalks.weFlags) {
-        Rules += Rhw4~dir | (Dirtroad ~> Rhw4)~dir & Road~x
-        Rules += Rhw4~dir & Road~x | (Dirtroad ~> Rhw4)~dir
-        for (y <- RhwMidblockCrosswalks.weFlags) {
-          Rules += Rhw4~dir & Road~x | (Dirtroad ~> Rhw4)~dir & Road~y
-        }
-      }
-    }
-    createRules()
+    for (dir <- Seq(WE, EW)) convert(Dirtroad, Rhw4, dir, twoWayPieces)
   }
 }
 
