@@ -37,19 +37,20 @@ object MirrorVariants {
     map
   }
 
-  def containsTlaFlags(tile: SymTile): Boolean = tile match {
-    case tile: Tile => tile.segs.exists(_.network.isTla)
+  def containsSpinFlags(tile: SymTile): Boolean = tile match {
+    case tile: Tile => tile.segs.exists(_.network.hasSpin)
     case _ => false
   }
   def shouldProjectTlaLeftOnly(tile: SymTile): Boolean = tile match {
-    case tile: Tile => tile.segs.forall(!_.network.isTla) || !tile.symmetries.quotient.exists(_.flipped)
+    case tile: Tile => tile.segs.forall(!_.network.hasSpin) ||
+      tile.segs.exists(_.network.isTla) && !tile.symmetries.quotient.exists(_.flipped)  // NWM TLA networks do not use different IDs for OxO (this seems a bit awkward here)
     case _ => true
   }
-  def projectTlaLeft(tile: SymTile): SymTile = tile match {
+  def projectSpinLeft(tile: SymTile): SymTile = tile match {
     case tile: Tile => NetworkProperties.projectTlaLeft(tile)
     case _ => tile
   }
-  def projectTlaRight(tile: SymTile): SymTile = tile match {
+  def projectSpinRight(tile: SymTile): SymTile = tile match {
     case tile: Tile => NetworkProperties.projectTlaRight(tile)
     case _ => tile
   }
@@ -62,15 +63,15 @@ object MirrorVariants {
                 rule.map(tile => mirrorVariants.get(tile).map(_._2).getOrElse(tile)),
               )
               else Iterator(rule)
-      hasTlaFlags = rule.exists(containsTlaFlags)
-      rule <- if (!hasTlaFlags) Iterator(rule)
-              else if (rule.forall(shouldProjectTlaLeftOnly)) Iterator(rule.map(projectTlaLeft))
-              else Iterator(rule.map(projectTlaLeft), rule.map(projectTlaRight))
+      hasSpinFlags = rule.exists(containsSpinFlags)
+      rule <- if (!hasSpinFlags) Iterator(rule)
+              else if (rule.forall(shouldProjectTlaLeftOnly)) Iterator(rule.map(projectSpinLeft))
+              else Iterator(rule.map(projectSpinLeft), rule.map(projectSpinRight))
       // We duplicate the rule by its R2F1 variant if there are TLAs or mirror
       // variants involved, as the left/right distinction can make them resolve
       // to different IDs (and the generators do not necessarily account for
       // this). For example, this is needed for Tla5/Avenue D×D.
-      rule <- if (hasMirrorVariant || hasTlaFlags) Iterator(rule, rule.map(_ * R2F1)).distinct
+      rule <- if (hasMirrorVariant || hasSpinFlags) Iterator(rule, rule.map(_ * R2F1)).distinct
               else Iterator(rule)
     } yield rule
   }

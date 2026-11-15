@@ -13,7 +13,7 @@ class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.m
   /** Add a new mapping from a `Tile` to an `IdTile`.
     * All unique rotations of the tile are added, as well.
     *
-    * If TLA networks are present (without left- or right-spins), by default both
+    * If TLA/spin networks are present (without left- or right-spins), by default both
     * projections are mapped to the same ID.
     *
     * If a tuple `(IdTile, IdTile)` is passed, these are taken to be mirror
@@ -32,16 +32,16 @@ class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.m
           (remap(elem._1) * rfInv, (i1 * rfInv, i2 * rfInv))
       }
 
-    // by default, we project any TLA flags if necessary and define the same ID for both
-    val tlaSegs = tile0.segs.filter(_.network.isTla)
+    // by default, we project any TLA/spin flags if necessary and define the same ID for both
+    val spinSegs = tile0.segs.filter(_.network.hasSpin)
     val tiles: Seq[Tile] =
-      if (tlaSegs.nonEmpty) {
-        if (tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.Default)) {
+      if (spinSegs.nonEmpty) {
+        if (spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.Default)) {
           Seq(NetworkProperties.projectTlaLeft(tile0), NetworkProperties.projectTlaRight(tile0))
-        } else if (tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.LeftSpin)) {
+        } else if (spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.LeftSpin)) {
           Seq(tile0)
         } else {
-          require(tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.RightSpin), s"The tile $tile0 ($idTiles) contains TLA flags of mixed kinds.")
+          require(spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.RightSpin), s"The tile $tile0 ($idTiles) contains TLA/spin flags of mixed kinds.")
           Seq(tile0)
         }
       } else Seq(tile0)

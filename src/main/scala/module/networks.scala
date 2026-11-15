@@ -10,6 +10,7 @@ class Network private (val height: Int, val typ: NetworkType, val base: Option[N
   def isRhw: Boolean = RhwNetworks.contains(this)
   def isNwm: Boolean = NwmNetworks.contains(this)
   def isTla: Boolean = this == Tla3 || this == Tla5 || this == Tla7m
+  def hasSpin: Boolean = isTla // add other networks here
   def isSymm: Boolean = typ == Symmetrical
   def isOwr4Like: Boolean = this == Owr4 || this == Owr4m
 }
