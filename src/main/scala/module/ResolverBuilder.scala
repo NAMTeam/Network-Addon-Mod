@@ -22,14 +22,16 @@ class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.m
     * mirrored or not (e.g. for TLA networks or D×O Rail×Avenue crossings).
     */
   def addOne(elem: (Tile, IdTile | (IdTile, IdTile))): this.type = {
-    val (tile0, idTiles) =  // with orientation R0F0
+    val (tile0, idTiles) =
+      // Earlier versions of the implementation used to normalize the rotations
+      // so that the IdTile appeared with R0F0. This caused problems when a tile
+      // should only appear in mirrored form, i.e. without R0F0 (e.g. LHD
+      // versions of Crosswalks), which could not be defined.
+      // Instead, such a normalization must now be performed add the call site
+      // by rerotating the passed Tile, so that the IdTile(s) can be taken as is.
       elem._2 match {
-        case i: IdTile =>
-          val rfInv = R0F0 / i.rf
-          (remap(elem._1) * rfInv, i * rfInv)
-        case (i1, i2) =>
-          val rfInv = R0F0 / i1.rf  // i2.rf should usually be the same
-          (remap(elem._1) * rfInv, (i1 * rfInv, i2 * rfInv))
+        case i: IdTile => (remap(elem._1), i)
+        case (i1, i2) => (remap(elem._1), (i1, i2))
       }
 
     // by default, we project any TLA/spin flags if necessary and define the same ID for both

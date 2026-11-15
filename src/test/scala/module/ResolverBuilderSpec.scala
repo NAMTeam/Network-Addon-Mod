@@ -32,5 +32,20 @@ class ResolverBuilderSpec extends AnyWordSpec with Matchers {
       }
       thrown.getStackTrace.head.getFileName.shouldBe("ResolverBuilderSpec.scala")
     }
+    "allow defining tiles that only appear mirrored (in R-spin variants)" in {
+      // actually this came up with midblock crosswalks, not TLAs
+      val builder = new ResolverBuilder()
+      builder.addOne((Tla5~EW).projectLeft  & Rhw4~NS, (IdTile(0x180, R0F0), IdTile(0x100, R0F1)))
+      builder.addOne((Tla5~EW).projectRight & Rhw4~NS, (IdTile(0x100, R0F1), IdTile(0x180, R0F0)))
+      val m = builder.result()
+      val expected0 = Map(
+        ((Tla5~EW).projectLeft  & Rhw4~NS) -> IdTile(0x180, R0F0),
+        ((Tla5~EW).projectRight & Rhw4~NS) -> IdTile(0x100, R0F1),  // i.e. R-projection appears flipped only
+        ((Tla5~EW).projectLeft  & Rhw4~SN) -> IdTile(0x100, R0F0),
+        ((Tla5~EW).projectRight & Rhw4~SN) -> IdTile(0x180, R0F1),  // i.e. R-projection appears flipped only
+      )
+      m.filter { (t, i) => i.rf.rot == 0 }.shouldBe(expected0)
+      m.shouldBe(expected0.flatMap((t, i) => Seq(R0F0, R1F0, R2F0, R3F0).map(rf => (t * rf, i * rf))))
+    }
   }
 }
