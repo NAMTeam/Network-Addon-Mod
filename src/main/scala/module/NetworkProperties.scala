@@ -107,12 +107,14 @@ object NetworkProperties {
     else RoadNetworks.contains(a) && RoadNetworks.contains(b)
   }
 
-  private def projectTla(t: Tile, p: Flags => Flags): Tile = t.copy(segs =
-    t.segs.map(s => if (!s.network.isTla) s else s.copy(flags = p(s.flags)))
+  private def projectSpin(t: Tile, p: Flags => Flags): Tile = t.copy(segs =
+    t.segs.map(s => if (!s.network.hasSpin) s else s.copy(flags = p(s.flags)))
     )
-  val projectTlaLeft = (t: Tile) => projectTla(t, _.spinLeft)
-  val projectTlaRight = (t: Tile) => projectTla(t, _.spinRight)
-  def unprojectTla(t: Tile): Tile = projectTla(t, (flags: Flags) => {
+  val projectSpinLeft = (t: Tile) => projectSpin(t, _.spinLeft)
+  val projectSpinRight = (t: Tile) => projectSpin(t, _.spinRight)
+  val projectTlaLeft = projectSpinLeft  // deprecated alias
+  val projectTlaRight = projectSpinRight  // deprecated alias
+  def unprojectSpin(t: Tile): Tile = projectSpin(t, (flags: Flags) => {
     val newMf = flags.manifest match {
       case Flag.LeftSpinBi => Flag.Bi
       case Flag.RightSpinBi => Flag.Bi
@@ -126,6 +128,17 @@ object NetworkProperties {
 
   val nonMirroredOnly: group.Quotient => Set[RotFlip] = _.filter(!_.flipped)
   val mirroredOnly: group.Quotient => Set[RotFlip] = _.filter(_.flipped)
+  val includeMirrors: group.Quotient => group.Quotient = {
+    import group.{Quotient => Q}
+    _ match {
+      case Q.Cyc1  => Q.Cyc2B
+      case Q.Cyc2A => Q.Dih2
+      case Q.Cyc2B => Q.Cyc2B
+      case Q.Cyc4  => Q.Dih4
+      case Q.Dih2  => Q.Dih2
+      case Q.Dih4  => Q.Dih4
+    }
+  }
 
   // /** Build combined flags for shared-tile diagonals. */
   // def shared(flags1: (Int, Int, Int, Int), flags2: (Int, Int, Int, Int)): (Int, Int, Int, Int) = {

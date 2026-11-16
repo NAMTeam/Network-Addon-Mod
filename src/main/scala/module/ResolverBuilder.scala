@@ -13,7 +13,7 @@ class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.m
   /** Add a new mapping from a `Tile` to an `IdTile`.
     * All unique rotations of the tile are added, as well.
     *
-    * If TLA networks are present (without left- or right-spins), by default both
+    * If TLA/spin networks are present (without left- or right-spins), by default both
     * projections are mapped to the same ID.
     *
     * If a tuple `(IdTile, IdTile)` is passed, these are taken to be mirror
@@ -22,26 +22,28 @@ class ResolverBuilder(remap: Tile => Tile = identity) extends scala.collection.m
     * mirrored or not (e.g. for TLA networks or D×O Rail×Avenue crossings).
     */
   def addOne(elem: (Tile, IdTile | (IdTile, IdTile))): this.type = {
-    val (tile0, idTiles) =  // with orientation R0F0
+    val (tile0, idTiles) =
+      // Earlier versions of the implementation used to normalize the rotations
+      // so that the IdTile appeared with R0F0. This caused problems when a tile
+      // should only appear in mirrored form, i.e. without R0F0 (e.g. LHD
+      // versions of Crosswalks), which could not be defined.
+      // Instead, such a normalization must now be performed add the call site
+      // by rerotating the passed Tile, so that the IdTile(s) can be taken as is.
       elem._2 match {
-        case i: IdTile =>
-          val rfInv = R0F0 / i.rf
-          (remap(elem._1) * rfInv, i * rfInv)
-        case (i1, i2) =>
-          val rfInv = R0F0 / i1.rf  // i2.rf should usually be the same
-          (remap(elem._1) * rfInv, (i1 * rfInv, i2 * rfInv))
+        case i: IdTile => (remap(elem._1), i)
+        case (i1, i2) => (remap(elem._1), (i1, i2))
       }
 
-    // by default, we project any TLA flags if necessary and define the same ID for both
-    val tlaSegs = tile0.segs.filter(_.network.isTla)
+    // by default, we project any TLA/spin flags if necessary and define the same ID for both
+    val spinSegs = tile0.segs.filter(_.network.hasSpin)
     val tiles: Seq[Tile] =
-      if (tlaSegs.nonEmpty) {
-        if (tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.Default)) {
+      if (spinSegs.nonEmpty) {
+        if (spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.Default)) {
           Seq(NetworkProperties.projectTlaLeft(tile0), NetworkProperties.projectTlaRight(tile0))
-        } else if (tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.LeftSpin)) {
+        } else if (spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.LeftSpin)) {
           Seq(tile0)
         } else {
-          require(tlaSegs.forall(s => s.flags.manifest.kind == Flag.Kind.RightSpin), s"The tile $tile0 ($idTiles) contains TLA flags of mixed kinds.")
+          require(spinSegs.forall(s => s.flags.manifest.kind == Flag.Kind.RightSpin), s"The tile $tile0 ($idTiles) contains TLA/spin flags of mixed kinds.")
           Seq(tile0)
         }
       } else Seq(tile0)

@@ -25,7 +25,7 @@ class RhwResolverSpec extends AnyWordSpec with Matchers {
         if (!tile.segs.exists(_.network.isTla)) {
           tile2.shouldBe(tile)
         } else {
-          unprojectTla(tile2).shouldBe(unprojectTla(tile))
+          unprojectSpin(tile2).shouldBe(unprojectSpin(tile))
         }
       }
     }

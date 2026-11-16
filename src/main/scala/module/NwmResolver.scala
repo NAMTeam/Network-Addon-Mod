@@ -203,7 +203,7 @@ class NwmResolver extends IdResolver {
 
       val pid = NwmResolver.nwmPieceId(n2)
       val (rev00, rev01, rev10, rev11) = (0x00, 0x05, 0x80, 0x85)  // for reversed directions of networks
-      val rfOxO = R0F0 / NwmResolver.orientationOffsetOxO(n + n2)
+      val rfOxO = NwmResolver.orientationOffsetOxO(n + n2)
       def asymmOrShared(network: Network) = !network.isSymm && network != Owr4m  // Owr4m shared diagonals use Owr4 IDs instead
       def asymmOrOwr4(network: Network) = network.typ == Asymmetrical || network.isOwr4Like && network != Owr4m  // Owr4 has fewer symmetries than Avenue
       def off8(id: Int): Int =  // map 8th digit 5 to 9, A to E
@@ -212,7 +212,7 @@ class NwmResolver extends IdResolver {
 
       // O×O
       if (!RhwResolver.greater(n2, n)) {
-        builder ++= withProjections(n~NS & n2~EW, IdTile(off8(NwmResolver.nwmRangeId(n) + pid + 0x1000), rfOxO))
+        builder ++= withProjections((n~NS & n2~EW) * rfOxO, IdTile(off8(NwmResolver.nwmRangeId(n) + pid + 0x1000), R0F0))
       }
       // O×D
       val id = NwmResolver.nwmRangeIdOverflow(n) + pid
