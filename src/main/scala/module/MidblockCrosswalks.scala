@@ -73,8 +73,8 @@ class MidblockCrosswalkResolver extends IdResolver {
     }
     builder.result()
   }
-  def isDefinedAt(t: Tile): Boolean = tileMap.isDefinedAt(t)
-  def apply(t: Tile): IdTile = tileMap(t)
+  export tileMap.isDefinedAt
+  export tileMap.apply
 }
 
 class MidblockCrosswalkRuleGenerator(var context: RuleTransducer.Context) extends RuleGenerator {
@@ -87,7 +87,6 @@ class MidblockCrosswalkRuleGenerator(var context: RuleTransducer.Context) extend
       Rules += to~dir | p.head & (from ~> to)~dir
       for ((a, b) <- p.zip(p.tail)) Rules += a & to~dir | b & (from ~> to)~dir
       Rules += p.last & to~dir | (from ~> to)~dir
-      for (q <- we) Rules += p.last & to~dir | q.head & (from ~> to)~dir
     }
     createRules()
   }
