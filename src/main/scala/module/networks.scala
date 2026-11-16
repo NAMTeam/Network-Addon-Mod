@@ -145,6 +145,14 @@ object Network extends scalaenum.Enum {
   val L1Avenue      = new Network(1, AvenueLike,  Some(Avenue))
   val L2Avenue      = new Network(2, AvenueLike,  Some(Avenue))
 
+  // mid-block crosswalk markers (Crosswalk2/3: outer edge to the right of the arrow)
+  val Crosswalk1    = new Network(0, Symmetrical,  None)
+  val Crosswalk2    = new Network(0, Asymmetrical, None)
+  val Crosswalk3    = new Network(0, Asymmetrical, None)
+  val Crosswalk3m   = new Network(0, Symmetrical,  None)
+  val CrosswalkDir  = new Network(0, Asymmetrical, None)  // OWR traffic direction
+  val CrosswalkRhd  = new Network(0, Asymmetrical, None)  // not mirror-symmetric
+
   // network collections
   val BaseNetworks: ValueSet = Network.values rangeFrom Road rangeTo Subway
   val OverrideNetworks: ValueSet = Network.values.filter(_.base.isDefined)
@@ -153,6 +161,7 @@ object Network extends scalaenum.Enum {
   val NwmNetworks: ValueSet = Network.values rangeFrom Tla3 rangeTo Ave6m
   val SamNetworks: ValueSet = Network.values rangeFrom Sam1 rangeTo Sam11
   val Viaducts: ValueSet = Network.values rangeFrom L1Road rangeTo L2Avenue
+  val CrosswalkNetworks: ValueSet = Network.values rangeFrom Crosswalk1 rangeTo CrosswalkRhd
   val RoadNetworks: ValueSet = RhwNetworks ++ NwmNetworks ++ SamNetworks ++ Viaducts + Road + Highway + Street + Avenue + Onewayroad + Groundhighway
 
 }

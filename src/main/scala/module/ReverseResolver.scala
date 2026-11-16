@@ -97,6 +97,7 @@ object ReverseResolver {
       (new flexfly.FlexFlyResolver).tileMap,
       (new NwmResolver).tileMap,
       (new ViaductResolver).tileMap,
+      (new MidblockCrosswalkResolver).tileMap,
     )
 
     val reverseTileMap = collection.mutable.Map.empty[Int, ::[Tile]]
