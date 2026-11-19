@@ -68,14 +68,14 @@ class HybridRailwayRuleGenerator(var context: RuleTransducer.Context) extends Ru
       Rules += L2Hrw~ES | (Hrw ~> L2Hrw)~NW        // diag continue
       Rules += L2Hrw~ES | Hrw~CNW | % | L2Hrw~NW   // diag stub convert
       //for ( over <- Overhang ) {
-      Rules += L1Hrw~WE | Rail~CW & Monorail~CE | % | L1Hrw~WE 
-      Rules += L2Hrw~WE | Rail~CW & Monorail~CE | % | L2Hrw~WE
-      Rules += L1Hrw~WE | Rail~WC & Monorail~EC | % | L1Hrw~WE        
-      Rules += L2Hrw~WE | Rail~WC & Monorail~EC | % | L2Hrw~WE
-      Rules += L1Hrw~WE | Rail~WC & Monorail~CE | % | L1Hrw~WE 
-      Rules += L2Hrw~WE | Rail~WC & Monorail~CE | % | L2Hrw~WE
-      Rules += L1Hrw~WE | Rail~EC & Monorail~WC | % | L1Hrw~WE        
-      Rules += L2Hrw~WE | Rail~EC & Monorail~WC | % | L2Hrw~WE
+      //Rules += L1Hrw~WE | Rail~CW & Monorail~CE | % | L1Hrw~WE //Commented out To Remove Confilct
+      //Rules += L2Hrw~WE | Rail~CW & Monorail~CE | % | L2Hrw~WE
+      //Rules += L1Hrw~WE | Rail~WC & Monorail~EC | % | L1Hrw~WE        
+      //Rules += L2Hrw~WE | Rail~WC & Monorail~EC | % | L2Hrw~WE
+      //Rules += L1Hrw~WE | Rail~WC & Monorail~CE | % | L1Hrw~WE 
+      //Rules += L2Hrw~WE | Rail~WC & Monorail~CE | % | L2Hrw~WE
+      //Rules += L1Hrw~WE | Rail~EC & Monorail~WC | % | L1Hrw~WE        
+      //Rules += L2Hrw~WE | Rail~EC & Monorail~WC | % | L2Hrw~WE
 
       for (minor <- BaseNetworks ) {
       //OxO Crossing overrides 
